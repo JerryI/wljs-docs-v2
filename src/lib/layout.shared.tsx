@@ -13,7 +13,7 @@ export function baseOptions(): BaseLayoutProps {
     nav: {
       title: (
         <>
-          <img src="/logo.svg" alt="Logo" style={{ width: '24px', height: '24px' }} />
+          <img src="/logo.svg" alt="Logo" style={{ width: '32px', height: '32px' }} />
           <span>WLJS Notebook</span>
         </>
       ),
