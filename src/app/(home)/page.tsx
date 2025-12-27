@@ -90,7 +90,7 @@ return r;`.split('')
 
 
 const animationsArray = [
-  async function(controller,setOutputVisible,assetsRef) {
+  async function(controller:any,setOutputVisible:any,assetsRef:any) {
         //section 1
         await controller.animate('plot', true);   // Clear and animate plot
         controller.setOutput(`(*VB[*)(dontlookatme)(*,*)(*"1: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"*)(*]VB*)`);// Wait 1 second
@@ -100,7 +100,7 @@ const animationsArray = [
         setOutputVisible(false); 
   },
 
-  async function (controller,setOutputVisible,assetsRef) {
+  async function (controller:any,setOutputVisible:any,assetsRef:any) {
         //section 2
         await controller.animate('table', true);   // Clear and animate plot
         controller.setOutput(`{1,(*BB[*)(2)(*,*)(*"1:eJxTTMoPSmNmYGAo5gMSwSWVOakuqcn5RYkl+UVpTCBxFiARVJqTWswFZDglJmenF+WX5qVANHGAJN2dnPNz8osyGYEcCAHEDGi6ecDGF2UW+Od55hWUlhSzAgXcEnOKU1EVBoPFixJzU8FCIUWlqQAABiTb"*)(*]BB*),(*BB[*)(3)(*,*)(*"1:eJxTTMoPSmNmYGAo5gMSwSWVOakuqcn5RYkl+UVpTCBxFiARVJqTWswFZDglJmenF+WX5qVANHGAJN2dnPNz8osyGYEcCAHEDGi6ecDGF2UW+Od55hWUlhSzAgXcEnOKU1EVBoPFixJzU8FCIUWlqQAABiTb"*)(*]BB*),4,(*BB[*)(5)(*,*)(*"1:eJxTTMoPSmNmYGAo5gMSwSWVOakuqcn5RYkl+UVpTCBxFiARVJqTWswFZDglJmenF+WX5qVANHGAJN2dnPNz8osyGYEcCAHEDGi6ecDGF2UW+Od55hWUlhSzAgXcEnOKU1EVBoPFixJzU8FCIUWlqQAABiTb"*)(*]BB*),6,(*BB[*)(7)(*,*)(*"1:eJxTTMoPSmNmYGAo5gMSwSWVOakuqcn5RYkl+UVpTCBxFiARVJqTWswFZDglJmenF+WX5qVANHGAJN2dnPNz8osyGYEcCAHEDGi6ecDGF2UW+Od55hWUlhSzAgXcEnOKU1EVBoPFixJzU8FCIUWlqQAABiTb"*)(*]BB*),8,9,10,(*BB[*)(11)(*,*)(*"1:eJxTTMoPSmNmYGAo5gMSwSWVOakuqcn5RYkl+UVpTCBxFiARVJqTWswFZDglJmenF+WX5qVANHGAJN2dnPNz8osyGYEcCAHEDGi6ecDGF2UW+Od55hWUlhSzAgXcEnOKU1EVBoPFixJzU8FCIUWlqQAABiTb"*)(*]BB*),12,(*BB[*)(13)(*,*)(*"1:eJxTTMoPSmNmYGAo5gMSwSWVOakuqcn5RYkl+UVpTCBxFiARVJqTWswFZDglJmenF+WX5qVANHGAJN2dnPNz8osyGYEcCAHEDGi6ecDGF2UW+Od55hWUlhSzAgXcEnOKU1EVBoPFixJzU8FCIUWlqQAABiTb"*)(*]BB*),14,15,16,(*BB[*)(17)(*,*)(*"1:eJxTTMoPSmNmYGAo5gMSwSWVOakuqcn5RYkl+UVpTCBxFiARVJqTWswFZDglJmenF+WX5qVANHGAJN2dnPNz8osyGYEcCAHEDGi6ecDGF2UW+Od55hWUlhSzAgXcEnOKU1EVBoPFixJzU8FCIUWlqQAABiTb"*)(*]BB*),18,(*BB[*)(19)(*,*)(*"1:eJxTTMoPSmNmYGAo5gMSwSWVOakuqcn5RYkl+UVpTCBxFiARVJqTWswFZDglJmenF+WX5qVANHGAJN2dnPNz8osyGYEcCAHEDGi6ecDGF2UW+Od55hWUlhSzAgXcEnOKU1EVBoPFixJzU8FCIUWlqQAABiTb"*)(*]BB*),20}`);
@@ -109,7 +109,7 @@ const animationsArray = [
         setOutputVisible(false);     
   },
 
-  async function (controller,setOutputVisible,assetsRef) {
+  async function (controller:any,setOutputVisible:any,assetsRef:any) {
         //section 3
         await controller.animate('eigen', true);
         controller.setOutput(`{(*FB[*)((u y-s z)(*,*)/(*,*)(-s t+r u))(*]FB*),(*FB[*)((t y-r z)(*,*)/(*,*)(s t-r u))(*]FB*)}`);
@@ -119,7 +119,7 @@ const animationsArray = [
 
   },
 
-  async function (controller,setOutputVisible,assetsRef) {
+  async function (controller:any,setOutputVisible:any,assetsRef:any) {
         //section 4
         // Load assets only when needed (right before CSV animation) and only once
         if (!assetsRef.current) {
@@ -134,7 +134,7 @@ const animationsArray = [
         
   },
 
-  async function (controller,setOutputVisible,assetsRef) {
+  async function (controller:any,setOutputVisible:any,assetsRef:any) {
         //section 5
         await controller.animate('md', true);
         await controller.pause(3000);
@@ -142,7 +142,7 @@ const animationsArray = [
 
   },
 
-  async function (controller,setOutputVisible,assetsRef) {
+  async function (controller:any,setOutputVisible:any,assetsRef:any) {
         //section 6
         // Load assets only when needed (right before CSV animation) and only once
         if (!assetsRef.current) {
@@ -158,7 +158,7 @@ const animationsArray = [
               
   },
 
-  async function (controller,setOutputVisible,assetsRef) {
+  async function (controller:any,setOutputVisible:any,assetsRef:any) {
         //section 7
         // Load assets only when needed (right before CSV animation) and only once
         if (!assetsRef.current) {
@@ -174,7 +174,7 @@ const animationsArray = [
 
   },
 
-  async function (controller,setOutputVisible,assetsRef) {
+  async function (controller:any,setOutputVisible:any,assetsRef:any) {
         //section 8
         // Load assets only when needed (right before CSV animation) and only once
         if (!assetsRef.current) {
@@ -190,7 +190,7 @@ const animationsArray = [
 
   },
 
-  async function (controller,setOutputVisible,assetsRef) {
+  async function (controller:any,setOutputVisible:any,assetsRef:any) {
         //section 9
         await controller.animate(`tomorrow`, true);
         controller.setOutput(`(*VB[*)(Quantity[1, "Days"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KWnMIB4vkAjLTC13SU3OL0osyS8K5gCKBJYm5pVkllRmgnQEg3S4JFYWAwAJNw/d"*)(*]VB*)`);
@@ -206,7 +206,7 @@ function loadAssets() : Promise<HTMLElement> {
   store.setAttribute('json', '/home/storage.txt');
   document.body.appendChild(store);
   console.log('started loading assets...');
-  const p = new Promise((resolve)=>{
+  const p = new Promise<HTMLElement>((resolve)=>{
     store.addEventListener('loaded', () => {
       resolve(store);
     });
@@ -218,7 +218,7 @@ function unloadAssets(el:HTMLElement) {
   el.remove();
 }
 
-function shuffleArray(array) {
+function shuffleArray(array:any) {
     for (var i = array.length - 1; i > 0; i--) {
         var j = Math.floor(Math.random() * (i + 1));
         var temp = array[i];
