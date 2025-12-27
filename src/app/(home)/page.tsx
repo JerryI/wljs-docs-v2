@@ -202,8 +202,8 @@ const animationsArray = [
 
 function loadAssets() : Promise<HTMLElement> {
   const store = document.createElement('wljs-store');
-  store.setAttribute('kernel', '/home/kernel.txt');
-  store.setAttribute('json', '/home/storage.txt');
+  store.setAttribute('kernel', 'home/kernel.txt');
+  store.setAttribute('json', 'home/storage.txt');
   document.body.appendChild(store);
   console.log('started loading assets...');
   const p = new Promise<HTMLElement>((resolve)=>{
