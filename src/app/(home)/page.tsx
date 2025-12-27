@@ -1,39 +1,120 @@
 'use client';
 
 import Link from 'next/link';
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Card, Cards } from 'fumadocs-ui/components/card';
 import { Code2, Lightbulb, Zap, Download, Package, Terminal } from 'lucide-react';
 import { AnimationController, type AnimationConfig } from './AnimationController';
 
+
 // Animation sequences - easy to add more!
 const ANIMATIONS: Record<string, AnimationConfig> = {
   plot: {
-    delay: 50,
+    delay: 45,
     frames: [
-      `Plot[`,
+      `Plot[{`,
       `(*FB[*)((1)(*,*)/(*,*)(x))(*]FB*)`,
+      `, `,
+      `(*SpB[*)Power[E(*|*),(*|*)x](*]SpB*)`,
+      `}`, 0,
       ...(`, {x,0,1}`).split(''),
-      ...(`, PlotStyle->`.split('')),
-      `(*VB[*)(RGBColor[1, 0, 0])(*,*)(*"1:eJxTTMoPSmNiYGAo5gUSYZmp5S6pyflFiSX5RcEsQBHn4PCQNGaQPAeQCHJ3cs7PyS8qYgCDD/ZQBgMDnAEA4iUPRg=="*)(*]VB*)`,
-      ...(`, {x,0,1}]`).split('')
+      ...(`, PlotStyle->{`.split('')),
+      `(*VB[*)(Hue[0.03561231666487014, 0.8918383801498982, 0.8795337025157177, 1.])(*,*)(*"1:eJxTTMoPSmNiYGAo5gUSYZmp5S6pyflFiSX5RcEsQBHn4PCQNBCjmANIBLk7Oefn5BcVicky3lVWfWNfpLliouDmCxfsi/5vOjStL2qHfREDGHywBwA7SBsq"*)(*]VB*)`,
+      `, `,
+      `(*VB[*)(Hue[0.7525250981820283, 0.9387608112070892, 0.9098038112440241, 1.])(*,*)(*"1:eJxTTMoPSmNiYGAo5gUSYZmp5S6pyflFiSX5RcEsQBHn4PCQNBCjmANIBLk7Oefn5BcVPbA7J9m98759kcuMqc8Ota2xL7Iwf/RQRvatfREDGHywBwBxeRxB"*)(*]VB*)`,
+      ...(`}, {x,0,1}]`).split('')
     ]
   },
   table: {
-    delay: 60,
-    frames: [`Table[`, `i^2`, `, {i, 1, 10}]`]
+    delay: 30,
+    frames: [
+      ...(`Table[If[PrimeQ[i], Framed[i, Background->`).split(''),
+      `(*VB[*)(RGBColor[1, 1, 0])(*,*)(*"1:eJxTTMoPSmNiYGAo5gUSYZmp5S6pyflFiSX5RcEsQBHn4PCQNGaQPAeQCHJ3cs7PyS8qYgCDD/boDAYGAO7rEHU="*)(*]VB*)`,
+      ...(`], i], {i, 1, 20}]`.split('')),
+    ]
   },
+  eigen: {
+    delay: 50,
+    frames: [
+      ...(`LinearSolve[(`.split('')),
+      `(*GB[*){{r(*|*),(*|*)s}(*||*),(*||*){t(*|*),(*|*)u}}(*]GB*)`,
+      `)`,0,
+      ...(`, {y, z}]`.split(''))
+    ]
+  },
+  csv: {
+    delay: 50,
+    frames: [
+      ...(`"table.tsv" // SemanticImport`.split(''))
+    ]
+  },  
   manipulate: {
+    delay: 30,
+    frames: [...(`Manipulate[
+    Plot[
+      1 + Sin[\[Phi]] Sin[x + \[Phi]], {x, 0, 5 \[Pi]}, 
+      Epilog -> {`.split('')),
+      `(*VB[*)(RGBColor[1, 0, 0])(*,*)(*"1:eJxTTMoPSmNiYGAo5gUSYZmp5S6pyflFiSX5RcEsQBHn4PCQNGaQPAeQCHJ3cs7PyS8qYgCDD/ZQBgMDnAEA4iUPRg=="*)(*]VB*)`,
+      ...(`, Disk[{8, 1 + Sin[\[Phi]] Sin[8 + \[Phi]]}, \[Phi] {0.5,0.1}]}
+    , ImageSize->250, ImagePadding->23], {\[Phi], 0, \[Pi], 0.2}
+]`.split(''))]
+  },
+
+  parrot: {
+    delay: 60,
+    frames: [
+      `(*VB[*)(FrontEndRef["e8bf1ee2-d637-4e14-9e1f-7fcd3edb8c67"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKp1okpRmmphrpppgZm+uapBqa6FqmGqbpmqclpxinpiRZJJuZAwCTVhZ2"*)(*]VB*)`,
+      ...(` // DominantColors`.split(''))
+    ]
+  },
+
+  md: {
     delay: 40,
-    frames: [`Manipulate[`, `Plot[Sin[a x], {x, 0, 2Pi}]`, `, {a, 1, 5}]`]
+    frames: `.md
+Write *your notes* in the same cell with $\\LaTeX$`.split('')
+  },
+
+  js: {
+    delay: 30,
+    frames: `.js
+const r = document.createElement('div');
+Object.assign(r.style, {width:'4rem',height:'3rem',backgroundImage:'linear-gradient(to right, red, green)'});
+return r;`.split('')
+  },
+
+  tomorrow: {
+    delay: 50,
+    frames: 'Tomorrow - Today'.split('')
   }
 };
 
+
+function loadAssets() : Promise<HTMLElement> {
+  const store = document.createElement('wljs-store');
+  store.setAttribute('kernel', '/home/kernel.txt');
+  store.setAttribute('json', '/home/storage.txt');
+  document.body.appendChild(store);
+  console.log('started loading assets...');
+  const p = new Promise((resolve)=>{
+    store.addEventListener('loaded', () => {
+      resolve(store);
+    });
+  });
+  return p;
+}
+
+function unloadAssets(el:HTMLElement) {
+  el.remove();
+}
+
 export default function HomePage() {
   const controllerRef = useRef<AnimationController | null>(null);
+  const [outputVisible, setOutputVisible] = useState(false);
+  const assetsRef = useRef<HTMLElement | null>(null);
 
   useEffect(() => {
     const editor = document.getElementById('hero-editor');
+    const outputEditor = document.getElementById('hero-output');
     
     if (!editor) return;
 
@@ -47,22 +128,114 @@ export default function HomePage() {
       const controller = new AnimationController(ANIMATIONS, event.detail);
       controllerRef.current = controller;
 
-      controller.runSequence([
-        { animationName: 'plot', pauseAfter: 2000, clearBefore: true }, // Clear placeholder, run plot, wait 2s
-        { animationName: 'table', pauseAfter: 1500, clearBefore: true }, // Clear, run table, wait 1.5s
-        { animationName: 'manipulate', clearBefore: true } // Clear and run manipulate
-      ]);
+      // Initialize output editor when it's ready
+      if (outputEditor) {
+        const handleOutputReady = (e: any) => {
+          if (e.detail) {
+            controller.setOutputEditor(e.detail);
+          }
+        };
+        outputEditor.addEventListener('codemirrorReady', handleOutputReady);
+      }
 
-      // Infinite loop 
-      // const runLoop = () => {
-      //   controller.runSequence([
-      //     { animationName: 'plot', pauseAfter: 3000, clearBefore: true },
-      //     { animationName: 'table', pauseAfter: 3000, clearBefore: true },
-      //   ]);
-      //   // Schedule next loop after all animations complete
-      //   setTimeout(runLoop, 8000);
-      // };
-      // runLoop();
+      // Run animations with async/await - much cleaner!
+      (async () => {
+
+        //section 1
+        await controller.animate('plot', true);   // Clear and animate plot
+        controller.setOutput(`(*VB[*)(dontlookatme)(*,*)(*"1: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"*)(*]VB*)`);// Wait 1 second
+        await controller.pause(300);
+        setOutputVisible(true);                    // Show output container
+        await controller.pause(4000);    
+        setOutputVisible(false); 
+        
+        
+        //section 2
+        await controller.animate('table', true);   // Clear and animate plot
+        controller.setOutput(`{1,(*BB[*)(2)(*,*)(*"1:eJxTTMoPSmNmYGAo5gMSwSWVOakuqcn5RYkl+UVpTCBxFiARVJqTWswFZDglJmenF+WX5qVANHGAJN2dnPNz8osyGYEcCAHEDGi6ecDGF2UW+Od55hWUlhSzAgXcEnOKU1EVBoPFixJzU8FCIUWlqQAABiTb"*)(*]BB*),(*BB[*)(3)(*,*)(*"1:eJxTTMoPSmNmYGAo5gMSwSWVOakuqcn5RYkl+UVpTCBxFiARVJqTWswFZDglJmenF+WX5qVANHGAJN2dnPNz8osyGYEcCAHEDGi6ecDGF2UW+Od55hWUlhSzAgXcEnOKU1EVBoPFixJzU8FCIUWlqQAABiTb"*)(*]BB*),4,(*BB[*)(5)(*,*)(*"1:eJxTTMoPSmNmYGAo5gMSwSWVOakuqcn5RYkl+UVpTCBxFiARVJqTWswFZDglJmenF+WX5qVANHGAJN2dnPNz8osyGYEcCAHEDGi6ecDGF2UW+Od55hWUlhSzAgXcEnOKU1EVBoPFixJzU8FCIUWlqQAABiTb"*)(*]BB*),6,(*BB[*)(7)(*,*)(*"1:eJxTTMoPSmNmYGAo5gMSwSWVOakuqcn5RYkl+UVpTCBxFiARVJqTWswFZDglJmenF+WX5qVANHGAJN2dnPNz8osyGYEcCAHEDGi6ecDGF2UW+Od55hWUlhSzAgXcEnOKU1EVBoPFixJzU8FCIUWlqQAABiTb"*)(*]BB*),8,9,10,(*BB[*)(11)(*,*)(*"1:eJxTTMoPSmNmYGAo5gMSwSWVOakuqcn5RYkl+UVpTCBxFiARVJqTWswFZDglJmenF+WX5qVANHGAJN2dnPNz8osyGYEcCAHEDGi6ecDGF2UW+Od55hWUlhSzAgXcEnOKU1EVBoPFixJzU8FCIUWlqQAABiTb"*)(*]BB*),12,(*BB[*)(13)(*,*)(*"1:eJxTTMoPSmNmYGAo5gMSwSWVOakuqcn5RYkl+UVpTCBxFiARVJqTWswFZDglJmenF+WX5qVANHGAJN2dnPNz8osyGYEcCAHEDGi6ecDGF2UW+Od55hWUlhSzAgXcEnOKU1EVBoPFixJzU8FCIUWlqQAABiTb"*)(*]BB*),14,15,16,(*BB[*)(17)(*,*)(*"1:eJxTTMoPSmNmYGAo5gMSwSWVOakuqcn5RYkl+UVpTCBxFiARVJqTWswFZDglJmenF+WX5qVANHGAJN2dnPNz8osyGYEcCAHEDGi6ecDGF2UW+Od55hWUlhSzAgXcEnOKU1EVBoPFixJzU8FCIUWlqQAABiTb"*)(*]BB*),18,(*BB[*)(19)(*,*)(*"1:eJxTTMoPSmNmYGAo5gMSwSWVOakuqcn5RYkl+UVpTCBxFiARVJqTWswFZDglJmenF+WX5qVANHGAJN2dnPNz8osyGYEcCAHEDGi6ecDGF2UW+Od55hWUlhSzAgXcEnOKU1EVBoPFixJzU8FCIUWlqQAABiTb"*)(*]BB*),20}`);
+        setOutputVisible(true);    
+        await controller.pause(3000);     
+        setOutputVisible(false); 
+
+
+        //section 3
+        await controller.animate('eigen', true);
+        controller.setOutput(`{(*FB[*)((u y-s z)(*,*)/(*,*)(-s t+r u))(*]FB*),(*FB[*)((t y-r z)(*,*)/(*,*)(s t-r u))(*]FB*)}`);
+        setOutputVisible(true); 
+        await controller.pause(3000);  
+        setOutputVisible(false); 
+
+
+        //section 4
+        // Load assets only when needed (right before CSV animation) and only once
+        if (!assetsRef.current) {
+          const loadedAssets = await loadAssets();
+          assetsRef.current = loadedAssets;
+        }
+        await controller.animate('csv', true);
+        controller.setOutput(`(*VB[*)(FrontEndRef["1156c29d-dc71-4588-a402-ae682a3fa0ce"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKGxqamiUbWabopiSbG+qamFpY6CaaGBjpJqaaWRglGqclGiSnAgB7dxWa"*)(*]VB*)`);
+        setOutputVisible(true); 
+        await controller.pause(3000);  
+        setOutputVisible(false);    
+        
+
+        //section 5
+        await controller.animate('md', true);
+        await controller.pause(3000);
+      
+
+
+        //section 6
+        // Load assets only when needed (right before CSV animation) and only once
+        if (!assetsRef.current) {
+          const loadedAssets = await loadAssets();
+          assetsRef.current = loadedAssets;
+        }        
+        await controller.animate(`js`, true);
+        controller.setOutput(`(*VB[*)(hey)(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKJxkkp5gnmRnophqZJeuaWBgn6loYWxjqmpsZGSYbJRmZmqZYAgCDuRU/"*)(*]VB*)`);
+        setOutputVisible(true); 
+        await controller.pause(3000);
+        setOutputVisible(false);  
+
+              
+
+        //section 7
+        // Load assets only when needed (right before CSV animation) and only once
+        if (!assetsRef.current) {
+          const loadedAssets = await loadAssets();
+          assetsRef.current = loadedAssets;
+        }            
+        await controller.animate('manipulate', true);
+        controller.setOutput(`(*VB[*)(42)(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKm6daJqWapSbpWhqmmumaGBlb6lpYmFroGqQZpJklG6SkpaQaAgCH6xXp"*)(*]VB*)`);
+        setOutputVisible(true); 
+        await controller.pause(6000);  
+        setOutputVisible(false);  
+
+
+
+        //section 8
+        // Load assets only when needed (right before CSV animation) and only once
+        if (!assetsRef.current) {
+          const loadedAssets = await loadAssets();
+          assetsRef.current = loadedAssets;
+        }            
+        await controller.animate('parrot', true);
+        controller.setOutput(`{(*VB[*)(RGBColor[0.30789742562221767, 0.28009930799992366, 0.2567324801591748])(*,*)(*"1:eJxTTMoPSmNiYGAo5gUSYZmp5S6pyflFiSX5RcEsQBHn4PCQNGaQPAeQCHJ3cs7PyS8q0qpOSZ++5bJ9UUT1/aWqby/aF+lsahP0y7tgDwBouxmd"*)(*]VB*),(*VB[*)(RGBColor[0.9708091105843779, 0.9803148755413071, 0.9904798899674178])(*,*)(*"1:eJxTTMoPSmNiYGAo5gUSYZmp5S6pyflFiSX5RcEsQBHn4PCQNGaQPAeQCHJ3cs7PyS8qOndmsss9gff2RUl57r5744AMRv0bD5k2vbcHAHK+Ghw="*)(*]VB*),(*VB[*)(RGBColor[0.5978503447738835, 0.04531749371194499, 0.035019904506210064])(*,*)(*"1:eJxTTMoPSmNiYGAo5gUSYZmp5S6pyflFiSX5RcEsQBHn4PCQNGaQPAeQCHJ3cs7PyS8qujjjGvd0xcf2RRzPbh+6ZbzcvuhArAKj4ruF9gB1jxnm"*)(*]VB*),(*VB[*)(RGBColor[0.5876268431590908, 0.6555093639216234, 0.500288518611284])(*,*)(*"1:eJxTTMoPSmNiYGAo5gUSYZmp5S6pyflFiSX5RcEsQBHn4PCQNGaQPAeQCHJ3cs7PyS8q0rlufP7a2Uf2RX+qOY69+/nEvujHX3vBWKYH9gCQ2Bvy"*)(*]VB*),(*VB[*)(RGBColor[0.6734079946460099, 0.5111777811451619, 0.03394819738718463])(*,*)(*"1:eJxTTMoPSmNiYGAo5gUSYZmp5S6pyflFiSX5RcEsQBHn4PCQNGaQPAeQCHJ3cs7PyS8qSrts/aav56l90YtdfY0Tox/YF0nUClWvSFxoDwCBHBp8"*)(*]VB*),(*VB[*)(RGBColor[0.060156564843861726, 0.19024753116250473, 0.33023547565899036])(*,*)(*"1:eJxTTMoPSmNiYGAo5gUSYZmp5S6pyflFiSX5RcEsQBHn4PCQNGaQPAeQCHJ3cs7PyS8qkjjmGXv9zDr7opc5dt/Yo07YF6078/vnZKWr9gB2iRtT"*)(*]VB*),(*VB[*)(RGBColor[0.6126267453513451, 0.4924692137326053, 0.409727153537265])(*,*)(*"1:eJxTTMoPSmNiYGAo5gUSYZmp5S6pyflFiSX5RcEsQBHn4PCQNGaQPAeQCHJ3cs7PyS8qus1dl7541mP7Ii7di9Pntty3L3Iu0rP9YXHLHgBoWxmI"*)(*]VB*)}`);
+        setOutputVisible(true); 
+        await controller.pause(4000);  
+        setOutputVisible(false);     
+        
+
+        
+        //section 9
+        await controller.animate(`tomorrow`, true);
+        controller.setOutput(`(*VB[*)(Quantity[1, "Days"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KWnMIB4vkAjLTC13SU3OL0osyS8K5gCKBJYm5pVkllRmgnQEg3S4JFYWAwAJNw/d"*)(*]VB*)`);
+        setOutputVisible(true); 
+        await controller.pause(3000);
+        setOutputVisible(false);         
+        
+
+      })();
     };
     
     editor.addEventListener('codemirrorReady', handleCodemirrorReady);
@@ -70,11 +243,17 @@ export default function HomePage() {
     // Comprehensive cleanup
     return () => {
       editor.removeEventListener('codemirrorReady', handleCodemirrorReady);
-      
+
       // Stop any running animations
       if (controllerRef.current) {
         controllerRef.current.stop();
         controllerRef.current = null;
+      }
+
+      // Unload assets when component unmounts
+      if (assetsRef.current) {
+        unloadAssets(assetsRef.current);
+        assetsRef.current = null;
       }
     };
   }, []);
@@ -181,12 +360,21 @@ export default function HomePage() {
             </pre>
           </div>
         </div>
-        <div className="relative w-full max-w-2xl group mt-2">
-          
-          <div className="relative rounded-lg border border-fd-border bg-fd-card/95 backdrop-blur-sm p-6 text-center shadow-xl">
+        
+        {/* Output container - slides in when outputVisible is true */}
+        <div 
+          style={{height: '240px'}}
+          className={`relative w-full max-w-2xl group mt-4 transition-all duration-500 ease-out ${
+            outputVisible 
+              ? 'opacity-100 translate-y-0' 
+              : 'opacity-0 -translate-y-4 pointer-events-none'
+          }`}
+        >
+          <div className="absolute -inset-0.5 bg-gradient-to-r from-green-500/50 to-blue-500/50 rounded-lg blur opacity-25 group-hover:opacity-40 transition duration-500" />
+          <div className="relative rounded-lg border border-fd-border bg-fd-card/95 backdrop-blur-sm p-6 text-center shadow-xl text-left">
             <pre className="text-sm overflow-x-auto">
               <code>
-                <wljs-editor type="Input" id="hero-output" display="codemirror">{`Plot`}</wljs-editor>
+                <wljs-editor type="Input" id="hero-output" display="codemirror">{`🪄`}</wljs-editor>
               </code>
             </pre>
           </div>
