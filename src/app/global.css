@@ -23,4 +23,8 @@
     filter: invert(1) hue-rotate(180Deg);
     color:black;
   }
+
+  .invertColor {
+    filter: invert(1) hue-rotate(180Deg);
+  }
 }

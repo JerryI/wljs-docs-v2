@@ -48,6 +48,7 @@ export function LazyAutoplayVideo ({url}) {
             {hasBeenInView && (
                 <video
                     src={url}
+                    className='invertColor'
                     autoPlay
                     muted
                     loop
