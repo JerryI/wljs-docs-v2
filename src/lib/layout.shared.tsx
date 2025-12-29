@@ -1,4 +1,6 @@
-import { BookIcon, Drum, Rocket, Pyramid, AppWindowMac } from 'lucide-react';
+import { Book,BookIcon, Drum, Rocket, Pyramid, AppWindowMac } from 'lucide-react';
+
+import Image from 'next/image'
 
 import {
   NavbarMenu,
@@ -7,13 +9,20 @@ import {
   NavbarMenuTrigger,
 } from 'fumadocs-ui/layouts/home/navbar';
 
+import Logo from './../../public/logo.svg'
+
 import type { BaseLayoutProps } from 'fumadocs-ui/layouts/shared';
 export function baseOptions(): BaseLayoutProps {
   return {
     nav: {
       title: (
         <>
-          <img src="logo.svg" alt="Logo" style={{ width: '32px', height: '32px' }} />
+          <Image
+      src={Logo}
+      width={32}
+      height={32}
+      alt="WLJS Logo"
+    />
           <span>WLJS Notebook</span>
         </>
       ),

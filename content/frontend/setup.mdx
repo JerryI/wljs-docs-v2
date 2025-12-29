@@ -1,0 +1,155 @@
+---
+icon: Rocket
+slug: /setup
+title: Installation
+---
+
+
+__Step 1__: download and install [freeware Wolfram Engine](https://www.wolfram.com/engine/) for developers.
+
+__Step 2__: install WLJS from the binaries hosted at Github or homebrew.
+
+Alternatively you can skip __steps 1, 2__ and use a __complete Docker Image__ (see further).
+
+import { Tabs, Tab } from 'fumadocs-ui/components/tabs';
+
+<Tabs items={['Windows', 'Mac','GNU/Linux', 'Docker', 'Homebrew']}>
+  <Tab value="Mac">
+    - [Apple Silicon](https://github.com/WLJSTeam/wolfram-js-frontend/releases/download/v2.9.1/wljs-notebook-2.9.1-arm64-macos.dmg)
+    - [Intel](https://github.com/WLJSTeam/wolfram-js-frontend/releases/download/v2.9.1/wljs-notebook-2.9.1-x64-macos.dmg)
+  </Tab>
+  <Tab value="Windows">
+    - [x86/64](https://github.com/WLJSTeam/wolfram-js-frontend/releases/download/v2.9.1/wljs-notebook-2.9.1-x64-win.exe)
+  </Tab>
+  <Tab value="GNU/Linux">
+    - [DEB x86/64](https://github.com/WLJSTeam/wolfram-js-frontend/releases/download/v2.9.1/wljs-notebook-2.9.1-amd64-gnulinux.deb)
+    - [DEB ARM64](https://github.com/WLJSTeam/wolfram-js-frontend/releases/download/v2.9.1/wljs-notebook-2.9.1-arm64-gnulinux.deb)
+    - [AppImage x86/64](https://github.com/WLJSTeam/wolfram-js-frontend/releases/download/untagged-dcd5209e28676510c773/wljs-notebook-2.9.1-x86_64-gnulinux.AppImage)
+    - [AppImage ARM64](https://github.com/WLJSTeam/wolfram-js-frontend/releases/download/untagged-dcd5209e28676510c773/wljs-notebook-2.9.1-arm64-gnulinux.AppImage)
+  </Tab>
+  <Tab value="Docker">
+
+```bash
+docker run -it \
+  -v ~/wljs:"/home/wljs/WLJS Notebooks" \
+  -v ~/wljs/Licensing:/home/wljs/.WolframEngine/Licensing \
+  -e PUID=$(id -u) \
+  -e PGID=$(id -g) \
+  -p 8000:3000 \
+  --name wljs \
+  ghcr.io/wljsteam/wolfram-js-frontend:main
+```
+
+  </Tab>
+  <Tab value="Homebrew">
+  
+```bash  
+brew install --cask wljs-notebook
+```
+
+  </Tab>
+</Tabs>
+
+see also
+
+[All releases](https://github.com/JerryI/wolfram-js-frontend/releases)
+
+> We carefully crafted our UI to match the look of all platforms as close as possible for a web-based application
+
+
+### Windows
+Download and install the latest `.exe`. *Only x86/64-bit architecture is supported*
+
+### Linux
+##### Using `.deb` Package (Recommended)
+```bash
+sudo apt install ./wljs-notebook.deb
+```
+⚠ *Ubuntu 24.04 users*: If you encounter AppArmor issues, run:
+```bash
+sudo sysctl -w kernel.apparmor_restrict_unprivileged_userns=0
+```
+
+##### Using `.AppImage` Package (Recommended)
+Make AppImage executable and run it by double-click.
+
+⚠ *Debian 13 users*: in the case of troubles install FUSE
+```bash
+sudo apt install libfuse2
+```
+⚠ or if you are *Ubuntu user*:
+```bash
+sudo apt install libfuse2t64
+```
+
+
+
+##### Using `.zip` Archive
+Extract and run the `wljs-notebook` executable.
+
+### macOS
+##### Using `.dmg` Installer
+- Apple Silicon users: Download the `-arm64.dmg` version.
+- Intel Mac users: Use `-amd64.dmg` version.
+
+##### Using Homebrew
+```bash
+brew install --cask wljs-notebook
+```
+
+---
+
+
+
+
+## 🚢 Running using Docker
+
+<Callout>
+Certain features such as image/sound recording might require `https` connection if you are running it __not on a local machine__. See how to set up a proxy in [📦 Docker Container Setup](https://github.com/JerryI/wolfram-js-frontend/blob/main/container/README.md)
+</Callout>
+
+__Step 1__: register and get developer license for [freeware Wolfram Engine](https://www.wolfram.com/engine/) at wolfram.com
+
+__Step 2__: deploy WLJS Notebook in a single line of code to any machine!
+
+```bash
+docker run -it \
+  -v ~/wljs:"/home/wljs/WLJS Notebooks" \
+  -v ~/wljs/Licensing:/home/wljs/.WolframEngine/Licensing \
+  -e PUID=$(id -u) \
+  -e PGID=$(id -g) \
+  -p 8000:3000 \
+  --name wljs \
+  ghcr.io/wljsteam/wolfram-js-frontend:main
+```
+
+Then open `http://127.0.0.1:8000` 
+
+[📦 Docker Container Setup](https://github.com/JerryI/wolfram-js-frontend/blob/main/container/README.md)
+
+In the case if you do not have `docker`, clone it directly from the repository as follows.
+
+<Callout type="warning">
+Some features require WLJS Desktop App:
+- `Export[_, _, "PDF"]` - export to PDF
+- Rendering `Animate` to a GIF file
+- `Rasterize` - expressions rasterization
+- `SystemOpen` - open files/folders using OS system calls
+- `SystemInputDialog` - open system file dialog
+- [Static Slides](frontend/Exporting/Static%20Slides.md) - export feature
+- Native notebook print feature
+</Callout>
+
+## 🍓 Raspberry PI
+
+Unix ARM64 binaries can work on any Raspberry PI computers with x64 OS installed. However, you might need to install `libuv` or/and `libuv-dev` dependency from the terminal.
+
+Wolfram Engine is available from APT repository by the default and does not require authentification.
+
+---
+
+
+<Cards>
+  <Card href="https://wljs.io/wljs-demo/intro-notebook">Explore online examples</Card>
+  <Card href="https://wljs.io/wljs-demo">Demonstration Project</Card>
+</Cards>

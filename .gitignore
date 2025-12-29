@@ -3,6 +3,7 @@
 
 # generated content
 .source
+public/attachments/*
 
 # test & build
 /coverage

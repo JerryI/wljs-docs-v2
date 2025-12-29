@@ -363,14 +363,14 @@ export default function HomePage() {
         
         <div className="flex gap-3 mb-12 flex-wrap justify-center">
           <Link 
-            href="/docs" 
+            href="/frontend/Overview" 
             className="group relative inline-flex items-center gap-2 rounded-lg bg-fd-primary px-6 py-2.5 font-medium text-fd-primary-foreground transition-all hover:bg-fd-primary/90 hover:shadow-lg hover:shadow-fd-primary/25"
           >
             <span className="relative z-10">Overview</span>
             <div className="absolute inset-0 rounded-lg bg-gradient-to-r from-fd-primary to-purple-600 opacity-0 group-hover:opacity-100 transition-opacity" />
           </Link>
           <Link 
-            href="/docs" 
+            href="/frontend/setup" 
             className="inline-flex items-center gap-2 rounded-lg border border-fd-border bg-fd-card/50 backdrop-blur-sm px-6 py-2.5 font-medium transition-all hover:bg-fd-primary hover:text-fd-background hover:border-fd-primary/50"
           >
             <Download className="size-4" />
@@ -379,12 +379,12 @@ export default function HomePage() {
         </div>
 
         {/* Code Example with glow effect */}
-        <div className="relative w-full max-w-2xl group">
+        <div className="relative w-full max-w-2xl group" style={{"height":"176px"}}>
           <div className="absolute -inset-0.5 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur opacity-25 group-hover:opacity-40 transition duration-500" />
           <div className="relative rounded-lg border border-fd-border bg-fd-card/95 backdrop-blur-sm p-6 text-left shadow-xl">
             <pre className="text-sm overflow-x-auto">
               <code>
-                <wljs-editor id="hero-editor" type="Input" display="codemirror">{`Plot`}</wljs-editor>
+                <wljs-editor id="hero-editor" type="Input" display="codemirror">{`Plot[1/x, {x,0,1}]`}</wljs-editor>
               </code>
             </pre>
           </div>
@@ -419,14 +419,14 @@ export default function HomePage() {
           <Card 
             icon={<Code2 />}
             title="Feels like Mathematica and Jupyter"
-            description="WLJS Notebook is compatible with Wolfram Mathematica (it can open .nb files) and has a flat and minimal notebook structure like in Jupyter Lab."
+            description="WLJS Notebook feels and works like Wolfram Mathematica (and it can open .nb files) and has a flat and minimal notebook structure like in Jupyter Lab."
             href="/docs"
           />
 
           <Card 
             icon={<Zap />}
             title="Interactive & Powerful"
-            description="Optimized for interactive computing and allows to make complex real-time visualizations."
+            description=<>{`Optimized for interactive computing and allows to make complex real-time visualizations. From the high-level `}<code>Manipulate</code> to low-level graphics primitives</>
             href="/docs"
           />
 
@@ -454,14 +454,39 @@ export default function HomePage() {
           <Card 
             icon={<Terminal />}
             title="Javascript Sandbox"
-            description="First class support of Javascript with a dedicated communication channel to Wolfram Kernel. Use any library from web to enhance your visuals."
+            description="First class support of Javascript cells with a dedicated communication channel to Wolfram Kernel. Use any library from web to enhance your visuals."
             href="/docs"
           />
         </Cards>
       </div>
 
+      {/* CodeSign Sponsor Banner */}
+      <div className="relative mb-16">
+        <div className="rounded-lg border border-fd-border bg-fd-card/50 backdrop-blur-sm p-6 sm:p-8 shadow-lg">
+          <div className="flex flex-col sm:flex-row items-center gap-6">
+            <div className="flex-1 text-center sm:text-left">
+              <h3 className="text-lg font-semibold mb-2">Digitally Signed</h3>
+              <p className="text-fd-muted-foreground text-sm mb-3">
+                Our releases are digitally signed and checked by SignPath Foundation and Apple
+              </p>
+              <a 
+                href="https://signpath.org/projects/wljsnotebook/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-sm text-fd-primary hover:underline"
+              >
+                Learn more about SignPath Foundation →
+              </a>
+            </div>
+            <div className="flex-shrink-0">
+              <img height="50" width="50" src="sign.png"/>
+            </div>
+          </div>
+        </div>
+      </div>
+
       {/* Call to Action Section with gradient border */}
-      <div className="relative group">
+      <div className="relative group mb-16">
         <div className="absolute -inset-0.5 bg-gradient-to-r from-fd-primary via-purple-500 to-fd-primary rounded-lg blur opacity-20 group-hover:opacity-30 transition duration-500" />
         <div className="relative rounded-lg border border-fd-border bg-fd-card/95 backdrop-blur-sm p-8 sm:p-12 text-center shadow-xl">
           <h2 className="text-2xl sm:text-3xl font-bold mb-4">We need your support</h2>
@@ -470,22 +495,69 @@ export default function HomePage() {
           </p>
           <div className="flex gap-3 justify-center flex-wrap">
             <a 
-              href="https://github.com/JerryI/wolfram-js-frontend" 
+              href="https://github.com/WLJSTeam/wolfram-js-frontend" 
               target="_blank" 
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-lg bg-fd-secondary px-6 py-2.5 font-medium text-fd-secondary-foreground transition-all hover:bg-fd-secondary/80 hover:scale-105"
             >
-              ⭐ Star on GitHub
+              Star and share
             </a>
             <Link 
               href="/docs" 
               className="inline-flex items-center gap-2 rounded-lg bg-fd-primary px-6 py-2.5 font-medium text-fd-primary-foreground transition-all hover:bg-fd-primary/90 hover:scale-105"
             >
-              📚 Documentation
+              Support
             </Link>
           </div>
         </div>
       </div>
+
+
+
+      {/* Privacy Policy Section */}
+      <div className="mb-16">
+        <div className="rounded-lg border border-fd-border bg-fd-card/50 backdrop-blur-sm p-8 sm:p-10">
+          <h3 className="text-lg font-semibold mb-4">Privacy Policy</h3>
+          <div className="prose prose-sm max-w-none text-fd-muted-foreground">
+            
+            {/* <h3 className="text-lg font-semibold text-fd-foreground mb-3 mt-6">Data Collection</h3> */}
+            <p className="mb-4">
+              WLJS Notebook is a desktop application that runs entirely on your local machine. We do not collect, transmit, or store any of your personal data, notebooks, or computational results.
+            </p>
+            
+            {/* <h3 className="text-lg font-semibold text-fd-foreground mb-3 mt-6">Local Storage</h3> */}
+            <p className="mb-4">
+              All notebook files and settings are stored locally on your computer. You have complete control over your data and can delete it at any time by removing the application and its associated files.
+            </p>
+          </div>
+        </div>
+      </div>
+      
+      {/* Licensing Section */}
+      <div className="mb-16">
+        <div className="rounded-lg border border-fd-border bg-fd-card/50 backdrop-blur-sm p-8 sm:p-10">
+          <h3 className="text-lg font-semibold mb-4">Licensing</h3>
+          <div className="prose prose-sm max-w-none text-fd-muted-foreground">
+            <p className="mb-4">
+              WLJS Notebook is open-source software licensed under the <strong>GNU GPL v3.0</strong>. You are free to use, modify, and distribute this software for both personal and commercial purposes.
+            </p>
+            <p className="mb-4">
+              <strong>Note:</strong> While WLJS Notebook itself is GNU GPL v3.0 licensed, it requires the Wolfram Engine to function. The Wolfram Engine is a separate product with its own licensing terms:
+            </p>
+            <ul className="list-disc list-inside space-y-2 mb-4">
+              <li><strong>Free Wolfram Engine for Developers</strong> - Available for non-production use and pre-production software development</li>
+              <li><strong>Commercial licenses</strong> - Required for production use in commercial applications</li>
+            </ul>
+            <p className="mb-4">
+              Please review the <a href="https://www.wolfram.com/legal/agreements/wolfram-engine/" target="_blank" rel="noopener noreferrer" className="text-fd-primary hover:underline">Wolfram Engine License Agreement</a> to ensure compliance with your use case.
+            </p>
+            <p>
+              For the full license text of WLJS Notebook, visit our <a href="https://github.com/WLJSTeam/wolfram-js-frontend/blob/main/LICENSE" target="_blank" rel="noopener noreferrer" className="text-fd-primary hover:underline">GitHub repository</a>.
+            </p>
+          </div>
+        </div>
+      </div>
+
     </main>
     </>
   );

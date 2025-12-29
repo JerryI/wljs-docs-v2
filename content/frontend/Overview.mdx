@@ -1,0 +1,431 @@
+---
+icon: CircleQuestionMark
+slug: /Overview
+title: What is WLJS
+---
+
+## The notebook interface
+
+The notebook interface (or IDE) combines live code in Wolfram, Javascript  and others. We provide GUI building blocks for user input/output, a subset of LaTeX for equations, Markdown for narrative text and for data-driven presentations.
+
+<div className='relative group'>
+<div className="absolute -inset-0.5 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur blur-3xl opacity-5 group-hover:opacity-10 transition duration-500" />
+![Notebook Interface](./../ui.png)
+</div>
+
+Think about it as a multitool platform for research, experiments or as a powerful sandbox, where you can try out your ideas, write a story about it alongside and then publish it somewhere on web. Like this one:
+
+<Card className={"text-sm"}>
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-5 group-hover:opacity-50 transition duration-500" />
+<wljs-editor type="Input" display="codemirror">{`.md
+Let\'s write a function to generate notes in the given scale:`}</wljs-editor>
+</WLJSWrapper>
+
+Let's write a function to generate notes in the given scale:
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-10 group-hover:opacity-50 transition duration-500" />
+<wljs-editor type="Input" display="codemirror">{`
+scale["Major"] = {2, 2, 1, 2, 2, 2, 1};
+
+makeScale[root_, sc_, pos_] := With[{b = Accumulate @ Prepend[sc, root]},
+    (Cycle[b][[pos]] + 12 Quotient[pos, Length[b]]) // MapThread[Plus, {#, 0 #}] & @ pos
+]`}</wljs-editor>
+</WLJSWrapper>
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-10 group-hover:opacity-50 transition duration-500" />
+<wljs-editor type="Input" display="codemirror">{`.md
+Now we can generate any chord progressions in a major scale, for ex. **I-V-VI-IV**`}</wljs-editor>
+</WLJSWrapper>
+
+Now we can generate any chord progressions in a major scale, for ex. **I-V-VI-IV**
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-10 group-hover:opacity-50 transition duration-500" />
+<wljs-editor type="Input" display="codemirror">{`SoundNote[makeScale[1, scale["Major"], {#,2+#,4+#}]] &/@ {
+  1, 1, 5, 5, 6, 6, 4, 4, 1 
+} // Sound `}</wljs-editor>
+</WLJSWrapper>
+
+<WLJSWrapper>
+<wljs-editor type="Output" display="codemirror">{`(*VB[*)(Null)(*,*)(*"1:eJxTTMoPSmNkYGAoZgUSwfmleSlpnCAuC5DwySwugUhywiT98ktS05iRFWSCFGSCdGdyAAnqqwepyuQBEfw0Uc8FUsoLIgRpop4NpBSuifrqUcMTAOwDUao="*)(*]VB*)`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-10 group-hover:opacity-50 transition duration-500" />
+<wljs-editor type="Input" display="codemirror">{`.md
+Visualize it on imaginary piano `}</wljs-editor>
+</WLJSWrapper>
+
+Visualize it on imaginary piano 
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-10 group-hover:opacity-50 transition duration-500" />
+<wljs-editor type="Input" display="codemirror">{`blackQ[y_] := MemberQ[{2,4,7,9,11}, Mod[y-1,12]+1];
+ListStepPlot[d, PlotStyle->(*VB[*)(Hue[0.03561231666487014, 0.8918383801498982, 0.8795337025157177, 1.])(*,*)(*"1:eJxTTMoPSmNiYGAo5gUSYZmp5S6pyflFiSX5RcEsQBHn4PCQNBCjmANIBLk7Oefn5BcVicky3lVWfWNfpLliouDmCxfsi/5vOjStL2qHfREDGHywBwA7SBsq"*)(*]VB*), Prolog->Flatten@Table[{If[blackQ[y],(*VB[*)(RGBColor[0.5666666666666667, 0.5666666666666667, 0.5666666666666667])(*,*)(*"1:eJxTTMoPSmNiYGAo5gUSYZmp5S6pyflFiSX5RcEsQBHn4PCQNGaQPAeQCHJ3cs7PyS8qUgKDR/aYDAAR9RPe"*)(*]VB*),(*VB[*)(GrayLevel[0.95])(*,*)(*"1:eJxTTMoPSmNiYGAo5gUSYZmp5S6pyflFiSX5RcEsQBHn4PCQNGaQPAeQCHJ3cs7PyS8qSgODd/aYDABY1RjK"*)(*]VB*)], Rectangle[{.5,y-.5},{9.5,y+.5}], (*VB[*)(GrayLevel[0])(*,*)(*"1:eJxTTMoPSmNiYGAo5gUSYZmp5S6pyflFiSX5RcEsQBHn4PCQNGaQPAeQCHJ3cs7PyS8qYoACTAYAyrgOFw=="*)(*]VB*), Line[{{.5,y-.5},{9.5,y-.5}}]}, {y, 0, 18}]]`}</wljs-editor>
+</WLJSWrapper>
+
+<WLJSWrapper>
+<wljs-editor type="Output" display="codemirror">{`(*VB[*)(Null)(*,*)(*"1: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"*)(*]VB*)`}</wljs-editor></WLJSWrapper>
+
+</Card>
+
+<wljs-store kernel="./../kernel-2636797554030104060.txt" json="./../455633c4-b341-4b7f-b93b-72e838d21fd4.txt"></wljs-store>
+
+
+WLJS is __more__ than just a <abbr title="Read-Eval-Print-Loop">REPL</abbr> or Jupyter clone ducktaped on Wolfram Engine; it provides its own standard libraries, runtime, UI kit and implements all manipulate features, graphics, sound from scratch allowing it to run expressions __even without a kernel, just in the browser__:
+
+<Card>
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-10 group-hover:opacity-50 transition duration-500" />
+<wljs-editor display="codemirror" type="Input"  >{`Manipulate[ParametricPlot[{Sin[u] u , Cos[u] u}, 
+ {u, 0, t}, PlotPoints -> 125, Axes -> False, MaxRecursion -> 0, 
+ PlotStyle -> Thick], {t,10,100,10}, ContinuousAction->True]`}</wljs-editor>
+ </WLJSWrapper>
+
+<WLJSWrapper>
+<wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(FrontEndRef["243bf338-3fd1-494e-897f-7baf372bfca3"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKG5kYJ6UZG1voGqelGOqaWJqk6lpYmqfpmiclphmbGyWlJScaAwCAaBXf"*)(*]VB*)`}</wljs-editor>
+ </WLJSWrapper>
+
+</Card>
+
+<br/>
+
+<Card>
+
+## Is it like Mathematica?
+
+WLJS Notebook is **free and open-source software** , that connects to and uses freeware [Wolfram Engine](https://www.wolfram.com/engine/). We provide compatibility layer for Wolfram Mathematica features as well as extend the language with event system, async functions, integration with web-technologies and many more. Notably:
+
+- Output cells are editable and mostly are valid for evaluation
+- Wide support for syntax sugar, math typesetting
+- `Graphics`, `Graphics3D`, `Sound`, `Image3D` work and also are interactive
+- Most plotting functions work out of the box
+- `Manipulate`, `Animate` are supported, but with <abbr title="See reference on Manipulate">some limitations</abbr>
+- Output expressions are also valid for console input, unlike Mathematica's output form
+
+import { Accordion, Accordions } from 'fumadocs-ui/components/accordion';
+
+<Accordions>
+<Accordion title="Differences">
+
+- Text or expression formatting is not as rich as in Mathematica
+- `Dynamic` and `DynamicModule` were removed in a favour of more fine-grained and optimized update methods
+- Event-based approach for input elements such as `Slider`
+- Flat Jupyter-like notebook structure 
+- Markdown language is used for text cells
+- There might not be full support of all plotting functions or <abbr title="Please, forgive us, there are over 5000 symbols in the standard library. We are getting there with your support :)">symbols representations</abbr>
+
+</Accordion>
+</Accordions>
+
+<Callout title="If something is not working, but you really need it">
+Apply `MMAView` expression on anything to make it looks like in Mathematica. It will bypass all WLJS pipleines and be rendered to an image.
+</Callout>
+
+> **Can it open `.nb` files?**
+> __Yes!__ There are some limitations regarding complex styling / formatting of the text, and dynamic modules (see below). But we gradually improve the compatibility with every update. 
+
+</Card>
+
+<br/>
+
+<Card>
+
+## Why not Jupyter Lab or VSCode?
+We chose to build our own system because:
+- A Jupyter kernel for Wolfram Engine already exists
+- We wanted powerful syntax sugar, editable output cells, __multimedia__ cells — which require a custom extendable code editor
+- __Frontend - Kernel__ interface based on ZMQ is quite robust, but it doesn't meet our needs for a low-latency communication with text and binary large payloads
+- Adding a 3rd main language or API would increase long-term maintenance
+
+</Card>
+
+## Under the hood
+A combination of <abbr title="Native kernel, IO interface and other critical parts written in C for each platform">native</abbr> and <abbr title="UI, code editor are written in Javascript and HTML">web-technologies</abbr> allows WLJS Notebook to run remotely on a server or on a desktop computer. 
+
+We heavily rely on Javascript and HTML for 3 reasons:
+
+1. It is safe sandbox for experiments and research
+2. Easy access to GPU resources and fantastic libraries for data-visualization
+3. <u>The interactive content of the notebook can be exported and published on web</u>
+
+
+## User Interface
+
+Your notebook is a file and is an entry point for taking notes on your data, research, and processing, or even creating interactive reports in the form of presentations. You may store files inside a notebook via `NotebookStore`, but we recommend keeping large files in a separate folder:
+
+import { File, Folder, Files } from 'fumadocs-ui/components/files';
+import {Notebook} from 'lucide-react'
+
+<Files>
+  <Folder name="Documents" defaultOpen>
+    <File name="Notebook.wln" icon={<Notebook />}/>
+    <Folder name="attachments" defaultOpen>
+        <File name="tables.csv" />
+        <File name="images.png" />
+        <File name="data.dat" />
+    </Folder>
+  </Folder>
+</Files>
+
+The notebook consits of cells or groups of *input-output* cells. <span className='relative inline-block group'><span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-3xl opacity-80 group-hover:opacity-50 transition duration-500" />
+<span className="relative">Input cell gives you a superpower</span></span> to switch between languages or type of produced content with a single line:
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-20 group-hover:opacity-50 transition duration-500" />
+<wljs-editor display="codemirror" type="Input"  >{`1+1`}</wljs-editor>
+ </WLJSWrapper>
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-20 group-hover:opacity-50 transition duration-500" />
+<wljs-editor display="codemirror" type="Input"  >{`.md
+Here is a text note`}</wljs-editor>
+ </WLJSWrapper>
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-20 group-hover:opacity-50 transition duration-500" />
+<wljs-editor display="codemirror" type="Input"  >{`.js
+return 1+1;`}</wljs-editor>
+ </WLJSWrapper> 
+
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-20 group-hover:opacity-50 transition duration-500" />
+<wljs-editor display="codemirror" type="Input"  >{`.slide
+# Slide
+
+My presentation
+`}</wljs-editor>
+ </WLJSWrapper>  
+
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-20 group-hover:opacity-50 transition duration-500" />
+<wljs-editor display="codemirror" type="Input"  >{`data.txt
+Write directly to a file
+`}</wljs-editor>
+ </WLJSWrapper>
+
+> Think of it like an anonymous file. We intentionally avoid menus, lists to give the most space for the content you write
+
+If __nothing matches the pattern in the first line__, it will assume Wolfram Language input.
+
+After typing, press <kbd>Shift-Enter</kbd> or <kbd>Ctrl/⌘-Enter</kbd> to make the magic happen.
+
+The output cells are results of evaluation. They can be many things: markdown rendered content, a slide of a presentation, a DOM element returned by Javascript cell or a Mermaid diagram:
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-20 group-hover:opacity-50 transition duration-500" />
+<wljs-editor display="codemirror" type="Input">{`{1,2,3} /. i_Integer :> Hue[i/3] `}</wljs-editor>
+ </WLJSWrapper>
+
+<WLJSWrapper>
+<wljs-editor display="codemirror" type="Output"  >{`{(*VB[*)(Hue[1/3])(*,*)(*"1:eJxTTMoPSmNiYGAo5gUSYZmp5S6pyflFiSX5RcEsQBHn4PCQNGaQPAeQCHJ3cs7PyS8qYoACKOODPVwEANd+D0Y="*)(*]VB*),(*VB[*)(Hue[2/3])(*,*)(*"1:eJxTTMoPSmNiYGAo5gUSYZmp5S6pyflFiSX5RcEsQBHn4PCQNGaQPAeQCHJ3cs7PyS8qYoACdMYHewDM1w9G"*)(*]VB*),(*VB[*)(Hue[1])(*,*)(*"1:eJxTTMoPSmNiYGAo5gUSYZmp5S6pyflFiSX5RcEsQBHn4PCQNGaQPAeQCHJ3cs7PyS8qYgCDD/ZQBgMDnAEA4iUPRg=="*)(*]VB*)}`}</wljs-editor>
+ </WLJSWrapper>
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-20 group-hover:opacity-50 transition duration-500" />
+<wljs-editor display="codemirror" type="Input"  >{`.mermaid
+gantt
+    section Waffle
+        Iron  : 1982, 3y
+        House : 1986, 3y
+`}</wljs-editor>
+ </WLJSWrapper>
+
+ <WLJSWrapper>
+<wljs-editor display="mermaid" type="Output"  >{`gantt
+    section Waffle
+        Iron  : 1982, 3y
+        House : 1986, 3y
+`}</wljs-editor>
+ </WLJSWrapper>
+
+
+
+<Callout type="info">
+You can mutate Wolfram output cells to new input cells by editing them.
+</Callout>
+
+
+### Cell group properties
+Even plain text cells are evaluated and produce output. For this reason you can change the properties of the group and, for example, __hide input cell__ for clarity:
+
+import cellProp from './../cell-prop.png'
+
+<div style={{'justifyContent': 'space-between'}}className="text-left align-right items-center w-full flex-start flex flex-wrap">
+<div className='text-xs' style={{maxWidth:'350px'}}>
+
+- __Clear output__ - removed all output cells
+- __Project to a window__ - evaluates input cell in a new window; it can be used for projecting slides, or control sliders
+- __Make initialization cell__ - marks input to be evaluated at the startup
+- __Copy group__ - copies a group as a special compressed string; paste it to an empty input cell 
+- __Split to new notebook__ - cuts all cells below and inserts to a new notebook
+- __Insert cell before__
+- __Hide / Show__ - hide or show input cell of the group; it can be used for markdown text cell
+- __Shrink / Expand__ - hides large content of the input cell
+- __Lock / Unlock__ - enables / disables editing of the input cell and hides the content
+- __Vanish__ - permanently hides input cell
+- __Delete__ - deletes the whole group
+
+
+</div>
+<Image width={400} height={400} src={cellProp}/>
+</div>
+
+
+<b>Project to a window</b> is a particularly useful feature that lets you evaluate a cell in a new window. This is especially helpful when presenting slides or distributing multiple controls / graphics outputs across windows.
+
+## Math typesetting and shortcuts
+To be honest, typing mathicamtical expressions in the most modern IDE for programming languages did not evolve since 1964. Our goal is to change that in a similar way as Mathematica did (over nearly 20 years), but in open-source.
+
+So to style code expressions, replace them, or add additional elements in between we use decorations. The most common one for example:
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-20 group-hover:opacity-50 transition duration-500" />
+<wljs-editor display="codemirror" type="Input"  >{`(*FB[*)((1)(*,*)/(*,*)(2))(*]FB*)`}</wljs-editor>
+ </WLJSWrapper>
+
+used to render fractions, if you copy it to a text editor you will still see a valid expression of `(1/2)`
+
+```wolfram
+(*FB[*)((1)(*,*)/(*,*)(2))(*]FB*)
+```
+
+the meta information is stored safely in comments, the same works with graphical, sound or any other non-textual output. In this sense __the standard output form of WLJS is decorated `InputForm`__. Here is more complex example:
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-20 group-hover:opacity-50 transition duration-500" />
+<wljs-editor display="codemirror" type="Input"  >{`(*TB[*)Integrate[(*|*)f[x](*|*), (*|*)x(*|*)](*|*)(*1:eJxTTMoPSmNmYGAo5gUSYZmp5S6pyflFiSX5RcGcQBHPvJLUdCA3NZMRpIgVSLgl5hSnAgCQTg44*)(*]TB*)`}</wljs-editor>
+ </WLJSWrapper>
+
+while under the hood we have:
+
+```wolfram
+(*TB[*)Integrate[(*|*)f[x](*|*), (*|*)x(*|*)](*|*)(*1:eJx...metainfo*)(*]TB*)
+```
+
+
+
+Decorated expressions can be infinitely nested and fully navigable with keyboard input: 
+
+<LazyAutoplayVideo url={"/math_input_crop.mov"}/>
+
+<Callout>
+Use arrow keys <kbd>↔</kbd> to navigate your cursor inside boxed expressions or <u>click</u> to edit them directly.
+</Callout>
+
+
+To assist with writing basic mathematical expressions, we provide special keyboard shortcuts to insert templates or apply formatting to selected text:
+
+<Card className="text-xs">
+
+<div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+<div>
+
+#### Cells
+
+- <kbd>Ctrl-/</kbd>: Create fraction
+- <kbd>Ctrl-6</kbd>: Power
+- <kbd>Ctrl-2</kbd>: Square root
+- <kbd>Ctrl--</kbd>: Subscript
+- <kbd>Ctrl-=</kbd>: Semantic input
+- <kbd>ESC</kbd>: Open suggestions for greek symbol
+- <kbd>Alt-/</kbd> or <kbd>⌘-/</kbd>: Comment a line
+- <kbd>Ctrl-F</kbd> or <kbd>⌘-F</kbd>: Search inside cell
+
+</div>
+
+<div>
+
+#### Evaluation
+
+- <kbd>Shift-Enter</kbd>: Evaluate cell
+- <kbd>Ctrl-Enter</kbd> or <kbd>⌘-Enter</kbd>: Evaluate cell and jump to the next
+- <kbd>Alt-I</kbd> or <kbd>⌘-I</kbd>: Evaluate initialization cells
+
+</div>
+
+<div>
+
+#### Notebook
+
+- <kbd>Alt-2</kbd> or <kbd>⌘-2</kbd>: Hide/show input cell
+- <kbd>Ctrl-U</kbd> or <kbd>⌘-U</kbd>: Clear output cell
+- <kbd>Ctrl-N</kbd> or <kbd>⌘-N</kbd>: New notebook
+- <kbd>Ctrl-S</kbd> or <kbd>⌘-S</kbd>: Save notebook
+- <kbd>Ctrl-O</kbd> or <kbd>⌘-O</kbd>: Open notebook
+- <kbd>Ctrl-P</kbd> or <kbd>⌘-P</kbd>: Open command palette
+
+</div>
+
+</div>
+
+</Card>
+
+### Command Palette
+Use <kbd>Ctrl-P</kbd> or <kbd>⌘-P</kbd> to access useful tools like matrix builders, color pickers, and more:
+
+<LazyAutoplayVideo url={"/palette_input_cropped.mov"}/>
+
+Palette items are also normal notebooks with special cells inside.
+
+### Overlay
+
+<span className='relative inline-block group'><span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur opacity-10 group-hover:opacity-50 transition duration-500" />There is also a global shortcut to call WLJS overlay for quick evaluations available on desktop <kbd>Shift-Alt-Space</kbd>.</span>
+
+
+
+## Portability
+Need to share your notes? You have several options:
+
+1. Export the entire notebook as a web page: [Static HTML](frontend/Exporting/Static%20HTML.md) or [Interactive HTML](frontend/Exporting/Interactive%20HTML.md)
+2. Export individual figures: [Figures](frontend/Exporting/Figures.md)
+3. Make a presentation: [Static Slides](frontend/Exporting/Static%20Slides.md)
+
+
+**No internet dependency** — it works offline and will remain functional even after future updates. You can always re-import the exported notebook. Ideal for sharing notes or publishing on a blog.
+
+__No external programms or plugins__ - just your browser.
+
+<details>
+
+<summary>Why HTML is the best?</summary>
+
+<iframe width="315" height="560" src="https://youtube.com/embed/vTrVGam84m8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+
+</details>
+
+
+## Other Languages
+Need annotations? No need to switch cell types. Just type `.md` on the first line of a cell to enable Markdown.
+
+
+Click the arrow on the right to hide the source — only the output will be shown. The editor is flexible enough to support custom output cells too.
+
+You can also mix WL and JavaScript to create stunning visualizations:
+
+
+### First class support:
+
+- [JavaScript](frontend/Cell%20types/Javascript.md)
+- [Markdown](frontend/Exporting/Markdown.md)
+- [Slides](frontend/Cell%20types/Slides.md)
+- [WLX](frontend/Cell%20types/WLX.md)
+- [Files](frontend/Cell%20types/Files.md)
+- [HTML](frontend/Cell%20types/HTML.md)
+- [More](frontend/Cell%20types/Many%20more.md) (e.g. Mermaid)
+
+## Debugger
+Access via the command palette.
+
+More: [Debugger](frontend/Advanced/Command%20palette/Debugger.md)
+
+## AI Assistant
+We won't force you to use it, it is fully optional and we do not have any profit from it. See more if you are interested @ [AI Assistant](frontend/Advanced/Command%20palette/AI%20Assistant.md)
