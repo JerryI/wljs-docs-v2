@@ -381,53 +381,168 @@ Palette items are also normal notebooks with special cells inside.
 
 <span className='relative inline-block group'><span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur opacity-10 group-hover:opacity-50 transition duration-500" />There is also a global shortcut to call WLJS overlay for quick evaluations available on desktop <kbd>Shift-Alt-Space</kbd>.</span>
 
+## Interactivity
 
+Interactive elements like `Manipulate`, `Animate`, `ManipulatePlot`, and `AnimatePlot` optimize performance by using low-level, fine-grained updates that avoid full re-evaluation of expressions. Here's an example of this approach: 
+
+<Card>
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-20 group-hover:opacity-50 transition duration-500" />
+<wljs-editor display="codemirror" type="Input"  >{`var = 1.0;
+Graphics[{
+    (*VB[*)(RGBColor[0.9324328496246868, 0.4779810744981178, 0.2076180267119551, 1.])(*,*)(*"1:eJxTTMoPSmNiYGAo5gUSYZmp5S6pyflFiSX5RcEsQBHn4PCQNBCjmANIBLk7Oefn5BcVvQqJzqq99ta+iOnxkXe20+/ZF329mWJrNfmUfREDGHywBwB/2B0I"*)(*]VB*), Rectangle[{0,-.1}, {Offload[var], .1}], 
+    (*VB[*)(RGBColor[0.5767811690402207, 0.576646915402451, 0.5765764507985959, 1.])(*,*)(*"1:eJxTTMoPSmNiYGAo5gUSYZmp5S6pyflFiSX5RcEsQBHn4PCQNBCjmANIBLk7Oefn5BcVLbKzP/G35JF9keDReOsnxUDG++hfJQEgBgMYfLAHAHLqHLY="*)(*]VB*), Text[var//Offload, {Offload[var + 0.05], 0}]
+}, AspectRatio->0.1]`}</wljs-editor>
+</WLJSWrapper>
+
+The nearest parent symbols (`Rectangle` and `Text`) become dependent on the symbol `var` wrapped with `Offload`, though this doesn't apply to simple math operations. Changing `var` will trigger an update of only these dependent elements. 
+
+<WLJSWrapper>
+<wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(Graphics[{RGBColor[0.9324328496246868, 0.4779810744981178, 0.2076180267119551, 1.], Rectangle[{0, -0.1}, {Offload[var], 0.1}], Directive[RGBColor[0.5767811690402207, 0.576646915402451, 0.5765764507985959, 1.], FontWeight -> 800], Text[Offload[var], {Offload[var + 0.05], 0}, {1, 0}]}, AspectRatio -> 0.1, "Controls" -> False, PlotRange -> {{0, 1.2}, Automatic}])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KWkgRjEHkHAvSizIyEwuhoiACJ/M4hKEfJC7k3N+Tn5R0auQ6Kzaa2/ti5geH3lnO/2efdHXmym2VpNP2RcxgMEH+zQmkC5OkK7U5JLEvPScVIgQzNhMkLqiWTNBYOd+VDmIA9mBhH9aWk5+YkoxM5BdllgEU49kvEtmEdCCzLJULO5cZGd/4m/JI/siwaPx1k+KgYz30b9KAkAMVHeCtAaV5qQWcwEZbvl5JeGpmekZJZkKQHvTmGEqQlIrcDuNgA8Q0gE5pcVo/llpDw4NtAACGYEmDnYjN5DhWFwA9HVQYklmPlqYwJQFg0LCGeiVovyc4mJWkL8Sc4pT0cziBDsoH2hSXjpaBGGLLmMw+GwP1udYWpKfC3RBMgA53ZpC"*)(*]VB*)`}</wljs-editor></WLJSWrapper>
+
+For user input, we use an event-based approach by assigning handler functions to interactive elements like sliders:
+
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-20 group-hover:opacity-50 transition duration-500" />
+<wljs-editor display="codemirror" type="Input"  >{`EventHandler[InputRange[0,1,0.1], Function[val, var=val]]`}</wljs-editor></WLJSWrapper>
+
+Try dragging the slider to see the result:
+
+<WLJSWrapper>
+<wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(EventObject[<|"Id" -> "71ade53b-7a60-40e5-84f3-279c2f7c5c16", "Initial" -> 0.5, "View" -> "81b5b125-693b-4830-868c-be07d724e831"|>])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKWxgmmSYZGpnqmlkaJ+maWBgb6FqYWSTrJqUamKeYG5mkWhgbAgB1kxTp"*)(*]VB*)`}</wljs-editor></WLJSWrapper>
+
+</Card>
+
+### Performance
+How far can we push `Offload`? WLJS architecture is optimized for rapid mutations, binary payloads, and streaming updates. Here are some real-time <abbr title="Performed on Mac M1 2021. WLJS 2.9.2">benchmarks</abbr> demonstrating interactive performance:
+
+<Accordions>
+
+<Accordion title="Vector graphics (1000 objects)">
+
+Animation made using `Graphics`:
+
+<LazyAutoplayVideo url={"/flock-fps-1000-ezgif.com-crop-video.mov"}/>
+</Accordion>
+
+<Accordion title="Raster graphics (480p 32-bit uncompressed stream)">
+
+Animation made using `Image`:
+
+<LazyAutoplayVideo url={"/image-stream-852-480-4-ezgif.com-crop-video.mov"}/>
+</Accordion>
+
+<Accordion title="Vector field (fluid simulation)">
+
+
+Animation made using `Graphics`:
+
+<LazyAutoplayVideo url={"/fluid-sim-15-15-ezgif.com-crop-video.mov"}/>
+</Accordion>
+
+<Accordion title="3D graphics (300 spheres)">
+
+Animation made using `Graphics3D`:
+
+<LazyAutoplayVideo url={"/balls-300-fps-ezgif.com-crop-video.mov"}/>
+</Accordion>
+
+<Accordion title="Marching cubes (240000 polygons)">
+
+
+Animation made using `Graphics3D`:
+
+<LazyAutoplayVideo url={"/marching-cubes-24642-tri-ezgif.com-crop-video.mov"}/>
+</Accordion>
+
+</Accordions>
+
+All examples were captured using a screenrecording app on the notebook cells.
 
 ## Portability
-Need to share your notes? You have several options:
+WLJS Notebook offers multiple export formats that <u>preserve interactivity</u>, allowing you to share your work in the way that best suits your needs:
 
-1. Export the entire notebook as a web page: [Static HTML](frontend/Exporting/Static%20HTML.md) or [Interactive HTML](frontend/Exporting/Interactive%20HTML.md)
-2. Export individual figures: [Figures](frontend/Exporting/Figures.md)
-3. Make a presentation: [Static Slides](frontend/Exporting/Static%20Slides.md)
+### Self-contained HTML file
+Everything is embedded in a single file: all cells, internal notebook storage, and images.
 
+**No internet dependency** — works completely offline and remains functional even after future updates. You can always re-import the exported notebook back into WLJS.
 
-**No internet dependency** — it works offline and will remain functional even after future updates. You can always re-import the exported notebook. Ideal for sharing notes or publishing on a blog.
-
-__No external programms or plugins__ - just your browser.
-
-<details>
-
-<summary>Why HTML is the best?</summary>
-
-<iframe width="315" height="560" src="https://youtube.com/embed/vTrVGam84m8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+> Best for long-term storage, sharing notes, presentations, or reports with colleagues. No external programs or plugins needed—just a browser
 
 
-</details>
+### Embeddable HTML
+Cells are converted to web components with interactivity metadata provided as JSON assets. Works both offline and online via CDN (default):
 
+<GithubInfo
+      owner="wljsteam"
+      repo="web-components"
+/>
 
-## Other Languages
-Need annotations? No need to switch cell types. Just type `.md` on the first line of a cell to enable Markdown.
+> Ideal for basic blog pages and publishing notes on the web
 
+### MDX
+Similar to *Embeddable HTML*, but adapted for JSX environments, particularly the Next.js framework. A working template is published in the repository:
 
-Click the arrow on the right to hide the source — only the output will be shown. The editor is flexible enough to support custom output cells too.
+<GithubInfo
+      owner="wljsteam"
+      repo="web-components-mdx"
+/>
 
-You can also mix WL and JavaScript to create stunning visualizations:
+> Ideal for modern blogs and content platforms that support Next.js or React
 
+### Markdown
+Only input cells and output text cells are converted to Markdown; all other outputs are stripped.
 
-### First class support:
+> Best for documentation or AI engines when interactivity isn't needed
 
-- [JavaScript](frontend/Cell%20types/Javascript.md)
-- [Markdown](frontend/Exporting/Markdown.md)
-- [Slides](frontend/Cell%20types/Slides.md)
-- [WLX](frontend/Cell%20types/WLX.md)
-- [Files](frontend/Cell%20types/Files.md)
-- [HTML](frontend/Cell%20types/HTML.md)
-- [More](frontend/Cell%20types/Many%20more.md) (e.g. Mermaid)
+### PDF
+Export the entire notebook to PDF or slides only from your presentation.
 
-## Debugger
-Access via the command palette.
+> Perfect for static documents, printing or projecting slides (when other options are not available)
 
-More: [Debugger](frontend/Advanced/Command%20palette/Debugger.md)
+### Mini application
+WLJS Notebook can be used as a runtime for mini apps. It's a single-window application that uses the full capabilities of a normal notebook (similar to Wolfram CDF or LabView programs) and runs in an isolated, generated context.
 
-## AI Assistant
-We won't force you to use it, it is fully optional and we do not have any profit from it. See more if you are interested @ [AI Assistant](frontend/Advanced/Command%20palette/AI%20Assistant.md)
+> Great for distributing standalone tools
+
+### Mathematica Notebook
+Convert a `.wln` notebook to a `.nb` file with some limitations.
+
+> Useful for sharing work with Mathematica users
+
+## Technology stack
+
+Both the server and desktop applications run on the same technology stack.
+
+<Card className="text-xs">
+
+### Backend
+- **Wolfram Engine** - acts as [TCP/HTTP server](https://github.com/WLJSTeam/HTTP) and handles logic
+- **WLX** - [template engine](https://github.com/JerryI/wl-wlx) for server-side rendering (similar to JSX)
+
+</Card>
+
+<br/>
+
+<Card className="text-xs">
+
+### Frontend
+- **WLJS Interpreter** - reduced 3kB Wolfram Language interpreter
+- **CodeMirror 6** - main code editor and the heart of the system
+- **D3.js, Plotly.js** - vector graphics rendering
+- **THREE.js** - 3D graphics rendering
+- **Custom WebGL shaders** - for 3D images and complex 2D graphics
+- **Marked.js** - markdown renderer
+- **KaTeX** - equation rendering
+- **Reveal.js** - markdown engine for presentations
+- **Tone.js** - sound generation
+- **XTerm.js** - terminal emulation
+- **Excalidraw** - hand drawing input in markdown cells
+
+</Card>
+
+Backend and frontend communicate via Wolfram expressions transported over binary or textual WebSockets.
+
+The desktop application adds **Electron Framework** and **Electron Builder** to the mix, along with **PDF.js** and **napi-rs/canvas** for PDF generation and a bunch of native modules (**electron-trackpad-utils**, **native-prompt**) for better desktop integration.

@@ -1,6 +1,7 @@
 import defaultMdxComponents from 'fumadocs-ui/mdx';
 import type { MDXComponents } from 'mdx/types';
 
+import { GithubInfo } from 'fumadocs-ui/components/github-info';
 import Image from "next/image"
 
 import {LazyAutoplayVideo} from "./lib/video"
@@ -34,7 +35,7 @@ function WLJSWrapper({children}: {children: React.ReactNode}) {
 export function getMDXComponents(components?: MDXComponents): MDXComponents {
   return {
     ...defaultMdxComponents,
-    WLJSWrapper, Image, LazyAutoplayVideo,
+    WLJSWrapper, Image, LazyAutoplayVideo, GithubInfo,
     ...components
   };
 }

@@ -11,6 +11,9 @@ __Step 2__: install WLJS from the binaries hosted at Github or homebrew.
 
 Alternatively you can skip __steps 1, 2__ and use a __complete Docker Image__ (see further).
 
+import { Accordion, Accordions } from 'fumadocs-ui/components/accordion';
+
+
 import { Tabs, Tab } from 'fumadocs-ui/components/tabs';
 
 <Tabs items={['Windows', 'Mac','GNU/Linux', 'Docker', 'Homebrew']}>
@@ -56,6 +59,17 @@ see also
 
 > We carefully crafted our UI to match the look of all platforms as close as possible for a web-based application
 
+<Accordions>
+<Accordion title="Does it require an internet connection?">
+WLJS itself - __does not__, however, Wolfram Engine needs it for:
+
+1. first time activation;
+2. any online features like: downloading neural nets, fetching natural languages data, online databases.
+
+If you do not use any of (2), an application will function fully offline and forever.
+
+</Accordion>
+</Accordions>
 
 ### Windows
 Download and install the latest `.exe`. *Only x86/64-bit architecture is supported*
@@ -130,14 +144,13 @@ Then open `http://127.0.0.1:8000`
 In the case if you do not have `docker`, clone it directly from the repository as follows.
 
 <Callout type="warning">
-Some features require WLJS Desktop App:
+Some features require WLJS desktop app:
 - `Export[_, _, "PDF"]` - export to PDF
 - Rendering `Animate` to a GIF file
 - `Rasterize` - expressions rasterization
 - `SystemOpen` - open files/folders using OS system calls
 - `SystemInputDialog` - open system file dialog
-- [Static Slides](frontend/Exporting/Static%20Slides.md) - export feature
-- Native notebook print feature
+- Any features, which use PDF generation
 </Callout>
 
 ## 🍓 Raspberry PI
