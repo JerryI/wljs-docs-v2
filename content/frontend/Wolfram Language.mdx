@@ -1,0 +1,1407 @@
+---
+icon: BookA
+slug: /Wolfram%20Language
+title: Wolfram Language
+---
+
+If you're new to the Wolfram Language, we recommend to start with the following resources:
+
+## Books
+
+> First principle: everything is an expression
+
+<Card>
+
+[__Mathematica Programming: An Advanced Introduction__](/math.pdf)
+Leonid Shifrin (2008)
+
+<embed src="/math.pdf" className="rounded" width="100%" height="400px"></embed>
+
+</Card>
+
+Despite its title, this book can be considered a general introduction to the Wolfram Language itself, rather than being tied to a specific front end. It is an excellent match for WLJS Notebook as an execution environment.
+
+<Card>
+
+[__An Elementary Introduction to the Wolfram Language 3rd Edition__](https://www.wolfram.com/language/elementary-introduction/3rd-ed/)
+Stephen Wolfram (202X)
+
+- Paper
+- Online version
+
+</Card>
+
+This is a great for beginners. All examples are written for Wolfram Mathematica, but the majority are compatible with WLJS Notebook.
+
+<wljs-store json="./../92f459ad-6b51-4785-9c9e-d860f59345c7.txt"></wljs-store>
+
+
+## Symbolic programming
+
+> This introduction covers only a fraction of Wolfram Language's extensive built-in functionality. Consider it a starting point for your exploration.
+
+Wolfram Language comes with a vast standard library that is well-suited for most problem-solving tasks—similar to what Python or Julia are used for.
+
+The complexity of many utility tasks, such as plotting data over a given range, __can be comparable to the simplicity of Microsoft Excel__.
+
+<Card className="relative group mb-16">
+        <div className="absolute -inset-0.5 bg-gradient-to-r from-fd-primary via-purple-500 to-fd-primary rounded-lg blur opacity-5 group-hover:opacity-30 transition duration-500" />
+
+Wolfram Language is a symbolic programming language, which in essence means:
+- Code and data are expressions.
+- Computation is driven by applying rules.
+- What you see is just one form of interpretation.
+
+</Card>
+
+### Introduction
+Let's explore the fundamental concepts with practical examples.
+
+#### Pattern Matching and Transformation Rules
+Pattern matching is at the heart of Wolfram Language. Let's start with a simple example:
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-10 group-hover:opacity-50 transition duration-500" />
+<wljs-editor type="Input" display="codemirror">{`
+{1,1,2,2,2,2} /. {2 -> 1, 1 -> 0}
+`}</wljs-editor>
+</WLJSWrapper>
+
+<WLJSWrapper>
+<wljs-editor type="Output" display="codemirror">{`
+{0,0,1,1,1,1}
+`}</wljs-editor>
+</WLJSWrapper>
+
+Integer numbers are atoms of the language on which we can apply transformation rules. We can also use more general patterns:
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-10 group-hover:opacity-50 transition duration-500" />
+<wljs-editor type="Input" display="codemirror">{`
+{0,0,1,1,1,1} /. {any_Integer :> any / 2}
+`}</wljs-editor>
+</WLJSWrapper>
+
+<WLJSWrapper>
+<wljs-editor type="Output" display="codemirror">{`{0,0,(*FB[*)((1)(*,*)/(*,*)(2))(*]FB*),(*FB[*)((1)(*,*)/(*,*)(2))(*]FB*),(*FB[*)((1)(*,*)/(*,*)(2))(*]FB*),(*FB[*)((1)(*,*)/(*,*)(2))(*]FB*)}`}</wljs-editor>
+</WLJSWrapper>
+
+__Any output expression is editable and can be reevaluated.__
+
+#### Advanced Pattern Matching
+
+Pattern matching can use conditions and more complex structures:
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-10 group-hover:opacity-50 transition duration-500" />
+<wljs-editor type="Input" display="codemirror">{`{0,0,(*FB[*)((1)(*,*)/(*,*)(2))(*]FB*),(*FB[*)((1)(*,*)/(*,*)(2))(*]FB*),(*FB[*)((1)(*,*)/(*,*)(2))(*]FB*),(*FB[*)((1)(*,*)/(*,*)(2))(*]FB*)} /. {any_?NumericQ :> {RGBColor[any, 1-any, 1], any} }`}</wljs-editor>
+</WLJSWrapper>
+
+
+<WLJSWrapper>
+<wljs-editor type="Input" display="codemirror">{`
+{{(*VB[*)(RGBColor[0, 1, 1])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeGJAIcndyzs/JLwouTyxJzghJzS3ISSxJTWMGyXMgyRcxQAGU8cEezgAAAxwUjA=="*)(*]VB*),0},{(*VB[*)(RGBColor[0, 1, 1])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeGJAIcndyzs/JLwouTyxJzghJzS3ISSxJTWMGyXMgyRcxQAGU8cEezgAAAxwUjA=="*)(*]VB*),0},{(*VB[*)(RGBColor[1/2, 1/2, 1])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeGJAIcndyzs/JLwouTyxJzghJzS3ISSxJTWMGyXMgyRcxgMEDe3TGB3sAGJkVmw=="*)(*]VB*),(*FB[*)((1)(*,*)/(*,*)(2))(*]FB*)},{(*VB[*)(RGBColor[1/2, 1/2, 1])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeGJAIcndyzs/JLwouTyxJzghJzS3ISSxJTWMGyXMgyRcxgMEDe3TGB3sAGJkVmw=="*)(*]VB*),(*FB[*)((1)(*,*)/(*,*)(2))(*]FB*)},{(*VB[*)(RGBColor[1/2, 1/2, 1])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeGJAIcndyzs/JLwouTyxJzghJzS3ISSxJTWMGyXMgyRcxgMEDe3TGB3sAGJkVmw=="*)(*]VB*),(*FB[*)((1)(*,*)/(*,*)(2))(*]FB*)},{(*VB[*)(RGBColor[1/2, 1/2, 1])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeGJAIcndyzs/JLwouTyxJzghJzS3ISSxJTWMGyXMgyRcxgMEDe3TGB3sAGJkVmw=="*)(*]VB*),(*FB[*)((1)(*,*)/(*,*)(2))(*]FB*)}}
+`}</wljs-editor>
+</WLJSWrapper>
+
+As you can see, Wolfram Language does not distinguish between data types. Colors, numbers, functions—they are all just symbolic expressions.
+
+You can also format output for readability:
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-10 group-hover:opacity-50 transition duration-500" />
+<wljs-editor type="Input" display="codemirror">{`
+% // Transpose // TableForm
+`}</wljs-editor>
+</WLJSWrapper>
+
+<WLJSWrapper>
+<wljs-editor type="Output" display="codemirror">{`
+(*GB[*){{(*VB[*)(RGBColor[0, 1, 1])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeGJAIcndyzs/JLwouTyxJzghJzS3ISSxJTWMGyXMgyRcxQAGU8cEezgAAAxwUjA=="*)(*]VB*)(*|*),(*|*)(*VB[*)(RGBColor[0, 1, 1])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeGJAIcndyzs/JLwouTyxJzghJzS3ISSxJTWMGyXMgyRcxQAGU8cEezgAAAxwUjA=="*)(*]VB*)(*|*),(*|*)(*VB[*)(RGBColor[1/2, 1/2, 1])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeGJAIcndyzs/JLwouTyxJzghJzS3ISSxJTWMGyXMgyRcxgMEDe3TGB3sAGJkVmw=="*)(*]VB*)(*|*),(*|*)(*VB[*)(RGBColor[1/2, 1/2, 1])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeGJAIcndyzs/JLwouTyxJzghJzS3ISSxJTWMGyXMgyRcxgMEDe3TGB3sAGJkVmw=="*)(*]VB*)(*|*),(*|*)(*VB[*)(RGBColor[1/2, 1/2, 1])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeGJAIcndyzs/JLwouTyxJzghJzS3ISSxJTWMGyXMgyRcxgMEDe3TGB3sAGJkVmw=="*)(*]VB*)(*|*),(*|*)(*VB[*)(RGBColor[1/2, 1/2, 1])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeGJAIcndyzs/JLwouTyxJzghJzS3ISSxJTWMGyXMgyRcxgMEDe3TGB3sAGJkVmw=="*)(*]VB*)}(*||*),(*||*){0(*|*),(*|*)0(*|*),(*|*)(*FB[*)((1)(*,*)/(*,*)(2))(*]FB*)(*|*),(*|*)(*FB[*)((1)(*,*)/(*,*)(2))(*]FB*)(*|*),(*|*)(*FB[*)((1)(*,*)/(*,*)(2))(*]FB*)(*|*),(*|*)(*FB[*)((1)(*,*)/(*,*)(2))(*]FB*)}}(*]GB*)
+`}</wljs-editor>
+</WLJSWrapper>
+
+#### Assignment: Set vs SetDelayed
+
+Understanding the difference between immediate (`=`) and delayed (`:=`) assignment is crucial:
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-10 group-hover:opacity-50 transition duration-500" />
+<wljs-editor type="Input" display="codemirror">{`
+(* Immediate assignment (Set) - evaluates right side immediately *)
+x = RandomReal[]
+(* x is now a specific number, e.g., 0.742891 *)
+
+x  (* Returns the same value every time *)
+x  (* Still the same value *)
+
+(* Delayed assignment (SetDelayed) - evaluates right side each time *)
+y := RandomReal[]
+(* y generates a new random number each time it's called *)
+
+y  (* Returns 0.123456 *)
+y  (* Returns 0.789012 - different value! *)
+`}</wljs-editor>
+</WLJSWrapper>
+
+Practical example showing when to use each:
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-10 group-hover:opacity-50 transition duration-500" />
+<wljs-editor type="Input" display="codemirror">{`
+(* Use = when you want to compute once and cache *)
+expensiveResult = Factor[x^100 - 1]
+(* Result is computed once and stored *)
+
+(* Use := when you want fresh evaluation each time *)
+currentTime := Now
+(* Evaluates Now each time you call currentTime *)
+
+(* Common pattern: memoization *)
+fib[n_] := fib[n] = fib[n-1] + fib[n-2]
+fib[0] = 0
+fib[1] = 1
+(* Computes once, then caches using immediate assignment *)
+`}</wljs-editor>
+</WLJSWrapper>
+
+<Callout type="warning">
+Using `=` instead of `:=` in function definitions can lead to unexpected behavior:
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-10 group-hover:opacity-50 transition duration-500" />
+<wljs-editor type="Input" display="codemirror">{`
+(* Wrong - evaluates pattern immediately *)
+f[x_] = x^2  (* x_ is evaluated at definition time! *)
+
+(* Correct - delays evaluation until function is called *)
+f[x_] := x^2
+`}</wljs-editor>
+</WLJSWrapper>
+</Callout>
+
+#### Functions and Functional Programming
+
+Wolfram Language treats functions as first-class citizens. There are several ways to define functions:
+
+**Pattern-based functions** (most common and powerful):
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-10 group-hover:opacity-50 transition duration-500" />
+<wljs-editor type="Input" display="codemirror">{`
+(* Basic pattern matching *)
+f[x_] := x^2 + 2*x + 1
+
+(* Multiple arguments *)
+area[width_, height_] := width * height
+
+(* Pattern with type restriction *)
+squareRoot[x_?Positive] := Sqrt[x]
+squareRoot[x_?Negative] := I * Sqrt[-x]
+
+(* Multiple definitions (pattern matching) *)
+factorial[0] = 1
+factorial[n_Integer?Positive] := n * factorial[n - 1]
+
+(* Conditions with /; *)
+absoluteValue[x_] := x /; x >= 0
+absoluteValue[x_] := -x /; x < 0
+`}</wljs-editor>
+</WLJSWrapper>
+
+**Pure (anonymous) functions**:
+
+> great for quick operations, since it can take advantage of JIT when applied using `Map`, `Table` and etc
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-10 group-hover:opacity-50 transition duration-500" />
+<wljs-editor type="Input" display="codemirror">{`
+(* Single argument with # *)
+#^2 + 2*# + 1 &
+
+(* Multiple arguments with #1, #2, etc. *)
+(#1 + #2)/#3 &
+
+(* Named slots (more readable) *)
+Function[{x}, x^2 + 2*x + 1]
+Function[{x, y}, x^2 + y^2]
+
+(* Apply to data *)
+{1, 2, 3, 4} // Map[#^2 &]
+`}</wljs-editor>
+</WLJSWrapper>
+
+<WLJSWrapper>
+<wljs-editor type="Output" display="codemirror">{`
+{1, 4, 9, 16}
+`}</wljs-editor>
+</WLJSWrapper>
+
+**When to use each:**
+- Pattern-based: Named functions, recursion, multiple dispatch, complex conditions
+- Anonymous: One-off transformations, quick and simple operations in `Map`/`Select`/etc.
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-10 group-hover:opacity-50 transition duration-500" />
+<wljs-editor type="Input" display="codemirror">{`
+(* Pattern-based for named, reusable functions *)
+distance[{x1_, y1_}, {x2_, y2_}] := Sqrt[(x2-x1)^2 + (y2-y1)^2]
+
+(* Anonymous for inline transformations *)
+data = {{1, 2}, {3, 4}, {5, 6}}
+data // Map[{#[[1]], #[[2]]^2} &]
+`}</wljs-editor>
+</WLJSWrapper>
+
+Use functional operators to process data elegantly:
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-10 group-hover:opacity-50 transition duration-500" />
+<wljs-editor type="Input" display="codemirror">{`
+(* Select even numbers *)
+Range[20] // Select[EvenQ]
+
+(* Chain multiple operations *)
+Range[100] // Select[PrimeQ] // Take[#, 5] &
+`}</wljs-editor>
+</WLJSWrapper>
+
+<WLJSWrapper>
+<wljs-editor type="Output" display="codemirror">{`
+{2, 3, 5, 7, 11}
+`}</wljs-editor>
+</WLJSWrapper>
+
+Nest and fold operations for iterative computations:
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-10 group-hover:opacity-50 transition duration-500" />
+<wljs-editor type="Input" display="codemirror">{`
+(* Apply function repeatedly *)
+Nest[# + 1 &, 0, 5]
+
+(* Accumulate results *)
+FoldList[Plus, 0, {1, 2, 3, 4, 5}]
+`}</wljs-editor>
+</WLJSWrapper>
+
+<WLJSWrapper>
+<wljs-editor type="Output" display="codemirror">{`
+{0, 1, 3, 6, 10, 15}
+`}</wljs-editor>
+</WLJSWrapper>
+
+#### Symbolic Mathematics
+
+Work with algebraic expressions symbolically:
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-10 group-hover:opacity-50 transition duration-500" />
+<wljs-editor type="Input" display="codemirror">{`
+(* Expand polynomial *)
+Expand[(x + y)^3]
+
+(* Factor expression *)
+Factor[x^2 - y^2]
+`}</wljs-editor>
+</WLJSWrapper>
+
+**Simplification** is one of the most powerful features:
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-10 group-hover:opacity-50 transition duration-500" />
+<wljs-editor type="Input" display="codemirror">{`
+(* Basic simplification *)
+Simplify[(x^2 - 1)/(x - 1)]
+`}</wljs-editor>
+</WLJSWrapper>
+
+<WLJSWrapper>
+<wljs-editor type="Output" display="codemirror">{`
+x + 1
+`}</wljs-editor>
+</WLJSWrapper>
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-10 group-hover:opacity-50 transition duration-500" />
+<wljs-editor type="Input" display="codemirror">{`
+(* Trigonometric simplification *)
+Simplify[Sin[x]^2 + Cos[x]^2]
+(* Returns: 1 *)
+
+(* Complex expressions *)
+Simplify[Sqrt[x^2]]
+(* Returns: Sqrt[x^2] - needs assumptions! *)
+
+(* With assumptions *)
+Simplify[Sqrt[x^2], Assumptions -> x > 0]
+(* Returns: x *)
+
+Simplify[Sqrt[x^2], Assumptions -> x < 0]
+(* Returns: -x *)
+`}</wljs-editor>
+</WLJSWrapper>
+
+Different simplification strategies:
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-10 group-hover:opacity-50 transition duration-500" />
+<wljs-editor type="Input" display="codemirror">{`
+(* FullSimplify - tries harder, slower *)
+FullSimplify[(x^3 - 1)/(x - 1)]
+(* Returns: 1 + x + x^2 *)
+
+(* Simplify with specific form *)
+Simplify[Sin[2*x], ComplexityFunction -> LeafCount]
+
+(* ExpToTrig and TrigToExp conversions *)
+ExpToTrig[Exp[I*x]]
+(* Returns: Cos[x] + I*Sin[x] *)
+
+TrigToExp[Sin[x]]
+(* Returns: -I/2*(E^(I*x) - E^(-I*x)) *)
+`}</wljs-editor>
+</WLJSWrapper>
+
+Common assumptions:
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-10 group-hover:opacity-50 transition duration-500" />
+<wljs-editor type="Input" display="codemirror">{`
+(* Element specifications *)
+Simplify[Sqrt[x^2], Assumptions -> Element[x, Reals]]
+Simplify[Abs[x*y], Assumptions -> {x > 0, y > 0}]
+
+(* Global assumptions with $Assumptions *)
+$Assumptions = {x ∈ Reals, x > 0, y ∈ Reals}
+Simplify[Sqrt[x^2] + Sqrt[y^2]]
+`}</wljs-editor>
+</WLJSWrapper>
+
+Solve equations symbolically:
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-10 group-hover:opacity-50 transition duration-500" />
+<wljs-editor type="Input" display="codemirror">{`
+(* Solve quadratic equation *)
+Solve[a*x^2 + b*x + c == 0, x]
+
+(* System of equations *)
+Solve[{x + y == 5, x - y == 1}, {x, y}]
+`}</wljs-editor>
+</WLJSWrapper>
+
+<WLJSWrapper>
+<wljs-editor type="Output" display="codemirror">{`
+{{x -> 3, y -> 2}}
+`}</wljs-editor>
+</WLJSWrapper>
+
+Calculus operations work symbolically too:
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-10 group-hover:opacity-50 transition duration-500" />
+<wljs-editor type="Input" display="codemirror">{`
+(* Differentiation *)
+D[x^3 + Sin[x], x]
+
+(* Integration *)
+Integrate[x^2 * Exp[-x], x]
+
+(* Limits *)
+Limit[Sin[x]/x, x -> 0]
+`}</wljs-editor>
+</WLJSWrapper>
+
+<WLJSWrapper>
+<wljs-editor type="Output" display="codemirror">{`
+3 ((*SpB[*)Power[x(*|*),(*|*)2](*]SpB*))+Cos[x]
+`}</wljs-editor>
+</WLJSWrapper>
+<WLJSWrapper>
+<wljs-editor type="Output" display="codemirror">{`
+((*SpB[*)Power[E(*|*),(*|*)-x](*]SpB*)) (-2-2 x-(*SpB[*)Power[x(*|*),(*|*)2](*]SpB*))
+`}</wljs-editor>
+</WLJSWrapper>
+<WLJSWrapper>
+<wljs-editor type="Output" display="codemirror">{`
+1
+`}</wljs-editor>
+</WLJSWrapper>
+
+#### Nested Structures and List Manipulation
+
+Wolfram Language excels at manipulating nested structures:
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-10 group-hover:opacity-50 transition duration-500" />
+<wljs-editor type="Input" display="codemirror">{`
+(* Create nested data *)
+data = Table[{i, i^2, i^3}, {i, 5}]
+
+(* Extract parts *)
+data[[All, 2]]  (* All second elements *)
+
+(* Apply function at specific level *)
+Map[Total, data, {1}]
+`}</wljs-editor>
+</WLJSWrapper>
+
+<WLJSWrapper>
+<wljs-editor type="Output" display="codemirror">{`
+{6, 14, 36, 84, 180}
+`}</wljs-editor>
+</WLJSWrapper>
+
+Thread operations across lists:
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-10 group-hover:opacity-50 transition duration-500" />
+<wljs-editor type="Input" display="codemirror">{`
+(* Thread operations *)
+Thread[f[{a, b, c}, {x, y, z}]]
+
+(* Partition data *)
+Partition[Range[12], 3]
+`}</wljs-editor>
+</WLJSWrapper>
+
+<WLJSWrapper>
+<wljs-editor type="Output" display="codemirror">{`
+{{1, 2, 3}, {4, 5, 6}, {7, 8, 9}, {10, 11, 12}}
+`}</wljs-editor>
+</WLJSWrapper>
+
+Transpose and reshape operations:
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-10 group-hover:opacity-50 transition duration-500" />
+<wljs-editor type="Input" display="codemirror">{`
+(* Transpose matrix *)
+{{1, 2, 3}, {4, 5, 6}} // Transpose
+
+(* Flatten nested lists *)
+Flatten[{{1, 2}, {3, {4, 5}}}]
+`}</wljs-editor>
+</WLJSWrapper>
+
+<WLJSWrapper>
+<wljs-editor type="Output" display="codemirror">{`
+{1, 2, 3, 4, 5}
+`}</wljs-editor>
+</WLJSWrapper>
+
+#### Association (Key-Value Pairs)
+
+Modern dictionary-like structures:
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-10 group-hover:opacity-50 transition duration-500" />
+<wljs-editor type="Input" display="codemirror">{`
+(* Create association *)
+person = <|"name" -> "Alice", "age" -> 30, "city" -> "NYC"|>
+
+(* Access values *)
+person["name"]
+
+(* Map over associations *)
+person // Map[ToString]
+
+(* Merge multiple associations *)
+Merge[{<|"a" -> 1, "b" -> 2|>, <|"b" -> 3, "c" -> 4|>}, Total]
+`}</wljs-editor>
+</WLJSWrapper>
+
+<WLJSWrapper>
+<wljs-editor type="Output" display="codemirror">{`<|"a" -> 1, "b" -> 5, "c" -> 4|>`}</wljs-editor>
+</WLJSWrapper>
+
+#### String Manipulation
+
+Powerful string processing with patterns:
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-10 group-hover:opacity-50 transition duration-500" />
+<wljs-editor type="Input" display="codemirror">{`
+(* String patterns *)
+StringCases["hello world 123", DigitCharacter..]
+
+(* String replacement *)
+StringReplace["hello world", "world" -> "universe"]
+
+(* Template strings *)
+TemplateApply["Hello \`name\`, you are \`age\` years old", 
+  <|"name" -> "Bob", "age" -> 25|>]
+`}</wljs-editor>
+</WLJSWrapper>
+
+<WLJSWrapper>
+<wljs-editor type="Output" display="codemirror">{`
+"Hello Bob, you are 25 years old"
+`}</wljs-editor>
+</WLJSWrapper>
+
+#### Data Visualization
+
+More complex styling:
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-10 group-hover:opacity-50 transition duration-500" />
+<wljs-editor type="Input" display="codemirror">{`
+Table[If[PrimeQ[i], Framed[i, Background -> Yellow], i], {i, 1, 20}]
+`}</wljs-editor>
+</WLJSWrapper>
+
+<WLJSWrapper>
+<wljs-editor type="Output" display="codemirror">{`{1,(*BB[*)(2)(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KWlMIB4HkHArSsxNdcqvgIiA5INKc1KLuYAMp8Tk7PSi/NK8lDRmmPIgdyfn/Jz8okyQcRACiBnQdPMAGcElRZkF/nmeeQWlJcWsIJsSc4pTAcQ1Hcg="*)(*]BB*),(*BB[*)(3)(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KWlMIB4HkHArSsxNdcqvgIiA5INKc1KLuYAMp8Tk7PSi/NK8lDRmmPIgdyfn/Jz8okyQcRACiBnQdPMAGcElRZkF/nmeeQWlJcWsIJsSc4pTAcQ1Hcg="*)(*]BB*),4,(*BB[*)(5)(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KWlMIB4HkHArSsxNdcqvgIiA5INKc1KLuYAMp8Tk7PSi/NK8lDRmmPIgdyfn/Jz8okyQcRACiBnQdPMAGcElRZkF/nmeeQWlJcWsIJsSc4pTAcQ1Hcg="*)(*]BB*),6,(*BB[*)(7)(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KWlMIB4HkHArSsxNdcqvgIiA5INKc1KLuYAMp8Tk7PSi/NK8lDRmmPIgdyfn/Jz8okyQcRACiBnQdPMAGcElRZkF/nmeeQWlJcWsIJsSc4pTAcQ1Hcg="*)(*]BB*),8,9,10,(*BB[*)(11)(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KWlMIB4HkHArSsxNdcqvgIiA5INKc1KLuYAMp8Tk7PSi/NK8lDRmmPIgdyfn/Jz8okyQcRACiBnQdPMAGcElRZkF/nmeeQWlJcWsIJsSc4pTAcQ1Hcg="*)(*]BB*),12,(*BB[*)(13)(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KWlMIB4HkHArSsxNdcqvgIiA5INKc1KLuYAMp8Tk7PSi/NK8lDRmmPIgdyfn/Jz8okyQcRACiBnQdPMAGcElRZkF/nmeeQWlJcWsIJsSc4pTAcQ1Hcg="*)(*]BB*),14,15,16,(*BB[*)(17)(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KWlMIB4HkHArSsxNdcqvgIiA5INKc1KLuYAMp8Tk7PSi/NK8lDRmmPIgdyfn/Jz8okyQcRACiBnQdPMAGcElRZkF/nmeeQWlJcWsIJsSc4pTAcQ1Hcg="*)(*]BB*),18,(*BB[*)(19)(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KWlMIB4HkHArSsxNdcqvgIiA5INKc1KLuYAMp8Tk7PSi/NK8lDRmmPIgdyfn/Jz8okyQcRACiBnQdPMAGcElRZkF/nmeeQWlJcWsIJsSc4pTAcQ1Hcg="*)(*]BB*),20}`}</wljs-editor>
+</WLJSWrapper>
+
+This uses pattern matching with `If` and `PrimeQ` to conditionally style elements.
+
+#### Graphics as Expressions
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-10 group-hover:opacity-50 transition duration-500" />
+<wljs-editor type="Input" display="codemirror">{`Plot[x, {x, 0, 1}, PlotStyle -> RGBColor[1/2, 1/2, 1]]`}</wljs-editor>
+</WLJSWrapper>
+
+<WLJSWrapper>
+<wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(FrontEndRef["d84a4b36-b420-4018-b1af-3bd020935a4f"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKp1iYJJokGZvpJpkYGeiaGBha6CYZJqbpGielGBgZWBqbJpqkAQB+qBVZ"*)(*]VB*)`}</wljs-editor>
+</WLJSWrapper>
+
+This creates an interactive graphic that renders as a line plot. It may look like an image, but it's not—it's a symbolic expression that can be manipulated, styled, and transformed.
+
+<Callout>
+Everything is a set of Wolfram expressions decorated with rendering metadata. Underneath, it’s still real code.
+</Callout>
+
+<Callout>
+Most symbols are abstract representations that can be interpreted in many ways.
+</Callout>
+
+Have a look at 3D graphics:
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-10 group-hover:opacity-50 transition duration-500" />
+<wljs-editor type="Input" display="codemirror">{`
+Graphics3D[Sphere[]]
+`}</wljs-editor>
+</WLJSWrapper>
+
+<WLJSWrapper>
+<wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(Graphics3D[{RGBColor[1, 0, 1], Sphere[{0, 0, 0}]}, ImageSize -> 200])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KWlMIB4XkHAvSizIyEwuNnaBiIFU+GQWl6Qxg3gcQCLI3ck5Pye/KBNkQiYDiACxIAayAYnggozUolSIBph2iDo4gTA7qDQntZgTyPDMTUxPDc6sSs08AeQBAJxmHk0="*)(*]VB*)`}</wljs-editor>
+</WLJSWrapper>
+
+This creates an interactive 3D sphere that you can rotate, zoom, and manipulate in real-time. The output is not a static image but a live 3D graphic object.
+
+__It’s all about interpretation.__
+
+Let's replace our 3D object with `Cuboid` inline:
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-10 group-hover:opacity-50 transition duration-500" />
+<wljs-editor display="codemirror" type="Input"  >{`(*VB[*)(Graphics3D[{RGBColor[1, 0, 1], Sphere[{0, 0, 0}]}, ImageSize -> 200])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KWlMIB4XkHAvSizIyEwuNnaBiIFU+GQWl6Qxg3gcQCLI3ck5Pye/KBNkQiYDiACxIAayAYnggozUolSIBph2iDo4gTA7qDQntZgTyPDMTUxPDc6sSs08AeQBAJxmHk0="*)(*]VB*)/. {Sphere -> Cuboid}`}</wljs-editor>
+</WLJSWrapper>
+
+<WLJSWrapper>
+<wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(Graphics3D[{RGBColor[1, 0, 1], Cuboid[{0, 0, 0}]}, ImageSize -> 200])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KWlMIB4XkHAvSizIyEwuNnaBiIFU+GQWl6Qxg3gcQCLI3ck5Pye/KBNkQiYDiACxIAayAQnn0qT8zBSIBph2iDo4gTA7qDQntZgTyPDMTUxPDc6sSs08AeQBAJf0Hjw="*)(*]VB*)`}</wljs-editor>
+</WLJSWrapper>
+
+Nothing stops us from taking the same primitives and use them in actual calculations:
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-10 group-hover:opacity-50 transition duration-500" />
+<wljs-editor display="codemirror" type="Input"  >{`Cuboid[{a,b,c}] // Volume 
+Sphere[{a,b,c}, R] // Area`}</wljs-editor>
+</WLJSWrapper>
+
+<WLJSWrapper>
+<wljs-editor display="codemirror" type="Output"  >{`1`}</wljs-editor>
+<wljs-editor display="codemirror" type="Output"  >{`4 \\[Pi] ((*SpB[*)Power[R(*|*),(*|*)2](*]SpB*))`}</wljs-editor>
+</WLJSWrapper>
+
+### Scientific Computing
+
+#### Data Visualization and Plotting
+
+Create publication-quality plots with minimal effort:
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-10 group-hover:opacity-50 transition duration-500" />
+<wljs-editor display="codemirror" type="Input"  >{`(* Multiple functions on one plot *)
+Plot[{Sin[x], Cos[x], Sin[x]*Cos[x]}, {x, 0, 2*Pi}, 
+  PlotLegends -> "Expressions",
+  PlotStyle -> {Red, Blue, Green}]
+
+(* Logarithmic plots *)
+LogPlot[Exp[x], {x, 0, 10}]
+
+(* Parametric plots *)
+ParametricPlot[{Sin[t], Cos[2*t]}, {t, 0, 2*Pi}]`}</wljs-editor>
+</WLJSWrapper>
+
+<WLJSWrapper>
+<wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(Legended[ToExpression[FrontEndRef["60812485-07b1-4866-b42b-0fd535a9f66a"], InputForm], Placed[LineLegend[{Directive[Opacity[1.], AbsoluteThickness[2], RGBColor[1, 0, 0]], Directive[Opacity[1.], AbsoluteThickness[2], RGBColor[0, 0, 1]], Directive[Opacity[1.], AbsoluteThickness[2], RGBColor[0, 1, 0]]}, {HoldForm[Sin[HoldForm[x]]], HoldForm[Cos[HoldForm[x]]], HoldForm[Sin[HoldForm[x]]*Cos[HoldForm[x]]]}, LegendMarkers -> None, LabelStyle -> {}, LegendLayout -> "Column"], After, Identity]])(*,*)(*"1:eJy9U8tOAjEUHRTxEV3oH5i4nWRAGHFlkIeaoBiGuG+nt9pQWtN2kPlrP8E+AgmYaFjoLE5mzj2357S9c47lmO5GUaRPLLww+OhBLhUyUmX7lhnCKwjSoDtOcmShT5itOSGtOO7MwkBJYfqC9BeQFwZhDtmFpdOkXW802604ucL1uNlO0xg3GzhOKGldttA1TVMUFq5aGBe27cC9ACIjwUvPTlQBIV/NwjNHORC6twwzZAJCwqCpek6b8HVooccU5IbNIaR1Wxq9o5yZUkX++bwJlVMLHawlLwxM3lg+FaA1c+nCYj7Z3W1XcqmY62DREv7abWXkff/FbbXBjXOtLOX3kpOBVLPAOFHGxPeydszip7au1Fu0+Wlx1z9hM9BbmP9mtTaG/l8Ic/WI1BSU9qUnKWBD6IcQYeCZKTnQaO2w1qXHqzWHqJSFyWo+Ei9mwu+oQ401ctEeCAhjb/EL38fJaA=="*)(*]VB*)`}</wljs-editor>
+<wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(FrontEndRef["96899d5e-ccc5-48e4-b96c-47c912209504"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKW5pZWFqmmKbqJicnm+qaWKSa6CZZmiXrmpgnWxoaGRlYmhqYAACEGxUv"*)(*]VB*)`}</wljs-editor>
+<wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(FrontEndRef["dfb7c2f7-abd1-4681-820f-303a0eba4ed1"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKp6QlmScbpZnrJialGOqamFkY6loYGaTpGhsYJxqkJiWapKYYAgCRXRYg"*)(*]VB*)`}</wljs-editor>
+</WLJSWrapper>
+
+Create different chart types for data analysis:
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-10 group-hover:opacity-50 transition duration-500" />
+<wljs-editor type="Input" display="codemirror">{`
+(* Generate sample data *)
+data = Table[{i, RandomReal[{0, 10}]}, {i, 20}];
+data // TableView 
+
+(* Bar chart *)
+BarChart[data[[All, 2]], ChartLabels -> data[[All, 1]]]
+
+(* Histogram *)
+Histogram[RandomVariate[NormalDistribution[0, 1], 1000], 30]
+`}</wljs-editor>
+</WLJSWrapper>
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-10 group-hover:opacity-50 transition duration-500" />
+<wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(FrontEndRef["0ccf1fbd-253a-40c9-a511-506ea6e50685"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKGyQnpxmmJaXoGpkaJ+qaGCRb6iaaGhrqmhqYpSaapQIpC1MAjRgVkw=="*)(*]VB*)`}</wljs-editor>
+<wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(FrontEndRef["7cf5ac85-ca64-4628-b764-83d7b4a53afb"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKmyenmSYmW5jqJieameiamBlZ6CaZA1kWxinmSSaJpsaJaUkAh+sV3A=="*)(*]VB*)`}</wljs-editor>
+<wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(FrontEndRef["9246c81e-1aa0-4103-b8c2-ff1299427d79"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKWxqZmCVbGKbqGiYmGuiaGBoY6yZZJBvppqUZGllamhiZp5hbAgB6WBUV"*)(*]VB*)`}</wljs-editor>
+</WLJSWrapper>
+
+
+3D visualization:
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-10 group-hover:opacity-50 transition duration-500" />
+<wljs-editor display="codemirror" type="Input"  >{`(* 3D surface plot *)
+
+Plot3D[Sin[x] Cos[y], {x, -3, 3}, {y, -3, 3}, PlotStyle -> Opacity[0.8\`], Mesh -> None, ColorFunction -> "Rainbow"]
+
+(* Contour plot *)
+
+ContourPlot[(*SpB[*)Power[x(*|*),(*|*)2](*]SpB*) + (*SpB[*)Power[y(*|*),(*|*)2](*]SpB*), {x, -2, 2}, {y, -2, 2}, Contours -> 15, ColorFunction -> "Rainbow"]
+
+(* Density plot *)
+
+DensityPlot[Sin[x y], {x, -2, 2}, {y, -2, 2}]`}</wljs-editor>
+</WLJSWrapper>
+
+<WLJSWrapper>
+<wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(FrontEndRef["4c65d609-37e9-42ea-ac16-62ca67291a54"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKmySbmaaYGVjqGpunWuqaGKUm6iYmG5rpmhklJ5qZG1kaJpqaAAB+4hVG"*)(*]VB*)`}</wljs-editor>
+<wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(FrontEndRef["e23aba53-6182-44f1-99af-3600ee90f655"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKpxoZJyYlmhrrmhlaGOmamKQZ6lpaJqbpGpsZGKSmWhqkmZmaAgCAEBVE"*)(*]VB*)`}</wljs-editor>
+<wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(FrontEndRef["19975dd7-de5d-42e4-badd-5152ee31a8cb"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKG1pampumpJjrpqSapuiaGKWa6CYlpqTomhqaGqWmGhsmWiQnAQCKFxY2"*)(*]VB*)`}</wljs-editor>
+</WLJSWrapper>
+
+#### Dataset - Structured Data Handling
+
+Dataset provides a powerful way to work with structured data:
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-10 group-hover:opacity-50 transition duration-500" />
+<wljs-editor display="codemirror" type="Input"  >{`(* Create dataset from associations *)
+ds = Dataset[{
+  <|"name" -> "Alice", "age" -> 25, "score" -> 92|>,
+  <|"name" -> "Bob", "age" -> 30, "score" -> 87|>,
+  <|"name" -> "Charlie", "age" -> 22, "score" -> 95|>,
+  <|"name" -> "Diana", "age" -> 28, "score" -> 89|>
+}]
+
+(* Query operations *)
+ds[All, "name"]  (* Get all names *)
+ds[Select[#age > 25 &]]  (* Filter by condition *)
+ds[All, <|"name" -> "name", "grade" -> (#score/100 &)|>]  (* Transform *)
+
+(* Statistical operations *)
+ds[Mean, "score"]`}</wljs-editor>
+</WLJSWrapper>
+
+<WLJSWrapper>
+<wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(FrontEndRef["f69bcbbe-75a5-4719-97fd-fd4a481084b2"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKp5lZJiUnJaXqmpsmmuqamBta6lqap6XopqWYJJpYGBpYmCQZAQCRTxXj"*)(*]VB*)`}</wljs-editor>
+<wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(FrontEndRef["697df6d5-91c9-4d41-9cac-eb636820bcfb"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKm1map6SZpZjqWhomW+qapJgY6lomJybrpiaZGZtZGBkkJaclAQCGwRYS"*)(*]VB*)`}</wljs-editor>
+<wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(FrontEndRef["b1696cb6-2305-4953-8f13-a06f770f7dd6"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKJxmaWZolJ5npGhkbmOqaWJoa61qkGRrrJhqYpZmbG6SZp6SYAQB2nRUd"*)(*]VB*)`}</wljs-editor>
+<wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(FrontEndRef["33e04317-a0f7-4ae1-b124-a75865176611"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKGxunGpgYG5rrJhqkmeuaJKYa6iYZGpnoJpqbWpiZGpqbmRkaAgB28hSl"*)(*]VB*)`}</wljs-editor>
+<wljs-editor display="codemirror" type="Output"  >{`(*FB[*)((363)(*,*)/(*,*)(4))(*]FB*)`}</wljs-editor>
+</WLJSWrapper>
+
+
+Work with hierarchical data:
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-10 group-hover:opacity-50 transition duration-500" />
+<wljs-editor display="codemirror" type="Input"  >{`(* Nested dataset *)
+experiments = Dataset[{
+  <|"date" -> "2024-01-01", 
+    "measurements" -> {12.5, 13.1, 12.9}|>,
+  <|"date" -> "2024-01-02", 
+    "measurements" -> {15.2, 14.8, 15.0}|>
+}]
+
+(* Query nested values *)
+experiments[All, "measurements"]
+Mean /@ experiments[All, "measurements"]`}</wljs-editor>
+</WLJSWrapper>
+
+<WLJSWrapper>
+<wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(FrontEndRef["58dd6536-c6c8-4d8c-9c6e-21baf47f98a3"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKm1qkpJiZGpvpJpslW+iapFgk61omm6XqGhkmJaaZmKdZWiQaAwCHMhXs"*)(*]VB*)`}</wljs-editor>
+<wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(FrontEndRef["c199aebf-5d73-4f4d-a558-2fd320ce6aa0"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKJxtaWiamJqXpmqaYG+uapJmk6CaamlroGqWlGBsZJKeaJSYaAACQRBYw"*)(*]VB*)`}</wljs-editor>
+<wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(FrontEndRef["1fbdca0d-c55d-4438-be63-2bbf846250c7"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKG6YlpSQnGqToJpuapuiamBhb6CalmhnrGiUlpVmYmBmZGiSbAwCURhX7"*)(*]VB*)`}</wljs-editor>
+</WLJSWrapper>
+
+#### Statistical Analysis
+
+Built-in statistical functions for data analysis:
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-10 group-hover:opacity-50 transition duration-500" />
+<wljs-editor display="codemirror" type="Input"  >{`(* Generate sample data *)
+data = RandomVariate[NormalDistribution[100, 15], 200];
+
+(* Descriptive statistics *)
+Mean[data]
+Median[data]
+StandardDeviation[data]
+Quartiles[data]
+
+(* Distribution fitting *)
+dist = EstimatedDistribution[data, NormalDistribution[μ, σ]]
+
+(* Hypothesis testing *)
+TTest[data, 100]
+
+(* Correlation analysis *)
+data2 = RandomVariate[NormalDistribution[50, 10], 200];
+Correlation[data, data2]`}</wljs-editor>
+</WLJSWrapper>
+
+<WLJSWrapper>
+<wljs-editor display="codemirror" type="Output"  >{`102.27687181157289\``}</wljs-editor>
+<wljs-editor display="codemirror" type="Output"  >{`102.95485075612231\``}</wljs-editor>
+<wljs-editor display="codemirror" type="Output"  >{`14.218033684585553\``}</wljs-editor>
+<wljs-editor display="codemirror" type="Output"  >{`{93.1823825265459\`,102.95485075612231\`,111.71599949332989\`}`}</wljs-editor>
+<wljs-editor display="codemirror" type="Output"  >{`NormalDistribution[102.27687181157289\`,14.182444057592095\`]`}</wljs-editor>
+<wljs-editor display="codemirror" type="Output"  >{`0.024607704936242588\``}</wljs-editor>
+<wljs-editor display="codemirror" type="Output"  >{`-0.14549160118041676\``}</wljs-editor>
+</WLJSWrapper>
+
+Create statistical visualizations:
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-10 group-hover:opacity-50 transition duration-500" />
+<wljs-editor display="codemirror" type="Input"  >{`(* Distribution comparison *)
+SmoothHistogram[{data, data2}, PlotLegends -> {"A", "B"}]
+
+(* Quantile-Quantile plot *)
+QuantilePlot[data, NormalDistribution[100, 15]]`}</wljs-editor>
+</WLJSWrapper>
+
+<WLJSWrapper>
+<wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(Legended[ToExpression[FrontEndRef["622665a6-5078-4839-baac-50239f9f9bf3"], InputForm], Placed[LineLegend[{Directive[RGBColor[0.24, 0.6, 0.8], AbsoluteThickness[2]], Directive[RGBColor[0.95, 0.627, 0.1425], AbsoluteThickness[2]]}, {"A", "B"}, LegendMarkers -> {{False, Automatic}, {False, Automatic}}, Joined -> {True, True}, LabelStyle -> {}, LegendLayout -> "Column"], After, Identity]])(*,*)(*"1:eJyVUU1Kw0AUjv9aFNQDCILbgiQ2tosSUltFSVGb4n6SvNGhaUZmJmoO4CF0684TdO0BXLjxALoRQfAGzkxsS6WL+gIf817efPO9720GtIVnDMPgKxLOCFzXIaQMCcr8BVnx4BySyMTTqqUgoRER+U814ilVW5ewz2giGknUuIEwFSiIwd+SZds0bbuE7GJpe7dc3ClblWKAUChT06pg+QXYyolnJbRSeW1RHQBFx0mc6WqbpZDrm5dwEqMQIjzfF+ORBHKFQx6PcJFnSxLqhEEoyNUvieY/qO3RmDLW27j9PO09O8zS8eaw+zsVH04+2poEN+A0TgW0L0jYSYBzoqgn48c6vhz2+P3SDFbfHVYtvD5cVp8m5O9P46tuV2Nt1C+9tNyAJmIdYHycD/2Mz6ldoZiDlu6mgnaRIOF/u/TLagdHVPr/x/rB1obrG72o94YCiH2RxYCN8Xp16/JgOg9lNBW+elR6m3YTrdLFQo6sPD+MIBFEZD9BTLPK"*)(*]VB*)`}</wljs-editor>
+<wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(FrontEndRef["3b3977a6-691a-4eab-8586-dd50ca951e84"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKGycZW5qbJ5rpmlkaJuqapCYm6VqYWpjppqSYGiQnWpoaplqYAACAERWC"*)(*]VB*)`}</wljs-editor>
+</WLJSWrapper>
+
+#### Curve Fitting and Regression
+
+Fit the data using linear function:
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-10 group-hover:opacity-50 transition duration-500" />
+<wljs-editor display="codemirror" type="Input"  >{`(* Generate noisy data *)
+dataPoints = Table[{x, Exp[x .5] + 3 + .01 RandomReal[{-1, 1}]}, {x, 0, 10, 0.5}];
+
+(* Linear fit *)
+ClearAll[x];
+fit = LinearModelFit[dataPoints, x,x]
+fit["BestFit"]
+fit["RSquared"]
+
+Show[
+  ListPlot[dataPoints, PlotStyle -> Red],
+  Plot[fit["BestFit"], {x, 0, 10}, PlotStyle -> Blue]
+]`}</wljs-editor>
+</WLJSWrapper>
+
+
+
+
+<WLJSWrapper>
+<wljs-editor display="codemirror" type="Output"  >{`FittedModel[(*VB[*) <|"Type" -> "Linear", "Model" -> <|"FittedParameters" -> {-22.340701277732325, 11.42455897723819}, "IndependentVariables" -> {x}, "BasisFunctions" -> {1, x}, "LinearOffset" -> <|"Function" -> 0, "Values" -> 0|>|>, "KeyNames" -> Automatic, "Weights" -> <|"ExampleWeights" -> 1.|>, "InputData" -> {{0., 3.9944783541855604}, {0.5, 4.276560670456315}, {1., 4.6416389294081295}, {1.5, 5.1193500548442525}, {2., 5.7268102436014345}, {2.5, 6.487238852433291}, {3., 7.484497703920415}, {3.5, 8.76095263344181}, {4., 10.38137028451088}, {4.5, 12.491007141402267}, {5., 15.187531342151104}, {5.5, 18.6358120609378}, {6., 23.080607635491926}, {6.5, 28.79612798722989}, {7., 36.12124008219325}, {7.5, 45.524489811191465}, {8., 57.596584594168334}, {8.5, 73.1018185390817}, {9., 93.01931070962853}, {9.5, 118.57567538543263}, {10., 151.42086276192015}}, "UserDefinedDesignMatrixQ" -> False, "DesignMatrix" -> {{1., 0.}, {1., 0.5}, {1., 1.}, {1., 1.5}, {1., 2.}, {1., 2.5}, {1., 3.}, {1., 3.5}, {1., 4.}, {1., 4.5}, {1., 5.}, {1., 5.5}, {1., 6.}, {1., 6.5}, {1., 7.}, {1., 7.5}, {1., 8.}, {1., 8.5}, {1., 9.}, {1., 9.5}, {1., 10.}}, "Localizer" -> Function[Null, FittedModels\`LocalizedBlock[{x}, #1], {HoldAll}], "Options" -> {}|> (*,*)(*"1:eJxVj70LwjAQxesXqIuj4ObgqDRpa3RUVBREodXORnOVQppAmqL+9yatoC4/7r13vOOGVxkmDcdx8oHBUj43UmWXhVJU3IFFRZZR9TJ2UrM7PYONkkKvBYtTpQvKq6BpsJWclcNBCvja+zTXSd2q/s+FT/NOQxan8IhM5FRbXYM1S7VUNvivr1TH4BzuV3CTDCJk1Bjjiee7xEWYEOJhDwejqTvCS4QmPvaDYDYnBHszNC9t91mdsrVhwSFq2wEoOwr+Kt2TKiBv2W8pz+ENrqNFIw=="*)(*]VB*)]`}</wljs-editor>
+<wljs-editor display="codemirror" type="Output"  >{`-22.340701277732325\`+11.42455897723819\` x`}</wljs-editor>
+<wljs-editor display="codemirror" type="Output"  >{`0.7226700984087944\``}</wljs-editor>
+<wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(FrontEndRef["529d8816-8702-4588-af7d-ae05625dfdcc"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKmxpZplhYGJrpWpgbGOmamFpY6CammafoJqYamJoZmaakpSQnAwBzlhWG"*)(*]VB*)`}</wljs-editor>
+</WLJSWrapper>
+
+
+Fit the data using poly function:
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-10 group-hover:opacity-50 transition duration-500" />
+<wljs-editor display="codemirror" type="Input"  >{`(* Polynomial fit *)
+polyFit = Fit[dataPoints, {1, x, (*SpB[*)Power[x(*|*),(*|*)2](*]SpB*)}, x]
+
+(* Visualize fit *)
+Show[
+  ListPlot[dataPoints, PlotStyle -> Red],
+  Plot[polyFit, {x, 0, 10}, PlotStyle -> Blue]
+]`}</wljs-editor>
+</WLJSWrapper>
+
+<WLJSWrapper>
+<wljs-editor display="codemirror" type="Output"  >{`15.982581848811188\` -12.77961983952612\` x+2.420417881676431\` ((*SpB[*)Power[x(*|*),(*|*)2](*]SpB*))`}</wljs-editor>
+<wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(FrontEndRef["d4846954-800f-4676-ac14-0f508cb2d85d"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKp5hYmJhZmproWhgYpOmamJmb6SYmG5roGqSZGlgkJxmlWJimAABzdhUc"*)(*]VB*)`}</wljs-editor>
+</WLJSWrapper>
+
+
+Fit the data using a non-linear model:
+
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-10 group-hover:opacity-50 transition duration-500" />
+<wljs-editor display="codemirror" type="Input"  >{`(* Non-linear fit *)
+nlFit = NonlinearModelFit[dataPoints, a*Exp[b*x]+c, {a,b,c}, x]
+
+(* Visualize fit *)
+Show[
+  Plot[nlFit[x], {x, 0, 10}, PlotStyle -> Blue],
+  ListPlot[dataPoints, PlotStyle -> Red]
+]`}</wljs-editor>
+</WLJSWrapper>
+
+<WLJSWrapper>
+<wljs-editor display="codemirror" type="Output"  >{`FittedModel[(*VB[*) <|"Type" -> "Nonlinear", "Model" -> <|"FittedParameterRules" -> {a -> 1.0000803176514326, b -> 0.49999316340911115, c -> 2.999099132627918}, "IndependentVariables" -> {x}, "FitExpression" -> c + a*E^(b*x), "ParameterConstraints" -> True|>, "KeyNames" -> Automatic, "Weights" -> <|"ExampleWeights" -> 1|>, "InputData" -> {{0., 3.9944783541855604}, {0.5, 4.276560670456315}, {1., 4.6416389294081295}, {1.5, 5.1193500548442525}, {2., 5.7268102436014345}, {2.5, 6.487238852433291}, {3., 7.484497703920415}, {3.5, 8.76095263344181}, {4., 10.38137028451088}, {4.5, 12.491007141402267}, {5., 15.187531342151104}, {5.5, 18.6358120609378}, {6., 23.080607635491926}, {6.5, 28.79612798722989}, {7., 36.12124008219325}, {7.5, 45.524489811191465}, {8., 57.596584594168334}, {8.5, 73.1018185390817}, {9., 93.01931070962853}, {9.5, 118.57567538543263}, {10., 151.42086276192015}}, "Localizer" -> Function[Null, FittedModels\`LocalizedBlock[{a, b, c, x}, #1], {HoldAll}], "Options" -> {}|> (*,*)(*"1:eJxdUE1LxDAQrV+gXjwK3jzkWpL0M8fttssKi0qre7aaqRTaRtKW3f09/lEnTcWPMDzmvTe8YXL7qvLqxHGc/gYhUfuV0u3LQuuyewdZjG1b6gPK1ZGZuUJYadUNWSe3tR7GsrHGKcJaNXJq7lUHP/Km7ofq2LDrXxvm5LsB2m0NuwItx05dImSyHpQ2xt94yy4QnvNNCm9KQvGJjLtCCCoE83jII8FiElLCsRLmUnwx9VgUBsxH/9uKp1oUHwkJEmwIF49qBxpZZi0SLa1O+PKfQl0fNwqPhZ5PBcMX2Nw9CdJ5NkhN9hwg7HHmkHxsoDg3DZTyoWsOk/qkR+jPzP+WTQ9fEOBd3Q=="*)(*]VB*)]`}</wljs-editor>
+<wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(FrontEndRef["ba1db508-dea5-43af-b074-d81cc4eceac0"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKJyUapiSZGljopqQmmuqaGCem6SYZmJvoplgYJiebpCanJiYbAACVWhas"*)(*]VB*)`}</wljs-editor>
+</WLJSWrapper>
+
+
+
+
+
+#### Differential Equations (for Physicists)
+
+Solve differential equations symbolically:
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-10 group-hover:opacity-50 transition duration-500" />
+<wljs-editor display="codemirror" type="Input"  >{`(* Symbolic solution - simple harmonic oscillator *)
+DSolve[y''[t] + (*SpB[*)Power[ω(*|*),(*|*)2](*]SpB*)*y[t] == 0, y[t], t]
+
+(* Numerical solution - damped oscillator *)
+sol = NDSolve[{
+  y''[t] + 0.5*y'[t] + 2*y[t] == 0,
+  y[0] == 1, y'[0] == 0
+}, y, {t, 0, 20}]
+
+Plot[Evaluate[y[t] /. sol], {t, 0, 20}, PlotLabel -> "Damped Oscillation"]`}</wljs-editor>
+</WLJSWrapper>
+
+<WLJSWrapper>
+<wljs-editor display="codemirror" type="Output"  >{`{{y[t]->(*SbB[*)Subscript[C(*|*),(*|*)1](*]SbB*) Cos[t \\[Omega]]+(*SbB[*)Subscript[C(*|*),(*|*)2](*]SbB*) Sin[t \\[Omega]]}}`}</wljs-editor>
+<wljs-editor display="codemirror" type="Output"  >{`{{y->(*VB[*)BoxForm\`temporalStorage$3296555(*,*)(*"1:eJxdkc2SmkAAhM1fVSpPkexJIVXKooukKgdZBmRQEIc/2drDOAwiICAMis+Ul4zmmMtX3V196v6xr7bJp8Fg0H67A8RHVjX+kV7Rnw+DgVEy2tRVgdmxPGhdSdixKt+GnK+8caPvQ+4nNxpyT8IvCm+x5wmrXl04jc8fjENKFTA35SKrBYavIuuZNg80dO6oG3W1YsEcbTfxOIntzEynQeWm62RziujOsgPmCcFEd9wFMbK+kskuapcw7SBUGe9heD24LLrW4n5MMBALU1KxnIm++YLuisycOq2hN0mDvQ6EtMGvZrbJ0S6agA5FFqhgqHv5Ga/6BmkYIEy8880yvOBiWCxV8yQzeTt5EeWgjMtqOT7NNemyO8rhhoY3nqFG7oHZVyJyO8XqwpOIMiWREJj7yZoEbXCIc6pFhrENp9uQROkazHhnaW+W7nPYqyvaLdraNH2cSKb93EJpNanPmpXIAqUKgW3peDkQYHeZ6uWehMKivyq8oM8i15mwmSqcX/ml1C+QriQt+f302P/dV7jRe/Lx8eHnO7ZdQdHXh6A4tsvi9i91m47+13kcjmhBCcP7grZf7lbDRUv/AtcSpIE="*)(*]VB*)}}`}</wljs-editor>
+<wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(FrontEndRef["751d680f-41ab-4dac-812d-e65f92fd6117"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKm5sapphZGKTpmhgmJumapCQm61oYGqXoppqZplkapaWYGRqaAwCD4RWl"*)(*]VB*)`}</wljs-editor>
+</WLJSWrapper>
+
+and numerically:
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-10 group-hover:opacity-50 transition duration-500" />
+<wljs-editor display="codemirror" type="Input"  >{`(* System of ODEs - Lotka-Volterra *)
+lotka = NDSolve[{
+  x'[t] == x[t] - x[t]*y[t],
+  y'[t] == -y[t] + x[t]*y[t],
+  x[0] == 1, y[0] == 0.5
+}, {x, y}, {t, 0, 20}]
+
+ParametricPlot[Evaluate[{x[t], y[t]} /. lotka], {t, 0, 20},
+  AxesLabel -> {"Prey", "Predator"}]`}</wljs-editor>
+</WLJSWrapper>
+
+<WLJSWrapper>
+<wljs-editor display="codemirror" type="Output"  >{`{{x->(*VB[*)BoxForm\`temporalStorage$3296921(*,*)(*"1:eJxdkcmOm1AQRZ1JivIVSa9sHAnbGIgj9YKxDcYDM6bVC3jvNQYeYCYz/FJ+MnaW2RxVXZWuSvf+CAvj/dNkMqm/3SHBuCkqJ0ad+efDZKLkDaquBQ6aOI/kNgdNXOSvU8LhX4nZ9ynxk5hNiaflb6QO0LaXWi9yuhduOMMQfgnq2mY12TxX0AkZ9m570QPojovVubxYhp9igyLZhaUMJZIzeT1qPZ15WLSyq9O0bbIASS2NfbGBfk/vPQDTMoD1fplEURYkstPmc3p5qdIdqZbM9qabjBYeAkAr6qVU3UWLQpbzK14XmP4Yu+vEqWFyPkpynZT7lJKAXu+7kwJS33NFxvRcqpayLujGJUbb28afV2E7rsQNNZfpxh421smzBqaJK9jhgcIZzoEQgtuhxUiYr2J5vcuAfyiuCX1e7xYRliF/Tm3At5lEmslR21pjrr+4NIwBp+384J3d7REQXa93xTwiV7dhpPI02VoRxx8Gs5yPasgKPfdCMgmsua6WTwpqbKsnkSLSQUMa3PPz0yP/N4cnZm/vHx8dfr7DuL9kfn0MKIDHHA//VKtq0X83j8JNhBFoghCj+st9lQNco7+krKc+"*)(*]VB*),y->(*VB[*)BoxForm\`temporalStorage$3297056(*,*)(*"1:eJxdkUmzmkAAhM1WlcqvSN7JBzm4IqYqB0BGZHEblsFX78AyI+AICoOAfyl/MppjLl91d/Wp+0dY7MmnXq9XfXtAjVNWlG6KG/jnQ6+3yhkuLwUNWJofQZ1HLC3ytz7nym/c6/c+95N77XMvw19Y72LHGZrtQtqhcC7t94qo6BNnZmrQLWs6Zi0DogfgtcY5PNhGYOunKxR4no89oLVMyhY+H647sQkjGpQVO0WZE55PG1m+zrC36kSPUQTXoK4jZ9U4UX0YsLGZxf4RTQEiMZZRosXhIlurEbCMEb13xKIVmypmKAl6W9xO92yp3w4LuZZJ4m3Pw7u3JInUwE01SNnqpCVtpYpt6E/IlV+ToBy7Y1DecsD4EuELvRZrD13EjZCPlNyMvQBGvm3SKRuUTREXGVbKfGmboEK6hqOzuiqzpi1UZAdWAm3D0O5zao/wJIaOYgp7n4TGtq7IEMnBHBF7dOsm29yqCuvYqIFaeqLnjsaAl6xtos38A/WN5W4uHGlai0gTdoC01u+X5/7vrsy9vpOPzw8/P7CvKYZfnwIH8San3b/ULmv8X+d5OMQURywIKa6+PCwIaIX/Aun0qD8="*)(*]VB*)}}`}</wljs-editor>
+<wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(FrontEndRef["5406a008-bab4-4b87-a633-13152a92071f"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKm5oYmCUaGFjoJiUmmeiaJFmY6yaaGRvrGhobmholWhoZmBumAQB2oxTM"*)(*]VB*)`}</wljs-editor>
+</WLJSWrapper>
+
+
+Partial differential equations:
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-10 group-hover:opacity-50 transition duration-500" />
+<wljs-editor display="codemirror" type="Input"  >{`(* Heat equation *)
+sol = NDSolve[{
+  D[u[t, x], t] == D[u[t, x], {x, 2}],
+  u[0, x] == Exp[-(*SpB[*)Power[x(*|*),(*|*)2](*]SpB*)],
+  u[t, -5] == 0, u[t, 5] == 0
+}, u, {t, 0, 1}, {x, -5, 5}]
+
+Plot3D[Evaluate[u[t, x] /. sol], {t, 0, 1}, {x, -5, 5},
+  PlotLabel -> "Heat Diffusion", ColorFunction->"Temperature"]`}</wljs-editor>
+</WLJSWrapper>
+
+<WLJSWrapper>
+<wljs-editor display="codemirror" type="Output"  >{`{{u->(*VB[*)BoxForm\`temporalStorage$3302102(*,*)(*"1:eJxdkkuTmkAAhM2rKpVfkexJMVUsILikag8gL4kCiozK1h5gGBCZBRaG51/Ln4vmmEtXd1ffvv4RFvv402Qyqb/dRI1SUlQgRZ3758Nkss4JqsoCByTNE63JIUmL/GVKAfmFmn2fUj+p2ZR6YH4hc4iySNx0o7Tr57D1ZFU9dW6s2f21BGEYVjwhmdV7eg58ljb3O5NsiekRmkbDWNILa7vrrhHHMWPjpFruMex6BELL9IPryJW4ueZDrAcYFNwZJjA3V1vRYMmh7QRLio96q4+VXg+rcGNcgoJf99m5ehve0OjrjPZ+BriJMqmrjkrnXJRHaU2PxYpvIa/TF9NYv6vmaOTI8vahaW193V4uneuJtY4LtGiZ9Ml1YBnbHmYVoKD8FHtzFwaYgWcQaauG49kGmTHJDt0p612fx4mOjdxMNb9bwKOsiTzatDArfRk6TOU/+igqlbm39xoH9pIm1SIgIBUOQqiJ0XVkaj6YMzQrPUF0SVhllXSawEmMPReMQq+6wxJUuPitnRQ28cBF5OhE9TNb9ZLn54c7j1cgU7PX+OOd6eeb7BuM3K93g4LIzvHwrz1UDfpvcz+AizCCJAgxqr/cohbgGv0FKpSrHQ=="*)(*]VB*)}}`}</wljs-editor>
+<wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(FrontEndRef["d27305c5-d04a-46bc-a897-919a866daedd"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKpxiZGxuYJpvqphiYJOqamCUl6yZaWJrrWhpaJlqYmaUkpqakAAB//RXb"*)(*]VB*)`}</wljs-editor>
+</WLJSWrapper>
+
+#### Numerical Methods and Optimization
+
+Numerical integration and root finding:
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-10 group-hover:opacity-50 transition duration-500" />
+<wljs-editor type="Input" display="codemirror">{`
+(* Numerical integration *)
+NIntegrate[Sin[x^2], {x, 0, 10}]
+
+(* Find roots *)
+FindRoot[Cos[x] == x, {x, 0}]
+
+(* Solve system numerically *)
+FindRoot[{x^2 + y^2 == 4, x - y == 1}, {x, 1}, {y, 1}]
+`}</wljs-editor>
+</WLJSWrapper>
+
+Optimization problems:
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-10 group-hover:opacity-50 transition duration-500" />
+<wljs-editor type="Input" display="codemirror">{`
+(* Minimize function *)
+NMinimize[x^2 + y^2, {x, y}]
+
+(* Constrained optimization *)
+NMinimize[{x^2 + y^2, x + y >= 1}, {x, y}]
+
+(* Linear programming *)
+LinearProgramming[{-1, -2}, {{1, 1}, {2, 1}}, {{5, -1}, {8, -1}}]
+`}</wljs-editor>
+</WLJSWrapper>
+
+#### Units and Quantities (for Physics)
+
+Work with physical units:
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-10 group-hover:opacity-50 transition duration-500" />
+<wljs-editor type="Input" display="codemirror">{`
+(* Define quantities *)
+distance = Quantity[100, "Meters"]
+time = Quantity[9.8, "Seconds"]
+
+(* Automatic unit conversion *)
+velocity = distance/time
+UnitConvert[velocity, "Miles"/"Hours"]
+
+(* Physical constants *)
+Quantity["SpeedOfLight"]
+Quantity["PlanckConstant"]
+Quantity["ElectronMass"]
+
+(* Unit conversions *)
+UnitConvert[Quantity[1, "Joules"], "ElectronVolts"]
+`}</wljs-editor>
+</WLJSWrapper>
+
+Physics calculations with units:
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-10 group-hover:opacity-50 transition duration-500" />
+<wljs-editor type="Input" display="codemirror">{`
+(* Kinetic energy *)
+mass = Quantity[2, "Kilograms"]
+v = Quantity[10, "Meters"/"Seconds"]
+KE = (1/2)*mass*v^2
+UnitConvert[KE, "Joules"]
+
+(* Wavelength from energy *)
+energy = Quantity[2, "ElectronVolts"]
+h = Quantity["PlanckConstant"]
+c = Quantity["SpeedOfLight"]
+wavelength = (h*c)/energy
+UnitConvert[wavelength, "Nanometers"]
+`}</wljs-editor>
+</WLJSWrapper>
+
+#### Fourier Analysis
+
+Frequency domain analysis:
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-10 group-hover:opacity-50 transition duration-500" />
+<wljs-editor display="codemirror" type="Input"  >{`(* Create signal *)
+signal = Table[Sin[2*Pi*5*t] + 0.5*Sin[2*Pi*10*t], {t, 0, 1, 0.01}];
+
+(* Fourier transform *)
+ft = Fourier[signal];
+
+(* Power spectrum *)
+ListLinePlot[Abs[ft][[1;;50]], PlotLabel -> "Frequency Spectrum"]
+
+(* Inverse transform *)
+reconstructed = InverseFourier[ft];
+signal - reconstructed // Abs // MinMax `}</wljs-editor>
+</WLJSWrapper>
+
+<WLJSWrapper>
+<wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(FrontEndRef["b57456ca-6b0f-4d32-995c-038ecde621ab"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKJ5mam5iaJSfqmiUZpOmapBgb6VpamibrGhhbpCanpJoZGSYmAQCDhRXR"*)(*]VB*)`}</wljs-editor>
+<wljs-editor display="codemirror" type="Output"  >{`{6.632532009743195\`*^-17,8.888726048555634\`*^-16}`}</wljs-editor>
+</WLJSWrapper>
+
+Spectral analysis for time series:
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-10 group-hover:opacity-50 transition duration-500" />
+<wljs-editor display="codemirror" type="Input"  >{`(* Generate noisy signal *)
+noisySignal = signal + RandomReal[{-0.2, 0.2}, Length[signal]];
+
+(* Spectrogram *)
+Spectrogram[noisySignal, SampleRate -> 100]
+
+(* Periodogram *)
+Periodogram[noisySignal, SampleRate -> 100]`}</wljs-editor>
+</WLJSWrapper>
+
+<WLJSWrapper>
+<wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(FrontEndRef["dee28f6e-fd15-4bd2-ab17-0b14f476b3b6"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKp6SmGlmkmaXqpqUYmuqaJKUY6SYmGZrrGiQZmqSZmJslGSeZAQCW7hYu"*)(*]VB*)`}</wljs-editor>
+<wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(FrontEndRef["79daa9c8-d39d-4390-9f04-e1c3dce37162"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKm1umJCZaJlvophhbpuiaGFsa6FqmGZjophomG6ckpxqbG5oZAQCJ2xWv"*)(*]VB*)`}</wljs-editor>
+</WLJSWrapper>
+
+#### Monte Carlo and Random Processes
+
+Monte Carlo simulations:
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-10 group-hover:opacity-50 transition duration-500" />
+<wljs-editor display="codemirror" type="Input"  >{`(* Estimate Pi using Monte Carlo *)
+n = 1000;
+points = RandomReal[{-1, 1}, {n, 2}];
+inside = Count[points, p_ /; Norm[p] <= 1];
+piEstimate = 4.0 * inside/n
+
+(* Visualize *)
+Graphics[{
+  PointSize[Small],
+  Red, Point[Select[points, Norm[#] <= 1 &]],
+  Blue, Point[Select[points, Norm[#] > 1 &]],
+  Circle[]
+}]`}</wljs-editor>
+</WLJSWrapper>
+
+<WLJSWrapper>
+<wljs-editor display="codemirror" type="Output"  >{`3.064\``}</wljs-editor>
+<wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(FrontEndRef["cc496adf-d0ed-49cf-a5a1-88abcfa431f7"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKJyebWJolpqTpphikpuiaWCan6SaaJhrqWlgkJiWnJZoYG6aZAwCdMxbE"*)(*]VB*)`}</wljs-editor>
+</WLJSWrapper>
+
+Random walks and stochastic processes:
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-10 group-hover:opacity-50 transition duration-500" />
+<wljs-editor display="codemirror" type="Input"  >{`(* 1D random walk *)
+walk = Accumulate[RandomChoice[{-1, 1}, 1000]];
+ListLinePlot[walk, PlotLabel -> "Random Walk"]`}</wljs-editor>
+</WLJSWrapper>
+
+<WLJSWrapper>
+<wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(FrontEndRef["57a7998b-60a3-45df-a13b-0e2d16655399"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKm5onmltaWiTpmhkkGuuamKak6SYaGifpGqQapRiamZmaGltaAgB9pRUe"*)(*]VB*)`}</wljs-editor>
+</WLJSWrapper>
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-10 group-hover:opacity-50 transition duration-500" />
+<wljs-editor display="codemirror" type="Input"  >{`(* 2D random walk *)
+walk2D = Accumulate[Table[RandomReal[{-1, 1}, 2], {1000}]];
+ListLinePlot[walk2D, AspectRatio -> 1]`}</wljs-editor>
+</WLJSWrapper>
+
+<WLJSWrapper>
+<wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(FrontEndRef["9eaac57f-9df0-420a-8237-1dd024b223de"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKW6YmJiabmqfpWqakGeiaGBkk6loYGZvrGqakGBiZJBkZGaekAgCMqhXH"*)(*]VB*)`}</wljs-editor>
+</WLJSWrapper>
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-10 group-hover:opacity-50 transition duration-500" />
+<wljs-editor display="codemirror" type="Input"  >{`(* Brownian motion *)
+brownian = RandomFunction[WienerProcess[], {0, 10, 0.01}];
+ListLinePlot[brownian]`}</wljs-editor>
+</WLJSWrapper>
+
+<WLJSWrapper>
+<wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(FrontEndRef["acf67522-701f-4713-99c2-bda40943eb07"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKJyanmZmbGhnpmhsYpumamBsa61paJhvpJqUkmhhYmhinJhmYAwB9xRVA"*)(*]VB*)`}</wljs-editor>
+</WLJSWrapper>
+
+
+#### Data Import and Export
+
+Work with external data:
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-10 group-hover:opacity-50 transition duration-500" />
+<wljs-editor type="Input" display="codemirror">{`
+(* Import CSV *)
+data = Import["data.csv", "Dataset"]
+
+(* Import from URLs *)
+webData = Import["https://example.com/data.json", "JSON"]
+
+(* Export results *)
+Export["results.csv", dataset]
+Export["plot.pdf", myPlot]
+Export["data.json", <|"values" -> {1, 2, 3}, "label" -> "test"|>]
+
+(* Clipboard operations *)
+CopyToClipboard[data]
+`}</wljs-editor>
+</WLJSWrapper>
+
+#### Working with Images
+
+Images are expressions too. Create or import an image:
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-10 group-hover:opacity-50 transition duration-500" />
+<wljs-editor display="codemirror" type="Input"  >{`(* Create a sample image of Lena *)
+i = Import["https://upload.wikimedia.org/wikipedia/en/7/7d/Lenna_%28test_image%29.png"];
+i = ImageResize[i, 200];
+
+(* Or import from file *)
+(* i = Import["image.jpg"] *)`}</wljs-editor>
+</WLJSWrapper>
+
+Then manipulate it:
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-10 group-hover:opacity-50 transition duration-500" />
+<wljs-editor display="codemirror" type="Input"  >{`(* Negate colors *)
+i // ColorNegate
+
+(* Apply filters *)
+ImageAdjust[i]
+Sharpen[i]
+EdgeDetect[i]`}</wljs-editor>
+</WLJSWrapper>
+
+<WLJSWrapper>
+<wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(FrontEndRef["9c511a23-fde7-468e-b8ba-3b77a17891a7"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKWyabGhomGhnrpqWkmuuamFmk6iZZJCXqGieZmycamltYGiaaAwCGuBWs"*)(*]VB*)`}</wljs-editor>
+
+<wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(FrontEndRef["12608338-094e-484c-ab21-b0416b959d09"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKGxqZGVgYG1voGliapOqaWJgk6yYmGRnqJhmYGJolWZpaphhYAgBtHBSw"*)(*]VB*)`}</wljs-editor>
+
+<wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(FrontEndRef["ab647878-e283-4ae3-9796-50ab364f2ce3"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKJyaZmZhbmFvophpZGOuaJKYa61qaW5rpmhokJhmbmaQZJacaAwB8nxVU"*)(*]VB*)`}</wljs-editor>
+
+<wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(FrontEndRef["8488254c-1644-422a-bc8c-b0c4f8a5acd8"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKW5hYWBiZmiTrGpqZmOiaGBkl6iYlWyTrJhkkm6RZJJomJqdYAAB2BBWi"*)(*]VB*)`}</wljs-editor>
+</WLJSWrapper>
+
+Extract image information, domainant colors and perform ML-based lines detection:
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-10 group-hover:opacity-50 transition duration-500" />
+<wljs-editor display="codemirror" type="Input"  >{`(* Extract features *)
+ImageDimensions[i]
+DominantColors[i, 5]
+HighlightImage[i, {Cyan, ImageLines[i, MaxFeatures->3]}]`}</wljs-editor>
+</WLJSWrapper>
+
+<WLJSWrapper>
+<wljs-editor display="codemirror" type="Output"  >{`{200,200}`}</wljs-editor>
+
+<wljs-editor display="codemirror" type="Output"  >{`{(*VB[*)(RGBColor[0.6618013835790273, 0.26296659067858263, 0.3200697735808811])(*,*)(*"1:eJxTTMoPSmNiYGAo5gUSYZmp5S6pyflFiSX5RcEsQBHn4PCQNGaQPAeQCHJ3cs7PyS8qCsmJlajSfWpftOrtzkuFVy7YF939XPuOteaKPQBxiRtc"*)(*]VB*),(*VB[*)(RGBColor[0.3580443461509232, 0.07796091751260913, 0.23999659396158404])(*,*)(*"1:eJxTTMoPSmNiYGAo5gUSYZmp5S6pyflFiSX5RcEsQBHn4PCQNGaQPAeQCHJ3cs7PyS8q8pL0v2r06pp9EbuxqLr91832RRc3SUea7jhnDwBOoBhc"*)(*]VB*),(*VB[*)(RGBColor[0.8339663460981626, 0.5542853922003433, 0.49391420257925406])(*,*)(*"1:eJxTTMoPSmNiYGAo5gUSYZmp5S6pyflFiSX5RcEsQBHn4PCQNGaQPAeQCHJ3cs7PyS8qSpt5zuDW+lf2RfxXWXZs2fPQvqjw2bEArzn37QF/bxtn"*)(*]VB*),(*VB[*)(RGBColor[0.895786848935645, 0.7484762523318615, 0.6870566597461323])(*,*)(*"1:eJxTTMoPSmNiYGAo5gUSYZmp5S6pyflFiSX5RcEsQBHn4PCQNGaQPAeQCHJ3cs7PyS8qEt7Uree56o190S4l44qWz8/ti75VNtvH/XlqDwBm2RqG"*)(*]VB*),(*VB[*)(RGBColor[0.5513531301841743, 0.3151927181891051, 0.5142281560156993])(*,*)(*"1:eJxTTMoPSmNiYGAo5gUSYZmp5S6pyflFiSX5RcEsQBHn4PCQNGaQPAeQCHJ3cs7PyS8qsmC7Frh+yUP7onXnlUXkdK7YFwUukpjdV/LAHgBaDhjH"*)(*]VB*)}`}</wljs-editor>
+
+<wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(FrontEndRef["f1d1d249-b928-4ddd-8139-7e59b7a545b4"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKpxmmGKYYmVjqJlkaWeiapKSk6FoYGlvqmqeaWiaZJ5qamCaZAACEvRWE"*)(*]VB*)`}</wljs-editor>
+</WLJSWrapper>
+
+Analyze color distribution in LAB space:
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-10 group-hover:opacity-50 transition duration-500" />
+<wljs-editor type="Input" display="codemirror">{`
+BubbleChart[
+ Append @@@ Tally[
+   Round[
+     Flatten[ImageData[ColorConvert[i, "LAB"]], 1][[All, {2, 3}]],
+     0.1]], 
+ ColorFunction -> (LABColor[.6, ##] &), 
+ ColorFunctionScaling -> False, BubbleSizes -> {0.01, 0.1}]
+`}</wljs-editor>
+</WLJSWrapper>
+
+This creates a bubble chart visualizing the color distribution in LAB color space, where each bubble represents a color cluster.
+
+
+<WLJSWrapper>
+<wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(FrontEndRef["afa368fd-f2e6-4058-8022-5f006943f0f3"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKJ6YlGptZpKXophmlmumaGJha6FoYGBnpmqYZGJhZmhinGaQZAwCHaxVG"*)(*]VB*)`}</wljs-editor>
+</WLJSWrapper>
+
+
+#### Matrix Operations
+
+Matrices are symbolic by default:
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-10 group-hover:opacity-50 transition duration-500" />
+<wljs-editor type="Input" display="codemirror">{`
+{{a, b}, {c, d}} // MatrixForm
+`}</wljs-editor>
+</WLJSWrapper>
+
+<WLJSWrapper>
+<wljs-editor type="Output" display="codemirror">{`
+(*GB[*){{a(*|*),(*|*)b}(*||*),(*||*){c(*|*),(*|*)d}}(*||*)(*1:eJxTTMoPSmNkYGAo5gUSYZmp5S6pyflFiSX5RcFsQBHfxJKizAoAs04KOA==*)(*]GB*)
+`}</wljs-editor>
+</WLJSWrapper>
+
+Still behaves like a regular matrix:
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-10 group-hover:opacity-50 transition duration-500" />
+<wljs-editor type="Input" display="codemirror">{`
+(*GB[*){{a(*|*),(*|*)b}(*||*),(*||*){c(*|*),(*|*)d}}(*||*)(*1:eJxTTMoPSmNkYGAo5gUSYZmp5S6pyflFiSX5RcFsQBHfxJKizAoAs04KOA==*)(*]GB*) . (*GB[*){{a(*|*),(*|*)b}(*||*),(*||*){c(*|*),(*|*)d}}(*||*)(*1:eJxTTMoPSmNkYGAo5gUSYZmp5S6pyflFiSX5RcFsQBHfxJKizAoAs04KOA==*)(*]GB*)
+`}</wljs-editor>
+</WLJSWrapper>
+
+<WLJSWrapper>
+<wljs-editor display="codemirror" type="Output"  >{`{{(*SpB[*)Power[a(*|*),(*|*)2](*]SpB*)+b c,a b+b d},{a c+c d,b c+(*SpB[*)Power[d(*|*),(*|*)2](*]SpB*)}}`}</wljs-editor>
+</WLJSWrapper>
+
+Compute eigenvalues symbolically:
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-10 group-hover:opacity-50 transition duration-500" />
+<wljs-editor type="Input" display="codemirror">{`
+Eigenvalues[{{a, b}, {c, d}}]
+
+(* Determinant *)
+Det[{{a, b}, {c, d}}]
+
+(* Inverse *)
+Inverse[{{a, b}, {c, d}}]
+`}</wljs-editor>
+</WLJSWrapper>
+
+
+<Callout type="idea">
+Use the command palette to draw matrices quickly.
+</Callout>
+
+#### Data Types and Formatting
+
+Wolfram Language provides rich visual representations for various data types:
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-10 group-hover:opacity-50 transition duration-500" />
+<wljs-editor type="Input" display="codemirror">{`
+Table[RGBColor[1, a, b], {a, 0, 1, 0.25}, {b, 0, 1, 0.25}] // MatrixForm
+`}</wljs-editor>
+</WLJSWrapper>
+
+<WLJSWrapper>
+<wljs-editor type="Output" display="codemirror">{`
+((*GB[*){{(*VB[*)(RGBColor[1, 0., 0.])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeGJAIcndyzs/JLwouTyxJzghJzS3ISSxJTWMGyXMgyRcxgMEHeyiDgQHOAAALpBNd"*)(*]VB*)(*|*),(*|*)(*VB[*)(RGBColor[1, 0., 0.25])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeGJAIcndyzs/JLwouTyxJzghJzS3ISSxJTWMGyXMgyRcxgMEHeyiDgQHKuGAPAA2DFGw="*)(*]VB*)(*|*),(*|*)(*VB[*)(RGBColor[1, 0., 0.5])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeGJAIcndyzs/JLwouTyxJzghJzS3ISSxJTWMGyXMgyRcxgMEHeyiDgQHKeGAPAA2jFHw="*)(*]VB*)(*|*),(*|*)(*VB[*)(RGBColor[1, 0., 0.75])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeGJAIcndyzs/JLwouTyxJzghJzS3ISSxJTWMGyXMgyRcxgMEHeyiDgQHKeGEPAA2zFIQ="*)(*]VB*)(*|*),(*|*)(*VB[*)(RGBColor[1, 0., 1.])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeGJAIcndyzs/JLwouTyxJzghJzS3ISSxJTWMGyXMgyRcxgMEHeyiDgQEuAgANwxSM"*)(*]VB*)}(*||*),(*||*){(*VB[*)(RGBColor[1, 0.25, 0.])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeGJAIcndyzs/JLwouTyxJzghJzS3ISSxJTWMGyXMgyRcxgMEHeyjjAozBwAAAFwoUbA=="*)(*]VB*)(*|*),(*|*)(*VB[*)(RGBColor[1, 0.25, 0.25])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeGJAIcndyzs/JLwouTyxJzghJzS3ISSxJTWMGyXMgyRcxgMEHeyjjAoIBABjpFXs="*)(*]VB*)(*|*),(*|*)(*VB[*)(RGBColor[1, 0.25, 0.5])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeGJAIcndyzs/JLwouTyxJzghJzS3ISSxJTWMGyXMgyRcxgMEHeyjjAozxwB4AGQkViw=="*)(*]VB*)(*|*),(*|*)(*VB[*)(RGBColor[1, 0.25, 0.75])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeGJAIcndyzs/JLwouTyxJzghJzS3ISSxJTWMGyXMgyRcxgMEHeyjjAozxwh4AGRkVkw=="*)(*]VB*)(*|*),(*|*)(*VB[*)(RGBColor[1, 0.25, 1.])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeGJAIcndyzs/JLwouTyxJzghJzS3ISSxJTWMGyXMgyRcxgMEHeyjjgj1cBAAZKRWb"*)(*]VB*)}(*||*),(*||*){(*VB[*)(RGBColor[1, 0.5, 0.])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeGJAIcndyzs/JLwouTyxJzghJzS3ISSxJTWMGyXMgyRcxgMEHeyjjAYzBwAAAF7oUfA=="*)(*]VB*)(*|*),(*|*)(*VB[*)(RGBColor[1, 0.5, 0.25])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeGJAIcndyzs/JLwouTyxJzghJzS3ISSxJTWMGyXMgyRcxgMEHeyjjAYxxwR4AGZkViw=="*)(*]VB*)(*|*),(*|*)(*VB[*)(RGBColor[1, 0.5, 0.5])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeGJAIcndyzs/JLwouTyxJzghJzS3ISSxJTWMGyXMgyRcxgMEHeyjjAYIBABm5FZs="*)(*]VB*)(*|*),(*|*)(*VB[*)(RGBColor[1, 0.5, 0.75])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeGJAIcndyzs/JLwouTyxJzghJzS3ISSxJTWMGyXMgyRcxgMEHeyjjAYzxwh4AGckVow=="*)(*]VB*)(*|*),(*|*)(*VB[*)(RGBColor[1, 0.5, 1.])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeGJAIcndyzs/JLwouTyxJzghJzS3ISSxJTWMGyXMgyRcxgMEHeyjjgT1cBAAZ2RWr"*)(*]VB*)}(*||*),(*||*){(*VB[*)(RGBColor[1, 0.75, 0.])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeGJAIcndyzs/JLwouTyxJzghJzS3ISSxJTWMGyXMgyRcxgMEHeyjjBYzBwAAAGBIUhA=="*)(*]VB*)(*|*),(*|*)(*VB[*)(RGBColor[1, 0.75, 0.25])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeGJAIcndyzs/JLwouTyxJzghJzS3ISSxJTWMGyXMgyRcxgMEHeyjjBYxxwR4AGfEVkw=="*)(*]VB*)(*|*),(*|*)(*VB[*)(RGBColor[1, 0.75, 0.5])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeGJAIcndyzs/JLwouTyxJzghJzS3ISSxJTWMGyXMgyRcxgMEHeyjjBYzxwB4AGhEVow=="*)(*]VB*)(*|*),(*|*)(*VB[*)(RGBColor[1, 0.75, 0.75])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeGJAIcndyzs/JLwouTyxJzghJzS3ISSxJTWMGyXMgyRcxgMEHeyjjBYIBABohFas="*)(*]VB*)(*|*),(*|*)(*VB[*)(RGBColor[1, 0.75, 1.])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeGJAIcndyzs/JLwouTyxJzghJzS3ISSxJTWMGyXMgyRcxgMEHeyjjhT1cBAAaMRWz"*)(*]VB*)}(*||*),(*||*){(*VB[*)(RGBColor[1, 1., 0.])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeGJAIcndyzs/JLwouTyxJzghJzS3ISSxJTWMGyXMgyRcxgMEHe3QGAwMAGGoUjA=="*)(*]VB*)(*|*),(*|*)(*VB[*)(RGBColor[1, 1., 0.25])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeGJAIcndyzs/JLwouTyxJzghJzS3ISSxJTWMGyXMgyRcxgMEHe3TGBXsAGkkVmw=="*)(*]VB*)(*|*),(*|*)(*VB[*)(RGBColor[1, 1., 0.5])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeGJAIcndyzs/JLwouTyxJzghJzS3ISSxJTWMGyXMgyRcxgMEHe3TGA3sAGmkVqw=="*)(*]VB*)(*|*),(*|*)(*VB[*)(RGBColor[1, 1., 0.75])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeGJAIcndyzs/JLwouTyxJzghJzS3ISSxJTWMGyXMgyRcxgMEHe3TGC3sAGnkVsw=="*)(*]VB*)(*|*),(*|*)(*VB[*)(RGBColor[1, 1., 1.])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeGJAIcndyzs/JLwouTyxJzghJzS3ISSxJTWMGyXMgyRcxgMEHe0wGABqJFbs="*)(*]VB*)}}(*]GB*))
+`}</wljs-editor>
+</WLJSWrapper>
+
+Syntax sugar also helps represent abstract objects:
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-10 group-hover:opacity-50 transition duration-500" />
+<wljs-editor type="Input" display="codemirror">{`
+NumericArray[{1,2,3,4,5,6}]
+`}</wljs-editor>
+</WLJSWrapper>
+
+<WLJSWrapper>
+<wljs-editor display="codemirror" type="Output"  >{`NumericArray[(*VB[*) {1, 2, 3, 4, 5, 6}, "UnsignedInteger8" (*,*)(*"1:eJydUMtqAkEQ3MQ8JeAtAU/JwR/wEMWbskoEUdhVz45O7zIw0x16Zkn279PjGpKcEnIpuqqarqKf9pQVrSRJfFdgQu8zYrcbMyssQeeVc4prkYuzuNMRmDFhmKLeGg6Vso1xIfBCVh+HJSEU55/ywvjQsIdvCafL8wBua+AtvxJvXb/C6LHZbQtMtQnE0f4Z0rBbgU22SOFAGvJ7Yb1+f4PelAh6jgFK4KFIX02yykJ+EwdQeoW2PqprruD3fnfipcaB3Cf0/215HVsOJs+9QfqXWv4y/ltZDx8C6mio"*)(*]VB*)]`}</wljs-editor>
+</WLJSWrapper>
+
+`NumericArray` provides an efficient packed representation for numerical data, displayed with its type and length.
+
+Even something like `DateObject` is visually formatted:
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-10 group-hover:opacity-50 transition duration-500" />
+<wljs-editor type="Input" display="codemirror">{`
+Now
+`}</wljs-editor>
+</WLJSWrapper>
+
+
+<WLJSWrapper>
+<wljs-editor type="Output" display="codemirror">{`
+(*VB[*)(DateObject[{2024,5,19,12,39,34.05428},"Instant","Gregorian",2.])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwSSxJ9U/KSk0uCUnNLcgB8oKlgMJKwaV5CoaWCr6JlQpGBkYmCoZGVsaWVsYmSgCu/RIR"*)(*]VB*)
+`}</wljs-editor>
+</WLJSWrapper>
+
+also:
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-10 group-hover:opacity-50 transition duration-500" />
+<wljs-editor display="codemirror" type="Input"  >{`Tomorrow - (*VB[*)(DateObject[{2025,12,31,15,42,21.780028\`8.090633417173185},"Instant","Gregorian",1.\`])(*,*)(*"1:eJxTTMoPSmNiYGAo5gUSYZmp5S6pyflFiSX5RcEsQBGXxJLUYCkgQyk8NUXB2FABKK1gZGBkqmBoamViZGVkqAQAHngPbQ=="*)(*]VB*)`}</wljs-editor>
+</WLJSWrapper>
+
+<WLJSWrapper>
+<wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(Quantity[0., "Days"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KWnMIB4vkAjLTC13SU3OL0osyS8K5gCKBJYm5pVkllQWMUBBMEiXS2JlMQBBnA/l"*)(*]VB*)`}</wljs-editor>
+</WLJSWrapper>
+
+
+
+Time series also render visually:
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-10 group-hover:opacity-50 transition duration-500" />
+<wljs-editor type="Input" display="codemirror">{`
+v = {2, 1, 6, 5, 7, 4};
+t = {1, 2, 5, 10, 12, 15};
+
+ts = TimeSeries[v, {t}]
+`}</wljs-editor>
+</WLJSWrapper>
+
+This creates a time series object with automatic plotting and temporal analysis capabilities. You can query properties like `ts["FirstTime"]`, `ts["LastTime"]`, or perform operations like `TimeSeriesResample`.
+
+<WLJSWrapper>
+<wljs-editor display="codemirror" type="Output"  >{`TimeSeries[(*VB[*) TemporalData[TimeSeries, {{{2, 1, 6, 5, 7, 4}}, {{{1, 2, 5, 10, 12, 15}}}, 1, {"Continuous", 1}, {"Discrete", 1}, 1, {ResamplingMethod -> {"Interpolation", InterpolationOrder -> 1}, ValueDimensions -> 1}}, False, 14.3] (*,*)(*"1:eJylUk1LAzEQXT+pohcvgqcteN3D0m9vSrcoLAi71bOTzUQCm6QkWdr++066glKESr08Zt68zLxM0mWmECdRFLk7giezmhmrPh6tBf2JvGyUArsmWhwFzQ3BzBrtM82zFVaNB1ZjeU90NYI+m6QsYVCxpA/VMGEMKRqPxlwMEHuTnjgOTU4Jcun8TrYdEJwUZvmb8PaHvy9fLx7Vu8RleU61uVT4ELfaS4KMS29sKLetQ7dnU/M2uyB4K/IpVoZjGaj0e2jR0KU6IUDgr7peb9m5bXC/laCMvTnQSDiUDv7ixF1RUC5A03uoHMXuOvcavabaFDzECyO1d/9Z3fAgw+4s/CaoHW4A882bpA=="*)(*]VB*)]`}</wljs-editor>
+</WLJSWrapper>
+
+Preview palettes visually:
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-10 group-hover:opacity-50 transition duration-500" />
+<wljs-editor type="Input" display="codemirror">{`
+ColorData[24]
+`}</wljs-editor>
+</WLJSWrapper>
+
+This displays an interactive color palette with a gradient showing all available colors in the scheme. You can use it with `ColorData[24][0.5]` to get specific colors.
+
+<WLJSWrapper>
+<wljs-editor display="codemirror" type="Output"  >{`ColorDataFunction[(*VB[*) 24, "Indexed", {1, 10, 1}, {RGBColor[0.9215686274509803, 0.49411764705882355, 0.43137254901960786], RGBColor[1., 0.7215686274509804, 0.2196078431372549], RGBColor[0.9490196078431372, 0.8627450980392157, 0.43529411764705883], RGBColor[0.6705882352941176, 0.8784313725490196, 0.9372549019607843], RGBColor[0.3176470588235294, 0.6549019607843137, 0.7529411764705882], RGBColor[0.12941176470588237, 0.5176470588235295, 0.6313725490196078], RGBColor[0.09019607843137255, 0.33725490196078434, 0.49411764705882355], RGBColor[0.7058823529411765, 0.49411764705882355, 0.5450980392156862], RGBColor[0.5333333333333333, 0.23529411764705882, 0.3058823529411765], RGBColor[0.8941176470588236, 0.7098039215686275, 0.7490196078431373]}[[Mod[Floor[#1], 10, 1]]] &  (*,*)(*"1:eJylk12TmjAUhu3X9GM608vO9Kp7waUzEoFq74giLoi6RLB41axEliUhGqDqT+u/a9C1daedqdPenJy85yTvE0Kubrm/etZoNIoPMkC+G3DBvppC4DwhMaoYw2Iv5dWTuuedDAPB89LK4zAVZYXpsfBchiGn8SEZ85ysnp7kUVqUf5q9P/N78LkuCQtTskUvZe06j8nu88dj8xsZrDgtuajrjz2Ps9cyBP6oT5Y8JqheBLRftn5FCXpVJwTHk5zuD+pMVOTvMPWyHqdcFP9Do7Yup7n8Q9U+U0xJWZJ/hfsuNQV0FGBCqOhQjgroHoRaCx9pp7v3yeogAwN0Qax2tKbWNoym1jJAE3d0ral2DdDSPhlgiYlsU/T+aVO5U+/MQyZAVdomcXazmceniI2zyDb5IrHQ8Fumu36PWA7cuh0xddvDMWrbJbJa1Sig3j7LxmFiuWxHF/YmiObre87u0ltGGLadZGGgBWaO4DbdYNtnEXOKhYMIMxPIxtCf12DnJHo//HnUS2HTGlZPPLRF83CCs2qzzHU/yqgCYBDcLP0osUKEM1V4MHRv2HqCvzhuBCdobwpapbN8sJnfu8Trs4EdSCQ4iXX9bh7Q1AzMpMdzWNLfQeED6CX/VPFWJmiNc3l7bERWZfGifsaYFuQHLPwHTQ=="*)(*]VB*)]`}</wljs-editor>
+</WLJSWrapper>
+
+Play audio inline:
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-10 group-hover:opacity-50 transition duration-500" />
+<wljs-editor type="Input" display="codemirror">{`
+ListPlay[Table[Sin[2 π 50 t], {t, 0, 1, 1./2000}]]
+`}</wljs-editor>
+</WLJSWrapper>
+
+This creates an audio player that plays a 50 Hz sine wave. The output includes playback controls and a waveform visualization.
+
+<WLJSWrapper>
+<wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(FrontEndRef["5bdc3fd7-0c49-4a1d-89d2-b5ddce0cc8f4"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKmyalJBunpZjrGiSbWOqaJBqm6FpYphjpJpmmpCSnGiQnW6SZAACTvhaV"*)(*]VB*)`}</wljs-editor>
+</WLJSWrapper>
+
+Too much data? Use icons:
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-10 group-hover:opacity-50 transition duration-500" />
+<wljs-editor type="Input" display="codemirror">{`
+Table[i, {i, 100}] // Iconize
+`}</wljs-editor>
+</WLJSWrapper>
+
+<WLJSWrapper>
+<wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(Uncompress["1:eJwV0UVTQgEAhdFnd6LYga1gYXeLgYoY2IGOM2/lAv//yNmc+eZubyz/m/35DoKgUF4kHRb+wpJihKUogz2sQCWqUI0a1KIO9WhAI5rQjBa0IoI2tCOKDnSiC93oQS/60I8BDCKGIQxjBKMYwzgmMIkpxJHANGYwiznMI4kFLGIJy1jBKtawjg1sYgvb2MEu9rCPAxziCMdI4QSnOMM50rjAJa6QwTWyuMEt7nCPHB7wiCc84wWveMM7PvCJPL7g/H+3c0Dg"])(*,*)(*"1:eJxTTMoPSmNmYGAo5gUSYZmp5S6pyflFiSX5RcEcQBHP5Py8zKrUlMwFnAwMaUwghSxAIqg0JzWYFcjwSUxKzQkGCfnl56UCAPKuEqQ="*)(*]VB*)`}</wljs-editor>
+</WLJSWrapper>
+
+These are stored with `zlib` compression and encoded in base64. If the content exceeds a few KB, it gets offloaded and referenced instead.
+
+<Callout>
+These are built-in features. There's no privilege granted to system code that you can't use yourself. You can build your own symbolic objects with syntax sugar and styling.
+</Callout>

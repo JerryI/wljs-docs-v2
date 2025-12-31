@@ -1,4 +1,4 @@
-import { Book,BookIcon, Drum, Rocket, Pyramid, AppWindowMac } from 'lucide-react';
+import { Book,BookIcon, BookA, Drum, Rocket, Pyramid, AppWindowMac } from 'lucide-react';
 
 import Image from 'next/image'
 
