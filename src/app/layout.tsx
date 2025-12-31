@@ -15,7 +15,7 @@ export default function Layout({ children }: LayoutProps<'/'>) {
       <body className="flex flex-col min-h-screen">
         <RootProvider>{children}</RootProvider>
         <Script
-          src="https://cdn.jsdelivr.net/gh/WLJSTeam/web-components@main/src/common/app.tw.js"
+          src="https://cdn.jsdelivr.net/gh/WLJSTeam/web-components@latest/src/common/app.tw.js"
           strategy="lazyOnload"
           id="wljs-component"
         />

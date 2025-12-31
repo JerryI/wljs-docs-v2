@@ -36,7 +36,8 @@ export function baseOptions(): BaseLayoutProps {
             <NavbarMenu>
               <NavbarMenuTrigger>Documentation</NavbarMenuTrigger>
               <NavbarMenuContent>
-                <NavbarMenuLink href="/docs">Hello World</NavbarMenuLink>
+                <NavbarMenuLink href="/frontend/Overview">Overview</NavbarMenuLink>
+                <NavbarMenuLink href="/frontend/Wolfram-Language">Wolfram Language</NavbarMenuLink>
               </NavbarMenuContent>
             </NavbarMenu>
           ),
