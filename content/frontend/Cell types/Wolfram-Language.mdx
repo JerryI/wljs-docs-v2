@@ -1,0 +1,42 @@
+---
+title: Wolfram Language
+---
+
+An input cell is a multi-tool. By default, it assumes Wolfram Language as input if no other patterns are found in the first line:
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-5 group-hover:opacity-50 transition duration-500" />
+<wljs-editor type="Input" display="codemirror">{`1+1`}</wljs-editor>
+</WLJSWrapper>
+
+<WLJSWrapper>
+<wljs-editor type="Output" display="codemirror">{`2`}</wljs-editor>
+</WLJSWrapper>
+
+
+<Callout type="idea">
+Read our fast-track introduction on Wolfram Language at [that page](./../Wolfram-Language.mdx)
+</Callout>
+
+<Callout>
+If an output is too large, it may be truncated or converted into a temporary symbol to reduce editor load. This can be adjusted in the editor's settings.
+</Callout>
+
+## Morph Output Cell into Input
+If you modify a Wolfram Language __output cell__, it will automatically be converted into a new __input cell__.
+
+## Auto-upload Files
+Drag and drop files into the editor or paste media from the clipboard
+
+## Syntax Highlighting & Symbol Tracking
+Wolfram Language autocomplete and highlighting can be extended using external packages.
+
+Once a symbol is defined in the `Global`` context of a Wolfram Kernel session, it appears in the autocomplete window and is shared across open notebooks.
+
+At startup, the Wolfram Kernel loads all imported packages, reads `::usage` directives for defined symbols.
+
+### Autocomplete for loaded packages
+You can enable in the editor's settings to periodically check for new loaded packages (not user-defined symbols) info upon `Get` or `Needs` commands.
+
+## Access to Documentation
+Click the 🔎 icon in the autocomplete window to open the documentation for a symbol in a new tab.

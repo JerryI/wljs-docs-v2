@@ -1,0 +1,14 @@
+{
+  "title": "Cell types",
+  "icon": "BetweenVerticalEnd",
+  "pages": [
+    "Wolfram-Language",
+    "Javascript",    
+    "Markdown",
+    "Slide",
+    "Misc",
+    "HTML",
+    "ESM",
+    "WLX"
+  ]
+}
