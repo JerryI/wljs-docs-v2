@@ -202,8 +202,8 @@ const animationsArray = [
 
 function loadAssets() : Promise<HTMLElement> {
   const store = document.createElement('wljs-store');
-  store.setAttribute('kernel', 'home/kernel.txt');
-  store.setAttribute('json', 'home/storage.txt');
+  store.setAttribute('kernel', '/home/kernel.txt');
+  store.setAttribute('json', '/home/storage.txt');
   document.body.appendChild(store);
   console.log('started loading assets...');
   const p = new Promise<HTMLElement>((resolve)=>{
@@ -444,6 +444,8 @@ export default function HomePage() {
             href="/docs"
           />
 
+          {/* ![TODO] */}
+
           <Card 
             icon={<Package />}
             title="Batteries included"
@@ -479,7 +481,7 @@ export default function HomePage() {
               </a>
             </div>
             <div className="flex-shrink-0">
-              <img height="50" width="50" src="sign.png"/>
+              <img height="50" width="50" src="/sign.png"/>
             </div>
           </div>
         </div>

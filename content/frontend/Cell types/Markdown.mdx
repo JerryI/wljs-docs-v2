@@ -2,4 +2,320 @@
 title: Markdown
 ---
 
-Markdown
+Type `.md` in the first line of an input cell and start writing Markdown on a new line:
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<wljs-editor type="Input" display="codemirror">{`.md
+# Notebook Title
+Here are my beautiful notes
+`}</wljs-editor>
+</WLJSWrapper>
+
+<WLJSWrapper>
+
+<h2 style={{fontSize:'larger'}}>Notebook Title</h2>
+
+Here are my beautiful notes
+
+</WLJSWrapper>
+
+
+Markdown is the main language for textual (narrative) cells in WLJS Notebook.
+
+<Callout info="idea">
+Hide input cells using __cell group properties__ - see [Overview](./../Overview.mdx)
+</Callout>
+
+## Markdown Syntax
+
+### Headings
+Use `#` for headings, increasing the number of `#` for smaller headings:
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<wljs-editor type="Input" display="codemirror">{`.md
+# Heading 1
+## Heading 2
+### Heading 3
+`}</wljs-editor>
+</WLJSWrapper>
+
+### Emphasis
+Use `*` or `_` for italics, and `**` or `__` for bold:
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<wljs-editor type="Input" display="codemirror">{`.md
+*italic* or _italic_
+**bold** or __bold__
+`}</wljs-editor>
+</WLJSWrapper>
+
+### Lists
+Create unordered lists with `*`, `+`, or `-`, and ordered lists with numbers followed by a period:
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<wljs-editor type="Input" display="codemirror">{`.md
+- Item 1
+- Item 2
+  - Subitem 1
+
+1. First item
+2. Second item
+   3. Subitem 1
+`}</wljs-editor>
+</WLJSWrapper>
+
+### Links
+Create links using `[text](URL)`:
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<wljs-editor type="Input" display="codemirror">{`.md
+[Tree](https://en.wikipedia.org/wiki/Tree)
+`}</wljs-editor>
+</WLJSWrapper>
+
+### Images
+Embed images using `![alt text](URL)`:
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<wljs-editor type="Input" display="codemirror">{`.md
+![Tree](https://upload.wikimedia.org/wikipedia/commons/e/eb/Ash_Tree_-_geograph.org.uk_-_590710.jpg)
+`}</wljs-editor>
+</WLJSWrapper>
+
+<Callout>
+Files can be remote or local (in the notebook folder). __Try dragging and dropping any image into a markdown cell.__
+</Callout>
+
+### Drawing board (Canvas)
+We use the amazing [Excalidraw](https://excalidraw.com/) editor for complex drawings, right inside a markdown input cell. Try typing:
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<wljs-editor type="Input" display="codemirror">{`.md
+
+!![]
+`}</wljs-editor>
+</WLJSWrapper>
+
+A corresponding SVG image will be generated in the output cell.
+
+<Callout>
+You can drag and drop images 🏞️ on the canvas. It will be uploaded and stored in the notebook
+</Callout>
+
+<Callout info="idea">
+If you want to copy the canvas as PNG or SVG - use __context menu__ of the canvas
+</Callout>
+
+### Blockquotes
+Create blockquotes using `>`:
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<wljs-editor type="Input" display="codemirror">{`.md
+> This is a blockquote.
+`}</wljs-editor>
+</WLJSWrapper>
+
+### Code
+Use backticks for inline code and triple backticks for code blocks:
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<wljs-editor type="Input" display="codemirror">{`.md
+
+\`inline code\`
+
+\`\`\`
+code block
+\`\`\`
+`}</wljs-editor>
+</WLJSWrapper>
+
+### Horizontal Rule
+Create a horizontal rule with three or more dashes, asterisks, or underscores:
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<wljs-editor type="Input" display="codemirror">{`.md
+---
+***
+___
+`}</wljs-editor>
+</WLJSWrapper>
+
+### Tables
+Create tables using pipes `|` and dashes `-`:
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<wljs-editor type="Input" display="codemirror">{`.md
+| Header 1 | Header 2 |
+|----------|----------|
+| Cell 1   | Cell 2   |
+| Cell 3   | Cell 4   |
+`}</wljs-editor>
+</WLJSWrapper>
+
+### Highlighter
+Use `==` to highlight text:
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<wljs-editor type="Input" display="codemirror">{`.md
+Here is ==my hello world==
+`}</wljs-editor>
+</WLJSWrapper>
+
+### Admonitions
+Use the following syntax:
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<wljs-editor type="Input" display="codemirror">{`.md
+:::tip
+Use admonitions!
+:::
+`}</wljs-editor>
+</WLJSWrapper>
+
+The following types have special highlighting: `tip`, `info`, `warning`, `danger`, and `todo`. Unknown types will be treated as `info`.
+
+You can also define your own custom type:
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<wljs-editor type="Input" display="codemirror">{`.html
+
+<style>
+.admonition.yourtype {
+  background-color: pink;
+}
+</style>
+`}</wljs-editor>
+</WLJSWrapper>
+
+#### TODO Lists
+The `todo` tag adds a live button-counter at the top of the page, serving as a reminder.
+
+
+### Bookmarks
+You can place a bookmark on the page using:
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<wljs-editor type="Input" display="codemirror">{`.md
+@bookmark
+`}</wljs-editor>
+</WLJSWrapper>
+
+It will appear as an icon at the top. Clicking it will scroll to the bookmarked content.
+
+### Page breaks
+For printing exported PDF or [Static HTML](frontend/Exporting/Static%20HTML.md) it comes handy to control page breaks manually. Use:
+- `PageBreakAbove`
+- `PageBreakBelow`
+
+For example
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<wljs-editor type="Input" display="codemirror">{`.md
+
+Here it breaks in two
+
+<PageBreakBelow/>
+
+`}</wljs-editor>
+</WLJSWrapper>
+
+## HTML Tags
+You can use __plain HTML__, styles, scripts to stylize markdown or embed media objects as usual
+
+## LaTeX
+We use KaTeX as the render engine. To write an equation, wrap it inside `$` for inline or `$$` for a block:
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<wljs-editor type="Input" display="codemirror">{`.md
+$$
+E = \\\\hbar \\\\omega
+$$
+`}</wljs-editor>
+</WLJSWrapper>
+
+
+<Callout>
+
+If you don't want to escape Markdown commands in your LaTeX code, please, consider to use [LaTeX](./Misc.mdx) cell type
+
+</Callout>
+
+### Backslashes
+To have full compatibility with Markdown syntax you have to escape all backslashes. For example, write `\\alpha` instead of `\alpha`.
+
+### Trailing underscores
+To avoid misinterpretation for `__` markdown command, you need to escape such cases. For example, instead of __this__
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<wljs-editor type="Input" display="codemirror">{`.md
+$$
+\\hat{\\alpha}_{x} - \\hat{\\beta}_{}
+$$
+`}</wljs-editor>
+</WLJSWrapper>
+
+try to write this
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<wljs-editor type="Input" display="codemirror">{`.md
+$$
+\\\\hat{\\\\alpha}\\_{x} - \\\\hat{\\\\beta}\\_{}
+$$
+`}</wljs-editor>
+</WLJSWrapper>
+
+
+See [here](https://katex.org/docs/supported.html) for all supported LaTeX functions.
+
+## WLX
+Markdown cells support many features of [WLX](./WLX.mdx) cells
+
+### Embed Figures
+For example, if you create a 3D plot:
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<wljs-editor type="Input" display="codemirror">{`
+Figure = Plot3D[Sin[x] Cos[y], {x, -5, 5}, {y, -5, 5}];
+`}</wljs-editor>
+</WLJSWrapper>
+
+<Callout type="warning">
+Make sure the first letter in a symbol name is capitalized. This is required by WLX syntax.
+</Callout>
+
+Then you can embed it into a markdown cell using a custom tag:
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<wljs-editor type="Input" display="codemirror">{`.md
+Hello there! Here is my plot
+
+<br/>
+
+<Figure/>
+`}</wljs-editor>
+</WLJSWrapper>
+
+## Autoupload
+Drag and drop files into the editor or paste media from the clipboard
+

@@ -28,20 +28,13 @@ export function baseOptions(): BaseLayoutProps {
       ),
     },
     links: [
-                  {
-          type: 'custom',
-          // only displayed on navbar, not mobile menu
-          on: 'nav',
-          children: (
-            <NavbarMenu>
-              <NavbarMenuTrigger>Documentation</NavbarMenuTrigger>
-              <NavbarMenuContent>
-                <NavbarMenuLink href="/frontend/Overview">Overview</NavbarMenuLink>
-                <NavbarMenuLink href="/frontend/Wolfram-Language">Wolfram Language</NavbarMenuLink>
-              </NavbarMenuContent>
-            </NavbarMenu>
-          ),
-        },
+      {
+        icon: <BookIcon />,
+        text: 'Documentation',
+        url: '/frontend/setup',
+        // secondary items will be displayed differently on navbar
+        secondary: false,
+      },
       {
         icon: <BookIcon />,
         text: 'Blog',

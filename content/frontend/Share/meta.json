@@ -1,0 +1,16 @@
+{
+  "title": "Sharing",
+  "icon": "Share2",
+  "pages": [
+    "Deploy-to-Github-Pages",
+    "Embed-Notebook-Files",
+    "Standalone-HTML",
+    "Embeddable-HTML",
+    "Markdown",
+    "Markdown-React",
+    "Mathematica",
+    "Mini-apps",
+    "Slides",
+    "PDF"
+  ]
+}

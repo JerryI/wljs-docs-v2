@@ -19,9 +19,14 @@
   --color-fd-primary-foreground: hsl(0, 0%, 9%);
   --color-fd-ring: hsl(24, 100%, 54%);
 
-  wljs-editor > div {
+  wljs-editor:not(.slide) > div {
     filter: invert(1) hue-rotate(180Deg);
     color:black;
+  }
+
+  wljs-editor.slide {
+    filter: invert(1) hue-rotate(180Deg);
+    color:black;    
   }
 
   .invertColor {

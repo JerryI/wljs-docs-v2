@@ -2,4 +2,519 @@
 title: Slide
 ---
 
-Slide
+import { Accordion, Accordions } from 'fumadocs-ui/components/accordion';
+
+
+Type `.slide` in the first line of an input cell and start writing Markdown slide on a new line:
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<wljs-editor type="Input" display="codemirror">{`.slide
+# Presentation Title
+
+You can also create presentations using the WLJS Notebook.
+
+`}</wljs-editor>
+</WLJSWrapper>
+
+<WLJSWrapper>
+<wljs-editor type="Input" style={{fontFamily: 'system-ui', borderRadius: '0.25rem'}} display="slide">{`
+# Presentation Title
+
+You can also create presentations using the WLJS Notebook.
+
+`}</wljs-editor>
+</WLJSWrapper>
+
+<Accordions>
+<Accordion title="Demonstration">
+{/* ![TODO] */}
+</Accordion>
+</Accordions>
+
+Slide cells provide all features of [Markdown cells](./Markdown.mdx), event listeners for slide events, fragments animations and option to export all slides as PDF.
+
+<Callout>
+To __enter fullscreen__ mode, press the `f` key after focusing (click) on a slide.
+</Callout>
+
+<Callout>
+To enable __virtual pointer__, press the `q` key after focusing (click) on a slide.
+</Callout>
+
+<Callout type="idea">
+Use __project__ feature of cell properties to show slides in a separate window. Note, that slide cell will also be evaluated within a context of a new window
+</Callout>
+
+<Cards>
+  <Card
+    href="https://nextjs.org/docs/app/building-your-application/data-fetching/fetching-caching-and-revalidating"
+    title="Data-driven slides"
+  >
+    Advanced guide on making interactive component-based presentations
+
+    {/* ![TODO] */}
+  </Card>
+</Cards>
+
+## Basics
+
+### Creating Individual Slides
+
+Each `.slide` cell creates a single presentation slide. You can write multiple slides across different cells in your notebook:
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<wljs-editor type="Input" display="codemirror">{`.slide
+# First Slide
+Content for the first slide
+`}</wljs-editor>
+</WLJSWrapper>
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<wljs-editor type="Input" display="codemirror">{`.slide
+# Second Slide
+Content for the second slide
+`}</wljs-editor>
+</WLJSWrapper>
+
+### Separating Slides Within a Cell
+
+Within a single `.slide` cell, you can create multiple slides by separating them with `---`:
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<wljs-editor type="Input" display="codemirror">{`.slide
+# First Slide
+This is the first slide
+
+---
+
+# Second Slide
+This is the second slide
+
+---
+
+# Third Slide
+This is the third slide
+`}</wljs-editor>
+</WLJSWrapper>
+
+### Merging All Slides
+
+To combine all slides from different cells across your notebook into a single presentation, use the plural form:
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<wljs-editor type="Input" display="codemirror">{`.slides
+
+Thank you for the attention
+`}</wljs-editor>
+</WLJSWrapper>
+
+This will merge and render all slide cells in the notebook as one continuous presentation, allowing you to navigate through all slides sequentially.
+
+## Layout
+Standard text to the left, full height layout:
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<wljs-editor type="Input" display="codemirror">{`.slide
+
+<!-- .slide: class="slide-standard" -->
+
+# Title
+
+Content
+`}</wljs-editor>
+</WLJSWrapper>
+
+Scrollable slide 
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<wljs-editor type="Input" display="codemirror">{`.slide
+
+<!-- .slide: class="slide-standard-scroll" -->
+
+## Title
+
+<br/><br/><br/>
+...large content goes
+<br/><br/><br/>
+...large content goes
+<br/><br/><br/>
+...large content goes
+<br/><br/><br/>
+
+<br/><br/><br/>
+...large content goes
+
+<br/><br/><br/>
+...large content goes
+<br/><br/><br/>
+...large content goes
+<br/><br/><br/>
+`}</wljs-editor>
+</WLJSWrapper>
+
+## Fragments
+
+Fragments allow you to reveal content incrementally on a slide. Use the `<!-- .element: class="fragment" -->` comment syntax to make elements appear one at a time when you advance the presentation:
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<wljs-editor type="Input" display="codemirror">{`.slide
+# Incremental Content
+
+This appears first
+<!-- .element: class="fragment" -->
+
+This appears second
+<!-- .element: class="fragment" -->
+
+This appears third
+<!-- .element: class="fragment" -->
+`}</wljs-editor>
+</WLJSWrapper>
+
+### Fragment Animations
+
+You can customize how fragments appear using different animation classes:
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<wljs-editor type="Input" display="codemirror">{`.slide
+# Fragment Animations
+
+Fade in
+<!-- .element: class="fragment fade-in" -->
+
+Fade out
+<!-- .element: class="fragment fade-out" -->
+
+Slide up while fading in
+<!-- .element: class="fragment fade-up" -->
+
+Slide down while fading in
+<!-- .element: class="fragment fade-down" -->
+
+Slide left while fading in
+<!-- .element: class="fragment fade-left" -->
+
+Slide right while fading in
+<!-- .element: class="fragment fade-right" -->
+
+Fades in, then out on next step
+<!-- .element: class="fragment fade-in-then-out" -->
+
+Fades in, then semi-out
+<!-- .element: class="fragment fade-in-then-semi-out" -->
+
+Highlight red
+<!-- .element: class="fragment highlight-red" -->
+
+Highlight green
+<!-- .element: class="fragment highlight-green" -->
+
+Highlight blue
+<!-- .element: class="fragment highlight-blue" -->
+
+Grow
+<!-- .element: class="fragment grow" -->
+
+Shrink
+<!-- .element: class="fragment shrink" -->
+`}</wljs-editor>
+</WLJSWrapper>
+
+### Fragment Order
+
+Control the order in which fragments appear using the `data-fragment-index` attribute:
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<wljs-editor type="Input" display="codemirror">{`.slide
+# Custom Fragment Order
+
+Appears third
+<!-- .element: class="fragment" data-fragment-index="3" -->
+
+Appears first
+<!-- .element: class="fragment" data-fragment-index="1" -->
+
+Appears second
+<!-- .element: class="fragment" data-fragment-index="2" -->
+`}</wljs-editor>
+</WLJSWrapper>
+
+
+## Backgrounds
+
+### Background Colors
+
+Add background colors to individual slides using HTML attributes:
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<wljs-editor type="Input" display="codemirror">{`.slide
+
+<!-- .slide: data-background-color="#ff0000" -->
+
+# Red Background
+
+This slide has a red background
+`}</wljs-editor>
+</WLJSWrapper>
+
+### Background Images
+
+Set background images for more visual presentations:
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<wljs-editor type="Input" display="codemirror">{`.slide
+
+<!-- .slide: data-background-image="https://example.com/image.jpg" -->
+
+# Image Background
+
+Content over the background image
+`}</wljs-editor>
+</WLJSWrapper>
+
+### Background Options
+
+Customize background behavior with additional attributes:
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<wljs-editor type="Input" display="codemirror">{`.slide
+
+<!-- .slide: data-background-image="image.jpg" data-background-size="cover" data-background-position="center" data-background-opacity="0.5" -->
+
+# Custom Background
+
+- \`data-background-size\`: \`cover\`, \`contain\`, or specific size
+- \`data-background-position\`: Position of the image
+- \`data-background-opacity\`: Opacity from 0 to 1
+`}</wljs-editor>
+</WLJSWrapper>
+
+## Transitions
+
+### Slide Transitions
+
+Control how slides transition using the `data-transition` attribute:
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<wljs-editor type="Input" display="codemirror">{`.slide
+
+<!-- .slide: data-transition="zoom" -->
+
+# Zoom Transition
+
+Available transitions: \`none\`, \`fade\`, \`slide\`, \`convex\`, \`concave\`, \`zoom\`
+`}</wljs-editor>
+</WLJSWrapper>
+
+
+## Plain HTML Support
+
+Slide cells support plain HTML mixed with [Markdown syntax](./Markdown.mdx) and [WLX](./WLX.mdx). This allows you to embed rich content like websites, videos. For example:
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<wljs-editor type="Input" display="codemirror">{`.slide
+
+<iframe
+  style="margin-left:auto; margin-right:auto; border-radius: 10px"
+  width="600"
+  height="500"
+  src="https://wljs.io/">
+</iframe>
+`}</wljs-editor>
+</WLJSWrapper>
+
+## WLX Integration (Data-driven Slides)
+Slide cells integrate features from the [WLX](./WLX.md) cell type, similar to [Markdown](./Markdown.md) cells. This enables dynamic, interactive content within your presentations:
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<wljs-editor type="Input" display="codemirror">{`.slide
+
+Today is <Now/>
+
+`}</wljs-editor>
+</WLJSWrapper>
+
+or embed the whole interactive plot
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<wljs-editor type="Input" display="codemirror">{`
+pts = RandomReal[10, {100, 2}];
+MyFigure = ListLinePlot[pts[[Last@FindShortestTour[pts]]], Epilog->{Point[pts]}, ImageSize->500]
+`}</wljs-editor>
+</WLJSWrapper>
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<wljs-editor type="Input" display="codemirror">{`.slide
+
+Compute and plot the shortest tour through 100 random points:
+
+<MyFigure/>
+
+`}</wljs-editor>
+</WLJSWrapper>
+
+
+## LaTeX Support
+
+Slides use KaTeX as the rendering engine for mathematical equations. Wrap inline equations in single `$` symbols, or use `$$` for block equations:
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<wljs-editor type="Input" display="codemirror">{`.slide
+# Mathematical Equations
+
+Inline equation: $E = mc^2$
+
+Block equation:
+$$
+E = \\\\hbar \\\\omega
+$$
+`}</wljs-editor>
+</WLJSWrapper>
+
+### Animated equations
+
+> This particular technique was developed by [Cian Luke Martin](https://www.cianlm.dev/), which is basically a post-processing engine for SVGs generated from LaTeX equations
+
+There is an option to create Manim-like animated equations:
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<wljs-editor type="Input" display="codemirror">{`.slide
+
+## Animated LaTeX
+
+$$
+\\\\begin{align*}
+\\\\mathbf{E}(t,x) &= \\\\sum_{\\\\omega} \\\\mathbf{E}_0^{\\\\omega} ~ exp\\\\Big( i\\\\omega t - \\\\frac{i\\\\hat{n}(\\\\omega) \\\\omega x}{c}\\\\Big) \\\\\\\\ &= \\\\sum\\\\mathbf{E}_0^{\\\\omega} \\\\colorbox{white}{$exp(-\\\\frac{\\\\alpha x}{2})$} ~exp\\\\Big(i\\\\omega t - \\\\frac{i n \\\\omega x}{c}\\\\Big)
+\\\\end{align*}
+$$ <!-- .element: data-eq-speed="0.1" -->
+`}</wljs-editor>
+</WLJSWrapper>
+
+See additional features:
+
+<Accordions>
+<Accordion title="Options">
+
+### Animation Speed (`data-eq-speed`)
+The increment of time (in seconds) between each stroke
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<wljs-editor type="Input" display="codemirror">{`
+
+## Animated LaTeX
+
+$$
+m a = F
+$$ <!-- .element: data-eq-speed="0.7" -->
+
+$$
+m a = F
+$$ <!-- .element: data-eq-speed="0.1" -->
+`}</wljs-editor>
+</WLJSWrapper>
+
+### Color/Color Gradient (`data-eq-gradient`)
+Any number of colors n≥1 is accepted (as well as rgb/hex values)
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<wljs-editor type="Input" display="codemirror">{`
+
+## Animated LaTeX
+
+$$
+m a = F
+$$ <!-- .element: data-eq-gradient="['red', 'gold']" -->
+`}</wljs-editor>
+</WLJSWrapper>
+
+### Color Precession (`data-eq-color-precess`)
+The gradient precesses in a loop
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<wljs-editor type="Input" display="codemirror">{`
+
+## Animated LaTeX
+
+$$
+m a = F
+$$ <!-- .element: data-eq-gradient="['red', 'gold']" data-eq-color-precess="true" -->
+`}</wljs-editor>
+</WLJSWrapper>
+
+### Bypass the animation (`data-eq-static`)
+It is used to skip animation, but still use Mathjax for rendering instead of standard KaTeX. It can be used for unifying the look of all equation.
+
+
+## Fragments
+One can also combine it with [Fragments](##Fragments) in the usual way. The only condition is `fragment` class has to be at the same `.element` selector as options for animating
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<wljs-editor type="Input" display="codemirror">{`
+
+## Animated LaTeX
+
+$$
+m a = m g
+$$ <!-- .element: class="fragment" data-eq-speed="0.3" -->
+
+$$
+m a = m g + F_{ext}
+$$ <!-- .element: class="fragment" data-eq-speed="0.3" -->
+`}</wljs-editor>
+</WLJSWrapper>
+
+</Accordion>
+</Accordions>
+
+### Backslashes
+
+For full compatibility with Markdown syntax, escape all backslashes in LaTeX commands. Write `\\alpha` instead of `\alpha`.
+
+<Callout>
+See [Markdown cells](./Markdown.md) for more information
+</Callout>
+
+
+## Drawings
+
+Slides integrate the [Excalidraw](https://excalidraw.com/) editor for creating drawings directly within your presentations. To create a drawing, type: `!![]`
+
+This opens the Excalidraw editor, and the resulting drawing is saved as an SVG image in the output cell.
+
+## Export Options (Share)
+
+You can export slides in multiple formats:
+
+- Export notebook as a standalone HTML file
+- Export only slides as a PDF file
+
+## Auto-upload Images
+
+Slides support automatic image uploading:
+
+- **Drop a file**: Drag and drop image files directly onto your slide
+- **Paste a media file**: Copy an image and paste it directly into the slide editor

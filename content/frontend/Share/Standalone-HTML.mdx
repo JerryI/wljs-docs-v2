@@ -1,0 +1,39 @@
+---
+title: HTML File
+---
+
+> A user does not need any app installed to view a WLJS notebook
+
+import { Share2, CircleQuestionMark } from 'lucide-react';
+
+
+Call <small>Share</small> from the top-menu or click on <span className='inline-flex' ><Share2 style={{height:"1rem"}}/></span> icon and choose <small>HTML File</small>.
+
+<Callout>No internet connection is required</Callout>
+
+<Card>
+
+## Use cases
+- Share a notebook with a colleague (no WLJS app required)
+- Share your work on the internet
+- Lecture notes & offline presentations
+- Make a report on data analysis, experiment
+- Documentation 
+- Cross-platform personal notes
+
+</Card>
+
+Local images can be embedded automatically, `NotebookStore[]` is preserved as well as [embedded files](./Embed-Notebook-Files.mdx). You can open the HTML file locally or [post it as a webpage](./Deploy-to-Github-Pages.mdx).
+
+import { Accordion, Accordions } from 'fumadocs-ui/components/accordion';
+
+
+<Accordions>
+<Accordion title="Example of posted notebook">
+<iframe className='rounded' src="/Spiral.html" width="100%" height="500px"></iframe>
+</Accordion>
+</Accordions>
+
+## Importing
+The original cell metadata is preserved, __allowing an HTML notebook to be converted back to a normal WLJS notebook__ format upon opening or using deep-links - click on the <span className='inline-flex' ><CircleQuestionMark style={{height:"1rem"}}/></span> icon.
+

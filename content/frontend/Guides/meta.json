@@ -1,0 +1,8 @@
+{
+  "title": "Guides",
+  "icon": "Book",
+  "pages": [
+    "Command-palette",
+    "Dynamic"
+  ]
+}

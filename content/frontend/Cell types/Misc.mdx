@@ -2,4 +2,83 @@
 title: Misc
 ---
 
-MISC
+## Image Preview
+You can drop any image available in the folder of your notebook and type its filename in a new cell.
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<wljs-editor type="Input" display="codemirror">{`randompic.png`}</wljs-editor>
+</WLJSWrapper>
+
+
+## Reading and Writing Files
+In principle, you can __print the contents of any file__ located in the notebook's folder by typing its name without line breaks.
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<wljs-editor type="Input" display="codemirror">{`filename.txt`}</wljs-editor>
+</WLJSWrapper>
+
+For writing, the process is the same, but the actual content goes on the next line:
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<wljs-editor type="Input" display="codemirror">{`filename.txt
+Hello World`}</wljs-editor>
+</WLJSWrapper>
+
+
+## Shell
+
+You can type commands directly into your system shell. The `PATH` is automatically imported from your terminal, and the working directory is set to [NotebookDirectory](frontend/Reference/Cells%20and%20Notebook/NotebookDirectory.md).
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<wljs-editor type="Input" display="codemirror">{`.sh
+ls
+`}</wljs-editor>
+</WLJSWrapper>
+
+<Callout>Use global shortkey <kbd>Alt+.</kbd> to interrupt the running process</Callout>
+
+## LaTeX
+There is a dedicated cell type solely to render LaTeX equations. You can still do it using [Markdown](./Markdown.md), but if for some reason you have troubles mixing MD and TeX, here you go
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<wljs-editor type="Input" display="codemirror">{`.latex
+
+\\alpha^2 + \\beta^2
+`}</wljs-editor>
+</WLJSWrapper>
+
+This also does not require escaping TeX code with double slashes unlike other cell types.
+
+
+## Mermaid
+
+Draw beautiful diagrams using code:
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<wljs-editor type="Input" display="codemirror">{`.mermaid
+pie title NETFLIX
+         "Time spent looking for movie" : 90
+         "Time spent watching it" : 10
+`}</wljs-editor>
+</WLJSWrapper>
+
+You can also apply custom styling:
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<wljs-editor type="Input" display="codemirror">{`.mermaid
+
+%%{init: { 'theme': 'base', 'themeVariables': { 'primaryColor': '#ffcc00', 'edgeLabelBackground':'#ffffff', 'tertiaryColor': '#F0F0F0'}}}%%
+graph TD;
+    A-->B;
+    A-->C;
+    B-->D;
+    C-->D;
+`}</wljs-editor>
+</WLJSWrapper>

@@ -1,0 +1,21 @@
+---
+title: Embed Notebook Files
+---
+
+This feature allows you to embed some files or folders into the notebook and create a self-extracting notebook.
+
+Call <small>Embed files</small> from the top-level menu:
+
+<div className='relative group'>
+<div className="absolute -inset-0.5 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur blur-3xl opacity-5 group-hover:opacity-10 transition duration-500" />
+
+![Embed](./imgs/embed-feature.png)
+
+</div>
+
+
+<Callout>
+This does not export anything to a new file — it modifies your current notebook by embedding the binary compressed data. Don't forget to save the notebook afterward.
+</Callout>
+
+Upon the next fresh launch, the data is automatically unpacked and the archive is removed from the notebook.

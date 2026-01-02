@@ -1,6 +1,6 @@
 import { DocsLayout } from 'fumadocs-ui/layouts/docs';
 import { baseOptions } from '@/lib/layout.shared';
-import { Book, BetweenVerticalEnd, CircleQuestionMark, Drum, Rocket, Pyramid, AppWindowMac } from 'lucide-react';
+import { Book, Share2, BetweenVerticalEnd, CircleQuestionMark, Drum, Rocket, Pyramid, AppWindowMac } from 'lucide-react';
 
 
 import { source } from '@/lib/source';
