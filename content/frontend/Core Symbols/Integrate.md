@@ -1,16 +1,23 @@
 # Integrate
 
+`Integrate[f, x]` gives the indefinite integral.
+
+`Integrate[f, {x, xmin, xmax}]` gives the definite integral.
+
+## Examples
+
+Indefinite integral:
+
+```wolfram
+Integrate[x^2, x]
+(* x^3/3 *)
 ```
-Integrate[f,x] gives the indefinite integral ∫f dx. 
 
-Integrate[f,{x,xmin,xmax}] gives the definite integral ∫xminxmax f dx. 
+Definite integral:
 
-Integrate[f,{x,xmin,xmax},{y,ymin,ymax},…] gives the multiple integral ∫xminxmaxdx∫yminymaxdy … f. 
-
-Integrate[f,{x,y,…}∈reg] integrates over the geometric region reg.
+```wolfram
+Integrate[Sin[x], {x, 0, Pi}]
+(* 2 *)
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Integrate.html) for more details.*

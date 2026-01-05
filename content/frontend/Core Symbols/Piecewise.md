@@ -1,12 +1,20 @@
 # Piecewise
 
+`Piecewise[{{val1, cond1}, {val2, cond2}, ...}]` represents a piecewise function with values in regions defined by conditions.
+
+## Examples
+
+Define piecewise functions:
+
+```wolfram
+f[x_] := Piecewise[{
+  {x^2, x < 0},
+  {x, 0 <= x < 1},
+  {1, x >= 1}
+}]
+
+(* Plot it *)
+Plot[Piecewise[{{-x, x < 0}, {x, x >= 0}}], {x, -2, 2}]
 ```
-Piecewise[{{val1,cond1},{val2,cond2},…}] represents a piecewise function with values vali in the regions defined by the conditions condi. 
 
-Piecewise[{{val1,cond1},…},val] uses default value val if none of the condi apply. The default for val is 0. 
-```
-
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Piecewise.html) for more details.*

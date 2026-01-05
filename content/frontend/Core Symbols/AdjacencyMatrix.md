@@ -1,12 +1,22 @@
 # AdjacencyMatrix
 
+`AdjacencyMatrix[g]` gives the adjacency matrix of graph `g`, where entry $(i,j)$ is 1 if vertices $i$ and $j$ are connected.
+
+## Examples
+
+Get adjacency matrix:
+
+```wolfram
+g = Graph[{1 <-> 2, 2 <-> 3, 3 <-> 1}]
+
+AdjacencyMatrix[g] // MatrixForm
+(*
+  0 1 1
+  1 0 1
+  1 1 0
+*)
+
+AdjacencyMatrix[CompleteGraph[4]] // MatrixForm
 ```
-AdjacencyMatrix[g] gives the vertex–vertex adjacency matrix of the graph g.
 
-AdjacencyMatrix[{v->w,…}] uses rules v->w to specify the graph g. 
-```
-
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/AdjacencyMatrix.html) for more details.*

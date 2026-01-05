@@ -1,14 +1,19 @@
 # Column
 
+`Column[{expr1, expr2, ...}]` arranges expressions in a vertical column. `Column[list, alignment]` specifies horizontal alignment.
+
+## Examples
+
+Arrange items vertically:
+
+```wolfram
+Column[{"First", "Second", "Third"}]
+
+(* With alignment and spacing *)
+Column[{"Left", "Aligned", "Text"}, Left, 1]
+
+(* Mixed content *)
+Column[{Plot[Sin[x], {x, 0, 2 Pi}], "Caption"}]
 ```
-Column[{expr1,expr2,…}] is an object that formats with the expri arranged in a column, with expr1 above expr2, etc. 
 
-Column[list,alignment] aligns each element horizontally in the specified way. 
-
-Column[list,alignment,spacing] leaves the specified number of x-heights of spacing between successive elements.
-```
-
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Column.html) for more details.*

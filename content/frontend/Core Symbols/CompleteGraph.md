@@ -1,12 +1,19 @@
 # CompleteGraph
 
+`CompleteGraph[n]` creates a complete graph $K_n$ with `n` vertices where every vertex is connected to every other.
+
+## Examples
+
+Create complete graphs:
+
+```wolfram
+CompleteGraph[5]
+
+(* Complete bipartite graph K_{3,3} *)
+CompleteGraph[{3, 3}]
+
+(* Styled complete graph *)
+CompleteGraph[6, GraphStyle -> "DiagramBlue"]
 ```
-CompleteGraph[n] gives the complete graph with n vertices Kn.
 
-CompleteGraph[{n1,n2,…,nk}] gives the complete k-partite graph with n1+n2+⋯+nk vertices Kn1,n2,…,nk.
-```
-
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/CompleteGraph.html) for more details.*

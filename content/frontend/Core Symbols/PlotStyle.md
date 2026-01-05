@@ -1,10 +1,20 @@
 # PlotStyle
 
+`PlotStyle` is an option that specifies styles for plot elements. Use colors, thickness, dashing, or lists for multiple curves.
+
+## Examples
+
+Style plot curves:
+
+```wolfram
+Plot[Sin[x], {x, 0, 2 Pi},
+  PlotStyle -> {Red, Thick}
+]
+
+(* Multiple curves with different styles *)
+Plot[{Sin[x], Cos[x]}, {x, 0, 2 Pi},
+  PlotStyle -> {{Blue, Thick}, {Red, Dashed}}
+]
 ```
-PlotStyle is an option for plotting and related functions that specifies styles in which objects are to be drawn. 
-```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/PlotStyle.html) for more details.*

@@ -1,12 +1,21 @@
 # FilterRules
 
+`FilterRules[rules, pattern]` selects rules whose left-hand sides match the pattern. Useful for passing options to functions.
+
+## Examples
+
+Filter option rules:
+
+```wolfram
+opts = {PlotRange -> All, Frame -> True, Color -> Red}
+
+(* Get only Plot options *)
+FilterRules[opts, Options[Plot]]
+(* {PlotRange -> All, Frame -> True} *)
+
+(* Filter by specific names *)
+FilterRules[opts, Frame]
+(* {Frame -> True} *)
 ```
-FilterRules[rules,patt] filters the list rules by picking out only those rules whose left-hand sides match patt.
 
-FilterRules[rules,{patt1,patt2,…}] picks out rules whose left-hand sides match any of the patti.
-```
-
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/FilterRules.html) for more details.*

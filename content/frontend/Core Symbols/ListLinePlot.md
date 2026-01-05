@@ -1,16 +1,21 @@
 # ListLinePlot
 
+`ListLinePlot[{y1, ..., yn}]` plots a line through points {1, y1}, ..., {n, yn}.
+
+`ListLinePlot[{{x1, y1}, ..., {xn, yn}}]` plots a line through the specified coordinates.
+
+## Examples
+
+Plot a line through y values:
+
+```wolfram
+ListLinePlot[{1, 4, 9, 16, 25}]
 ```
-ListLinePlot[{y1,…,yn}] plots a line through the points {1,y1}, …, {n,yn}.
 
-ListLinePlot[{{x1,y1},…,{xn,yn}}] plots a line through the points {x1,y1}, …, {xn,yn}.
+Multiple lines:
 
-ListLinePlot[{data1,data2,…}] plots lines from all the datai. 
-
-ListLinePlot[{…,w[datai,…],…}] plots datai with features defined by the symbolic wrapper w.
+```wolfram
+ListLinePlot[{Table[Sin[x], {x, 0, 2 Pi, 0.1}], Table[Cos[x], {x, 0, 2 Pi, 0.1}]}]
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ListLinePlot.html) for more details.*

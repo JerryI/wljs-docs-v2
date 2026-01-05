@@ -1,14 +1,24 @@
 # NonlinearModelFit
 
+`NonlinearModelFit[data, form, params, x]` fits data to a nonlinear model with statistical analysis.
+
+## Examples
+
+Fit to exponential model:
+
+```wolfram
+data = Table[{x, 5 Exp[-x/3] + RandomReal[0.2]}, {x, 0, 10, 0.5}]
+
+nlm = NonlinearModelFit[data, a Exp[-x/b], {a, b}, x]
+
+(* Best fit function *)
+nlm["BestFit"]
+
+(* Parameter table with statistics *)
+nlm["ParameterTable"]
+
+(* Plot fit with data *)
+Show[ListPlot[data], Plot[nlm[x], {x, 0, 10}, PlotStyle -> Red]]
 ```
-NonlinearModelFit[{{x1,y1},{x2,y2},…},form,{β1,…},x] constructs a nonlinear model with formula form that fits the yi for each xi using the free parameters βi.
 
-NonlinearModelFit[data,form,params,{x1,…}] constructs a nonlinear model where form depends on the variables xk. 
-
-NonlinearModelFit[data,{form,cons},params,{x1,…}] constructs a nonlinear model subject to the parameter constraints cons.
-```
-
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/NonlinearModelFit.html) for more details.*

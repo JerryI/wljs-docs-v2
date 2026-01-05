@@ -1,16 +1,27 @@
 # ListPlot
 
+`ListPlot[{y1, ..., yn}]` plots regularly spaced points.
+
+`ListPlot[{{x1, y1}, ..., {xn, yn}}]` generates a scatter plot with specified coordinates.
+
+## Examples
+
+Plot y values:
+
+```wolfram
+ListPlot[{1, 4, 9, 16, 25}]
 ```
-ListPlot[{y1,…,yn}] plots regularly spaced points {i,yi}.
 
-ListPlot[{{x1,y1},…,{xn,yn}}] generates a scatter plot with points {xi,yi}.
+Plot x-y pairs:
 
-ListPlot[{data1,data2,…}] plots points from all the datai.
-
-ListPlot[{…,w[datai,…],…}] plots datai with features defined by the symbolic wrapper w. 
+```wolfram
+ListPlot[{{0, 0}, {1, 1}, {2, 4}, {3, 9}}]
 ```
 
+Multiple datasets:
 
+```wolfram
+ListPlot[{Table[Sin[x], {x, 0, 10, 0.5}], Table[Cos[x], {x, 0, 10, 0.5}]}]
+```
 
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ListPlot.html) for more details.*

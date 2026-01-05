@@ -1,14 +1,20 @@
 # DateObject
 
+`DateObject[]` gives the current local date and time. `DateObject[{y, m, d}]` creates a date object for a specific date.
+
+## Examples
+
+Work with dates:
+
+```wolfram
+(* Current date *)
+DateObject[]
+
+(* Specific date *)
+DateObject[{2024, 12, 25}]
+
+(* With time *)
+DateObject[{2024, 1, 1, 12, 0, 0}]
 ```
-DateObject[] gives the current local date.
 
-DateObject[date] gives a date object corresponding to the given date specification.
-
-DateObject[rdate,gran] gives the date object of calendar granularity gran that includes the reference date rdate.
-```
-
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/DateObject.html) for more details.*

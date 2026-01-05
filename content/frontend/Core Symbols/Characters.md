@@ -1,10 +1,21 @@
 # Characters
 
+`Characters["string"]` gives a list of the characters in a string.
+
+## Examples
+
+Split into characters:
+
+```wolfram
+Characters["Hello"]
+(* {"H", "e", "l", "l", "o"} *)
 ```
-Characters["string"] gives a list of the characters in a string. 
+
+Count characters:
+
+```wolfram
+Length[Characters["example"]]
+(* 7 *)
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Characters.html) for more details.*

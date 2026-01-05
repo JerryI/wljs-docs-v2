@@ -1,16 +1,20 @@
 # Eigenvectors
 
+`Eigenvectors[m]` gives a list of the eigenvectors of the square matrix m.
+
+## Examples
+
+Eigenvectors of a matrix:
+
+```wolfram
+Eigenvectors[{{1, 2}, {3, 4}}]
+(* {{2/(3 - Sqrt[33]), 1}, {2/(3 + Sqrt[33]), 1}} *)
 ```
-Eigenvectors[m] gives a list of the eigenvectors of the square matrix m. 
 
-Eigenvectors[{m,a}] gives the generalized eigenvectors of m with respect to a. 
+Numerical eigenvectors:
 
-Eigenvectors[m,k] gives the first k eigenvectors of m. 
-
-Eigenvectors[{m,a},k] gives the first k generalized eigenvectors.
+```wolfram
+Eigenvectors[{{1., 2.}, {3., 4.}}] // Normalize /@ # &
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Eigenvectors.html) for more details.*

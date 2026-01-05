@@ -1,12 +1,21 @@
 # DeleteDuplicates
 
+`DeleteDuplicates[data]` deletes all duplicates from data, keeping the first occurrence.
+
+## Examples
+
+Remove duplicates:
+
+```wolfram
+DeleteDuplicates[{1, 2, 3, 2, 1, 4}]
+(* {1, 2, 3, 4} *)
 ```
-DeleteDuplicates[data] deletes all duplicates from data.
 
-DeleteDuplicates[data,test] applies test to pairs of elements to determine whether they should be considered duplicates. 
+With custom test:
+
+```wolfram
+DeleteDuplicates[{1, -1, 2, -2, 3}, Abs[#1] == Abs[#2] &]
+(* {1, 2, 3} *)
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/DeleteDuplicates.html) for more details.*

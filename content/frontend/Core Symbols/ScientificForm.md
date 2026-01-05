@@ -1,12 +1,19 @@
 # ScientificForm
 
+`ScientificForm[expr]` displays numbers in scientific notation. `ScientificForm[expr, n]` uses `n` digits of precision.
+
+## Examples
+
+Display numbers in scientific notation:
+
+```wolfram
+ScientificForm[123456.789]
+(* 1.23457 × 10^5 *)
+
+ScientificForm[0.000123, 3]
+(* 1.23 × 10^-4 *)
+
+ScientificForm[6.022 * 10^23, 4]
 ```
-ScientificForm[expr] prints with all real numbers in expr given in scientific notation. 
 
-ScientificForm[expr,n] prints with numbers given to n‐digit precision. 
-```
-
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ScientificForm.html) for more details.*

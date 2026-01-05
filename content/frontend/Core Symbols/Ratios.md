@@ -1,14 +1,21 @@
 # Ratios
 
+`Ratios[list]` gives the successive ratios between consecutive elements: `{e2/e1, e3/e2, ...}`.
+
+## Examples
+
+Compute ratios:
+
+```wolfram
+Ratios[{1, 2, 4, 8, 16}]
+(* {2, 2, 2, 2} *)
+
+Ratios[{1, 2, 6, 24, 120}]
+(* {2, 3, 4, 5} *)
+
+(* Detecting geometric sequences *)
+Ratios[{3, 9, 27, 81}]
+(* {3, 3, 3} *)
 ```
-Ratios[list] gives the successive ratios of elements in list. 
 
-Ratios[list,n] gives the nth iterated ratios of list. 
-
-Ratios[list,{n1,n2,…}] gives the successive nkth ratios at level k in a nested list. 
-```
-
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Ratios.html) for more details.*

@@ -1,18 +1,20 @@
 # Hue
 
+`Hue[h]` represents a color with hue `h` (0 to 1). `Hue[h, s, b]` specifies hue, saturation, and brightness.
+
+## Examples
+
+Use HSB colors in graphics:
+
+```wolfram
+(* Rainbow of colors *)
+Graphics[Table[
+  {Hue[h], Disk[{10 h, 0}, 0.4]},
+  {h, 0, 1, 0.1}
+]]
+
+(* Full HSB specification *)
+Hue[0.6, 0.8, 1.0]  (* bright saturated blue *)
 ```
-Hue[h] represents a color in the HSB color space with hue h. 
 
-Hue[h,s,b] specifies colors in terms of hue, saturation and brightness. 
-
-Hue[h,s,b,a] specifies opacity a. 
-
-Hue["string"] returns a color from an HTML color name etc.
-
-Hue[color] returns the HSB representation of color.
-```
-
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Hue.html) for more details.*

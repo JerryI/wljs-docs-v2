@@ -1,10 +1,14 @@
 # ToLowerCase
 
+`ToLowerCase[string]` yields a string in which all letters have been converted to lowercase.
+
+## Examples
+
+Convert to lowercase:
+
+```wolfram
+ToLowerCase["Hello World"]
+(* "hello world" *)
 ```
-ToLowerCase[string] yields a string in which all letters have been converted to lowercase. 
-```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ToLowerCase.html) for more details.*

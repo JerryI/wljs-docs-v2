@@ -1,20 +1,19 @@
 # ParametricPlot
 
-```
-ParametricPlot[{fx,fy},{u,umin,umax}] generates a parametric plot of a curve with x and y coordinates fx and fy as a function of u. 
+`ParametricPlot[{fx, fy}, {u, umin, umax}]` generates a parametric plot of a curve with x and y coordinates as functions of u.
 
-ParametricPlot[{{fx,fy},{gx,gy},…},{u,umin,umax}] plots several parametric curves. 
+## Examples
 
-ParametricPlot[{fx,fy},{u,umin,umax},{v,vmin,vmax}] plots a parametric region. 
+Plot a circle:
 
-ParametricPlot[{{fx,fy},{gx,gy},…},{u,umin,umax},{v,vmin,vmax}] plots several parametric regions. 
-
-ParametricPlot[{…,w[{fx,fy}],…},…] plots the curve {fx,fy} with features defined by the symbolic wrapper w.
-
-ParametricPlot[…,{u,v}∈reg] takes parameters {u,v} to be in the geometric region reg.
+```wolfram
+ParametricPlot[{Cos[t], Sin[t]}, {t, 0, 2 Pi}]
 ```
 
+Plot a spiral:
 
+```wolfram
+ParametricPlot[{t Cos[t], t Sin[t]}, {t, 0, 4 Pi}]
+```
 
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ParametricPlot.html) for more details.*

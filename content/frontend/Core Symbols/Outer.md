@@ -1,14 +1,22 @@
 # Outer
 
+`Outer[f, list1, list2, ...]` forms all combinations of elements from the lists and applies `f` to each combination.
+
+## Examples
+
+Create outer products:
+
+```wolfram
+(* All pairs *)
+Outer[List, {a, b}, {1, 2, 3}]
+(* {{{a, 1}, {a, 2}, {a, 3}}, {{b, 1}, {b, 2}, {b, 3}}} *)
+
+(* Multiplication table *)
+Outer[Times, Range[5], Range[5]] // MatrixForm
+
+(* Tensor outer product *)
+Outer[Times, {1, 2}, {3, 4}]
+(* {{3, 4}, {6, 8}} *)
 ```
-Outer[f,list1,list2,…] gives the generalized outer product of the listi, forming all possible combinations of the lowest‐level elements in each of them, and feeding them as arguments to f. 
 
-Outer[f,list1,list2,…,n] treats as separate elements only sublists at level n in the listi. 
-
-Outer[f,list1,list2,…,n1,n2,…] treats as separate elements only sublists at level ni in the corresponding listi. 
-```
-
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Outer.html) for more details.*

@@ -1,10 +1,14 @@
 # ToUpperCase
 
+`ToUpperCase[string]` yields a string in which all letters have been converted to uppercase.
+
+## Examples
+
+Convert to uppercase:
+
+```wolfram
+ToUpperCase["Hello World"]
+(* "HELLO WORLD" *)
 ```
-ToUpperCase[string] yields a string in which all letters have been converted to uppercase. 
-```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ToUpperCase.html) for more details.*

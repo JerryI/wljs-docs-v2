@@ -1,10 +1,24 @@
 # False
 
+`False` is the symbol for the Boolean value false.
+
+## Examples
+
+Logical operations:
+
+```wolfram
+False && True
+(* False *)
+
+False || True
+(* True *)
 ```
-False is the symbol for the Boolean value false. 
+
+Conditional:
+
+```wolfram
+If[False, "yes", "no"]
+(* "no" *)
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/False.html) for more details.*

@@ -1,10 +1,21 @@
 # Det
 
+`Det[m]` gives the determinant of the square matrix `m`.
+
+## Examples
+
+Compute determinants:
+
+```wolfram
+Det[{{1, 2}, {3, 4}}]
+(* -2 *)
+
+Det[{{a, b}, {c, d}}]
+(* a d - b c *)
+
+(* 3x3 matrix *)
+Det[{{1, 2, 3}, {4, 5, 6}, {7, 8, 9}}]
+(* 0 *)
 ```
-Det[m] gives the determinant of the square matrix m. 
-```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Det.html) for more details.*

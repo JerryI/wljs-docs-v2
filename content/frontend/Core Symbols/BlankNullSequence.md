@@ -1,12 +1,25 @@
 # BlankNullSequence
 
+`___` (three underscores) or `BlankNullSequence[]` is a pattern that can stand for any sequence of zero or more expressions.
+
+## Examples
+
+Match zero or more arguments:
+
+```wolfram
+f[x___] := Length[{x}]
+f[]
+(* 0 *)
+
+f[a, b, c]
+(* 3 *)
 ```
-___ (three _ characters) or BlankNullSequence[] is a pattern object that can stand for any sequence of zero or more Wolfram Language expressions. 
 
-___h or BlankNullSequence[h] can stand for any sequence of expressions, all of which have head h. 
+Extract first element or default:
+
+```wolfram
+{1, 2, 3} /. {x_, ___} :> x
+(* 1 *)
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/BlankNullSequence.html) for more details.*

@@ -1,12 +1,18 @@
 # Entity
 
+`Entity["type", name]` represents a real-world entity (country, chemical, star, etc.) from Wolfram's curated data.
+
+## Examples
+
+Access entity data:
+
+```wolfram
+Entity["Country", "France"]
+
+Entity["Planet", "Mars"]["Mass"]
+(* Quantity[6.4171*10^23, "Kilograms"] *)
+
+Entity["Chemical", "Water"]["MolecularFormula"]
 ```
-Entity["type",name] represents an entity of the specified type, identified by name.
 
-Entity[cspec,name] represents an entity from the computed class, specified by cspec. 
-```
-
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Entity.html) for more details.*

@@ -1,16 +1,23 @@
 # Total
 
+`Total[list]` gives the total of the elements in list.
+
+`Total[list, n]` totals all elements down to level n.
+
+## Examples
+
+Sum a list:
+
+```wolfram
+Total[{1, 2, 3, 4, 5}]
+(* 15 *)
 ```
-Total[list] gives the total of the elements in list. 
 
-Total[list,n] totals all elements down to level n. 
+Total of nested lists:
 
-Total[list,{n}] totals elements at level n. 
-
-Total[list,{n1,n2}] totals elements at levels n1 through n2. 
+```wolfram
+Total[{{1, 2}, {3, 4}}, 2]
+(* 10 *)
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Total.html) for more details.*

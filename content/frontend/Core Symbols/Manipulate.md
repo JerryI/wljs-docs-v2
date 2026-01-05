@@ -1,22 +1,23 @@
 # Manipulate
 
+`Manipulate[expr, {u, umin, umax}]` creates an interactive interface with controls to vary `u`. Multiple parameters can be controlled simultaneously.
+
+## Examples
+
+Create interactive visualizations:
+
+```wolfram
+Manipulate[
+  Plot[Sin[n x], {x, 0, 2 Pi}],
+  {n, 1, 5, 1}
+]
+
+(* Multiple controls *)
+Manipulate[
+  Plot[a Sin[b x], {x, 0, 2 Pi}],
+  {a, 0.5, 2},
+  {b, 1, 5}
+]
 ```
-Manipulate[expr,{u,umin,umax}] generates a version of expr with controls added to allow interactive manipulation of the value of u. 
 
-Manipulate[expr,{u,umin,umax,du}] allows the value of u to vary between umin and umax in steps du. 
-
-Manipulate[expr,{{u,uinit},umin,umax,…}] takes the initial value of u to be uinit. 
-
-Manipulate[expr,{{u,uinit,ulbl},…}] labels the controls for u with ulbl. 
-
-Manipulate[expr,{u,{u1,u2,…}}] allows u to take on discrete values u1,u2,…. 
-
-Manipulate[expr,{u,…},{v,…},…] provides controls to manipulate each of the u,v,…. 
-
-Manipulate[expr,cu->{u,…},cv->{v,…},…] links the controls to the specified controllers on an external device.
-```
-
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Manipulate.html) for more details.*

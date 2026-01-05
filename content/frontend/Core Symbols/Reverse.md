@@ -1,14 +1,21 @@
 # Reverse
 
+`Reverse[expr]` reverses the order of the elements in expr.
+
+## Examples
+
+Reverse a list:
+
+```wolfram
+Reverse[{1, 2, 3, 4, 5}]
+(* {5, 4, 3, 2, 1} *)
 ```
-Reverse[expr] reverses the order of the elements in expr. 
 
-Reverse[expr,n] reverses elements at level n in expr.
+Reverse a string:
 
-Reverse[expr,{n1,n2,…}] reverses elements at levels n1, n2, … in expr.
+```wolfram
+StringReverse["hello"]
+(* "olleh" *)
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Reverse.html) for more details.*

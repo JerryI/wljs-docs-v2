@@ -1,18 +1,19 @@
 # NDSolve
 
-```
-NDSolve[eqns,u,{x,xmin,xmax}] finds a numerical solution to the ordinary differential equations eqns for the function u with the independent variable x in the range xmin to xmax. 
+`NDSolve[eqns, u, {x, xmin, xmax}]` finds a numerical solution to the ordinary differential equations eqns for the function u with independent variable x in the specified range.
 
-NDSolve[eqns,u,{x,xmin,xmax},{y,ymin,ymax}] solves the partial differential equations eqns over a rectangular region.
+## Examples
 
-NDSolve[eqns,u,{x,y}∈Ω] solves the partial differential equations eqns over the region Ω.
+Solve a simple ODE numerically:
 
-NDSolve[eqns,u,{t,tmin,tmax},{x,y}∈Ω] solves the time-dependent partial differential equations eqns over the region Ω.
-
-NDSolve[eqns,{u1,u2,…},…] solves for the functions ui. 
+```wolfram
+sol = NDSolve[{y'[x] == y[x], y[0] == 1}, y, {x, 0, 5}]
 ```
 
+Plot the solution:
 
+```wolfram
+Plot[Evaluate[y[x] /. sol], {x, 0, 5}]
+```
 
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/NDSolve.html) for more details.*

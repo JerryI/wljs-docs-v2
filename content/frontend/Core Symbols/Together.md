@@ -1,10 +1,19 @@
 # Together
 
+`Together[expr]` puts terms in a sum over a common denominator, and cancels factors in the result.
+
+## Examples
+
+Combine fractions:
+
+```wolfram
+Together[1/x + 1/y]
+(* (x + y)/(x y) *)
 ```
-Together[expr] puts terms in a sum over a common denominator, and cancels factors in the result. 
+
+```wolfram
+Together[a/b + c/d]
+(* (a d + b c)/(b d) *)
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Together.html) for more details.*

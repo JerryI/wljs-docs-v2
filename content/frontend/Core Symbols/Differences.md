@@ -1,16 +1,22 @@
 # Differences
 
+`Differences[list]` gives the successive differences between consecutive elements: `{e2-e1, e3-e2, ...}`.
+
+## Examples
+
+Compute differences:
+
+```wolfram
+Differences[{1, 4, 9, 16, 25}]
+(* {3, 5, 7, 9} *)
+
+(* Second differences *)
+Differences[{1, 4, 9, 16, 25}, 2]
+(* {2, 2, 2} *)
+
+(* Inverse of Accumulate *)
+Differences[Accumulate[{1, 2, 3, 4, 5}]]
+(* {2, 3, 4, 5} *)
 ```
-Differences[list] gives the successive differences of elements in list. 
 
-Differences[list,n] gives the nth differences of list. 
-
-Differences[list,n,s] gives the differences of elements step s apart.
-
-Differences[list,{n1,n2,…}] gives the successive nkth differences at level k in a nested list. 
-```
-
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Differences.html) for more details.*

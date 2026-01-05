@@ -1,16 +1,21 @@
 # DateString
 
+`DateString[]` gives the current date and time as a string. `DateString[date, format]` formats a date according to specified elements.
+
+## Examples
+
+Format dates as strings:
+
+```wolfram
+DateString[]
+(* "Wed 15 Jan 2025 14:30:00" *)
+
+(* Custom format *)
+DateString[Now, {"Year", "-", "Month", "-", "Day"}]
+(* "2025-01-15" *)
+
+(* ISO format *)
+DateString[Now, "ISODate"]
 ```
-DateString[] gives a string representing the complete current local date and time. 
 
-DateString[date] gives a string corresponding to the given date specification.
-
-DateString[{"elem1","elem2",…}] concatenates the specified elements in the order given.
-
-DateString[date,fmt] gives elements specified by the date format fmt for the date or time specification date.
-```
-
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/DateString.html) for more details.*

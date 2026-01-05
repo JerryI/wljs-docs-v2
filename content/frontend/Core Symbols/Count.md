@@ -1,14 +1,21 @@
 # Count
 
+`Count[list, pattern]` gives the number of elements in list that match pattern.
+
+## Examples
+
+Count occurrences:
+
+```wolfram
+Count[{a, b, a, c, a}, a]
+(* 3 *)
 ```
-Count[list,pattern] gives the number of elements in list that match pattern. 
 
-Count[expr,pattern,levelspec] gives the total number of subexpressions matching pattern that appear at the levels in expr specified by levelspec. 
+With patterns:
 
-Count[pattern] represents an operator form of Count that can be applied to an expression.
+```wolfram
+Count[{1, 2, "a", 3, "b"}, _Integer]
+(* 3 *)
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Count.html) for more details.*

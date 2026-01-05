@@ -1,20 +1,21 @@
 # ReplacePart
 
-```
-ReplacePart[expr,i->new] yields an expression in which the ith part of expr is replaced by new. 
+`ReplacePart[expr, i -> new]` yields an expression in which the ith part is replaced by new.
 
-ReplacePart[expr,{i1->new1,i2->new2,…}] replaces parts at positions in by newn. 
+## Examples
 
-ReplacePart[expr,{i,j,…}->new] replaces the part at position {i,j,…}. 
+Replace at position:
 
-ReplacePart[expr,{{i1,j1,…}->new1,…}] replaces parts at positions {in,jn,…} by newn. 
-
-ReplacePart[expr,{{i1,j1,…},…}->new] replaces all parts at positions {in,jn,…} by new. 
-
-ReplacePart[i->new] represents an operator form of ReplacePart that can be applied to an expression.
+```wolfram
+ReplacePart[{a, b, c, d}, 2 -> x]
+(* {a, x, c, d} *)
 ```
 
+Replace multiple parts:
 
+```wolfram
+ReplacePart[{a, b, c, d}, {1 -> x, 3 -> y}]
+(* {x, b, y, d} *)
+```
 
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ReplacePart.html) for more details.*

@@ -1,14 +1,24 @@
 # FreeQ
 
+`FreeQ[expr, form]` yields `True` if no subexpression in expr matches form, and `False` otherwise.
+
+## Examples
+
+Check if expression is free of a symbol:
+
+```wolfram
+FreeQ[x^2 + y, z]
+(* True *)
+
+FreeQ[x^2 + y, x]
+(* False *)
 ```
-FreeQ[expr,form] yields True if no subexpression in expr matches form, and yields False otherwise. 
 
-FreeQ[expr,form,levelspec] tests only those parts of expr on levels specified by levelspec. 
+With patterns:
 
-FreeQ[form] represents an operator form of FreeQ that can be applied to an expression.
+```wolfram
+FreeQ[{a, b, c}, _Integer]
+(* True *)
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/FreeQ.html) for more details.*

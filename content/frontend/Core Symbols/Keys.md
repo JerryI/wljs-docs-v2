@@ -1,14 +1,23 @@
 # Keys
 
+`Keys[assoc]` gives a list of the keys in an association.
+
+`Keys[{key1 -> val1, key2 -> val2, ...}]` gives a list of keys in a list of rules.
+
+## Examples
+
+Get keys from an association:
+
+```wolfram
+Keys[<|"a" -> 1, "b" -> 2, "c" -> 3|>]
+(* {"a", "b", "c"} *)
 ```
-Keys[<|key1->val1,key2->val2,…|>] gives a list of the keys keyi in an association.
 
-Keys[{key1->val1,key2->val2,…}] gives a list of the keyi in a list of rules.
+Get keys from rules:
 
-Keys[expr,h] gives a list of keys in expr, wrapping each of them with head h before evaluation.
+```wolfram
+Keys[{x -> 1, y -> 2}]
+(* {x, y} *)
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Keys.html) for more details.*

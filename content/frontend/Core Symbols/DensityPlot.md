@@ -1,12 +1,19 @@
 # DensityPlot
 
+`DensityPlot[f, {x, xmin, xmax}, {y, ymin, ymax}]` makes a density plot showing `f` as colors over the x-y plane.
+
+## Examples
+
+Create density plots:
+
+```wolfram
+DensityPlot[Sin[x] Sin[y], {x, 0, 2 Pi}, {y, 0, 2 Pi}]
+
+(* With custom color function *)
+DensityPlot[x^2 - y^2, {x, -2, 2}, {y, -2, 2},
+  ColorFunction -> "Rainbow",
+  PlotLegends -> Automatic
+]
 ```
-DensityPlot[f,{x,xmin,xmax},{y,ymin,ymax}] makes a density plot of f as a function of x and y. 
 
-DensityPlot[f,{x,y}∈reg] takes the variables {x,y} to be in the geometric region reg. 
-```
-
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/DensityPlot.html) for more details.*

@@ -1,20 +1,22 @@
 # PadRight
 
+`PadRight[list, n]` pads a list to length `n` with zeros on the right. `PadRight[list, n, x]` uses element `x` for padding.
+
+## Examples
+
+Pad lists on the right:
+
+```wolfram
+PadRight[{1, 2, 3}, 6]
+(* {1, 2, 3, 0, 0, 0} *)
+
+PadRight[{a, b}, 5, "*"]
+(* {a, b, "*", "*", "*"} *)
+
+(* Make all sublists same length *)
+lists = {{1}, {1, 2}, {1, 2, 3}}
+PadRight[#, 4] & /@ lists
+(* {{1, 0, 0, 0}, {1, 2, 0, 0}, {1, 2, 3, 0}} *)
 ```
-PadRight[list,n] makes a list of length n by padding list with zeros on the right. 
 
-PadRight[list,n,x] pads by repeating the element x. 
-
-PadRight[list,n,{x1,x2,…}] pads by cyclically repeating the elements xi. 
-
-PadRight[list,n,padding,m] leaves a margin of m elements of padding on the left. 
-
-PadRight[list,{n1,n2,…}] makes a nested list with length ni at level i. 
-
-PadRight[list] pads a ragged array list with zeros to make it full. 
-```
-
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/PadRight.html) for more details.*

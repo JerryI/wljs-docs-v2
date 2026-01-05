@@ -1,14 +1,19 @@
 # EdgeList
 
+`EdgeList[g]` gives the list of edges in graph `g`.
+
+## Examples
+
+Get edges from a graph:
+
+```wolfram
+g = Graph[{1 <-> 2, 2 <-> 3, 3 <-> 1}]
+
+EdgeList[g]
+(* {1 <-> 2, 2 <-> 3, 1 <-> 3} *)
+
+Length[EdgeList[CompleteGraph[5]]]
+(* 10 *)
 ```
-EdgeList[g] gives the list of edges for the graph g.
 
-EdgeList[g,patt] gives a list of edges that match the pattern patt.
-
-EdgeList[{v->w,…},…] uses rules v->w to specify the graph g. 
-```
-
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/EdgeList.html) for more details.*

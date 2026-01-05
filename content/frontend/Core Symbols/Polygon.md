@@ -1,16 +1,20 @@
 # Polygon
 
+`Polygon[{p1, p2, ..., pn}]` represents a filled polygon with vertices at the specified points.
+
+## Examples
+
+Draw polygons:
+
+```wolfram
+(* Triangle *)
+Graphics[Polygon[{{0, 0}, {1, 0}, {0.5, 1}}]]
+
+(* Colored pentagon *)
+Graphics[{
+  LightBlue, EdgeForm[Black],
+  Polygon[Table[{Cos[t], Sin[t]}, {t, 0, 2 Pi, 2 Pi/5}]]
+}]
 ```
-Polygon[{p1,…,pn}] represents a filled polygon with points pi.
 
-Polygon[{p1,…,pn}->{{q1,…,qm},…}] represents a polygon with holes {q1,…,qm},….
-
-Polygon[{poly1,poly2,…}] represents a collection of polygons polyi.
-
-Polygon[{p1,…,pn},data] represents a polygon in which coordinates given as integers i in data are taken to be pi.
-```
-
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Polygon.html) for more details.*

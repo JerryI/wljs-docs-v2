@@ -1,20 +1,21 @@
 # Product
 
-```
-Product[f,{i,imax}] evaluates the product ∏+i=1%imaxf. 
+`Product[f, {i, imin, imax}]` evaluates the product of f as i ranges from imin to imax.
 
-Product[f,{i,imin,imax}] starts with i=imin. 
+## Examples
 
-Product[f,{i,imin,imax,di}] uses steps di. 
+Factorial as a product:
 
-Product[f,{i,{i1,i2,…}}] uses successive values i1, i2, ….
-
-Product[f,{i,imin,imax},{j,jmin,jmax},…] evaluates the multiple product ∏+i=imin%imax∏+j=jmin%jmax… f. 
-
-Product[f,i] gives the indefinite product ∏+if.
+```wolfram
+Product[i, {i, 1, 5}]
+(* 120 *)
 ```
 
+Symbolic product:
 
+```wolfram
+Product[x + i, {i, 0, 3}]
+(* x (1 + x) (2 + x) (3 + x) *)
+```
 
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Product.html) for more details.*

@@ -1,20 +1,30 @@
 # D
 
+`D[f, x]` gives the partial derivative of f with respect to x.
+
+`D[f, {x, n}]` gives the nth derivative.
+
+## Examples
+
+First derivative:
+
+```wolfram
+D[x^3, x]
+(* 3 x^2 *)
 ```
-D[f,x] gives the partial derivative ∂f/∂x. 
 
-D[f,{x,n}] gives the multiple derivative ∂nf/∂xn.
+Second derivative:
 
-D[f,x,y,…] gives the partial derivative ⋯ (∂/∂y)(∂/∂x) f.
-
-D[f,{x,n},{y,m},…] gives the multiple partial derivative ⋯ (∂m/∂ym)(∂n/∂xn) f.
-
-D[f,{{x1,x2,…}}] for a scalar f gives the vector derivative (∂f/∂x1,∂f/∂x2,…). 
-
-D[f,{array}] gives an array derivative.
+```wolfram
+D[Sin[x], {x, 2}]
+(* -Sin[x] *)
 ```
 
+Partial derivative:
 
+```wolfram
+D[x^2 y, x]
+(* 2 x y *)
+```
 
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/D.html) for more details.*

@@ -1,14 +1,21 @@
 # DateDifference
 
+`DateDifference[date1, date2]` gives the number of days between two dates. `DateDifference[date1, date2, "unit"]` uses specified units.
+
+## Examples
+
+Calculate time differences:
+
+```wolfram
+DateDifference[{2024, 1, 1}, {2024, 12, 31}]
+(* Quantity[365, "Days"] *)
+
+(* In months *)
+DateDifference[{2020, 1, 1}, {2024, 1, 1}, "Year"]
+(* Quantity[4, "Years"] *)
+
+(* Multiple units *)
+DateDifference[{2024, 1, 1}, {2025, 6, 15}, {"Year", "Month", "Day"}]
 ```
-DateDifference[date1,date2] gives the number of days from date1 to date2.
 
-DateDifference[date1,date2,"unit"] gives the difference between date1 and date2 in the specified unit.
-
-DateDifference[date1,date2,{"unit1","unit2",…}] gives the difference as a list with elements corresponding to the successive "uniti".
-```
-
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/DateDifference.html) for more details.*

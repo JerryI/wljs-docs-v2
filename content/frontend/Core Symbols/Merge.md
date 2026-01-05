@@ -1,14 +1,22 @@
 # Merge
 
+`Merge[{assoc1, assoc2, ...}, f]` merges associations, using `f` to combine values with the same key.
+
+## Examples
+
+Merge associations with conflict resolution:
+
+```wolfram
+a1 = <|"x" -> 1, "y" -> 2|>
+a2 = <|"y" -> 3, "z" -> 4|>
+
+(* Sum values with same key *)
+Merge[{a1, a2}, Total]
+(* <|"x" -> 1, "y" -> 5, "z" -> 4|> *)
+
+(* Keep first value *)
+Merge[{a1, a2}, First]
+(* <|"x" -> 1, "y" -> 2, "z" -> 4|> *)
 ```
-Merge[{assoc1,assoc2,…},f] merges the associations associ, using the function f to combine values with the same key. 
 
-Merge[{key1->val1,key2->val2,…},f] gives an association in which values corresponding to identical keys are combined using f. 
-
-Merge[f] represents an operator form of Merge that can be applied to an expression.
-```
-
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Merge.html) for more details.*

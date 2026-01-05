@@ -1,14 +1,21 @@
 # DeleteElements
 
+`DeleteElements[list, {e1, e2, ...}]` removes all instances of elements ei from list.
+
+## Examples
+
+Remove elements:
+
+```wolfram
+DeleteElements[{a, b, c, b, a}, {a, b}]
+(* {c} *)
 ```
-DeleteElements[list,{e1,e2,…}] removes all instances of elements ei from list.
 
-DeleteElements[list,n->{e1,e2,…}] removes up to n instances of each ei from list.
+Remove limited instances:
 
-DeleteElements[list,{n1,n2,…}->{e1,e2,…}] removes up to ni instances of ei from list.
+```wolfram
+DeleteElements[{a, a, a, b, b}, 1 -> {a}]
+(* {a, a, b, b} *)
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/DeleteElements.html) for more details.*

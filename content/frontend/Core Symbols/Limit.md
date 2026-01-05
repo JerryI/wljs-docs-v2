@@ -1,14 +1,21 @@
 # Limit
 
+`Limit[f, x -> x0]` gives the limit of f as x approaches x0.
+
+## Examples
+
+Limit at a point:
+
+```wolfram
+Limit[Sin[x]/x, x -> 0]
+(* 1 *)
 ```
-Limit[f,x->x*] gives the limit x->x*f(x). 
 
-Limit[f,{x1->x1*,…,xn->xn*}] gives the nested limit +x1->x1*⋯ +xn->xn*f(x1,…,xn). 
+Limit at infinity:
 
-Limit[f,{x1,…,xn}->{x1*,…,xn*}] gives the multivariate limit +{x1,…,xn}->{x1*,…,xn*}f(x1,…,xn).
+```wolfram
+Limit[1/x, x -> Infinity]
+(* 0 *)
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Limit.html) for more details.*

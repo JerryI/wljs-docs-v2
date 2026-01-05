@@ -1,12 +1,20 @@
 # Row
 
+`Row[{expr1, expr2, ...}]` arranges expressions in a horizontal row. `Row[list, separator]` inserts a separator between elements.
+
+## Examples
+
+Arrange items horizontally:
+
+```wolfram
+Row[{"a", "b", "c"}]
+(* abc *)
+
+(* With separator *)
+Row[{1, 2, 3, 4, 5}, ", "]
+(* 1, 2, 3, 4, 5 *)
+
+Row[{Red, Green, Blue}, " | "]
 ```
-Row[{expr1,expr2,…}] is an object that formats with the expri arranged in a row, potentially extending over several lines. 
 
-Row[list,s] inserts s as a separator between successive elements. 
-```
-
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Row.html) for more details.*

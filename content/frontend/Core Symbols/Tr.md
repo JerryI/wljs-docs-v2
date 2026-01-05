@@ -1,14 +1,21 @@
 # Tr
 
+`Tr[m]` gives the trace of a square matrix (sum of diagonal elements).
+
+## Examples
+
+Compute matrix trace:
+
+```wolfram
+Tr[{{1, 2}, {3, 4}}]
+(* 5 *)
+
+Tr[IdentityMatrix[3]]
+(* 3 *)
+
+(* Trace with symbolic elements *)
+Tr[{{a, b}, {c, d}}]
+(* a + d *)
 ```
-Tr[list] finds the trace of the matrix or tensor list. 
 
-Tr[list,f] finds a generalized trace, combining terms with f instead of Plus. 
-
-Tr[list,f,n] goes down to level n in list. 
-```
-
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Tr.html) for more details.*

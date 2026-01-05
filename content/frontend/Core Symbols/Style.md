@@ -1,28 +1,18 @@
 # Style
 
-```
-Style[expr,options] displays with expr formatted using the specified option settings. 
+`Style[expr, options]` displays `expr` with specified formatting. Common styles include `Bold`, `Italic`, colors, and font sizes.
 
-Style[expr,"style"] uses the option settings for the specified style in the current notebook. 
+## Examples
 
-Style[expr,color] displays using the specified color. 
+Format text and expressions:
 
-Style[expr,Bold] displays with fonts made bold. 
+```wolfram
+Style["Hello World", Bold, Red, 20]
 
-Style[expr,Italic] displays with fonts made italic. 
+Style[x^2 + y^2, Italic, Blue]
 
-Style[expr,Underlined] displays with fonts underlined. 
-
-Style[expr,Larger] displays with fonts made larger. 
-
-Style[expr,Smaller] displays with fonts made smaller. 
-
-Style[expr,n] displays with font size n. 
-
-Style[expr,Tiny], Style[expr,Small], etc. display with fonts that are tiny, small, etc. 
+(* Multiple styles *)
+Style["Important", Bold, Underlined, Larger]
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Style.html) for more details.*

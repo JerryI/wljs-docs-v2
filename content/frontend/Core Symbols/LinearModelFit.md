@@ -1,14 +1,23 @@
 # LinearModelFit
 
+`LinearModelFit[data, {f1, f2, ...}, x]` creates a linear regression model with statistical analysis.
+
+## Examples
+
+Perform linear regression:
+
+```wolfram
+data = {{1, 2.1}, {2, 3.9}, {3, 6.2}, {4, 7.8}}
+
+lm = LinearModelFit[data, {1, x}, x]
+
+(* Get the fitted function *)
+lm["BestFit"]
+(* 0.1 + 1.98 x *)
+
+(* R-squared *)
+lm["RSquared"]
+(* 0.9973 *)
 ```
-LinearModelFit[{{x1,y1},{x2,y2},…},{f1,f2,…},x] constructs a linear model of the form β0+β1f1+β2f2+… that fits the yi for successive xi values.
 
-LinearModelFit[data,{f1,f2,…},{x1,x2,…}] constructs a linear model where the fi depend on the variables xk.
-
-LinearModelFit[{m,v}] constructs a linear model from the design matrix m and response vector v.
-```
-
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/LinearModelFit.html) for more details.*

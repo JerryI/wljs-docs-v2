@@ -1,16 +1,21 @@
 # Insert
 
+`Insert[list, elem, n]` inserts elem at position n in list.
+
+## Examples
+
+Insert at position 2:
+
+```wolfram
+Insert[{a, b, c}, x, 2]
+(* {a, x, b, c} *)
 ```
-Insert[list,elem,n] inserts elem at position n in list. If n is negative, the position is counted from the end. 
 
-Insert[expr,elem,{i,j,…}] inserts elem at position {i,j,…} in expr. 
+Insert from the end:
 
-Insert[expr,elem,{{i1,j1,…},{i2,j2,…},…}] inserts elem at several positions. 
-
-Insert[elem,pos] represents an operator form of Insert that can be applied to an expression.
+```wolfram
+Insert[{a, b, c}, x, -1]
+(* {a, b, c, x} *)
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Insert.html) for more details.*

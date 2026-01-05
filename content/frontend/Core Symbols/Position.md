@@ -1,16 +1,21 @@
 # Position
 
+`Position[expr, pattern]` gives a list of the positions at which objects matching pattern appear in expr.
+
+## Examples
+
+Find positions of an element:
+
+```wolfram
+Position[{a, b, c, b, a}, b]
+(* {{2}, {4}} *)
 ```
-Position[expr,pattern] gives a list of the positions at which objects matching pattern appear in expr. 
 
-Position[expr,pattern,levelspec] finds only objects that appear on levels specified by levelspec. 
+Find positions in nested lists:
 
-Position[expr,pattern,levelspec,n] gives the positions of the first n objects found. 
-
-Position[pattern] represents an operator form of Position that can be applied to an expression.
+```wolfram
+Position[{{1, 2}, {3, 1}}, 1]
+(* {{1, 1}, {2, 2}} *)
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Position.html) for more details.*

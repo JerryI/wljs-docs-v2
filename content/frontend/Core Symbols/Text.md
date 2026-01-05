@@ -1,12 +1,18 @@
 # Text
 
+`Text[expr, coords]` is a graphics primitive that displays text at the specified coordinates. `Text[expr, coords, offset]` allows offset positioning.
+
+## Examples
+
+Add text to graphics:
+
+```wolfram
+Graphics[{
+  Point[{0, 0}],
+  Text["Origin", {0, 0}, {-1, -1}],
+  Red, Point[{1, 1}],
+  Text[Style["(1,1)", Bold], {1, 1}, {-1, 0}]
+}]
 ```
-Text[expr] displays with expr in plain text format. 
 
-Text[expr,coords] is a graphics primitive that displays the textual form of expr centered at the point specified by coords. 
-```
-
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Text.html) for more details.*

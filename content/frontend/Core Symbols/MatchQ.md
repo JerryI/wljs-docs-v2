@@ -1,12 +1,21 @@
 # MatchQ
 
+`MatchQ[expr, form]` returns `True` if expr matches the pattern form, and `False` otherwise.
+
+## Examples
+
+Match against a pattern:
+
+```wolfram
+MatchQ[{1, 2, 3}, {__Integer}]
+(* True *)
 ```
-MatchQ[expr,form] returns True if expr matches the pattern form, and returns False otherwise.
 
-MatchQ[form] represents an operator form of MatchQ that can be applied to an expression.
+Match head:
+
+```wolfram
+MatchQ[f[x, y], _f]
+(* True *)
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/MatchQ.html) for more details.*

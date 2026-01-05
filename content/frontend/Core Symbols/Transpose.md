@@ -1,16 +1,21 @@
 # Transpose
 
+`Transpose[list]` transposes the first two levels in list.
+
+## Examples
+
+Transpose a matrix:
+
+```wolfram
+Transpose[{{1, 2, 3}, {4, 5, 6}}]
+(* {{1, 4}, {2, 5}, {3, 6}} *)
 ```
-Transpose[list] transposes the first two levels in list. 
 
-Transpose[list,{n1,n2,…}] transposes list so that the kth level in list is the nkth level in the result. 
+Pairs to lists:
 
-Transpose[list,mn] transposes levels m and n in list, leaving all other levels unchanged.
-
-Transpose[list,k] cycles the levels in list k positions to the right. 
+```wolfram
+Transpose[{{a, 1}, {b, 2}, {c, 3}}]
+(* {{a, b, c}, {1, 2, 3}} *)
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Transpose.html) for more details.*

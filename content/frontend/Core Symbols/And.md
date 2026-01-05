@@ -1,10 +1,25 @@
 # And
 
+`e1 && e2 && ...` is the logical AND function. It gives `False` immediately if any argument is `False`, and `True` if all are `True`.
+
+## Examples
+
+Logical AND:
+
+```wolfram
+True && True
+(* True *)
+
+True && False
+(* False *)
 ```
-e1&amp;&amp;e2&amp;&amp;… is the logical AND function. It evaluates its arguments in order, giving False immediately if any of them are False, and True if they are all True. 
+
+With conditions:
+
+```wolfram
+x = 5;
+x > 0 && x < 10
+(* True *)
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/And.html) for more details.*

@@ -1,16 +1,21 @@
 # Eigenvalues
 
+`Eigenvalues[m]` gives a list of the eigenvalues of the square matrix m.
+
+## Examples
+
+Eigenvalues of a matrix:
+
+```wolfram
+Eigenvalues[{{1, 2}, {3, 4}}]
+(* {(5 + Sqrt[33])/2, (5 - Sqrt[33])/2} *)
 ```
-Eigenvalues[m] gives a list of the eigenvalues of the square matrix m. 
 
-Eigenvalues[{m,a}] gives the generalized eigenvalues of m with respect to a. 
+Numerical eigenvalues:
 
-Eigenvalues[m,k] gives the first k eigenvalues of m. 
-
-Eigenvalues[{m,a},k] gives the first k generalized eigenvalues.
+```wolfram
+Eigenvalues[{{1., 2.}, {3., 4.}}]
+(* {5.37228, -0.372281} *)
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Eigenvalues.html) for more details.*

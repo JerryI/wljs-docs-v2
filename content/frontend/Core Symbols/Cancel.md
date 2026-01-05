@@ -1,10 +1,19 @@
 # Cancel
 
+`Cancel[expr]` cancels out common factors in the numerator and denominator of expr.
+
+## Examples
+
+Cancel common factors:
+
+```wolfram
+Cancel[(x^2 - 1)/(x - 1)]
+(* x + 1 *)
 ```
-Cancel[expr] cancels out common factors in the numerator and denominator of expr. 
+
+```wolfram
+Cancel[(x^2 + 2x + 1)/(x + 1)]
+(* x + 1 *)
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Cancel.html) for more details.*

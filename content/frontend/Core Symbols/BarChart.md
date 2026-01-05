@@ -1,14 +1,22 @@
 # BarChart
 
+`BarChart[{y1, y2, ...}]` creates a bar chart with bar heights `y1`, `y2`, etc.
+
+## Examples
+
+Create bar charts:
+
+```wolfram
+BarChart[{1, 3, 2, 5, 4}]
+
+(* With labels and colors *)
+BarChart[{5, 10, 15, 20},
+  ChartLabels -> {"Q1", "Q2", "Q3", "Q4"},
+  ChartStyle -> "Pastel"
+]
+
+(* Grouped bar chart *)
+BarChart[{{1, 2, 3}, {4, 5, 6}}]
 ```
-BarChart[{y1,y2,…,yn}] makes a bar chart with bar lengths y1,  y2, ….
 
-BarChart[{…,wi[yi,…],…,wj[yj,…],…}] makes a bar chart with bar features defined by the symbolic wrappers wk.
-
-BarChart[{data1,data2,…}] makes a bar chart from multiple datasets datai. 
-```
-
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/BarChart.html) for more details.*

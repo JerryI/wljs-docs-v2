@@ -1,12 +1,19 @@
 # TreeForm
 
+`TreeForm[expr]` displays expr as a tree with different levels at different depths.
+
+## Examples
+
+Visualize expression structure:
+
+```wolfram
+TreeForm[a + b*c]
 ```
-TreeForm[expr] displays expr as a tree with different levels at different depths. 
 
-TreeForm[expr,n] displays expr as a tree only down to level n.
+Limit depth:
+
+```wolfram
+TreeForm[{{1, 2}, {3, 4}}, 2]
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/TreeForm.html) for more details.*

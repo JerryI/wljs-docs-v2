@@ -1,14 +1,24 @@
 # MemberQ
 
+`MemberQ[list, form]` returns `True` if an element of list matches form, and `False` otherwise.
+
+## Examples
+
+Check membership:
+
+```wolfram
+MemberQ[{a, b, c}, b]
+(* True *)
+
+MemberQ[{a, b, c}, d]
+(* False *)
 ```
-MemberQ[list,form] returns True if an element of list matches form, and False otherwise. 
 
-MemberQ[list,form,levelspec] tests all parts of list specified by levelspec. 
+With patterns:
 
-MemberQ[form] represents an operator form of MemberQ that can be applied to an expression.
+```wolfram
+MemberQ[{1, 2, 3}, _Integer]
+(* True *)
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/MemberQ.html) for more details.*
