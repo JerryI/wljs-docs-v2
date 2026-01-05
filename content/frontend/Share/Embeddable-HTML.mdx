@@ -2,4 +2,65 @@
 title: HTML Embeddable
 ---
 
-Hey
+This export option converts notebook cells into HTML web components and associated assets, making it easy to embed them in a webpage, such as your blog post or note.
+
+import { Share2, CircleQuestionMark, Dot } from 'lucide-react';
+
+Call <small>Share</small> from the top menu or click the <span className='inline-flex' ><Share2 style={{height:"1rem"}}/></span> icon and choose <small>HTML Embeddable</small>:
+
+<div class="fd-steps">
+    <div class="fd-step py-3 items-center flex flex-row">
+        <div class="flex flex-row items-center text-sm gap-x-2"> <Share2 width={"1rem"}/> Share</div>
+    </div>
+    <div class="fd-step py-3 items-center flex flex-row">
+        <div class="flex flex-row items-center text-sm gap-x-2"> <Dot width={"1rem"}/> HTML Embeddable</div>
+    </div>
+    <div class="fd-step py-3 items-center flex flex-row">
+        <div class="flex flex-row items-center text-sm gap-x-2"> <Dot width={"1rem"}/> Static / Interactive</div>
+    </div> 
+</div>
+
+<Card>
+
+
+## Use cases
+- Embed notebook cells in a blog post or webpage
+- Share your work on the internet with interactive components
+
+</Card>
+
+import { Accordion, Accordions } from 'fumadocs-ui/components/accordion';
+
+
+<Accordions>
+<Accordion title="Example of a basic HTML page">
+<iframe className='rounded' src="https://wljsteam.github.io/web-components/" width="100%" height="500px"></iframe>
+</Accordion>
+</Accordions>
+
+Embeddable WLJS cells provide the same features as the [standard HTML export option](./Standalone-HTML), including:
+
+<Card>
+
+## Features
+
+- __Lazy Loading__ - Components and dependencies load progressively, showing meaningful raw content while loading
+- __Graceful Degradation__ - Users with JavaScript disabled still see readable code and expressions
+- __Interactive Content__ - 2D/3D graphics, plots, manipulatable widgets, and more
+- __CDN-Ready__ - Single script import; all dependencies load automatically
+- __No Build Step__ - Ready to use immediately after export
+- __Framework Agnostic__ - Life cycle managed automatically using native web components compatible with any modern web framework
+
+</Card>
+
+## Export Options
+For detailed export options and modes (Static, Interactive, etc.), see the [HTML file export documentation](./Standalone-HTML).
+
+## How to Use
+
+After exporting, you'll receive a folder containing HTML components and assets. Simply include the provided script in your webpage and use the custom web components. For detailed integration instructions and examples, see:
+
+<GithubInfo
+      owner="wljsteam"
+      repo="web-components"
+/>

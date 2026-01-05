@@ -2,15 +2,22 @@
 title: Embed Notebook Files
 ---
 
-This feature allows you to embed some files or folders into the notebook and create a self-extracting notebook.
+This feature allows you to embed files or folders into the notebook and create a self-extracting notebook.
 
 Call <small>Embed files</small> from the top-level menu:
 
-<div className='relative group'>
-<div className="absolute -inset-0.5 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur blur-3xl opacity-5 group-hover:opacity-10 transition duration-500" />
+import { Ellipsis, Dot, Share2 } from 'lucide-react';
 
-![Embed](./imgs/embed-feature.png)
-
+<div class="fd-steps">
+    <div class="fd-step py-3 items-center flex flex-row">
+        <div class="flex flex-row items-center text-sm gap-x-2"> <Ellipsis width={"1rem"}/> Menu</div>
+    </div>
+    <div class="fd-step py-3 items-center flex flex-row">
+        <div class="flex flex-row items-center text-sm gap-x-2"> <Dot width={"1rem"}/> Misc</div>
+    </div>
+    <div class="fd-step">
+        <div class="flex flex-row items-center text-sm gap-x-2"> <Dot width={"1rem"}/> Embed files</div>
+    </div>
 </div>
 
 

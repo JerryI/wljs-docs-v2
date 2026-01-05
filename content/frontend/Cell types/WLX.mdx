@@ -22,7 +22,7 @@ import {Tab, Tabs} from 'fumadocs-ui/components/tabs';
 Make sure the first letter in a symbol name is capitalized. This is required by WLX syntax.
 </Callout>
 
-This allows you to use [Wolfram Language XML](https://jerryi.github.io/wlx-docs/docs/Reference/WLX/) in your cell. It's extremely powerful and especially useful when creating complex cell structures, components of the [presentations](./Slide.mdx), making mini-apps or enhancing the output with the power of HTML, CSS, and JavaScript.
+This allows you to use [Wolfram Language XML](https://jerryi.github.io/wlx-docs/docs/Reference/WLX/) in your cell. It's extremely powerful and especially useful when creating complex cell structures, components for [presentations](./Slide), mini-apps, or enhancing output with the power of HTML, CSS, and JavaScript.
 
 <Cards>
   <Card
@@ -46,7 +46,7 @@ This allows you to use [Wolfram Language XML](https://jerryi.github.io/wlx-docs/
 
 
 
-One can think about WLX as a WL and plain HTML got extended to each other. It allows you to write Wolfram Language using XML tags, and building HTML template using Wolfram Expressions.
+You can think of WLX as WL and plain HTML extended to work with each other. It allows you to write Wolfram Language using XML tags and build HTML templates using Wolfram Expressions.
 
 <Callout>
 Unlike JSX, you can write a plain HTML inside WLX scripts with no restrictions.
@@ -80,7 +80,7 @@ Wolfram expressions always start with a capital letter, while plain `HTML` tags 
 
 
 ## Ownvalues and Downvalues
-`OwnValue` of a symbol corresponds to a __self-closing__ tags with no attributes, while `DownValue` of a symbol is normal tags with/without attributes. For example:
+`OwnValue` of a symbol corresponds to __self-closing__ tags with no attributes, while `DownValue` of a symbol corresponds to normal tags with or without attributes. For example:
 
 ```wolfram
 TimeNow := TextString[Now];
@@ -105,7 +105,7 @@ __First child__ element is the __first argument__ of a given function and etc.
 <Callout type="warning">Any symbol defined within WLX cell is in `Global\`` context</Callout>
 
 ### Output form
-Any symbol in Wolfram Language has a few predefined output forms. `StandardForm` is shown in all output cells, while `WLXForm` is shown in WLX, [slide](./Slide.mdx), [markdown](./Markdown.mdx) output cells and is usually some sort of a string.
+Any symbol in Wolfram Language has a few predefined output forms. `StandardForm` is shown in all output cells, while `WLXForm` is shown in WLX, [slide](./Slide), [markdown](./Markdown) output cells and is usually some sort of a string.
 
 <Callout>If `WLXForm` is not defined for a given symbol, `ToString` is applied</Callout>
 
@@ -403,7 +403,7 @@ You can now use it in your layout:
 `}</wljs-editor>
 </WLJSWrapper>
 
-this will work on [slides](./Slide.mdx) and [markdown](./Markdown.mdx) cells as well:
+this will work on [slides](./Slide) and [markdown](./Markdown) cells as well:
 
 <WLJSWrapper>
 <span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />

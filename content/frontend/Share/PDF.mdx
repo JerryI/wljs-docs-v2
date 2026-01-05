@@ -1,4 +1,78 @@
 ---
 title: PDF
 ---
-Hey
+
+You can export an entire notebook as a PDF document ready for printing. There are two ways depending on how you run WLJS Notebook:
+
+import {Tab, Tabs} from 'fumadocs-ui/components/tabs';
+import { Share2, CircleQuestionMark, Dot } from 'lucide-react';
+
+
+<Tabs items={['Desktop app', 'Docker / Server']}>
+  <Tab value="Desktop app">
+  
+  Navigate to the file menu and click <small>Print</small>, or locate it from the [command palette](./../Guides/Command-palette):
+
+<div class="fd-steps">
+    <div class="fd-step py-3 items-center flex flex-row">
+        <div class="flex flex-row items-center text-sm gap-x-2"> <Dot width={"1rem"}/> Menu</div>
+    </div>
+    <div class="fd-step py-3 items-center flex flex-row">
+        <div class="flex flex-row items-center text-sm gap-x-2"> <Dot width={"1rem"}/> File</div>
+    </div>
+    <div class="fd-step py-3 items-center flex flex-row">
+        <div class="flex flex-row items-center text-sm gap-x-2"> <Dot width={"1rem"}/> Print</div>
+    </div>  
+</div>
+
+
+  </Tab>
+  <Tab value="Docker / Server">
+  
+    Export your notebook as an [HTML File](./Standalone-HTML), open it, and use the browser's native printing option.
+  
+  </Tab>
+</Tabs>
+
+
+## Page Breaks
+To manually insert page breaks, use the `PageBreakAbove` or `PageBreakBelow` symbols inside [Markdown](./../Cell%20types/Markdown) cells, for example:
+
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-20 group-hover:opacity-50 transition duration-500" />
+<wljs-editor display="codemirror" type="Input"  >{`.md
+
+<PageBreakAbove/>
+`}</wljs-editor>
+</WLJSWrapper>
+
+
+## Export Slides
+
+<Callout type="warning">This requires the WLJS Notebook desktop app, as we use a customized Chromium engine feature to produce high-quality vector-based PDFs from any Wolfram Language expression.</Callout>
+
+Use the dedicated option for rendering presentations (slides) into a single PDF document: [Slides](./Slides)
+
+## Export Individual Graphs and Expressions
+
+<Callout type="warning">This requires the WLJS Notebook desktop app, as we use a customized Chromium engine feature to produce high-quality vector-based PDFs from any Wolfram Language expression.</Callout>
+
+To export individual expressions, use the default `Export` function with a PDF extension in the file name:
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-20 group-hover:opacity-50 transition duration-500" />
+<wljs-editor display="codemirror" type="Input"  >{`
+Plot[x, {x, 0,1}];
+Export["filename.pdf", %]
+`}</wljs-editor>
+</WLJSWrapper>
+
+### Options
+For the PDF format, there are a few extra options you can provide:
+
+- `"Crop"` - by default is `True`, which trims white regions
+- `"Window"` - by default is `CurrentWindow[]`, which specifies the window object where to render
+- `"ExposureTime"` - time delay to wait before capturing (to let the layout settle), the default is 2.5 seconds
+- `"Landscape"` - printing mode, by default is `True`
+

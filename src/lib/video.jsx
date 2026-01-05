@@ -32,6 +32,13 @@ export function LazyAutoplayVideo ({url}) {
 
         if (videoRef.current) {
             observer.observe(videoRef.current); // Observe the video element 
+            
+            // Check if element is already in view (important for accordion reopening)
+            const rect = videoRef.current.getBoundingClientRect();
+            const isInViewport = rect.top < window.innerHeight && rect.bottom > 0;
+            if (isInViewport) {
+                setHasBeenInView(true);
+            }
         }
 
         return () => {

@@ -2,4 +2,47 @@
 title: Mathematica
 ---
 
-fd
+import { Share2, CircleQuestionMark, Dot } from 'lucide-react';
+
+Any WLJS notebook can be exported to Mathematica's native format `.nb`. Call <small>Share</small> from the top menu or click the <span className='inline-flex' ><Share2 style={{height:"1rem"}}/></span> icon and choose <small>Mathematica</small>:
+
+<div class="fd-steps">
+    <div class="fd-step py-3 items-center flex flex-row">
+        <div class="flex flex-row items-center text-sm gap-x-2"> <Share2 width={"1rem"}/> Share</div>
+    </div>
+    <div class="fd-step py-3 items-center flex flex-row">
+        <div class="flex flex-row items-center text-sm gap-x-2"> <Dot width={"1rem"}/> Mathematica</div>
+    </div>
+</div>
+
+<Card>
+
+
+## Use cases
+- Share WLJS notebooks with Mathematica users
+
+</Card>
+
+Consider the following limitations when sharing in Mathematica format:
+
+1. __Only input cells__ will be transferred.
+2. Input cells will be converted to `InputForm`.
+3. Markdown formatting is not fully supported in Wolfram Language text cells (only sections, titles, etc. are preserved).
+4. LaTeX, Mermaid, HTML, and many other non-standard output cells will not be displayed.
+
+## Importing
+Simply open a `.nb` file with the WLJS application; it will be automatically converted to `.wln`.
+
+<Callout type="warning">This feature is still experimental</Callout>
+
+<Card>
+
+### Known limitations
+
+- large notebooks will be automatically split to avoid performance degradation;
+- `DynamicModule`, `Dynamic` will not render correctly;
+- avoid complex text formatting;
+- certain `Graphics` and `Graphics3D` styling options may not work;
+- embedded image / video / audio data inside cells will no be available
+
+</Card>

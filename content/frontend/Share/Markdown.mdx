@@ -1,4 +1,49 @@
 ---
 title: Markdown
 ---
-hey
+
+This export option converts notebook cells into a single markdown file.
+
+import { Share2, CircleQuestionMark, Dot, Settings } from 'lucide-react';
+
+Call <small>Share</small> from the top menu or click the <span className='inlineFlex' ><Share2 style={{height:"1rem"}}/></span> icon and choose <small>Markdown</small>:
+
+<div class="fd-steps">
+    <div class="fd-step py-3 items-center flex flex-row">
+        <div class="flex flex-row items-center text-sm gap-x-2"> <Share2 width={"1rem"}/> Share</div>
+    </div>
+    <div class="fd-step py-3 items-center flex flex-row">
+        <div class="flex flex-row items-center text-sm gap-x-2"> <Dot width={"1rem"}/> Markdown</div>
+    </div>
+</div>
+
+<Card>
+
+
+## Use cases
+- Short notes, text for LLM
+- Documentation
+
+</Card>
+
+The Markdown format exports all code, images, and comments, but __excludes all output cells__.
+
+## Importing
+Markdown file can be imported back as a normal WLJS notebooks. Simply open it using WLJS application.
+
+## Bundler features
+
+### External images
+Compress all external images and embed them inline to Markdown file used on slides, WLX, HTML or Markdown cells:
+
+<div class="fd-steps">
+    <div class="fd-step py-3 items-center flex flex-row">
+        <div class="flex flex-row items-center text-sm gap-x-2"> <Settings width={"1rem"}/> Settings</div>
+    </div>
+    <div class="fd-step py-3 items-center flex flex-row">
+        <div class="flex flex-row items-center text-sm gap-x-2"> <Dot width={"1rem"}/> Export settings</div>
+    </div>
+    <div class="fd-step">
+        <div class="flex flex-row items-center text-sm gap-x-2"> <Dot width={"1rem"}/> Include</div>
+    </div>
+</div>

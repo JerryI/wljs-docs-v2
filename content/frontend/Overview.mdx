@@ -6,7 +6,7 @@ title: What is WLJS
 
 ## The notebook interface
 
-The notebook interface (or IDE) combines live code in Wolfram, Javascript  and others. We provide GUI building blocks for user input/output, a subset of LaTeX for equations, Markdown for narrative text and for data-driven presentations.
+The notebook interface (or IDE) combines live code in Wolfram, JavaScript, and other languages. We provide GUI building blocks for user input/output, a subset of LaTeX for equations, Markdown for narrative text, and data-driven presentations.
 
 <div className='relative group'>
 <div className="absolute -inset-0.5 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur blur-3xl opacity-5 group-hover:opacity-10 transition duration-500" />
@@ -15,10 +15,10 @@ The notebook interface (or IDE) combines live code in Wolfram, Javascript  and o
 </div>
 </div>
 
-Think about it as a multitool platform for research, experiments or as a powerful sandbox, where you can try out your ideas, write a story about it alongside and then publish it somewhere on web. Like this one:
+Think of it as a multi-tool platform for research, experiments, or as a powerful sandbox where you can try out your ideas, write a story about them, and then publish them on the web. Like this one:
 
 <Callout type="idea">
-Read our fast-track introduction on Wolfram Language at [that page](./Wolfram-Language.mdx)
+Read our fast-track introduction on Wolfram Language at [that page](./Wolfram-Language)
 </Callout>
 
 <Card className={"text-sm"}>
@@ -52,7 +52,7 @@ Now we can generate any chord progressions in a major scale, for ex. **I-V-VI-IV
 <WLJSWrapper>
 <span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-10 group-hover:opacity-50 transition duration-500" />
 <wljs-editor type="Input" display="codemirror">{`SoundNote[makeScale[1, scale["Major"], {#,2+#,4+#}]] &/@ {
-  1, 1, 5, 5, 6, 6, 4, 4, 1 
+    1, 1, 5, 5, 6, 6, 4, 4, 1 
 } // Sound `}</wljs-editor>
 </WLJSWrapper>
 

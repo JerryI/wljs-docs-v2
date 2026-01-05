@@ -1,20 +1,33 @@
 ---
-title: Deploy to Github Pages
+title: Deploy to GitHub Pages
 ---
 
-It is possible to host your interactive notebook on GitHub Pages, allowing everyone to view it, interact with sliders, and import the original notebook with a single click.
+You can host your interactive notebook on GitHub Pages, allowing everyone to view it, interact with sliders, and import the original notebook with a single click.
 
 ## Exporting
-We assume you exported your notebook to a [standalone HTML file](./Standalone-HTML.mdx).
+We assume you have exported your notebook to a [standalone HTML file](./Standalone-HTML):
+
+
+import { Ellipsis, Dot, Share2 } from 'lucide-react';
+
+<div class="fd-steps">
+    <div class="fd-step py-3 items-center flex flex-row">
+        <div class="flex flex-row items-center text-sm gap-x-2"> <Share2 width={"1rem"}/> Share</div>
+        </div>
+    <div class="fd-step">
+        <div class="flex flex-row items-center text-sm gap-x-2"> <Dot width={"1rem"}/> HTML File</div>
+    </div>
+</div>
+
 
 <Callout>
 Exported notebooks do not require any build process — only hosting
 </Callout>
 
 ## Publishing
-This involves creating a repository, uploading your `.html` documents, and setting up GitHub Pages. Follow these steps:
+This process involves creating a repository, uploading your `.html` documents, and setting up GitHub Pages. Follow these steps:
 
-1. Create a __public__ repository. If you have `git` installed, run `git init`, and add your HTML documents. You can organize them into folders and create navigation links using Markdown or HTML cells.
+1. Create a __public__ repository. If you have `git` installed, run `git init` and add your HTML documents. You can organize them into folders and create navigation links using Markdown or HTML cells.
 
 #### Using GitHub Pages
 
@@ -76,4 +89,4 @@ There are plenty of alternatives. Search for `static HTML hosting`.
 
 - [Wasmer](https://wasmer.io/)
 - [Cloudflare](https://pages.cloudflare.com/)
-- Some quick file sharing services renders HTML files by the default
+- Some quick file-sharing services render HTML files by default

@@ -2,4 +2,105 @@
 title: Mini apps
 ---
 
-Hey
+This export option converts a notebook into a window application that uses WLJS as a runtime and works in an isolated context.
+
+import { Share2, CircleQuestionMark, Dot } from 'lucide-react';
+
+Call <small>Share</small> from the top menu or click the <span className='inline-flex' ><Share2 style={{height:"1rem"}}/></span> icon and choose <small>Mini app</small>:
+
+<div class="fd-steps">
+    <div class="fd-step py-3 items-center flex flex-row">
+        <div class="flex flex-row items-center text-sm gap-x-2"> <Share2 width={"1rem"}/> Share</div>
+    </div>
+    <div class="fd-step py-3 items-center flex flex-row">
+        <div class="flex flex-row items-center text-sm gap-x-2"> <Dot width={"1rem"}/> Mini app</div>
+    </div>
+</div>
+
+<Card>
+
+
+## Use cases
+- Calculators and utilities
+- Useful tools for processing data with a GUI
+- Share your notebook in the form of a small app
+
+</Card>
+
+All initialization cells of the notebook are evaluated on startup, and the last input cell becomes the main window of the app. 
+
+<Callout type="idea">Use [WLX cells](./../Cell%20types/WLX.mdx) for maximum customization</Callout>
+
+<Callout type="idea">You can create new windows with `CellPrint`</Callout>
+
+## How to Prepare a Mini App
+In general, you can think of a mini app as if it were an output of a single cell [projected](./../Overview.mdx) (see <small>Project</small> feature) to a window. The following rules apply:
+
+<Card>
+
+- The default context (`$Context`) of all symbols is randomly generated and will be unique for each running instance of your app
+- __All initialization cells will be executed automatically__ on the startup of an app
+- __The output of the last input cell__ will be the first window of your app
+- An app will pick the first available computation kernel in your system
+
+</Card>
+
+Apart from that, the program for the widget is just a plain WLJS notebook. You can leave cells there for testing and debugging with no impact.
+
+
+### Example 1
+Let's write the simplest possible interactive widget: 
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-20 group-hover:opacity-50 transition duration-500" />
+<wljs-editor display="codemirror" type="Input"  >{`
+(* make it initialization cell *)
+equation[x_,n_] := Sum[(Sin[2\[Pi](2j - 1) x])/(2j - 1), {j, 1, n}]
+`}</wljs-editor>
+</WLJSWrapper>
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-20 group-hover:opacity-50 transition duration-500" />
+<wljs-editor display="codemirror" type="Input"  >{`
+(* make it the last input cell in the notebook *)
+ManipulatePlot[equation[x,n]//Re, {x, -1,1}, {n, 1,10,1}]
+`}</wljs-editor>
+</WLJSWrapper>
+
+Then export it as <small>Mini app</small> and double-click the created file. You can open it anytime on any machine with WLJS Notebook installed. 
+
+### Example 2
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-20 group-hover:opacity-50 transition duration-500" />
+<wljs-editor display="codemirror" type="Input"  >{`
+(* make it initialization cell *)
+newWindow = Module[{
+  text = "Hello World"
+},
+Column[{
+	EventHandler[InputText[text], (text = #)&],
+	Graphics[Table[{
+		RandomColor[], 
+		Rotate[
+			Text[text // Offload, RandomReal[{-1,1}, 2]],
+			RandomReal[{0, 3.14}]
+		]
+	}, {40}]]
+}]
+];
+`}</wljs-editor>
+</WLJSWrapper>
+
+and the last input cell:
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-20 group-hover:opacity-50 transition duration-500" />
+<wljs-editor display="codemirror" type="Input"  >{`
+notebook = EvaluationNotebook[];
+
+Button["Open window", CellPrint[newWindow, "Notebook"->notebook, "Target"->_]]
+`}</wljs-editor>
+</WLJSWrapper>
+
+It will create a window with a single button that, when clicked, creates a new window with its content.

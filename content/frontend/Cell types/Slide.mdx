@@ -28,11 +28,13 @@ You can also create presentations using the WLJS Notebook.
 
 <Accordions>
 <Accordion title="Demonstration">
-{/* ![TODO] */}
+
+<LazyAutoplayVideo url={"/slides-example.mov"}/>
+
 </Accordion>
 </Accordions>
 
-Slide cells provide all features of [Markdown cells](./Markdown.mdx), event listeners for slide events, fragments animations and option to export all slides as PDF.
+Slide cells provide all features of [Markdown cells](./Markdown), event listeners for slide events, fragment animations, and the option to export all slides as PDF.
 
 <Callout>
 To __enter fullscreen__ mode, press the `f` key after focusing (click) on a slide.
@@ -43,7 +45,7 @@ To enable __virtual pointer__, press the `q` key after focusing (click) on a sli
 </Callout>
 
 <Callout type="idea">
-Use __project__ feature of cell properties to show slides in a separate window. Note, that slide cell will also be evaluated within a context of a new window
+Use the __project__ feature of cell properties to show slides in a separate window. Note that the slide cell will also be evaluated within the context of a new window
 </Callout>
 
 <Cards>
@@ -51,7 +53,7 @@ Use __project__ feature of cell properties to show slides in a separate window. 
     href="https://nextjs.org/docs/app/building-your-application/data-fetching/fetching-caching-and-revalidating"
     title="Data-driven slides"
   >
-    Advanced guide on making interactive component-based presentations
+    An advanced guide on making interactive component-based presentations
 
     {/* ![TODO] */}
   </Card>
@@ -116,7 +118,7 @@ Thank you for the attention
 This will merge and render all slide cells in the notebook as one continuous presentation, allowing you to navigate through all slides sequentially.
 
 ## Layout
-Standard text to the left, full height layout:
+Standard text to the left, full-height layout:
 
 <WLJSWrapper>
 <span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
@@ -130,7 +132,7 @@ Content
 `}</wljs-editor>
 </WLJSWrapper>
 
-Scrollable slide 
+Scrollable slide
 
 <WLJSWrapper>
 <span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
@@ -323,7 +325,7 @@ Available transitions: \`none\`, \`fade\`, \`slide\`, \`convex\`, \`concave\`, \
 
 ## Plain HTML Support
 
-Slide cells support plain HTML mixed with [Markdown syntax](./Markdown.mdx) and [WLX](./WLX.mdx). This allows you to embed rich content like websites, videos. For example:
+Slide cells support plain HTML mixed with [Markdown syntax](./Markdown) and [WLX](./WLX). This allows you to embed rich content like websites, videos. For example:
 
 <WLJSWrapper>
 <span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
@@ -339,7 +341,7 @@ Slide cells support plain HTML mixed with [Markdown syntax](./Markdown.mdx) and 
 </WLJSWrapper>
 
 ## WLX Integration (Data-driven Slides)
-Slide cells integrate features from the [WLX](./WLX.md) cell type, similar to [Markdown](./Markdown.md) cells. This enables dynamic, interactive content within your presentations:
+Slide cells integrate features from the [WLX](./WLX) cell type, similar to [Markdown](./Markdown) cells. This feature enables dynamic, interactive content within your presentations:
 
 <WLJSWrapper>
 <span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
@@ -350,7 +352,7 @@ Today is <Now/>
 `}</wljs-editor>
 </WLJSWrapper>
 
-or embed the whole interactive plot
+or embed an entire interactive plot
 
 <WLJSWrapper>
 <span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
@@ -392,9 +394,9 @@ $$
 
 ### Animated equations
 
-> This particular technique was developed by [Cian Luke Martin](https://www.cianlm.dev/), which is basically a post-processing engine for SVGs generated from LaTeX equations
+> This particular technique was developed by [Cian Luke Martin](https://www.cianlm.dev/) and is essentially a post-processing engine for SVGs generated from LaTeX equations
 
-There is an option to create Manim-like animated equations:
+You can create Manim-like animated equations:
 
 <WLJSWrapper>
 <span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
@@ -416,7 +418,7 @@ See additional features:
 <Accordion title="Options">
 
 ### Animation Speed (`data-eq-speed`)
-The increment of time (in seconds) between each stroke
+The time increment (in seconds) between each stroke
 
 <WLJSWrapper>
 <span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
@@ -435,7 +437,7 @@ $$ <!-- .element: data-eq-speed="0.1" -->
 </WLJSWrapper>
 
 ### Color/Color Gradient (`data-eq-gradient`)
-Any number of colors n≥1 is accepted (as well as rgb/hex values)
+Any number of colors n≥1 is accepted (as well as RGB/hex values)
 
 <WLJSWrapper>
 <span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
@@ -465,11 +467,11 @@ $$ <!-- .element: data-eq-gradient="['red', 'gold']" data-eq-color-precess="true
 </WLJSWrapper>
 
 ### Bypass the animation (`data-eq-static`)
-It is used to skip animation, but still use Mathjax for rendering instead of standard KaTeX. It can be used for unifying the look of all equation.
+This is used to skip the animation while still using MathJax for rendering instead of standard KaTeX. It can be used to unify the look of all equations.
 
 
 ## Fragments
-One can also combine it with [Fragments](##Fragments) in the usual way. The only condition is `fragment` class has to be at the same `.element` selector as options for animating
+You can also combine this with [Fragments](##Fragments) in the usual way. The only condition is that the `fragment` class must be in the same `.element` selector as the options for animating
 
 <WLJSWrapper>
 <span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
@@ -495,7 +497,7 @@ $$ <!-- .element: class="fragment" data-eq-speed="0.3" -->
 For full compatibility with Markdown syntax, escape all backslashes in LaTeX commands. Write `\\alpha` instead of `\alpha`.
 
 <Callout>
-See [Markdown cells](./Markdown.md) for more information
+See [Markdown cells](./Markdown) for more information
 </Callout>
 
 
@@ -503,7 +505,7 @@ See [Markdown cells](./Markdown.md) for more information
 
 Slides integrate the [Excalidraw](https://excalidraw.com/) editor for creating drawings directly within your presentations. To create a drawing, type: `!![]`
 
-This opens the Excalidraw editor, and the resulting drawing is saved as an SVG image in the output cell.
+This will open the Excalidraw editor, and the resulting drawing will be saved as an SVG image in the output cell.
 
 ## Export Options (Share)
 
