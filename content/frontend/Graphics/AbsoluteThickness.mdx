@@ -1,0 +1,26 @@
+---
+title: AbsoluteThickness
+env:
+  - WLJS
+update: false
+
+source: https://github.com/JerryI/wljs-graphics-d3/blob/dev/src/Kernel.wl
+package: wljs-graphics-d3
+---
+```wolfram
+AbsoluteThickness[n_Real]
+```
+
+is used to control the visible thickness of lines used in [Graphics](../Graphics/Graphics). The displayed is not affected by scaling or zooming the plot. 
+
+## Example
+A styled [Line](../Graphics/Line) object
+
+```wolfram
+Graphics[{
+  AbsoluteThickness[3],
+  Cyan, 
+  Line[{{0,0}, {1,1}}]
+}]
+```
+

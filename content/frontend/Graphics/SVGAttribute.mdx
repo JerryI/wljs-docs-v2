@@ -1,0 +1,38 @@
+---
+title: SVGAttribute
+env:
+  - WLJS
+update: true
+source: https://github.com/JerryI/wljs-graphics-d3/blob/dev/src/Kernel.wl
+package: wljs-graphics-d3
+---
+Allows to directly set SVG attribute to a 2D graphics object
+```wolfram
+SVGAttribute[object_, "name"->"value"]
+```
+
+__Please see the SVG__ [docs](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute) for all possible attributes. In principle it should work with most 2D primitives, since all of them are SVG elements.
+## Example
+If we want a dashed line
+
+```wolfram
+Graphics[
+	SVGAttribute[
+		Line[{{-1,-1}, {1,1}}]
+	, "stroke-dasharray"->"3"]
+]
+```
+
+Make it blurry
+
+```wolfram
+Graphics[
+	SVGAttribute[
+		SVGGroup[{
+			Red, Disk[{0,0}, 0.5],
+			Blue, Line[{{-1,-1}, {1,1}}]
+		}]
+	, "style"->"filter: blur(10px)"]
+]
+```
+

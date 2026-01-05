@@ -1,0 +1,14 @@
+# GeoHistogram
+
+```
+GeoHistogram[locs] plots a density histogram of the geographic locations locs.
+
+GeoHistogram[locs,bspec] plots a density histogram with bins specified by bspec.
+
+GeoHistogram[locs,bspec,hspec] plots a density histogram with bin densities computed according to the specification hspec.
+```
+
+
+
+
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*

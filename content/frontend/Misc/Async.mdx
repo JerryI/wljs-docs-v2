@@ -1,0 +1,119 @@
+---
+title: Async
+---
+## Utils
+
+### `SetTimeout`
+Spawns an asynchronous task (a wrapper over `SchelduleTask`), that evaluates an expression once
+```wolfram
+SetTimeout[expr_, interval_Real | interval_Quantity] _TaskObject
+```
+A symbol has `HoldFirst` attribute. An `interval` is in __milliseconds__. To cancel it, use
+```wolfram
+CancelTimeout[_TaskObject]
+```
+
+### `SetInterval`
+Spawns an asynchronous task (a wrapper over `SchelduleTask`), that evaluates an expression every `interval` __milliseconds__
+```wolfram
+SetInterval[expr_, interval_Real | interval_Quantity] _TaskObject
+```
+A symbol has `HoldFirst` attribute. To cancel this task use
+
+```wolfram
+TaskRemove[_TaskObject]
+```
+or
+
+```wolfram
+CancelInterval[_TaskObject]
+```
+
+### `PauseAsync`
+It works similar to `Pause`, but returns [Promise](../Misc/Promise)
+
+```wolfram
+Then[PauseAsync[3], Beep];
+```
+
+### `TableAsync`
+It works similar to `Table`, but the inner expression can be implicit `AsyncFunction`
+
+```wolfram
+n = EvaluationCell[];
+
+Then[TableAsync[
+  PauseAsync[1] // Await;
+  i
+, {i,3}], CellPrint[#, "After"->n]&];
+```
+
+### `DoAsync`
+Works in the same way as `TableAsync`
+
+### More
+Note, that there are more expressions in the standard library, which support patterns of async programming:
+
+- [FrontFetchAsync](../Frontend%20IO/FrontFetchAsync)
+- [ChoiceDialogAsync](../Frontend%20IO/ChoiceDialogAsync)
+- [SystemDialogInputAsync](../Frontend%20IO/SystemDialogInputAsync)
+- [`ParallelSubmitAsync`](../Misc/Parallel)
+- [`ParallelSubmitFunctionAsync`](../Misc/Parallel)
+- [ExportAsync](../Misc/ExportAsync)
+- [RasterizeAsync](../Image/RasterizeAsync)
+- `DoAsync`
+- `TableAsync`
+- `PauseAsync`
+- `MMAViewAsync`
+- `AsyncFunction`
+- Any `EventObject`: [InputButton](../GUI/InputButton) and etc
+
+## Asynchronous Functions
+
+### `AsyncFunction`
+It works similar to `Function`
+
+```wolfram
+AsyncFunction[args, body] _Promise
+```
+
+One can use it as normal function, but utilizing [`Await`](#`Await`) keyword. On the background it restructures `body` in the runtime. 
+
+### `Await`
+Holds the execution (non blocking to threads) until the promise is resolved and returns the result
+
+```wolfram
+Await[_ | _Promise] _
+```
+
+If the argument is not `Promise` it won't pause the execution and return the result without changes.
+
+- `Set`
+- `CompoundExpression`
+- `If` 
+- `Module`, `With`
+- `_Symbol` or any other singular expressions
+- `TableAsync`
+- `DoAsync`
+- `PauseAsync`
+- any expression, that returns `Promise` or `EventObject`
+
+What is not supported (by now)
+- Loops: `While`, `For`, `Do`
+- Tables and maps: `Map`, `Table`
+- `Return` will not work correctly inside `AsyncFunction`
+
+For example:
+
+```wolfram
+btn = InputButton[]
+
+Then[AsyncFunction[x, Module[{res},
+  Speak["Click to start"];
+  btn // Await;
+  Speak["Choose"];
+  res = ChoiceDialogAsync["Add 10?"] // Await;
+  If[res, x + 10, x] 
+]][10], Speak];
+
+```

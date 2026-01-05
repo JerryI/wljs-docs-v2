@@ -1,0 +1,10 @@
+# SuperDagger
+
+```
+SuperDagger[expr] displays as expr†.
+```
+
+
+
+
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*

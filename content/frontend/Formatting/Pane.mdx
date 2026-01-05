@@ -1,0 +1,42 @@
+---
+title: Pane
+---
+```wolfram
+Pane[expr_]
+```
+
+displays as a pane containing `expr`.
+
+```wolfram
+Pane[expr_, w_]
+```
+
+```wolfram
+Pane[expr_, {w_, h_}]
+```
+
+displays with a given container size.
+
+## Methods
+### `EventHandler`
+It supports `Click` event
+
+```wolfram
+EventHandler[Pane["Click on me"], {"Click" -> Print}]
+```
+
+## Options
+### `ImageSize`
+The effect is the same as if `{w_, h_}` or `w` were specified as a second argument.
+
+### `Background`
+Specifies the background color
+
+## Examples
+
+```wolfram
+Pane[50!, 200]
+```
+
+## Supported output forms
+- [StandardForm](../Formatting/StandardForm)

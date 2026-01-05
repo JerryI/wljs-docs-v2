@@ -1,0 +1,27 @@
+---
+title: Tetrahedron
+env:
+  - WLJS
+  - Wolfram Kernel
+package: wljs-graphics3d-threejs
+source: https://github.com/JerryI/Mathematica-ThreeJS-graphics-engine/blob/dev/src/kernel.js
+update: false
+---
+```wolfram
+Tetrahedron[{p1, p2, p3, p4}]
+```
+
+represents a polyhedron with 4 vertices 
+
+```wolfram
+Graphics3D[Tetrahedron[{{1, 1, 1}, {-1, -1, 1}, {1, -1, -1}, {-1, 1, -1}}]]
+```
+
+## Parameters
+
+### `RGBColor`
+
+## Methods
+### `Volume`
+
+### `RegionCentroid`

@@ -1,0 +1,12 @@
+# InverseSeries
+
+```
+InverseSeries[s] takes the series s, and gives a series for the inverse of the function represented by s. 
+
+InverseSeries[s,x] uses the variable x in the inverse series.
+```
+
+
+
+
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*

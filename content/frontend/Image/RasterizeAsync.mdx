@@ -1,0 +1,24 @@
+---
+title: RasterizeAsync
+env:
+  - Wolfram Kernel
+---
+```wolfram
+RasterizeAsync[expression_, opts___] _Promise
+```
+
+async version of [Rasterize](../Image/Rasterize)
+
+<Callout type="tip">
+Use it instead of [Rasterize](../Image/Rasterize) when the action was called by a press of a button, or any other external event
+</Callout>
+
+## Options
+### `"Window"`
+By the default it uses [CurrentWindow](../Frontend%20IO/CurrentWindow). 
+
+### `"ExposureTime"`
+Sets the time in seconds for possible async processes to settle down on displayed expression before the rasterization. By the default is `1`.
+
+### `"ImageUpscaling"`
+Upscales the render canvas by `_Integer` times. Default value is `1` (no upscaling, it renders as it is)

@@ -1,0 +1,22 @@
+---
+title: MessageDialog
+env:
+  - Wolfram Kernel
+package: wljs-editor
+---
+```wolfram
+MessageDialog[expr_]
+```
+
+opens a modal window with `expr` displayed in the middle in a *non-blocking way*, where `expr` can be a string, graphics or any other expression
+
+<Callout type="note">
+It will use [StandardForm](../Formatting/StandardForm) for displaying expressions
+</Callout>
+
+## Options
+In a case of a lost context provide 
+
+### `"Notebook"`
+Specify explicitly a notebook where to pop up a window
+

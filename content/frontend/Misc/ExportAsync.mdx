@@ -1,0 +1,14 @@
+---
+title: ExportAsync
+env:
+  - Wolfram Kernel
+---
+```wolfram
+ExportAsync[out_File | out_String, content_, opts___] _Promise
+```
+
+async version of a standard `Export` function, that uses parallel kernels to export data. Returns `Promise`
+
+<Callout type="note">
+Depending on the type of export, one might need to provide extra options for the context. For the case of [Export graphs, expressions](./../Share/PDF) you need to provide `"Window"` if this action was called via timer or any other event, which does not provide [CurrentWindow](../Frontend%20IO/CurrentWindow)
+</Callout>

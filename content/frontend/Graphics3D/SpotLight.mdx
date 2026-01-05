@@ -1,0 +1,53 @@
+---
+title: SpotLight
+env:
+  - WLJS
+virtual: true
+update: true
+origin: https://github.com/JerryI/wljs-graphics-d3/
+---
+```wolfram
+SpotLight[color_RGBColor, opts___]
+SpotLight[color_RGBColor, position_, opts___]
+SpotLight[color_RGBColor, {position_, target_}, opts___]
+SpotLight[color_RGBColor, {position_, target_}, angle_, opts___]
+```
+
+places a fake source of spot light in a 3D scene (see [Graphics3D](../Graphics3D/Graphics3D)). The default `target` is $\{0,0,0\}$. 
+
+```wolfram
+Graphics3D[{Shadows[True], Polygon[ {{-5,5,-1}, {5,5,-1}, {5,-5,-1}, {-5,-5,-1}}], White, Cuboid[{-1,-1,-1}, {1,1,1}], Directive["Shadows"->False], PointLight[Red, {1.5075, 4.1557, 2.6129}, "Intensity"->50], Directive["Shadows"->True], SpotLight[Cyan, {-2.268, -2.144, 3.1635}]}, "Lighting"->None]
+```
+
+For the best effect, use [Shadows](../Graphics3D/Shadows) set to `True` 
+
+<Callout type="warn">
+In the case of `"PathTracing"` renderer, spot light can only work properly if `"MultipleImportanceSampling"` is enabled in the options of [Graphics3D](../Graphics3D/Graphics3D)
+</Callout>
+
+## Options
+### `"Intensity"`
+By the default is 100
+
+### `"Decay"`
+### `"Penumbra"`
+### `"ShadowBias"`
+### `"ShadowMapSize"`
+See THREE.js docs
+
+## Dynamics
+`position` and `target` do support updates
+
+```wolfram
+pos = {0,0,2};
+handler = Function[data, pos = data];
+
+KnotData[{"TorusKnot", {3, 5}}][[1]];
+Graphics3D[{ Shadows[True],
+  %, 
+  EventHandler[Sphere[pos, 0.1], {"drag" -> handler}], 
+  SpotLight[White, {Offload[pos], {0,0,0}}],
+  Polygon[5{{-1,1,-1}, {1,1,-1}, {1,-1,-1}, {-1,-1,-1}}]
+}, "Lighting"->None, ImageSize->600]
+```
+

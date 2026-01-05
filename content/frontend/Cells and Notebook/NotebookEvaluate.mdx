@@ -1,0 +1,30 @@
+---
+title: NotebookEvaluate
+env:
+  - Wolfram Kernel
+---
+```wolfram
+NotebookEvaluate[_RemoteNotebook] _
+```
+
+evaluates the content of provided [RemoteNotebook](../Cells%20and%20Notebook/RemoteNotebook) following the rules:
+- all initialization cells are evaluated __in the isolated context__ on the same caller kernel
+- the output of the __last input Wolfram cell__ is returned
+
+<Callout type="warn">
+`NotebookEvaluate` breaks the evaluation order and causes the evaluation of the host cell __one more time__. Please consider to switch to [NotebookEvaluateAsync](../Cells%20and%20Notebook/NotebookEvaluateAsync), which is much safer and more predictable 
+</Callout>
+
+For example, one can use it to import some definitions from other notebooks like a small "module" using a standard importer:
+
+```wolfram
+nb = Import["someStuff.wln", "WLN"];
+{Symbol1, Symbol2} = NotebookEvaluate[nb];
+```
+
+where at `someStuff.wln` you may have:
+
+```wolfram title="cell -1"
+{1+1, Plot[x, {x,0,1}]}
+```
+

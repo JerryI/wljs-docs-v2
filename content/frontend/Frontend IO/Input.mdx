@@ -1,0 +1,21 @@
+---
+title: Input
+---
+```wolfram
+Input[]
+Input[prompt_String]
+Input[prompt_String, default_]
+```
+
+interactively prompts a user to enter Wolfram Expression displaying `prompt` message with `default` expression shown in the input field.
+
+<Callout type="note">
+This is a blocking sync expression. Please consider to use `InputAsync`
+</Callout>
+
+For example:
+
+```wolfram
+Plot[Evaluate[Input[]], {x,0,1}]
+```
+

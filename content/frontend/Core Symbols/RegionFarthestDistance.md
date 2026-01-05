@@ -1,0 +1,10 @@
+# RegionFarthestDistance
+
+```
+RegionFarthestDistance[reg1,reg2] gives the farthest distance between points in the regions reg1 and reg2.
+```
+
+
+
+
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*

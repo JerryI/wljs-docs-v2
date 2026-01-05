@@ -1,0 +1,17 @@
+---
+title: ParentCell
+env:
+  - Wolfram Kernel
+source: https://github.com/JerryI/wljs-editor/blob/dev/src/RemoteCellsKernel.wl
+package: wljs-editor
+
+---
+fetches [RemoteCellObj](../Cells%20and%20Notebook/RemoteCellObj) for a parent input cell of a given cell
+
+```wolfram
+ParentCell[cell_RemoteCellObj] _CellObj
+```
+
+<Callout type="warn">
+It relies on a synchronous function [`WaitAll`](../Misc/Promise), which blocks the main event-loop, therefore it is not recommended to use it. Please, consider to use [EvaluationCell](../Cells%20and%20Notebook/EvaluationCell) if possible.  
+</Callout>

@@ -1,0 +1,27 @@
+---
+title: MatrixPlot
+env:
+  - Wolfram Kernel
+update:
+---
+Plots a 2D array with an arbitrary data inside with axes
+```wolfram
+MatrixPlot[
+ Fourier[Table[
+   UnitStep[i, 4 - i] UnitStep[j, 7 - j], {i, -25, 25}, {j, -25, 
+    25}]]]
+```
+
+or with a simpler example
+
+```wolfram
+MatrixPlot[PauliMatrix[3]]
+```
+
+## Options
+<Callout type="warn">
+`ColorFunction` is not supported option for now
+</Callout>
+
+## Dev notes
+It produces [`Raster`](../Graphics/Raster) graphics object placed into [`Graphics`](../Graphics/Graphics)

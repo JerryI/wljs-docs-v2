@@ -1,0 +1,16 @@
+# NearestNeighborG
+
+```
+NearestNeighborG[pdata,r] estimates the nearest neighbor function G(r) at radius r in the point data pdata.
+
+NearestNeighborG[pproc,r] computes G(r) for the point process pproc.
+
+NearestNeighborG[bdata,r] computes G(r) for binned data bdata. 
+
+NearestNeighborG[pspec] generates the function G that can be applied repeatedly to different radii r.
+```
+
+
+
+
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*

@@ -1,0 +1,62 @@
+---
+title: Refresh
+env:
+  - Wolfram Kernel
+
+package: wljs-manipulate
+source: https://github.com/JerryI/wljs-manipulate/blob/main/Kernel.wl
+---
+<Callout type="warn">
+Implementation differs from Mathematica
+</Callout>
+
+```wolfram
+Refresh[expr_, interval_]
+```
+
+produces a dynamic window with `expr` reevaluated each interval of time specified in seconds or in `Quantity` provided in `interval`
+
+```wolfram
+Refresh[expr_, trigger_EventObject | trigger_String]
+```
+
+produces a dynamic window with `expr` reevaluated by `trigger` event (see [Events](../Misc/Events)).
+
+`Referesh` has `HoldFirst` attribute.
+
+<Callout type="note">
+Unlike [Animate](../GUI/Animate), `Refresh` will throttle the refresh rate if the CPU time takes more than provided interval.
+</Callout>
+
+## Example
+
+```wolfram
+Refresh[Now // TextString, 1]
+```
+
+or even for decorated symbols
+
+```wolfram
+Refresh[Now, 1]
+```
+
+## JIT Features
+`Refresh` expression uses the same runtime optimization features as [Manipulate](../GUI/Manipulate) and [Animate](../GUI/Animate), which can benefit some cases and prevent full reevaluation.
+
+For example:
+
+```wolfram
+Refresh[RandomImage[], 0.2]
+```
+
+or 
+
+```wolfram
+Refresh[ListLinePlot[RandomReal[{-1,1}, 100]], 0.2]
+```
+
+<Callout type="warn">
+Be careful with `Plot` or any other functions placed as `expr` with a fast refresh rate (< 1 second). It might cause a significant load to the system in some cases if JIT optimizations were not successful. Test it on longer update times beforehand.
+
+Consider to use [Offload](../Interpreter/Offload) for rapidly changing data (see more in [Dynamics](frontend/Dynamics) and [Animation](frontend/Advanced/Dynamics/Animation) or [PlotlyExtendTraces](../Plotly/PlotlyExtendTraces)).
+</Callout>

@@ -1,0 +1,12 @@
+# HeavisideTheta
+
+```
+HeavisideTheta[x] represents the Heaviside theta function θ(x), equal to 0 for x<0 and 1 for x>0. 
+
+HeavisideTheta[x1,x2,…] represents the multidimensional Heaviside theta function, which is 1 only if all of the xi are positive. 
+```
+
+
+
+
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*

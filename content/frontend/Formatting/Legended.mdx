@@ -1,0 +1,41 @@
+---
+title: Legended
+---
+Attaches legend or label to any `expr`
+
+```wolfram
+Legended[expr_, lbl_ | legend_]
+```
+
+One can use it to provide legend entries for specific elements
+
+```wolfram
+PieChart[{1, Legended[2, "Bob"], 3, Legended[4, "John"]}]
+```
+
+Add a legend to a table of numbers
+
+```wolfram
+Legended[ Grid[Partition[ Table[If[PrimeQ[n], Item[n, Background -> LightBlue], n], {n, 100}], 10], Frame -> All], SwatchLegend[{LightBlue}, {"prime numbers"}]]
+```
+
+<Callout type="note">
+`Legended` is used implicitly with provided options `PlotLegends`
+
+```wolfram
+Plot[{BesselJ[2, x], BesselJ[3, x]}, {x, 0, 20}, 
+ PlotLegends -> Placed["Expressions", {Right, Top}]]
+```
+
+</Callout>
+
+## Legend placement 
+Use [Placed](../Formatting/Placed) to adjust the position of your legend, i.e.
+
+```wolfram
+Legended[1/2, Placed[SwatchLegend[{Red}, {"Number"}], Before]]
+```
+
+## Supported output forms
+- [StandardForm](../Formatting/StandardForm)
+- [WLXForm](../Formatting/WLXForm)

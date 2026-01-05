@@ -1,0 +1,16 @@
+---
+title: RandomImage
+env:
+  - Wolfram Kernel
+origin: Wolfram Language
+source:
+---
+Generates a raster [`Image`](../Image/Image) with a given size and distribution. Only `RGB` space is supported. The maximum value __is limited to `255` for each channel__
+
+```wolfram
+RandomImage[255, {100, 100}, ColorSpace -> "RGB"]
+```
+
+<Callout type="warn">
+3D features are not supported
+</Callout>

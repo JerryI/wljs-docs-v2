@@ -1,0 +1,13 @@
+---
+title: PasteButton
+env:
+  - Wolfram Kernel
+package: wljs-editor
+---
+```wolfram
+PasteButton[expr_ | str_String]
+PasteButton[label_, expr_ | str_String]
+```
+
+pushes [StandardForm](../Formatting/StandardForm) form of `expr` or `str` directly as a new cell when pressed with a `label` displayed
+

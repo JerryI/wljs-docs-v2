@@ -1,0 +1,42 @@
+---
+title: InputSelect
+env:
+  - Wolfram Kernel
+origin: https://github.com/JerryI/wljs-inputs
+
+package: wljs-inputs
+source: https://github.com/JerryI/wljs-inputs/blob/dev/src/Kernel.wl
+---
+```wolfram
+InputSelect[{expr1_ -> name1_String, expr2_ -> name2_String}, defaultExpr_] _EventObject
+```
+
+represents a select field with different choices
+
+or
+
+```wolfram
+InputSelect[{val1_, val2_}, defaultval_] _EventObject
+```
+
+is also valid
+
+## Event generation
+Emits corresponding `expr` based on user's choice.
+
+## Options
+### `"Label"`
+Adds a label 
+### `"Topic"`
+Specifies which topic or pattern of an event is used
+
+## Chaining events
+One can reuse another event
+
+```wolfram
+InputSelect[event_EventObject, rest__]
+```
+
+## Supported output forms
+- [StandardForm](../Formatting/StandardForm)
+- [WLXForm](../Formatting/WLXForm)

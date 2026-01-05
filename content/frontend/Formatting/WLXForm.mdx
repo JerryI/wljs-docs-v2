@@ -1,0 +1,44 @@
+---
+title: WLXForm
+
+---
+
+A standard form used for representing Wolfram expressions on [Slides](frontend/Advanced/Slides/Slides) and in [WLX](frontend/Cell%20types/WLX) cells.
+
+By the default it applies `ToString` transformation. The use cases are the same as for [StandardForm](../Formatting/StandardForm). 
+
+## Example
+### Strings
+Try the simples example:
+
+```wolfram
+Sym /: MakeBoxes[Sym, f: StandardForm] := MakeBoxes["Hooray", f]
+
+Sym /: MakeBoxes[Sym, f: WLXForm] := MakeBoxes["Didly-Didly", f]
+```
+
+Here is how it looks in the wolfram language cell:
+
+Here it is in markdown cell:
+
+### Complex
+Depending on where an expression is displayed, one can change its visual representation using [MakeBoxes](../Formatting/MakeBoxes) tagset, i.e.
+
+```wolfram
+SpecialOne /: MakeBoxes[SpecialOne, StandardForm] := With[{
+	o = Graphics[{Red, Disk[]}] 
+},
+	MakeBoxes[o, StandardForm]
+]
+
+SpecialOne /: MakeBoxes[SpecialOne, WLXForm] := With[{
+	o = Graphics[{Blue, Disk[]}]
+},
+	MakeBoxes[o, WLXForm]
+]
+```
+
+in the normal Wolfram cell an output looks like
+
+while on a slide
+

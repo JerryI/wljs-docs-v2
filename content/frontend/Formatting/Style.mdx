@@ -1,0 +1,59 @@
+---
+title: Style
+env:
+  - Wolfram Kernel
+update: 
+origin: https://github.com/JerryI/wljs-editor/tree/main
+needsContainer:
+---
+
+Styling box used as a decoration for an arbitrary Wolfram Expressions
+
+```wolfram
+Style[expr_, opts__]
+```
+
+<Callout type="info">
+Expressions are editable
+</Callout>
+
+The argument `opts` contains directives for the formatted output. 
+## Options
+- `Background`
+- `FontFamily`
+- `FontSize`
+
+## Directives
+- `_Integer` font size
+- `_RGBColor` font color
+- `Bold`
+- `Italic`
+
+## Example
+
+```wolfram
+Style[1, Background->Yellow]
+```
+
+For pure string options are much richer
+
+```wolfram
+Style["ddd", Background->LightBlue, FontFamily->"Monospace", Bold, Red, Italic,  20]
+```
+
+Hamlet's soliloquy, with repeated words successively has more contrast background
+
+```wolfram
+With[{data = ExampleData[{"Text", "ToBeOrNotToBe"}, "Words"]}, 
+  Take[MapIndexed[Style[#, 4 Count[Take[data, First[#2]], #]] &, data], 100]
+]
+```
+
+Or for a regular expressions
+
+```wolfram
+Style[(*FB[*)((1)(*,*)/(*,*)((*SqB[*)Sqrt[2](*]SqB*)))(*]FB*), 18, Red]
+```
+
+## Supported output forms
+- [StandardForm](../Formatting/StandardForm)

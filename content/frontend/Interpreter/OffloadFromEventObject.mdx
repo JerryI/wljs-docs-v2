@@ -1,0 +1,33 @@
+---
+title: OffloadFromEventObject
+env:
+  - Wolfram Kernel
+
+package: wljs-editor
+origin: https://github.com/JerryI/wljs-editor/tree/main
+---
+```wolfram
+Offload`FromEventObject[ev_EventObject] _Offload
+```
+
+generates a dynamic symbol (aka [Offload](../Interpreter/Offload)) from a given [`EventObject`](../Misc/Events) ([InputRange](../GUI/InputRange), [InputText](../GUI/InputText), ... etc) placing view-component of `ev` as a decoration
+
+<Callout type="info">
+To produce more instances, you need to call it multiple times
+</Callout>
+
+## Example
+It feels similar to what Mathematica's dynamic keyword produce
+
+```wolfram title="evaluate"
+Offload`FromEventObject[InputRange[-1,1,0.1]]
+```
+
+__cut and paste it into__
+
+```wolfram
+Rectangle[{-1,-1}, {(*here*), 1}]
+```
+
+## Dev notes
+This is a simple combination of [Offload](../Interpreter/Offload), [`EventHandler`](../Misc/Events) and [Interpretation](../Formatting/Interpretation) 

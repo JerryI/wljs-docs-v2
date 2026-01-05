@@ -1,0 +1,23 @@
+---
+title: Offset
+env:
+  - WLJS
+package: wljs-graphics-d3
+source: https://github.com/JerryI/wljs-graphics-d3/blob/dev/src/kernel.js
+---
+adds an offset to the given position in absolute units (pixels)
+
+```wolfram
+Offset[{dx_,dy_}, position_]
+```
+
+sets returns coordinates in absolute units
+
+```wolfram
+Offset[{ax_,ay_}]
+```
+
+<Callout type="tip">
+Use it to set radiuses for [Disk](../Graphics/Disk) or [Circle](../Graphics/Circle) 
+</Callout>
+

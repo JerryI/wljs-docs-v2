@@ -1,0 +1,12 @@
+# Greater
+
+```
+x>y yields True if x is determined to be greater than y. 
+
+x1>x2>x3 yields True if the xi form a strictly decreasing sequence. 
+```
+
+
+
+
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*

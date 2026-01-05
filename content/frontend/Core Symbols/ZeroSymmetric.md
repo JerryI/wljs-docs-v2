@@ -1,0 +1,10 @@
+# ZeroSymmetric
+
+```
+ZeroSymmetric[{s1,…,sn}] represents the symmetry of a zero tensor in the slots si.
+```
+
+
+
+
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*

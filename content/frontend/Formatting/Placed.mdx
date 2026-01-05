@@ -1,0 +1,47 @@
+---
+title: Placed
+env:
+  - WLJS
+---
+
+A special symbol used across formatting, plotting functions in Wolfram Language
+
+```wolfram
+Placed[feature_, position_]
+```
+
+where `position` can be
+
+```wolfram
+Before | After | {x, y} | {Left, Top} | ...
+```
+
+where `x,y` are scaled coordinates.
+
+## Use cases
+### Legended
+
+```wolfram
+Legended[Disk[]//Graphics, Placed[SwatchLegend[{Red}, {"Mark"}], Before]]
+```
+
+```wolfram
+Legended[Disk[]//Graphics, Placed[SwatchLegend[{Red}, {"Mark"}], After]]
+```
+
+Or using scaled coordinates
+
+```wolfram
+Legended[Disk[]//Graphics, Placed[SwatchLegend[{Red}, {"Mark"}], {0.5,0.5}]]
+```
+
+### Plot
+In the most plotting function you can use this wrapper to place your generated legend
+
+```wolfram
+Plot[
+  {x,x^2}, {x,0,1}, 
+  PlotLegends->Placed[SwatchLegend[Automatic], {0.2,0.2}]
+]
+```
+

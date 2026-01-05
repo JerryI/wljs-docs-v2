@@ -1,0 +1,10 @@
+# Shortest
+
+```
+Shortest[p] is a pattern object that matches the shortest sequence consistent with the pattern p. 
+```
+
+
+
+
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*

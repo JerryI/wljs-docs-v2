@@ -1,0 +1,19 @@
+---
+title: OpenerView
+env:
+  - Wolfram Kernel
+---
+```wolfram
+OpenerView[{exprSummary_, expr_}, state_:False]
+```
+
+represent a disclosure widget in which `expr` is visible only when the widget is toggled into an open state. A summary or label is represented as `exprSummary`.
+
+For example:
+```wolfram
+OpenerView[{"Show me a plot", Plot[x, {x,0,1}]}]
+```
+
+## Output forms
+- [StandardForm](../Formatting/StandardForm)
+- [WLXForm](../Formatting/WLXForm)

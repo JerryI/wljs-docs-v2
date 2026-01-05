@@ -1,0 +1,52 @@
+---
+title: HighlightImage
+---
+Combines raster [Image](../Image/Image) with vector [Graphics](../Graphics/Graphics) in order to annotate, overlay or highlight certain features
+
+```wolfram
+HighlightImage[img_Image, roi_]
+```
+
+where `roi` can be
+
+- `{{x1,y1}, ...}` list of image positions (drawn as points)
+- `g_Graphics` a graphics object or list of graphics primitives
+- `mask_Image` a mask image
+
+The following form is also valid
+
+```wolfram
+HighlightImage[img_Image, {style__, roi_}]
+```
+
+where `style` accepts the same directives as [Style](../Graphics/Style) or graphics.
+There are additional `style` rules
+
+- `"Blur", {"Blur", r}`
+
+<Callout type="warn">
+There is a known bug on HI-DPI screens and specific types of images. Apply this patch to your image.
+
+```wolfram
+img = Image[img, "ImageResolution"->Automatic];
+```
+
+</Callout>
+
+## Examples
+Highlight features
+
+```wolfram
+i = (* image *)
+HighlightImage[i, ImageCorners[i, 1, .001, 5]]
+```
+
+Highlight multiple regions of interest
+```wolfram
+i = (* image *);
+
+HighlightImage[i, {Blue, EdgeDetect[i], Red, 
+  ImageLines[GradientFilter[i, 2], MaxFeatures -> 10], Green, 
+  ImageKeypoints[i, MaxFeatures -> 20]}]
+```
+

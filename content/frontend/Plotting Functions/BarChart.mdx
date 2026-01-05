@@ -1,0 +1,32 @@
+---
+title: BarChart
+env:
+  - Wolfram Kernel
+origin: https://reference.wolfram.com/language/ref/BarChart.html
+update: false
+needsContainer: false
+---
+```wolfram
+BarChart[{1, 2, 3}]
+```
+generates a bar chart for a list of heights
+
+or also
+```wolfram
+BarChart[{data1, data2...}]
+```
+is used for multiple plots.
+
+## Examples
+Set the style for bars
+
+```wolfram
+BarChart[Range[8], ChartStyle -> "DarkRainbow"]
+```
+
+chartwork with stacked bars
+
+```wolfram
+BarChart[RandomReal[1, {50, 50}], ChartLayout -> "Stacked", Axes -> None, BarSpacing -> {0, 0}, PerformanceGoal -> "Speed", ChartStyle -> "FallColors"]
+```
+

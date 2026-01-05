@@ -1,0 +1,27 @@
+---
+title: Indexed
+---
+```wolfram
+Indexed[expr_, i_]
+```
+
+represents the component of `expr` with index `i` and formats as expected in traditional form.
+
+```wolfram
+Indexed[expr_, {i_, j_, ...}]
+```
+
+For example
+
+```wolfram
+Indexed[x, {1,2}]
+```
+
+```wolfram @
+(*TB[*)Indexed[(*|*)x(*|*), {(*|*)1,2(*|*)}](*|*)(*1:eJxTTMoPSmMAgmIuIOGZl5JakZrilF8BAECTBhI=*)(*]TB*)
+```
+
+<Callout type="note">
+If `expr` represents a `List`, a corresponding `Part` of this list will be taken
+</Callout>
+

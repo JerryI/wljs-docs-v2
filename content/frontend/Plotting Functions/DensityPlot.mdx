@@ -1,0 +1,45 @@
+---
+title: DensityPlot
+env:
+  - Wolfram Kernel
+needsContainer: false
+update: false
+origin: https://reference.wolfram.com/language/ref/DensityPlot.html
+---
+```wolfram
+DensityPlot[f, {x, xmin, xmax}, {y, ymin, ymax}]
+```
+makes a density plot of `f` as a function of `x` and `y`
+
+<Callout type="note">
+Hardware accelerated
+</Callout>
+
+<Callout type="tip">
+For better performance use this option
+```wolfram
+PerformanceGoal->"Speed"
+```
+</Callout>
+
+```wolfram
+DensityPlot[x y, {x,0,1}, {y,0,1}]
+```
+
+## Options
+
+### `ColorFunction`
+
+```wolfram
+CoolColor[ z_ ] := RGBColor[z, 1 - z, 1];
+DensityPlot[Sin[x y], {x, -1, 1}, {y, -1, 1}, 
+ ColorFunction -> CoolColor]
+```
+
+or using predefined
+
+```wolfram
+ DensityPlot[Sin[x] Sin[y], {x, -2, 2}, {y, -2, 2}, 
+ ColorFunction -> ColorData["SolarColors"]]
+```
+

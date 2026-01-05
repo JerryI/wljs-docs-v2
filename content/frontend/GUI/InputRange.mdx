@@ -1,0 +1,126 @@
+---
+title: InputRange
+env:
+  - Wolfram Kernel
+origin: https://github.com/JerryI/wljs-inputs
+
+package: wljs-inputs
+source: https://github.com/JerryI/wljs-inputs/blob/dev/src/Kernel.wl
+---
+```wolfram
+InputRange[min_, max_, step_:1, initial_:(min+max)/2, opts___] _EventObject
+```
+creates a basic combo of a slider and numerical input field and returns [`EventObject`](../Misc/Events)
+
+## Event generation
+Every-time user drags a slider, an event __in a form of number__ will be generated
+```wolfram
+slider = InputRange[0,1,0.1];
+EventHandler[slider, Function[data,
+	Print[StringTemplate["`` is a number"][data]]
+]];
+slider
+```
+
+<Callout type="info">
+On MacOS devices it provides a haptic feedback when dragged
+</Callout>
+
+## Options
+### `"Label"`
+Adds a label to a slider
+
+```wolfram
+slider = InputRange[0, 1, 0.1, "Label"->"Slider"]
+```
+
+### `"Topic"`
+Specifies which topic or pattern of an event is used
+
+```wolfram
+"Topic" -> name_String
+```
+emits `name` for each time when user drags a slider
+
+```wolfram
+"Topic" -> {oninput_String, onchange_String}
+```
+emits `oninput` when any changes occur, while `onchange` is __emitted after__ the users action. `Null` value will suppress event generation, i.e. to make `onchange` only slider
+
+```wolfram
+"Topic" -> {Null, "Default"}
+```
+
+### `"TrackedExpression"`
+Adds expression to track (usually a symbol) and update the slider position
+
+```wolfram
+var = 0.3;
+EventHandler[InputRange[0,2,0.1, var, "TrackedExpression"->Offload[var], Print]
+```
+
+Now you can overwrite slider position by setting
+
+```wolfram
+var = 0.6;
+```
+
+<Callout type="note">
+Your slider effectively acquires an initialization value because of tracked expression 
+</Callout>
+
+### Debouncing
+To prevent an event propagation, when a tracked symbol is updated use
+```wolfram
+"TrackedExpression"->{Offload[var], "Debounce"}
+```
+
+then you can safely write
+
+```wolfram
+var = 0.3;
+EventHandler[InputRange[0,2,0.1, var, "TrackedExpression"->{Offload[var], "Debounce"}], Function[newValue,
+	var = newValue
+]]
+```
+
+Then InputRange *will remember its state*
+
+### `Appearance`
+By the default is `Automatic`. 
+Possible value: `"FineTuning"` - adds a fine control element to vary the range value $\pm 10\%$.
+
+## Chaining events
+One can reuse another event for a new element
+
+```wolfram
+InputRange[event_EventObject, min_, max_, step_:1, initial_:(min+max)/2, opts___]
+```
+
+for example
+
+```wolfram
+ev = EventObject[];
+
+InputButton[ev, "Topic"->"Button"]
+InputRange[ev, 0,1,0.1, "Topic"->"Slider"]
+
+EventHandler[ev, {
+	"Button" -> Beep,
+	"Slider" -> Print
+}];
+```
+
+## Applications
+Control properties using knob
+
+```wolfram
+EventHandler[InputRange[0,1,0.1], Function[data, pos = data]];
+% 
+% // EventFire;
+Graphics[Rectangle[{-1,0}, {1, Offload[pos]}]]
+```
+
+## Supported output forms
+- [StandardForm](../Formatting/StandardForm)
+- [WLXForm](../Formatting/WLXForm)

@@ -1,0 +1,16 @@
+# ActivePrediction
+
+```
+ActivePrediction[f,{conf1,conf2, …}] gives an object representing the result of active prediction obtained by using the function f to determine values for the example configurations confi.
+
+ActivePrediction[f,reg] generates configurations within the region specified by reg.
+
+ActivePrediction[f,sampler] generates configurations by applying the function sampler.
+
+ActivePrediction[f,{conf1,conf2,…}->nsampler] applies the function nsampler to successively generate configurations starting from one of the confi.
+```
+
+
+
+
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*

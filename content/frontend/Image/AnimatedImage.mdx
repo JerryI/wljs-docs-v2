@@ -1,0 +1,88 @@
+---
+title: AnimatedImage
+---
+Represents a collection of [Image](../Image/Image) merged into an animation
+
+```wolfram
+AnimatedImage[{__Image}, opts___]
+```
+
+```wolfram
+AnimatedImage[File[_String], opts___]
+```
+
+## Options
+### `FrameRate`
+By the default is `12`
+
+## Constructor
+### From GIF animation
+Import `.gif` as usual and supply to `AnimatedImage` as a list
+
+```wolfram
+AnimatedImage[File["yourGif.gif"], FrameRate->24]
+```
+
+### From images
+Generate raster images
+
+```wolfram
+t = Table[
+  With[{h = h}, LinearGradientImage[Hue[# + h, .5] &, 50]], {h, 0, 
+   1, .1}];
+
+AnimatedImage[t, FrameRate->24]
+```
+
+or from imported GIF
+
+```wolfram
+AnimatedImage[Import["anim.gif"], FrameRate->30]
+```
+
+Another example
+
+```wolfram
+AnimatedImage[Rasterize[Style[#, 40]] & /@ Range[0, 9], 
+ FrameRate -> 6]
+```
+
+### From Animate
+You can wrap [Animate](../GUI/Animate), [AnimatePlot](../Plotting%20Functions/AnimatePlot), [AnimateParametericPlot](../Plotting%20Functions/AnimateParametericPlot) expressions with `AnimatedImage` to rasterize them into the series of images:
+
+```wolfram
+AnimatedImage[AnimatePlot[Sinc[x z], {x,0,4Pi}, {z,1,5}], FrameRate->60]
+```
+
+where it is extended with options alike [Rasterize](../Image/Rasterize)
+
+#### Options
+- `FrameRate` playback speed (does not affect rasterization)
+- `"Window"` by the default is [CurrentWindow](../Frontend%20IO/CurrentWindow) 
+- `"ExposureTime"` sets waiting time before each frame is captured. By the default it is `Automatic` and the actual values is taken from the animation rate of the widget
+- `"Asynchronous"` sets async rasterization mode, where the constructor returns `Promise` immediately. By the default is `False`.
+
+## Exporting
+You can export `AnimatedImage` as GIF using file, `ByteArray` or a string as a container:
+
+```wolfram
+Export["anim.gif", AnimatedImage[...]]
+```
+
+```wolfram
+ExportByteArray[AnimatedImage[...], "GIF"]
+```
+
+```wolfram
+ExportString[AnimatedImage[...], {"Base64", "GIF"}]
+```
+
+Also [Video](../Video/Video) object can be directly derived from [AnimatedImage](../Image/AnimatedImage):
+
+```wolfram
+Video[AnimatedImage[...]]
+```
+
+## Output forms
+- [StandardForm](../Formatting/StandardForm)
+- [WLXForm](../Formatting/WLXForm)

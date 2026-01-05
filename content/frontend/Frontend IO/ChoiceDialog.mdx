@@ -1,0 +1,47 @@
+---
+title: ChoiceDialog
+env:
+  - Wolfram Kernel
+package: wljs-editor
+---
+```wolfram
+ChoiceDialog[expr_]
+```
+
+puts up a standard choice dialog that displays `expr` together with two buttons OK and CANCEL. It block the execution, until any button is pressed (or ESC / ENTER)
+
+```wolfram
+ChoiceDialog[expr_, {label1_ -> value1_, label2_ -> value2_ ...}]
+```
+
+includes buttons with labels `labeli` and returns `valuei` if clicked. Labels and values can be __any WL expressions__.
+
+<Callout type="note">
+It will use [StandardForm](../Formatting/StandardForm) for displaying expressions
+</Callout>
+
+## Examples
+Confirm action
+
+```wolfram
+ChoiceDialog["Ok or not Ok?"]
+```
+
+Choose from the list of expressions
+
+```wolfram
+ChoiceDialog["Choose the Date", {Now->Now, Now + Quantity[1, "Days"] -> Now + Quantity[1, "Days"]}]
+```
+
+Choose from the list of labels
+
+```wolfram
+ChoiceDialog["Choose the Date", {"Now"->Now, "Tomorrow" -> Now + Quantity[1, "Days"]}]
+```
+
+## Options
+In a case of a lost context provide 
+
+### `"Notebook"`
+Specify explicitly a notebook where to pop up a window
+

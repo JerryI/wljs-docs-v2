@@ -1,0 +1,259 @@
+---
+title: Plot
+env:
+  - Wolfram Kernel
+update: false
+virtual: 
+registered: true
+---
+A Swiss knife for displaying 2D data
+
+```wolfram
+Plot[expr_, {variable, min, max, step}, opts__]
+```
+
+has `HoldFirst` attribute. See the list of supported options (`opts`) down below
+## Options
+### `PlotStyle` 
+Works as in Mathematica, i.e. per element in `expr` array, supports color, opacity and etc
+
+```wolfram
+Plot[Table[x^y, {y, 6}]//Evaluate, {x, 0,1}, PlotStyle->Table[Blend[{Red, Blue}, i/6], {i, 6}]]
+```
+
+### `AxesLabel`
+Place labels on your axes
+```wolfram
+Plot[Sinc[x], {x, 0, 10}, AxesLabel -> {"x", "Sinc[x]"}]
+```
+
+Labels __accepts only strings__ or numbers unlike Mathematica, where you can put everything. 
+
+Since it is translated into [`Text`](../Graphics/Text), one can use sort of TeX math input
+
+```wolfram
+Plot[PDF[NormalDistribution[0, 1], x], {x, -10, 10}, AxesLabel -> {"wavenumber (cm^{-1})", "absorption \\alpha"}, PlotRange->Full]
+```
+
+It also supports absolute positioning using offset
+
+```wolfram
+Plot[PDF[NormalDistribution[0, 1], x], {x, -10, 10}, AxesLabel -> {"wavenumber (cm^{-1})", {"absorption \\alpha", {112,0}}}, PlotRange->Full]
+```
+
+### `Ticks`
+Customize ticks by providing an array of numbers for both axes
+```wolfram
+Plot[x, {x, 0, 1}, Ticks->{{0, 0.5, 1}, {}}]
+```
+
+Or by providing as pairs `{Number, String}` one can specify the displayed text
+```wolfram
+Plot[x, {x, 0, 1}, Ticks->{{{0, "Zero"}, {0.5, "Half"}, {1,"One"}}, {}}]
+```
+
+### `Controls` 💛
+This is more an option for [Graphics](../Graphics/Graphics), but with a bit of a hacking it can be used here as well. The features __allows to pan and zoom your plots__, that was never possible in Mathematica
+
+```wolfram
+Plot[Sin[1/x], {x, 0.001, 0.1}, MaxRecursion->1];
+Insert[%, Controls->True, {2,-1}]
+```
+
+*Try to use your mouse here*
+
+### `Frame`
+Turns plot into the journals-like styled graph. In general it has much more options to customize the look
+
+```wolfram
+Plot[x, {x, 0, 1}, Frame->True]
+```
+
+#### `FrameTicks`
+The same as [`Ticks`](#`Ticks`), but for this regime.
+
+#### `FrameLabel` 
+The same as [`AxesLabel`](#`AxesLabel`)
+```wolfram
+Plot[x, {x, 0, 1}, Frame->True, FrameLabel->{
+	"x-axis", 
+	"y-axis"
+}]
+```
+
+one can specify an absolute offset for a label by wrapping it into a list
+
+```wolfram
+Plot[x, {x, 0, 1}, Frame->True, FrameLabel->{
+	"x-axis", 
+	{"y-axis", {0,50}}
+}]
+```
+
+#### `FrameStyle`
+Affects the style of [`FrameLabels`](#`FrameLabels`). Use `Directive` for changing the style
+```wolfram
+Plot[x, {x, 0, 1}, Frame->True, FrameLabel->{"x-axis", "y-axis"}, FrameStyle->Directive[FontSize->16]]
+```
+
+#### `FrameTicksStyle`
+Affects the style of [`FrameTicks`](#`FrameTicks`)
+```wolfram
+Plot[x, {x, 0, 1}, Frame->True, FrameLabel->{"x-axis", "y-axis"}, FrameTicksStyle->Directive[FontSize->16]]
+```
+
+#### `TickLabels`
+<Callout type="info">
+Since `Plot` options are hardcoded in WL core, we cannot add new options, however using trick with `Insert` any values can be provided to the resulting `Graphics` expression
+</Callout>
+To remove unnecessary ticks, use
+```wolfram
+Plot[x, {x, 0, 1}, Frame->True];
+Insert[%, "TickLabels"->{{True, False}, {True, False}}, {2,-1}]
+```
+
+### `ClippingStyle`
+Show the clipped regions like the rest of the curve and colored
+```wolfram
+Plot[Sin[x]/x^2, {x, -10, 10}, ClippingStyle -> Red]
+```
+
+### `Filling`
+Fill the area under, over of between curves
+
+```wolfram
+Plot[Evaluate[Table[BesselJ[n, x], {n, 4}]], {x, 0, 10}, Filling -> Axis]
+```
+
+Possible options will be
+- `Bottom`
+- `Top`
+- `{1 -> {2}}` from curve 1 to 2
+
+### `Baseline`
+Align graphs by the $x$ axis in each plot:
+```wolfram
+{Plot[Im[Zeta[1/2 + I t]], {t, -20, 20}, BaselinePosition -> Axis], 
+ Plot[Re[Zeta[1/2 + I t]], {t, -20, 20}, BaselinePosition -> Axis]} // Row
+```
+
+### `Epilog`
+Puts any graphics object on top of the data plotted
+
+```wolfram
+Plot[Sin[x], {x, 0, 2 Pi}, Epilog -> {PointSize[0.04], Point[{0, 0}], Point[{Pi, 0}], Point[{2 Pi, 0}]}]
+```
+
+It opens up many possibilities, since it provides low-level access to the `Graphics` canvas.
+
+### `Prolog`
+The same as [`Epilog`](#`Epilog`), but acts before plotting the data.
+
+### `ExclusionsStyle`
+Use red lines to indicate the vertical asymptotes
+
+```wolfram
+Plot[Tan[x], {x, 0, 10}, Exclusions -> {Cos[x] == 0}, 
+ ExclusionsStyle -> Red]
+```
+
+### `ImageSize`
+A common option for any graphics 
+```wolfram
+ImageSize -> Width
+```
+or
+```wolfram
+ImageSize -> {Width, Height}
+```
+It uses pixels as units
+
+### `MaxReqursion`
+Affects the accuracy of the plot when it comes to the sudden changes of a sampled function
+```wolfram
+Plot[Sin[1/x], {x, 0.001, 0.1}, MaxRecursion->1]
+```
+
+The lowest values is `0`
+
+### `Mesh`
+Shows sampling points
+```wolfram
+Plot[Sin[1/x], {x, 0.001, 0.1}, Mesh -> All]
+```
+
+### `PeformanceGoal`
+Affects the number of sampling points to reduce the load
+- `"Speed"`
+- `"Quality"`
+
+### `PlotPoints`
+Change the initial sampling points
+- a number
+
+### `PlotLegends`
+Accepts `Automatic`, `"Expressions"` or `List` of expressions to show or explicit legend function, i.e. [SwatchLegend](../Formatting/SwatchLegend), [LineLegend](../Formatting/LineLegend) or [PointLegend](../Formatting/PointLegend)
+
+```wolfram
+Plot[{Sin[x], Cos[x]}, {x, 0, 5}, 
+ PlotLegends -> {"Sin", "Cos"}]
+```
+
+```wolfram
+Plot[{Sin[x], Cos[x]}, {x, 0, 5}, 
+ PlotLegends -> {Sin, Cos}]
+```
+
+```wolfram
+Plot[{Sin[x], Cos[x]}, {x, 0, 5}, 
+ PlotLegends -> SwatchLegend["Expressions"]]
+```
+
+```wolfram
+Plot[{Sin[x], Cos[x]}, {x, 0, 5}, 
+ PlotLegends -> SwatchLegend[Automatic, {Sin, Cos}]]
+```
+
+or 
+
+```wolfram @
+legend = PointLegend[{Red, Green, Blue}, {"red", "green", "blue"}];
+Plot[{x, (*SpB[*)Power[x(*|*),(*|*)2](*]SpB*), (*SpB[*)Power[x(*|*),(*|*)3](*]SpB*)}, {x,0,3}, PlotStyle->{(*VB[*)(RGBColor[1, 0, 0])(*,*)(*"1:eJxTTMoPSmNiYGAo5gUSYZmp5S6pyflFiSX5RcEsQBHn4PCQNGaQPAeQCHJ3cs7PyS8qYgCDD/ZQBgMDnAEA4iUPRg=="*)(*]VB*), (*VB[*)(RGBColor[0, 1, 0])(*,*)(*"1:eJxTTMoPSmNiYGAo5gUSYZmp5S6pyflFiSX5RcEsQBHn4PCQNGaQPAeQCHJ3cs7PyS8qYoACKOODPVwEANd+D0Y="*)(*]VB*), (*VB[*)(RGBColor[0, 0, 1])(*,*)(*"1:eJxTTMoPSmNiYGAo5gUSYZmp5S6pyflFiSX5RcEsQBHn4PCQNGaQPAeQCHJ3cs7PyS8qYoACdMYHewDM1w9G"*)(*]VB*)}, PlotLegends->legend]
+```
+
+#### Legend placement 
+Use [Placed](../Formatting/Placed) to adjust the position of your legend, i.e.
+
+```wolfram
+Plot[
+  {x,x^2}, {x,0,1}, 
+  PlotLegends->Placed[SwatchLegend[Automatic], {0.2,0.2}]
+]
+```
+
+### `PlotRange`
+Change the lot range to show the whole area
+```wolfram
+Plot[Sqrt[x], {x, -5, 5}, PlotRange -> Full]
+```
+
+Or a custom range
+```wolfram
+Plot[Sqrt[x], {x, -5, 5}, PlotRange -> {{-5,5}, {0,1}}]
+```
+
+### `RegionFunction`
+Show the specific area only
+```wolfram
+Plot[Sin[x], {x, 0, 8 Pi}, RegionFunction -> Function[{x, y}, Abs[y] > 0.5]]
+```
+
+### `Axes`
+Show or hide axes of the plot
+
+```wolfram
+Plot[Sinc[x], {x, 0, 10}, Axes -> False]
+```
+
+## Dynamics
+Consider to use [ManipulatePlot](../Plotting%20Functions/ManipulatePlot) for manipulating parameters of a function in real time

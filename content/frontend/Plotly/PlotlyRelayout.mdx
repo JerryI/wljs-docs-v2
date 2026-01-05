@@ -1,0 +1,39 @@
+---
+title: PlotlyRelayout
+env:
+  - Wolfram Kernel
+source: https://github.com/JerryI/wljs-plotly/blob/dev/src/Kernel.wl
+
+package: wljs-plotly
+---
+```wolfram
+PlotlyRelayout[p_PlotlyInstance, update_Association, opts___]
+```
+
+an efficient means of updating the `layout` object of an existing plot.
+
+**Mush faster than [PlotlyReact](../Plotly/PlotlyReact)**
+
+<Callout type="tip">
+See the [official reference](https://plotly.com/javascript/plotlyjs-function-reference/)
+</Callout>
+
+For example
+
+```wolfram
+p = Plotly[<|"type"->"line", "y"->{1,2,3,4,5,6}|>]
+```
+
+Change the ranges
+
+```wolfram
+PlotlyRelayout[p, <|"xaxis.range" -> {0, 5}|>];
+```
+
+## Options
+### `"Window"`
+By default, the `"Window"` option is set to `"Inherited"`. This setting *dynamically* uses the currently active window associated with the [`PlotlyInstance`](../Plotly/PlotlyInstance).
+
+When set to `"Inherited"`, even if a new window is opened using the same instance, it will be detected automatically. This is possible because all [`PlotlyInstance`](../Plotly/PlotlyInstance) objects perform a handshake after mounting on the page.
+
+To override this behavior, you can provide a specific [`WindowObj`](../Frontend%20IO/WindowObj) as an option.

@@ -1,0 +1,55 @@
+---
+title: FrontEndExecutable
+env:
+  - WLJS
+internal: true
+
+package: wljs-editor
+source: https://github.com/JerryI/wljs-editor/blob/dev/src/FrontendObject.wl
+---
+```wolfram
+FrontEndExecutable[uid_String]
+```
+
+A static reference to a frontend object (see [CreateFrontEndObject](../Frontend%20Objects/CreateFrontEndObject))  like [FrontEndRef](../Frontend%20Objects/FrontEndRef).
+
+## Supported output forms
+[StandardForm](../Formatting/StandardForm) used in the output Wolfram Language cells is defined as [ViewBox](../Formatting/Low-level/ViewBox) decoration with a corresponding [FrontEndRef](../Frontend%20Objects/FrontEndRef) as an input expression. This decoration is used as a sort of an empty widget to which any nested expression can output ([Graphics](../Graphics/Graphics), [Plot](../Plotting%20Functions/Plot) and etc made using this method)
+
+[WLXForm](../Formatting/WLXForm) produces a widget-like placeholder, which can be populated with a content. This is how [Plot](../Plotting%20Functions/Plot) and other graphics function can output to a [slides](frontend/Cell%20types/Slides).
+
+## Application
+
+### Custom WLJS function
+Use for custom defined WLJS functions i.e.
+
+```js
+.js
+core.MyCustomStuff = async (args, env) => {
+	env.element.innerText = "Hi dude!";
+}
+```
+
+and then in the next cell
+```wolfram
+CreateFrontEndObject[MyCustomStuff[]]
+```
+
+<Callout type="tip">
+Use `TagSetDelayed` on [MakeBoxes](../Formatting/MakeBoxes) to apply it automatically, i.e.
+
+```wolfram
+MyCustomStuff /: MakeBoxes[m_MyCustomStuff, StandardForm] := With[{
+	o = CreateFrontEndObject[m]
+},
+	MakeBoxes[m, StandardForm]
+]
+```
+
+then you don't need to manually create a frontend object anymore. Or even better - __if your expression is not too big__ one can bypass frontend objects at all
+
+```wolfram
+MyCustomStuff /: MakeBoxes[m_MyCustomStuff, StandardForm] := ViewBox[m,m]
+```
+</Callout>
+

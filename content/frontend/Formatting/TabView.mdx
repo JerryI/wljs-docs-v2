@@ -1,0 +1,24 @@
+---
+title: TabView
+env:
+  - Wolfram Kernel
+package: wljs-editor
+---
+
+```wolfram
+TabView[{lbl1->expr1, lbl2->expr2, ...}, default_Integer:1]
+```
+
+represents an object in which clicking the tab with label `lbli` displays `expri`
+
+```wolfram
+TabView[{expr1, expr2, ...}, default_Integer:1]
+```
+
+<Callout type="note">
+It prerenders all expressions and swaps between them in the display widget. Therefore it can work offline in [Static HTML](frontend/Exporting/Static%20HTML) and on exported slides.
+</Callout>
+
+## Supported output forms
+- [StandardForm](../Formatting/StandardForm)
+- [WLXForm](../Formatting/WLXForm)

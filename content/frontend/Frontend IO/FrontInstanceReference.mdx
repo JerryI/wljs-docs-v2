@@ -1,0 +1,47 @@
+---
+title: FrontInstanceReference
+env:
+  - Wolfram Kernel
+package: wljs-editor
+
+---
+```wolfram
+FrontInstanceReference[] _FrontInstanceReference
+```
+
+or 
+
+```wolfram
+FrontInstanceReference[uid_String] _FrontInstanceReference
+```
+
+constructs an instance reference object, which can be used to refer the execution context on the frontend in order to evaluate new expressions within it.
+
+## Methods
+### `FrontSubmit`
+
+```wolfram
+FrontSubmit[expr_, _FrontInstanceReference, opts___]
+```
+
+For example to add a new object on a scene
+
+```wolfram
+scene = FrontInstanceReference[];
+Plot[x, {x,0,1}, Epilog->{scene}]
+```
+
+Then one can dynamically add new object
+
+```wolfram
+FrontSubmit[{RandomColor[], Disk[{.5,.5},.2]}, scene];
+```
+
+### `FrontFetch`
+
+### `FrontFetchAsync`
+
+```wolfram
+FrontFetchAsync[expr_, _FrontInstanceReference, opts___]
+```
+

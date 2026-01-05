@@ -1,0 +1,32 @@
+---
+title: SwatchLegend
+---
+Represents swatch-type legend
+
+```wolfram
+SwatchLegend[colors_List, labels_List]
+```
+
+where `labels` can be any Wolfram Expression
+
+## Examples
+### Manual
+Define firstly
+
+```wolfram
+legend = SwatchLegend[{Red, Green, Blue}, {1,2,3}]
+```
+
+and place it to an existing plot
+
+```wolfram
+Plot[{x, x^2, x^3}, {x,0,1}, PlotStyle->{Red, Green, Blue}, PlotLegends->legend]
+```
+
+### Automatic
+Let it determine colors or expressions automatically
+
+```wolfram
+Plot[{Sin[x], Cos[x]}, {x, 0, 5}, PlotLegends -> SwatchLegend["Expressions"]]
+```
+

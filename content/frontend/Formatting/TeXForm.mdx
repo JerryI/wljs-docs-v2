@@ -1,0 +1,32 @@
+---
+title: TeXForm
+---
+Exports an expression to TeX format
+
+```wolfram
+TeXForm[expr_]
+```
+
+## Examples
+```wolfram
+Series[Sin[x], {x,0,5}] // Normal // TeXForm
+```
+
+```wolfram title="output"
+"\\frac{x^5}{120}-\\frac{x^3}{6}+x"
+```
+
+One can directly render using LaTeX built in to [Markdown](frontend/Cell%20types/Markdown) cells or [LaTeX cells](frontend/Cell%20types/Many%20more) via [CellView](../GUI/CellView)
+
+```wolfram
+CellView[StringJoin[
+  TeXForm[Series[Sin[x], {x,0,7}] // Normal]
+], "Display"->"latex"]
+```
+
+## Back-conversion
+Using `ToExpression` one can parse TeX to Wolfram Language
+
+```wolfram
+ToExpression["\\frac{x^5}{120}-\\frac{x^3}{6}+x", TeXForm]
+```

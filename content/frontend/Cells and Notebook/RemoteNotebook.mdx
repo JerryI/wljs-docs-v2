@@ -1,0 +1,39 @@
+---
+title: RemoteNotebook
+env:
+  - Wolfram Kernel
+package: wljs-editor
+source: https://github.com/JerryI/wljs-editor/blob/dev/src/RemoteCellsKernel.wl
+
+---
+represents notebook object for a evaluation Kernel
+
+```wolfram
+RemoteNotebook[uid_String] _RemoteNotebook
+```
+
+## Properties
+Get see all properties of a notebook object:
+
+```wolfram
+n = EvaluationNotebook[];
+n["Properties"]
+```
+
+## Methods
+- [NotebookEvaluate](../Cells%20and%20Notebook/NotebookEvaluate)
+- [NotebookEvaluateAsync](../Cells%20and%20Notebook/NotebookEvaluateAsync)
+- [NotebookOpen](../Cells%20and%20Notebook/NotebookOpen)
+- [NotebookClose](../Cells%20and%20Notebook/NotebookClose)
+- [NotebookSave](../Cells%20and%20Notebook/NotebookSave)
+- 
+
+## How to create notebooks
+1. Use the default importer for WLN files
+
+```wolfram
+Import["notebook.wln", "WLN"]
+```
+
+2. Use [CreateDocument](../Cells%20and%20Notebook/CreateDocument)
+

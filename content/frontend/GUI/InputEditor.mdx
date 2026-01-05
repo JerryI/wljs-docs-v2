@@ -1,0 +1,28 @@
+---
+title: InputEditor
+env:
+  - Wolfram Kernel
+source: https://github.com/JerryI/wljs-editor/blob/dev/src/EditorKernel.wl
+package: wljs-editor
+
+---
+a wrapper over [EditorView](../GUI/EditorView) used for making input elements
+
+```wolfram
+InputEditor[expr_String] _EventObject
+```
+
+as a result it returns [`EventObject`](../Misc/Events)
+
+## Event generation
+It fires the following patterns/topics
+
+### `"Input"`
+Fires every time users changes the content with a content as a payload
+
+### `"Evaluate"`
+Fires when a user presses a combination `Shift+Enter`
+
+## Supported output forms
+- [StandardForm](../Formatting/StandardForm)
+- [WLXForm](../Formatting/WLXForm)

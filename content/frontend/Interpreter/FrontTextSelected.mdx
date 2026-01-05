@@ -1,0 +1,18 @@
+---
+title: FrontTextSelected
+env:
+  - WLJS
+---
+Returns selected (anywhere) text as a string
+
+```wolfram
+FrontTextSelected[] _String
+```
+
+<Callout type="warn">
+This has to be executed in WLJS interpreter, i.e. using [FrontSubmit](../Frontend%20IO/FrontSubmit) or [FrontFetchAsync](../Frontend%20IO/FrontFetchAsync)
+</Callout>
+
+<Callout type="note">
+This expression is similar to [FrontEditorSelected](../Interpreter/FrontEditorSelected), but reads text content from any place in WLJS Notebook
+</Callout>

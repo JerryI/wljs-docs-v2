@@ -1,0 +1,42 @@
+---
+title: Rasterize
+env:
+  - Wolfram Kernel
+---
+```wolfram
+Rasterize[expression_, opts___]
+```
+
+rasterizes any expression into an [Image](../Image/Image) using frontend as it is rendered in a cell.
+
+<Callout type="warn">
+Requires Desktop App for rasterizing (no available in server mode). It literally takes a screenshot of a specific area.
+</Callout>
+
+<Callout type="tip">
+Apply `Rasterize` before exporting expression to an image or video (using `Export`).
+</Callout>
+
+## Options
+### `"Window"`
+By the default it uses [CurrentWindow](../Frontend%20IO/CurrentWindow). 
+
+### `"ExposureTime"`
+Sets the time in seconds for possible async processes to settle down on displayed expression before the rasterization. By the default is `1`.
+
+### `"ImageUpscaling"`
+Upscales the render canvas by `_Integer` times. Default value is `1` (no upscaling, it renders as it is)
+
+## Application
+Can be used to export graphics to raster format try
+
+```wolfram
+Rasterize[x+y]
+```
+
+And then you can freely export it to an image file
+
+```wolfram
+Export["image.png", %]
+```
+

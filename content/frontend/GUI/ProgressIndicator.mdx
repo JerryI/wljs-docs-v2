@@ -1,0 +1,38 @@
+---
+title: ProgressIndicator
+env:
+  - WLJS
+  - Wolfram Kernel
+update: true
+---
+
+```wolfram
+ProgressIndicator[x]
+ProgressIndicator[x, {min, max}]
+```
+
+represents an active indicator used for reporting the progress. When ranges are not specified, it is assumed to be from 0 to 1.
+
+## Dynamics
+First argument `x` can be dynamic symbols or expression. Use [Offload](../Interpreter/Offload) to dynamically update the indicator, i.e.
+
+```wolfram
+x = 0.2;
+ProgressIndicator[Offload[x], {0,10}]
+```
+
+then in the next cell
+
+```wolfram
+Do[x++; Pause[0.2];, {5}];
+```
+
+or as a button
+
+```wolfram
+Button["Increase", x++]
+```
+
+## Output forms
+- [StandardForm](../Formatting/StandardForm)
+- [WLXForm](../Formatting/WLXForm)

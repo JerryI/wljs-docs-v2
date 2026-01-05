@@ -1,0 +1,93 @@
+---
+title: Promise
+---
+
+## `Promise`
+A constructor and also representation of [`EventObject`](../Misc/Events) which __can be fired only once__ (aka resolved) and even before a corresponding handler is attached
+
+```wolfram
+Promise[] _Promise (* constructor *)
+```
+
+To resolve or reject a promise - use [`EventFire`](../Misc/Events)
+
+```wolfram
+EventFire[p_Promise, Resolve | Reject, data_]
+```
+
+<Callout type="info">
+`Promise` is actively used in __async functions__. See more at [Async](../Misc/Async)
+</Callout>
+
+## `Then`
+An expression for asynchronous subscribing to promise resolution or rejection
+
+```wolfram
+Then[p_Promise | _List | _, resolve_]
+Then[p_Promise | _List | _, resolve_, reject_]
+```
+
+where `resolve` and `reject` are any arbitrary functions. This is __non-blocking__ function.
+
+<Callout type="info">
+The key difference between [`EventHandler`](../Misc/Events) and [`Then`](#`Then`) is that [`Then`](#`Then`) __can even be applied to already resolved__ `Promise` object (after it was fired), which will cause an immediate evaluation of `resolve` or `reject` functions. 
+</Callout>
+
+Being applied to a `List` of `_Promise` objects it will wait until all of them are resolved before evaluating `resolve` function.
+
+Any Wolfram Expressions, which is not a `List` of `Promise` __counts as resolved__, i.e. this is valid
+
+```wolfram
+Then[1+1, Function[result, Print]];
+```
+
+```wolfram
+p = Promise[];
+
+Then[{1+1, p}, Function[result, Print]];
+Pause[3];
+EventFire[p, Resolve, 43];
+```
+
+### Example
+Let's try with a multiple promise events
+
+```wolfram
+p1 = Promise[];
+p2 = Promise[];
+
+SetTimeout[EventFire[p1, Resolve, Null], 1000];
+SetTimeout[EventFire[p2, Resolve, Null], 1500];
+
+Then[{p1,p2,Null}, Function[Null,
+	Echo["Resolved!"];
+]];
+```
+
+Here `Null` as a last element of a list was used just for demonstration purposes. It can also be any non `_Promise | _List` expression.
+
+### Relation to EventObject
+```wolfram
+Then[e_EventObject, resolve_]
+```
+
+It effectively assigns an event handler to `e` and calls `resolve` on __any pattern captured__. 
+
+## `WaitAll`
+A __synchronous blocking function__ to wait until a promise has resolved and returns the result
+
+```wolfram
+WaitAll[p_Promise] _
+```
+
+```wolfram
+WaitAll[p_Promise, timeout_:15] _
+```
+
+There is __a timeout of 15 seconds__, then `$Failed` is returned.
+
+<Callout type="warn">
+Be careful while using this. Avoid to use in `SessionSubmit`, `BackgroundTask`, `Button` and other interrupting the main loop subroutines. If your promise resolution does depend on TCP socket message, it will never be resolved properly, since all subroutines blocks TCP sockets and other external services.
+
+Consider to chain async events with `Then` and use `*Async` version of expressions such as [InputAsync](../Frontend%20IO/InputAsync), [SystemDialogInputAsync](../Frontend%20IO/SystemDialogInputAsync) and etc. 
+</Callout>

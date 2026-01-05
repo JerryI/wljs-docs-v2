@@ -1,0 +1,19 @@
+---
+title: ClickToCopy
+env:
+  - Wolfram Kernel
+package: wljs-editor
+---
+```wolfram
+ClickToCopy[expr_ | str_String, opts___]
+ClickToCopy[label_, expr_ | str_String, opts___]
+```
+
+represents sort of a button with `label` (or `expr` in [StandardForm](../Formatting/StandardForm)) as a label. It pushes [InputForm](../Formatting/InputForm) of `expr` or directly `str` to user's clipboard when pressed.
+
+## Options
+In a case of a lost context provide 
+
+### `"Window"`
+Specify explicitly a window to which the data will be pushed. By the default is [CurrentWindow](../Frontend%20IO/CurrentWindow)
+

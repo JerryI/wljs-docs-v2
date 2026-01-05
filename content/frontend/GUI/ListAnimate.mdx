@@ -1,0 +1,35 @@
+---
+title: ListAnimate
+env:
+  - Wolfram Kernel
+source: https://github.com/JerryI/wljs-manipulate/blob/main/Kernel.wl
+package: wljs-manipulate
+---
+```wolfram
+ListAnimate[{__Image}, opts___]
+```
+
+accepts list of [Image](../Image/Image) s and animates them in the session
+
+<Callout type="warn">
+Limited functionality
+</Callout>
+
+## Options
+### `RefreshRate`
+By the default is set to `12` (frames per second)
+
+## Portability
+`ListAnimate` cannot be exported to any of available formats
+
+## Examples
+Rasterize and animate
+
+```wolfram
+frames = Table[Rasterize[Plot[Sin[x y], {x,0,1}]], {y,0,5}];
+```
+
+```wolfram
+ListAnimate[frames]
+```
+

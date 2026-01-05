@@ -1,0 +1,20 @@
+---
+title: GeoGraphics
+env:
+  - Wolfram Kernel
+---
+<Callout type="warn">
+Limited support. Outputs only rasterized images
+</Callout>
+
+```wolfram
+GeoGraphics[primitives_, opts___]
+```
+
+represents a two-dimensional geographical image (similar to [Graphics](../Graphics/Graphics))
+
+For example
+```wolfram @
+GeoGraphics[{EdgeForm[Black], FaceForm[Red], Polygon[(*VB[*)(Entity["Country", "Italy"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KWnMIB4vkAjLTC13SU3OL0osyS8KZgOKuOaVZJZUBrMDmc75pXklRZXBrEC2Z0liTiUAdDwSUA=="*)(*]VB*)]}]
+```
+

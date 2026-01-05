@@ -1,0 +1,25 @@
+---
+title: FrontSlidesSelected
+env:
+  - WLJS
+package: wljs-revealjs
+source: https://github.com/JerryI/wljs-revealjs/blob/dev/src/Kernel.wl
+---
+```wolfram
+FrontSlidesSelected[type_String, payload_]
+```
+
+an interface symbol to control current slideshow (if available) similar to [FrontEditorSelected](../Interpreter/FrontEditorSelected) in terms of API implementation.
+
+<Callout type="note">
+You need to call this symbol using [FrontSubmit](../Frontend%20IO/FrontSubmit)
+</Callout>
+
+`type` field reflects [RevealJS API method](https://revealjs.com/api/) and `payload` its first argument.
+
+## Example
+To programmatically change the slide
+
+```wolfram
+FrontSlidesSelected["navigateNext", 1] // FrontSubmit
+```

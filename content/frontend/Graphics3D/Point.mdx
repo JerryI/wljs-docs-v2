@@ -1,0 +1,39 @@
+---
+title: Point
+env:
+  - WLJS
+package: wljs-graphics3d-threejs
+update: true
+numericArray: true
+---
+represents 3D point
+
+```wolfram
+Point[{x,y,z}] 
+```
+
+or set of points
+
+```wolfram
+Point[p_List] 
+```
+
+## Parameters
+### `RGBColor`
+### `Opacity`
+
+### `PointSize`
+Absolute size of a point can be altered using `PointSize`
+
+```wolfram
+{PointSize[Small], Point[{1,1,1}]}
+```
+
+or in numbers
+
+```wolfram
+{PointSize[0.01], Point[{1,1,1}]}
+```
+
+## Indexed geometry
+The most efficient way of using it for constructing complex objects is to wrap it into [GraphicsComplex](../Graphics3D/GraphicsComplex)

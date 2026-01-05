@@ -1,0 +1,49 @@
+---
+title: Sound
+env:
+  - WLJS
+  - Wolfram Kernel
+package: wljs-sound
+---
+```wolfram
+Sound[primitives_]
+```
+
+represents sound as a concept composed from `primitives`. Draws a player widget once appears in the output form - [StandardForm](../Formatting/StandardForm)
+
+`primitives` can be a simple primitive or a `List` of primitives played sequentially 
+
+## Primitives
+
+### `SoundNote`
+
+### `SampledSoundList`
+
+## Examples
+Play chord composed from [SoundNote](../Sound/SoundNote)
+
+```wolfram
+Sound[SoundNote[{"E", "G#", "B"}]]
+```
+
+Play D Major scale up and down doubled in up-octave
+
+```wolfram
+major = {2,2,1,2,2,2};
+SoundNote[{#, # + 12}] &/@ Accumulate[Join[{2}, major, -major]] // Sound
+```
+
+## Emit sound without a widget
+It is possible to play the sound programmatically without a widget using [FrontSubmit](../Frontend%20IO/FrontSubmit)
+
+```wolfram
+EventHandler[InputButton[], Function[Null,
+  FrontSubmit[Sound[SoundNote[RandomInteger[{0, 12}]]]]
+]]
+```
+
+or __use [EmitSound](../Sound/EmitSound)__
+
+<Callout type="tip">
+If you want to continuously stream raw sound data, consider to use [PCMPlayer](../Sound/PCMPlayer)
+</Callout>

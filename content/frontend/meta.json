@@ -9,6 +9,24 @@
     "Guides",
     "Share",
     "---Advanced---",
-    "---Reference---"
+    "---Reference---",
+    "Formatting",
+    "Plotting Functions",
+    "Graphics",
+    "Graphics3D",
+    "GeoGraphics",
+    "Image",
+    "Image3D",
+    "Dataset",
+    "GUI",
+    "Misc",
+    "Plotly",
+    "Slides",
+    "Sound",
+    "Video",
+    "Cells and Notebook",
+    "Frontend IO",
+    "Frontend Objects",
+    "Interpreter"
   ]
 }

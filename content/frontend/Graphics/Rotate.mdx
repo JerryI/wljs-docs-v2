@@ -1,0 +1,36 @@
+---
+title: Rotate
+env:
+  - WLJS
+package: wljs-graphics-d3
+source: https://github.com/JerryI/wljs-graphics-d3/blob/dev/src/kernel.js
+update: true
+---
+```wolfram
+Rotate[g_, angle_Real]
+```
+
+rotates graphics primitive or list of primitives `g` by `angle` 
+
+```wolfram
+Rotate[g_, angle_Real, origin_List]
+```
+
+rotates around `origin`
+
+```wolfram
+Graphics[Rotate[Rectangle[{-1,-1}, {1,1}], 30 Degree]]
+```
+
+## Dynamics
+It support updates for `angle` variable. Graphics primitives `g` can be updated separately. `Rotate` only applies transformation on `g`.
+
+```wolfram
+EventHandler[InputRange[0, 2.0 Pi, 0.1], Function[a,
+  angle = a
+]]
+% // EventFire;
+
+Graphics[Rotate[Rectangle[{-1,-1}, {1,1}], angle // Offload]]
+```
+

@@ -1,0 +1,140 @@
+---
+title: AnimationFrameListener
+env:
+  - WLJS
+package: wljs-graphics-d3
+update: true
+source: https://github.com/JerryI/wljs-graphics-d3/blob/dev/src/Kernel.wl
+
+---
+signals once the beginning of a browser's frame (depends on OS settings, hardware). It can be reloaded again after any changes of dependent dynamic symbols similar to [`requestAnimationFrame`](https://developer.mozilla.org/en-US/docs/Web/API/window/requestAnimationFrame).
+
+The main idea is
+- to be in sync with a beginning of native browser's frame drawing
+- to animate something as fast as possible
+- don't fire next frame, before calculations are done
+
+Therefore this provides a balanced load to the system.
+
+```wolfram
+AnimationFrameListener[symbol_Offload, "Event"->event_String]
+```
+
+where `symbol` can be any dynamic symbol wrapped in [Offload](../Interpreter/Offload), that will be changed each frame, it serves the purpose of a signal, that all calculations are done. `event` is a string representation of [`EventObject`](../Misc/Events) to which a handler function, that recalculates `symbol` is assigned.
+
+## Options
+### `"Event"` (mandatory)
+Provides an event object in the form of a string
+
+## Methods
+Apply [`EventHandler`](../Misc/Events) on the `AnimationFrameListener` directly to assign a handler with a generated event UID:
+
+```wolfram
+EventHandler[AnimationFrameListener[symbol_Offload], handler_]
+```
+
+where `handler` is handler function, that will be called.
+
+## Example
+Here is an almost one-liner animation:
+
+```wolfram @
+Module[{p=RandomReal[{-1,1}, {100,2}]}, 
+  Graphics[{
+    (*VB[*)(RGBColor[0.368417, 0.506779, 0.709798])(*,*)(*"1:eJxTTMoPSmNiYGAo5gUSYZmp5S6pyflFiSX5RcEsQBHn4PCQNGaQPAeQCHJ3cs7PyS8qKpg26anKlOv2RYbTXk7vMH9gX3S8ZYb3qm3P7AF5kRs6"*)(*]VB*), Point[p//Offload], 
+    EventHandler[AnimationFrameListener[p//Offload], Function[Null,
+      p = (# + Norm[#] 0.01 {#[[2]], -#[[1]]}) &/@ p;
+    ]]
+  }, ImageSize->Small]
+]
+```
+
+Here is a basic example with many points and lines animated:
+
+```wolfram
+With[{pts = Unique[], event = CreateUUID[], n = Unique[]},
+   n = 1;
+   
+   EventHandler[event, Function[Null,
+     pts = Table[{x, Sum[Cos[2 x i]/(2i+1), {i, 1, n}]/n}, {x,0,10Pi,0.1}];
+     n = If[n>20, 1, n + 0.1];
+   ]]; 
+
+   EventFire[event, True];
+
+   Graphics[{
+     Blue, Line[pts//Offload], Red, Point[pts//Offload],
+     AnimationFrameListener[pts//Offload, "Event"->event]
+   }, Axes->True, PlotRange->{{0,10Pi}, {-0.15,0.3}}, TransitionType->None]
+]
+```
+
+<Callout type="tip">
+Animation goes as fast as possible. It does not make sense to still use transition interpolation of 2D vector graphics, therefore we disabled it with `TransitionType->None`. 
+</Callout>
+
+Here we used the same symbol `pts` used for drawing our points for triggering [AnimationFrameListener](../Graphics/AnimationFrameListener). __It does not cost anything__, since it listens only for change of a symbol and does not read or decode an actual value.
+
+Here is another example with 3D graphics:
+
+```wolfram
+balls = RandomReal[{-1,1}, {100,3}];
+vels  = RandomReal[{-1,1}, {100,3}];
+
+EventHandler["frame", Function[Null,
+  vels = Table[
+    If[Norm[balls[[i]]] < 0.01, -1, 1] vels[[i]] - 0.08 balls[[i]]
+  , {i, Length[balls]}];
+  
+  balls = Table[balls[[i]] + 0.08 vels[[i]], {i, Length[balls]}];
+]];
+
+Graphics3D[{
+  Table[With[{i = i},
+    {
+      RGBColor[RandomReal[{0,1}, 3]],
+      Sphere[balls[[i]] // Offload, 0.03]
+    }
+  ], {i, Length[balls]}], 
+  AnimationFrameListener[balls // Offload, "Event"->"frame"]
+}]
+```
+
+There is also [a famous example](https://community.wolfram.com/groups/-/m/t/122095) of 1000 particles "dancing" with each other
+
+```wolfram title="cell 1"
+n = 1000;
+r := RandomInteger[{1, n}];
+f := (#/(.01 + Sqrt[#.#])) & /@ (x[[#]] - x) &;
+s := With[{r1 = r}, p[[r1]] = r; q[[r1]] = r];
+x = RandomReal[{-1, 1}, {n, 2}];
+{p, q} = RandomInteger[{1, n}, {2, n}];
+```
+
+```wolfram title="cell 2"
+EventHandler["frame", Function[Null,
+  (* all calculations *)
+  x = 0.995 x + 0.02 f[p] - 0.01 f[q];
+  If[r < 100, s];
+]];
+```
+
+```wolfram title="cell 3"
+Graphics[{
+  PointSize[0.007], Point[x // Offload],
+  AnimationFrameListener[x // Offload, "Event"->"frame"]
+}, PlotRange -> {{-2,2}, {-2,2}}, "TransitionType"->"Linear", "TransitionDuration"->1]  
+```
+
+to cancel animation - remove handler
+
+```wolfram
+EventRemove["frame"]
+```
+
+and to restart - evaluate cell 2 and retrigger it using
+
+```wolfram
+EventFire["frame", True];
+```
+

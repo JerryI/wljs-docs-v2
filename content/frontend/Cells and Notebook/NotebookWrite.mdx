@@ -1,0 +1,14 @@
+---
+title: NotebookWrite
+---
+writes the content to the given notebook
+
+```wolfram
+NotebookWrite[_RemoteNotebook, expr_]
+NotebookWrite[_RemoteNotebook, {expr1_, ...}]
+```
+
+For example this will act similar to [CellPrint](../Cells%20and%20Notebook/CellPrint):
+```wolfram
+NotebookWrite[EvaluationNotebook[], Plot[x, {x,0,1}]];
+```

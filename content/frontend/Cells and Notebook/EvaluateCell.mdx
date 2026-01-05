@@ -1,0 +1,22 @@
+---
+title: EvaluateCell
+env:
+  - Wolfram Kernel
+
+package: wljs-editor
+---
+```wolfram
+EvaluateCell[cell_RemoteCellObj, opts___]
+```
+
+evaluates interactively a cell in current notebook given by [RemoteCellObj](../Cells%20and%20Notebook/RemoteCellObj)
+
+<Callout type="warn">
+This only tells a UI to evaluate a given cell interactively if a user would click to evaluate
+</Callout>
+
+## Options
+### `"Target"`
+Specifies where to output the result. Default is `"Notebook"`, possible values
+- `"Notebook"` or `Null`
+- `"Window"` or `_` makes the output to be projected to a new window

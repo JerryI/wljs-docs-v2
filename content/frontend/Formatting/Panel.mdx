@@ -1,0 +1,47 @@
+---
+title: Panel
+---
+```wolfram
+Panel[expr_]
+```
+
+```wolfram
+Panel[expr_, titleLabel_, pos_:Top]
+```
+
+displays as a panel containing `expr` and provides a title at the top.
+
+## Methods
+### `EventHandler`
+It supports `Click` event
+
+```wolfram
+EventHandler[Panel["Click on me"], {"Click" -> Print}]
+```
+
+## Options
+### `ImageSize`
+The effect is the same as if `{w_, h_}` or `w` were specified as a second argument.
+
+### `FrameMargins`
+Sets a margin to the content in *1/10 rem*
+
+### `Background`
+Specifies the background color
+
+## Examples
+
+```wolfram
+Panel[i = InputRange[0,1,0.1], Style["My slider", 10]]
+```
+
+## Common issues
+By the default it shows [StandardForm](../Formatting/StandardForm) of expression passed as `titleLabel`. For string it will print double quotes as well. To remove them apply [Style](../Graphics/Style)
+
+```wolfram
+Panel[123, Style["Title", 10]]
+```
+
+## Supported output forms
+- [StandardForm](../Formatting/StandardForm)
+- [WLXForm](../Formatting/WLXForm) limited

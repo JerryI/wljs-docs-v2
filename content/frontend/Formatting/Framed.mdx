@@ -1,0 +1,34 @@
+---
+title: Framed
+env:
+  - Wolfram Kernel
+update: 
+origin: https://github.com/JerryI/wljs-editor/tree/main
+needsContainer:
+---
+
+Acts like a [Style](../Formatting/Style) box, but wrapped into a frame
+
+```wolfram
+Framed[expr_, opts__]
+```
+
+The argument `opts` contains directives for the formatted output. The following options are supported
+- `Background->RGBColor[...]` adds background to the wrapped expression
+
+<Callout type="warn">
+Styling options are currently quite limited
+</Callout>
+## Example
+Highlight prime numbers in the list
+```wolfram
+Table[If[PrimeQ[i], Framed[i, Background->Yellow], i], {i, 1, 100}]
+```
+
+Or this neat example from Wolfram Research
+```wolfram
+NestList[Framed, x, 6]
+```
+
+## Supported output forms
+- [StandardForm](../Formatting/StandardForm)

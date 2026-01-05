@@ -1,0 +1,13 @@
+---
+title: FrontFetch
+env:
+  - Wolfram Kernel
+source: https://github.com/JerryI/wljs-editor/blob/dev/src/FrontSubmitKernel.wl
+package: wljs-editor
+
+---
+is a synchronous version of [FrontFetchAsync](../Frontend%20IO/FrontFetchAsync), that uses [`WaitAll`](../Misc/Promise) to pause an execution while waiting for an incoming data
+
+<Callout type="warn">
+It is not recommended to use synchronous version, since it blocks an event loop and can prevent receiving the data from external sources which affects the work of [Promise](../Misc/Promise) module. 
+</Callout>

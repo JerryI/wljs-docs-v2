@@ -1,0 +1,78 @@
+---
+title: RemoteCellObj
+env:
+  - Wolfram Kernel
+package: wljs-editor
+
+source: https://github.com/JerryI/wljs-editor/blob/dev/src/RemoteCellsKernel.wl
+---
+a remote representation of a notebook cell for evaluation Kernel
+
+```wolfram
+RemoteCellObj[uid_String] _RemoteCellObj
+```
+
+## Methods
+### `Delete`
+Deletes a given cell in the notebook
+
+```wolfram title="Self destruction"
+With[{cell = EvaluationCell[]},
+	EventHandler[InputButton["Bye"], Function[Null,
+		cell // Delete
+	]]
+]
+```
+*removes an input cell*
+
+### `EventHandler`
+There is an adapter for [`EventHandler`](../Misc/Events) method. You can listen a cell's events from the evaluation Kernel  
+
+```wolfram
+With[{cell = EvaluationCell[]},
+	EventHandler[cell, {any_ :> (Print[any, ": ", #]&)}];
+]
+```
+*listen all events from the input cell*
+
+#### Possible events
+##### Normal cells
+- `"Destroy"` when a cell was removed
+
+##### Projected cells 
+*See [CellPrint](../Cells%20and%20Notebook/CellPrint) with window Target*
+
+- `"Mounted"` fired once cell is mounted and is ready, returns [WindowObj](../Frontend%20IO/WindowObj);
+
+<Callout type="note">
+`"Mounted"` can be fired multiple times in the case if a window was refreshed (or reconnected)
+</Callout>
+
+- `"Closed"` fired when user closes window (or connection breaks), returns [WindowObj](../Frontend%20IO/WindowObj)
+
+## Properties
+To get all properties of a given cell:
+
+```wolfram
+cell = EvaluationCell[]
+cell["Properties"]
+```
+
+### Get/Set patterns
+Use
+```wolfram
+cell[name_String]
+```
+
+### Setting content
+Use `"Data"` field to mutate the content live
+
+```wolfram
+With[{cell = EvaluationCell[]},
+  cell["Data"] = "1+1"
+]
+```
+
+<Callout type="warn">
+For now only works for input cells
+</Callout>

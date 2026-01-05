@@ -1,0 +1,35 @@
+---
+title: BarLegend
+---
+Represents bar-type legend
+
+```wolfram
+BarLegend[cf_ColorFunction | cf_String]
+```
+
+```wolfram
+BarLegend[{cf_, {min, max}}]
+```
+
+where `cf` is a color function (named or provided explicitly)
+
+## Examples
+Named colors
+
+```wolfram
+BarLegend[{"Rainbow", {0,1}}]
+```
+
+Using `Hue`
+
+```wolfram
+BarLegend[{Hue, {0, 1}}]
+```
+
+### Implicit usage
+Automatically generated and wrapped into [Legended](../Formatting/Legended)
+
+```wolfram
+ContourPlot[Sin[x y], {x, 0, \[Pi]}, {y, 0, \[Pi]}, Contours -> 5, PlotLegends -> Automatic]
+```
+

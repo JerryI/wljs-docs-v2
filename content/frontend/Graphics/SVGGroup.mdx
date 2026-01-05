@@ -1,0 +1,31 @@
+---
+title: SVGGroup
+env:
+  - WLJS
+package: wljs-graphics-d3
+origin: https://github.com/JerryI/wljs-graphics-d3/
+---
+```wolfram
+SVGGroup[g_]
+```
+
+represents an isolated group of 2D graphics primitives (see [Graphics](../Graphics/Graphics)). The common use case is to reset all attributes like [RGBColor](../Graphics/RGBColor), [Opacity](../Graphics/Opacity) and the rest defined in [Directive](../Graphics/Directive).
+
+Another handy property is that external attributes are applied solely to the group container, i.e. it does not propagate deeper. For example
+
+```wolfram
+o = 0.5;
+
+{Opacity[o // Offload], SVGGroup[{
+	Disk[{0,0}, 2], Opacity[0.5], Red, RegularPolygon[3]
+}]} // Graphics
+```
+
+```wolfram
+o = 0.1;
+```
+
+Here `Opacity` is applied to a container, but does not affect opacity of inner objects.
+
+### Z-ordering
+If you dynamically add primitives to [Graphics](../Graphics/Graphics), by adding them to `SVGGroup` can help you to control z-order with respect to other groups.

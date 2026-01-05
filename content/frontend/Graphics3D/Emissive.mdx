@@ -1,0 +1,30 @@
+---
+title: Emissive
+env:
+  - WLJS
+package: wljs-graphics3d-threejs
+source: https://github.com/JerryI/Mathematica-ThreeJS-graphics-engine/blob/dev/src/kernel.js
+
+---
+<Callout type="warn">
+It is considered to be removed. Please use [Directive](../Graphics3D/Directive) instead
+</Callout>
+
+specifies weather the material emits light
+
+```wolfram
+Emissive[color_RGBColor, intensity_:10]
+```
+
+example
+
+```wolfram
+Graphics3D[{
+    {Emissive[Red], Sphere[{0,0,2}]}, 
+    {White, Sphere[]}
+}]
+```
+
+<Callout type="tip">
+The best looking results can be achieved in a **Path-tracing mode** of [Graphics3D](../Graphics3D/Graphics3D). Emissive materials cannot cast light to other objects in a normal rasterization mode, use artificial light sources such as [SpotLight](../Graphics3D/SpotLight) and [PointLight](../Graphics3D/PointLight)...
+</Callout>

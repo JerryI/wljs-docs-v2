@@ -1,0 +1,29 @@
+---
+title: Row
+env:
+  - Wolfram Kernel
+---
+```wolfram
+Row[{object1, object2, ...}]
+```
+shows the list of any Wolfram Expressions in a row acting as a decoration
+
+Or using it on slides with [WLX](frontend/Cell%20types/WLX)
+
+```wolfram title="cell 1"
+Figure = Plot[x, {x,0,1}];
+Editor = EditorView["Plot[x, {x,0,1}] -> "];
+```
+
+```html title="cell 2"
+.slide
+
+<Row>
+	<Editor/>
+	<Figure/>
+</Row>
+```
+
+## Supported output forms
+- [StandardForm](../Formatting/StandardForm)
+- [WLXForm](../Formatting/WLXForm)

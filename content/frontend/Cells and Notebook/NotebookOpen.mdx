@@ -1,0 +1,16 @@
+---
+title: NotebookOpen
+---
+```wolfram
+NotebookOpen[_RemoteNotebook, opts___]
+NotebookOpen[path_String, opts___]
+```
+
+opens a notebook represented by [RemoteNotebook](../Cells%20and%20Notebook/RemoteNotebook) or by file path and returns its representation
+
+## Options
+In the case of lost context, a window from which to open can be provided
+
+### `"Window"`
+By the default is [CurrentWindow](../Frontend%20IO/CurrentWindow)
+

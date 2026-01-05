@@ -1,0 +1,19 @@
+---
+title: EmitSound
+package: wljs-sound
+update: false
+source: https://github.com/JerryI/wljs-sound/blob/master/src/Kernel.wl
+---
+```wolfram
+EmitSound[_Audio | _Sound, opts___]
+```
+
+emits (without output or any widgets) a [Sound](../Sound/Sound) or plays [Audio](../Sound/Audio) object. 
+
+## Options
+### `"Window"`
+The same as in [FrontSubmit](../Frontend%20IO/FrontSubmit). By the default is [CurrentWindow](../Frontend%20IO/CurrentWindow)
+
+<Callout type="tip">
+If you want to continuously stream raw sound data, consider to use a low-level streamer [PCMPlayer](../Sound/PCMPlayer)
+</Callout>

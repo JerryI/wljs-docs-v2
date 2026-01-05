@@ -1,0 +1,20 @@
+# FindChannels
+
+```
+FindChannels[] gives a list of channels in your home area on the channel broker server.
+
+FindChannels[None] gives a list of your unnamed channels.
+
+FindChannels[All] gives a list of all channels owned by you.
+
+FindChannels[form] gives a list of channels in your home area whose names match the string pattern form.
+
+FindChannels["/�] gives a list of channels whose names match the string pattern "/abspath".
+
+FindChannels["mqtts://…"] gives a list of channels whose names match the specified pattern representing a URL.
+```
+
+
+
+
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*

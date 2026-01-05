@@ -1,0 +1,70 @@
+---
+title: ArrangeSummaryBox
+env:
+  - Wolfram Kernel
+
+package: wljs-editor
+source: https://github.com/JerryI/wljs-editor/blob/dev/src/Boxes.wl
+---
+```wolfram
+BoxForm`ArrangeSummaryBox[head_Symbol, interpretation_, icon_Graphics | _Graphics3D | _Image | None, summary_List, Null, opts___] _RowBox
+```
+
+A decoration for summarizing internals of any WL expression to a human-readable form
+
+<Callout type="info">
+A decoration behaves like a single symbol and should contain all covered data. 
+</Callout>
+
+Usually it is applied to the output expression using [MakeBoxes](../Formatting/MakeBoxes) and [StandardForm](../Formatting/StandardForm) representation
+
+```wolfram
+$icon = Graphics[{Red, Disk[]}];
+
+MyObject /: MakeBoxes[obj : MyObject[asc_Association], StandardForm] := 
+    Module[{above, below},
+        above = { 
+          {BoxForm`SummaryItem[{"Name: ", asc["Name"]}]},
+          {BoxForm`SummaryItem[{"Variables: ", asc["Variables"]}], BoxForm`SummaryItem[{"Length: ", asc["Length"]}]}
+        };
+
+        BoxForm`ArrangeSummaryBox[
+           MyObject, (* head *)
+           obj,      (* interpretation *)
+           $icon,    (* icon, use None if not needed *)
+           (* above and below must be in a format suitable for Grid or Column *)
+           above,    (* always shown content *)
+           Null (* expandable content. Currently not supported!*)
+        ]
+    ];
+```
+
+where `$icon` can be any [Image](../Image/Image) or [Graphics](../Graphics/Graphics) or [Graphics3D](../Graphics3D/Graphics3D) or other arbitrary [WLJS Function](frontend/Advanced/Frontend%20interpretation/WLJS%20Functions) that can output to the DOM.
+
+Each line is a
+
+```wolfram
+BoxForm`SummaryItem[{label_String, expr_}]
+```
+
+where `expr` is an expression that will be printed in place
+
+Let us test this
+
+```wolfram
+MyObject[<|
+  "Name" -> "My particular object",
+  "Length" -> 10,
+  "Variables" -> {a,b,c},
+  "Date" -> Today,
+  MetaInformation -> "more info..." |>]
+```
+
+This expression __is still valid for normal coping and evaluating__ 
+
+## Supported output forms
+- [StandardForm](../Formatting/StandardForm)
+
+## Options
+### `"Event"`
+A string identifier used for attaching event listeners to a widget. Since this is a wrapper over [ViewBox](../Formatting/Low-level/ViewBox) and `RowBox`,  see more on its page.

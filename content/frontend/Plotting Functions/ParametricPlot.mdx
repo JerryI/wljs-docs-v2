@@ -1,0 +1,28 @@
+---
+title: ParametricPlot
+---
+The same as [Plot](../Plotting%20Functions/Plot), but accepts function generating pairs of `{x,y}`
+
+```wolfram
+ParametricPlot[{Sin[t], Cos[t]}Exp[-t], {t, 0, 2Pi}]
+```
+
+## Examples
+Generate complex parametric plot
+```wolfram
+ParametricPlot[
+ With[{z = u + I v}, {Re[z + 1/z], Im[z + 1/z]}], {u, -1/2, 
+  1/2}, {v, -1/2, 1/2}, PlotRange -> 5, Mesh -> Automatic]
+```
+
+Map a texture to parametric plot
+```wolfram @
+texture = Image[CellularAutomaton[30, {{1}, 0}, 40], "Bit", Magnification -> 2] // Texture
+```
+```wolfram @
+ParametricPlot[{r Cos[\[Theta]], r Sin[\[Theta]]}, {r, 1, 
+  2}, {\[Theta], 0, 2 Pi/3}, PlotRange -> All, Mesh -> 15, PlotStyle->texture]
+```
+
+## Dynamics
+Consider to use [ManipulateParametricPlot](../Plotting%20Functions/ManipulateParametricPlot)  for manipulating parameters of a function in real time

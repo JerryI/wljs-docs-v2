@@ -1,0 +1,44 @@
+---
+title: EchoLabel
+---
+```wolfram
+EchoLabel[label_][expr_]
+```
+
+is operator form of `Echo` with a label. In WLJS it has extended  properties, which allows user programs to various push notifications:
+
+```wolfram
+EchoLabel["Test"]["This is normal one"];
+```
+Print to notifications:
+```wolfram
+EchoLabel["Notification"]["This will always appear at the top"];
+```
+__Warning__ messages:
+```wolfram
+EchoLabel["Warning"]["This will a warning"];
+```
+__Error__ message:
+```wolfram
+EchoLabel["Error"]["This will an error"];
+```
+__Spinner__:
+```wolfram
+spinner = EchoLabel["Spinner"]["Hey. I am spinning"];
+```
+```wolfram
+spinner["Cancel"]; 
+```
+__Progress bar__:
+```wolfram
+bar = EchoLabel["ProgressBar"]["I am progressing"];
+```
+```wolfram
+bar["Set", 0.5];
+```
+```wolfram
+bar["SetMessage", "Hey!"];
+```
+```wolfram
+bar["Cancel"];
+```

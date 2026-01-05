@@ -1,0 +1,70 @@
+---
+title: InputTerminal
+env:
+  - Wolfram Kernel
+package: wljs-inputs
+source: https://github.com/JerryI/wljs-inputs/
+---
+```wolfram
+InputTerminal[opts___] _EventObject
+```
+
+creates a minimal interactive terminal, which can capture user inputs and used for streaming data as well.
+
+**Based on [ttty project](https://github.com/mkrl/ttty)**
+
+## Event generation
+The following patters are emitted
+- `"Command"`
+- `"Interrupt"` (caused by Ctrl+C)
+
+### Backprogapation
+Any event handling function output can be used to output the data back to the terminal, i.e. a simple echo handler can be constructed as follows:
+
+```wolfram
+t = InputTerminal[]
+EventHandler[t, {"Command" -> Function[c, c]}]
+```
+
+The returned value of `Function[c, ...]` can be:
+- `_String`
+- `{__String}` list of string
+- `_Promise` a promise that resolves into strings
+- `{__Promise}` list of promises
+- anything else will not be printed to the terminal
+
+## Options
+### `ImageSize`
+Sets the size of a terminal in pixels. Must be a number or a pair of numbers
+
+## Streaming
+The generated `EventObject` contains two input streams: 
+- `t["StandardOutput"]` a writable stream for basic output
+- `t["StandardError"]` a writable stream for errors
+
+For example
+
+```wolfram
+t = InputTerminal[]
+```
+
+```wolfram
+WriteString[t["StandardOutput"], "Hi There!"];
+```
+
+Another example: you can redirect the output of all warnings to the terminal using:
+
+```wolfram
+$Messages = {t["StandardError"]};
+```
+
+and then try
+
+```wolfram
+1/0
+```
+
+## Output forms
+The same as any [`EventObject`](../Misc/Events)
+- [StandardForm](../Formatting/StandardForm)
+- [WLXForm](../Formatting/WLXForm)

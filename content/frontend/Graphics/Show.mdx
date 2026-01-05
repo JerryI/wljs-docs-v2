@@ -1,0 +1,32 @@
+---
+title: Show
+env:
+  - Wolfram Kernel
+---
+
+<Callout type="warn">
+Only partially supported [wljs-graphics-d3](https://github.com/JerryI/wljs-graphics-d3) for now
+</Callout>
+
+```wolfram
+Show[g1_Graphics, g2_Graphics] _Graphics
+```
+
+overlay two or more [Graphics](../Graphics/Graphics) objects
+
+## Example
+
+Plot a histogram and a 2D graph
+
+```wolfram
+data = RandomVariate[GammaDistribution[4, 12.5], 10^4];
+hist = Histogram[data, Automatic, "ProbabilityDensity"];
+pl = Plot[PDF[GammaDistribution[4, 12.5], x], {x, 0, 200}];
+```
+
+Show them overlayed
+
+```wolfram
+Show[hist, pl]
+```
+

@@ -1,0 +1,12 @@
+# SelectedCells
+
+```
+SelectedCells[notebook] returns a list of CellObject expressions corresponding to the currently selected cells in notebook.
+
+SelectedCells[] returns the currently selected cells in the notebook in which this function is being evaluated.
+```
+
+
+
+
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*

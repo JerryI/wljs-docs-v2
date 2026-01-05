@@ -1,0 +1,25 @@
+---
+title: MeshPhysicalMaterial
+env:
+  - WLJS
+package: wljs-graphics3d-threejs
+
+source: https://github.com/JerryI/Mathematica-ThreeJS-graphics-engine/blob/dev/src/kernel.js
+---
+```wolfram
+MeshPhysicalMaterial[]
+```
+
+a default material used in [MeshMaterial](../Graphics3D/MeshMaterial). The most accurate material, that can be parameterized with
+
+### [Roughness](../Graphics3D/Roughness)
+### [Emissive](../Graphics3D/Emissive)
+
+### [Metalness](../Graphics3D/Metalness)
+
+## Example
+
+```wolfram
+Graphics3D[{MeshMaterial[MeshPhysicalMaterial[]], Roughness[0], Sphere[], PointLight[Red, {1.5075, 4.1557, 2.6129}, "Intensity"->50],  PointLight[Cyan, {-2.268, -2.144, 3.1635}, "Intensity"->50]}, "Lighting"->None]
+```
+

@@ -68,7 +68,7 @@ Let's explore the fundamental concepts with practical examples.
 Pattern matching is at the heart of Wolfram Language. Let's start with a simple example:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl  opacity-10 group-hover:opacity-50 transition duration-500" />
 <wljs-editor type="Input" display="codemirror">{`
 {1,1,2,2,2,2} /. {2 -> 1, 1 -> 0}
 `}</wljs-editor>
@@ -83,7 +83,7 @@ Pattern matching is at the heart of Wolfram Language. Let's start with a simple 
 Integer numbers are atoms of the language on which we can apply transformation rules. We can also use more general patterns:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl  opacity-10 group-hover:opacity-50 transition duration-500" />
 <wljs-editor type="Input" display="codemirror">{`
 {0,0,1,1,1,1} /. {any_Integer :> any / 2}
 `}</wljs-editor>
@@ -100,7 +100,7 @@ __Any output expression is editable and can be reevaluated.__
 Pattern matching can use conditions and more complex structures:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl  opacity-10 group-hover:opacity-50 transition duration-500" />
 <wljs-editor type="Input" display="codemirror">{`{0,0,(*FB[*)((1)(*,*)/(*,*)(2))(*]FB*),(*FB[*)((1)(*,*)/(*,*)(2))(*]FB*),(*FB[*)((1)(*,*)/(*,*)(2))(*]FB*),(*FB[*)((1)(*,*)/(*,*)(2))(*]FB*)} /. {any_?NumericQ :> {RGBColor[any, 1-any, 1], any} }`}</wljs-editor>
 </WLJSWrapper>
 
@@ -116,7 +116,7 @@ As you can see, Wolfram Language does not distinguish between data types. Colors
 You can also format output for readability:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl  opacity-10 group-hover:opacity-50 transition duration-500" />
 <wljs-editor lazy="true" type="Input" display="codemirror">{`
 % // Transpose // TableForm
 `}</wljs-editor>
@@ -133,7 +133,7 @@ You can also format output for readability:
 Understanding the difference between immediate (`=`) and delayed (`:=`) assignment is crucial:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl  opacity-10 group-hover:opacity-50 transition duration-500" />
 <wljs-editor lazy="true" type="Input" display="codemirror">{`
 (* Immediate assignment (Set) - evaluates right side immediately *)
 x = RandomReal[]
@@ -154,7 +154,7 @@ y  (* Returns 0.789012 - different value! *)
 Practical example showing when to use each:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl  opacity-10 group-hover:opacity-50 transition duration-500" />
 <wljs-editor lazy="true" type="Input" display="codemirror">{`
 (* Use = when you want to compute once and cache *)
 expensiveResult = Factor[x^100 - 1]
@@ -176,7 +176,7 @@ fib[1] = 1
 Using `=` instead of `:=` in function definitions can lead to unexpected behavior:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl  opacity-10 group-hover:opacity-50 transition duration-500" />
 <wljs-editor lazy="true" type="Input" display="codemirror">{`
 (* Wrong - evaluates pattern immediately *)
 f[x_] = x^2  (* x_ is evaluated at definition time! *)
@@ -194,7 +194,7 @@ Wolfram Language treats functions as first-class citizens. There are several way
 **Pattern-based functions** (most common and powerful):
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl  opacity-10 group-hover:opacity-50 transition duration-500" />
 <wljs-editor lazy="true" type="Input" display="codemirror">{`
 (* Basic pattern matching *)
 f[x_] := x^2 + 2*x + 1
@@ -221,7 +221,7 @@ absoluteValue[x_] := -x /; x < 0
 > great for quick operations, since it can take advantage of JIT when applied using `Map`, `Table` and etc
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl  opacity-10 group-hover:opacity-50 transition duration-500" />
 <wljs-editor lazy="true" type="Input" display="codemirror">{`
 (* Single argument with # *)
 #^2 + 2*# + 1 &
@@ -249,7 +249,7 @@ Function[{x, y}, x^2 + y^2]
 - Anonymous: One-off transformations, quick and simple operations in `Map`/`Select`/etc.
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl  opacity-10 group-hover:opacity-50 transition duration-500" />
 <wljs-editor lazy="true" type="Input" display="codemirror">{`
 (* Pattern-based for named, reusable functions *)
 distance[{x1_, y1_}, {x2_, y2_}] := Sqrt[(x2-x1)^2 + (y2-y1)^2]
@@ -263,7 +263,7 @@ data // Map[{#[[1]], #[[2]]^2} &]
 Use functional operators to process data elegantly:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl  opacity-10 group-hover:opacity-50 transition duration-500" />
 <wljs-editor lazy="true" type="Input" display="codemirror">{`
 (* Select even numbers *)
 Range[20] // Select[EvenQ]
@@ -282,7 +282,7 @@ Range[100] // Select[PrimeQ] // Take[#, 5] &
 Nest and fold operations for iterative computations:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl  opacity-10 group-hover:opacity-50 transition duration-500" />
 <wljs-editor lazy="true" type="Input" display="codemirror">{`
 (* Apply function repeatedly *)
 Nest[# + 1 &, 0, 5]
@@ -303,7 +303,7 @@ FoldList[Plus, 0, {1, 2, 3, 4, 5}]
 Work with algebraic expressions symbolically:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl  opacity-10 group-hover:opacity-50 transition duration-500" />
 <wljs-editor lazy="true" type="Input" display="codemirror">{`
 (* Expand polynomial *)
 Expand[(x + y)^3]
@@ -316,7 +316,7 @@ Factor[x^2 - y^2]
 **Simplification** is one of the most powerful features:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl  opacity-10 group-hover:opacity-50 transition duration-500" />
 <wljs-editor lazy="true" type="Input" display="codemirror">{`
 (* Basic simplification *)
 Simplify[(x^2 - 1)/(x - 1)]
@@ -330,7 +330,7 @@ x + 1
 </WLJSWrapper>
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl  opacity-10 group-hover:opacity-50 transition duration-500" />
 <wljs-editor lazy="true" type="Input" display="codemirror">{`
 (* Trigonometric simplification *)
 Simplify[Sin[x]^2 + Cos[x]^2]
@@ -352,7 +352,7 @@ Simplify[Sqrt[x^2], Assumptions -> x < 0]
 Different simplification strategies:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl  opacity-10 group-hover:opacity-50 transition duration-500" />
 <wljs-editor lazy="true" type="Input" display="codemirror">{`
 (* FullSimplify - tries harder, slower *)
 FullSimplify[(x^3 - 1)/(x - 1)]
@@ -373,7 +373,7 @@ TrigToExp[Sin[x]]
 Common assumptions:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl  opacity-10 group-hover:opacity-50 transition duration-500" />
 <wljs-editor lazy="true" type="Input" display="codemirror">{`
 (* Element specifications *)
 Simplify[Sqrt[x^2], Assumptions -> Element[x, Reals]]
@@ -388,7 +388,7 @@ Simplify[Sqrt[x^2] + Sqrt[y^2]]
 Solve equations symbolically:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl  opacity-10 group-hover:opacity-50 transition duration-500" />
 <wljs-editor lazy="true" type="Input" display="codemirror">{`
 (* Solve quadratic equation *)
 Solve[a*x^2 + b*x + c == 0, x]
@@ -407,7 +407,7 @@ Solve[{x + y == 5, x - y == 1}, {x, y}]
 Calculus operations work symbolically too:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl  opacity-10 group-hover:opacity-50 transition duration-500" />
 <wljs-editor lazy="true" type="Input" display="codemirror">{`
 (* Differentiation *)
 D[x^3 + Sin[x], x]
@@ -441,7 +441,7 @@ Limit[Sin[x]/x, x -> 0]
 Wolfram Language excels at manipulating nested structures:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl  opacity-10 group-hover:opacity-50 transition duration-500" />
 <wljs-editor lazy="true" type="Input" display="codemirror">{`
 (* Create nested data *)
 data = Table[{i, i^2, i^3}, {i, 5}]
@@ -463,7 +463,7 @@ Map[Total, data, {1}]
 Thread operations across lists:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl  opacity-10 group-hover:opacity-50 transition duration-500" />
 <wljs-editor lazy="true" type="Input" display="codemirror">{`
 (* Thread operations *)
 Thread[f[{a, b, c}, {x, y, z}]]
@@ -482,7 +482,7 @@ Partition[Range[12], 3]
 Transpose and reshape operations:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl  opacity-10 group-hover:opacity-50 transition duration-500" />
 <wljs-editor lazy="true" type="Input" display="codemirror">{`
 (* Transpose matrix *)
 {{1, 2, 3}, {4, 5, 6}} // Transpose
@@ -503,7 +503,7 @@ Flatten[{{1, 2}, {3, {4, 5}}}]
 Modern dictionary-like structures:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl  opacity-10 group-hover:opacity-50 transition duration-500" />
 <wljs-editor lazy="true" type="Input" display="codemirror">{`
 (* Create association *)
 person = <|"name" -> "Alice", "age" -> 30, "city" -> "NYC"|>
@@ -528,7 +528,7 @@ Merge[{<|"a" -> 1, "b" -> 2|>, <|"b" -> 3, "c" -> 4|>}, Total]
 Powerful string processing with patterns:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl  opacity-10 group-hover:opacity-50 transition duration-500" />
 <wljs-editor lazy="true" type="Input" display="codemirror">{`
 (* String patterns *)
 StringCases["hello world 123", DigitCharacter..]
@@ -553,7 +553,7 @@ TemplateApply["Hello \`name\`, you are \`age\` years old",
 More complex styling:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl  opacity-10 group-hover:opacity-50 transition duration-500" />
 <wljs-editor lazy="true" type="Input" display="codemirror">{`
 Table[If[PrimeQ[i], Framed[i, Background -> Yellow], i], {i, 1, 20}]
 `}</wljs-editor>
@@ -568,7 +568,7 @@ This uses pattern matching with `If` and `PrimeQ` to conditionally style element
 #### Graphics as Expressions
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl  opacity-10 group-hover:opacity-50 transition duration-500" />
 <wljs-editor lazy="true" type="Input" display="codemirror">{`Plot[x, {x, 0, 1}, PlotStyle -> RGBColor[1/2, 1/2, 1]]`}</wljs-editor>
 </WLJSWrapper>
 
@@ -589,7 +589,7 @@ Most symbols are abstract representations that can be interpreted in many ways.
 Have a look at 3D graphics:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl  opacity-10 group-hover:opacity-50 transition duration-500" />
 <wljs-editor lazy="true" type="Input" display="codemirror">{`
 Graphics3D[Sphere[]]
 `}</wljs-editor>
@@ -606,7 +606,7 @@ __It’s all about interpretation.__
 Let's replace our 3D object with `Cuboid` inline:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl  opacity-10 group-hover:opacity-50 transition duration-500" />
 <wljs-editor lazy="true" display="codemirror" type="Input"  >{`(*VB[*)(Graphics3D[{RGBColor[1, 0, 1], Sphere[{0, 0, 0}]}, ImageSize -> 200])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KWlMIB4XkHAvSizIyEwuNnaBiIFU+GQWl6Qxg3gcQCLI3ck5Pye/KBNkQiYDiACxIAayAYnggozUolSIBph2iDo4gTA7qDQntZgTyPDMTUxPDc6sSs08AeQBAJxmHk0="*)(*]VB*)/. {Sphere -> Cuboid}`}</wljs-editor>
 </WLJSWrapper>
 
@@ -617,7 +617,7 @@ Let's replace our 3D object with `Cuboid` inline:
 Nothing stops us from taking the same primitives and use them in actual calculations:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl  opacity-10 group-hover:opacity-50 transition duration-500" />
 <wljs-editor lazy="true" display="codemirror" type="Input"  >{`Cuboid[{a,b,c}] // Volume 
 Sphere[{a,b,c}, R] // Area`}</wljs-editor>
 </WLJSWrapper>
@@ -634,7 +634,7 @@ Sphere[{a,b,c}, R] // Area`}</wljs-editor>
 Create publication-quality plots with minimal effort:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl  opacity-10 group-hover:opacity-50 transition duration-500" />
 <wljs-editor lazy="true" display="codemirror" type="Input"  >{`(* Multiple functions on one plot *)
 Plot[{Sin[x], Cos[x], Sin[x]*Cos[x]}, {x, 0, 2*Pi}, 
   PlotLegends -> "Expressions",
@@ -656,7 +656,7 @@ ParametricPlot[{Sin[t], Cos[2*t]}, {t, 0, 2*Pi}]`}</wljs-editor>
 Create different chart types for data analysis:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl  opacity-10 group-hover:opacity-50 transition duration-500" />
 <wljs-editor lazy="true" type="Input" display="codemirror">{`
 (* Generate sample data *)
 data = Table[{i, RandomReal[{0, 10}]}, {i, 20}];
@@ -671,7 +671,7 @@ Histogram[RandomVariate[NormalDistribution[0, 1], 1000], 30]
 </WLJSWrapper>
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl  opacity-10 group-hover:opacity-50 transition duration-500" />
 <wljs-editor lazy="true" display="codemirror" type="Output"  >{`(*VB[*)(FrontEndRef["0ccf1fbd-253a-40c9-a511-506ea6e50685"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKGyQnpxmmJaXoGpkaJ+qaGCRb6iaaGhrqmhqYpSaapQIpC1MAjRgVkw=="*)(*]VB*)`}</wljs-editor>
 <wljs-editor lazy="true" display="codemirror" type="Output"  >{`(*VB[*)(FrontEndRef["7cf5ac85-ca64-4628-b764-83d7b4a53afb"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKmyenmSYmW5jqJieameiamBlZ6CaZA1kWxinmSSaJpsaJaUkAh+sV3A=="*)(*]VB*)`}</wljs-editor>
 <wljs-editor lazy="true" display="codemirror" type="Output"  >{`(*VB[*)(FrontEndRef["9246c81e-1aa0-4103-b8c2-ff1299427d79"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKWxqZmCVbGKbqGiYmGuiaGBoY6yZZJBvppqUZGllamhiZp5hbAgB6WBUV"*)(*]VB*)`}</wljs-editor>
@@ -681,7 +681,7 @@ Histogram[RandomVariate[NormalDistribution[0, 1], 1000], 30]
 3D visualization:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl  opacity-10 group-hover:opacity-50 transition duration-500" />
 <wljs-editor lazy="true" display="codemirror" type="Input"  >{`(* 3D surface plot *)
 
 Plot3D[Sin[x] Cos[y], {x, -3, 3}, {y, -3, 3}, PlotStyle -> Opacity[0.8\`], Mesh -> None, ColorFunction -> "Rainbow"]
@@ -706,7 +706,7 @@ DensityPlot[Sin[x y], {x, -2, 2}, {y, -2, 2}]`}</wljs-editor>
 Dataset provides a powerful way to work with structured data:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl  opacity-10 group-hover:opacity-50 transition duration-500" />
 <wljs-editor lazy="true" display="codemirror" type="Input"  >{`(* Create dataset from associations *)
 ds = Dataset[{
   <|"name" -> "Alice", "age" -> 25, "score" -> 92|>,
@@ -736,7 +736,7 @@ ds[Mean, "score"]`}</wljs-editor>
 Work with hierarchical data:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl  opacity-10 group-hover:opacity-50 transition duration-500" />
 <wljs-editor lazy="true" display="codemirror" type="Input"  >{`(* Nested dataset *)
 experiments = Dataset[{
   <|"date" -> "2024-01-01", 
@@ -761,7 +761,7 @@ Mean /@ experiments[All, "measurements"]`}</wljs-editor>
 Built-in statistical functions for data analysis:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl  opacity-10 group-hover:opacity-50 transition duration-500" />
 <wljs-editor lazy="true" display="codemirror" type="Input"  >{`(* Generate sample data *)
 data = RandomVariate[NormalDistribution[100, 15], 200];
 
@@ -795,7 +795,7 @@ Correlation[data, data2]`}</wljs-editor>
 Create statistical visualizations:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl  opacity-10 group-hover:opacity-50 transition duration-500" />
 <wljs-editor lazy="true" display="codemirror" type="Input"  >{`(* Distribution comparison *)
 SmoothHistogram[{data, data2}, PlotLegends -> {"A", "B"}]
 
@@ -813,7 +813,7 @@ QuantilePlot[data, NormalDistribution[100, 15]]`}</wljs-editor>
 Fit the data using linear function:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl  opacity-10 group-hover:opacity-50 transition duration-500" />
 <wljs-editor lazy="true" display="codemirror" type="Input"  >{`(* Generate noisy data *)
 dataPoints = Table[{x, Exp[x .5] + 3 + .01 RandomReal[{-1, 1}]}, {x, 0, 10, 0.5}];
 
@@ -843,7 +843,7 @@ Show[
 Fit the data using poly function:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl  opacity-10 group-hover:opacity-50 transition duration-500" />
 <wljs-editor lazy="true" display="codemirror" type="Input"  >{`(* Polynomial fit *)
 polyFit = Fit[dataPoints, {1, x, (*SpB[*)Power[x(*|*),(*|*)2](*]SpB*)}, x]
 
@@ -864,7 +864,7 @@ Fit the data using a non-linear model:
 
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl  opacity-10 group-hover:opacity-50 transition duration-500" />
 <wljs-editor lazy="true" display="codemirror" type="Input"  >{`(* Non-linear fit *)
 nlFit = NonlinearModelFit[dataPoints, a*Exp[b*x]+c, {a,b,c}, x]
 
@@ -889,7 +889,7 @@ Show[
 Solve differential equations symbolically:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl  opacity-10 group-hover:opacity-50 transition duration-500" />
 <wljs-editor lazy="true" display="codemirror" type="Input"  >{`(* Symbolic solution - simple harmonic oscillator *)
 DSolve[y''[t] + (*SpB[*)Power[ω(*|*),(*|*)2](*]SpB*)*y[t] == 0, y[t], t]
 
@@ -911,7 +911,7 @@ Plot[Evaluate[y[t] /. sol], {t, 0, 20}, PlotLabel -> "Damped Oscillation"]`}</wl
 and numerically:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl  opacity-10 group-hover:opacity-50 transition duration-500" />
 <wljs-editor lazy="true" display="codemirror" type="Input"  >{`(* System of ODEs - Lotka-Volterra *)
 lotka = NDSolve[{
   x'[t] == x[t] - x[t]*y[t],
@@ -932,7 +932,7 @@ ParametricPlot[Evaluate[{x[t], y[t]} /. lotka], {t, 0, 20},
 Partial differential equations:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl  opacity-10 group-hover:opacity-50 transition duration-500" />
 <wljs-editor lazy="true" display="codemirror" type="Input"  >{`(* Heat equation *)
 sol = NDSolve[{
   D[u[t, x], t] == D[u[t, x], {x, 2}],
@@ -954,7 +954,7 @@ Plot3D[Evaluate[u[t, x] /. sol], {t, 0, 1}, {x, -5, 5},
 Numerical integration and root finding:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl  opacity-10 group-hover:opacity-50 transition duration-500" />
 <wljs-editor lazy="true" type="Input" display="codemirror">{`
 (* Numerical integration *)
 NIntegrate[Sin[x^2], {x, 0, 10}]
@@ -970,7 +970,7 @@ FindRoot[{x^2 + y^2 == 4, x - y == 1}, {x, 1}, {y, 1}]
 Optimization problems:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl  opacity-10 group-hover:opacity-50 transition duration-500" />
 <wljs-editor lazy="true" type="Input" display="codemirror">{`
 (* Minimize function *)
 NMinimize[x^2 + y^2, {x, y}]
@@ -988,7 +988,7 @@ LinearProgramming[{-1, -2}, {{1, 1}, {2, 1}}, {{5, -1}, {8, -1}}]
 Work with physical units:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl  opacity-10 group-hover:opacity-50 transition duration-500" />
 <wljs-editor lazy="true" type="Input" display="codemirror">{`
 (* Define quantities *)
 distance = Quantity[100, "Meters"]
@@ -1011,7 +1011,7 @@ UnitConvert[Quantity[1, "Joules"], "ElectronVolts"]
 Physics calculations with units:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl  opacity-10 group-hover:opacity-50 transition duration-500" />
 <wljs-editor lazy="true" type="Input" display="codemirror">{`
 (* Kinetic energy *)
 mass = Quantity[2, "Kilograms"]
@@ -1033,7 +1033,7 @@ UnitConvert[wavelength, "Nanometers"]
 Frequency domain analysis:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl  opacity-10 group-hover:opacity-50 transition duration-500" />
 <wljs-editor lazy="true" display="codemirror" type="Input"  >{`(* Create signal *)
 signal = Table[Sin[2*Pi*5*t] + 0.5*Sin[2*Pi*10*t], {t, 0, 1, 0.01}];
 
@@ -1056,7 +1056,7 @@ signal - reconstructed // Abs // MinMax `}</wljs-editor>
 Spectral analysis for time series:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl  opacity-10 group-hover:opacity-50 transition duration-500" />
 <wljs-editor lazy="true" display="codemirror" type="Input"  >{`(* Generate noisy signal *)
 noisySignal = signal + RandomReal[{-0.2, 0.2}, Length[signal]];
 
@@ -1077,7 +1077,7 @@ Periodogram[noisySignal, SampleRate -> 100]`}</wljs-editor>
 Monte Carlo simulations:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl  opacity-10 group-hover:opacity-50 transition duration-500" />
 <wljs-editor lazy="true" display="codemirror" type="Input"  >{`(* Estimate Pi using Monte Carlo *)
 n = 1000;
 points = RandomReal[{-1, 1}, {n, 2}];
@@ -1101,7 +1101,7 @@ Graphics[{
 Random walks and stochastic processes:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl  opacity-10 group-hover:opacity-50 transition duration-500" />
 <wljs-editor lazy="true" display="codemirror" type="Input"  >{`(* 1D random walk *)
 walk = Accumulate[RandomChoice[{-1, 1}, 1000]];
 ListLinePlot[walk, PlotLabel -> "Random Walk"]`}</wljs-editor>
@@ -1112,7 +1112,7 @@ ListLinePlot[walk, PlotLabel -> "Random Walk"]`}</wljs-editor>
 </WLJSWrapper>
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl  opacity-10 group-hover:opacity-50 transition duration-500" />
 <wljs-editor lazy="true" display="codemirror" type="Input"  >{`(* 2D random walk *)
 walk2D = Accumulate[Table[RandomReal[{-1, 1}, 2], {1000}]];
 ListLinePlot[walk2D, AspectRatio -> 1]`}</wljs-editor>
@@ -1123,7 +1123,7 @@ ListLinePlot[walk2D, AspectRatio -> 1]`}</wljs-editor>
 </WLJSWrapper>
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl  opacity-10 group-hover:opacity-50 transition duration-500" />
 <wljs-editor lazy="true" display="codemirror" type="Input"  >{`(* Brownian motion *)
 brownian = RandomFunction[WienerProcess[], {0, 10, 0.01}];
 ListLinePlot[brownian]`}</wljs-editor>
@@ -1139,7 +1139,7 @@ ListLinePlot[brownian]`}</wljs-editor>
 Work with external data:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl  opacity-10 group-hover:opacity-50 transition duration-500" />
 <wljs-editor lazy="true" type="Input" display="codemirror">{`
 (* Import CSV *)
 data = Import["data.csv", "Dataset"]
@@ -1162,7 +1162,7 @@ CopyToClipboard[data]
 Images are expressions too. Create or import an image:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl  opacity-10 group-hover:opacity-50 transition duration-500" />
 <wljs-editor lazy="true" display="codemirror" type="Input"  >{`(* Create a sample image of Lena *)
 i = Import["https://upload.wikimedia.org/wikipedia/en/7/7d/Lenna_%28test_image%29.png"];
 i = ImageResize[i, 200];
@@ -1174,7 +1174,7 @@ i = ImageResize[i, 200];
 Then manipulate it:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl  opacity-10 group-hover:opacity-50 transition duration-500" />
 <wljs-editor lazy="true" display="codemirror" type="Input"  >{`(* Negate colors *)
 i // ColorNegate
 
@@ -1197,7 +1197,7 @@ EdgeDetect[i]`}</wljs-editor>
 Extract image information, domainant colors and perform ML-based lines detection:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl  opacity-10 group-hover:opacity-50 transition duration-500" />
 <wljs-editor lazy="true" display="codemirror" type="Input"  >{`(* Extract features *)
 ImageDimensions[i]
 DominantColors[i, 5]
@@ -1215,7 +1215,7 @@ HighlightImage[i, {Cyan, ImageLines[i, MaxFeatures->3]}]`}</wljs-editor>
 Analyze color distribution in LAB space:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl  opacity-10 group-hover:opacity-50 transition duration-500" />
 <wljs-editor lazy="true" type="Input" display="codemirror">{`
 BubbleChart[
  Append @@@ Tally[
@@ -1240,7 +1240,7 @@ This creates a bubble chart visualizing the color distribution in LAB color spac
 Matrices are symbolic by default:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl  opacity-10 group-hover:opacity-50 transition duration-500" />
 <wljs-editor lazy="true" type="Input" display="codemirror">{`
 {{a, b}, {c, d}} // MatrixForm
 `}</wljs-editor>
@@ -1255,7 +1255,7 @@ Matrices are symbolic by default:
 Still behaves like a regular matrix:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl  opacity-10 group-hover:opacity-50 transition duration-500" />
 <wljs-editor lazy="true" type="Input" display="codemirror">{`
 (*GB[*){{a(*|*),(*|*)b}(*||*),(*||*){c(*|*),(*|*)d}}(*||*)(*1:eJxTTMoPSmNkYGAo5gUSYZmp5S6pyflFiSX5RcFsQBHfxJKizAoAs04KOA==*)(*]GB*) . (*GB[*){{a(*|*),(*|*)b}(*||*),(*||*){c(*|*),(*|*)d}}(*||*)(*1:eJxTTMoPSmNkYGAo5gUSYZmp5S6pyflFiSX5RcFsQBHfxJKizAoAs04KOA==*)(*]GB*)
 `}</wljs-editor>
@@ -1268,7 +1268,7 @@ Still behaves like a regular matrix:
 Compute eigenvalues symbolically:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl  opacity-10 group-hover:opacity-50 transition duration-500" />
 <wljs-editor lazy="true" type="Input" display="codemirror">{`
 Eigenvalues[{{a, b}, {c, d}}]
 
@@ -1290,7 +1290,7 @@ Use the command palette to draw matrices quickly.
 Wolfram Language provides rich visual representations for various data types:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl  opacity-10 group-hover:opacity-50 transition duration-500" />
 <wljs-editor lazy="true" type="Input" display="codemirror">{`
 Table[RGBColor[1, a, b], {a, 0, 1, 0.25}, {b, 0, 1, 0.25}] // MatrixForm
 `}</wljs-editor>
@@ -1305,7 +1305,7 @@ Table[RGBColor[1, a, b], {a, 0, 1, 0.25}, {b, 0, 1, 0.25}] // MatrixForm
 Syntax sugar also helps represent abstract objects:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl  opacity-10 group-hover:opacity-50 transition duration-500" />
 <wljs-editor lazy="true" type="Input" display="codemirror">{`
 NumericArray[{1,2,3,4,5,6}]
 `}</wljs-editor>
@@ -1320,7 +1320,7 @@ NumericArray[{1,2,3,4,5,6}]
 Even something like `DateObject` is visually formatted:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl  opacity-10 group-hover:opacity-50 transition duration-500" />
 <wljs-editor lazy="true" type="Input" display="codemirror">{`
 Now
 `}</wljs-editor>
@@ -1336,7 +1336,7 @@ Now
 also:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl  opacity-10 group-hover:opacity-50 transition duration-500" />
 <wljs-editor lazy="true" display="codemirror" type="Input"  >{`Tomorrow - (*VB[*)(DateObject[{2025,12,31,15,42,21.780028\`8.090633417173185},"Instant","Gregorian",1.\`])(*,*)(*"1:eJxTTMoPSmNiYGAo5gUSYZmp5S6pyflFiSX5RcEsQBGXxJLUYCkgQyk8NUXB2FABKK1gZGBkqmBoamViZGVkqAQAHngPbQ=="*)(*]VB*)`}</wljs-editor>
 </WLJSWrapper>
 
@@ -1349,7 +1349,7 @@ also:
 Time series also render visually:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl  opacity-10 group-hover:opacity-50 transition duration-500" />
 <wljs-editor lazy="true" type="Input" display="codemirror">{`
 v = {2, 1, 6, 5, 7, 4};
 t = {1, 2, 5, 10, 12, 15};
@@ -1367,7 +1367,7 @@ This creates a time series object with automatic plotting and temporal analysis 
 Preview palettes visually:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl  opacity-10 group-hover:opacity-50 transition duration-500" />
 <wljs-editor lazy="true" type="Input" display="codemirror">{`
 ColorData[24]
 `}</wljs-editor>
@@ -1382,7 +1382,7 @@ This displays an interactive color palette with a gradient showing all available
 Play audio inline:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl  opacity-10 group-hover:opacity-50 transition duration-500" />
 <wljs-editor lazy="true" type="Input" display="codemirror">{`
 ListPlay[Table[Sin[2 π 50 t], {t, 0, 1, 1./2000}]]
 `}</wljs-editor>
@@ -1397,7 +1397,7 @@ This creates an audio player that plays a 50 Hz sine wave. The output includes p
 Too much data? Use icons:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl  opacity-10 group-hover:opacity-50 transition duration-500" />
 <wljs-editor lazy="true" type="Input" display="codemirror">{`
 Table[i, {i, 100}] // Iconize
 `}</wljs-editor>

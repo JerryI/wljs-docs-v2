@@ -1,0 +1,22 @@
+---
+title: Play
+draft: false
+package: wljs-sound
+env:
+  - Wolfram Kernel
+---
+
+```wolfram
+Play[f, {t, tmin, tmax}, opts___] _Sound
+```
+
+creates an object that plays as a sound whose amplitude is given by `f` as a function of time `t`.
+
+## Options
+
+### `SampleRate`
+The default is `8000`
+
+<Callout type="note">
+Is effectively generate [SampledSoundList](../Sound/SampledSoundList) and feed it to [Sound](../Sound/Sound)
+</Callout>

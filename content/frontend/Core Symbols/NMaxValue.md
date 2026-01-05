@@ -1,0 +1,16 @@
+# NMaxValue
+
+```
+NMaxValue[f,x] gives the global maximum value of f with respect to x.
+
+NMaxValue[f,{x,y,…}] gives the global maximum value of f with respect to x, y, …. 
+
+NMaxValue[{f,cons},{x,y,…}] gives the global maximum value of f subject to the constraints cons. 
+
+NMaxValue[…,x∈reg] constrains x to be in the region reg.
+```
+
+
+
+
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*

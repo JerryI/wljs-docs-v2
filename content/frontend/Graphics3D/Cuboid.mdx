@@ -1,0 +1,23 @@
+---
+title: Cuboid
+draft: false
+update: true
+package: wljs-graphics3d-threejs
+source: https://github.com/JerryI/Mathematica-ThreeJS-graphics-engine/blob/dev/src/kernel.js
+---
+```wolfram
+Cuboid[pmin_, pmax_]
+```
+draws a hypercube from `pmin` to `pmax`
+
+```wolfram
+Graphics3D[
+ Table[{EdgeForm[Opacity[.3]], Hue[RandomReal[], 1, 0.5], 
+   Cuboid[RandomReal[4, 3]]}, {40}]]
+```
+
+## Dynamics
+Fully supports. 
+
+An example using gizmo-snippet
+

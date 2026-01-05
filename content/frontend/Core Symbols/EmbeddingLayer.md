@@ -1,0 +1,12 @@
+# EmbeddingLayer
+
+```
+EmbeddingLayer[size,n] represents a trainable net layer that embeds integers between 1 and n into a continuous vector space of dimension size.
+
+EmbeddingLayer[size] leaves the n to be inferred from context.
+```
+
+
+
+
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
