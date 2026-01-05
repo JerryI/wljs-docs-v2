@@ -1,10 +1,13 @@
 # FischerGroupFi24Prime
 
+`FischerGroupFi24Prime[]` represents the sporadic simple Fischer group Fi24′.
+
+## Examples
+
+Get the order of the Fischer group Fi24′:
+
+```wolfram
+GroupOrder[FischerGroupFi24Prime[]]
 ```
-FischerGroupFi24Prime[] represents the sporadic simple Fischer group Fi24′.
-```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/FischerGroupFi24Prime.html) for more details.*

@@ -1,10 +1,26 @@
 # FileExtension
 
+`FileExtension["file"]` gives the file extension.
+
+## Examples
+
+Get extension:
+
+```wolfram
+FileExtension["document.pdf"]
+(* "pdf" *)
 ```
-FileExtension["file"] gives the file extension for a file name.
+
+```wolfram
+FileExtension["archive.tar.gz"]
+(* "gz" *)
 ```
 
+No extension:
 
+```wolfram
+FileExtension["README"]
+(* "" *)
+```
 
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/FileExtension.html) for more details.*

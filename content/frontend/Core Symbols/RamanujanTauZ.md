@@ -1,10 +1,11 @@
 # RamanujanTauZ
 
+`RamanujanTauZ[t]` gives the Ramanujan tau Z-function Z(t).
+
+## Examples
+
+```wolfram
+RamanujanTauZ[2.5]
 ```
-RamanujanTauZ[t] gives the Ramanujan tau Z-function Z(t).
-```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/RamanujanTauZ.html) for more details.*

@@ -1,14 +1,21 @@
 # IntervalMemberQ
 
+`IntervalMemberQ[interval, x]` gives `True` if x lies within the interval, and `False` otherwise.
+
+`IntervalMemberQ[interval1, interval2]` gives `True` if interval2 is completely contained in interval1.
+
+## Examples
+
+Check membership:
+
+```wolfram
+IntervalMemberQ[Interval[{0, 10}], 5]
+(* True *)
 ```
-IntervalMemberQ[interval,x] gives True if the number x lies within the specified interval, and False otherwise. 
 
-IntervalMemberQ[interval1,interval2] gives True if interval2 is completely contained within interval1. 
-
-IntervalMemberQ[interval] represents an operator form of IntervalMemberQ that can be applied to a number.
+```wolfram
+IntervalMemberQ[Interval[{0, 10}], 15]
+(* False *)
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/IntervalMemberQ.html) for more details.*

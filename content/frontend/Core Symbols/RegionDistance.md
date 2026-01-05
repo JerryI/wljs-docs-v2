@@ -1,14 +1,21 @@
 # RegionDistance
 
+`RegionDistance[reg, p]` gives the minimum distance from point p to the region.
+
+## Examples
+
+Distance to a disk:
+
+```wolfram
+RegionDistance[Disk[{0, 0}, 1], {2, 0}]
+(* 1 *)
 ```
-RegionDistance[reg,p] gives the minimum distance from the point p to the region reg.
 
-RegionDistance[reg1,reg2] gives the minimum distance between points in the regions reg1 and reg2.
+Distance between regions:
 
-RegionDistance[reg] gives a RegionDistanceFunction[…] that can be applied repeatedly to different points.
+```wolfram
+RegionDistance[Disk[{0, 0}, 1], Disk[{3, 0}, 1]]
+(* 1 *)
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/RegionDistance.html) for more details.*

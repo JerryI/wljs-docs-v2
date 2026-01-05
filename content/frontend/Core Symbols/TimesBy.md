@@ -1,10 +1,16 @@
 # TimesBy
 
+`x *= c` multiplies x by c and returns the new value of x.
+
+## Examples
+
+Multiply a variable by a value:
+
+```wolfram
+x = 5;
+x *= 3;
+x
+(* 15 *)
 ```
-x*=c multiplies x by c and returns the new value of x. 
-```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/TimesBy.html) for more details.*

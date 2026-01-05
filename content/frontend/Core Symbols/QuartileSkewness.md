@@ -1,14 +1,17 @@
 # QuartileSkewness
 
+`QuartileSkewness[data]` gives the coefficient of quartile skewness for the elements in list.
+
+`QuartileSkewness[data,{{a,b},{c,d}}]` uses the quantile definition specified by parameters a, b, c, d.
+
+`QuartileSkewness[dist]` gives the coefficient of quartile skewness for the distribution dist.
+
+## Examples
+
+Compute the quartile skewness of a dataset:
+
+```wolfram
+QuartileSkewness[{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}]
 ```
-QuartileSkewness[data] gives the coefficient of quartile skewness for the elements in list.
 
-QuartileSkewness[data,{{a,b},{c,d}}] uses the quantile definition specified by parameters a, b, c, d.
-
-QuartileSkewness[dist] gives the coefficient of quartile skewness for the distribution dist.
-```
-
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/QuartileSkewness.html) for more details.*

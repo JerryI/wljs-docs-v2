@@ -1,12 +1,23 @@
 # DayCount
 
+`DayCount[date1,date2]` gives the number of days from date1 to date2.
+
+`DayCount[date1,date2,daytype]` gives the number of days of the specified daytype from date1 to date2.
+
+## Examples
+
+Count days between two dates:
+
+```wolfram
+DayCount[{2020, 1, 1}, {2020, 12, 31}]
+(* 365 *)
 ```
-DayCount[date1,date2] gives the number of days from date1 to date2.
 
-DayCount[date1,date2,daytype] gives the number of days of the specified daytype from date1 to date2.
+Count only business days:
+
+```wolfram
+DayCount[{2020, 1, 1}, {2020, 1, 31}, "BusinessDay"]
+(* 22 *)
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/DayCount.html) for more details.*

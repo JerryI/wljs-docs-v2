@@ -1,10 +1,17 @@
 # WordBoundary
 
+`WordBoundary` represents a boundary between words for purposes of matching in `StringExpression`.
+
+## Examples
+
+```wolfram
+StringMatchQ["hello world", __ ~~ WordBoundary ~~ __]
+(* True *)
 ```
-WordBoundary represents a boundary between words for purposes of matching in StringExpression.
+
+```wolfram
+StringCases["the cat sat", WordBoundary ~~ LetterCharacter.. ~~ WordBoundary]
+(* {"the", "cat", "sat"} *)
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/WordBoundary.html) for more details.*

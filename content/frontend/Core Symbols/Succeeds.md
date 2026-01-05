@@ -1,10 +1,12 @@
 # Succeeds
 
+`Succeeds[x,y,…]` displays as x≻y≻….
+
+## Examples
+
+```wolfram
+Succeeds[a, b, c]
+(* a ≻ b ≻ c *)
 ```
-Succeeds[x,y,…] displays as x≻y≻….
-```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Succeeds.html) for more details.*

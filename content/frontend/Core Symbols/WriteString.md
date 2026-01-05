@@ -1,14 +1,21 @@
 # WriteString
 
+`WriteString["file", "string"]` writes a string to a file.
+
+`WriteString[channel, expr1, expr2, ...]` writes multiple expressions in sequence.
+
+## Examples
+
+Write to a file:
+
+```wolfram
+WriteString["output.txt", "Hello, World!"]
 ```
-WriteString["file","string"] writes "string" to a file.
 
-WriteString[channel,"string"] writes "string" to a stream or process.
+Write to standard output:
 
-WriteString[channel,expr1,expr2,…] converts the expri to strings, and then writes them in sequence to the specified output channel. 
+```wolfram
+WriteString[$Output, "Message: ", value, "\n"]
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/WriteString.html) for more details.*

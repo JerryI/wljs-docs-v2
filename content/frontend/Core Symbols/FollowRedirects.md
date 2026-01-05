@@ -1,10 +1,14 @@
 # FollowRedirects
 
+`FollowRedirects` is an option for `URLRead` and related functions that specifies whether to follow HTTP redirects when retrieving a URL.
+
+## Examples
+
+Disable following redirects:
+
+```wolfram
+URLRead["https://example.com/redirect", FollowRedirects -> False]
+(* HTTPResponse[...] *)
 ```
-FollowRedirects is an option for URLRead and related functions that specifies whether to follow HTTP redirects when retrieving a URL.
-```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/FollowRedirects.html) for more details.*

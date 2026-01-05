@@ -1,14 +1,28 @@
 # Put
 
+`expr >> filename` writes expr to a file.
+
+`Put[expr1, expr2, ..., "filename"]` writes a sequence of expressions to a file.
+
+## Examples
+
+Save an expression:
+
+```wolfram
+{1, 2, 3} >> "mydata.m"
 ```
-expr>>filename writes expr to a file. 
 
-Put[expr1,expr2,…,"filename"] writes a sequence of expressions expri to a file. 
+Save multiple expressions:
 
-Put["filename"] creates an empty file with the specified name.
+```wolfram
+Put[x = 5, y = 10, "values.m"]
 ```
 
+Read back with Get:
 
+```wolfram
+Get["mydata.m"]
+(* {1, 2, 3} *)
+```
 
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Put.html) for more details.*

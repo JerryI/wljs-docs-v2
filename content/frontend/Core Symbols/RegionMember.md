@@ -1,14 +1,25 @@
 # RegionMember
 
+`RegionMember[reg, {x, y, ...}]` gives True if the point is inside the region.
+
+## Examples
+
+Test point in disk:
+
+```wolfram
+RegionMember[Disk[], {0.5, 0.5}]
+(* True *)
+
+RegionMember[Disk[], {2, 0}]
+(* False *)
 ```
-RegionMember[reg,{x,y,…}] gives True if the numeric point {x,y,…} is a member of the constant region reg and False otherwise.
 
-RegionMember[reg,{x,y,…}] gives conditions for the point {x,y,…} to be a member of reg.
+Membership function:
 
-RegionMember[reg] returns a RegionMemberFunction[…] that can be applied repeatedly to different points. 
+```wolfram
+mf = RegionMember[Ball[]];
+mf[{0.5, 0.5, 0.5}]
+(* True *)
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/RegionMember.html) for more details.*

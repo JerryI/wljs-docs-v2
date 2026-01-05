@@ -1,14 +1,28 @@
 # RandomVariate
 
+`RandomVariate[dist]` gives a pseudorandom variate from the symbolic distribution dist. `RandomVariate[dist, n]` gives a list of n variates.
+
+## Examples
+
+Sample from a normal distribution:
+
+```wolfram
+RandomVariate[NormalDistribution[]]
+(* 0.543821 *)
 ```
-RandomVariate[dist] gives a pseudorandom variate from the symbolic distribution dist.
 
-RandomVariate[dist,n] gives a list of n pseudorandom variates from the symbolic distribution dist.
+Generate multiple samples from an exponential distribution:
 
-RandomVariate[dist,{n1,n2,…}] gives an n1× n2×… array of pseudorandom variates from the symbolic distribution dist.
+```wolfram
+RandomVariate[ExponentialDistribution[1], 5]
+(* {0.234, 1.872, 0.651, 2.103, 0.412} *)
 ```
 
+Sample from a Poisson distribution:
 
+```wolfram
+RandomVariate[PoissonDistribution[3], 4]
+(* {2, 4, 3, 1} *)
+```
 
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/RandomVariate.html) for more details.*

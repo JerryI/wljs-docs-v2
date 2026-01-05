@@ -1,10 +1,16 @@
 # Byte
 
+`Byte` represents a single byte of data when used with `Read` and related functions.
+
+## Examples
+
+Read bytes from a stream:
+
+```wolfram
+stream = OpenRead["file.bin", BinaryFormat -> True];
+Read[stream, Byte]
+(* 65 *)
+Close[stream];
 ```
-Byte represents a single byte of data in Read. 
-```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Byte.html) for more details.*

@@ -1,10 +1,21 @@
 # StirlingS1
 
+`StirlingS1[n, m]` gives the Stirling number of the first kind, related to permutations with cycles.
+
+## Examples
+
+Stirling numbers of the first kind:
+
+```wolfram
+Table[StirlingS1[4, k], {k, 0, 4}]
+(* {0, 6, -11, 6, -1} *)
 ```
-StirlingS1[n,m] gives the Stirling number of the first kind Sn(m). 
+
+Single value:
+
+```wolfram
+StirlingS1[5, 2]
+(* 50 *)
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/StirlingS1.html) for more details.*

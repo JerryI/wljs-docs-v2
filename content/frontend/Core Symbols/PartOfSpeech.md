@@ -1,10 +1,14 @@
 # PartOfSpeech
 
+`PartOfSpeech["word"]` returns the possible parts of speech for the specified word.
+
+## Examples
+
+Get parts of speech for a word:
+
+```wolfram
+PartOfSpeech["run"]
+(* {"Noun", "Verb"} *)
 ```
-PartOfSpeech["word"] returns the possible parts of speech for the specified word.
-```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/PartOfSpeech.html) for more details.*

@@ -1,10 +1,11 @@
 # LameSPrime
 
+`LameSPrime[ν,j,z,m]` gives the z-derivative of the jth Lamé function Esν(j)(zm) of order ν with elliptic parameter m.
+
+## Examples
+
+```wolfram
+LameSPrime[2, 1, 0.5, 0.3]
 ```
-LameSPrime[ν,j,z,m] gives the z-derivative of the jth Lamé function Esν(j)(zm) of order ν with elliptic parameter m.
-```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/LameSPrime.html) for more details.*

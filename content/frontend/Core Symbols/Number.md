@@ -1,10 +1,13 @@
 # Number
 
+`Number` represents an exact integer or an approximate real number in Read.
+
+## Examples
+
+Read a number from a stream:
+
+```wolfram
+Read[stream, Number]
 ```
-Number represents an exact integer or an approximate real number in Read. 
-```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Number.html) for more details.*

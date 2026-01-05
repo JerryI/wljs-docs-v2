@@ -1,14 +1,21 @@
 # Volume
 
+`Volume[reg]` gives the volume of a three-dimensional region.
+
+## Examples
+
+Volume of a ball:
+
+```wolfram
+Volume[Ball[{0, 0, 0}, r]]
+(* (4 Pi r^3)/3 *)
 ```
-Volume[reg] gives the volume of the three-dimensional region reg.
 
-Volume[{x1,…,xn},{s,smin,smax},{t,tmin,tmax},{u,umin,umax}] gives the volume of the parametrized region whose Cartesian coordinates xi are functions of s, t, u.
+Volume of a cylinder:
 
-Volume[{x1,…,xn},{s,smin,smax},{t,tmin,tmax},{u,umin,umax},chart] interprets the xi as coordinates in the specified coordinate chart.
+```wolfram
+Volume[Cylinder[{{0, 0, 0}, {0, 0, 1}}, 1]]
+(* Pi *)
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Volume.html) for more details.*

@@ -1,10 +1,12 @@
 # RecordSeparators
 
+`RecordSeparators` is an option for `Read`, `Find`, and related functions that specifies the list of strings to be taken as delimiters for records.
+
+## Examples
+
+```wolfram
+ImportString["a;b;c", "Table", RecordSeparators -> {";"}]
+(* {{"a"}, {"b"}, {"c"}} *)
 ```
-RecordSeparators is an option for Read, Find, and related functions that specifies the list of strings to be taken as delimiters for records. 
-```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/RecordSeparators.html) for more details.*

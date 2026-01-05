@@ -1,10 +1,22 @@
 # SequenceHold
 
+`SequenceHold` is an attribute that specifies that Sequence objects appearing in the arguments of a function should not automatically be flattened out.
+
+## Examples
+
+Without SequenceHold, Sequence is flattened:
+
+```wolfram
+f[Sequence[a, b, c]]
+(* f[a, b, c] *)
 ```
-SequenceHold is an attribute that specifies that Sequence objects appearing in the arguments of a function should not automatically be flattened out. 
+
+With SequenceHold attribute:
+
+```wolfram
+SetAttributes[g, SequenceHold];
+g[Sequence[a, b, c]]
+(* g[Sequence[a, b, c]] *)
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/SequenceHold.html) for more details.*

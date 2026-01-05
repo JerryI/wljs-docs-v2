@@ -1,10 +1,14 @@
 # NotSquareSupersetEqual
 
+`NotSquareSupersetEqual[x,y,…]` displays as x⋣y⋣….
+
+## Examples
+
+Display a not square superset or equal relation:
+
+```wolfram
+NotSquareSupersetEqual[a, b, c]
+(* a⋣b⋣c *)
 ```
-NotSquareSupersetEqual[x,y,…] displays as x⋣y⋣….
-```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/NotSquareSupersetEqual.html) for more details.*

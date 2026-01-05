@@ -1,10 +1,21 @@
 # MangoldtLambda
 
+`MangoldtLambda[n]` gives the von Mangoldt function Λ(n).
+
+## Examples
+
+The von Mangoldt function for a prime power:
+
+```wolfram
+MangoldtLambda[8]
+(* Log[2] *)
 ```
-MangoldtLambda[n] gives the von Mangoldt function Λ(n).
+
+For a non-prime-power:
+
+```wolfram
+MangoldtLambda[6]
+(* 0 *)
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/MangoldtLambda.html) for more details.*

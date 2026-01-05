@@ -1,14 +1,20 @@
 # ProbabilityScalePlot
 
+`ProbabilityScalePlot[{x1, x2, ...}]` generates a normal probability plot of the samples.
+
+## Examples
+
+Probability scale plot:
+
+```wolfram
+data = RandomVariate[NormalDistribution[], 100];
+ProbabilityScalePlot[data]
 ```
-ProbabilityScalePlot[{x1,x2,…}] generates a normal probability plot of the samples xi. 
 
-ProbabilityScalePlot[{x1,x2,…},"dist"] generates a probability plot scaled for the distribution "dist".
+For different distribution:
 
-ProbabilityScalePlot[{data1,data2,…},"dist"] generates several scaled probability plots for data1, data2, ….
+```wolfram
+ProbabilityScalePlot[data, "Exponential"]
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ProbabilityScalePlot.html) for more details.*

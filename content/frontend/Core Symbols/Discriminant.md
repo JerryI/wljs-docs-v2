@@ -1,12 +1,21 @@
 # Discriminant
 
+`Discriminant[poly, var]` computes the discriminant of the polynomial poly with respect to var.
+
+## Examples
+
+Discriminant of a quadratic:
+
+```wolfram
+Discriminant[a*x^2 + b*x + c, x]
+(* b^2 - 4 a c *)
 ```
-Discriminant[poly,var] computes the discriminant of the polynomial poly with respect to the variable var.
 
-Discriminant[poly,var,Modulus->p] computes the discriminant modulo p.
+Numeric example:
+
+```wolfram
+Discriminant[x^2 - 5x + 6, x]
+(* 1 *)
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Discriminant.html) for more details.*

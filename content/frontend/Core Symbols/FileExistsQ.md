@@ -1,10 +1,20 @@
 # FileExistsQ
 
+`FileExistsQ["name"]` gives `True` if the file exists, and `False` otherwise.
+
+## Examples
+
+Check if file exists:
+
+```wolfram
+FileExistsQ["/path/to/file.txt"]
+(* True or False *)
 ```
-FileExistsQ["name"] gives True if the file with the specified name exists, and gives False otherwise.
+
+Conditional loading:
+
+```wolfram
+If[FileExistsQ["config.m"], Get["config.m"]]
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/FileExistsQ.html) for more details.*

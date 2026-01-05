@@ -1,18 +1,21 @@
 # FindMinimum
 
+`FindMinimum[f, {x, x0}]` searches for a local minimum in f, starting from the point x=x0.
+
+## Examples
+
+Find local minimum:
+
+```wolfram
+FindMinimum[x^2 - 4x + 5, {x, 0}]
+(* {1., {x -> 2.}} *)
 ```
-FindMinimum[f,x] searches for a local minimum in f, starting from an automatically selected point.
 
-FindMinimum[f,{x,x0}] searches for a local minimum in f, starting from the point x=x0. 
+Multivariable:
 
-FindMinimum[f,{{x,x0},{y,y0},…}] searches for a local minimum in a function of several variables. 
-
-FindMinimum[{f,cons},{{x,x0},{y,y0},…}] searches for a local minimum subject to the constraints cons.
-
-FindMinimum[{f,cons},{x,y,…}] starts from a point within the region defined by the constraints.
+```wolfram
+FindMinimum[x^2 + y^2 + x*y, {{x, 1}, {y, 1}}]
+(* {0., {x -> 0., y -> 0.}} *)
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/FindMinimum.html) for more details.*

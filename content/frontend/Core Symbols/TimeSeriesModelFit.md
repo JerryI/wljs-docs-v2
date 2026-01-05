@@ -1,12 +1,18 @@
 # TimeSeriesModelFit
 
+`TimeSeriesModelFit[data]` constructs a time series model for data from an automatically selected model family.
+
+`TimeSeriesModelFit[data,mspec]` constructs a time series model for data from a model family specified by mspec.
+
+## Examples
+
+```wolfram
+TimeSeriesModelFit[{1, 2, 4, 7, 11, 16}]
+(* TimeSeriesModel[...] *)
 ```
-TimeSeriesModelFit[data] constructs a time series model for data from an automatically selected model family.
 
-TimeSeriesModelFit[data,mspec] constructs a time series model for data from a model family specified by mspec.
+```wolfram
+TimeSeriesModelFit[data, "ARMA"]
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/TimeSeriesModelFit.html) for more details.*

@@ -1,10 +1,16 @@
 # Thursday
 
+`Thursday` is a day of the week.
+
+## Examples
+
+```wolfram
+DayName[Thursday]
+(* Thursday *)
 ```
-Thursday is a day of the week.
+
+```wolfram
+NextDate[Thursday]
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Thursday.html) for more details.*

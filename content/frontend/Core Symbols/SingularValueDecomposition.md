@@ -1,16 +1,21 @@
 # SingularValueDecomposition
 
+`SingularValueDecomposition[m]` gives the singular value decomposition for a numerical matrix m as a list `{u, σ, v}`, where m = u.σ.ConjugateTranspose[v].
+
+## Examples
+
+SVD of a matrix:
+
+```wolfram
+{u, s, v} = SingularValueDecomposition[{{1, 2}, {3, 4}}]
+(* {{{-0.404, -0.915}, {-0.915, 0.404}}, {{5.46, 0}, {0, 0.366}}, ...} *)
 ```
-SingularValueDecomposition[m] gives the singular value decomposition for a numerical matrix m as a list of matrices {u,σ,v}, where σ is a diagonal matrix and m can be written as u.σ.ConjugateTranspose[v].
 
-SingularValueDecomposition[{m,a}] gives the generalized singular value decomposition of m with respect to a. 
+Reconstruct the original matrix:
 
-SingularValueDecomposition[m,k] gives the singular value decomposition associated with the k largest singular values of m. 
-
-SingularValueDecomposition[m,UpTo[k]] gives the decomposition for the k largest singular values, or as many as are available. 
+```wolfram
+u . s . ConjugateTranspose[v]
+(* {{1., 2.}, {3., 4.}} *)
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/SingularValueDecomposition.html) for more details.*

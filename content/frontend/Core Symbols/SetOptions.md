@@ -1,14 +1,26 @@
 # SetOptions
 
+`SetOptions[s, name1 -> value1, ...]` sets the specified default options for a symbol s.
+
+## Examples
+
+Change default options for Plot:
+
+```wolfram
+SetOptions[Plot, PlotStyle -> Red]
+(* Now all Plots default to red *)
 ```
-SetOptions[s,name1->value1,name2->value2,…] sets the specified default options for a symbol s. 
 
-SetOptions[stream,…] or SetOptions["name",…] sets options associated with a particular stream. 
+Set options for a stream:
 
-SetOptions[object,…] sets options associated with an external object such as a NotebookObject or CloudObject. 
+```wolfram
+SetOptions[$Output, PageWidth -> 80]
 ```
 
+Reset to original:
 
+```wolfram
+SetOptions[Plot, PlotStyle -> Automatic]
+```
 
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/SetOptions.html) for more details.*

@@ -1,10 +1,14 @@
 # ListFormat
 
+`ListFormat` is an option to `TextString` and related functions that determines how lists are formatted.
+
+## Examples
+
+Format a list with custom separators:
+
+```wolfram
+TextString[{a, b, c}, ListFormat -> {"", ", ", ""}]
+(* "a, b, c" *)
 ```
-ListFormat is an option to TextString and related functions that determines how lists are formatted.
-```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ListFormat.html) for more details.*

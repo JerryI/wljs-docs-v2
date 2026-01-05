@@ -1,10 +1,17 @@
 # CoefficientArrays
 
+`CoefficientArrays[polys, vars]` gives the arrays of coefficients of the variables vars in the polynomials polys.
+
+## Examples
+
+```wolfram
+CoefficientArrays[{a x + b y, c x + d y}, {x, y}]
+(* {{0, 0}, {{a, b}, {c, d}}} *)
 ```
-CoefficientArrays[polys,vars] gives the arrays of coefficients of the variables vars in the polynomials polys. 
+
+```wolfram
+CoefficientArrays[x^2 + 2 x + 1, x]
+(* {1, {2}, {{1}}} *)
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/CoefficientArrays.html) for more details.*

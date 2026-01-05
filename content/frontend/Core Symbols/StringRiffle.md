@@ -1,18 +1,30 @@
 # StringRiffle
 
+`StringRiffle[{s1, s2, s3, ...}]` concatenates strings with spaces between them.
+
+`StringRiffle[list, sep]` uses sep as the separator.
+
+## Examples
+
+Join with spaces:
+
+```wolfram
+StringRiffle[{"a", "b", "c"}]
+(* "a b c" *)
 ```
-StringRiffle[{s1,s2,s3,…}] creates a string by concatenating all the si, with spaces inserted between them.
 
-StringRiffle[{{s11,s12,…},{s21,s22,…},…}] creates a string by concatenating the sij, and inserting spaces at the lowest level and newlines at the higher level.
+Join with custom separator:
 
-StringRiffle[list,sep] inserts the separator sep between all elements in list.
-
-StringRiffle[list,{"left","sep","right"}] use left and right as delimiters after concatenation.
-
-StringRiffle[list,sep1,sep2,…] inserts separator sepi between elements of list at level i.
+```wolfram
+StringRiffle[{"a", "b", "c"}, ", "]
+(* "a, b, c" *)
 ```
 
+With delimiters:
 
+```wolfram
+StringRiffle[{"a", "b", "c"}, {"[", ", ", "]"}]
+(* "[a, b, c]" *)
+```
 
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/StringRiffle.html) for more details.*

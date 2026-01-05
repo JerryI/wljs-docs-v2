@@ -1,16 +1,28 @@
 # StringStartsQ
 
+`StringStartsQ["string", patt]` yields `True` if the beginning of the string matches the pattern.
+
+`StringStartsQ[patt]` represents an operator form.
+
+## Examples
+
+Check prefix:
+
+```wolfram
+StringStartsQ["Hello World", "Hello"]
+(* True *)
 ```
-StringStartsQ["string",patt] yields True if the beginning of "string" matches the string expression patt, and yields False otherwise.
 
-StringStartsQ["string",{patt1,patt2,…}] yields True if the beginning of "string" matches any of the patti.
-
-StringStartsQ[{string1,string2,…},patt] gives a list of the results for each of the "stringi".
-
-StringStartsQ[patt] represents an operator form of StringStartsQ that can be applied to an expression.
+```wolfram
+StringStartsQ["Hello World", "World"]
+(* False *)
 ```
 
+Filter strings by prefix:
 
+```wolfram
+Select[{"apple", "apricot", "banana"}, StringStartsQ["ap"]]
+(* {"apple", "apricot"} *)
+```
 
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/StringStartsQ.html) for more details.*

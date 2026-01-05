@@ -1,10 +1,20 @@
 # BetaDistribution
 
+`BetaDistribution[α, β]` represents a continuous beta distribution with shape parameters α and β.
+
+## Examples
+
+Define a beta distribution:
+
+```wolfram
+dist = BetaDistribution[2, 5]
 ```
-BetaDistribution[α,β] represents a continuous beta distribution with shape parameters α and β.
+
+Compute the mean:
+
+```wolfram
+Mean[BetaDistribution[2, 5]]
+(* 2/7 *)
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/BetaDistribution.html) for more details.*

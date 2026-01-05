@@ -1,18 +1,25 @@
 # GraphPlot
 
-```
-GraphPlot[g] generates a plot of the graph g.
+`GraphPlot[g]` generates a plot of the graph g. Works with adjacency lists, rules, or matrices.
 
-GraphPlot[{e1,e2,…}] generates a plot of the graph with edges ei.
+## Examples
 
-GraphPlot[{…,w[ei],…}] plots ei with features defined by the symbolic wrapper w.
+Plot a simple graph:
 
-GraphPlot[{vi1->vj1,…}] uses rules vik->vjk to specify the graph g.
-
-GraphPlot[m] uses the adjacency matrix m to specify the graph g.
+```wolfram
+GraphPlot[{1 -> 2, 2 -> 3, 3 -> 1}]
 ```
 
+From adjacency matrix:
 
+```wolfram
+GraphPlot[{{0, 1, 1}, {1, 0, 1}, {1, 1, 0}}]
+```
 
+With styling:
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+```wolfram
+GraphPlot[{a -> b, b -> c}, VertexLabeling -> True]
+```
+
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/GraphPlot.html) for more details.*

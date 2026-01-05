@@ -1,10 +1,12 @@
 # TrigToExp
 
+`TrigToExp[expr]` converts trigonometric functions in expr to exponentials.
+
+## Examples
+
+```wolfram
+TrigToExp[Sin[x]]
+(* (E^(I x) - E^(-I x))/(2 I) *)
 ```
-TrigToExp[expr] converts trigonometric functions in expr to exponentials. 
-```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/TrigToExp.html) for more details.*

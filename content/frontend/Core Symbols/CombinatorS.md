@@ -1,10 +1,11 @@
 # CombinatorS
 
+`CombinatorS` represents the **S** combinator.
+
+## Examples
+
+```wolfram
+CombinatorS
 ```
-CombinatorS represents the <b>S</b> combinator.
-```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/CombinatorS.html) for more details.*

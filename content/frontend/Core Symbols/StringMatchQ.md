@@ -1,18 +1,30 @@
 # StringMatchQ
 
+`StringMatchQ["string", patt]` tests whether the entire string matches the pattern.
+
+`StringMatchQ[patt]` represents an operator form.
+
+## Examples
+
+Match with wildcard:
+
+```wolfram
+StringMatchQ["Hello World", "Hello*"]
+(* True *)
 ```
-StringMatchQ["string",patt] tests whether "string" matches the string pattern patt. 
 
-StringMatchQ["string",RegularExpression["regex"]] tests whether "string" matches the specified regular expression. 
+Match entire string:
 
-StringMatchQ["string",{patt1,patt2,…}] test whether "string" matches any of the patti.
-
-StringMatchQ[{string1,string2,…},patt] gives the list of the results for each of the "stringi". 
-
-StringMatchQ[patt] represents an operator form of StringMatchQ that can be applied to an expression.
+```wolfram
+StringMatchQ["abc123", LetterCharacter..]
+(* False *)
 ```
 
+With regex:
 
+```wolfram
+StringMatchQ["test@example.com", RegularExpression[".+@.+\\..+"]]
+(* True *)
+```
 
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/StringMatchQ.html) for more details.*

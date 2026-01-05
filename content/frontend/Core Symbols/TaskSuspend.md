@@ -1,10 +1,13 @@
 # TaskSuspend
 
+`TaskSuspend[task]` suspends the execution of the specified task.
+
+## Examples
+
+```wolfram
+task = SessionSubmit[ScheduledTask[Print["hello"], 1]];
+TaskSuspend[task]
+(* suspends the scheduled task *)
 ```
-TaskSuspend[task] suspends the execution of the specified task.
-```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/TaskSuspend.html) for more details.*

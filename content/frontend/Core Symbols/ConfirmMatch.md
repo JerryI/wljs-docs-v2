@@ -1,14 +1,23 @@
 # ConfirmMatch
 
+`ConfirmMatch[expr, form]` confirms that expr matches the pattern form, otherwise throws an error to the nearest `Enclose`.
+
+## Examples
+
+Validate pattern:
+
+```wolfram
+Enclose[
+  {a, b} = ConfirmMatch[getData[], {_Integer, _Integer}];
+  a + b
+]
+(* Throws if getData[] doesn't return two integers *)
 ```
-ConfirmMatch[expr,form] confirms that expr matches the pattern form, otherwise throwing an error to the nearest surrounding Enclose.
 
-ConfirmMatch[expr,form,info] evaluates info and includes its value in the thrown error if expr is not confirmed.
+With error message:
 
-ConfirmMatch[expr,form,info,tag] uses the specified tag for any thrown errors.
+```wolfram
+ConfirmMatch[x, _List, "Expected a list"]
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ConfirmMatch.html) for more details.*

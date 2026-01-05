@@ -1,14 +1,19 @@
 # RegionPlot
 
+`RegionPlot[pred, {x, xmin, xmax}, {y, ymin, ymax}]` makes a plot showing the region where pred is True.
+
+## Examples
+
+Plot a circular region:
+
+```wolfram
+RegionPlot[x^2 + y^2 < 1, {x, -1.5, 1.5}, {y, -1.5, 1.5}]
 ```
-RegionPlot[pred,{x,xmin,xmax},{y,ymin,ymax}] makes a plot showing the region in which pred is True. 
 
-RegionPlot[{pred1,pred2,…},…] plots several regions corresponding to the predi.
+Multiple regions:
 
-RegionPlot[{…,w[predi,…],…},…] plots predi with features defined by the symbolic wrapper w.
+```wolfram
+RegionPlot[{x^2 + y^2 < 1, x + y < 0}, {x, -2, 2}, {y, -2, 2}]
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/RegionPlot.html) for more details.*

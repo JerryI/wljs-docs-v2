@@ -1,10 +1,16 @@
 # Property
 
+`Property[item, name -> value]` associates the property name->value with item.
+
+## Examples
+
+```wolfram
+Graph[{1 -> 2, 2 -> 3}, VertexLabels -> Automatic, 
+  Properties -> {1 -> {"Label" -> "Start"}}]
 ```
-Property[item,name->value] associates the property name->value with item.
+
+```wolfram
+Property[1, "color" -> Red]
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Property.html) for more details.*

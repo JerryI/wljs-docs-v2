@@ -1,10 +1,19 @@
 # RegionDifference
 
+`RegionDifference[reg1, reg2]` gives the difference of regions (reg1 minus reg2).
+
+## Examples
+
+Disk with hole:
+
+```wolfram
+RegionDifference[Disk[{0, 0}, 2], Disk[{0, 0}, 1]]
 ```
-RegionDifference[reg1,reg2] gives the difference of the regions reg1 and reg2.
+
+Subtract region:
+
+```wolfram
+RegionDifference[Rectangle[], Disk[{0.5, 0.5}, 0.3]]
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/RegionDifference.html) for more details.*

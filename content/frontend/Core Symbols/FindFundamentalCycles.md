@@ -1,10 +1,15 @@
 # FindFundamentalCycles
 
+`FindFundamentalCycles[g]` finds fundamental cycles of the graph g.
+
+## Examples
+
+```wolfram
+FindFundamentalCycles[CycleGraph[5]]
 ```
-FindFundamentalCycles[g] finds fundamental cycles of the graph g.
+
+```wolfram
+FindFundamentalCycles[CompleteGraph[4]]
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/FindFundamentalCycles.html) for more details.*

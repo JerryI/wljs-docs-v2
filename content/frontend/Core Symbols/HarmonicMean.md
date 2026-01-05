@@ -1,10 +1,21 @@
 # HarmonicMean
 
+`HarmonicMean[data]` gives the harmonic mean of the values in data.
+
+## Examples
+
+Compute the harmonic mean:
+
+```wolfram
+HarmonicMean[{1, 2, 4}]
+(* 12/7 *)
 ```
-HarmonicMean[data] gives the harmonic mean of the values in data.
+
+Numerical result:
+
+```wolfram
+N[HarmonicMean[{1, 2, 4}]]
+(* 1.71429 *)
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/HarmonicMean.html) for more details.*

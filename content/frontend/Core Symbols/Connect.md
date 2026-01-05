@@ -1,10 +1,11 @@
 # Connect
 
+`Connect` is a setting for the `LinkMode` option of `LinkOpen`. `LinkMode -> Connect` causes a link to be created that will connect to a link listening on a named port.
+
+## Examples
+
+```wolfram
+link = LinkOpen["8000", LinkMode -> Connect]
 ```
-Connect is a setting for the LinkMode option of LinkOpen.  LinkMode->Connect causes a link to be created that will connect to a link listening on a named port.
-```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Connect.html) for more details.*

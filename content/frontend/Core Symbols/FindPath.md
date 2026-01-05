@@ -1,20 +1,29 @@
 # FindPath
 
-```
-FindPath[g,s,t] finds a path between vertex s and vertex t in the graph g.
+`FindPath[g, s, t]` finds a path between vertices s and t in graph g. `FindPath[g, s, t, k, n]` finds up to n paths of length at most k.
 
-FindPath[g,s,t,k] finds a path of length at most k between vertex s and vertex t in the graph g.
+## Examples
 
-FindPath[g,s,t,{k}] finds a path of length exactly k.
+Find any path:
 
-FindPath[g,s,t,{kmin,kmax}] finds a path of length between kmin and kmax.
-
-FindPath[g,s,t,kspec,n] finds at most n paths.
-
-FindPath[{v->w,…},…] uses rules v->w to specify the graph g.
+```wolfram
+g = Graph[{1 <-> 2, 2 <-> 3, 1 <-> 3}]
+FindPath[g, 1, 3]
+(* {{1, 3}} *)
 ```
 
+Find multiple paths:
 
+```wolfram
+FindPath[g, 1, 3, Infinity, All]
+(* {{1, 3}, {1, 2, 3}} *)
+```
 
+Paths of specific length:
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+```wolfram
+FindPath[g, 1, 3, {2}]
+(* {{1, 2, 3}} - length exactly 2 *)
+```
+
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/FindPath.html) for more details.*

@@ -1,10 +1,19 @@
 # Red
 
+`Red` represents the color red in graphics or style specifications.
+
+## Examples
+
+Use red in graphics:
+
+```wolfram
+Graphics[{Red, Disk[]}]
 ```
-Red represents the color red in graphics or style specifications. 
+
+Style text in red:
+
+```wolfram
+Style["Warning", Red, Bold]
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Red.html) for more details.*

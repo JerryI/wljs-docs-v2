@@ -1,12 +1,21 @@
 # Laplacian
 
+`Laplacian[f, {x1, ..., xn}]` gives the Laplacian ∂²f/∂x1² + ... + ∂²f/∂xn².
+
+## Examples
+
+Laplacian of a function:
+
+```wolfram
+Laplacian[x^2 + y^2 + z^2, {x, y, z}]
+(* 6 *)
 ```
-Laplacian[f,{x1,…,xn}] gives the Laplacian ∂2f/∂x12+…+∂2f/∂xn2.
 
-Laplacian[f,{x1,…,xn},chart] gives the Laplacian in the given coordinates chart.
+2D Laplacian:
+
+```wolfram
+Laplacian[Sin[x] Cos[y], {x, y}]
+(* -2 Cos[y] Sin[x] *)
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Laplacian.html) for more details.*

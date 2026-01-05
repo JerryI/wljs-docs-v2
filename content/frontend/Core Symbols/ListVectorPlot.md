@@ -1,14 +1,21 @@
 # ListVectorPlot
 
+`ListVectorPlot[varr]` generates a vector plot from an array of vectors.
+
+## Examples
+
+From array of vectors:
+
+```wolfram
+vectors = Table[{Sin[i], Cos[j]}, {i, 5}, {j, 5}];
+ListVectorPlot[vectors]
 ```
-ListVectorPlot[varr] generates a vector plot from an array varr of vectors.
 
-ListVectorPlot[{{{x1,y1},{vx1,vy1}},…}] generates a vector plot from vectors {vxi,vyi} given at specified points {xi,yi}.
+With explicit positions:
 
-ListVectorPlot[{data1,data2,…}] plots data for several vector fields. 
+```wolfram
+data = Table[{{x, y}, {-y, x}}, {x, -2, 2}, {y, -2, 2}];
+ListVectorPlot[Flatten[data, 1]]
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ListVectorPlot.html) for more details.*

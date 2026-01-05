@@ -1,10 +1,24 @@
 # AcyclicGraphQ
 
+`AcyclicGraphQ[g]` yields `True` if graph g has no cycles and `False` otherwise.
+
+## Examples
+
+Test for cycles:
+
+```wolfram
+AcyclicGraphQ[TreeGraph[{1 -> 2, 1 -> 3}]]
+(* True *)
+
+AcyclicGraphQ[CycleGraph[5]]
+(* False *)
 ```
-AcyclicGraphQ[g] yields True if the graph g is an acyclic graph and False otherwise.
+
+Path is acyclic:
+
+```wolfram
+AcyclicGraphQ[PathGraph[Range[5]]]
+(* True *)
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/AcyclicGraphQ.html) for more details.*

@@ -1,14 +1,30 @@
 # AnyTrue
 
+`AnyTrue[{e1, e2, ...}, test]` yields `True` if `test[ei]` is `True` for any element.
+
+`AnyTrue[test]` represents an operator form that can be applied to an expression.
+
+## Examples
+
+Check if any element is negative:
+
+```wolfram
+AnyTrue[{1, -2, 3, 4}, Negative]
+(* True *)
 ```
-AnyTrue[{e1,e2,…},test] yields True if test[ei] is True for any of the ei.
 
-AnyTrue[expr,test,level] tests parts of expr at level level.
+Check if any is a string:
 
-AnyTrue[test] represents an operator form of AnyTrue that can be applied to an expression.
+```wolfram
+AnyTrue[{1, 2, 3}, StringQ]
+(* False *)
 ```
 
+Using operator form:
 
+```wolfram
+AnyTrue[PrimeQ][{4, 6, 7, 8}]
+(* True *)
+```
 
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/AnyTrue.html) for more details.*

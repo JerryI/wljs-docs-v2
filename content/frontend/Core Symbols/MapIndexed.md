@@ -1,14 +1,23 @@
 # MapIndexed
 
+`MapIndexed[f, expr]` applies f to the elements of expr, providing the position as a second argument.
+
+`MapIndexed[f, expr, levelspec]` applies f to parts at specified levels.
+
+## Examples
+
+Map with position information:
+
+```wolfram
+MapIndexed[f, {a, b, c}]
+(* {f[a, {1}], f[b, {2}], f[c, {3}]} *)
 ```
-MapIndexed[f,expr] applies f to the elements of expr, giving the part specification of each element as a second argument to f. 
 
-MapIndexed[f,expr,levelspec] applies f to all parts of expr on levels specified by levelspec. 
+Use position to label elements:
 
-MapIndexed[f] represents an operator form of MapIndexed that can be applied to an expression.
+```wolfram
+MapIndexed[{#2[[1]], #1} &, {a, b, c}]
+(* {{1, a}, {2, b}, {3, c}} *)
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/MapIndexed.html) for more details.*

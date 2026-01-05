@@ -1,10 +1,25 @@
 # SystemOpen
 
+`SystemOpen["target"]` opens the file, URL, or target with the associated system application.
+
+## Examples
+
+Open a file:
+
+```wolfram
+SystemOpen["document.pdf"]
 ```
-SystemOpen["target"] opens the specified file, URL, or other target with the associated program on your computer system.
+
+Open a URL in browser:
+
+```wolfram
+SystemOpen["https://www.wolfram.com"]
 ```
 
+Open a folder:
 
+```wolfram
+SystemOpen[Directory[]]
+```
 
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/SystemOpen.html) for more details.*

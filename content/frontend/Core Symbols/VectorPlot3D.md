@@ -1,14 +1,19 @@
 # VectorPlot3D
 
+`VectorPlot3D[{vx, vy, vz}, {x, xmin, xmax}, {y, ymin, ymax}, {z, zmin, zmax}]` generates a 3D vector plot.
+
+## Examples
+
+3D vector field:
+
+```wolfram
+VectorPlot3D[{y, -x, z}, {x, -1, 1}, {y, -1, 1}, {z, -1, 1}]
 ```
-VectorPlot3D[{vx,vy,vz},{x,xmin,xmax},{y,ymin,ymax},{z,zmin,zmax}] generates a 3D vector plot of the vector field {vx,vy,vz} as a function of x, y, and z.
 
-VectorPlot3D[{field1,field2,…},{x,xmin,xmax},{y,ymin,ymax},{z,zmin,zmax}] plots several vector fields.
+Radial field:
 
-VectorPlot3D[…,{x,y,z}∈reg] takes the variables {x,y,z} to be in the geometric region reg. 
+```wolfram
+VectorPlot3D[{x, y, z}, {x, -2, 2}, {y, -2, 2}, {z, -2, 2}]
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/VectorPlot3D.html) for more details.*

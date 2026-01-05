@@ -1,10 +1,13 @@
 # EdgeStyle
 
+`EdgeStyle` is an option and annotation for Graph and related functions that specifies what style to use for edges.
+
+## Examples
+
+Style edges in a graph:
+
+```wolfram
+Graph[{1 -> 2, 2 -> 3}, EdgeStyle -> Red]
 ```
-EdgeStyle is an option and annotation for Graph and related functions that specifies what style to use for edges. 
-```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/EdgeStyle.html) for more details.*

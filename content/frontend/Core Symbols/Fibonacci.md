@@ -1,12 +1,30 @@
 # Fibonacci
 
+`Fibonacci[n]` gives the nth Fibonacci number.
+
+`Fibonacci[n, x]` gives the Fibonacci polynomial Fₙ(x).
+
+## Examples
+
+Get Fibonacci numbers:
+
+```wolfram
+Fibonacci[10]
+(* 55 *)
 ```
-Fibonacci[n] gives the Fibonacci number Fn. 
 
-Fibonacci[n,x] gives the Fibonacci polynomial Fn(x). 
+Generate a sequence:
+
+```wolfram
+Table[Fibonacci[n], {n, 1, 10}]
+(* {1, 1, 2, 3, 5, 8, 13, 21, 34, 55} *)
 ```
 
+A large Fibonacci number:
 
+```wolfram
+Fibonacci[100]
+(* 354224848179261915075 *)
+```
 
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Fibonacci.html) for more details.*

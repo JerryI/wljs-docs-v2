@@ -1,18 +1,21 @@
 # FindMaximum
 
+`FindMaximum[f, {x, x0}]` searches for a local maximum in f, starting from the point x=x0.
+
+## Examples
+
+Find local maximum:
+
+```wolfram
+FindMaximum[-x^2 + 4x + 5, {x, 0}]
+(* {9., {x -> 2.}} *)
 ```
-FindMaximum[f,x] searches for a local maximum in f, starting from an automatically selected point.
 
-FindMaximum[f,{x,x0}] searches for a local maximum in f, starting from the point x=x0. 
+With constraints:
 
-FindMaximum[f,{{x,x0},{y,y0},…}] searches for a local maximum in a function of several variables. 
-
-FindMaximum[{f,cons},{{x,x0},{y,y0},…}] searches for a local maximum subject to the constraints cons.
-
-FindMaximum[{f,cons},{x,y,…}] starts from a point within the region defined by the constraints.
+```wolfram
+FindMaximum[{x + y, x^2 + y^2 <= 1}, {{x, 0.5}, {y, 0.5}}]
+(* {1.414, {x -> 0.707, y -> 0.707}} *)
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/FindMaximum.html) for more details.*

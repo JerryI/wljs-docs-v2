@@ -1,12 +1,23 @@
 # StringRepeat
 
+`StringRepeat["str", n]` creates a string consisting of "str" repeated n times.
+
+`StringRepeat["str", n, max]` limits the result to at most max characters.
+
+## Examples
+
+Repeat a string:
+
+```wolfram
+StringRepeat["ab", 5]
+(* "ababababab" *)
 ```
-StringRepeat["str",n] creates a string consisting of "str" repeated n times.
 
-StringRepeat["str",n,max] creates a string consisting of up to n copies of "str", truncated to be of maximum total length at most max.
+With maximum length:
+
+```wolfram
+StringRepeat["hello", 10, 20]
+(* "hellohellohelloHello" *)
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/StringRepeat.html) for more details.*

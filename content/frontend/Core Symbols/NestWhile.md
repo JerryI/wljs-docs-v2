@@ -1,20 +1,25 @@
 # NestWhile
 
+`NestWhile[f, expr, test]` applies f repeatedly to expr until `test[result]` is no longer `True`.
+
+`NestWhile[f, expr, test, m]` supplies the most recent m results to test.
+
+`NestWhile[f, expr, test, m, max]` applies f at most max times.
+
+## Examples
+
+Divide by 2 while even:
+
+```wolfram
+NestWhile[#/2 &, 64, EvenQ]
+(* 1 *)
 ```
-NestWhile[f,expr,test] starts with expr, then repeatedly applies f until applying test to the result no longer yields True. 
 
-NestWhile[f,expr,test,m] supplies the most recent m results as arguments for test at each step. 
+Collatz sequence step:
 
-NestWhile[f,expr,test,All] supplies all results so far as arguments for test at each step. 
-
-NestWhile[f,expr,test,m,max] applies f at most max times. 
-
-NestWhile[f,expr,test,m,max,n] applies f an extra n times. 
-
-NestWhile[f,expr,test,m,max,-n] returns the result found when f had been applied n fewer times. 
+```wolfram
+NestWhile[If[EvenQ[#], #/2, 3# + 1] &, 7, # != 1 &]
+(* 1 *)
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/NestWhile.html) for more details.*

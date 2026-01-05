@@ -1,12 +1,18 @@
 # AudioChannelSeparate
 
+`AudioChannelSeparate[audio]` gives a list of Audio objects, each of which represents one channel of audio.
+
+`AudioChannelSeparate[audio, channel]` returns the specified channel from audio.
+
+## Examples
+
+```wolfram
+audio = ExampleData[{"Audio", "Apollo11"}];
+AudioChannelSeparate[audio]
 ```
-AudioChannelSeparate[audio] gives a list of Audio objects, each of which represents one channel of audio.
 
-AudioChannelSeparate[audio,channel] returns the specified channel from audio.
+```wolfram
+AudioChannelSeparate[audio, 1]
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/AudioChannelSeparate.html) for more details.*

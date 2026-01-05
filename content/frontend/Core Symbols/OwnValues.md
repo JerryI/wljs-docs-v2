@@ -1,12 +1,24 @@
 # OwnValues
 
+`OwnValues[x]` gives a list of transformation rules corresponding to all ownvalues (direct values) defined for the symbol x.
+
+## Examples
+
+Get the value assigned to a symbol:
+
+```wolfram
+x = 5;
+OwnValues[x]
+(* {HoldPattern[x] :> 5} *)
 ```
-OwnValues[x] gives a list of transformation rules corresponding to all ownvalues defined for the symbol x.
 
-OwnValues["symbol"] gives a list of transformation rules corresponding to all ownvalues defined for the symbol named "symbol" if it exists.
+Compare with DownValues:
+
+```wolfram
+f = 10;         (* OwnValue *)
+f[x_] := x^2;   (* DownValue *)
+OwnValues[f]
+(* {HoldPattern[f] :> 10} *)
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/OwnValues.html) for more details.*

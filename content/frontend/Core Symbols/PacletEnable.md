@@ -1,10 +1,20 @@
 # PacletEnable
 
+`PacletEnable[paclet]` enables a previously disabled paclet.
+
+## Examples
+
+Enable a disabled paclet:
+
+```wolfram
+PacletEnable["MyPaclet"]
 ```
-PacletEnable[paclet] enables a previously disabled paclet.
+
+Enable a paclet object:
+
+```wolfram
+pac = PacletFind["MyPaclet"][[1]];
+PacletEnable[pac]
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/PacletEnable.html) for more details.*

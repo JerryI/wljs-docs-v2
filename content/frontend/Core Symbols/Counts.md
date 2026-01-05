@@ -1,12 +1,21 @@
 # Counts
 
+`Counts[list]` gives an association whose keys are the distinct elements and values are their counts.
+
+## Examples
+
+Count element occurrences:
+
+```wolfram
+Counts[{a, b, a, c, b, a}]
+(* <|a -> 3, b -> 2, c -> 1|> *)
 ```
-Counts[list] gives an association whose keys are the distinct elements of list, and whose values give the number of times those elements appear in list.
 
-Counts[list,elems] gives an association whose keys are the distinct elements in elems, and whose values give the number of times those elements appear in list.
+Count characters:
+
+```wolfram
+Counts[Characters["mississippi"]]
+(* <|"m" -> 1, "i" -> 4, "s" -> 4, "p" -> 2|> *)
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Counts.html) for more details.*

@@ -1,16 +1,20 @@
 # ListLogPlot
 
+`ListLogPlot[{y1, y2, ...}]` makes a log plot of the yi values with logarithmic vertical axis.
+
+## Examples
+
+Log plot of data:
+
+```wolfram
+ListLogPlot[{1, 10, 100, 1000, 10000}]
 ```
-ListLogPlot[{y1,y2,…}] makes a log plot of the yi, assumed to correspond to x coordinates 1, 2, ….
 
-ListLogPlot[{{x1,y1},{x2,y2},…}] makes a log plot of the specified list of x and y values.
+With coordinates:
 
-ListLogPlot[{data1,data2,…}] plots data from all the datai.
-
-ListLogPlot[{…,w[datai,…],…}] plots datai with features defined by the symbolic wrapper w. 
+```wolfram
+data = Table[{x, Exp[x]}, {x, 1, 5}];
+ListLogPlot[data]
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ListLogPlot.html) for more details.*

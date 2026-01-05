@@ -1,10 +1,21 @@
 # ArcTanh
 
+`ArcTanh[z]` gives the inverse hyperbolic tangent tanh⁻¹(z) of the complex number z.
+
+## Examples
+
+Compute the inverse hyperbolic tangent:
+
+```wolfram
+ArcTanh[0.5]
+(* 0.549306 *)
 ```
-ArcTanh[z] gives the inverse hyperbolic tangent tanh-1(z) of the complex number z. 
+
+Symbolic evaluation:
+
+```wolfram
+ArcTanh[0]
+(* 0 *)
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ArcTanh.html) for more details.*

@@ -1,16 +1,23 @@
 # StringPadLeft
 
+`StringPadLeft["string", n]` pads the string on the left with spaces to make it length n.
+
+`StringPadLeft["string", n, "padding"]` pads with a custom padding string.
+
+## Examples
+
+Pad with spaces:
+
+```wolfram
+StringPadLeft["hello", 10]
+(* "     hello" *)
 ```
-StringPadLeft["string",n] makes string be of length n, padding it on the left with spaces or truncating it if necessary. 
 
-StringPadLeft["string",n,"padding"] pads by repeating copies of the string padding.
+Pad with zeros:
 
-StringPadLeft[{s1,s2,…}] pads strings with spaces on the left to make them all the same length.
-
-StringPadLeft[{s1,s2,…},n,…] pads or truncates to make all strings of length n.
+```wolfram
+StringPadLeft["42", 5, "0"]
+(* "00042" *)
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/StringPadLeft.html) for more details.*

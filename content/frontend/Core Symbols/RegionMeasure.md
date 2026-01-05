@@ -1,16 +1,21 @@
 # RegionMeasure
 
+`RegionMeasure[reg]` gives the measure (length, area, volume) of the region.
+
+## Examples
+
+Area of disk:
+
+```wolfram
+RegionMeasure[Disk[]]
+(* Pi *)
 ```
-RegionMeasure[reg] gives the measure of the region reg.
 
-RegionMeasure[reg,d] gives the d-dimensional measure of the region reg.
+Volume of ball:
 
-RegionMeasure[{x1,…,xn},{{t1,a1,b1},…,{tk,ak,bk}}] gives the k-measure of the parametric formula whose Cartesian coordinates xi are functions of tj.
-
-RegionMeasure[{x1,…,xn},{{t1,a1,b1},…,{tk,ak,bk}},chart] interprets the xi as coordinates in the specified coordinate chart.
+```wolfram
+RegionMeasure[Ball[]]
+(* (4 Pi)/3 *)
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/RegionMeasure.html) for more details.*

@@ -1,10 +1,12 @@
 # CombinatorC
 
+`CombinatorC` represents the **C** combinator.
+
+## Examples
+
+```wolfram
+CombinatorC[f][x][y]
+(* f[y][x] *)
 ```
-CombinatorC represents the <b>C</b> combinator.
-```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/CombinatorC.html) for more details.*

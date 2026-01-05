@@ -1,10 +1,17 @@
 # WhitespaceCharacter
 
+`WhitespaceCharacter` represents a single whitespace character in `StringExpression`.
+
+## Examples
+
+```wolfram
+StringMatchQ[" ", WhitespaceCharacter]
+(* True *)
 ```
-WhitespaceCharacter represents a single whitespace character in StringExpression.
+
+```wolfram
+StringSplit["hello world", WhitespaceCharacter..]
+(* {"hello", "world"} *)
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/WhitespaceCharacter.html) for more details.*

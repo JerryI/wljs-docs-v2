@@ -1,14 +1,23 @@
 # EstimatedDistribution
 
+`EstimatedDistribution[data, dist]` estimates the parametric distribution dist from data.
+
+## Examples
+
+Estimate normal parameters:
+
+```wolfram
+data = RandomVariate[NormalDistribution[5, 2], 1000];
+EstimatedDistribution[data, NormalDistribution[μ, σ]]
+(* NormalDistribution[5.02, 1.98] *)
 ```
-EstimatedDistribution[data,dist] estimates the parametric distribution dist from data.
 
-EstimatedDistribution[data,dist,{{p,p0},{q,q0},…}] estimates the parameters p, q, … with starting values p0, q0, ….
+Estimate exponential:
 
-EstimatedDistribution[data,dist,idist] estimates distribution dist with starting values taken from the instantiated distribution idist.
+```wolfram
+data = RandomVariate[ExponentialDistribution[0.5], 500];
+EstimatedDistribution[data, ExponentialDistribution[λ]]
+(* ExponentialDistribution[0.51] *)
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/EstimatedDistribution.html) for more details.*

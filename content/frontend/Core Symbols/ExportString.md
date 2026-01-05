@@ -1,14 +1,21 @@
 # ExportString
 
+`ExportString[expr, "format"]` generates a string of expr in the specified format.
+
+## Examples
+
+Export to JSON string:
+
+```wolfram
+ExportString[{1, 2, 3}, "JSON"]
+(* "[1, 2, 3]" *)
 ```
-ExportString[expr,"format"] generates a string corresponding to expr exported in the specified format. 
 
-ExportString[rules,{"format","Rules"}] gives explicit rules for different elements of the data to be exported. 
+Export to CSV:
 
-ExportString[exprs,elems] generates a string by treating exprs as elements specified by elems.
+```wolfram
+ExportString[{{1, 2}, {3, 4}}, "CSV"]
+(* "1,2\n3,4" *)
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ExportString.html) for more details.*

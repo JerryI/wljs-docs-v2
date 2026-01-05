@@ -1,12 +1,21 @@
 # SchurDecomposition
 
+`SchurDecomposition[m]` yields the Schur decomposition for a numerical matrix m, given as a list `{q, t}` where q is orthonormal and t is block upper-triangular.
+
+## Examples
+
+Schur decomposition:
+
+```wolfram
+{q, t} = SchurDecomposition[{{1, 2}, {0, 3}}]
+(* {{{1, 0}, {0, 1}}, {{1, 2}, {0, 3}}} *)
 ```
-SchurDecomposition[m] yields the Schur decomposition for a numerical matrix m, given as a list {q,t} where q is an orthonormal matrix and t is a block upper‐triangular matrix. 
 
-SchurDecomposition[{m,a}] gives the generalized Schur decomposition of m with respect to a. 
+Reconstruct original:
+
+```wolfram
+q . t . ConjugateTranspose[q]
+(* {{1., 2.}, {0., 3.}} *)
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/SchurDecomposition.html) for more details.*

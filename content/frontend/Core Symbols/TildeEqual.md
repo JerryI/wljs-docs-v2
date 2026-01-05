@@ -1,10 +1,14 @@
 # TildeEqual
 
+`TildeEqual[x, y, ...]` displays as x≃y≃….
+
+## Examples
+
+Create an approximate equality expression:
+
+```wolfram
+TildeEqual[a, b, c]
+(* a ≃ b ≃ c *)
 ```
-TildeEqual[x,y,…] displays as x≃y≃….
-```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/TildeEqual.html) for more details.*

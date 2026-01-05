@@ -1,10 +1,12 @@
 # SinDegrees
 
+`SinDegrees[θ]` gives the sine of θ degrees.
+
+## Examples
+
+```wolfram
+SinDegrees[30]
+(* 1/2 *)
 ```
-SinDegrees[θ] gives the sine of θ degrees. 
-```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/SinDegrees.html) for more details.*

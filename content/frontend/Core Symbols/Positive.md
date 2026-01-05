@@ -1,10 +1,26 @@
 # Positive
 
+`Positive[x]` gives `True` if x is a positive number.
+
+## Examples
+
+Test for positive numbers:
+
+```wolfram
+Positive[5]
+(* True *)
 ```
-Positive[x] gives True if x is a positive number. 
+
+```wolfram
+Positive[-3]
+(* False *)
 ```
 
+Filter positive numbers:
 
+```wolfram
+Select[{-2, -1, 0, 1, 2}, Positive]
+(* {1, 2} *)
+```
 
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Positive.html) for more details.*

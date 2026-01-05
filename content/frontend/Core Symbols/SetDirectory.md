@@ -1,12 +1,23 @@
 # SetDirectory
 
+`SetDirectory["dir"]` sets the current working directory to dir.
+
+`SetDirectory[]` sets it to your home directory.
+
+## Examples
+
+Change directory:
+
+```wolfram
+SetDirectory["/path/to/folder"]
+(* "/path/to/folder" *)
 ```
-SetDirectory["dir"] sets the current working directory to dir. 
 
-SetDirectory[] sets the current working directory to your "home" directory.
+Return to home:
+
+```wolfram
+SetDirectory[]
+(* "/Users/username" *)
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/SetDirectory.html) for more details.*

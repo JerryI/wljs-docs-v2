@@ -1,10 +1,21 @@
 # TrigReduce
 
+`TrigReduce[expr]` rewrites products and powers of trigonometric functions in terms of trigonometric functions with combined arguments.
+
+## Examples
+
+Reduce trigonometric products:
+
+```wolfram
+TrigReduce[Sin[x]^2]
+(* 1/2 (1 - Cos[2 x]) *)
 ```
-TrigReduce[expr] rewrites products and powers of trigonometric functions in expr in terms of trigonometric functions with combined arguments. 
+
+Combine products:
+
+```wolfram
+TrigReduce[Sin[x] Cos[y]]
+(* 1/2 (Sin[x - y] + Sin[x + y]) *)
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/TrigReduce.html) for more details.*

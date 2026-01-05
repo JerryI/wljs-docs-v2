@@ -1,10 +1,21 @@
 # AlgebraicNumberTrace
 
+`AlgebraicNumberTrace[a]` gives the trace of the algebraic number a.
+
+## Examples
+
+Find the trace of an algebraic number:
+
+```wolfram
+AlgebraicNumberTrace[Sqrt[2]]
+(* 0 *)
 ```
-AlgebraicNumberTrace[a] gives the trace of the algebraic number a.
+
+Trace of a root of unity:
+
+```wolfram
+AlgebraicNumberTrace[Root[#^3 - 2 &, 1]]
+(* 0 *)
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/AlgebraicNumberTrace.html) for more details.*

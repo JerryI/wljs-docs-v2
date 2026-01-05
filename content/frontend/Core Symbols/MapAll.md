@@ -1,10 +1,12 @@
 # MapAll
 
+`MapAll[f, expr]` or `f //@ expr` applies f to every subexpression in expr.
+
+## Examples
+
+```wolfram
+MapAll[f, {a, {b, c}}]
+(* f[{f[a], f[{f[b], f[c]}]}] *)
 ```
-MapAll[f,expr] or f//@expr applies f to every subexpression in expr. 
-```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/MapAll.html) for more details.*

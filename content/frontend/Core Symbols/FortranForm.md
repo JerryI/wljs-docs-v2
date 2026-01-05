@@ -1,10 +1,19 @@
 # FortranForm
 
+`FortranForm[expr]` prints expr in Fortran language syntax.
+
+## Examples
+
+Convert to Fortran code:
+
+```wolfram
+FortranForm[x^2 + y^2]
+(* x**2 + y**2 *)
 ```
-FortranForm[expr] prints as a Fortran language version of expr. 
+
+```wolfram
+FortranForm[Sin[x] * Cos[y]]
+(* Cos(y)*Sin(x) *)
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/FortranForm.html) for more details.*

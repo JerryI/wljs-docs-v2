@@ -1,10 +1,21 @@
 # DictionaryWordQ
 
+`DictionaryWordQ["word"]` tests whether "word" is a recognized dictionary word.
+
+## Examples
+
+Check if a word is in the dictionary:
+
+```wolfram
+DictionaryWordQ["hello"]
+(* True *)
 ```
-DictionaryWordQ["word"] tests whether "word" is a recognized dictionary word.
+
+Check a non-word:
+
+```wolfram
+DictionaryWordQ["asdfgh"]
+(* False *)
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/DictionaryWordQ.html) for more details.*

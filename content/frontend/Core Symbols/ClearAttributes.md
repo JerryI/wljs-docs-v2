@@ -1,16 +1,28 @@
 # ClearAttributes
 
+`ClearAttributes[symbol, attr]` removes attr from the list of attributes of the symbol.
+
+## Examples
+
+Remove Listable attribute:
+
+```wolfram
+SetAttributes[f, Listable]
+ClearAttributes[f, Listable]
+Attributes[f]
+(* {} *)
 ```
-ClearAttributes[symbol,attr] removes attr from the list of attributes of the symbol symbol. 
 
-ClearAttributes["symbol",attr] removes attr from the attributes of the symbol named "symbol" if it exists.
+Remove multiple attributes:
 
-ClearAttributes[s,{attr1,attr2,…}] removes several attributes at a time.
-
-ClearAttributes[{s1,s2,…},attrs] removes attributes from several symbols at a time.
+```wolfram
+ClearAttributes[g, {Flat, Orderless}]
 ```
 
+Remove from multiple symbols:
 
+```wolfram
+ClearAttributes[{f, g}, Listable]
+```
 
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ClearAttributes.html) for more details.*

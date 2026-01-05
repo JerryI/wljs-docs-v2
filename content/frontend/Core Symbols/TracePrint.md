@@ -1,14 +1,21 @@
 # TracePrint
 
+`TracePrint[expr]` prints all expressions used in the evaluation of expr. `TracePrint[expr, form]` includes only expressions matching form.
+
+## Examples
+
+Print evaluation steps:
+
+```wolfram
+TracePrint[2 + 3]
+(* Prints: 2 + 3, then 5 *)
 ```
-TracePrint[expr] prints all expressions used in the evaluation of expr. 
 
-TracePrint[expr,form] includes only those expressions which match form. 
+Trace specific function:
 
-TracePrint[expr,s] includes all evaluations which use transformation rules associated with the symbol s. 
+```wolfram
+TracePrint[Length[{a, b, c}], Length]
+(* Shows Length evaluations *)
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/TracePrint.html) for more details.*

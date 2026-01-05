@@ -1,12 +1,22 @@
 # RegionNearest
 
+`RegionNearest[reg, p]` gives a point in the region that is nearest to point p.
+
+## Examples
+
+Nearest point on circle:
+
+```wolfram
+RegionNearest[Circle[{0, 0}, 1], {2, 0}]
+(* {1, 0} *)
 ```
-RegionNearest[reg,p] gives a point in the region reg that is nearest the point p. 
 
-RegionNearest[reg] gives a RegionNearestFunction[…] that can be repeatedly applied to points. 
+Nearest function:
+
+```wolfram
+nf = RegionNearest[Disk[]];
+nf[{5, 5}]
+(* {1/Sqrt[2], 1/Sqrt[2]} *)
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/RegionNearest.html) for more details.*

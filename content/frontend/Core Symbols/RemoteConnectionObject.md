@@ -1,10 +1,14 @@
 # RemoteConnectionObject
 
+`RemoteConnectionObject[…]` is an object that represents a remote connection.
+
+## Examples
+
+Connect to a remote machine and get the connection object:
+
+```wolfram
+conn = RemoteConnect["user@host"]
+(* RemoteConnectionObject[...] *)
 ```
-RemoteConnectionObject[…] is an object that represents a remote connection.
-```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/RemoteConnectionObject.html) for more details.*

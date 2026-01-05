@@ -1,16 +1,23 @@
 # TakeSmallest
 
+`TakeSmallest[data, n]` gives the n smallest elements of data, sorted in ascending order.
+
+`TakeSmallest[n]` represents an operator form.
+
+## Examples
+
+Get 3 smallest elements:
+
+```wolfram
+TakeSmallest[{3, 1, 4, 1, 5, 9, 2, 6}, 3]
+(* {1, 1, 2} *)
 ```
-TakeSmallest[data,n] gives the n smallest elements of data, sorted in ascending order.
 
-TakeSmallest[data->prop,n] gives the property prop for the n smallest elements in data.
+From an association:
 
-TakeSmallest[data,n,p] uses the order function p for sorting.
-
-TakeSmallest[n] represents an operator form of TakeSmallest that can be applied to an expression.
+```wolfram
+TakeSmallest[<|"a" -> 5, "b" -> 2, "c" -> 8, "d" -> 1|>, 2]
+(* {1, 2} *)
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/TakeSmallest.html) for more details.*

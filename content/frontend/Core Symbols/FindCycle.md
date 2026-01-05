@@ -1,22 +1,29 @@
 # FindCycle
 
-```
-FindCycle[g] finds a cycle in the graph g.
+`FindCycle[g]` finds a cycle in graph g. `FindCycle[g, k, n]` finds up to n cycles of length at most k.
 
-FindCycle[g,k] finds a cycle of length at most k in the graph g.
+## Examples
 
-FindCycle[g,{k}] finds a cycle of length exactly k.
+Find a cycle:
 
-FindCycle[g,{kmin,kmax}] finds a cycle of length between kmin and kmax.
-
-FindCycle[g,kspec,s] finds at most s cycles.
-
-FindCycle[{g,v},…] finds cycles that include the vertex v.
-
-FindCycle[{v->w,…},…] uses rules v->w to specify the graph g.
+```wolfram
+g = Graph[{1 -> 2, 2 -> 3, 3 -> 1}]
+FindCycle[g]
+(* {{1 -> 2, 2 -> 3, 3 -> 1}} *)
 ```
 
+Find triangles:
 
+```wolfram
+FindCycle[CompleteGraph[5], {3}, All]
+(* All 3-cycles in K5 *)
+```
 
+No cycles in a tree:
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+```wolfram
+FindCycle[TreeGraph[{1 -> 2, 1 -> 3}]]
+(* {} *)
+```
+
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/FindCycle.html) for more details.*

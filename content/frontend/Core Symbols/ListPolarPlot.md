@@ -1,14 +1,19 @@
 # ListPolarPlot
 
+`ListPolarPlot[{r1, r2, ...}]` plots points equally spaced in angle at radii ri.
+
+## Examples
+
+Polar plot of radii:
+
+```wolfram
+ListPolarPlot[Table[Sin[3 θ], {θ, 0, 2 Pi, 0.1}]]
 ```
-ListPolarPlot[{r1,r2,…}] plots points equally spaced in angle at radii ri.
 
-ListPolarPlot[{{θ1,r1},{θ2,r2},…}] plots points at polar coordinates θi, ri.
+With explicit angles:
 
-ListPolarPlot[{list1,list2,…}] plots several lists of values.
+```wolfram
+ListPolarPlot[Table[{θ, 1 + Cos[θ]}, {θ, 0, 2 Pi, 0.1}]]
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ListPolarPlot.html) for more details.*

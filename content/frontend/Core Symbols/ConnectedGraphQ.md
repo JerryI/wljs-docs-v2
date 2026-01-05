@@ -1,10 +1,24 @@
 # ConnectedGraphQ
 
+`ConnectedGraphQ[g]` yields `True` if graph g is connected (every vertex can reach every other vertex), and `False` otherwise.
+
+## Examples
+
+Test connectivity:
+
+```wolfram
+ConnectedGraphQ[Graph[{1 <-> 2, 2 <-> 3}]]
+(* True *)
+
+ConnectedGraphQ[Graph[{1 <-> 2, 3 <-> 4}]]
+(* False - two disconnected components *)
 ```
-ConnectedGraphQ[g] yields True if the graph g is connected, and False otherwise.
+
+Complete graphs are connected:
+
+```wolfram
+ConnectedGraphQ[CompleteGraph[10]]
+(* True *)
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ConnectedGraphQ.html) for more details.*

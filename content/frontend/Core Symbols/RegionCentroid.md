@@ -1,10 +1,21 @@
 # RegionCentroid
 
+`RegionCentroid[reg]` gives the centroid of the region.
+
+## Examples
+
+Centroid of a triangle:
+
+```wolfram
+RegionCentroid[Triangle[{{0, 0}, {1, 0}, {0, 1}}]]
+(* {1/3, 1/3} *)
 ```
-RegionCentroid[reg] gives the centroid of the region reg.
+
+Centroid of a disk:
+
+```wolfram
+RegionCentroid[Disk[{2, 3}, 1]]
+(* {2, 3} *)
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/RegionCentroid.html) for more details.*

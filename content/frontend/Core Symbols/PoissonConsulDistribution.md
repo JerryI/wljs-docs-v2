@@ -1,10 +1,14 @@
 # PoissonConsulDistribution
 
+`PoissonConsulDistribution[μ,λ]` represents a Poisson–Consul distribution with parameters μ and λ.
+
+## Examples
+
+Create a Poisson-Consul distribution and compute mean:
+
+```wolfram
+dist = PoissonConsulDistribution[5, 0.2];
+Mean[dist]
 ```
-PoissonConsulDistribution[μ,λ] represents a Poisson–Consul distribution with parameters μ and λ.
-```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/PoissonConsulDistribution.html) for more details.*

@@ -1,10 +1,21 @@
 # ArcCsc
 
+`ArcCsc[z]` gives the arc cosecant csc⁻¹(z) of the complex number z.
+
+## Examples
+
+Compute the arc cosecant:
+
+```wolfram
+ArcCsc[2]
+(* π/6 *)
 ```
-ArcCsc[z] gives the arc cosecant csc-1(z) of the complex number z. 
+
+Numerical evaluation:
+
+```wolfram
+ArcCsc[2.0]
+(* 0.523599 *)
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ArcCsc.html) for more details.*

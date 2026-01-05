@@ -1,12 +1,16 @@
 # AudioAmplify
 
+`AudioAmplify[audio, s]` multiplies all samples of audio by a factor s.
+
+`AudioAmplify[video, s]` amplifies the first audio track in video.
+
+## Examples
+
+Double the volume of audio:
+
+```wolfram
+AudioAmplify[ExampleData[{"Audio", "Trumpet"}], 2]
+(* Audio[...] *)
 ```
-AudioAmplify[audio,s] multiplies all samples of audio by a factor s. 
 
-AudioAmplify[video,s] amplifies the first audio track in video.
-```
-
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/AudioAmplify.html) for more details.*

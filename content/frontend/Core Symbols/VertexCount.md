@@ -1,14 +1,25 @@
 # VertexCount
 
+`VertexCount[g]` gives the number of vertices in graph g. `VertexCount[g, patt]` counts vertices matching the pattern.
+
+## Examples
+
+Count vertices:
+
+```wolfram
+VertexCount[CompleteGraph[10]]
+(* 10 *)
+
+VertexCount[GridGraph[{5, 5}]]
+(* 25 *)
 ```
-VertexCount[g] gives a count of the number of vertices in the graph g.
 
-VertexCount[g,patt] gives a count of the number of vertices that match the pattern patt.
+Count matching pattern:
 
-VertexCount[{v->w,…},…] uses rules v->w to specify the graph g.
+```wolfram
+g = Graph[{1, 2, 3, "a", "b"}, {1 <-> 2}]
+VertexCount[g, _Integer]
+(* 3 *)
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/VertexCount.html) for more details.*

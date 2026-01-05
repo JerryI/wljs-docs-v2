@@ -1,14 +1,21 @@
 # Area
 
+`Area[reg]` gives the area of a two-dimensional region.
+
+## Examples
+
+Area of a disk:
+
+```wolfram
+Area[Disk[{0, 0}, r]]
+(* Pi r^2 *)
 ```
-Area[reg] gives the area of the two-dimensional region reg.
 
-Area[{x1,…,xn},{s,smin,smax},{t,tmin,tmax}] gives the area of the parametrized surface whose Cartesian coordinates xi are functions of s and t.
+Area of a polygon:
 
-Area[{x1,…,xn},{s,smin,smax},{t,tmin,tmax},chart] interprets the xi as coordinates in the specified coordinate chart.
+```wolfram
+Area[Polygon[{{0, 0}, {1, 0}, {1, 1}, {0, 1}}]]
+(* 1 *)
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Area.html) for more details.*

@@ -1,16 +1,20 @@
 # ListLogLogPlot
 
+`ListLogLogPlot[{y1, y2, ...}]` makes a log-log plot with logarithmic scales on both axes.
+
+## Examples
+
+Log-log plot:
+
+```wolfram
+data = Table[{n, n^2}, {n, 1, 100}];
+ListLogLogPlot[data]
 ```
-ListLogLogPlot[{y1,y2,…}] makes a log-log plot of the yi, assumed to correspond to x coordinates 1, 2, ….
 
-ListLogLogPlot[{{x1,y1},{x2,y2},…}] makes a log-log plot of the specified list of x and y values.
+Power law data:
 
-ListLogLogPlot[{data1,data2,…}] plots data from all the datai.
-
-ListLogLogPlot[{…,w[datai,…],…}] plots datai with features defined by the symbolic wrapper w. 
+```wolfram
+ListLogLogPlot[Table[{x, x^1.5}, {x, 1, 1000, 10}]]
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ListLogLogPlot.html) for more details.*

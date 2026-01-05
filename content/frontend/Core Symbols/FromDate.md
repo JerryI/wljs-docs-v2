@@ -1,10 +1,17 @@
 # FromDate
 
+`FromDate[date]` converts a date of the form {y,m,d,h,m,s} to an absolute number of seconds since the beginning of January 1, 1900.
+
+## Examples
+
+```wolfram
+FromDate[{2000, 1, 1, 0, 0, 0}]
+(* 3155673600 *)
 ```
-FromDate[date] converts a date of the form {y,m,d,h,m,s} to an absolute number of seconds since the beginning of January 1, 1900. 
+
+```wolfram
+FromDate[{1900, 1, 1}]
+(* 0 *)
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/FromDate.html) for more details.*

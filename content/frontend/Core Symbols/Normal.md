@@ -1,14 +1,21 @@
 # Normal
 
+`Normal[expr]` converts expr to a normal expression from a variety of special forms, such as `SeriesData`, `SparseArray`, etc.
+
+## Examples
+
+Convert series to polynomial:
+
+```wolfram
+Normal[Series[Sin[x], {x, 0, 5}]]
+(* x - x^3/6 + x^5/120 *)
 ```
-Normal[expr] converts expr to a normal expression from a variety of special forms. 
 
-Normal[expr,h] converts objects with head h in expr to normal expressions.
+Convert sparse array:
 
-Normal[expr,{h1,h2,…}] converts objects with head hi to normal expressions.
+```wolfram
+Normal[SparseArray[{1 -> a, 3 -> b}, 4]]
+(* {a, 0, b, 0} *)
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Normal.html) for more details.*

@@ -1,12 +1,15 @@
 # FourierDSTMatrix
 
+`FourierDSTMatrix[n]` returns an n×n discrete sine transform matrix of type 2.
+
+`FourierDSTMatrix[n, m]` returns an n×n discrete sine transform matrix of type m.
+
+## Examples
+
+Generate a 4×4 DST matrix:
+
+```wolfram
+FourierDSTMatrix[4]
 ```
-FourierDSTMatrix[n] returns an n×n discrete sine transform matrix of type 2.
 
-FourierDSTMatrix[n,m] returns an n×n discrete sine transform matrix of type m.
-```
-
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/FourierDSTMatrix.html) for more details.*

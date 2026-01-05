@@ -1,16 +1,25 @@
 # NetModel
 
+`NetModel["name"]` obtains a neural net model with the specified name from the Neural Net Repository.
+
+`NetModel[{"name",param1->setting1,…}]` obtains a specified model from a parameterized family of models.
+
+`NetModel[model,"prop"]` gives property prop of the model.
+
+`NetModel[]` gives a dataset of available pre-trained neural net models.
+
+## Examples
+
+Load a pre-trained model:
+
+```wolfram
+net = NetModel["LeNet Trained on MNIST Data"]
 ```
-NetModel["name"] obtains a neural net model with the specified name from the Neural Net Repository. 
 
-NetModel[{"name",param1->setting1,…}] obtains a specified model from a parameterized family of models.
+List available models:
 
-NetModel[model,"prop"] gives property prop of the model.
-
-NetModel[] gives a dataset of available pre-trained neural net models.
+```wolfram
+NetModel[]
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/NetModel.html) for more details.*

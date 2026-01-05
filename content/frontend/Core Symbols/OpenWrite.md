@@ -1,12 +1,24 @@
 # OpenWrite
 
+`OpenWrite["file"]` opens a file for writing and returns an `OutputStream` object.
+
+`OpenWrite[]` opens a new temporary file.
+
+## Examples
+
+Open a file for writing:
+
+```wolfram
+stream = OpenWrite["output.txt"]
+(* OutputStream[...] *)
 ```
-OpenWrite["file"] opens a file to write output to it, and returns an OutputStream object. 
 
-OpenWrite[] opens a new file in the default area for temporary files on your computer system.
+Write and close:
+
+```wolfram
+stream = OpenWrite["output.txt"];
+WriteString[stream, "Hello, World!"];
+Close[stream];
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/OpenWrite.html) for more details.*

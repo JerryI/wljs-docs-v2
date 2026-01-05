@@ -1,14 +1,30 @@
 # NoneTrue
 
+`NoneTrue[{e1, e2, ...}, test]` yields `True` if `test[ei]` is `False` for all elements.
+
+`NoneTrue[test]` represents an operator form that can be applied to an expression.
+
+## Examples
+
+Check if no elements are negative:
+
+```wolfram
+NoneTrue[{1, 2, 3, 4}, Negative]
+(* True *)
 ```
-NoneTrue[{e1,e2,…},test] yields True if test[ei] is False for all of the ei.
 
-NoneTrue[expr,test,level] tests parts of expr at level level.
+Check if none are strings:
 
-NoneTrue[test] represents an operator form of NoneTrue that can be applied to an expression.
+```wolfram
+NoneTrue[{1, "a", 3}, StringQ]
+(* False *)
 ```
 
+Using operator form:
 
+```wolfram
+NoneTrue[PrimeQ][{4, 6, 8, 9}]
+(* True *)
+```
 
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/NoneTrue.html) for more details.*

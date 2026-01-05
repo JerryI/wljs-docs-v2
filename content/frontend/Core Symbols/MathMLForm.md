@@ -1,10 +1,19 @@
 # MathMLForm
 
+`MathMLForm[expr]` gives the MathML representation of expr.
+
+## Examples
+
+Convert to MathML:
+
+```wolfram
+MathMLForm[a/b]
+(* <math>...</math> *)
 ```
-MathMLForm[expr] prints as a MathML form of expr. 
+
+```wolfram
+MathMLForm[Sqrt[x]]
+(* <math><msqrt><mi>x</mi></msqrt></math> *)
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/MathMLForm.html) for more details.*

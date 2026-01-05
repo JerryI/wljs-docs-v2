@@ -1,10 +1,20 @@
 # LanczosWindow
 
+`LanczosWindow[x]` represents a Lanczos window function of x.
+
+## Examples
+
+Evaluate the Lanczos window at a point:
+
+```wolfram
+LanczosWindow[0]
+(* 1 *)
 ```
-LanczosWindow[x] represents a Lanczos window function of x.
+
+Plot the window function:
+
+```wolfram
+Plot[LanczosWindow[x], {x, -1, 1}]
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/LanczosWindow.html) for more details.*

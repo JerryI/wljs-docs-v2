@@ -1,10 +1,14 @@
 # EntityProperties
 
+`EntityProperties[type]` lists properties associated with entity type type.
+
+## Examples
+
+List properties for countries:
+
+```wolfram
+EntityProperties["Country"]
+(* {EntityProperty["Country", "Area"], EntityProperty["Country", "Capital"], ...} *)
 ```
-EntityProperties[type] lists properties associated with entity type type.
-```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/EntityProperties.html) for more details.*

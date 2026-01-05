@@ -1,16 +1,21 @@
 # NDSolveValue
 
+`NDSolveValue[eqns, expr, {x, xmin, xmax}]` gives the value of expr determined by numerical solution to differential equations.
+
+## Examples
+
+Solve ODE and get function:
+
+```wolfram
+sol = NDSolveValue[{y'[x] == y[x], y[0] == 1}, y, {x, 0, 2}]
+sol[1.0]
+(* 2.718 *)
 ```
-NDSolveValue[eqns,expr,{x,xmin,xmax}] gives the value of expr with functions determined by a numerical solution to the ordinary differential equations eqns with the independent variable x in the range xmin to xmax. 
 
-NDSolveValue[eqns,expr,{x,xmin,xmax},{y,ymin,ymax}] solves the partial differential equations eqns over a rectangular region.
+Plot the solution:
 
-NDSolveValue[eqns,expr,{x,y}∈Ω] solves the partial differential equations eqns over the region Ω.
-
-NDSolveValue[eqns,u,{t,tmin,tmax},{x,y}∈Ω] solves the time-dependent partial differential equations eqns over the region Ω.
+```wolfram
+Plot[sol[x], {x, 0, 2}]
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/NDSolveValue.html) for more details.*

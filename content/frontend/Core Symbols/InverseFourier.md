@@ -1,12 +1,23 @@
 # InverseFourier
 
+`InverseFourier[list]` finds the discrete inverse Fourier transform of a list of complex numbers.
+
+## Examples
+
+Reconstruct original signal:
+
+```wolfram
+data = {1, 2, 3, 4};
+ft = Fourier[data];
+InverseFourier[ft]
+(* {1., 2., 3., 4.} *)
 ```
-InverseFourier[list] finds the discrete inverse Fourier transform of a list of complex numbers.
 
-InverseFourier[list,{p1,p2,…}] returns the specified positions of the discrete inverse Fourier transform. 
+Round-trip verification:
+
+```wolfram
+Chop[InverseFourier[Fourier[{1, 0, 1, 0}]]]
+(* {1., 0., 1., 0.} *)
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/InverseFourier.html) for more details.*

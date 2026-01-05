@@ -1,10 +1,21 @@
 # CosineDistance
 
+`CosineDistance[u, v]` gives the angular cosine distance between vectors u and v.
+
+## Examples
+
+Compute the cosine distance between two vectors:
+
+```wolfram
+CosineDistance[{1, 0}, {0, 1}]
+(* 1 *)
 ```
-CosineDistance[u,v] gives the angular cosine distance between vectors u and v.
+
+Parallel vectors have zero cosine distance:
+
+```wolfram
+CosineDistance[{1, 2, 3}, {2, 4, 6}]
+(* 0 *)
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/CosineDistance.html) for more details.*

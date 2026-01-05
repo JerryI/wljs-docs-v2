@@ -1,10 +1,13 @@
 # DumpGet
 
+`DumpGet["filename"]` reads in a file saved with `DumpSave`.
+
+## Examples
+
+Load a previously saved dump file:
+
+```wolfram
+DumpGet["mydata.mx"]
 ```
-DumpGet[ "filename"] reads in a file saved with DumpSave.
-```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/DumpGet.html) for more details.*

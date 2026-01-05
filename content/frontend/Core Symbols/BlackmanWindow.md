@@ -1,10 +1,13 @@
 # BlackmanWindow
 
+`BlackmanWindow[x]` represents a Blackman window function of x.
+
+## Examples
+
+Plot the Blackman window:
+
+```wolfram
+Plot[BlackmanWindow[x], {x, -1, 1}]
 ```
-BlackmanWindow[x] represents a Blackman window function of x.
-```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/BlackmanWindow.html) for more details.*

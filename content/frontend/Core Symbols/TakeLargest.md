@@ -1,16 +1,23 @@
 # TakeLargest
 
+`TakeLargest[data, n]` gives the n largest elements of data, sorted in descending order.
+
+`TakeLargest[n]` represents an operator form.
+
+## Examples
+
+Get 3 largest elements:
+
+```wolfram
+TakeLargest[{3, 1, 4, 1, 5, 9, 2, 6}, 3]
+(* {9, 6, 5} *)
 ```
-TakeLargest[data,n] gives the n largest elements of data, sorted in descending order.
 
-TakeLargest[data->prop,n] gives the property prop for the n largest elements in data.
+From an association:
 
-TakeLargest[data,n,p] uses the ordering function p for sorting.
-
-TakeLargest[n] represents an operator form of TakeLargest that can be applied to an expression.
+```wolfram
+TakeLargest[<|"a" -> 5, "b" -> 2, "c" -> 8, "d" -> 1|>, 2]
+(* {8, 5} *)
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/TakeLargest.html) for more details.*

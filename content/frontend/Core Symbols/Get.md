@@ -1,14 +1,20 @@
 # Get
 
+`<< name` or `Get["name"]` reads in a file, evaluating each expression and returning the last one.
+
+## Examples
+
+Load a package or file:
+
+```wolfram
+<< "myfile.m"
 ```
-<<name reads in a file, evaluating each expression in it and returning the last one. 
 
-Get[stream] reads from a stream, evaluating each expression in it and returning the last one.
+Get returns the last expression:
 
-Get["file","key"] reads a file that has been encoded using Encode["source","file","key"].
+```wolfram
+Get["definitions.m"]
+(* last expression in file *)
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Get.html) for more details.*

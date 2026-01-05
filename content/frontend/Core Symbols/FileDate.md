@@ -1,12 +1,22 @@
 # FileDate
 
+`FileDate["file"]` gives the date and time the file was last modified.
+
+`FileDate["file", "type"]` gives info on the specified date type.
+
+## Examples
+
+Get modification date:
+
+```wolfram
+FileDate["myfile.txt"]
+(* DateObject[{2024, 1, 15, 14, 30, 0}] *)
 ```
-FileDate["file"] gives the date and time at which a file was last modified. 
 
-FileDate["file","type"] gives information on the specified type of date associated with a file.
+Get creation date:
+
+```wolfram
+FileDate["myfile.txt", "Creation"]
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/FileDate.html) for more details.*

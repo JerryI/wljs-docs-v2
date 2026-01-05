@@ -1,14 +1,23 @@
 # Confirm
 
+`Confirm[expr]` confirms that expr is not a failure, otherwise throws an error to the nearest `Enclose`.
+
+## Examples
+
+Use with Enclose:
+
+```wolfram
+Enclose[
+  x = Confirm[someComputation[]];
+  x + 1
+]
+(* Returns Failure if someComputation fails *)
 ```
-Confirm[expr] confirms that expr is not considered a failure, otherwise throwing an error to the nearest surrounding Enclose. 
 
-Confirm[expr,info] evaluates info and includes its value in the thrown error if expr is not confirmed.
+With error info:
 
-Confirm[expr,info,tag] uses the specified tag for any thrown errors.
+```wolfram
+Confirm[result, "Computation failed"]
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Confirm.html) for more details.*

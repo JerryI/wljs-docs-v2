@@ -1,10 +1,21 @@
 # PositiveReals
 
+`PositiveReals` represents the domain of strictly positive real numbers.
+
+## Examples
+
+Test if a number is in PositiveReals:
+
+```wolfram
+Element[5, PositiveReals]
+(* True *)
 ```
-PositiveReals represents the domain of strictly positive real numbers.
+
+Use in assumptions:
+
+```wolfram
+Simplify[Sqrt[x^2], x ∈ PositiveReals]
+(* x *)
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/PositiveReals.html) for more details.*

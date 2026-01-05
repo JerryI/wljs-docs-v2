@@ -1,12 +1,23 @@
 # LexicographicSort
 
+`LexicographicSort[{e1,e2,…}]` sorts the list of expressions ei in lexicographic order.
+
+`LexicographicSort[{e1,e2,…},p]` compares elements of the ei expressions using the ordering function p.
+
+## Examples
+
+Sort lists lexicographically:
+
+```wolfram
+LexicographicSort[{{1, 2}, {1, 1}, {2, 1}}]
+(* {{1, 1}, {1, 2}, {2, 1}} *)
 ```
-LexicographicSort[{e1,e2,…}] sorts the list of expressions ei in lexicographic order.
 
-LexicographicSort[{e1,e2,…},p] compares elements of the ei expressions using the ordering function p.
+Sort strings:
+
+```wolfram
+LexicographicSort[{"apple", "apricot", "banana"}]
+(* {"apple", "apricot", "banana"} *)
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/LexicographicSort.html) for more details.*

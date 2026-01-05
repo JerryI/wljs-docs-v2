@@ -1,10 +1,14 @@
 # NumberPoint
 
+`NumberPoint` is an option for `NumberForm` and related functions that gives the string to use as a decimal point.
+
+## Examples
+
+Use a comma as decimal point:
+
+```wolfram
+NumberForm[3.14159, NumberPoint -> ","]
+(* 3,14159 *)
 ```
-NumberPoint is an option for NumberForm and related functions that gives the string to use as a decimal point. 
-```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/NumberPoint.html) for more details.*

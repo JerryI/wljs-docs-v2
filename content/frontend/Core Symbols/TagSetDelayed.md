@@ -1,10 +1,23 @@
 # TagSetDelayed
 
+`f/:lhs:=rhs` assigns rhs to be the delayed value of lhs, and associates the assignment with the symbol f.
+
+## Examples
+
+Define an upvalue for a symbol:
+
+```wolfram
+f /: g[f[x_]] := x^2
+g[f[3]]
+(* 9 *)
 ```
-f/:lhs:=rhs assigns rhs to be the delayed value of lhs, and associates the assignment with the symbol f. 
+
+Associate a rule with a specific symbol:
+
+```wolfram
+foo /: bar[foo] := "result"
+bar[foo]
+(* "result" *)
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/TagSetDelayed.html) for more details.*

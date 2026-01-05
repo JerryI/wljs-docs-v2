@@ -1,16 +1,32 @@
 # ArrayPad
 
+`ArrayPad[array, m]` gives an array with m zeros of padding on every side.
+
+`ArrayPad[array, m, padding]` uses the specified padding.
+
+`ArrayPad[array, {m, n}]` pads with m elements at the beginning and n at the end.
+
+## Examples
+
+Pad a list with zeros:
+
+```wolfram
+ArrayPad[{1, 2, 3}, 2]
+(* {0, 0, 1, 2, 3, 0, 0} *)
 ```
-ArrayPad[array,m] gives an array with m zeros of padding on every side. 
 
-ArrayPad[array,m,padding] uses the specified padding.
+Pad with a specific value:
 
-ArrayPad[array,{m,n},…] pads with m elements at the beginning and n elements at the end. 
-
-ArrayPad[array,{{m1,n1},{m2,n2},…},…] pads with mi, ni elements at level i in array. 
+```wolfram
+ArrayPad[{1, 2, 3}, 1, x]
+(* {x, 1, 2, 3, x} *)
 ```
 
+Asymmetric padding:
 
+```wolfram
+ArrayPad[{1, 2, 3}, {1, 3}]
+(* {0, 1, 2, 3, 0, 0, 0} *)
+```
 
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ArrayPad.html) for more details.*

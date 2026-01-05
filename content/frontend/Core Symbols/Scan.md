@@ -1,14 +1,25 @@
 # Scan
 
+`Scan[f, expr]` evaluates f applied to each element of expr in turn (for side effects).
+
+`Scan[f, expr, levelspec]` applies f to parts at specified levels.
+
+## Examples
+
+Print each element:
+
+```wolfram
+Scan[Print, {a, b, c}]
+(* prints: a, b, c *)
 ```
-Scan[f,expr] evaluates f applied to each element of expr in turn. 
 
-Scan[f,expr,levelspec] applies f to parts of expr specified by levelspec. 
+Accumulate values with side effects:
 
-Scan[f] represents an operator form of Scan that can be applied to an expression.
+```wolfram
+total = 0;
+Scan[(total += #) &, {1, 2, 3, 4}];
+total
+(* 10 *)
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Scan.html) for more details.*

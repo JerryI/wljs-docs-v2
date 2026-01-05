@@ -1,16 +1,29 @@
 # ConnectedComponents
 
+`ConnectedComponents[g]` gives the connected components of graph g as lists of vertices.
+
+## Examples
+
+Find connected components:
+
+```wolfram
+g = Graph[{1 <-> 2, 2 <-> 3, 4 <-> 5}]
+ConnectedComponents[g]
+(* {{1, 2, 3}, {4, 5}} *)
 ```
-ConnectedComponents[g] gives the connected components of the graph g.
 
-ConnectedComponents[g,{v1,v2,…}] gives the connected components that include at least one of the vertices v1, v2, … .
+Single connected graph:
 
-ConnectedComponents[g,patt] gives the connected components that include a vertex that matches the pattern patt.
-
-ConnectedComponents[{v->w,…},…] uses rules v->w to specify the graph g.
+```wolfram
+ConnectedComponents[CompleteGraph[5]]
+(* {{1, 2, 3, 4, 5}} *)
 ```
 
+Number of components:
 
+```wolfram
+Length[ConnectedComponents[g]]
+(* 2 *)
+```
 
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ConnectedComponents.html) for more details.*

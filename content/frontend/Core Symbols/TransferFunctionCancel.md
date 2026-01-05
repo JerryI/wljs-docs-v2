@@ -1,12 +1,16 @@
 # TransferFunctionCancel
 
+`TransferFunctionCancel[tfm]` cancels common poles and zeros in the `TransferFunctionModel` tfm.
+
+`TransferFunctionCancel[tfm, crit]` cancels only common pole-zero pairs ei for which `crit[ei]` is `True`.
+
+## Examples
+
+Cancel common factors in a transfer function:
+
+```wolfram
+tf = TransferFunctionModel[(s - 1)/((s - 1)(s + 2)), s];
+TransferFunctionCancel[tf]
 ```
-TransferFunctionCancel[tfm] cancels common poles and zeros in the TransferFunctionModel tfm.
 
-TransferFunctionCancel[tfm,crit] cancels only common pole-zero pairs ei for which crit[ei] is True.
-```
-
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/TransferFunctionCancel.html) for more details.*

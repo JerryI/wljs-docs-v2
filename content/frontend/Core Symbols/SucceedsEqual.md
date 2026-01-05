@@ -1,10 +1,21 @@
 # SucceedsEqual
 
+`SucceedsEqual[x, y, …]` displays as x⪰y⪰….
+
+## Examples
+
+Display the succeeds or equal relation:
+
+```wolfram
+SucceedsEqual[a, b, c]
+(* a ⪰ b ⪰ c *)
 ```
-SucceedsEqual[x,y,…] displays as x⪰y⪰….
+
+Use in symbolic expressions:
+
+```wolfram
+SucceedsEqual[x, y]
+(* x ⪰ y *)
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/SucceedsEqual.html) for more details.*

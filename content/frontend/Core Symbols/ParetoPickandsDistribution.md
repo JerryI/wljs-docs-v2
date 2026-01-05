@@ -1,12 +1,21 @@
 # ParetoPickandsDistribution
 
+`ParetoPickandsDistribution[μ,σ,ξ]` gives a Pareto–Pickands distribution with location parameter μ, scale parameter σ and shape parameter ξ.
+
+`ParetoPickandsDistribution[ξ]` gives the standard Pareto–Pickands distribution with zero location and unit scale parameters.
+
+## Examples
+
+Create a standard Pareto-Pickands distribution:
+
+```wolfram
+dist = ParetoPickandsDistribution[0.5]
 ```
-ParetoPickandsDistribution[μ,σ,ξ] gives a Pareto–Pickands distribution with location parameter μ, scale parameter σ and shape parameter ξ.
 
-ParetoPickandsDistribution[ξ] gives the standard Pareto–Pickands distribution with zero location and unit scale parameters.
+Compute the mean of a distribution:
+
+```wolfram
+Mean[ParetoPickandsDistribution[0, 1, 0.25]]
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ParetoPickandsDistribution.html) for more details.*

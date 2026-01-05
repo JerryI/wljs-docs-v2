@@ -1,10 +1,13 @@
 # RecalibrationFunction
 
+`RecalibrationFunction` is an option for `Classify`, `Predict` and related functions that specifies how to post-process model predictions.
+
+## Examples
+
+Apply isotonic regression recalibration:
+
+```wolfram
+Classify[trainingData, RecalibrationFunction -> "IsotonicRegression"]
 ```
-RecalibrationFunction is an option for Classify, Predict and related functions that specifies how to post-process model predictions.
-```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/RecalibrationFunction.html) for more details.*

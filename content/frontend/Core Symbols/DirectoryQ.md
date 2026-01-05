@@ -1,10 +1,20 @@
 # DirectoryQ
 
+`DirectoryQ["name"]` gives `True` if the directory exists, and `False` otherwise.
+
+## Examples
+
+Check if directory exists:
+
+```wolfram
+DirectoryQ["/path/to/folder"]
+(* True or False *)
 ```
-DirectoryQ["name"] gives True if the directory with the specified name exists, and gives False otherwise.
+
+Filter directories from files:
+
+```wolfram
+Select[FileNames["*"], DirectoryQ]
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/DirectoryQ.html) for more details.*

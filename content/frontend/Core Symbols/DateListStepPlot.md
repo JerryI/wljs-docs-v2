@@ -1,20 +1,27 @@
 # DateListStepPlot
 
+`DateListStepPlot[{{date1, y1}, {date2, y2}, …}]` plots the values yi in steps at a sequence of dates.
+
+`DateListStepPlot[{y1, y2, …}, datespec]` plots the values yi in steps with dates at equal intervals specified by datespec.
+
+`DateListStepPlot[tseries]` plots the time series tseries.
+
+`DateListStepPlot[{data1, data2, …}]` plots data from all the datai.
+
+`DateListStepPlot[…, step]` plots using steps specified by step.
+
+`DateListStepPlot[{…, w[datai], …}]` plots data datai with features defined by the symbolic wrapper w.
+
+## Examples
+
+```wolfram
+DateListStepPlot[{{{2020, 1}, 10}, {{2020, 6}, 15}, {{2021, 1}, 12}}]
+(* Graphics[...] *)
 ```
-DateListStepPlot[{{date1,y1},{date2,y2},…}] plots the values yi in steps at a sequence of dates.
 
-DateListStepPlot[{y1,y2,…},datespec] plots the values yi in steps with dates at equal intervals specified by datespec.
-
-DateListStepPlot[tseries] plots the time series tseries.
-
-DateListStepPlot[{data1,data2,…}] plots data from all the datai.
-
-DateListStepPlot[…,step] plots using steps specified by step.
-
-DateListStepPlot[{…,w[datai],…}] plots data datai with features defined by the symbolic wrapper w.
+```wolfram
+DateListStepPlot[TimeSeries[{1, 2, 3, 4}, {{2020, 1, 1}, Automatic, "Month"}]]
+(* Graphics[...] *)
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/DateListStepPlot.html) for more details.*

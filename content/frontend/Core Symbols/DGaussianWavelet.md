@@ -1,12 +1,18 @@
 # DGaussianWavelet
 
+`DGaussianWavelet[]` represents a derivative of Gaussian wavelet of derivative order 2.
+
+`DGaussianWavelet[n]` represents a derivative of Gaussian wavelet of derivative order n.
+
+## Examples
+
+```wolfram
+DGaussianWavelet[]
+(* DGaussianWavelet[2] *)
 ```
-DGaussianWavelet[] represents a derivative of Gaussian wavelet of derivative order 2.
 
-DGaussianWavelet[n] represents a derivative of Gaussian wavelet of derivative order n.
+```wolfram
+Plot[DGaussianWavelet[4][x], {x, -5, 5}]
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/DGaussianWavelet.html) for more details.*

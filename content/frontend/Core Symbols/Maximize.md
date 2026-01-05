@@ -1,18 +1,21 @@
 # Maximize
 
+`Maximize[f, x]` maximizes f symbolically with respect to x.
+
+## Examples
+
+Symbolic maximum:
+
+```wolfram
+Maximize[-x^2 + 4x + 5, x]
+(* {9, {x -> 2}} *)
 ```
-Maximize[f,x] maximizes f symbolically with respect to x.
 
-Maximize[f,{x,y,…}] maximizes f symbolically with respect to x, y, …. 
+With constraints:
 
-Maximize[{f,cons},{x,y,…}] maximizes f symbolically subject to the constraints cons. 
-
-Maximize[…,x∈rdom] constrains x to be in the region or domain rdom.
-
-Maximize[…,…,dom] constrains variables to the domain dom, typically Reals or Integers.
+```wolfram
+Maximize[{x + y, x^2 + y^2 <= 1}, {x, y}]
+(* {Sqrt[2], {x -> 1/Sqrt[2], y -> 1/Sqrt[2]}} *)
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Maximize.html) for more details.*

@@ -1,10 +1,31 @@
 # Unset
 
+`lhs =.` removes any rules defined for lhs.
+
+## Examples
+
+Remove a definition:
+
+```wolfram
+x = 5;
+x
+(* 5 *)
+
+x =.;
+x
+(* x *)
 ```
-lhs=. removes any rules defined for lhs. 
+
+Remove function definition:
+
+```wolfram
+f[x_] := x^2;
+f[3]
+(* 9 *)
+
+f[x_] =.;
+f[3]
+(* f[3] *)
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Unset.html) for more details.*

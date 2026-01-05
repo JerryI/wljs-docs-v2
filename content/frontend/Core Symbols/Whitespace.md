@@ -1,10 +1,14 @@
 # Whitespace
 
+`Whitespace` represents a sequence of whitespace characters in `StringExpression`.
+
+## Examples
+
+Split a string by whitespace:
+
+```wolfram
+StringSplit["hello world", Whitespace]
+(* {"hello", "world"} *)
 ```
-Whitespace represents a sequence of whitespace characters in StringExpression.
-```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Whitespace.html) for more details.*

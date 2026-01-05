@@ -1,12 +1,14 @@
 # LaplacianPDETerm
 
+`LaplacianPDETerm[vars]` represents a Laplacian term ∇²u with model variables vars.
+
+`LaplacianPDETerm[vars, pars]` uses model parameters pars.
+
+## Examples
+
+```wolfram
+LaplacianPDETerm[{u[x, y], {x, y}}]
+(* LaplacianPDETerm[{u[x, y], {x, y}}] *)
 ```
-LaplacianPDETerm[vars] represents a Laplacian term ∇2{x1,…,xn}u with model variables vars.
 
-LaplacianPDETerm[vars,pars] uses model parameters pars.
-```
-
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/LaplacianPDETerm.html) for more details.*

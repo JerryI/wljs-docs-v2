@@ -1,14 +1,29 @@
 # GraphDistance
 
+`GraphDistance[g, s, t]` gives the shortest path distance from vertex s to vertex t in graph g.
+
+## Examples
+
+Distance between vertices:
+
+```wolfram
+g = Graph[{1 <-> 2, 2 <-> 3, 3 <-> 4}]
+GraphDistance[g, 1, 4]
+(* 3 *)
 ```
-GraphDistance[g,s,t] gives the distance from source vertex s to target vertex t in the graph g.
 
-GraphDistance[g,s] gives the distance from s to all vertices of the graph g.
+Distances from one vertex to all others:
 
-GraphDistance[{v->w,…},…] uses rules v->w to specify the graph g.
+```wolfram
+GraphDistance[g, 1]
+(* {0, 1, 2, 3} *)
 ```
 
+In a complete graph:
 
+```wolfram
+GraphDistance[CompleteGraph[5], 1, 5]
+(* 1 *)
+```
 
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/GraphDistance.html) for more details.*

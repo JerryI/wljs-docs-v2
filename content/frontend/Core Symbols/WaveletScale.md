@@ -1,10 +1,13 @@
 # WaveletScale
 
+`WaveletScale` is an option for `ContinuousWaveletTransform` and related constructs used to specify the smallest resolvable scale.
+
+## Examples
+
+Use WaveletScale with ContinuousWaveletTransform:
+
+```wolfram
+ContinuousWaveletTransform[data, MorletWavelet[], WaveletScale -> 1]
 ```
-WaveletScale is an option for ContinuousWaveletTransform and related constructs used to specify the smallest resolvable scale. 
-```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/WaveletScale.html) for more details.*

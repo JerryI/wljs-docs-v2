@@ -1,10 +1,26 @@
 # TrueQ
 
+`TrueQ[expr]` yields `True` if expr is explicitly `True`, and `False` otherwise.
+
+## Examples
+
+Test for True:
+
+```wolfram
+TrueQ[True]
+(* True *)
 ```
-TrueQ[expr] yields True if expr is True, and yields False otherwise. 
+
+```wolfram
+TrueQ[False]
+(* False *)
 ```
 
+Unevaluated expressions give False:
 
+```wolfram
+TrueQ[x > 0]
+(* False *)
+```
 
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/TrueQ.html) for more details.*

@@ -1,16 +1,28 @@
 # Off
 
+`Off[symbol::tag]` switches off a message permanently so it is no longer printed.
+
+## Examples
+
+Turn off a specific message:
+
+```wolfram
+Off[General::spell1]
+(* Spelling warnings disabled *)
 ```
-Off[symbol::tag] switches off a message, so that it is no longer printed. 
 
-Off["name"] switches off a named group of messages.
+Turn off all messages from a symbol:
 
-Off[s] switches off tracing messages associated with the symbol s. 
-
-Off[m1,m2,…] switches off several messages or message groups. 
+```wolfram
+Off[Power::infy]
+1/0
+(* ComplexInfinity - no message *)
 ```
 
+Turn back on with On:
 
+```wolfram
+On[General::spell1]
+```
 
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Off.html) for more details.*

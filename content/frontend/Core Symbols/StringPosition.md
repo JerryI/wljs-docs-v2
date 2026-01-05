@@ -1,20 +1,23 @@
 # StringPosition
 
+`StringPosition["string", "sub"]` gives a list of `{start, end}` positions where the substring appears.
+
+`StringPosition["string", patt, n]` includes only the first n occurrences.
+
+## Examples
+
+Find positions:
+
+```wolfram
+StringPosition["abcabc", "bc"]
+(* {{2, 3}, {5, 6}} *)
 ```
-StringPosition["string","sub"] gives a list of the starting and ending character positions at which "sub" appears as a substring of "string". 
 
-StringPosition["string",patt] gives all positions at which substrings matching the general string expression patt appear in "string". 
+First occurrence only:
 
-StringPosition["string",patt,n] includes only the first n occurrences of patt. 
-
-StringPosition["string",{patt1,patt2,…}] gives positions of all the patti. 
-
-StringPosition[{s1,s2,…},p] gives the list of results for each of the si. 
-
-StringPosition[patt] represents an operator form of StringPosition that can be applied to an expression.
+```wolfram
+StringPosition["abcabc", "bc", 1]
+(* {{2, 3}} *)
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/StringPosition.html) for more details.*

@@ -1,12 +1,21 @@
 # Convolve
 
+`Convolve[f, g, x, y]` gives the convolution of expressions f and g with respect to x.
+
+## Examples
+
+Convolve two functions:
+
+```wolfram
+Convolve[Exp[-x^2], Exp[-x^2], x, y]
+(* Sqrt[Pi/2] E^(-y^2/2) *)
 ```
-Convolve[f,g,x,y] gives the convolution with respect to x of the expressions f and g.
 
-Convolve[f,g,{x1,x2,…},{y1,y2,…}] gives the multidimensional convolution.
+Box convolution:
+
+```wolfram
+Convolve[UnitBox[x], UnitBox[x], x, y]
+(* UnitTriangle[y] *)
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Convolve.html) for more details.*

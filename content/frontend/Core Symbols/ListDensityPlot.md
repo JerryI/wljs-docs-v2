@@ -1,12 +1,20 @@
 # ListDensityPlot
 
+`ListDensityPlot[data]` generates a smooth density plot from an array of values.
+
+## Examples
+
+Density plot from array:
+
+```wolfram
+data = Table[Sin[x] Sin[y], {x, 0, Pi, 0.1}, {y, 0, Pi, 0.1}];
+ListDensityPlot[data]
 ```
-ListDensityPlot[{{f11,…,f1n},…,{fm1,…,fmn}}] generates a smooth density plot from an array of values fij.
 
-ListDensityPlot[{{x1,y1,f1},…,{xk,yk,fk}}] generates a density plot with values fi defined at specified points {xi,yi}. 
+With color function:
+
+```wolfram
+ListDensityPlot[data, ColorFunction -> "Rainbow"]
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ListDensityPlot.html) for more details.*

@@ -1,10 +1,24 @@
 # PlanarGraphQ
 
+`PlanarGraphQ[g]` yields `True` if graph g can be drawn in a plane without edge crossings, and `False` otherwise.
+
+## Examples
+
+Test for planarity:
+
+```wolfram
+PlanarGraphQ[CompleteGraph[4]]
+(* True - K4 is planar *)
+
+PlanarGraphQ[CompleteGraph[5]]
+(* False - K5 is not planar *)
 ```
-PlanarGraphQ[g] yields True if g is a planar graph and False otherwise.
+
+Grid graphs are planar:
+
+```wolfram
+PlanarGraphQ[GridGraph[{10, 10}]]
+(* True *)
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/PlanarGraphQ.html) for more details.*

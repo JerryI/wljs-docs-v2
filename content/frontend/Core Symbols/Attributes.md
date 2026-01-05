@@ -1,14 +1,28 @@
 # Attributes
 
+`Attributes[symbol]` gives the list of attributes for a symbol.
+
+## Examples
+
+Get attributes of a symbol:
+
+```wolfram
+Attributes[Plus]
+(* {Flat, Listable, NumericFunction, OneIdentity, Orderless, Protected} *)
 ```
-Attributes[symbol] gives the list of attributes for a symbol. 
 
-Attributes["symbol"] gives the attributes for the symbol named "symbol" if it exists.
+Check attributes of multiple symbols:
 
-Attributes[{s1,s2,…}] gives a list of the attributes for each of the si.
+```wolfram
+Attributes[{Sin, Cos}]
+(* {{Listable, NumericFunction, Protected}, ...} *)
 ```
 
+User-defined symbol:
 
+```wolfram
+Attributes[myFunc]
+(* {} - no attributes by default *)
+```
 
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Attributes.html) for more details.*

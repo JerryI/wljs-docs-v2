@@ -1,10 +1,20 @@
 # EmptyRegion
 
+`EmptyRegion[n]` represents the empty subset of ℝ^n.
+
+## Examples
+
+Create an empty region in 2D:
+
+```wolfram
+EmptyRegion[2]
 ```
-EmptyRegion[n] represents the empty subset of n. 
+
+Check if a point is in an empty region:
+
+```wolfram
+RegionMember[EmptyRegion[2], {0, 0}]
+(* False *)
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/EmptyRegion.html) for more details.*

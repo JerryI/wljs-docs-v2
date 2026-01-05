@@ -1,18 +1,21 @@
 # DSolveValue
 
+`DSolveValue[eqn, expr, x]` gives the value of expr determined by a symbolic solution to the differential equation.
+
+## Examples
+
+Solve ODE and get function:
+
+```wolfram
+DSolveValue[{y'[x] == y[x], y[0] == 1}, y[x], x]
+(* E^x *)
 ```
-DSolveValue[eqn,expr,x] gives the value of expr determined by a symbolic solution to the ordinary differential equation eqn with independent variable x. 
 
-DSolveValue[eqn,expr,{x,xmin,xmax}] uses a symbolic solution for x between xmin and xmax.
+Second order ODE:
 
-DSolveValue[{eqn1,eqn2,…},expr,…] uses a symbolic solution for a list of differential equations. 
-
-DSolveValue[eqn,expr,{x1,x2,…}] uses a solution for the partial differential equation eqn. 
-
-DSolveValue[eqn,expr,{x1,x2,…}∈Ω] uses a solution of the partial differential equation eqn over the region Ω.
+```wolfram
+DSolveValue[y''[x] + y[x] == 0, y[x], x]
+(* C[1] Cos[x] + C[2] Sin[x] *)
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/DSolveValue.html) for more details.*

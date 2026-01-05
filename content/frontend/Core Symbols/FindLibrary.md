@@ -1,10 +1,19 @@
 # FindLibrary
 
+`FindLibrary[lib]` finds a dynamic library that can be loaded by LibraryFunctionLoad.
+
+## Examples
+
+Find a library by name:
+
+```wolfram
+FindLibrary["demo"]
 ```
-FindLibrary[lib] finds a dynamic library that can be loaded by LibraryFunctionLoad.
+
+Check if a library exists:
+
+```wolfram
+FindLibrary["mylib"] =!= $Failed
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/FindLibrary.html) for more details.*

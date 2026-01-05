@@ -1,14 +1,21 @@
 # ArcLength
 
+`ArcLength[reg]` gives the length of a one-dimensional region (curve).
+
+## Examples
+
+Length of a line:
+
+```wolfram
+ArcLength[Line[{{0, 0}, {3, 4}}]]
+(* 5 *)
 ```
-ArcLength[reg] gives the length of the one-dimensional region reg.
 
-ArcLength[{x1,…,xn},{t,tmin,tmax}] gives the length of the parametrized curve whose Cartesian coordinates xi are functions of t.
+Circumference of a circle:
 
-ArcLength[{x1,…,xn},{t,tmin,tmax},chart] interprets the xi as coordinates in the specified coordinate chart.
+```wolfram
+ArcLength[Circle[{0, 0}, r]]
+(* 2 Pi r *)
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ArcLength.html) for more details.*

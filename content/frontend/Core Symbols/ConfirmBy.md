@@ -1,14 +1,23 @@
 # ConfirmBy
 
+`ConfirmBy[expr, f]` confirms that `f[expr]` returns `True`, otherwise throws an error to the nearest `Enclose`.
+
+## Examples
+
+Validate with a predicate:
+
+```wolfram
+Enclose[
+  x = ConfirmBy[computeValue[], Positive];
+  Sqrt[x]
+]
+(* Throws if value is not positive *)
 ```
-ConfirmBy[expr,f] confirms that f[expr] returns True, otherwise throwing an error to the nearest surrounding Enclose.
 
-ConfirmBy[expr,f,info] evaluates info and includes its value in the thrown error if expr is not confirmed.
+With custom test:
 
-ConfirmBy[expr,f,info,tag] uses the specified tag for any thrown errors.
+```wolfram
+ConfirmBy[result, # > 0 &, "Must be positive"]
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ConfirmBy.html) for more details.*

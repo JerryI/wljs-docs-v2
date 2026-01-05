@@ -1,14 +1,24 @@
 # Unprotect
 
+`Unprotect[s1, s2, ...]` removes the attribute `Protected` from symbols, allowing modification of their definitions.
+
+## Examples
+
+Unprotect to modify a built-in:
+
+```wolfram
+Unprotect[Plus]
+(* Now Plus can be modified *)
+
+Protect[Plus]
+(* Restore protection *)
 ```
-Unprotect[s1,s2,…] removes the attribute Protected for the symbols si.
 
-Unprotect[patt1,patt2,…] unprotects all symbols whose names textually match any of the arbitrary string patterns patti.
+Unprotect custom symbol:
 
-Unprotect[{spec1,spec2,…}] unprotects any symbols that are equal to or whose names match any of the speci.
+```wolfram
+Unprotect[myFunc]
+myFunc[x_] := x^3
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Unprotect.html) for more details.*

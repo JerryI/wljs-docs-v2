@@ -1,10 +1,13 @@
 # ServiceDisconnect
 
+`ServiceDisconnect[service]` disconnects from an external service specified by a ServiceObject.
+
+## Examples
+
+Disconnect from a service:
+
+```wolfram
+ServiceDisconnect[$service]
 ```
-ServiceDisconnect[service] disconnects from an external service specified by a ServiceObject.
-```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ServiceDisconnect.html) for more details.*

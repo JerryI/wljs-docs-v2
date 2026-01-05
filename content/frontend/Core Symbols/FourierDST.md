@@ -1,12 +1,21 @@
 # FourierDST
 
+`FourierDST[list]` finds the Fourier discrete sine transform of a list of real numbers.
+
+`FourierDST[list,m]` finds the Fourier discrete sine transform of type m.
+
+## Examples
+
+Compute the discrete sine transform:
+
+```wolfram
+FourierDST[{1, 2, 3, 4}]
 ```
-FourierDST[list] finds the Fourier discrete sine transform of a list of real numbers.
 
-FourierDST[list,m] finds the Fourier discrete sine transform of type m.
+Use a specific transform type:
+
+```wolfram
+FourierDST[{1, 2, 3, 4}, 2]
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/FourierDST.html) for more details.*

@@ -1,10 +1,11 @@
 # PacletUninstall
 
+`PacletUninstall[paclet]` uninstalls a paclet.
+
+## Examples
+
+```wolfram
+PacletUninstall["MyPaclet"]
 ```
-PacletUninstall[paclet] uninstalls a paclet.
-```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/PacletUninstall.html) for more details.*

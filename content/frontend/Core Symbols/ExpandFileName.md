@@ -1,10 +1,20 @@
 # ExpandFileName
 
+`ExpandFileName["name"]` expands name to an absolute file path for your OS.
+
+## Examples
+
+Expand home directory:
+
+```wolfram
+ExpandFileName["~/Documents"]
+(* "/Users/username/Documents" *)
 ```
-ExpandFileName["name"] textually expands name to have the form of an absolute file name for your operating system.
+
+Expand relative path:
+
+```wolfram
+ExpandFileName["./data"]
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ExpandFileName.html) for more details.*

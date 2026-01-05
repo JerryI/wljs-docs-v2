@@ -1,12 +1,21 @@
 # CoefficientRules
 
+`CoefficientRules[poly, {x1, x2, ...}]` gives exponent vectors and coefficients for monomials in poly.
+
+## Examples
+
+Get exponent-coefficient rules:
+
+```wolfram
+CoefficientRules[x^2 + 3x*y + y^2, {x, y}]
+(* {{2, 0} -> 1, {1, 1} -> 3, {0, 2} -> 1} *)
 ```
-CoefficientRules[poly,{x1,x2,…}] gives the list {{e11,e12,…}->c1,{e21,…}->c2,…} of exponent vectors and coefficients for the monomials in poly with respect to the xi.
 
-CoefficientRules[poly,{x1,x2,…},order] gives the result with the monomial ordering specified by order.
+Single variable:
+
+```wolfram
+CoefficientRules[2x^3 + 5x + 1, {x}]
+(* {{3} -> 2, {1} -> 5, {0} -> 1} *)
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/CoefficientRules.html) for more details.*

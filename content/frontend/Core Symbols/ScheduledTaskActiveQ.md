@@ -1,10 +1,15 @@
 # ScheduledTaskActiveQ
 
+`ScheduledTaskActiveQ[obj]` yields True if obj represents an active task, and False otherwise.
+
+## Examples
+
+Check if a scheduled task is active:
+
+```wolfram
+task = CreateScheduledTask[Print["Hello"], 5];
+ScheduledTaskActiveQ[task]
+(* True *)
 ```
-ScheduledTaskActiveQ[obj] yields True if obj represents an active task, and False otherwise.
-```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ScheduledTaskActiveQ.html) for more details.*

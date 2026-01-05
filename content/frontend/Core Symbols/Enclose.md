@@ -1,16 +1,33 @@
 # Enclose
 
+`Enclose[expr]` evaluates expr and returns the result, but catches any errors from `Confirm` and returns a `Failure` object.
+
+## Examples
+
+Basic error handling:
+
+```wolfram
+Enclose[
+  x = Confirm[1/0];
+  x + 1
+]
+(* Failure[...] *)
 ```
-Enclose[expr] attempts to evaluate expr and return the result, but stops if it catches an error and returns a failure object. 
 
-Enclose[expr,f] applies f to any failure object generated.
+Successful evaluation:
 
-Enclose[expr,"prop"] gives the property prop of any failure object generated. 
-
-Enclose[expr,handler,form] only catches errors with explicitly specified tags matching form. 
+```wolfram
+Enclose[
+  x = Confirm[5];
+  x + 1
+]
+(* 6 *)
 ```
 
+Handle failure:
 
+```wolfram
+Enclose[computation[], "Message" &]
+```
 
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Enclose.html) for more details.*

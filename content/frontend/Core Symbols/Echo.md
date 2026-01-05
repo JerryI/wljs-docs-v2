@@ -1,14 +1,25 @@
 # Echo
 
+`Echo[expr]` prints expr and returns expr.
+
+`Echo[expr, label]` prints expr with a label prefix.
+
+`Echo[expr, label, f]` prints `f[expr]` with a label and returns expr.
+
+## Examples
+
+Print intermediate values:
+
+```wolfram
+Echo[2 + 2]
+(* prints: 4 and returns 4 *)
 ```
-Echo[expr] prints expr and returns expr.
 
-Echo[expr,label] prints expr prepending label and returns expr.
+With a label:
 
-Echo[expr,label,f] prints f[expr] prepending label and returns expr.
+```wolfram
+Echo[{1, 2, 3}, "value: "]
+(* prints: value: {1, 2, 3} *)
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Echo.html) for more details.*

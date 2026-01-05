@@ -1,10 +1,21 @@
 # ArcSec
 
+`ArcSec[z]` gives the arc secant of the complex number z.
+
+## Examples
+
+Compute the arc secant:
+
+```wolfram
+ArcSec[2]
+(* Pi/3 *)
 ```
-ArcSec[z] gives the arc secant sec-1(z) of the complex number z. 
+
+Numerical evaluation:
+
+```wolfram
+ArcSec[2.0]
+(* 1.0472 *)
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ArcSec.html) for more details.*

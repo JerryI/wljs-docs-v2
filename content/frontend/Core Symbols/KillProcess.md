@@ -1,10 +1,23 @@
 # KillProcess
 
+`KillProcess[proc]` kills the external process represented by the ProcessObject proc.
+
+## Examples
+
+Start and kill a process:
+
+```wolfram
+proc = StartProcess[{"sleep", "100"}];
+KillProcess[proc]
 ```
-KillProcess[proc] kills the external process represented by the ProcessObject proc.
+
+Check process status:
+
+```wolfram
+proc = StartProcess[{"ls"}];
+KillProcess[proc];
+ProcessStatus[proc]
+(* "Finished" *)
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/KillProcess.html) for more details.*

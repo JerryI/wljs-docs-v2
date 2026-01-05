@@ -1,14 +1,21 @@
 # ListPlot3D
 
+`ListPlot3D[data]` generates a 3D surface from a 2D array of height values or from `{x, y, z}` data points.
+
+## Examples
+
+Surface from array:
+
+```wolfram
+data = Table[Sin[x] Cos[y], {x, 0, Pi, 0.2}, {y, 0, Pi, 0.2}];
+ListPlot3D[data]
 ```
-ListPlot3D[{{f11,…,f1n},…,{fm1,…,fmn}}] generates a surface with height fij at {x,y} position {j,i}. 
 
-ListPlot3D[{{x1,y1,f1},…,{xk,yk,fk}}] generates a surface with height fi at {x,y} position {xi,yi}. 
+From scattered points:
 
-ListPlot3D[{data1,data2,…}] plots the surfaces corresponding to each of the datai.
+```wolfram
+points = Table[{x, y, Sin[x] Cos[y]}, {x, 0, Pi, 0.5}, {y, 0, Pi, 0.5}];
+ListPlot3D[Flatten[points, 1]]
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ListPlot3D.html) for more details.*

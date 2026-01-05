@@ -1,12 +1,19 @@
 # RegionPlot3D
 
+`RegionPlot3D[pred, {x, xmin, xmax}, {y, ymin, ymax}, {z, zmin, zmax}]` makes a 3D plot showing the region where pred is True.
+
+## Examples
+
+Plot a sphere:
+
+```wolfram
+RegionPlot3D[x^2 + y^2 + z^2 < 1, {x, -1, 1}, {y, -1, 1}, {z, -1, 1}]
 ```
-RegionPlot3D[pred,{x,xmin,xmax},{y,ymin,ymax},{z,zmin,zmax}] makes a plot showing the three-dimensional region in which pred is True. 
 
-RegionPlot3D[{pred1,pred2,…},…] plots several regions corresponding to the predi.
+Intersection of regions:
+
+```wolfram
+RegionPlot3D[x^2 + y^2 < 1 && z > 0, {x, -1, 1}, {y, -1, 1}, {z, -1, 1}]
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/RegionPlot3D.html) for more details.*

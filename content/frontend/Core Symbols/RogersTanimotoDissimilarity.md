@@ -1,10 +1,21 @@
 # RogersTanimotoDissimilarity
 
+`RogersTanimotoDissimilarity[u,v]` gives the Rogers–Tanimoto dissimilarity between Boolean vectors u and v.
+
+## Examples
+
+Compute dissimilarity between two Boolean vectors:
+
+```wolfram
+RogersTanimotoDissimilarity[{1, 0, 1, 1}, {1, 1, 0, 1}]
+(* 1/2 *)
 ```
-RogersTanimotoDissimilarity[u,v] gives the Rogers–Tanimoto dissimilarity between Boolean vectors u and v.
+
+Identical vectors have zero dissimilarity:
+
+```wolfram
+RogersTanimotoDissimilarity[{1, 0, 1}, {1, 0, 1}]
+(* 0 *)
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/RogersTanimotoDissimilarity.html) for more details.*

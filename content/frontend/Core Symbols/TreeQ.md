@@ -1,10 +1,19 @@
 # TreeQ
 
+`TreeQ[tree]` yields `True` if tree is a valid `Tree` object and `False` otherwise.
+
+## Examples
+
+Check if an expression is a valid tree:
+
+```wolfram
+TreeQ[Tree[a, {Tree[b], Tree[c]}]]
+(* True *)
 ```
-TreeQ[tree] yields True if tree is a valid Tree object and False otherwise.
+
+```wolfram
+TreeQ[{1, 2, 3}]
+(* False *)
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/TreeQ.html) for more details.*

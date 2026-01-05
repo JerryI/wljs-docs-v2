@@ -1,10 +1,21 @@
 # PrimePowerQ
 
+`PrimePowerQ[expr]` yields True if expr is a power of a prime number, and yields False otherwise.
+
+## Examples
+
+Test if a number is a prime power:
+
+```wolfram
+PrimePowerQ[8]
+(* True *)
 ```
-PrimePowerQ[expr] yields True if expr is a power of a prime number, and yields False otherwise. 
+
+Test a non-prime power:
+
+```wolfram
+PrimePowerQ[12]
+(* False *)
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/PrimePowerQ.html) for more details.*

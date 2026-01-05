@@ -1,10 +1,15 @@
 # NearestFunction
 
+`NearestFunction[data]` represents a function whose values give the elements closest to an element that is supplied.
+
+## Examples
+
+Create a nearest function and query it:
+
+```wolfram
+nf = Nearest[{1, 2, 5, 8, 10}]
+nf[6]
+(* {5} *)
 ```
-NearestFunction[data] represents a function whose values give the elements closest to an element that is supplied.
-```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/NearestFunction.html) for more details.*

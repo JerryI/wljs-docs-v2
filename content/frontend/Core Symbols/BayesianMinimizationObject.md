@@ -1,10 +1,20 @@
 # BayesianMinimizationObject
 
+`BayesianMinimizationObject[…]` represents the result of a Bayesian minimization process.
+
+## Examples
+
+Perform Bayesian minimization:
+
+```wolfram
+result = BayesianMinimization[#^2 &, {-10, 10}]
+(* BayesianMinimizationObject[...] *)
 ```
-BayesianMinimizationObject[…] represents the result of a Bayesian minimization process. 
+
+Extract the minimum:
+
+```wolfram
+result["MinimumConfiguration"]
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/BayesianMinimizationObject.html) for more details.*

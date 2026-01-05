@@ -1,10 +1,12 @@
 # Record
 
+`Record` represents a record in `Read`, `Find`, and related functions.
+
+## Examples
+
+```wolfram
+Read[stream, Record]
+(* reads a single record from the stream *)
 ```
-Record represents a record in Read, Find, and related functions. 
-```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Record.html) for more details.*

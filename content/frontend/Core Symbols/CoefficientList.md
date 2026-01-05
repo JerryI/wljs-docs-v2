@@ -1,14 +1,21 @@
 # CoefficientList
 
+`CoefficientList[poly, var]` gives a list of coefficients of powers of var in poly, starting with power 0.
+
+## Examples
+
+Get all coefficients:
+
+```wolfram
+CoefficientList[3x^3 + 2x^2 + x + 5, x]
+(* {5, 1, 2, 3} *)
 ```
-CoefficientList[poly,var] gives a list of coefficients of powers of var in poly, starting with power 0. 
 
-CoefficientList[poly,{var1,var2,…}] gives an array of coefficients of the vari. 
+For a quadratic:
 
-CoefficientList[poly,{var1,var2,…},{dim1,dim2,…}] gives an array of dimensions {dim1,dim2,…}, truncating or padding with zeros as needed.
+```wolfram
+CoefficientList[x^2 - 3x + 2, x]
+(* {2, -3, 1} *)
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/CoefficientList.html) for more details.*

@@ -1,10 +1,26 @@
 # EvenQ
 
+`EvenQ[expr]` gives `True` if expr is an even integer, and `False` otherwise.
+
+## Examples
+
+Test if a number is even:
+
+```wolfram
+EvenQ[4]
+(* True *)
 ```
-EvenQ[expr] gives True if expr is an even integer, and False otherwise. 
+
+```wolfram
+EvenQ[7]
+(* False *)
 ```
 
+Filter even numbers from a list:
 
+```wolfram
+Select[Range[10], EvenQ]
+(* {2, 4, 6, 8, 10} *)
+```
 
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/EvenQ.html) for more details.*

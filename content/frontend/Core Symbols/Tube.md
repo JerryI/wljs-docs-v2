@@ -1,16 +1,20 @@
 # Tube
 
+`Tube[{{x1, y1, z1}, {x2, y2, z2}, ...}, r]` represents a 3D tube of radius r around a path.
+
+## Examples
+
+Tube along a path:
+
+```wolfram
+Graphics3D[Tube[{{0, 0, 0}, {1, 1, 0}, {2, 0, 1}}, 0.1]]
 ```
-Tube[{{x1,y1,z1},{x2,y2,z2},…}] represents a 3D tube around the line joining a sequence of points.
 
-Tube[{pt1,pt2,…},r] represents a tube of radius r.
+Helix tube:
 
-Tube[{{pt11,pt12,…},{pt21,…},…},…] represents a collection of tubes.
-
-Tube[curve,…] represents a tube around the specified 3D curve.
+```wolfram
+pts = Table[{Cos[t], Sin[t], t/5}, {t, 0, 4 Pi, 0.2}];
+Graphics3D[Tube[pts, 0.1]]
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Tube.html) for more details.*

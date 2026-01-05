@@ -1,12 +1,15 @@
 # SimpleGraph
 
+`SimpleGraph[g]` gives the underlying simple graph from the graph g.
+
+`SimpleGraph[{v->w,…}]` uses rules v->w to specify the graph g.
+
+## Examples
+
+Get the simple graph from a multigraph:
+
+```wolfram
+SimpleGraph[Graph[{1 -> 2, 1 -> 2, 2 -> 3}]]
 ```
-SimpleGraph[g] gives the underlying simple graph from the graph g.
 
-SimpleGraph[{v->w,…}] uses rules v->w to specify the graph g.
-```
-
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/SimpleGraph.html) for more details.*

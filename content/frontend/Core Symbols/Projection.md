@@ -1,12 +1,21 @@
 # Projection
 
+`Projection[u, v]` finds the projection of the vector u onto the vector v.
+
+## Examples
+
+Project u onto v:
+
+```wolfram
+Projection[{3, 4}, {1, 0}]
+(* {3, 0} *)
 ```
-Projection[u,v] finds the projection of the vector u onto the vector v.
 
-Projection[u,v,f] finds projections with respect to the inner product function f.
+3D projection:
+
+```wolfram
+Projection[{1, 2, 3}, {1, 1, 1}]
+(* {2, 2, 2} *)
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Projection.html) for more details.*

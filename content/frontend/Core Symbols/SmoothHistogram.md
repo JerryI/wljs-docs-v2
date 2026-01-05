@@ -1,16 +1,21 @@
 # SmoothHistogram
 
+`SmoothHistogram[{x1, x2, ...}]` plots a smooth kernel histogram for the PDF of the values.
+
+## Examples
+
+Smooth histogram of data:
+
+```wolfram
+data = RandomVariate[NormalDistribution[], 500];
+SmoothHistogram[data]
 ```
-SmoothHistogram[{x1,x2,…}] plots a smooth kernel histogram for the PDF of the values xi.
 
-SmoothHistogram[{x1,x2,…},espec] plots a smooth kernel histogram with estimator specification espec.
+Multiple datasets:
 
-SmoothHistogram[{x1,x2,…},espec,dfun] plots the distribution function dfun. 
-
-SmoothHistogram[{data1,data2,…},…] plots smooth kernel histograms for multiple datasets datai.
+```wolfram
+SmoothHistogram[{RandomVariate[NormalDistribution[0, 1], 500],
+                 RandomVariate[NormalDistribution[2, 1], 500]}]
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/SmoothHistogram.html) for more details.*

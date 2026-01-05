@@ -1,14 +1,24 @@
 # AutocorrelationTest
 
+`AutocorrelationTest[data]` tests whether the data is autocorrelated.
+
+`AutocorrelationTest[data,k]` tests whether the data is autocorrelated up to lag k.
+
+`AutocorrelationTest[data,k,"property"]` returns the value of "property" for a given model.
+
+## Examples
+
+Test for autocorrelation in data:
+
+```wolfram
+data = RandomReal[1, 100];
+AutocorrelationTest[data]
 ```
-AutocorrelationTest[data] tests whether the data is autocorrelated.
 
-AutocorrelationTest[data,k] tests whether the data is autocorrelated up to lag k.
+Get the p-value:
 
-AutocorrelationTest[data,k,"property"] returns the value of "property" for a given model.
+```wolfram
+AutocorrelationTest[data, 5, "PValue"]
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/AutocorrelationTest.html) for more details.*

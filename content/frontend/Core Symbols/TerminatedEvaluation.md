@@ -1,10 +1,14 @@
 # TerminatedEvaluation
 
+`TerminatedEvaluation["reason"]` represents an expression whose evaluation overran global kernel session limits and was terminated.
+
+## Examples
+
+A terminated evaluation result:
+
+```wolfram
+(* This would appear if a computation exceeded time/memory limits *)
+TerminatedEvaluation["TimeExceeded"]
 ```
-TerminatedEvaluation["reason"] represents an expression whose evaluation overran global kernel session limits and was terminated.
-```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/TerminatedEvaluation.html) for more details.*

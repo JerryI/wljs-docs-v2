@@ -1,14 +1,24 @@
 # EdgeCount
 
+`EdgeCount[g]` gives the number of edges in graph g. `EdgeCount[g, patt]` counts edges matching the pattern.
+
+## Examples
+
+Count edges:
+
+```wolfram
+EdgeCount[CompleteGraph[5]]
+(* 10 - n*(n-1)/2 for complete graph *)
+
+EdgeCount[CycleGraph[10]]
+(* 10 *)
 ```
-EdgeCount[g] gives a count of the number of edges in the graph g.
 
-EdgeCount[g,patt] gives a count of the number of edges that match the pattern patt.
+Edge count in grid:
 
-EdgeCount[{v->w,…},…] uses rules v->w to specify the graph g. 
+```wolfram
+EdgeCount[GridGraph[{3, 3}]]
+(* 12 *)
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/EdgeCount.html) for more details.*

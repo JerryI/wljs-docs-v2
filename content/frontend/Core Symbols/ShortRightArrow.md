@@ -1,10 +1,14 @@
 # ShortRightArrow
 
+`ShortRightArrow[x, y, ...]` displays as x→y→….
+
+## Examples
+
+Display a short right arrow:
+
+```wolfram
+ShortRightArrow[a, b, c]
+(* a → b → c *)
 ```
-ShortRightArrow[x,y,…] displays as xy….
-```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ShortRightArrow.html) for more details.*

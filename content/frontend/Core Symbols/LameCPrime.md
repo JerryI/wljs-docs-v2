@@ -1,10 +1,13 @@
 # LameCPrime
 
+`LameCPrime[ν,j,z,m]` gives the z-derivative of the jth Lamé function Ecν(j)(zm) of order ν with elliptic parameter m.
+
+## Examples
+
+Evaluate the derivative of a Lamé function:
+
+```wolfram
+LameCPrime[2, 1, 0.5, 0.3]
 ```
-LameCPrime[ν,j,z,m] gives the z-derivative of the jth Lamé function Ecν(j)(zm) of order ν with elliptic parameter m.
-```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/LameCPrime.html) for more details.*

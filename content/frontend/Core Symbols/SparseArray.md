@@ -1,16 +1,25 @@
 # SparseArray
 
+`SparseArray[{pos1 -> v1, pos2 -> v2, ...}]` yields a sparse array with values at specified positions.
+
+`SparseArray[list]` yields a sparse array version of list.
+
+`SparseArray[data, dims, val]` uses val for unspecified elements.
+
+## Examples
+
+Create a sparse array with specific values:
+
+```wolfram
+SparseArray[{{1, 1} -> 1, {2, 2} -> 2, {3, 3} -> 3}]
+(* SparseArray[..., {3, 3}] *)
 ```
-SparseArray[{pos1->v1,pos2->v2,…}] yields a sparse array with all elements zero except for values vi at positions posi.
 
-SparseArray[list] yields a sparse array version of list. 
+Convert to normal array:
 
-SparseArray[data,{d1,d2,…}] yields a sparse array representing a d1×d2×… array. 
-
-SparseArray[data,dims,val] yields a sparse array in which unspecified elements are taken to have value val. 
+```wolfram
+Normal[SparseArray[{{1, 1} -> 1, {2, 2} -> 1}, {2, 2}]]
+(* {{1, 0}, {0, 1}} *)
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/SparseArray.html) for more details.*

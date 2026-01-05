@@ -1,10 +1,20 @@
 # MessagePacket
 
+`MessagePacket[symbol,string]` is a WSTP packet containing a Wolfram Language message identifier of the form symbol::string.
+
+## Examples
+
+A message packet structure:
+
+```wolfram
+MessagePacket[General, "argx"]
 ```
-MessagePacket[symbol,string] is a WSTP packet containing a Wolfram Language message identifier of the form symbol::string.
+
+Handle message packets in WSTP communication:
+
+```wolfram
+(* Typically received when processing kernel messages *)
+MessagePacket[Sin, "argx"]
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/MessagePacket.html) for more details.*
