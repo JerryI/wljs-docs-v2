@@ -1,4 +1,6 @@
-# ImportOptions
+---
+title: ImportOptions
+---
 
 `ImportOptions` is an option for Interpreter and related functions that specifies what options should be used in importing data.
 

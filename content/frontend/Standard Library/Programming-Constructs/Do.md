@@ -1,4 +1,6 @@
-# Do
+---
+title: Do
+---
 
 `Do[expr, n]` evaluates expr n times.
 

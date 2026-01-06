@@ -1,4 +1,6 @@
-# RebuildPacletData
+---
+title: RebuildPacletData
+---
 
 The experimental function `RebuildPacletData` is now obsolete and is superseded by `PacletDataRebuild`.
 

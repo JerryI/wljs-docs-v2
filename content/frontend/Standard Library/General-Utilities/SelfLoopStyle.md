@@ -1,4 +1,6 @@
-# SelfLoopStyle
+---
+title: SelfLoopStyle
+---
 
 `SelfLoopStyle` is an option for `GraphPlot` and related functions that specifies how to draw self-loops that connect a vertex to itself.
 

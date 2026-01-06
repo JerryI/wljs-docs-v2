@@ -1,4 +1,6 @@
-# IgnoringInactive
+---
+title: IgnoringInactive
+---
 
 `IgnoringInactive[patt]` is a pattern object that, for purposes of pattern matching, ignores occurrences of `Inactive` in both patt and the expression being matched.
 

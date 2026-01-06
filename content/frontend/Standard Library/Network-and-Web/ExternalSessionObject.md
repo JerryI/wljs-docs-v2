@@ -1,4 +1,6 @@
-# ExternalSessionObject
+---
+title: ExternalSessionObject
+---
 
 `ExternalSessionObject[…]` represents an external session started by StartExternalSession for use with ExternalEvaluate.
 

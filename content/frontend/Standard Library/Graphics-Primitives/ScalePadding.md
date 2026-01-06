@@ -1,4 +1,6 @@
-# ScalePadding
+---
+title: ScalePadding
+---
 
 `ScalePadding` is an option for gauge functions that specifies how much space to leave around the scale.
 

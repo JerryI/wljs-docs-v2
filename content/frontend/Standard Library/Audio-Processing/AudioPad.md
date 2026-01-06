@@ -1,4 +1,6 @@
-# AudioPad
+---
+title: AudioPad
+---
 
 `AudioPad[audio,t]` adds t seconds of silence to the end of audio.
 

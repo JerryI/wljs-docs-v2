@@ -1,4 +1,6 @@
-# MaterialShading
+---
+title: MaterialShading
+---
 
 `MaterialShading["material"]` is a three-dimensional graphics directive specifying that surfaces that follow are to be drawn with the material "material" appearance.
 

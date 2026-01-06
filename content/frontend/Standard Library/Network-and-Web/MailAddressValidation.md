@@ -1,4 +1,6 @@
-# MailAddressValidation
+---
+title: MailAddressValidation
+---
 
 `MailAddressValidation` is an option for `SendMail` that specifies whether and how to validate email addresses.
 

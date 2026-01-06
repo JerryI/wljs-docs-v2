@@ -1,4 +1,6 @@
-# PrivateKey
+---
+title: PrivateKey
+---
 
 `PrivateKey[assoc]` represents the private part of a key pair for a public-key cryptographic system.
 

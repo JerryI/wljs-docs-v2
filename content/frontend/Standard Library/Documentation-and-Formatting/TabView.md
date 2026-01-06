@@ -1,4 +1,6 @@
-# TabView
+---
+title: TabView
+---
 
 `TabView[{lbl1->expr1, lbl2->expr2, ...}]` represents an object in which clicking the tab with label lbli displays expri.
 

@@ -1,4 +1,6 @@
-# CanberraDistance
+---
+title: CanberraDistance
+---
 
 `CanberraDistance[u, v]` gives the Canberra distance between vectors u and v.
 

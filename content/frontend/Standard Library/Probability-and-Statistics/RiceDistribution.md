@@ -1,4 +1,6 @@
-# RiceDistribution
+---
+title: RiceDistribution
+---
 
 `RiceDistribution[α, β]` represents a Rice distribution with shape parameters α and β.
 

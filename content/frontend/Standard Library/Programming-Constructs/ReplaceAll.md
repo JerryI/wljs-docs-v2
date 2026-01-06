@@ -1,4 +1,6 @@
-# ReplaceAll
+---
+title: ReplaceAll
+---
 
 `expr /. rules` or `ReplaceAll[expr, rules]` applies a rule or list of rules in an attempt to transform each subpart of an expression expr.
 

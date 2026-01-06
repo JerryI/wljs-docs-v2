@@ -1,4 +1,6 @@
-# FunctionMonotonicity
+---
+title: FunctionMonotonicity
+---
 
 `FunctionMonotonicity[f, x]` finds the monotonicity of the function f with the variable x over the reals.
 

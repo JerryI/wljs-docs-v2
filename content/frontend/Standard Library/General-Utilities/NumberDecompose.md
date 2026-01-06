@@ -1,4 +1,6 @@
-# NumberDecompose
+---
+title: NumberDecompose
+---
 
 `NumberDecompose[x, {u1, ..., un}]` returns a list of coefficients {c1, ..., cn} of a decomposition of the number x in the basis {u1, ..., un}.
 

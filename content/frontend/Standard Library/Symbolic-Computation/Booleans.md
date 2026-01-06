@@ -1,4 +1,6 @@
-# Booleans
+---
+title: Booleans
+---
 
 `Booleans` represents the domain of Booleans, as in x∈Booleans.
 

@@ -1,4 +1,6 @@
-# NMinimize
+---
+title: NMinimize
+---
 
 `NMinimize[f, x]` searches for a global minimum in f numerically with respect to x.
 

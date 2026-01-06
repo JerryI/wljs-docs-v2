@@ -1,4 +1,6 @@
-# ProbabilityPlot
+---
+title: ProbabilityPlot
+---
 
 `ProbabilityPlot[list]` generates a plot of the CDF of list against the CDF of a normal distribution.
 

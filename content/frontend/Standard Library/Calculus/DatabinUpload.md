@@ -1,4 +1,6 @@
-# DatabinUpload
+---
+title: DatabinUpload
+---
 
 `DatabinUpload[bin, {entry1, entry2, ...}]` bulk uploads all the entries entryi to a databin.
 

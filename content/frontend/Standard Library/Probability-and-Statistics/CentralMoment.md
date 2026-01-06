@@ -1,4 +1,6 @@
-# CentralMoment
+---
+title: CentralMoment
+---
 
 `CentralMoment[data, r]` gives the order r central moment of data.
 

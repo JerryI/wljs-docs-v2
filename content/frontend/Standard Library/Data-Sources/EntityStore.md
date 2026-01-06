@@ -1,4 +1,6 @@
-# EntityStore
+---
+title: EntityStore
+---
 
 `EntityStore["type"]` represents an empty entity store for entities of type "type".
 

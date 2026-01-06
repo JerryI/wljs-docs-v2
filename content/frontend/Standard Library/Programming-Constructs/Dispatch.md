@@ -1,4 +1,6 @@
-# Dispatch
+---
+title: Dispatch
+---
 
 `Dispatch[{lhs1 -> rhs1, lhs2 -> rhs2, ...}]` generates an optimized dispatch table representation of a list of rules for faster rule application.
 

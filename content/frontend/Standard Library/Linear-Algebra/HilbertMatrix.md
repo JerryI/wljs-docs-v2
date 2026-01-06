@@ -1,4 +1,6 @@
-# HilbertMatrix
+---
+title: HilbertMatrix
+---
 
 `HilbertMatrix[n]` gives the n×n Hilbert matrix with elements of the form 1/(i+j-1).
 

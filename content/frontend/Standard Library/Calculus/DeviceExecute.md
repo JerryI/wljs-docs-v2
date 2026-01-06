@@ -1,4 +1,6 @@
-# DeviceExecute
+---
+title: DeviceExecute
+---
 
 `DeviceExecute[device, "command"]` executes the specified command on a device.
 

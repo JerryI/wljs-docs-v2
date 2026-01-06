@@ -1,4 +1,6 @@
-# ClebschGordan
+---
+title: ClebschGordan
+---
 
 `ClebschGordan[{j1, m1}, {j2, m2}, {j, m}]` gives the Clebsch–Gordan coefficient for the decomposition of |j, m〉 in terms of |j1, m1〉|j2, m2〉.
 

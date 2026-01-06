@@ -1,4 +1,6 @@
-# DegreeCentrality
+---
+title: DegreeCentrality
+---
 
 `DegreeCentrality[g]` gives a list of vertex degrees for the vertices in the underlying simple graph of g.
 

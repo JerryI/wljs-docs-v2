@@ -1,4 +1,6 @@
-# AppellF1
+---
+title: AppellF1
+---
 
 `AppellF1[a, b1, b2, c, x, y]` is the Appell hypergeometric function of two variables F1(a; b1, b2; c; x, y).
 

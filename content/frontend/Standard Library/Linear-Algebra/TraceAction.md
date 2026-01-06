@@ -1,4 +1,6 @@
-# TraceAction
+---
+title: TraceAction
+---
 
 `TraceAction` is an option for `TracePrint` and `TraceDialog` that specifies the function to be applied to each expression they trace.
 

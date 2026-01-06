@@ -1,4 +1,6 @@
-# IncludeWindowTimes
+---
+title: IncludeWindowTimes
+---
 
 `IncludeWindowTimes` is an option to `TimeSeriesWindow` that specifies whether the endpoints in the time window should be included.
 

@@ -1,4 +1,6 @@
-# BatesDistribution
+---
+title: BatesDistribution
+---
 
 `BatesDistribution[n]` represents the distribution of a mean of n random variables uniformly distributed from 0 to 1.
 

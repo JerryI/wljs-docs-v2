@@ -1,4 +1,6 @@
-# ParallelNeeds
+---
+title: ParallelNeeds
+---
 
 `ParallelNeeds["context`"]` evaluates `Needs["context`"]` on all available parallel kernels.
 

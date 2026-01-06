@@ -1,4 +1,6 @@
-# CDFWavelet
+---
+title: CDFWavelet
+---
 
 `CDFWavelet[]` represents a Cohen–Daubechies–Feauveau wavelet of type "9/7".
 

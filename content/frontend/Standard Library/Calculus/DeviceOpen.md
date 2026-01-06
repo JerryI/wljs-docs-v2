@@ -1,4 +1,6 @@
-# DeviceOpen
+---
+title: DeviceOpen
+---
 
 `DeviceOpen["devclass"]` opens a connection to the first available device in the class specified by "devclass".
 

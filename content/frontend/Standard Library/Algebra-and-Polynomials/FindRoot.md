@@ -1,4 +1,6 @@
-# FindRoot
+---
+title: FindRoot
+---
 
 `FindRoot[f, {x, x0}]` searches for a numerical root of f, starting from x = x0.
 

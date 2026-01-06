@@ -1,4 +1,6 @@
-# FrameMargins
+---
+title: FrameMargins
+---
 
 `FrameMargins` is an option for objects that can be displayed with frames which specifies the absolute margins in printer's points to leave inside the frame.
 

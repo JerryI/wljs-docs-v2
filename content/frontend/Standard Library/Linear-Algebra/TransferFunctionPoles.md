@@ -1,4 +1,6 @@
-# TransferFunctionPoles
+---
+title: TransferFunctionPoles
+---
 
 `TransferFunctionPoles[tfm]` gives a matrix of roots of the denominators in the TransferFunctionModel tfm.
 

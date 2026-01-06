@@ -1,4 +1,6 @@
-# DateTicksFormat
+---
+title: DateTicksFormat
+---
 
 `DateTicksFormat` is an option for `DateListPlot` which specifies how date tick labels should be formatted.
 

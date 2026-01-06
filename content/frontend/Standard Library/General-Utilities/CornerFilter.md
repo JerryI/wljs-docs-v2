@@ -1,4 +1,6 @@
-# CornerFilter
+---
+title: CornerFilter
+---
 
 `CornerFilter[image]` computes a measure for the presence of a corner for each pixel in image and returns the result as an intensity image.
 

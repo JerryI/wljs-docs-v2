@@ -1,4 +1,6 @@
-# FileNameForms
+---
+title: FileNameForms
+---
 
 `FileNameForms` is an option that specifies the pattern for file names to be selected by a function.
 

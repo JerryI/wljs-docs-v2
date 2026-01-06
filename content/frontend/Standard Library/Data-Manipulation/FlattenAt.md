@@ -1,4 +1,6 @@
-# FlattenAt
+---
+title: FlattenAt
+---
 
 `FlattenAt[list, n]` flattens out a sublist that appears as the nth element of list.
 

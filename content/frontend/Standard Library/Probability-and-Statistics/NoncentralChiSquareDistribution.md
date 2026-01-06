@@ -1,4 +1,6 @@
-# NoncentralChiSquareDistribution
+---
+title: NoncentralChiSquareDistribution
+---
 
 `NoncentralChiSquareDistribution[ν, λ]` represents a noncentral χ² distribution with *ν* degrees of freedom and noncentrality parameter *λ*.
 

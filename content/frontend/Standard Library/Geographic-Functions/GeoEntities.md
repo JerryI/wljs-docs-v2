@@ -1,4 +1,6 @@
-# GeoEntities
+---
+title: GeoEntities
+---
 
 `GeoEntities[reg, enttype]` gives a list of the geographic entities of type `enttype` contained in the extended region `reg`.
 

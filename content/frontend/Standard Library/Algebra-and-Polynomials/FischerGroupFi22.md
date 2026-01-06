@@ -1,4 +1,6 @@
-# FischerGroupFi22
+---
+title: FischerGroupFi22
+---
 
 `FischerGroupFi22[]` represents the sporadic simple Fischer group Fi22.
 

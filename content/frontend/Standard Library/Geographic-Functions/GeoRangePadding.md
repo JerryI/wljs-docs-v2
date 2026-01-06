@@ -1,4 +1,6 @@
-# GeoRangePadding
+---
+title: GeoRangePadding
+---
 
 `GeoRangePadding` is an option for `GeoGraphics` that specifies what padding to use when extending beyond the original ranges of latitude and longitude.
 

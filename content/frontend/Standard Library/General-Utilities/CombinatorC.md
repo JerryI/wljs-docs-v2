@@ -1,4 +1,6 @@
-# CombinatorC
+---
+title: CombinatorC
+---
 
 `CombinatorC` represents the **C** combinator.
 

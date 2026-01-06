@@ -1,4 +1,6 @@
-# PeronaMalikFilter
+---
+title: PeronaMalikFilter
+---
 
 `PeronaMalikFilter[image]` applies a Perona–Malik diffusion filter to image.
 

@@ -1,4 +1,6 @@
-# GeodesicOpening
+---
+title: GeodesicOpening
+---
 
 `GeodesicOpening[image, ker]` gives the geodesic opening of `image` with respect to the structuring element `ker`.
 

@@ -1,4 +1,6 @@
-# RevolutionAxis
+---
+title: RevolutionAxis
+---
 
 `RevolutionAxis` is an option for `RevolutionPlot3D` which specifies the revolution axis around which the curve should be rotated.
 

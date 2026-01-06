@@ -1,4 +1,6 @@
-# RiskReductionImportance
+---
+title: RiskReductionImportance
+---
 
 `RiskReductionImportance[rdist, t]` gives the risk reduction importances for all components in the `ReliabilityDistribution` rdist at time t.
 

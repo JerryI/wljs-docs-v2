@@ -1,4 +1,6 @@
-# Majority
+---
+title: Majority
+---
 
 `Majority[e1, e2, ...]` gives True if the majority of the ei are True, and False if the majority are False.
 

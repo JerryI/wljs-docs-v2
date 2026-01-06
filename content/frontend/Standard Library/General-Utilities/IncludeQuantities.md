@@ -1,4 +1,6 @@
-# IncludeQuantities
+---
+title: IncludeQuantities
+---
 
 `IncludeQuantities` is an option for `DimensionalCombinations` for additional quantities to include in the result.
 

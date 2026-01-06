@@ -1,4 +1,6 @@
-# Raster
+---
+title: Raster
+---
 
 `Raster[{{a11, a12, …}, …}]` is a two-dimensional graphics primitive which represents a rectangular array of gray cells.
 

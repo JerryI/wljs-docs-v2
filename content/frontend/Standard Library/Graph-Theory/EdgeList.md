@@ -1,4 +1,6 @@
-# EdgeList
+---
+title: EdgeList
+---
 
 `EdgeList[g]` gives the list of edges in graph `g`.
 

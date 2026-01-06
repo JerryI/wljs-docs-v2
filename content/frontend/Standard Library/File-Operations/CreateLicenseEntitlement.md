@@ -1,4 +1,6 @@
-# CreateLicenseEntitlement
+---
+title: CreateLicenseEntitlement
+---
 
 `CreateLicenseEntitlement[settings]` creates an on-demand license entitlement using settings.
 

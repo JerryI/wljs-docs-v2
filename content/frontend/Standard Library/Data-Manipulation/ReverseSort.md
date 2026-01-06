@@ -1,4 +1,6 @@
-# ReverseSort
+---
+title: ReverseSort
+---
 
 `ReverseSort[list]` sorts the elements of list into reverse canonical order.
 

@@ -1,4 +1,6 @@
-# FindLibrary
+---
+title: FindLibrary
+---
 
 `FindLibrary[lib]` finds a dynamic library that can be loaded by LibraryFunctionLoad.
 

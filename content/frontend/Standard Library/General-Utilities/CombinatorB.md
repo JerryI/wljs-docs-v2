@@ -1,4 +1,6 @@
-# CombinatorB
+---
+title: CombinatorB
+---
 
 `CombinatorB` represents the **B** combinator (composition combinator).
 

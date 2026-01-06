@@ -1,4 +1,6 @@
-# PacletDisable
+---
+title: PacletDisable
+---
 
 `PacletDisable[paclet]` disables an installed paclet.
 

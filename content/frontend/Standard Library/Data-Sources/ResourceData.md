@@ -1,4 +1,6 @@
-# ResourceData
+---
+title: ResourceData
+---
 
 `ResourceData[resource]` gives the primary content of the specified *resource*.
 

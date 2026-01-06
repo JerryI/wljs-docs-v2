@@ -1,4 +1,6 @@
-# InflationMethod
+---
+title: InflationMethod
+---
 
 `InflationMethod` is an option for `InflationAdjust` that specifies what time series data is to be used for adjustment in time.
 

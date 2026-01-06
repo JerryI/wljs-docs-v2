@@ -1,4 +1,6 @@
-# LogIntegral
+---
+title: LogIntegral
+---
 
 `LogIntegral[z]` gives the logarithmic integral function li(z).
 

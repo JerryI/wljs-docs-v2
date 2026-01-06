@@ -1,4 +1,6 @@
-# PermissionsGroupMemberQ
+---
+title: PermissionsGroupMemberQ
+---
 
 `PermissionsGroupMemberQ[group, user]` returns `True` if user is a member of the permissions group, and `False` otherwise.
 

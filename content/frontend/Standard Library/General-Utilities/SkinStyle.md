@@ -1,4 +1,6 @@
-# SkinStyle
+---
+title: SkinStyle
+---
 
 `SkinStyle` is an option of `AnatomyPlot3D` that specifies what style to use for automatically included skin subparts.
 

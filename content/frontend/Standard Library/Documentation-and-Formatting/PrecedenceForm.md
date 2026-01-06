@@ -1,4 +1,6 @@
-# PrecedenceForm
+---
+title: PrecedenceForm
+---
 
 `PrecedenceForm[expr,prec]` prints with expr parenthesized as it would be if it contained an operator with precedence prec.
 

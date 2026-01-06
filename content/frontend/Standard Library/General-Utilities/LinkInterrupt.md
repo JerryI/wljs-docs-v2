@@ -1,4 +1,6 @@
-# LinkInterrupt
+---
+title: LinkInterrupt
+---
 
 `LinkInterrupt[link]` sends an interrupt to the program at the other end of the specified WSTP connection.
 

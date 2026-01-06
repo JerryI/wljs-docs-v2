@@ -1,4 +1,6 @@
-# SpatialGraphDistribution
+---
+title: SpatialGraphDistribution
+---
 
 `SpatialGraphDistribution[n,r]` represents a spatial distribution for graphs with n vertices uniformly distributed over the unit square and edges between vertices that are at distance at most r.
 

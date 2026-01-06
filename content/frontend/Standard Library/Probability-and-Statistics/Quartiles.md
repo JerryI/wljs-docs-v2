@@ -1,4 +1,6 @@
-# Quartiles
+---
+title: Quartiles
+---
 
 `Quartiles[data]` gives the {Q1, Q2, Q3} quantile estimates of the elements in data.
 

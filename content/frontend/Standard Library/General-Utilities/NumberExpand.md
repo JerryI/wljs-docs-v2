@@ -1,4 +1,6 @@
-# NumberExpand
+---
+title: NumberExpand
+---
 
 `NumberExpand[x]` gives a list of the decimal digits of x multiplied by their corresponding powers of 10.
 

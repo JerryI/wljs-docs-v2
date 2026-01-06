@@ -1,4 +1,6 @@
-# CopyDatabin
+---
+title: CopyDatabin
+---
 
 `CopyDatabin[bin]` creates a copy of a databin.
 

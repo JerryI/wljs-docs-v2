@@ -1,4 +1,6 @@
-# GraphLinkEfficiency
+---
+title: GraphLinkEfficiency
+---
 
 `GraphLinkEfficiency[g]` gives the link efficiency of the graph `g`.
 

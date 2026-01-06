@@ -1,4 +1,6 @@
-# MoonPhase
+---
+title: MoonPhase
+---
 
 `MoonPhase[]` gives moon phase fraction of illumination for the current date.
 

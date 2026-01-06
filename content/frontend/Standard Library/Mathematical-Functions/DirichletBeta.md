@@ -1,4 +1,6 @@
-# DirichletBeta
+---
+title: DirichletBeta
+---
 
 `DirichletBeta[s]` gives the Dirichlet beta function β(s).
 

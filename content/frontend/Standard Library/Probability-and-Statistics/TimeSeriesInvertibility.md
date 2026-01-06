@@ -1,4 +1,6 @@
-# TimeSeriesInvertibility
+---
+title: TimeSeriesInvertibility
+---
 
 `TimeSeriesInvertibility[tproc]` gives conditions for the time series process tproc to be invertible.
 

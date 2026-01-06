@@ -1,4 +1,6 @@
-# Conditioned
+---
+title: Conditioned
+---
 
 `Conditioned[expr, cond]` or `expr \[Conditioned] cond` represents expr conditioned by the predicate cond.
 

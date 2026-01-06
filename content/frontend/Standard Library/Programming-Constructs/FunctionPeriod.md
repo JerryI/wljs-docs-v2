@@ -1,4 +1,6 @@
-# FunctionPeriod
+---
+title: FunctionPeriod
+---
 
 `FunctionPeriod[f, x]` gives a period p of the function f over the reals such that f(x + p) = f(x).
 

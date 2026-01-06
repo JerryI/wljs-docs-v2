@@ -1,4 +1,6 @@
-# GeoGridRangePadding
+---
+title: GeoGridRangePadding
+---
 
 `GeoGridRangePadding` is an option for geographic functions that specifies how much to extend the projected coordinate ranges determined by `GeoGridRange`.
 

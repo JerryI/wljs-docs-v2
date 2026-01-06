@@ -1,4 +1,6 @@
-# LaminaData
+---
+title: LaminaData
+---
 
 `LaminaData[entity, property]` gives the value of the specified property for the lamina entity.
 

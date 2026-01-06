@@ -1,4 +1,6 @@
-# RandomWord
+---
+title: RandomWord
+---
 
 `RandomWord[]` gives a pseudorandom commonly used word.
 

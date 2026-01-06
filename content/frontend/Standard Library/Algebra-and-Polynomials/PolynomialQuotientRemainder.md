@@ -1,4 +1,6 @@
-# PolynomialQuotientRemainder
+---
+title: PolynomialQuotientRemainder
+---
 
 `PolynomialQuotientRemainder[p, q, x]` gives a list of the quotient and remainder of p and q, treated as polynomials in x.
 

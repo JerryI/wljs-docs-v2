@@ -1,4 +1,6 @@
-# GaussianIntegers
+---
+title: GaussianIntegers
+---
 
 `GaussianIntegers` is an option for FactorInteger, PrimeQ, Factor, and related functions that specifies whether factorization should be done over Gaussian integers.
 

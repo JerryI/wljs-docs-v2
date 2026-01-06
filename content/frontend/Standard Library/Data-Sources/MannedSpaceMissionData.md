@@ -1,4 +1,6 @@
-# MannedSpaceMissionData
+---
+title: MannedSpaceMissionData
+---
 
 `MannedSpaceMissionData[entity, property]` gives the value of the specified property for the manned space mission entity.
 

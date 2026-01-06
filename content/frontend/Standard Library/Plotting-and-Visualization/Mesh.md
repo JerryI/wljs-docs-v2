@@ -1,4 +1,6 @@
-# Mesh
+---
+title: Mesh
+---
 
 `Mesh` is an option for `Plot3D`, `DensityPlot`, and other plotting functions that specifies what mesh should be drawn.
 

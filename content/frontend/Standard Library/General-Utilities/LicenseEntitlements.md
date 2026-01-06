@@ -1,4 +1,6 @@
-# LicenseEntitlements
+---
+title: LicenseEntitlements
+---
 
 `LicenseEntitlements[]` gives a list of on-demand license entitlements owned by you.
 

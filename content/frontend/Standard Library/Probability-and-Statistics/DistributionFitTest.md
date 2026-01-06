@@ -1,4 +1,6 @@
-# DistributionFitTest
+---
+title: DistributionFitTest
+---
 
 `DistributionFitTest[data]` tests whether data is normally distributed.
 

@@ -1,4 +1,6 @@
-# Write
+---
+title: Write
+---
 
 `Write[channel, expr1, expr2, ...]` writes the expressions expri in sequence, followed by a newline, to the specified output channel.
 

@@ -1,4 +1,6 @@
-# WienerProcess
+---
+title: WienerProcess
+---
 
 `WienerProcess[μ, σ]` represents a Wiener process with a drift μ and volatility σ.
 

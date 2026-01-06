@@ -1,4 +1,6 @@
-# MaxLimit
+---
+title: MaxLimit
+---
 
 `MaxLimit[f,x->x*]` gives the max limit as x approaches x*.
 

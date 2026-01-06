@@ -1,4 +1,6 @@
-# ImageScan
+---
+title: ImageScan
+---
 
 `ImageScan[f, image]` evaluates f applied to each pixel of image in turn.
 

@@ -1,4 +1,6 @@
-# PowerMod
+---
+title: PowerMod
+---
 
 `PowerMod[a, b, m]` gives a^b mod m efficiently.
 

@@ -1,4 +1,6 @@
-# GaborWavelet
+---
+title: GaborWavelet
+---
 
 `GaborWavelet[]` represents a Gabor wavelet of frequency 6.
 

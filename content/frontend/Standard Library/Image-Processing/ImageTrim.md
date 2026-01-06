@@ -1,4 +1,6 @@
-# ImageTrim
+---
+title: ImageTrim
+---
 
 `ImageTrim[image, roi]` gives the smallest subimage that includes the specified region of interest roi.
 

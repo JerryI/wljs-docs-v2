@@ -1,4 +1,6 @@
-# Slot
+---
+title: Slot
+---
 
 `#` (or `#1`) represents the first argument in a pure function. `#n` represents the nth argument. `#name` accesses keys in associations.
 

@@ -1,4 +1,6 @@
-# PoissonConsulDistribution
+---
+title: PoissonConsulDistribution
+---
 
 `PoissonConsulDistribution[μ,λ]` represents a Poisson–Consul distribution with parameters μ and λ.
 

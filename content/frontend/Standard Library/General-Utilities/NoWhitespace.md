@@ -1,4 +1,6 @@
-# NoWhitespace
+---
+title: NoWhitespace
+---
 
 `NoWhitespace` represents the absence of whitespace between elements in a grammar rules pattern.
 

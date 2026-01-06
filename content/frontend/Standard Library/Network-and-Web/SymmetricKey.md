@@ -1,4 +1,6 @@
-# SymmetricKey
+---
+title: SymmetricKey
+---
 
 `SymmetricKey[assoc]` represents all the information needed for encryption, decryption, and other operations in a symmetric cryptographic system.
 

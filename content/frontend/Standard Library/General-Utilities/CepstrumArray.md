@@ -1,4 +1,6 @@
-# CepstrumArray
+---
+title: CepstrumArray
+---
 
 `CepstrumArray[data]` computes the power cepstrum of data.
 

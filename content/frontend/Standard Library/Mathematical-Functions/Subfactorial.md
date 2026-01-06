@@ -1,4 +1,6 @@
-# Subfactorial
+---
+title: Subfactorial
+---
 
 `Subfactorial[n]` gives the number of permutations of n objects that leave no object fixed (derangements).
 

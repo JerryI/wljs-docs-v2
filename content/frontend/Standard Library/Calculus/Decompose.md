@@ -1,4 +1,6 @@
-# Decompose
+---
+title: Decompose
+---
 
 `Decompose[poly, x]` decomposes a polynomial, if possible, into a composition of simpler polynomials.
 

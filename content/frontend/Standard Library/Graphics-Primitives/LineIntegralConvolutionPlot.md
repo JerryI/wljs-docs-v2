@@ -1,4 +1,6 @@
-# LineIntegralConvolutionPlot
+---
+title: LineIntegralConvolutionPlot
+---
 
 `LineIntegralConvolutionPlot[{{vx, vy}, image}, {x, xmin, xmax}, {y, ymin, ymax}]` generates a line integral convolution plot of image convolved with the vector field {vx, vy} as a function of x and y.
 

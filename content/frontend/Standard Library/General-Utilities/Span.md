@@ -1,4 +1,6 @@
-# Span
+---
+title: Span
+---
 
 `i;;j` represents a span of elements from `i` to `j`. Used for extracting ranges from lists. `;;` alone means all elements.
 

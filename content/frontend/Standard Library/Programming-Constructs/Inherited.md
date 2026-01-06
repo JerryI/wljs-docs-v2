@@ -1,4 +1,6 @@
-# Inherited
+---
+title: Inherited
+---
 
 `Inherited` represents an option value to be inherited from an enclosing style, cell, or notebook.
 

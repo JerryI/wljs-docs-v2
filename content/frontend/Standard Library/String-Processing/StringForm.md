@@ -1,4 +1,6 @@
-# StringForm
+---
+title: StringForm
+---
 
 `StringForm["controlstring", expr1, ...]` prints as the text of the controlstring, with the printed forms of the expri embedded.
 

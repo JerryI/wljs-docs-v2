@@ -1,4 +1,6 @@
-# Region
+---
+title: Region
+---
 
 `Region[reg]` represents a geometric region.
 

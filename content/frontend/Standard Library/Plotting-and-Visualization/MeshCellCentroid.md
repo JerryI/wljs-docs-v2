@@ -1,4 +1,6 @@
-# MeshCellCentroid
+---
+title: MeshCellCentroid
+---
 
 `MeshCellCentroid` is an annotation of `MeshRegion` and `BoundaryMeshRegion` objects that gives the centroids of mesh cells.
 

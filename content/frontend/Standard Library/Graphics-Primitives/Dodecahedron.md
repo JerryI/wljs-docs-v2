@@ -1,4 +1,6 @@
-# Dodecahedron
+---
+title: Dodecahedron
+---
 
 `Dodecahedron[]` represents a regular dodecahedron centered at the origin with unit edge length.
 

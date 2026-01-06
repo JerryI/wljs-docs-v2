@@ -1,4 +1,6 @@
-# ARCHProcess
+---
+title: ARCHProcess
+---
 
 `ARCHProcess[κ, {α1, ..., αq}]` represents an autoregressive conditionally heteroscedastic process of order q, driven by a standard white noise.
 

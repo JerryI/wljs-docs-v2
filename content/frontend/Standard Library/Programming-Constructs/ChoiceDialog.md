@@ -1,4 +1,6 @@
-# ChoiceDialog
+---
+title: ChoiceDialog
+---
 
 `ChoiceDialog[expr]` puts up a standard choice dialog that displays expr together with OK and Cancel buttons, and returns True if OK is clicked and False if Cancel is clicked.
 

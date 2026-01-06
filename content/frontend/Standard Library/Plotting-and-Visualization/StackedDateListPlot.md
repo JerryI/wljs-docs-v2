@@ -1,4 +1,6 @@
-# StackedDateListPlot
+---
+title: StackedDateListPlot
+---
 
 `StackedDateListPlot[{{date1, y1}, {date2, y2}, ...}]` plots points with values yi at a sequence of dates.
 

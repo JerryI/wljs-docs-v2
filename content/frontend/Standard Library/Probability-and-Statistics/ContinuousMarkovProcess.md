@@ -1,4 +1,6 @@
-# ContinuousMarkovProcess
+---
+title: ContinuousMarkovProcess
+---
 
 `ContinuousMarkovProcess[i0, q]` represents a continuous-time finite-state Markov process with transition rate matrix q and initial state i0.
 

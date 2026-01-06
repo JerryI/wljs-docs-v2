@@ -1,4 +1,6 @@
-# Select
+---
+title: Select
+---
 
 `Select[data, crit]` picks out all elements ei of data for which crit[ei] is True.
 

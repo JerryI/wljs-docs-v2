@@ -1,4 +1,6 @@
-# NumberMultiplier
+---
+title: NumberMultiplier
+---
 
 `NumberMultiplier` is an option for `NumberForm` and related functions which gives the string to use as a multiplication sign in scientific notation.
 

@@ -1,4 +1,6 @@
-# DistributeDefinitions
+---
+title: DistributeDefinitions
+---
 
 `DistributeDefinitions[s1, s2, ...]` distributes all definitions for the symbols si to all parallel kernels.
 

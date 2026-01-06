@@ -1,4 +1,6 @@
-# FieldSize
+---
+title: FieldSize
+---
 
 `FieldSize` is an option for InputField, PopupMenu, and related functions that specifies the size of the field allowed for input or contents. 
 

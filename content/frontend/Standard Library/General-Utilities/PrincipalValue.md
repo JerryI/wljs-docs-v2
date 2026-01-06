@@ -1,4 +1,6 @@
-# PrincipalValue
+---
+title: PrincipalValue
+---
 
 `PrincipalValue` is an option for Integrate that specifies whether the Cauchy principal value should be found for a definite integral.
 

@@ -1,4 +1,6 @@
-# TextString
+---
+title: TextString
+---
 
 `TextString[expr]` gives a human-readable string representation of expr.
 

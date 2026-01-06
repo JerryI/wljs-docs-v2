@@ -1,4 +1,6 @@
-# MailServerConnection
+---
+title: MailServerConnection
+---
 
 `MailServerConnection[...]` is a symbolic representation of a connection to an incoming mail server.
 

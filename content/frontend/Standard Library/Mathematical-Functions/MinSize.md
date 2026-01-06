@@ -1,4 +1,6 @@
-# MinSize
+---
+title: MinSize
+---
 
 `MinSize` is an option of certain `BoxForm` primitives.
 

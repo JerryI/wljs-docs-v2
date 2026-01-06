@@ -1,4 +1,6 @@
-# MailResponseFunction
+---
+title: MailResponseFunction
+---
 
 `MailResponseFunction` is an option for `MailReceiverFunction` that specifies what function to apply to respond to the sender of mail received by a `MailReceiverFunction`.
 

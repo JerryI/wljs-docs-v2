@@ -1,4 +1,6 @@
-# FilteredEntityClass
+---
+title: FilteredEntityClass
+---
 
 `FilteredEntityClass[class,f]` represents a class of entities where only entities for which the EntityFunction object f yields True are kept.
 

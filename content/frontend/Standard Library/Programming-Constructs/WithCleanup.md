@@ -1,4 +1,6 @@
-# WithCleanup
+---
+title: WithCleanup
+---
 
 `WithCleanup[expr,cleanup]` evaluates expr, running cleanup before returning the result, even if an abort, throw, etc. was generated during the evaluation of expr.
 

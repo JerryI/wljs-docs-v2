@@ -1,4 +1,6 @@
-# PacletObjectQ
+---
+title: PacletObjectQ
+---
 
 `PacletObjectQ[expr]` returns True or False depending on whether its argument is a PacletObject expression.
 

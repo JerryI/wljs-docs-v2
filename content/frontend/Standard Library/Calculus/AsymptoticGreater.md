@@ -1,4 +1,6 @@
-# AsymptoticGreater
+---
+title: AsymptoticGreater
+---
 
 `AsymptoticGreater[f, g, x -> x*]` gives conditions for f(x) ≻ g(x) or f(x) ∈ ω(g(x)) as x -> x*.
 

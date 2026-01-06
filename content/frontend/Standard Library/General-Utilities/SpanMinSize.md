@@ -1,4 +1,6 @@
-# SpanMinSize
+---
+title: SpanMinSize
+---
 
 `SpanMinSize` is an option for selections that specifies the minimum size of spanning characters such as parentheses and brackets.
 

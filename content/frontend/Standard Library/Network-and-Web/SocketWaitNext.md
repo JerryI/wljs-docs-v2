@@ -1,4 +1,6 @@
-# SocketWaitNext
+---
+title: SocketWaitNext
+---
 
 `SocketWaitNext[{socket1, socket2, ...}]` waits until there is data ready to read on any of the socketi, then returns that socket.
 

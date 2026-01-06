@@ -1,4 +1,6 @@
-# InverseJacobiSN
+---
+title: InverseJacobiSN
+---
 
 `InverseJacobiSN[v, m]` gives the inverse Jacobi elliptic function sn⁻¹(v|m).
 

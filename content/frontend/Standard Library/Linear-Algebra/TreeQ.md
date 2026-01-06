@@ -1,4 +1,6 @@
-# TreeQ
+---
+title: TreeQ
+---
 
 `TreeQ[tree]` yields `True` if tree is a valid `Tree` object and `False` otherwise.
 

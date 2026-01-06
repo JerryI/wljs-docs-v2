@@ -1,4 +1,6 @@
-# BohmanWindow
+---
+title: BohmanWindow
+---
 
 `BohmanWindow[x]` represents a Bohman window function of x.
 

@@ -1,4 +1,6 @@
-# Using
+---
+title: Using
+---
 
 `Using` is an option to `Roots` that specifies any subsidiary equations that are to be used.
 

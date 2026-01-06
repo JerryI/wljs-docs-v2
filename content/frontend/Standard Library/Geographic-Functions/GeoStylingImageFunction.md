@@ -1,4 +1,6 @@
-# GeoStylingImageFunction
+---
+title: GeoStylingImageFunction
+---
 
 `GeoStylingImageFunction` is an option for specifying an image effect to apply to a geo style.
 

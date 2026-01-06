@@ -1,4 +1,6 @@
-# InfinitePlane
+---
+title: InfinitePlane
+---
 
 `InfinitePlane[{p1, p2, p3}]` represents the plane passing through the points p1, p2, and p3.
 

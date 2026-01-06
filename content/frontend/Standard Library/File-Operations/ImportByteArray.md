@@ -1,4 +1,6 @@
-# ImportByteArray
+---
+title: ImportByteArray
+---
 
 `ImportByteArray[ba, "format"]` imports data in the specified format from a ByteArray object.
 

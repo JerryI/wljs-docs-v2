@@ -1,4 +1,6 @@
-# WaveletMapIndexed
+---
+title: WaveletMapIndexed
+---
 
 `WaveletMapIndexed[f, wd]` applies the function f to the arrays of coefficients and indices of a `ContinuousWaveletData` or `DiscreteWaveletData` object.
 

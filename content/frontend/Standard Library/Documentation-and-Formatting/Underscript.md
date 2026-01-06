@@ -1,4 +1,6 @@
-# Underscript
+---
+title: Underscript
+---
 
 `Underscript[x, y]` is an object that formats as x with y underneath.
 

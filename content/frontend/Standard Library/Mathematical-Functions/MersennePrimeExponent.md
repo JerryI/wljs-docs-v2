@@ -1,4 +1,6 @@
-# MersennePrimeExponent
+---
+title: MersennePrimeExponent
+---
 
 `MersennePrimeExponent[n]` gives the nth Mersenne prime exponent.
 

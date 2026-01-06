@@ -1,4 +1,6 @@
-# ExpressionTree
+---
+title: ExpressionTree
+---
 
 `ExpressionTree[expr]` gives a `Tree` object from the structure of the expression expr.
 

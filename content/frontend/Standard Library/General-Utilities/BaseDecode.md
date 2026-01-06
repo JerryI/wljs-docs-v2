@@ -1,4 +1,6 @@
-# BaseDecode
+---
+title: BaseDecode
+---
 
 `BaseDecode["string"]` decodes the Base64 data contained in a string and returns the result as a byte array.
 

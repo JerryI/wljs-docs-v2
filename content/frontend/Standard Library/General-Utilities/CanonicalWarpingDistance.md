@@ -1,4 +1,6 @@
-# CanonicalWarpingDistance
+---
+title: CanonicalWarpingDistance
+---
 
 `CanonicalWarpingDistance[s1, s2]` gives the canonical time warping (CTW) distance between sequences s1 and s2.
 

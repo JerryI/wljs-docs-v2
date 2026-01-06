@@ -1,4 +1,6 @@
-# Which
+---
+title: Which
+---
 
 `Which[test1, value1, test2, value2, ...]` evaluates each test in turn, returning the value corresponding to the first one that yields `True`.
 

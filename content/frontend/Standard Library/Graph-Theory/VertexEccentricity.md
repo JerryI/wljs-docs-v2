@@ -1,4 +1,6 @@
-# VertexEccentricity
+---
+title: VertexEccentricity
+---
 
 `VertexEccentricity[g, s]` gives the length of the longest shortest path from the source s to every other vertex in the graph g.
 

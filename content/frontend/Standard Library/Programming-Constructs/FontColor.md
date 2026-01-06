@@ -1,4 +1,6 @@
-# FontColor
+---
+title: FontColor
+---
 
 `FontColor` is an option for `Style`, `Cell`, and related constructs that specifies the default color for rendering text.
 

@@ -1,4 +1,6 @@
-# BayesianMinimizationObject
+---
+title: BayesianMinimizationObject
+---
 
 `BayesianMinimizationObject[…]` represents the result of a Bayesian minimization process.
 

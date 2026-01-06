@@ -1,4 +1,6 @@
-# ForceVersionInstall
+---
+title: ForceVersionInstall
+---
 
 `ForceVersionInstall` is an option to PacletInstall and PacletInstallSubmit that specifies whether an older version of a paclet is allowed to be installed if a newer version is already installed.
 

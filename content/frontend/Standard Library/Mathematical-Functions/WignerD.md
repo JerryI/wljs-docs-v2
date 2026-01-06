@@ -1,4 +1,6 @@
-# WignerD
+---
+title: WignerD
+---
 
 `WignerD[{j, m1, m2}, ψ, θ, ϕ]` gives the Wigner D-function.
 

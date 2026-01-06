@@ -1,4 +1,6 @@
-# DisjointQ
+---
+title: DisjointQ
+---
 
 `DisjointQ[list1, list2]` yields `True` if list1 and list2 do not share any common elements, and `False` otherwise.
 

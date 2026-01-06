@@ -1,4 +1,6 @@
-# PoissonProcess
+---
+title: PoissonProcess
+---
 
 `PoissonProcess[μ]` represents a Poisson process with rate μ.
 

@@ -1,4 +1,6 @@
-# Ratios
+---
+title: Ratios
+---
 
 `Ratios[list]` gives the successive ratios between consecutive elements: `{e2/e1, e3/e2, ...}`.
 

@@ -1,4 +1,6 @@
-# ParentEdgeLabelFunction
+---
+title: ParentEdgeLabelFunction
+---
 
 `ParentEdgeLabelFunction` is an option for `Tree` and related functions that specifies functions to use to generate edge labels.
 

@@ -1,4 +1,6 @@
-# BirnbaumImportance
+---
+title: BirnbaumImportance
+---
 
 `BirnbaumImportance[rdist, t]` gives the Birnbaum importances for all components in the ReliabilityDistribution rdist at time t.
 

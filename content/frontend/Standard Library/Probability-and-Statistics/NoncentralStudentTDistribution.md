@@ -1,4 +1,6 @@
-# NoncentralStudentTDistribution
+---
+title: NoncentralStudentTDistribution
+---
 
 `NoncentralStudentTDistribution[ν, δ]` represents a noncentral Student t distribution with ν degrees of freedom and noncentrality parameter δ.
 

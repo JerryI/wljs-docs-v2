@@ -1,4 +1,6 @@
-# GaugeFaceElementFunction
+---
+title: GaugeFaceElementFunction
+---
 
 `GaugeFaceElementFunction` is an option for gauge functions that gives a function to use to generate the primitives for rendering the gauge face.
 

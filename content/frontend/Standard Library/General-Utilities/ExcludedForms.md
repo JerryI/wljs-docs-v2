@@ -1,4 +1,6 @@
-# ExcludedForms
+---
+title: ExcludedForms
+---
 
 `ExcludedForms` is an option that gives a list of patterns for expressions that should be excluded from an operation performed by a particular function.
 

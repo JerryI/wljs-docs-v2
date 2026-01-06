@@ -1,4 +1,6 @@
-# Listable
+---
+title: Listable
+---
 
 `Listable` is an attribute that can be assigned to a symbol f to indicate that the function f should automatically be threaded over lists that appear as its arguments.
 

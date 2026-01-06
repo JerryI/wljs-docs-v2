@@ -1,4 +1,6 @@
-# BetaRegularized
+---
+title: BetaRegularized
+---
 
 `BetaRegularized[z, a, b]` gives the regularized incomplete beta function Iz(a,b).
 

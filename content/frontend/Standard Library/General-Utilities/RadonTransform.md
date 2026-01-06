@@ -1,4 +1,6 @@
-# RadonTransform
+---
+title: RadonTransform
+---
 
 `RadonTransform[expr, {x, y}, {p, ϕ}]` gives the Radon transform of expr.
 

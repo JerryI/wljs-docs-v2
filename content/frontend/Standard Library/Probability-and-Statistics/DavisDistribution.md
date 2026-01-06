@@ -1,4 +1,6 @@
-# DavisDistribution
+---
+title: DavisDistribution
+---
 
 `DavisDistribution[b,n,μ]` represents a Davis distribution with scale parameter b, shape parameter n, and location parameter μ.
 

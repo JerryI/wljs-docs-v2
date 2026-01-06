@@ -1,4 +1,6 @@
-# RightUpVector
+---
+title: RightUpVector
+---
 
 `RightUpVector[x, y, ...]` displays as x↾y↾....
 

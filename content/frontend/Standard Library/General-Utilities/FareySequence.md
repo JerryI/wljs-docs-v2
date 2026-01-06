@@ -1,4 +1,6 @@
-# FareySequence
+---
+title: FareySequence
+---
 
 `FareySequence[n]` generates the Farey sequence of order n.
 

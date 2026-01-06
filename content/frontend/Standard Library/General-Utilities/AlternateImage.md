@@ -1,4 +1,6 @@
-# AlternateImage
+---
+title: AlternateImage
+---
 
 `AlternateImage` is an option to CDFInformation that specifies an image that should be used if the plugin is not available.
 

@@ -1,4 +1,6 @@
-# FeatureValueImpactPlot
+---
+title: FeatureValueImpactPlot
+---
 
 `FeatureValueImpactPlot[model,data]` plots the impact of the value of a given feature in data on the result of model.
 

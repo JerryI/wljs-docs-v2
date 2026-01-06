@@ -1,4 +1,6 @@
-# VertexIndex
+---
+title: VertexIndex
+---
 
 `VertexIndex[g,v]` gives the integer index for the vertex v in the graph g.
 

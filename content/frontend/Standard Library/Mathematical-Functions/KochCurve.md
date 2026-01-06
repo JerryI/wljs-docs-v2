@@ -1,4 +1,6 @@
-# KochCurve
+---
+title: KochCurve
+---
 
 `KochCurve[n]` gives the line segments representing the nth-step Koch curve.
 

@@ -1,4 +1,6 @@
-# SetStreamPosition
+---
+title: SetStreamPosition
+---
 
 `SetStreamPosition[stream, n]` sets the current point in an open stream.
 

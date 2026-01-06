@@ -1,4 +1,6 @@
-# StatusArea
+---
+title: StatusArea
+---
 
 `StatusArea[expr, string]` displays string in the status area of the current notebook when the mouse pointer is in the region where expr appears.
 

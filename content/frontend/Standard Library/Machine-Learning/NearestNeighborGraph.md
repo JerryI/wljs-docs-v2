@@ -1,4 +1,6 @@
-# NearestNeighborGraph
+---
+title: NearestNeighborGraph
+---
 
 `NearestNeighborGraph[{elem1,elem2,...}]` gives a graph with vertices elem1,elem2,... and edges connecting each elemi to its nearest neighbors.
 

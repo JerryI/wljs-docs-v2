@@ -1,4 +1,6 @@
-# GompertzMakehamDistribution
+---
+title: GompertzMakehamDistribution
+---
 
 `GompertzMakehamDistribution[λ, ξ]` represents a Gompertz distribution with scale parameter `λ` and frailty parameter `ξ`.
 

@@ -1,4 +1,6 @@
-# InterfaceSwitched
+---
+title: InterfaceSwitched
+---
 
 `InterfaceSwitched[<|size1 -> expr1, size2 -> expr2, ...|>]` is a construct that behaves as if it were expri when it is in an interface environment with width sizei.
 

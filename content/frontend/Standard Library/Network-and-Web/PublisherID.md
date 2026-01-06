@@ -1,4 +1,6 @@
-# PublisherID
+---
+title: PublisherID
+---
 
 `PublisherID` is an option for `ResourceSubmit` that specifies the ID used to submit a resource for publication in the resource system.
 

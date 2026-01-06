@@ -1,4 +1,6 @@
-# IncludeDirectories
+---
+title: IncludeDirectories
+---
 
 `IncludeDirectories` is an option that specifies whether directories are included in evaluations.
 

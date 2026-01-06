@@ -1,4 +1,6 @@
-# BiweightLocation
+---
+title: BiweightLocation
+---
 
 `BiweightLocation[list]` gives the value of the biweight location estimator of the elements in list.
 

@@ -1,4 +1,6 @@
-# UnderseaFeatureData
+---
+title: UnderseaFeatureData
+---
 
 `UnderseaFeatureData[entity, property]` gives the value of the specified property for the undersea feature entity.
 

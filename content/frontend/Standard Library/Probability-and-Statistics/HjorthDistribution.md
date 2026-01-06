@@ -1,4 +1,6 @@
-# HjorthDistribution
+---
+title: HjorthDistribution
+---
 
 `HjorthDistribution[m, s, f]` represents the Hjorth distribution with location parameter m, scale parameter s, and shape parameter f.
 

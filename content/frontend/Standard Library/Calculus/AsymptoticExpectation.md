@@ -1,4 +1,6 @@
-# AsymptoticExpectation
+---
+title: AsymptoticExpectation
+---
 
 `AsymptoticExpectation[expr, x \[Distributed] dist, a -> a0]` computes an asymptotic approximation for the expectation of expr centered at a0, under the assumption that x follows the probability distribution dist.
 

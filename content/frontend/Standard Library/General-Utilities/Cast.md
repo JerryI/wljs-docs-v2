@@ -1,4 +1,6 @@
-# Cast
+---
+title: Cast
+---
 
 `Cast[val, type]` converts val to the type type, for use in compiled code.
 

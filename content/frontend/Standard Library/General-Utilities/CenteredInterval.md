@@ -1,4 +1,6 @@
-# CenteredInterval
+---
+title: CenteredInterval
+---
 
 `CenteredInterval[x, dx]` for real numbers x and dx gives a centered interval that contains the real interval from x-dx to x+dx.
 

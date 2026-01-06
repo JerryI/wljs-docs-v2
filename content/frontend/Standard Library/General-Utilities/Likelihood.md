@@ -1,4 +1,6 @@
-# Likelihood
+---
+title: Likelihood
+---
 
 `Likelihood[dist, {x1, x2, …}]` gives the likelihood function for observations x1, x2, … from the distribution dist.
 

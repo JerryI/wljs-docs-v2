@@ -1,4 +1,6 @@
-# MaxCellMeasure
+---
+title: MaxCellMeasure
+---
 
 `MaxCellMeasure` is an option for `DiscretizeRegion` and related functions that specifies the maximum cell measure for the result.
 

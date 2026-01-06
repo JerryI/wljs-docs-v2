@@ -1,4 +1,6 @@
-# LinkCreate
+---
+title: LinkCreate
+---
 
 `LinkCreate["name"]` creates a WSTP link with the specified name for another program to connect to.
 

@@ -1,4 +1,6 @@
-# CircularQuaternionMatrixDistribution
+---
+title: CircularQuaternionMatrixDistribution
+---
 
 `CircularQuaternionMatrixDistribution[n]` represents a circular quaternion matrix distribution with matrix dimensions {2n, 2n} over the field of complex numbers.
 

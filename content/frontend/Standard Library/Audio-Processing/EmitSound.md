@@ -1,4 +1,6 @@
-# EmitSound
+---
+title: EmitSound
+---
 
 `EmitSound[snd]` emits the sound snd when evaluated.
 

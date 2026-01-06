@@ -1,4 +1,6 @@
-# PeriodogramArray
+---
+title: PeriodogramArray
+---
 
 `PeriodogramArray[list]` returns the squared magnitude of the discrete Fourier transform (power spectrum) of list.
 

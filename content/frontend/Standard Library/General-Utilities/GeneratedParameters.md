@@ -1,4 +1,6 @@
-# GeneratedParameters
+---
+title: GeneratedParameters
+---
 
 `GeneratedParameters` is an option that specifies how parameters generated to represent the results of various symbolic operations should be named.
 

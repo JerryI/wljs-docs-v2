@@ -1,4 +1,6 @@
-# ImprovementImportance
+---
+title: ImprovementImportance
+---
 
 `ImprovementImportance[rdist, t]` gives the improvement importances for all components in the ReliabilityDistribution rdist at time t.
 

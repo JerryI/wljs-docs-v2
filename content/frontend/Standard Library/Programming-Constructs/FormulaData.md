@@ -1,4 +1,6 @@
-# FormulaData
+---
+title: FormulaData
+---
 
 `FormulaData[name]` gives the equations for the formula name.
 

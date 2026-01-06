@@ -1,4 +1,6 @@
-# ColorsNear
+---
+title: ColorsNear
+---
 
 `ColorsNear[color]` represents a region around color.
 

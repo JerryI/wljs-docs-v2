@@ -1,4 +1,6 @@
-# HatchShading
+---
+title: HatchShading
+---
 
 `HatchShading[]` is a three-dimensional graphics directive specifying that objects that follow are to be drawn with closely spaced parallel lines.
 

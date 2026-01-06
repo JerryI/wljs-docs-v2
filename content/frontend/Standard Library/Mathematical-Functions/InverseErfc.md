@@ -1,4 +1,6 @@
-# InverseErfc
+---
+title: InverseErfc
+---
 
 `InverseErfc[s]` gives the inverse complementary error function, solving for z in s = erfc(z).
 

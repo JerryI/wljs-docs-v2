@@ -1,4 +1,6 @@
-# PermutationMatrix
+---
+title: PermutationMatrix
+---
 
 `PermutationMatrix[permv]` represents the permutation matrix given by permutation vector permv as a structured array.
 

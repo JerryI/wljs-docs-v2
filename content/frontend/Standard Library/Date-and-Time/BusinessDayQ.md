@@ -1,4 +1,6 @@
-# BusinessDayQ
+---
+title: BusinessDayQ
+---
 
 `BusinessDayQ[date]` returns `True` if the date is a business day and returns `False` otherwise.
 

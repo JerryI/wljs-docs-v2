@@ -1,4 +1,6 @@
-# StadiumShape
+---
+title: StadiumShape
+---
 
 `StadiumShape[{{x1, y1}, {x2, y2}}, r]` represents a stadium of radius r between the points {x1, y1} and {x2, y2}.
 

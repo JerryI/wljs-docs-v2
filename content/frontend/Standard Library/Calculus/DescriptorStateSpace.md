@@ -1,4 +1,6 @@
-# DescriptorStateSpace
+---
+title: DescriptorStateSpace
+---
 
 `DescriptorStateSpace` is an option to `StateSpaceModel` and `StateSpaceTransform` that specifies whether to use descriptor or standard representation.
 

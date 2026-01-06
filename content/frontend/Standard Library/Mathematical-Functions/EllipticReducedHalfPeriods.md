@@ -1,4 +1,6 @@
-# EllipticReducedHalfPeriods
+---
+title: EllipticReducedHalfPeriods
+---
 
 `EllipticReducedHalfPeriods[{u, v}]` gives a reduced pair of half periods {w, w'} corresponding to the same lattice as that of {u, v}.
 

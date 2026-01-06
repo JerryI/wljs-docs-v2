@@ -1,4 +1,6 @@
-# NullSpace
+---
+title: NullSpace
+---
 
 `NullSpace[m]` gives a list of vectors that forms a basis for the null space of the matrix m.
 

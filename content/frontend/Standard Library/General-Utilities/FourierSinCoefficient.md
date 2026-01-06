@@ -1,4 +1,6 @@
-# FourierSinCoefficient
+---
+title: FourierSinCoefficient
+---
 
 `FourierSinCoefficient[expr, t, n]` gives the nth coefficient in the Fourier sine series expansion of expr.
 

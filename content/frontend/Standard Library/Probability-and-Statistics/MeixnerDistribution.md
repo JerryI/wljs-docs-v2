@@ -1,4 +1,6 @@
-# MeixnerDistribution
+---
+title: MeixnerDistribution
+---
 
 `MeixnerDistribution[a, b, m, d]` represents a Meixner distribution with location parameter m, scale parameter a, skew parameter b, and shape parameter d.
 

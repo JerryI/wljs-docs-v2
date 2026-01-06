@@ -1,4 +1,6 @@
-# UnitTriangle
+---
+title: UnitTriangle
+---
 
 `UnitTriangle[x]` represents the unit triangle function on the interval |x| ≤ 1.
 

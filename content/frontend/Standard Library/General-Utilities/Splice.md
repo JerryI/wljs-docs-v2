@@ -1,4 +1,6 @@
-# Splice
+---
+title: Splice
+---
 
 `Splice[{e1, e2, ...}]` represents an expression that will automatically be spliced into any list in which it appears as the sequence of elements ei.
 

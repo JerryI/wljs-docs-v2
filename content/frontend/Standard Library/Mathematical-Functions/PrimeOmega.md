@@ -1,4 +1,6 @@
-# PrimeOmega
+---
+title: PrimeOmega
+---
 
 `PrimeOmega[n]` gives the number of prime factors counting multiplicities Ω(n) in n.
 

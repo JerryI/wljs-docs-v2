@@ -1,4 +1,6 @@
-# WeierstrassE1
+---
+title: WeierstrassE1
+---
 
 `WeierstrassE1[{g2,g3}]` gives the value e1 of the Weierstrass elliptic function ℘ at the half-period ω1(g2,g3).
 

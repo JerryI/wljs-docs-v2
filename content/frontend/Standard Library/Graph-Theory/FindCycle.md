@@ -1,4 +1,6 @@
-# FindCycle
+---
+title: FindCycle
+---
 
 `FindCycle[g]` finds a cycle in graph g. `FindCycle[g, k, n]` finds up to n cycles of length at most k.
 

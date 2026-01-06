@@ -1,4 +1,6 @@
-# PolynomialGCD
+---
+title: PolynomialGCD
+---
 
 `PolynomialGCD[poly1, poly2, ...]` gives the greatest common divisor of the polynomials.
 

@@ -1,4 +1,6 @@
-# GainMargins
+---
+title: GainMargins
+---
 
 `GainMargins[lsys]` gives the gain margins of the linear time-invariant system lsys.
 

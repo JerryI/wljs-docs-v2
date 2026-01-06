@@ -1,4 +1,6 @@
-# TravelMethod
+---
+title: TravelMethod
+---
 
 `TravelMethod` is an option for `TravelDirections` and related functions that specifies the mode of transportation to assume.
 

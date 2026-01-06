@@ -1,4 +1,6 @@
-# Return
+---
+title: Return
+---
 
 `Return[expr]` returns the value expr from a function.
 

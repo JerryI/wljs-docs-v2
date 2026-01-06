@@ -1,4 +1,6 @@
-# MultilaunchWarning
+---
+title: MultilaunchWarning
+---
 
 `MultilaunchWarning` is a global option that specifies whether a warning is given when you try to modify user preferences while running two copies of the Wolfram System simultaneously.
 

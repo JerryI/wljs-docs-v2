@@ -1,4 +1,6 @@
-# NetGraph
+---
+title: NetGraph
+---
 
 `NetGraph[{layer1, layer2, ...}, {m1 -> n1, m2 -> n2, ...}]` specifies a neural net defined by a graph in which the output of layer mi is given as input to layer ni.
 

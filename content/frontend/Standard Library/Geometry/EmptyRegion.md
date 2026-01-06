@@ -1,4 +1,6 @@
-# EmptyRegion
+---
+title: EmptyRegion
+---
 
 `EmptyRegion[n]` represents the empty subset of ℝ^n.
 

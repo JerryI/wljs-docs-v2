@@ -1,4 +1,6 @@
-# GraphHighlightStyle
+---
+title: GraphHighlightStyle
+---
 
 `GraphHighlightStyle` is an option to `Graph` and related objects that specifies styles to use for highlighted graph elements.
 

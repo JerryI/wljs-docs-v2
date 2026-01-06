@@ -1,4 +1,6 @@
-# HoldAllComplete
+---
+title: HoldAllComplete
+---
 
 `HoldAllComplete` is an attribute which specifies that all arguments to a function are not to be modified or looked at in any way during evaluation.
 

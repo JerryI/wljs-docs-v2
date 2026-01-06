@@ -1,4 +1,6 @@
-# TreeOutline
+---
+title: TreeOutline
+---
 
 `TreeOutline[tree]` gives an outline of the data in tree as a nested OpenerView.
 

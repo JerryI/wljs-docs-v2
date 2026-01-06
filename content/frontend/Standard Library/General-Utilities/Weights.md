@@ -1,4 +1,6 @@
-# Weights
+---
+title: Weights
+---
 
 `Weights` is an option for various fitting and other functions which specifies weights to associate with data elements.
 

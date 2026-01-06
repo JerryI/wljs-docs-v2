@@ -1,4 +1,6 @@
-# DoubleLongRightArrow
+---
+title: DoubleLongRightArrow
+---
 
 `DoubleLongRightArrow[x, y, ...]` displays as x⟹y⟹....
 

@@ -1,4 +1,6 @@
-# TrimmedVariance
+---
+title: TrimmedVariance
+---
 
 `TrimmedVariance[list,f]` gives the variance of the elements in list after dropping a fraction f of the smallest and largest elements.
 

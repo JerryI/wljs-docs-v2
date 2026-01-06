@@ -1,4 +1,6 @@
-# Get
+---
+title: Get
+---
 
 `<< name` or `Get["name"]` reads in a file, evaluating each expression and returning the last one.
 

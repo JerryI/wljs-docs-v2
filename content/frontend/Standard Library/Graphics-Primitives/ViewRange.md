@@ -1,4 +1,6 @@
-# ViewRange
+---
+title: ViewRange
+---
 
 `ViewRange` is an option for Graphics3D and related functions which specifies the range of distances from the view point to be included in displaying a three-dimensional scene.
 

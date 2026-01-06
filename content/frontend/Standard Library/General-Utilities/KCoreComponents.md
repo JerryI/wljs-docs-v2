@@ -1,4 +1,6 @@
-# KCoreComponents
+---
+title: KCoreComponents
+---
 
 `KCoreComponents[g,k]` gives the k-core components of the underlying simple graph of g.
 

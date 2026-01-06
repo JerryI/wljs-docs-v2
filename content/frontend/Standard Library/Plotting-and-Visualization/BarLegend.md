@@ -1,4 +1,6 @@
-# BarLegend
+---
+title: BarLegend
+---
 
 `BarLegend[cf]` generates a legend that identifies colors from the color function cf with an automatic range of values.
 

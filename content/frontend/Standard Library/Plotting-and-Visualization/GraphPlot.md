@@ -1,4 +1,6 @@
-# GraphPlot
+---
+title: GraphPlot
+---
 
 `GraphPlot[g]` generates a plot of the graph g. Works with adjacency lists, rules, or matrices.
 

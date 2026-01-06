@@ -1,4 +1,6 @@
-# PartialCorrelationFunction
+---
+title: PartialCorrelationFunction
+---
 
 `PartialCorrelationFunction[data,hspec]` estimates the partial correlation function at lags hspec from data.
 

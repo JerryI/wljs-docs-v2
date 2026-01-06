@@ -1,4 +1,6 @@
-# StackInhibit
+---
+title: StackInhibit
+---
 
 `StackInhibit[expr]` evaluates expr without modifying the evaluation stack.
 

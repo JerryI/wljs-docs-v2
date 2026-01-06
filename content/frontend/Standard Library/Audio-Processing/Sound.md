@@ -1,4 +1,6 @@
-# Sound
+---
+title: Sound
+---
 
 `Sound[primitives]` represents a sound.
 

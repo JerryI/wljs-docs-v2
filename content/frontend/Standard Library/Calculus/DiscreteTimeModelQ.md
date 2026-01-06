@@ -1,4 +1,6 @@
-# DiscreteTimeModelQ
+---
+title: DiscreteTimeModelQ
+---
 
 `DiscreteTimeModelQ[lsys]` gives `True` if lsys is a discrete-time systems model, and `False` otherwise.
 

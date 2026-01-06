@@ -1,4 +1,6 @@
-# StringReplacePart
+---
+title: StringReplacePart
+---
 
 `StringReplacePart["string", "snew", {m, n}]` replaces the characters at positions m through n in "string" by "snew".
 

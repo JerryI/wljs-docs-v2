@@ -1,4 +1,6 @@
-# PowerSymmetricPolynomial
+---
+title: PowerSymmetricPolynomial
+---
 
 `PowerSymmetricPolynomial[r]` represents a formal power symmetric polynomial with exponent r.
 

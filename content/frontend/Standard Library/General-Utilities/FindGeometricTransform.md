@@ -1,4 +1,6 @@
-# FindGeometricTransform
+---
+title: FindGeometricTransform
+---
 
 `FindGeometricTransform[pts1,pts2]` finds a geometric transformation that aligns positions specified by pts2 with pts1, returning the alignment error together with the transformation function.
 

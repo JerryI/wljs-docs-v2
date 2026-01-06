@@ -1,4 +1,6 @@
-# SymmetricMatrix
+---
+title: SymmetricMatrix
+---
 
 `SymmetricMatrix[smat]` converts the symmetric matrix smat to a structured array.
 

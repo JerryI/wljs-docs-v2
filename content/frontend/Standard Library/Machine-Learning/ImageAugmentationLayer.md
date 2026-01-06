@@ -1,4 +1,6 @@
-# ImageAugmentationLayer
+---
+title: ImageAugmentationLayer
+---
 
 `ImageAugmentationLayer[{h, w}]` represents a net layer that applies random image transformations to produce images of height h and width w.
 

@@ -1,4 +1,6 @@
-# ConvolutionLayer
+---
+title: ConvolutionLayer
+---
 
 `ConvolutionLayer[n, s]` represents a trainable convolutional net layer having n output channels and using kernels of size s to compute the convolution.
 

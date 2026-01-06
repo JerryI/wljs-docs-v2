@@ -1,4 +1,6 @@
-# EndDialogPacket
+---
+title: EndDialogPacket
+---
 
 `EndDialogPacket[integer]` is a WSTP packet indicating the end of the Dialog subsession referenced by integer.
 

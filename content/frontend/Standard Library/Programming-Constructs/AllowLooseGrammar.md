@@ -1,4 +1,6 @@
-# AllowLooseGrammar
+---
+title: AllowLooseGrammar
+---
 
 `AllowLooseGrammar` is an option for `GrammarRules` and related functions that specifies whether grammatical "fluff" should automatically be ignored in applying grammar rules.
 

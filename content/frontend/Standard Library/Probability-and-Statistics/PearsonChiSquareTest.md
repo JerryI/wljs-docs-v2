@@ -1,4 +1,6 @@
-# PearsonChiSquareTest
+---
+title: PearsonChiSquareTest
+---
 
 `PearsonChiSquareTest[data]` tests whether data is normally distributed using the Pearson χ² test.
 

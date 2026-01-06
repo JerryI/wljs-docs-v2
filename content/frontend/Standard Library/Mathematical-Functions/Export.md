@@ -1,4 +1,6 @@
-# Export
+---
+title: Export
+---
 
 `Export["file.ext", expr]` exports data to a file, converting it to the format corresponding to the file extension.
 

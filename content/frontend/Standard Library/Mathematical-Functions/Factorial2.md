@@ -1,4 +1,6 @@
-# Factorial2
+---
+title: Factorial2
+---
 
 `n!!` or `Factorial2[n]` gives the double factorial of n (product of every other number from 1 or 2 to n).
 

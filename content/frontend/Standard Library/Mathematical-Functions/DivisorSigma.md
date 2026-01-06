@@ -1,4 +1,6 @@
-# DivisorSigma
+---
+title: DivisorSigma
+---
 
 `DivisorSigma[k, n]` gives the divisor function σk(n), the sum of the k-th powers of divisors of n.
 

@@ -1,4 +1,6 @@
-# JacobiP
+---
+title: JacobiP
+---
 
 `JacobiP[n, a, b, x]` gives the Jacobi polynomial $P_n^{(a,b)}(x)$.
 

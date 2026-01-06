@@ -1,4 +1,6 @@
-# ElectricCurrentDensityValue
+---
+title: ElectricCurrentDensityValue
+---
 
 `ElectricCurrentDensityValue[pred, vars, pars]` represents a current density boundary condition for PDEs with predicate pred indicating where it applies, with model variables vars and global parameters pars.
 

@@ -1,4 +1,6 @@
-# MinimumTimeIncrement
+---
+title: MinimumTimeIncrement
+---
 
 `MinimumTimeIncrement[tseries]` gives the minimum time increment in the time series tseries.
 

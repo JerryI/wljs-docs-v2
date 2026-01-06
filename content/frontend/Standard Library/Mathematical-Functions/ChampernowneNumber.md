@@ -1,4 +1,6 @@
-# ChampernowneNumber
+---
+title: ChampernowneNumber
+---
 
 `ChampernowneNumber[b]` gives the base-b Champernowne number.
 

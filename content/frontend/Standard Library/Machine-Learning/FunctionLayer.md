@@ -1,4 +1,6 @@
-# FunctionLayer
+---
+title: FunctionLayer
+---
 
 `FunctionLayer[f]` represents a net layer that applies function f to its input.
 

@@ -1,4 +1,6 @@
-# PolygonalNumber
+---
+title: PolygonalNumber
+---
 
 `PolygonalNumber[n]` gives the nth triangular number. `PolygonalNumber[r, n]` gives the nth r-gonal number.
 

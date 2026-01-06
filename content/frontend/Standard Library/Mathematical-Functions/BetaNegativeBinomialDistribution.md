@@ -1,4 +1,6 @@
-# BetaNegativeBinomialDistribution
+---
+title: BetaNegativeBinomialDistribution
+---
 
 `BetaNegativeBinomialDistribution[α, β, n]` represents a beta negative binomial mixture distribution with beta distribution parameters α and β and n successful trials.
 

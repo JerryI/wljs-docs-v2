@@ -1,4 +1,6 @@
-# TraceOn
+---
+title: TraceOn
+---
 
 `TraceOn` is an option for `Trace` and related functions which specifies when tracing should be switched on.
 

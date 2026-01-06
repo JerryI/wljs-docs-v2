@@ -1,4 +1,6 @@
-# ListSliceVectorPlot3D
+---
+title: ListSliceVectorPlot3D
+---
 
 `ListSliceVectorPlot3D[varr, surf]` generates a vector plot from a 3D array varr of vector field values over the slice surface surf.
 

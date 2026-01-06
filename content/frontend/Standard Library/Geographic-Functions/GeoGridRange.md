@@ -1,4 +1,6 @@
-# GeoGridRange
+---
+title: GeoGridRange
+---
 
 `GeoGridRange` is an option for geographic functions that specifies the range of projected coordinates to include.
 

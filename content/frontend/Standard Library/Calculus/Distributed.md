@@ -1,4 +1,6 @@
-# Distributed
+---
+title: Distributed
+---
 
 `Distributed[x, dist]` or `x \[Distributed] dist` asserts that the random variable x is distributed according to the probability distribution dist.
 

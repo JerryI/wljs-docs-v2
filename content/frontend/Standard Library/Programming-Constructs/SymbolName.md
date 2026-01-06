@@ -1,4 +1,6 @@
-# SymbolName
+---
+title: SymbolName
+---
 
 `SymbolName[symbol]` gives the name of the specified symbol as a string.
 

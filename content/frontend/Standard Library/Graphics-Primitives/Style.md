@@ -1,4 +1,6 @@
-# Style
+---
+title: Style
+---
 
 `Style[expr, options]` displays `expr` with specified formatting. Common styles include `Bold`, `Italic`, colors, and font sizes.
 

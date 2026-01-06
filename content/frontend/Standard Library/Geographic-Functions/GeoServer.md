@@ -1,4 +1,6 @@
-# GeoServer
+---
+title: GeoServer
+---
 
 `GeoServer` is an option for `GeoGraphics`, `GeoStyling` and `GeoImage` that specifies the URL address of a geo server and connection parameters to download map tiles and geo elevation data.
 

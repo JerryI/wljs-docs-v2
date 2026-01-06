@@ -1,4 +1,6 @@
-# NSurfaceIntegrate
+---
+title: NSurfaceIntegrate
+---
 
 `NSurfaceIntegrate[f, {x, y, ...} ∈ surface]` computes the numerical scalar surface integral of the function f[x, y, ...] over the surface.
 

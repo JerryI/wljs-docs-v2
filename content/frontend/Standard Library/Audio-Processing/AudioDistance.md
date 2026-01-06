@@ -1,4 +1,6 @@
-# AudioDistance
+---
+title: AudioDistance
+---
 
 `AudioDistance[audio1, audio2]` returns a distance measure between audio1 and audio2.
 

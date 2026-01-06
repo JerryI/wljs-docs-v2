@@ -1,4 +1,6 @@
-# HITSCentrality
+---
+title: HITSCentrality
+---
 
 `HITSCentrality[g]` gives a list of authority and hub centralities for the vertices in the graph g.
 

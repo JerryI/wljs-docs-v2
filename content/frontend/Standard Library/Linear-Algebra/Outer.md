@@ -1,4 +1,6 @@
-# Outer
+---
+title: Outer
+---
 
 `Outer[f, list1, list2, ...]` forms all combinations of elements from the lists and applies `f` to each combination.
 

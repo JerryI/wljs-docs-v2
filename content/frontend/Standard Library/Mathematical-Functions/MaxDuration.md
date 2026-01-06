@@ -1,4 +1,6 @@
-# MaxDuration
+---
+title: MaxDuration
+---
 
 `MaxDuration` is an option that specifies the maximum duration for audio playback or capture.
 

@@ -1,4 +1,6 @@
-# SequenceType
+---
+title: SequenceType
+---
 
 `SequenceType[var]` represents a type parameterized by var that refers to a sequence of zero or more types.
 

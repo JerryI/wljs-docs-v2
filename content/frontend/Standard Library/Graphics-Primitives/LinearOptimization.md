@@ -1,4 +1,6 @@
-# LinearOptimization
+---
+title: LinearOptimization
+---
 
 `LinearOptimization[f, cons, vars]` finds values of variables vars that minimize the linear objective f subject to linear constraints cons.
 

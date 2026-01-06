@@ -1,4 +1,6 @@
-# ZTransform
+---
+title: ZTransform
+---
 
 `ZTransform[expr, n, z]` gives the Z transform of expr.
 

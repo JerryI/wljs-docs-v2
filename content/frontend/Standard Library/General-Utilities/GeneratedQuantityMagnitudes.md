@@ -1,4 +1,6 @@
-# GeneratedQuantityMagnitudes
+---
+title: GeneratedQuantityMagnitudes
+---
 
 `GeneratedQuantityMagnitudes` is an option that specifies how quantities generated to represent the quantity multiplier results in NondimensionalizationTransform should be named.
 

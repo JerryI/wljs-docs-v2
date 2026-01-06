@@ -1,4 +1,6 @@
-# Fold
+---
+title: Fold
+---
 
 `Fold[f, x, list]` gives the last element of `FoldList[f, x, list]`.
 

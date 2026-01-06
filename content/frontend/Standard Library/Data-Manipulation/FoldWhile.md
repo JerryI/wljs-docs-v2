@@ -1,4 +1,6 @@
-# FoldWhile
+---
+title: FoldWhile
+---
 
 `FoldWhile[f,x,{a1,a2,…},test]` returns the first expression f[… f[f[x,a1],a2]…,ak] to which applying test does not yield True.
 

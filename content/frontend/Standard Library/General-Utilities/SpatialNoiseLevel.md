@@ -1,4 +1,6 @@
-# SpatialNoiseLevel
+---
+title: SpatialNoiseLevel
+---
 
 `SpatialNoiseLevel` is an option to `SpatialEstimate` and other spatial functions that gives the noise variance level in the data.
 

@@ -1,4 +1,6 @@
-# MeanAbsoluteLossLayer
+---
+title: MeanAbsoluteLossLayer
+---
 
 `MeanAbsoluteLossLayer[]` represents a loss layer that computes the mean absolute loss between the "Input" port and "Target" port.
 

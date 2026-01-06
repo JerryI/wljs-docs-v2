@@ -1,4 +1,6 @@
-# SequenceCases
+---
+title: SequenceCases
+---
 
 `SequenceCases[list, patt]` gives a list of the sublists in list that match the sequence pattern patt.
 

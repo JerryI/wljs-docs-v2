@@ -1,4 +1,6 @@
-# DualPlanarGraph
+---
+title: DualPlanarGraph
+---
 
 `DualPlanarGraph[g]` gives the dual of the planar graph g.
 

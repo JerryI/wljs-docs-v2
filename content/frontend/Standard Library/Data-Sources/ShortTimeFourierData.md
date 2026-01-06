@@ -1,4 +1,6 @@
-# ShortTimeFourierData
+---
+title: ShortTimeFourierData
+---
 
 `ShortTimeFourierData[assoc]` represents the result and properties of a short-time Fourier transform (STFT) of a signal.
 

@@ -1,4 +1,6 @@
-# RandomSample
+---
+title: RandomSample
+---
 
 `RandomSample[{e1, e2, ...}, n]` gives a pseudorandom sample of n elements (without replacement).
 

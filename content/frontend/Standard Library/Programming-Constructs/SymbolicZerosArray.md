@@ -1,4 +1,6 @@
-# SymbolicZerosArray
+---
+title: SymbolicZerosArray
+---
 
 `SymbolicZerosArray[]` represents an array of zeros with unspecified dimensions.
 

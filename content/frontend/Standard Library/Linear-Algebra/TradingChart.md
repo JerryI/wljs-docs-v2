@@ -1,4 +1,6 @@
-# TradingChart
+---
+title: TradingChart
+---
 
 `TradingChart[{{date1, {open1, high1, low1, close1, volume1}}, ...}]` makes a chart showing prices and volume for each date.
 

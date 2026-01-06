@@ -1,4 +1,6 @@
-# ConditionalExpression
+---
+title: ConditionalExpression
+---
 
 `ConditionalExpression[expr, cond]` is a symbolic construct that represents the expression expr when the condition cond is True.
 

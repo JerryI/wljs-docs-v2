@@ -1,4 +1,6 @@
-# PermutationReplace
+---
+title: PermutationReplace
+---
 
 `PermutationReplace[expr, perm]` replaces each part in expr by its image under the permutation perm.
 

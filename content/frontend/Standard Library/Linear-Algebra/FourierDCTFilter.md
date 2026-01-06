@@ -1,4 +1,6 @@
-# FourierDCTFilter
+---
+title: FourierDCTFilter
+---
 
 `FourierDCTFilter[image,t]` reduces noise in image by locally thresholding the discrete cosine transforms of overlapping subimages, using the hard threshold t.
 

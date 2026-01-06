@@ -1,4 +1,6 @@
-# LeftVectorBar
+---
+title: LeftVectorBar
+---
 
 `LeftVectorBar[x, y, ...]` displays as x⥒y⥒....
 

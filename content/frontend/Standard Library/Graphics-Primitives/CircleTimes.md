@@ -1,4 +1,6 @@
-# CircleTimes
+---
+title: CircleTimes
+---
 
 `CircleTimes[x]` displays as ⊗x.
 

@@ -1,4 +1,6 @@
-# BesselJZero
+---
+title: BesselJZero
+---
 
 `BesselJZero[n, k]` represents the kth zero of the Bessel function Jn(x).
 

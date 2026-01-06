@@ -1,4 +1,6 @@
-# TreeDepth
+---
+title: TreeDepth
+---
 
 `TreeDepth[tree]` gives the maximum level of tree.
 

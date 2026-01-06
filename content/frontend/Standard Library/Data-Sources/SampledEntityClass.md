@@ -1,4 +1,6 @@
-# SampledEntityClass
+---
+title: SampledEntityClass
+---
 
 `SampledEntityClass[class, n]` represents an entity class containing n entities from class.
 

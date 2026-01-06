@@ -1,4 +1,6 @@
-# SpeechSynthesize
+---
+title: SpeechSynthesize
+---
 
 `SpeechSynthesize[expr]` synthesizes the contents of expr as an Audio object.
 

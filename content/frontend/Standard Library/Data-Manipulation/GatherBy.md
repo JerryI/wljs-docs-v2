@@ -1,4 +1,6 @@
-# GatherBy
+---
+title: GatherBy
+---
 
 `GatherBy[list, f]` gathers elements into sublists that give the same value when f is applied.
 

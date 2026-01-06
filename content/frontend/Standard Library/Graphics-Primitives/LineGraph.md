@@ -1,4 +1,6 @@
-# LineGraph
+---
+title: LineGraph
+---
 
 `LineGraph[g]` gives the line graph of the graph g.
 

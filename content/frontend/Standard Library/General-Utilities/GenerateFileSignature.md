@@ -1,4 +1,6 @@
-# GenerateFileSignature
+---
+title: GenerateFileSignature
+---
 
 `GenerateFileSignature["file", key]` generates a digital signature of file using the specified private key.
 

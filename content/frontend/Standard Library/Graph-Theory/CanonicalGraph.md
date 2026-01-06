@@ -1,4 +1,6 @@
-# CanonicalGraph
+---
+title: CanonicalGraph
+---
 
 `CanonicalGraph[g]` gives a canonical form of the graph g.
 

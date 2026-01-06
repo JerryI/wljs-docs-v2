@@ -1,4 +1,6 @@
-# TunnelData
+---
+title: TunnelData
+---
 
 `TunnelData[entity, property]` gives the value of the specified property for the tunnel entity.
 

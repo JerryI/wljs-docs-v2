@@ -1,4 +1,6 @@
-# FileTemplateApply
+---
+title: FileTemplateApply
+---
 
 `FileTemplateApply[template]` applies a template and writes the result to a temporary file, returning its name.
 

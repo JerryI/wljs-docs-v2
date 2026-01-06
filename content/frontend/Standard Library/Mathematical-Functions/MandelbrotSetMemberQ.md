@@ -1,4 +1,6 @@
-# MandelbrotSetMemberQ
+---
+title: MandelbrotSetMemberQ
+---
 
 `MandelbrotSetMemberQ[z]` returns True if z is in the Mandelbrot set, and False otherwise.
 

@@ -1,4 +1,6 @@
-# ColorOutput
+---
+title: ColorOutput
+---
 
 `ColorOutput` is an option for graphics functions that specifies the type of color output to produce.
 

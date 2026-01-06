@@ -1,4 +1,6 @@
-# Area
+---
+title: Area
+---
 
 `Area[reg]` gives the area of a two-dimensional region.
 

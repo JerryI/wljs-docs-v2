@@ -1,4 +1,6 @@
-# Hypergeometric1F1
+---
+title: Hypergeometric1F1
+---
 
 `Hypergeometric1F1[a, b, z]` is the Kummer confluent hypergeometric function $_1F_1(a;b;z)$.
 

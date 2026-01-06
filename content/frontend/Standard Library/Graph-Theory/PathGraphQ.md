@@ -1,4 +1,6 @@
-# PathGraphQ
+---
+title: PathGraphQ
+---
 
 `PathGraphQ[g]` yields True if the graph g is a path and False otherwise.
 

@@ -1,4 +1,6 @@
-# CenterDot
+---
+title: CenterDot
+---
 
 `CenterDot[x, y, ...]` displays as x·y·....
 

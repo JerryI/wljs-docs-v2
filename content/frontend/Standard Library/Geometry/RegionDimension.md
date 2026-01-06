@@ -1,4 +1,6 @@
-# RegionDimension
+---
+title: RegionDimension
+---
 
 `RegionDimension[reg]` gives the geometric dimension of the region reg.
 

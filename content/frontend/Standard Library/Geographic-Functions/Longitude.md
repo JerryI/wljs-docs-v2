@@ -1,4 +1,6 @@
-# Longitude
+---
+title: Longitude
+---
 
 `Longitude[pos]` gives the longitude in degrees of a geographic position specified by pos.
 

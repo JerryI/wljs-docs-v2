@@ -1,4 +1,6 @@
-# TaskObject
+---
+title: TaskObject
+---
 
 `TaskObject[spec]` is an object that represents a background task.
 

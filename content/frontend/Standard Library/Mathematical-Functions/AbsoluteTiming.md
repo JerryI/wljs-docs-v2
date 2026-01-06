@@ -1,4 +1,6 @@
-# AbsoluteTiming
+---
+title: AbsoluteTiming
+---
 
 `AbsoluteTiming[expr]` evaluates expr, returning a list of the absolute number of seconds in real time that have elapsed, together with the result obtained.
 

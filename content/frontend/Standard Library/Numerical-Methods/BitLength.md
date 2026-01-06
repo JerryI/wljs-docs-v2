@@ -1,4 +1,6 @@
-# BitLength
+---
+title: BitLength
+---
 
 `BitLength[n]` gives the number of binary bits necessary to represent the integer n.
 

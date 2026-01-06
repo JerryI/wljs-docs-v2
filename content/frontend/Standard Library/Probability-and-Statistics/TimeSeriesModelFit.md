@@ -1,4 +1,6 @@
-# TimeSeriesModelFit
+---
+title: TimeSeriesModelFit
+---
 
 `TimeSeriesModelFit[data]` constructs a time series model for data from an automatically selected model family.
 

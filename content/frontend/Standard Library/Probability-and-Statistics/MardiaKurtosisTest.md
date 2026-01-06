@@ -1,4 +1,6 @@
-# MardiaKurtosisTest
+---
+title: MardiaKurtosisTest
+---
 
 `MardiaKurtosisTest[data]` tests whether data follows a MultinormalDistribution using the Mardia kurtosis test.
 

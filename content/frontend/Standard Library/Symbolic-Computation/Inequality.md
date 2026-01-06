@@ -1,4 +1,6 @@
-# Inequality
+---
+title: Inequality
+---
 
 `Inequality` represents a sequence of relational statements.
 

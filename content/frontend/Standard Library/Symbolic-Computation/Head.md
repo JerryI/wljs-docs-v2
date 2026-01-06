@@ -1,4 +1,6 @@
-# Head
+---
+title: Head
+---
 
 `Head[expr]` gives the head of expr.
 

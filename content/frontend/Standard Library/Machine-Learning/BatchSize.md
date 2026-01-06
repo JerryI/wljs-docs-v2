@@ -1,4 +1,6 @@
-# BatchSize
+---
+title: BatchSize
+---
 
 `BatchSize` is an option for `NetTrain` and related functions that specifies the size of a batch of examples to process together.
 

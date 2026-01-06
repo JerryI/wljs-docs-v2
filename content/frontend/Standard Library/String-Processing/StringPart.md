@@ -1,4 +1,6 @@
-# StringPart
+---
+title: StringPart
+---
 
 `StringPart["string", n]` gives the nth character in "string".
 

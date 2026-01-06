@@ -1,4 +1,6 @@
-# SetProperty
+---
+title: SetProperty
+---
 
 `SetProperty[{obj, itemspec}, name -> value]` sets the property `name -> value` for itemspec in obj.
 

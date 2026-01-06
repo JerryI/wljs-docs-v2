@@ -1,4 +1,6 @@
-# Cone
+---
+title: Cone
+---
 
 `Cone[{{x1, y1, z1}, {x2, y2, z2}}, r]` represents a cone with base of radius r centered at the first point and tip at the second.
 

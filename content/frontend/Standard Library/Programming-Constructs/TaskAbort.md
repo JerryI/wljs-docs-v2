@@ -1,4 +1,6 @@
-# TaskAbort
+---
+title: TaskAbort
+---
 
 `TaskAbort[task]` generates an interrupt to abort the current execution of a task.
 

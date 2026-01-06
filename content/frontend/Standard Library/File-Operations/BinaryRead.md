@@ -1,4 +1,6 @@
-# BinaryRead
+---
+title: BinaryRead
+---
 
 `BinaryRead[stream]` reads one byte of raw binary data from an input stream, and returns an integer from 0 to 255.
 

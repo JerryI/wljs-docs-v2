@@ -1,4 +1,6 @@
-# DiffObject
+---
+title: DiffObject
+---
 
 `DiffObject[v, type, data]` represents a sequence of diffs for transforming objects of the indicated type.
 

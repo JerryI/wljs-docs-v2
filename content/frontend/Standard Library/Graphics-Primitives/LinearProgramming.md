@@ -1,4 +1,6 @@
-# LinearProgramming
+---
+title: LinearProgramming
+---
 
 `LinearProgramming[c, m, b]` finds a vector x that minimizes the quantity c.x subject to the constraints m.x ≥ b and x ≥ 0.
 

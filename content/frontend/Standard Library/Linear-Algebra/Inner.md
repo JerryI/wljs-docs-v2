@@ -1,4 +1,6 @@
-# Inner
+---
+title: Inner
+---
 
 `Inner[f, list1, list2, g]` is a generalization of `Dot` where `f` replaces multiplication and `g` replaces addition.
 

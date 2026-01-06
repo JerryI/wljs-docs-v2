@@ -1,4 +1,6 @@
-# ServiceDisconnect
+---
+title: ServiceDisconnect
+---
 
 `ServiceDisconnect[service]` disconnects from an external service specified by a ServiceObject.
 

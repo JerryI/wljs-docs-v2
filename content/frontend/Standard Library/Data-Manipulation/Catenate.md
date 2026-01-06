@@ -1,4 +1,6 @@
-# Catenate
+---
+title: Catenate
+---
 
 `Catenate[{list1, list2, ...}]` yields a single list with all elements from the listi in order.
 

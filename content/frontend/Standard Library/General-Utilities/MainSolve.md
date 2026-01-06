@@ -1,4 +1,6 @@
-# MainSolve
+---
+title: MainSolve
+---
 
 `MainSolve[eqns]` is the underlying function for transforming systems of equations. `Solve` and `Eliminate` call it. The equations must be of the form lhs == rhs. They can be combined using && and ||.
 

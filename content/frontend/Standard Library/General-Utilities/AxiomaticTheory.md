@@ -1,4 +1,6 @@
-# AxiomaticTheory
+---
+title: AxiomaticTheory
+---
 
 `AxiomaticTheory["theory"]` gives an axiomatic representation of the specified axiomatic theory.
 

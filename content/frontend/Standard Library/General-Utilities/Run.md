@@ -1,4 +1,6 @@
-# Run
+---
+title: Run
+---
 
 `Run["command"]` runs command as an external OS command, returning the exit code.
 

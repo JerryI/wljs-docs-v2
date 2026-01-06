@@ -1,4 +1,6 @@
-# MatrixSymbol
+---
+title: MatrixSymbol
+---
 
 `MatrixSymbol[a]` represents a matrix with name a.
 

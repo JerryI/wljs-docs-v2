@@ -1,4 +1,6 @@
-# ImageExposureCombine
+---
+title: ImageExposureCombine
+---
 
 `ImageExposureCombine[{image1, image2, ...}]` combines differently exposed images of the same scene into a single image with good overall exposure.
 

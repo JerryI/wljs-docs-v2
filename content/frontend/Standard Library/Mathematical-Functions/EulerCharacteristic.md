@@ -1,4 +1,6 @@
-# EulerCharacteristic
+---
+title: EulerCharacteristic
+---
 
 `EulerCharacteristic[poly]` gives the Euler characteristic of a poly.
 

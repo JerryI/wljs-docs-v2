@@ -1,4 +1,6 @@
-# Together
+---
+title: Together
+---
 
 `Together[expr]` puts terms in a sum over a common denominator, and cancels factors in the result.
 

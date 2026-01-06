@@ -1,4 +1,6 @@
-# MeshShading
+---
+title: MeshShading
+---
 
 `MeshShading` is an option for plotting functions that gives lists of colors to use for regions between mesh divisions.
 

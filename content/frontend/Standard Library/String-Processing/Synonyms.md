@@ -1,4 +1,6 @@
-# Synonyms
+---
+title: Synonyms
+---
 
 `Synonyms["word"]` returns the synonyms associated with the specified word.
 

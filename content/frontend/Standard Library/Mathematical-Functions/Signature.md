@@ -1,4 +1,6 @@
-# Signature
+---
+title: Signature
+---
 
 `Signature[list]` gives the signature of the permutation needed to place the elements of list in canonical order.
 

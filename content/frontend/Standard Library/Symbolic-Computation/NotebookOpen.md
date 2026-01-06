@@ -1,4 +1,6 @@
-# NotebookOpen
+---
+title: NotebookOpen
+---
 
 `NotebookOpen[nb]` opens programmatically notebook *nb* given by `RemoteNotebook` object or a path.
 

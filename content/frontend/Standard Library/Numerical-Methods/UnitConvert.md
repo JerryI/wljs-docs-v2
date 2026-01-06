@@ -1,4 +1,6 @@
-# UnitConvert
+---
+title: UnitConvert
+---
 
 `UnitConvert[quantity, targetunit]` converts a quantity to the target unit. `UnitConvert[quantity]` converts to SI base units.
 

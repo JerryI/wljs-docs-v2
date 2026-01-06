@@ -1,4 +1,6 @@
-# DoubleBracketingBar
+---
+title: DoubleBracketingBar
+---
 
 `DoubleBracketingBar[x, y, ...]` displays as ⟦x, y, ...⟧.
 

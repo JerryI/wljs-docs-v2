@@ -1,4 +1,6 @@
-# NotCongruent
+---
+title: NotCongruent
+---
 
 `NotCongruent[x, y, ...]` displays as x≢y≢....
 

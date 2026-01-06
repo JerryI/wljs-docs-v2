@@ -1,4 +1,6 @@
-# ClusteringTree
+---
+title: ClusteringTree
+---
 
 `ClusteringTree[{e1, e2, ...}]` constructs a weighted tree from the hierarchical clustering of the elements e1, e2, ....
 

@@ -1,4 +1,6 @@
-# UniformDistribution
+---
+title: UniformDistribution
+---
 
 `UniformDistribution[{min, max}]` represents a continuous uniform distribution between min and max. `UniformDistribution[]` gives values between 0 and 1.
 

@@ -1,4 +1,6 @@
-# IsolatingInterval
+---
+title: IsolatingInterval
+---
 
 `IsolatingInterval[a]` gives a rational isolating interval for the algebraic number a.
 

@@ -1,4 +1,6 @@
-# AffineSpace
+---
+title: AffineSpace
+---
 
 `AffineSpace[{p1, ..., pk+1}]` represents the affine space passing through the points pi.
 

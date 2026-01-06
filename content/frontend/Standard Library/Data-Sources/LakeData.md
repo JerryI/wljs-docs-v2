@@ -1,4 +1,6 @@
-# LakeData
+---
+title: LakeData
+---
 
 `LakeData[entity, property]` gives the value of the specified property for the lake entity.
 

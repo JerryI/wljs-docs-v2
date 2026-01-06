@@ -1,4 +1,6 @@
-# NonNegativeRationals
+---
+title: NonNegativeRationals
+---
 
 `NonNegativeRationals` represents the domain of non-negative rational numbers, as in x∈NonNegativeRationals.
 

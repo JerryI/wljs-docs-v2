@@ -1,4 +1,6 @@
-# TimeSeriesThread
+---
+title: TimeSeriesThread
+---
 
 `TimeSeriesThread[f,{tseries1,tseries2,…}]` combines the tseriesi using the function f.
 

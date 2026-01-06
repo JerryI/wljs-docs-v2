@@ -1,4 +1,6 @@
-# ValidationSet
+---
+title: ValidationSet
+---
 
 `ValidationSet` is an option for `Predict`, `Classify`, `NetTrain`, and related functions that specifies the validation set to be used during the training phase.
 

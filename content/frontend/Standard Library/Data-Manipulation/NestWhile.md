@@ -1,4 +1,6 @@
-# NestWhile
+---
+title: NestWhile
+---
 
 `NestWhile[f, expr, test]` applies f repeatedly to expr until `test[result]` is no longer `True`.
 

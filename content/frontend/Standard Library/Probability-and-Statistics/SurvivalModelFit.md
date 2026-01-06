@@ -1,4 +1,6 @@
-# SurvivalModelFit
+---
+title: SurvivalModelFit
+---
 
 `SurvivalModelFit[{e1, e2, ...}]` creates a survival model for event times ei.
 

@@ -1,4 +1,6 @@
-# SearchIndexObject
+---
+title: SearchIndexObject
+---
 
 `SearchIndexObject[loc]` represents a search index object, as created by `CreateSearchIndex`.
 

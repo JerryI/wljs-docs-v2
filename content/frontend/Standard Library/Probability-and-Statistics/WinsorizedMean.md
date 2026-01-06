@@ -1,4 +1,6 @@
-# WinsorizedMean
+---
+title: WinsorizedMean
+---
 
 `WinsorizedMean[list, f]` gives the mean of the elements in list after replacing the fraction f of the smallest and largest elements by the remaining extreme values.
 

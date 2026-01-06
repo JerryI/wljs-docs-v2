@@ -1,4 +1,6 @@
-# CauchyWindow
+---
+title: CauchyWindow
+---
 
 `CauchyWindow[x]` represents a Cauchy window function of x.
 

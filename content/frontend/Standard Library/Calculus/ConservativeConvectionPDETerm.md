@@ -1,4 +1,6 @@
-# ConservativeConvectionPDETerm
+---
+title: ConservativeConvectionPDETerm
+---
 
 `ConservativeConvectionPDETerm[vars, α]` represents a conservative convection term ∇{x1,…,xn}·(-α u) with conservative convection coefficient α and model variables vars.
 

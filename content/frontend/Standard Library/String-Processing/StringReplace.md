@@ -1,4 +1,6 @@
-# StringReplace
+---
+title: StringReplace
+---
 
 `StringReplace["string", s -> sp]` replaces the string expression s by sp wherever it appears.
 

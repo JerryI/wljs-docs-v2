@@ -1,4 +1,6 @@
-# ModelPredictiveController
+---
+title: ModelPredictiveController
+---
 
 `ModelPredictiveController[sspec, cost, cons]` computes the model predictive controller for the system specification sspec that minimizes the cost function cost and satisfies the constraints cons.
 

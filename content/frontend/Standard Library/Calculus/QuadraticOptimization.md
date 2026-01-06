@@ -1,4 +1,6 @@
-# QuadraticOptimization
+---
+title: QuadraticOptimization
+---
 
 `QuadraticOptimization[f, cons, vars]` finds values of variables vars that minimize the quadratic objective f subject to linear constraints cons.
 

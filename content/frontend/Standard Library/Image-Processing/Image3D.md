@@ -1,4 +1,6 @@
-# Image3D
+---
+title: Image3D
+---
 
 `Image3D[data]` represents a 3D image with voxel values given by the array data.
 

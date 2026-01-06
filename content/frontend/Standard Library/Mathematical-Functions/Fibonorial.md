@@ -1,4 +1,6 @@
-# Fibonorial
+---
+title: Fibonorial
+---
 
 `Fibonorial[n]` gives the fibonorial n!_F (product of the first n Fibonacci numbers).
 

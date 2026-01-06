@@ -1,4 +1,6 @@
-# ControllableModelQ
+---
+title: ControllableModelQ
+---
 
 `ControllableModelQ[sys]` yields True if the state-space model sys is controllable, and False otherwise.
 

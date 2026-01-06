@@ -1,4 +1,6 @@
-# WordCounts
+---
+title: WordCounts
+---
 
 `WordCounts["string"]` gives an association whose keys are the distinct words identified in string, and whose values give the number of times those words appear.
 

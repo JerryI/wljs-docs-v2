@@ -1,4 +1,6 @@
-# ProcessParameterQ
+---
+title: ProcessParameterQ
+---
 
 `ProcessParameterQ[proc]` yields `True` if proc is a valid random process, and yields `False` otherwise.
 

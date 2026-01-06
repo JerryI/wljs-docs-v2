@@ -1,4 +1,6 @@
-# ImageMarker
+---
+title: ImageMarker
+---
 
 `ImageMarker[pos]` is a `HighlightImage` specification that represents a marker at position pos.
 

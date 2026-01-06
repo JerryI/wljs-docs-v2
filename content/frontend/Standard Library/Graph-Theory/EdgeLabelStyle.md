@@ -1,4 +1,6 @@
-# EdgeLabelStyle
+---
+title: EdgeLabelStyle
+---
 
 `EdgeLabelStyle` is an option and property for `Graph` and related functions that specifies the style to use for edge labels.
 

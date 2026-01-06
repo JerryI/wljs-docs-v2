@@ -1,4 +1,6 @@
-# DimensionalCombinations
+---
+title: DimensionalCombinations
+---
 
 `DimensionalCombinations[{pq1, pq2, ...}]` returns possible combinations of physical quantities that are dimensionless.
 

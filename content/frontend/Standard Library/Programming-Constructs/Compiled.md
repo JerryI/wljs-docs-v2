@@ -1,4 +1,6 @@
-# Compiled
+---
+title: Compiled
+---
 
 `Compiled` is an option for various numerical and plotting functions which specifies whether the expressions they work with should automatically be compiled.
 

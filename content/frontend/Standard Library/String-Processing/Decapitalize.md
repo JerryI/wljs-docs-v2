@@ -1,4 +1,6 @@
-# Decapitalize
+---
+title: Decapitalize
+---
 
 `Decapitalize[string]` yields a string in which the first character has been made lowercase.
 

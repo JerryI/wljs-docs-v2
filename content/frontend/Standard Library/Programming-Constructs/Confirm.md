@@ -1,4 +1,6 @@
-# Confirm
+---
+title: Confirm
+---
 
 `Confirm[expr]` confirms that expr is not a failure, otherwise throws an error to the nearest `Enclose`.
 

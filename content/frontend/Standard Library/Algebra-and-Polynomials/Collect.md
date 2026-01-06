@@ -1,4 +1,6 @@
-# Collect
+---
+title: Collect
+---
 
 `Collect[expr, x]` collects together terms involving the same powers of objects matching x.
 

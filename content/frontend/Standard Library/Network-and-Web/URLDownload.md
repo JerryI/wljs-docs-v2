@@ -1,4 +1,6 @@
-# URLDownload
+---
+title: URLDownload
+---
 
 `URLDownload[url]` downloads the content of the specified URL to a local temporary file.
 

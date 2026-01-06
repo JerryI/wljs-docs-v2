@@ -1,4 +1,6 @@
-# ColorSpace
+---
+title: ColorSpace
+---
 
 `ColorSpace` is an option for `Image` and related functions that specifies the color space to which color values refer.
 

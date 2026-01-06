@@ -1,4 +1,6 @@
-# GatedRecurrentLayer
+---
+title: GatedRecurrentLayer
+---
 
 `GatedRecurrentLayer[n]` represents a trainable recurrent layer that takes a sequence of vectors and produces a sequence of vectors each of size n.
 

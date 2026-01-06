@@ -1,4 +1,6 @@
-# DirichletLambda
+---
+title: DirichletLambda
+---
 
 `DirichletLambda[s]` gives the Dirichlet lambda function λ(s).
 

@@ -1,4 +1,6 @@
-# Defer
+---
+title: Defer
+---
 
 `Defer[expr]` yields an object that displays as the unevaluated form of expr, but evaluates when used as input.
 

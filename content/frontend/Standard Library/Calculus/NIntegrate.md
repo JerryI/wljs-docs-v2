@@ -1,4 +1,6 @@
-# NIntegrate
+---
+title: NIntegrate
+---
 
 `NIntegrate[f, {x, xmin, xmax}]` gives a numerical approximation to the definite integral.
 

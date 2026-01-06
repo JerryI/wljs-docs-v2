@@ -1,4 +1,6 @@
-# DiscreteWaveletPacketTransform
+---
+title: DiscreteWaveletPacketTransform
+---
 
 `DiscreteWaveletPacketTransform[data]` gives the discrete wavelet packet transform (DWPT) of an array of data.
 

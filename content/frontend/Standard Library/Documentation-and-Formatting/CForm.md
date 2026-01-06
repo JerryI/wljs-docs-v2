@@ -1,4 +1,6 @@
-# CForm
+---
+title: CForm
+---
 
 `CForm[expr]` prints expr in C language syntax.
 

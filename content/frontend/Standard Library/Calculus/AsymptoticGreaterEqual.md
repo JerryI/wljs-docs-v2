@@ -1,4 +1,6 @@
-# AsymptoticGreaterEqual
+---
+title: AsymptoticGreaterEqual
+---
 
 `AsymptoticGreaterEqual[f, g, x->x*]` gives conditions for f(x)⪰g(x) or f(x)∈Ω(g(x)) as x->x*.
 

@@ -1,4 +1,6 @@
-# GetEnvironment
+---
+title: GetEnvironment
+---
 
 `GetEnvironment["var"]` gives the setting corresponding to the variable "var" in the operating system environment.
 

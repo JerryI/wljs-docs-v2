@@ -1,4 +1,6 @@
-# Erfi
+---
+title: Erfi
+---
 
 `Erfi[z]` gives the imaginary error function erf(iz)/i.
 

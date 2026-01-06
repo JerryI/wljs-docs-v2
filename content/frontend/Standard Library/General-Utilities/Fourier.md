@@ -1,4 +1,6 @@
-# Fourier
+---
+title: Fourier
+---
 
 `Fourier[list]` finds the discrete Fourier transform of a list of complex numbers.
 

@@ -1,4 +1,6 @@
-# BinaryReadList
+---
+title: BinaryReadList
+---
 
 `BinaryReadList["file"]` reads all remaining bytes from a file, and returns them as a list of integers from 0 to 255.
 

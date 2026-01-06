@@ -1,4 +1,6 @@
-# Bookmarks
+---
+title: Bookmarks
+---
 
 `Bookmarks` is an option for `Manipulate` and related functions that gives a list of bookmark settings.
 

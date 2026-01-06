@@ -1,4 +1,6 @@
-# VectorPlot
+---
+title: VectorPlot
+---
 
 `VectorPlot[{vx, vy}, {x, xmin, xmax}, {y, ymin, ymax}]` plots a 2D vector field as arrows.
 

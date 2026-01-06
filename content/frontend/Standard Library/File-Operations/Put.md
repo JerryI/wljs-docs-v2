@@ -1,4 +1,6 @@
-# Put
+---
+title: Put
+---
 
 `expr >> filename` writes expr to a file.
 

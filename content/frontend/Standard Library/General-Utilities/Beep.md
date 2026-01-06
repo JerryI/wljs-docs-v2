@@ -1,4 +1,6 @@
-# Beep
+---
+title: Beep
+---
 
 `Beep[]` generates an audible beep when evaluated.
 

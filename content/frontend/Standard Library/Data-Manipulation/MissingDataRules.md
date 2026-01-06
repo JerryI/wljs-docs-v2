@@ -1,4 +1,6 @@
-# MissingDataRules
+---
+title: MissingDataRules
+---
 
 `MissingDataRules` is an option for `SemanticImport` and related functions that specifies what should be considered "missing" and what to replace it with.
 

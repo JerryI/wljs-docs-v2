@@ -1,4 +1,6 @@
-# FinancialData
+---
+title: FinancialData
+---
 
 `FinancialData["name"]` gives the last known price or value for the financial entity specified by "name".
 

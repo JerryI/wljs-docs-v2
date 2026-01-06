@@ -1,4 +1,6 @@
-# IntegerPartitions
+---
+title: IntegerPartitions
+---
 
 `IntegerPartitions[n]` gives a list of all possible ways to partition the integer n into smaller integers.
 

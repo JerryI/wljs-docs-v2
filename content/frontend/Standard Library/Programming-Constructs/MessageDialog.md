@@ -1,4 +1,6 @@
-# MessageDialog
+---
+title: MessageDialog
+---
 
 `MessageDialog[expr]` puts up a standard message dialog that displays expr together with an OK button.
 

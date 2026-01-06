@@ -1,4 +1,6 @@
-# LameEigenvalueB
+---
+title: LameEigenvalueB
+---
 
 `LameEigenvalueB[ν, j, m]` gives the jth Lamé eigenvalue b_ν^{(j)}(m) of order ν with elliptic parameter m for the Lamé function `LameS[ν, j, z, m]`.
 

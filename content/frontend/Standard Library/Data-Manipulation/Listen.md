@@ -1,4 +1,6 @@
-# Listen
+---
+title: Listen
+---
 
 `Listen` is a setting for the `LinkMode` option of `LinkOpen`. `LinkMode -> Listen` causes a link to be created that listens on a named port for an incoming connection request.
 

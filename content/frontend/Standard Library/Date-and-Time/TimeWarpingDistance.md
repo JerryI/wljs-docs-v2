@@ -1,4 +1,6 @@
-# TimeWarpingDistance
+---
+title: TimeWarpingDistance
+---
 
 `TimeWarpingDistance[s1, s2]` gives the dynamic time warping (DTW) distance between sequences s1 and s2.
 

@@ -1,4 +1,6 @@
-# NegativeBinomialDistribution
+---
+title: NegativeBinomialDistribution
+---
 
 `NegativeBinomialDistribution[n, p]` represents a negative binomial distribution with parameters n and p.
 

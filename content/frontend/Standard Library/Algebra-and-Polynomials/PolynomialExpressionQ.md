@@ -1,4 +1,6 @@
-# PolynomialExpressionQ
+---
+title: PolynomialExpressionQ
+---
 
 `PolynomialExpressionQ[expr, x]` gives `True` if expr is structurally a polynomial expression in x, and `False` otherwise.
 

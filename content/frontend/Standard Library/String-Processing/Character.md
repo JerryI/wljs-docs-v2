@@ -1,4 +1,6 @@
-# Character
+---
+title: Character
+---
 
 `Character` represents a single character in `Read`.
 

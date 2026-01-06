@@ -1,4 +1,6 @@
-# CombinatorS
+---
+title: CombinatorS
+---
 
 `CombinatorS` represents the **S** combinator.
 

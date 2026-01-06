@@ -1,4 +1,6 @@
-# IntersectedEntityClass
+---
+title: IntersectedEntityClass
+---
 
 `IntersectedEntityClass[class1, class2, ...]` represents an entity class containing all the entities common to all classi.
 

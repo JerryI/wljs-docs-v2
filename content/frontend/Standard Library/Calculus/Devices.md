@@ -1,4 +1,6 @@
-# Devices
+---
+title: Devices
+---
 
 `Devices[]` gives a list of registered devices on a particular system.
 

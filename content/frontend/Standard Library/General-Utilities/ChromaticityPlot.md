@@ -1,4 +1,6 @@
-# ChromaticityPlot
+---
+title: ChromaticityPlot
+---
 
 `ChromaticityPlot[colspace]` plots a 2D slice of the color space colspace.
 

@@ -1,4 +1,6 @@
-# NuclearReactorData
+---
+title: NuclearReactorData
+---
 
 `NuclearReactorData[entity, property]` gives the value of the specified property for the nuclear reactor entity.
 

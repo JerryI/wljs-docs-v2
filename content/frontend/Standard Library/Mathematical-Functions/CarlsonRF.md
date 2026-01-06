@@ -1,4 +1,6 @@
-# CarlsonRF
+---
+title: CarlsonRF
+---
 
 `CarlsonRF[x, y, z]` gives Carlson's elliptic integral RF(x, y, z).
 

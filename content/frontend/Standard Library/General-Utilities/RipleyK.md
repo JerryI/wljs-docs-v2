@@ -1,4 +1,6 @@
-# RipleyK
+---
+title: RipleyK
+---
 
 `RipleyK[pdata,r]` estimates Ripley's K function K(r) at radius r for point data pdata.
 

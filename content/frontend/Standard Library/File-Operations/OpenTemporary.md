@@ -1,4 +1,6 @@
-# OpenTemporary
+---
+title: OpenTemporary
+---
 
 `OpenTemporary[]` opens a temporary file to which output can be written, and returns an OutputStream object.
 

@@ -1,4 +1,6 @@
-# StreamPlot
+---
+title: StreamPlot
+---
 
 `StreamPlot[{vx, vy}, {x, xmin, xmax}, {y, ymin, ymax}]` generates a stream plot showing flow lines of a vector field.
 

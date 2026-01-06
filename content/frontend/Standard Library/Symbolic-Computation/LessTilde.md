@@ -1,4 +1,6 @@
-# LessTilde
+---
+title: LessTilde
+---
 
 `LessTilde[x, y, …]` displays as x≲y≲….
 

@@ -1,4 +1,6 @@
-# PropagateAborts
+---
+title: PropagateAborts
+---
 
 `PropagateAborts` is an option to `CheckAbort` to control whether a handled abort propagates to the enclosing function.
 

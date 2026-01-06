@@ -1,4 +1,6 @@
-# SpellingCorrectionList
+---
+title: SpellingCorrectionList
+---
 
 `SpellingCorrectionList["word"]` gives a list of possible spelling corrections for "word".
 

@@ -1,4 +1,6 @@
-# Log2
+---
+title: Log2
+---
 
 `Log2[x]` gives the base-2 logarithm of x.
 

@@ -1,4 +1,6 @@
-# HermiteDecomposition
+---
+title: HermiteDecomposition
+---
 
 `HermiteDecomposition[m]` gives the Hermite normal form decomposition of an integer matrix m.
 

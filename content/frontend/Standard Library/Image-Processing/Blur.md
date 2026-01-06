@@ -1,4 +1,6 @@
-# Blur
+---
+title: Blur
+---
 
 `Blur[image]` gives a blurred version of image.
 

@@ -1,4 +1,6 @@
-# MovingMedian
+---
+title: MovingMedian
+---
 
 `MovingMedian[list, r]` gives the moving median of list, computed using spans of r elements.
 

@@ -1,4 +1,6 @@
-# GeoHistogram
+---
+title: GeoHistogram
+---
 
 `GeoHistogram[locs]` plots a density histogram of the geographic locations `locs`.
 

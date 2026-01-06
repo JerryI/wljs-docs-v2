@@ -1,4 +1,6 @@
-# SpatialRandomnessTest
+---
+title: SpatialRandomnessTest
+---
 
 `SpatialRandomnessTest[pdata]` tests whether the point collection pdata is distributed uniformly over the observation region.
 

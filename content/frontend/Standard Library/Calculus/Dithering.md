@@ -1,4 +1,6 @@
-# Dithering
+---
+title: Dithering
+---
 
 `Dithering` is an option for ColorQuantize that specifies whether or not to apply dithering while quantizing the pixel values.
 

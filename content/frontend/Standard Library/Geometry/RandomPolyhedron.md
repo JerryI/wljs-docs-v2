@@ -1,4 +1,6 @@
-# RandomPolyhedron
+---
+title: RandomPolyhedron
+---
 
 `RandomPolyhedron[spec]` gives a pseudorandom polyhedron with the specified specification spec.
 

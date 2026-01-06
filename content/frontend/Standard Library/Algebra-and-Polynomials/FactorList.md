@@ -1,4 +1,6 @@
-# FactorList
+---
+title: FactorList
+---
 
 `FactorList[poly]` gives a list of the factors of a polynomial, together with their exponents.
 

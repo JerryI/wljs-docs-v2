@@ -1,4 +1,6 @@
-# Attributes
+---
+title: Attributes
+---
 
 `Attributes[symbol]` gives the list of attributes for a symbol.
 

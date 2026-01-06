@@ -1,4 +1,6 @@
-# MorletWavelet
+---
+title: MorletWavelet
+---
 
 `MorletWavelet[]` represents a Morlet wavelet.
 

@@ -1,4 +1,6 @@
-# HostLookup
+---
+title: HostLookup
+---
 
 `HostLookup[name]` gives the IP address for the host with the specified name.
 

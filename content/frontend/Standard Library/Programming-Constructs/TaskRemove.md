@@ -1,4 +1,6 @@
-# TaskRemove
+---
+title: TaskRemove
+---
 
 `TaskRemove[task]` terminates and removes the specified task.
 

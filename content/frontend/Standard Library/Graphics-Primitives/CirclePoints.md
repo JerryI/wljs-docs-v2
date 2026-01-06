@@ -1,4 +1,6 @@
-# CirclePoints
+---
+title: CirclePoints
+---
 
 `CirclePoints[n]` gives the positions of n points equally spaced around the unit circle.
 

@@ -1,4 +1,6 @@
-# GeoBubbleChart
+---
+title: GeoBubbleChart
+---
 
 `GeoBubbleChart[{reg1 -> val1, reg2 -> val2, …}]` makes a geo bubble chart with bubbles centered at the geographic regions `regi` with sizes `vali`.
 

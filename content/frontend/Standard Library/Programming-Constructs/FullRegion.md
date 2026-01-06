@@ -1,4 +1,6 @@
-# FullRegion
+---
+title: FullRegion
+---
 
 `FullRegion[n]` represents the full region in n dimensions.
 

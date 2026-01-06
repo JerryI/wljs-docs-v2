@@ -1,4 +1,6 @@
-# NumericQ
+---
+title: NumericQ
+---
 
 `NumericQ[expr]` gives `True` if expr is a numeric quantity, and `False` otherwise.
 

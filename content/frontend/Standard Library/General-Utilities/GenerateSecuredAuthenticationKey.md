@@ -1,4 +1,6 @@
-# GenerateSecuredAuthenticationKey
+---
+title: GenerateSecuredAuthenticationKey
+---
 
 `GenerateSecuredAuthenticationKey[]` generates a new anonymous SecuredAuthenticationKey owned by the current user ID.
 

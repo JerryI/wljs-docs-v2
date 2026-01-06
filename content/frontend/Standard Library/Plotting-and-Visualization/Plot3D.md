@@ -1,4 +1,6 @@
-# Plot3D
+---
+title: Plot3D
+---
 
 `Plot3D[f, {x, xmin, xmax}, {y, ymin, ymax}]` generates a three-dimensional plot of f as a function of x and y.
 

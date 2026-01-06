@@ -1,4 +1,6 @@
-# Switch
+---
+title: Switch
+---
 
 `Switch[expr, form1, value1, form2, value2, ...]` evaluates expr, then returns the value corresponding to the first matching form.
 

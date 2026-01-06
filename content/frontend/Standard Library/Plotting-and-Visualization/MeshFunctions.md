@@ -1,4 +1,6 @@
-# MeshFunctions
+---
+title: MeshFunctions
+---
 
 `MeshFunctions` is an option for plotting functions that specifies functions to use to determine the placement of mesh divisions.
 

@@ -1,4 +1,6 @@
-# ParticleAcceleratorData
+---
+title: ParticleAcceleratorData
+---
 
 `ParticleAcceleratorData[entity, property]` gives the value of the specified property for the particle accelerator entity.
 

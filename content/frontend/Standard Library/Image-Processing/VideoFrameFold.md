@@ -1,4 +1,6 @@
-# VideoFrameFold
+---
+title: VideoFrameFold
+---
 
 `VideoFrameFold[f, img0, video]` gives a video whose frames are {f[img0, img1], f[f[img0, img1], img2], …}, where imgi are frames of video.
 

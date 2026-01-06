@@ -1,4 +1,6 @@
-# RemoveAlphaChannel
+---
+title: RemoveAlphaChannel
+---
 
 `RemoveAlphaChannel[color]` removes opacity from color.
 

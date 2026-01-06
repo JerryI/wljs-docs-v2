@@ -1,4 +1,6 @@
-# InverseErf
+---
+title: InverseErf
+---
 
 `InverseErf[s]` gives the inverse error function, solving for z in s = erf(z).
 

@@ -1,4 +1,6 @@
-# Lookup
+---
+title: Lookup
+---
 
 `Lookup[assoc, key]` looks up the value associated with `key` in the association. `Lookup[assoc, key, default]` returns `default` if the key is missing.
 

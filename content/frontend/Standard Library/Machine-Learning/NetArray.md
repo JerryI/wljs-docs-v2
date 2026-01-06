@@ -1,4 +1,6 @@
-# NetArray
+---
+title: NetArray
+---
 
 `NetArray[]` represents an array in a net.
 

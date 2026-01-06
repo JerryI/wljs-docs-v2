@@ -1,4 +1,6 @@
-# LeftUpDownVector
+---
+title: LeftUpDownVector
+---
 
 `LeftUpDownVector[x,y,…]` displays as x⥑y⥑….
 

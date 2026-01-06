@@ -1,4 +1,6 @@
-# KroneckerDelta
+---
+title: KroneckerDelta
+---
 
 `KroneckerDelta[n1, n2, ...]` gives the Kronecker delta δ_{n1 n2 ...}, equal to 1 if all the n_i are equal, and 0 otherwise.
 

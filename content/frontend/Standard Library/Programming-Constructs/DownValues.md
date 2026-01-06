@@ -1,4 +1,6 @@
-# DownValues
+---
+title: DownValues
+---
 
 `DownValues[f]` gives a list of transformation rules corresponding to all downvalues (definitions for `f[...]`) defined for the symbol f.
 

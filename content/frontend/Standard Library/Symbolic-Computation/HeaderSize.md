@@ -1,4 +1,6 @@
-# HeaderSize
+---
+title: HeaderSize
+---
 
 `HeaderSize` is an option for Dataset that specifies the widths and heights of headers.
 

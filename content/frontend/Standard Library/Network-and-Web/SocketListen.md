@@ -1,4 +1,6 @@
-# SocketListen
+---
+title: SocketListen
+---
 
 `SocketListen[socket, fun]` starts listening on the specified socket, asynchronously applying fun whenever data is received on the socket.
 

@@ -1,4 +1,6 @@
-# GraphAssortativity
+---
+title: GraphAssortativity
+---
 
 `GraphAssortativity[g]` gives the assortativity coefficient of a graph g using vertex degrees.
 

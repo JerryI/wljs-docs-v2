@@ -1,4 +1,6 @@
-# NumberDigit
+---
+title: NumberDigit
+---
 
 `NumberDigit[x,n]` returns the digit corresponding to 10^n in the real-valued number x.
 

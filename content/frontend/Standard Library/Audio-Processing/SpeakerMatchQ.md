@@ -1,4 +1,6 @@
-# SpeakerMatchQ
+---
+title: SpeakerMatchQ
+---
 
 `SpeakerMatchQ[audio,ref]` gives True if speaker features in audio match the one from reference ref and returns False otherwise.
 

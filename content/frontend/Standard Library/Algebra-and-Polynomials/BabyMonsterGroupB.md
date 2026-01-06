@@ -1,4 +1,6 @@
-# BabyMonsterGroupB
+---
+title: BabyMonsterGroupB
+---
 
 `BabyMonsterGroupB[]` represents the sporadic simple baby monster group B.
 

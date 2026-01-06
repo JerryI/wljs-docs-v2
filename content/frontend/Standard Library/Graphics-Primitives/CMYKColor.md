@@ -1,4 +1,6 @@
-# CMYKColor
+---
+title: CMYKColor
+---
 
 `CMYKColor[c, m, y, k]` represents a color in the CMYK color space with cyan, magenta, yellow, and black components.
 

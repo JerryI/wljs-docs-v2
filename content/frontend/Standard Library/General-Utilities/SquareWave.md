@@ -1,4 +1,6 @@
-# SquareWave
+---
+title: SquareWave
+---
 
 `SquareWave[x]` gives a square wave that alternates between +1 and -1 with unit period.
 

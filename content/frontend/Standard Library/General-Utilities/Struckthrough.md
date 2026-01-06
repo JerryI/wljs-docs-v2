@@ -1,4 +1,6 @@
-# Struckthrough
+---
+title: Struckthrough
+---
 
 `Struckthrough` represents a font with a strike-through line.
 

@@ -1,4 +1,6 @@
-# DeleteDuplicatesBy
+---
+title: DeleteDuplicatesBy
+---
 
 `DeleteDuplicatesBy[data, f]` deletes elements that give duplicate values when f is applied.
 

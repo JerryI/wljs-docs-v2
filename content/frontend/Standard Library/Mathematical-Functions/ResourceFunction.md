@@ -1,4 +1,6 @@
-# ResourceFunction
+---
+title: ResourceFunction
+---
 
 `ResourceFunction[resource]` represents the function associated with the specified resource.
 

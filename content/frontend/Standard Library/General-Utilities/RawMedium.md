@@ -1,4 +1,6 @@
-# RawMedium
+---
+title: RawMedium
+---
 
 `RawMedium` is an internal symbol.
 

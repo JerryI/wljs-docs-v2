@@ -1,4 +1,6 @@
-# GraphIntersection
+---
+title: GraphIntersection
+---
 
 `GraphIntersection[g1, g2]` gives the graph intersection (edges present in both g1 and g2).
 

@@ -1,4 +1,6 @@
-# StringContainsQ
+---
+title: StringContainsQ
+---
 
 `StringContainsQ["string", patt]` yields `True` if any substring matches the pattern.
 

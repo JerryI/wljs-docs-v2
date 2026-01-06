@@ -1,4 +1,6 @@
-# FourierCosCoefficient
+---
+title: FourierCosCoefficient
+---
 
 `FourierCosCoefficient[expr,t,n]` gives the nth coefficient in the Fourier cosine series expansion of expr.
 

@@ -1,4 +1,6 @@
-# EndOfFile
+---
+title: EndOfFile
+---
 
 `EndOfFile` is a symbol returned by `Read` when it reaches the end of a file.
 

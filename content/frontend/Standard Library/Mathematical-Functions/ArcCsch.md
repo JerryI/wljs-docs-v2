@@ -1,4 +1,6 @@
-# ArcCsch
+---
+title: ArcCsch
+---
 
 `ArcCsch[z]` gives the inverse hyperbolic cosecant csch⁻¹(z) of the complex number z.
 

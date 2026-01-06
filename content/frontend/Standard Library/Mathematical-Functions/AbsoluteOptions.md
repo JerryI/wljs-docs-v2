@@ -1,4 +1,6 @@
-# AbsoluteOptions
+---
+title: AbsoluteOptions
+---
 
 `AbsoluteOptions[obj]` gives the absolute settings of options used by the given object.
 

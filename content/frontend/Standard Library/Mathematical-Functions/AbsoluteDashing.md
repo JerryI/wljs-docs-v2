@@ -1,4 +1,6 @@
-# AbsoluteDashing
+---
+title: AbsoluteDashing
+---
 
 `AbsoluteDashing[{d1, d2, ...}]` is a graphics directive which specifies that lines which follow are to be drawn dashed, with successive segments having absolute lengths d1, d2, ... (repeated cyclically).
 

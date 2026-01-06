@@ -1,4 +1,6 @@
-# ArcSinh
+---
+title: ArcSinh
+---
 
 `ArcSinh[z]` gives the inverse hyperbolic sine sinh⁻¹(z) of the complex number z.
 

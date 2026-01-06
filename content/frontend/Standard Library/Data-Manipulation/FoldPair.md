@@ -1,4 +1,6 @@
-# FoldPair
+---
+title: FoldPair
+---
 
 `FoldPair[f, y0, list]` gives the last element of `FoldPairList[f, y0, list]`.
 

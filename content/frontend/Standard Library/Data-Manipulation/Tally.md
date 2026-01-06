@@ -1,4 +1,6 @@
-# Tally
+---
+title: Tally
+---
 
 `Tally[list]` tallies the elements in list, listing all distinct elements together with their multiplicities.
 

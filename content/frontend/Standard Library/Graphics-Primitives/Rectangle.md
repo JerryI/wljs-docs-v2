@@ -1,4 +1,6 @@
-# Rectangle
+---
+title: Rectangle
+---
 
 `Rectangle[{xmin, ymin}, {xmax, ymax}]` represents a filled rectangle. `Rectangle[{xmin, ymin}]` gives a unit square.
 

@@ -1,4 +1,6 @@
-# TickLabels
+---
+title: TickLabels
+---
 
 `TickLabels` is an option for `AxisObject` that specifies how tick marks should be labeled.
 

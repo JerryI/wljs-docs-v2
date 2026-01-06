@@ -1,4 +1,6 @@
-# JoinedCurve
+---
+title: JoinedCurve
+---
 
 `JoinedCurve[{segment1, segment2, ...}]` represents a curve consisting of connected segments.
 

@@ -1,4 +1,6 @@
-# PacletSiteUnregister
+---
+title: PacletSiteUnregister
+---
 
 `PacletSiteUnregister[url]` removes url from the list of registered paclet sites.
 

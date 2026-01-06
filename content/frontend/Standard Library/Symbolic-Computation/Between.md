@@ -1,4 +1,6 @@
-# Between
+---
+title: Between
+---
 
 `Between[x, {min, max}]` is equivalent to `min ≤ x ≤ max`.
 

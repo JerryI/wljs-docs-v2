@@ -1,4 +1,6 @@
-# LatticeData
+---
+title: LatticeData
+---
 
 `LatticeData[lattice, "property"]` gives the specified property for a lattice.
 

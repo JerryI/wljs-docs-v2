@@ -1,4 +1,6 @@
-# LanguageData
+---
+title: LanguageData
+---
 
 `LanguageData[entity, property]` gives the value of the specified property for the language entity.
 

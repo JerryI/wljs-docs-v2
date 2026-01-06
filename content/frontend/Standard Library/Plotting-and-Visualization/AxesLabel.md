@@ -1,4 +1,6 @@
-# AxesLabel
+---
+title: AxesLabel
+---
 
 `AxesLabel` is an option that specifies labels for the axes. Use `{xlabel, ylabel}` for 2D plots or `{x, y, z}` for 3D.
 

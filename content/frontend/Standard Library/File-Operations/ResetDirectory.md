@@ -1,4 +1,6 @@
-# ResetDirectory
+---
+title: ResetDirectory
+---
 
 `ResetDirectory[]` resets the current working directory to its previous value.
 

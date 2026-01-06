@@ -1,4 +1,6 @@
-# Fibonacci
+---
+title: Fibonacci
+---
 
 `Fibonacci[n]` gives the nth Fibonacci number.
 

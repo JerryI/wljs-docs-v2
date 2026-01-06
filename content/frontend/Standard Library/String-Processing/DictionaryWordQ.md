@@ -1,4 +1,6 @@
-# DictionaryWordQ
+---
+title: DictionaryWordQ
+---
 
 `DictionaryWordQ["word"]` tests whether "word" is a recognized dictionary word.
 

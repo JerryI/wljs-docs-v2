@@ -1,4 +1,6 @@
-# TuttePolynomial
+---
+title: TuttePolynomial
+---
 
 `TuttePolynomial[g, {x, y}]` gives the Tutte polynomial of the graph g.
 

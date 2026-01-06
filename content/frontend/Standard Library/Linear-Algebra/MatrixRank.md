@@ -1,4 +1,6 @@
-# MatrixRank
+---
+title: MatrixRank
+---
 
 `MatrixRank[m]` gives the rank of the matrix `m` (the number of linearly independent rows or columns).
 

@@ -1,4 +1,6 @@
-# TreeElementSizeFunction
+---
+title: TreeElementSizeFunction
+---
 
 `TreeElementSizeFunction` is an option for `Tree` and related functions that specifies a function to use to generate sizes for subtree elements.
 

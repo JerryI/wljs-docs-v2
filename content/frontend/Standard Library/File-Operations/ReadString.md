@@ -1,4 +1,6 @@
-# ReadString
+---
+title: ReadString
+---
 
 `ReadString["file"]` reads the complete contents of a file as a string.
 

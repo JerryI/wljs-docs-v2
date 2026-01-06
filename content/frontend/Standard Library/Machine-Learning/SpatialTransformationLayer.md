@@ -1,4 +1,6 @@
-# SpatialTransformationLayer
+---
+title: SpatialTransformationLayer
+---
 
 `SpatialTransformationLayer[{h, w}]` represents a net layer that applies an affine transformation to an input of size c×h₀×w₀ and returns an output of size c×h×w.
 

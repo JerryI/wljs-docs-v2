@@ -1,4 +1,6 @@
-# ExactRootIsolation
+---
+title: ExactRootIsolation
+---
 
 `ExactRootIsolation` is an option for `Root`, which specifies whether exact isolating intervals rather than numeric approximations should be used to identify algebraic numbers.
 

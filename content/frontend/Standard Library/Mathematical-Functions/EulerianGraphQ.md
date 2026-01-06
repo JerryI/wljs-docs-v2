@@ -1,4 +1,6 @@
-# EulerianGraphQ
+---
+title: EulerianGraphQ
+---
 
 `EulerianGraphQ[g]` yields `True` if the graph g is Eulerian (has an Eulerian circuit), and `False` otherwise.
 

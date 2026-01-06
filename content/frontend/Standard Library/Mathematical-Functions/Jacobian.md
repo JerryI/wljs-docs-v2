@@ -1,4 +1,6 @@
-# Jacobian
+---
+title: Jacobian
+---
 
 `Jacobian` is an option for `FindRoot`. `Jacobian -> Automatic` attempts symbolic computation of the Jacobian of the system of functions whose root is being sought.
 

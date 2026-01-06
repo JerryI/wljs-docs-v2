@@ -1,4 +1,6 @@
-# Graphics3D
+---
+title: Graphics3D
+---
 
 `Graphics3D[primitives, options]` represents a three-dimensional graphical image.
 

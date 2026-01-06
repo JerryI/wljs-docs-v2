@@ -1,4 +1,6 @@
-# FrobeniusNumber
+---
+title: FrobeniusNumber
+---
 
 `FrobeniusNumber[{a1, ..., an}]` gives the Frobenius number of a1, ..., an.
 

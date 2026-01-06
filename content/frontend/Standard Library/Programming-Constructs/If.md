@@ -1,4 +1,6 @@
-# If
+---
+title: If
+---
 
 `If[condition, t, f]` gives t if condition evaluates to True, and f if it evaluates to False.
 

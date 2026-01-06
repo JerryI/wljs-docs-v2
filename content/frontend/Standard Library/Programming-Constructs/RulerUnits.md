@@ -1,4 +1,6 @@
-# RulerUnits
+---
+title: RulerUnits
+---
 
 `RulerUnits` is an option for notebooks that specifies the units in the ruler toolbar.
 

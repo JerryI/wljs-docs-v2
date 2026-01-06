@@ -1,4 +1,6 @@
-# ParametricPlot
+---
+title: ParametricPlot
+---
 
 `ParametricPlot[{fx, fy}, {u, umin, umax}]` generates a parametric plot of a curve with x and y coordinates as functions of u.
 

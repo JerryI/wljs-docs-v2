@@ -1,4 +1,6 @@
-# Orthogonalize
+---
+title: Orthogonalize
+---
 
 `Orthogonalize[{v1, v2, ...}]` gives an orthonormal basis found by orthogonalizing the vectors vi.
 

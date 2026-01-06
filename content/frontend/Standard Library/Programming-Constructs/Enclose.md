@@ -1,4 +1,6 @@
-# Enclose
+---
+title: Enclose
+---
 
 `Enclose[expr]` evaluates expr and returns the result, but catches any errors from `Confirm` and returns a `Failure` object.
 

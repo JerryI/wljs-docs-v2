@@ -1,4 +1,6 @@
-# Socket
+---
+title: Socket
+---
 
 `Socket` is a possible value returned by `FileType` and related functions.
 

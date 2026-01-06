@@ -1,4 +1,6 @@
-# SequenceIndicesLayer
+---
+title: SequenceIndicesLayer
+---
 
 `SequenceIndicesLayer[]` represents a net layer that produces a list of indices for an input sequence.
 

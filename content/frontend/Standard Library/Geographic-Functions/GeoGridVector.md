@@ -1,4 +1,6 @@
-# GeoGridVector
+---
+title: GeoGridVector
+---
 
 `GeoGridVector[loc -> {vx, vy}, proj]` represents a horizontal two-dimensional vector of components `vx`, `vy` in the orthonormal frame of the coordinates of the geo projection `proj`, at geo location `loc`.
 

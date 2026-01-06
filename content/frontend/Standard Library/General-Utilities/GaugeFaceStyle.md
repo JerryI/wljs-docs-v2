@@ -1,4 +1,6 @@
-# GaugeFaceStyle
+---
+title: GaugeFaceStyle
+---
 
 `GaugeFaceStyle` is an option for gauge functions that specifies the style in which the face is to be drawn.
 

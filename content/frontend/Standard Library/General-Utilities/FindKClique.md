@@ -1,4 +1,6 @@
-# FindKClique
+---
+title: FindKClique
+---
 
 `FindKClique[g,k]` finds a largest k-clique in the graph g.
 

@@ -1,4 +1,6 @@
-# TaskWait
+---
+title: TaskWait
+---
 
 `TaskWait[task]` waits for the specified task to be completely finished.
 

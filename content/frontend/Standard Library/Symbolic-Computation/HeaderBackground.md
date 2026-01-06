@@ -1,4 +1,6 @@
-# HeaderBackground
+---
+title: HeaderBackground
+---
 
 `HeaderBackground` is an option for `Dataset` that specifies what background color to use for row and column headers.
 

@@ -1,4 +1,6 @@
-# LLMPrompt
+---
+title: LLMPrompt
+---
 
 `LLMPrompt["name"]` gives the TemplateObject for the specified large language model prompt.
 

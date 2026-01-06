@@ -1,4 +1,6 @@
-# ColorDataFunction
+---
+title: ColorDataFunction
+---
 
 `ColorDataFunction[range, ...]` is a function that represents a color scheme.
 

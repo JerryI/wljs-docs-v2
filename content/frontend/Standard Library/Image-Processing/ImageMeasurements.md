@@ -1,4 +1,6 @@
-# ImageMeasurements
+---
+title: ImageMeasurements
+---
 
 `ImageMeasurements[image, "prop"]` returns the value of property "prop" for the entire image.
 

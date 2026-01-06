@@ -1,4 +1,6 @@
-# VarianceGammaDistribution
+---
+title: VarianceGammaDistribution
+---
 
 `VarianceGammaDistribution[λ, α, β, μ]` represents a variance-gamma distribution with location parameter μ, skewness parameter β, and shape parameters λ and α.
 

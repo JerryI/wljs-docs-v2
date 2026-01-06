@@ -1,4 +1,6 @@
-# LinkReadyQ
+---
+title: LinkReadyQ
+---
 
 `LinkReadyQ[link]` tests whether there is an expression ready to read from the specified WSTP connection.
 

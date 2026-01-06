@@ -1,4 +1,6 @@
-# FactorialMoment
+---
+title: FactorialMoment
+---
 
 `FactorialMoment[data, r]` gives the order r factorial moment of data.
 

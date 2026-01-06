@@ -1,4 +1,6 @@
-# ScaleDivisions
+---
+title: ScaleDivisions
+---
 
 `ScaleDivisions` is an option for gauge functions that specifies how many tick marks should be drawn on the scale.
 

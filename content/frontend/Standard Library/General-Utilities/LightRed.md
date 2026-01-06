@@ -1,4 +1,6 @@
-# LightRed
+---
+title: LightRed
+---
 
 `LightRed` represents a light red color in graphics or style specifications.
 

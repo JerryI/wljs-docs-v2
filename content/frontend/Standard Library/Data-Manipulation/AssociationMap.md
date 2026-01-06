@@ -1,4 +1,6 @@
-# AssociationMap
+---
+title: AssociationMap
+---
 
 `AssociationMap[f, {key1, key2, ...}]` creates the association `<|key1 -> f[key1], key2 -> f[key2], ...|>`.
 

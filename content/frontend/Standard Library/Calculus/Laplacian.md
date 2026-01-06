@@ -1,4 +1,6 @@
-# Laplacian
+---
+title: Laplacian
+---
 
 `Laplacian[f, {x1, ..., xn}]` gives the Laplacian ∂²f/∂x1² + ... + ∂²f/∂xn².
 

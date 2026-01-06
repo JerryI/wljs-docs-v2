@@ -1,4 +1,6 @@
-# FittedModel
+---
+title: FittedModel
+---
 
 `FittedModel[...]` represents the symbolic fitted model obtained from functions like `LinearModelFit`.
 

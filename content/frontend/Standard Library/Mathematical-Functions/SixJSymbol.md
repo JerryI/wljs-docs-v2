@@ -1,4 +1,6 @@
-# SixJSymbol
+---
+title: SixJSymbol
+---
 
 `SixJSymbol[{j1, j2, j3}, {j4, j5, j6}]` gives the values of the Wigner 6-j symbol.
 

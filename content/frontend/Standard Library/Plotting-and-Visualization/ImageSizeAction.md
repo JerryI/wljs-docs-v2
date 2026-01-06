@@ -1,4 +1,6 @@
-# ImageSizeAction
+---
+title: ImageSizeAction
+---
 
 `ImageSizeAction` is an option for `Pane` and related constructs that specifies what to do if the specified ImageSize setting does not match the size of the contents.
 

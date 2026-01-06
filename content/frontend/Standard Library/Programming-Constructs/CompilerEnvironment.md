@@ -1,4 +1,6 @@
-# CompilerEnvironment
+---
+title: CompilerEnvironment
+---
 
 `CompilerEnvironment` is an option for `FunctionCompile` and related functions that allows definitions to be included in the compilation.
 

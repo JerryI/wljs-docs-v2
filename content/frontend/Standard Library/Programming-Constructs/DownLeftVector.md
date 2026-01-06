@@ -1,4 +1,6 @@
-# DownLeftVector
+---
+title: DownLeftVector
+---
 
 `DownLeftVector[x, y, ...]` displays as x↽y↽....
 

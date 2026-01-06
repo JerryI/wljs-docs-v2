@@ -1,4 +1,6 @@
-# KumaraswamyDistribution
+---
+title: KumaraswamyDistribution
+---
 
 `KumaraswamyDistribution[α, β]` represents a Kumaraswamy distribution with shape parameters α and β.
 

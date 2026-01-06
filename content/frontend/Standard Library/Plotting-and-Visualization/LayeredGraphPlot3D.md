@@ -1,4 +1,6 @@
-# LayeredGraphPlot3D
+---
+title: LayeredGraphPlot3D
+---
 
 `LayeredGraphPlot3D[g]` generates a 3D layered plot of the graph g.
 

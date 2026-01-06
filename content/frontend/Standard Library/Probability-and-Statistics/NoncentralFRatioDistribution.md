@@ -1,4 +1,6 @@
-# NoncentralFRatioDistribution
+---
+title: NoncentralFRatioDistribution
+---
 
 `NoncentralFRatioDistribution[n, m, λ]` represents a noncentral F-ratio distribution with n numerator degrees of freedom, m denominator degrees of freedom, and numerator noncentrality parameter λ.
 

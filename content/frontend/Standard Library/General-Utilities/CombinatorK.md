@@ -1,4 +1,6 @@
-# CombinatorK
+---
+title: CombinatorK
+---
 
 `CombinatorK` represents the **K** combinator (constant combinator).
 

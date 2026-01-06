@@ -1,4 +1,6 @@
-# Sphere
+---
+title: Sphere
+---
 
 `Sphere[p]` represents a unit sphere centered at the point p.
 

@@ -1,4 +1,6 @@
-# SequencePosition
+---
+title: SequencePosition
+---
 
 `SequencePosition[list, sublist]` gives a list of the starting and ending positions at which sublist appears in list.
 

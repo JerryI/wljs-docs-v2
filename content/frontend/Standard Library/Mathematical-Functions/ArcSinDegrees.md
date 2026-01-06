@@ -1,4 +1,6 @@
-# ArcSinDegrees
+---
+title: ArcSinDegrees
+---
 
 `ArcSinDegrees[z]` gives the arc sine in degrees of the complex number z.
 

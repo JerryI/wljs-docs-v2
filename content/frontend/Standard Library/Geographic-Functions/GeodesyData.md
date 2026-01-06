@@ -1,4 +1,6 @@
-# GeodesyData
+---
+title: GeodesyData
+---
 
 `GeodesyData["name", "property"]` gives the value of the specified property for a named geodetic datum or reference ellipsoid.
 

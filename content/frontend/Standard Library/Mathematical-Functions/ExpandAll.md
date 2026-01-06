@@ -1,4 +1,6 @@
-# ExpandAll
+---
+title: ExpandAll
+---
 
 `ExpandAll[expr]` expands out all products and integer powers in any part of expr.
 

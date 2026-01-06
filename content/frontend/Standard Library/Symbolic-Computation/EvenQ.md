@@ -1,4 +1,6 @@
-# EvenQ
+---
+title: EvenQ
+---
 
 `EvenQ[expr]` gives `True` if expr is an even integer, and `False` otherwise.
 

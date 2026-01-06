@@ -1,4 +1,6 @@
-# FrobeniusSolve
+---
+title: FrobeniusSolve
+---
 
 `FrobeniusSolve[{a1, ..., an}, b]` gives a list of all solutions of the Frobenius equation a1*x1 + ... + an*xn = b.
 

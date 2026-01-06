@@ -1,4 +1,6 @@
-# ObservabilityGramian
+---
+title: ObservabilityGramian
+---
 
 `ObservabilityGramian[ssm]` gives the observability Gramian of the state-space model *ssm*.
 

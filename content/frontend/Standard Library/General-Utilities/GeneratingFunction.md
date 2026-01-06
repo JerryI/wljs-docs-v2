@@ -1,4 +1,6 @@
-# GeneratingFunction
+---
+title: GeneratingFunction
+---
 
 `GeneratingFunction[expr,n,x]` gives the generating function in x for the sequence whose nth series coefficient is given by the expression expr.
 

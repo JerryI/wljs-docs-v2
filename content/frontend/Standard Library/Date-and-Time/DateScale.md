@@ -1,4 +1,6 @@
-# DateScale
+---
+title: DateScale
+---
 
 `DateScale[]` represents the canonical mapping of continuous dates and times to a quantitative scale.
 

@@ -1,4 +1,6 @@
-# Magnify
+---
+title: Magnify
+---
 
 `Magnify[expr, r]` represents an object to be displayed with magnification r.
 

@@ -1,4 +1,6 @@
-# LinkLaunch
+---
+title: LinkLaunch
+---
 
 `LinkLaunch["prog"]` starts the external program prog and opens a WSTP connection to it.
 

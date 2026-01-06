@@ -1,4 +1,6 @@
-# HypergeometricPFQRegularized
+---
+title: HypergeometricPFQRegularized
+---
 
 `HypergeometricPFQRegularized[{a1,…,ap},{b1,…,bq},z]` is the regularized generalized hypergeometric function pFq(a;b;z)/(Γ(b1)…Γ(bq)).
 

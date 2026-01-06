@@ -1,4 +1,6 @@
-# NotHumpEqual
+---
+title: NotHumpEqual
+---
 
 `NotHumpEqual[x, y, ...]` displays as x≏̸y….
 

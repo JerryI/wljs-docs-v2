@@ -1,4 +1,6 @@
-# EntityTypeName
+---
+title: EntityTypeName
+---
 
 `EntityTypeName[entity]` gives the name of the entity type of entity.
 

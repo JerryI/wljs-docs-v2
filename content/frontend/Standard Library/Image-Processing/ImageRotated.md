@@ -1,4 +1,6 @@
-# ImageRotated
+---
+title: ImageRotated
+---
 
 `ImageRotated` is an option for `Export` that specifies whether images should be rotated into landscape mode.
 

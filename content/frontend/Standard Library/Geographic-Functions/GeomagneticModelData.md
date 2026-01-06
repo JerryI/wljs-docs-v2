@@ -1,4 +1,6 @@
-# GeomagneticModelData
+---
+title: GeomagneticModelData
+---
 
 `GeomagneticModelData[]` returns the current magnetic field data for the current location.
 

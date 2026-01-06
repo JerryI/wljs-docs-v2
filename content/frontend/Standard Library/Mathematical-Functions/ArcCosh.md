@@ -1,4 +1,6 @@
-# ArcCosh
+---
+title: ArcCosh
+---
 
 `ArcCosh[z]` gives the inverse hyperbolic cosine cosh⁻¹(z) of the complex number z.
 

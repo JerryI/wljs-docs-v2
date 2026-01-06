@@ -1,4 +1,6 @@
-# TreeInsert
+---
+title: TreeInsert
+---
 
 `TreeInsert[tree, child, pos]` inserts child at the position specified by pos in tree.
 

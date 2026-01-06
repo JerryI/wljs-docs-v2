@@ -1,4 +1,6 @@
-# Composition
+---
+title: Composition
+---
 
 `Composition[f, g, h]` represents the composition of functions, applied right to left: `f[g[h[x]]]`.
 

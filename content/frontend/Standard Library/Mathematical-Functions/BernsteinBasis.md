@@ -1,4 +1,6 @@
-# BernsteinBasis
+---
+title: BernsteinBasis
+---
 
 `BernsteinBasis[d, n, x]` represents the nth Bernstein basis function of degree d at x.
 

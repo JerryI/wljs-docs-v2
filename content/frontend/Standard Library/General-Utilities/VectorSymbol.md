@@ -1,4 +1,6 @@
-# VectorSymbol
+---
+title: VectorSymbol
+---
 
 `VectorSymbol[v]` represents a vector with name v.
 

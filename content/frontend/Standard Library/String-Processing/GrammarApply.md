@@ -1,4 +1,6 @@
-# GrammarApply
+---
+title: GrammarApply
+---
 
 `GrammarApply[grammar, input]` attempts to parse input according to the grammar defined by grammar.
 

@@ -1,4 +1,6 @@
-# BenktanderGibratDistribution
+---
+title: BenktanderGibratDistribution
+---
 
 `BenktanderGibratDistribution[a, b]` represents a Benktander distribution of type I with parameters a and b.
 

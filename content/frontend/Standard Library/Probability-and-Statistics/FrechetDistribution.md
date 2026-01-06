@@ -1,4 +1,6 @@
-# FrechetDistribution
+---
+title: FrechetDistribution
+---
 
 `FrechetDistribution[α, β]` represents the Fréchet distribution with shape parameter α and scale parameter β.
 

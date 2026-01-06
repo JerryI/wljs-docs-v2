@@ -1,4 +1,6 @@
-# TreeElementShape
+---
+title: TreeElementShape
+---
 
 `TreeElementShape` is an option for `Tree` and related functions that specifies what graphics should be used for subtree elements.
 

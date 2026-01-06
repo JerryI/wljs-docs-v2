@@ -1,4 +1,6 @@
-# BlockDiagonalMatrix
+---
+title: BlockDiagonalMatrix
+---
 
 `BlockDiagonalMatrix[{d1, d2, ...}]` represents the block diagonal matrix with diagonal blocks di as a structured array.
 

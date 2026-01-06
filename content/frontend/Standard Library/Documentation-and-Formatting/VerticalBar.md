@@ -1,4 +1,6 @@
-# VerticalBar
+---
+title: VerticalBar
+---
 
 `VerticalBar[x, y, ...]` displays as x|y|....
 

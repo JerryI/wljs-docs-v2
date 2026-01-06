@@ -1,4 +1,6 @@
-# ResamplingAlgorithmData
+---
+title: ResamplingAlgorithmData
+---
 
 `ResamplingAlgorithmData[rs,"prop"]` gives the specified property "prop" for the resampling rs.
 

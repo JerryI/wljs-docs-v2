@@ -1,4 +1,6 @@
-# Ball
+---
+title: Ball
+---
 
 `Ball[p, r]` represents a ball (filled sphere) of radius r centered at point p.
 

@@ -1,4 +1,6 @@
-# StringPartition
+---
+title: StringPartition
+---
 
 `StringPartition["string", n]` partitions string into nonoverlapping substrings of length n.
 

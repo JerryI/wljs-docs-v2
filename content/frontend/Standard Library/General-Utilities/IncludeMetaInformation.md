@@ -1,4 +1,6 @@
-# IncludeMetaInformation
+---
+title: IncludeMetaInformation
+---
 
 `IncludeMetaInformation` is an option for `Import`, `Thumbnail`, and other functions to specify what types of metadata to include.
 

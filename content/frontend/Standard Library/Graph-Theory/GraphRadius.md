@@ -1,4 +1,6 @@
-# GraphRadius
+---
+title: GraphRadius
+---
 
 `GraphRadius[g]` gives the minimum eccentricity of the vertices in graph g (the eccentricity of the center).
 

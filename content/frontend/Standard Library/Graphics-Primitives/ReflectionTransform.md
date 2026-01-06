@@ -1,4 +1,6 @@
-# ReflectionTransform
+---
+title: ReflectionTransform
+---
 
 `ReflectionTransform[v]` gives a TransformationFunction that represents a reflection in a mirror through the origin, normal to the vector v.
 

@@ -1,4 +1,6 @@
-# AudioGenerator
+---
+title: AudioGenerator
+---
 
 `AudioGenerator[model]` generates one second of audio of a given model.
 

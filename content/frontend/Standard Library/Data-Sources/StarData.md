@@ -1,4 +1,6 @@
-# StarData
+---
+title: StarData
+---
 
 `StarData[entity, property]` gives the value of the specified property for the star entity.
 

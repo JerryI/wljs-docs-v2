@@ -1,4 +1,6 @@
-# StateSpaceModel
+---
+title: StateSpaceModel
+---
 
 `StateSpaceModel[{a, b, c, d}]` represents the standard state-space model with state matrix a, input matrix b, output matrix c, and transmission matrix d.
 

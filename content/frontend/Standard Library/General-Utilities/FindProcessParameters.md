@@ -1,4 +1,6 @@
-# FindProcessParameters
+---
+title: FindProcessParameters
+---
 
 `FindProcessParameters[data, proc]` finds the parameter estimates for the process proc from data.
 

@@ -1,4 +1,6 @@
-# HumpEqual
+---
+title: HumpEqual
+---
 
 `HumpEqual[x, y, …]` displays as x ≏ y ≏ ….
 

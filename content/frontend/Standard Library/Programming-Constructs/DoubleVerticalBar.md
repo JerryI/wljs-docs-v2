@@ -1,4 +1,6 @@
-# DoubleVerticalBar
+---
+title: DoubleVerticalBar
+---
 
 `DoubleVerticalBar[x, y, ...]` displays as x∥y∥....
 

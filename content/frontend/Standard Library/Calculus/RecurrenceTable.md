@@ -1,4 +1,6 @@
-# RecurrenceTable
+---
+title: RecurrenceTable
+---
 
 `RecurrenceTable[eqns, expr, {n, nmax}]` generates a list of values of expr for successive n based on solving the recurrence equations eqns.
 

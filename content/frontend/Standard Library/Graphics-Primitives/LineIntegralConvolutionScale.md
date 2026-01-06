@@ -1,4 +1,6 @@
-# LineIntegralConvolutionScale
+---
+title: LineIntegralConvolutionScale
+---
 
 `LineIntegralConvolutionScale` is an option to `LineIntegralConvolutionPlot` and related functions that determines the scale of the line integral convolution to be used.
 

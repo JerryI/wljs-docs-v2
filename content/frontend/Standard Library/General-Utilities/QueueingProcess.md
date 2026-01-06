@@ -1,4 +1,6 @@
-# QueueingProcess
+---
+title: QueueingProcess
+---
 
 `QueueingProcess[λ,μ]` represents an M/M/1 queue with arrival rate λ and service rate μ.
 

@@ -1,4 +1,6 @@
-# InfinitePast
+---
+title: InfinitePast
+---
 
 `InfinitePast` returns a `DateObject` expression representing infinite past in time.
 

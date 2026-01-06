@@ -1,4 +1,6 @@
-# FileNameDialogSettings
+---
+title: FileNameDialogSettings
+---
 
 `FileNameDialogSettings` is a global option that specifies settings for the Insert File Path dialog box.
 

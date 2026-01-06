@@ -1,4 +1,6 @@
-# GeoStreamPlot
+---
+title: GeoStreamPlot
+---
 
 `GeoStreamPlot[vecs]` generates a stream plot from the field of geo vectors `vecs`.
 

@@ -1,4 +1,6 @@
-# MatchQ
+---
+title: MatchQ
+---
 
 `MatchQ[expr, form]` returns `True` if expr matches the pattern form, and `False` otherwise.
 

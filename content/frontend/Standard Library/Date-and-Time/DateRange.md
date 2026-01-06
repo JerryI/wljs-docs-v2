@@ -1,4 +1,6 @@
-# DateRange
+---
+title: DateRange
+---
 
 `DateRange[date1, date2]` gives all dates in the range from date1 to date2.
 

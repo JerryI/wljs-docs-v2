@@ -1,4 +1,6 @@
-# CSGRegionQ
+---
+title: CSGRegionQ
+---
 
 `CSGRegionQ[reg]` yields `True` if the region reg is a valid CSGRegion object and `False` otherwise.
 

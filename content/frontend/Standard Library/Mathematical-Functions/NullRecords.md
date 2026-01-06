@@ -1,4 +1,6 @@
-# NullRecords
+---
+title: NullRecords
+---
 
 `NullRecords` is an option for `Read` and related functions which specifies whether null records should be taken to exist between repeated record separators.
 

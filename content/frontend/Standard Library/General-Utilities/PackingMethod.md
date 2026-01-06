@@ -1,4 +1,6 @@
-# PackingMethod
+---
+title: PackingMethod
+---
 
 `PackingMethod` is an option for `GraphPlot` and related functions that specifies how disconnected components should be packed together in the layout produced.
 

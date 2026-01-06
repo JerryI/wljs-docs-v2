@@ -1,4 +1,6 @@
-# AudioAmplify
+---
+title: AudioAmplify
+---
 
 `AudioAmplify[audio, s]` multiplies all samples of audio by a factor s.
 

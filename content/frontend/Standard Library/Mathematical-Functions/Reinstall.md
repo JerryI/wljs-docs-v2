@@ -1,4 +1,6 @@
-# Reinstall
+---
+title: Reinstall
+---
 
 `Reinstall[link]` un-installs the specified external package and installs it again.
 

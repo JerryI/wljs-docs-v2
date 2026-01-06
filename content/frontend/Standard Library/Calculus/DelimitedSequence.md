@@ -1,4 +1,6 @@
-# DelimitedSequence
+---
+title: DelimitedSequence
+---
 
 `DelimitedSequence[form]` represents a delimited sequence of elements of the specified form in Interpreter and related functions.
 

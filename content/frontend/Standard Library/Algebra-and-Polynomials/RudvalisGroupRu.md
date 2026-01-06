@@ -1,4 +1,6 @@
-# RudvalisGroupRu
+---
+title: RudvalisGroupRu
+---
 
 `RudvalisGroupRu[]` represents the sporadic simple Rudvalis group Ru.
 

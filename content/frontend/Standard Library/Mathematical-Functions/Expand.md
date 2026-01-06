@@ -1,4 +1,6 @@
-# Expand
+---
+title: Expand
+---
 
 `Expand[expr]` expands out products and positive integer powers in expr.
 

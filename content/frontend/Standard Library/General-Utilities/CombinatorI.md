@@ -1,4 +1,6 @@
-# CombinatorI
+---
+title: CombinatorI
+---
 
 `CombinatorI` represents the **I** combinator (identity combinator).
 

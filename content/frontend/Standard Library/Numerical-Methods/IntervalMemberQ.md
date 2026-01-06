@@ -1,4 +1,6 @@
-# IntervalMemberQ
+---
+title: IntervalMemberQ
+---
 
 `IntervalMemberQ[interval, x]` gives `True` if x lies within the interval, and `False` otherwise.
 

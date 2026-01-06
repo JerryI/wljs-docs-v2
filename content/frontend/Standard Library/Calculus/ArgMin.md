@@ -1,4 +1,6 @@
-# ArgMin
+---
+title: ArgMin
+---
 
 `ArgMin[f, x]` gives a position xmin at which f is minimized.
 

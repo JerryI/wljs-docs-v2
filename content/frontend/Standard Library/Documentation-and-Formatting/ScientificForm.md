@@ -1,4 +1,6 @@
-# ScientificForm
+---
+title: ScientificForm
+---
 
 `ScientificForm[expr]` displays numbers in scientific notation. `ScientificForm[expr, n]` uses `n` digits of precision.
 

@@ -1,4 +1,6 @@
-# Activate
+---
+title: Activate
+---
 
 `Activate[expr]` replaces all instances of `Inactive[f]` in expr with f.
 

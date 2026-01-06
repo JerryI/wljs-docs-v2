@@ -1,4 +1,6 @@
-# MaxExtraBandwidths
+---
+title: MaxExtraBandwidths
+---
 
 `MaxExtraBandwidths` is an option to `SmoothKernelDistribution` that controls the behavior outside that data range.
 

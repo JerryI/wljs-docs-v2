@@ -1,4 +1,6 @@
-# Dialog
+---
+title: Dialog
+---
 
 `Dialog[]` initiates a dialog.
 

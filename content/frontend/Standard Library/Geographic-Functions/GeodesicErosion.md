@@ -1,4 +1,6 @@
-# GeodesicErosion
+---
+title: GeodesicErosion
+---
 
 `GeodesicErosion[marker, mask]` gives the fixed point of the geodesic erosion of the `marker` constrained by the `mask`.
 

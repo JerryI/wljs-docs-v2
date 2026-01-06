@@ -1,4 +1,6 @@
-# MeanSquaredLossLayer
+---
+title: MeanSquaredLossLayer
+---
 
 `MeanSquaredLossLayer[]` represents a loss layer that computes the mean squared loss between its "Input" port and "Target" port.
 

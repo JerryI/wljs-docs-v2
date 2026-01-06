@@ -1,4 +1,6 @@
-# TransitiveReductionGraph
+---
+title: TransitiveReductionGraph
+---
 
 `TransitiveReductionGraph[g]` gives a transitive reduction of the graph g.
 

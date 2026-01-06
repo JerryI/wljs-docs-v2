@@ -1,4 +1,6 @@
-# PointProcessFitTest
+---
+title: PointProcessFitTest
+---
 
 `PointProcessFitTest[pdata]` tests whether the point collection pdata could be modeled by a Poisson point process.
 

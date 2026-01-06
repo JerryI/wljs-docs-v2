@@ -1,4 +1,6 @@
-# InverseHankelTransform
+---
+title: InverseHankelTransform
+---
 
 `InverseHankelTransform[expr, s, r]` gives the inverse Hankel transform of order 0 for expr.
 

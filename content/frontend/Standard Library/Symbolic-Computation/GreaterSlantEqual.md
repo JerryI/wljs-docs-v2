@@ -1,4 +1,6 @@
-# GreaterSlantEqual
+---
+title: GreaterSlantEqual
+---
 
 `GreaterSlantEqual[x, y, …]` displays as x⩾y⩾….
 

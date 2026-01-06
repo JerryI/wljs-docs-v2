@@ -1,4 +1,6 @@
-# PolarAxesOrigin
+---
+title: PolarAxesOrigin
+---
 
 `PolarAxesOrigin` is an option for sector charts and polar plots that specifies where polar axes should be drawn.
 

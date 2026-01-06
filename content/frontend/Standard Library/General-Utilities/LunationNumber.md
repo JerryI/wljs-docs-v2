@@ -1,4 +1,6 @@
-# LunationNumber
+---
+title: LunationNumber
+---
 
 `LunationNumber[]` returns the number of new moons since the first new moon of the year 2000.
 

@@ -1,4 +1,6 @@
-# CorrelationFunction
+---
+title: CorrelationFunction
+---
 
 `CorrelationFunction[data, hspec]` estimates the correlation function at lags hspec from data.
 

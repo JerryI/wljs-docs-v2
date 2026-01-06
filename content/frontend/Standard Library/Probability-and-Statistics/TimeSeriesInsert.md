@@ -1,4 +1,6 @@
-# TimeSeriesInsert
+---
+title: TimeSeriesInsert
+---
 
 `TimeSeriesInsert[tseries, {t, v}]` inserts a value v at time t in the time series tseries.
 

@@ -1,4 +1,6 @@
-# AudioLoudness
+---
+title: AudioLoudness
+---
 
 `AudioLoudness[audio]` computes the loudness of audio according to the EBU momentary definition.
 

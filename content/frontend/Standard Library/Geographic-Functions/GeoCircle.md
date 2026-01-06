@@ -1,4 +1,6 @@
-# GeoCircle
+---
+title: GeoCircle
+---
 
 `GeoCircle[loc, r]` is a two-dimensional `GeoGraphics` primitive that represents a circle of radius `r` centered at the location `loc` on the surface of the Earth.
 

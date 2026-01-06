@@ -1,4 +1,6 @@
-# MemoryInUse
+---
+title: MemoryInUse
+---
 
 `MemoryInUse[]` gives the number of bytes currently being used to store all data in the current Wolfram Language kernel session.
 

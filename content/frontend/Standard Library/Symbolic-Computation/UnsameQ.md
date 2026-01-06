@@ -1,4 +1,6 @@
-# UnsameQ
+---
+title: UnsameQ
+---
 
 `lhs =!= rhs` yields `True` if the expression lhs is not identical to rhs, and `False` otherwise.
 

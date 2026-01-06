@@ -1,4 +1,6 @@
-# NRoots
+---
+title: NRoots
+---
 
 `NRoots[lhs == rhs, var]` yields numerical approximations to the roots of a polynomial equation.
 

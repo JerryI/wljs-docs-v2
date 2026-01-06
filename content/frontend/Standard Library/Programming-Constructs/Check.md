@@ -1,4 +1,6 @@
-# Check
+---
+title: Check
+---
 
 `Check[expr, failexpr]` evaluates expr, returning the result unless messages were generated, in which case it returns failexpr.
 

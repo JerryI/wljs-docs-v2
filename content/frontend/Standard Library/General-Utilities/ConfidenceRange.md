@@ -1,4 +1,6 @@
-# ConfidenceRange
+---
+title: ConfidenceRange
+---
 
 `ConfidenceRange` is an option for SurvivalModelFit and other functions that specifies the range over which simultaneous confidence intervals and bands are computed.
 

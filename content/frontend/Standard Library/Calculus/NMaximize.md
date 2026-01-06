@@ -1,4 +1,6 @@
-# NMaximize
+---
+title: NMaximize
+---
 
 `NMaximize[f, x]` searches for a global maximum in f numerically with respect to x.
 

@@ -1,4 +1,6 @@
-# Trig
+---
+title: Trig
+---
 
 `Trig` is an option for various polynomial manipulation functions that specifies whether trigonometric functions should be treated like polynomial elements.
 

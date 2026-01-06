@@ -1,4 +1,6 @@
-# Loopback
+---
+title: Loopback
+---
 
 `Loopback` is a setting for the `LinkMode` option of `LinkOpen`. `LinkMode -> Loopback` causes a link to be created that is not connected to another program. Expressions written to the link are read back from the same link.
 

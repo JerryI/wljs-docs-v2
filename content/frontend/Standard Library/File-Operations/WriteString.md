@@ -1,4 +1,6 @@
-# WriteString
+---
+title: WriteString
+---
 
 `WriteString["file", "string"]` writes a string to a file.
 

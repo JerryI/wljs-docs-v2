@@ -1,4 +1,6 @@
-# WeatherForecastData
+---
+title: WeatherForecastData
+---
 
 `WeatherForecastData[loc]` gives the most recent forecast for all weather forecast properties for the specified location.
 

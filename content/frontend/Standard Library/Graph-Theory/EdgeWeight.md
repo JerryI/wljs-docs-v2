@@ -1,4 +1,6 @@
-# EdgeWeight
+---
+title: EdgeWeight
+---
 
 `EdgeWeight` is an option and annotation for `Graph` and related functions that specifies an edge weight.
 

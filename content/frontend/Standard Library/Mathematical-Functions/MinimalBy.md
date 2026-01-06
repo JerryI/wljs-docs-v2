@@ -1,4 +1,6 @@
-# MinimalBy
+---
+title: MinimalBy
+---
 
 `MinimalBy[data, f]` returns a list of the elements e_i of data for which the value of f is minimal.
 

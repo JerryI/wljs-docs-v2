@@ -1,4 +1,6 @@
-# PageBreakBelow
+---
+title: PageBreakBelow
+---
 
 `PageBreakBelow` is an option for Cell which specifies whether a page break should be made immediately below the cell if the notebook that contains the cell is printed.
 

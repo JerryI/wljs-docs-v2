@@ -1,4 +1,6 @@
-# ExponentialMovingAverage
+---
+title: ExponentialMovingAverage
+---
 
 `ExponentialMovingAverage[list, α]` gives the exponential moving average of list with smoothing constant α.
 

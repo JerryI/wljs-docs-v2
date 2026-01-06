@@ -1,4 +1,6 @@
-# Prime
+---
+title: Prime
+---
 
 `Prime[n]` gives the nth prime number.
 

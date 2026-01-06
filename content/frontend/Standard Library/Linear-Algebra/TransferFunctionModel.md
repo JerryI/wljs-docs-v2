@@ -1,4 +1,6 @@
-# TransferFunctionModel
+---
+title: TransferFunctionModel
+---
 
 `TransferFunctionModel[g[s], s]` represents the model of the transfer-function matrix g[s] with complex variable s.
 

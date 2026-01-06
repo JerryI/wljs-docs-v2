@@ -1,4 +1,6 @@
-# SnubPolyhedron
+---
+title: SnubPolyhedron
+---
 
 `SnubPolyhedron[poly]` gives the snub polyhedron of poly by truncating some corners.
 

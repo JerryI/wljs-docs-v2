@@ -1,4 +1,6 @@
-# Disjunction
+---
+title: Disjunction
+---
 
 `Disjunction[expr, {a1, a2, ...}]` gives the disjunction of expr over all choices of the Boolean variables ai.
 

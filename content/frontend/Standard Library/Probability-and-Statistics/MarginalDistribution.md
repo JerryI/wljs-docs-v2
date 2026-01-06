@@ -1,4 +1,6 @@
-# MarginalDistribution
+---
+title: MarginalDistribution
+---
 
 `MarginalDistribution[dist,k]` represents a univariate marginal distribution of the kth coordinate from the multivariate distribution dist.
 

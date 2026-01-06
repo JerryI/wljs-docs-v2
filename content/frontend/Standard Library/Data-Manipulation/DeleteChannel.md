@@ -1,4 +1,6 @@
-# DeleteChannel
+---
+title: DeleteChannel
+---
 
 `DeleteChannel[channel]` deletes the specified channel from the channel broker server.
 

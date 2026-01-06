@@ -1,4 +1,6 @@
-# FussellVeselyImportance
+---
+title: FussellVeselyImportance
+---
 
 `FussellVeselyImportance[rdist, t]` gives the Fussell–Vesely importances for all components in the ReliabilityDistribution rdist at time t.
 

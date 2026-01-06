@@ -1,4 +1,6 @@
-# LibraryUnload
+---
+title: LibraryUnload
+---
 
 `LibraryUnload[lib]` unloads all functions that have been loaded from a Wolfram Library, then it unloads the library.
 

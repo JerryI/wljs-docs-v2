@@ -1,4 +1,6 @@
-# Word
+---
+title: Word
+---
 
 `Word` represents a word in `Read`, `Find`, and related functions.
 

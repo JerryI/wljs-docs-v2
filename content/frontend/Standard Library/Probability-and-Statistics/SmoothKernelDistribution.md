@@ -1,4 +1,6 @@
-# SmoothKernelDistribution
+---
+title: SmoothKernelDistribution
+---
 
 `SmoothKernelDistribution[{x1, x2, ...}]` represents a smooth kernel distribution based on the data values xi.
 

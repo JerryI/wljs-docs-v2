@@ -1,4 +1,6 @@
-# LineIndent
+---
+title: LineIndent
+---
 
 `LineIndent` is an option for `Style` and `Cell` that specifies how many ems of indentation to add at the beginnings of lines for each level of nesting in an expression.
 

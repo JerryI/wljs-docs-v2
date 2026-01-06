@@ -1,4 +1,6 @@
-# GeoCenter
+---
+title: GeoCenter
+---
 
 `GeoCenter` is an option for `GeoGraphics` that specifies the coordinates of the point that should appear at the geographic center of the final map.
 

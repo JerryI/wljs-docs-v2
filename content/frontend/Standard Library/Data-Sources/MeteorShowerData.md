@@ -1,4 +1,6 @@
-# MeteorShowerData
+---
+title: MeteorShowerData
+---
 
 `MeteorShowerData[entity, property]` gives the value of the specified property for the meteor shower entity.
 

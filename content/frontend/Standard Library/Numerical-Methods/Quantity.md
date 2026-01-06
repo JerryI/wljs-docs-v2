@@ -1,4 +1,6 @@
-# Quantity
+---
+title: Quantity
+---
 
 `Quantity[magnitude, unit]` represents a physical quantity with a numerical value and unit. Quantities support automatic unit handling in calculations.
 

@@ -1,4 +1,6 @@
-# BodePlot
+---
+title: BodePlot
+---
 
 `BodePlot[lsys]` generates a Bode plot of a linear time-invariant system lsys.
 

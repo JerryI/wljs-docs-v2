@@ -1,4 +1,6 @@
-# MeanPointDensity
+---
+title: MeanPointDensity
+---
 
 `MeanPointDensity[pdata]` estimates the mean point density λ from point data pdata in the observation region reg.
 

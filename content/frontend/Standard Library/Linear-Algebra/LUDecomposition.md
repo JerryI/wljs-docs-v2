@@ -1,4 +1,6 @@
-# LUDecomposition
+---
+title: LUDecomposition
+---
 
 `LUDecomposition[m]` generates a representation of the LU decomposition of a square matrix m.
 

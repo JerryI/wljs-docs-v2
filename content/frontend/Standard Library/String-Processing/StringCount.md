@@ -1,4 +1,6 @@
-# StringCount
+---
+title: StringCount
+---
 
 `StringCount["string", "sub"]` counts occurrences of a substring.
 

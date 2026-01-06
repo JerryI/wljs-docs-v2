@@ -1,4 +1,6 @@
-# PredictorInformation
+---
+title: PredictorInformation
+---
 
 `PredictorInformation[predictor]` generates a report giving information on the predictor function predictor.
 

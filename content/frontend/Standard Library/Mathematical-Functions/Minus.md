@@ -1,4 +1,6 @@
-# Minus
+---
+title: Minus
+---
 
 `-x` is the arithmetic negation of x.
 

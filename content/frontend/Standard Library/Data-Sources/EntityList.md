@@ -1,4 +1,6 @@
-# EntityList
+---
+title: EntityList
+---
 
 `EntityList[class]` gives a list of entities in the specified entity class.
 

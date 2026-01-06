@@ -1,4 +1,6 @@
-# FullForm
+---
+title: FullForm
+---
 
 `FullForm[expr]` prints as the full form of expr, with no special syntax.
 

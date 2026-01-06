@@ -1,4 +1,6 @@
-# SocketReadyQ
+---
+title: SocketReadyQ
+---
 
 `SocketReadyQ[socket]` tests if there is any data immediately available to read from the specified socket.
 

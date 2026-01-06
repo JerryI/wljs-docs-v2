@@ -1,4 +1,6 @@
-# VectorScale
+---
+title: VectorScale
+---
 
 `VectorScale` is an option to `VectorPlot`, `ListVectorPlot`, and related functions that determines the length and arrowhead size of field vectors that are drawn.
 

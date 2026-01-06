@@ -1,4 +1,6 @@
-# ListVectorDensityPlot
+---
+title: ListVectorDensityPlot
+---
 
 `ListVectorDensityPlot[varr]` generates a vector density plot from an array varr of vector and scalar field values {{vx_ij, vy_ij}, r_ij}.
 

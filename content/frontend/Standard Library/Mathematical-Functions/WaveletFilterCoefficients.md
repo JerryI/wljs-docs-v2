@@ -1,4 +1,6 @@
-# WaveletFilterCoefficients
+---
+title: WaveletFilterCoefficients
+---
 
 `WaveletFilterCoefficients[wave, filt]` gives the filter coefficients for the symbolic wavelet wave of type filt.
 

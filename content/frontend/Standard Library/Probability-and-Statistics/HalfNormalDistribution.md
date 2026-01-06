@@ -1,4 +1,6 @@
-# HalfNormalDistribution
+---
+title: HalfNormalDistribution
+---
 
 `HalfNormalDistribution[θ]` represents a half-normal distribution with scale inversely proportional to parameter θ.
 

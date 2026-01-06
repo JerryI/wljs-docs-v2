@@ -1,4 +1,6 @@
-# Sockets
+---
+title: Sockets
+---
 
 `Sockets[]` returns all active socket connections initiated by your current Wolfram Language session.
 

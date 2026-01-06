@@ -1,4 +1,6 @@
-# SequenceCount
+---
+title: SequenceCount
+---
 
 `SequenceCount[list, sub]` gives a count of the number of times sub appears as a sublist of list.
 

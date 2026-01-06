@@ -1,4 +1,6 @@
-# InternallyBalancedDecomposition
+---
+title: InternallyBalancedDecomposition
+---
 
 `InternallyBalancedDecomposition[ssm]` yields the internally balanced decomposition of the state-space model ssm.
 

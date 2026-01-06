@@ -1,4 +1,6 @@
-# StartAsynchronousTask
+---
+title: StartAsynchronousTask
+---
 
 `StartAsynchronousTask[task]` allows asynchronous evaluations from task after it has been stopped.
 

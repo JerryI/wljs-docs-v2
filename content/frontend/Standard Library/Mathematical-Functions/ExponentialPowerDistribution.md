@@ -1,4 +1,6 @@
-# ExponentialPowerDistribution
+---
+title: ExponentialPowerDistribution
+---
 
 `ExponentialPowerDistribution[κ,μ,σ]` represents an exponential power distribution with shape parameter κ, location parameter μ, and scale parameter σ.
 

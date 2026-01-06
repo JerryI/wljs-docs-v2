@@ -1,4 +1,6 @@
-# PoissonDistribution
+---
+title: PoissonDistribution
+---
 
 `PoissonDistribution[μ]` represents a Poisson distribution with mean μ.
 

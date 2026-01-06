@@ -1,4 +1,6 @@
-# RequiredPhysicalQuantities
+---
+title: RequiredPhysicalQuantities
+---
 
 `RequiredPhysicalQuantities` is an option for FormulaLookup that specifies physical quantities that must be used by the formulas returned.
 

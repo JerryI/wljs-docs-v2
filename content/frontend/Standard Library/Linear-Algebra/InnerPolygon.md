@@ -1,4 +1,6 @@
-# InnerPolygon
+---
+title: InnerPolygon
+---
 
 `InnerPolygon[poly]` gives the inner polygon of the polygon poly.
 

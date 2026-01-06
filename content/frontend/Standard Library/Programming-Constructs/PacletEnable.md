@@ -1,4 +1,6 @@
-# PacletEnable
+---
+title: PacletEnable
+---
 
 `PacletEnable[paclet]` enables a previously disabled paclet.
 

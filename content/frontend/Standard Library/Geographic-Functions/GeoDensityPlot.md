@@ -1,4 +1,6 @@
-# GeoDensityPlot
+---
+title: GeoDensityPlot
+---
 
 `GeoDensityPlot[{loc1 -> val1, loc2 -> val2, …}]` makes a geo density plot with colors at the locations `loci` determined by the values `vali`.
 

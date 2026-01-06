@@ -1,4 +1,6 @@
-# ControllableDecomposition
+---
+title: ControllableDecomposition
+---
 
 `ControllableDecomposition[sys]` yields the controllable subsystem of the state-space model sys.
 

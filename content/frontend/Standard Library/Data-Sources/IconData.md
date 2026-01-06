@@ -1,4 +1,6 @@
-# IconData
+---
+title: IconData
+---
 
 `IconData[type, value]` generates an icon of the specified type assuming the value given.
 

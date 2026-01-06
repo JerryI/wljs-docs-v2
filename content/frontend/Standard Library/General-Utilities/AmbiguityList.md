@@ -1,4 +1,6 @@
-# AmbiguityList
+---
+title: AmbiguityList
+---
 
 `AmbiguityList[{expr1,expr2,…}]` represents possible results derived from an ambiguous semantic interpretation.
 

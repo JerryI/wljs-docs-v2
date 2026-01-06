@@ -1,4 +1,6 @@
-# SynthesizeMissingValues
+---
+title: SynthesizeMissingValues
+---
 
 `SynthesizeMissingValues[{example1, example2, ...}]` replaces missing values in each example by generated values.
 

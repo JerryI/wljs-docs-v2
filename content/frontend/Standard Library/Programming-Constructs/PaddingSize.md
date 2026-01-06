@@ -1,4 +1,6 @@
-# PaddingSize
+---
+title: PaddingSize
+---
 
 `PaddingSize` is an option in AudioDelay and other functions that specifies the amount of padding.
 

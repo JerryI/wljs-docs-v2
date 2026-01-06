@@ -1,4 +1,6 @@
-# InverseGammaDistribution
+---
+title: InverseGammaDistribution
+---
 
 `InverseGammaDistribution[α,β]` represents an inverse gamma distribution with shape parameter α and scale parameter β.
 

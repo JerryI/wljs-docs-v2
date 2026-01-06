@@ -1,4 +1,6 @@
-# ImageCompose
+---
+title: ImageCompose
+---
 
 `ImageCompose[image, overlay]` gives the result of overlaying overlay onto image.
 

@@ -1,4 +1,6 @@
-# KernelMixtureDistribution
+---
+title: KernelMixtureDistribution
+---
 
 `KernelMixtureDistribution[{x1, x2, …}]` represents a kernel mixture distribution based on the data values `xi`.
 

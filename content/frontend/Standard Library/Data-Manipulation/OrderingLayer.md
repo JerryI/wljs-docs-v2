@@ -1,4 +1,6 @@
-# OrderingLayer
+---
+title: OrderingLayer
+---
 
 `OrderingLayer[]` represents a net layer that effectively applies `Ordering` to its input.
 

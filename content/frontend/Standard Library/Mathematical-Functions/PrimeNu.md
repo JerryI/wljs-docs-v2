@@ -1,4 +1,6 @@
-# PrimeNu
+---
+title: PrimeNu
+---
 
 `PrimeNu[n]` gives the number of distinct primes ν(n) in n.
 

@@ -1,4 +1,6 @@
-# DigitCharacter
+---
+title: DigitCharacter
+---
 
 `DigitCharacter` represents a digit character 0–9 in StringExpression.
 

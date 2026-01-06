@@ -1,4 +1,6 @@
-# VectorAngle
+---
+title: VectorAngle
+---
 
 `VectorAngle[u, v]` gives the angle between the vectors u and v.
 

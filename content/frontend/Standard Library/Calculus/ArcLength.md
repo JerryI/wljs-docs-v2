@@ -1,4 +1,6 @@
-# ArcLength
+---
+title: ArcLength
+---
 
 `ArcLength[reg]` gives the length of a one-dimensional region (curve).
 

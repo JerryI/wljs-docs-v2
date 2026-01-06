@@ -1,4 +1,6 @@
-# PlantData
+---
+title: PlantData
+---
 
 `PlantData[entity, property]` gives the value of the specified property for the plant entity.
 

@@ -1,4 +1,6 @@
-# Tomorrow
+---
+title: Tomorrow
+---
 
 `Tomorrow` gives a DateObject representing the following day.
 

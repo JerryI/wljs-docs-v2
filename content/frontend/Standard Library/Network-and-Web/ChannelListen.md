@@ -1,4 +1,6 @@
-# ChannelListen
+---
+title: ChannelListen
+---
 
 `ChannelListen[channel]` starts listening on the specified channel.
 

@@ -1,4 +1,6 @@
-# BellB
+---
+title: BellB
+---
 
 `BellB[n]` gives the Bell number Bn.
 

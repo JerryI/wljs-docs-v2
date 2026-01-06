@@ -1,4 +1,6 @@
-# BenfordDistribution
+---
+title: BenfordDistribution
+---
 
 `BenfordDistribution[b]` represents a Benford distribution with base parameter b.
 

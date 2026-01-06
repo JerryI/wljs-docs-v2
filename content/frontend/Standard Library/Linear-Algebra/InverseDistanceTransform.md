@@ -1,4 +1,6 @@
-# InverseDistanceTransform
+---
+title: InverseDistanceTransform
+---
 
 `InverseDistanceTransform[image]` gives the inverse distance transform of image, returning a binary image.
 

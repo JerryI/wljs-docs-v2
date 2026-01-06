@@ -1,4 +1,6 @@
-# MathematicalFunctionData
+---
+title: MathematicalFunctionData
+---
 
 `MathematicalFunctionData[entity,property]` gives data corresponding to property for the mathematical function specified by entity.
 

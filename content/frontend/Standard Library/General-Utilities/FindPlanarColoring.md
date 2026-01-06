@@ -1,4 +1,6 @@
-# FindPlanarColoring
+---
+title: FindPlanarColoring
+---
 
 `FindPlanarColoring[g]` finds a coloring with minimal size for the faces of the planar graph g.
 

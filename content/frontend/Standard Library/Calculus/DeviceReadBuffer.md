@@ -1,4 +1,6 @@
-# DeviceReadBuffer
+---
+title: DeviceReadBuffer
+---
 
 `DeviceReadBuffer[device]` reads the complete contents of the buffer on a device.
 

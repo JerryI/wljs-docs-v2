@@ -1,4 +1,6 @@
-# MinIntervalSize
+---
+title: MinIntervalSize
+---
 
 `MinIntervalSize` is an option for `IntervalSlider` that specifies the minimum size of the interval during interactive editing.
 

@@ -1,4 +1,6 @@
-# SokalSneathDissimilarity
+---
+title: SokalSneathDissimilarity
+---
 
 `SokalSneathDissimilarity[u, v]` gives the Sokal–Sneath dissimilarity between Boolean vectors u and v.
 

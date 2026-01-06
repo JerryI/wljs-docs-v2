@@ -1,4 +1,6 @@
-# Let
+---
+title: Let
+---
 
 `Let` is a With-like construction that allows recursive assignments, like Let* in Scheme.
 

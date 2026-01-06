@@ -1,4 +1,6 @@
-# SliceDistribution
+---
+title: SliceDistribution
+---
 
 `SliceDistribution[proc, t]` represents the distribution of the process state at time t.
 

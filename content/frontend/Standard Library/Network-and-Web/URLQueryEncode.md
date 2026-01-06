@@ -1,4 +1,6 @@
-# URLQueryEncode
+---
+title: URLQueryEncode
+---
 
 `URLQueryEncode[<|key1 -> val1, key2 -> val2, ...|>]` creates a URL-style query string from an association of keys and values.
 

@@ -1,4 +1,6 @@
-# StringDelete
+---
+title: StringDelete
+---
 
 `StringDelete["string", patt]` yields the string obtained by deleting from string all occurrences of anything matching the string pattern patt.
 

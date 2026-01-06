@@ -1,4 +1,6 @@
-# URLDownloadSubmit
+---
+title: URLDownloadSubmit
+---
 
 `URLDownloadSubmit[url, file]` submits the specified URL to be downloaded asynchronously to the file given.
 

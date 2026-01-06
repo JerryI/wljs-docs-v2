@@ -1,4 +1,6 @@
-# TrigFactorList
+---
+title: TrigFactorList
+---
 
 `TrigFactorList[expr]` factors trigonometric functions in expr, yielding a list of lists containing trigonometric monomials and exponents.
 

@@ -1,4 +1,6 @@
-# KelvinKer
+---
+title: KelvinKer
+---
 
 `KelvinKer[z]` gives the Kelvin function ker(z).
 

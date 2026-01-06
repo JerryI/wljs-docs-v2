@@ -1,4 +1,6 @@
-# PseudoInverse
+---
+title: PseudoInverse
+---
 
 `PseudoInverse[m]` finds the pseudoinverse (Moore-Penrose inverse) of a rectangular matrix.
 

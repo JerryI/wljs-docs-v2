@@ -1,4 +1,6 @@
-# SnippetsVideo
+---
+title: SnippetsVideo
+---
 
 `SnippetsVideo[video, n]` returns a summary video based on *n* snippets from *video*.
 

@@ -1,4 +1,6 @@
-# Star
+---
+title: Star
+---
 
 `Star[x, y, ...]` displays as x⋆y⋆....
 

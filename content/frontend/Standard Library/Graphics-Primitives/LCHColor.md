@@ -1,4 +1,6 @@
-# LCHColor
+---
+title: LCHColor
+---
 
 `LCHColor[l, c, h]` represents a color in the LCH color space with lightness l, chroma c and hue h.
 

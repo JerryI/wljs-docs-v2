@@ -1,4 +1,6 @@
-# TreeGraphQ
+---
+title: TreeGraphQ
+---
 
 `TreeGraphQ[g]` yields `True` if graph g is a tree (connected and acyclic) and `False` otherwise.
 

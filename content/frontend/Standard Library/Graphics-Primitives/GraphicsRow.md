@@ -1,4 +1,6 @@
-# GraphicsRow
+---
+title: GraphicsRow
+---
 
 `GraphicsRow[{g1, g2, …}]` generates a graphic in which the `gi` are laid out in a row.
 

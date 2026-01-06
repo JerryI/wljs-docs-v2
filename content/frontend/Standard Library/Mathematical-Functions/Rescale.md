@@ -1,4 +1,6 @@
-# Rescale
+---
+title: Rescale
+---
 
 `Rescale[x, {min, max}]` rescales `x` from the range `[min, max]` to `[0, 1]`. `Rescale[x, {min, max}, {ymin, ymax}]` rescales to `[ymin, ymax]`.
 

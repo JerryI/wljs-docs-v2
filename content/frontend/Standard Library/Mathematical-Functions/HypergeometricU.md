@@ -1,4 +1,6 @@
-# HypergeometricU
+---
+title: HypergeometricU
+---
 
 `HypergeometricU[a, b, z]` is the Tricomi confluent hypergeometric function U(a, b, z).
 

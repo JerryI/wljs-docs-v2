@@ -1,4 +1,6 @@
-# CoifletWavelet
+---
+title: CoifletWavelet
+---
 
 `CoifletWavelet[]` represents a Coiflet wavelet of order 2.
 

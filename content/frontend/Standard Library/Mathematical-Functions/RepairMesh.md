@@ -1,4 +1,6 @@
-# RepairMesh
+---
+title: RepairMesh
+---
 
 `RepairMesh[mreg]` repairs defects in the mesh region mreg.
 

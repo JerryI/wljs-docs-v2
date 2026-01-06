@@ -1,4 +1,6 @@
-# GeoVectorENU
+---
+title: GeoVectorENU
+---
 
 `GeoVectorENU[loc -> {ve, vn}]` represents a horizontal two-dimensional vector of components `ve` and `vn` in an orthonormal frame tangent to the Earth at geo location `loc`.
 

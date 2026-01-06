@@ -1,4 +1,6 @@
-# TagSetDelayed
+---
+title: TagSetDelayed
+---
 
 `f/:lhs:=rhs` assigns rhs to be the delayed value of lhs, and associates the assignment with the symbol f.
 

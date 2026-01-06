@@ -1,4 +1,6 @@
-# MeshConnectivityGraph
+---
+title: MeshConnectivityGraph
+---
 
 `MeshConnectivityGraph[mr, 0]` gives a graph of points connected by lines.
 

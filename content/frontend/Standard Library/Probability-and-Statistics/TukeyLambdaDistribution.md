@@ -1,4 +1,6 @@
-# TukeyLambdaDistribution
+---
+title: TukeyLambdaDistribution
+---
 
 `TukeyLambdaDistribution[λ]` represents Tukey's lambda distribution with shape parameter *λ*.
 

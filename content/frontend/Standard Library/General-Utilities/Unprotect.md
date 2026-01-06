@@ -1,4 +1,6 @@
-# Unprotect
+---
+title: Unprotect
+---
 
 `Unprotect[s1, s2, ...]` removes the attribute `Protected` from symbols, allowing modification of their definitions.
 

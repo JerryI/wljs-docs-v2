@@ -1,4 +1,6 @@
-# AudioTrackApply
+---
+title: AudioTrackApply
+---
 
 `AudioTrackApply[f, video]` applies the function f to the first audio track of the Video object video.
 

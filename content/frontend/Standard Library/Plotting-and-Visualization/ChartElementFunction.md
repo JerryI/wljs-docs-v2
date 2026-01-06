@@ -1,4 +1,6 @@
-# ChartElementFunction
+---
+title: ChartElementFunction
+---
 
 `ChartElementFunction` is an option for charting functions such as `BarChart` that gives a function to use to generate the primitives for rendering each chart element.
 

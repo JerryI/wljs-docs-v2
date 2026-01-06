@@ -1,4 +1,6 @@
-# RandomTree
+---
+title: RandomTree
+---
 
 `RandomTree[n]` gives a pseudorandom tree with n nodes.
 

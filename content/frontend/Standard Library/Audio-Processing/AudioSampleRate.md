@@ -1,4 +1,6 @@
-# AudioSampleRate
+---
+title: AudioSampleRate
+---
 
 `AudioSampleRate[audio]` returns the sample rate of the Audio object audio.
 

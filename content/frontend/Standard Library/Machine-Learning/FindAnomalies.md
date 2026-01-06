@@ -1,4 +1,6 @@
-# FindAnomalies
+---
+title: FindAnomalies
+---
 
 `FindAnomalies[{example1,example2,…}]` gives a list of the examplei that are considered anomalous with respect to the other examples.
 

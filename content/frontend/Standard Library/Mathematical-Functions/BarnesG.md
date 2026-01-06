@@ -1,4 +1,6 @@
-# BarnesG
+---
+title: BarnesG
+---
 
 `BarnesG[z]` gives the Barnes G-function G(z).
 

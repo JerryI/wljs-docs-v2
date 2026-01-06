@@ -1,4 +1,6 @@
-# ExampleData
+---
+title: ExampleData
+---
 
 `ExampleData["type"]` gives a list of names of examples of the specified type.
 

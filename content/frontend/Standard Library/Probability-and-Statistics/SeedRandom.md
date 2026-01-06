@@ -1,4 +1,6 @@
-# SeedRandom
+---
+title: SeedRandom
+---
 
 `SeedRandom[s]` resets the pseudorandom generator using s as a seed.
 

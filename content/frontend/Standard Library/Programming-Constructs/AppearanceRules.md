@@ -1,4 +1,6 @@
-# AppearanceRules
+---
+title: AppearanceRules
+---
 
 `AppearanceRules` is an option for form and page generation functions that specifies the overall appearance of the generated object.
 

@@ -1,4 +1,6 @@
-# Cyclotomic
+---
+title: Cyclotomic
+---
 
 `Cyclotomic[n, x]` gives the nth cyclotomic polynomial in x.
 

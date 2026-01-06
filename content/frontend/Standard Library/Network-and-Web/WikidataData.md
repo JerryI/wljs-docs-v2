@@ -1,4 +1,6 @@
-# WikidataData
+---
+title: WikidataData
+---
 
 `WikidataData[item, property]` gives the values of the specified *property* for the given *item*.
 

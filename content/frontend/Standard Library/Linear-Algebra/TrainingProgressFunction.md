@@ -1,4 +1,6 @@
-# TrainingProgressFunction
+---
+title: TrainingProgressFunction
+---
 
 `TrainingProgressFunction` is an option for `NetTrain` that specifies a function to run periodically during training.
 

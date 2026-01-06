@@ -1,4 +1,6 @@
-# LocalResponseNormalizationLayer
+---
+title: LocalResponseNormalizationLayer
+---
 
 `LocalResponseNormalizationLayer[]` represents a net layer that normalizes its input by averaging across neighboring input channels.
 

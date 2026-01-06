@@ -1,4 +1,6 @@
-# RenkoChart
+---
+title: RenkoChart
+---
 
 `RenkoChart[{{date1, p1}, {date2, p2}, ...}]` makes a Renko chart with prices pi at date datei.
 

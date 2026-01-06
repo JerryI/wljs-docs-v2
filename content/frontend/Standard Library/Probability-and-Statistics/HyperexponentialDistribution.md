@@ -1,4 +1,6 @@
-# HyperexponentialDistribution
+---
+title: HyperexponentialDistribution
+---
 
 `HyperexponentialDistribution[{α1, ..., αm}, {λ1, ..., λm}]` represents an m-phase hyperexponential distribution with phase probabilities αi and rates λi.
 

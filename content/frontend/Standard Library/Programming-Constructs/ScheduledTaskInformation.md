@@ -1,4 +1,6 @@
-# ScheduledTaskInformation
+---
+title: ScheduledTaskInformation
+---
 
 `ScheduledTaskInformation[cloudobj]` returns the properties of the ScheduledTask cloudobj.
 

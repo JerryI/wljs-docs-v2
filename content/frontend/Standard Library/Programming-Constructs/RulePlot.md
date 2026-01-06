@@ -1,4 +1,6 @@
-# RulePlot
+---
+title: RulePlot
+---
 
 `RulePlot[sys]` generates a plot representing the rule for the computational system sys.
 

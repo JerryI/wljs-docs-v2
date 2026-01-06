@@ -1,4 +1,6 @@
-# GoldenRatio
+---
+title: GoldenRatio
+---
 
 `GoldenRatio` is the golden ratio φ = (1 + √5)/2, with numerical value ≈ 1.61803.
 

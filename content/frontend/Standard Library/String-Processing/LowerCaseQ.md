@@ -1,4 +1,6 @@
-# LowerCaseQ
+---
+title: LowerCaseQ
+---
 
 `LowerCaseQ[string]` yields `True` if all the characters in the string are lowercase letters, and yields `False` otherwise.
 

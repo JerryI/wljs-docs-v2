@@ -1,4 +1,6 @@
-# DualPolyhedron
+---
+title: DualPolyhedron
+---
 
 `DualPolyhedron[poly]` gives the dual polyhedron of the polyhedron poly.
 

@@ -1,4 +1,6 @@
-# MathieuSPrime
+---
+title: MathieuSPrime
+---
 
 `MathieuSPrime[a, q, z]` gives the derivative with respect to *z* of the odd Mathieu function with characteristic value *a* and parameter *q*.
 

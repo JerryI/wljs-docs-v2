@@ -1,4 +1,6 @@
-# DaubechiesWavelet
+---
+title: DaubechiesWavelet
+---
 
 `DaubechiesWavelet[]` represents a Daubechies wavelet of order 2.
 

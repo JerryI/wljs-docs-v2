@@ -1,4 +1,6 @@
-# Normalized
+---
+title: Normalized
+---
 
 `Normalized` is an option that determines whether to test if matrix columns or rows are normalized.
 

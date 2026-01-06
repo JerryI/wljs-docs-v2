@@ -1,4 +1,6 @@
-# BubbleChart3D
+---
+title: BubbleChart3D
+---
 
 `BubbleChart3D[{{x1, y1, z1, u1}, {x2, y2, z2, u2}, ...}]` makes a 3D bubble chart with bubbles at positions {xi, yi, zi} with sizes ui.
 

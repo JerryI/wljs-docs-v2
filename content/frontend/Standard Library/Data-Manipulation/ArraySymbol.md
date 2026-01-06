@@ -1,4 +1,6 @@
-# ArraySymbol
+---
+title: ArraySymbol
+---
 
 `ArraySymbol[a]` represents an array with name a.
 

@@ -1,4 +1,6 @@
-# BlackmanNuttallWindow
+---
+title: BlackmanNuttallWindow
+---
 
 `BlackmanNuttallWindow[x]` represents a Blackman–Nuttall window function of x.
 

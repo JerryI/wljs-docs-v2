@@ -1,4 +1,6 @@
-# Encode
+---
+title: Encode
+---
 
 `Encode["source", "dest"]` writes an encoded version of the file source to the file dest.
 

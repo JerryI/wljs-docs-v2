@@ -1,4 +1,6 @@
-# AstronomicalData
+---
+title: AstronomicalData
+---
 
 `AstronomicalData["name","property"]` gives the value of the specified property of the astronomical object with the specified name.
 

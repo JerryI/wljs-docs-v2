@@ -1,4 +1,6 @@
-# KeySortBy
+---
+title: KeySortBy
+---
 
 `KeySortBy[assoc,f]` sorts the elements of an association in the order defined by applying f to each of their keys.
 

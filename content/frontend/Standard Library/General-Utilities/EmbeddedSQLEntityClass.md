@@ -1,4 +1,6 @@
-# EmbeddedSQLEntityClass
+---
+title: EmbeddedSQLEntityClass
+---
 
 `EmbeddedSQLEntityClass[string, props]` represents a verbatim SQL query to be interpreted as an entity class with properties given by props.
 

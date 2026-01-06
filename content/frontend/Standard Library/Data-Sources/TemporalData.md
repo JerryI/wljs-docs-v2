@@ -1,4 +1,6 @@
-# TemporalData
+---
+title: TemporalData
+---
 
 `TemporalData[{v1, v2, ...}, tspec]` represents temporal data with values vi at times specified by tspec.
 

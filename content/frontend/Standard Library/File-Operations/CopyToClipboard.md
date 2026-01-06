@@ -1,4 +1,6 @@
-# CopyToClipboard
+---
+title: CopyToClipboard
+---
 
 `CopyToClipboard[expr]` replaces the contents of the clipboard with expr.
 

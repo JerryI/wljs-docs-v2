@@ -1,4 +1,6 @@
-# AudioPause
+---
+title: AudioPause
+---
 
 `AudioPause[]` pauses the playback of all AudioStream objects.
 

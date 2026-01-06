@@ -1,4 +1,6 @@
-# BrayCurtisDistance
+---
+title: BrayCurtisDistance
+---
 
 `BrayCurtisDistance[u, v]` gives the Bray–Curtis distance between vectors u and v.
 

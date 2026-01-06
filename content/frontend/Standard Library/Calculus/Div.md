@@ -1,4 +1,6 @@
-# Div
+---
+title: Div
+---
 
 `Div[{f1, ..., fn}, {x1, ..., xn}]` gives the divergence ∂f1/∂x1 + ... + ∂fn/∂xn.
 

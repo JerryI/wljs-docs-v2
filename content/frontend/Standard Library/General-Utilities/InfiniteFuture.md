@@ -1,4 +1,6 @@
-# InfiniteFuture
+---
+title: InfiniteFuture
+---
 
 `InfiniteFuture` returns a DateObject expression representing infinite future in time.
 

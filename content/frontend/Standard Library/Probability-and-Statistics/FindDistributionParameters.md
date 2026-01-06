@@ -1,4 +1,6 @@
-# FindDistributionParameters
+---
+title: FindDistributionParameters
+---
 
 `FindDistributionParameters[data,dist]` finds the parameter estimates for the distribution dist from data.
 

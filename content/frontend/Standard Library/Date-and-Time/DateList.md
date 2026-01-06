@@ -1,4 +1,6 @@
-# DateList
+---
+title: DateList
+---
 
 `DateList[]` gives the current local date and time in the form `{year, month, day, hour, minute, second}`. `DateList[date]` gives a date list for a given date specification.
 

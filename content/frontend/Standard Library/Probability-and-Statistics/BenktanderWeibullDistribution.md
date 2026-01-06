@@ -1,4 +1,6 @@
-# BenktanderWeibullDistribution
+---
+title: BenktanderWeibullDistribution
+---
 
 `BenktanderWeibullDistribution[a, b]` represents a Benktander distribution of type II with parameters a and b.
 

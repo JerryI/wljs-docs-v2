@@ -1,4 +1,6 @@
-# FromDateString
+---
+title: FromDateString
+---
 
 `FromDateString["string"]` gives a date object corresponding to the date represented by "string".
 

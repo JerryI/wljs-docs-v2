@@ -1,4 +1,6 @@
-# UnconstrainedParameters
+---
+title: UnconstrainedParameters
+---
 
 `UnconstrainedParameters` is an option to functions like `GeometricScene` that specifies what parameters should be treated as unconstrained, so that they can take on any possible value.
 

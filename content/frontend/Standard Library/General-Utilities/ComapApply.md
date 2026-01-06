@@ -1,4 +1,6 @@
-# ComapApply
+---
+title: ComapApply
+---
 
 `ComapApply[{f1, f2, ...}, expr]` gives {Apply[f1, expr], Apply[f2, expr], ...}.
 

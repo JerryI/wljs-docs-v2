@@ -1,4 +1,6 @@
-# KaryTree
+---
+title: KaryTree
+---
 
 `KaryTree[n]` gives a binary tree with `n` vertices.
 

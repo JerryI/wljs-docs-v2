@@ -1,4 +1,6 @@
-# FindSubgraphIsomorphism
+---
+title: FindSubgraphIsomorphism
+---
 
 `FindSubgraphIsomorphism[g1, g2]` finds a subgraph isomorphism that maps the graph g1 to a subgraph of g2 by renaming vertices.
 

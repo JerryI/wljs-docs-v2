@@ -1,4 +1,6 @@
-# CepstrogramArray
+---
+title: CepstrogramArray
+---
 
 `CepstrogramArray[data]` computes an array of cepstra on data.
 

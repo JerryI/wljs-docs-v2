@@ -1,4 +1,6 @@
-# RandomGeneratorState
+---
+title: RandomGeneratorState
+---
 
 `RandomGeneratorState[...]` gives a representation of the internal state of a pseudorandom generator.
 

@@ -1,4 +1,6 @@
-# SymmetricReduction
+---
+title: SymmetricReduction
+---
 
 `SymmetricReduction[f, {x1, …, xn}]` gives a pair of polynomials {p, q} in x1, …, xn such that f == p + q, where p is the symmetric part and q is the remainder.
 

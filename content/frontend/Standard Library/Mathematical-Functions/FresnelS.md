@@ -1,4 +1,6 @@
-# FresnelS
+---
+title: FresnelS
+---
 
 `FresnelS[z]` gives the Fresnel sine integral S(z).
 

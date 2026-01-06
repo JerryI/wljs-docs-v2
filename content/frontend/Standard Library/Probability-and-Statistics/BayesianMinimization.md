@@ -1,4 +1,6 @@
-# BayesianMinimization
+---
+title: BayesianMinimization
+---
 
 `BayesianMinimization[f,{conf1,conf2,…}]` gives an object representing the result of Bayesian minimization of the function f over the configurations confi.
 

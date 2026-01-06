@@ -1,4 +1,6 @@
-# QuantityVariableDimensions
+---
+title: QuantityVariableDimensions
+---
 
 `QuantityVariableDimensions[quantityvariable]` returns a list of base dimensions associated with the specified quantityvariable.
 

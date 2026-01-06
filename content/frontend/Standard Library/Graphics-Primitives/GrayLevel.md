@@ -1,4 +1,6 @@
-# GrayLevel
+---
+title: GrayLevel
+---
 
 `GrayLevel[g]` represents a color in the grayscale color space with gray level g (0 = black, 1 = white).
 

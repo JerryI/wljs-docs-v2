@@ -1,4 +1,6 @@
-# DrazinInverse
+---
+title: DrazinInverse
+---
 
 `DrazinInverse[m]` finds the Drazin generalized inverse of a square matrix m.
 

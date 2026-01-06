@@ -1,4 +1,6 @@
-# JacobiSD
+---
+title: JacobiSD
+---
 
 `JacobiSD[u, m]` gives the Jacobi elliptic function sd(u|m).
 

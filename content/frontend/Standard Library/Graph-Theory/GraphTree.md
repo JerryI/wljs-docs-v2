@@ -1,4 +1,6 @@
-# GraphTree
+---
+title: GraphTree
+---
 
 `GraphTree[g]` constructs a tree from the tree graph `g`.
 

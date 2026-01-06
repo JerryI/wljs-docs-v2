@@ -1,4 +1,6 @@
-# EffectiveInterest
+---
+title: EffectiveInterest
+---
 
 `EffectiveInterest[r, q]` gives the effective interest rate corresponding to interest specification r, compounded at time intervals q.
 

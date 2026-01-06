@@ -1,4 +1,6 @@
-# Condition
+---
+title: Condition
+---
 
 `patt /; test` is a pattern which matches only if the evaluation of test yields True.
 

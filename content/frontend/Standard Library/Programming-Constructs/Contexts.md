@@ -1,4 +1,6 @@
-# Contexts
+---
+title: Contexts
+---
 
 `Contexts[]` gives a list of all contexts.
 

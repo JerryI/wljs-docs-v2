@@ -1,4 +1,6 @@
-# PredictorMeasurements
+---
+title: PredictorMeasurements
+---
 
 `PredictorMeasurements[predictor, testset, prop]` gives measurements associated with the property *prop* when *predictor* is evaluated on *testset*.
 

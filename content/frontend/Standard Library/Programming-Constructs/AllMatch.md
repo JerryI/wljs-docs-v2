@@ -1,4 +1,6 @@
-# AllMatch
+---
+title: AllMatch
+---
 
 `AllMatch[{e1, e2, ...}, form]` yields True if ei matches the pattern form for all of the ei.
 

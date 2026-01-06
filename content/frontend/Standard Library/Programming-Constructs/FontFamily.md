@@ -1,4 +1,6 @@
-# FontFamily
+---
+title: FontFamily
+---
 
 `FontFamily` is an option for Style and Cell that specifies the font family in which text should be rendered.
 

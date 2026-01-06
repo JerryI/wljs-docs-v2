@@ -1,4 +1,6 @@
-# NominalVariables
+---
+title: NominalVariables
+---
 
 `NominalVariables` is an option for statistical functions such as `LinearModelFit` that specifies which variables should be treated as having discrete values specified by names.
 

@@ -1,4 +1,6 @@
-# ArrayPad
+---
+title: ArrayPad
+---
 
 `ArrayPad[array, m]` gives an array with m zeros of padding on every side.
 

@@ -1,4 +1,6 @@
-# SummationLayer
+---
+title: SummationLayer
+---
 
 `SummationLayer[]` represents a net layer that sums all of its input elements.
 

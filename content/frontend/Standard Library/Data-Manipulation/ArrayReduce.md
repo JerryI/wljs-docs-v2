@@ -1,4 +1,6 @@
-# ArrayReduce
+---
+title: ArrayReduce
+---
 
 `ArrayReduce[f, array, n]` reduces dimension n of array by applying f.
 

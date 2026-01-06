@@ -1,4 +1,6 @@
-# CriticalSection
+---
+title: CriticalSection
+---
 
 `CriticalSection[var, expr]` acquires the lock var for parallel computation, evaluates expr, then releases the lock var.
 

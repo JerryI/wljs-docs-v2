@@ -1,4 +1,6 @@
-# TemplateExpression
+---
+title: TemplateExpression
+---
 
 `TemplateExpression[expr]` represents an expression held until a template is applied, and then evaluated.
 

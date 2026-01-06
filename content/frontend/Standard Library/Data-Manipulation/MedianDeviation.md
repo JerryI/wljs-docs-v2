@@ -1,4 +1,6 @@
-# MedianDeviation
+---
+title: MedianDeviation
+---
 
 `MedianDeviation[data]` gives the median absolute deviation from the median of the elements in data.
 

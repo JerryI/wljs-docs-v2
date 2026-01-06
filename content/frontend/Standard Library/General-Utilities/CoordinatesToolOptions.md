@@ -1,4 +1,6 @@
-# CoordinatesToolOptions
+---
+title: CoordinatesToolOptions
+---
 
 `CoordinatesToolOptions` is an option for `Graphics` that gives values of options associated with the Get Coordinates tool.
 

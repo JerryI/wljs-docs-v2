@@ -1,4 +1,6 @@
-# ArrayReshape
+---
+title: ArrayReshape
+---
 
 `ArrayReshape[list, dims]` arranges the elements of list into a rectangular array with dimensions dims.
 

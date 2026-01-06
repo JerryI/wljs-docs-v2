@@ -1,4 +1,6 @@
-# ConcaveHullMesh
+---
+title: ConcaveHullMesh
+---
 
 `ConcaveHullMesh[{p1, p2, ...}]` gives the concave hull mesh from the points p1, p2, ....
 

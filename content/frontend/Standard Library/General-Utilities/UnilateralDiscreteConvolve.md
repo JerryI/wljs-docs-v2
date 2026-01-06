@@ -1,4 +1,6 @@
-# UnilateralDiscreteConvolve
+---
+title: UnilateralDiscreteConvolve
+---
 
 `UnilateralDiscreteConvolve[f, g, k, n]` gives the unilateral discrete convolution with respect to k of the expressions f and g.
 

@@ -1,4 +1,6 @@
-# LogMultinormalDistribution
+---
+title: LogMultinormalDistribution
+---
 
 `LogMultinormalDistribution[μ, Σ]` represents a log-multinormal distribution with parameters μ and Σ.
 

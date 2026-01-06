@@ -1,4 +1,6 @@
-# JulianDate
+---
+title: JulianDate
+---
 
 `JulianDate[]` gives the current number of days since noon on November 24, 4714 BCE in the GMT time zone.
 

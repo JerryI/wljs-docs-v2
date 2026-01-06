@@ -1,4 +1,6 @@
-# ReImPlot
+---
+title: ReImPlot
+---
 
 `ReImPlot[f, {x, xmin, xmax}]` generates a plot of `Re[f]` and `Im[f]` as functions of x from xmin to xmax.
 

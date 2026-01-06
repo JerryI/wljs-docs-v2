@@ -1,4 +1,6 @@
-# Connect
+---
+title: Connect
+---
 
 `Connect` is a setting for the `LinkMode` option of `LinkOpen`. `LinkMode -> Connect` causes a link to be created that will connect to a link listening on a named port.
 

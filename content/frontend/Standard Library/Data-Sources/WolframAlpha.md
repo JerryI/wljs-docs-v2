@@ -1,4 +1,6 @@
-# WolframAlpha
+---
+title: WolframAlpha
+---
 
 `WolframAlpha["query"]` sends query to Wolfram|Alpha and imports the output.
 

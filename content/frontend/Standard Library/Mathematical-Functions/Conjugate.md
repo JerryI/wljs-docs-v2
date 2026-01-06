@@ -1,4 +1,6 @@
-# Conjugate
+---
+title: Conjugate
+---
 
 `Conjugate[z]` gives the complex conjugate of the complex number z.
 

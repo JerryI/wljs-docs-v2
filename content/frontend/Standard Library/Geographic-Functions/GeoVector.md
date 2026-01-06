@@ -1,4 +1,6 @@
-# GeoVector
+---
+title: GeoVector
+---
 
 `GeoVector[loc -> {m, α}]` represents a horizontal two-dimensional vector of magnitude `m` and bearing `α` at geo location `loc`.
 

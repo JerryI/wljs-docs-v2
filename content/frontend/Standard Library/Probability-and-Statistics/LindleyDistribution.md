@@ -1,4 +1,6 @@
-# LindleyDistribution
+---
+title: LindleyDistribution
+---
 
 `LindleyDistribution[δ]` represents a Lindley distribution with shape parameter δ.
 

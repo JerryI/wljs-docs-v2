@@ -1,4 +1,6 @@
-# UniverseModelData
+---
+title: UniverseModelData
+---
 
 `UniverseModelData[spec]` returns properties of the universe based on the default model at specification defined by the time after the Big Bang, the distance to the comoving object, or the redshift of such an object.
 

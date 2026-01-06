@@ -1,4 +1,6 @@
-# QuotientRemainder
+---
+title: QuotientRemainder
+---
 
 `QuotientRemainder[m, n]` gives a list of the quotient and remainder from division of m by n.
 

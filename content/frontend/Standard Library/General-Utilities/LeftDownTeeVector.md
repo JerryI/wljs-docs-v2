@@ -1,4 +1,6 @@
-# LeftDownTeeVector
+---
+title: LeftDownTeeVector
+---
 
 `LeftDownTeeVector[x, y, ...]` displays as x⥡y⥡....
 

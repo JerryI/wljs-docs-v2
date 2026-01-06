@@ -1,4 +1,6 @@
-# StringReplaceList
+---
+title: StringReplaceList
+---
 
 `StringReplaceList["string", s -> sp]` gives a list of the strings obtained by replacing each individual occurrence of substrings in "string" matching the string expressions.
 

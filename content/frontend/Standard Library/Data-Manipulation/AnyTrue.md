@@ -1,4 +1,6 @@
-# AnyTrue
+---
+title: AnyTrue
+---
 
 `AnyTrue[{e1, e2, ...}, test]` yields `True` if `test[ei]` is `True` for any element.
 

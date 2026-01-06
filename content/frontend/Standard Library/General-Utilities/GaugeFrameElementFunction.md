@@ -1,4 +1,6 @@
-# GaugeFrameElementFunction
+---
+title: GaugeFrameElementFunction
+---
 
 `GaugeFrameElementFunction` is an option for gauge functions that gives a function to generate the primitives for rendering the gauge frame.
 

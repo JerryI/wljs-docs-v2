@@ -1,4 +1,6 @@
-# Parallelize
+---
+title: Parallelize
+---
 
 `Parallelize[expr]` evaluates expr using automatic parallelization.
 

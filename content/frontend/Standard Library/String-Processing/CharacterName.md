@@ -1,4 +1,6 @@
-# CharacterName
+---
+title: CharacterName
+---
 
 `CharacterName["c"]` gives the name of the character c.
 

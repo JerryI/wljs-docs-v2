@@ -1,4 +1,6 @@
-# SignPadding
+---
+title: SignPadding
+---
 
 `SignPadding` is an option for `NumberForm` and related functions that specifies whether padding should be inserted after signs.
 

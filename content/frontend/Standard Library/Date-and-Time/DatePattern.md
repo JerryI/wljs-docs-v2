@@ -1,4 +1,6 @@
-# DatePattern
+---
+title: DatePattern
+---
 
 `DatePattern[{"e1", "e2", ...}]` represents the characters of a date with elements of type "ei" in `StringExpression`.
 

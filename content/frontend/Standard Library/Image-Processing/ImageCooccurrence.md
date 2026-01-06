@@ -1,4 +1,6 @@
-# ImageCooccurrence
+---
+title: ImageCooccurrence
+---
 
 `ImageCooccurrence[image,n]` gives the n×n co-occurrence matrix for image.
 

@@ -1,4 +1,6 @@
-# IntegerExponent
+---
+title: IntegerExponent
+---
 
 `IntegerExponent[n, b]` gives the highest power of b that divides n.
 

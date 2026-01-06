@@ -1,4 +1,6 @@
-# AsymptoticLess
+---
+title: AsymptoticLess
+---
 
 `AsymptoticLess[f,g,x->x*]` gives conditions for f(x)≺g(x) or f(x)∈o(g(x)) as x->x*.
 

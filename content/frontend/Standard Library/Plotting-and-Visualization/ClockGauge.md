@@ -1,4 +1,6 @@
-# ClockGauge
+---
+title: ClockGauge
+---
 
 `ClockGauge[]` draws an analog clock face showing the local time with hours, minutes, and seconds.
 

@@ -1,4 +1,6 @@
-# Column
+---
+title: Column
+---
 
 `Column[{expr1, expr2, ...}]` arranges expressions in a vertical column. `Column[list, alignment]` specifies horizontal alignment.
 

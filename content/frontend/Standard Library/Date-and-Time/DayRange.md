@@ -1,4 +1,6 @@
-# DayRange
+---
+title: DayRange
+---
 
 `DayRange[date1, date2]` gives the dates in the range from date1 to date2.
 

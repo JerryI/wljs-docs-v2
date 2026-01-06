@@ -1,4 +1,6 @@
-# DayCount
+---
+title: DayCount
+---
 
 `DayCount[date1,date2]` gives the number of days from date1 to date2.
 

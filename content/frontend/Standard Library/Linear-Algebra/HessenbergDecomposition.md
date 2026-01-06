@@ -1,4 +1,6 @@
-# HessenbergDecomposition
+---
+title: HessenbergDecomposition
+---
 
 `HessenbergDecomposition[m]` gives the Hessenberg decomposition of a numerical matrix m.
 

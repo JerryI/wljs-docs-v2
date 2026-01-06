@@ -1,4 +1,6 @@
-# BartlettWindow
+---
+title: BartlettWindow
+---
 
 `BartlettWindow[x]` represents a Bartlett window function of x.
 

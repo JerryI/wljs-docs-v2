@@ -1,4 +1,6 @@
-# UnityDimensions
+---
+title: UnityDimensions
+---
 
 `UnityDimensions` is an option for `UnitSimplify` that specifies which `UnitDimensions` should be factored out.
 

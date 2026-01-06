@@ -1,4 +1,6 @@
-# TimeSeriesRescale
+---
+title: TimeSeriesRescale
+---
 
 `TimeSeriesRescale[tseries, {tmin, tmax}]` rescales the times in time series tseries to run from tmin to tmax.
 

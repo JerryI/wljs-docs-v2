@@ -1,4 +1,6 @@
-# MeanDeviation
+---
+title: MeanDeviation
+---
 
 `MeanDeviation[data]` gives the mean absolute deviation from the mean of the elements in data.
 

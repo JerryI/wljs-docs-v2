@@ -1,4 +1,6 @@
-# ListSliceDensityPlot3D
+---
+title: ListSliceDensityPlot3D
+---
 
 `ListSliceDensityPlot3D[farr, surf]` generates a density plot of the 3D array of values sliced to the surface surf.
 

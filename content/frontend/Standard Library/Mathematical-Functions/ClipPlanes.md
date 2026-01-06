@@ -1,4 +1,6 @@
-# ClipPlanes
+---
+title: ClipPlanes
+---
 
 `ClipPlanes` is an option to `Graphics3D` that specifies a list of clipping planes that can cut away portions of a 3D scene from the resulting view.
 

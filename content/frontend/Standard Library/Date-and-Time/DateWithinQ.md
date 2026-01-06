@@ -1,4 +1,6 @@
-# DateWithinQ
+---
+title: DateWithinQ
+---
 
 `DateWithinQ[date1, date2]` returns `True` if the calendar date date2 is entirely contained within date1, and `False` otherwise.
 

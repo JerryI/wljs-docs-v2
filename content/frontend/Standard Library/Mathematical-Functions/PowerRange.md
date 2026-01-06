@@ -1,4 +1,6 @@
-# PowerRange
+---
+title: PowerRange
+---
 
 `PowerRange[b]` generates the list {1, 10, 100, …, max}, where max is the largest power of 10 that does not exceed b.
 

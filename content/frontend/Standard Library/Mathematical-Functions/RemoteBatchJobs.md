@@ -1,4 +1,6 @@
-# RemoteBatchJobs
+---
+title: RemoteBatchJobs
+---
 
 `RemoteBatchJobs[env]` gives a list of RemoteBatchJobObject expressions representing batch jobs submitted using env.
 

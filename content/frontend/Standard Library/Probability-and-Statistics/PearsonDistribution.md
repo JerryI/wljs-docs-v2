@@ -1,4 +1,6 @@
-# PearsonDistribution
+---
+title: PearsonDistribution
+---
 
 `PearsonDistribution[a1, a0, b2, b1, b0]` represents a distribution of the Pearson family with parameters a1, a0, b2, b1, and b0.
 

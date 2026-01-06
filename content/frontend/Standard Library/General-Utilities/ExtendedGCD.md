@@ -1,4 +1,6 @@
-# ExtendedGCD
+---
+title: ExtendedGCD
+---
 
 `ExtendedGCD[n1, n2, ...]` gives the extended greatest common divisor of the integers ni, including coefficients for expressing the GCD as a linear combination.
 

@@ -1,4 +1,6 @@
-# LexicographicSort
+---
+title: LexicographicSort
+---
 
 `LexicographicSort[{e1,e2,…}]` sorts the list of expressions ei in lexicographic order.
 

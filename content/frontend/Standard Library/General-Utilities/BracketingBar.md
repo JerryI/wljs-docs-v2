@@ -1,4 +1,6 @@
-# BracketingBar
+---
+title: BracketingBar
+---
 
 `BracketingBar[x, y, ...]` displays as |x, y, ...|.
 

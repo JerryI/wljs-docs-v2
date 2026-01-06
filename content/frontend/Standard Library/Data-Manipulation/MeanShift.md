@@ -1,4 +1,6 @@
-# MeanShift
+---
+title: MeanShift
+---
 
 `MeanShift[list,d]` replaces each element in list by the mean of the values of all elements that differ by less than d.
 

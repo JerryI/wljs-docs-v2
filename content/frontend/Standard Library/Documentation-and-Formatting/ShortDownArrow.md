@@ -1,4 +1,6 @@
-# ShortDownArrow
+---
+title: ShortDownArrow
+---
 
 `ShortDownArrow[x, y, ...]` displays as x↓y↓….
 

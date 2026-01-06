@@ -1,4 +1,6 @@
-# VerifyFileSignature
+---
+title: VerifyFileSignature
+---
 
 `VerifyFileSignature[{"file", sig}, key]` verifies the digital signature sig for file using the specified public key.
 

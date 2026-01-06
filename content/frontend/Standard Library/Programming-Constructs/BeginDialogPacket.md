@@ -1,4 +1,6 @@
-# BeginDialogPacket
+---
+title: BeginDialogPacket
+---
 
 `BeginDialogPacket[integer]` is a WSTP packet that indicates the start of the Dialog subsession referenced by integer.
 

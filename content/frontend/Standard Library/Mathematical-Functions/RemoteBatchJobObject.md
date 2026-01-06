@@ -1,4 +1,6 @@
-# RemoteBatchJobObject
+---
+title: RemoteBatchJobObject
+---
 
 `RemoteBatchJobObject[…]` represents a remote batch job submitted by `RemoteBatchSubmit` or `RemoteBatchMapSubmit`.
 

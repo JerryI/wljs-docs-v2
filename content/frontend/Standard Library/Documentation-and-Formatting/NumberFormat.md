@@ -1,4 +1,6 @@
-# NumberFormat
+---
+title: NumberFormat
+---
 
 `NumberFormat` is an option for `NumberForm` and related functions that specifies how the mantissa, base, and exponent should be assembled into a final print form.
 

@@ -1,4 +1,6 @@
-# ImageWaveformPlot
+---
+title: ImageWaveformPlot
+---
 
 `ImageWaveformPlot[image]` plots the waveform of image.
 

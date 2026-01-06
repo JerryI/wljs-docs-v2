@@ -1,4 +1,6 @@
-# DispersionEstimatorFunction
+---
+title: DispersionEstimatorFunction
+---
 
 `DispersionEstimatorFunction` is an option for generalized linear model fitting functions that specifies the estimator for the dispersion parameter.
 

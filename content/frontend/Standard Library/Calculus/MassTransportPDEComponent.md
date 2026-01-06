@@ -1,4 +1,6 @@
-# MassTransportPDEComponent
+---
+title: MassTransportPDEComponent
+---
 
 `MassTransportPDEComponent[vars, pars]` yields a mass transport PDE term with variables vars and parameters pars.
 

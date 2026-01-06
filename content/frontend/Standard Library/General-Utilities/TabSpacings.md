@@ -1,4 +1,6 @@
-# TabSpacings
+---
+title: TabSpacings
+---
 
 `TabSpacings` is an option for character selections that specifies the number of spaces in ems that the cursor advances when the Tab key is pressed.
 

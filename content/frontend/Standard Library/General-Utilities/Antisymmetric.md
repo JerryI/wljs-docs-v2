@@ -1,4 +1,6 @@
-# Antisymmetric
+---
+title: Antisymmetric
+---
 
 `Antisymmetric[{s1, ..., sn}]` represents the symmetry of a tensor that is antisymmetric in the slots si.
 

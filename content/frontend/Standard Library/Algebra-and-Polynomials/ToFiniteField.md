@@ -1,4 +1,6 @@
-# ToFiniteField
+---
+title: ToFiniteField
+---
 
 `ToFiniteField[k,ff]` converts the integer k to an element of the prime subfield of the finite field ff.
 

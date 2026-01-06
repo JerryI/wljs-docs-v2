@@ -1,4 +1,6 @@
-# FillingTransform
+---
+title: FillingTransform
+---
 
 `FillingTransform[image]` gives a version of image with all extended minima filled.
 

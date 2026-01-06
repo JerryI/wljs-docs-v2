@@ -1,4 +1,6 @@
-# RegionEmbeddingDimension
+---
+title: RegionEmbeddingDimension
+---
 
 `RegionEmbeddingDimension[reg]` gives the dimension of the space in which the region reg is embedded.
 

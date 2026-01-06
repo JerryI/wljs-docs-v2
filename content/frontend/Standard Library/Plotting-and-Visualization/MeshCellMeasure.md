@@ -1,4 +1,6 @@
-# MeshCellMeasure
+---
+title: MeshCellMeasure
+---
 
 `MeshCellMeasure` is an annotation of `MeshRegion` and `BoundaryMeshRegion` objects that gives the measures of mesh cells.
 

@@ -1,4 +1,6 @@
-# ReplicateLayer
+---
+title: ReplicateLayer
+---
 
 `ReplicateLayer[n]` represents a net layer that takes an input of dimensions {d1, d2, …} and replicates it n times to produce an output of dimensions {n, d1, d2, …}.
 

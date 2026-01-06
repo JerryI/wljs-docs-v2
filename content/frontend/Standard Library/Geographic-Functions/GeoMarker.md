@@ -1,4 +1,6 @@
-# GeoMarker
+---
+title: GeoMarker
+---
 
 `GeoMarker[]` is a `GeoGraphics` primitive that represents a marker at the current `$GeoLocation`.
 

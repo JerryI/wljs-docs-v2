@@ -1,4 +1,6 @@
-# UniversityData
+---
+title: UniversityData
+---
 
 `UniversityData[entity, property]` gives the value of the specified property for the university entity.
 

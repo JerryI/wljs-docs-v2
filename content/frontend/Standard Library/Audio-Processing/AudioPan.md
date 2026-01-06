@@ -1,4 +1,6 @@
-# AudioPan
+---
+title: AudioPan
+---
 
 `AudioPan[audio]` returns a center-panned stereo audio object from a mono audio.
 

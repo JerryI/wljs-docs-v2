@@ -1,4 +1,6 @@
-# Abort
+---
+title: Abort
+---
 
 `Abort[]` generates an interrupt to abort a computation.
 

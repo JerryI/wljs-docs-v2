@@ -1,4 +1,6 @@
-# Mod
+---
+title: Mod
+---
 
 `Mod[m, n]` gives the remainder on division of m by n.
 

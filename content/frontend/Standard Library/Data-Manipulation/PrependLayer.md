@@ -1,4 +1,6 @@
-# PrependLayer
+---
+title: PrependLayer
+---
 
 `PrependLayer[]` represents a net layer that takes an input array and prepends another array to it.
 

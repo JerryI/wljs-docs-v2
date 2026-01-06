@@ -1,4 +1,6 @@
-# AudioSplit
+---
+title: AudioSplit
+---
 
 `AudioSplit[audio, t]` splits audio at time t.
 

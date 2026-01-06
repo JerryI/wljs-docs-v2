@@ -1,4 +1,6 @@
-# ComplexExpand
+---
+title: ComplexExpand
+---
 
 `ComplexExpand[expr]` expands expr assuming that all variables are real.
 

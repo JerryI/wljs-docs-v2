@@ -1,4 +1,6 @@
-# MellinTransform
+---
+title: MellinTransform
+---
 
 `MellinTransform[expr, x, s]` gives the Mellin transform of expr.
 

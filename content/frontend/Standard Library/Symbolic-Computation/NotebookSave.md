@@ -1,4 +1,6 @@
-# NotebookSave
+---
+title: NotebookSave
+---
 
 `NotebookSave[nb]` or `NotebookSave[nb, path]` saves notebook nb to a file given by path or using the existing temporal path.
 

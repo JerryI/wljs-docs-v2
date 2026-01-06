@@ -1,4 +1,6 @@
-# PrependTo
+---
+title: PrependTo
+---
 
 `PrependTo[x,elem]` prepends elem to the value of x, and resets x to the result.
 

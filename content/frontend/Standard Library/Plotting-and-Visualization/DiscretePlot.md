@@ -1,4 +1,6 @@
-# DiscretePlot
+---
+title: DiscretePlot
+---
 
 `DiscretePlot[f, {n, nmax}]` generates a plot of f as a function of n for n=1, ..., nmax.
 

@@ -1,4 +1,6 @@
-# LeapVariant
+---
+title: LeapVariant
+---
 
 `LeapVariant[n]` represents a repeated calendar element caused by a leap period.
 

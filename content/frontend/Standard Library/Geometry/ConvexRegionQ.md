@@ -1,4 +1,6 @@
-# ConvexRegionQ
+---
+title: ConvexRegionQ
+---
 
 `ConvexRegionQ[reg]` gives True if reg is a convex region and False otherwise.
 

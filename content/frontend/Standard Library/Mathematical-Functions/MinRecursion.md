@@ -1,4 +1,6 @@
-# MinRecursion
+---
+title: MinRecursion
+---
 
 `MinRecursion` is an option for `NIntegrate` and other numerical functions that use a recursive algorithm. With `MinRecursion -> n`, a minimum depth of recursion of n is used before tests for convergence begin.
 

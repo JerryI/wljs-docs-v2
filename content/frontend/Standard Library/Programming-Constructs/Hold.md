@@ -1,4 +1,6 @@
-# Hold
+---
+title: Hold
+---
 
 `Hold[expr]` maintains expr in an unevaluated form.
 

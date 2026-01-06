@@ -1,4 +1,6 @@
-# MandelbrotSetPlot
+---
+title: MandelbrotSetPlot
+---
 
 `MandelbrotSetPlot[{zmin, zmax}]` plots the portion of the Mandelbrot set inside the rectangle with corners zmin and zmax.
 

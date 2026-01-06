@@ -1,4 +1,6 @@
-# DoubleDownArrow
+---
+title: DoubleDownArrow
+---
 
 `DoubleDownArrow[x, y, ...]` displays as x⇓y⇓....
 

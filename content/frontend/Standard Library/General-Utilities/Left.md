@@ -1,4 +1,6 @@
-# Left
+---
+title: Left
+---
 
 `Left` is a symbol that represents the left-hand side for purposes of alignment and positioning.
 

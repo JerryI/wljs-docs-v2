@@ -1,4 +1,6 @@
-# InhomogeneousPoissonProcess
+---
+title: InhomogeneousPoissonProcess
+---
 
 `InhomogeneousPoissonProcess[λ[t], t]` represents an inhomogeneous Poisson process with intensity `λ[t]` given as a function of `t`.
 

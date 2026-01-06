@@ -1,4 +1,6 @@
-# DamerauLevenshteinDistance
+---
+title: DamerauLevenshteinDistance
+---
 
 `DamerauLevenshteinDistance[u, v]` gives the Damerau–Levenshtein distance between strings or vectors u and v.
 

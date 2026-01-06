@@ -1,4 +1,6 @@
-# HankelMatrix
+---
+title: HankelMatrix
+---
 
 `HankelMatrix[n]` gives the n×n Hankel matrix with first row and first column being successive integers.
 

@@ -1,4 +1,6 @@
-# LimitsPositioningTokens
+---
+title: LimitsPositioningTokens
+---
 
 `LimitsPositioningTokens` is an option for selections that specifies a set of characters for which the option `LimitsPositioning` is set to `True` by default.
 

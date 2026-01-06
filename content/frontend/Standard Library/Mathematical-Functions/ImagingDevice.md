@@ -1,4 +1,6 @@
-# ImagingDevice
+---
+title: ImagingDevice
+---
 
 `ImagingDevice` is an option to specify what device to use for capturing images.
 

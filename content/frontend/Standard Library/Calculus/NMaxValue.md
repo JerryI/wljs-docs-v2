@@ -1,4 +1,6 @@
-# NMaxValue
+---
+title: NMaxValue
+---
 
 `NMaxValue[f, x]` gives the global maximum value of f with respect to x.
 

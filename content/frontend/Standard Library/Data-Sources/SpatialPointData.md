@@ -1,4 +1,6 @@
-# SpatialPointData
+---
+title: SpatialPointData
+---
 
 `SpatialPointData[points]` represents a collection of spatial locations points.
 

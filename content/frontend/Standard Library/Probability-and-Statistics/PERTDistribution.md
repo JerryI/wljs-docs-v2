@@ -1,4 +1,6 @@
-# PERTDistribution
+---
+title: PERTDistribution
+---
 
 `PERTDistribution[{min, max}, c]` represents a PERT distribution with range *min* to *max* and mode at *c*.
 

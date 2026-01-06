@@ -1,4 +1,6 @@
-# Complex
+---
+title: Complex
+---
 
 `Complex` is the head used for complex numbers.
 

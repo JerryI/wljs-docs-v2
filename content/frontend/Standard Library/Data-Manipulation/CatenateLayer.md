@@ -1,4 +1,6 @@
-# CatenateLayer
+---
+title: CatenateLayer
+---
 
 `CatenateLayer[]` represents a net layer that takes a list of input arrays and catenates them.
 

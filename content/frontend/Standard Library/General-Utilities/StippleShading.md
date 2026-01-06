@@ -1,4 +1,6 @@
-# StippleShading
+---
+title: StippleShading
+---
 
 `StippleShading[]` is a three-dimensional graphics directive specifying that objects that follow are to be drawn using small dots.
 

@@ -1,4 +1,6 @@
-# Floor
+---
+title: Floor
+---
 
 `Floor[x]` gives the greatest integer less than or equal to x.
 

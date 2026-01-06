@@ -1,4 +1,6 @@
-# AudioIdentify
+---
+title: AudioIdentify
+---
 
 `AudioIdentify[audio]` yields the result of attempting to identify what audio is a recording of.
 

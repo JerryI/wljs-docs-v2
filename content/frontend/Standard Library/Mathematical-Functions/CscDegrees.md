@@ -1,4 +1,6 @@
-# CscDegrees
+---
+title: CscDegrees
+---
 
 `CscDegrees[θ]` gives the cosecant of θ degrees.
 

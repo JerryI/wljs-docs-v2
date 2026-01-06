@@ -1,4 +1,6 @@
-# BooleanMinterms
+---
+title: BooleanMinterms
+---
 
 `BooleanMinterms[k, n]` represents the kth minterm in n variables.
 

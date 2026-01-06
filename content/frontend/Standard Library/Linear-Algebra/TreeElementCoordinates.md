@@ -1,4 +1,6 @@
-# TreeElementCoordinates
+---
+title: TreeElementCoordinates
+---
 
 `TreeElementCoordinates` is an option for `Tree` and related functions that specifies the coordinates to use to place the center of subtree elements.
 

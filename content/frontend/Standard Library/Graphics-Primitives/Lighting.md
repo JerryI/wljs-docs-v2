@@ -1,4 +1,6 @@
-# Lighting
+---
+title: Lighting
+---
 
 `Lighting` is an option for `Graphics3D` and related functions that specifies what simulated lighting to use in coloring 3D surfaces.
 

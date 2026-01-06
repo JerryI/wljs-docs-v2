@@ -1,4 +1,6 @@
-# EntityType
+---
+title: EntityType
+---
 
 `EntityType["type"]` represents an entity type with the specified name.
 

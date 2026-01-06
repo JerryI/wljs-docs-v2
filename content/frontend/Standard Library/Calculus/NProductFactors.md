@@ -1,4 +1,6 @@
-# NProductFactors
+---
+title: NProductFactors
+---
 
 `NProductFactors` is an option for `NProduct`. `NProductFactors -> n` explicitly includes n factors in the product before extrapolation.
 

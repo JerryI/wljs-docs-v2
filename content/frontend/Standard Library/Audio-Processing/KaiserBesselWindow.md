@@ -1,4 +1,6 @@
-# KaiserBesselWindow
+---
+title: KaiserBesselWindow
+---
 
 `KaiserBesselWindow[x]` represents a Kaiser–Bessel window function of x.
 

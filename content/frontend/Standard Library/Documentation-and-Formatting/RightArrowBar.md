@@ -1,4 +1,6 @@
-# RightArrowBar
+---
+title: RightArrowBar
+---
 
 `RightArrowBar[x, y, ...]` displays as x⇥y⇥....
 

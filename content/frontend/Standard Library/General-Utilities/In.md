@@ -1,4 +1,6 @@
-# In
+---
+title: In
+---
 
 `In[n]` is a global object assigned to have a delayed value of the nth input line.
 

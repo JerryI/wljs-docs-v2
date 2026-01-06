@@ -1,4 +1,6 @@
-# Null
+---
+title: Null
+---
 
 `Null` is a symbol used to indicate the absence of an expression or a result. When it appears as a complete output expression, no output is printed.
 

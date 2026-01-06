@@ -1,4 +1,6 @@
-# DumpSave
+---
+title: DumpSave
+---
 
 `DumpSave["file.mx", symbol]` writes definitions associated with a symbol to a file in internal Wolfram System format.
 

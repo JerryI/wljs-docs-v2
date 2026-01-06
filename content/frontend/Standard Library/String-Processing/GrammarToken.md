@@ -1,4 +1,6 @@
-# GrammarToken
+---
+title: GrammarToken
+---
 
 `GrammarToken[form]` is a grammar rules pattern object that represents any input of the specified form.
 

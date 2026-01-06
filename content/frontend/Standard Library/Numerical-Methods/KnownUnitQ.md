@@ -1,4 +1,6 @@
-# KnownUnitQ
+---
+title: KnownUnitQ
+---
 
 `KnownUnitQ[expr]` returns `True` if `expr` is a canonical unit, and `False` otherwise.
 

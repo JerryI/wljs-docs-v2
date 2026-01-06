@@ -1,4 +1,6 @@
-# NoncentralBetaDistribution
+---
+title: NoncentralBetaDistribution
+---
 
 `NoncentralBetaDistribution[α, β, δ]` represents a noncentral beta distribution with shape parameters α, β and noncentrality parameter δ.
 

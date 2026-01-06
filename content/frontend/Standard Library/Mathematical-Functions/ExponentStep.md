@@ -1,4 +1,6 @@
-# ExponentStep
+---
+title: ExponentStep
+---
 
 `ExponentStep` is an option for `NumberForm` and related functions that determines in what steps exponents are taken to increase when scientific notation is used.
 

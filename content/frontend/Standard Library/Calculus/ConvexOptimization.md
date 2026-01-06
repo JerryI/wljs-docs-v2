@@ -1,4 +1,6 @@
-# ConvexOptimization
+---
+title: ConvexOptimization
+---
 
 `ConvexOptimization[f, cons, vars]` finds values of variables vars that minimize the convex objective function f subject to convex constraints cons.
 

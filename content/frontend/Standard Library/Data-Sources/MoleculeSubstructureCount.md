@@ -1,4 +1,6 @@
-# MoleculeSubstructureCount
+---
+title: MoleculeSubstructureCount
+---
 
 `MoleculeSubstructureCount[mol, patt]` gives a count of the number of times patt appears as a substructure in mol.
 

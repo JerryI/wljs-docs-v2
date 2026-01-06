@@ -1,4 +1,6 @@
-# V2Get
+---
+title: V2Get
+---
 
 `V2Get[name]` reads in a file written by the V2.x versions.
 

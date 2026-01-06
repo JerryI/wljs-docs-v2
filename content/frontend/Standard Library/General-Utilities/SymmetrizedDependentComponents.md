@@ -1,4 +1,6 @@
-# SymmetrizedDependentComponents
+---
+title: SymmetrizedDependentComponents
+---
 
 `SymmetrizedDependentComponents[comp, sym]` gives the list of components that are equivalent to the component comp by the symmetry sym.
 

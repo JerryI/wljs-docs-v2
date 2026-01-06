@@ -1,4 +1,6 @@
-# ParameterMixtureDistribution
+---
+title: ParameterMixtureDistribution
+---
 
 `ParameterMixtureDistribution[dist[θ], θ \[Distributed] wdist]` represents a parameter mixture distribution where the parameter θ is distributed according to the weight distribution wdist.
 

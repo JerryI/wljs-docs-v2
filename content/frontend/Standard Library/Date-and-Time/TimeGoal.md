@@ -1,4 +1,6 @@
-# TimeGoal
+---
+title: TimeGoal
+---
 
 `TimeGoal` is an option for various functions that specifies how long to spend doing a particular operation.
 

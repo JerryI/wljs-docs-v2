@@ -1,4 +1,6 @@
-# XMLTemplate
+---
+title: XMLTemplate
+---
 
 `XMLTemplate["string"]` yields a TemplateObject that represents an XML template to be applied using functions like `TemplateApply`.
 

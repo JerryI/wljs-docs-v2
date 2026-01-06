@@ -1,4 +1,6 @@
-# AudioData
+---
+title: AudioData
+---
 
 `AudioData[audio]` gives an array of audio samples.
 

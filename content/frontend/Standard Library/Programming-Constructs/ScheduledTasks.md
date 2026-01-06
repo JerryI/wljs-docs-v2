@@ -1,4 +1,6 @@
-# ScheduledTasks
+---
+title: ScheduledTasks
+---
 
 `ScheduledTasks[]` returns a list of `ScheduledTaskObject` expressions that represent current tasks.
 

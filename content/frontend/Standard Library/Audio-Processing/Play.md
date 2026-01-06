@@ -1,4 +1,6 @@
-# Play
+---
+title: Play
+---
 
 `Play[f, {t, tmin, tmax}]` creates an object that plays as a sound whose amplitude is given by f as a function of time t in seconds between tmin and tmax.
 

@@ -1,4 +1,6 @@
-# Baseline
+---
+title: Baseline
+---
 
 `Baseline` is a symbol that represents the baseline for purposes of alignment and positioning.
 

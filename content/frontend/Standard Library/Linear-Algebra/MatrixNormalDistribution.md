@@ -1,4 +1,6 @@
-# MatrixNormalDistribution
+---
+title: MatrixNormalDistribution
+---
 
 `MatrixNormalDistribution[Σrow, Σcol]` represents zero mean matrix normal distribution with row covariance matrix Σrow and column covariance matrix Σcol.
 

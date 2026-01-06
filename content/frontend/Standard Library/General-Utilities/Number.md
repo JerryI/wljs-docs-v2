@@ -1,4 +1,6 @@
-# Number
+---
+title: Number
+---
 
 `Number` represents an exact integer or an approximate real number in Read.
 

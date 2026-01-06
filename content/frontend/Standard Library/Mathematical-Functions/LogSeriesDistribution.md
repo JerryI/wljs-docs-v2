@@ -1,4 +1,6 @@
-# LogSeriesDistribution
+---
+title: LogSeriesDistribution
+---
 
 `LogSeriesDistribution[θ]` represents a logarithmic series distribution with parameter θ.
 

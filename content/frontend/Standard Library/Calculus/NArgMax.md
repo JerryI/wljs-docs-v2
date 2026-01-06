@@ -1,4 +1,6 @@
-# NArgMax
+---
+title: NArgMax
+---
 
 `NArgMax[f, x]` gives a position xmax at which f is numerically globally maximized.
 

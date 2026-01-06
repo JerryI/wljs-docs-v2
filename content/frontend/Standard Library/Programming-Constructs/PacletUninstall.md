@@ -1,4 +1,6 @@
-# PacletUninstall
+---
+title: PacletUninstall
+---
 
 `PacletUninstall[paclet]` uninstalls a paclet.
 

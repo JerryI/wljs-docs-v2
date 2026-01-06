@@ -1,4 +1,6 @@
-# TreeGraph
+---
+title: TreeGraph
+---
 
 `TreeGraph[{e1, e2, ...}]` creates a tree graph from edges. The layout is optimized for tree structures.
 

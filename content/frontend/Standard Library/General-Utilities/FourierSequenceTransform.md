@@ -1,4 +1,6 @@
-# FourierSequenceTransform
+---
+title: FourierSequenceTransform
+---
 
 `FourierSequenceTransform[expr,n,ω]` gives the Fourier sequence transform of expr.
 

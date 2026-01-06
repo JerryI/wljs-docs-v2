@@ -1,4 +1,6 @@
-# RightArrowLeftArrow
+---
+title: RightArrowLeftArrow
+---
 
 `RightArrowLeftArrow[x,y,...]` displays as x⇄y⇄....
 

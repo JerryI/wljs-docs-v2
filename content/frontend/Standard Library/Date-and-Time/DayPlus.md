@@ -1,4 +1,6 @@
-# DayPlus
+---
+title: DayPlus
+---
 
 `DayPlus[date,n]` gives the date n days away from date.
 

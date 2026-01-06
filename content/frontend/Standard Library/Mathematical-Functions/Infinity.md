@@ -1,4 +1,6 @@
-# Infinity
+---
+title: Infinity
+---
 
 `Infinity` or `∞` is a symbol that represents a positive infinite quantity.
 

@@ -1,4 +1,6 @@
-# WordData
+---
+title: WordData
+---
 
 `WordData["word", "property"]` gives the specified property for the English word "word".
 

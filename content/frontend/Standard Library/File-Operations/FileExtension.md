@@ -1,4 +1,6 @@
-# FileExtension
+---
+title: FileExtension
+---
 
 `FileExtension["file"]` gives the file extension.
 

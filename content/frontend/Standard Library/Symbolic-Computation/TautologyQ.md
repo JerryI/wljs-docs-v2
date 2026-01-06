@@ -1,4 +1,6 @@
-# TautologyQ
+---
+title: TautologyQ
+---
 
 `TautologyQ[bf]` gives True if all combinations of values of variables make the Boolean function bf yield True.
 

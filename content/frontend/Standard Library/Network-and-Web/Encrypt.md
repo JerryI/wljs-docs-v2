@@ -1,4 +1,6 @@
-# Encrypt
+---
+title: Encrypt
+---
 
 `Encrypt["password", expr]` encrypts expr using the specified password, returning an encrypted object.
 

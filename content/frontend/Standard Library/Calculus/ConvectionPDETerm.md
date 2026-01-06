@@ -1,4 +1,6 @@
-# ConvectionPDETerm
+---
+title: ConvectionPDETerm
+---
 
 `ConvectionPDETerm[vars, β]` represents a convection term β·∇u with convection coefficient β and model variables vars.
 

@@ -1,4 +1,6 @@
-# Colon
+---
+title: Colon
+---
 
 `Colon[x, y, ...]` displays as x∶y∶....
 

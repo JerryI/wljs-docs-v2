@@ -1,4 +1,6 @@
-# AdjacencyGraph
+---
+title: AdjacencyGraph
+---
 
 `AdjacencyGraph[amat]` gives the graph with adjacency matrix amat.
 

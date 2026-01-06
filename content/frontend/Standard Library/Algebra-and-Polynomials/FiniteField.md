@@ -1,4 +1,6 @@
-# FiniteField
+---
+title: FiniteField
+---
 
 `FiniteField[p, d]` gives a finite field with p^d elements.
 

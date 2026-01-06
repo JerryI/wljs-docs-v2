@@ -1,4 +1,6 @@
-# SystemDialogInput
+---
+title: SystemDialogInput
+---
 
 `SystemDialogInput["type"]` brings up an interactive system dialog and returns the value chosen in the dialog.
 

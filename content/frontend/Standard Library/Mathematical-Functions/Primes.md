@@ -1,4 +1,6 @@
-# Primes
+---
+title: Primes
+---
 
 `Primes` represents the domain of prime numbers, as in x∈Primes.
 

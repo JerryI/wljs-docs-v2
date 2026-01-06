@@ -1,4 +1,6 @@
-# AxisStyle
+---
+title: AxisStyle
+---
 
 `AxisStyle` is an option for `AxisObject` that specifies how to style the path of an axis.
 

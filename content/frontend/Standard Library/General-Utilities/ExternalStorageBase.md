@@ -1,4 +1,6 @@
-# ExternalStorageBase
+---
+title: ExternalStorageBase
+---
 
 `ExternalStorageBase` is an option for various external storage functions that specifies which external storage service to use.
 

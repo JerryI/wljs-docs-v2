@@ -1,4 +1,6 @@
-# Catch
+---
+title: Catch
+---
 
 `Catch[expr]` returns the argument of the first `Throw` generated in the evaluation of expr.
 

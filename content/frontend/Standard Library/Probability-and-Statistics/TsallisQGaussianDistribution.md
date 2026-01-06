@@ -1,4 +1,6 @@
-# TsallisQGaussianDistribution
+---
+title: TsallisQGaussianDistribution
+---
 
 `TsallisQGaussianDistribution[μ,β,q]` represents a Tsallis q-Gaussian distribution with mean μ, scale parameter β, and deformation parameter q.
 

@@ -1,4 +1,6 @@
-# WhiteNoiseProcess
+---
+title: WhiteNoiseProcess
+---
 
 `WhiteNoiseProcess[]` represents a Gaussian white noise process with mean 0 and standard deviation 1.
 

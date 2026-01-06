@@ -1,4 +1,6 @@
-# InexactNumberQ
+---
+title: InexactNumberQ
+---
 
 `InexactNumberQ[expr]` returns True if expr is an inexact real or complex number, and returns False otherwise.
 

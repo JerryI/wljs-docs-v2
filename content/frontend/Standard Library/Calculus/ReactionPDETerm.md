@@ -1,4 +1,6 @@
-# ReactionPDETerm
+---
+title: ReactionPDETerm
+---
 
 `ReactionPDETerm[vars, a]` represents a reaction term a u with reaction coefficient a and with model variables vars.
 

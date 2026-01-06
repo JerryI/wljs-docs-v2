@@ -1,4 +1,6 @@
-# Regularization
+---
+title: Regularization
+---
 
 `Regularization` is an option for `Sum` and `Product` that specifies what type of regularization to use.
 

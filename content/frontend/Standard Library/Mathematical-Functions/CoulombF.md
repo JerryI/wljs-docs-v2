@@ -1,4 +1,6 @@
-# CoulombF
+---
+title: CoulombF
+---
 
 `CoulombF[l, η, r]` gives the regular Coulomb wavefunction Fl(η, r).
 

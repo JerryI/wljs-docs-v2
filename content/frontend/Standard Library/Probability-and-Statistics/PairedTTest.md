@@ -1,4 +1,6 @@
-# PairedTTest
+---
+title: PairedTTest
+---
 
 `PairedTTest[data]` tests whether the mean of data is zero.
 

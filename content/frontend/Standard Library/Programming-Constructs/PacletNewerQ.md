@@ -1,4 +1,6 @@
-# PacletNewerQ
+---
+title: PacletNewerQ
+---
 
 `PacletNewerQ[paclet1, paclet2]` returns `True` if paclet1 has a higher version number than paclet2, and `False` otherwise.
 

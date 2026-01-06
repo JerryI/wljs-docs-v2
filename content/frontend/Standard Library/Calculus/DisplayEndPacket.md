@@ -1,4 +1,6 @@
-# DisplayEndPacket
+---
+title: DisplayEndPacket
+---
 
 `DisplayEndPacket[]` is a WSTP packet that indicates the end of a series of expressions relating to a PostScript graphic.
 

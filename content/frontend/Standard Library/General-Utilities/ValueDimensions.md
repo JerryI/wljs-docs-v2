@@ -1,4 +1,6 @@
-# ValueDimensions
+---
+title: ValueDimensions
+---
 
 `ValueDimensions` is an option to `TemporalData`, `TimeSeries`, and `EventSeries` that specifies the dimension of the value space.
 

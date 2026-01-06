@@ -1,4 +1,6 @@
-# RegionDisjoint
+---
+title: RegionDisjoint
+---
 
 `RegionDisjoint[reg1, reg2]` returns `True` if the regions reg1 and reg2 are disjoint.
 

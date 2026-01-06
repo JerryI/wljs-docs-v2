@@ -1,4 +1,6 @@
-# RegionProduct
+---
+title: RegionProduct
+---
 
 `RegionProduct[reg1, reg2]` represents the Cartesian product of the regions reg1 and reg2.
 

@@ -1,4 +1,6 @@
-# VideoMapList
+---
+title: VideoMapList
+---
 
 `VideoMapList[f, video]` applies f to a chunk of data corresponding to one frame from the Video object video, returning a list of results.
 

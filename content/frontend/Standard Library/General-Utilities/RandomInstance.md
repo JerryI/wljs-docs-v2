@@ -1,4 +1,6 @@
-# RandomInstance
+---
+title: RandomInstance
+---
 
 `RandomInstance[expr]` finds a random instance of an expression such as a geometric scene or biomolecular sequence.
 

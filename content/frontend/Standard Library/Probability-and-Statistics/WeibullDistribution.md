@@ -1,4 +1,6 @@
-# WeibullDistribution
+---
+title: WeibullDistribution
+---
 
 `WeibullDistribution[α,β]` represents a Weibull distribution with shape parameter α and scale parameter β.
 

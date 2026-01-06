@@ -1,4 +1,6 @@
-# SARMAProcess
+---
+title: SARMAProcess
+---
 
 `SARMAProcess[{a1,…,ap},{b1,…,bq},{s,{α1,…,αm},{β1,…,βr}},v]` represents a weakly stationary seasonal autoregressive moving-average process with ARMA coefficients ai and bj, seasonal order s, seasonal ARMA coefficients αi and βj, and normal white noise with variance v.
 

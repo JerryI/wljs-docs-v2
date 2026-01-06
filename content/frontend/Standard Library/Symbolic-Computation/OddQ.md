@@ -1,4 +1,6 @@
-# OddQ
+---
+title: OddQ
+---
 
 `OddQ[expr]` gives `True` if expr is an odd integer, and `False` otherwise.
 

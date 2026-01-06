@@ -1,4 +1,6 @@
-# HankelTransform
+---
+title: HankelTransform
+---
 
 `HankelTransform[expr, r, s]` gives the Hankel transform of order 0 for expr.
 

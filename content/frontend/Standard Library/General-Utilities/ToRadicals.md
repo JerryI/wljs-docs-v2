@@ -1,4 +1,6 @@
-# ToRadicals
+---
+title: ToRadicals
+---
 
 `ToRadicals[expr]` attempts to express all Root objects in expr in terms of radicals.
 

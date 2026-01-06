@@ -1,4 +1,6 @@
-# QuietEcho
+---
+title: QuietEcho
+---
 
 `QuietEcho[expr]` evaluates expr without letting `Echo` and related functions inside expr print any result.
 

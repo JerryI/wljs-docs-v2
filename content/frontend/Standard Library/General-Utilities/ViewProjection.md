@@ -1,4 +1,6 @@
-# ViewProjection
+---
+title: ViewProjection
+---
 
 `ViewProjection` is an option for three-dimensional graphics that specifies the projection to use for the graphic.
 

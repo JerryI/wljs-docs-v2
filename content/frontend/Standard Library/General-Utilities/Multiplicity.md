@@ -1,4 +1,6 @@
-# Multiplicity
+---
+title: Multiplicity
+---
 
 `Multiplicity` is an option to `Roots`. `Multiplicity -> n` specifies that the multiplicity of each of the roots is n in the final result.
 

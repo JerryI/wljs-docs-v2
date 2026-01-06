@@ -1,4 +1,6 @@
-# RemoveVideoStream
+---
+title: RemoveVideoStream
+---
 
 `RemoveVideoStream[]` deletes all `VideoStream` objects.
 

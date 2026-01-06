@@ -1,4 +1,6 @@
-# Log10
+---
+title: Log10
+---
 
 `Log10[x]` gives the base-10 logarithm of x.
 

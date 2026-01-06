@@ -1,4 +1,6 @@
-# PhaseMargins
+---
+title: PhaseMargins
+---
 
 `PhaseMargins[lsys]` gives the phase margins of the linear time-invariant system lsys.
 

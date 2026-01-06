@@ -1,4 +1,6 @@
-# RamanujanTauTheta
+---
+title: RamanujanTauTheta
+---
 
 `RamanujanTauTheta[t]` gives the Ramanujan tau theta function θ(t).
 

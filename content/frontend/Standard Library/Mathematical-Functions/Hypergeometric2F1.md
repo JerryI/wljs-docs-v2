@@ -1,4 +1,6 @@
-# Hypergeometric2F1
+---
+title: Hypergeometric2F1
+---
 
 `Hypergeometric2F1[a, b, c, z]` is the hypergeometric function 2F1(a,b;c;z).
 

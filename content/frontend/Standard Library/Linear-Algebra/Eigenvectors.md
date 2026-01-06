@@ -1,4 +1,6 @@
-# Eigenvectors
+---
+title: Eigenvectors
+---
 
 `Eigenvectors[m]` gives a list of the eigenvectors of the square matrix m.
 

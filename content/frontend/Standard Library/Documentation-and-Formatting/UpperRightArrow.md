@@ -1,4 +1,6 @@
-# UpperRightArrow
+---
+title: UpperRightArrow
+---
 
 `UpperRightArrow[x, y, …]` displays as x↗y↗….
 

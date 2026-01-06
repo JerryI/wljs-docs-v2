@@ -1,4 +1,6 @@
-# OptionValue
+---
+title: OptionValue
+---
 
 `OptionValue[name]` extracts option values inside a function defined with `OptionsPattern[]`.
 

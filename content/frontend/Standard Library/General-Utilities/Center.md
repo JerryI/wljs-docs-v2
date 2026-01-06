@@ -1,4 +1,6 @@
-# Center
+---
+title: Center
+---
 
 `Center` is a symbol that represents the center for purposes of alignment and positioning.
 

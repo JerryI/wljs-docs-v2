@@ -1,4 +1,6 @@
-# FindClique
+---
+title: FindClique
+---
 
 `FindClique[g]` finds a largest clique in the graph g.
 

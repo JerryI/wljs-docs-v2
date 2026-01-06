@@ -1,4 +1,6 @@
-# AudioMeasurements
+---
+title: AudioMeasurements
+---
 
 `AudioMeasurements[audio,"prop"]` computes the property "prop" for the entire audio.
 

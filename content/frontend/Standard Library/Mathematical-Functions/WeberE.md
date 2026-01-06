@@ -1,4 +1,6 @@
-# WeberE
+---
+title: WeberE
+---
 
 `WeberE[ν, z]` gives the Weber function Eν(z).
 

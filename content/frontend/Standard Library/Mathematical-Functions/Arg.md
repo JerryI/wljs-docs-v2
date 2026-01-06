@@ -1,4 +1,6 @@
-# Arg
+---
+title: Arg
+---
 
 `Arg[z]` gives the argument of the complex number z.
 

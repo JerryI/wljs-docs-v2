@@ -1,4 +1,6 @@
-# AudioTimeStretch
+---
+title: AudioTimeStretch
+---
 
 `AudioTimeStretch[audio,r]` applies time stretching to audio by the specified factor r.
 

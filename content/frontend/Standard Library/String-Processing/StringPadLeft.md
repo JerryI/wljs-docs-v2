@@ -1,4 +1,6 @@
-# StringPadLeft
+---
+title: StringPadLeft
+---
 
 `StringPadLeft["string", n]` pads the string on the left with spaces to make it length n.
 

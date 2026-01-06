@@ -1,4 +1,6 @@
-# Ramp
+---
+title: Ramp
+---
 
 `Ramp[x]` gives x if x ≥ 0 and 0 otherwise.
 

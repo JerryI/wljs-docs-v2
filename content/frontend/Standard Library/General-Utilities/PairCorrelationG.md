@@ -1,4 +1,6 @@
-# PairCorrelationG
+---
+title: PairCorrelationG
+---
 
 `PairCorrelationG[pdata, r]` estimates the pair correlation function g(r) for point data pdata at radius r.
 

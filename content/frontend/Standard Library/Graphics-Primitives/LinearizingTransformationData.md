@@ -1,4 +1,6 @@
-# LinearizingTransformationData
+---
+title: LinearizingTransformationData
+---
 
 `LinearizingTransformationData[…]` represents data of an `AffineStateSpaceModel` linearized by functions such as `FeedbackLinearize` and `StateTransformationLinearize` using transformation of variables.
 

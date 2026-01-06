@@ -1,4 +1,6 @@
-# AbelianGroup
+---
+title: AbelianGroup
+---
 
 `AbelianGroup[{n1, n2, ...}]` represents the direct product of the cyclic groups of degrees n1, n2, ....
 

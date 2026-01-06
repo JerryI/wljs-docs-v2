@@ -1,4 +1,6 @@
-# Smaller
+---
+title: Smaller
+---
 
 `Smaller` is a style or option setting that specifies that objects should be smaller.
 

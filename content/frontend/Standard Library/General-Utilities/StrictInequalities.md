@@ -1,4 +1,6 @@
-# StrictInequalities
+---
+title: StrictInequalities
+---
 
 `StrictInequalities` is an option to `FunctionSign` and `FunctionMonotonicity`, etc. that determines whether strict inequalities should be used in definitions.
 

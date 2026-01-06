@@ -1,4 +1,6 @@
-# Divide
+---
+title: Divide
+---
 
 `x/y` or `Divide[x, y]` is equivalent to x y^-1.
 

@@ -1,4 +1,6 @@
-# HeavisidePi
+---
+title: HeavisidePi
+---
 
 `HeavisidePi[x]` represents the box distribution Π(x), equal to 1 for |x| < 1/2 and 0 for |x| > 1/2.
 

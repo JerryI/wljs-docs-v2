@@ -1,4 +1,6 @@
-# AudioOutputDevice
+---
+title: AudioOutputDevice
+---
 
 `AudioOutputDevice` is an option for `Audio` and related functions that specifies the device to use for playback.
 

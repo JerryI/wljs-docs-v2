@@ -1,4 +1,6 @@
-# AsymptoticDSolveValue
+---
+title: AsymptoticDSolveValue
+---
 
 `AsymptoticDSolveValue[eqn, f, x -> x0]` computes an asymptotic approximation to the differential equation eqn for f[x] centered at x0.
 

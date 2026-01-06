@@ -1,4 +1,6 @@
-# ConformationMethod
+---
+title: ConformationMethod
+---
 
 `ConformationMethod` is an option for `VideoJoin` and others that specifies how to conform frames of different videos.
 

@@ -1,4 +1,6 @@
-# SectorChart
+---
+title: SectorChart
+---
 
 `SectorChart[{{x1, y1}, {x2, y2}, ...}]` makes a sector chart with sector angles proportional to xi and radii yi.
 

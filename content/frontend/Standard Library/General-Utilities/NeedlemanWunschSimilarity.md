@@ -1,4 +1,6 @@
-# NeedlemanWunschSimilarity
+---
+title: NeedlemanWunschSimilarity
+---
 
 `NeedlemanWunschSimilarity[u, v]` gives a number representing the Needleman–Wunsch similarity between strings, vectors, or biomolecular sequences u and v.
 

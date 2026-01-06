@@ -1,4 +1,6 @@
-# DistanceTransform
+---
+title: DistanceTransform
+---
 
 `DistanceTransform[image]` gives the distance transform of image, in which the value of each pixel is replaced by its distance to the nearest background pixel.
 

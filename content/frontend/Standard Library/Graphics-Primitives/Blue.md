@@ -1,4 +1,6 @@
-# Blue
+---
+title: Blue
+---
 
 `Blue` represents the color blue in graphics or style specifications.
 

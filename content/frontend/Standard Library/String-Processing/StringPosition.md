@@ -1,4 +1,6 @@
-# StringPosition
+---
+title: StringPosition
+---
 
 `StringPosition["string", "sub"]` gives a list of `{start, end}` positions where the substring appears.
 

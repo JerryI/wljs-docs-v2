@@ -1,4 +1,6 @@
-# DefineOutputStreamMethod
+---
+title: DefineOutputStreamMethod
+---
 
 `DefineOutputStreamMethod["name", {fname1 -> function1, fname2 -> function2, ...}]` defines a custom output stream method with the specified name, allowing the Wolfram Language to call the stream functions for opening and writing to an output stream.
 

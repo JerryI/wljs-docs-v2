@@ -1,4 +1,6 @@
-# FromCharacterCode
+---
+title: FromCharacterCode
+---
 
 `FromCharacterCode[n]` gives a string consisting of the character with integer code n.
 

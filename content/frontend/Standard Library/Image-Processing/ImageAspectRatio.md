@@ -1,4 +1,6 @@
-# ImageAspectRatio
+---
+title: ImageAspectRatio
+---
 
 `ImageAspectRatio[image]` gives the ratio of height to width for image.
 

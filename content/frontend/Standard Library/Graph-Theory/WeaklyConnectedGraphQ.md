@@ -1,4 +1,6 @@
-# WeaklyConnectedGraphQ
+---
+title: WeaklyConnectedGraphQ
+---
 
 `WeaklyConnectedGraphQ[g]` yields True if the graph g is weakly connected, and False otherwise.
 

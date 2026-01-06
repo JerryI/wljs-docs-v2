@@ -1,4 +1,6 @@
-# FlightData
+---
+title: FlightData
+---
 
 `FlightData[spec,options]` returns a subset of properties for a flight or selection of flights with specifications spec.
 

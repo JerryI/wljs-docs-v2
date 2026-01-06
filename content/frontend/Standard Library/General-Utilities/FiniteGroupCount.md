@@ -1,4 +1,6 @@
-# FiniteGroupCount
+---
+title: FiniteGroupCount
+---
 
 `FiniteGroupCount[n]` gives the number of finite groups of order n.
 

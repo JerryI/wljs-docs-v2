@@ -1,4 +1,6 @@
-# CanonicalWarpingCorrespondence
+---
+title: CanonicalWarpingCorrespondence
+---
 
 `CanonicalWarpingCorrespondence[s1, s2]` gives the canonical time warping (CTW) correspondence between sequences s1 and s2.
 

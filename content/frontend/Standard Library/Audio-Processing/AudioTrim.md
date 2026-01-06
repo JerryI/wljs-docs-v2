@@ -1,4 +1,6 @@
-# AudioTrim
+---
+title: AudioTrim
+---
 
 `AudioTrim[audio]` trims silence from the beginning and end of audio.
 

@@ -1,4 +1,6 @@
-# DiskSegment
+---
+title: DiskSegment
+---
 
 `DiskSegment[{x,y},r,{θ1,θ2}]` represents the disk segment from angle θ1 to θ2 in a disk centered at {x,y} of radius r.
 

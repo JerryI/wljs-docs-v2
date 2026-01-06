@@ -1,4 +1,6 @@
-# AsymptoticEquivalent
+---
+title: AsymptoticEquivalent
+---
 
 `AsymptoticEquivalent[f, g, x -> x*]` gives conditions for f(x) ~ g(x) as x -> x*.
 

@@ -1,4 +1,6 @@
-# InterpolationPoints
+---
+title: InterpolationPoints
+---
 
 `InterpolationPoints` is an option to `SmoothKernelDistribution` and `FunctionInterpolation` that specifies the initial number of interpolation points to use.
 

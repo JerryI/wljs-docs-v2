@@ -1,4 +1,6 @@
-# SearchIndices
+---
+title: SearchIndices
+---
 
 `SearchIndices[]` returns a list with all the locally stored instances of `SearchIndexObject`.
 

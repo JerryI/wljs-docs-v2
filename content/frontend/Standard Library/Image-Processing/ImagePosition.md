@@ -1,4 +1,6 @@
-# ImagePosition
+---
+title: ImagePosition
+---
 
 `ImagePosition[image]` gives an association of image positions for each identified category of objects in image.
 

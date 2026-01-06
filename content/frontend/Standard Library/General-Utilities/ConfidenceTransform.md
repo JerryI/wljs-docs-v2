@@ -1,4 +1,6 @@
-# ConfidenceTransform
+---
+title: ConfidenceTransform
+---
 
 `ConfidenceTransform` is an option for functions such as SurvivalModelFit that specifies the transformation used for confidence intervals and bands.
 

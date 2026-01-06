@@ -1,4 +1,6 @@
-# RegionDifference
+---
+title: RegionDifference
+---
 
 `RegionDifference[reg1, reg2]` gives the difference of regions (reg1 minus reg2).
 

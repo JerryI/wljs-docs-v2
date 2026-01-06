@@ -1,4 +1,6 @@
-# LearningRate
+---
+title: LearningRate
+---
 
 `LearningRate` is an option for `NetTrain` that specifies the rate at which to adjust neural net weights in order to minimize the training loss.
 

@@ -1,4 +1,6 @@
-# MorphologicalBinarize
+---
+title: MorphologicalBinarize
+---
 
 `MorphologicalBinarize[image, {t1, t2}]` creates a binary image from image by replacing all values above the upper threshold t2 with 1, also including pixels with intensities above the lower threshold t1 that are connected to the foreground.
 

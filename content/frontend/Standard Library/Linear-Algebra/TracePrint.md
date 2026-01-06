@@ -1,4 +1,6 @@
-# TracePrint
+---
+title: TracePrint
+---
 
 `TracePrint[expr]` prints all expressions used in the evaluation of expr. `TracePrint[expr, form]` includes only expressions matching form.
 

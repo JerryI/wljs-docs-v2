@@ -1,4 +1,6 @@
-# CentralMomentGeneratingFunction
+---
+title: CentralMomentGeneratingFunction
+---
 
 `CentralMomentGeneratingFunction[dist, t]` gives the central moment-generating function for the distribution dist as a function of t.
 

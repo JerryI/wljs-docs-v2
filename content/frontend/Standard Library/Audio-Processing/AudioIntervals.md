@@ -1,4 +1,6 @@
-# AudioIntervals
+---
+title: AudioIntervals
+---
 
 `AudioIntervals[audio]` returns audible intervals of audio.
 

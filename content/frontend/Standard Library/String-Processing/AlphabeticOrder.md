@@ -1,4 +1,6 @@
-# AlphabeticOrder
+---
+title: AlphabeticOrder
+---
 
 `AlphabeticOrder["string1", "string2"]` gives 1 if "string1" appears before "string2" in alphabetical order, -1 if it is after, and 0 if it is identical.
 

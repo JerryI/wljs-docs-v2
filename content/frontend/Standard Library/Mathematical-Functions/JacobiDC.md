@@ -1,4 +1,6 @@
-# JacobiDC
+---
+title: JacobiDC
+---
 
 `JacobiDC[u, m]` gives the Jacobi elliptic function dc(u|m).
 

@@ -1,4 +1,6 @@
-# PositionSmallest
+---
+title: PositionSmallest
+---
 
 `PositionSmallest[list]` gives the positions of the numerically smallest value in list.
 

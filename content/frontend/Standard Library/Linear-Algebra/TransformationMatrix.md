@@ -1,4 +1,6 @@
-# TransformationMatrix
+---
+title: TransformationMatrix
+---
 
 `TransformationMatrix[tfun]` gives the homogeneous matrix associated with a `TransformationFunction` object.
 

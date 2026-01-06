@@ -1,4 +1,6 @@
-# ImageFeatureTrack
+---
+title: ImageFeatureTrack
+---
 
 `ImageFeatureTrack[{image1, image2, ..., imagen}]` tracks features from image1 through imagen.
 

@@ -1,4 +1,6 @@
-# GeoPath
+---
+title: GeoPath
+---
 
 `GeoPath[{loc1, loc2}, pathtype]` is a `GeoGraphics` primitive that represents a path of type `pathtype` between locations `loc1` and `loc2`.
 

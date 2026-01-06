@@ -1,4 +1,6 @@
-# ChromaticityPlot3D
+---
+title: ChromaticityPlot3D
+---
 
 `ChromaticityPlot3D[colspace]` returns a 3D gamut of the color space colspace.
 

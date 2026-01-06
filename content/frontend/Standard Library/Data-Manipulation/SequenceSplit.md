@@ -1,4 +1,6 @@
-# SequenceSplit
+---
+title: SequenceSplit
+---
 
 `SequenceSplit[list, patt]` splits list into sublists separated by sequences that match the sequence pattern patt.
 

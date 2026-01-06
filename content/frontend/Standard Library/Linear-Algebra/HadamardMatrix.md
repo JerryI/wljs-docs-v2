@@ -1,4 +1,6 @@
-# HadamardMatrix
+---
+title: HadamardMatrix
+---
 
 `HadamardMatrix[n]` returns an n×n Hadamard matrix.
 

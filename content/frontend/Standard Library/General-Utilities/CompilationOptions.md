@@ -1,4 +1,6 @@
-# CompilationOptions
+---
+title: CompilationOptions
+---
 
 `CompilationOptions` is an option for `Compile` that specifies settings for the compilation process.
 

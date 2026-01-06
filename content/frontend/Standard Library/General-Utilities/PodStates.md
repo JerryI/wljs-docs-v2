@@ -1,4 +1,6 @@
-# PodStates
+---
+title: PodStates
+---
 
 `PodStates` is an option for `WolframAlpha` that determines information about the states of the pods.
 

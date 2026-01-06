@@ -1,4 +1,6 @@
-# PrintableASCIIQ
+---
+title: PrintableASCIIQ
+---
 
 `PrintableASCIIQ[string]` yields `True` if the string contains only printable ASCII characters, and yields `False` otherwise.
 

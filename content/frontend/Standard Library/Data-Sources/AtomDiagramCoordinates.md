@@ -1,4 +1,6 @@
-# AtomDiagramCoordinates
+---
+title: AtomDiagramCoordinates
+---
 
 `AtomDiagramCoordinates` is an option for `Molecule` and related functions that specifies the two-dimensional coordinates of the atoms.
 

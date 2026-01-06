@@ -1,4 +1,6 @@
-# VertexShape
+---
+title: VertexShape
+---
 
 `VertexShape` is an option and property for `Graph` and related functions that specifies the graphics used for vertices.
 

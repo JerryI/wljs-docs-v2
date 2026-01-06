@@ -1,4 +1,6 @@
-# ResourceVersion
+---
+title: ResourceVersion
+---
 
 `ResourceVersion` is an option for `ResourceObject`, `ResourceFunction` and related functions for specifying the version of a resource.
 

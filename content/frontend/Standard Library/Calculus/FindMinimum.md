@@ -1,4 +1,6 @@
-# FindMinimum
+---
+title: FindMinimum
+---
 
 `FindMinimum[f, {x, x0}]` searches for a local minimum in f, starting from the point x=x0.
 

@@ -1,4 +1,6 @@
-# Depth
+---
+title: Depth
+---
 
 `Depth[expr]` gives the maximum number of indices needed to specify any part of expr, plus 1.
 

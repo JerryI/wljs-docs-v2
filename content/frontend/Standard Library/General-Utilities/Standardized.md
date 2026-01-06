@@ -1,4 +1,6 @@
-# Standardized
+---
+title: Standardized
+---
 
 `Standardized` is an option that determines whether to standardize the data.
 

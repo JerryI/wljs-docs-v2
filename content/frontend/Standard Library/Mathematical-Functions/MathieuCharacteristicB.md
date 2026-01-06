@@ -1,4 +1,6 @@
-# MathieuCharacteristicB
+---
+title: MathieuCharacteristicB
+---
 
 `MathieuCharacteristicB[r, q]` gives the characteristic value br for odd Mathieu functions with characteristic exponent r and parameter q.
 

@@ -1,4 +1,6 @@
-# ArrayDepth
+---
+title: ArrayDepth
+---
 
 `ArrayDepth[expr]` gives the depth to which expr is a full (rectangular) array, with all parts at each level having the same length.
 

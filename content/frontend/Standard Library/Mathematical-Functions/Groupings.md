@@ -1,4 +1,6 @@
-# Groupings
+---
+title: Groupings
+---
 
 `Groupings[n, k]` gives a list of all possible groupings of `1, …, n` taken `k` at a time.
 

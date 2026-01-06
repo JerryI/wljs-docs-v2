@@ -1,4 +1,6 @@
-# GegenbauerC
+---
+title: GegenbauerC
+---
 
 `GegenbauerC[n, m, x]` gives the Gegenbauer polynomial C_n^(m)(x).
 

@@ -1,4 +1,6 @@
-# Count
+---
+title: Count
+---
 
 `Count[list, pattern]` gives the number of elements in list that match pattern.
 

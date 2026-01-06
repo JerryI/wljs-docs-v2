@@ -1,4 +1,6 @@
-# WaveletPhi
+---
+title: WaveletPhi
+---
 
 `WaveletPhi[wave, x]` gives the scaling function ϕ(x) for the symbolic wavelet wave evaluated at x.
 

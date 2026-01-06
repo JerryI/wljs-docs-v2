@@ -1,4 +1,6 @@
-# Pick
+---
+title: Pick
+---
 
 `Pick[list, sel]` picks out those elements of *list* for which the corresponding element of *sel* is `True`.
 

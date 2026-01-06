@@ -1,4 +1,6 @@
-# CreateManagedLibraryExpression
+---
+title: CreateManagedLibraryExpression
+---
 
 `CreateManagedLibraryExpression[mname, f]` creates a managed library expression by applying f to a positive integer ID associated with a registered manager with name mname.
 

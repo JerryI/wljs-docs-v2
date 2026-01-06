@@ -1,4 +1,6 @@
-# ChannelBrokerAction
+---
+title: ChannelBrokerAction
+---
 
 `ChannelBrokerAction` is an option specifying the action to execute on the channel broker server in addition to routing a message.
 

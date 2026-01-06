@@ -1,4 +1,6 @@
-# NetPortGradient
+---
+title: NetPortGradient
+---
 
 `NetPortGradient["port"]` represents the gradient of the output of a net with respect to the value of the specified input port.
 

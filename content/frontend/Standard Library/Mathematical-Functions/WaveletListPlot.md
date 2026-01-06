@@ -1,4 +1,6 @@
-# WaveletListPlot
+---
+title: WaveletListPlot
+---
 
 `WaveletListPlot[dwd]` plots wavelet transform coefficients in the DiscreteWaveletData dwd.
 

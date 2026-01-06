@@ -1,4 +1,6 @@
-# PlotHighlighting
+---
+title: PlotHighlighting
+---
 
 `PlotHighlighting` is an option to `Plot`, `ListPlot` and related visualization functions that specifies how points and curves should be highlighted.
 

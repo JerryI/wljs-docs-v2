@@ -1,4 +1,6 @@
-# WindingPolygon
+---
+title: WindingPolygon
+---
 
 `WindingPolygon[{p1, p2, ..., pn}]` gives a polygon representing all points for which the closed contour p1, p2, ..., pn, p1 winds around at least once.
 

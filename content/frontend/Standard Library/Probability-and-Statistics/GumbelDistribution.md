@@ -1,4 +1,6 @@
-# GumbelDistribution
+---
+title: GumbelDistribution
+---
 
 `GumbelDistribution[α, β]` represents a Gumbel distribution with location parameter α and scale parameter β.
 

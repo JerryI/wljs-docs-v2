@@ -1,4 +1,6 @@
-# StruveH
+---
+title: StruveH
+---
 
 `StruveH[n, z]` gives the Struve function Hₙ(z).
 

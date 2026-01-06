@@ -1,4 +1,6 @@
-# EnterTextPacket
+---
+title: EnterTextPacket
+---
 
 `EnterTextPacket[string]` is a WSTP packet that requests the parsing and evaluation of string as an expression.
 

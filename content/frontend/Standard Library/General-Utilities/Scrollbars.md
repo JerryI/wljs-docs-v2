@@ -1,4 +1,6 @@
-# Scrollbars
+---
+title: Scrollbars
+---
 
 `Scrollbars` is an option for `Pane` that specifies whether scrollbars should be displayed.
 

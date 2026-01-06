@@ -1,4 +1,6 @@
-# ErlangB
+---
+title: ErlangB
+---
 
 `ErlangB[c, a]` computes the Erlang B loss probability for an M/M/c/c queue.
 

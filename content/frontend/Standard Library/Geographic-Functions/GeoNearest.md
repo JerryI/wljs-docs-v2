@@ -1,4 +1,6 @@
-# GeoNearest
+---
+title: GeoNearest
+---
 
 `GeoNearest[enttype, loc]` returns the geographic entity of type `enttype` closest to the geo location `loc`.
 

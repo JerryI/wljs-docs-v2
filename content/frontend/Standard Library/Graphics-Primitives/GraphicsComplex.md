@@ -1,4 +1,6 @@
-# GraphicsComplex
+---
+title: GraphicsComplex
+---
 
 `GraphicsComplex[{pt1, pt2, …}, data]` represents a graphics complex in which coordinates given as integers `i` in graphics primitives in `data` are taken to be `pti`.
 

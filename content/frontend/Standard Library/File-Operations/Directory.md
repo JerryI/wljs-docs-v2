@@ -1,4 +1,6 @@
-# Directory
+---
+title: Directory
+---
 
 `Directory[]` gives the current working directory.
 

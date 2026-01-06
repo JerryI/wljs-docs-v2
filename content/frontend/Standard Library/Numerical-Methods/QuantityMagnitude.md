@@ -1,4 +1,6 @@
-# QuantityMagnitude
+---
+title: QuantityMagnitude
+---
 
 `QuantityMagnitude[quantity]` extracts the numerical value from a quantity. `QuantityMagnitude[quantity, unit]` gives the value in specific units.
 

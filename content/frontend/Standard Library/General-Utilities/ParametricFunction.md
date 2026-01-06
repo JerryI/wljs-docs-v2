@@ -1,4 +1,6 @@
-# ParametricFunction
+---
+title: ParametricFunction
+---
 
 `ParametricFunction[pars,…]` represents a function that computes a solution when evaluated with numerical values for the parameters pars.
 

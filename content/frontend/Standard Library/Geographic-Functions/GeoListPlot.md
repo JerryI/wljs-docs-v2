@@ -1,4 +1,6 @@
-# GeoListPlot
+---
+title: GeoListPlot
+---
 
 `GeoListPlot[{loc1, loc2, …}]` generates a map on which the locations `loci` are indicated.
 

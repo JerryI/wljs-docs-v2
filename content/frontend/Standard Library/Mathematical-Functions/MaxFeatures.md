@@ -1,4 +1,6 @@
-# MaxFeatures
+---
+title: MaxFeatures
+---
 
 `MaxFeatures` is an option that specifies the maximum number of features returned from feature detection algorithms.
 

@@ -1,4 +1,6 @@
-# TitsGroupT
+---
+title: TitsGroupT
+---
 
 `TitsGroupT[]` represents the simple Tits group T.
 

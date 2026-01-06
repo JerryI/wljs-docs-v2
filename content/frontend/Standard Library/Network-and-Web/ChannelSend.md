@@ -1,4 +1,6 @@
-# ChannelSend
+---
+title: ChannelSend
+---
 
 `ChannelSend[channel, msg]` sends the specified message msg to the specified channel.
 

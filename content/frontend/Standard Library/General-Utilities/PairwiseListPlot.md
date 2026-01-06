@@ -1,4 +1,6 @@
-# PairwiseListPlot
+---
+title: PairwiseListPlot
+---
 
 `PairwiseListPlot[{{y11, ..., y1n}, ..., {ym1, ..., ymn}}]` creates an array of scatter plots by plotting the data columns against each other in pairs.
 

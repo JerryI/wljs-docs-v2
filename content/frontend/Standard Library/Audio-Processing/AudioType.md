@@ -1,4 +1,6 @@
-# AudioType
+---
+title: AudioType
+---
 
 `AudioType[audio]` returns the data type used to represent samples in the Audio object audio.
 

@@ -1,4 +1,6 @@
-# Graphics
+---
+title: Graphics
+---
 
 `Graphics[primitives, options]` represents a two-dimensional graphical image.
 

@@ -1,4 +1,6 @@
-# Dataset
+---
+title: Dataset
+---
 
 `Dataset[data]` represents a structured dataset based on a hierarchy of lists and associations, enabling query operations and visualization.
 

@@ -1,4 +1,6 @@
-# LibraryFunctionDeclaration
+---
+title: LibraryFunctionDeclaration
+---
 
 `LibraryFunctionDeclaration["extName", lib, type]` represents a function declaration that exposes the library function *extName* with the type *type* from the library *lib*, for use in compiled code.
 

@@ -1,4 +1,6 @@
-# RegionMoment
+---
+title: RegionMoment
+---
 
 `RegionMoment[reg, {i1, i2, ..., in}]` computes the polynomial moment for the region reg.
 

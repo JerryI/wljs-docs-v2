@@ -1,4 +1,6 @@
-# BitAnd
+---
+title: BitAnd
+---
 
 `BitAnd[n1, n2, ...]` gives the bitwise AND of the integers ni.
 

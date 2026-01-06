@@ -1,4 +1,6 @@
-# AASTriangle
+---
+title: AASTriangle
+---
 
 `AASTriangle[α, β, a]` returns a filled triangle with angles α and β and side length a, where a is adjacent to one angle only.
 

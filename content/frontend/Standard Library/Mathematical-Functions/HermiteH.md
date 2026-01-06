@@ -1,4 +1,6 @@
-# HermiteH
+---
+title: HermiteH
+---
 
 `HermiteH[n, x]` gives the Hermite polynomial H_n(x), used in quantum mechanics and probability.
 

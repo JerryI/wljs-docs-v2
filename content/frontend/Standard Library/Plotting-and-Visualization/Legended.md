@@ -1,4 +1,6 @@
-# Legended
+---
+title: Legended
+---
 
 `Legended[expr, leg]` displays expr with legend leg.
 

@@ -1,4 +1,6 @@
-# SetFileDate
+---
+title: SetFileDate
+---
 
 `SetFileDate["file"]` sets the modification and access dates for a file to be the current date.
 

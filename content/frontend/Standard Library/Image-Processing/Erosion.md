@@ -1,4 +1,6 @@
-# Erosion
+---
+title: Erosion
+---
 
 `Erosion[image, ker]` gives the morphological erosion of image with respect to the structuring element ker.
 

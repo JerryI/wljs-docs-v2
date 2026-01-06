@@ -1,4 +1,6 @@
-# CoefficientArrays
+---
+title: CoefficientArrays
+---
 
 `CoefficientArrays[polys, vars]` gives the arrays of coefficients of the variables vars in the polynomials polys.
 

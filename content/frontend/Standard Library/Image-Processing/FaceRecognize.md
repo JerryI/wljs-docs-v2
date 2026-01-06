@@ -1,4 +1,6 @@
-# FaceRecognize
+---
+title: FaceRecognize
+---
 
 `FaceRecognize[{example1->name1,example2->name2,…}]` generates a ClassifierFunction[…] based on the face examples and names given.
 

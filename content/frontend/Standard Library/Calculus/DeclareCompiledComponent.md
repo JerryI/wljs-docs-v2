@@ -1,4 +1,6 @@
-# DeclareCompiledComponent
+---
+title: DeclareCompiledComponent
+---
 
 `DeclareCompiledComponent["name", decls]` adds declarations decls to compiled component "name".
 

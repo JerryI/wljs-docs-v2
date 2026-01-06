@@ -1,4 +1,6 @@
-# FileFormatQ
+---
+title: FileFormatQ
+---
 
 `FileFormatQ[source,"fmt"]` gives True if the file corresponding to source might be imported as format "fmt" and gives False otherwise.
 

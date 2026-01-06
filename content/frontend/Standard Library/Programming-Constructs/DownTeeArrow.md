@@ -1,4 +1,6 @@
-# DownTeeArrow
+---
+title: DownTeeArrow
+---
 
 `DownTeeArrow[x, y, ...]` displays as x↧y↧....
 

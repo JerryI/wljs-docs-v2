@@ -1,4 +1,6 @@
-# FunctionInjective
+---
+title: FunctionInjective
+---
 
 `FunctionInjective[f, x]` tests whether f(x) = y has at most one solution x ∈ Reals for each y.
 

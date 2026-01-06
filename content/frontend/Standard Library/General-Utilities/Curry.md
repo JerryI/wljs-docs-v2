@@ -1,4 +1,6 @@
-# Curry
+---
+title: Curry
+---
 
 `Curry[f, n]` represents an operator form of the function f of n arguments so that `Curry[f, n][x1]…[xn]` is equivalent to `f[x1, …, xn]`.
 

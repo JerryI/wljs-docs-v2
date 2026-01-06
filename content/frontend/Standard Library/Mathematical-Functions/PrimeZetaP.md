@@ -1,4 +1,6 @@
-# PrimeZetaP
+---
+title: PrimeZetaP
+---
 
 `PrimeZetaP[s]` gives prime zeta function P(s).
 

@@ -1,4 +1,6 @@
-# Diff3
+---
+title: Diff3
+---
 
 `Diff3[ancestor, first, second]` returns a representation of the three-way diff between ancestor and two independently changed versions of ancestor.
 

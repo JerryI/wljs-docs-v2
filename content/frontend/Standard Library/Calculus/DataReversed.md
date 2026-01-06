@@ -1,4 +1,6 @@
-# DataReversed
+---
+title: DataReversed
+---
 
 `DataReversed` is an option for `ArrayPlot` and related functions that specifies whether data should be plotted in reverse order.
 

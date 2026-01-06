@@ -1,4 +1,6 @@
-# Threaded
+---
+title: Threaded
+---
 
 `Threaded[list]` is an object whose elements will automatically be threaded into the lowest level of an array when used in a listable operation such as Plus.
 

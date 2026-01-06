@@ -1,4 +1,6 @@
-# RandomPrime
+---
+title: RandomPrime
+---
 
 `RandomPrime[{imin, imax}]` gives a pseudorandom prime in the range imin to imax.
 

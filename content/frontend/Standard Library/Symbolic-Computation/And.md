@@ -1,4 +1,6 @@
-# And
+---
+title: And
+---
 
 `e1 && e2 && ...` is the logical AND function. It gives `False` immediately if any argument is `False`, and `True` if all are `True`.
 

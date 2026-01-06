@@ -1,4 +1,6 @@
-# GraphicsGroup
+---
+title: GraphicsGroup
+---
 
 `GraphicsGroup[{g1, g2, …}]` represents a collection of graphics objects grouped together for purposes of interactive selection in a notebook.
 

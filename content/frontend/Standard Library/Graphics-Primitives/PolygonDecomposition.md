@@ -1,4 +1,6 @@
-# PolygonDecomposition
+---
+title: PolygonDecomposition
+---
 
 `PolygonDecomposition[poly]` decomposes the polygon poly into a disjoint union of simpler polygons.
 

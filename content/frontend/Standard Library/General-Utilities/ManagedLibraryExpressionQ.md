@@ -1,4 +1,6 @@
-# ManagedLibraryExpressionQ
+---
+title: ManagedLibraryExpressionQ
+---
 
 `ManagedLibraryExpressionQ[expr]` returns `True` if expr is a managed library expression and `False` otherwise.
 

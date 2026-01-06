@@ -1,4 +1,6 @@
-# HotellingTSquareDistribution
+---
+title: HotellingTSquareDistribution
+---
 
 `HotellingTSquareDistribution[p, m]` represents Hotelling's T² distribution with dimensionality parameter p and m degrees of freedom.
 

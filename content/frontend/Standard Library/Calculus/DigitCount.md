@@ -1,4 +1,6 @@
-# DigitCount
+---
+title: DigitCount
+---
 
 `DigitCount[n, b, d]` gives the number of d digits in the base-b representation of n.
 

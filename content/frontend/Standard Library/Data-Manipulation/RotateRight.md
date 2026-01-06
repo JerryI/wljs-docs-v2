@@ -1,4 +1,6 @@
-# RotateRight
+---
+title: RotateRight
+---
 
 `RotateRight[expr, n]` cycles the elements in expr n positions to the right.
 

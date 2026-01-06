@@ -1,4 +1,6 @@
-# ReIm
+---
+title: ReIm
+---
 
 `ReIm[z]` gives the list {Re[z], Im[z]} of the number z.
 

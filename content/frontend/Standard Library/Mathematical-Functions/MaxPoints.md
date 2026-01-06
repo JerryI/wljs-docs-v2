@@ -1,4 +1,6 @@
-# MaxPoints
+---
+title: MaxPoints
+---
 
 `MaxPoints` is an option for `NIntegrate` specifying the maximum total number of times to sample the integrand.
 

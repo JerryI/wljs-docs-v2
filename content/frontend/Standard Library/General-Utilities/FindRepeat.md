@@ -1,4 +1,6 @@
-# FindRepeat
+---
+title: FindRepeat
+---
 
 `FindRepeat[list]` finds the minimal sublist or subarray that repeats to give list.
 

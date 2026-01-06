@@ -1,4 +1,6 @@
-# GeometricAssertion
+---
+title: GeometricAssertion
+---
 
 `GeometricAssertion[obj, prop]` represents the assertion that the geometric object `obj` satisfies `prop`.
 

@@ -1,4 +1,6 @@
-# Cap
+---
+title: Cap
+---
 
 `Cap[x, y, ...]` displays as x⌢y⌢….
 

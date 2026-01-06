@@ -1,4 +1,6 @@
-# Autocomplete
+---
+title: Autocomplete
+---
 
 `Autocomplete[{string1, string2, ...}, "string"]` gives a list of the stringi that can complete string.
 

@@ -1,4 +1,6 @@
-# UnitaryMatrix
+---
+title: UnitaryMatrix
+---
 
 `UnitaryMatrix[umat]` converts the unitary matrix umat to a structured array.
 

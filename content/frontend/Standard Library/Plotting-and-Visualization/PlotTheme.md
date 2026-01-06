@@ -1,4 +1,6 @@
-# PlotTheme
+---
+title: PlotTheme
+---
 
 `PlotTheme` is an option for plotting and related functions that specifies an overall theme for visualization elements and styles.
 

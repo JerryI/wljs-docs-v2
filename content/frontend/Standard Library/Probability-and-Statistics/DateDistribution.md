@@ -1,4 +1,6 @@
-# DateDistribution
+---
+title: DateDistribution
+---
 
 `DateDistribution[dist, dunit, dorig]` represents a distribution dist of dates with date scale unit dunit and date origin dorig.
 

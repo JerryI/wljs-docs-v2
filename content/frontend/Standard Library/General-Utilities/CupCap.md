@@ -1,4 +1,6 @@
-# CupCap
+---
+title: CupCap
+---
 
 `CupCap[x, y, ...]` displays as x≍y≍….
 

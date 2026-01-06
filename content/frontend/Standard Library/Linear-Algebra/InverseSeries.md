@@ -1,4 +1,6 @@
-# InverseSeries
+---
+title: InverseSeries
+---
 
 `InverseSeries[s]` gives a series for the inverse of the function represented by series s.
 

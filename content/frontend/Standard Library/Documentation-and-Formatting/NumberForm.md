@@ -1,4 +1,6 @@
-# NumberForm
+---
+title: NumberForm
+---
 
 `NumberForm[expr, n]` displays numbers with `n` digits of precision. `NumberForm[expr, {n, f}]` shows `n` total digits with `f` after the decimal.
 

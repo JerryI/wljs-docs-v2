@@ -1,4 +1,6 @@
-# InverseBilateralZTransform
+---
+title: InverseBilateralZTransform
+---
 
 `InverseBilateralZTransform[expr, z, n]` gives the inverse bilateral Z transform of expr.
 

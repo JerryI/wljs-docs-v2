@@ -1,4 +1,6 @@
-# DateListStepPlot
+---
+title: DateListStepPlot
+---
 
 `DateListStepPlot[{{date1, y1}, {date2, y2}, …}]` plots the values yi in steps at a sequence of dates.
 

@@ -1,4 +1,6 @@
-# SpokenString
+---
+title: SpokenString
+---
 
 `SpokenString[expr]` gives a string of text corresponding to a spoken representation of the expression expr.
 

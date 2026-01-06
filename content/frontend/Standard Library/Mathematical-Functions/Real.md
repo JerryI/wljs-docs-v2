@@ -1,4 +1,6 @@
-# Real
+---
+title: Real
+---
 
 `Real` is the head used for real (floating-point) numbers.
 

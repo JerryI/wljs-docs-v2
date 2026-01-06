@@ -1,4 +1,6 @@
-# NormFunction
+---
+title: NormFunction
+---
 
 `NormFunction` is an option for functions such as `FindFit` and `NDSolve` which gives a function to be minimized in generating results.
 

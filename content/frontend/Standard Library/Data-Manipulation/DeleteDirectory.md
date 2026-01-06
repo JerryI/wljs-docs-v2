@@ -1,4 +1,6 @@
-# DeleteDirectory
+---
+title: DeleteDirectory
+---
 
 `DeleteDirectory["dir"]` deletes the specified directory.
 

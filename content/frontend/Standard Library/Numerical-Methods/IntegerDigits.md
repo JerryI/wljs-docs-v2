@@ -1,4 +1,6 @@
-# IntegerDigits
+---
+title: IntegerDigits
+---
 
 `IntegerDigits[n]` gives a list of the decimal digits in the integer n.
 

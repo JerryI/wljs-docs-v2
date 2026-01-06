@@ -1,4 +1,6 @@
-# EstimatorGains
+---
+title: EstimatorGains
+---
 
 `EstimatorGains[ssm, {p1, p2, ..., pn}]` gives the estimator gain matrix for the `StateSpaceModel` ssm, such that the poles of the estimator are pi.
 

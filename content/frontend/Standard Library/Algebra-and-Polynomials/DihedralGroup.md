@@ -1,4 +1,6 @@
-# DihedralGroup
+---
+title: DihedralGroup
+---
 
 `DihedralGroup[n]` represents the dihedral group of order 2n.
 

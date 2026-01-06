@@ -1,4 +1,6 @@
-# KuiperTest
+---
+title: KuiperTest
+---
 
 `KuiperTest[data]` tests whether `data` is normally distributed using the Kuiper test.
 

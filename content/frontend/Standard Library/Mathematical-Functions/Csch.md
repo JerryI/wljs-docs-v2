@@ -1,4 +1,6 @@
-# Csch
+---
+title: Csch
+---
 
 `Csch[z]` gives the hyperbolic cosecant of z.
 

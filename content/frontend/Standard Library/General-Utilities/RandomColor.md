@@ -1,4 +1,6 @@
-# RandomColor
+---
+title: RandomColor
+---
 
 `RandomColor[]` gives a pseudorandom color directive in the RGBColor space. `RandomColor[n]` gives n pseudorandom colors.
 

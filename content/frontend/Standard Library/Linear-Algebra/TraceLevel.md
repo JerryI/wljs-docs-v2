@@ -1,4 +1,6 @@
-# TraceLevel
+---
+title: TraceLevel
+---
 
 `TraceLevel[]` returns the level currently being traced when it appears within `Trace` and related functions.
 

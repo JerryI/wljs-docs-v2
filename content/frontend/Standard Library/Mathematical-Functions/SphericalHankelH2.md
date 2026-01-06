@@ -1,4 +1,6 @@
-# SphericalHankelH2
+---
+title: SphericalHankelH2
+---
 
 `SphericalHankelH2[n, z]` gives the spherical Hankel function of the second kind h_n^(2)(z).
 

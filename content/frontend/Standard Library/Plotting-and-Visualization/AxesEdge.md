@@ -1,4 +1,6 @@
-# AxesEdge
+---
+title: AxesEdge
+---
 
 `AxesEdge` is an option for three-dimensional graphics functions that specifies on which edges of the bounding box axes should be drawn.
 

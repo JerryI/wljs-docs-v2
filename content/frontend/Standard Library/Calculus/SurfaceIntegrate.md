@@ -1,4 +1,6 @@
-# SurfaceIntegrate
+---
+title: SurfaceIntegrate
+---
 
 `SurfaceIntegrate[f, {x, y, ...} ∈ surface]` computes the scalar surface integral of the function f[x, y, ...] over the surface.
 

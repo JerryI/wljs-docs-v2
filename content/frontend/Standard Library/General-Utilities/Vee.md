@@ -1,4 +1,6 @@
-# Vee
+---
+title: Vee
+---
 
 `Vee[x, y, ...]` displays as x⋁y⋁....
 

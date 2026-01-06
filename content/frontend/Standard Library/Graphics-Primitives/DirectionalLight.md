@@ -1,4 +1,6 @@
-# DirectionalLight
+---
+title: DirectionalLight
+---
 
 `DirectionalLight[col, pt]` is a three-dimensional graphics directive that specifies the directional light of color col from the point pt to the center of the bounding box to use in coloring 3D surfaces.
 

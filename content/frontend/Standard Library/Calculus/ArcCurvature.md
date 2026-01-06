@@ -1,4 +1,6 @@
-# ArcCurvature
+---
+title: ArcCurvature
+---
 
 `ArcCurvature[{x1, ..., xn}, t]` gives the curvature of the parametrized curve whose Cartesian coordinates xi are functions of t.
 

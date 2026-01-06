@@ -1,4 +1,6 @@
-# HeatRadiationValue
+---
+title: HeatRadiationValue
+---
 
 `HeatRadiationValue[pred,vars,pars]` represents a thermal radiation boundary condition for PDEs with predicate pred indicating where it applies, with model variables vars and global parameters pars.
 

@@ -1,4 +1,6 @@
-# FileByteCount
+---
+title: FileByteCount
+---
 
 `FileByteCount[file]` gives the number of bytes in a file.
 

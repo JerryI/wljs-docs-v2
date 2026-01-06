@@ -1,4 +1,6 @@
-# PrecedesEqual
+---
+title: PrecedesEqual
+---
 
 `PrecedesEqual[x, y, ...]` displays as x ⪯ y ⪯ ....
 

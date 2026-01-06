@@ -1,4 +1,6 @@
-# WhitePoint
+---
+title: WhitePoint
+---
 
 `WhitePoint` is an option for `ColorConvert`, `ChromaticityPlot` and other functions to specify the white point.
 

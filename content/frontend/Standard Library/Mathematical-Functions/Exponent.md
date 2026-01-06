@@ -1,4 +1,6 @@
-# Exponent
+---
+title: Exponent
+---
 
 `Exponent[expr, form]` gives the maximum power with which form appears in the expanded form of expr.
 

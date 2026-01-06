@@ -1,4 +1,6 @@
-# URLSave
+---
+title: URLSave
+---
 
 `URLSave["url"]` saves the content of the URL to a file in $TemporaryDirectory.
 

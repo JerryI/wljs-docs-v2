@@ -1,4 +1,6 @@
-# Censoring
+---
+title: Censoring
+---
 
 `Censoring[t,c]` represents a censored event time t with censoring c.
 

@@ -1,4 +1,6 @@
-# ConformImages
+---
+title: ConformImages
+---
 
 `ConformImages[{image1, image2, ...}]` returns a list of images where all imagei are made to have conforming properties, including dimensions, data type, color space, and interleaving.
 

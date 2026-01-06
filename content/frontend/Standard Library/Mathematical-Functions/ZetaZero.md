@@ -1,4 +1,6 @@
-# ZetaZero
+---
+title: ZetaZero
+---
 
 `ZetaZero[k]` represents the kth zero of the Riemann zeta function on the critical line.
 

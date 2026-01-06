@@ -1,4 +1,6 @@
-# PrimitiveRoot
+---
+title: PrimitiveRoot
+---
 
 `PrimitiveRoot[n]` gives a primitive root of n.
 

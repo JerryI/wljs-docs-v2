@@ -1,4 +1,6 @@
-# RandomVariate
+---
+title: RandomVariate
+---
 
 `RandomVariate[dist]` gives a pseudorandom variate from the symbolic distribution dist. `RandomVariate[dist, n]` gives a list of n variates.
 

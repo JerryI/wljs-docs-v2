@@ -1,4 +1,6 @@
-# Pattern
+---
+title: Pattern
+---
 
 `sym:obj` or `Pattern[sym, obj]` represents the pattern object obj, assigned the name sym.
 

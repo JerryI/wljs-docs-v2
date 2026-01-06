@@ -1,4 +1,6 @@
-# InverseBetaRegularized
+---
+title: InverseBetaRegularized
+---
 
 `InverseBetaRegularized[s, a, b]` gives the inverse of the regularized incomplete beta function.
 

@@ -1,4 +1,6 @@
-# RegionIntersection
+---
+title: RegionIntersection
+---
 
 `RegionIntersection[reg1, reg2, ...]` gives the intersection of the regions.
 

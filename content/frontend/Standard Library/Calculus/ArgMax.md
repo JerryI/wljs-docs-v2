@@ -1,4 +1,6 @@
-# ArgMax
+---
+title: ArgMax
+---
 
 `ArgMax[f, x]` gives a position xmax at which f is maximized.
 

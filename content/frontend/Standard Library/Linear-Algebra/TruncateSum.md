@@ -1,4 +1,6 @@
-# TruncateSum
+---
+title: TruncateSum
+---
 
 `TruncateSum[sexpr,n]` truncates each Sum in sexpr to have at most n terms.
 

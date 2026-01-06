@@ -1,4 +1,6 @@
-# BitNot
+---
+title: BitNot
+---
 
 `BitNot[n]` gives the bitwise NOT of the integer n.
 

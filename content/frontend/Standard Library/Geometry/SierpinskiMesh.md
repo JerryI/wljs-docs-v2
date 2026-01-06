@@ -1,4 +1,6 @@
-# SierpinskiMesh
+---
+title: SierpinskiMesh
+---
 
 `SierpinskiMesh[n]` gives a mesh region representing the nth-step Sierpiński triangle.
 

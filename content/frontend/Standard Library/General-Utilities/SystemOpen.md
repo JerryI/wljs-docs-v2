@@ -1,4 +1,6 @@
-# SystemOpen
+---
+title: SystemOpen
+---
 
 `SystemOpen["target"]` opens the file, URL, or target with the associated system application.
 

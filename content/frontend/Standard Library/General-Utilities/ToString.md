@@ -1,4 +1,6 @@
-# ToString
+---
+title: ToString
+---
 
 `ToString[expr]` gives a string corresponding to the printed form of expr.
 

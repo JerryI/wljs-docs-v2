@@ -1,4 +1,6 @@
-# PacletDirectoryRemove
+---
+title: PacletDirectoryRemove
+---
 
 `PacletDirectoryRemove` is an obsolete function that has been superseded by `PacletDirectoryUnload`.
 

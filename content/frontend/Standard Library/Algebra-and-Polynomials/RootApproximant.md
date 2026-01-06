@@ -1,4 +1,6 @@
-# RootApproximant
+---
+title: RootApproximant
+---
 
 `RootApproximant[x]` converts the number x to one of the "simplest" algebraic numbers that approximates it well.
 

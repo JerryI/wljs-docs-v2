@@ -1,4 +1,6 @@
-# ScrollingOptions
+---
+title: ScrollingOptions
+---
 
 `ScrollingOptions` is an option for notebooks that specifies settings for scrolling.
 

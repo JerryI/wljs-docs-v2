@@ -1,4 +1,6 @@
-# DigitalSignature
+---
+title: DigitalSignature
+---
 
 `DigitalSignature[assoc]` represents a digital signature object.
 

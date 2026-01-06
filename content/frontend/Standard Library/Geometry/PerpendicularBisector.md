@@ -1,4 +1,6 @@
-# PerpendicularBisector
+---
+title: PerpendicularBisector
+---
 
 `PerpendicularBisector[{p1, p2}]` gives the perpendicular bisector of the line segment connecting p1 and p2.
 

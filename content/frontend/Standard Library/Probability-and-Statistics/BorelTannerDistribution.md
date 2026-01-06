@@ -1,4 +1,6 @@
-# BorelTannerDistribution
+---
+title: BorelTannerDistribution
+---
 
 `BorelTannerDistribution[α, n]` represents a Borel–Tanner distribution with shape parameters α and n.
 

@@ -1,4 +1,6 @@
-# ImageEffect
+---
+title: ImageEffect
+---
 
 `ImageEffect[image, "effect"]` applies the specified image effect to image.
 

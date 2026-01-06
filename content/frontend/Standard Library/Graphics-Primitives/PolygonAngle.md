@@ -1,4 +1,6 @@
-# PolygonAngle
+---
+title: PolygonAngle
+---
 
 `PolygonAngle[poly]` gives a list of angles at the vertex points of poly.
 

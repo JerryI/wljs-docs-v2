@@ -1,4 +1,6 @@
-# FormatValues
+---
+title: FormatValues
+---
 
 `FormatValues[f]` gives a list of transformation rules corresponding to all printing formats (values for Format[f[x, ...], ...], etc.) defined for the symbol f.
 

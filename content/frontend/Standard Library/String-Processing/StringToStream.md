@@ -1,4 +1,6 @@
-# StringToStream
+---
+title: StringToStream
+---
 
 `StringToStream["string"]` opens an input stream for reading from a string.
 

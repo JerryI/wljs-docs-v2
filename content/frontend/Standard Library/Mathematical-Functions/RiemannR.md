@@ -1,4 +1,6 @@
-# RiemannR
+---
+title: RiemannR
+---
 
 `RiemannR[x]` gives the Riemann prime counting function R(x).
 

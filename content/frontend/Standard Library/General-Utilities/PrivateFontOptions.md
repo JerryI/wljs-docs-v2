@@ -1,4 +1,6 @@
-# PrivateFontOptions
+---
+title: PrivateFontOptions
+---
 
 `PrivateFontOptions` is an option for selections that specifies settings for various font suboptions.
 

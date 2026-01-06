@@ -1,4 +1,6 @@
-# SubPlus
+---
+title: SubPlus
+---
 
 `SubPlus[expr]` displays as expr+.
 

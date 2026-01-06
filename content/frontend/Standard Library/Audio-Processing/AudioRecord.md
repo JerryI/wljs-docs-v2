@@ -1,4 +1,6 @@
-# AudioRecord
+---
+title: AudioRecord
+---
 
 `AudioRecord[]` returns a new AudioStream object and starts to record from the default input audio device.
 

@@ -1,4 +1,6 @@
-# Union
+---
+title: Union
+---
 
 `Union[list1, list2, ...]` gives a sorted list of all distinct elements from any of the lists.
 

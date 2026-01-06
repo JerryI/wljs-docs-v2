@@ -1,4 +1,6 @@
-# NullWords
+---
+title: NullWords
+---
 
 `NullWords` is an option for `Read` and related functions which specifies whether null words should be taken to exist between repeated word separators.
 

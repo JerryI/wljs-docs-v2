@@ -1,4 +1,6 @@
-# ImagePyramid
+---
+title: ImagePyramid
+---
 
 `ImagePyramid[image]` creates a Gaussian image pyramid formed from image.
 

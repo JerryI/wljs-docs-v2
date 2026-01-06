@@ -1,4 +1,6 @@
-# CharacterEncodingsPath
+---
+title: CharacterEncodingsPath
+---
 
 `CharacterEncodingsPath` is a global option that specifies which directories are searched for character encoding files.
 

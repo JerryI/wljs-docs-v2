@@ -1,4 +1,6 @@
-# PolynomialQ
+---
+title: PolynomialQ
+---
 
 `PolynomialQ[expr, var]` yields `True` if expr is a polynomial in var, and `False` otherwise.
 

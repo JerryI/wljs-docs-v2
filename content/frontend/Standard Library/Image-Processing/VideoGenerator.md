@@ -1,4 +1,6 @@
-# VideoGenerator
+---
+title: VideoGenerator
+---
 
 `VideoGenerator[imagespec]` generates a video with frames generated from imagespec.
 

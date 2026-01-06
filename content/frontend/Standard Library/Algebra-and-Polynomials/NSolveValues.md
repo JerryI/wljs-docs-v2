@@ -1,4 +1,6 @@
-# NSolveValues
+---
+title: NSolveValues
+---
 
 `NSolveValues[expr, vars]` attempts to find numerical approximations to the values of *vars* determined by the solutions of the system *expr*.
 

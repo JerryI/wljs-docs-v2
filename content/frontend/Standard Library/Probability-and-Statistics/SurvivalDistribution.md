@@ -1,4 +1,6 @@
-# SurvivalDistribution
+---
+title: SurvivalDistribution
+---
 
 `SurvivalDistribution[{e1, e2, …}]` represents a survival distribution with event times ei.
 

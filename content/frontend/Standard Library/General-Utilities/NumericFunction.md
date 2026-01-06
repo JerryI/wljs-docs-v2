@@ -1,4 +1,6 @@
-# NumericFunction
+---
+title: NumericFunction
+---
 
 `NumericFunction` is an attribute that can be assigned to a symbol f to indicate that `f[arg1, arg2, ...]` should be considered a numeric quantity whenever all the argi are numeric quantities.
 

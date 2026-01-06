@@ -1,4 +1,6 @@
-# MixedMagnitude
+---
+title: MixedMagnitude
+---
 
 `MixedMagnitude[{val1, val2, ..., valn}]` represents a mixed-magnitude expression consisting of values val1 through valn.
 

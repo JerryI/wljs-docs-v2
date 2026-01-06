@@ -1,4 +1,6 @@
-# HannPoissonWindow
+---
+title: HannPoissonWindow
+---
 
 `HannPoissonWindow[x]` represents a Hann–Poisson window function of x.
 

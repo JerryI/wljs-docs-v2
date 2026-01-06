@@ -1,4 +1,6 @@
-# DeleteContents
+---
+title: DeleteContents
+---
 
 `DeleteContents` is an option for DeleteDirectory that specifies whether the contents of directories should automatically be deleted.
 

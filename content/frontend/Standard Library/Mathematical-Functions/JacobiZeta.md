@@ -1,4 +1,6 @@
-# JacobiZeta
+---
+title: JacobiZeta
+---
 
 `JacobiZeta[φ, m]` gives the Jacobi zeta function Z(φ|m).
 

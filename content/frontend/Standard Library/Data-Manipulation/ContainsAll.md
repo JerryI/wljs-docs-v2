@@ -1,4 +1,6 @@
-# ContainsAll
+---
+title: ContainsAll
+---
 
 `ContainsAll[list1, list2]` yields True if list1 contains all of the elements of list2.
 

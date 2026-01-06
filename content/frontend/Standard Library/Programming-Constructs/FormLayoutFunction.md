@@ -1,4 +1,6 @@
-# FormLayoutFunction
+---
+title: FormLayoutFunction
+---
 
 `FormLayoutFunction` is an option for FormObject and FormFunction that can be used to specify how to lay out a form.
 

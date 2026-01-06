@@ -1,4 +1,6 @@
-# BesselJ
+---
+title: BesselJ
+---
 
 `BesselJ[n, z]` gives the Bessel function of the first kind J_n(z).
 

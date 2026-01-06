@@ -1,4 +1,6 @@
-# TimeSeriesForecast
+---
+title: TimeSeriesForecast
+---
 
 `TimeSeriesForecast[tproc, data, k]` gives the k-step-ahead forecast beyond data according to the time series process tproc.
 

@@ -1,4 +1,6 @@
-# VideoTrim
+---
+title: VideoTrim
+---
 
 `VideoTrim[video,t]` returns the first t seconds of video.
 

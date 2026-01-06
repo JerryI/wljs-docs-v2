@@ -1,4 +1,6 @@
-# InterpolatingFunction
+---
+title: InterpolatingFunction
+---
 
 `InterpolatingFunction[domain, table]` represents an approximate function whose values are found by interpolation.
 

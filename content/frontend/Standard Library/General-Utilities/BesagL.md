@@ -1,4 +1,6 @@
-# BesagL
+---
+title: BesagL
+---
 
 `BesagL[pdata, r]` estimates Besag's L function L(r) for point data pdata at radius r.
 

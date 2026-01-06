@@ -1,4 +1,6 @@
-# UnitSimplify
+---
+title: UnitSimplify
+---
 
 `UnitSimplify[quantity]` simplifies the units of a quantity to a standard form.
 

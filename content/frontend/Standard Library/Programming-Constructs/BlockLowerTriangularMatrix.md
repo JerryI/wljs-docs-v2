@@ -1,4 +1,6 @@
-# BlockLowerTriangularMatrix
+---
+title: BlockLowerTriangularMatrix
+---
 
 `BlockLowerTriangularMatrix[lmat]` represents the block lower triangular matrix lmat as a structured array.
 

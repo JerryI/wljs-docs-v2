@@ -1,4 +1,6 @@
-# Curl
+---
+title: Curl
+---
 
 `Curl[{f1, f2, f3}, {x1, x2, x3}]` gives the curl of a 3D vector field.
 

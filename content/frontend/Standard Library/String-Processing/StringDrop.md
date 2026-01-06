@@ -1,4 +1,6 @@
-# StringDrop
+---
+title: StringDrop
+---
 
 `StringDrop["string", n]` gives string with its first n characters dropped.
 

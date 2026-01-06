@@ -1,4 +1,6 @@
-# LogGamma
+---
+title: LogGamma
+---
 
 `LogGamma[z]` gives the logarithm of the gamma function log Γ(z).
 

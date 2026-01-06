@@ -1,4 +1,6 @@
-# ListStreamPlot3D
+---
+title: ListStreamPlot3D
+---
 
 `ListStreamPlot3D[varr]` plots streamlines for the vector field given as a 3D array of vectors.
 

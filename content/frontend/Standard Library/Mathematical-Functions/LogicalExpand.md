@@ -1,4 +1,6 @@
-# LogicalExpand
+---
+title: LogicalExpand
+---
 
 `LogicalExpand[expr]` expands out logical combinations of equations, inequalities, and other functions.
 

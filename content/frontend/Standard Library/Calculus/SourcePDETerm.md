@@ -1,4 +1,6 @@
-# SourcePDETerm
+---
+title: SourcePDETerm
+---
 
 `SourcePDETerm[vars, f]` represents a source term f with source coefficient f and model variables vars.
 

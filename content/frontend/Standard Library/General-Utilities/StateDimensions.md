@@ -1,4 +1,6 @@
-# StateDimensions
+---
+title: StateDimensions
+---
 
 `StateDimensions` is an option to `TemporalData` that specifies the dimensions of the state space.
 

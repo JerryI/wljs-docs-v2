@@ -1,4 +1,6 @@
-# StringEndsQ
+---
+title: StringEndsQ
+---
 
 `StringEndsQ["string", patt]` yields `True` if the end of the string matches the pattern.
 

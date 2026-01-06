@@ -1,4 +1,6 @@
-# CategoricalDistribution
+---
+title: CategoricalDistribution
+---
 
 `CategoricalDistribution[{c1, c2, ...}]` represents a uniform categorical distribution over classes c1, c2, etc.
 

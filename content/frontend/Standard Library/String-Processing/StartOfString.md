@@ -1,4 +1,6 @@
-# StartOfString
+---
+title: StartOfString
+---
 
 `StartOfString` represents the start of a string for purposes of matching in `StringExpression`.
 

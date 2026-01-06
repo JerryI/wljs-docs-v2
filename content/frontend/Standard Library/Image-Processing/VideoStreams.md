@@ -1,4 +1,6 @@
-# VideoStreams
+---
+title: VideoStreams
+---
 
 `VideoStreams[]` returns all existing video streams.
 

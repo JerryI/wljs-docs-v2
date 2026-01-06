@@ -1,4 +1,6 @@
-# TimeZone
+---
+title: TimeZone
+---
 
 `TimeZone` is an option for `DateObject`, `DateString`, and related functions that specifies the time zone to use for dates and times.
 

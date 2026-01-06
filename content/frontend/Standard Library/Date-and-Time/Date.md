@@ -1,4 +1,6 @@
-# Date
+---
+title: Date
+---
 
 `Date[]` gives the current local date and time in the form {year, month, day, hour, minute, second}.
 

@@ -1,4 +1,6 @@
-# StreamDensityPlot
+---
+title: StreamDensityPlot
+---
 
 `StreamDensityPlot[{{vx, vy}, r}, {x, xmin, xmax}, {y, ymin, ymax}]` generates stream lines superimposed on a density plot of scalar field r.
 

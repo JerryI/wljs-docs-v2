@@ -1,4 +1,6 @@
-# GridFrameMargins
+---
+title: GridFrameMargins
+---
 
 `GridFrameMargins` is an option for grids that specifies the spacing between the content of the grid and the frame surrounding it.
 

@@ -1,4 +1,6 @@
-# ParametricConvexOptimization
+---
+title: ParametricConvexOptimization
+---
 
 `ParametricConvexOptimization[f, cons, vars, pars]` gives a ParametricFunction object that finds values of variables vars that minimize the convex objective function f subject to convex constraints cons with parameters pars.
 

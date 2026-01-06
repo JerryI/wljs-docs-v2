@@ -1,4 +1,6 @@
-# Degree
+---
+title: Degree
+---
 
 `Degree` gives the number of radians in one degree. It has a numerical value of π/180.
 

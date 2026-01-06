@@ -1,4 +1,6 @@
-# TimeZoneOffset
+---
+title: TimeZoneOffset
+---
 
 `TimeZoneOffset[tz]` gives the numeric offset between the time zone tz and GMT on the current date.
 

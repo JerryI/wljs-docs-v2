@@ -1,4 +1,6 @@
-# Latitude
+---
+title: Latitude
+---
 
 `Latitude[pos]` gives the latitude in degrees of a geographic position specified by pos.
 

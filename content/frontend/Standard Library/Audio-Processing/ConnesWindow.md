@@ -1,4 +1,6 @@
-# ConnesWindow
+---
+title: ConnesWindow
+---
 
 `ConnesWindow[x]` represents a Connes window function of x.
 

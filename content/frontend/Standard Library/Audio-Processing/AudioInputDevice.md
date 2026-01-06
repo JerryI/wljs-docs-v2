@@ -1,4 +1,6 @@
-# AudioInputDevice
+---
+title: AudioInputDevice
+---
 
 `AudioInputDevice` is an option for `AudioCapture` that specifies the device to use for audio recording.
 

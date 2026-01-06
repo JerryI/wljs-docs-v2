@@ -1,4 +1,6 @@
-# OpenWrite
+---
+title: OpenWrite
+---
 
 `OpenWrite["file"]` opens a file for writing and returns an `OutputStream` object.
 

@@ -1,4 +1,6 @@
-# SessionSubmit
+---
+title: SessionSubmit
+---
 
 `SessionSubmit[expr]` submits an asynchronous task to evaluate expr in the current session.
 

@@ -1,4 +1,6 @@
-# MeanAround
+---
+title: MeanAround
+---
 
 `MeanAround[{x1,x2,x3,…}]` gives an Around object describing the mean of the xi and its uncertainty.
 

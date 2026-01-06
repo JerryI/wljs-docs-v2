@@ -1,4 +1,6 @@
-# Until
+---
+title: Until
+---
 
 `Until[test, body]` evaluates body and then test, repetitively, until test first gives `True`.
 

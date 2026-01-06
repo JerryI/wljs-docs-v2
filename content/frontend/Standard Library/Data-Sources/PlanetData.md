@@ -1,4 +1,6 @@
-# PlanetData
+---
+title: PlanetData
+---
 
 `PlanetData[entity, property]` gives the value of the specified property for the planet entity.
 

@@ -1,4 +1,6 @@
-# DateGranularity
+---
+title: DateGranularity
+---
 
 `DateGranularity` is an option that determines the calendar granularity of generated dates.
 

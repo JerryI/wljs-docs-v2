@@ -1,4 +1,6 @@
-# QuantityQ
+---
+title: QuantityQ
+---
 
 `QuantityQ[expr]` gives `True` if expr is a `Quantity` with valid arguments, and `False` otherwise.
 

@@ -1,4 +1,6 @@
-# MIMETypeToFormatList
+---
+title: MIMETypeToFormatList
+---
 
 `MIMETypeToFormatList[]` returns lists of file formats corresponding to all registered MIME types.
 

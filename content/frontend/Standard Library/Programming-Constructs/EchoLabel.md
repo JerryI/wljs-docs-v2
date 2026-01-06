@@ -1,4 +1,6 @@
-# EchoLabel
+---
+title: EchoLabel
+---
 
 `EchoLabel[label][expr]` prints expr prepending label and returns expr.
 

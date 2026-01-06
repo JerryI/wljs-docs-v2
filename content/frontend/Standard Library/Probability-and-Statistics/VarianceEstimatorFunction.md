@@ -1,4 +1,6 @@
-# VarianceEstimatorFunction
+---
+title: VarianceEstimatorFunction
+---
 
 `VarianceEstimatorFunction` is an option for `LinearModelFit` and `NonlinearModelFit` which specifies the variance estimator to use.
 

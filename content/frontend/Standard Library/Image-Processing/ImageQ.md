@@ -1,4 +1,6 @@
-# ImageQ
+---
+title: ImageQ
+---
 
 `ImageQ[image]` yields `True` if image has the form of a valid Image or Image3D object, and `False` otherwise.
 

@@ -1,4 +1,6 @@
-# BernoulliDistribution
+---
+title: BernoulliDistribution
+---
 
 `BernoulliDistribution[p]` represents a Bernoulli distribution with probability parameter p.
 

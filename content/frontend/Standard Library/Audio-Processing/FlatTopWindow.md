@@ -1,4 +1,6 @@
-# FlatTopWindow
+---
+title: FlatTopWindow
+---
 
 `FlatTopWindow[x]` represents an exact flat top window function of x.
 

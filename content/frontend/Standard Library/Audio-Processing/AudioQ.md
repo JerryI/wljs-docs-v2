@@ -1,4 +1,6 @@
-# AudioQ
+---
+title: AudioQ
+---
 
 `AudioQ[audio]` yields True if audio has the form of a valid Audio object, and False otherwise.
 

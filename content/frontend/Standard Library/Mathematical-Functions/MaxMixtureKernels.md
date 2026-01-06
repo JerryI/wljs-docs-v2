@@ -1,4 +1,6 @@
-# MaxMixtureKernels
+---
+title: MaxMixtureKernels
+---
 
 `MaxMixtureKernels` is an option for `SmoothKernelDistribution` and related functions that specifies the maximum number and location of kernel functions to use in the estimation.
 

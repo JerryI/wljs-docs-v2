@@ -1,4 +1,6 @@
-# Rest
+---
+title: Rest
+---
 
 `Rest[list]` gives the list with the first element removed. Equivalent to `Drop[list, 1]`.
 

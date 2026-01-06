@@ -1,4 +1,6 @@
-# RawMemoryWrite
+---
+title: RawMemoryWrite
+---
 
 `RawMemoryWrite[ptr, val]` writes a binary representation of val to the raw memory at the pointer ptr.
 

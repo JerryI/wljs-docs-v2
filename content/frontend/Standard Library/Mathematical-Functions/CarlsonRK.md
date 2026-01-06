@@ -1,4 +1,6 @@
-# CarlsonRK
+---
+title: CarlsonRK
+---
 
 `CarlsonRK[x, y]` gives Carlson's elliptic integral RK(x, y).
 

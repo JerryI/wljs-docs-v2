@@ -1,4 +1,6 @@
-# ConformDates
+---
+title: ConformDates
+---
 
 `ConformDates[dates]` returns a list of dates where all dates are made to have conforming properties, including calendar, time zone and granularity.
 

@@ -1,4 +1,6 @@
-# MeyerWavelet
+---
+title: MeyerWavelet
+---
 
 `MeyerWavelet[]` represents the Meyer wavelet of order 3.
 

@@ -1,4 +1,6 @@
-# RightUpDownVector
+---
+title: RightUpDownVector
+---
 
 `RightUpDownVector[x, y, ...]` displays as x⥏y⥏....
 

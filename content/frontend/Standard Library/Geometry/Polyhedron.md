@@ -1,4 +1,6 @@
-# Polyhedron
+---
+title: Polyhedron
+---
 
 `Polyhedron[{f1, ..., fn}]` represents a filled polyhedron inside the closed surfaces with polygon faces fi.
 

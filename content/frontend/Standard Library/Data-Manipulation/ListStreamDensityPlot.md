@@ -1,4 +1,6 @@
-# ListStreamDensityPlot
+---
+title: ListStreamDensityPlot
+---
 
 `ListStreamDensityPlot[varr]` generates a stream density plot from an array varr of vector and scalar field values {{vx_ij, vy_ij}, r_ij}.
 

@@ -1,4 +1,6 @@
-# AudioLength
+---
+title: AudioLength
+---
 
 `AudioLength[audio]` returns the number of samples in the Audio object audio.
 

@@ -1,4 +1,6 @@
-# Predict
+---
+title: Predict
+---
 
 `Predict[{in1->out1,in2->out2,…}]` generates a PredictorFunction that attempts to predict outi from the example ini.
 

@@ -1,4 +1,6 @@
-# GCD
+---
+title: GCD
+---
 
 `GCD[n1, n2, ...]` gives the greatest common divisor of the integers.
 

@@ -1,4 +1,6 @@
-# KernelObject
+---
+title: KernelObject
+---
 
 `KernelObject[…]` represents a kernel available for parallel computing.
 

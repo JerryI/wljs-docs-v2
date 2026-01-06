@@ -1,4 +1,6 @@
-# Rasterize
+---
+title: Rasterize
+---
 
 `Rasterize[expr]` returns a rasterized version of the displayed form of expr.
 

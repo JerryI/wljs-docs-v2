@@ -1,4 +1,6 @@
-# MexicanHatWavelet
+---
+title: MexicanHatWavelet
+---
 
 `MexicanHatWavelet[]` represents the Mexican hat wavelet of width 1.
 

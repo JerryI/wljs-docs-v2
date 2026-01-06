@@ -1,4 +1,6 @@
-# FollowRedirects
+---
+title: FollowRedirects
+---
 
 `FollowRedirects` is an option for `URLRead` and related functions that specifies whether to follow HTTP redirects when retrieving a URL.
 

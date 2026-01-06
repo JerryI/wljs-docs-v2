@@ -1,4 +1,6 @@
-# CatalanNumber
+---
+title: CatalanNumber
+---
 
 `CatalanNumber[n]` gives the nth Catalan number Cn.
 

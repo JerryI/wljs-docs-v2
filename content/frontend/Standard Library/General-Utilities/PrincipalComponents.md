@@ -1,4 +1,6 @@
-# PrincipalComponents
+---
+title: PrincipalComponents
+---
 
 `PrincipalComponents[matrix]` transforms elements of matrix into unscaled principal components.
 

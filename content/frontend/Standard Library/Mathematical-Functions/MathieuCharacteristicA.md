@@ -1,4 +1,6 @@
-# MathieuCharacteristicA
+---
+title: MathieuCharacteristicA
+---
 
 `MathieuCharacteristicA[r, q]` gives the characteristic value $a_r$ for even Mathieu functions with characteristic exponent r and parameter q.
 

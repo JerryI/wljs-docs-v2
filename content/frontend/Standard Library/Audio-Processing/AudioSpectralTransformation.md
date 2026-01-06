@@ -1,4 +1,6 @@
-# AudioSpectralTransformation
+---
+title: AudioSpectralTransformation
+---
 
 `AudioSpectralTransformation[f, audio]` returns a modified version of audio by applying a time-frequency transformation f to its short-time Fourier transform.
 

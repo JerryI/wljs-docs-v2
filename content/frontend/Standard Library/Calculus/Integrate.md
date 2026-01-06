@@ -1,4 +1,6 @@
-# Integrate
+---
+title: Integrate
+---
 
 `Integrate[f, x]` gives the indefinite integral.
 

@@ -1,4 +1,6 @@
-# CumulantGeneratingFunction
+---
+title: CumulantGeneratingFunction
+---
 
 `CumulantGeneratingFunction[dist, t]` gives the cumulant-generating function for the distribution dist as a function of the variable t.
 

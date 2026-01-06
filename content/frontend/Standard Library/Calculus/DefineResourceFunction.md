@@ -1,4 +1,6 @@
-# DefineResourceFunction
+---
+title: DefineResourceFunction
+---
 
 `DefineResourceFunction[f]` defines a resource function that can be applied to arguments to give the same result as `f[...]`.
 

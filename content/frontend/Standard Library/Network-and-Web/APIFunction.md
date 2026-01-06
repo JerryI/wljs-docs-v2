@@ -1,4 +1,6 @@
-# APIFunction
+---
+title: APIFunction
+---
 
 `APIFunction[{name1 -> type1, name2 -> type2, ...}, fun]` represents an API with parameters namei that evaluates the function fun whenever it is called.
 

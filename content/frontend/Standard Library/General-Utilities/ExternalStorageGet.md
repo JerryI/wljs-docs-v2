@@ -1,4 +1,6 @@
-# ExternalStorageGet
+---
+title: ExternalStorageGet
+---
 
 `ExternalStorageGet[ExternalStorageObject[…]]` reads in an expression stored at an external storage specified by the ExternalStorageObject.
 

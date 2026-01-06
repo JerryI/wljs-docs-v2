@@ -1,4 +1,6 @@
-# KirchhoffMatrix
+---
+title: KirchhoffMatrix
+---
 
 `KirchhoffMatrix[g]` gives the Kirchhoff matrix (Laplacian matrix) of the graph g.
 

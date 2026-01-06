@@ -1,4 +1,6 @@
-# AbortProtect
+---
+title: AbortProtect
+---
 
 `AbortProtect[expr]` evaluates expr, saving any aborts until the evaluation is complete.
 

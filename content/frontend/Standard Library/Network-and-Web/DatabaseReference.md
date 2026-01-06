@@ -1,4 +1,6 @@
-# DatabaseReference
+---
+title: DatabaseReference
+---
 
 `DatabaseReference[File["filename"]]` represents a reference to a local file-based SQL database.
 

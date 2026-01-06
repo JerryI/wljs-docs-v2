@@ -1,4 +1,6 @@
-# SemanticImport
+---
+title: SemanticImport
+---
 
 `SemanticImport[file]` attempts to import a file semantically to give a Dataset object.
 

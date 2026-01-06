@@ -1,4 +1,6 @@
-# MaxDate
+---
+title: MaxDate
+---
 
 `MaxDate[{date1, date2, ...}]` gives the latest date of the dates.
 

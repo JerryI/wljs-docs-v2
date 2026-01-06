@@ -1,4 +1,6 @@
-# DeleteStopwords
+---
+title: DeleteStopwords
+---
 
 `DeleteStopwords[list]` deletes stopwords from a list of words.
 

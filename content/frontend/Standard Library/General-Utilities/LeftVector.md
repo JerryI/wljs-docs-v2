@@ -1,4 +1,6 @@
-# LeftVector
+---
+title: LeftVector
+---
 
 `LeftVector[x, y, ...]` displays as x↼y↼....
 

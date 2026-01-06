@@ -1,4 +1,6 @@
-# Expectation
+---
+title: Expectation
+---
 
 `Expectation[expr, x \[Distributed] dist]` gives the expectation of expr under the assumption that x follows the probability distribution dist.
 

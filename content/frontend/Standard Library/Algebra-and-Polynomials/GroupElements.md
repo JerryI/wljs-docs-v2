@@ -1,4 +1,6 @@
-# GroupElements
+---
+title: GroupElements
+---
 
 `GroupElements[group]` returns the list of all elements of `group`.
 

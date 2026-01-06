@@ -1,4 +1,6 @@
-# NHoldAll
+---
+title: NHoldAll
+---
 
 `NHoldAll` is an attribute which specifies that none of the arguments to a function should be affected by `N`.
 

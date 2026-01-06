@@ -1,4 +1,6 @@
-# HammingWindow
+---
+title: HammingWindow
+---
 
 `HammingWindow[x]` represents a Hamming window function of x.
 

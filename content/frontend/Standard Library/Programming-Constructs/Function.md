@@ -1,4 +1,6 @@
-# Function
+---
+title: Function
+---
 
 `body &` or `Function[body]` is a pure (or "anonymous") function. The formal parameters are `#` (or `#1`), `#2`, etc.
 

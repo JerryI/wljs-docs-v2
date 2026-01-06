@@ -1,4 +1,6 @@
-# EvaluationCell
+---
+title: EvaluationCell
+---
 
 `EvaluationCell[]` returns a `CellObject` corresponding to the cell in which this function is being evaluated.
 

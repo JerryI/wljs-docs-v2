@@ -1,4 +1,6 @@
-# InstallService
+---
+title: InstallService
+---
 
 `InstallService["url"]` installs the web service operations in the WSDL description at the URL given.
 

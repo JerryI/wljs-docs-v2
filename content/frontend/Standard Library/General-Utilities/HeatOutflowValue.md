@@ -1,4 +1,6 @@
-# HeatOutflowValue
+---
+title: HeatOutflowValue
+---
 
 `HeatOutflowValue[pred,vars,pars]` represents a thermal outflow boundary condition for PDEs with predicate pred indicating where it applies, with model variables vars and global parameters pars.
 

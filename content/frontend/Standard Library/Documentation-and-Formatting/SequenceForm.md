@@ -1,4 +1,6 @@
-# SequenceForm
+---
+title: SequenceForm
+---
 
 `SequenceForm[expr1, expr2, ...]` prints as the textual concatenation of the printed forms of the *expri*.
 

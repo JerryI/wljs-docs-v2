@@ -1,4 +1,6 @@
-# Dimensions
+---
+title: Dimensions
+---
 
 `Dimensions[expr]` gives a list of the dimensions of expr.
 

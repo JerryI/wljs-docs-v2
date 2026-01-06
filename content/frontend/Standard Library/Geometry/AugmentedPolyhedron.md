@@ -1,4 +1,6 @@
-# AugmentedPolyhedron
+---
+title: AugmentedPolyhedron
+---
 
 `AugmentedPolyhedron[poly]` gives the augmented polyhedron poly by replacing each face by a pyramid.
 

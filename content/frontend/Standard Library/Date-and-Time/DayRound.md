@@ -1,4 +1,6 @@
-# DayRound
+---
+title: DayRound
+---
 
 `DayRound[date, daytype]` rounds date to the nearest day of daytype, using the next-day rounding convention.
 

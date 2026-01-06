@@ -1,4 +1,6 @@
-# EllipticLog
+---
+title: EllipticLog
+---
 
 `EllipticLog[{x, y}, {a, b}]` gives the generalized logarithm associated with the elliptic curve y² = x³ + ax² + bx.
 

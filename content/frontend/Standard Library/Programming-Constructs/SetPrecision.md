@@ -1,4 +1,6 @@
-# SetPrecision
+---
+title: SetPrecision
+---
 
 `SetPrecision[expr,p]` yields a version of expr in which all numbers have been set to have precision p.
 

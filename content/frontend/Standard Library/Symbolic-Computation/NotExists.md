@@ -1,4 +1,6 @@
-# NotExists
+---
+title: NotExists
+---
 
 `NotExists[x, y]` displays as ∄xy.
 

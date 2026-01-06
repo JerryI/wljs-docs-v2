@@ -1,4 +1,6 @@
-# NDSolveValue
+---
+title: NDSolveValue
+---
 
 `NDSolveValue[eqns, expr, {x, xmin, xmax}]` gives the value of expr determined by numerical solution to differential equations.
 

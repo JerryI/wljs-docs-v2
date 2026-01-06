@@ -1,4 +1,6 @@
-# TableForm
+---
+title: TableForm
+---
 
 `TableForm[list]` displays a list as a table with elements in rectangular cells.
 

@@ -1,4 +1,6 @@
-# Gudermannian
+---
+title: Gudermannian
+---
 
 `Gudermannian[z]` gives the Gudermannian function gd(z).
 

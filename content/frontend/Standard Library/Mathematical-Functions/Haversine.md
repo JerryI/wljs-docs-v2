@@ -1,4 +1,6 @@
-# Haversine
+---
+title: Haversine
+---
 
 `Haversine[z]` gives the haversine function hav(z) = (1 - cos(z))/2.
 

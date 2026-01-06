@@ -1,4 +1,6 @@
-# PlanarGraphQ
+---
+title: PlanarGraphQ
+---
 
 `PlanarGraphQ[g]` yields `True` if graph g can be drawn in a plane without edge crossings, and `False` otherwise.
 

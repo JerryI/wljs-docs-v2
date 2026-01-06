@@ -1,4 +1,6 @@
-# AssociationQ
+---
+title: AssociationQ
+---
 
 `AssociationQ[expr]` gives `True` if expr is a valid `Association` object, and `False` otherwise.
 

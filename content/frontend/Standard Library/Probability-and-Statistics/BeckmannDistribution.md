@@ -1,4 +1,6 @@
-# BeckmannDistribution
+---
+title: BeckmannDistribution
+---
 
 `BeckmannDistribution[μ1, μ2, σ1, σ2]` represents the Beckmann distribution with means μ1 and μ2 and standard deviations σ1 and σ2.
 

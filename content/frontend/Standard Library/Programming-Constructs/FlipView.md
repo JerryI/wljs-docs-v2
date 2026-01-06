@@ -1,4 +1,6 @@
-# FlipView
+---
+title: FlipView
+---
 
 `FlipView[{expr1, expr2}]` represents an object which flips between displaying expr1 and expr2 each time it is clicked.
 

@@ -1,4 +1,6 @@
-# DownTee
+---
+title: DownTee
+---
 
 `DownTee[x,y]` displays as x⊤y.
 

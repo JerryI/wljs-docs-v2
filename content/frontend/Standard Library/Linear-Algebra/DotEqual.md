@@ -1,4 +1,6 @@
-# DotEqual
+---
+title: DotEqual
+---
 
 `DotEqual[x,y,…]` displays as x≐y≐….
 

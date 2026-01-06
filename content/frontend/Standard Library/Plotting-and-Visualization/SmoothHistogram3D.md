@@ -1,4 +1,6 @@
-# SmoothHistogram3D
+---
+title: SmoothHistogram3D
+---
 
 `SmoothHistogram3D[{{x1, y1}, {x2, y2}, ...}]` plots a 3D smooth kernel histogram of the values {xi, yi}.
 

@@ -1,4 +1,6 @@
-# PiecewiseExpand
+---
+title: PiecewiseExpand
+---
 
 `PiecewiseExpand[expr]` expands nested piecewise functions in expr to give a single piecewise function.
 

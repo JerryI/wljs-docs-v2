@@ -1,4 +1,6 @@
-# ListQ
+---
+title: ListQ
+---
 
 `ListQ[expr]` gives `True` if the head of expr is `List`, and `False` otherwise.
 

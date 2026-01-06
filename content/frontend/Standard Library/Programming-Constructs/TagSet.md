@@ -1,4 +1,6 @@
-# TagSet
+---
+title: TagSet
+---
 
 `f /: lhs = rhs` assigns rhs to be the value of lhs, and associates the assignment with the symbol f.
 

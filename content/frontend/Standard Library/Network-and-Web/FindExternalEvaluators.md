@@ -1,4 +1,6 @@
-# FindExternalEvaluators
+---
+title: FindExternalEvaluators
+---
 
 `FindExternalEvaluators[]` finds installed external evaluators that can be used with ExternalEvaluate, returning a dataset of the results found.
 

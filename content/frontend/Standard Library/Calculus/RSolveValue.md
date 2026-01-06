@@ -1,4 +1,6 @@
-# RSolveValue
+---
+title: RSolveValue
+---
 
 `RSolveValue[eqn,expr,n]` gives the value of expr determined by a symbolic solution to the ordinary difference equation eqn with independent variable n.
 

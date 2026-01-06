@@ -1,4 +1,6 @@
-# DeviceReadTimeSeries
+---
+title: DeviceReadTimeSeries
+---
 
 `DeviceReadTimeSeries[device,{t,dt}]` repeatedly reads default items from the specified device at interval dt for a total time t, returning a time series of the resulting values.
 

@@ -1,4 +1,6 @@
-# StudentTDistribution
+---
+title: StudentTDistribution
+---
 
 `StudentTDistribution[ν]` represents a standard Student *t* distribution with *ν* degrees of freedom.
 

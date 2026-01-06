@@ -1,4 +1,6 @@
-# InertExpression
+---
+title: InertExpression
+---
 
 `InertExpression[expr]` creates an inert expression in compiled code.
 

@@ -1,4 +1,6 @@
-# VertexCosineSimilarity
+---
+title: VertexCosineSimilarity
+---
 
 `VertexCosineSimilarity[g, u, v]` gives the cosine similarity between vertices u and v of the graph g.
 

@@ -1,4 +1,6 @@
-# VideoRecord
+---
+title: VideoRecord
+---
 
 `VideoRecord[source]` creates a VideoStream object and records from source.
 

@@ -1,4 +1,6 @@
-# BSplineCurve
+---
+title: BSplineCurve
+---
 
 `BSplineCurve[{pt1, pt2, ...}]` is a graphics primitive that represents a nonuniform rational B-spline curve with control points pti.
 

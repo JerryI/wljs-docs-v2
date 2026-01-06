@@ -1,4 +1,6 @@
-# DeleteSmallComponents
+---
+title: DeleteSmallComponents
+---
 
 `DeleteSmallComponents[image]` replaces small connected components in a binary image with background pixels.
 

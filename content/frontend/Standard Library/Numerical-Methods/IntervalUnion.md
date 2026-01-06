@@ -1,4 +1,6 @@
-# IntervalUnion
+---
+title: IntervalUnion
+---
 
 `IntervalUnion[interval1, interval2, ...]` gives an interval containing points in any of the intervals.
 

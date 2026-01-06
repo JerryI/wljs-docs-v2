@@ -1,4 +1,6 @@
-# Position
+---
+title: Position
+---
 
 `Position[expr, pattern]` gives a list of the positions at which objects matching pattern appear in expr.
 

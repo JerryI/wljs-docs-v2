@@ -1,4 +1,6 @@
-# EdgeDetect
+---
+title: EdgeDetect
+---
 
 `EdgeDetect[image]` finds edges in image and returns the result as a binary image.
 

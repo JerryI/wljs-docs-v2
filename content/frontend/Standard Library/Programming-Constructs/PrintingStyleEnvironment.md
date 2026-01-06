@@ -1,4 +1,6 @@
-# PrintingStyleEnvironment
+---
+title: PrintingStyleEnvironment
+---
 
 `PrintingStyleEnvironment` is an option for notebooks that specifies the style environment to be used in printing the notebook on paper.
 

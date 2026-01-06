@@ -1,4 +1,6 @@
-# DropoutLayer
+---
+title: DropoutLayer
+---
 
 `DropoutLayer[]` represents a net layer that sets its input elements to zero with probability 0.5 during training.
 

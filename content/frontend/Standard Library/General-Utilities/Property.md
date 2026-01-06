@@ -1,4 +1,6 @@
-# Property
+---
+title: Property
+---
 
 `Property[item, name -> value]` associates the property name->value with item.
 

@@ -1,4 +1,6 @@
-# Cancel
+---
+title: Cancel
+---
 
 `Cancel[expr]` cancels out common factors in the numerator and denominator of expr.
 

@@ -1,4 +1,6 @@
-# EclipseType
+---
+title: EclipseType
+---
 
 `EclipseType` is an option for `SolarEclipse` and `LunarEclipse` that specifies the type of eclipse being queried for.
 

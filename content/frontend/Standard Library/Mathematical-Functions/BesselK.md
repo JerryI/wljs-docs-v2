@@ -1,4 +1,6 @@
-# BesselK
+---
+title: BesselK
+---
 
 `BesselK[n, z]` gives the modified Bessel function of the second kind K_n(z).
 

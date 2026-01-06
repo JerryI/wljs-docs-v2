@@ -1,4 +1,6 @@
-# Cube
+---
+title: Cube
+---
 
 `Cube[]` represents a regular cube centered at the origin with unit edge length.
 

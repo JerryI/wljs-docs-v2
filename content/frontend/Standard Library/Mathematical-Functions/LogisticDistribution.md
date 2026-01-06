@@ -1,4 +1,6 @@
-# LogisticDistribution
+---
+title: LogisticDistribution
+---
 
 `LogisticDistribution[μ,β]` represents a logistic distribution with mean μ and scale parameter β.
 

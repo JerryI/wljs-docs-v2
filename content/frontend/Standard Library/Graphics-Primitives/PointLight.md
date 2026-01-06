@@ -1,4 +1,6 @@
-# PointLight
+---
+title: PointLight
+---
 
 `PointLight[col, pt]` is a three-dimensional graphics directive that specifies the point light of color col at position pt to use in coloring 3D surfaces.
 

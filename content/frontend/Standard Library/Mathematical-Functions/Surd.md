@@ -1,4 +1,6 @@
-# Surd
+---
+title: Surd
+---
 
 `Surd[x, n]` gives the real-valued nth root of x.
 

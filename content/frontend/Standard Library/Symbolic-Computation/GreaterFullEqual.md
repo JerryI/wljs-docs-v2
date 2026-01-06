@@ -1,4 +1,6 @@
-# GreaterFullEqual
+---
+title: GreaterFullEqual
+---
 
 `GreaterFullEqual[x,y,…]` displays as x≧y≧….
 

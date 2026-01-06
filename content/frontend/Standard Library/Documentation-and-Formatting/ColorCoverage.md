@@ -1,4 +1,6 @@
-# ColorCoverage
+---
+title: ColorCoverage
+---
 
 `ColorCoverage` is an option for `DominantColors` that specifies the minimum image coverage that each color cluster should have.
 

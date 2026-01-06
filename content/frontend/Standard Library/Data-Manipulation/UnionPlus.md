@@ -1,4 +1,6 @@
-# UnionPlus
+---
+title: UnionPlus
+---
 
 `UnionPlus[x,y,…]` displays as x⊎y⊎….
 

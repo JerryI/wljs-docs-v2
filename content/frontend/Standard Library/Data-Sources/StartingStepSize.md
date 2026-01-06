@@ -1,4 +1,6 @@
-# StartingStepSize
+---
+title: StartingStepSize
+---
 
 `StartingStepSize` is an option to `NDSolve` and related functions that specifies the initial step size to use in trying to generate results.
 

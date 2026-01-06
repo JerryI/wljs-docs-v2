@@ -1,4 +1,6 @@
-# MemoryConstrained
+---
+title: MemoryConstrained
+---
 
 `MemoryConstrained[expr, b]` evaluates expr, stopping if more than b bytes of memory are requested. `MemoryConstrained[expr, b, failexpr]` returns failexpr if the constraint is exceeded.
 

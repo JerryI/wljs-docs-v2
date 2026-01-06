@@ -1,4 +1,6 @@
-# PacletSiteUpdate
+---
+title: PacletSiteUpdate
+---
 
 `PacletSiteUpdate[site]` acquires and caches current information about the available paclets on the given paclet site.
 

@@ -1,4 +1,6 @@
-# LinkPatterns
+---
+title: LinkPatterns
+---
 
 `LinkPatterns[link]` gives a list of the patterns for which definitions were set up when the external program associated with the specified WSTP connection was installed.
 

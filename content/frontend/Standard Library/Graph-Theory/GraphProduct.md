@@ -1,4 +1,6 @@
-# GraphProduct
+---
+title: GraphProduct
+---
 
 `GraphProduct[g1, g2]` gives the Cartesian product of the graphs `g1` and `g2`.
 

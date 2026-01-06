@@ -1,4 +1,6 @@
-# LogNormalDistribution
+---
+title: LogNormalDistribution
+---
 
 `LogNormalDistribution[μ, σ]` represents a lognormal distribution derived from a normal distribution with mean μ and standard deviation σ.
 

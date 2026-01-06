@@ -1,4 +1,6 @@
-# ShiftRegisterSequence
+---
+title: ShiftRegisterSequence
+---
 
 `ShiftRegisterSequence[n]` gives a complete maximum-length sequence for a size n linear-feedback shift register.
 

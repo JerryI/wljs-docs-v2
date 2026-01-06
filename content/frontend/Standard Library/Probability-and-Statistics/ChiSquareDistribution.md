@@ -1,4 +1,6 @@
-# ChiSquareDistribution
+---
+title: ChiSquareDistribution
+---
 
 `ChiSquareDistribution[ν]` represents a chi-square distribution with ν degrees of freedom.
 

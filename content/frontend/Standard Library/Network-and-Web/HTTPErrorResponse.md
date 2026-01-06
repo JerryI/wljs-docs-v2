@@ -1,4 +1,6 @@
-# HTTPErrorResponse
+---
+title: HTTPErrorResponse
+---
 
 `HTTPErrorResponse[code]` is an object that represents an error response to an HTTP request, with specified error code.
 

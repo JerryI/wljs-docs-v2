@@ -1,4 +1,6 @@
-# GenerateAsymmetricKeyPair
+---
+title: GenerateAsymmetricKeyPair
+---
 
 `GenerateAsymmetricKeyPair[]` randomly generates a PrivateKey and corresponding PublicKey object for use with public-key cryptographic functions.
 

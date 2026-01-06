@@ -1,4 +1,6 @@
-# Cuboid
+---
+title: Cuboid
+---
 
 `Cuboid[pmin, pmax]` represents an axis-aligned filled box with lower corner pmin and upper corner pmax.
 

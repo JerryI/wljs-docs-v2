@@ -1,4 +1,6 @@
-# ArcTanDegrees
+---
+title: ArcTanDegrees
+---
 
 `ArcTanDegrees[z]` gives the arc tangent in degrees of the complex number z.
 

@@ -1,4 +1,6 @@
-# InverseChiSquareDistribution
+---
+title: InverseChiSquareDistribution
+---
 
 `InverseChiSquareDistribution[ν]` represents an inverse χ² distribution with ν degrees of freedom.
 

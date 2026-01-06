@@ -1,4 +1,6 @@
-# NBernoulliB
+---
+title: NBernoulliB
+---
 
 `NBernoulliB[n]` gives the numerical value of the nth Bernoulli number.
 

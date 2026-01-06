@@ -1,4 +1,6 @@
-# MailItem
+---
+title: MailItem
+---
 
 `MailItem[...]` represents an item of mail associated with an active mail server connection.
 

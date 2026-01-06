@@ -1,4 +1,6 @@
-# BubbleSizes
+---
+title: BubbleSizes
+---
 
 `BubbleSizes` is an option to BubbleChart and related functions that specifies the range of sizes used for bubbles.
 

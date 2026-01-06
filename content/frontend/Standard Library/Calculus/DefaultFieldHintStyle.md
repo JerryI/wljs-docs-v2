@@ -1,4 +1,6 @@
-# DefaultFieldHintStyle
+---
+title: DefaultFieldHintStyle
+---
 
 `DefaultFieldHintStyle` is a low-level option for `InputField` that specifies the default style to use for displaying the field hint.
 

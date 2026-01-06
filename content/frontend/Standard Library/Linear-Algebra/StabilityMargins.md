@@ -1,4 +1,6 @@
-# StabilityMargins
+---
+title: StabilityMargins
+---
 
 `StabilityMargins` is an option to frequency response plots such as `BodePlot`, `NyquistPlot`, and `NicholsPlot` that specifies the gain and phase margins to be shown on the plot.
 

@@ -1,4 +1,6 @@
-# Sunrise
+---
+title: Sunrise
+---
 
 `Sunrise[]` gives the time of the next sunrise for the current date and location.
 

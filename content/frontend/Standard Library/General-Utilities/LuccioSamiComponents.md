@@ -1,4 +1,6 @@
-# LuccioSamiComponents
+---
+title: LuccioSamiComponents
+---
 
 `LuccioSamiComponents[g]` gives the Luccio–Sami components of the graph g.
 

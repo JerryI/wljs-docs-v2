@@ -1,4 +1,6 @@
-# RegionDistance
+---
+title: RegionDistance
+---
 
 `RegionDistance[reg, p]` gives the minimum distance from point p to the region.
 

@@ -1,4 +1,6 @@
-# Triangle
+---
+title: Triangle
+---
 
 `Triangle[{p1, p2, p3}]` represents a filled triangle with corner points p1, p2, and p3.
 

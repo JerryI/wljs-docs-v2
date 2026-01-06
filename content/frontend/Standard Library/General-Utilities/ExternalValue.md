@@ -1,4 +1,6 @@
-# ExternalValue
+---
+title: ExternalValue
+---
 
 `ExternalValue[sys,"sym"]` gives the value of "sym" in external evaluator sys. 
 

@@ -1,4 +1,6 @@
-# ComplexArrayPlot
+---
+title: ComplexArrayPlot
+---
 
 `ComplexArrayPlot[array]` generates a plot in which complex values zij in an array are shown in a discrete array of squares with Arg[zij] indicated by color and Abs[zij] by shading.
 

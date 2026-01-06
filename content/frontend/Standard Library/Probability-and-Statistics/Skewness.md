@@ -1,4 +1,6 @@
-# Skewness
+---
+title: Skewness
+---
 
 `Skewness[data]` gives the coefficient of skewness estimate for the elements in data.
 

@@ -1,4 +1,6 @@
-# ImageFocusCombine
+---
+title: ImageFocusCombine
+---
 
 `ImageFocusCombine[{image1, image2, ...}]` combines differently focused images of the same scene to obtain a single well-focused image.
 

@@ -1,4 +1,6 @@
-# CompiledFunction
+---
+title: CompiledFunction
+---
 
 `CompiledFunction[...]` represents compiled code for evaluating a compiled function.
 

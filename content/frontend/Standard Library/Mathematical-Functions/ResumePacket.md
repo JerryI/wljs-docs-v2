@@ -1,4 +1,6 @@
-# ResumePacket
+---
+title: ResumePacket
+---
 
 `ResumePacket[]` is a WSTP packet used for synchronization with the Wolfram Language kernel.
 

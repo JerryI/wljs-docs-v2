@@ -1,4 +1,6 @@
-# PitchRecognize
+---
+title: PitchRecognize
+---
 
 `PitchRecognize[audio]` recognizes the main pitch in audio, returning it as a TimeSeries object.
 

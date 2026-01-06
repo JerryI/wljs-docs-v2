@@ -1,4 +1,6 @@
-# RiskAchievementImportance
+---
+title: RiskAchievementImportance
+---
 
 `RiskAchievementImportance[rdist, t]` gives the risk achievement importances for all components in the `ReliabilityDistribution` rdist at time t.
 

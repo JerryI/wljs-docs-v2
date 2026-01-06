@@ -1,4 +1,6 @@
-# DiffGranularity
+---
+title: DiffGranularity
+---
 
 `DiffGranularity` is an option to `Diff` and related functions that indicates with what granularity to compare the given expressions.
 

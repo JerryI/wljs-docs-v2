@@ -1,4 +1,6 @@
-# HodgeDual
+---
+title: HodgeDual
+---
 
 `HodgeDual[tensor]` gives the Hodge dual of the tensor.
 

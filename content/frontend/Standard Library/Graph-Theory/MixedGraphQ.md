@@ -1,4 +1,6 @@
-# MixedGraphQ
+---
+title: MixedGraphQ
+---
 
 `MixedGraphQ[g]` yields True if the graph g is a mixed graph and False otherwise.
 

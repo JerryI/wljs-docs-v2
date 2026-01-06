@@ -1,4 +1,6 @@
-# Snippet
+---
+title: Snippet
+---
 
 `Snippet[doc]` gives a snippet of text from a document or other content object.
 

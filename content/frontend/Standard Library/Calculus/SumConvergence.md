@@ -1,4 +1,6 @@
-# SumConvergence
+---
+title: SumConvergence
+---
 
 `SumConvergence[f,n]` gives conditions for the sum ∑f to be convergent.
 

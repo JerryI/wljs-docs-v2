@@ -1,4 +1,6 @@
-# OuterPolygon
+---
+title: OuterPolygon
+---
 
 `OuterPolygon[poly]` gives the outer polygon of the polygon poly.
 

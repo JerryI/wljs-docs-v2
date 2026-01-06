@@ -1,4 +1,6 @@
-# PeanoCurve
+---
+title: PeanoCurve
+---
 
 `PeanoCurve[n]` gives the line segments representing the nth-step Peano curve.
 

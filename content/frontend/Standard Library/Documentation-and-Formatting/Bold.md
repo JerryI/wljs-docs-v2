@@ -1,4 +1,6 @@
-# Bold
+---
+title: Bold
+---
 
 `Bold` represents a bold font weight.
 

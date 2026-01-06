@@ -1,4 +1,6 @@
-# DeleteAnomalies
+---
+title: DeleteAnomalies
+---
 
 `DeleteAnomalies[{example1, example2, ...}]` gives a list in which examplei that are considered anomalous have been dropped.
 

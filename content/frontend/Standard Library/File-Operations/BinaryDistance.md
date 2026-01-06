@@ -1,4 +1,6 @@
-# BinaryDistance
+---
+title: BinaryDistance
+---
 
 `BinaryDistance[u, v]` gives the binary distance between vectors u and v, equal to 0 if they are identical and 1 otherwise.
 

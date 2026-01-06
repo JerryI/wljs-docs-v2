@@ -1,4 +1,6 @@
-# TreePosition
+---
+title: TreePosition
+---
 
 `TreePosition[tree,pattern]` gives a list of the positions of subtrees of tree whose data matches pattern.
 

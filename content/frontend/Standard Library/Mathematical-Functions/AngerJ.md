@@ -1,4 +1,6 @@
-# AngerJ
+---
+title: AngerJ
+---
 
 `AngerJ[ν,z]` gives the Anger function Jν(z).
 

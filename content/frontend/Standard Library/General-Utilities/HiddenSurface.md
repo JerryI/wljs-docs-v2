@@ -1,4 +1,6 @@
-# HiddenSurface
+---
+title: HiddenSurface
+---
 
 `HiddenSurface` is an option for `SurfaceGraphics` which specifies whether hidden surfaces are to be eliminated.
 

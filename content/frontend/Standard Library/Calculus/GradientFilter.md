@@ -1,4 +1,6 @@
-# GradientFilter
+---
+title: GradientFilter
+---
 
 `GradientFilter[data, r]` gives the magnitude of the gradient of `data`, computed using discrete derivatives of a Gaussian of sample radius `r`.
 

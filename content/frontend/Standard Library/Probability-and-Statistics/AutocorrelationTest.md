@@ -1,4 +1,6 @@
-# AutocorrelationTest
+---
+title: AutocorrelationTest
+---
 
 `AutocorrelationTest[data]` tests whether the data is autocorrelated.
 

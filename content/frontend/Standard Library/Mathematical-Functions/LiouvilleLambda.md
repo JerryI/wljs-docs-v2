@@ -1,4 +1,6 @@
-# LiouvilleLambda
+---
+title: LiouvilleLambda
+---
 
 `LiouvilleLambda[n]` gives the Liouville function λ(n).
 

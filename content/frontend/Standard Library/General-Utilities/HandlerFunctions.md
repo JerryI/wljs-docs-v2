@@ -1,4 +1,6 @@
-# HandlerFunctions
+---
+title: HandlerFunctions
+---
 
 `HandlerFunctions` is an option that specifies functions to apply when events are generated.
 

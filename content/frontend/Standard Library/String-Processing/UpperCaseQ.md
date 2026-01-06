@@ -1,4 +1,6 @@
-# UpperCaseQ
+---
+title: UpperCaseQ
+---
 
 `UpperCaseQ[string]` yields True if all the characters in the string are uppercase letters, and yields False otherwise.
 

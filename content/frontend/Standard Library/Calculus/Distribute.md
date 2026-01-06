@@ -1,4 +1,6 @@
-# Distribute
+---
+title: Distribute
+---
 
 `Distribute[f[x1, x2, ...]]` distributes f over `Plus` appearing in any xi.
 

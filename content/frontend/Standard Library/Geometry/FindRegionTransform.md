@@ -1,4 +1,6 @@
-# FindRegionTransform
+---
+title: FindRegionTransform
+---
 
 `FindRegionTransform[reg1,reg2]` gives the transformation function that maps the region reg1 to the region reg2.
 

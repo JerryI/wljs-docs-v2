@@ -1,4 +1,6 @@
-# ClearCookies
+---
+title: ClearCookies
+---
 
 `ClearCookies[domain]` clears all persistent and session cookies associated with the specified domain.
 

@@ -1,4 +1,6 @@
-# EdgeValueRange
+---
+title: EdgeValueRange
+---
 
 `EdgeValueRange` is an option for `GeoGraphValuePlot` that specifies the range of edge values to include in a plot.
 

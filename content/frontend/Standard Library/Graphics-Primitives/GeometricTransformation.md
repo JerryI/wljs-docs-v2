@@ -1,4 +1,6 @@
-# GeometricTransformation
+---
+title: GeometricTransformation
+---
 
 `GeometricTransformation[g, tfun]` represents the result of applying the transformation function tfun to the geometric objects corresponding to the primitives g.
 

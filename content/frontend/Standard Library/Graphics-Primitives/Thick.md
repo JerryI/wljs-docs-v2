@@ -1,4 +1,6 @@
-# Thick
+---
+title: Thick
+---
 
 `Thick` is a graphics directive that specifies that lines which follow should be drawn thick.
 

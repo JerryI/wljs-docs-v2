@@ -1,4 +1,6 @@
-# FindVertexColoring
+---
+title: FindVertexColoring
+---
 
 `FindVertexColoring[g]` finds a coloring with minimal size for the vertices in the graph g.
 

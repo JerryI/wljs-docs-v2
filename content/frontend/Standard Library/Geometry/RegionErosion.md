@@ -1,4 +1,6 @@
-# RegionErosion
+---
+title: RegionErosion
+---
 
 `RegionErosion[reg, r]` gives the erosion of the region reg by a disk of radius r centered at the origin.
 

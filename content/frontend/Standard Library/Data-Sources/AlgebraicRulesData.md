@@ -1,4 +1,6 @@
-# AlgebraicRulesData
+---
+title: AlgebraicRulesData
+---
 
 `AlgebraicRulesData` is an object returned by `AlgebraicRules`. Its output appears to be a list of rules, but the rules will be used algebraically rather than syntactically by `Replace` and related functions.
 

@@ -1,4 +1,6 @@
-# SortedEntityClass
+---
+title: SortedEntityClass
+---
 
 `SortedEntityClass[class,prop]` represents an entity class derived from class by sorting according to the values of the property prop.
 

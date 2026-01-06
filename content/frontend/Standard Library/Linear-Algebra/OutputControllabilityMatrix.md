@@ -1,4 +1,6 @@
-# OutputControllabilityMatrix
+---
+title: OutputControllabilityMatrix
+---
 
 `OutputControllabilityMatrix[ssm]` gives the output controllability matrix of the state-space model ssm.
 

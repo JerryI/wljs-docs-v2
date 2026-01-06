@@ -1,4 +1,6 @@
-# FindThreshold
+---
+title: FindThreshold
+---
 
 `FindThreshold[image]` finds a global threshold value that partitions the intensity values in image into two intervals.
 

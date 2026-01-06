@@ -1,4 +1,6 @@
-# FrameRate
+---
+title: FrameRate
+---
 
 `FrameRate` is an option to specify the number of frames per second.
 

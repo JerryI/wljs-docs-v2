@@ -1,4 +1,6 @@
-# ReplaceList
+---
+title: ReplaceList
+---
 
 `ReplaceList[expr, rules]` attempts to transform the entire expression expr by applying a rule or list of rules in all possible ways, and returns a list of the results obtained.
 

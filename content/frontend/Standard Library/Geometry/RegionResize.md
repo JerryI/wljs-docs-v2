@@ -1,4 +1,6 @@
-# RegionResize
+---
+title: RegionResize
+---
 
 `RegionResize[reg,l]` resize the region reg to have the first side length l preserving side length ratios.
 

@@ -1,4 +1,6 @@
-# ZeroTest
+---
+title: ZeroTest
+---
 
 `ZeroTest` is an option to various linear algebra functions that gives a function to use in testing whether symbolic expressions should be treated as zero.
 

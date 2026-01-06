@@ -1,4 +1,6 @@
-# MountainData
+---
+title: MountainData
+---
 
 `MountainData[entity,property]` gives the value of the specified property for the mountain entity.
 

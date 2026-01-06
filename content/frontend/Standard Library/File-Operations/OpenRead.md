@@ -1,4 +1,6 @@
-# OpenRead
+---
+title: OpenRead
+---
 
 `OpenRead["file"]` opens a file for reading and returns an `InputStream` object.
 

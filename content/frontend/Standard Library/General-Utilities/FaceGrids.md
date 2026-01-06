@@ -1,4 +1,6 @@
-# FaceGrids
+---
+title: FaceGrids
+---
 
 `FaceGrids` is an option for three-dimensional graphics functions that specifies grid lines to draw on the faces of the bounding box. 
 

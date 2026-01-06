@@ -1,4 +1,6 @@
-# HoldAll
+---
+title: HoldAll
+---
 
 `HoldAll` is an attribute that specifies that all arguments to a function are to be maintained in an unevaluated form.
 

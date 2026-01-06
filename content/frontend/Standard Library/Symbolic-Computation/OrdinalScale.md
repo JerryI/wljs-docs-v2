@@ -1,4 +1,6 @@
-# OrdinalScale
+---
+title: OrdinalScale
+---
 
 `OrdinalScale[{cat1, cat2, ..., catn}]` represents a set of ordered categories cati with order cat1 < cat2 < … < catn.
 

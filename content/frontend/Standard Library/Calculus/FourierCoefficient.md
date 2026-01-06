@@ -1,4 +1,6 @@
-# FourierCoefficient
+---
+title: FourierCoefficient
+---
 
 `FourierCoefficient[expr, t, n]` gives the nth coefficient in the Fourier series expansion of expr.
 

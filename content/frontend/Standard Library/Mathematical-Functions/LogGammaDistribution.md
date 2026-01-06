@@ -1,4 +1,6 @@
-# LogGammaDistribution
+---
+title: LogGammaDistribution
+---
 
 `LogGammaDistribution[α, β, μ]` represents a log-gamma distribution with shape parameters α and β and location parameter μ.
 

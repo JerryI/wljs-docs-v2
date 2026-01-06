@@ -1,4 +1,6 @@
-# Convergents
+---
+title: Convergents
+---
 
 `Convergents[list]` gives a list of the convergents corresponding to the continued fraction terms list.
 

@@ -1,4 +1,6 @@
-# NetInsertSharedArrays
+---
+title: NetInsertSharedArrays
+---
 
 `NetInsertSharedArrays[net]` converts all ordinary arrays in net into `NetSharedArray` objects.
 

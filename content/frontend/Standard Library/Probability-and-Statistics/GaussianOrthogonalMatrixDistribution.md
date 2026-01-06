@@ -1,4 +1,6 @@
-# GaussianOrthogonalMatrixDistribution
+---
+title: GaussianOrthogonalMatrixDistribution
+---
 
 `GaussianOrthogonalMatrixDistribution[σ, n]` represents a Gaussian orthogonal matrix distribution with n×n dimensions and scale parameter σ.
 

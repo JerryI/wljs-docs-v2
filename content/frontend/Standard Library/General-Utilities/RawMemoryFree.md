@@ -1,4 +1,6 @@
-# RawMemoryFree
+---
+title: RawMemoryFree
+---
 
 `RawMemoryFree[ptr]` frees the raw memory at a pointer ptr.
 

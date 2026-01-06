@@ -1,4 +1,6 @@
-# LayerSizeFunction
+---
+title: LayerSizeFunction
+---
 
 `LayerSizeFunction` is an option for TreePlot that gives a function to specify the relative height to allow for each layer.
 

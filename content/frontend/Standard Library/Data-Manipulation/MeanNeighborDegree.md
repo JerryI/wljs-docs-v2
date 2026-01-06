@@ -1,4 +1,6 @@
-# MeanNeighborDegree
+---
+title: MeanNeighborDegree
+---
 
 `MeanNeighborDegree[g]` gives a list of mean neighbor degrees of vertices for the graph *g*.
 

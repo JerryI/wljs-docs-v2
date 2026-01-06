@@ -1,4 +1,6 @@
-# Residue
+---
+title: Residue
+---
 
 `Residue[expr, {z, z0}]` finds the residue of expr at the point z = z0.
 

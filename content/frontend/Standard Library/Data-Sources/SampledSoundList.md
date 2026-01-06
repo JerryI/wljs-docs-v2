@@ -1,4 +1,6 @@
-# SampledSoundList
+---
+title: SampledSoundList
+---
 
 `SampledSoundList[{a1, a2, ...}, r]` is a sound primitive that represents a sound whose amplitude has levels ai sampled r times a second.
 

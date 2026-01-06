@@ -1,4 +1,6 @@
-# ConnectedGraphQ
+---
+title: ConnectedGraphQ
+---
 
 `ConnectedGraphQ[g]` yields `True` if graph g is connected (every vertex can reach every other vertex), and `False` otherwise.
 

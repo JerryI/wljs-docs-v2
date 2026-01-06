@@ -1,4 +1,6 @@
-# FileConvert
+---
+title: FileConvert
+---
 
 `FileConvert[source->"dest.ext"]` converts the contents of source to the format defined by the extension ext and writes the result to the file dest.ext. 
 

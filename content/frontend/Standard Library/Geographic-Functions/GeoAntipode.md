@@ -1,4 +1,6 @@
-# GeoAntipode
+---
+title: GeoAntipode
+---
 
 `GeoAntipode[loc]` gives the antipodal position of location `loc`.
 

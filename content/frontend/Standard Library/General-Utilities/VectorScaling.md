@@ -1,4 +1,6 @@
-# VectorScaling
+---
+title: VectorScaling
+---
 
 `VectorScaling` is an option for `VectorPlot` and related functions that determines how the magnitudes of vectors are scaled for visualization.
 

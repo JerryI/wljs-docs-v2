@@ -1,4 +1,6 @@
-# DistributedContexts
+---
+title: DistributedContexts
+---
 
 `DistributedContexts` is an option for various parallel computing functions that specifies which definitions for symbols appearing in an expression should be distributed to all parallel kernels.
 

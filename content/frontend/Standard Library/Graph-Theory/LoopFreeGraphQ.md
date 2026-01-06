@@ -1,4 +1,6 @@
-# LoopFreeGraphQ
+---
+title: LoopFreeGraphQ
+---
 
 `LoopFreeGraphQ[g]` yields True if the graph g has no self-loops, and False otherwise.
 

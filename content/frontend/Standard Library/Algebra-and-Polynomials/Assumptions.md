@@ -1,4 +1,6 @@
-# Assumptions
+---
+title: Assumptions
+---
 
 `Assumptions` is an option for functions such as `Simplify`, `Refine`, and `Integrate` that specifies default assumptions to be made about symbolic quantities.
 

@@ -1,4 +1,6 @@
-# EllipticE
+---
+title: EllipticE
+---
 
 `EllipticE[m]` gives the complete elliptic integral E(m).
 

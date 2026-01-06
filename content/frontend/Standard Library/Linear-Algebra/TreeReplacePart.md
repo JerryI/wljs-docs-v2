@@ -1,4 +1,6 @@
-# TreeReplacePart
+---
+title: TreeReplacePart
+---
 
 `TreeReplacePart[tree, pos -> new]` gives a tree in which the subtree of tree at the position specified by pos is replaced with new.
 

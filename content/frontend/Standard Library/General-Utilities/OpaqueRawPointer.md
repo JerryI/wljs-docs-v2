@@ -1,4 +1,6 @@
-# OpaqueRawPointer
+---
+title: OpaqueRawPointer
+---
 
 `OpaqueRawPointer[addr]` represents an untyped pointer to the memory address addr.
 

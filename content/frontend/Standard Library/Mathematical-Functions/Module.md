@@ -1,4 +1,6 @@
-# Module
+---
+title: Module
+---
 
 `Module[{x, y, ...}, expr]` specifies that occurrences of the symbols x, y, ... in expr should be treated as local.
 

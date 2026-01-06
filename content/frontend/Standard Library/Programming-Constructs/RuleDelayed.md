@@ -1,4 +1,6 @@
-# RuleDelayed
+---
+title: RuleDelayed
+---
 
 `lhs :> rhs` represents a rule that transforms lhs to rhs, evaluating rhs only after the rule is used.
 

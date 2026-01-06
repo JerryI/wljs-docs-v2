@@ -1,4 +1,6 @@
-# MapThread
+---
+title: MapThread
+---
 
 `MapThread[f, {{a1, a2, ...}, {b1, b2, ...}, ...}]` gives `{f[a1, b1, ...], f[a2, b2, ...], ...}`.
 

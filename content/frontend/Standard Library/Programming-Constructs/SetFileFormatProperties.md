@@ -1,4 +1,6 @@
-# SetFileFormatProperties
+---
+title: SetFileFormatProperties
+---
 
 `SetFileFormatProperties["fmt", "prop" -> val]` sets the value of a property "prop" for the specified format "fmt".
 

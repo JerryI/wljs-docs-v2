@@ -1,4 +1,6 @@
-# KeyFreeQ
+---
+title: KeyFreeQ
+---
 
 `KeyFreeQ[assoc, form]` yields `True` if no key in the association `assoc` matches `form`, and yields `False` otherwise.
 

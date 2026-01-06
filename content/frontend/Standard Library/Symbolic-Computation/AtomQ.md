@@ -1,4 +1,6 @@
-# AtomQ
+---
+title: AtomQ
+---
 
 `AtomQ[expr]` yields `True` if expr is an atomic expression that cannot be divided into subexpressions.
 

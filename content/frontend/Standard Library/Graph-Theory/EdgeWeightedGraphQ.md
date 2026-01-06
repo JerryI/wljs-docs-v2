@@ -1,4 +1,6 @@
-# EdgeWeightedGraphQ
+---
+title: EdgeWeightedGraphQ
+---
 
 `EdgeWeightedGraphQ[g]` yields `True` if the graph g is an edge-weighted graph and `False` otherwise.
 

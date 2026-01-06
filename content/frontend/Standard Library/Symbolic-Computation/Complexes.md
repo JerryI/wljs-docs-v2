@@ -1,4 +1,6 @@
-# Complexes
+---
+title: Complexes
+---
 
 `Complexes` represents the domain of complex numbers, as in x∈Complexes.
 

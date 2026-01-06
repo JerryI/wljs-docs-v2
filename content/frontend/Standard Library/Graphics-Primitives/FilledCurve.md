@@ -1,4 +1,6 @@
-# FilledCurve
+---
+title: FilledCurve
+---
 
 `FilledCurve[{segment1,segment2,…}]` represents a filled curve consisting of segment1 followed by segment2 etc. 
 

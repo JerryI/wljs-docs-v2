@@ -1,4 +1,6 @@
-# With
+---
+title: With
+---
 
 `With[{x = x0, y = y0, ...}, expr]` specifies that all occurrences of the symbols x, y, ... in expr should be replaced by x0, y0, ....
 

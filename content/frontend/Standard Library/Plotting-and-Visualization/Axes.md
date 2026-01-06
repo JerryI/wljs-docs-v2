@@ -1,4 +1,6 @@
-# Axes
+---
+title: Axes
+---
 
 `Axes` is an option for graphics functions that specifies whether axes should be drawn.
 

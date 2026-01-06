@@ -1,4 +1,6 @@
-# TildeEqual
+---
+title: TildeEqual
+---
 
 `TildeEqual[x, y, ...]` displays as x≃y≃….
 

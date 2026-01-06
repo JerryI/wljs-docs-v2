@@ -1,4 +1,6 @@
-# LexicographicOrder
+---
+title: LexicographicOrder
+---
 
 `LexicographicOrder[{a1, a2, ...}, {b1, b2, ...}]` gives `Order[ai, bi]` for the first non-coinciding pair ai, bi of elements, and 0 if the lists are identical.
 

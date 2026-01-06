@@ -1,4 +1,6 @@
-# Monday
+---
+title: Monday
+---
 
 `Monday` is a day of the week.
 

@@ -1,4 +1,6 @@
-# AccountingForm
+---
+title: AccountingForm
+---
 
 `AccountingForm[expr]` prints with all numbers in expr given in standard accounting notation.
 

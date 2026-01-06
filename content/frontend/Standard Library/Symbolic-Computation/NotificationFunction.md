@@ -1,4 +1,6 @@
-# NotificationFunction
+---
+title: NotificationFunction
+---
 
 `NotificationFunction` is an option that specifies how notifications should be sent from background tasks.
 

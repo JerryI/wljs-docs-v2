@@ -1,4 +1,6 @@
-# BilateralLaplaceTransform
+---
+title: BilateralLaplaceTransform
+---
 
 `BilateralLaplaceTransform[expr, t, s]` gives the bilateral Laplace transform of expr.
 

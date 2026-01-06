@@ -1,4 +1,6 @@
-# AnyMatch
+---
+title: AnyMatch
+---
 
 `AnyMatch[{e1, e2, ...}, form]` yields `True` if ei matches the pattern form for any of the ei.
 

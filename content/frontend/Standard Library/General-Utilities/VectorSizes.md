@@ -1,4 +1,6 @@
-# VectorSizes
+---
+title: VectorSizes
+---
 
 `VectorSizes` is an option for `VectorPlot` and related functions that specifies the range of sizes used for arrows.
 

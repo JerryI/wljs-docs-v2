@@ -1,4 +1,6 @@
-# FunctionMeromorphic
+---
+title: FunctionMeromorphic
+---
 
 `FunctionMeromorphic[f, x]` tests whether f(x) is a meromorphic function of x.
 

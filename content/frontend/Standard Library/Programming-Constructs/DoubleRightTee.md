@@ -1,4 +1,6 @@
-# DoubleRightTee
+---
+title: DoubleRightTee
+---
 
 `DoubleRightTee[x, y]` displays as x⊨y.
 

@@ -1,4 +1,6 @@
-# LanguageCategory
+---
+title: LanguageCategory
+---
 
 `LanguageCategory` is an option for `Cell` that determines in what category of language the contents of the cell should be assumed to be for purposes of spell checking and hyphenation.
 

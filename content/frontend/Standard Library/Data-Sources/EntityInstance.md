@@ -1,4 +1,6 @@
-# EntityInstance
+---
+title: EntityInstance
+---
 
 `EntityInstance[entity, qual -> val]` represents an entity whose qualifier qual has value val.
 

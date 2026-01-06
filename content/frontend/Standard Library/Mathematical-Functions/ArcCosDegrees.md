@@ -1,4 +1,6 @@
-# ArcCosDegrees
+---
+title: ArcCosDegrees
+---
 
 `ArcCosDegrees[z]` gives the arc cosine in degrees of the complex number z.
 

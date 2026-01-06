@@ -1,4 +1,6 @@
-# On
+---
+title: On
+---
 
 `On[symbol::tag]` switches on a message so that it can be printed (reverses `Off`).
 

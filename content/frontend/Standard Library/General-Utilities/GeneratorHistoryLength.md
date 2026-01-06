@@ -1,4 +1,6 @@
-# GeneratorHistoryLength
+---
+title: GeneratorHistoryLength
+---
 
 `GeneratorHistoryLength` is an option for document generators controlling the number of runs archived in the cloud.
 

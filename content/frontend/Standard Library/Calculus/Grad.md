@@ -1,4 +1,6 @@
-# Grad
+---
+title: Grad
+---
 
 `Grad[f, {x1, ..., xn}]` gives the gradient (∂f/∂x1, ..., ∂f/∂xn).
 

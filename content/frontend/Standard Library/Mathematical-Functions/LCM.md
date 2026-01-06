@@ -1,4 +1,6 @@
-# LCM
+---
+title: LCM
+---
 
 `LCM[n1, n2, ...]` gives the least common multiple of the integers.
 

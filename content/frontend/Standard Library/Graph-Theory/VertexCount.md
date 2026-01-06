@@ -1,4 +1,6 @@
-# VertexCount
+---
+title: VertexCount
+---
 
 `VertexCount[g]` gives the number of vertices in graph g. `VertexCount[g, patt]` counts vertices matching the pattern.
 

@@ -1,4 +1,6 @@
-# CopulaDistribution
+---
+title: CopulaDistribution
+---
 
 `CopulaDistribution[ker, {dist1, dist2, ...}]` represents a copula distribution with kernel distribution ker and marginal distributions dist1, dist2, ....
 

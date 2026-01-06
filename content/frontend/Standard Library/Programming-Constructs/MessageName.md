@@ -1,4 +1,6 @@
-# MessageName
+---
+title: MessageName
+---
 
 `symbol::tag` is a name for a message.
 

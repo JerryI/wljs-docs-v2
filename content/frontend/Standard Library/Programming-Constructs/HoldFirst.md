@@ -1,4 +1,6 @@
-# HoldFirst
+---
+title: HoldFirst
+---
 
 `HoldFirst` is an attribute that specifies that the first argument to a function is to be maintained in an unevaluated form.
 

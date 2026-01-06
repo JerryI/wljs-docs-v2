@@ -1,4 +1,6 @@
-# Grid
+---
+title: Grid
+---
 
 `Grid[{{expr11, expr12, ...}, {expr21, expr22, ...}, ...}]` arranges expressions in a 2D grid.
 

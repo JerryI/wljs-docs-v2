@@ -1,4 +1,6 @@
-# RegionMember
+---
+title: RegionMember
+---
 
 `RegionMember[reg, {x, y, ...}]` gives True if the point is inside the region.
 

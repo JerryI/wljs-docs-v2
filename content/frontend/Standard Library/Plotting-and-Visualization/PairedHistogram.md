@@ -1,4 +1,6 @@
-# PairedHistogram
+---
+title: PairedHistogram
+---
 
 `PairedHistogram[{x1, x2, ...}, {y1, y2, ...}]` plots a paired histogram comparing two datasets.
 

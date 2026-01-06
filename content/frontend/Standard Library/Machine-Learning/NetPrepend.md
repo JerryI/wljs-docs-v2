@@ -1,4 +1,6 @@
-# NetPrepend
+---
+title: NetPrepend
+---
 
 `NetPrepend[net, layer]` prepends a layer or a net onto a `NetChain`, a layer or a `NetGraph` with one input port.
 

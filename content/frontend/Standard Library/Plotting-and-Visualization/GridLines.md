@@ -1,4 +1,6 @@
-# GridLines
+---
+title: GridLines
+---
 
 `GridLines` is an option for two-dimensional graphics functions that specifies grid lines.
 

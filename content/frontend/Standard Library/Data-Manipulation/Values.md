@@ -1,4 +1,6 @@
-# Values
+---
+title: Values
+---
 
 `Values[assoc]` gives a list of the values in an association.
 

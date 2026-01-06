@@ -1,4 +1,6 @@
-# LowerTriangularMatrix
+---
+title: LowerTriangularMatrix
+---
 
 `LowerTriangularMatrix[lmat]` converts the lower triangular matrix lmat to a structured array.
 

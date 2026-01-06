@@ -1,4 +1,6 @@
-# ParticleData
+---
+title: ParticleData
+---
 
 `ParticleData[name, "property"]` gives the specified property for a subatomic particle or family of particles with the specified name.
 

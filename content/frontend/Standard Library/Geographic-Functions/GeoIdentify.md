@@ -1,4 +1,6 @@
-# GeoIdentify
+---
+title: GeoIdentify
+---
 
 `GeoIdentify[enttype]` identifies the geographic entities of the type enttype in which the current geo location is contained.
 

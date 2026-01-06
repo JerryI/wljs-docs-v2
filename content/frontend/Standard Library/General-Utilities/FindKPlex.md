@@ -1,4 +1,6 @@
-# FindKPlex
+---
+title: FindKPlex
+---
 
 `FindKPlex[g,k]` finds a largest k-plex in the graph g.
 

@@ -1,4 +1,6 @@
-# FisherHypergeometricDistribution
+---
+title: FisherHypergeometricDistribution
+---
 
 `FisherHypergeometricDistribution[n,nsucc,ntot,w]` represents a Fisher noncentral hypergeometric distribution.
 

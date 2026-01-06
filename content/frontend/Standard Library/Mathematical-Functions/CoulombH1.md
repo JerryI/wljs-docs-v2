@@ -1,4 +1,6 @@
-# CoulombH1
+---
+title: CoulombH1
+---
 
 `CoulombH1[l, η, r]` gives the outgoing irregular Coulomb wavefunction Hl(+)(η, r).
 

@@ -1,4 +1,6 @@
-# NetGANOperator
+---
+title: NetGANOperator
+---
 
 `NetGANOperator[{generator, discriminator}]` represents a network to perform generative adversarial network (GAN) training with a generative net generator and a classification net discriminator.
 

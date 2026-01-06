@@ -1,4 +1,6 @@
-# JacobiDS
+---
+title: JacobiDS
+---
 
 `JacobiDS[u, m]` gives the Jacobi elliptic function ds(u|m).
 

@@ -1,4 +1,6 @@
-# FourierDCTMatrix
+---
+title: FourierDCTMatrix
+---
 
 `FourierDCTMatrix[n]` returns an n×n discrete cosine transform matrix of type 2.
 

@@ -1,4 +1,6 @@
-# PillaiTrace
+---
+title: PillaiTrace
+---
 
 `PillaiTrace[m1, m2]` gives Pillai's trace for the matrices m1 and m2.
 

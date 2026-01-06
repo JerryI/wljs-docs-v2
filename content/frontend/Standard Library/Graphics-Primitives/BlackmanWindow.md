@@ -1,4 +1,6 @@
-# BlackmanWindow
+---
+title: BlackmanWindow
+---
 
 `BlackmanWindow[x]` represents a Blackman window function of x.
 

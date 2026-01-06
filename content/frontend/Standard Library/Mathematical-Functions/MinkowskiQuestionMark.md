@@ -1,4 +1,6 @@
-# MinkowskiQuestionMark
+---
+title: MinkowskiQuestionMark
+---
 
 `MinkowskiQuestionMark[x]` gives Minkowski's question mark function ?(x).
 

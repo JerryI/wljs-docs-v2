@@ -1,4 +1,6 @@
-# AllSameBy
+---
+title: AllSameBy
+---
 
 `AllSameBy[{e1, e2, ...}, f]` tests whether all the `f[ei]` are the same.
 

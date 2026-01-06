@@ -1,4 +1,6 @@
-# DeviceReadList
+---
+title: DeviceReadList
+---
 
 `DeviceReadList[device, n]` reads from the specified device n times, returning a list of the results.
 

@@ -1,4 +1,6 @@
-# Delimiters
+---
+title: Delimiters
+---
 
 `Delimiters` is an option to various functions that specifies what delimiters to use or look for.
 

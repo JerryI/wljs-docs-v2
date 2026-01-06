@@ -1,4 +1,6 @@
-# PacletSites
+---
+title: PacletSites
+---
 
 `PacletSites[]` gives the list of all paclet sites known to your system.
 

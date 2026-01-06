@@ -1,4 +1,6 @@
-# NotGreaterSlantEqual
+---
+title: NotGreaterSlantEqual
+---
 
 `NotGreaterSlantEqual[x, y, …]` displays as x⩾̸y⩾̸….
 

@@ -1,4 +1,6 @@
-# PageHeaders
+---
+title: PageHeaders
+---
 
 `PageHeaders` is an option for notebooks that specifies what should be inserted as the header of each page of a notebook when it is printed.
 

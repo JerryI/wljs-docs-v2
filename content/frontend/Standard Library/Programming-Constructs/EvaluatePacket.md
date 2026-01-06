@@ -1,4 +1,6 @@
-# EvaluatePacket
+---
+title: EvaluatePacket
+---
 
 `EvaluatePacket[expr]` is a WSTP packet requesting evaluation of expr.
 

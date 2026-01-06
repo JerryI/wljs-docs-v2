@@ -1,4 +1,6 @@
-# InterpolationOrder
+---
+title: InterpolationOrder
+---
 
 `InterpolationOrder` is an option for Interpolation and plotting functions that specifies the order of interpolation to use.
 

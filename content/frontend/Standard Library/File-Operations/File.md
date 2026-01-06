@@ -1,4 +1,6 @@
-# File
+---
+title: File
+---
 
 `File["path"]` is a symbolic representation of a location in the local file system.
 

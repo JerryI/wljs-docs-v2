@@ -1,4 +1,6 @@
-# FontSubstitutions
+---
+title: FontSubstitutions
+---
 
 `FontSubstitutions` is a global option that gives a list of substitutions to try for font family names.
 

@@ -1,4 +1,6 @@
-# InverseJacobiNC
+---
+title: InverseJacobiNC
+---
 
 `InverseJacobiNC[v, m]` gives the inverse Jacobi elliptic function nc⁻¹(v|m).
 

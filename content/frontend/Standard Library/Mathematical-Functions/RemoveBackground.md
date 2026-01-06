@@ -1,4 +1,6 @@
-# RemoveBackground
+---
+title: RemoveBackground
+---
 
 `RemoveBackground[image]` returns an image with an alpha channel where the background is transparent.
 

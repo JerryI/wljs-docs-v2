@@ -1,4 +1,6 @@
-# DateValue
+---
+title: DateValue
+---
 
 `DateValue["elem"]` gives the specified element of the current date and time. `DateValue[date, elem]` extracts the element from a specific date.
 

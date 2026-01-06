@@ -1,4 +1,6 @@
-# VertexComponent
+---
+title: VertexComponent
+---
 
 `VertexComponent[g,{v1,v2,…}]` gives the vertices in the graph g that have a path to at least one of v1, v2, ….
 

@@ -1,4 +1,6 @@
-# CoordinateTransform
+---
+title: CoordinateTransform
+---
 
 `CoordinateTransform[t, pt]` performs the coordinate transformation t on the point pt.
 

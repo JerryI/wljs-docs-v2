@@ -1,4 +1,6 @@
-# LogisticSigmoid
+---
+title: LogisticSigmoid
+---
 
 `LogisticSigmoid[z]` gives the logistic sigmoid function.
 

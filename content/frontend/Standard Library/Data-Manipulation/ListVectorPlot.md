@@ -1,4 +1,6 @@
-# ListVectorPlot
+---
+title: ListVectorPlot
+---
 
 `ListVectorPlot[varr]` generates a vector plot from an array of vectors.
 

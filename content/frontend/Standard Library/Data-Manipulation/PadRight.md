@@ -1,4 +1,6 @@
-# PadRight
+---
+title: PadRight
+---
 
 `PadRight[list, n]` pads a list to length `n` with zeros on the right. `PadRight[list, n, x]` uses element `x` for padding.
 

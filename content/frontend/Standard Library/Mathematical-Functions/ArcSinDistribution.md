@@ -1,4 +1,6 @@
-# ArcSinDistribution
+---
+title: ArcSinDistribution
+---
 
 `ArcSinDistribution[{xmin, xmax}]` represents the arc sine distribution supported between xmin and xmax.
 

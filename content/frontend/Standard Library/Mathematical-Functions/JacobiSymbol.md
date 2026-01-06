@@ -1,4 +1,6 @@
-# JacobiSymbol
+---
+title: JacobiSymbol
+---
 
 `JacobiSymbol[n, m]` gives the Jacobi symbol (n/m).
 

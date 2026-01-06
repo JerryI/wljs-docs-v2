@@ -1,4 +1,6 @@
-# TypeHint
+---
+title: TypeHint
+---
 
 `TypeHint[expr, type]` represents an expression of a specified type when compiled and gives expr when evaluated.
 

@@ -1,4 +1,6 @@
-# Sequence
+---
+title: Sequence
+---
 
 `Sequence[expr1, expr2, ...]` represents a sequence of arguments to be spliced automatically into any function.
 

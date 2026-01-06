@@ -1,4 +1,6 @@
-# DeviceWrite
+---
+title: DeviceWrite
+---
 
 `DeviceWrite[device, val]` writes the value val to the specified device.
 

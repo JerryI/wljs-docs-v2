@@ -1,4 +1,6 @@
-# HighlightImage
+---
+title: HighlightImage
+---
 
 `HighlightImage[image, roi]` highlights the specified region of interest roi in image.
 

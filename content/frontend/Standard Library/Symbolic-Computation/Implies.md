@@ -1,4 +1,6 @@
-# Implies
+---
+title: Implies
+---
 
 `Implies[p, q]` represents the logical implication p ⇒ q.
 

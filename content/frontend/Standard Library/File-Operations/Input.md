@@ -1,4 +1,6 @@
-# Input
+---
+title: Input
+---
 
 `Input[]` interactively reads in one Wolfram Language expression.
 

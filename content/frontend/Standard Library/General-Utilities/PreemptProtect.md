@@ -1,4 +1,6 @@
-# PreemptProtect
+---
+title: PreemptProtect
+---
 
 `PreemptProtect[expr]` evaluates expr, without any interruption from preemptive evaluations.
 

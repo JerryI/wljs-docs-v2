@@ -1,4 +1,6 @@
-# Fit
+---
+title: Fit
+---
 
 `Fit[data, {f1, f2, ...}, x]` finds a least-squares fit of the form $a_1 f_1 + a_2 f_2 + ...$ to the data.
 

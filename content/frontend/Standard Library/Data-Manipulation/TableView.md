@@ -1,4 +1,6 @@
-# TableView
+---
+title: TableView
+---
 
 `TableView[{{expr11, expr12, ...}, {expr21, expr22, ...}, ...}]` displays as a spreadsheet-like table view for editing and viewing exprij.
 

@@ -1,4 +1,6 @@
-# LinkError
+---
+title: LinkError
+---
 
 `LinkError[link]` returns error information for link in the form `{errorNumber, errorExplanation}`.
 

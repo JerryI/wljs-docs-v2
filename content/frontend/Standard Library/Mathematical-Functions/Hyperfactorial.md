@@ -1,4 +1,6 @@
-# Hyperfactorial
+---
+title: Hyperfactorial
+---
 
 `Hyperfactorial[n]` gives the hyperfactorial function H(n).
 

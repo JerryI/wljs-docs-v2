@@ -1,4 +1,6 @@
-# ContentFieldOptions
+---
+title: ContentFieldOptions
+---
 
 `ContentFieldOptions` is an option for CreateSearchIndex and related functions that allows options to be specified for handling different fields in content that is being indexed.
 

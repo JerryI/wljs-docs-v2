@@ -1,4 +1,6 @@
-# TreeExpression
+---
+title: TreeExpression
+---
 
 `TreeExpression[tree]` gives an expression from the structure of the `Tree` object tree.
 

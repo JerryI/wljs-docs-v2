@@ -1,4 +1,6 @@
-# Modulus
+---
+title: Modulus
+---
 
 `Modulus -> n` is an option that can be given in certain algebraic functions to specify that integers should be treated modulo n.
 

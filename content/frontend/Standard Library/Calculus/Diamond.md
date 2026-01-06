@@ -1,4 +1,6 @@
-# Diamond
+---
+title: Diamond
+---
 
 `Diamond[x, y, ...]` displays as x⋄y⋄....
 

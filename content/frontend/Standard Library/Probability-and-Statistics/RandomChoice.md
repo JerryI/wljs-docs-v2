@@ -1,4 +1,6 @@
-# RandomChoice
+---
+title: RandomChoice
+---
 
 `RandomChoice[{e1, e2, ...}]` gives a pseudorandom choice of one of the ei.
 

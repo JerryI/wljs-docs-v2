@@ -1,4 +1,6 @@
-# RegionWithin
+---
+title: RegionWithin
+---
 
 `RegionWithin[reg1, reg2]` returns True if reg2 is contained within reg1.
 

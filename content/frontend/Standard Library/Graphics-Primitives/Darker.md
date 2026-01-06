@@ -1,4 +1,6 @@
-# Darker
+---
+title: Darker
+---
 
 `Darker[color]` represents a darker version of the specified color.
 

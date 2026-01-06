@@ -1,4 +1,6 @@
-# RemoteConnectionObject
+---
+title: RemoteConnectionObject
+---
 
 `RemoteConnectionObject[…]` is an object that represents a remote connection.
 

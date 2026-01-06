@@ -1,4 +1,6 @@
-# InverseGudermannian
+---
+title: InverseGudermannian
+---
 
 `InverseGudermannian[z]` gives the inverse Gudermannian function gd⁻¹(z).
 

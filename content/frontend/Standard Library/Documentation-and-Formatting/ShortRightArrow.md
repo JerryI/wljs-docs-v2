@@ -1,4 +1,6 @@
-# ShortRightArrow
+---
+title: ShortRightArrow
+---
 
 `ShortRightArrow[x, y, ...]` displays as x→y→….
 

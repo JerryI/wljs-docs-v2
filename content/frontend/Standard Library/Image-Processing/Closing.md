@@ -1,4 +1,6 @@
-# Closing
+---
+title: Closing
+---
 
 `Closing[image, ker]` gives the morphological closing of image with respect to the structuring element ker.
 

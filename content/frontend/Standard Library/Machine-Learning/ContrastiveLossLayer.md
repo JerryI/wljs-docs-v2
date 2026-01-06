@@ -1,4 +1,6 @@
-# ContrastiveLossLayer
+---
+title: ContrastiveLossLayer
+---
 
 `ContrastiveLossLayer[]` represents a loss layer that computes a loss based on a distance metric and a target that specifies whether the distance should be minimized or maximized.
 

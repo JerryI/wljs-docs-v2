@@ -1,4 +1,6 @@
-# SamplerModel
+---
+title: SamplerModel
+---
 
 `SamplerModel[]` represents the single-input, single-output model of a sampler.
 

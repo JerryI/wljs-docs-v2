@@ -1,4 +1,6 @@
-# ImageResize
+---
+title: ImageResize
+---
 
 `ImageResize[image, width]` gives a resized version of image that is width pixels wide.
 

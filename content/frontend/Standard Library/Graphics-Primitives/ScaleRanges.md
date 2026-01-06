@@ -1,4 +1,6 @@
-# ScaleRanges
+---
+title: ScaleRanges
+---
 
 `ScaleRanges` is an option for gauge functions that describes how to draw sections of the scale.
 

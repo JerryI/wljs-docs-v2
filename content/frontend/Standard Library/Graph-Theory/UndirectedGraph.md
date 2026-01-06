@@ -1,4 +1,6 @@
-# UndirectedGraph
+---
+title: UndirectedGraph
+---
 
 `UndirectedGraph[g]` gives an undirected graph from the directed graph g.
 

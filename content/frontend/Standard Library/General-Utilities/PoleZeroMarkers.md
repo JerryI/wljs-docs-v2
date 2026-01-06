@@ -1,4 +1,6 @@
-# PoleZeroMarkers
+---
+title: PoleZeroMarkers
+---
 
 `PoleZeroMarkers` is an option for `RootLocusPlot` that specifies the markers to be drawn on the complex plane at the open-loop poles, closed-loop poles, and open-loop zeros.
 

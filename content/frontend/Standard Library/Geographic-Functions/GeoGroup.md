@@ -1,4 +1,6 @@
-# GeoGroup
+---
+title: GeoGroup
+---
 
 `GeoGroup[geoobjects]` represents a list of geographic objects to be treated as a single object for certain operations.
 

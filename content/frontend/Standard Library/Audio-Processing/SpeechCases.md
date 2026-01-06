@@ -1,4 +1,6 @@
-# SpeechCases
+---
+title: SpeechCases
+---
 
 `SpeechCases[audio, form]` gives a list of cases of text identified as being of type form that appear in the transcription of audio.
 

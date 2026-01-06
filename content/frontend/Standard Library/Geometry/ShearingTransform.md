@@ -1,4 +1,6 @@
-# ShearingTransform
+---
+title: ShearingTransform
+---
 
 `ShearingTransform[θ, v, n]` gives a TransformationFunction that represents a shear by θ radians along the direction of the vector v, normal to the vector n, keeping the origin fixed.
 

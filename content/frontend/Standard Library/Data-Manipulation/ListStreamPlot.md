@@ -1,4 +1,6 @@
-# ListStreamPlot
+---
+title: ListStreamPlot
+---
 
 `ListStreamPlot[varr]` generates a stream plot from an array varr of vectors.
 

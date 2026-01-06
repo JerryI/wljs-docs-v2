@@ -1,4 +1,6 @@
-# Power
+---
+title: Power
+---
 
 `x^y` gives x to the power y.
 

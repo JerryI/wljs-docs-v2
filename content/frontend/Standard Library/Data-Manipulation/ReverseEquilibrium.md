@@ -1,4 +1,6 @@
-# ReverseEquilibrium
+---
+title: ReverseEquilibrium
+---
 
 `ReverseEquilibrium[x,y,…]` displays as x⇋y⇋….
 

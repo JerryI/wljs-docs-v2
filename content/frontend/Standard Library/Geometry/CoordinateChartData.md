@@ -1,4 +1,6 @@
-# CoordinateChartData
+---
+title: CoordinateChartData
+---
 
 `CoordinateChartData[chart, property]` gives the value of the specified property for chart.
 

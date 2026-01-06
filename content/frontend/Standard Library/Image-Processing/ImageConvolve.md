@@ -1,4 +1,6 @@
-# ImageConvolve
+---
+title: ImageConvolve
+---
 
 `ImageConvolve[image, ker]` gives the convolution of image with kernel ker.
 

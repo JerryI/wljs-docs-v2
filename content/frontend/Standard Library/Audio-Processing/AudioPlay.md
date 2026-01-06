@@ -1,4 +1,6 @@
-# AudioPlay
+---
+title: AudioPlay
+---
 
 `AudioPlay[audio]` returns a new AudioStream object from audio and starts the playback.
 

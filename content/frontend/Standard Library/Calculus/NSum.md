@@ -1,4 +1,6 @@
-# NSum
+---
+title: NSum
+---
 
 `NSum[f, {i, imin, imax}]` gives a numerical approximation to the sum.
 

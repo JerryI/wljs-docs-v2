@@ -1,4 +1,6 @@
-# URLExecute
+---
+title: URLExecute
+---
 
 `URLExecute[url]` executes the specified URL, importing whatever result is generated.
 

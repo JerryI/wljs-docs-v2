@@ -1,4 +1,6 @@
-# OverTilde
+---
+title: OverTilde
+---
 
 `OverTilde[expr]` displays with a tilde over expr.
 

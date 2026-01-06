@@ -1,4 +1,6 @@
-# Interpolation
+---
+title: Interpolation
+---
 
 `Interpolation[data]` creates an interpolating function that passes through the given data points.
 

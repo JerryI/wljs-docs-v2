@@ -1,4 +1,6 @@
-# DFixedPoints
+---
+title: DFixedPoints
+---
 
 `DFixedPoints[eqn, x[t], t]` gives the fixed points for a differential equation.
 

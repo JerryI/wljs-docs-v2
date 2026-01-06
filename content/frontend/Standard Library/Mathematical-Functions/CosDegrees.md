@@ -1,4 +1,6 @@
-# CosDegrees
+---
+title: CosDegrees
+---
 
 `CosDegrees[θ]` gives the cosine of θ degrees.
 

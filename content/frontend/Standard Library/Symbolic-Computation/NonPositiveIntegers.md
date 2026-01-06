@@ -1,4 +1,6 @@
-# NonPositiveIntegers
+---
+title: NonPositiveIntegers
+---
 
 `NonPositiveIntegers` represents the domain of non-positive integers, as in x ∈ NonPositiveIntegers.
 

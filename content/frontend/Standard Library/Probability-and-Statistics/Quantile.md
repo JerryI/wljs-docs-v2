@@ -1,4 +1,6 @@
-# Quantile
+---
+title: Quantile
+---
 
 `Quantile[data, p]` gives the `p`th quantile of `data`. `Quantile[data, {p1, p2, ...}]` gives a list of quantiles.
 

@@ -1,4 +1,6 @@
-# CholeskyDecomposition
+---
+title: CholeskyDecomposition
+---
 
 `CholeskyDecomposition[m]` gives the Cholesky decomposition of a positive definite matrix m.
 

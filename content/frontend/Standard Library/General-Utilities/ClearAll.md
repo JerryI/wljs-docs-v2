@@ -1,4 +1,6 @@
-# ClearAll
+---
+title: ClearAll
+---
 
 `ClearAll[s1, s2, ...]` clears all values, definitions, attributes, defaults, options, and messages for the symbols.
 

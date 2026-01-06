@@ -1,4 +1,6 @@
-# CriticalitySuccessImportance
+---
+title: CriticalitySuccessImportance
+---
 
 `CriticalitySuccessImportance[rdist, t]` gives the criticality success importances for all components in the ReliabilityDistribution rdist at time t.
 

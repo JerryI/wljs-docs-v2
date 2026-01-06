@@ -1,4 +1,6 @@
-# RandomWalkProcess
+---
+title: RandomWalkProcess
+---
 
 `RandomWalkProcess[p]` represents a random walk on a line with the probability of a positive unit step *p* and the probability of a negative unit step 1-*p*.
 

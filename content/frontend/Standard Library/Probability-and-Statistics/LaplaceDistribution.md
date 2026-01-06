@@ -1,4 +1,6 @@
-# LaplaceDistribution
+---
+title: LaplaceDistribution
+---
 
 `LaplaceDistribution[μ, β]` represents a Laplace double-exponential distribution with mean μ and scale parameter β.
 

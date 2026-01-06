@@ -1,4 +1,6 @@
-# TemplateApply
+---
+title: TemplateApply
+---
 
 `TemplateApply[template]` applies a template, evaluating all template elements it contains.
 

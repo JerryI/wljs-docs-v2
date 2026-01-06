@@ -1,4 +1,6 @@
-# UnateQ
+---
+title: UnateQ
+---
 
 `UnateQ[bexpr, {x1, x2, ...}]` tests whether the Boolean expression bexpr is positive unate in the variables x1, x2, ....
 

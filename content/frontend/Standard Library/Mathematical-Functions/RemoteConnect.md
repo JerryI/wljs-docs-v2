@@ -1,4 +1,6 @@
-# RemoteConnect
+---
+title: RemoteConnect
+---
 
 `RemoteConnect["host"]` connects to the specified remote host.
 

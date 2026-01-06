@@ -1,4 +1,6 @@
-# ViewMatrix
+---
+title: ViewMatrix
+---
 
 `ViewMatrix` is an option for `Graphics3D` and related functions that can be used to specify a pair of explicit homogeneous transformation and projection matrices for 3D coordinates.
 

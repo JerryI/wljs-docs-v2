@@ -1,4 +1,6 @@
-# Looping
+---
+title: Looping
+---
 
 `Looping` is an option for `VideoStream`, `AudioStream` and related functions to specify the playback looping.
 

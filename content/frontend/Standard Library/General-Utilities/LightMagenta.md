@@ -1,4 +1,6 @@
-# LightMagenta
+---
+title: LightMagenta
+---
 
 `LightMagenta` represents a light magenta color in graphics or style specifications.
 

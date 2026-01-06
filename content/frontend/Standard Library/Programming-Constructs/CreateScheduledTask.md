@@ -1,4 +1,6 @@
-# CreateScheduledTask
+---
+title: CreateScheduledTask
+---
 
 `CreateScheduledTask[expr]` creates a local scheduled task that will repeatedly evaluate expr once per second.
 

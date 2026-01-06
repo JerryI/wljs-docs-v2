@@ -1,4 +1,6 @@
-# ImagePreviewFunction
+---
+title: ImagePreviewFunction
+---
 
 `ImagePreviewFunction` is an option for `CurrentImage` and similar functions that specifies the function to apply to images before being displayed.
 

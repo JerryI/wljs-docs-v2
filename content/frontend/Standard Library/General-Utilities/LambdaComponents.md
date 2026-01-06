@@ -1,4 +1,6 @@
-# LambdaComponents
+---
+title: LambdaComponents
+---
 
 `LambdaComponents[g]` gives the lambda components of the graph g.
 

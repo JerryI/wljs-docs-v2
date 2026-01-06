@@ -1,4 +1,6 @@
-# TimesBy
+---
+title: TimesBy
+---
 
 `x *= c` multiplies x by c and returns the new value of x.
 

@@ -1,4 +1,6 @@
-# PerfectNumberQ
+---
+title: PerfectNumberQ
+---
 
 `PerfectNumberQ[n]` returns `True` if n is a perfect number, and `False` otherwise.
 

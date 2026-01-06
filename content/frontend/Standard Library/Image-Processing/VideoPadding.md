@@ -1,4 +1,6 @@
-# VideoPadding
+---
+title: VideoPadding
+---
 
 `VideoPadding` is an option for `GridVideo` and other video functions to specify how to pad video frames when input videos have different durations.
 

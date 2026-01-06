@@ -1,4 +1,6 @@
-# HeaderStyle
+---
+title: HeaderStyle
+---
 
 `HeaderStyle` is an option for `Dataset` that specifies the style to use for headers.
 

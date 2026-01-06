@@ -1,4 +1,6 @@
-# GraphicsSpacing
+---
+title: GraphicsSpacing
+---
 
 `GraphicsSpacing` is an option for GraphicsArray that specifies the spacing between elements in the array.
 

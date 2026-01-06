@@ -1,4 +1,6 @@
-# DeleteBorderComponents
+---
+title: DeleteBorderComponents
+---
 
 `DeleteBorderComponents[image]` replaces connected components adjacent to the border in a binary image image with background pixels.
 

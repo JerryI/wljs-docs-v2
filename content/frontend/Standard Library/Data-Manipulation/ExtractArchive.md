@@ -1,4 +1,6 @@
-# ExtractArchive
+---
+title: ExtractArchive
+---
 
 `ExtractArchive[source]` expands an archive file, saving its content into the current directory.
 

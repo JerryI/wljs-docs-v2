@@ -1,4 +1,6 @@
-# Adjugate
+---
+title: Adjugate
+---
 
 `Adjugate[m]` gives the adjugate (classical adjoint) of a square matrix m.
 

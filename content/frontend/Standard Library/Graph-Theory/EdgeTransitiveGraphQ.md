@@ -1,4 +1,6 @@
-# EdgeTransitiveGraphQ
+---
+title: EdgeTransitiveGraphQ
+---
 
 `EdgeTransitiveGraphQ[g]` yields `True` if the graph g is an edge-transitive graph and `False` otherwise.
 

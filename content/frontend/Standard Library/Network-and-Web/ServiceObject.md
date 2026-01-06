@@ -1,4 +1,6 @@
-# ServiceObject
+---
+title: ServiceObject
+---
 
 `ServiceObject["service", …]` represents an open connection to an external service.
 

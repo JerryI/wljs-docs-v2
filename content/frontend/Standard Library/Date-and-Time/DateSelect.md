@@ -1,4 +1,6 @@
-# DateSelect
+---
+title: DateSelect
+---
 
 `DateSelect[list, crit]` picks out all dates datei of a list for which crit[datei] is True.
 

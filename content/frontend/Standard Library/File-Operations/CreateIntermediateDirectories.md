@@ -1,4 +1,6 @@
-# CreateIntermediateDirectories
+---
+title: CreateIntermediateDirectories
+---
 
 `CreateIntermediateDirectories` is an option for CreateDirectory and related functions that specifies whether to create intermediate directories in a directory path specified.
 

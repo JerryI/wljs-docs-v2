@@ -1,4 +1,6 @@
-# TakeDrop
+---
+title: TakeDrop
+---
 
 `TakeDrop[list, n]` gives the pair {list1, list2}, where list1 contains the first n elements of list and list2 contains the rest.
 

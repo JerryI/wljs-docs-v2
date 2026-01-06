@@ -1,4 +1,6 @@
-# TrainingUpdateSchedule
+---
+title: TrainingUpdateSchedule
+---
 
 `TrainingUpdateSchedule` is an option for `NetTrain` that specifies which arrays of the network can be updated at each step of the optimization process.
 

@@ -1,4 +1,6 @@
-# TimeSeriesResample
+---
+title: TimeSeriesResample
+---
 
 `TimeSeriesResample[tseries]` uniformly resamples tseries according to its minimum time increment.
 

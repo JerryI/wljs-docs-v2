@@ -1,4 +1,6 @@
-# ThermodynamicData
+---
+title: ThermodynamicData
+---
 
 `ThermodynamicData["name", "property"]` gives the value of the specific property for the substance "name".
 

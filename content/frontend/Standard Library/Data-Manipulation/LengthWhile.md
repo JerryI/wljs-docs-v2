@@ -1,4 +1,6 @@
-# LengthWhile
+---
+title: LengthWhile
+---
 
 `LengthWhile[list,crit]` gives the number of contiguous elements ei starting at the beginning of list for which crit[ei] is True.
 

@@ -1,4 +1,6 @@
-# DocumentGeneratorInformation
+---
+title: DocumentGeneratorInformation
+---
 
 `DocumentGeneratorInformation[cloudobj]` returns the properties of the `DocumentGenerator` cloudobj.
 

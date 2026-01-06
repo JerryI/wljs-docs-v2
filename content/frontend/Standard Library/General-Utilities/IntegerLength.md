@@ -1,4 +1,6 @@
-# IntegerLength
+---
+title: IntegerLength
+---
 
 `IntegerLength[n]` gives the number of digits in the base 10 representation of n.
 

@@ -1,4 +1,6 @@
-# Parallelogram
+---
+title: Parallelogram
+---
 
 `Parallelogram[p,{v1,v2}]` represents a parallelogram with origin p and directions v1 and v2.
 

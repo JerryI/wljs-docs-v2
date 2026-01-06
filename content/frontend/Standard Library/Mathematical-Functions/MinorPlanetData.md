@@ -1,4 +1,6 @@
-# MinorPlanetData
+---
+title: MinorPlanetData
+---
 
 `MinorPlanetData[entity, property]` gives the value of the specified property for the minor planet entity.
 

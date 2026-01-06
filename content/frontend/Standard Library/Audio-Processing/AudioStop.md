@@ -1,4 +1,6 @@
-# AudioStop
+---
+title: AudioStop
+---
 
 `AudioStop[]` stops the playback of all AudioStream objects.
 

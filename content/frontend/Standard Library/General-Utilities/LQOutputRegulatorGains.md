@@ -1,4 +1,6 @@
-# LQOutputRegulatorGains
+---
+title: LQOutputRegulatorGains
+---
 
 `LQOutputRegulatorGains[sspec, wts]` gives the state feedback gains for the system specification sspec that minimizes an output cost function with weights wts.
 

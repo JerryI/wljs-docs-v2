@@ -1,4 +1,6 @@
-# FactorSquareFreeList
+---
+title: FactorSquareFreeList
+---
 
 `FactorSquareFreeList[poly]` gives a list of square-free factors of a polynomial, together with their exponents.
 

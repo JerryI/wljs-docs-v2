@@ -1,4 +1,6 @@
-# DiscreteConvolve
+---
+title: DiscreteConvolve
+---
 
 `DiscreteConvolve[f, g, n, m]` gives the convolution with respect to n of the expressions f and g.
 

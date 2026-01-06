@@ -1,4 +1,6 @@
-# Timing
+---
+title: Timing
+---
 
 `Timing[expr]` evaluates expr, and returns a list of the CPU time in seconds used, together with the result obtained.
 

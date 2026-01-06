@@ -1,4 +1,6 @@
-# VideoMapTimeSeries
+---
+title: VideoMapTimeSeries
+---
 
 `VideoMapTimeSeries[f, video]` applies f to each frame of the Video object video, returning a time series.
 

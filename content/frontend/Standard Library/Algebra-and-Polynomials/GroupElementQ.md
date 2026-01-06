@@ -1,4 +1,6 @@
-# GroupElementQ
+---
+title: GroupElementQ
+---
 
 `GroupElementQ[group, g]` returns `True` if the object `g` is an element of `group` and `False` otherwise.
 

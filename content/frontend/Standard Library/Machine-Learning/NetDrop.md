@@ -1,4 +1,6 @@
-# NetDrop
+---
+title: NetDrop
+---
 
 `NetDrop[chain, n]` removes the first n layers from a `NetChain`.
 

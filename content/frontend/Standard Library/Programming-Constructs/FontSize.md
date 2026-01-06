@@ -1,4 +1,6 @@
-# FontSize
+---
+title: FontSize
+---
 
 `FontSize` is an option for `Style` and `Cell` that specifies the default size in printer's points for text.
 

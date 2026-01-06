@@ -1,4 +1,6 @@
-# OutputPorts
+---
+title: OutputPorts
+---
 
 `OutputPorts` is an option to specify the number, names or shapes of output ports for some neural net layers.
 

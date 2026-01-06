@@ -1,4 +1,6 @@
-# MessagePacket
+---
+title: MessagePacket
+---
 
 `MessagePacket[symbol,string]` is a WSTP packet containing a Wolfram Language message identifier of the form symbol::string.
 

@@ -1,4 +1,6 @@
-# LanguageIdentify
+---
+title: LanguageIdentify
+---
 
 `LanguageIdentify["string"]` attempts to determine what human language text in `string` is in, predominantly.
 

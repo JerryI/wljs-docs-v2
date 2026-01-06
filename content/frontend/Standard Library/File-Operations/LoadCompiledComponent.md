@@ -1,4 +1,6 @@
-# LoadCompiledComponent
+---
+title: LoadCompiledComponent
+---
 
 `LoadCompiledComponent[comp]` loads a compiled component comp.
 

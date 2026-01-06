@@ -1,4 +1,6 @@
-# AffineHalfSpace
+---
+title: AffineHalfSpace
+---
 
 `AffineHalfSpace[{p1, ..., pk+1}, w]` represents `AffineSpace[{p1, ..., pk+1}]` extended in the direction w.
 

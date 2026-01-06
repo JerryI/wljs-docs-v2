@@ -1,4 +1,6 @@
-# Sharpen
+---
+title: Sharpen
+---
 
 `Sharpen[image]` gives a sharpened version of image.
 

@@ -1,4 +1,6 @@
-# SampleDepth
+---
+title: SampleDepth
+---
 
 `SampleDepth` is an option for sound primitives that specifies how many bits should be used to encode sound amplitude levels.
 

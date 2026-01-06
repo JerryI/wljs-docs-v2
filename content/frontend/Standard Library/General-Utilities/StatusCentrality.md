@@ -1,4 +1,6 @@
-# StatusCentrality
+---
+title: StatusCentrality
+---
 
 `StatusCentrality[g]` gives a list of status centralities for the vertices in the graph g.
 

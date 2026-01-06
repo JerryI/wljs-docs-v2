@@ -1,4 +1,6 @@
-# FactorTermsList
+---
+title: FactorTermsList
+---
 
 `FactorTermsList[poly]` gives a list where the first element is the overall numerical factor and the second is the polynomial with the factor removed.
 

@@ -1,4 +1,6 @@
-# Nearest
+---
+title: Nearest
+---
 
 `Nearest[{elem1, elem2, ...}, x]` gives the list of elem_i to which x is nearest.
 

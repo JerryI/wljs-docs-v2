@@ -1,4 +1,6 @@
-# HitMissTransform
+---
+title: HitMissTransform
+---
 
 `HitMissTransform[image, ker]` gives the hit-or-miss transform of image with respect to the composite structuring element ker.
 

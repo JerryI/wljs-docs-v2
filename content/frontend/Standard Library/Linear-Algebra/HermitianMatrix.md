@@ -1,4 +1,6 @@
-# HermitianMatrix
+---
+title: HermitianMatrix
+---
 
 `HermitianMatrix[hmat]` converts the Hermitian matrix hmat to a structured array.
 

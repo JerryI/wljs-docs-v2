@@ -1,4 +1,6 @@
-# InverseFunctions
+---
+title: InverseFunctions
+---
 
 `InverseFunctions` is an option for `Solve` and related functions that specifies whether inverse functions should be used.
 

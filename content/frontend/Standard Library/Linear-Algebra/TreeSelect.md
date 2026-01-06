@@ -1,4 +1,6 @@
-# TreeSelect
+---
+title: TreeSelect
+---
 
 `TreeSelect[tree, crit]` picks out all subtrees treei of tree for which crit[treei] is True.
 

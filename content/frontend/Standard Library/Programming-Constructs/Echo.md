@@ -1,4 +1,6 @@
-# Echo
+---
+title: Echo
+---
 
 `Echo[expr]` prints expr and returns expr.
 

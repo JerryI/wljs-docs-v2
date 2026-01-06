@@ -1,4 +1,6 @@
-# IntervalMarkers
+---
+title: IntervalMarkers
+---
 
 `IntervalMarkers` is an option for plotting functions such as `ListPlot` and `BarChart` that specifies how to represent uncertainty intervals.
 

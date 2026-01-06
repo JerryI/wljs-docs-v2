@@ -1,4 +1,6 @@
-# NetDelete
+---
+title: NetDelete
+---
 
 `NetDelete[net, n]` deletes the nth layer from a `NetChain` or `NetGraph`.
 

@@ -1,4 +1,6 @@
-# PascalBinomial
+---
+title: PascalBinomial
+---
 
 `PascalBinomial[n, m]` gives the binomial coefficient C(n, m) that preserves Pascal's identity.
 

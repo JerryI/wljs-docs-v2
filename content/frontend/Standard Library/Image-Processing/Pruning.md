@@ -1,4 +1,6 @@
-# Pruning
+---
+title: Pruning
+---
 
 `Pruning[image]` removes the outermost branches of thin objects in image by setting their values to black.
 

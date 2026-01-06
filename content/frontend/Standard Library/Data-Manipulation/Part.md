@@ -1,4 +1,6 @@
-# Part
+---
+title: Part
+---
 
 `expr[[i]]` or `Part[expr, i]` gives the ith part of expr.
 

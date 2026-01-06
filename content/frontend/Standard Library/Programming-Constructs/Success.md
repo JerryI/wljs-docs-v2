@@ -1,4 +1,6 @@
-# Success
+---
+title: Success
+---
 
 `Success["tag", assoc]` represents a success of a type indicated by tag, with details given by the association assoc.
 

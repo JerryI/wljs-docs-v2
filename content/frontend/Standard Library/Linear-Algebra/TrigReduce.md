@@ -1,4 +1,6 @@
-# TrigReduce
+---
+title: TrigReduce
+---
 
 `TrigReduce[expr]` rewrites products and powers of trigonometric functions in terms of trigonometric functions with combined arguments.
 

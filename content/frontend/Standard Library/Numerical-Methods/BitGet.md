@@ -1,4 +1,6 @@
-# BitGet
+---
+title: BitGet
+---
 
 `BitGet[n, k]` gets the bit corresponding to the coefficient of $2^k$ in the integer n.
 

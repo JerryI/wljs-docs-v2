@@ -1,4 +1,6 @@
-# SymmetrizedIndependentComponents
+---
+title: SymmetrizedIndependentComponents
+---
 
 `SymmetrizedIndependentComponents[dims, sym]` gives the list of independent components of an array of dimensions *dims* with the symmetry *sym*.
 

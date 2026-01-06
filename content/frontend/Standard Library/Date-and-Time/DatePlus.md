@@ -1,4 +1,6 @@
-# DatePlus
+---
+title: DatePlus
+---
 
 `DatePlus[date, n]` gives the date `n` days after `date`. `DatePlus[date, {n, "unit"}]` uses specified time units.
 

@@ -1,4 +1,6 @@
-# MangoldtLambda
+---
+title: MangoldtLambda
+---
 
 `MangoldtLambda[n]` gives the von Mangoldt function Λ(n).
 

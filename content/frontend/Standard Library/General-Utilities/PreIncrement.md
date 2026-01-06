@@ -1,4 +1,6 @@
-# PreIncrement
+---
+title: PreIncrement
+---
 
 `++x` increases the value of x by 1, returning the new value of x.
 

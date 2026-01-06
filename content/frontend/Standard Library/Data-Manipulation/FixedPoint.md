@@ -1,4 +1,6 @@
-# FixedPoint
+---
+title: FixedPoint
+---
 
 `FixedPoint[f, expr]` starts with expr, then applies f repeatedly until the result no longer changes.
 

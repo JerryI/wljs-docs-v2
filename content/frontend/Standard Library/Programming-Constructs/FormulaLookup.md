@@ -1,4 +1,6 @@
-# FormulaLookup
+---
+title: FormulaLookup
+---
 
 `FormulaLookup["query"]` gives a list of the full names of formulas whose names are consistent with "query".
 

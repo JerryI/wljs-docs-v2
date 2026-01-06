@@ -1,4 +1,6 @@
-# CoxianDistribution
+---
+title: CoxianDistribution
+---
 
 `CoxianDistribution[{α1, ..., αm-1}, {λ1, ..., λm}]` represents an m-phase Coxian distribution with phase probabilities αi and rates λi.
 

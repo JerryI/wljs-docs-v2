@@ -1,4 +1,6 @@
-# PositionIndex
+---
+title: PositionIndex
+---
 
 `PositionIndex[list]` gives an association between unique elements in list and the positions at which they occur.
 

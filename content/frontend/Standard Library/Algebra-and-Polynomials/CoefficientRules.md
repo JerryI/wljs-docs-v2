@@ -1,4 +1,6 @@
-# CoefficientRules
+---
+title: CoefficientRules
+---
 
 `CoefficientRules[poly, {x1, x2, ...}]` gives exponent vectors and coefficients for monomials in poly.
 

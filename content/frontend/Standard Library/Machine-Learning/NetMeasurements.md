@@ -1,4 +1,6 @@
-# NetMeasurements
+---
+title: NetMeasurements
+---
 
 `NetMeasurements[net, data, measurement]` computes the requested *measurement* for the net evaluated on *data*.
 

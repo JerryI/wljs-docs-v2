@@ -1,4 +1,6 @@
-# Sum
+---
+title: Sum
+---
 
 `Sum[f, {i, imax}]` evaluates the sum from i=1 to imax.
 

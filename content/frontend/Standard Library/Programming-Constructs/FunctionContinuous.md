@@ -1,4 +1,6 @@
-# FunctionContinuous
+---
+title: FunctionContinuous
+---
 
 `FunctionContinuous[f,x]` tests whether f(x) is a real-valued continuous function for x∈Reals.
 

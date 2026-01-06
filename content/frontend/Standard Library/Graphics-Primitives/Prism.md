@@ -1,4 +1,6 @@
-# Prism
+---
+title: Prism
+---
 
 `Prism[{p1, ..., p6}]` represents a filled prism connecting two triangular faces.
 

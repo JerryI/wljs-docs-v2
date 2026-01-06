@@ -1,4 +1,6 @@
-# FeedbackSector
+---
+title: FeedbackSector
+---
 
 `FeedbackSector` is an option to NyquistPlot that specifies the sector limits of the nonlinearity in the feedback. 
 

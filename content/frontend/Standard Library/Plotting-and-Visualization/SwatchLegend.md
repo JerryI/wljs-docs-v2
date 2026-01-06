@@ -1,4 +1,6 @@
-# SwatchLegend
+---
+title: SwatchLegend
+---
 
 `SwatchLegend[{col1, ...}, {lbl1, ...}]` generates a legend that associates swatches of colors coli with labels lbli.
 

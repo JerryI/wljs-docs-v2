@@ -1,4 +1,6 @@
-# TransferFunctionExpand
+---
+title: TransferFunctionExpand
+---
 
 `TransferFunctionExpand[tfm]` expands polynomial terms in the numerators and denominators of the TransferFunctionModel tfm.
 

@@ -1,4 +1,6 @@
-# LessEqualThan
+---
+title: LessEqualThan
+---
 
 `LessEqualThan[y]` is an operator form that yields x≤y when applied to an expression x.
 

@@ -1,4 +1,6 @@
-# NormalizedSquaredEuclideanDistance
+---
+title: NormalizedSquaredEuclideanDistance
+---
 
 `NormalizedSquaredEuclideanDistance[u, v]` gives the normalized squared Euclidean distance between vectors u and v.
 

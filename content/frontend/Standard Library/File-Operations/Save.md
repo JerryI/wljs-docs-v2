@@ -1,4 +1,6 @@
-# Save
+---
+title: Save
+---
 
 `Save["filename", symbol]` appends definitions associated with the specified symbol to a file.
 

@@ -1,4 +1,6 @@
-# WaveletScale
+---
+title: WaveletScale
+---
 
 `WaveletScale` is an option for `ContinuousWaveletTransform` and related constructs used to specify the smallest resolvable scale.
 

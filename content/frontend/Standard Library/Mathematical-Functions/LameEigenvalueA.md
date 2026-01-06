@@ -1,4 +1,6 @@
-# LameEigenvalueA
+---
+title: LameEigenvalueA
+---
 
 `LameEigenvalueA[ν,j,m]` gives the jth Lamé eigenvalue aν(j)(m) of order ν with elliptic parameter m for the function LameC[ν,j,z,m].
 

@@ -1,4 +1,6 @@
-# InverseSurvivalFunction
+---
+title: InverseSurvivalFunction
+---
 
 `InverseSurvivalFunction[dist, q]` gives the inverse of the survival function for the distribution *dist* as a function of the variable *q*.
 

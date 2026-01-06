@@ -1,4 +1,6 @@
-# ListFormat
+---
+title: ListFormat
+---
 
 `ListFormat` is an option to `TextString` and related functions that determines how lists are formatted.
 

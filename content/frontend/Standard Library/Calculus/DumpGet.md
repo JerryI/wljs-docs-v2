@@ -1,4 +1,6 @@
-# DumpGet
+---
+title: DumpGet
+---
 
 `DumpGet["filename"]` reads in a file saved with `DumpSave`.
 

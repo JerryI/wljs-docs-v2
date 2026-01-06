@@ -1,4 +1,6 @@
-# BitRate
+---
+title: BitRate
+---
 
 `BitRate` is an option that specifies an approximate number of bits per second when creating video and audio files.
 

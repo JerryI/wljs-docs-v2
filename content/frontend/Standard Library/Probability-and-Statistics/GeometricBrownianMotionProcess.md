@@ -1,4 +1,6 @@
-# GeometricBrownianMotionProcess
+---
+title: GeometricBrownianMotionProcess
+---
 
 `GeometricBrownianMotionProcess[μ, σ, x0]` represents a geometric Brownian motion process with drift μ, volatility σ, and initial value x0.
 

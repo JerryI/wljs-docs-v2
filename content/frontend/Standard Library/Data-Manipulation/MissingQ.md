@@ -1,4 +1,6 @@
-# MissingQ
+---
+title: MissingQ
+---
 
 `MissingQ[expr]` gives `True` if expr has head `Missing`.
 

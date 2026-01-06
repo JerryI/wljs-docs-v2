@@ -1,4 +1,6 @@
-# Overlaps
+---
+title: Overlaps
+---
 
 `Overlaps` is an option to string and sequence functions that specifies how to treat overlapping substrings.
 

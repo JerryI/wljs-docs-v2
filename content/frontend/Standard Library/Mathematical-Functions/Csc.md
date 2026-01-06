@@ -1,4 +1,6 @@
-# Csc
+---
+title: Csc
+---
 
 `Csc[z]` gives the cosecant of z.
 

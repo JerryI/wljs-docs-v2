@@ -1,4 +1,6 @@
-# ReverseElement
+---
+title: ReverseElement
+---
 
 `ReverseElement[x, y, ...]` displays as x∋y∋….
 

@@ -1,4 +1,6 @@
-# VectorGreaterEqual
+---
+title: VectorGreaterEqual
+---
 
 `VectorGreaterEqual[{x, y}]` yields `True` for vectors of length n if xi ≥ yi for all components 1 ≤ i ≤ n.
 

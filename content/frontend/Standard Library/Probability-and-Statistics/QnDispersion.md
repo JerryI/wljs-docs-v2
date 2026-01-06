@@ -1,4 +1,6 @@
-# QnDispersion
+---
+title: QnDispersion
+---
 
 `QnDispersion[list]` gives the Qn statistic of the elements in list.
 

@@ -1,4 +1,6 @@
-# BayesianMaximization
+---
+title: BayesianMaximization
+---
 
 `BayesianMaximization[f, {conf1, conf2, ...}]` gives an object representing the result of Bayesian maximization over the function f over the configurations confi.
 

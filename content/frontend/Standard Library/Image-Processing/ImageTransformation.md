@@ -1,4 +1,6 @@
-# ImageTransformation
+---
+title: ImageTransformation
+---
 
 `ImageTransformation[image, f]` gives an image where each pixel at position p corresponds to position f[p] in image.
 

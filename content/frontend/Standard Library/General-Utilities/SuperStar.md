@@ -1,4 +1,6 @@
-# SuperStar
+---
+title: SuperStar
+---
 
 `SuperStar[expr]` displays as expr*.
 

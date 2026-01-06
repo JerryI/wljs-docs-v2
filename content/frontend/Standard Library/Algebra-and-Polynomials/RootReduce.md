@@ -1,4 +1,6 @@
-# RootReduce
+---
+title: RootReduce
+---
 
 `RootReduce[expr]` attempts to reduce expr to a single Root object.
 

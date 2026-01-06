@@ -1,4 +1,6 @@
-# EdgeRules
+---
+title: EdgeRules
+---
 
 `EdgeRules[g]` gives the list of edge rules for the graph g.
 

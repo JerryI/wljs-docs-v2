@@ -1,4 +1,6 @@
-# WienerFilter
+---
+title: WienerFilter
+---
 
 `WienerFilter[data,r]` removes noise from data by applying a range-r Wiener filter.
 

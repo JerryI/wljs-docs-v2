@@ -1,4 +1,6 @@
-# VertexJaccardSimilarity
+---
+title: VertexJaccardSimilarity
+---
 
 `VertexJaccardSimilarity[g,u,v]` gives the Jaccard similarity between vertices u and v of the graph g.
 

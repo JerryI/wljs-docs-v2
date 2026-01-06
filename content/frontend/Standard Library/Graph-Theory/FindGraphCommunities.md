@@ -1,4 +1,6 @@
-# FindGraphCommunities
+---
+title: FindGraphCommunities
+---
 
 `FindGraphCommunities[g]` finds communities in the graph g.
 

@@ -1,4 +1,6 @@
-# BiweightMidvariance
+---
+title: BiweightMidvariance
+---
 
 `BiweightMidvariance[list]` gives the value of the biweight midvariance of the elements in list.
 

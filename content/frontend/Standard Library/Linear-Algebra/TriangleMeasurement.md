@@ -1,4 +1,6 @@
-# TriangleMeasurement
+---
+title: TriangleMeasurement
+---
 
 `TriangleMeasurement[tri, type]` gives the specified type of measurement for the triangle tri.
 

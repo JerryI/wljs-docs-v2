@@ -1,4 +1,6 @@
-# ImportString
+---
+title: ImportString
+---
 
 `ImportString["data", "format"]` imports data in the specified format from a string.
 

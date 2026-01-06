@@ -1,4 +1,6 @@
-# UnilateralConvolve
+---
+title: UnilateralConvolve
+---
 
 `UnilateralConvolve[f, g, u, t]` gives the unilateral convolution with respect to u of the expressions f and g.
 

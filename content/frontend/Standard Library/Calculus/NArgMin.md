@@ -1,4 +1,6 @@
-# NArgMin
+---
+title: NArgMin
+---
 
 `NArgMin[f, x]` gives a position xmin at which f is numerically globally minimized.
 

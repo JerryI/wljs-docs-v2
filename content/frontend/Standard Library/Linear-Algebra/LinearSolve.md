@@ -1,4 +1,6 @@
-# LinearSolve
+---
+title: LinearSolve
+---
 
 `LinearSolve[m, b]` finds a vector `x` that solves the matrix equation $m \cdot x = b$.
 

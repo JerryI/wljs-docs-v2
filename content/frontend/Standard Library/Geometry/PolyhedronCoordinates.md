@@ -1,4 +1,6 @@
-# PolyhedronCoordinates
+---
+title: PolyhedronCoordinates
+---
 
 `PolyhedronCoordinates[poly]` gives a list of coordinates in the polyhedron poly.
 

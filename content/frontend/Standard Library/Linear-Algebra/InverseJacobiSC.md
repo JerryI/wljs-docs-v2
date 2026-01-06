@@ -1,4 +1,6 @@
-# InverseJacobiSC
+---
+title: InverseJacobiSC
+---
 
 `InverseJacobiSC[v, m]` gives the inverse Jacobi elliptic function sc⁻¹(v|m).
 

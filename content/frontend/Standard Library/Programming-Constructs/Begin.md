@@ -1,4 +1,6 @@
-# Begin
+---
+title: Begin
+---
 
 `Begin["context`"]` resets the current context.
 

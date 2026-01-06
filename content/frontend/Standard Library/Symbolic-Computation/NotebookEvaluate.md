@@ -1,4 +1,6 @@
-# NotebookEvaluate
+---
+title: NotebookEvaluate
+---
 
 `NotebookEvaluate[nb]` evaluates the initialization cells of the notebook and returns the result of the last Wolfram Language cell.
 

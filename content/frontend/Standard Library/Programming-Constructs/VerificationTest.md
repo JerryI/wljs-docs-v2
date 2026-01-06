@@ -1,4 +1,6 @@
-# VerificationTest
+---
+title: VerificationTest
+---
 
 `VerificationTest[input]` runs a verification test to determine whether input evaluates to True.
 

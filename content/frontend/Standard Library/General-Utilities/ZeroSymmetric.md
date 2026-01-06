@@ -1,4 +1,6 @@
-# ZeroSymmetric
+---
+title: ZeroSymmetric
+---
 
 `ZeroSymmetric[{s1, ..., sn}]` represents the symmetry of a zero tensor in the slots si.
 

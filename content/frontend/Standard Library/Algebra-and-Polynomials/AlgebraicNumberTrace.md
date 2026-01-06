@@ -1,4 +1,6 @@
-# AlgebraicNumberTrace
+---
+title: AlgebraicNumberTrace
+---
 
 `AlgebraicNumberTrace[a]` gives the trace of the algebraic number a.
 

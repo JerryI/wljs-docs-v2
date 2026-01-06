@@ -1,4 +1,6 @@
-# PlotRegion
+---
+title: PlotRegion
+---
 
 `PlotRegion` is an option for graphics functions that specifies what region of the final display area a plot should fill.
 

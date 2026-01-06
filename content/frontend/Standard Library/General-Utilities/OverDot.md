@@ -1,4 +1,6 @@
-# OverDot
+---
+title: OverDot
+---
 
 `OverDot[expr]` displays with a dot over expr.
 

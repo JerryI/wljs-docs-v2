@@ -1,4 +1,6 @@
-# FromUnixTime
+---
+title: FromUnixTime
+---
 
 `FromUnixTime[time]` gives a DateObject corresponding to a Unix time specification (seconds since January 1, 1970).
 

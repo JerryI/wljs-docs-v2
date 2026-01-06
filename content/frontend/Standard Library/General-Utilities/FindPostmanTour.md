@@ -1,4 +1,6 @@
-# FindPostmanTour
+---
+title: FindPostmanTour
+---
 
 `FindPostmanTour[g]` finds a Chinese postman tour in the graph g of minimal length.
 

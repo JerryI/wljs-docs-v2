@@ -1,4 +1,6 @@
-# NevilleThetaC
+---
+title: NevilleThetaC
+---
 
 `NevilleThetaC[z, m]` gives the Neville theta function ϑc(z|m).
 

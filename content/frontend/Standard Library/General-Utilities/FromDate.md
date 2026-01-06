@@ -1,4 +1,6 @@
-# FromDate
+---
+title: FromDate
+---
 
 `FromDate[date]` converts a date of the form {y,m,d,h,m,s} to an absolute number of seconds since the beginning of January 1, 1900.
 

@@ -1,4 +1,6 @@
-# ImageTake
+---
+title: ImageTake
+---
 
 `ImageTake[image, n]` gives an image consisting of the first n rows.
 

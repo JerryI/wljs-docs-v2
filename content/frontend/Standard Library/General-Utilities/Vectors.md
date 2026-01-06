@@ -1,4 +1,6 @@
-# Vectors
+---
+title: Vectors
+---
 
 `Vectors[d]` represents the domain of vectors of dimension d.
 

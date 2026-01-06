@@ -1,4 +1,6 @@
-# ServiceExecute
+---
+title: ServiceExecute
+---
 
 `ServiceExecute[service, "req"]` executes "req" on an external service.
 

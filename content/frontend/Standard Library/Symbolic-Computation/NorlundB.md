@@ -1,4 +1,6 @@
-# NorlundB
+---
+title: NorlundB
+---
 
 `NorlundB[n, a]` gives Nørlund polynomials Bₙ(a) of degree *n* in *a*.
 

@@ -1,4 +1,6 @@
-# TransferFunctionCancel
+---
+title: TransferFunctionCancel
+---
 
 `TransferFunctionCancel[tfm]` cancels common poles and zeros in the `TransferFunctionModel` tfm.
 

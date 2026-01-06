@@ -1,4 +1,6 @@
-# DimensionReduce
+---
+title: DimensionReduce
+---
 
 `DimensionReduce[{example1,example2,…}]` projects the examples examplei to a lower-dimensional approximating manifold.
 

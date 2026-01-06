@@ -1,4 +1,6 @@
-# RomanNumeral
+---
+title: RomanNumeral
+---
 
 `RomanNumeral[n]` gives a string corresponding to the Roman numeral form of the integer n.
 

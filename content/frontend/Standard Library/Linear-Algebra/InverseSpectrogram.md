@@ -1,4 +1,6 @@
-# InverseSpectrogram
+---
+title: InverseSpectrogram
+---
 
 `InverseSpectrogram[data]` reconstructs the signal from the magnitude spectrogram data.
 

@@ -1,4 +1,6 @@
-# TestReport
+---
+title: TestReport
+---
 
 `TestReport["file"]` gives a report of the results of the tests from a file.
 

@@ -1,4 +1,6 @@
-# ExternalIdentifier
+---
+title: ExternalIdentifier
+---
 
 `ExternalIdentifier["type", id]` represents a resource identified by id in the external identifier system "type".
 

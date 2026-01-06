@@ -1,4 +1,6 @@
-# DiscretizeRegion
+---
+title: DiscretizeRegion
+---
 
 `DiscretizeRegion[reg]` discretizes a region reg into a `MeshRegion`.
 

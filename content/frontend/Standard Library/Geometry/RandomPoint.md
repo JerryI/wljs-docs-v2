@@ -1,4 +1,6 @@
-# RandomPoint
+---
+title: RandomPoint
+---
 
 `RandomPoint[reg]` gives a pseudorandom point uniformly distributed in the region reg.
 

@@ -1,4 +1,6 @@
-# Eigensystem
+---
+title: Eigensystem
+---
 
 `Eigensystem[m]` gives a list {values, vectors} of the eigenvalues and eigenvectors of the square matrix m.
 

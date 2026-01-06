@@ -1,4 +1,6 @@
-# PrintAction
+---
+title: PrintAction
+---
 
 `PrintAction` is an option for notebooks that specifies the action taken when a `Print[]` command is evaluated by the kernel.
 

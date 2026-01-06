@@ -1,4 +1,6 @@
-# BarcodeImage
+---
+title: BarcodeImage
+---
 
 `BarcodeImage["string"]` generates a barcode image of "string" in the "QR" format.
 

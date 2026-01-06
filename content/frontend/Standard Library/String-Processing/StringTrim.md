@@ -1,4 +1,6 @@
-# StringTrim
+---
+title: StringTrim
+---
 
 `StringTrim["string"]` trims whitespace from the beginning and end of the string.
 

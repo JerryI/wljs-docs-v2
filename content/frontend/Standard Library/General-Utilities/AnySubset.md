@@ -1,4 +1,6 @@
-# AnySubset
+---
+title: AnySubset
+---
 
 `AnySubset[{c1, c2, ...}]` represents an element in an interpreter or form that accepts any subset of the choices ci.
 

@@ -1,4 +1,6 @@
-# ImageKeypoints
+---
+title: ImageKeypoints
+---
 
 `ImageKeypoints[image]` finds key features in image and returns their coordinates.
 

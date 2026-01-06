@@ -1,4 +1,6 @@
-# PolarTicks
+---
+title: PolarTicks
+---
 
 `PolarTicks` is an option for sector charts and polar plots that specifies tick marks for polar axes.
 

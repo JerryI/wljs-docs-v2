@@ -1,4 +1,6 @@
-# DirectedEdge
+---
+title: DirectedEdge
+---
 
 `DirectedEdge[u, v]` or `u -> v` represents a directed edge from u to v.
 

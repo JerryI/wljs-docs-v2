@@ -1,4 +1,6 @@
-# ParentEdgeShapeFunction
+---
+title: ParentEdgeShapeFunction
+---
 
 `ParentEdgeShapeFunction` is an option for `Tree` and related functions that specifies a function to use to generate primitives for rendering edges.
 

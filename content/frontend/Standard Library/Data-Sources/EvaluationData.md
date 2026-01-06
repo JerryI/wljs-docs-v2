@@ -1,4 +1,6 @@
-# EvaluationData
+---
+title: EvaluationData
+---
 
 `EvaluationData[expr]` gives an association containing the result of evaluating expr and metadata about the evaluation process.
 

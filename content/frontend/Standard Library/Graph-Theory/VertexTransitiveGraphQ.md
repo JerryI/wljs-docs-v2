@@ -1,4 +1,6 @@
-# VertexTransitiveGraphQ
+---
+title: VertexTransitiveGraphQ
+---
 
 `VertexTransitiveGraphQ[g]` yields `True` if the graph g is a vertex-transitive graph and `False` otherwise.
 

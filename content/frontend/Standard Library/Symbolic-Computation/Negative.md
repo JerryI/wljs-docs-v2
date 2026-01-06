@@ -1,4 +1,6 @@
-# Negative
+---
+title: Negative
+---
 
 `Negative[x]` gives `True` if x is a negative number.
 

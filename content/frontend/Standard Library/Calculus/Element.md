@@ -1,4 +1,6 @@
-# Element
+---
+title: Element
+---
 
 `Element[x, dom]` or `x ∈ dom` asserts that x is an element of the domain dom.
 

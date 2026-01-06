@@ -1,4 +1,6 @@
-# Median
+---
+title: Median
+---
 
 `Median[data]` gives the median of the elements in `data`. `Median[dist]` gives the median of the distribution `dist`.
 

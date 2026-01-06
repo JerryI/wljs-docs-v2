@@ -1,4 +1,6 @@
-# AudioDevice
+---
+title: AudioDevice
+---
 
 `AudioDevice` is an option for `Audio` and related functions that specifies the device to use for playback.
 

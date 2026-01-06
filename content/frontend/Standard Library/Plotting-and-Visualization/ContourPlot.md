@@ -1,4 +1,6 @@
-# ContourPlot
+---
+title: ContourPlot
+---
 
 `ContourPlot[f, {x, xmin, xmax}, {y, ymin, ymax}]` generates a contour plot of f as a function of x and y.
 

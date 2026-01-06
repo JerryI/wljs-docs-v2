@@ -1,4 +1,6 @@
-# RegularlySampledQ
+---
+title: RegularlySampledQ
+---
 
 `RegularlySampledQ[tseries]` gives `True` if tseries is a regular time series, and `False` otherwise.
 

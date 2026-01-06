@@ -1,4 +1,6 @@
-# BooleanVariables
+---
+title: BooleanVariables
+---
 
 `BooleanVariables[expr]` gives a list of the Boolean variables in the Boolean expression expr.
 

@@ -1,4 +1,6 @@
-# Partition
+---
+title: Partition
+---
 
 `Partition[list, n]` partitions list into nonoverlapping sublists of length n.
 

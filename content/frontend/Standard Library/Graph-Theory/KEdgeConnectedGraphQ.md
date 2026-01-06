@@ -1,4 +1,6 @@
-# KEdgeConnectedGraphQ
+---
+title: KEdgeConnectedGraphQ
+---
 
 `KEdgeConnectedGraphQ[g,k]` yields True if the graph g is k-edge-connected and False otherwise.
 

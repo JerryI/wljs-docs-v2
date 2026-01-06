@@ -1,4 +1,6 @@
-# SequenceReplace
+---
+title: SequenceReplace
+---
 
 `SequenceReplace[list, rules]` replaces sequences in list according to the specified rule or list of rules.
 

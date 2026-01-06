@@ -1,4 +1,6 @@
-# CompoundExpression
+---
+title: CompoundExpression
+---
 
 `expr1; expr2; ...` evaluates the expri in turn, giving the last one as the result.
 

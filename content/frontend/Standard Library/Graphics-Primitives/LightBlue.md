@@ -1,4 +1,6 @@
-# LightBlue
+---
+title: LightBlue
+---
 
 `LightBlue` represents a light blue color in graphics or style specifications.
 

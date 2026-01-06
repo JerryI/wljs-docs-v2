@@ -1,4 +1,6 @@
-# ErlangC
+---
+title: ErlangC
+---
 
 `ErlangC[c, a]` computes the Erlang C probability for nonzero waiting time in an M/M/c queue.
 

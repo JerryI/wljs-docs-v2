@@ -1,4 +1,6 @@
-# Uninstall
+---
+title: Uninstall
+---
 
 `Uninstall[link]` terminates an external program started by `Install`, and removes Wolfram Language definitions set up by it.
 

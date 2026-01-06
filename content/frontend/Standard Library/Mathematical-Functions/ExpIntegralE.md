@@ -1,4 +1,6 @@
-# ExpIntegralE
+---
+title: ExpIntegralE
+---
 
 `ExpIntegralE[n, z]` gives the exponential integral function Eₙ(z).
 

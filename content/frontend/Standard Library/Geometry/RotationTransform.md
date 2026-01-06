@@ -1,4 +1,6 @@
-# RotationTransform
+---
+title: RotationTransform
+---
 
 `RotationTransform[θ]` gives a TransformationFunction that represents a rotation in 2D by θ radians about the origin.
 

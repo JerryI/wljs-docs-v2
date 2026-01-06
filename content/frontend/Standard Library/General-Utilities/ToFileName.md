@@ -1,4 +1,6 @@
-# ToFileName
+---
+title: ToFileName
+---
 
 `ToFileName["directory", "name"]` assembles a full file name from a directory name and a file name.
 

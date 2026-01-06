@@ -1,4 +1,6 @@
-# IntermediateTest
+---
+title: IntermediateTest
+---
 
 `IntermediateTest[input]` creates an intermediate test to determine whether input evaluates to `True`.
 

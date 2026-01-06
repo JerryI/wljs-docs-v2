@@ -1,4 +1,6 @@
-# GraphLayout
+---
+title: GraphLayout
+---
 
 `GraphLayout` is an option to `Graph` and related functions that specifies what layout algorithm to use.
 

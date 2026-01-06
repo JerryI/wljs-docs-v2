@@ -1,4 +1,6 @@
-# SphericalBesselJ
+---
+title: SphericalBesselJ
+---
 
 `SphericalBesselJ[n, z]` gives the spherical Bessel function of the first kind jₙ(z).
 

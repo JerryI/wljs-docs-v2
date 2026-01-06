@@ -1,4 +1,6 @@
-# PermutationCycles
+---
+title: PermutationCycles
+---
 
 `PermutationCycles[perm]` gives a disjoint cycle representation of permutation perm.
 

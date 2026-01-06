@@ -1,4 +1,6 @@
-# EchoEvaluation
+---
+title: EchoEvaluation
+---
 
 `EchoEvaluation[expr]` prints expr before evaluation, then prints the result after evaluation and returns that result.
 

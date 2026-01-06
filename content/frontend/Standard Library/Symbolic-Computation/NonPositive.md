@@ -1,4 +1,6 @@
-# NonPositive
+---
+title: NonPositive
+---
 
 `NonPositive[x]` gives True if x is a non‐positive number.
 

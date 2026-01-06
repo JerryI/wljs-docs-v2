@@ -1,4 +1,6 @@
-# GeoModel
+---
+title: GeoModel
+---
 
 `GeoModel` is an option for `GeoGraphics` that specifies the reference body or model for it for the purposes of geodetic computations and map drawing.
 

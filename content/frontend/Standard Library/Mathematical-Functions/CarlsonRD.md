@@ -1,4 +1,6 @@
-# CarlsonRD
+---
+title: CarlsonRD
+---
 
 `CarlsonRD[x, y, z]` gives the Carlson's elliptic integral RD(x, y, z).
 

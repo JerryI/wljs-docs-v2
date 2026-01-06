@@ -1,4 +1,6 @@
-# StringTakeDrop
+---
+title: StringTakeDrop
+---
 
 `StringTakeDrop["string", n]` gives a pair of strings containing the first n characters in "string" and the remaining characters.
 

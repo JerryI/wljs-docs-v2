@@ -1,4 +1,6 @@
-# UpdateSemanticSearchIndex
+---
+title: UpdateSemanticSearchIndex
+---
 
 `UpdateSemanticSearchIndex[index, source]` updates the `SemanticSearchIndex[...]` *index* with the data in *source*.
 

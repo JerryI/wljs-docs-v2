@@ -1,4 +1,6 @@
-# LowpassFilter
+---
+title: LowpassFilter
+---
 
 `LowpassFilter[data, ωc]` applies a lowpass filter with a cutoff frequency ωc to an array of data.
 

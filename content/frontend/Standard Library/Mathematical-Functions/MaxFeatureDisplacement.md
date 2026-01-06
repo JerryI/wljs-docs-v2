@@ -1,4 +1,6 @@
-# MaxFeatureDisplacement
+---
+title: MaxFeatureDisplacement
+---
 
 `MaxFeatureDisplacement` is an option that specifies the maximum displacement allowed for any feature.
 

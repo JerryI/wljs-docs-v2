@@ -1,4 +1,6 @@
-# MinStableDistribution
+---
+title: MinStableDistribution
+---
 
 `MinStableDistribution[μ, σ, ξ]` represents a generalized minimum extreme value distribution with location parameter μ, scale parameter σ, and shape parameter ξ.
 

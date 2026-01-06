@@ -1,4 +1,6 @@
-# DirichletWindow
+---
+title: DirichletWindow
+---
 
 `DirichletWindow[x]` represents a Dirichlet window function of x.
 

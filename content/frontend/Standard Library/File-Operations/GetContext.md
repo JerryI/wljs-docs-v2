@@ -1,4 +1,6 @@
-# GetContext
+---
+title: GetContext
+---
 
 `GetContext["context\`"]` loads the file for a package that defines the specified context.
 

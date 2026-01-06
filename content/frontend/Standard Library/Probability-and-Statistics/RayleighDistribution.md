@@ -1,4 +1,6 @@
-# RayleighDistribution
+---
+title: RayleighDistribution
+---
 
 `RayleighDistribution[σ]` represents the Rayleigh distribution with scale parameter σ.
 

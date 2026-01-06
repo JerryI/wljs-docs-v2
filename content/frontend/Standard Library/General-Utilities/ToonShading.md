@@ -1,4 +1,6 @@
-# ToonShading
+---
+title: ToonShading
+---
 
 `ToonShading[]` is a three-dimensional graphics directive specifying that surfaces that follow are to be drawn to emulate two-dimensional flat objects (cartoon/cel shading style).
 

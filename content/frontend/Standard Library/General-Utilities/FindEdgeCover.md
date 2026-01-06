@@ -1,4 +1,6 @@
-# FindEdgeCover
+---
+title: FindEdgeCover
+---
 
 `FindEdgeCover[g]` finds an edge cover of the graph g with a minimum number of edges.
 

@@ -1,4 +1,6 @@
-# GroebnerBasis
+---
+title: GroebnerBasis
+---
 
 `GroebnerBasis[{poly1,poly2,…},{x1,x2,…}]` gives a list of polynomials that form a Gröbner basis for the set of polynomials polyi.
 

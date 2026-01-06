@@ -1,4 +1,6 @@
-# BreadthFirstScan
+---
+title: BreadthFirstScan
+---
 
 `BreadthFirstScan[g, s, {event1 -> f1, event2 -> f2, ...}]` performs a breadth-first scan (BFS) of the graph g starting at the vertex s and evaluates fi whenever "eventi" occurs.
 

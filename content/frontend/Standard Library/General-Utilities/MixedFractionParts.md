@@ -1,4 +1,6 @@
-# MixedFractionParts
+---
+title: MixedFractionParts
+---
 
 `MixedFractionParts[expr]` gives the list `{IntegerPart[expr], FractionalPart[expr]}`.
 

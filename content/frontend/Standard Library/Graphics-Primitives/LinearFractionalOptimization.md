@@ -1,4 +1,6 @@
-# LinearFractionalOptimization
+---
+title: LinearFractionalOptimization
+---
 
 `LinearFractionalOptimization[f, cons, vars]` finds values of variables vars that minimize the linear fractional objective f subject to linear constraints cons.
 

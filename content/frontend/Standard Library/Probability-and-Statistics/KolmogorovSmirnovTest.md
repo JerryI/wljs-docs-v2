@@ -1,4 +1,6 @@
-# KolmogorovSmirnovTest
+---
+title: KolmogorovSmirnovTest
+---
 
 `KolmogorovSmirnovTest[data]` tests whether `data` is normally distributed using the Kolmogorov–Smirnov test.
 

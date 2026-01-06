@@ -1,4 +1,6 @@
-# TextElement
+---
+title: TextElement
+---
 
 `TextElement[text, props]` represents an element of text with the specified properties.
 

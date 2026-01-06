@@ -1,4 +1,6 @@
-# Shallow
+---
+title: Shallow
+---
 
 `Shallow[expr]` prints as a shallow form of expr.
 

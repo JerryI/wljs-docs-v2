@@ -1,4 +1,6 @@
-# Accumulate
+---
+title: Accumulate
+---
 
 `Accumulate[list]` gives a list of cumulative sums (running totals) of the elements.
 

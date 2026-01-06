@@ -1,4 +1,6 @@
-# MatrixQ
+---
+title: MatrixQ
+---
 
 `MatrixQ[expr]` gives `True` if expr is a rectangular list of lists representing a matrix.
 

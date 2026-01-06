@@ -1,4 +1,6 @@
-# NestWhileList
+---
+title: NestWhileList
+---
 
 `NestWhileList[f, expr, test]` generates a list of results from applying f repeatedly until test fails.
 

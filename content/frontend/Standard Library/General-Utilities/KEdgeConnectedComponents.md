@@ -1,4 +1,6 @@
-# KEdgeConnectedComponents
+---
+title: KEdgeConnectedComponents
+---
 
 `KEdgeConnectedComponents[g, k]` gives the k-edge-connected components of the graph `g`.
 

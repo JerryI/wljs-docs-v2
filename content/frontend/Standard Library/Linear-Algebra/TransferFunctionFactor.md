@@ -1,4 +1,6 @@
-# TransferFunctionFactor
+---
+title: TransferFunctionFactor
+---
 
 `TransferFunctionFactor[tfm]` factors the polynomial terms in the numerators and denominators of the `TransferFunctionModel` tfm.
 

@@ -1,4 +1,6 @@
-# ImageLevels
+---
+title: ImageLevels
+---
 
 `ImageLevels[image]` gives a list of pixel values and counts for each channel in image.
 

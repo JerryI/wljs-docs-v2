@@ -1,4 +1,6 @@
-# InverseGaussianDistribution
+---
+title: InverseGaussianDistribution
+---
 
 `InverseGaussianDistribution[μ,λ]` represents an inverse Gaussian distribution with mean μ and scale parameter λ.
 

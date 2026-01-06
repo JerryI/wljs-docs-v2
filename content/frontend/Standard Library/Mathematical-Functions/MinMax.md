@@ -1,4 +1,6 @@
-# MinMax
+---
+title: MinMax
+---
 
 `MinMax[list]` gives the list `{Min[list], Max[list]}`.
 

@@ -1,4 +1,6 @@
-# HeunGPrime
+---
+title: HeunGPrime
+---
 
 `HeunGPrime[a, q, α, β, γ, δ, z]` gives the z-derivative of the `HeunG` function.
 

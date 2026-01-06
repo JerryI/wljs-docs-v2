@@ -1,4 +1,6 @@
-# HTTPRequest
+---
+title: HTTPRequest
+---
 
 `HTTPRequest[url]` represents an HTTP request for the specified URL.
 

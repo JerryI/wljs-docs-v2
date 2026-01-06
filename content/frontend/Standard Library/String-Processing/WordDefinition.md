@@ -1,4 +1,6 @@
-# WordDefinition
+---
+title: WordDefinition
+---
 
 `WordDefinition["word"]` gives the dictionary definitions available for "word".
 

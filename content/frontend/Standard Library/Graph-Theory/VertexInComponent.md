@@ -1,4 +1,6 @@
-# VertexInComponent
+---
+title: VertexInComponent
+---
 
 `VertexInComponent[g, {v1, v2, ...}, k]` gives the vertices with a directed path to at least one of v1, v2, … of at most length k.
 

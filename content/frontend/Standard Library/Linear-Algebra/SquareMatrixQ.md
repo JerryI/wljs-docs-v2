@@ -1,4 +1,6 @@
-# SquareMatrixQ
+---
+title: SquareMatrixQ
+---
 
 `SquareMatrixQ[m]` gives True if m is a square matrix, and False otherwise.
 

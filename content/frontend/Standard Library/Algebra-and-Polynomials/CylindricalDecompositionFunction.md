@@ -1,4 +1,6 @@
-# CylindricalDecompositionFunction
+---
+title: CylindricalDecompositionFunction
+---
 
 `CylindricalDecompositionFunction[data][x1,x2,…]` represents a cylindrical algebraic formula in x1,x2,….
 

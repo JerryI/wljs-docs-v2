@@ -1,4 +1,6 @@
-# AsymptoticLessEqual
+---
+title: AsymptoticLessEqual
+---
 
 `AsymptoticLessEqual[f, g, x -> x*]` gives conditions for f(x) ⪯ g(x) or f(x) ∈ O(g(x)) as x -> x*.
 

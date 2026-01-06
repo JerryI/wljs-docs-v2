@@ -1,4 +1,6 @@
-# CommunityBoundaryStyle
+---
+title: CommunityBoundaryStyle
+---
 
 `CommunityBoundaryStyle` is an option to `CommunityGraphPlot` that specifies how to style community boundaries.
 

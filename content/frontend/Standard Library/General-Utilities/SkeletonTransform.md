@@ -1,4 +1,6 @@
-# SkeletonTransform
+---
+title: SkeletonTransform
+---
 
 `SkeletonTransform[image]` gives the skeleton transform of image, in which the value of each skeleton pixel is its distance to the nearest background pixel.
 

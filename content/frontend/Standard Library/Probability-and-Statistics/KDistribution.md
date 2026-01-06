@@ -1,4 +1,6 @@
-# KDistribution
+---
+title: KDistribution
+---
 
 `KDistribution[ν, w]` represents a K distribution with shape parameters ν and w.
 

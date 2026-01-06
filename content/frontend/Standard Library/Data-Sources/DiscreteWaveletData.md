@@ -1,4 +1,6 @@
-# DiscreteWaveletData
+---
+title: DiscreteWaveletData
+---
 
 `DiscreteWaveletData[{wind1 -> coef1, ...}, wave, wtrans]` yields a discrete wavelet data object with wavelet coefficients coefi corresponding to wavelet index windi.
 

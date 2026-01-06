@@ -1,4 +1,6 @@
-# FrameLabel
+---
+title: FrameLabel
+---
 
 `FrameLabel` is an option for `Graphics`, `Manipulate`, and related functions that specifies labels to be placed on the edges of a frame.
 

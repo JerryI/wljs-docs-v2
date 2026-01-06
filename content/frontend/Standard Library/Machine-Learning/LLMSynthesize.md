@@ -1,4 +1,6 @@
-# LLMSynthesize
+---
+title: LLMSynthesize
+---
 
 `LLMSynthesize[prompt]` generates text according to the input prompt.
 

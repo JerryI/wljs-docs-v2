@@ -1,4 +1,6 @@
-# MapIndexed
+---
+title: MapIndexed
+---
 
 `MapIndexed[f, expr]` applies f to the elements of expr, providing the position as a second argument.
 

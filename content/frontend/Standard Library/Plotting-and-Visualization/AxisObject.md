@@ -1,4 +1,6 @@
-# AxisObject
+---
+title: AxisObject
+---
 
 `AxisObject[path]` is a Graphics primitive that represents an axis with a quantitative scale along the path path.
 

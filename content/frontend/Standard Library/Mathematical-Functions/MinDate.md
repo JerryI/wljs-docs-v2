@@ -1,4 +1,6 @@
-# MinDate
+---
+title: MinDate
+---
 
 `MinDate[{date1, date2, ...}]` gives the earliest date of the datei.
 

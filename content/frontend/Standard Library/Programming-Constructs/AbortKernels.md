@@ -1,4 +1,6 @@
-# AbortKernels
+---
+title: AbortKernels
+---
 
 `AbortKernels[]` aborts evaluations running in all parallel subkernels.
 

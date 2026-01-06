@@ -1,4 +1,6 @@
-# Restricted
+---
+title: Restricted
+---
 
 `Restricted[form,cond,…]` represents a form for `Interpreter` and related functions restricted according to the conditions cond.
 

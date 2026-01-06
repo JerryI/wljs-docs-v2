@@ -1,4 +1,6 @@
-# GridLinesStyle
+---
+title: GridLinesStyle
+---
 
 `GridLinesStyle` is an option for 2D graphics functions that specifies how grid lines should be rendered.
 

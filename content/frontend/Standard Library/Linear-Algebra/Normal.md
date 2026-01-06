@@ -1,4 +1,6 @@
-# Normal
+---
+title: Normal
+---
 
 `Normal[expr]` converts expr to a normal expression from a variety of special forms, such as `SeriesData`, `SparseArray`, etc.
 

@@ -1,4 +1,6 @@
-# FileFormatProperties
+---
+title: FileFormatProperties
+---
 
 `FileFormatProperties["fmt"]` returns an association of properties for the specified format "fmt".
 

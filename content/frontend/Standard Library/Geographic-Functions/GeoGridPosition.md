@@ -1,4 +1,6 @@
-# GeoGridPosition
+---
+title: GeoGridPosition
+---
 
 `GeoGridPosition[{x, y}, proj]` represents a point `{x, y}` in a planimetric cartographic grid using the projection `proj`.
 

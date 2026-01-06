@@ -1,4 +1,6 @@
-# LocalTime
+---
+title: LocalTime
+---
 
 `LocalTime[]` gives a DateObject corresponding to the current local time at the current geo location.
 

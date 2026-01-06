@@ -1,4 +1,6 @@
-# DelaunayMesh
+---
+title: DelaunayMesh
+---
 
 `DelaunayMesh[{p1, p2, ...}]` gives a MeshRegion representing the Delaunay mesh from the points p1, p2, ....
 

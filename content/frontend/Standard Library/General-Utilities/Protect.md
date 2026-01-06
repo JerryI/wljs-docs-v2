@@ -1,4 +1,6 @@
-# Protect
+---
+title: Protect
+---
 
 `Protect[s1, s2, ...]` sets the attribute `Protected` for the symbols, preventing modification of their definitions.
 

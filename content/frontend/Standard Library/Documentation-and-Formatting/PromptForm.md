@@ -1,4 +1,6 @@
-# PromptForm
+---
+title: PromptForm
+---
 
 `PromptForm[prompt, expr]` prints as an output prompt and expression.
 

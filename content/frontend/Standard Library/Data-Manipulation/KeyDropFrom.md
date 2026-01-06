@@ -1,4 +1,6 @@
-# KeyDropFrom
+---
+title: KeyDropFrom
+---
 
 `KeyDropFrom[a,key]` changes the association a by dropping the element with the specified key.
 

@@ -1,4 +1,6 @@
-# Gradient
+---
+title: Gradient
+---
 
 `Gradient` is an option for `FindMinimum` and related functions that specifies the gradient vector for the function being optimized.
 

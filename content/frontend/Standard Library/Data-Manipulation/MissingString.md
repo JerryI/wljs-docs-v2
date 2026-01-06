@@ -1,4 +1,6 @@
-# MissingString
+---
+title: MissingString
+---
 
 `MissingString` is an option for `TextString` and related functions that indicates how an expression with head `Missing` should be converted to a string.
 

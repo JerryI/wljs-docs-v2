@@ -1,4 +1,6 @@
-# ScheduledTaskActiveQ
+---
+title: ScheduledTaskActiveQ
+---
 
 `ScheduledTaskActiveQ[obj]` yields True if obj represents an active task, and False otherwise.
 

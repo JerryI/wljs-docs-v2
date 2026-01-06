@@ -1,4 +1,6 @@
-# Random
+---
+title: Random
+---
 
 `Random[]` gives a uniformly distributed pseudorandom Real in the range 0 to 1.
 

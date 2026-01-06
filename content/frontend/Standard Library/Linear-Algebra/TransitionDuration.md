@@ -1,4 +1,6 @@
-# TransitionDuration
+---
+title: TransitionDuration
+---
 
 `TransitionDuration` is an option for `PaneSelector` that specifies the duration in seconds that a transition effect should last.
 

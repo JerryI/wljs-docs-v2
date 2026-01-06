@@ -1,4 +1,6 @@
-# EmptySpaceF
+---
+title: EmptySpaceF
+---
 
 `EmptySpaceF[pdata, r]` estimates the empty space function F(r) for point data pdata at radius r.
 

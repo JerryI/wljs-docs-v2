@@ -1,4 +1,6 @@
-# ExternalTypeSignature
+---
+title: ExternalTypeSignature
+---
 
 `ExternalTypeSignature` is an option for EmbedCode that gives rules specifying the mapping to external types in an embedded code.
 

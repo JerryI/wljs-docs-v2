@@ -1,4 +1,6 @@
-# LeastSquaresFilterKernel
+---
+title: LeastSquaresFilterKernel
+---
 
 `LeastSquaresFilterKernel[{{ω1, ..., ωk-1}, {a1, ..., ak}}, n]` creates a k-band finite impulse response (FIR) filter kernel of length n designed using a least squares method, given the specified frequencies ωi and amplitudes ai.
 

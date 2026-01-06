@@ -1,4 +1,6 @@
-# RegionSymmetricDifference
+---
+title: RegionSymmetricDifference
+---
 
 `RegionSymmetricDifference[reg1, reg2, ...]` represents the symmetric difference of the regions reg1, reg2, ....
 

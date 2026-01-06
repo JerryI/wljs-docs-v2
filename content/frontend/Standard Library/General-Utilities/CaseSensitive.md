@@ -1,4 +1,6 @@
-# CaseSensitive
+---
+title: CaseSensitive
+---
 
 `CaseSensitive[patt]` represents a string pattern that requires matching typographical case, even with the overall option setting IgnoreCase->True.
 

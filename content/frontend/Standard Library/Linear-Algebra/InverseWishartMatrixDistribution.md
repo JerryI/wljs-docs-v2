@@ -1,4 +1,6 @@
-# InverseWishartMatrixDistribution
+---
+title: InverseWishartMatrixDistribution
+---
 
 `InverseWishartMatrixDistribution[ν,Σ]` represents an inverse Wishart matrix distribution with ν degrees of freedom and covariance matrix Σ.
 

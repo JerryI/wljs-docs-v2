@@ -1,4 +1,6 @@
-# OverVector
+---
+title: OverVector
+---
 
 `OverVector[expr]` displays with a right vector over expr.
 

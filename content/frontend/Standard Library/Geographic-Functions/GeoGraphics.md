@@ -1,4 +1,6 @@
-# GeoGraphics
+---
+title: GeoGraphics
+---
 
 `GeoGraphics[primitives, options]` represents a two-dimensional geographical image.
 

@@ -1,4 +1,6 @@
-# Once
+---
+title: Once
+---
 
 `Once[expr]` evaluates expr once in each Wolfram Language session, always returning the result from the first evaluation.
 

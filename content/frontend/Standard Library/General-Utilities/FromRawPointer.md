@@ -1,4 +1,6 @@
-# FromRawPointer
+---
+title: FromRawPointer
+---
 
 `FromRawPointer[p]` returns the value referred to by the pointer p for use in compiled code.
 

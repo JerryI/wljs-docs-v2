@@ -1,4 +1,6 @@
-# ONanGroupON
+---
+title: ONanGroupON
+---
 
 `ONanGroupON[]` represents the sporadic simple O'Nan group O'N.
 

@@ -1,4 +1,6 @@
-# ImageColorSpace
+---
+title: ImageColorSpace
+---
 
 `ImageColorSpace[image]` gives the name of the color space of image.
 

@@ -1,4 +1,6 @@
-# MathieuGroupM11
+---
+title: MathieuGroupM11
+---
 
 `MathieuGroupM11[]` represents the sporadic simple Mathieu group M11.
 

@@ -1,4 +1,6 @@
-# ChannelListeners
+---
+title: ChannelListeners
+---
 
 `ChannelListeners[]` gives a list of currently active channel listeners.
 

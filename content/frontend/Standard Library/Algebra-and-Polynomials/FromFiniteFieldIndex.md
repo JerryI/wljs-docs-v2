@@ -1,4 +1,6 @@
-# FromFiniteFieldIndex
+---
+title: FromFiniteFieldIndex
+---
 
 `FromFiniteFieldIndex[ind,ff]` gives the element of the finite field ff with index ind.
 

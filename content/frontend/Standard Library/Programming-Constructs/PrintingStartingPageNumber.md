@@ -1,4 +1,6 @@
-# PrintingStartingPageNumber
+---
+title: PrintingStartingPageNumber
+---
 
 `PrintingStartingPageNumber` is an option for notebooks that specifies what number to assign to the first page of a notebook when printed.
 

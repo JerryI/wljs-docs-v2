@@ -1,4 +1,6 @@
-# ExportByteArray
+---
+title: ExportByteArray
+---
 
 `ExportByteArray[expr, "format"]` generates a `ByteArray` object corresponding to expr exported in the specified format.
 

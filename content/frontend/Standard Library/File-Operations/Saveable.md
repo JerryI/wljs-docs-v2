@@ -1,4 +1,6 @@
-# Saveable
+---
+title: Saveable
+---
 
 `Saveable` is an option for notebooks that specifies whether a notebook can be saved.
 

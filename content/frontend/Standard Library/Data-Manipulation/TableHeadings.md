@@ -1,4 +1,6 @@
-# TableHeadings
+---
+title: TableHeadings
+---
 
 `TableHeadings` is an option for `TableForm` and `MatrixForm` that gives the labels to be printed for entries in each dimension of a table or matrix.
 

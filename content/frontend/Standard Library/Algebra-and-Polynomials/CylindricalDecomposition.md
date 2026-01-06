@@ -1,4 +1,6 @@
-# CylindricalDecomposition
+---
+title: CylindricalDecomposition
+---
 
 `CylindricalDecomposition[expr, {x1, x2, ...}]` finds a decomposition of the region represented by the statement expr into cylindrical parts whose directions correspond to the successive xi.
 

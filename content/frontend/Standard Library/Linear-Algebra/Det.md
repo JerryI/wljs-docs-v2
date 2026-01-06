@@ -1,4 +1,6 @@
-# Det
+---
+title: Det
+---
 
 `Det[m]` gives the determinant of the square matrix `m`.
 

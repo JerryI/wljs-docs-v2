@@ -1,4 +1,6 @@
-# ImageForestingComponents
+---
+title: ImageForestingComponents
+---
 
 `ImageForestingComponents[image]` finds a segmentation of image, returning an integer matrix in which positive integers label different components.
 

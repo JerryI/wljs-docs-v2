@@ -1,4 +1,6 @@
-# TimeRemaining
+---
+title: TimeRemaining
+---
 
 `TimeRemaining[]` gives the number of seconds remaining until the earliest enclosing `TimeConstrained` will request the current computation to stop.
 

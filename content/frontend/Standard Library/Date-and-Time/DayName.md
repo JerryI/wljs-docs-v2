@@ -1,4 +1,6 @@
-# DayName
+---
+title: DayName
+---
 
 `DayName[]` gives the current day of the week.
 

@@ -1,4 +1,6 @@
-# WaringYuleDistribution
+---
+title: WaringYuleDistribution
+---
 
 `WaringYuleDistribution[α]` represents the Yule distribution with shape parameter α.
 

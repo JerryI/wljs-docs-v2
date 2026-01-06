@@ -1,4 +1,6 @@
-# RotationAction
+---
+title: RotationAction
+---
 
 `RotationAction` is an option for three-dimensional graphics functions that specifies how to render 3D objects when they are interactively rotated.
 

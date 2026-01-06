@@ -1,4 +1,6 @@
-# ListZTransform
+---
+title: ListZTransform
+---
 
 `ListZTransform[list, z]` gives the Z transform of list as a function of z.
 

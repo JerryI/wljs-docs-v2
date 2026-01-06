@@ -1,4 +1,6 @@
-# MAProcess
+---
+title: MAProcess
+---
 
 `MAProcess[{b1, ..., bq}, v]` represents a moving-average process of order *q* with normal white noise variance *v*.
 

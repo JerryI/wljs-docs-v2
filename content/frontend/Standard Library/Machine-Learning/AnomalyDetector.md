@@ -1,4 +1,6 @@
-# AnomalyDetector
+---
+title: AnomalyDetector
+---
 
 `AnomalyDetector` is an option for functions such as `Classify` that specifies an anomaly detector for them to include.
 

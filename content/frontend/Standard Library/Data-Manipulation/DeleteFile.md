@@ -1,4 +1,6 @@
-# DeleteFile
+---
+title: DeleteFile
+---
 
 `DeleteFile["file"]` deletes a file.
 

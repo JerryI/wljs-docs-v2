@@ -1,4 +1,6 @@
-# DivideSides
+---
+title: DivideSides
+---
 
 `DivideSides[rel, x]` divides each side of the equation or inequality rel by x.
 

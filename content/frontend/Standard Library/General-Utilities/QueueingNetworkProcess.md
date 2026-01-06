@@ -1,4 +1,6 @@
-# QueueingNetworkProcess
+---
+title: QueueingNetworkProcess
+---
 
 `QueueingNetworkProcess[γ, r, μ, c]` represents an open (Jackson) queueing network process with arrival vector γ, routing probability matrix r, service vector μ, and service channel vector c.
 

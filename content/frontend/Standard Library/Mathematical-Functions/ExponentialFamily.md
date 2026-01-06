@@ -1,4 +1,6 @@
-# ExponentialFamily
+---
+title: ExponentialFamily
+---
 
 `ExponentialFamily` is an option for `GeneralizedLinearModelFit` that specifies the exponential family for the model.
 

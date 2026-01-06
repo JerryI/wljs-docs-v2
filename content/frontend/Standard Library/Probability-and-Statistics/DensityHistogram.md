@@ -1,4 +1,6 @@
-# DensityHistogram
+---
+title: DensityHistogram
+---
 
 `DensityHistogram[{{x1, y1}, {x2, y2}, ...}]` plots a density histogram of the values {xi, yi}.
 

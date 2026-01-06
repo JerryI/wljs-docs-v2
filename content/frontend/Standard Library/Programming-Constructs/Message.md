@@ -1,4 +1,6 @@
-# Message
+---
+title: Message
+---
 
 `Message[symbol::tag]` prints the message symbol::tag unless it has been switched off. `Message[symbol::tag, e1, ...]` inserts values into the message.
 

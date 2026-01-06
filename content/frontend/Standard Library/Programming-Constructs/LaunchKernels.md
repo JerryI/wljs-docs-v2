@@ -1,4 +1,6 @@
-# LaunchKernels
+---
+title: LaunchKernels
+---
 
 `LaunchKernels[]` launches all currently configured parallel subkernels.
 

@@ -1,4 +1,6 @@
-# VectorColorFunction
+---
+title: VectorColorFunction
+---
 
 `VectorColorFunction` is an option for `VectorPlot` and related functions that specifies a function to apply to determine colors of field vectors drawn.
 

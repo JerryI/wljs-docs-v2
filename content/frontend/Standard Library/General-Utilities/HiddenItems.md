@@ -1,4 +1,6 @@
-# HiddenItems
+---
+title: HiddenItems
+---
 
 `HiddenItems` is an option for `Dataset` that specifies which items to hide.
 

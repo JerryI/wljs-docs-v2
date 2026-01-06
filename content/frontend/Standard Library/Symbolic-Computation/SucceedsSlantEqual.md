@@ -1,4 +1,6 @@
-# SucceedsSlantEqual
+---
+title: SucceedsSlantEqual
+---
 
 `SucceedsSlantEqual[x, y, ...]` displays as x≽y≽....
 

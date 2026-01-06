@@ -1,4 +1,6 @@
-# HistogramPointDensity
+---
+title: HistogramPointDensity
+---
 
 `HistogramPointDensity[pdata]` estimates the histogram point density function μ(x) for point data pdata.
 

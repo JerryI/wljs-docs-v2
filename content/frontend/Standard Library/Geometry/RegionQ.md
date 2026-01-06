@@ -1,4 +1,6 @@
-# RegionQ
+---
+title: RegionQ
+---
 
 `RegionQ[reg]` gives True if reg is a valid region and False otherwise.
 

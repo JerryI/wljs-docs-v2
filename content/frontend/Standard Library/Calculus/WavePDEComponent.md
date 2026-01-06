@@ -1,4 +1,6 @@
-# WavePDEComponent
+---
+title: WavePDEComponent
+---
 
 `WavePDEComponent[vars, pars]` yields a wave equation PDE term ∂²u/∂t² - c²∇²u with model variables vars and model parameters pars.
 

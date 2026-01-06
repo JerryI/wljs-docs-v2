@@ -1,4 +1,6 @@
-# VertexCoverQ
+---
+title: VertexCoverQ
+---
 
 `VertexCoverQ[g, vlist]` yields True if the vertex list vlist is a vertex cover of the graph g, and False otherwise.
 

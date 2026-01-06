@@ -1,4 +1,6 @@
-# Display
+---
+title: Display
+---
 
 `Display[channel, graphics]` writes graphics or sound to the specified output channel in PostScript format.
 

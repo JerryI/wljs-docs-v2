@@ -1,4 +1,6 @@
-# SignedRankTest
+---
+title: SignedRankTest
+---
 
 `SignedRankTest[data]` tests whether the median of data is zero.
 

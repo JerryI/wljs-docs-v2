@@ -1,4 +1,6 @@
-# Close
+---
+title: Close
+---
 
 `Close[stream]` closes a stream or socket.
 

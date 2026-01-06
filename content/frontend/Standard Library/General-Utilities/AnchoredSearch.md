@@ -1,4 +1,6 @@
-# AnchoredSearch
+---
+title: AnchoredSearch
+---
 
 `AnchoredSearch` is an option for `Find` and `FindList` that specifies whether the text searched for must be at the beginning of a record.
 

@@ -1,4 +1,6 @@
-# CopyDirectory
+---
+title: CopyDirectory
+---
 
 `CopyDirectory[dir1, dir2]` copies the directory dir1 to dir2.
 

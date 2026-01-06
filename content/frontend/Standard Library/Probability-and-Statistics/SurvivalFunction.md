@@ -1,4 +1,6 @@
-# SurvivalFunction
+---
+title: SurvivalFunction
+---
 
 `SurvivalFunction[dist,x]` gives the survival function for the distribution dist evaluated at x.
 

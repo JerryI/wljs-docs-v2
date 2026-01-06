@@ -1,4 +1,6 @@
-# PrintPrecision
+---
+title: PrintPrecision
+---
 
 `PrintPrecision` is an option for selections that specifies the maximum number of digits used for displaying a machine-precision number.
 

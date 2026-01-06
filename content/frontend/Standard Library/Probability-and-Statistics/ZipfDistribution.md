@@ -1,4 +1,6 @@
-# ZipfDistribution
+---
+title: ZipfDistribution
+---
 
 `ZipfDistribution[ρ]` represents a zeta distribution with parameter ρ.
 

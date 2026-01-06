@@ -1,4 +1,6 @@
-# Xor
+---
+title: Xor
+---
 
 `Xor[e1, e2, ...]` is the logical XOR (exclusive OR) function. It gives `True` if an odd number of the ei are `True`.
 

@@ -1,4 +1,6 @@
-# Compile
+---
+title: Compile
+---
 
 `Compile[{x1, x2, ...}, expr]` creates a compiled function that evaluates expr assuming numerical values of the xi.
 

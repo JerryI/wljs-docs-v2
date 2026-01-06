@@ -1,4 +1,6 @@
-# CreateUUID
+---
+title: CreateUUID
+---
 
 `CreateUUID[]` creates a random, universally unique UUID string.
 

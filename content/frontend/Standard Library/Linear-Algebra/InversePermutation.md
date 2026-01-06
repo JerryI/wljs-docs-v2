@@ -1,4 +1,6 @@
-# InversePermutation
+---
+title: InversePermutation
+---
 
 `InversePermutation[perm]` returns the inverse of permutation perm.
 

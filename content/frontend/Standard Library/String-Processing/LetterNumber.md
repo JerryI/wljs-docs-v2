@@ -1,4 +1,6 @@
-# LetterNumber
+---
+title: LetterNumber
+---
 
 `LetterNumber["c"]` gives the position of the character c in the English alphabet.
 

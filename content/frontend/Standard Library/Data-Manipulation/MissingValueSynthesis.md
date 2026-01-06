@@ -1,4 +1,6 @@
-# MissingValueSynthesis
+---
+title: MissingValueSynthesis
+---
 
 `MissingValueSynthesis` is an option for functions such as `Classify` that specifies how missing values should be replaced.
 

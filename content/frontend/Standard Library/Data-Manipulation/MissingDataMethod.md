@@ -1,4 +1,6 @@
-# MissingDataMethod
+---
+title: MissingDataMethod
+---
 
 `MissingDataMethod` is an option to TemporalData and other functions that controls how to process missing data.
 

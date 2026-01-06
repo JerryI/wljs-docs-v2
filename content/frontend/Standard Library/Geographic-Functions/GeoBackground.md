@@ -1,4 +1,6 @@
-# GeoBackground
+---
+title: GeoBackground
+---
 
 `GeoBackground` is an option that specifies the background style of a `GeoGraphics` object.
 

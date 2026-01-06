@@ -1,4 +1,6 @@
-# Plot
+---
+title: Plot
+---
 
 `Plot[f, {x, xmin, xmax}]` generates a plot of f as a function of x from xmin to xmax.
 

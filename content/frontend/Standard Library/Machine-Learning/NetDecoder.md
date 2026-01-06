@@ -1,4 +1,6 @@
-# NetDecoder
+---
+title: NetDecoder
+---
 
 `NetDecoder["name"]` represents a decoder that takes a net representation and decodes it into an expression of a given form.
 

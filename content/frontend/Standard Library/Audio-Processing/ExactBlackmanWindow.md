@@ -1,4 +1,6 @@
-# ExactBlackmanWindow
+---
+title: ExactBlackmanWindow
+---
 
 `ExactBlackmanWindow[x]` represents an exact Blackman window function of x.
 

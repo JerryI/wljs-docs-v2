@@ -1,4 +1,6 @@
-# SymmetrizedReplacePart
+---
+title: SymmetrizedReplacePart
+---
 
 `SymmetrizedReplacePart[sa,{pos1->val1,pos2->val2,…}]` replaces independent values of the symmetrized array sa as given by the rules posi->vali.
 

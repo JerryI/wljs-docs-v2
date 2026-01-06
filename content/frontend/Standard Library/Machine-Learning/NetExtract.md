@@ -1,4 +1,6 @@
-# NetExtract
+---
+title: NetExtract
+---
 
 `NetExtract[layer, "param"]` extracts the value of a parameter for the specified net layer.
 

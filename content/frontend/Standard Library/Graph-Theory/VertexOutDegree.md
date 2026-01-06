@@ -1,4 +1,6 @@
-# VertexOutDegree
+---
+title: VertexOutDegree
+---
 
 `VertexOutDegree[g]` gives the list of vertex out-degrees for all vertices in the graph g.
 

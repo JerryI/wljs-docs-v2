@@ -1,4 +1,6 @@
-# PointValuePlot
+---
+title: PointValuePlot
+---
 
 `PointValuePlot[{pt1 -> val1, pt2 -> val2, ...}]` plots the points pti styled according to the values vali.
 

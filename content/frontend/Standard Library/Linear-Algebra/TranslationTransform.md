@@ -1,4 +1,6 @@
-# TranslationTransform
+---
+title: TranslationTransform
+---
 
 `TranslationTransform[v]` gives a TransformationFunction that represents translation of points by a vector v.
 

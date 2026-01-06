@@ -1,4 +1,6 @@
-# StringFormatQ
+---
+title: StringFormatQ
+---
 
 `StringFormatQ["string","fmt"]` gives True if the string "string" might be imported as format "fmt" and gives False otherwise.
 

@@ -1,4 +1,6 @@
-# LinkWriteHeld
+---
+title: LinkWriteHeld
+---
 
 `LinkWriteHeld[link, Hold[expr]]` writes expr (without the Hold) via WSTP to link.
 

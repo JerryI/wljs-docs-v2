@@ -1,4 +1,6 @@
-# RectangularRepeatingElement
+---
+title: RectangularRepeatingElement
+---
 
 `RectangularRepeatingElement[elem]` represents a rectangular array of elements of type elem in an interpreter, API or form specification.
 

@@ -1,4 +1,6 @@
-# MatrixPropertyDistribution
+---
+title: MatrixPropertyDistribution
+---
 
 `MatrixPropertyDistribution[expr, x \[Distributed] mdist]` represents the distribution of the matrix property expr where the matrix-valued random variable x follows the matrix distribution mdist.
 

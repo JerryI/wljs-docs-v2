@@ -1,4 +1,6 @@
-# CountDistinct
+---
+title: CountDistinct
+---
 
 `CountDistinct[list]` gives the number of distinct elements that appear in list.
 

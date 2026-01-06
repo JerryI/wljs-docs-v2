@@ -1,4 +1,6 @@
-# Options
+---
+title: Options
+---
 
 `Options[symbol]` gives the list of default options for a function. `Options[expr]` extracts options from an expression.
 

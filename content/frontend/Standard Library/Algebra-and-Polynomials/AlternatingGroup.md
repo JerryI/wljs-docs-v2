@@ -1,4 +1,6 @@
-# AlternatingGroup
+---
+title: AlternatingGroup
+---
 
 `AlternatingGroup[n]` represents the alternating group of degree n.
 

@@ -1,4 +1,6 @@
-# RealExponent
+---
+title: RealExponent
+---
 
 `RealExponent[x]` gives log₁₀(|x|).
 

@@ -1,4 +1,6 @@
-# AudioResample
+---
+title: AudioResample
+---
 
 `AudioResample[audio, sr]` resamples audio to have the sample rate of sr.
 

@@ -1,4 +1,6 @@
-# TruncatedPolyhedron
+---
+title: TruncatedPolyhedron
+---
 
 `TruncatedPolyhedron[poly]` gives the truncated polyhedron of poly by truncating all vertices.
 

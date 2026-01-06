@@ -1,4 +1,6 @@
-# ArcTan
+---
+title: ArcTan
+---
 
 `ArcTan[z]` gives the arc tangent (inverse tangent) of `z`. `ArcTan[x, y]` gives the arc tangent of `y/x`, taking into account which quadrant the point is in.
 

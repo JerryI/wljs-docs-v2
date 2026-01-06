@@ -1,4 +1,6 @@
-# HeavisideLambda
+---
+title: HeavisideLambda
+---
 
 `HeavisideLambda[x]` represents the triangle distribution Λ(x) which is nonzero for |x| < 1.
 

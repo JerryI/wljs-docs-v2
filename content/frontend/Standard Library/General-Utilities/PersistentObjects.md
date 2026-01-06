@@ -1,4 +1,6 @@
-# PersistentObjects
+---
+title: PersistentObjects
+---
 
 `PersistentObjects[]` gives all persistent objects in all locations in `$PersistencePath`.
 

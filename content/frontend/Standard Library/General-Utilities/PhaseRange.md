@@ -1,4 +1,6 @@
-# PhaseRange
+---
+title: PhaseRange
+---
 
 `PhaseRange` is an option to `BodePlot` and `NicholsPlot` that specifies the phase range.
 

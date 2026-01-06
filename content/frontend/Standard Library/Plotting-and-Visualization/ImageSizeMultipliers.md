@@ -1,4 +1,6 @@
-# ImageSizeMultipliers
+---
+title: ImageSizeMultipliers
+---
 
 `ImageSizeMultipliers` is an option that specifies how much smaller to render graphics that appear within other constructs.
 

@@ -1,4 +1,6 @@
-# TrigToExp
+---
+title: TrigToExp
+---
 
 `TrigToExp[expr]` converts trigonometric functions in expr to exponentials.
 

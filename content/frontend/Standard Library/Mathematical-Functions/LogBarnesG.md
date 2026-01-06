@@ -1,4 +1,6 @@
-# LogBarnesG
+---
+title: LogBarnesG
+---
 
 `LogBarnesG[z]` gives the logarithm of the Barnes G-function log G(z).
 

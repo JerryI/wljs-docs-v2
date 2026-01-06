@@ -1,4 +1,6 @@
-# Blend
+---
+title: Blend
+---
 
 `Blend[{col1, col2}, x]` gives a color obtained by blending a fraction 1-x of color col1 and x of color col2.
 

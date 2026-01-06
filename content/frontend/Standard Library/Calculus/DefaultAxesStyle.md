@@ -1,4 +1,6 @@
-# DefaultAxesStyle
+---
+title: DefaultAxesStyle
+---
 
 `DefaultAxesStyle` is a low-level option for graphics functions that specifies the default style to use in displaying axes and axes-like constructs.
 

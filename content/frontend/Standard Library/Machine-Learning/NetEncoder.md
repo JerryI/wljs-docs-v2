@@ -1,4 +1,6 @@
-# NetEncoder
+---
+title: NetEncoder
+---
 
 `NetEncoder["name"]` represents an encoder that takes a given form of input and encodes it as an array for use in a net.
 

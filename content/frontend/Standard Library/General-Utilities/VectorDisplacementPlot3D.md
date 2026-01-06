@@ -1,4 +1,6 @@
-# VectorDisplacementPlot3D
+---
+title: VectorDisplacementPlot3D
+---
 
 `VectorDisplacementPlot3D[{vx, vy, vz}, {x, xmin, xmax}, {y, ymin, ymax}, {z, zmin, zmax}]` generates a displacement plot of the vector field {vx, vy, vz} as a function of x, y, and z.
 

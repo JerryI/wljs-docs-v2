@@ -1,4 +1,6 @@
-# KeySelect
+---
+title: KeySelect
+---
 
 `KeySelect[assoc, crit]` selects elements in the association assoc for which crit applied to their keys is `True`.
 

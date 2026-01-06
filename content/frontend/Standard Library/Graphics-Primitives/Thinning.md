@@ -1,4 +1,6 @@
-# Thinning
+---
+title: Thinning
+---
 
 `Thinning[image]` finds the skeletons of foreground regions in image by applying morphological thinning until convergence.
 

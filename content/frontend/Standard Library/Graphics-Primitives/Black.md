@@ -1,4 +1,6 @@
-# Black
+---
+title: Black
+---
 
 `Black` represents the color black in graphics or style specifications.
 

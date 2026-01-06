@@ -1,4 +1,6 @@
-# ButterflyGraph
+---
+title: ButterflyGraph
+---
 
 `ButterflyGraph[n]` gives the order-n butterfly graph.
 

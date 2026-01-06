@@ -1,4 +1,6 @@
-# LiftingWaveletTransform
+---
+title: LiftingWaveletTransform
+---
 
 `LiftingWaveletTransform[data]` gives the lifting wavelet transform (LWT) of an array of data.
 

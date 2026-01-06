@@ -1,4 +1,6 @@
-# EquatedTo
+---
+title: EquatedTo
+---
 
 `EquatedTo` is an option for `Roots`, which specifies an expression to use in place of the variable in the solution.
 

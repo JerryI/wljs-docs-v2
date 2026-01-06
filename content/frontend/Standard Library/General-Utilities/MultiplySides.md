@@ -1,4 +1,6 @@
-# MultiplySides
+---
+title: MultiplySides
+---
 
 `MultiplySides[rel, x]` multiplies each side of the equation or inequality rel by x.
 

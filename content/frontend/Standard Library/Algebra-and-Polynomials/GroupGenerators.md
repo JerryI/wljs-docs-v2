@@ -1,4 +1,6 @@
-# GroupGenerators
+---
+title: GroupGenerators
+---
 
 `GroupGenerators[group]` returns a list of generators of group.
 

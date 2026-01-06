@@ -1,4 +1,6 @@
-# GalaxyData
+---
+title: GalaxyData
+---
 
 `GalaxyData[entity,property]` gives the value of the specified property for the galaxy entity.
 

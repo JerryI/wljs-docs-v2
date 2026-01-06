@@ -1,4 +1,6 @@
-# TrainingStoppingCriterion
+---
+title: TrainingStoppingCriterion
+---
 
 `TrainingStoppingCriterion` is an option for `NetTrain` that specifies a criterion for stopping training early in order to prevent overfitting.
 

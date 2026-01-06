@@ -1,4 +1,6 @@
-# AutocompletionFunction
+---
+title: AutocompletionFunction
+---
 
 `AutocompletionFunction[...]` represents a function to be applied to a string to generate possible completions.
 

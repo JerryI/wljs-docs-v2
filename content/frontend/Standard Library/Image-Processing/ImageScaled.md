@@ -1,4 +1,6 @@
-# ImageScaled
+---
+title: ImageScaled
+---
 
 `ImageScaled[{x,y}]` gives the position of a graphical object in terms of coordinates scaled to run from 0 to 1 across the whole image region in each direction.
 

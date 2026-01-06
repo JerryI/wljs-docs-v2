@@ -1,4 +1,6 @@
-# InverseFourierTransform
+---
+title: InverseFourierTransform
+---
 
 `InverseFourierTransform[expr, ω, t]` gives the symbolic inverse Fourier transform of expr.
 

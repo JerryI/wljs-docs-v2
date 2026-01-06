@@ -1,4 +1,6 @@
-# BooleanRegion
+---
+title: BooleanRegion
+---
 
 `BooleanRegion[bfunc, {reg1, reg2, ...}]` represents the Boolean combination of regions.
 

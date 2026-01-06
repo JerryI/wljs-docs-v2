@@ -1,4 +1,6 @@
-# FrameTicksStyle
+---
+title: FrameTicksStyle
+---
 
 `FrameTicksStyle` is an option for 2D graphics functions that specifies how frame ticks should be rendered.
 

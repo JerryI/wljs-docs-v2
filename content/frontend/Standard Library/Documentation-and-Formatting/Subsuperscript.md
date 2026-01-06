@@ -1,4 +1,6 @@
-# Subsuperscript
+---
+title: Subsuperscript
+---
 
 `Subsuperscript[x, y, z]` is an object that formats as x with subscript y and superscript z.
 

@@ -1,4 +1,6 @@
-# RemoveInputStreamMethod
+---
+title: RemoveInputStreamMethod
+---
 
 `RemoveInputStreamMethod["name"]` removes a custom input stream method.
 

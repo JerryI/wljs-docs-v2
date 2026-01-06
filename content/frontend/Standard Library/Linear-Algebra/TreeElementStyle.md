@@ -1,4 +1,6 @@
-# TreeElementStyle
+---
+title: TreeElementStyle
+---
 
 `TreeElementStyle` is an option for `Tree` and related functions that specifies what styles should be used for subtree elements.
 

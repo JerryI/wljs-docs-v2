@@ -1,4 +1,6 @@
-# Interrupt
+---
+title: Interrupt
+---
 
 `Interrupt[]` generates an interrupt, halting the current evaluation.
 

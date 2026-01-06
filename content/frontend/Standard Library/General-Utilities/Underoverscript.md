@@ -1,4 +1,6 @@
-# Underoverscript
+---
+title: Underoverscript
+---
 
 `Underoverscript[x,y,z]` is an object that formats with x as the base, y as the underscript, and z as the overscript.
 

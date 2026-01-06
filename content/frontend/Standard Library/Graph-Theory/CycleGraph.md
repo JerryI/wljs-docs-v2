@@ -1,4 +1,6 @@
-# CycleGraph
+---
+title: CycleGraph
+---
 
 `CycleGraph[n]` gives the cycle graph C_n with n vertices connected in a cycle.
 

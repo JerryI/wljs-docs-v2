@@ -1,4 +1,6 @@
-# StackBegin
+---
+title: StackBegin
+---
 
 `StackBegin[expr]` evaluates expr, starting a fresh evaluation stack.
 

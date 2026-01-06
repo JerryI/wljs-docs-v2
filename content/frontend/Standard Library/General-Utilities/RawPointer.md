@@ -1,4 +1,6 @@
-# RawPointer
+---
+title: RawPointer
+---
 
 `RawPointer[addr, type]` represents a raw pointer to the specified *type* at the memory address *addr*.
 

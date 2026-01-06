@@ -1,4 +1,6 @@
-# GraphDifference
+---
+title: GraphDifference
+---
 
 `GraphDifference[g1, g2]` gives the graph difference of graphs g1 and g2 (edges in g1 but not in g2).
 

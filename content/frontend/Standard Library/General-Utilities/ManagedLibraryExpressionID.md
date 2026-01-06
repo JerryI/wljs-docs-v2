@@ -1,4 +1,6 @@
-# ManagedLibraryExpressionID
+---
+title: ManagedLibraryExpressionID
+---
 
 `ManagedLibraryExpressionID[expr]` returns the positive integer ID associated with expr if it is a managed library expression and $Failed otherwise.
 

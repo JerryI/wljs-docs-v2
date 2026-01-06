@@ -1,4 +1,6 @@
-# BoundedRegionQ
+---
+title: BoundedRegionQ
+---
 
 `BoundedRegionQ[reg]` gives True if reg is a bounded region and False otherwise.
 

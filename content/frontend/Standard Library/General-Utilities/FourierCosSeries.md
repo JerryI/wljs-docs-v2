@@ -1,4 +1,6 @@
-# FourierCosSeries
+---
+title: FourierCosSeries
+---
 
 `FourierCosSeries[expr,t,n]` gives the nth-order Fourier cosine series expansion of expr in t.
 

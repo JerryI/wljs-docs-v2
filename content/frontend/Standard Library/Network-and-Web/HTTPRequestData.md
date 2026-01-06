@@ -1,4 +1,6 @@
-# HTTPRequestData
+---
+title: HTTPRequestData
+---
 
 `HTTPRequestData["prop"]` gives the value of the specified property of the current HTTP request.
 

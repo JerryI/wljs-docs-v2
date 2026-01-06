@@ -1,4 +1,6 @@
-# RegionFunction
+---
+title: RegionFunction
+---
 
 `RegionFunction` is an option for plotting functions that specifies the region to include in the plot drawn.
 

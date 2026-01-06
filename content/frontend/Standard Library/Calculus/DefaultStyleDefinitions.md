@@ -1,4 +1,6 @@
-# DefaultStyleDefinitions
+---
+title: DefaultStyleDefinitions
+---
 
 `DefaultStyleDefinitions` is a global option that specifies the default stylesheet for all new notebooks.
 

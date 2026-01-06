@@ -1,4 +1,6 @@
-# VideoExtractTracks
+---
+title: VideoExtractTracks
+---
 
 `VideoExtractTracks[video]` returns a list of video, audio and subtitle tracks of video.
 

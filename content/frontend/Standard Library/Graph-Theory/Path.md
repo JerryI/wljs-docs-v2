@@ -1,4 +1,6 @@
-# Path
+---
+title: Path
+---
 
 `Path` is an option for `Get` and related functions which gives a list of directories to search in attempting to find an external file.
 

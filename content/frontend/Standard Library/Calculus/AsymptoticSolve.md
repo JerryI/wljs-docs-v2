@@ -1,4 +1,6 @@
-# AsymptoticSolve
+---
+title: AsymptoticSolve
+---
 
 `AsymptoticSolve[eqn, y -> b, x -> a]` computes asymptotic approximations of solutions y[x] of the equation eqn passing through {a, b}.
 

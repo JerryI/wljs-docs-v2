@@ -1,4 +1,6 @@
-# Locked
+---
+title: Locked
+---
 
 `Locked` is an attribute that, once assigned, prevents modification of any attributes of a symbol.
 

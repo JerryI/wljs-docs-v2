@@ -1,4 +1,6 @@
-# DegreeGraphDistribution
+---
+title: DegreeGraphDistribution
+---
 
 `DegreeGraphDistribution[dlist]` represents a degree graph distribution with vertex degree dlist.
 

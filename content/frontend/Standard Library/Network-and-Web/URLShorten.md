@@ -1,4 +1,6 @@
-# URLShorten
+---
+title: URLShorten
+---
 
 `URLShorten["url"]` creates a shortened URL that redirects to "url".
 

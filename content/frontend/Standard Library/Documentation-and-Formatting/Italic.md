@@ -1,4 +1,6 @@
-# Italic
+---
+title: Italic
+---
 
 `Italic` represents an italic font slant.
 

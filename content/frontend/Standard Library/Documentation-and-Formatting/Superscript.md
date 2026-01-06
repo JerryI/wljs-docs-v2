@@ -1,4 +1,6 @@
-# Superscript
+---
+title: Superscript
+---
 
 `Superscript[x, y]` is an object that formats as x with y as a superscript.
 

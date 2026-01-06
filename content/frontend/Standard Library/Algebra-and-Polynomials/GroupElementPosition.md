@@ -1,4 +1,6 @@
-# GroupElementPosition
+---
+title: GroupElementPosition
+---
 
 `GroupElementPosition[group, g]` returns the position of the element `g` in the list of elements of `group`.
 

@@ -1,4 +1,6 @@
-# XMLElement
+---
+title: XMLElement
+---
 
 `XMLElement[tag, {attr1 -> val1, ...}, {data1, ...}]` represents an element in symbolic XML.
 

@@ -1,4 +1,6 @@
-# RealValuedNumberQ
+---
+title: RealValuedNumberQ
+---
 
 `RealValuedNumberQ[expr]` returns True if expr is a number with a real value and False otherwise.
 

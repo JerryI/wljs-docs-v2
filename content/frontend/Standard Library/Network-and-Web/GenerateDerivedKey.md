@@ -1,4 +1,6 @@
-# GenerateDerivedKey
+---
+title: GenerateDerivedKey
+---
 
 `GenerateDerivedKey[password]` generates a DerivedKey object from the password given.
 

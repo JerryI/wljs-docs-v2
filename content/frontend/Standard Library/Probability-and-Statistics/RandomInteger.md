@@ -1,4 +1,6 @@
-# RandomInteger
+---
+title: RandomInteger
+---
 
 `RandomInteger[{imin, imax}]` gives a pseudorandom integer in the range imin to imax.
 

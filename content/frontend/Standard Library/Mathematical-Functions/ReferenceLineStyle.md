@@ -1,4 +1,6 @@
-# ReferenceLineStyle
+---
+title: ReferenceLineStyle
+---
 
 `ReferenceLineStyle` is an option for `QuantilePlot` and similar functions that specifies the style used for the reference line.
 

@@ -1,4 +1,6 @@
-# VideoMap
+---
+title: VideoMap
+---
 
 `VideoMap[f, video]` applies f to partial video and audio data corresponding to one frame of video, returning a new video.
 

@@ -1,4 +1,6 @@
-# AssumeDeterministic
+---
+title: AssumeDeterministic
+---
 
 `AssumeDeterministic` is an option for functions such as `BayesianMinimization` that specifies whether or not the function being considered should be assumed to be deterministic.
 

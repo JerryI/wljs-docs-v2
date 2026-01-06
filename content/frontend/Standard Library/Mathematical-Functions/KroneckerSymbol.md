@@ -1,4 +1,6 @@
-# KroneckerSymbol
+---
+title: KroneckerSymbol
+---
 
 `KroneckerSymbol[n, m]` gives the Kronecker symbol (n/m).
 

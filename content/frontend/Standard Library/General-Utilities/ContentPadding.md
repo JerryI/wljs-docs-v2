@@ -1,4 +1,6 @@
-# ContentPadding
+---
+title: ContentPadding
+---
 
 `ContentPadding` is an option for objects that can be displayed with frames that specifies whether the vertical margins should shrink wrap tightly around the contents.
 

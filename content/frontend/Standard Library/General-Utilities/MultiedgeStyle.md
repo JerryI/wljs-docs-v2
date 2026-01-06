@@ -1,4 +1,6 @@
-# MultiedgeStyle
+---
+title: MultiedgeStyle
+---
 
 `MultiedgeStyle` is an option for `GraphPlot` and related functions that specifies how to draw multiple edges.
 

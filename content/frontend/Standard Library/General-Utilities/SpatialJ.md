@@ -1,4 +1,6 @@
-# SpatialJ
+---
+title: SpatialJ
+---
 
 `SpatialJ[pdata, r]` estimates the J function J(r) for point data *pdata* at radius *r*.
 

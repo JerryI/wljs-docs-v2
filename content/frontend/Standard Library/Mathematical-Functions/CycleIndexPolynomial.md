@@ -1,4 +1,6 @@
-# CycleIndexPolynomial
+---
+title: CycleIndexPolynomial
+---
 
 `CycleIndexPolynomial[perm, {x1, ..., xn}]` constructs the cycle index monomial of the permutation perm in the variables xi.
 

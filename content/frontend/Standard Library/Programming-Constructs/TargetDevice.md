@@ -1,4 +1,6 @@
-# TargetDevice
+---
+title: TargetDevice
+---
 
 `TargetDevice` is an option for certain functions that specifies on which device the computation should be attempted.
 

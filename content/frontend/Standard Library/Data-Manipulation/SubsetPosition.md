@@ -1,4 +1,6 @@
-# SubsetPosition
+---
+title: SubsetPosition
+---
 
 `SubsetPosition[list, sublist]` gives a list of positions at which sublist appears in list in any order.
 

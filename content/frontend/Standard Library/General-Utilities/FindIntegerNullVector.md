@@ -1,4 +1,6 @@
-# FindIntegerNullVector
+---
+title: FindIntegerNullVector
+---
 
 `FindIntegerNullVector[{x1,x2,…,xn}]` finds a list of integers ai such that a1 x1+a2 x2+⋯+an xn≈0.
 

@@ -1,4 +1,6 @@
-# ImagePartition
+---
+title: ImagePartition
+---
 
 `ImagePartition[image, s]` partitions an image into an array of s×s-pixel subimages.
 

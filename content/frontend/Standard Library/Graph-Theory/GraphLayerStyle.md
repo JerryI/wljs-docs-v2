@@ -1,4 +1,6 @@
-# GraphLayerStyle
+---
+title: GraphLayerStyle
+---
 
 `GraphLayerStyle` is an option for `LayeredGraphPlot3D` and related functions that specifies the style in which to draw a layer on the plot.
 

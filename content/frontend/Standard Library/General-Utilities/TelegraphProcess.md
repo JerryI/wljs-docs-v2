@@ -1,4 +1,6 @@
-# TelegraphProcess
+---
+title: TelegraphProcess
+---
 
 `TelegraphProcess[μ]` represents a telegraph process with rate μ.
 

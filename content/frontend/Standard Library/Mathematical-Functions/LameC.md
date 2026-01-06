@@ -1,4 +1,6 @@
-# LameC
+---
+title: LameC
+---
 
 `LameC[ν, j, z, m]` gives the jth Lamé function Ec_ν^(j)(z|m) of order ν with elliptic parameter m.
 

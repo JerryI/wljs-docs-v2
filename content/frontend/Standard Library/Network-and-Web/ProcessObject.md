@@ -1,4 +1,6 @@
-# ProcessObject
+---
+title: ProcessObject
+---
 
 `ProcessObject[...]` is an object that represents a runnable external process.
 

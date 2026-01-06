@@ -1,4 +1,6 @@
-# GeoPositionXYZ
+---
+title: GeoPositionXYZ
+---
 
 `GeoPositionXYZ[{x, y, z}]` represents a position in a Cartesian geocentric coordinate system.
 

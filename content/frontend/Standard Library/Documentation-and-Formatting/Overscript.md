@@ -1,4 +1,6 @@
-# Overscript
+---
+title: Overscript
+---
 
 `Overscript[x, y]` is an object that formats as x with y as an overscript.
 

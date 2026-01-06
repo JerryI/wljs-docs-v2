@@ -1,4 +1,6 @@
-# ByteArrayFormatQ
+---
+title: ByteArrayFormatQ
+---
 
 `ByteArrayFormatQ[ba, "fmt"]` gives True if the ByteArray object ba might be imported as format "fmt" and gives False otherwise.
 

@@ -1,4 +1,6 @@
-# EdgeValueSizes
+---
+title: EdgeValueSizes
+---
 
 `EdgeValueSizes` is an option for GeoGraphValuePlot that specifies the thicknesses used to show edge values in a plot.
 

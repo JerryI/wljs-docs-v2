@@ -1,4 +1,6 @@
-# ReliefImage
+---
+title: ReliefImage
+---
 
 `ReliefImage[array]` generates a relief image of an array of height values.
 

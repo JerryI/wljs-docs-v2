@@ -1,4 +1,6 @@
-# AiryBiZero
+---
+title: AiryBiZero
+---
 
 `AiryBiZero[k]` represents the kth zero of the Airy function Bi(x).
 

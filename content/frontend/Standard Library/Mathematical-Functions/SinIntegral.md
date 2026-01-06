@@ -1,4 +1,6 @@
-# SinIntegral
+---
+title: SinIntegral
+---
 
 `SinIntegral[z]` gives the sine integral function Si(z).
 

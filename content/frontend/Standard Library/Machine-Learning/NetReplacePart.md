@@ -1,4 +1,6 @@
-# NetReplacePart
+---
+title: NetReplacePart
+---
 
 `NetReplacePart[layer, "array" -> value]` replaces an array within a layer, returning a new layer.
 

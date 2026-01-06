@@ -1,4 +1,6 @@
-# Antihermitian
+---
+title: Antihermitian
+---
 
 `Antihermitian[{1, 2}]` represents the symmetry of an antihermitian matrix.
 

@@ -1,4 +1,6 @@
-# OutputStream
+---
+title: OutputStream
+---
 
 `OutputStream["name", n]` is an object that represents an output stream for functions such as Write.
 

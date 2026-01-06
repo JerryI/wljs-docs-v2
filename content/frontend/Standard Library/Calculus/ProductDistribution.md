@@ -1,4 +1,6 @@
-# ProductDistribution
+---
+title: ProductDistribution
+---
 
 `ProductDistribution[dist1,dist2,…]` represents the joint distribution with independent component distributions dist1, dist2, ….
 

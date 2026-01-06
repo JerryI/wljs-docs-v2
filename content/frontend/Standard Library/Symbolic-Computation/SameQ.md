@@ -1,4 +1,6 @@
-# SameQ
+---
+title: SameQ
+---
 
 `lhs === rhs` yields `True` if the expression lhs is identical to rhs, and `False` otherwise.
 

@@ -1,4 +1,6 @@
-# NotCupCap
+---
+title: NotCupCap
+---
 
 `NotCupCap[x, y, …]` displays as x≭y≭….
 

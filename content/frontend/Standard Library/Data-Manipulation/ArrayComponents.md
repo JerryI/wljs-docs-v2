@@ -1,4 +1,6 @@
-# ArrayComponents
+---
+title: ArrayComponents
+---
 
 `ArrayComponents[array]` gives an array in which all identical elements of array are replaced by an integer index representing the component in which the element lies.
 

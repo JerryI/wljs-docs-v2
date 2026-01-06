@@ -1,4 +1,6 @@
-# ByteArrayFormat
+---
+title: ByteArrayFormat
+---
 
 `ByteArrayFormat[ba]` attempts to determine what ImportByteArray format could be used to import the ByteArray object ba.
 

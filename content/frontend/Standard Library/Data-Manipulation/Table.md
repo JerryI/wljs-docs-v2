@@ -1,4 +1,6 @@
-# Table
+---
+title: Table
+---
 
 `Table[expr, n]` generates a list of n copies of expr.
 

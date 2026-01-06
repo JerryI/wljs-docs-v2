@@ -1,4 +1,6 @@
-# PermutationCyclesQ
+---
+title: PermutationCyclesQ
+---
 
 `PermutationCyclesQ[expr]` returns True if expr is a permutation in disjoint cyclic form, and False otherwise.
 

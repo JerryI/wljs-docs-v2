@@ -1,4 +1,6 @@
-# NextDate
+---
+title: NextDate
+---
 
 `NextDate[gran]` gives the next occurring date of the specified granularity type *gran*.
 

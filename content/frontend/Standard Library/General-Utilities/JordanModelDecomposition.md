@@ -1,4 +1,6 @@
-# JordanModelDecomposition
+---
+title: JordanModelDecomposition
+---
 
 `JordanModelDecomposition[ssm]` yields the Jordan decomposition of the state-space model ssm.
 

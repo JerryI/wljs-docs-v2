@@ -1,4 +1,6 @@
-# FindEdgeCut
+---
+title: FindEdgeCut
+---
 
 `FindEdgeCut[g]` finds a smallest edge cut of the graph g.
 

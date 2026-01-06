@@ -1,4 +1,6 @@
-# SolidAngle
+---
+title: SolidAngle
+---
 
 `SolidAngle[p, {u1, ..., ud}]` gives the solid angle at the point p and spanned by the vectors u1, ..., ud.
 

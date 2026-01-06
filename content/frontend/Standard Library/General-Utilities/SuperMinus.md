@@ -1,4 +1,6 @@
-# SuperMinus
+---
+title: SuperMinus
+---
 
 `SuperMinus[expr]` displays as expr⁻.
 

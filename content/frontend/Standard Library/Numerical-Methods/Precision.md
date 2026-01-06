@@ -1,4 +1,6 @@
-# Precision
+---
+title: Precision
+---
 
 `Precision[x]` gives the effective number of digits of precision in the number x.
 

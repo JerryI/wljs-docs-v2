@@ -1,4 +1,6 @@
-# Annulus
+---
+title: Annulus
+---
 
 `Annulus[{x, y}, {rinner, router}]` represents an annulus centered at {x, y} with inner radius rinner and outer radius router.
 

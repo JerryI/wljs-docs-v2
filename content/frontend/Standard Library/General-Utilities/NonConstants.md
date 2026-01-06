@@ -1,4 +1,6 @@
-# NonConstants
+---
+title: NonConstants
+---
 
 `NonConstants` is an option for `D` which gives a list of objects to be taken to depend implicitly on the differentiation variables.
 

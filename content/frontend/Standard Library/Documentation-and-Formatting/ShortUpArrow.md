@@ -1,4 +1,6 @@
-# ShortUpArrow
+---
+title: ShortUpArrow
+---
 
 `ShortUpArrow[x,y,…]` displays as x↑y↑….
 

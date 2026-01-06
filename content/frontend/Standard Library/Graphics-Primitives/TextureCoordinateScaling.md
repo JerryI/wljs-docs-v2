@@ -1,4 +1,6 @@
-# TextureCoordinateScaling
+---
+title: TextureCoordinateScaling
+---
 
 `TextureCoordinateScaling` is an option to `Plot3D` and similar functions that specifies whether arguments supplied to a texture coordinate function should be scaled to lie between 0 and 1.
 

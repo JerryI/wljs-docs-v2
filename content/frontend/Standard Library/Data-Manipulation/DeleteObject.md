@@ -1,4 +1,6 @@
-# DeleteObject
+---
+title: DeleteObject
+---
 
 `DeleteObject[obj]` deletes the object obj.
 

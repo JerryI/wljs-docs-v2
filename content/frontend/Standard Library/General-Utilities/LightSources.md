@@ -1,4 +1,6 @@
-# LightSources
+---
+title: LightSources
+---
 
 `LightSources` is an option for Graphics3D and related functions that specifies the properties of point light sources for simulated illumination.
 

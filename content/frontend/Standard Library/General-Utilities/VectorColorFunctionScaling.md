@@ -1,4 +1,6 @@
-# VectorColorFunctionScaling
+---
+title: VectorColorFunctionScaling
+---
 
 `VectorColorFunctionScaling` is an option for graphics functions which specifies whether arguments supplied to a vector color function should be scaled to lie between 0 and 1.
 

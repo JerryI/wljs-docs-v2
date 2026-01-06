@@ -1,4 +1,6 @@
-# EdgeBetweennessCentrality
+---
+title: EdgeBetweennessCentrality
+---
 
 `EdgeBetweennessCentrality[g]` gives a list of betweenness centralities for the edges in the graph g.
 

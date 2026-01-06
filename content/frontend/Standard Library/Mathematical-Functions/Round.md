@@ -1,4 +1,6 @@
-# Round
+---
+title: Round
+---
 
 `Round[x]` gives the integer closest to x.
 

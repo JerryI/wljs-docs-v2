@@ -1,4 +1,6 @@
-# MakeBoxes
+---
+title: MakeBoxes
+---
 
 `MakeBoxes[expr, form]` is the low‐level function used in Wolfram System sessions to convert expressions into boxes.
 

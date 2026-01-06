@@ -1,4 +1,6 @@
-# LossFunction
+---
+title: LossFunction
+---
 
 `LossFunction` is an option for `NetTrain` that specifies how to compare actual and requested outputs from a neural net.
 

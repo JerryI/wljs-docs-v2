@@ -1,4 +1,6 @@
-# SunPosition
+---
+title: SunPosition
+---
 
 `SunPosition[]` gives the position of the Sun for the current date and location.
 

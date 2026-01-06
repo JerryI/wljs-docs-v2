@@ -1,4 +1,6 @@
-# FindSpanningTree
+---
+title: FindSpanningTree
+---
 
 `FindSpanningTree[g]` finds a spanning tree of graph g that connects all vertices with minimum total edge weight.
 

@@ -1,4 +1,6 @@
-# NormalsFunction
+---
+title: NormalsFunction
+---
 
 `NormalsFunction` is an option for `Plot3D` and related functions that specifies a function to apply to determine the effective surface normals at every point.
 

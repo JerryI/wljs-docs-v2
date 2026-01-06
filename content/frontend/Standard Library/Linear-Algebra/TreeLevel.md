@@ -1,4 +1,6 @@
-# TreeLevel
+---
+title: TreeLevel
+---
 
 `TreeLevel[tree, levelspec]` gives a list of all subtrees of tree on levels specified by levelspec.
 

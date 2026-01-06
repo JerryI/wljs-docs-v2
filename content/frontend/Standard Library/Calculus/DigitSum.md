@@ -1,4 +1,6 @@
-# DigitSum
+---
+title: DigitSum
+---
 
 `DigitSum[n]` gives the sum of the decimal digits in the integer n.
 

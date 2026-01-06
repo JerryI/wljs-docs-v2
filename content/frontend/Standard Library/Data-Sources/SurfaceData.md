@@ -1,4 +1,6 @@
-# SurfaceData
+---
+title: SurfaceData
+---
 
 `SurfaceData[entity, property]` gives the value of the specified property for the surface entity.
 

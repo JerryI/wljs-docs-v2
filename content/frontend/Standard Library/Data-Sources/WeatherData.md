@@ -1,4 +1,6 @@
-# WeatherData
+---
+title: WeatherData
+---
 
 `WeatherData[loc, "property"]` gives the most recent measurement for the specified weather property at the location corresponding to loc.
 

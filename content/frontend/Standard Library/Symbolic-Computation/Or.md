@@ -1,4 +1,6 @@
-# Or
+---
+title: Or
+---
 
 `e1 || e2 || ...` is the logical OR function. It gives `True` immediately if any argument is `True`, and `False` if all are `False`.
 

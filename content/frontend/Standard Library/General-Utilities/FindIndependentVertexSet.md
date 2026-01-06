@@ -1,4 +1,6 @@
-# FindIndependentVertexSet
+---
+title: FindIndependentVertexSet
+---
 
 `FindIndependentVertexSet[g]` finds an independent vertex set of the graph g with a maximum number of vertices.
 

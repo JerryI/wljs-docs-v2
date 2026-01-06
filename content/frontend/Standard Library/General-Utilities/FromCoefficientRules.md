@@ -1,4 +1,6 @@
-# FromCoefficientRules
+---
+title: FromCoefficientRules
+---
 
 `FromCoefficientRules[list, {x1, x2, ...}]` constructs a polynomial from a list of rules for exponent vectors and coefficients.
 

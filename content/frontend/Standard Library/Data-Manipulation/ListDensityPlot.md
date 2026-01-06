@@ -1,4 +1,6 @@
-# ListDensityPlot
+---
+title: ListDensityPlot
+---
 
 `ListDensityPlot[data]` generates a smooth density plot from an array of values.
 

@@ -1,4 +1,6 @@
-# DiscretePlot3D
+---
+title: DiscretePlot3D
+---
 
 `DiscretePlot3D[f, {i, imin, imax}, {j, jmin, jmax}]` generates a 3D plot of f when i runs from imin to imax and j runs from jmin to jmax.
 

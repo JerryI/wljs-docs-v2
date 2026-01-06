@@ -1,4 +1,6 @@
-# AudioInstanceQ
+---
+title: AudioInstanceQ
+---
 
 `AudioInstanceQ[audio, obj]` gives True if audio sounds to be an instance of the object obj, and gives False otherwise.
 

@@ -1,4 +1,6 @@
-# PairedBarChart
+---
+title: PairedBarChart
+---
 
 `PairedBarChart[{y1, y2, …}, {z1, z2, …}]` makes a paired bar chart with bar lengths y1, y2, … and z1, z2, ….
 

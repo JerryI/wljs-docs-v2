@@ -1,4 +1,6 @@
-# WindDirectionData
+---
+title: WindDirectionData
+---
 
 `WindDirectionData[]` gives the most recent measurement for wind direction near the current location.
 

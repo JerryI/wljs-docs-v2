@@ -1,4 +1,6 @@
-# ViewCenter
+---
+title: ViewCenter
+---
 
 `ViewCenter` is an option for `Graphics3D` and related functions which gives the scaled coordinates of the point which should appear at the center of the final image.
 

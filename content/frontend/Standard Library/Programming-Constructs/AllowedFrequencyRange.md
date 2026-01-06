@@ -1,4 +1,6 @@
-# AllowedFrequencyRange
+---
+title: AllowedFrequencyRange
+---
 
 `AllowedFrequencyRange` is an option for audio and signal processing functions that specifies the range of frequencies of interest.
 

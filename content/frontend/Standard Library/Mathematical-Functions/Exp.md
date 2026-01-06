@@ -1,4 +1,6 @@
-# Exp
+---
+title: Exp
+---
 
 `Exp[z]` gives the exponential of z (e raised to the power z).
 

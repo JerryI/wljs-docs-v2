@@ -1,4 +1,6 @@
-# URLParse
+---
+title: URLParse
+---
 
 `URLParse["url"]` takes a well-formed URL and gives an association whose values correspond to the components of the URL.
 

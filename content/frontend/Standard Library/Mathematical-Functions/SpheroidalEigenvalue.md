@@ -1,4 +1,6 @@
-# SpheroidalEigenvalue
+---
+title: SpheroidalEigenvalue
+---
 
 `SpheroidalEigenvalue[n, m, γ]` gives the spheroidal eigenvalue with degree n and order m.
 

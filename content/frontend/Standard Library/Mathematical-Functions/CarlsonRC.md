@@ -1,4 +1,6 @@
-# CarlsonRC
+---
+title: CarlsonRC
+---
 
 `CarlsonRC[x, y]` gives Carlson's elliptic integral RC(x, y).
 

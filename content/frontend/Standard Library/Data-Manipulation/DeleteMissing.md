@@ -1,4 +1,6 @@
-# DeleteMissing
+---
+title: DeleteMissing
+---
 
 `DeleteMissing[list]` drops elements with head `Missing` from a list.
 

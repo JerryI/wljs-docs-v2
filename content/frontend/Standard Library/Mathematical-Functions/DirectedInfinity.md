@@ -1,4 +1,6 @@
-# DirectedInfinity
+---
+title: DirectedInfinity
+---
 
 `DirectedInfinity[]` represents an infinite numerical quantity whose direction in the complex plane is unknown.
 

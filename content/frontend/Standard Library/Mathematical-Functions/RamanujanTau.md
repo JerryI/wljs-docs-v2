@@ -1,4 +1,6 @@
-# RamanujanTau
+---
+title: RamanujanTau
+---
 
 `RamanujanTau[n]` gives the Ramanujan τ function τ(n).
 

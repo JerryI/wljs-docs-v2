@@ -1,4 +1,6 @@
-# ImageCases
+---
+title: ImageCases
+---
 
 `ImageCases[image]` gives an association of lists of subimages for each identified category of objects in image.
 

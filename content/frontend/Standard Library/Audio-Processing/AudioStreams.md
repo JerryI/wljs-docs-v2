@@ -1,4 +1,6 @@
-# AudioStreams
+---
+title: AudioStreams
+---
 
 `AudioStreams[]` returns all existing streams.
 

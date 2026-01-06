@@ -1,4 +1,6 @@
-# DSolveValue
+---
+title: DSolveValue
+---
 
 `DSolveValue[eqn, expr, x]` gives the value of expr determined by a symbolic solution to the differential equation.
 

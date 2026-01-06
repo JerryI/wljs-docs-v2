@@ -1,4 +1,6 @@
-# Framed
+---
+title: Framed
+---
 
 `Framed[expr]` displays a framed version of expr.
 

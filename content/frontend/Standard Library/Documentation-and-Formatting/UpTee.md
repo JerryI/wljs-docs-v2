@@ -1,4 +1,6 @@
-# UpTee
+---
+title: UpTee
+---
 
 `UpTee[x, y]` displays as x⊥y.
 

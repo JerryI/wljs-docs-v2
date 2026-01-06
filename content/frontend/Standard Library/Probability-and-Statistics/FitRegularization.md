@@ -1,4 +1,6 @@
-# FitRegularization
+---
+title: FitRegularization
+---
 
 `FitRegularization` is an option for `Fit` and `FindFit` that specifies a regularization for fitting a model.
 

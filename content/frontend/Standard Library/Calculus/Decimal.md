@@ -1,4 +1,6 @@
-# Decimal
+---
+title: Decimal
+---
 
 `Decimal` is a setting for the `ColumnAlignments` option of `GridBox` which states that numbers should align along the decimal place.
 

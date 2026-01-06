@@ -1,4 +1,6 @@
-# WorkingPrecision
+---
+title: WorkingPrecision
+---
 
 `WorkingPrecision` is an option for various numerical operations that specifies how many digits of precision should be maintained in internal computations.
 

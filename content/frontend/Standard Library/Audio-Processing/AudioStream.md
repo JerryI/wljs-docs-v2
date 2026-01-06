@@ -1,4 +1,6 @@
-# AudioStream
+---
+title: AudioStream
+---
 
 `AudioStream[source]` creates a new AudioStream object from source.
 

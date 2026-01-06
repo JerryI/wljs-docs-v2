@@ -1,4 +1,6 @@
-# MandelbrotSetDistance
+---
+title: MandelbrotSetDistance
+---
 
 `MandelbrotSetDistance[c]` estimates the distance from c to the nearest point in the Mandelbrot set.
 

@@ -1,4 +1,6 @@
-# InverseWeierstrassP
+---
+title: InverseWeierstrassP
+---
 
 `InverseWeierstrassP[p, {g2, g3}]` gives a value of u for which the Weierstrass function ℘(u; g2, g3) is equal to p.
 

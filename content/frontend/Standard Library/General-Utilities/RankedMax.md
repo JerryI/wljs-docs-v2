@@ -1,4 +1,6 @@
-# RankedMax
+---
+title: RankedMax
+---
 
 `RankedMax[list,n]` gives the nth largest element in list.
 

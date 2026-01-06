@@ -1,4 +1,6 @@
-# ManhattanDistance
+---
+title: ManhattanDistance
+---
 
 `ManhattanDistance[u, v]` gives the Manhattan or "city block" distance between vectors u and v.
 

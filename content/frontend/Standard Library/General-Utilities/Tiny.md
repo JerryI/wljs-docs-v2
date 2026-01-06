@@ -1,4 +1,6 @@
-# Tiny
+---
+title: Tiny
+---
 
 `Tiny` is a style or option setting that specifies that objects should be tiny.
 

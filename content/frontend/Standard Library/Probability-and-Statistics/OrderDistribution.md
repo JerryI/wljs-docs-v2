@@ -1,4 +1,6 @@
-# OrderDistribution
+---
+title: OrderDistribution
+---
 
 `OrderDistribution[{dist, n}, k]` represents the kth-order statistics distribution for n observations from the distribution dist.
 

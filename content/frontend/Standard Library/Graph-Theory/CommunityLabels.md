@@ -1,4 +1,6 @@
-# CommunityLabels
+---
+title: CommunityLabels
+---
 
 `CommunityLabels` is an option to `CommunityGraphPlot` that controls what labels and placement to use for communities.
 

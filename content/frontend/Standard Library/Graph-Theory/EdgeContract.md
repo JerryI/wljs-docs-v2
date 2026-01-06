@@ -1,4 +1,6 @@
-# EdgeContract
+---
+title: EdgeContract
+---
 
 `EdgeContract[g, e]` contracts the edge e of the graph g.
 

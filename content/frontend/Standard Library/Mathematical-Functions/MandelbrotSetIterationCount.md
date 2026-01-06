@@ -1,4 +1,6 @@
-# MandelbrotSetIterationCount
+---
+title: MandelbrotSetIterationCount
+---
 
 `MandelbrotSetIterationCount[c]` returns the number of iterations of the function f(z) = z² + c, beginning with z₀ = 0, that are needed to determine whether c is in the Mandelbrot set.
 

@@ -1,4 +1,6 @@
-# BetweennessCentrality
+---
+title: BetweennessCentrality
+---
 
 `BetweennessCentrality[g]` gives a list of betweenness centralities for the vertices in the graph g.
 

@@ -1,4 +1,6 @@
-# Cylinder
+---
+title: Cylinder
+---
 
 `Cylinder[{{x1, y1, z1}, {x2, y2, z2}}, r]` represents a cylinder of radius r around the line from (x1, y1, z1) to (x2, y2, z2).
 

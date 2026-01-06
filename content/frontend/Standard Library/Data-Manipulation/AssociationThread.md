@@ -1,4 +1,6 @@
-# AssociationThread
+---
+title: AssociationThread
+---
 
 `AssociationThread[{key1, key2, ...} -> {val1, val2, ...}]` or `AssociationThread[{keys}, {values}]` creates an association pairing corresponding keys and values.
 

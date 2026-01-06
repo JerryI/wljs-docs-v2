@@ -1,4 +1,6 @@
-# Delimiter
+---
+title: Delimiter
+---
 
 `Delimiter` represents a delimiter to be displayed in objects such as `PopupMenu`, `Manipulate`, and `FormObject`.
 

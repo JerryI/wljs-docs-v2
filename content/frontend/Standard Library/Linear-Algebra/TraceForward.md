@@ -1,4 +1,6 @@
-# TraceForward
+---
+title: TraceForward
+---
 
 `TraceForward` is an option for `Trace` and related functions which specifies whether to include later expressions on the evaluation chain that contains the pattern form sought.
 

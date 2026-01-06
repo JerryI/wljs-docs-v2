@@ -1,4 +1,6 @@
-# EdgeAdd
+---
+title: EdgeAdd
+---
 
 `EdgeAdd[g, e]` makes a graph by adding the edge e to the graph g.
 

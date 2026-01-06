@@ -1,4 +1,6 @@
-# All
+---
+title: All
+---
 
 `All` is a setting used for certain options. In `Part` and related functions, `All` specifies all parts at a particular level.
 

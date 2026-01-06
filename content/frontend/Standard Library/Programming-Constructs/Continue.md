@@ -1,4 +1,6 @@
-# Continue
+---
+title: Continue
+---
 
 `Continue[]` goes to the next iteration of the nearest enclosing `Do`, `For`, `While`, or `Until` loop.
 

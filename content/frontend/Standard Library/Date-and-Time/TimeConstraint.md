@@ -1,4 +1,6 @@
-# TimeConstraint
+---
+title: TimeConstraint
+---
 
 `TimeConstraint` is an option for various functions that specifies the maximum time to spend doing a particular operation.
 

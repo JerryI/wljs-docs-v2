@@ -1,4 +1,6 @@
-# ExternalSessions
+---
+title: ExternalSessions
+---
 
 `ExternalSessions[]` gives the list of currently active external evaluator sessions.
 

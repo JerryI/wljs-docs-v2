@@ -1,4 +1,6 @@
-# FromContinuedFraction
+---
+title: FromContinuedFraction
+---
 
 `FromContinuedFraction[list]` reconstructs a number from the list of its continued fraction terms.
 

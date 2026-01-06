@@ -1,4 +1,6 @@
-# ChannelReceiverFunction
+---
+title: ChannelReceiverFunction
+---
 
 `ChannelReceiverFunction[fun]` represents a channel receiver function that applies fun to any channel message it receives.
 

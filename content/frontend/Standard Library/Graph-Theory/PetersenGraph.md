@@ -1,4 +1,6 @@
-# PetersenGraph
+---
+title: PetersenGraph
+---
 
 `PetersenGraph[n, k]` gives the generalized Petersen graph P(n, k).
 

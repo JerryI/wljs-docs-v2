@@ -1,4 +1,6 @@
-# ProductLog
+---
+title: ProductLog
+---
 
 `ProductLog[z]` gives the principal solution for w in z = w*e^w (Lambert W function).
 

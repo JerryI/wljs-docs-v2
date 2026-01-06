@@ -1,4 +1,6 @@
-# DoubleUpArrow
+---
+title: DoubleUpArrow
+---
 
 `DoubleUpArrow[x,y,…]` displays as x⇑y⇑….
 

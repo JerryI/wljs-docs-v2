@@ -1,4 +1,6 @@
-# NonCommutativeMultiply
+---
+title: NonCommutativeMultiply
+---
 
 `a ** b ** c` is a general associative, but non-commutative, form of multiplication.
 

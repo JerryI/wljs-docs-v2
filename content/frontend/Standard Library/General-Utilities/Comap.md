@@ -1,4 +1,6 @@
-# Comap
+---
+title: Comap
+---
 
 `Comap[{f1, f2, ...}, x]` gives {f1[x], f2[x], ...}.
 

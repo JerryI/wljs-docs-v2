@@ -1,4 +1,6 @@
-# TrainingProgressReporting
+---
+title: TrainingProgressReporting
+---
 
 `TrainingProgressReporting` is an option for `NetTrain` and related functions that specifies how to report the progress of training.
 

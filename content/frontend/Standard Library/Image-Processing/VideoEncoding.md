@@ -1,4 +1,6 @@
-# VideoEncoding
+---
+title: VideoEncoding
+---
 
 `VideoEncoding` is an option for `Export` and other functions that specifies the video encoding to use when creating a video file.
 

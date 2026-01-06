@@ -1,4 +1,6 @@
-# Top
+---
+title: Top
+---
 
 `Top` is a symbol that represents the top for purposes of alignment and positioning.
 

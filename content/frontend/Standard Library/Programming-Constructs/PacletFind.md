@@ -1,4 +1,6 @@
-# PacletFind
+---
+title: PacletFind
+---
 
 `PacletFind["name"]` gives a list of installed paclets that match "name".
 

@@ -1,4 +1,6 @@
-# Atom
+---
+title: Atom
+---
 
 `Atom["sym"]` represents an atom with atomic symbol "sym".
 

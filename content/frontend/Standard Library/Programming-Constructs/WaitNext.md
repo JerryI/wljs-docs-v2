@@ -1,4 +1,6 @@
-# WaitNext
+---
+title: WaitNext
+---
 
 `WaitNext[{eid1,eid2,…}]` waits until the first evaluation represented by any of the eidi finishes, then returns its result, the corresponding eidi, and the list of remaining eidk.
 

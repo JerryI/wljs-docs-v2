@@ -1,4 +1,6 @@
-# LucasL
+---
+title: LucasL
+---
 
 `LucasL[n]` gives the Lucas number Ln.
 

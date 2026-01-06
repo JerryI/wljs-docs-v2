@@ -1,4 +1,6 @@
-# ComputeUncertainty
+---
+title: ComputeUncertainty
+---
 
 `ComputeUncertainty` is an option for `ClassifierMeasurements`, `LearnedDistribution` and other functions to specify if numeric results should be returned along with their uncertainty.
 

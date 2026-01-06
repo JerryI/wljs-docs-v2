@@ -1,4 +1,6 @@
-# TensorWedge
+---
+title: TensorWedge
+---
 
 `TensorWedge[tensor1, tensor2, ...]` represents the antisymmetrized tensor product of the tensori.
 

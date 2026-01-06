@@ -1,4 +1,6 @@
-# CriterionFunction
+---
+title: CriterionFunction
+---
 
 `CriterionFunction` is an option in functions such as `ClusterClassify` that specifies the criterion to use to select a method.
 

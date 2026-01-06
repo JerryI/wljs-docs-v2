@@ -1,4 +1,6 @@
-# SchrodingerPDEComponent
+---
+title: SchrodingerPDEComponent
+---
 
 `SchrodingerPDEComponent[vars, pars]` yields a Schrödinger PDE term with model variables vars and model parameters pars.
 

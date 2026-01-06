@@ -1,4 +1,6 @@
-# WeierstrassHalfPeriodW1
+---
+title: WeierstrassHalfPeriodW1
+---
 
 `WeierstrassHalfPeriodW1[{g2, g3}]` gives the half-period ω1 for Weierstrass elliptic functions corresponding to the invariants {g2, g3}.
 

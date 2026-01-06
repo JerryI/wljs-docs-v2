@@ -1,4 +1,6 @@
-# FromEntity
+---
+title: FromEntity
+---
 
 `FromEntity[entity]` returns a Wolfram Language object corresponding to an entity.
 

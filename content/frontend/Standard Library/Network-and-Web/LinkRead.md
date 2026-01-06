@@ -1,4 +1,6 @@
-# LinkRead
+---
+title: LinkRead
+---
 
 `LinkRead[link]` reads one expression from the specified WSTP connection.
 

@@ -1,4 +1,6 @@
-# TotalVariationFilter
+---
+title: TotalVariationFilter
+---
 
 `TotalVariationFilter[data]` iteratively reduces noise while preserving rapid transitions in data.
 

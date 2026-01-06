@@ -1,4 +1,6 @@
-# HeldGroupHe
+---
+title: HeldGroupHe
+---
 
 `HeldGroupHe[]` represents the sporadic simple Held group He.
 

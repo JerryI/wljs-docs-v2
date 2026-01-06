@@ -1,4 +1,6 @@
-# FRatioDistribution
+---
+title: FRatioDistribution
+---
 
 `FRatioDistribution[n,m]` represents an F-ratio distribution with n numerator and m denominator degrees of freedom.
 

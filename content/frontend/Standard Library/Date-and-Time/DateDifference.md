@@ -1,4 +1,6 @@
-# DateDifference
+---
+title: DateDifference
+---
 
 `DateDifference[date1, date2]` gives the number of days between two dates. `DateDifference[date1, date2, "unit"]` uses specified units.
 

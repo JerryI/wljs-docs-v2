@@ -1,4 +1,6 @@
-# Names
+---
+title: Names
+---
 
 `Names["pattern"]` gives a list of the names of symbols that match the pattern.
 

@@ -1,4 +1,6 @@
-# ListPlot
+---
+title: ListPlot
+---
 
 `ListPlot[{y1, ..., yn}]` plots regularly spaced points.
 

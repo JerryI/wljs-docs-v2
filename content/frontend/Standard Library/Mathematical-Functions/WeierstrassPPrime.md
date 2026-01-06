@@ -1,4 +1,6 @@
-# WeierstrassPPrime
+---
+title: WeierstrassPPrime
+---
 
 `WeierstrassPPrime[u,{g2,g3}]` gives the derivative of the Weierstrass elliptic function ℘(u;g2,g3).
 

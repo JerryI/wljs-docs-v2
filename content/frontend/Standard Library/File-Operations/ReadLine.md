@@ -1,4 +1,6 @@
-# ReadLine
+---
+title: ReadLine
+---
 
 `ReadLine[stream]` reads a line of text from a stream and returns it as a string.
 

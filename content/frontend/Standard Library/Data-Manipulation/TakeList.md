@@ -1,4 +1,6 @@
-# TakeList
+---
+title: TakeList
+---
 
 `TakeList[list,{n1,n2,…}]` gives the list of results obtained by successively taking ni elements from list.
 

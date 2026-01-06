@@ -1,4 +1,6 @@
-# MeshCoordinates
+---
+title: MeshCoordinates
+---
 
 `MeshCoordinates[mreg]` gives a list of coordinates in the mesh region mreg.
 

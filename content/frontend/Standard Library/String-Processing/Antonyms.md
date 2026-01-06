@@ -1,4 +1,6 @@
-# Antonyms
+---
+title: Antonyms
+---
 
 `Antonyms["word"]` returns the antonyms associated with the specified word.
 

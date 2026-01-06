@@ -1,4 +1,6 @@
-# ColorCombine
+---
+title: ColorCombine
+---
 
 `ColorCombine[{image1,image2,…}]` creates a multichannel image by combining the sequence of channels in the imagei.
 

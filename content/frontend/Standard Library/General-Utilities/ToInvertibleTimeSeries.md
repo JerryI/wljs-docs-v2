@@ -1,4 +1,6 @@
-# ToInvertibleTimeSeries
+---
+title: ToInvertibleTimeSeries
+---
 
 `ToInvertibleTimeSeries[tproc]` returns an invertible version of a time series process tproc.
 

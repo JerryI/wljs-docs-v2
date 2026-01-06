@@ -1,4 +1,6 @@
-# TransitiveClosureGraph
+---
+title: TransitiveClosureGraph
+---
 
 `TransitiveClosureGraph[g]` gives the transitive closure of the graph g.
 

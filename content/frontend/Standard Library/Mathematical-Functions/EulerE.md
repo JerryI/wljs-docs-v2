@@ -1,4 +1,6 @@
-# EulerE
+---
+title: EulerE
+---
 
 `EulerE[n]` gives the Euler number E_n. `EulerE[n, x]` gives the Euler polynomial E_n(x).
 

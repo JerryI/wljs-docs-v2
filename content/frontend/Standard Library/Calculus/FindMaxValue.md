@@ -1,4 +1,6 @@
-# FindMaxValue
+---
+title: FindMaxValue
+---
 
 `FindMaxValue[f,x]` gives the value at a local maximum of f.
 

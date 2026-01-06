@@ -1,4 +1,6 @@
-# VoiceStyleData
+---
+title: VoiceStyleData
+---
 
 `VoiceStyleData[]` gives the list of available voices for speech synthesis.
 

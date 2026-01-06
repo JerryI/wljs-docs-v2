@@ -1,4 +1,6 @@
-# ExoplanetData
+---
+title: ExoplanetData
+---
 
 `ExoplanetData[entity, property]` gives the value of the specified property for the exoplanet entity.
 

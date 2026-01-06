@@ -1,4 +1,6 @@
-# QuantityArray
+---
+title: QuantityArray
+---
 
 `QuantityArray[mags,unit]` represents an array of quantities with magnitudes mags and common unit.
 

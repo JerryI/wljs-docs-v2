@@ -1,4 +1,6 @@
-# K
+---
+title: K
+---
 
 `K` is a default generic name for a summation index in a symbolic sum.
 

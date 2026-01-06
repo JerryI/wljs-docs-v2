@@ -1,4 +1,6 @@
-# Print
+---
+title: Print
+---
 
 `Print[expr]` prints expr as output.
 

@@ -1,4 +1,6 @@
-# InputStream
+---
+title: InputStream
+---
 
 `InputStream["name", n]` is an object that represents an input stream for functions such as Read and Find.
 

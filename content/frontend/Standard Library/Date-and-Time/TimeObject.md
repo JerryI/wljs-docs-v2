@@ -1,4 +1,6 @@
-# TimeObject
+---
+title: TimeObject
+---
 
 `TimeObject[]` represents the current time.
 

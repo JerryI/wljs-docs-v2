@@ -1,4 +1,6 @@
-# EndOfString
+---
+title: EndOfString
+---
 
 `EndOfString` represents the end of a string for purposes of matching in `StringExpression`.
 

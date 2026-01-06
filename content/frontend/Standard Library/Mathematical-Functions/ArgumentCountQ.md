@@ -1,4 +1,6 @@
-# ArgumentCountQ
+---
+title: ArgumentCountQ
+---
 
 `ArgumentCountQ[head, len, min, max]` tests whether the number len of arguments of a function head is between min and max.
 

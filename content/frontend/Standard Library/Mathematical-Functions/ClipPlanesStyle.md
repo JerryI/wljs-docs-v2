@@ -1,4 +1,6 @@
-# ClipPlanesStyle
+---
+title: ClipPlanesStyle
+---
 
 `ClipPlanesStyle` is an option to `Graphics3D` that specifies how clipping planes defined with the `ClipPlanes` option should be rendered.
 

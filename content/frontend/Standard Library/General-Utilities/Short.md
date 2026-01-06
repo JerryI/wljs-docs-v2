@@ -1,4 +1,6 @@
-# Short
+---
+title: Short
+---
 
 `Short[expr]` prints as a short form of expr, less than about one line long.
 

@@ -1,4 +1,6 @@
-# Whitespace
+---
+title: Whitespace
+---
 
 `Whitespace` represents a sequence of whitespace characters in `StringExpression`.
 

@@ -1,4 +1,6 @@
-# MultinomialDistribution
+---
+title: MultinomialDistribution
+---
 
 `MultinomialDistribution[n,{p1,p2,…,pm}]` represents a multinomial distribution with n trials and probabilities pi.
 

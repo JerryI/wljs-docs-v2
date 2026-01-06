@@ -1,4 +1,6 @@
-# Solve
+---
+title: Solve
+---
 
 `Solve[expr, vars]` attempts to solve the system expr of equations or inequalities for the variables vars.
 

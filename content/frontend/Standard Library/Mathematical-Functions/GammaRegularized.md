@@ -1,4 +1,6 @@
-# GammaRegularized
+---
+title: GammaRegularized
+---
 
 `GammaRegularized[a, z]` is the regularized incomplete gamma function Q(a,z).
 

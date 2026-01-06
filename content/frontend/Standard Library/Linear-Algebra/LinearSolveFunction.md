@@ -1,4 +1,6 @@
-# LinearSolveFunction
+---
+title: LinearSolveFunction
+---
 
 `LinearSolveFunction[dimensions, data]` represents a function for providing solutions to a matrix equation.
 

@@ -1,4 +1,6 @@
-# FileNameSplit
+---
+title: FileNameSplit
+---
 
 `FileNameSplit["name"]` splits a file path into a list of components.
 

@@ -1,4 +1,6 @@
-# LightGreen
+---
+title: LightGreen
+---
 
 `LightGreen` represents a light green color in graphics or style specifications.
 

@@ -1,4 +1,6 @@
-# InverseZTransform
+---
+title: InverseZTransform
+---
 
 `InverseZTransform[expr, z, n]` gives the inverse Z transform of expr.
 

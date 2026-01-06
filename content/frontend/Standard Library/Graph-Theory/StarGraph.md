@@ -1,4 +1,6 @@
-# StarGraph
+---
+title: StarGraph
+---
 
 `StarGraph[n]` gives the star graph with n vertices.
 

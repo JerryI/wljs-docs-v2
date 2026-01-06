@@ -1,4 +1,6 @@
-# CorrelationTest
+---
+title: CorrelationTest
+---
 
 `CorrelationTest[{{x1, y1}, {x2, y2}, ...}]` tests whether the correlation coefficient for a bivariate population is zero.
 

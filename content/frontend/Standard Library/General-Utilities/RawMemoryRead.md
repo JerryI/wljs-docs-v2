@@ -1,4 +1,6 @@
-# RawMemoryRead
+---
+title: RawMemoryRead
+---
 
 `RawMemoryRead[ptr]` reads raw memory from the pointer ptr.
 

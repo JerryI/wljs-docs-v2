@@ -1,4 +1,6 @@
-# TraceDialog
+---
+title: TraceDialog
+---
 
 `TraceDialog[expr]` initiates a dialog for every expression used in the evaluation of expr.
 

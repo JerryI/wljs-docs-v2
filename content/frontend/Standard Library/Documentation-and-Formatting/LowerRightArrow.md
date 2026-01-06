@@ -1,4 +1,6 @@
-# LowerRightArrow
+---
+title: LowerRightArrow
+---
 
 `LowerRightArrow[x, y, ...]` displays as x↘y↘….
 

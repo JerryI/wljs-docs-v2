@@ -1,4 +1,6 @@
-# GeodesicDilation
+---
+title: GeodesicDilation
+---
 
 `GeodesicDilation[marker, mask]` gives the fixed point of the geodesic dilation of the `marker` constrained by the `mask`.
 

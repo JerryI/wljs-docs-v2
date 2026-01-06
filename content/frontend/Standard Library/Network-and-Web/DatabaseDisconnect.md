@@ -1,4 +1,6 @@
-# DatabaseDisconnect
+---
+title: DatabaseDisconnect
+---
 
 `DatabaseDisconnect[db]` deactivates a connection to the database db.
 

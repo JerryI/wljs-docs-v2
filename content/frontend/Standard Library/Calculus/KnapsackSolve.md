@@ -1,4 +1,6 @@
-# KnapsackSolve
+---
+title: KnapsackSolve
+---
 
 `KnapsackSolve[{cost1,cost2,…},maxtotalcost]` solves the knapsack problem of finding the maximum number of items associated with each of the costi, subject to the constraint that the total cost is not larger than maxtotalcost.
 

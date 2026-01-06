@@ -1,4 +1,6 @@
-# DiscreteDelta
+---
+title: DiscreteDelta
+---
 
 `DiscreteDelta[n1, n2, ...]` gives the discrete delta function δ(n1, n2, ...), equal to 1 if all ni are zero, and 0 otherwise.
 

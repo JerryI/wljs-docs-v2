@@ -1,4 +1,6 @@
-# MetaCharacters
+---
+title: MetaCharacters
+---
 
 `MetaCharacters` is an option to `StringPosition`. With `MetaCharacters -> None`, no strings have special meanings. `MetaCharacters -> {c1, c2, c3}` specifies the metacharacters for pattern escape, single character matching and multiple character matching. `MetaCharacters -> Automatic` is equivalent to `MetaCharacters -> {"\\", ".", "*"}`.
 

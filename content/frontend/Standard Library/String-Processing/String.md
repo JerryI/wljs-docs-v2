@@ -1,4 +1,6 @@
-# String
+---
+title: String
+---
 
 `String` is the head of a character string "text".
 

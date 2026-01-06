@@ -1,4 +1,6 @@
-# StringQ
+---
+title: StringQ
+---
 
 `StringQ[expr]` gives `True` if expr is a string, and `False` otherwise.
 

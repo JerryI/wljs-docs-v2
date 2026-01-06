@@ -1,4 +1,6 @@
-# NetArrayLayer
+---
+title: NetArrayLayer
+---
 
 `NetArrayLayer[]` represents a layer that has no input and produces as output a constant array.
 

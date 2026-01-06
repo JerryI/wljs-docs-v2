@@ -1,4 +1,6 @@
-# ArcSecDegrees
+---
+title: ArcSecDegrees
+---
 
 `ArcSecDegrees[z]` gives the arc secant in degrees of the complex number z.
 

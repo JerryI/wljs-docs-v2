@@ -1,4 +1,6 @@
-# FindClusters
+---
+title: FindClusters
+---
 
 `FindClusters[{e1, e2, ...}]` partitions the elements into clusters of similar elements.
 

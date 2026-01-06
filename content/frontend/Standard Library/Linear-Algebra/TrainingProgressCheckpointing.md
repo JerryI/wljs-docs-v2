@@ -1,4 +1,6 @@
-# TrainingProgressCheckpointing
+---
+title: TrainingProgressCheckpointing
+---
 
 `TrainingProgressCheckpointing` is an option for `NetTrain` that specifies how to save copies of the net during training.
 

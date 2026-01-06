@@ -1,4 +1,6 @@
-# RSolve
+---
+title: RSolve
+---
 
 `RSolve[eqn, a[n], n]` solves a recurrence equation for a[n].
 

@@ -1,4 +1,6 @@
-# Factor
+---
+title: Factor
+---
 
 `Factor[poly]` factors a polynomial over the integers.
 

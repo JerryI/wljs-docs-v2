@@ -1,4 +1,6 @@
-# NeighborhoodGraph
+---
+title: NeighborhoodGraph
+---
 
 `NeighborhoodGraph[g, v]` gives the graph neighborhood of a vertex v in the graph g.
 

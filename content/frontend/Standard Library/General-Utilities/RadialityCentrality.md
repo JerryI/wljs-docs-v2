@@ -1,4 +1,6 @@
-# RadialityCentrality
+---
+title: RadialityCentrality
+---
 
 `RadialityCentrality[g]` gives a list of radiality centralities for the vertices in the graph g.
 

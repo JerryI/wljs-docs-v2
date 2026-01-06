@@ -1,4 +1,6 @@
-# ContinuousTimeModelQ
+---
+title: ContinuousTimeModelQ
+---
 
 `ContinuousTimeModelQ[lsys]` gives True if lsys is a continuous-time systems model, and False otherwise.
 

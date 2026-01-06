@@ -1,4 +1,6 @@
-# DisplayPacket
+---
+title: DisplayPacket
+---
 
 `DisplayPacket[]` is a WSTP packet that indicates the beginning of a series of expressions related to a PostScript graphic.
 

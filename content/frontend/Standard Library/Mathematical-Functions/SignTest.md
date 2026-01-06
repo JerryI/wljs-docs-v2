@@ -1,4 +1,6 @@
-# SignTest
+---
+title: SignTest
+---
 
 `SignTest[data]` tests whether the median of data is zero.
 

@@ -1,4 +1,6 @@
-# VectorAround
+---
+title: VectorAround
+---
 
 `VectorAround[{x1, x2, ...}, {δ1, δ2, ...}]` represents a vector of uncorrelated approximate numbers or quantities with values xi and uncertainties δi.
 

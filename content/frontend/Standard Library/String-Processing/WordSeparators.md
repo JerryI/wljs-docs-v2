@@ -1,4 +1,6 @@
-# WordSeparators
+---
+title: WordSeparators
+---
 
 `WordSeparators` is an option for `Read`, `Find`, and related functions that specifies the list of strings to be taken as delimiters for words.
 

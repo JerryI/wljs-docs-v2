@@ -1,4 +1,6 @@
-# ExcludedPhysicalQuantities
+---
+title: ExcludedPhysicalQuantities
+---
 
 `ExcludedPhysicalQuantities` is an option for `FormulaLookup` that specifies physical quantities that should be not used by the formulas returned.
 

@@ -1,4 +1,6 @@
-# CreateTypeInstance
+---
+title: CreateTypeInstance
+---
 
 `CreateTypeInstance[type, arg1, arg2, ...]` creates an instance of a type in compiled code.
 

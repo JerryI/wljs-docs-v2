@@ -1,4 +1,6 @@
-# MailServerConnect
+---
+title: MailServerConnect
+---
 
 `MailServerConnect[]` connects to your default incoming mail server.
 

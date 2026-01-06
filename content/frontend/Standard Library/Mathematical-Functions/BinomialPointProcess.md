@@ -1,4 +1,6 @@
-# BinomialPointProcess
+---
+title: BinomialPointProcess
+---
 
 `BinomialPointProcess[n, reg]` represents a binomial point process with n points in the region reg.
 

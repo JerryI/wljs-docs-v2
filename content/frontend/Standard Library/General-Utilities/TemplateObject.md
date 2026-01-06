@@ -1,4 +1,6 @@
-# TemplateObject
+---
+title: TemplateObject
+---
 
 `TemplateObject[expr]` represents a template object to be applied using functions like `TemplateApply`.
 

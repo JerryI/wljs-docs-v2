@@ -1,4 +1,6 @@
-# MinimalStateSpaceModel
+---
+title: MinimalStateSpaceModel
+---
 
 `MinimalStateSpaceModel[sys]` gives the minimal state-space model of the state-space model sys.
 

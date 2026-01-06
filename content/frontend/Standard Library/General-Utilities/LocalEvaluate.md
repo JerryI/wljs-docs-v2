@@ -1,4 +1,6 @@
-# LocalEvaluate
+---
+title: LocalEvaluate
+---
 
 `LocalEvaluate[expr]` gives the result of evaluating expr using your current default local Wolfram Language kernel.
 

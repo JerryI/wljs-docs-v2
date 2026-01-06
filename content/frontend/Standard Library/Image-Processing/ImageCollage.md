@@ -1,4 +1,6 @@
-# ImageCollage
+---
+title: ImageCollage
+---
 
 `ImageCollage[{image1, image2, ...}]` creates a collage of images.
 

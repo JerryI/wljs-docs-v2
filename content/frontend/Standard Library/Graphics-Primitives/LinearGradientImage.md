@@ -1,4 +1,6 @@
-# LinearGradientImage
+---
+title: LinearGradientImage
+---
 
 `LinearGradientImage[gcol]` returns an image with values linearly changing from left to right based on gradient color gcol.
 

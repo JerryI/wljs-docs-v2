@@ -1,4 +1,6 @@
-# GaugeMarkers
+---
+title: GaugeMarkers
+---
 
 `GaugeMarkers` is an option for gauge functions that specifies what markers to draw to mark the values.
 

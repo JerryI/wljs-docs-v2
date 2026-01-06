@@ -1,4 +1,6 @@
-# EdgeForm
+---
+title: EdgeForm
+---
 
 `EdgeForm[g]` specifies that edges of polygons and filled objects are drawn using graphics directive `g`.
 

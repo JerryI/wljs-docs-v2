@@ -1,4 +1,6 @@
-# MeshStyle
+---
+title: MeshStyle
+---
 
 `MeshStyle` is an option for `Plot3D`, `DensityPlot`, and other plotting functions that specifies the style in which to draw a mesh.
 

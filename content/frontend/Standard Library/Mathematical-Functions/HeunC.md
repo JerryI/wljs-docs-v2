@@ -1,4 +1,6 @@
-# HeunC
+---
+title: HeunC
+---
 
 `HeunC[q, α, γ, δ, ϵ, z]` gives the confluent Heun function.
 

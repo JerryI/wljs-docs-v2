@@ -1,4 +1,6 @@
-# NegativelyOrientedPoints
+---
+title: NegativelyOrientedPoints
+---
 
 `NegativelyOrientedPoints[{p1,p2,p3,…,pn}]` tests whether the sequence of points p1,p2,p3,…,pn is negatively oriented.
 

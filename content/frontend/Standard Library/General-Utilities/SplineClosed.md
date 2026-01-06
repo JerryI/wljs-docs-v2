@@ -1,4 +1,6 @@
-# SplineClosed
+---
+title: SplineClosed
+---
 
 `SplineClosed` is an option for B-spline functions and graphics primitives that specifies whether spline curves or surfaces should be closed.
 

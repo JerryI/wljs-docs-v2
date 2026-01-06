@@ -1,4 +1,6 @@
-# EmbeddedService
+---
+title: EmbeddedService
+---
 
 `EmbeddedService[service]` is an object that formats as a web frame containing content from the specified external service.
 

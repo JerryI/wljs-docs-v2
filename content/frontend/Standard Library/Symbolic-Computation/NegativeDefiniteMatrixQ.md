@@ -1,4 +1,6 @@
-# NegativeDefiniteMatrixQ
+---
+title: NegativeDefiniteMatrixQ
+---
 
 `NegativeDefiniteMatrixQ[m]` gives `True` if m is explicitly negative definite, and `False` otherwise.
 

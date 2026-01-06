@@ -1,4 +1,6 @@
-# SectorSpacing
+---
+title: SectorSpacing
+---
 
 `SectorSpacing` is an option to `PieChart` and related functions that specifies radial spacing of sectors.
 

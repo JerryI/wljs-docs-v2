@@ -1,4 +1,6 @@
-# FileTemplate
+---
+title: FileTemplate
+---
 
 `FileTemplate["file"]` yields a TemplateObject expression representing a file template to be applied using functions like `TemplateApply`.
 

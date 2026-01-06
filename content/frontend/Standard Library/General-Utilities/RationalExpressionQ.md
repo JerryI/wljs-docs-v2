@@ -1,4 +1,6 @@
-# RationalExpressionQ
+---
+title: RationalExpressionQ
+---
 
 `RationalExpressionQ[expr,x]` gives True if expr is structurally a rational expression in x, and False otherwise.
 

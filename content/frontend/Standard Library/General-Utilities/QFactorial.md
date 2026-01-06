@@ -1,4 +1,6 @@
-# QFactorial
+---
+title: QFactorial
+---
 
 `QFactorial[n, q]` gives the q-factorial [n]_q!.
 

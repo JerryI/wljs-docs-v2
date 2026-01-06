@@ -1,4 +1,6 @@
-# AutoloadPath
+---
+title: AutoloadPath
+---
 
 `AutoloadPath` is a global option that specifies from which directories packages are automatically loaded when the Wolfram System is started.
 

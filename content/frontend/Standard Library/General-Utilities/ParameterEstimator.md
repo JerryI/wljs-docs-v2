@@ -1,4 +1,6 @@
-# ParameterEstimator
+---
+title: ParameterEstimator
+---
 
 `ParameterEstimator` is an option to `EstimatedDistribution` and `FindDistributionParameters` that specifies what parameter estimator to use.
 

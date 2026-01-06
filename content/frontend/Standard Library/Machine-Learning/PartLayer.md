@@ -1,4 +1,6 @@
-# PartLayer
+---
+title: PartLayer
+---
 
 `PartLayer[i]` represents a net layer that gives the ith part of the input.
 

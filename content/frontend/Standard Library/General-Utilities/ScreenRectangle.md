@@ -1,4 +1,6 @@
-# ScreenRectangle
+---
+title: ScreenRectangle
+---
 
 `ScreenRectangle` is a global option that specifies the position of the primary screen by giving the coordinates of two diagonally opposite corners.
 

@@ -1,4 +1,6 @@
-# QuantityDistribution
+---
+title: QuantityDistribution
+---
 
 `QuantityDistribution[dist, unit]` represents a distribution dist of quantities with unit specified by unit.
 

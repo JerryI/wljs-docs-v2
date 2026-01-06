@@ -1,4 +1,6 @@
-# TimeSeriesMapThread
+---
+title: TimeSeriesMapThread
+---
 
 `TimeSeriesMapThread[f, tseries]` gives {{t1, f[t1, x1]}, {t2, f[t2, x2]}, …} for the time series tseries.
 

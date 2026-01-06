@@ -1,4 +1,6 @@
-# PadeApproximant
+---
+title: PadeApproximant
+---
 
 `PadeApproximant[expr,{x,x0,{m,n}}]` gives the Padé approximant to expr about the point x=x0, with numerator order m and denominator order n.
 

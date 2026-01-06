@@ -1,4 +1,6 @@
-# TargetFunctions
+---
+title: TargetFunctions
+---
 
 `TargetFunctions` is an option for functions such as `ComplexExpand` and `FindDistribution` that specifies what functions to attempt to generate in the output.
 

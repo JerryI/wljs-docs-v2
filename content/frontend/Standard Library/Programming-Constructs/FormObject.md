@@ -1,4 +1,6 @@
-# FormObject
+---
+title: FormObject
+---
 
 `FormObject[{name1->type1,name2->type2,…}]` represents a form with fields having names namei that take data of type typei.
 

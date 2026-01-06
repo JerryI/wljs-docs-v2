@@ -1,4 +1,6 @@
-# FromDigits
+---
+title: FromDigits
+---
 
 `FromDigits[list]` constructs an integer from the list of its decimal digits.
 

@@ -1,4 +1,6 @@
-# Interval
+---
+title: Interval
+---
 
 `Interval[{min, max}]` represents the range of values between min and max.
 

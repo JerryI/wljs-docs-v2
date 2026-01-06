@@ -1,4 +1,6 @@
-# DeclarePackage
+---
+title: DeclarePackage
+---
 
 `DeclarePackage["context`", {"name1", "name2", ...}]` declares that `Needs["context`"]` should automatically be executed if a symbol with any of the specified names is ever used.
 

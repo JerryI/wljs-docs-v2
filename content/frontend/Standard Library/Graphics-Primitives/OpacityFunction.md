@@ -1,4 +1,6 @@
-# OpacityFunction
+---
+title: OpacityFunction
+---
 
 `OpacityFunction` is an option for graphics functions that specifies a function to apply to determine opacity of elements.
 

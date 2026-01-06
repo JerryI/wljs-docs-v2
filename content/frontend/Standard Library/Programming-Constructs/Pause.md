@@ -1,4 +1,6 @@
-# Pause
+---
+title: Pause
+---
 
 `Pause[n]` pauses evaluation for at least n seconds.
 

@@ -1,4 +1,6 @@
-# HarmonicMean
+---
+title: HarmonicMean
+---
 
 `HarmonicMean[data]` gives the harmonic mean of the values in data.
 

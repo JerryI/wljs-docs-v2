@@ -1,4 +1,6 @@
-# Off
+---
+title: Off
+---
 
 `Off[symbol::tag]` switches off a message permanently so it is no longer printed.
 

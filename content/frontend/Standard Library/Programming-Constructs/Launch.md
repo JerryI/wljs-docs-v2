@@ -1,4 +1,6 @@
-# Launch
+---
+title: Launch
+---
 
 `Launch` is a setting for the `LinkMode` option of `LinkOpen` that causes a link to be created by launching another program.
 

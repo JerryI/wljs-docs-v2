@@ -1,4 +1,6 @@
-# SocketConnect
+---
+title: SocketConnect
+---
 
 `SocketConnect[address]` makes a socket connection to the TCP host at the specified address and returns a SocketObject representing the connection.
 

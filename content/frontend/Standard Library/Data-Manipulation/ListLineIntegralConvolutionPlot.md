@@ -1,4 +1,6 @@
-# ListLineIntegralConvolutionPlot
+---
+title: ListLineIntegralConvolutionPlot
+---
 
 `ListLineIntegralConvolutionPlot[{array, image}]` generates a line integral convolution plot of image convolved with the vector field defined by an array of vector field values.
 

@@ -1,4 +1,6 @@
-# RandomPermutation
+---
+title: RandomPermutation
+---
 
 `RandomPermutation[n]` gives a pseudorandom permutation of length n.
 

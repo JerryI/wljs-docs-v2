@@ -1,4 +1,6 @@
-# Moment
+---
+title: Moment
+---
 
 `Moment[data, r]` gives the order r moment μ_r of data.
 

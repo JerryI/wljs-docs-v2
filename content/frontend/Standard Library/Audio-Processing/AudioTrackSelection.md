@@ -1,4 +1,6 @@
-# AudioTrackSelection
+---
+title: AudioTrackSelection
+---
 
 `AudioTrackSelection` is an option that specifies the audio tracks of interest.
 

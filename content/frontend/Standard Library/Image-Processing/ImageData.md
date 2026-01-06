@@ -1,4 +1,6 @@
-# ImageData
+---
+title: ImageData
+---
 
 `ImageData[image]` gives the array of pixel values in an Image object.
 

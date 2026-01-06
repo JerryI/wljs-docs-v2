@@ -1,4 +1,6 @@
-# LeftUpTeeVector
+---
+title: LeftUpTeeVector
+---
 
 `LeftUpTeeVector[x, y, ...]` displays as x⥠y⥠....
 

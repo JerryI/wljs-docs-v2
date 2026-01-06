@@ -1,4 +1,6 @@
-# BesselY
+---
+title: BesselY
+---
 
 `BesselY[n, z]` gives the Bessel function of the second kind Y_n(z), also called the Neumann function.
 

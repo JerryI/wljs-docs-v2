@@ -1,4 +1,6 @@
-# GreaterEqualLess
+---
+title: GreaterEqualLess
+---
 
 `GreaterEqualLess[x, y, …]` displays as x⋛y⋛….
 

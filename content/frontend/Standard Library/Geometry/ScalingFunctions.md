@@ -1,4 +1,6 @@
-# ScalingFunctions
+---
+title: ScalingFunctions
+---
 
 `ScalingFunctions` is an option for `ListPlot`, `BarChart`, `Histogram`, and other plotting functions that specifies what scaling functions should be used.
 

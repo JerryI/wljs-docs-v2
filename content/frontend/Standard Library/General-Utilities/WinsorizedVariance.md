@@ -1,4 +1,6 @@
-# WinsorizedVariance
+---
+title: WinsorizedVariance
+---
 
 `WinsorizedVariance[list, f]` gives the variance of the elements in list after replacing the fraction f of the smallest and largest elements by the remaining extreme values.
 

@@ -1,4 +1,6 @@
-# RightDownVector
+---
+title: RightDownVector
+---
 
 `RightDownVector[x, y, ...]` displays as x⇂y⇂….
 

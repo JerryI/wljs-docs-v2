@@ -1,4 +1,6 @@
-# ChartStyle
+---
+title: ChartStyle
+---
 
 `ChartStyle` is an option for charting functions that specifies styles in which chart elements should be drawn.
 

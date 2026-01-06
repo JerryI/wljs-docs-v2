@@ -1,4 +1,6 @@
-# Generic
+---
+title: Generic
+---
 
 `Generic` is a setting for the Mode option of Solve and related functions.
 

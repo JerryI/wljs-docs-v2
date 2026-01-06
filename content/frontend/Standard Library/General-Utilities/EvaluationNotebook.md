@@ -1,4 +1,6 @@
-# EvaluationNotebook
+---
+title: EvaluationNotebook
+---
 
 `EvaluationNotebook[]` gives the notebook in which this function is being evaluated.
 

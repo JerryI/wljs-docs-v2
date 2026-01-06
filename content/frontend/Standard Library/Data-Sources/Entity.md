@@ -1,4 +1,6 @@
-# Entity
+---
+title: Entity
+---
 
 `Entity["type", name]` represents a real-world entity (country, chemical, star, etc.) from Wolfram's curated data.
 

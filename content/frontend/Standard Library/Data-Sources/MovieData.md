@@ -1,4 +1,6 @@
-# MovieData
+---
+title: MovieData
+---
 
 `MovieData[entity, property]` gives the value of the specified *property* for the movie *entity*.
 

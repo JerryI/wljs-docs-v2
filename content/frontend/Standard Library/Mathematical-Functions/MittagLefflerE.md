@@ -1,4 +1,6 @@
-# MittagLefflerE
+---
+title: MittagLefflerE
+---
 
 `MittagLefflerE[α, z]` gives the Mittag–Leffler function $E_α(z)$.
 

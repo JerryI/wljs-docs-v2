@@ -1,4 +1,6 @@
-# VandermondeMatrix
+---
+title: VandermondeMatrix
+---
 
 `VandermondeMatrix[{x1, x2, ..., xn}]` gives an n×n Vandermonde matrix corresponding to the nodes xi.
 

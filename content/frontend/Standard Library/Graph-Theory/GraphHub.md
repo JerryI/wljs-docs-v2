@@ -1,4 +1,6 @@
-# GraphHub
+---
+title: GraphHub
+---
 
 `GraphHub[g]` gives the set of vertices with maximum vertex degree in the underlying simple graph of `g`.
 

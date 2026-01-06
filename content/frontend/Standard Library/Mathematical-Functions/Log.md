@@ -1,4 +1,6 @@
-# Log
+---
+title: Log
+---
 
 `Log[z]` gives the natural logarithm of z (logarithm to base e).
 

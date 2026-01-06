@@ -1,4 +1,6 @@
-# TensorRank
+---
+title: TensorRank
+---
 
 `TensorRank[tensor]` gives the rank of a tensor.
 

@@ -1,4 +1,6 @@
-# FindChannels
+---
+title: FindChannels
+---
 
 `FindChannels[]` gives a list of channels in your home area on the channel broker server.
 

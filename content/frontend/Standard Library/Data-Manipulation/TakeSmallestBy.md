@@ -1,4 +1,6 @@
-# TakeSmallestBy
+---
+title: TakeSmallestBy
+---
 
 `TakeSmallestBy[data,f,n]` gives the n elements ei in data for which f[ei] is smallest, sorted in ascending order.
 

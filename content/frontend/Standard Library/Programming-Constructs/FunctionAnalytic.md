@@ -1,4 +1,6 @@
-# FunctionAnalytic
+---
+title: FunctionAnalytic
+---
 
 `FunctionAnalytic[f, x]` tests whether f(x) is an analytic function for x ∈ Reals.
 

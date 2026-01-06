@@ -1,4 +1,6 @@
-# JohnsonDistribution
+---
+title: JohnsonDistribution
+---
 
 `JohnsonDistribution["SB", γ, δ, μ, σ]` represents a bounded Johnson distribution with shape parameters *γ*, *δ*, location parameter *μ*, and scale parameter *σ*.
 

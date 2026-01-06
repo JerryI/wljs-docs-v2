@@ -1,4 +1,6 @@
-# RandomGraph
+---
+title: RandomGraph
+---
 
 `RandomGraph[{n,m}]` gives a pseudorandom graph with n vertices and m edges.
 

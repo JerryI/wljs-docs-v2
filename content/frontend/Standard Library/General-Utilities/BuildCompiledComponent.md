@@ -1,4 +1,6 @@
-# BuildCompiledComponent
+---
+title: BuildCompiledComponent
+---
 
 `BuildCompiledComponent[comp]` builds the compiled component comp.
 

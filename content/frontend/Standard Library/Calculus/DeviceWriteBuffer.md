@@ -1,4 +1,6 @@
-# DeviceWriteBuffer
+---
+title: DeviceWriteBuffer
+---
 
 `DeviceWriteBuffer[device, vals]` fills the buffer on a device with the values vals.
 

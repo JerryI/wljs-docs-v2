@@ -1,4 +1,6 @@
-# Delayed
+---
+title: Delayed
+---
 
 `Delayed[expr]` represents an expression whose evaluation is delayed until its value is externally requested.
 

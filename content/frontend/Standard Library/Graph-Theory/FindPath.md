@@ -1,4 +1,6 @@
-# FindPath
+---
+title: FindPath
+---
 
 `FindPath[g, s, t]` finds a path between vertices s and t in graph g. `FindPath[g, s, t, k, n]` finds up to n paths of length at most k.
 

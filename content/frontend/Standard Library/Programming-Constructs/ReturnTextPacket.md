@@ -1,4 +1,6 @@
-# ReturnTextPacket
+---
+title: ReturnTextPacket
+---
 
 `ReturnTextPacket[string]` is a WSTP packet containing string, the result of an `EnterTextPacket` evaluation.
 

@@ -1,4 +1,6 @@
-# InverseContinuousWaveletTransform
+---
+title: InverseContinuousWaveletTransform
+---
 
 `InverseContinuousWaveletTransform[cwd]` gives the inverse continuous wavelet transform of a `ContinuousWaveletData` object cwd.
 

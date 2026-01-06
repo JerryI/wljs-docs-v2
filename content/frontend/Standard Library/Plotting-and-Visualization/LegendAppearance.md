@@ -1,4 +1,6 @@
-# LegendAppearance
+---
+title: LegendAppearance
+---
 
 `LegendAppearance` is an option for charting functions that specifies the appearance of any legends that are generated.
 

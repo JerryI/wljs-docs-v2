@@ -1,4 +1,6 @@
-# PrimitiveRootList
+---
+title: PrimitiveRootList
+---
 
 `PrimitiveRootList[n]` gives a list of primitive roots of n.
 

@@ -1,4 +1,6 @@
-# WindowTitle
+---
+title: WindowTitle
+---
 
 `WindowTitle` is an option that specifies the title to give for a window.
 

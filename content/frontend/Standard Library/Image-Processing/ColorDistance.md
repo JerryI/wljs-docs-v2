@@ -1,4 +1,6 @@
-# ColorDistance
+---
+title: ColorDistance
+---
 
 `ColorDistance[c1, c2]` gives the approximate perceptual distance between color directives c1 and c2.
 

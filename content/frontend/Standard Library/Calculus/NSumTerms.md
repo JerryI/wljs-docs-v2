@@ -1,4 +1,6 @@
-# NSumTerms
+---
+title: NSumTerms
+---
 
 `NSumTerms` is an option for `NSum`. `NSumTerms -> n` explicitly includes n terms in the sum before extrapolation.
 

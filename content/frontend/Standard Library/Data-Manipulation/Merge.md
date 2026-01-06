@@ -1,4 +1,6 @@
-# Merge
+---
+title: Merge
+---
 
 `Merge[{assoc1, assoc2, ...}, f]` merges associations, using `f` to combine values with the same key.
 

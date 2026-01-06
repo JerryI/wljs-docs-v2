@@ -1,4 +1,6 @@
-# WeightedData
+---
+title: WeightedData
+---
 
 `WeightedData[{x1, x2, ...}, {w1, w2, ...}]` represents observations xi with weights wi.
 

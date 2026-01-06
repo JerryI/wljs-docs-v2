@@ -1,4 +1,6 @@
-# ListVectorPlot3D
+---
+title: ListVectorPlot3D
+---
 
 `ListVectorPlot3D[varr]` generates a 3D vector plot from a 3D array of vector field values.
 

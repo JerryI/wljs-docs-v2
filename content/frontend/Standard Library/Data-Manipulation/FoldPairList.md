@@ -1,4 +1,6 @@
-# FoldPairList
+---
+title: FoldPairList
+---
 
 `FoldPairList[f, y0, {a1, a2, ...}]` gives the list of successive xi obtained by applying f to pairs, where f returns `{xi, yi}` at each step.
 

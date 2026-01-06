@@ -1,4 +1,6 @@
-# AudioLabel
+---
+title: AudioLabel
+---
 
 `AudioLabel` is an option for an `Audio` object that specifies the label to show on the object.
 

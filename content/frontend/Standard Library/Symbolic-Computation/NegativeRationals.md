@@ -1,4 +1,6 @@
-# NegativeRationals
+---
+title: NegativeRationals
+---
 
 `NegativeRationals` represents the domain of strictly negative rational numbers, as in x∈NegativeRationals.
 

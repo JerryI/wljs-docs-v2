@@ -1,4 +1,6 @@
-# LLMEvaluator
+---
+title: LLMEvaluator
+---
 
 `LLMEvaluator` is an option for functions such as `LLMSynthesize` that specifies the LLM configuration.
 

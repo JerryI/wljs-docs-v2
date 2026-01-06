@@ -1,4 +1,6 @@
-# NetInsert
+---
+title: NetInsert
+---
 
 `NetInsert[chain, layer, i]` inserts a layer into a NetChain before the layer at position i.
 

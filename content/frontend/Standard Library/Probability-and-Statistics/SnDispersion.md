@@ -1,4 +1,6 @@
-# SnDispersion
+---
+title: SnDispersion
+---
 
 `SnDispersion[list]` gives the Sn statistic of the elements in list.
 

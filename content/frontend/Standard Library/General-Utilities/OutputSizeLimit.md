@@ -1,4 +1,6 @@
-# OutputSizeLimit
+---
+title: OutputSizeLimit
+---
 
 `OutputSizeLimit` is an option for notebooks that specifies the maximum size in bytes of expressions that will automatically be output in their entirety.
 

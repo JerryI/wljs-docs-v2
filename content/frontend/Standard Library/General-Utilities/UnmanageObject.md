@@ -1,4 +1,6 @@
-# UnmanageObject
+---
+title: UnmanageObject
+---
 
 `UnmanageObject[man]` takes ownership of memory wrapped in a managed object.
 

@@ -1,4 +1,6 @@
-# TimeSeriesWindow
+---
+title: TimeSeriesWindow
+---
 
 `TimeSeriesWindow[tseries,{tmin,tmax}]` gives the elements of the time series tseries that fall between tmin and tmax.
 

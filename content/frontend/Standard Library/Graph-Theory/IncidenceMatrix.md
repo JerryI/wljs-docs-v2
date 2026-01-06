@@ -1,4 +1,6 @@
-# IncidenceMatrix
+---
+title: IncidenceMatrix
+---
 
 `IncidenceMatrix[g]` gives the vertex-edge incidence matrix of the graph g.
 

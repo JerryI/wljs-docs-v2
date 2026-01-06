@@ -1,4 +1,6 @@
-# Gather
+---
+title: Gather
+---
 
 `Gather[list]` gathers the elements of list into sublists of identical elements.
 

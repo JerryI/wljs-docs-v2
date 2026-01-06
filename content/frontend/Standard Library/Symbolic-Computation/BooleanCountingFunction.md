@@ -1,4 +1,6 @@
-# BooleanCountingFunction
+---
+title: BooleanCountingFunction
+---
 
 `BooleanCountingFunction[kmax, n]` represents a Boolean function of n variables that gives True if at most kmax variables are True.
 

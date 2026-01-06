@@ -1,4 +1,6 @@
-# HelpBrowserSettings
+---
+title: HelpBrowserSettings
+---
 
 `HelpBrowserSettings` is a global option that specifies settings for the legacy Help Browser.
 

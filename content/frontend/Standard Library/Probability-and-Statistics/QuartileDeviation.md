@@ -1,4 +1,6 @@
-# QuartileDeviation
+---
+title: QuartileDeviation
+---
 
 `QuartileDeviation[data]` gives the quartile deviation or semi-interquartile range of the elements in data.
 

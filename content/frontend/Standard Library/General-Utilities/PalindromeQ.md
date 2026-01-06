@@ -1,4 +1,6 @@
-# PalindromeQ
+---
+title: PalindromeQ
+---
 
 `PalindromeQ[list]` returns True if the given list is identical to Reverse[list], and False otherwise.
 

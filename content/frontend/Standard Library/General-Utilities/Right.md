@@ -1,4 +1,6 @@
-# Right
+---
+title: Right
+---
 
 `Right` is a symbol that represents the right-hand side for purposes of alignment and positioning.
 

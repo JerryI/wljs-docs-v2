@@ -1,4 +1,6 @@
-# MomentGeneratingFunction
+---
+title: MomentGeneratingFunction
+---
 
 `MomentGeneratingFunction[dist, t]` gives the moment-generating function for the distribution dist as a function of the variable t.
 

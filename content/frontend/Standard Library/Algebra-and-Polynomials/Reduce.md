@@ -1,4 +1,6 @@
-# Reduce
+---
+title: Reduce
+---
 
 `Reduce[expr, vars]` reduces the statement expr by solving equations or inequalities for vars.
 

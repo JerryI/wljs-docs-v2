@@ -1,4 +1,6 @@
-# AudioNormalize
+---
+title: AudioNormalize
+---
 
 `AudioNormalize[audio]` normalizes audio so that the maximum absolute value of its samples is 1.
 

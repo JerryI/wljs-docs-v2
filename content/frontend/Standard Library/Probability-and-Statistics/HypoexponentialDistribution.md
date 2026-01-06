@@ -1,4 +1,6 @@
-# HypoexponentialDistribution
+---
+title: HypoexponentialDistribution
+---
 
 `HypoexponentialDistribution[{λ1,…,λm}]` represents an m-phase hypoexponential distribution with rates λ1, …, λm.
 

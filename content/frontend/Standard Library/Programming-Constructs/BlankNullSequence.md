@@ -1,4 +1,6 @@
-# BlankNullSequence
+---
+title: BlankNullSequence
+---
 
 `___` (three underscores) or `BlankNullSequence[]` is a pattern that can stand for any sequence of zero or more expressions.
 

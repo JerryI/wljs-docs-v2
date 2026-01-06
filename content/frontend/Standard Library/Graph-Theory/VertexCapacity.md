@@ -1,4 +1,6 @@
-# VertexCapacity
+---
+title: VertexCapacity
+---
 
 `VertexCapacity` is an option and annotation for `Graph` and related functions that specifies a vertex capacity.
 

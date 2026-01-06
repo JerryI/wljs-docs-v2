@@ -1,4 +1,6 @@
-# FourierDCT
+---
+title: FourierDCT
+---
 
 `FourierDCT[list]` finds the Fourier discrete cosine transform of a list of real numbers.
 

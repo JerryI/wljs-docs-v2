@@ -1,4 +1,6 @@
-# ButterworthFilterModel
+---
+title: ButterworthFilterModel
+---
 
 `ButterworthFilterModel[n]` creates a lowpass Butterworth filter of order n and cutoff frequency of 1.
 

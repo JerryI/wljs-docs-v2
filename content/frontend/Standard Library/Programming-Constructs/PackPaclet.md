@@ -1,4 +1,6 @@
-# PackPaclet
+---
+title: PackPaclet
+---
 
 The experimental function `PackPaclet` is now obsolete and is superseded by `CreatePacletArchive`.
 

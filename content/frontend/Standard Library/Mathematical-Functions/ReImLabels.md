@@ -1,4 +1,6 @@
-# ReImLabels
+---
+title: ReImLabels
+---
 
 `ReImLabels` is an option for `ReImPlot` that specifies labels to use for the real and imaginary components.
 

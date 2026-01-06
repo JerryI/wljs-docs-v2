@@ -1,4 +1,6 @@
-# AsymptoticOutputTracker
+---
+title: AsymptoticOutputTracker
+---
 
 `AsymptoticOutputTracker[sys, {f1, ...}, {p1, ...}]` gives the state feedback control law that causes the outputs of the affine system sys to track the reference signals fi with decay rates pj.
 

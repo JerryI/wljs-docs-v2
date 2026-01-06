@@ -1,4 +1,6 @@
-# NetMapThreadOperator
+---
+title: NetMapThreadOperator
+---
 
 `NetMapThreadOperator[mapnet]` represents a net in which mapnet is mapped over one or more inputs to give one or more outputs.
 

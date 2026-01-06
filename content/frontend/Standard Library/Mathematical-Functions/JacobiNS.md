@@ -1,4 +1,6 @@
-# JacobiNS
+---
+title: JacobiNS
+---
 
 `JacobiNS[u, m]` gives the Jacobi elliptic function ns(u|m).
 

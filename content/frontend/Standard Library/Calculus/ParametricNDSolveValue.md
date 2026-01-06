@@ -1,4 +1,6 @@
-# ParametricNDSolveValue
+---
+title: ParametricNDSolveValue
+---
 
 `ParametricNDSolveValue[eqns,expr,{x,xmin,xmax},pars]` gives the value of expr with functions determined by a numerical solution to the ordinary differential equations eqns with the independent variable x in the range xmin to xmax with parameters pars.
 

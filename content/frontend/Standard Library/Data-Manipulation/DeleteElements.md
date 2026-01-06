@@ -1,4 +1,6 @@
-# DeleteElements
+---
+title: DeleteElements
+---
 
 `DeleteElements[list, {e1, e2, ...}]` removes all instances of elements ei from list.
 

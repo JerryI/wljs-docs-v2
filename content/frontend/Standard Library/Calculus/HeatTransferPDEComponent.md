@@ -1,4 +1,6 @@
-# HeatTransferPDEComponent
+---
+title: HeatTransferPDEComponent
+---
 
 `HeatTransferPDEComponent[vars,pars]` yields a heat transfer PDE term with variables vars and parameters pars.
 

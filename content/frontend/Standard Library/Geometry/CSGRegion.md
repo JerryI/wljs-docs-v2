@@ -1,4 +1,6 @@
-# CSGRegion
+---
+title: CSGRegion
+---
 
 `CSGRegion[{reg1,reg2,…}]` represents the solid region corresponding to the union of solid regions reg1,reg2,….
 

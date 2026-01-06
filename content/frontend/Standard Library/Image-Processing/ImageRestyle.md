@@ -1,4 +1,6 @@
-# ImageRestyle
+---
+title: ImageRestyle
+---
 
 `ImageRestyle[image, sample]` attempts to restyle image so as to follow the graphical style of sample.
 

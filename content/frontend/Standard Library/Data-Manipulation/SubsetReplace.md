@@ -1,4 +1,6 @@
-# SubsetReplace
+---
+title: SubsetReplace
+---
 
 `SubsetReplace[list, rules]` replaces sublists in list according to the specified rule or list of rules.
 

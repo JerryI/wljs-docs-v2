@@ -1,4 +1,6 @@
-# AudioChannelCombine
+---
+title: AudioChannelCombine
+---
 
 `AudioChannelCombine[{audio1, audio2, ...}]` creates a multichannel audio object by combining the sequence of channels in audioi.
 

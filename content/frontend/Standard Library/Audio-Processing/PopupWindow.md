@@ -1,4 +1,6 @@
-# PopupWindow
+---
+title: PopupWindow
+---
 
 `PopupWindow[expr, contents]` displays as expr, but pops up a window containing contents when clicked.
 

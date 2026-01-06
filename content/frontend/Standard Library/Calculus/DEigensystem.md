@@ -1,4 +1,6 @@
-# DEigensystem
+---
+title: DEigensystem
+---
 
 `DEigensystem[ℒ[u[x, y, ...]], u, {x, y, ...} ∈ Ω, n]` gives the n smallest magnitude eigenvalues and eigenfunctions for the linear differential operator ℒ over the region Ω.
 

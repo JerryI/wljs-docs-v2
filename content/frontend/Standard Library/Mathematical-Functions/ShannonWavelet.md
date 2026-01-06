@@ -1,4 +1,6 @@
-# ShannonWavelet
+---
+title: ShannonWavelet
+---
 
 `ShannonWavelet[]` represents the Shannon wavelet evaluated on the equally spaced interval {-10, 10}.
 

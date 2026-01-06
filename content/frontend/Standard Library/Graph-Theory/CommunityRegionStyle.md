@@ -1,4 +1,6 @@
-# CommunityRegionStyle
+---
+title: CommunityRegionStyle
+---
 
 `CommunityRegionStyle` is an option to `CommunityGraphPlot` that specifies how to style community regions.
 

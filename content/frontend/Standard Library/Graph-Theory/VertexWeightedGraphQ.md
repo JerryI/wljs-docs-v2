@@ -1,4 +1,6 @@
-# VertexWeightedGraphQ
+---
+title: VertexWeightedGraphQ
+---
 
 `VertexWeightedGraphQ[g]` yields `True` if the graph g is a vertex-weighted graph, and `False` otherwise.
 

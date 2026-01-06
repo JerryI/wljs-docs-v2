@@ -1,4 +1,6 @@
-# RotationMatrix
+---
+title: RotationMatrix
+---
 
 `RotationMatrix[θ]` gives the 2D rotation matrix that rotates 2D vectors counterclockwise by θ radians.
 

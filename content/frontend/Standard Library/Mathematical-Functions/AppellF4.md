@@ -1,4 +1,6 @@
-# AppellF4
+---
+title: AppellF4
+---
 
 `AppellF4[a, b, c1, c2, x, y]` is the Appell hypergeometric function of two variables F4(a; b; c1, c2; x, y).
 

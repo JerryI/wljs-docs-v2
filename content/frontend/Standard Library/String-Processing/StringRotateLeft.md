@@ -1,4 +1,6 @@
-# StringRotateLeft
+---
+title: StringRotateLeft
+---
 
 `StringRotateLeft[string,n]` cycles the characters in string n positions to the left.
 

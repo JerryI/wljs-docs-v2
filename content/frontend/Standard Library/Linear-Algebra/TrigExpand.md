@@ -1,4 +1,6 @@
-# TrigExpand
+---
+title: TrigExpand
+---
 
 `TrigExpand[expr]` expands out trigonometric functions in expr.
 

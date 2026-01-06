@@ -1,4 +1,6 @@
-# ListContourPlot3D
+---
+title: ListContourPlot3D
+---
 
 `ListContourPlot3D[array]` generates a 3D contour plot from a 3D array of values.
 

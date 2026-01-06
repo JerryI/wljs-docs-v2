@@ -1,4 +1,6 @@
-# FeatureValueDependencyPlot
+---
+title: FeatureValueDependencyPlot
+---
 
 `FeatureValueDependencyPlot[model,data]` plots the dependency of the result of model on the value of a particular feature in data.
 

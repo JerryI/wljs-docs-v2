@@ -1,4 +1,6 @@
-# MortalityData
+---
+title: MortalityData
+---
 
 `MortalityData[spec]` gives the values of all properties for the specified demographic.
 

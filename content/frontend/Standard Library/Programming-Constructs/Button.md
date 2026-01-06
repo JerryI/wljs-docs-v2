@@ -1,4 +1,6 @@
-# Button
+---
+title: Button
+---
 
 `Button[label, action]` represents a button labeled with `label` that evaluates `action` when clicked.
 

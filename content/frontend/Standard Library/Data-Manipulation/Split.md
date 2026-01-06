@@ -1,4 +1,6 @@
-# Split
+---
+title: Split
+---
 
 `Split[list]` splits list into sublists consisting of runs of identical elements.
 

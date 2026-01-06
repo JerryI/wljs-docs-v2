@@ -1,4 +1,6 @@
-# Bond
+---
+title: Bond
+---
 
 `Bond[{idi, idj}, type]` represents a chemical bond between atoms with indices idi and idj of the specified type.
 

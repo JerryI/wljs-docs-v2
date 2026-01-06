@@ -1,4 +1,6 @@
-# ImageContainsQ
+---
+title: ImageContainsQ
+---
 
 `ImageContainsQ[image, category]` returns `True` if an instance of the specified category is detected in image.
 

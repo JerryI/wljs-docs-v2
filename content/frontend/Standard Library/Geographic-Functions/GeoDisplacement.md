@@ -1,4 +1,6 @@
-# GeoDisplacement
+---
+title: GeoDisplacement
+---
 
 `GeoDisplacement[{dist, α}]` represents a geodesic displacement of length `dist` and initial bearing `α` from a geo location.
 

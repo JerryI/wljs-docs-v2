@@ -1,4 +1,6 @@
-# AnglePath3D
+---
+title: AnglePath3D
+---
 
 `AnglePath3D[{{α1, β1, γ1}, {α2, β2, γ2}, ...}]` gives the list of 3D coordinates of a path of an object that starts at {0,0,0}, then takes a series of steps of unit length, each in the direction obtained after successive rotation by the Euler angles αi, βi, γi.
 

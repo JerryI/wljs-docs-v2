@@ -1,4 +1,6 @@
-# LibraryDataType
+---
+title: LibraryDataType
+---
 
 `LibraryDataType[datatype]` specifies the data type for a LibraryFunction argument or result to be datatype.
 

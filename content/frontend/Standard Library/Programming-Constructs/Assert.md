@@ -1,4 +1,6 @@
-# Assert
+---
+title: Assert
+---
 
 `Assert[test]` represents the assertion that test is `True`. If assertions are enabled and test is not `True`, an assertion failure is generated.
 

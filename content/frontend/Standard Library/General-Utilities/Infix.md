@@ -1,4 +1,6 @@
-# Infix
+---
+title: Infix
+---
 
 `Infix[f[e1, e2, ...]]` prints with f in default infix form: e1~f~e2~f~e3....
 

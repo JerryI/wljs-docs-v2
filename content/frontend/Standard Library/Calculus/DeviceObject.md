@@ -1,4 +1,6 @@
-# DeviceObject
+---
+title: DeviceObject
+---
 
 `DeviceObject[...]` represents a device that can be accessed in a Wolfram Language session.
 

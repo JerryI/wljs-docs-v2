@@ -1,4 +1,6 @@
-# SquareSubset
+---
+title: SquareSubset
+---
 
 `SquareSubset[x, y, …]` displays as x⊏y⊏….
 

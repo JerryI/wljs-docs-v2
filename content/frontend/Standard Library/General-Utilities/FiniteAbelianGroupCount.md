@@ -1,4 +1,6 @@
-# FiniteAbelianGroupCount
+---
+title: FiniteAbelianGroupCount
+---
 
 `FiniteAbelianGroupCount[n]` gives the number of finite Abelian groups of order n.
 

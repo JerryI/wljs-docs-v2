@@ -1,4 +1,6 @@
-# Asynchronous
+---
+title: Asynchronous
+---
 
 `Asynchronous` is an option for `WolframAlpha` that determines whether to use the asynchronous features of the Wolfram|Alpha API.
 

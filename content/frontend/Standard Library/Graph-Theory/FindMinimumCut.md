@@ -1,4 +1,6 @@
-# FindMinimumCut
+---
+title: FindMinimumCut
+---
 
 `FindMinimumCut[g]` gives the minimum cut of the graph g.
 

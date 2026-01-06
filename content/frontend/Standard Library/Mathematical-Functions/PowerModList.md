@@ -1,4 +1,6 @@
-# PowerModList
+---
+title: PowerModList
+---
 
 `PowerModList[a, s/r, m]` gives a list of all x modulo m for which x^r ≡ a^s mod m.
 

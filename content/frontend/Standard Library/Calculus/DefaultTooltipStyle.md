@@ -1,4 +1,6 @@
-# DefaultTooltipStyle
+---
+title: DefaultTooltipStyle
+---
 
 `DefaultTooltipStyle` is a low-level option for tooltips that specifies the default style to use in displaying their elements.
 

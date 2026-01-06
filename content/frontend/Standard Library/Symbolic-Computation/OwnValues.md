@@ -1,4 +1,6 @@
-# OwnValues
+---
+title: OwnValues
+---
 
 `OwnValues[x]` gives a list of transformation rules corresponding to all ownvalues (direct values) defined for the symbol x.
 

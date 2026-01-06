@@ -1,4 +1,6 @@
-# PreserveColor
+---
+title: PreserveColor
+---
 
 `PreserveColor` is an option for `ImageRestyle` and related functions that specifies whether to preserve colors in the original image.
 

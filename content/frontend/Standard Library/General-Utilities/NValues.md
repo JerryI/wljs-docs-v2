@@ -1,4 +1,6 @@
-# NValues
+---
+title: NValues
+---
 
 `NValues[f]` gives a list of transformation rules corresponding to all numerical values (values for `N[f[x,…],…]`, etc.) defined for the symbol f.
 

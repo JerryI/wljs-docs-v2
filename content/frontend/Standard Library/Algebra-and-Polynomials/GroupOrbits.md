@@ -1,4 +1,6 @@
-# GroupOrbits
+---
+title: GroupOrbits
+---
 
 `GroupOrbits[group, {p1, …}]` returns the orbits of the points `pi` under the action of the elements of `group`.
 

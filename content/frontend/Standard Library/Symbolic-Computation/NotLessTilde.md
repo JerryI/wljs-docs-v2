@@ -1,4 +1,6 @@
-# NotLessTilde
+---
+title: NotLessTilde
+---
 
 `NotLessTilde[x, y, ...]` displays as x≴y≴....
 

@@ -1,4 +1,6 @@
-# JuliaSetBoettcher
+---
+title: JuliaSetBoettcher
+---
 
 `JuliaSetBoettcher[c, z]` gives the Böttcher coordinate of z with respect to the quadratic Julia set Jc.
 

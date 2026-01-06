@@ -1,4 +1,6 @@
-# ListLinePlot3D
+---
+title: ListLinePlot3D
+---
 
 `ListLinePlot3D[{{x1, y1, z1}, {x2, y2, z2}, ..., {xn, yn, zn}}]` plots a curve through the 3D points {x_i, y_i, z_i}.
 

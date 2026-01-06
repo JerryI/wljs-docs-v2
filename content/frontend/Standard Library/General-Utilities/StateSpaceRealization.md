@@ -1,4 +1,6 @@
-# StateSpaceRealization
+---
+title: StateSpaceRealization
+---
 
 `StateSpaceRealization` is an option to `StateSpaceModel` that specifies its canonical representation.
 

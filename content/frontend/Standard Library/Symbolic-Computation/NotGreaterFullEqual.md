@@ -1,4 +1,6 @@
-# NotGreaterFullEqual
+---
+title: NotGreaterFullEqual
+---
 
 `NotGreaterFullEqual[x, y, ...]` displays as x≩y≩....
 

@@ -1,4 +1,6 @@
-# TracyWidomDistribution
+---
+title: TracyWidomDistribution
+---
 
 `TracyWidomDistribution[β]` represents a Tracy–Widom distribution with Dyson index β.
 

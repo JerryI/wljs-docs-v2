@@ -1,4 +1,6 @@
-# InputString
+---
+title: InputString
+---
 
 `InputString[]` interactively reads in a character string.
 

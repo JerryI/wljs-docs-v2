@@ -1,4 +1,6 @@
-# MeshCellLabel
+---
+title: MeshCellLabel
+---
 
 `MeshCellLabel` is an option to `MeshRegion`, `BoundaryMeshRegion` and related functions that specifies labels and placements for mesh cells.
 

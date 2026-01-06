@@ -1,4 +1,6 @@
-# VideoIntervals
+---
+title: VideoIntervals
+---
 
 `VideoIntervals[video, crit]` returns time intervals of video for which the criterion crit is satisfied.
 

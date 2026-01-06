@@ -1,4 +1,6 @@
-# AffineStateSpaceModel
+---
+title: AffineStateSpaceModel
+---
 
 `AffineStateSpaceModel[{a, b, c, d}, x]` represents the affine state-space model x'(t) = a(x(t)) + b(x(t)).u(t), y(t) = c(x(t)) + d(x(t)).u(t).
 

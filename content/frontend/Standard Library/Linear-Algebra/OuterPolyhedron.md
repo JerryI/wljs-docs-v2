@@ -1,4 +1,6 @@
-# OuterPolyhedron
+---
+title: OuterPolyhedron
+---
 
 `OuterPolyhedron[poly]` gives the outer polyhedron of the polyhedron poly.
 

@@ -1,4 +1,6 @@
-# GeoBoundsRegion
+---
+title: GeoBoundsRegion
+---
 
 `GeoBoundsRegion[{{latmin, latmax}, {lonmin, lonmax}}]` is a two-dimensional `GeoGraphics` primitive that represents a geo region bounded by parallels `latmin`, `latmax` and meridians `lonmin`, `lonmax` on the surface of the Earth.
 

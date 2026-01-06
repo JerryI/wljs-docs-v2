@@ -1,4 +1,6 @@
-# OneIdentity
+---
+title: OneIdentity
+---
 
 `OneIdentity` is an attribute that can be assigned to a symbol f to indicate that f[x], f[f[x]], etc. are all equivalent to x for the purpose of pattern matching.
 

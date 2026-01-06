@@ -1,4 +1,6 @@
-# GraphTriangleCount
+---
+title: GraphTriangleCount
+---
 
 `GraphTriangleCount[g]` gives the number of triangles in the graph `g`.
 

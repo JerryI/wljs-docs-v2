@@ -1,4 +1,6 @@
-# NotSuperset
+---
+title: NotSuperset
+---
 
 `NotSuperset[x, y, ...]` displays as x⊅y⊅....
 

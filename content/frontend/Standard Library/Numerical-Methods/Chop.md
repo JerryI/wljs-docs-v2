@@ -1,4 +1,6 @@
-# Chop
+---
+title: Chop
+---
 
 `Chop[expr]` replaces approximate real numbers in expr that are close to zero by the exact integer 0.
 

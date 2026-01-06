@@ -1,4 +1,6 @@
-# LayeredGraph3D
+---
+title: LayeredGraph3D
+---
 
 `LayeredGraph3D[g]` creates a graph with vertices and edges from the graph `g` represented as a 3D layered plot.
 

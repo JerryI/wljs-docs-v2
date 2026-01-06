@@ -1,4 +1,6 @@
-# SubtractFrom
+---
+title: SubtractFrom
+---
 
 `x -= dx` subtracts dx from x and returns the new value of x.
 

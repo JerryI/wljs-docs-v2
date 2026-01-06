@@ -1,4 +1,6 @@
-# PacletUpdate
+---
+title: PacletUpdate
+---
 
 The experimental function `PacletUpdate` is now obsolete and is superseded by `PacletInstall`.
 

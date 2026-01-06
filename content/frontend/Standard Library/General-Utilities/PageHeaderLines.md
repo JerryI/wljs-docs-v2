@@ -1,4 +1,6 @@
-# PageHeaderLines
+---
+title: PageHeaderLines
+---
 
 `PageHeaderLines` is an option for notebooks that specifies whether a horizontal line is inserted at the top of each page when the notebook is printed.
 

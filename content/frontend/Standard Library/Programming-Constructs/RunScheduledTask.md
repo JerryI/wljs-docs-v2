@@ -1,4 +1,6 @@
-# RunScheduledTask
+---
+title: RunScheduledTask
+---
 
 `RunScheduledTask[expr]` schedules and starts a local scheduled task that will repeatedly evaluate expr once per second.
 

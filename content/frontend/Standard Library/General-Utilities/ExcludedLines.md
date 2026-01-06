@@ -1,4 +1,6 @@
-# ExcludedLines
+---
+title: ExcludedLines
+---
 
 `ExcludedLines` is an option for `SemanticImport` and related functions that specifies which lines should be ignored for further processing.
 

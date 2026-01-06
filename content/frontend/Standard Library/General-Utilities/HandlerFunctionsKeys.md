@@ -1,4 +1,6 @@
-# HandlerFunctionsKeys
+---
+title: HandlerFunctionsKeys
+---
 
 `HandlerFunctionsKeys` is an option that specifies the content of associations to which to apply handler functions.
 

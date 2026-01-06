@@ -1,4 +1,6 @@
-# DiceDissimilarity
+---
+title: DiceDissimilarity
+---
 
 `DiceDissimilarity[x,y]` gives the Dice dissimilarity between Boolean vectors x and y.
 

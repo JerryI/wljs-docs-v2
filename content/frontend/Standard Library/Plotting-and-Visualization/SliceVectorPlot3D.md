@@ -1,4 +1,6 @@
-# SliceVectorPlot3D
+---
+title: SliceVectorPlot3D
+---
 
 `SliceVectorPlot3D[{vx, vy, vz}, surf, {x, xmin, xmax}, {y, ymin, ymax}, {z, zmin, zmax}]` generates a vector plot of the field {vx, vy, vz} over the slice surface surf.
 

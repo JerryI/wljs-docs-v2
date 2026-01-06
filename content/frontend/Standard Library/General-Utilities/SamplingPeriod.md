@@ -1,4 +1,6 @@
-# SamplingPeriod
+---
+title: SamplingPeriod
+---
 
 `SamplingPeriod` is an option to `StateSpaceModel` etc. that specifies the sampling period.
 

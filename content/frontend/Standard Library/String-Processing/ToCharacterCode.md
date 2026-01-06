@@ -1,4 +1,6 @@
-# ToCharacterCode
+---
+title: ToCharacterCode
+---
 
 `ToCharacterCode["string"]` gives a list of the integer codes corresponding to the characters in a string.
 

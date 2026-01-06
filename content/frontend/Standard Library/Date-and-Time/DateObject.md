@@ -1,4 +1,6 @@
-# DateObject
+---
+title: DateObject
+---
 
 `DateObject[]` gives the current local date and time. `DateObject[{y, m, d}]` creates a date object for a specific date.
 

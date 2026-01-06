@@ -1,4 +1,6 @@
-# DefaultFontProperties
+---
+title: DefaultFontProperties
+---
 
 `DefaultFontProperties` is a global option that allows overriding properties of specified font families.
 

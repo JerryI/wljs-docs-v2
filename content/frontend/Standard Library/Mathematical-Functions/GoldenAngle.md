@@ -1,4 +1,6 @@
-# GoldenAngle
+---
+title: GoldenAngle
+---
 
 `GoldenAngle` is the golden angle (3-√5)π, with numerical value ≈137.5°.
 

@@ -1,4 +1,6 @@
-# RandomTime
+---
+title: RandomTime
+---
 
 `RandomTime[]` gives a pseudorandom time of day.
 

@@ -1,4 +1,6 @@
-# RemoteEvaluate
+---
+title: RemoteEvaluate
+---
 
 `RemoteEvaluate[expr]` gives the result of evaluating *expr* using your current default remote Wolfram Language kernel.
 

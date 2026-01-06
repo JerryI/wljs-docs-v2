@@ -1,4 +1,6 @@
-# EntityUnregister
+---
+title: EntityUnregister
+---
 
 `EntityUnregister["type"]` unregisters all entities in the first entity store that defines entities of the specified type.
 

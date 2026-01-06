@@ -1,4 +1,6 @@
-# DGaussianWavelet
+---
+title: DGaussianWavelet
+---
 
 `DGaussianWavelet[]` represents a derivative of Gaussian wavelet of derivative order 2.
 

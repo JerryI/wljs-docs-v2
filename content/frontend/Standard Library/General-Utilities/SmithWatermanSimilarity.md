@@ -1,4 +1,6 @@
-# SmithWatermanSimilarity
+---
+title: SmithWatermanSimilarity
+---
 
 `SmithWatermanSimilarity[u, v]` gives a number representing the Smith–Waterman similarity between strings, vectors or bio sequences u and v.
 

@@ -1,4 +1,6 @@
-# EvaluationObject
+---
+title: EvaluationObject
+---
 
 `EvaluationObject[expr, ...]` represents an expression submitted for evaluation on any available parallel kernel.
 

@@ -1,4 +1,6 @@
-# CharacterRange
+---
+title: CharacterRange
+---
 
 `CharacterRange["c1", "c2"]` yields a list of the characters in the range from c1 to c2.
 

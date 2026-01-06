@@ -1,4 +1,6 @@
-# InverseJacobiDN
+---
+title: InverseJacobiDN
+---
 
 `InverseJacobiDN[v, m]` gives the inverse Jacobi elliptic function dn⁻¹(v|m).
 

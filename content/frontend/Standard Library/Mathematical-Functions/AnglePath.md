@@ -1,4 +1,6 @@
-# AnglePath
+---
+title: AnglePath
+---
 
 `AnglePath[{θ1, θ2, θ3, ...}]` gives the list of 2D coordinates corresponding to a path that starts at {0,0}, then takes a series of steps of unit length at successive relative angles θi.
 

@@ -1,4 +1,6 @@
-# ModularLambda
+---
+title: ModularLambda
+---
 
 `ModularLambda[τ]` gives the modular lambda elliptic function λ(τ).
 

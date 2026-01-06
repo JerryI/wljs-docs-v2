@@ -1,4 +1,6 @@
-# UpArrowDownArrow
+---
+title: UpArrowDownArrow
+---
 
 `UpArrowDownArrow[x, y, ...]` displays as x⇅y⇅….
 

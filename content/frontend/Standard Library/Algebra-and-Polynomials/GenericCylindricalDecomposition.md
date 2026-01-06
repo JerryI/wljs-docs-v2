@@ -1,4 +1,6 @@
-# GenericCylindricalDecomposition
+---
+title: GenericCylindricalDecomposition
+---
 
 `GenericCylindricalDecomposition[ineqs,{x1,x2,...}]` finds the full-dimensional part of the decomposition of the region represented by the inequalities ineqs into cylindrical parts whose directions correspond to the successive xi, together with any hypersurfaces containing the rest of the region.
 

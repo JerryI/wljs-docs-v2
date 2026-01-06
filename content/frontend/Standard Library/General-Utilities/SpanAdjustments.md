@@ -1,4 +1,6 @@
-# SpanAdjustments
+---
+title: SpanAdjustments
+---
 
 `SpanAdjustments` is an option for selections that specifies the height and width of spanning characters.
 

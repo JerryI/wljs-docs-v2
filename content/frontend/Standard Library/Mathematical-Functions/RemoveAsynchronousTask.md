@@ -1,4 +1,6 @@
-# RemoveAsynchronousTask
+---
+title: RemoveAsynchronousTask
+---
 
 `RemoveAsynchronousTask[asyncTask]` stops asynchronous evaluations and removes asyncTask from the system.
 

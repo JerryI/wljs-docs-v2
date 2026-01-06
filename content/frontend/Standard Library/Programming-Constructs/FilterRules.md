@@ -1,4 +1,6 @@
-# FilterRules
+---
+title: FilterRules
+---
 
 `FilterRules[rules, pattern]` selects rules whose left-hand sides match the pattern. Useful for passing options to functions.
 

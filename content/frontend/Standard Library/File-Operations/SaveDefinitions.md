@@ -1,4 +1,6 @@
-# SaveDefinitions
+---
+title: SaveDefinitions
+---
 
 `SaveDefinitions` is an option to `Manipulate` and related functions that specifies whether current definitions should automatically be saved with the output.
 

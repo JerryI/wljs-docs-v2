@@ -1,4 +1,6 @@
-# PlotJoined
+---
+title: PlotJoined
+---
 
 `PlotJoined` is an option for `ListPlot` that specifies whether the points plotted should be joined by a line.
 

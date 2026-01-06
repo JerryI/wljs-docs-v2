@@ -1,4 +1,6 @@
-# BoundaryDiscretizeRegion
+---
+title: BoundaryDiscretizeRegion
+---
 
 `BoundaryDiscretizeRegion[reg]` discretizes the region reg into a BoundaryMeshRegion.
 

@@ -1,4 +1,6 @@
-# SequenceReverseLayer
+---
+title: SequenceReverseLayer
+---
 
 `SequenceReverseLayer[]` represents a net that reverses the order of an input sequence.
 

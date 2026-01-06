@@ -1,4 +1,6 @@
-# StringApply
+---
+title: StringApply
+---
 
 `StringApply[f, string]` applies f to the code points in string.
 

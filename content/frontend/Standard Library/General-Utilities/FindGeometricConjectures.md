@@ -1,4 +1,6 @@
-# FindGeometricConjectures
+---
+title: FindGeometricConjectures
+---
 
 `FindGeometricConjectures[scene]` finds conjectures that appear to hold for the GeometricScene object scene and adds these conjectures to the scene object.
 

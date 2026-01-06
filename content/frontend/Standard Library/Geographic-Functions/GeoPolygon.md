@@ -1,4 +1,6 @@
-# GeoPolygon
+---
+title: GeoPolygon
+---
 
 `GeoPolygon[{loc1, …, locn}]` is a `GeoGraphics` primitive that represents a filled polygon whose boundary is formed by geodesic segments between locations `loci` and `loci+1`.
 

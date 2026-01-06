@@ -1,4 +1,6 @@
-# Numerator
+---
+title: Numerator
+---
 
 `Numerator[expr]` gives the numerator of expr.
 

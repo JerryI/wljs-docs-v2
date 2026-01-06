@@ -1,4 +1,6 @@
-# RightTriangle
+---
+title: RightTriangle
+---
 
 `RightTriangle[x, y, ...]` displays as x⊳y⊳….
 

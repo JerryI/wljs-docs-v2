@@ -1,4 +1,6 @@
-# ChannelHistoryLength
+---
+title: ChannelHistoryLength
+---
 
 `ChannelHistoryLength` is an option to `ChannelListen` that specifies the maximum number of messages to cache in the channel listener object.
 

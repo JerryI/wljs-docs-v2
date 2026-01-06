@@ -1,4 +1,6 @@
-# MoleculeDraw
+---
+title: MoleculeDraw
+---
 
 `MoleculeDraw[]` displays a window with interactive tools for drawing a Molecule, and returns the result.
 

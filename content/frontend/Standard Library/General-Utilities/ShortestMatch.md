@@ -1,4 +1,6 @@
-# ShortestMatch
+---
+title: ShortestMatch
+---
 
 `ShortestMatch[p]` is a string pattern object matching the shortest sequence of characters consistent with the string pattern p.
 

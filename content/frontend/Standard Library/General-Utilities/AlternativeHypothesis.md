@@ -1,4 +1,6 @@
-# AlternativeHypothesis
+---
+title: AlternativeHypothesis
+---
 
 `AlternativeHypothesis` is an option for hypothesis testing functions like `LocationTest` that specifies the alternative hypothesis.
 

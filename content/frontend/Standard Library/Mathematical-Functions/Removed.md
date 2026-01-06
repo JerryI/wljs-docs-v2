@@ -1,4 +1,6 @@
-# Removed
+---
+title: Removed
+---
 
 `Removed[string]` is printed to indicate a symbol that has been removed.
 

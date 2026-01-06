@@ -1,4 +1,6 @@
-# FindShortestPath
+---
+title: FindShortestPath
+---
 
 `FindShortestPath[g, s, t]` finds the shortest path from source vertex s to target vertex t in graph g.
 

@@ -1,4 +1,6 @@
-# Prolog
+---
+title: Prolog
+---
 
 `Prolog` is an option for graphics functions which gives a list of graphics primitives to be rendered before the main part of the graphics is rendered.
 

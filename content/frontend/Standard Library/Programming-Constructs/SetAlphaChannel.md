@@ -1,4 +1,6 @@
-# SetAlphaChannel
+---
+title: SetAlphaChannel
+---
 
 `SetAlphaChannel[color]` adds full opacity to color.
 

@@ -1,4 +1,6 @@
-# HannWindow
+---
+title: HannWindow
+---
 
 `HannWindow[x]` represents a Hann window function of x.
 

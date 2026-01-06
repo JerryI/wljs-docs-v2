@@ -1,4 +1,6 @@
-# Failure
+---
+title: Failure
+---
 
 `Failure["tag", assoc]` represents a failure of a type indicated by tag, with details in the association.
 

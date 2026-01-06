@@ -1,4 +1,6 @@
-# ViewVertical
+---
+title: ViewVertical
+---
 
 `ViewVertical` is an option for `Graphics3D` and related functions which specifies what direction in scaled coordinates should be vertical in the final image.
 

@@ -1,4 +1,6 @@
-# Minors
+---
+title: Minors
+---
 
 `Minors[m]` gives the minors of a matrix m. `Minors[m, k]` gives the kth minors.
 

@@ -1,4 +1,6 @@
-# KalmanFilter
+---
+title: KalmanFilter
+---
 
 `KalmanFilter[tproc, data]` filters data using the time series model given by `tproc`.
 

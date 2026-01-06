@@ -1,4 +1,6 @@
-# QHypergeometricPFQ
+---
+title: QHypergeometricPFQ
+---
 
 `QHypergeometricPFQ[{a1, ..., ar}, {b1, ..., bs}, q, z]` gives the basic hypergeometric series rϕs(a;b;q;z).
 

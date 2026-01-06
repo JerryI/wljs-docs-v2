@@ -1,4 +1,6 @@
-# GraphData
+---
+title: GraphData
+---
 
 `GraphData[name]` gives a graph with the specified name.
 

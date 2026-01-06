@@ -1,4 +1,6 @@
-# Databins
+---
+title: Databins
+---
 
 `Databins[]` gives a list of databins associated with the currently connected user.
 

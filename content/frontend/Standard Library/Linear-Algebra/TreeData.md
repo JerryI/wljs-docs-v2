@@ -1,4 +1,6 @@
-# TreeData
+---
+title: TreeData
+---
 
 `TreeData[tree]` extracts the data in the root of the Tree object tree.
 

@@ -1,4 +1,6 @@
-# Masking
+---
+title: Masking
+---
 
 `Masking` is an option for various image and signal processing functions that specifies on which regions they should operate.
 

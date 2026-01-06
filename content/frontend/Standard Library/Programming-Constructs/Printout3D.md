@@ -1,4 +1,6 @@
-# Printout3D
+---
+title: Printout3D
+---
 
 `Printout3D[model]` prints out the 3D model using a 3D print previewer.
 

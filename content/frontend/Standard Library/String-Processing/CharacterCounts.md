@@ -1,4 +1,6 @@
-# CharacterCounts
+---
+title: CharacterCounts
+---
 
 `CharacterCounts["string"]` gives an association whose keys are the distinct characters in string, and whose values give the number of times those characters appear.
 

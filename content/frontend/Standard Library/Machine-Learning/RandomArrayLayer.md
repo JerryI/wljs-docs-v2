@@ -1,4 +1,6 @@
-# RandomArrayLayer
+---
+title: RandomArrayLayer
+---
 
 `RandomArrayLayer[dist]` represents a net layer that has no input and produces a random array from the univariate distribution dist.
 

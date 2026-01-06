@@ -1,4 +1,6 @@
-# Rationalize
+---
+title: Rationalize
+---
 
 `Rationalize[x]` converts an approximate number x to a nearby rational with small denominator.
 

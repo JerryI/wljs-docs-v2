@@ -1,4 +1,6 @@
-# BoundaryDiscretizeGraphics
+---
+title: BoundaryDiscretizeGraphics
+---
 
 `BoundaryDiscretizeGraphics[g]` discretizes a 2D or 3D graphic g into a BoundaryMeshRegion.
 

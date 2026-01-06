@@ -1,4 +1,6 @@
-# Sech
+---
+title: Sech
+---
 
 `Sech[z]` gives the hyperbolic secant of z.
 

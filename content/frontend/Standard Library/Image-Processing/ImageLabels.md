@@ -1,4 +1,6 @@
-# ImageLabels
+---
+title: ImageLabels
+---
 
 `ImageLabels` is an option for image highlighting that specifies what labels to use for each highlighted feature.
 

@@ -1,4 +1,6 @@
-# AlgebraicNumberPolynomial
+---
+title: AlgebraicNumberPolynomial
+---
 
 `AlgebraicNumberPolynomial[a, x]` gives the polynomial in x corresponding to the `AlgebraicNumber` object a.
 

@@ -1,4 +1,6 @@
-# FacialFeatures
+---
+title: FacialFeatures
+---
 
 `FacialFeatures[image]` returns a minimal summary of facial features for all detected faces in image.
 

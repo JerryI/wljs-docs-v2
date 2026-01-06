@@ -1,4 +1,6 @@
-# ActivePredictionObject
+---
+title: ActivePredictionObject
+---
 
 `ActivePredictionObject[...]` represents the result of an `ActivePrediction` process.
 

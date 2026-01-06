@@ -1,4 +1,6 @@
-# White
+---
+title: White
+---
 
 `White` represents the color white in graphics or style specifications.
 

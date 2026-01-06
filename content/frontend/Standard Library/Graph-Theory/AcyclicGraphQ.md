@@ -1,4 +1,6 @@
-# AcyclicGraphQ
+---
+title: AcyclicGraphQ
+---
 
 `AcyclicGraphQ[g]` yields `True` if graph g has no cycles and `False` otherwise.
 

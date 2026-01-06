@@ -1,4 +1,6 @@
-# AiryBi
+---
+title: AiryBi
+---
 
 `AiryBi[z]` gives the Airy function Bi(z).
 

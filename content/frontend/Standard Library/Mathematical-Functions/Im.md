@@ -1,4 +1,6 @@
-# Im
+---
+title: Im
+---
 
 `Im[z]` gives the imaginary part of the complex number z.
 

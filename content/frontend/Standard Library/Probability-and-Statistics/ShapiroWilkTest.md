@@ -1,4 +1,6 @@
-# ShapiroWilkTest
+---
+title: ShapiroWilkTest
+---
 
 `ShapiroWilkTest[data]` tests whether data is normally distributed using the Shapiro–Wilk test.
 

@@ -1,4 +1,6 @@
-# SpatialEstimate
+---
+title: SpatialEstimate
+---
 
 `SpatialEstimate[{loc1 -> val1, loc2 -> val2, ...}]` creates a spatial prediction from values vali given at locations loci.
 

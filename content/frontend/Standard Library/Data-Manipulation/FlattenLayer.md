@@ -1,4 +1,6 @@
-# FlattenLayer
+---
+title: FlattenLayer
+---
 
 `FlattenLayer[]` represents a net layer that flattens any input array into a vector.
 

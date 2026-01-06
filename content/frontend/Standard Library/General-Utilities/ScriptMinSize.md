@@ -1,4 +1,6 @@
-# ScriptMinSize
+---
+title: ScriptMinSize
+---
 
 `ScriptMinSize` is an option for `Style` which specifies the minimum font size to use in rendering subscripts, etc.
 

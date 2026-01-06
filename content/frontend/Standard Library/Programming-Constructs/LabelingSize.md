@@ -1,4 +1,6 @@
-# LabelingSize
+---
+title: LabelingSize
+---
 
 `LabelingSize` is an option to visualization functions that specifies the size to be used for labels and callouts.
 

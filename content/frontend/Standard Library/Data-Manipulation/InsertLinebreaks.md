@@ -1,4 +1,6 @@
-# InsertLinebreaks
+---
+title: InsertLinebreaks
+---
 
 `InsertLinebreaks["string"]` inserts newline characters into string to make a string in which no line is longer than 78 characters.
 

@@ -1,4 +1,6 @@
-# CellularAutomaton
+---
+title: CellularAutomaton
+---
 
 `CellularAutomaton[rule,init,t]` generates a list representing the evolution of the cellular automaton with the specified rule from initial condition init for t steps.
 

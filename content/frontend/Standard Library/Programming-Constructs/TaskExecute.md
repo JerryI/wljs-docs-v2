@@ -1,4 +1,6 @@
-# TaskExecute
+---
+title: TaskExecute
+---
 
 `TaskExecute[task]` immediately executes an instance of the specified task, independently of any schedule given.
 

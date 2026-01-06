@@ -1,4 +1,6 @@
-# Resultant
+---
+title: Resultant
+---
 
 `Resultant[poly1, poly2, var]` computes the resultant of two polynomials with respect to var.
 

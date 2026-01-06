@@ -1,4 +1,6 @@
-# Placed
+---
+title: Placed
+---
 
 `Placed[expr, pos]` represents an expression expr placed at relative position pos in a chart or other display.
 

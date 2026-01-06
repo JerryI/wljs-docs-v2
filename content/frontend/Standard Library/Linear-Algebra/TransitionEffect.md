@@ -1,4 +1,6 @@
-# TransitionEffect
+---
+title: TransitionEffect
+---
 
 `TransitionEffect` is an option for `PaneSelector` that specifies the visual effect used when transitioning between states.
 

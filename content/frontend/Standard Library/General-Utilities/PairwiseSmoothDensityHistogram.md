@@ -1,4 +1,6 @@
-# PairwiseSmoothDensityHistogram
+---
+title: PairwiseSmoothDensityHistogram
+---
 
 `PairwiseSmoothDensityHistogram[{{y11,…,y1n},…,{ym1,…,ymn}}]` creates an array of smooth density histograms by plotting the data columns against each other in pairs.
 

@@ -1,4 +1,6 @@
-# SquareRepeatingElement
+---
+title: SquareRepeatingElement
+---
 
 `SquareRepeatingElement[spec]` represents a square array of elements of type spec in an interpreter, API, or form specification.
 

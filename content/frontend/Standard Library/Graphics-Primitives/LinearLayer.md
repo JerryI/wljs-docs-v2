@@ -1,4 +1,6 @@
-# LinearLayer
+---
+title: LinearLayer
+---
 
 `LinearLayer[n]` represents a trainable, fully connected net layer that computes w.x+b with output vector of size n.
 

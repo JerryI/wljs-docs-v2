@@ -1,4 +1,6 @@
-# Pyramid
+---
+title: Pyramid
+---
 
 `Pyramid[{p1, ..., p5}]` represents a filled pyramid with base {p1, ..., p4} and apex p5.
 

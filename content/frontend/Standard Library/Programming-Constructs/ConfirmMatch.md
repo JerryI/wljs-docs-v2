@@ -1,4 +1,6 @@
-# ConfirmMatch
+---
+title: ConfirmMatch
+---
 
 `ConfirmMatch[expr, form]` confirms that expr matches the pattern form, otherwise throws an error to the nearest `Enclose`.
 

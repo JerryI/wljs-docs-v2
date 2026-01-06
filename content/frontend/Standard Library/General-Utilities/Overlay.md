@@ -1,4 +1,6 @@
-# Overlay
+---
+title: Overlay
+---
 
 `Overlay[{expr1, expr2, ...}]` displays as an overlay of all the expri.
 

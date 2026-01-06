@@ -1,4 +1,6 @@
-# DawsonF
+---
+title: DawsonF
+---
 
 `DawsonF[z]` gives the Dawson integral F(z).
 

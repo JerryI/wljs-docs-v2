@@ -1,4 +1,6 @@
-# LessSlantEqual
+---
+title: LessSlantEqual
+---
 
 `LessSlantEqual[x, y, ...]` displays as x⩽y⩽....
 

@@ -1,4 +1,6 @@
-# FeatureSpacePlot3D
+---
+title: FeatureSpacePlot3D
+---
 
 `FeatureSpacePlot3D[{example1,example2,…}]` plots features extracted from the examplei as a scatter 3D plot.
 

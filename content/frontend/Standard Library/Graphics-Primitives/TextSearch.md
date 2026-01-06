@@ -1,4 +1,6 @@
-# TextSearch
+---
+title: TextSearch
+---
 
 `TextSearch[source, form]` searches for files referenced by source that contain text matching form.
 

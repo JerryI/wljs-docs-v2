@@ -1,4 +1,6 @@
-# FoxHReduce
+---
+title: FoxHReduce
+---
 
 `FoxHReduce[expr, x]` attempts to reduce expr to a single FoxH object as a function of x.
 

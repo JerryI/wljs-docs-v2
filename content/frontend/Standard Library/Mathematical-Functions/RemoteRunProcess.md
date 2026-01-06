@@ -1,4 +1,6 @@
-# RemoteRunProcess
+---
+title: RemoteRunProcess
+---
 
 `RemoteRunProcess["host", "command"]` runs the specified system command on the remote host, returning information on the outcome.
 

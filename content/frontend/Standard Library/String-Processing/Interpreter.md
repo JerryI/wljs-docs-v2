@@ -1,4 +1,6 @@
-# Interpreter
+---
+title: Interpreter
+---
 
 `Interpreter[form]` represents an interpreter object that can interpret input as an object of the specified form.
 

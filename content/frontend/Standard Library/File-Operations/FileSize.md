@@ -1,4 +1,6 @@
-# FileSize
+---
+title: FileSize
+---
 
 `FileSize[file]` gives the size of a file as a quantity.
 

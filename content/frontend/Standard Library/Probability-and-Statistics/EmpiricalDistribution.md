@@ -1,4 +1,6 @@
-# EmpiricalDistribution
+---
+title: EmpiricalDistribution
+---
 
 `EmpiricalDistribution[{x1, x2, ...}]` represents an empirical distribution based on the data values xi.
 

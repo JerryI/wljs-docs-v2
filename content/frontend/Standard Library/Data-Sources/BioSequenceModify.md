@@ -1,4 +1,6 @@
-# BioSequenceModify
+---
+title: BioSequenceModify
+---
 
 `BioSequenceModify[seq, "mod"]` gives the result of applying the modification "mod" to the sequence seq.
 

@@ -1,4 +1,6 @@
-# JacobiZN
+---
+title: JacobiZN
+---
 
 `JacobiZN[u, m]` gives the Jacobi zeta function zn(u|m).
 

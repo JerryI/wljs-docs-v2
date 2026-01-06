@@ -1,4 +1,6 @@
-# SequenceFold
+---
+title: SequenceFold
+---
 
 `SequenceFold[f, {x1, ..., xn}, {a1, a2, ...}]` gives the last element of `SequenceFoldList[f, {x1, ..., xn}, {a1, a2, ...}]`.
 

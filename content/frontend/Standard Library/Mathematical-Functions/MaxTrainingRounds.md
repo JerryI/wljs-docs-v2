@@ -1,4 +1,6 @@
-# MaxTrainingRounds
+---
+title: MaxTrainingRounds
+---
 
 `MaxTrainingRounds` is an option for `NetTrain` and related functions that specifies the maximum number of rounds of training to do.
 

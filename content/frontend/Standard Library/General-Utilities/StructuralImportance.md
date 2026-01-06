@@ -1,4 +1,6 @@
-# StructuralImportance
+---
+title: StructuralImportance
+---
 
 `StructuralImportance[rdist]` gives the structural importances for all components in the `ReliabilityDistribution` rdist.
 

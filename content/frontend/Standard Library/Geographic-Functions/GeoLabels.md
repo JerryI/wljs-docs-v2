@@ -1,4 +1,6 @@
-# GeoLabels
+---
+title: GeoLabels
+---
 
 `GeoLabels` is an option for `GeoListPlot` and `GeoRegionValuePlot` that specifies whether and how to add labels to the locations in the first argument.
 

@@ -1,4 +1,6 @@
-# OrnsteinUhlenbeckProcess
+---
+title: OrnsteinUhlenbeckProcess
+---
 
 `OrnsteinUhlenbeckProcess[μ,σ,θ]` represents a stationary Ornstein–Uhlenbeck process with long-term mean μ, volatility σ, and mean reversion speed θ.
 

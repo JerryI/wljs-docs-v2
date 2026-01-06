@@ -1,4 +1,6 @@
-# CheckArguments
+---
+title: CheckArguments
+---
 
 `CheckArguments[f[args], n]` gives True if args consists of exactly n positional arguments followed by valid options for f, and False otherwise.
 

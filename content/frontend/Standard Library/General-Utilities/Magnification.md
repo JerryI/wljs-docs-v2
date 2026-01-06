@@ -1,4 +1,6 @@
-# Magnification
+---
+title: Magnification
+---
 
 `Magnification` is an option for Style and Cell that specifies what magnification to use for display.
 

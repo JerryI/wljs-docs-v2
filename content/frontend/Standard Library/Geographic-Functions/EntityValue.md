@@ -1,4 +1,6 @@
-# EntityValue
+---
+title: EntityValue
+---
 
 `EntityValue[entity, property]` gets the value of a property for an entity. Can query multiple entities or properties at once.
 

@@ -1,4 +1,6 @@
-# Thread
+---
+title: Thread
+---
 
 `Thread[f[args]]` threads f over any lists that appear in args.
 

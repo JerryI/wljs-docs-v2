@@ -1,4 +1,6 @@
-# CoshIntegral
+---
+title: CoshIntegral
+---
 
 `CoshIntegral[z]` gives the hyperbolic cosine integral Chi(z).
 

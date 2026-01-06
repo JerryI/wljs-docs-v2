@@ -1,4 +1,6 @@
-# LinkMode
+---
+title: LinkMode
+---
 
 `LinkMode` is an option for `LinkOpen` that specifies how the link is to be established and connected. The possible settings for `LinkMode` are `Launch`, `Listen`, `Connect`, and `Loopback`.
 

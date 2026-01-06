@@ -1,4 +1,6 @@
-# FindPermutation
+---
+title: FindPermutation
+---
 
 `FindPermutation[expr]` gives a permutation that produces expr by permuting `Sort[expr]`.
 

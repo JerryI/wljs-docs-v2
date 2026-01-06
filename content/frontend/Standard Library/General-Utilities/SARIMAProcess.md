@@ -1,4 +1,6 @@
-# SARIMAProcess
+---
+title: SARIMAProcess
+---
 
 `SARIMAProcess[{a1, ..., ap}, d, {b1, ..., bq}, {s, {α1, ..., αm}, δ, {β1, ..., βr}}, v]` represents a seasonal integrated autoregressive moving-average process with ARIMA coefficients, seasonal order s, and variance v.
 

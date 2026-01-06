@@ -1,4 +1,6 @@
-# IndexGraph
+---
+title: IndexGraph
+---
 
 `IndexGraph[g]` replaces the vertices of the graph g by its vertex indices.
 

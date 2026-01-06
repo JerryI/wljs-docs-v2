@@ -1,4 +1,6 @@
-# CarlsonRM
+---
+title: CarlsonRM
+---
 
 `CarlsonRM[x,y,ρ]` gives Carlson's elliptic integral RM(x,y,ρ).
 

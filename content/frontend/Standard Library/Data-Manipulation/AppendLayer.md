@@ -1,4 +1,6 @@
-# AppendLayer
+---
+title: AppendLayer
+---
 
 `AppendLayer[]` represents a net layer that takes an input array and appends another array to it.
 

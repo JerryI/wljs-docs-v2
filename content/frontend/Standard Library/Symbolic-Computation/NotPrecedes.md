@@ -1,4 +1,6 @@
-# NotPrecedes
+---
+title: NotPrecedes
+---
 
 `NotPrecedes[x, y, …]` displays as x⊀y⊀….
 

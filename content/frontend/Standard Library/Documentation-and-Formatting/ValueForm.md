@@ -1,4 +1,6 @@
-# ValueForm
+---
+title: ValueForm
+---
 
 `ValueForm` is an internal symbol used by the Wolfram Language system.
 

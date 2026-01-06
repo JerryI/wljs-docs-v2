@@ -1,4 +1,6 @@
-# MorphologicalPerimeter
+---
+title: MorphologicalPerimeter
+---
 
 `MorphologicalPerimeter[image]` picks out the morphological perimeter of regions of foreground in *image*.
 

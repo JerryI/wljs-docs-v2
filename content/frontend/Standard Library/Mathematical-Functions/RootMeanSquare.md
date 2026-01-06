@@ -1,4 +1,6 @@
-# RootMeanSquare
+---
+title: RootMeanSquare
+---
 
 `RootMeanSquare[list]` gives the root mean square of values in list.
 

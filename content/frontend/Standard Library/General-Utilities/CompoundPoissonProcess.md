@@ -1,4 +1,6 @@
-# CompoundPoissonProcess
+---
+title: CompoundPoissonProcess
+---
 
 `CompoundPoissonProcess[λ, jdist]` represents a compound Poisson process with rate parameter λ and jump size distribution jdist.
 

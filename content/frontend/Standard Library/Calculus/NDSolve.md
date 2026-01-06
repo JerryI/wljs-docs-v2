@@ -1,4 +1,6 @@
-# NDSolve
+---
+title: NDSolve
+---
 
 `NDSolve[eqns, u, {x, xmin, xmax}]` finds a numerical solution to the ordinary differential equations eqns for the function u with independent variable x in the specified range.
 

@@ -1,4 +1,6 @@
-# SinghMaddalaDistribution
+---
+title: SinghMaddalaDistribution
+---
 
 `SinghMaddalaDistribution[q, a, b]` represents the Singh–Maddala distribution with shape parameters q and a and scale parameter b.
 

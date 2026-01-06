@@ -1,4 +1,6 @@
-# TaskResume
+---
+title: TaskResume
+---
 
 `TaskResume[task]` resumes execution of the specified task.
 

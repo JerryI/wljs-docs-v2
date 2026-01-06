@@ -1,4 +1,6 @@
-# LineBreakChart
+---
+title: LineBreakChart
+---
 
 `LineBreakChart[{{date1,p1},{date2,p2},…}]` makes a line break chart with prices pi at date datei.
 

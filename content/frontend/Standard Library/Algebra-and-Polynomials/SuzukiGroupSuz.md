@@ -1,4 +1,6 @@
-# SuzukiGroupSuz
+---
+title: SuzukiGroupSuz
+---
 
 `SuzukiGroupSuz[]` represents the sporadic simple Suzuki group Suz.
 

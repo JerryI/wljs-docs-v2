@@ -1,4 +1,6 @@
-# ForeignFunction
+---
+title: ForeignFunction
+---
 
 `ForeignFunction[args]` represents a function that has been loaded from a library.
 

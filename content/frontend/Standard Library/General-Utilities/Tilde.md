@@ -1,4 +1,6 @@
-# Tilde
+---
+title: Tilde
+---
 
 `Tilde[x, y, ...]` displays as x∼y∼….
 

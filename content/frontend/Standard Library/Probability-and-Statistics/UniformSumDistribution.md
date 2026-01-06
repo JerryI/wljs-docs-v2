@@ -1,4 +1,6 @@
-# UniformSumDistribution
+---
+title: UniformSumDistribution
+---
 
 `UniformSumDistribution[n]` represents the distribution of a sum of n random variables uniformly distributed from 0 to 1.
 

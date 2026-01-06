@@ -1,4 +1,6 @@
-# Around
+---
+title: Around
+---
 
 `Around[x, δ]` represents an approximate number or quantity with a value around x and an uncertainty δ.
 

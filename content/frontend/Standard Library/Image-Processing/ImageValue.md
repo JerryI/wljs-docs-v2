@@ -1,4 +1,6 @@
-# ImageValue
+---
+title: ImageValue
+---
 
 `ImageValue[image,pos]` gives the interpolated value of image at position pos.
 

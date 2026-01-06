@@ -1,4 +1,6 @@
-# HolidayCalendar
+---
+title: HolidayCalendar
+---
 
 `HolidayCalendar` is an option that specifies the holiday calendar schedule in business day functions.
 

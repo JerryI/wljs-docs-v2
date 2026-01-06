@@ -1,4 +1,6 @@
-# UnsetShared
+---
+title: UnsetShared
+---
 
 `UnsetShared[s1, s2, ...]` stops the sharing of the variables or functions si among parallel kernels.
 

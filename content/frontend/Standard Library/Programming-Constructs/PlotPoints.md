@@ -1,4 +1,6 @@
-# PlotPoints
+---
+title: PlotPoints
+---
 
 `PlotPoints` is an option for plotting functions that specifies how many initial sample points to use.
 

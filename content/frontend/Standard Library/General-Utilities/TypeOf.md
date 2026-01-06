@@ -1,4 +1,6 @@
-# TypeOf
+---
+title: TypeOf
+---
 
 `TypeOf[expr]` gives the type of expr without evaluating it.
 

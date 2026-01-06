@@ -1,4 +1,6 @@
-# Unset
+---
+title: Unset
+---
 
 `lhs =.` removes any rules defined for lhs.
 

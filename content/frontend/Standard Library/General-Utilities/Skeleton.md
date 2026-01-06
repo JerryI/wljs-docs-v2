@@ -1,4 +1,6 @@
-# Skeleton
+---
+title: Skeleton
+---
 
 `Skeleton[n]` represents a sequence of n omitted elements in an expression printed with Short or Shallow.
 

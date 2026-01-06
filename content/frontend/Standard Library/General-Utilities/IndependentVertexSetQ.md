@@ -1,4 +1,6 @@
-# IndependentVertexSetQ
+---
+title: IndependentVertexSetQ
+---
 
 `IndependentVertexSetQ[g, vlist]` yields `True` if the vertex list vlist is an independent vertex set in the graph g, and `False` otherwise.
 

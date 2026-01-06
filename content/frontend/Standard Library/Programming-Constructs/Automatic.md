@@ -1,4 +1,6 @@
-# Automatic
+---
+title: Automatic
+---
 
 `Automatic` represents an option or other value that is to be chosen automatically by a built-in function.
 

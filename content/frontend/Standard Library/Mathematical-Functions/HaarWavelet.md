@@ -1,4 +1,6 @@
-# HaarWavelet
+---
+title: HaarWavelet
+---
 
 `HaarWavelet[]` represents a Haar wavelet.
 

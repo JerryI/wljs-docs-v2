@@ -1,4 +1,6 @@
-# NegativeMultinomialDistribution
+---
+title: NegativeMultinomialDistribution
+---
 
 `NegativeMultinomialDistribution[n, p]` represents a negative multinomial distribution with parameter n and failure probability vector p.
 

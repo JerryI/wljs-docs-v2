@@ -1,4 +1,6 @@
-# Derivative
+---
+title: Derivative
+---
 
 `f'` represents the derivative of a function f of one argument.
 

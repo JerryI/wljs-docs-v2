@@ -1,4 +1,6 @@
-# ClickPane
+---
+title: ClickPane
+---
 
 `ClickPane[image,func]` represents a clickable pane that displays as image and applies func to the x,y coordinates of each click within the pane.
 

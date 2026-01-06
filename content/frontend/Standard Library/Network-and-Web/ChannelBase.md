@@ -1,4 +1,6 @@
-# ChannelBase
+---
+title: ChannelBase
+---
 
 `ChannelBase` is an option specifying the base URL of the server to use for brokering channel communications.
 

@@ -1,4 +1,6 @@
-# FindInstance
+---
+title: FindInstance
+---
 
 `FindInstance[expr, vars]` finds an instance of vars that makes the statement expr be True.
 

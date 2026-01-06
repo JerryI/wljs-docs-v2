@@ -1,4 +1,6 @@
-# Verbatim
+---
+title: Verbatim
+---
 
 `Verbatim[expr]` represents expr in pattern matching, requiring that expr be matched exactly as it appears, with no substitutions for blanks or other transformations.
 

@@ -1,4 +1,6 @@
-# Rotate
+---
+title: Rotate
+---
 
 `Rotate[g, θ]` represents 2D graphics primitives or any other objects g rotated counterclockwise by θ radians about the center of their bounding box.
 

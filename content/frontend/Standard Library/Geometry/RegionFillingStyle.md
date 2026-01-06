@@ -1,4 +1,6 @@
-# RegionFillingStyle
+---
+title: RegionFillingStyle
+---
 
 `RegionFillingStyle` is an option for plotting functions that specifies the style for the filled region over which the plot is being drawn.
 

@@ -1,4 +1,6 @@
-# Dividers
+---
+title: Dividers
+---
 
 `Dividers` is an option for `Grid` and related constructs that specifies where and how to draw divider lines.
 

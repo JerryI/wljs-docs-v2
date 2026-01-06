@@ -1,4 +1,6 @@
-# NetPairEmbeddingOperator
+---
+title: NetPairEmbeddingOperator
+---
 
 `NetPairEmbeddingOperator[net]` represents a net that takes a pair of arrays, embeds them into a vector space using net, and outputs the distance under the embedding.
 

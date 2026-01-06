@@ -1,4 +1,6 @@
-# RasterSize
+---
+title: RasterSize
+---
 
 `RasterSize` is an option for `Rasterize` and related functions that determines the absolute pixel size of the raster generated.
 

@@ -1,4 +1,6 @@
-# ColorBalance
+---
+title: ColorBalance
+---
 
 `ColorBalance[image]` adjusts the colors in image to achieve a balance simulating neutral lighting.
 

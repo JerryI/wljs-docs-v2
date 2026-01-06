@@ -1,4 +1,6 @@
-# AbsoluteFileName
+---
+title: AbsoluteFileName
+---
 
 `AbsoluteFileName["name"]` gives the full absolute path for a file.
 

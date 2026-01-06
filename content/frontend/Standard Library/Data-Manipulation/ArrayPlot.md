@@ -1,4 +1,6 @@
-# ArrayPlot
+---
+title: ArrayPlot
+---
 
 `ArrayPlot[array]` generates a plot in which the values in an array are shown in a discrete array of squares.
 

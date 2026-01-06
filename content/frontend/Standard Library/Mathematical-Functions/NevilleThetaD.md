@@ -1,4 +1,6 @@
-# NevilleThetaD
+---
+title: NevilleThetaD
+---
 
 `NevilleThetaD[z, m]` gives the Neville theta function ϑd(z|m).
 

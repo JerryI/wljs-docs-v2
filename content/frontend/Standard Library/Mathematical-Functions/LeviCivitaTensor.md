@@ -1,4 +1,6 @@
-# LeviCivitaTensor
+---
+title: LeviCivitaTensor
+---
 
 `LeviCivitaTensor[d]` gives the d-dimensional Levi-Civita totally antisymmetric tensor.
 

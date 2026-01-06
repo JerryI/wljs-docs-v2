@@ -1,4 +1,6 @@
-# NotLeftTriangleEqual
+---
+title: NotLeftTriangleEqual
+---
 
 `NotLeftTriangleEqual[x,y,…]` displays as x⋬y⋬….
 

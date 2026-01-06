@@ -1,4 +1,6 @@
-# ReverseApplied
+---
+title: ReverseApplied
+---
 
 `ReverseApplied[f]` represents a form of f that takes arguments in reverse order so that `ReverseApplied[f][x1, ..., xn]` is equivalent to `f[xn, ..., x1]`.
 

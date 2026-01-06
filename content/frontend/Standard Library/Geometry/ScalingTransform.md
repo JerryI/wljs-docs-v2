@@ -1,4 +1,6 @@
-# ScalingTransform
+---
+title: ScalingTransform
+---
 
 `ScalingTransform[{sx,sy,…}]` gives a TransformationFunction that represents scaling by a factor si along each coordinate axis from the origin.
 

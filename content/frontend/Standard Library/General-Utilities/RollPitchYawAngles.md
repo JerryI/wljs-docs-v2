@@ -1,4 +1,6 @@
-# RollPitchYawAngles
+---
+title: RollPitchYawAngles
+---
 
 `RollPitchYawAngles[r]` gives the roll-pitch-yaw angles {α, β, γ} corresponding to the rotation matrix r.
 

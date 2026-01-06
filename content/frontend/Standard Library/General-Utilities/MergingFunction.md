@@ -1,4 +1,6 @@
-# MergingFunction
+---
+title: MergingFunction
+---
 
 `MergingFunction` is an option for functions such as PersistentSymbol that specifies a function to apply to the list of values found.
 

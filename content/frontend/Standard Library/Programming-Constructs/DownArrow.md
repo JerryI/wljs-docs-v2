@@ -1,4 +1,6 @@
-# DownArrow
+---
+title: DownArrow
+---
 
 `DownArrow[x,y,…]` displays as x↓y↓….
 

@@ -1,4 +1,6 @@
-# HeatSymmetryValue
+---
+title: HeatSymmetryValue
+---
 
 `HeatSymmetryValue[pred, vars, pars]` represents a thermal symmetry boundary condition for PDEs with predicate pred indicating where it applies, with model variables vars and global parameters pars.
 

@@ -1,4 +1,6 @@
-# SetEnvironment
+---
+title: SetEnvironment
+---
 
 `SetEnvironment["var" -> value]` sets the value of an operating system environment variable.
 

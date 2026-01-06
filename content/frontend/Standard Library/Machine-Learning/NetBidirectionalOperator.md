@@ -1,4 +1,6 @@
-# NetBidirectionalOperator
+---
+title: NetBidirectionalOperator
+---
 
 `NetBidirectionalOperator[net]` represents a net that applies net to a sequence and to its reverse, concatenating both results into one output sequence.
 

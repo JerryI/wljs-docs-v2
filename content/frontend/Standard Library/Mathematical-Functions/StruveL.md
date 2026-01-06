@@ -1,4 +1,6 @@
-# StruveL
+---
+title: StruveL
+---
 
 `StruveL[n, z]` gives the modified Struve function Ln(z).
 

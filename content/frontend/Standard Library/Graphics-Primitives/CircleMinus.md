@@ -1,4 +1,6 @@
-# CircleMinus
+---
+title: CircleMinus
+---
 
 `CircleMinus[x,y]` displays as x⊖y.
 

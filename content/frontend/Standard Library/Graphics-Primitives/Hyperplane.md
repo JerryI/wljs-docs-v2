@@ -1,4 +1,6 @@
-# Hyperplane
+---
+title: Hyperplane
+---
 
 `Hyperplane[n, p]` represents a hyperplane with normal n passing through point p.
 

@@ -1,4 +1,6 @@
-# DiracDelta
+---
+title: DiracDelta
+---
 
 `DiracDelta[x]` represents the Dirac delta function δ(x).
 

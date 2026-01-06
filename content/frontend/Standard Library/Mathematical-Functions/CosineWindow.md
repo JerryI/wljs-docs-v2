@@ -1,4 +1,6 @@
-# CosineWindow
+---
+title: CosineWindow
+---
 
 `CosineWindow[x]` represents a cosine window function of x.
 

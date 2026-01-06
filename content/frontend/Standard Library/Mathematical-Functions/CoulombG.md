@@ -1,4 +1,6 @@
-# CoulombG
+---
+title: CoulombG
+---
 
 `CoulombG[l, η, r]` gives the irregular Coulomb wavefunction Gl(η, r).
 

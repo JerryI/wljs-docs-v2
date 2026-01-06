@@ -1,4 +1,6 @@
-# KnotData
+---
+title: KnotData
+---
 
 `KnotData[knot, "property"]` gives the specified property for a knot.
 

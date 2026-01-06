@@ -1,4 +1,6 @@
-# ShellRegion
+---
+title: ShellRegion
+---
 
 `ShellRegion[reg]` gives a solid shell of a 3D region reg.
 

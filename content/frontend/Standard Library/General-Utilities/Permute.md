@@ -1,4 +1,6 @@
-# Permute
+---
+title: Permute
+---
 
 `Permute[expr, perm]` permutes the positions of the elements of expr according to the permutation perm.
 

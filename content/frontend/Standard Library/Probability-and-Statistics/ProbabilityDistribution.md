@@ -1,4 +1,6 @@
-# ProbabilityDistribution
+---
+title: ProbabilityDistribution
+---
 
 `ProbabilityDistribution[pdf, {x, xmin, xmax}]` represents the continuous distribution with PDF pdf in the variable x where the pdf is taken to be zero for x < xmin and x > xmax.
 

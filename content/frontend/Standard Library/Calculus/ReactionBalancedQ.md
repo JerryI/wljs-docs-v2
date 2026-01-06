@@ -1,4 +1,6 @@
-# ReactionBalancedQ
+---
+title: ReactionBalancedQ
+---
 
 `ReactionBalancedQ[rxn]` returns True if the given chemical reaction is balanced, and False otherwise.
 

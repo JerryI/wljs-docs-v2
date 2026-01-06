@@ -1,4 +1,6 @@
-# Small
+---
+title: Small
+---
 
 `Small` is a style or option setting that specifies that objects should be small.
 

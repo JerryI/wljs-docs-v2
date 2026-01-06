@@ -1,4 +1,6 @@
-# ScorerHiPrime
+---
+title: ScorerHiPrime
+---
 
 `ScorerHiPrime[z]` gives the derivative of the Scorer function Hi′(z).
 

@@ -1,4 +1,6 @@
-# Reals
+---
+title: Reals
+---
 
 `Reals` represents the domain of real numbers, as in x∈Reals.
 

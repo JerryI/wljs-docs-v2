@@ -1,4 +1,6 @@
-# ToEntity
+---
+title: ToEntity
+---
 
 `ToEntity[expr]` returns an entity object corresponding to the given expression.
 

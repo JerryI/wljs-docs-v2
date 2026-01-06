@@ -1,4 +1,6 @@
-# RepeatedTiming
+---
+title: RepeatedTiming
+---
 
 `RepeatedTiming[expr]` evaluates expr repeatedly and returns a list of the average time in seconds used, together with the result obtained.
 

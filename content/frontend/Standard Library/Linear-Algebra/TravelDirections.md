@@ -1,4 +1,6 @@
-# TravelDirections
+---
+title: TravelDirections
+---
 
 `TravelDirections[{loc1, loc2, ...}]` generates directions for travel from loc1 to loc2, ....
 

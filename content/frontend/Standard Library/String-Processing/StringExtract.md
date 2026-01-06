@@ -1,4 +1,6 @@
-# StringExtract
+---
+title: StringExtract
+---
 
 `StringExtract["string", n]` extracts the nth block of characters in string, where blocks of characters are defined as delimited by whitespace.
 

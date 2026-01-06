@@ -1,4 +1,6 @@
-# AiryAiZero
+---
+title: AiryAiZero
+---
 
 `AiryAiZero[k]` represents the kth zero of the Airy function Ai(x).
 

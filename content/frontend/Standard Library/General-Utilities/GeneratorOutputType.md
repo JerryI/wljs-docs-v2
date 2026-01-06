@@ -1,4 +1,6 @@
-# GeneratorOutputType
+---
+title: GeneratorOutputType
+---
 
 `GeneratorOutputType` is an option controlling the file format of documents produced by a `DocumentGenerator`.
 

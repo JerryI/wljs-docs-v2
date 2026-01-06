@@ -1,4 +1,6 @@
-# NetChain
+---
+title: NetChain
+---
 
 `NetChain[{layer1, layer2, ...}]` specifies a neural net in which the output of layeri is connected to the input of layeri+1.
 

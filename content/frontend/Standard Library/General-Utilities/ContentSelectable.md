@@ -1,4 +1,6 @@
-# ContentSelectable
+---
+title: ContentSelectable
+---
 
 `ContentSelectable` is an option to constructs such as `Inset`, `Graphics`, and `GraphicsGroup` that specifies whether and how content within them should be selectable.
 

@@ -1,4 +1,6 @@
-# LyonsGroupLy
+---
+title: LyonsGroupLy
+---
 
 `LyonsGroupLy[]` represents the sporadic simple Lyons group Ly.
 

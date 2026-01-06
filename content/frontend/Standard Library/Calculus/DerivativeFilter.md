@@ -1,4 +1,6 @@
-# DerivativeFilter
+---
+title: DerivativeFilter
+---
 
 `DerivativeFilter[data, {n1, n2, ...}]` computes the nith derivative of data at level i.
 

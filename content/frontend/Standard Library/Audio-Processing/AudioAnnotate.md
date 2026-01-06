@@ -1,4 +1,6 @@
-# AudioAnnotate
+---
+title: AudioAnnotate
+---
 
 `AudioAnnotate[audio, prop]` computes the property prop and adds it as an annotation to audio.
 

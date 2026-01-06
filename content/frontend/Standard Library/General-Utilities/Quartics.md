@@ -1,4 +1,6 @@
-# Quartics
+---
+title: Quartics
+---
 
 `Quartics` is an option for functions that involve solving algebraic equations that specifies whether explicit forms for solutions to quartic equations should be given.
 

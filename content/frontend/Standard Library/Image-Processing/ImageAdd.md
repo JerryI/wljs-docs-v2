@@ -1,4 +1,6 @@
-# ImageAdd
+---
+title: ImageAdd
+---
 
 `ImageAdd[image,x]` adds an amount x to each channel value in image.
 

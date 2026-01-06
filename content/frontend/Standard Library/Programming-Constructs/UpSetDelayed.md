@@ -1,4 +1,6 @@
-# UpSetDelayed
+---
+title: UpSetDelayed
+---
 
 `lhs ^:= rhs` assigns rhs to be the delayed value of lhs, and associates the assignment with symbols that occur at level one in lhs.
 

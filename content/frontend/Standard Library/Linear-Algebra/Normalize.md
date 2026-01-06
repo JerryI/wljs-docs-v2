@@ -1,4 +1,6 @@
-# Normalize
+---
+title: Normalize
+---
 
 `Normalize[v]` gives the unit vector in the direction of vector `v`. For complex numbers, returns `z/Abs[z]`.
 

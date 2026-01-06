@@ -1,4 +1,6 @@
-# SymbolicDeltaProductArray
+---
+title: SymbolicDeltaProductArray
+---
 
 `SymbolicDeltaProductArray[{n1, n2, ...}, {{j1,1, j1,2, ...}, {j2,1, j2,2, ...}, ...}]` represents an n1×n2×... array with elements equal to 1 if all index conditions are satisfied, and 0 otherwise.
 

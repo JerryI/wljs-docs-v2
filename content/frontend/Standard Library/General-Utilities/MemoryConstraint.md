@@ -1,4 +1,6 @@
-# MemoryConstraint
+---
+title: MemoryConstraint
+---
 
 `MemoryConstraint` is an option for TestReport and VerificationTest that specifies how much memory (in bytes) the test is allowed to use.
 

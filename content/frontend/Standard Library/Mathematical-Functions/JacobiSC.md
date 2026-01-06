@@ -1,4 +1,6 @@
-# JacobiSC
+---
+title: JacobiSC
+---
 
 `JacobiSC[u, m]` gives the Jacobi elliptic function sc(u|m).
 

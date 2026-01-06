@@ -1,4 +1,6 @@
-# Catalan
+---
+title: Catalan
+---
 
 `Catalan` is Catalan's constant, with numerical value ≈ 0.915966.
 

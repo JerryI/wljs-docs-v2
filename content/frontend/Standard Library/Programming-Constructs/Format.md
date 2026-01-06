@@ -1,4 +1,6 @@
-# Format
+---
+title: Format
+---
 
 `Format[expr]` prints as the formatted form of expr. Assigning values to `Format[expr]` defines print forms.
 

@@ -1,4 +1,6 @@
-# Out
+---
+title: Out
+---
 
 `%n` or `Out[n]` is a global object that is assigned to be the value produced on the nth output line.
 

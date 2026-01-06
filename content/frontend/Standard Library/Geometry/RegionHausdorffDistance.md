@@ -1,4 +1,6 @@
-# RegionHausdorffDistance
+---
+title: RegionHausdorffDistance
+---
 
 `RegionHausdorffDistance[reg1, reg2]` gives the Hausdorff distance between the regions reg1 and reg2.
 

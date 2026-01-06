@@ -1,4 +1,6 @@
-# TargetUnits
+---
+title: TargetUnits
+---
 
 `TargetUnits` is an option used to specify the desired output units for visualization functions operating on Quantity expressions.
 

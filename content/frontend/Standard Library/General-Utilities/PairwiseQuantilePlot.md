@@ -1,4 +1,6 @@
-# PairwiseQuantilePlot
+---
+title: PairwiseQuantilePlot
+---
 
 `PairwiseQuantilePlot[{{y11, ..., y1n}, ..., {ym1, ..., ymn}}]` creates an array of quantile plots by plotting the quantiles of the columns against each other.
 

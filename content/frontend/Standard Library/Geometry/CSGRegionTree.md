@@ -1,4 +1,6 @@
-# CSGRegionTree
+---
+title: CSGRegionTree
+---
 
 `CSGRegionTree[reg]` gives the tree expression representing the CSG region reg.
 

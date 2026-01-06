@@ -1,4 +1,6 @@
-# DayHemisphere
+---
+title: DayHemisphere
+---
 
 `DayHemisphere[]` is a two-dimensional GeoGraphics primitive that represents the half of the Earth that is currently in daylight.
 

@@ -1,4 +1,6 @@
-# VertexCoordinateRules
+---
+title: VertexCoordinateRules
+---
 
 `VertexCoordinateRules` is an option for `GraphPlot` and related functions which specifies rules for determining the coordinates at which vertices should be placed.
 

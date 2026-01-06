@@ -1,4 +1,6 @@
-# DateString
+---
+title: DateString
+---
 
 `DateString[]` gives the current date and time as a string. `DateString[date, format]` formats a date according to specified elements.
 

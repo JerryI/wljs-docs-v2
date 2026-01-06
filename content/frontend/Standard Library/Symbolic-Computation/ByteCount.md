@@ -1,4 +1,6 @@
-# ByteCount
+---
+title: ByteCount
+---
 
 `ByteCount[expr]` gives the number of bytes used internally by the Wolfram System to store expr.
 

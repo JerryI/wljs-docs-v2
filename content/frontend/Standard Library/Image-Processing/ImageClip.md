@@ -1,4 +1,6 @@
-# ImageClip
+---
+title: ImageClip
+---
 
 `ImageClip[image]` clips all channel values in image to lie in the default range.
 

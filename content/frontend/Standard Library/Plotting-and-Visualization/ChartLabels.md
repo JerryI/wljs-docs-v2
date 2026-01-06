@@ -1,4 +1,6 @@
-# ChartLabels
+---
+title: ChartLabels
+---
 
 `ChartLabels` is an option for charting functions that specifies what labels should be used for chart elements.
 

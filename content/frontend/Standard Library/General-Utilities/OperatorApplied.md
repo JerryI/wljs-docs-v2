@@ -1,4 +1,6 @@
-# OperatorApplied
+---
+title: OperatorApplied
+---
 
 `OperatorApplied[f, n]` represents an operator form of the function f of n arguments so that `OperatorApplied[f, n][x1]...[xn]` is equivalent to `f[x1, ..., xn]`.
 

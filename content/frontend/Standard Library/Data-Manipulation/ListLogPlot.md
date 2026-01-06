@@ -1,4 +1,6 @@
-# ListLogPlot
+---
+title: ListLogPlot
+---
 
 `ListLogPlot[{y1, y2, ...}]` makes a log plot of the yi values with logarithmic vertical axis.
 

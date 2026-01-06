@@ -1,4 +1,6 @@
-# KeepExistingVersion
+---
+title: KeepExistingVersion
+---
 
 `KeepExistingVersion` is an option for `PacletInstall` and `PacletInstallSubmit` that specifies whether an older version of a paclet should remain installed when a newer one gets installed.
 

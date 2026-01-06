@@ -1,4 +1,6 @@
-# NotSquareSubset
+---
+title: NotSquareSubset
+---
 
 `NotSquareSubset[x, y, ...]` displays as x⊄y⊄....
 

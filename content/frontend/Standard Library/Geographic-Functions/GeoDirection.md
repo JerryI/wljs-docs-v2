@@ -1,4 +1,6 @@
-# GeoDirection
+---
+title: GeoDirection
+---
 
 `GeoDirection[{lat1, lon1}, {lat2, lon2}]` gives the azimuthal direction from one latitude-longitude position on the Earth to another.
 

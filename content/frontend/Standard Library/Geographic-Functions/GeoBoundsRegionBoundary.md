@@ -1,4 +1,6 @@
-# GeoBoundsRegionBoundary
+---
+title: GeoBoundsRegionBoundary
+---
 
 `GeoBoundsRegionBoundary[{{latmin, latmax}, {lonmin, lonmax}}]` is a one-dimensional `GeoGraphics` primitive that represents the boundary of the region between parallels `latmin`, `latmax` and meridians `lonmin`, `lonmax` on the surface of the Earth.
 

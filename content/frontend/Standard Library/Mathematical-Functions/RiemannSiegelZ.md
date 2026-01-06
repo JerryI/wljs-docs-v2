@@ -1,4 +1,6 @@
-# RiemannSiegelZ
+---
+title: RiemannSiegelZ
+---
 
 `RiemannSiegelZ[t]` gives the Riemann–Siegel function Z(t).
 

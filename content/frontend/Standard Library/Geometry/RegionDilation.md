@@ -1,4 +1,6 @@
-# RegionDilation
+---
+title: RegionDilation
+---
 
 `RegionDilation[reg, r]` gives the dilation of the region reg by a disk of radius r centered at the origin.
 

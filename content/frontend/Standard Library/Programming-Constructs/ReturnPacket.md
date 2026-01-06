@@ -1,4 +1,6 @@
-# ReturnPacket
+---
+title: ReturnPacket
+---
 
 `ReturnPacket[expr]` is a WSTP packet that contains the expression expr, the result of an `EvaluatePacket` evaluation.
 

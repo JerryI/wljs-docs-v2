@@ -1,4 +1,6 @@
-# CaputoD
+---
+title: CaputoD
+---
 
 `CaputoD[f, {x, α}]` gives the Caputo fractional differintegral of the function f(x).
 

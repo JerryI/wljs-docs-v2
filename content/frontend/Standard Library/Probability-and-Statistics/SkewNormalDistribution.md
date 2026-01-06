@@ -1,4 +1,6 @@
-# SkewNormalDistribution
+---
+title: SkewNormalDistribution
+---
 
 `SkewNormalDistribution[μ, σ, α]` represents a skew-normal distribution with shape parameter α, location parameter μ, and scale parameter σ.
 

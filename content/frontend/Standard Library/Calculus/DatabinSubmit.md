@@ -1,4 +1,6 @@
-# DatabinSubmit
+---
+title: DatabinSubmit
+---
 
 `DatabinSubmit[bin, data]` submits the specified data to be added to the databin bin asynchronously.
 

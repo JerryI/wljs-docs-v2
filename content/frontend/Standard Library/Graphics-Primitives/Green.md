@@ -1,4 +1,6 @@
-# Green
+---
+title: Green
+---
 
 `Green` represents the color green in graphics or style specifications.
 

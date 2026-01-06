@@ -1,4 +1,6 @@
-# Arrow
+---
+title: Arrow
+---
 
 `Arrow[{pt1, pt2}]` is a graphics primitive representing an arrow from `pt1` to `pt2`. `Arrow[curve]` draws an arrow along a curve.
 

@@ -1,4 +1,6 @@
-# ImageInstanceQ
+---
+title: ImageInstanceQ
+---
 
 `ImageInstanceQ[image, obj]` gives `True` if image appears to be an instance of the object obj, and gives `False` otherwise.
 

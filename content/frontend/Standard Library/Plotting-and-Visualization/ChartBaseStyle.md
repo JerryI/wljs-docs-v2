@@ -1,4 +1,6 @@
-# ChartBaseStyle
+---
+title: ChartBaseStyle
+---
 
 `ChartBaseStyle` is an option for charting functions that specifies the base style for all chart elements.
 

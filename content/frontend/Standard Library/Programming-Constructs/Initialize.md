@@ -1,4 +1,6 @@
-# Initialize
+---
+title: Initialize
+---
 
 `Initialize[sym]` initializes the symbol sym from persistent values on the default persistence path.
 

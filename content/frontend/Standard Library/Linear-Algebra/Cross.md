@@ -1,4 +1,6 @@
-# Cross
+---
+title: Cross
+---
 
 `Cross[a, b]` gives the vector cross product of a and b.
 

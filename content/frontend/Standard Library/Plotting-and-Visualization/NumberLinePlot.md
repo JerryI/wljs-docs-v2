@@ -1,4 +1,6 @@
-# NumberLinePlot
+---
+title: NumberLinePlot
+---
 
 `NumberLinePlot[{v1,v2,…}]` plots the values vi on a number line.
 

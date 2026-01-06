@@ -1,4 +1,6 @@
-# NetSharedArray
+---
+title: NetSharedArray
+---
 
 `NetSharedArray["name"]` represents an array in a net that is shared by more than one layer.
 

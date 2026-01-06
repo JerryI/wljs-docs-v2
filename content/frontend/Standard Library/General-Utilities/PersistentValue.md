@@ -1,4 +1,6 @@
-# PersistentValue
+---
+title: PersistentValue
+---
 
 `PersistentValue["name"]` represents the persistent value associated with the key "name".
 

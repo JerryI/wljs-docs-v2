@@ -1,4 +1,6 @@
-# BinaryFormat
+---
+title: BinaryFormat
+---
 
 `BinaryFormat` is an option for OpenRead and related functions that specifies that a stream should be opened in binary format, so that no textual interpretation of newlines or other data is done.
 

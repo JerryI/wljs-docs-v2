@@ -1,4 +1,6 @@
-# Keys
+---
+title: Keys
+---
 
 `Keys[assoc]` gives a list of the keys in an association.
 

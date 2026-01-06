@@ -1,4 +1,6 @@
-# SemanticSearch
+---
+title: SemanticSearch
+---
 
 `SemanticSearch[index, query]` finds the items similar to query inside index.
 

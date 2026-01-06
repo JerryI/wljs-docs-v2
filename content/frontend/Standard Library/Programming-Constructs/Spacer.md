@@ -1,4 +1,6 @@
-# Spacer
+---
+title: Spacer
+---
 
 `Spacer[w]` displays as a spacer w printer's points wide.
 

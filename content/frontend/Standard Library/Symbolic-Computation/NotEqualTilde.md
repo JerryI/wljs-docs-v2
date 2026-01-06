@@ -1,4 +1,6 @@
-# NotEqualTilde
+---
+title: NotEqualTilde
+---
 
 `NotEqualTilde[x, y, ...]` displays as x≂̸y≂̸….
 

@@ -1,4 +1,6 @@
-# CantorMesh
+---
+title: CantorMesh
+---
 
 `CantorMesh[n]` gives a mesh region representing the nth-step Cantor set.
 

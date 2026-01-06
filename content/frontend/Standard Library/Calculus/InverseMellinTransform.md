@@ -1,4 +1,6 @@
-# InverseMellinTransform
+---
+title: InverseMellinTransform
+---
 
 `InverseMellinTransform[expr, s, x]` gives the inverse Mellin transform of expr.
 

@@ -1,4 +1,6 @@
-# SymmetrizedArrayRules
+---
+title: SymmetrizedArrayRules
+---
 
 `SymmetrizedArrayRules[sa]` returns a list of rules posi -> vali of the symmetrized array sa.
 

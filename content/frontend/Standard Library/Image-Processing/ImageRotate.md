@@ -1,4 +1,6 @@
-# ImageRotate
+---
+title: ImageRotate
+---
 
 `ImageRotate[image]` rotates image by 90° about its center.
 

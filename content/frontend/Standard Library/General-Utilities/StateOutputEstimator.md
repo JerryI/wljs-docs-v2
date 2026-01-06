@@ -1,4 +1,6 @@
-# StateOutputEstimator
+---
+title: StateOutputEstimator
+---
 
 `StateOutputEstimator[ssm, l]` constructs an estimator for the `StateSpaceModel` ssm, with estimator gain matrix l.
 

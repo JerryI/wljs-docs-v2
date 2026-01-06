@@ -1,4 +1,6 @@
-# IntersectingQ
+---
+title: IntersectingQ
+---
 
 `IntersectingQ[list1, list2]` yields True if list1 and list2 have at least one element in common, and False otherwise.
 

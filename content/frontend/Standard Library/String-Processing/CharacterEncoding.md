@@ -1,4 +1,6 @@
-# CharacterEncoding
+---
+title: CharacterEncoding
+---
 
 `CharacterEncoding` is an option for input and output functions which specifies what raw character encoding should be used.
 

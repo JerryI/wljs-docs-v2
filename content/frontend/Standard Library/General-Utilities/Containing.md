@@ -1,4 +1,6 @@
-# Containing
+---
+title: Containing
+---
 
 `Containing["outer", "inner"]` represents an object of type outer containing objects of type inner.
 

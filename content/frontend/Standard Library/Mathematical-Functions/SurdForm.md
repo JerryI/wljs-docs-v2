@@ -1,4 +1,6 @@
-# SurdForm
+---
+title: SurdForm
+---
 
 `SurdForm` is an option to `RadicalBox` and `SqrtBox` that indicates whether the radical represents a `Surd` expression.
 

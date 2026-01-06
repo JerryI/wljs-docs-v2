@@ -1,4 +1,6 @@
-# RegionBoundaryStyle
+---
+title: RegionBoundaryStyle
+---
 
 `RegionBoundaryStyle` is an option for plotting functions that specifies the boundary style for the region over which the plot is being drawn.
 

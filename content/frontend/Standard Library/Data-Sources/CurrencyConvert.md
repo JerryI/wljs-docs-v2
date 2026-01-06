@@ -1,4 +1,6 @@
-# CurrencyConvert
+---
+title: CurrencyConvert
+---
 
 `CurrencyConvert[quantity,target]` attempts to convert the specified currency quantity to the specified target currency.
 

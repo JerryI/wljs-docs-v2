@@ -1,4 +1,6 @@
-# FindFundamentalCycles
+---
+title: FindFundamentalCycles
+---
 
 `FindFundamentalCycles[g]` finds fundamental cycles of the graph g.
 

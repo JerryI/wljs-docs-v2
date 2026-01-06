@@ -1,4 +1,6 @@
-# ContentObject
+---
+title: ContentObject
+---
 
 `ContentObject["string"]` gives a content object whose content is string.
 

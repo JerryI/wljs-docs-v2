@@ -1,4 +1,6 @@
-# GeologicalPeriodData
+---
+title: GeologicalPeriodData
+---
 
 `GeologicalPeriodData[entity, property]` gives the value of the specified property for the geological period entity.
 

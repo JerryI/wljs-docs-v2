@@ -1,4 +1,6 @@
-# LibraryFunctionLoad
+---
+title: LibraryFunctionLoad
+---
 
 `LibraryFunctionLoad[lib, fun, argtype, rettype]` loads Wolfram Library lib and makes the library function fun available in the Wolfram Language.
 

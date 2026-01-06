@@ -1,4 +1,6 @@
-# NondimensionalizationTransform
+---
+title: NondimensionalizationTransform
+---
 
 `NondimensionalizationTransform[eq, ovars, fvars]` nondimensionalizes *eq*, replacing original variables *ovars* with the variables *fvars*.
 

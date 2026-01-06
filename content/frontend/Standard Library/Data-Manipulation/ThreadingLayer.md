@@ -1,4 +1,6 @@
-# ThreadingLayer
+---
+title: ThreadingLayer
+---
 
 `ThreadingLayer[f]` represents a net layer that takes several input arrays and applies a function f to corresponding array elements.
 

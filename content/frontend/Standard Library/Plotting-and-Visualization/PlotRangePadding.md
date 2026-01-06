@@ -1,4 +1,6 @@
-# PlotRangePadding
+---
+title: PlotRangePadding
+---
 
 `PlotRangePadding` is an option for graphics functions that specifies how much further axes etc. should extend beyond the range of coordinates specified by `PlotRange`.
 

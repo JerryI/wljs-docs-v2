@@ -1,4 +1,6 @@
-# SolveValues
+---
+title: SolveValues
+---
 
 `SolveValues[expr, vars]` gives the values of vars determined by the solutions of the system expr.
 

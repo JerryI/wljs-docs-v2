@@ -1,4 +1,6 @@
-# PerfectNumber
+---
+title: PerfectNumber
+---
 
 `PerfectNumber[n]` gives the nth perfect number.
 

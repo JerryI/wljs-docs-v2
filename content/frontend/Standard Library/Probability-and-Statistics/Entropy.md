@@ -1,4 +1,6 @@
-# Entropy
+---
+title: Entropy
+---
 
 `Entropy[list]` gives the base E information entropy of the values in list.
 

@@ -1,4 +1,6 @@
-# LameS
+---
+title: LameS
+---
 
 `LameS[ν,j,z,m]` gives the jth Lamé function Esν(j)(zm) of order ν with elliptic parameter m.
 

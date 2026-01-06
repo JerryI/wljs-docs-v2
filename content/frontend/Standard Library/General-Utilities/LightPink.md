@@ -1,4 +1,6 @@
-# LightPink
+---
+title: LightPink
+---
 
 `LightPink` represents a light pink color in graphics or style specifications.
 

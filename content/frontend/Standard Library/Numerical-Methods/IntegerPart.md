@@ -1,4 +1,6 @@
-# IntegerPart
+---
+title: IntegerPart
+---
 
 `IntegerPart[x]` gives the integer part of x.
 

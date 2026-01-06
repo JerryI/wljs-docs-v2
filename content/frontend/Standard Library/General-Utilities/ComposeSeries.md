@@ -1,4 +1,6 @@
-# ComposeSeries
+---
+title: ComposeSeries
+---
 
 `ComposeSeries[series1, series2, ...]` composes several power series.
 

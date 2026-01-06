@@ -1,4 +1,6 @@
-# Row
+---
+title: Row
+---
 
 `Row[{expr1, expr2, ...}]` arranges expressions in a horizontal row. `Row[list, separator]` inserts a separator between elements.
 

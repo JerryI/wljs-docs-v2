@@ -1,4 +1,6 @@
-# TypeSpecifier
+---
+title: TypeSpecifier
+---
 
 `TypeSpecifier[cons]` represents a type.
 

@@ -1,4 +1,6 @@
-# IncludeInflections
+---
+title: IncludeInflections
+---
 
 `IncludeInflections` is an option for linguistic functions that specifies whether inflected forms of words should be included in results.
 

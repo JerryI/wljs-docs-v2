@@ -1,4 +1,6 @@
-# MailReceiverFunction
+---
+title: MailReceiverFunction
+---
 
 `MailReceiverFunction[fun]` represents a mail receiver function that applies fun to any mail message it receives.
 

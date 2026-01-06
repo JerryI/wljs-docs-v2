@@ -1,4 +1,6 @@
-# JankoGroupJ1
+---
+title: JankoGroupJ1
+---
 
 `JankoGroupJ1[]` represents the sporadic simple Janko group J1.
 

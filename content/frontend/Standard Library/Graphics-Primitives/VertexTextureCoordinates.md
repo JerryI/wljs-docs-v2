@@ -1,4 +1,6 @@
-# VertexTextureCoordinates
+---
+title: VertexTextureCoordinates
+---
 
 `VertexTextureCoordinates` is an option for graphics primitives that specifies the texture coordinates to assign to vertices.
 

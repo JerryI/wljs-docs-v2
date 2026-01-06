@@ -1,4 +1,6 @@
-# DeleteDuplicates
+---
+title: DeleteDuplicates
+---
 
 `DeleteDuplicates[data]` deletes all duplicates from data, keeping the first occurrence.
 

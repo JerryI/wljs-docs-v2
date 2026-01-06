@@ -1,4 +1,6 @@
-# EndPackage
+---
+title: EndPackage
+---
 
 `EndPackage[]` restores `$Context` and `$ContextPath` to their values before the preceding `BeginPackage`, and prepends the current context to `$ContextPath`.
 

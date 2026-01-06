@@ -1,4 +1,6 @@
-# DifferenceQuotient
+---
+title: DifferenceQuotient
+---
 
 `DifferenceQuotient[f, {x, h}]` gives the difference quotient (f(x+h)-f(x))/h.
 

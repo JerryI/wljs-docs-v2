@@ -1,4 +1,6 @@
-# PatternFilling
+---
+title: PatternFilling
+---
 
 `PatternFilling[obj]` is a two-dimensional graphics directive specifying that obj should be used to fill faces of polygons and other filled graphics objects.
 

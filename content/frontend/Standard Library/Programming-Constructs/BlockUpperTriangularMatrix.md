@@ -1,4 +1,6 @@
-# BlockUpperTriangularMatrix
+---
+title: BlockUpperTriangularMatrix
+---
 
 `BlockUpperTriangularMatrix[umat]` represents the block upper triangular matrix umat as a structured array.
 

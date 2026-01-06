@@ -1,4 +1,6 @@
-# RemoteAuthorizationCaching
+---
+title: RemoteAuthorizationCaching
+---
 
 `RemoteAuthorizationCaching` is an option for `RemoteConnect` and related functions that determines whether caching of authorization information on remote hosts should be used.
 

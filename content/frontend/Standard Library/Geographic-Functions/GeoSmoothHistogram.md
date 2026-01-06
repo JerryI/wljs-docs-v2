@@ -1,4 +1,6 @@
-# GeoSmoothHistogram
+---
+title: GeoSmoothHistogram
+---
 
 `GeoSmoothHistogram[locs]` plots a smooth kernel histogram of the geo locations `locs`.
 

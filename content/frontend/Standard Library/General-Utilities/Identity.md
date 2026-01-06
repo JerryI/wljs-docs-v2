@@ -1,4 +1,6 @@
-# Identity
+---
+title: Identity
+---
 
 `Identity[expr]` gives expr (the identity operation).
 

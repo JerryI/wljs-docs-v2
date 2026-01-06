@@ -1,4 +1,6 @@
-# TickLabelPositioning
+---
+title: TickLabelPositioning
+---
 
 `TickLabelPositioning` is an option for `AxisObject` that specifies how the tick labels should be positioned relative to the ticks.
 

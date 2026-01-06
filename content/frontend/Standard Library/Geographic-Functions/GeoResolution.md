@@ -1,4 +1,6 @@
-# GeoResolution
+---
+title: GeoResolution
+---
 
 `GeoResolution` is an option for geographic functions that specifies an average distance between neighboring pixels in the resulting map.
 

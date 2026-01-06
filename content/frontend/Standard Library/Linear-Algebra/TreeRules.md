@@ -1,4 +1,6 @@
-# TreeRules
+---
+title: TreeRules
+---
 
 `TreeRules[tree]` returns the rules associated with the Tree object tree.
 

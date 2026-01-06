@@ -1,4 +1,6 @@
-# DiscreteMarkovProcess
+---
+title: DiscreteMarkovProcess
+---
 
 `DiscreteMarkovProcess[i0, m]` represents a discrete-time, finite-state Markov process with transition matrix m and initial state i0.
 

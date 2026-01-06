@@ -1,4 +1,6 @@
-# GraphPower
+---
+title: GraphPower
+---
 
 `GraphPower[g, n]` gives the graph n-th power of the graph `g`.
 

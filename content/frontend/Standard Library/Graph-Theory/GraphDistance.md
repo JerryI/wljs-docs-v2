@@ -1,4 +1,6 @@
-# GraphDistance
+---
+title: GraphDistance
+---
 
 `GraphDistance[g, s, t]` gives the shortest path distance from vertex s to vertex t in graph g.
 

@@ -1,4 +1,6 @@
-# LayeredGraphPlot
+---
+title: LayeredGraphPlot
+---
 
 `LayeredGraphPlot[g]` generates a layered plot of the graph g.
 

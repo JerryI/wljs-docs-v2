@@ -1,4 +1,6 @@
-# OptionQ
+---
+title: OptionQ
+---
 
 `OptionQ[e]` returns `True` if e can be considered an option or list of options, and `False` otherwise.
 

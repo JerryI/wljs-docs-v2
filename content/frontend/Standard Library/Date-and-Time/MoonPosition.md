@@ -1,4 +1,6 @@
-# MoonPosition
+---
+title: MoonPosition
+---
 
 `MoonPosition[]` gives the position of the Moon for the current date and location.
 

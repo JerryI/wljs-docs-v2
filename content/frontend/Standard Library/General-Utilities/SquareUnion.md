@@ -1,4 +1,6 @@
-# SquareUnion
+---
+title: SquareUnion
+---
 
 `SquareUnion[x, y, ...]` displays as x⊔y⊔….
 

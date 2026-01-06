@@ -1,4 +1,6 @@
-# WaitAsynchronousTask
+---
+title: WaitAsynchronousTask
+---
 
 `WaitAsynchronousTask[task]` waits for task to complete.
 

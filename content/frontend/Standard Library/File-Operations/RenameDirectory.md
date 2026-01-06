@@ -1,4 +1,6 @@
-# RenameDirectory
+---
+title: RenameDirectory
+---
 
 `RenameDirectory[dir1, dir2]` renames the directory dir1 to dir2.
 

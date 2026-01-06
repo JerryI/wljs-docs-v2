@@ -1,4 +1,6 @@
-# Magenta
+---
+title: Magenta
+---
 
 `Magenta` represents the color magenta in graphics or style specifications.
 

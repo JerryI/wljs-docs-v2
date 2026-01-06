@@ -1,4 +1,6 @@
-# PieChart3D
+---
+title: PieChart3D
+---
 
 `PieChart3D[{y1, y2, …}]` makes a 3D pie chart with sector angle proportional to y1, y2, ….
 

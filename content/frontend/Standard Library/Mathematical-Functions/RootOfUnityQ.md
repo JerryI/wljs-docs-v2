@@ -1,4 +1,6 @@
-# RootOfUnityQ
+---
+title: RootOfUnityQ
+---
 
 `RootOfUnityQ[a]` yields True if a is a root of unity, and yields False otherwise.
 

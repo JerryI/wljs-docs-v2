@@ -1,4 +1,6 @@
-# RawMemoryAllocate
+---
+title: RawMemoryAllocate
+---
 
 `RawMemoryAllocate[type]` allocates enough raw memory to store a binary representation of the specified type.
 

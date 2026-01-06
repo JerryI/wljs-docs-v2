@@ -1,4 +1,6 @@
-# PolynomialLCM
+---
+title: PolynomialLCM
+---
 
 `PolynomialLCM[poly1, poly2, …]` gives the least common multiple of the polynomials.
 

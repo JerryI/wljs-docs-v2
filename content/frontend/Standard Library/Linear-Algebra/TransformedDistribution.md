@@ -1,4 +1,6 @@
-# TransformedDistribution
+---
+title: TransformedDistribution
+---
 
 `TransformedDistribution[expr,x⟨dist]` represents the transformed distribution of expr where the random variable x follows the distribution dist.
 

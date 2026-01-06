@@ -1,4 +1,6 @@
-# TrainTextContentDetector
+---
+title: TrainTextContentDetector
+---
 
 `TrainTextContentDetector[{text1 -> {span1 -> class1, ...}, ...}]` trains a ContentDetectorFunction[...] based on the examples given.
 

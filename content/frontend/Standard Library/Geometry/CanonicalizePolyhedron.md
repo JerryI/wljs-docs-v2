@@ -1,4 +1,6 @@
-# CanonicalizePolyhedron
+---
+title: CanonicalizePolyhedron
+---
 
 `CanonicalizePolyhedron[poly]` gives a canonical representation of the polyhedron poly with shared coordinates and with inner and outer boundaries.
 

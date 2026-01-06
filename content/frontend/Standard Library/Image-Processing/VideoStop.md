@@ -1,4 +1,6 @@
-# VideoStop
+---
+title: VideoStop
+---
 
 `VideoStop[]` stops the playback of all `VideoStream` objects.
 

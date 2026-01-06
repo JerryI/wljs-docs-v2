@@ -1,4 +1,6 @@
-# StringLength
+---
+title: StringLength
+---
 
 `StringLength["string"]` gives the number of characters in a string.
 

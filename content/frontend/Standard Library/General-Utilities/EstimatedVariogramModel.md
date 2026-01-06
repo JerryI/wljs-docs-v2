@@ -1,4 +1,6 @@
-# EstimatedVariogramModel
+---
+title: EstimatedVariogramModel
+---
 
 `EstimatedVariogramModel[{loc1 -> val1, loc2 -> val2, ...}]` estimates the best variogram function from values vali given at locations loci.
 

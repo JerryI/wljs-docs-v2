@@ -1,4 +1,6 @@
-# ContinuedFractionK
+---
+title: ContinuedFractionK
+---
 
 `ContinuedFractionK[f, g, {i, imin, imax}]` represents the continued fraction with numerators f and denominators g.
 

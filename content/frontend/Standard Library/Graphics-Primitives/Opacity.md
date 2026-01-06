@@ -1,4 +1,6 @@
-# Opacity
+---
+title: Opacity
+---
 
 `Opacity[a]` is a graphics directive that specifies that graphical objects that follow are to be displayed with opacity a.
 

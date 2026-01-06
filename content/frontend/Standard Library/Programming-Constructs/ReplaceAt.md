@@ -1,4 +1,6 @@
-# ReplaceAt
+---
+title: ReplaceAt
+---
 
 `ReplaceAt[expr, rules, n]` transforms expr by replacing the nth element using rules.
 

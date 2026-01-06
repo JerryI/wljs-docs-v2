@@ -1,4 +1,6 @@
-# WatershedComponents
+---
+title: WatershedComponents
+---
 
 `WatershedComponents[image]` computes the watershed transform of image, returning the result as an array in which positive integers label the catchment basins.
 

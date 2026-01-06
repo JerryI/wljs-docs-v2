@@ -1,4 +1,6 @@
-# Simplify
+---
+title: Simplify
+---
 
 `Simplify[expr]` performs algebraic transformations on expr and returns the simplest form it finds.
 

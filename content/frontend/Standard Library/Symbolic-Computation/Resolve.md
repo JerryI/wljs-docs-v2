@@ -1,4 +1,6 @@
-# Resolve
+---
+title: Resolve
+---
 
 `Resolve[expr]` attempts to resolve expr into a form that eliminates `ForAll` and `Exists` quantifiers.
 

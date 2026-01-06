@@ -1,4 +1,6 @@
-# FieldHint
+---
+title: FieldHint
+---
 
 `FieldHint` is an option for InputField that specifies contents to display when the input field is empty.
 

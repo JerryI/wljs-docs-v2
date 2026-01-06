@@ -1,4 +1,6 @@
-# PreferencesPath
+---
+title: PreferencesPath
+---
 
 `PreferencesPath` is a global option that specifies which directories are searched for user-specific settings when the Wolfram System is started.
 

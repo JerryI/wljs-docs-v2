@@ -1,4 +1,6 @@
-# SowVideo
+---
+title: SowVideo
+---
 
 `SowVideo[frame]` specifies that frame should be collected by the nearest enclosing `ReapVideo`.
 

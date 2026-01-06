@@ -1,4 +1,6 @@
-# NBodySimulationData
+---
+title: NBodySimulationData
+---
 
 `NBodySimulationData[...]` represents the result of an n-body simulation.
 

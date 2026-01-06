@@ -1,4 +1,6 @@
-# Wednesday
+---
+title: Wednesday
+---
 
 `Wednesday` is a day of the week.
 

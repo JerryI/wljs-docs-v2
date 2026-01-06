@@ -1,4 +1,6 @@
-# Orderless
+---
+title: Orderless
+---
 
 `Orderless` is an attribute that can be assigned to a symbol f to indicate that the elements in expressions of the form `f[e1, e2, …]` should automatically be sorted into canonical order.
 

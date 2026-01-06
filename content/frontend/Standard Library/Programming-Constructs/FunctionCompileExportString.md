@@ -1,4 +1,6 @@
-# FunctionCompileExportString
+---
+title: FunctionCompileExportString
+---
 
 `FunctionCompileExportString[fspec]` gives a string of textual LLVM code obtained by compiling the function specification fspec.
 

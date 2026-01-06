@@ -1,4 +1,6 @@
-# NetInitialize
+---
+title: NetInitialize
+---
 
 `NetInitialize[net]` gives a net in which all uninitialized learnable parameters have been given initial values.
 

@@ -1,4 +1,6 @@
-# MaxOverlapFraction
+---
+title: MaxOverlapFraction
+---
 
 `MaxOverlapFraction` is an option that specifies the maximum acceptable overlap between different identifications.
 

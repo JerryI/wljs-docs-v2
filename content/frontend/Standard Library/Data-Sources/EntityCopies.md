@@ -1,4 +1,6 @@
-# EntityCopies
+---
+title: EntityCopies
+---
 
 `EntityCopies[entity, n]` represents n copies of entity.
 

@@ -1,4 +1,6 @@
-# PropertyList
+---
+title: PropertyList
+---
 
 `PropertyList[{obj,itemspec}]` lists the properties available for itemspec in obj.
 

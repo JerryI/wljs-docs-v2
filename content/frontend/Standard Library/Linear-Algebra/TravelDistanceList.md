@@ -1,4 +1,6 @@
-# TravelDistanceList
+---
+title: TravelDistanceList
+---
 
 `TravelDistanceList[{loc1, loc2, ..., locn}]` returns the list {TravelDistance[loc1, loc2], ..., TravelDistance[locn-1, locn]}.
 

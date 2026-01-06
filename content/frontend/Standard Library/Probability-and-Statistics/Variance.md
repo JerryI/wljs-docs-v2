@@ -1,4 +1,6 @@
-# Variance
+---
+title: Variance
+---
 
 `Variance[data]` gives the sample variance estimate of the elements in `data`. `Variance[dist]` gives the variance of the distribution `dist`.
 

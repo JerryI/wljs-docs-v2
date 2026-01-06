@@ -1,4 +1,6 @@
-# GraphJoin
+---
+title: GraphJoin
+---
 
 `GraphJoin[g1, g2]` gives the graph join of the graphs `g1` and `g2`.
 

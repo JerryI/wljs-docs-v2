@@ -1,4 +1,6 @@
-# FunctionCompileExportByteArray
+---
+title: FunctionCompileExportByteArray
+---
 
 `FunctionCompileExportByteArray[fspec]` gives a byte array of binary LLVM code obtained by compiling the function specification fspec.
 

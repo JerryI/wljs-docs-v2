@@ -1,4 +1,6 @@
-# ListSurfacePlot3D
+---
+title: ListSurfacePlot3D
+---
 
 `ListSurfacePlot3D[{{x1,y1,z1},{x2,y2,z2},…}]` plots a three-dimensional surface constructed to fit the specified points.
 

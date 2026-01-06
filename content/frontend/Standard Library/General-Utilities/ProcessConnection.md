@@ -1,4 +1,6 @@
-# ProcessConnection
+---
+title: ProcessConnection
+---
 
 `ProcessConnection[proc, "stream"]` returns the stream object for a given stream.
 

@@ -1,4 +1,6 @@
-# TakeLargest
+---
+title: TakeLargest
+---
 
 `TakeLargest[data, n]` gives the n largest elements of data, sorted in descending order.
 

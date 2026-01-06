@@ -1,4 +1,6 @@
-# CharacteristicFunction
+---
+title: CharacteristicFunction
+---
 
 `CharacteristicFunction[dist, t]` gives the characteristic function for the distribution dist as a function of the variable t.
 

@@ -1,4 +1,6 @@
-# ASATriangle
+---
+title: ASATriangle
+---
 
 `ASATriangle[α, c, β]` returns a filled triangle with angles α and β and side length c, where c is adjacent to both angles.
 

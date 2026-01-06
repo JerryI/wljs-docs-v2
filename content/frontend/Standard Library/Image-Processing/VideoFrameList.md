@@ -1,4 +1,6 @@
-# VideoFrameList
+---
+title: VideoFrameList
+---
 
 `VideoFrameList[video, n]` gives a list of n images extracted from video.
 

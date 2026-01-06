@@ -1,4 +1,6 @@
-# RemoveDiacritics
+---
+title: RemoveDiacritics
+---
 
 `RemoveDiacritics[string]` replaces characters in string that have diacritics by their base ASCII characters, when possible.
 

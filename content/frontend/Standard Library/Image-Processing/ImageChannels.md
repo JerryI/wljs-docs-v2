@@ -1,4 +1,6 @@
-# ImageChannels
+---
+title: ImageChannels
+---
 
 `ImageChannels[image]` gives the number of channels present in the data for the Image object.
 

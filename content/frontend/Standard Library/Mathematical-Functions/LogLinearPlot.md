@@ -1,4 +1,6 @@
-# LogLinearPlot
+---
+title: LogLinearPlot
+---
 
 `LogLinearPlot[f, {x, xmin, xmax}]` generates a log-linear plot of f as a function of x from xmin to xmax.
 

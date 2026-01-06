@@ -1,4 +1,6 @@
-# SplitBy
+---
+title: SplitBy
+---
 
 `SplitBy[list, f]` splits list into sublists consisting of runs of successive elements that give the same value when f is applied.
 

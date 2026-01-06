@@ -1,4 +1,6 @@
-# SpatialBoundaryCorrection
+---
+title: SpatialBoundaryCorrection
+---
 
 `SpatialBoundaryCorrection` is an option to various spatial statistics functions that controls how to correct for boundary effects of observation regions.
 

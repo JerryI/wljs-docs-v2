@@ -1,4 +1,6 @@
-# Text
+---
+title: Text
+---
 
 `Text[expr, coords]` is a graphics primitive that displays text at the specified coordinates. `Text[expr, coords, offset]` allows offset positioning.
 

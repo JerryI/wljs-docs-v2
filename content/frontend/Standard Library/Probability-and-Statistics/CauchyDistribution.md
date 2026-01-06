@@ -1,4 +1,6 @@
-# CauchyDistribution
+---
+title: CauchyDistribution
+---
 
 `CauchyDistribution[a, b]` represents a Cauchy distribution with location parameter a and scale parameter b.
 

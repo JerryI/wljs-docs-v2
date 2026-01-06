@@ -1,4 +1,6 @@
-# VertexQ
+---
+title: VertexQ
+---
 
 `VertexQ[g, v]` yields `True` if v is a vertex in the graph g and `False` otherwise.
 

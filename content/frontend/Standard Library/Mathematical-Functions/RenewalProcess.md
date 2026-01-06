@@ -1,4 +1,6 @@
-# RenewalProcess
+---
+title: RenewalProcess
+---
 
 `RenewalProcess[rdist]` represents a renewal process with interarrival times distributed according to rdist.
 

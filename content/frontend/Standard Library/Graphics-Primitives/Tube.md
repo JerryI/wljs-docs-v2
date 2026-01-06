@@ -1,4 +1,6 @@
-# Tube
+---
+title: Tube
+---
 
 `Tube[{{x1, y1, z1}, {x2, y2, z2}, ...}, r]` represents a 3D tube of radius r around a path.
 

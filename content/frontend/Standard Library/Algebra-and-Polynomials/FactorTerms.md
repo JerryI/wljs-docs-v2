@@ -1,4 +1,6 @@
-# FactorTerms
+---
+title: FactorTerms
+---
 
 `FactorTerms[poly]` pulls out any overall numerical factor in poly.
 

@@ -1,4 +1,6 @@
-# JacobiSN
+---
+title: JacobiSN
+---
 
 `JacobiSN[u, m]` gives the Jacobi elliptic function sn(u|m).
 

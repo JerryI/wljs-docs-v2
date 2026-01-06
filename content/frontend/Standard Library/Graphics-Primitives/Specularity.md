@@ -1,4 +1,6 @@
-# Specularity
+---
+title: Specularity
+---
 
 `Specularity[s]` is a graphics directive which specifies that surfaces of 3D graphics objects which follow are to be taken to have specularity s.
 

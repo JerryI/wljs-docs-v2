@@ -1,4 +1,6 @@
-# HoldForm
+---
+title: HoldForm
+---
 
 `HoldForm[expr]` prints as the expression expr, with expr maintained in an unevaluated form (unlike `Hold`, doesn't show the wrapper).
 

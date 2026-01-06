@@ -1,4 +1,6 @@
-# TicksStyle
+---
+title: TicksStyle
+---
 
 `TicksStyle` is an option for graphics functions which specifies how ticks should be rendered.
 

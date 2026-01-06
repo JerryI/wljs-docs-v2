@@ -1,4 +1,6 @@
-# Indeterminate
+---
+title: Indeterminate
+---
 
 `Indeterminate` is a symbol that represents a numerical quantity whose magnitude cannot be determined.
 

@@ -1,4 +1,6 @@
-# DayCountConvention
+---
+title: DayCountConvention
+---
 
 `DayCountConvention` is an option that specifies the day count convention used by `DateDifference`.
 

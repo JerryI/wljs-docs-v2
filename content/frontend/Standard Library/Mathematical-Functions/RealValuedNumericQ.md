@@ -1,4 +1,6 @@
-# RealValuedNumericQ
+---
+title: RealValuedNumericQ
+---
 
 `RealValuedNumericQ[expr]` gives True if expr is a real-valued numeric quantity, and False otherwise.
 

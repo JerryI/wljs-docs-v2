@@ -1,4 +1,6 @@
-# PolygonCoordinates
+---
+title: PolygonCoordinates
+---
 
 `PolygonCoordinates[poly]` gives a list of coordinates in the polygon poly.
 

@@ -1,4 +1,6 @@
-# SubsetCount
+---
+title: SubsetCount
+---
 
 `SubsetCount[list,sub]` gives a count of the number of times sub appears in any order as a sublist of list.
 

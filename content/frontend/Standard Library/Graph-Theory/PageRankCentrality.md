@@ -1,4 +1,6 @@
-# PageRankCentrality
+---
+title: PageRankCentrality
+---
 
 `PageRankCentrality[g,α]` gives a list of page-rank centralities for the vertices in the graph g and weight α.
 

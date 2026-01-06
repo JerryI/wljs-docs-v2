@@ -1,4 +1,6 @@
-# ReapVideo
+---
+title: ReapVideo
+---
 
 `ReapVideo[expr]` gives a video whose frames are the expressions to which `SowVideo` has been applied during its evaluation.
 

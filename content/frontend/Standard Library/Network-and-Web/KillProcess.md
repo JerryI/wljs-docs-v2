@@ -1,4 +1,6 @@
-# KillProcess
+---
+title: KillProcess
+---
 
 `KillProcess[proc]` kills the external process represented by the ProcessObject proc.
 

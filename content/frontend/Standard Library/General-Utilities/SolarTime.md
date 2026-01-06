@@ -1,4 +1,6 @@
-# SolarTime
+---
+title: SolarTime
+---
 
 `SolarTime[]` gives the angle on the celestial equator between the Sun and the local antimeridian for the current location and date.
 

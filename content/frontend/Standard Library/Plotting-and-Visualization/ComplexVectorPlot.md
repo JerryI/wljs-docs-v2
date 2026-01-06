@@ -1,4 +1,6 @@
-# ComplexVectorPlot
+---
+title: ComplexVectorPlot
+---
 
 `ComplexVectorPlot[f, {z, zmin, zmax}]` generates a vector plot of the vector field {Re[f], Im[f]} over the complex rectangle with corners zmin and zmax.
 

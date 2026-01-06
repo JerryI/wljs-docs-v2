@@ -1,4 +1,6 @@
-# DistributionParameterQ
+---
+title: DistributionParameterQ
+---
 
 `DistributionParameterQ[dist]` yields `True` if dist is a valid distribution, and yields `False` otherwise.
 

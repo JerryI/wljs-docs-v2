@@ -1,4 +1,6 @@
-# PositiveReals
+---
+title: PositiveReals
+---
 
 `PositiveReals` represents the domain of strictly positive real numbers.
 

@@ -1,4 +1,6 @@
-# DeviceConfigure
+---
+title: DeviceConfigure
+---
 
 `DeviceConfigure[device, config]` configures the specified device according to config.
 

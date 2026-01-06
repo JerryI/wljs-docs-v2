@@ -1,4 +1,6 @@
-# EntityFunction
+---
+title: EntityFunction
+---
 
 `EntityFunction[x, body]` is a function with a single formal parameter x, to be used in `EntityValue` and related functions.
 

@@ -1,4 +1,6 @@
-# ArcCsc
+---
+title: ArcCsc
+---
 
 `ArcCsc[z]` gives the arc cosecant csc⁻¹(z) of the complex number z.
 

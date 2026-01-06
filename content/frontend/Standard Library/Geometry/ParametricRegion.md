@@ -1,4 +1,6 @@
-# ParametricRegion
+---
+title: ParametricRegion
+---
 
 `ParametricRegion[{f1, ..., fn}, {u1, ..., um}]` represents a region given by parametric functions.
 

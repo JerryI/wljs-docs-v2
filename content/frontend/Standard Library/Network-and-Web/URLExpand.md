@@ -1,4 +1,6 @@
-# URLExpand
+---
+title: URLExpand
+---
 
 `URLExpand["url"]` expands a shortened "url".
 

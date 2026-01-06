@@ -1,4 +1,6 @@
-# AnomalyDetection
+---
+title: AnomalyDetection
+---
 
 `AnomalyDetection[{example1, example2, ...}]` generates an `AnomalyDetectorFunction[...]` based on the examples given.
 

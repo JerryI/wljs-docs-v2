@@ -1,4 +1,6 @@
-# BuildingData
+---
+title: BuildingData
+---
 
 `BuildingData[entity, property]` gives the value of the specified property for the building entity.
 

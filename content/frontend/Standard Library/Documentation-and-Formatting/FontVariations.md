@@ -1,4 +1,6 @@
-# FontVariations
+---
+title: FontVariations
+---
 
 `FontVariations` is an option for Style, Cell, and related constructs that specifies what font variations should be used.
 

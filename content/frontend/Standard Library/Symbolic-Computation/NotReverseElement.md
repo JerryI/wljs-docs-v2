@@ -1,4 +1,6 @@
-# NotReverseElement
+---
+title: NotReverseElement
+---
 
 `NotReverseElement[x, y, ...]` displays as x∌y∌....
 

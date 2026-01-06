@@ -1,4 +1,6 @@
-# NominalScale
+---
+title: NominalScale
+---
 
 `NominalScale[{cat1, cat2, ..., catn}]` represents a set of unordered categories cati.
 

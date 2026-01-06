@@ -1,4 +1,6 @@
-# Cycles
+---
+title: Cycles
+---
 
 `Cycles[{cyc1, cyc2, ...}]` represents a permutation with disjoint cycles cyci.
 

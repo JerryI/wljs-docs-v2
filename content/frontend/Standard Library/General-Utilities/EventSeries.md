@@ -1,4 +1,6 @@
-# EventSeries
+---
+title: EventSeries
+---
 
 `EventSeries[{{t1, v1}, {t2, v2}, ...}]` represents a series of events given as time-value pairs {ti, vi}.
 

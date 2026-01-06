@@ -1,4 +1,6 @@
-# Directive
+---
+title: Directive
+---
 
 `Directive[g1, g2, ...]` represents a single graphics directive composed of the directives g1, g2, ....
 

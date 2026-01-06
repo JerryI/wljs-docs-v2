@@ -1,4 +1,6 @@
-# OrderedQ
+---
+title: OrderedQ
+---
 
 `OrderedQ[h[e1, e2, …]]` gives `True` if the ei are in canonical order, and `False` otherwise.
 

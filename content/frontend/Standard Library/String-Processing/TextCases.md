@@ -1,4 +1,6 @@
-# TextCases
+---
+title: TextCases
+---
 
 `TextCases[text, form]` gives a list of all cases of text identified as being of type form that appear in text.
 

@@ -1,4 +1,6 @@
-# Speak
+---
+title: Speak
+---
 
 `Speak[expr]` speaks a spoken representation of the expression expr.
 

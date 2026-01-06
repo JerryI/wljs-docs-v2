@@ -1,4 +1,6 @@
-# ExportString
+---
+title: ExportString
+---
 
 `ExportString[expr, "format"]` generates a string of expr in the specified format.
 

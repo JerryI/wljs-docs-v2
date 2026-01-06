@@ -1,4 +1,6 @@
-# DefaultFrameStyle
+---
+title: DefaultFrameStyle
+---
 
 `DefaultFrameStyle` is a low-level option for graphics and related constructs that specifies the default style to use in displaying their frames.
 

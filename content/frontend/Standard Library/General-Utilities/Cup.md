@@ -1,4 +1,6 @@
-# Cup
+---
+title: Cup
+---
 
 `Cup[x, y, ...]` displays as x⌣y⌣....
 

@@ -1,4 +1,6 @@
-# Invisible
+---
+title: Invisible
+---
 
 `Invisible[expr]` displays as space that is the same size as the formatted version of expr.
 

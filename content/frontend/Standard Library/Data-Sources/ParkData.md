@@ -1,4 +1,6 @@
-# ParkData
+---
+title: ParkData
+---
 
 `ParkData[entity, property]` gives the value of the specified property for the park entity.
 

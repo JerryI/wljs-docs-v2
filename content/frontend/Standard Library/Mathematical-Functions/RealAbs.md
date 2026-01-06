@@ -1,4 +1,6 @@
-# RealAbs
+---
+title: RealAbs
+---
 
 `RealAbs[x]` gives the absolute value of the real number x.
 

@@ -1,4 +1,6 @@
-# LyapunovSolve
+---
+title: LyapunovSolve
+---
 
 `LyapunovSolve[a,c]` finds a solution x of the matrix Lyapunov equation a.x+x.aᵀ=c.
 

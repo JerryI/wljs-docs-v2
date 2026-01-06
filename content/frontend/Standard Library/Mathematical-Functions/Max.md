@@ -1,4 +1,6 @@
-# Max
+---
+title: Max
+---
 
 `Max[x1, x2, ...]` yields the numerically largest of the xi.
 

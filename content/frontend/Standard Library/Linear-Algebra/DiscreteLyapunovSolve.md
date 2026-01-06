@@ -1,4 +1,6 @@
-# DiscreteLyapunovSolve
+---
+title: DiscreteLyapunovSolve
+---
 
 `DiscreteLyapunovSolve[a, c]` finds the numeric solution x of the discrete matrix equation a.x.a† - x = c.
 

@@ -1,4 +1,6 @@
-# NetTake
+---
+title: NetTake
+---
 
 `NetTake[net, end]` takes only those layers up to end in a NetChain or NetGraph.
 

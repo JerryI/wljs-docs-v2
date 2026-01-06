@@ -1,4 +1,6 @@
-# NearestFunction
+---
+title: NearestFunction
+---
 
 `NearestFunction[data]` represents a function whose values give the elements closest to an element that is supplied.
 

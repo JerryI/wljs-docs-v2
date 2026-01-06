@@ -1,4 +1,6 @@
-# GeometricMean
+---
+title: GeometricMean
+---
 
 `GeometricMean[data]` gives the geometric mean of the values in data.
 

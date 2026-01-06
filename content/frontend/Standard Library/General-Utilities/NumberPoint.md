@@ -1,4 +1,6 @@
-# NumberPoint
+---
+title: NumberPoint
+---
 
 `NumberPoint` is an option for `NumberForm` and related functions that gives the string to use as a decimal point.
 

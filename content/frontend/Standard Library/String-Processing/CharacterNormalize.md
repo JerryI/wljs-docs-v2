@@ -1,4 +1,6 @@
-# CharacterNormalize
+---
+title: CharacterNormalize
+---
 
 `CharacterNormalize["text", form]` converts the characters in text to the specified normalization form.
 

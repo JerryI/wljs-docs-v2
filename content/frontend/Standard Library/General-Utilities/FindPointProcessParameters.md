@@ -1,4 +1,6 @@
-# FindPointProcessParameters
+---
+title: FindPointProcessParameters
+---
 
 `FindPointProcessParameters[pdata,pproc]` estimates the parameters of the point process pproc from point data pdata.
 

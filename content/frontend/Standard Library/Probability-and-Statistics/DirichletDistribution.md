@@ -1,4 +1,6 @@
-# DirichletDistribution
+---
+title: DirichletDistribution
+---
 
 `DirichletDistribution[{α1, ..., αk+1}]` represents a Dirichlet distribution of dimension k with shape parameters αi.
 

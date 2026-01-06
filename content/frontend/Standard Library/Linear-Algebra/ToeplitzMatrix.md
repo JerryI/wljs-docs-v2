@@ -1,4 +1,6 @@
-# ToeplitzMatrix
+---
+title: ToeplitzMatrix
+---
 
 `ToeplitzMatrix[n]` gives the n×n Toeplitz matrix with first row and first column being successive integers.
 

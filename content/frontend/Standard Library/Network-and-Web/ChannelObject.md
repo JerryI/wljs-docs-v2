@@ -1,4 +1,6 @@
-# ChannelObject
+---
+title: ChannelObject
+---
 
 `ChannelObject[]` gives a new anonymous channel specification.
 

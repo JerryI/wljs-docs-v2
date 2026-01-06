@@ -1,4 +1,6 @@
-# PermutationOrder
+---
+title: PermutationOrder
+---
 
 `PermutationOrder[perm]` gives the order of permutation perm.
 

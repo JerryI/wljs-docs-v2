@@ -1,4 +1,6 @@
-# SearchAdjustment
+---
+title: SearchAdjustment
+---
 
 `SearchAdjustment[query, w]` represents a component of a search query that is to be treated as having weight w.
 

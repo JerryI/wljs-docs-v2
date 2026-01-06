@@ -1,4 +1,6 @@
-# OutputControllableModelQ
+---
+title: OutputControllableModelQ
+---
 
 `OutputControllableModelQ[ssm]` gives True if the state-space model ssm is output controllable, and False otherwise.
 

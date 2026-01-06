@@ -1,4 +1,6 @@
-# PacletObject
+---
+title: PacletObject
+---
 
 `PacletObject[...]` is the representation of a paclet in the Wolfram Language.
 

@@ -1,4 +1,6 @@
-# SequenceAttentionLayer
+---
+title: SequenceAttentionLayer
+---
 
 `SequenceAttentionLayer[]` is equivalent to `AttentionLayer[]` with a single "Input" port instead of ports "Key" and "Value". It should no longer be used.
 

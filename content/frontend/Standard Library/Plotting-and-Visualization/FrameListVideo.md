@@ -1,4 +1,6 @@
-# FrameListVideo
+---
+title: FrameListVideo
+---
 
 `FrameListVideo[{img1, img2, ...}]` generates a video containing frames img1, img2, etc.
 

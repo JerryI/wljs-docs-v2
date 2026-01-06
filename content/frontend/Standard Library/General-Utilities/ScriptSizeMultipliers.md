@@ -1,4 +1,6 @@
-# ScriptSizeMultipliers
+---
+title: ScriptSizeMultipliers
+---
 
 `ScriptSizeMultipliers` is an option for `Style` that specifies how much smaller to render each successive level of subscripts, etc.
 

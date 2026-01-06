@@ -1,4 +1,6 @@
-# Limit
+---
+title: Limit
+---
 
 `Limit[f, x -> x0]` gives the limit of f as x approaches x0.
 

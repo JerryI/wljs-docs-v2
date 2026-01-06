@@ -1,4 +1,6 @@
-# PermutationSupport
+---
+title: PermutationSupport
+---
 
 `PermutationSupport[perm]` returns the support of the permutation perm.
 

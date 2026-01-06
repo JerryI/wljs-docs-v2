@@ -1,4 +1,6 @@
-# FromJulianDate
+---
+title: FromJulianDate
+---
 
 `FromJulianDate[jd]` gives a date object corresponding to the Julian date jd.
 

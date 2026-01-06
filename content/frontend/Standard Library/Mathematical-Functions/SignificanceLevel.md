@@ -1,4 +1,6 @@
-# SignificanceLevel
+---
+title: SignificanceLevel
+---
 
 `SignificanceLevel` is an option to `VarianceTest` and similar functions that controls cutoffs for diagnostic tests as well as test conclusions.
 

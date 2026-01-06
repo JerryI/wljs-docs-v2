@@ -1,4 +1,6 @@
-# WikipediaData
+---
+title: WikipediaData
+---
 
 `WikipediaData[article]` gives the plain text of the specified Wikipedia article.
 

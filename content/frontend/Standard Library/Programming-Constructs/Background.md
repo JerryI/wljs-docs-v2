@@ -1,4 +1,6 @@
-# Background
+---
+title: Background
+---
 
 `Background` is an option that specifies what background color to use.
 

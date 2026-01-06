@@ -1,4 +1,6 @@
-# StringFormat
+---
+title: StringFormat
+---
 
 `StringFormat["string"]` attempts to determine what `ImportString` format could be used to import the string *"string"*.
 

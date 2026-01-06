@@ -1,4 +1,6 @@
-# ParabolicCylinderD
+---
+title: ParabolicCylinderD
+---
 
 `ParabolicCylinderD[ν, z]` gives the parabolic cylinder function Dν(z).
 

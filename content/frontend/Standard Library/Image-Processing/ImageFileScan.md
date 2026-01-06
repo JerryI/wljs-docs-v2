@@ -1,4 +1,6 @@
-# ImageFileScan
+---
+title: ImageFileScan
+---
 
 `ImageFileScan[f,inputfile]` applies the function f to the list of channel values for each pixel of the image stored in inputfile.
 

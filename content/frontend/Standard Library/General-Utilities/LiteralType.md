@@ -1,4 +1,6 @@
-# LiteralType
+---
+title: LiteralType
+---
 
 `LiteralType[x]` represents a literal value *x* for use as a type.
 

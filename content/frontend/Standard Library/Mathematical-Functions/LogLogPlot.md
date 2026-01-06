@@ -1,4 +1,6 @@
-# LogLogPlot
+---
+title: LogLogPlot
+---
 
 `LogLogPlot[f, {x, xmin, xmax}]` generates a log-log plot of f as a function of x from xmin to xmax.
 

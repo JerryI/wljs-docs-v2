@@ -1,4 +1,6 @@
-# CountRoots
+---
+title: CountRoots
+---
 
 `CountRoots[f, x]` gives the number of real roots of the univariate function f in x.
 

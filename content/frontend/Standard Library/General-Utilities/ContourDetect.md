@@ -1,4 +1,6 @@
-# ContourDetect
+---
+title: ContourDetect
+---
 
 `ContourDetect[image]` gives a binary image in which white pixels correspond to the zeros and zero crossings in image.
 

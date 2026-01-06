@@ -1,4 +1,6 @@
-# FormFunction
+---
+title: FormFunction
+---
 
 `FormFunction[formspec,func]` represents an active form that, when submitted, applies func to the values obtained from the form specified by formspec.
 

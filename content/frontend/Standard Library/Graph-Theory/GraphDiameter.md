@@ -1,4 +1,6 @@
-# GraphDiameter
+---
+title: GraphDiameter
+---
 
 `GraphDiameter[g]` gives the greatest distance between any pair of vertices in graph g.
 

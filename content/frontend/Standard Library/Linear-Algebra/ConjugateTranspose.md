@@ -1,4 +1,6 @@
-# ConjugateTranspose
+---
+title: ConjugateTranspose
+---
 
 `ConjugateTranspose[m]` gives the conjugate transpose (Hermitian transpose) of a matrix m.
 

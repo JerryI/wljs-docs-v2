@@ -1,4 +1,6 @@
-# GeometricDistribution
+---
+title: GeometricDistribution
+---
 
 `GeometricDistribution[p]` represents a geometric distribution with probability parameter p.
 

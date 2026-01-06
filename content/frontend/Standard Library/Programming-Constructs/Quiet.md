@@ -1,4 +1,6 @@
-# Quiet
+---
+title: Quiet
+---
 
 `Quiet[expr]` evaluates expr without outputting any messages generated.
 

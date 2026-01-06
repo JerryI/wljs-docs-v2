@@ -1,4 +1,6 @@
-# ReplaceRepeated
+---
+title: ReplaceRepeated
+---
 
 `expr//.rules` repeatedly performs replacements until expr no longer changes.
 

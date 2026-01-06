@@ -1,4 +1,6 @@
-# StateTransformationLinearize
+---
+title: StateTransformationLinearize
+---
 
 `StateTransformationLinearize[asys]` linearizes the AffineStateSpaceModel asys by state transformation.
 

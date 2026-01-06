@@ -1,4 +1,6 @@
-# OutputNamePacket
+---
+title: OutputNamePacket
+---
 
 `OutputNamePacket[string]` is a WSTP packet that contains in *string* the name assigned to the next output.
 

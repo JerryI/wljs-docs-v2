@@ -1,4 +1,6 @@
-# StirlingS2
+---
+title: StirlingS2
+---
 
 `StirlingS2[n, m]` gives the Stirling number of the second kind, the number of ways to partition n elements into m non-empty subsets.
 

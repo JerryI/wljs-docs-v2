@@ -1,4 +1,6 @@
-# EulerAngles
+---
+title: EulerAngles
+---
 
 `EulerAngles[r]` gives Euler angles {α,β,γ} corresponding to the rotation matrix r.
 

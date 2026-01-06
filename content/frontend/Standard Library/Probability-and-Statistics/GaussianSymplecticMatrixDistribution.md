@@ -1,4 +1,6 @@
-# GaussianSymplecticMatrixDistribution
+---
+title: GaussianSymplecticMatrixDistribution
+---
 
 `GaussianSymplecticMatrixDistribution[σ, n]` represents a Gaussian symplectic matrix distribution with matrix dimensions {2n, 2n} over the field of complex numbers and scale parameter σ.
 

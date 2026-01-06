@@ -1,4 +1,6 @@
-# MatrixPower
+---
+title: MatrixPower
+---
 
 `MatrixPower[m, n]` gives the nth matrix power of the matrix m.
 

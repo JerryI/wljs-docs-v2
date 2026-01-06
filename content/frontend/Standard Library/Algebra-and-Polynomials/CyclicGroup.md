@@ -1,4 +1,6 @@
-# CyclicGroup
+---
+title: CyclicGroup
+---
 
 `CyclicGroup[n]` represents the cyclic group of degree n.
 

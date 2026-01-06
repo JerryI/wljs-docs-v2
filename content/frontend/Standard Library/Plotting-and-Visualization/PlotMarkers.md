@@ -1,4 +1,6 @@
-# PlotMarkers
+---
+title: PlotMarkers
+---
 
 `PlotMarkers` is an option for graphics functions like `ListPlot` and `ListLinePlot` that specifies what markers to draw at the points plotted.
 

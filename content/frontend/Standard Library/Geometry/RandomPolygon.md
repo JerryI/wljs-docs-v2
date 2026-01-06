@@ -1,4 +1,6 @@
-# RandomPolygon
+---
+title: RandomPolygon
+---
 
 `RandomPolygon[n]` gives a pseudorandom simple polygon with n vertex points.
 

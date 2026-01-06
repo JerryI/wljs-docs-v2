@@ -1,4 +1,6 @@
-# StateResponse
+---
+title: StateResponse
+---
 
 `StateResponse[sys, u, {t, tmin, tmax}]` gives the numeric state response of the state-space model sys to input u for tmin ≤ t ≤ tmax.
 

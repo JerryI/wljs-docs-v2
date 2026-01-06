@@ -1,4 +1,6 @@
-# CoordinateBoundsArray
+---
+title: CoordinateBoundsArray
+---
 
 `CoordinateBoundsArray[{{xmin, xmax}, {ymin, ymax}, ...}]` generates an array of {x, y, ...} coordinates with integer steps in each dimension.
 

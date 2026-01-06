@@ -1,4 +1,6 @@
-# FiniteGroupData
+---
+title: FiniteGroupData
+---
 
 `FiniteGroupData[name, "property"]` gives the value of the specified property for the finite group specified by name.
 

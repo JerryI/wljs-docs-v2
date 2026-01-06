@@ -1,4 +1,6 @@
-# DominatorTreeGraph
+---
+title: DominatorTreeGraph
+---
 
 `DominatorTreeGraph[g, r]` gives the dominator tree of the directed graph g from the root vertex r.
 

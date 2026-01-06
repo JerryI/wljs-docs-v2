@@ -1,4 +1,6 @@
-# SendMessage
+---
+title: SendMessage
+---
 
 `SendMessage[channel, message]` sends a message to the specified channel.
 

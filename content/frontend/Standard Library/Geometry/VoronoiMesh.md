@@ -1,4 +1,6 @@
-# VoronoiMesh
+---
+title: VoronoiMesh
+---
 
 `VoronoiMesh[{p1, ..., pn}]` gives a MeshRegion representing the Voronoi mesh from the points p1, p2, ....
 

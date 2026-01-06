@@ -1,4 +1,6 @@
-# RegularExpression
+---
+title: RegularExpression
+---
 
 `RegularExpression["regex"]` represents the generalized regular expression specified by the string "regex".
 

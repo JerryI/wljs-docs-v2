@@ -1,4 +1,6 @@
-# Capitalize
+---
+title: Capitalize
+---
 
 `Capitalize[string]` yields a string in which the first character has been made uppercase.
 

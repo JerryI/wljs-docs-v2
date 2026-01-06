@@ -1,4 +1,6 @@
-# SubsetEqual
+---
+title: SubsetEqual
+---
 
 `SubsetEqual[x, y, ...]` displays as x⊆y⊆….
 

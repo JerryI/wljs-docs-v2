@@ -1,4 +1,6 @@
-# StringToByteArray
+---
+title: StringToByteArray
+---
 
 `StringToByteArray["string"]` returns a byte array corresponding to the UTF-8 encoding of the specified string.
 

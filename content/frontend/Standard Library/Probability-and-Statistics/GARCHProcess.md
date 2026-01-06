@@ -1,4 +1,6 @@
-# GARCHProcess
+---
+title: GARCHProcess
+---
 
 `GARCHProcess[κ,{α1,…,αq},{β1,…,βp}]` represents a generalized autoregressive conditionally heteroscedastic process of orders p and q, driven by a standard white noise.
 

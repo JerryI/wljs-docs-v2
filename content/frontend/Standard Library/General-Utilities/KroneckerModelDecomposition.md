@@ -1,4 +1,6 @@
-# KroneckerModelDecomposition
+---
+title: KroneckerModelDecomposition
+---
 
 `KroneckerModelDecomposition[ssm]` yields the Kronecker decomposition of a descriptor state-space model ssm.
 

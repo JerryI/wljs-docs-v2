@@ -1,4 +1,6 @@
-# PieChart
+---
+title: PieChart
+---
 
 `PieChart[{y1, y2, ...}]` creates a pie chart with sector sizes proportional to the values.
 

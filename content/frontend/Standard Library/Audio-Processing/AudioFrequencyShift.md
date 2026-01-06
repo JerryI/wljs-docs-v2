@@ -1,4 +1,6 @@
-# AudioFrequencyShift
+---
+title: AudioFrequencyShift
+---
 
 `AudioFrequencyShift[audio, freq]` gives audio by shifting the spectrum of audio by freq.
 

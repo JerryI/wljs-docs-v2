@@ -1,4 +1,6 @@
-# SphericalBesselY
+---
+title: SphericalBesselY
+---
 
 `SphericalBesselY[n, z]` gives the spherical Bessel function of the second kind yn(z).
 

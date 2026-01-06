@@ -1,4 +1,6 @@
-# FaceGridsStyle
+---
+title: FaceGridsStyle
+---
 
 `FaceGridsStyle` is an option for 3D graphics functions that specifies how face grids should be rendered.
 

@@ -1,4 +1,6 @@
-# EulerMatrix
+---
+title: EulerMatrix
+---
 
 `EulerMatrix[{α, β, γ}]` gives the Euler 3D rotation matrix formed by rotating by α around the current z axis, then by β around the current y axis, and then by γ around the current z axis.
 

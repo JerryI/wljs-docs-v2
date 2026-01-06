@@ -1,4 +1,6 @@
-# ExponentialDistribution
+---
+title: ExponentialDistribution
+---
 
 `ExponentialDistribution[λ]` represents an exponential distribution with rate parameter λ.
 

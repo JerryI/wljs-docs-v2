@@ -1,4 +1,6 @@
-# FeedbackSectorStyle
+---
+title: FeedbackSectorStyle
+---
 
 `FeedbackSectorStyle` is an option to `NyquistPlot` that specifies the style in which graphics of `FeedbackSector` should be drawn.
 

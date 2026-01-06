@@ -1,4 +1,6 @@
-# Thickness
+---
+title: Thickness
+---
 
 `Thickness[r]` is a graphics directive specifying that lines are to be drawn with thickness `r` (as a fraction of the plot width).
 

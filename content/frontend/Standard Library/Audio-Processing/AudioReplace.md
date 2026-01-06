@@ -1,4 +1,6 @@
-# AudioReplace
+---
+title: AudioReplace
+---
 
 `AudioReplace[audio,{t1,t2}->new]` replaces the audio signal between t1 and t2 with the new signal new.
 

@@ -1,4 +1,6 @@
-# FrameStyle
+---
+title: FrameStyle
+---
 
 `FrameStyle` is an option for `Graphics`, `Grid`, and other constructs that specifies the style in which to draw frames.
 

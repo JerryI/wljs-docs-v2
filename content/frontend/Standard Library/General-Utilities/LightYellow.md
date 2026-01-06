@@ -1,4 +1,6 @@
-# LightYellow
+---
+title: LightYellow
+---
 
 `LightYellow` represents a light yellow color in graphics or style specifications.
 

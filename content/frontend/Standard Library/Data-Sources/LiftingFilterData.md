@@ -1,4 +1,6 @@
-# LiftingFilterData
+---
+title: LiftingFilterData
+---
 
 `LiftingFilterData[...]` represents lifting-filter data used to compute forward and inverse lifting wavelet transforms.
 

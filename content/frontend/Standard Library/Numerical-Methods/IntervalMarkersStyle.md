@@ -1,4 +1,6 @@
-# IntervalMarkersStyle
+---
+title: IntervalMarkersStyle
+---
 
 `IntervalMarkersStyle` is an option for plotting functions that specifies styles in which uncertainty intervals are drawn.
 

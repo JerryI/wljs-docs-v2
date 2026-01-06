@@ -1,4 +1,6 @@
-# InputNamePacket
+---
+title: InputNamePacket
+---
 
 `InputNamePacket[string]` is a WSTP packet that contains in string the name to be assigned to the next input.
 

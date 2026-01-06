@@ -1,4 +1,6 @@
-# NExpectation
+---
+title: NExpectation
+---
 
 `NExpectation[expr, x \[Distributed] dist]` gives the numerical expectation of expr under the assumption that x follows the probability distribution dist.
 

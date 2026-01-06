@@ -1,4 +1,6 @@
-# TildeTilde
+---
+title: TildeTilde
+---
 
 `TildeTilde[x, y, ...]` displays as x ≈ y ≈ ....
 

@@ -1,4 +1,6 @@
-# DefaultFrameTicksStyle
+---
+title: DefaultFrameTicksStyle
+---
 
 `DefaultFrameTicksStyle` is a low-level option for 2D graphics functions that specifies the default style to use in rendering frame ticks.
 

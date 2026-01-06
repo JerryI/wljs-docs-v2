@@ -1,4 +1,6 @@
-# RiemannSiegelTheta
+---
+title: RiemannSiegelTheta
+---
 
 `RiemannSiegelTheta[t]` gives the Riemann–Siegel function ϑ(t).
 

@@ -1,4 +1,6 @@
-# WeightedGraphQ
+---
+title: WeightedGraphQ
+---
 
 `WeightedGraphQ[g]` yields True if the graph g is a weighted graph and False otherwise.
 

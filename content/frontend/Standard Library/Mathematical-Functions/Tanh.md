@@ -1,4 +1,6 @@
-# Tanh
+---
+title: Tanh
+---
 
 `Tanh[z]` gives the hyperbolic tangent of `z`, defined as $\sinh(z)/\cosh(z)$.
 

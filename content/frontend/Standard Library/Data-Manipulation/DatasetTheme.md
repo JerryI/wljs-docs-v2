@@ -1,4 +1,6 @@
-# DatasetTheme
+---
+title: DatasetTheme
+---
 
 `DatasetTheme` is an option for `Dataset` that specifies an overall theme for a dataset and its elements.
 

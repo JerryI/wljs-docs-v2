@@ -1,4 +1,6 @@
-# GalleryView
+---
+title: GalleryView
+---
 
 `GalleryView[{expr1, expr2, ...}]` represents an object in which the expri are displayed in a browsable gallery layout.
 

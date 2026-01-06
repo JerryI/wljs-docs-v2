@@ -1,4 +1,6 @@
-# KirchhoffGraph
+---
+title: KirchhoffGraph
+---
 
 `KirchhoffGraph[kmat]` gives the graph with Kirchhoff matrix `kmat`.
 

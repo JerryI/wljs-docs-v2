@@ -1,4 +1,6 @@
-# ExtentSize
+---
+title: ExtentSize
+---
 
 `ExtentSize` is an option to `DiscretePlot` and `DiscretePlot3D` that specifies how far to extend out from each plot point.
 

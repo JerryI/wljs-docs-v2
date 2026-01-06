@@ -1,4 +1,6 @@
-# Construct
+---
+title: Construct
+---
 
 `Construct[f, x]` gives `f[x]`. `Construct[f, x1, ..., xn]` gives `f[x1, ..., xn]`.
 

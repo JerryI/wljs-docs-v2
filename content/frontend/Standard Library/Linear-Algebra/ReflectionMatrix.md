@@ -1,4 +1,6 @@
-# ReflectionMatrix
+---
+title: ReflectionMatrix
+---
 
 `ReflectionMatrix[v]` gives the matrix that represents reflection of points in a mirror normal to the vector v.
 

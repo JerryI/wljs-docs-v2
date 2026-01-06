@@ -1,4 +1,6 @@
-# FinancialIndicator
+---
+title: FinancialIndicator
+---
 
 `FinancialIndicator["ind",par1,par2,…]` represents a financial indicator "ind" with parameters par1, par2, etc. 
 

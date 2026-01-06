@@ -1,4 +1,6 @@
-# PlayRange
+---
+title: PlayRange
+---
 
 `PlayRange` is an option for `Play` and related functions which specifies what range of sound amplitude levels should be included.
 

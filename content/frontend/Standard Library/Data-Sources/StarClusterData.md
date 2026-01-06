@@ -1,4 +1,6 @@
-# StarClusterData
+---
+title: StarClusterData
+---
 
 `StarClusterData[entity,property]` gives the value of the specified property for the star cluster entity.
 

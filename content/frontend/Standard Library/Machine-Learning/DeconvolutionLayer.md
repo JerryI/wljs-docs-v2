@@ -1,4 +1,6 @@
-# DeconvolutionLayer
+---
+title: DeconvolutionLayer
+---
 
 `DeconvolutionLayer[n, sz]` represents a trainable deconvolutional net layer having n output channels and using kernels of size sz to compute the deconvolution.
 

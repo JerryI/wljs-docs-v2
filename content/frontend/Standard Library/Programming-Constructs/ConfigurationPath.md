@@ -1,4 +1,6 @@
-# ConfigurationPath
+---
+title: ConfigurationPath
+---
 
 `ConfigurationPath` is a global option that specifies which directories are searched for systemwide configuration information.
 

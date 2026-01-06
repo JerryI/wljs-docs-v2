@@ -1,4 +1,6 @@
-# DownArrowBar
+---
+title: DownArrowBar
+---
 
 `DownArrowBar[x, y, ...]` displays as x⤓y⤓....
 

@@ -1,4 +1,6 @@
-# YuleDissimilarity
+---
+title: YuleDissimilarity
+---
 
 `YuleDissimilarity[u, v]` gives the Yule dissimilarity between Boolean vectors u and v.
 

@@ -1,4 +1,6 @@
-# BuckyballGraph
+---
+title: BuckyballGraph
+---
 
 `BuckyballGraph[]` gives the buckyball graph.
 

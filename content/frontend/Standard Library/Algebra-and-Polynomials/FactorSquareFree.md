@@ -1,4 +1,6 @@
-# FactorSquareFree
+---
+title: FactorSquareFree
+---
 
 `FactorSquareFree[poly]` pulls out any multiple factors in a polynomial, giving a product of square-free factors.
 

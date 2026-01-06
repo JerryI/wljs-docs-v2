@@ -1,4 +1,6 @@
-# PossibleZeroQ
+---
+title: PossibleZeroQ
+---
 
 `PossibleZeroQ[expr]` gives `True` if basic symbolic and numerical methods suggest that expr has value zero, and gives `False` otherwise.
 

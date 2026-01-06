@@ -1,4 +1,6 @@
-# FourierParameters
+---
+title: FourierParameters
+---
 
 `FourierParameters` is an option to Fourier and related functions that specifies the conventions to use in computing Fourier transforms.
 

@@ -1,4 +1,6 @@
-# ImageHistogram
+---
+title: ImageHistogram
+---
 
 `ImageHistogram[image]` plots a histogram of the pixel levels for each channel in image.
 

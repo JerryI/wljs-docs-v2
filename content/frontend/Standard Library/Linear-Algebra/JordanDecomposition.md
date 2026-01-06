@@ -1,4 +1,6 @@
-# JordanDecomposition
+---
+title: JordanDecomposition
+---
 
 `JordanDecomposition[m]` yields the Jordan decomposition of a square matrix m as a list `{s, j}` where s is a similarity matrix and j is the Jordan canonical form.
 

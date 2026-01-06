@@ -1,4 +1,6 @@
-# Annuity
+---
+title: Annuity
+---
 
 `Annuity[p, t]` represents an annuity of fixed payments p made over t periods.
 

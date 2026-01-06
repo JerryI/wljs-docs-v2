@@ -1,4 +1,6 @@
-# ChannelSubscribers
+---
+title: ChannelSubscribers
+---
 
 `ChannelSubscribers[channel]` gives a list of users currently subscribed to the specified channel.
 

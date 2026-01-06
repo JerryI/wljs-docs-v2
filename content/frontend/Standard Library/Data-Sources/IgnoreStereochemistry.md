@@ -1,4 +1,6 @@
-# IgnoreStereochemistry
+---
+title: IgnoreStereochemistry
+---
 
 `IgnoreStereochemistry` is an option for `MoleculeMatchQ` that determines whether stereochemistry should be ignored for pattern matching.
 

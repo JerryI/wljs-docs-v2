@@ -1,4 +1,6 @@
-# Tr
+---
+title: Tr
+---
 
 `Tr[m]` gives the trace of a square matrix (sum of diagonal elements).
 

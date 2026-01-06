@@ -1,4 +1,6 @@
-# Integer
+---
+title: Integer
+---
 
 `Integer` is the head used for integers.
 

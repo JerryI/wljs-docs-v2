@@ -1,4 +1,6 @@
-# Through
+---
+title: Through
+---
 
 `Through[p[f, g, ...][x, y, ...]]` gives `p[f[x, y, ...], g[x, y, ...], ...]`.
 

@@ -1,4 +1,6 @@
-# AudioFade
+---
+title: AudioFade
+---
 
 `AudioFade[audio]` returns audio in which the beginning and end of audio are faded.
 

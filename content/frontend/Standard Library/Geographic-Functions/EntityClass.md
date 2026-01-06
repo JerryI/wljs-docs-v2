@@ -1,4 +1,6 @@
-# EntityClass
+---
+title: EntityClass
+---
 
 `EntityClass[type, name]` represents a class of entities of the specified type identified by name.
 

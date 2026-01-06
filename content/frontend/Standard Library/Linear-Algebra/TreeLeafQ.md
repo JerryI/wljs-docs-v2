@@ -1,4 +1,6 @@
-# TreeLeafQ
+---
+title: TreeLeafQ
+---
 
 `TreeLeafQ[tree]` gives True if tree is a Tree object with no children, and gives False otherwise.
 

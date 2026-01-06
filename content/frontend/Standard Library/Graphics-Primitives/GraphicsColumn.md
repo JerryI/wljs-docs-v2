@@ -1,4 +1,6 @@
-# GraphicsColumn
+---
+title: GraphicsColumn
+---
 
 `GraphicsColumn[{g1, g2, …}]` generates a graphic in which the `gi` are laid out in a column, with `g1` above `g2`, etc.
 

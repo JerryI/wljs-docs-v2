@@ -1,4 +1,6 @@
-# Diff
+---
+title: Diff
+---
 
 `Diff[first, second]` returns a representation of the diffs between first and second.
 

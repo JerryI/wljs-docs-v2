@@ -1,4 +1,6 @@
-# FourierTransform
+---
+title: FourierTransform
+---
 
 `FourierTransform[expr, t, ω]` gives the symbolic Fourier transform of expr.
 

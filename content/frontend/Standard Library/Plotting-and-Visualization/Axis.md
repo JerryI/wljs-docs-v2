@@ -1,4 +1,6 @@
-# Axis
+---
+title: Axis
+---
 
 `Axis` is a symbol that represents the axis for purposes of alignment and positioning.
 

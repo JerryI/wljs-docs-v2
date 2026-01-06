@@ -1,4 +1,6 @@
-# FileNameToFormatList
+---
+title: FileNameToFormatList
+---
 
 `FileNameToFormatList[]` returns lists of file formats corresponding to all registered file name patterns.
 

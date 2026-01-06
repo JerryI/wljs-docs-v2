@@ -1,4 +1,6 @@
-# BetaDistribution
+---
+title: BetaDistribution
+---
 
 `BetaDistribution[α, β]` represents a continuous beta distribution with shape parameters α and β.
 

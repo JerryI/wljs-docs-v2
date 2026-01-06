@@ -1,4 +1,6 @@
-# PlanarAngle
+---
+title: PlanarAngle
+---
 
 `PlanarAngle[p -> {q1, q2}]` gives the angle between the half‐lines from p through q1 and q2.
 

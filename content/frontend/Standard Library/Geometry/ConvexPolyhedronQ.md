@@ -1,4 +1,6 @@
-# ConvexPolyhedronQ
+---
+title: ConvexPolyhedronQ
+---
 
 `ConvexPolyhedronQ[poly]` gives True if the polyhedron poly is convex, and False otherwise.
 

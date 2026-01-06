@@ -1,4 +1,6 @@
-# Clear
+---
+title: Clear
+---
 
 `Clear[s1, s2, ...]` clears values and definitions for the symbols.
 

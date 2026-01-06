@@ -1,4 +1,6 @@
-# DifferenceRootReduce
+---
+title: DifferenceRootReduce
+---
 
 `DifferenceRootReduce[expr,n]` attempts to reduce expr to a single DifferenceRoot object as a function of n.
 

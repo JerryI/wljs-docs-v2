@@ -1,4 +1,6 @@
-# PolyhedronDecomposition
+---
+title: PolyhedronDecomposition
+---
 
 `PolyhedronDecomposition[poly]` decomposes the polyhedron poly into a union of simpler polyhedra.
 

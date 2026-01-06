@@ -1,4 +1,6 @@
-# FindCookies
+---
+title: FindCookies
+---
 
 `FindCookies[]` gives a list of all currently set cookies.
 

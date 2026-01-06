@@ -1,4 +1,6 @@
-# SquareFreeQ
+---
+title: SquareFreeQ
+---
 
 `SquareFreeQ[expr]` gives True if expr is a square-free polynomial or number, and False otherwise.
 

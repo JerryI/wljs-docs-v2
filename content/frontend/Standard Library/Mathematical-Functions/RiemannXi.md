@@ -1,4 +1,6 @@
-# RiemannXi
+---
+title: RiemannXi
+---
 
 `RiemannXi[s]` gives the Riemann xi function ξ(s).
 

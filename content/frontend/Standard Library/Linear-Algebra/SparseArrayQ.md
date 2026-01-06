@@ -1,4 +1,6 @@
-# SparseArrayQ
+---
+title: SparseArrayQ
+---
 
 `SparseArrayQ[s]` yields `True` if s is a valid SparseArray object and `False` otherwise.
 

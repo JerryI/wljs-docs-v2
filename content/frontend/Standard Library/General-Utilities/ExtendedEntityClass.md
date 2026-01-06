@@ -1,4 +1,6 @@
-# ExtendedEntityClass
+---
+title: ExtendedEntityClass
+---
 
 `ExtendedEntityClass[class, "name" -> f]` represents an entity class derived from class by adding a new computed property "name" whose value for each entity is obtained by applying the entity function f.
 

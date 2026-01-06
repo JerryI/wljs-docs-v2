@@ -1,4 +1,6 @@
-# TreeSize
+---
+title: TreeSize
+---
 
 `TreeSize[tree]` gives the number of subtrees of tree.
 

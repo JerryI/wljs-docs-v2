@@ -1,4 +1,6 @@
-# Quit
+---
+title: Quit
+---
 
 `Quit[]` terminates a Wolfram Language kernel session.
 

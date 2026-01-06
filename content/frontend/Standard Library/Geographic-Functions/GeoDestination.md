@@ -1,4 +1,6 @@
-# GeoDestination
+---
+title: GeoDestination
+---
 
 `GeoDestination[loc,{d,α}]` gives the end position of the geodesic of length d starting from loc with azimuthal direction α.
 

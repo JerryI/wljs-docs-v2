@@ -1,4 +1,6 @@
-# AdjacencyMatrix
+---
+title: AdjacencyMatrix
+---
 
 `AdjacencyMatrix[g]` gives the adjacency matrix of graph `g`, where entry $(i,j)$ is 1 if vertices $i$ and $j$ are connected.
 

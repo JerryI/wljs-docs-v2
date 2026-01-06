@@ -1,4 +1,6 @@
-# OutputResponse
+---
+title: OutputResponse
+---
 
 `OutputResponse[sys, u[t], {t, tmin, tmax}]` gives the numeric output response of systems model sys to the input u[t] for tmin ≤ t ≤ tmax.
 

@@ -1,4 +1,6 @@
-# LongestCommonSubsequencePositions
+---
+title: LongestCommonSubsequencePositions
+---
 
 `LongestCommonSubsequencePositions[s1, s2]` finds the longest contiguous subsequence of elements common to the strings or lists s1 and s2 and returns their positions {pos1, pos2} in s1 and s2.
 

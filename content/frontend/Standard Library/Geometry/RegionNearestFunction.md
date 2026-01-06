@@ -1,4 +1,6 @@
-# RegionNearestFunction
+---
+title: RegionNearestFunction
+---
 
 `RegionNearestFunction[reg, …]` represents a function whose values give the nearest point in the region reg.
 

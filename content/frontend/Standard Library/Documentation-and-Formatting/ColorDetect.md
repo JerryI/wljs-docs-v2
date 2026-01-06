@@ -1,4 +1,6 @@
-# ColorDetect
+---
+title: ColorDetect
+---
 
 `ColorDetect[image, cspec]` returns a mask image representing regions in image with colors within the specified color region.
 

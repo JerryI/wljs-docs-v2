@@ -1,4 +1,6 @@
-# Unequal
+---
+title: Unequal
+---
 
 `lhs != rhs` returns `True` if lhs and rhs are not identical.
 

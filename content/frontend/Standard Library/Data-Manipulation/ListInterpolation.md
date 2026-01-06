@@ -1,4 +1,6 @@
-# ListInterpolation
+---
+title: ListInterpolation
+---
 
 `ListInterpolation[array]` constructs an InterpolatingFunction object from a regular grid of values.
 

@@ -1,4 +1,6 @@
-# SolidMechanicsStress
+---
+title: SolidMechanicsStress
+---
 
 `SolidMechanicsStress[vars, pars, strain]` yields solid mechanics internal stress with variables vars, parameters pars and total strain strain.
 

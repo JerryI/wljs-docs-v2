@@ -1,4 +1,6 @@
-# TimeSeriesShift
+---
+title: TimeSeriesShift
+---
 
 `TimeSeriesShift[tseries, shift]` shifts the time series tseries to the left or right according to shift.
 

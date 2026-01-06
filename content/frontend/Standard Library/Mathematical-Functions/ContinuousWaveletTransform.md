@@ -1,4 +1,6 @@
-# ContinuousWaveletTransform
+---
+title: ContinuousWaveletTransform
+---
 
 `ContinuousWaveletTransform[{x1, x2, ...}]` gives the continuous wavelet transform of a list of values xi.
 

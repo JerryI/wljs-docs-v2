@@ -1,4 +1,6 @@
-# SucceedsTilde
+---
+title: SucceedsTilde
+---
 
 `SucceedsTilde[x, y, …]` displays as x≿y≿….
 

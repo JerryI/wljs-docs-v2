@@ -1,4 +1,6 @@
-# MandelbrotSetBoettcher
+---
+title: MandelbrotSetBoettcher
+---
 
 `MandelbrotSetBoettcher[z]` gives the Böttcher coordinate of z with respect to the Mandelbrot set.
 

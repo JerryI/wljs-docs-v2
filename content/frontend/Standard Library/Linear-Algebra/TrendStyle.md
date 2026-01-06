@@ -1,4 +1,6 @@
-# TrendStyle
+---
+title: TrendStyle
+---
 
 `TrendStyle` is an option to `CandlestickChart`, `RenkoChart`, and other financial charting functions that specifies how to style price trends.
 

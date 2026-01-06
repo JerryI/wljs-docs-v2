@@ -1,4 +1,6 @@
-# SocketWaitAll
+---
+title: SocketWaitAll
+---
 
 `SocketWaitAll[{socket1,socket2,…}]` waits until there is data ready to read on all of the socketi.
 

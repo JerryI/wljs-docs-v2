@@ -1,4 +1,6 @@
-# AudioChannelSeparate
+---
+title: AudioChannelSeparate
+---
 
 `AudioChannelSeparate[audio]` gives a list of Audio objects, each of which represents one channel of audio.
 

@@ -1,4 +1,6 @@
-# InfiniteLine
+---
+title: InfiniteLine
+---
 
 `InfiniteLine[{p1, p2}]` represents the infinite straight line passing through the points p1 and p2.
 

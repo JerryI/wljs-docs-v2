@@ -1,4 +1,6 @@
-# MissingValuePattern
+---
+title: MissingValuePattern
+---
 
 `MissingValuePattern` is an option for `SynthesizeMissingValues` and `ToTabular` to specify which data elements are considered missing.
 

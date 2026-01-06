@@ -1,4 +1,6 @@
-# FromFiniteField
+---
+title: FromFiniteField
+---
 
 `FromFiniteField[a, ff]` converts the element a of the prime subfield of the finite field ff to an integer.
 

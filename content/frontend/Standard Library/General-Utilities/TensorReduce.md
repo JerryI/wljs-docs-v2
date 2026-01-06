@@ -1,4 +1,6 @@
-# TensorReduce
+---
+title: TensorReduce
+---
 
 `TensorReduce[texpr]` attempts to return a canonical form for the symbolic tensor expression texpr.
 

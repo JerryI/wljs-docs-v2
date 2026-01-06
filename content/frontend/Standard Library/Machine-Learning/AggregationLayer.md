@@ -1,4 +1,6 @@
-# AggregationLayer
+---
+title: AggregationLayer
+---
 
 `AggregationLayer[f]` represents a layer that aggregates an array of arbitrary rank into a vector, using the function f.
 

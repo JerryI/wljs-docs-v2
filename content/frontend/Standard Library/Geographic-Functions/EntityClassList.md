@@ -1,4 +1,6 @@
-# EntityClassList
+---
+title: EntityClassList
+---
 
 `EntityClassList["type"]` gives a list of entity classes for the specified type of entity.
 

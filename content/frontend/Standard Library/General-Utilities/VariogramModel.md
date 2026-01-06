@@ -1,4 +1,6 @@
-# VariogramModel
+---
+title: VariogramModel
+---
 
 `VariogramModel["model", {params}]` represents the function for the variogram model specified by "model".
 

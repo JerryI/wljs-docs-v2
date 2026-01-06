@@ -1,4 +1,6 @@
-# ExternalEvaluate
+---
+title: ExternalEvaluate
+---
 
 `ExternalEvaluate["sys","cmd"]` evaluates the command cmd in the external evaluator sys, returning an expression corresponding to the output.
 

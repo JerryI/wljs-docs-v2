@@ -1,4 +1,6 @@
-# Insert
+---
+title: Insert
+---
 
 `Insert[list, elem, n]` inserts elem at position n in list.
 

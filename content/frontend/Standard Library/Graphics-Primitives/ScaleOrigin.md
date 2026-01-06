@@ -1,4 +1,6 @@
-# ScaleOrigin
+---
+title: ScaleOrigin
+---
 
 `ScaleOrigin` is an option for gauge functions that describes how to position the scale on the gauge.
 

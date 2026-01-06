@@ -1,4 +1,6 @@
-# BaseEncode
+---
+title: BaseEncode
+---
 
 `BaseEncode[ba]` encodes the byte array ba as a Base64 string.
 

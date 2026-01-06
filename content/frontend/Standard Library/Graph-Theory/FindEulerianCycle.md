@@ -1,4 +1,6 @@
-# FindEulerianCycle
+---
+title: FindEulerianCycle
+---
 
 `FindEulerianCycle[g]` finds an Eulerian cycle in the graph g.
 

@@ -1,4 +1,6 @@
-# EllipticExpPrime
+---
+title: EllipticExpPrime
+---
 
 `EllipticExpPrime[u, {a, b}]` gives the derivative of `EllipticExp[u, {a, b}]` with respect to u.
 

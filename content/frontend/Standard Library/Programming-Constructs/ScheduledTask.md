@@ -1,4 +1,6 @@
-# ScheduledTask
+---
+title: ScheduledTask
+---
 
 `ScheduledTask[expr, timespec]` represents a scheduled task to be evaluated on the schedule defined by timespec.
 

@@ -1,4 +1,6 @@
-# OperationDeclaration
+---
+title: OperationDeclaration
+---
 
 `OperationDeclaration[type, op, typedfun]` declares a typed function to be used for the operation op of type.
 

@@ -1,4 +1,6 @@
-# TotalLayer
+---
+title: TotalLayer
+---
 
 `TotalLayer[]` represents a net layer taking a list of input arrays and performing elementwise addition on them.
 

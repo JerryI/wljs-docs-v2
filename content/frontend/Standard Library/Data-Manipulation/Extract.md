@@ -1,4 +1,6 @@
-# Extract
+---
+title: Extract
+---
 
 `Extract[expr, pos]` extracts the part of expr at the position specified by pos. `Extract[expr, {pos1, pos2, ...}]` extracts multiple parts.
 

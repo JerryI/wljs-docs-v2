@@ -1,4 +1,6 @@
-# ImageContents
+---
+title: ImageContents
+---
 
 `ImageContents[image]` gives a dataset of identified entities in `image`.
 

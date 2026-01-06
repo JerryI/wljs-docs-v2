@@ -1,4 +1,6 @@
-# IgnorePunctuation
+---
+title: IgnorePunctuation
+---
 
 `IgnorePunctuation` is an option for `AlphabeticSort` and related functions that specifies whether to consider punctuation in determining sorting order.
 

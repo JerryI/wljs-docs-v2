@@ -1,4 +1,6 @@
-# Cubics
+---
+title: Cubics
+---
 
 `Cubics` is an option for functions that involve solving algebraic equations, that specifies whether explicit forms for solutions to cubic equations should be given.
 

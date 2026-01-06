@@ -1,4 +1,6 @@
-# ThreeJSymbol
+---
+title: ThreeJSymbol
+---
 
 `ThreeJSymbol[{j1, m1}, {j2, m2}, {j3, m3}]` gives the values of the Wigner 3-j symbol.
 

@@ -1,4 +1,6 @@
-# FindPeaks
+---
+title: FindPeaks
+---
 
 `FindPeaks[list]` gives positions and values of the detected peaks in list.
 

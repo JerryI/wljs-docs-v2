@@ -1,4 +1,6 @@
-# DotDashed
+---
+title: DotDashed
+---
 
 `DotDashed` is a graphics directive specifying that lines that follow should be drawn dot-dashed.
 

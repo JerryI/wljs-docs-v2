@@ -1,4 +1,6 @@
-# CurveClosed
+---
+title: CurveClosed
+---
 
 `CurveClosed` is an option for `JoinedCurve` that specifies whether individual curve components should be closed curves.
 

@@ -1,4 +1,6 @@
-# NuclearExplosionData
+---
+title: NuclearExplosionData
+---
 
 `NuclearExplosionData[entity, property]` gives the value of the specified property for the nuclear explosion entity.
 

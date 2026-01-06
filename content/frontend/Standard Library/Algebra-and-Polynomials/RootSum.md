@@ -1,4 +1,6 @@
-# RootSum
+---
+title: RootSum
+---
 
 `RootSum[f, form]` represents the sum of form[x] for all x that satisfy the polynomial equation f[x]==0.
 

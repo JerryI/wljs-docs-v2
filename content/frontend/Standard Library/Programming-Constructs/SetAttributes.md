@@ -1,4 +1,6 @@
-# SetAttributes
+---
+title: SetAttributes
+---
 
 `SetAttributes[symbol, attr]` adds attr to the list of attributes of the symbol.
 

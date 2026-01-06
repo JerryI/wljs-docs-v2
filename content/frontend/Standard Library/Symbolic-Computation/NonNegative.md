@@ -1,4 +1,6 @@
-# NonNegative
+---
+title: NonNegative
+---
 
 `NonNegative[x]` gives `True` if x is a non-negative number (zero or positive).
 

@@ -1,4 +1,6 @@
-# PrecedesSlantEqual
+---
+title: PrecedesSlantEqual
+---
 
 `PrecedesSlantEqual[x, y, ...]` displays as x ≼ y ≼ ....
 

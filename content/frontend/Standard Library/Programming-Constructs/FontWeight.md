@@ -1,4 +1,6 @@
-# FontWeight
+---
+title: FontWeight
+---
 
 `FontWeight` is an option for `Style`, `Cell`, and related constructs that specifies how heavy the characters in a font should be.
 

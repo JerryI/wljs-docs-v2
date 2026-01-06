@@ -1,4 +1,6 @@
-# WordCount
+---
+title: WordCount
+---
 
 `WordCount["string"]` gives the total number of words in string.
 

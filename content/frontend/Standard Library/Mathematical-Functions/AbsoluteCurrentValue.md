@@ -1,4 +1,6 @@
-# AbsoluteCurrentValue
+---
+title: AbsoluteCurrentValue
+---
 
 `AbsoluteCurrentValue[item]` gives the absolute current value of item at a location in the Wolfram System and interface.
 

@@ -1,4 +1,6 @@
-# PublicKey
+---
+title: PublicKey
+---
 
 `PublicKey[assoc]` represents the public part of a key pair for a public-key cryptographic system.
 

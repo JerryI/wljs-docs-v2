@@ -1,4 +1,6 @@
-# Tan
+---
+title: Tan
+---
 
 `Tan[z]` gives the tangent of z.
 

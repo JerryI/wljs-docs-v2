@@ -1,4 +1,6 @@
-# ResourceRemove
+---
+title: ResourceRemove
+---
 
 `ResourceRemove[resource]` removes the specified resource from the system on which it is run.
 

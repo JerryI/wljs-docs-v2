@@ -1,4 +1,6 @@
-# MengerMesh
+---
+title: MengerMesh
+---
 
 `MengerMesh[n]` gives a mesh region representing the nth-step Menger sponge.
 

@@ -1,4 +1,6 @@
-# Factorial
+---
+title: Factorial
+---
 
 `n!` or `Factorial[n]` gives the factorial of n (the product 1×2×3×...×n).
 

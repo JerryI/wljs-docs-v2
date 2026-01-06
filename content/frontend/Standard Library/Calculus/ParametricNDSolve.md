@@ -1,4 +1,6 @@
-# ParametricNDSolve
+---
+title: ParametricNDSolve
+---
 
 `ParametricNDSolve[eqns, u, {x, xmin, xmax}, pars]` finds a numerical solution to the ordinary differential equations eqns for the function u with the independent variable x in the range xmin to xmax with parameters pars.
 

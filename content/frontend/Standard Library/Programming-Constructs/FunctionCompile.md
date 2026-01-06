@@ -1,4 +1,6 @@
-# FunctionCompile
+---
+title: FunctionCompile
+---
 
 `FunctionCompile[f]` generates a compiled code function from a pure function.
 

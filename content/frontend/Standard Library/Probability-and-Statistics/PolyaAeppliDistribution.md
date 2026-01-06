@@ -1,4 +1,6 @@
-# PolyaAeppliDistribution
+---
+title: PolyaAeppliDistribution
+---
 
 `PolyaAeppliDistribution[θ, p]` represents a Pólya–Aeppli distribution with shape parameters θ and p.
 

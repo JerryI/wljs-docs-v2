@@ -1,4 +1,6 @@
-# ImageMargins
+---
+title: ImageMargins
+---
 
 `ImageMargins` is an option that specifies the absolute margins to leave around the image displayed for an object.
 

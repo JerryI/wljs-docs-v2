@@ -1,4 +1,6 @@
-# MassSymmetryValue
+---
+title: MassSymmetryValue
+---
 
 `MassSymmetryValue[pred, vars, pars]` represents a mass symmetry boundary condition for PDEs with predicate pred indicating where it applies, with model variables vars and global parameters pars.
 

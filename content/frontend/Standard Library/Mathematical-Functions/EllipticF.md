@@ -1,4 +1,6 @@
-# EllipticF
+---
+title: EllipticF
+---
 
 `EllipticF[ϕ, m]` gives the elliptic integral of the first kind F(ϕ|m).
 

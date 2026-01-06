@@ -1,4 +1,6 @@
-# MeshCellHighlight
+---
+title: MeshCellHighlight
+---
 
 `MeshCellHighlight` is an option and annotation of `MeshRegion`, `BoundaryMeshRegion`, and related functions that specifies mesh cells to highlight.
 

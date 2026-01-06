@@ -1,4 +1,6 @@
-# PowerExpand
+---
+title: PowerExpand
+---
 
 `PowerExpand[expr]` expands all powers of products and powers.
 

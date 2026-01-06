@@ -1,4 +1,6 @@
-# Denominator
+---
+title: Denominator
+---
 
 `Denominator[expr]` gives the denominator of expr.
 

@@ -1,4 +1,6 @@
-# LinkConnect
+---
+title: LinkConnect
+---
 
 `LinkConnect["name"]` connects to a WSTP link created by another program.
 

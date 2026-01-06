@@ -1,4 +1,6 @@
-# StreamStyle
+---
+title: StreamStyle
+---
 
 `StreamStyle` is an option to `StreamPlot`, `StreamDensityPlot`, and related functions that determines the style to use for drawing streamlines.
 

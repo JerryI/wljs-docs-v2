@@ -1,4 +1,6 @@
-# WeierstrassEta2
+---
+title: WeierstrassEta2
+---
 
 `WeierstrassEta2[{g2, g3}]` gives the value η₂ of the Weierstrass zeta function ζ at the half-period ω₂(g₂, g₃).
 

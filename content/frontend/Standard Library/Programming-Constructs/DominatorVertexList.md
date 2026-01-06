@@ -1,4 +1,6 @@
-# DominatorVertexList
+---
+title: DominatorVertexList
+---
 
 `DominatorVertexList[g, r]` gives the list of dominators of the directed graph g from the root vertex r.
 

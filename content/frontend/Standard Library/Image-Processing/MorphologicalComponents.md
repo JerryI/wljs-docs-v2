@@ -1,4 +1,6 @@
-# MorphologicalComponents
+---
+title: MorphologicalComponents
+---
 
 `MorphologicalComponents[image]` gives an array in which each pixel of image is replaced by an integer index representing the connected foreground image component in which the pixel lies.
 

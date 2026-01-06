@@ -1,4 +1,6 @@
-# SymletWavelet
+---
+title: SymletWavelet
+---
 
 `SymletWavelet[]` represents the Symlet wavelet of order 4.
 

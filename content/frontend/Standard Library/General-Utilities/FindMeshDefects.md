@@ -1,4 +1,6 @@
-# FindMeshDefects
+---
+title: FindMeshDefects
+---
 
 `FindMeshDefects[mreg]` finds defects in the mesh region mreg.
 

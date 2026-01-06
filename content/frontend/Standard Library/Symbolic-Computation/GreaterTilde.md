@@ -1,4 +1,6 @@
-# GreaterTilde
+---
+title: GreaterTilde
+---
 
 `GreaterTilde[x,y,...]` displays as x≳y≳....
 

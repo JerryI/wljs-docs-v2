@@ -1,4 +1,6 @@
-# ReadList
+---
+title: ReadList
+---
 
 `ReadList["file"]` reads all expressions in a file and returns a list.
 

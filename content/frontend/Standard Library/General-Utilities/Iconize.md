@@ -1,4 +1,6 @@
-# Iconize
+---
+title: Iconize
+---
 
 `Iconize[expr]` gives an iconized form that can be used to stand in for expr in notebook input.
 

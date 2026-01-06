@@ -1,4 +1,6 @@
-# ParallelTry
+---
+title: ParallelTry
+---
 
 `ParallelTry[f, {arg1, arg2, ...}]` evaluates f[argi] in parallel, returning the first result received.
 

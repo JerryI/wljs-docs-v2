@@ -1,4 +1,6 @@
-# KeyMap
+---
+title: KeyMap
+---
 
 `KeyMap[f, <|key1 -> val1, key2 -> val2, ...|>]` maps f over the keys in an association, giving <|f[key1] -> val1, f[key2] -> val2, ...|>.
 

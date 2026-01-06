@@ -1,4 +1,6 @@
-# VertexColors
+---
+title: VertexColors
+---
 
 `VertexColors` is an option for graphics primitives which specifies the colors to assign to vertices.
 

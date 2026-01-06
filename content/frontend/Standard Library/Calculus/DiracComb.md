@@ -1,4 +1,6 @@
-# DiracComb
+---
+title: DiracComb
+---
 
 `DiracComb[x]` represents the Dirac comb function giving a delta function at every integer point.
 

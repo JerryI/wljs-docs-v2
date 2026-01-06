@@ -1,4 +1,6 @@
-# Most
+---
+title: Most
+---
 
 `Most[list]` gives the list with the last element removed. Equivalent to `Drop[list, -1]`.
 

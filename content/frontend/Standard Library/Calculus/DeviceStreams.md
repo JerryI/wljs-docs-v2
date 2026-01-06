@@ -1,4 +1,6 @@
-# DeviceStreams
+---
+title: DeviceStreams
+---
 
 `DeviceStreams[device]` gives a list of all open streams associated with a device.
 

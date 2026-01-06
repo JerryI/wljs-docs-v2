@@ -1,4 +1,6 @@
-# IndependentPhysicalQuantity
+---
+title: IndependentPhysicalQuantity
+---
 
 `IndependentPhysicalQuantity[string]` represents a physical quantity string with no relationship to other physical quantities used in `QuantityVariable`.
 

@@ -1,4 +1,6 @@
-# ShowAutoSpellCheck
+---
+title: ShowAutoSpellCheck
+---
 
 `ShowAutoSpellCheck` is an option for `Cell` that specifies whether to highlight misspelled words.
 

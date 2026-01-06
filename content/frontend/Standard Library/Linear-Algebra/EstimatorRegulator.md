@@ -1,4 +1,6 @@
-# EstimatorRegulator
+---
+title: EstimatorRegulator
+---
 
 `EstimatorRegulator[sspec, {l, κ}]` gives the output feedback controller with estimator and regulator gains l and κ for the system specification sspec.
 

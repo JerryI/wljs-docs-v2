@@ -1,4 +1,6 @@
-# TemplateWith
+---
+title: TemplateWith
+---
 
 `TemplateWith["name" -> value, expr]` represents an element of a template object that evaluates expr after replacing `TemplateSlot["name"]` with value.
 

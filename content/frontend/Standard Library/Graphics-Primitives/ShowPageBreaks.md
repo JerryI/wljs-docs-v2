@@ -1,4 +1,6 @@
-# ShowPageBreaks
+---
+title: ShowPageBreaks
+---
 
 `ShowPageBreaks` is a notebook option that specifies whether to indicate in the on-screen display of a notebook where page breaks would occur if the notebook were printed.
 

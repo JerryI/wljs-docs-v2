@@ -1,4 +1,6 @@
-# GeometricTest
+---
+title: GeometricTest
+---
 
 `GeometricTest[obj, prop]` tests whether the geometric object `obj` satisfies `prop`.
 

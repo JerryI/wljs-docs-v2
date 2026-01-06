@@ -1,4 +1,6 @@
-# HistogramList
+---
+title: HistogramList
+---
 
 `HistogramList[{x1, x2, …}]` gives a list of bins and histogram heights of the values xi.
 

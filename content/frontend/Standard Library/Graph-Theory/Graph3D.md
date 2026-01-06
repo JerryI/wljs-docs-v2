@@ -1,4 +1,6 @@
-# Graph3D
+---
+title: Graph3D
+---
 
 `Graph3D[g]` creates a graph with vertices and edges from the graph `g` and represented as a 3D plot.
 

@@ -1,4 +1,6 @@
-# SpellingDictionaries
+---
+title: SpellingDictionaries
+---
 
 `SpellingDictionaries` is a global option that specifies settings for spell checking.
 

@@ -1,4 +1,6 @@
-# Last
+---
+title: Last
+---
 
 `Last[expr]` gives the last element in expr.
 

@@ -1,4 +1,6 @@
-# HalftoneShading
+---
+title: HalftoneShading
+---
 
 `HalftoneShading[]` is a three-dimensional graphics directive specifying that surfaces that follow are to be drawn with a base pattern of dots.
 

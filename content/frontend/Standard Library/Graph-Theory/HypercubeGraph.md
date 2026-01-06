@@ -1,4 +1,6 @@
-# HypercubeGraph
+---
+title: HypercubeGraph
+---
 
 `HypercubeGraph[n]` gives the n-dimensional hypercube graph Qₙ.
 

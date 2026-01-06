@@ -1,4 +1,6 @@
-# VertexDelete
+---
+title: VertexDelete
+---
 
 `VertexDelete[g, v]` makes a graph by deleting the vertex v and all edges connected to v from the graph g.
 

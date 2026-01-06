@@ -1,4 +1,6 @@
-# Beta
+---
+title: Beta
+---
 
 `Beta[a, b]` gives the Euler beta function B(a, b). `Beta[z, a, b]` gives the incomplete beta function.
 

@@ -1,4 +1,6 @@
-# Thursday
+---
+title: Thursday
+---
 
 `Thursday` is a day of the week.
 

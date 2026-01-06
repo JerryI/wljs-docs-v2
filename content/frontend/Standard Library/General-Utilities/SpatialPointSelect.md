@@ -1,4 +1,6 @@
-# SpatialPointSelect
+---
+title: SpatialPointSelect
+---
 
 `SpatialPointSelect[spdata, crit]` selects a subset of the `SpatialPointData` *spdata* according to *crit*.
 

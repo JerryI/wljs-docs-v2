@@ -1,4 +1,6 @@
-# MatrixForm
+---
+title: MatrixForm
+---
 
 `MatrixForm[list]` prints with the elements of list arranged in a regular array.
 

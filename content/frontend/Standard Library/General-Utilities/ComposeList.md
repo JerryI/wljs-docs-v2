@@ -1,4 +1,6 @@
-# ComposeList
+---
+title: ComposeList
+---
 
 `ComposeList[{f1, f2, ...}, x]` generates a list of the form {x, f1[x], f2[f1[x]], ...}.
 

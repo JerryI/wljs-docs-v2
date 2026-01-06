@@ -1,4 +1,6 @@
-# NetNestOperator
+---
+title: NetNestOperator
+---
 
 `NetNestOperator[net, n]` represents a net in which net is applied n times to the input.
 

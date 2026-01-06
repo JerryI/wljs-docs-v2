@@ -1,4 +1,6 @@
-# PointProcessParameterAssumptions
+---
+title: PointProcessParameterAssumptions
+---
 
 `PointProcessParameterAssumptions[proc]` gives a logical expression for assumptions on parameters in the point process proc.
 

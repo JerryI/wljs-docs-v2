@@ -1,4 +1,6 @@
-# Update
+---
+title: Update
+---
 
 `Update[symbol]` tells the Wolfram Language that hidden changes have been made that could affect values associated with a symbol.
 

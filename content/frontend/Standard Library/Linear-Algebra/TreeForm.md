@@ -1,4 +1,6 @@
-# TreeForm
+---
+title: TreeForm
+---
 
 `TreeForm[expr]` displays expr as a tree with different levels at different depths.
 

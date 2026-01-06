@@ -1,4 +1,6 @@
-# ChebyshevDistance
+---
+title: ChebyshevDistance
+---
 
 `ChebyshevDistance[u, v]` gives the Chebyshev or sup norm distance between vectors u and v.
 

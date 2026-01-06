@@ -1,4 +1,6 @@
-# GraphUnion
+---
+title: GraphUnion
+---
 
 `GraphUnion[g1,g2]` gives the graph union of the graphs g1 and g2.
 

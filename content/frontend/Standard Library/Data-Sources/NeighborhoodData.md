@@ -1,4 +1,6 @@
-# NeighborhoodData
+---
+title: NeighborhoodData
+---
 
 `NeighborhoodData[entity, property]` gives the value of the specified property for the neighborhood entity.
 

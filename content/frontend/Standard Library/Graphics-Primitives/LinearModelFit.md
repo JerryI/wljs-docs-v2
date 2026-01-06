@@ -1,4 +1,6 @@
-# LinearModelFit
+---
+title: LinearModelFit
+---
 
 `LinearModelFit[data, {f1, f2, ...}, x]` creates a linear regression model with statistical analysis.
 

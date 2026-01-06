@@ -1,4 +1,6 @@
-# BitOr
+---
+title: BitOr
+---
 
 `BitOr[n1, n2, ...]` gives the bitwise OR of the integers ni.
 

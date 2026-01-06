@@ -1,4 +1,6 @@
-# CrossingDetect
+---
+title: CrossingDetect
+---
 
 `CrossingDetect[image]` gives a binary image in which white pixels correspond to the zero crossings in image.
 

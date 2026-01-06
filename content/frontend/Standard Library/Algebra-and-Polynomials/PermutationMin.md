@@ -1,4 +1,6 @@
-# PermutationMin
+---
+title: PermutationMin
+---
 
 `PermutationMin[perm]` returns the smallest integer moved by the permutation perm.
 

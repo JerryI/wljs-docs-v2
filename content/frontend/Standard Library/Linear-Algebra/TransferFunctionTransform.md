@@ -1,4 +1,6 @@
-# TransferFunctionTransform
+---
+title: TransferFunctionTransform
+---
 
 `TransferFunctionTransform[f,tf]` transforms the TransferFunctionModel object tf using the transformation function f.
 

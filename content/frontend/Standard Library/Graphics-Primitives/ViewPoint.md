@@ -1,4 +1,6 @@
-# ViewPoint
+---
+title: ViewPoint
+---
 
 `ViewPoint` is an option for `Graphics3D` and related functions which gives the point in space from which three-dimensional objects are to be viewed.
 

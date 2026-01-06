@@ -1,4 +1,6 @@
-# Clip
+---
+title: Clip
+---
 
 `Clip[x]` clips `x` to the range $[-1, 1]$. `Clip[x, {min, max}]` clips to the range `[min, max]`.
 

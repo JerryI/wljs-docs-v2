@@ -1,4 +1,6 @@
-# Thin
+---
+title: Thin
+---
 
 `Thin` is a graphics directive that specifies that lines which follow should be drawn thin.
 

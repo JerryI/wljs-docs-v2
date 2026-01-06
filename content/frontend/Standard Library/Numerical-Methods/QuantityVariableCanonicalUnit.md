@@ -1,4 +1,6 @@
-# QuantityVariableCanonicalUnit
+---
+title: QuantityVariableCanonicalUnit
+---
 
 `QuantityVariableCanonicalUnit[quantityvariable]` returns the canonical unit associated with the specified quantityvariable.
 

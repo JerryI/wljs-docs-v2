@@ -1,4 +1,6 @@
-# AlphabeticSort
+---
+title: AlphabeticSort
+---
 
 `AlphabeticSort[list]` sorts the elements of list into alphabetical order.
 

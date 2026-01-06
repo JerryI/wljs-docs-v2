@@ -1,4 +1,6 @@
-# UnitaryMatrixQ
+---
+title: UnitaryMatrixQ
+---
 
 `UnitaryMatrixQ[m]` gives `True` if m is a unitary matrix, and `False` otherwise.
 

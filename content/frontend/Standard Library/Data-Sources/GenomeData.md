@@ -1,4 +1,6 @@
-# GenomeData
+---
+title: GenomeData
+---
 
 `GenomeData["gene"]` gives the DNA sequence for the specified gene on the reference human genome.
 

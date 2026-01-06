@@ -1,4 +1,6 @@
-# DotLayer
+---
+title: DotLayer
+---
 
 `DotLayer[]` represents a net layer that takes the dot product of two or more arrays.
 

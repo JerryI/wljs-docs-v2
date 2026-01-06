@@ -1,4 +1,6 @@
-# Ellipsoid
+---
+title: Ellipsoid
+---
 
 `Ellipsoid[p, {r1, r2, r3}]` represents an axis-aligned ellipsoid centered at p with semiaxes lengths ri.
 

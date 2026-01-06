@@ -1,4 +1,6 @@
-# FindMaximumFlow
+---
+title: FindMaximumFlow
+---
 
 `FindMaximumFlow[g,s,t]` finds the maximum flow between source vertex s and target vertex t in a graph g.
 

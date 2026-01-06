@@ -1,4 +1,6 @@
-# GeoDisk
+---
+title: GeoDisk
+---
 
 `GeoDisk[loc, r]` is a two-dimensional `GeoGraphics` primitive that represents a filled disk of radius `r` centered at the location `loc` on the surface of the Earth.
 

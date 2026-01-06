@@ -1,4 +1,6 @@
-# MachineNumberQ
+---
+title: MachineNumberQ
+---
 
 `MachineNumberQ[expr]` returns True if expr is a machine-precision real or complex number, and returns False otherwise.
 

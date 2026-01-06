@@ -1,4 +1,6 @@
-# GroupOrder
+---
+title: GroupOrder
+---
 
 `GroupOrder[group]` returns the number of elements of `group`.
 

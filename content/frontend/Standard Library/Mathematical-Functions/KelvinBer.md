@@ -1,4 +1,6 @@
-# KelvinBer
+---
+title: KelvinBer
+---
 
 `KelvinBer[z]` gives the Kelvin function ber(z).
 

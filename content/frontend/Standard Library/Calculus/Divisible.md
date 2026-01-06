@@ -1,4 +1,6 @@
-# Divisible
+---
+title: Divisible
+---
 
 `Divisible[n, m]` yields `True` if n is divisible by m, and `False` otherwise.
 

@@ -1,4 +1,6 @@
-# MersennePrimeExponentQ
+---
+title: MersennePrimeExponentQ
+---
 
 `MersennePrimeExponentQ[n]` returns True if n is a Mersenne prime exponent, and False otherwise.
 

@@ -1,4 +1,6 @@
-# CircleThrough
+---
+title: CircleThrough
+---
 
 `CircleThrough[{p1, p2, ...}]` represents a circle passing through the points pi.
 

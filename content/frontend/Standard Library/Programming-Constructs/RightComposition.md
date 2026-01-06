@@ -1,4 +1,6 @@
-# RightComposition
+---
+title: RightComposition
+---
 
 `RightComposition[f, g, h]` composes functions left to right: first `f`, then `g`, then `h`. Opposite order from `Composition`.
 

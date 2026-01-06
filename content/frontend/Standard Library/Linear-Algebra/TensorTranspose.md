@@ -1,4 +1,6 @@
-# TensorTranspose
+---
+title: TensorTranspose
+---
 
 `TensorTranspose[tensor, perm]` represents the tensor obtained by transposing the slots of tensor as given by the permutation perm.
 

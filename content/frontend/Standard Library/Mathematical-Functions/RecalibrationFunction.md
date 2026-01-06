@@ -1,4 +1,6 @@
-# RecalibrationFunction
+---
+title: RecalibrationFunction
+---
 
 `RecalibrationFunction` is an option for `Classify`, `Predict` and related functions that specifies how to post-process model predictions.
 

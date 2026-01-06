@@ -1,4 +1,6 @@
-# Scale
+---
+title: Scale
+---
 
 `Scale[g, s]` represents graphics primitives g scaled by a factor s.
 

@@ -1,4 +1,6 @@
-# PairwiseDensityHistogram
+---
+title: PairwiseDensityHistogram
+---
 
 `PairwiseDensityHistogram[{{y11, ..., y1n}, ..., {ym1, ..., ymn}}]` creates an array of density histograms by plotting the data columns against each other in pairs.
 

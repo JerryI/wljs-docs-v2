@@ -1,4 +1,6 @@
-# EstimatedBackground
+---
+title: EstimatedBackground
+---
 
 `EstimatedBackground[data]` estimates the background of data.
 

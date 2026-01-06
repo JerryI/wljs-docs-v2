@@ -1,4 +1,6 @@
-# Hermitian
+---
+title: Hermitian
+---
 
 `Hermitian[{1, 2}]` represents the symmetry of a Hermitian matrix.
 

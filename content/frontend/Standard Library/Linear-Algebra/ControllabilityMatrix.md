@@ -1,4 +1,6 @@
-# ControllabilityMatrix
+---
+title: ControllabilityMatrix
+---
 
 `ControllabilityMatrix[ssm]` gives the controllability matrix of the state-space model ssm.
 

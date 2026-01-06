@@ -1,4 +1,6 @@
-# Line
+---
+title: Line
+---
 
 `Line[{p1, p2, ...}]` represents line segments joining a sequence of points.
 

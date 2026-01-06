@@ -1,4 +1,6 @@
-# Lighter
+---
+title: Lighter
+---
 
 `Lighter[color]` represents a lighter version of the specified color.
 

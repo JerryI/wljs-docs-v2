@@ -1,4 +1,6 @@
-# ComplexInfinity
+---
+title: ComplexInfinity
+---
 
 `ComplexInfinity` represents a quantity with infinite magnitude, but undetermined complex phase.
 

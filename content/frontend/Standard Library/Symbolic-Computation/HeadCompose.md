@@ -1,4 +1,6 @@
-# HeadCompose
+---
+title: HeadCompose
+---
 
 `HeadCompose[a, b, c, d]` gives `a[b][c][d]`.
 

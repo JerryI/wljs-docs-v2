@@ -1,4 +1,6 @@
-# XMLObject
+---
+title: XMLObject
+---
 
 `XMLObject["type"]` represents the head of an XML object in symbolic XML.
 

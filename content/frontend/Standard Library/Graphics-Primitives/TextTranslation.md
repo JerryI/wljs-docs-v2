@@ -1,4 +1,6 @@
-# TextTranslation
+---
+title: TextTranslation
+---
 
 `TextTranslation["text"]` translates text into the current default language.
 

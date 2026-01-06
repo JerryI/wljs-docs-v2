@@ -1,4 +1,6 @@
-# SinDegrees
+---
+title: SinDegrees
+---
 
 `SinDegrees[θ]` gives the sine of θ degrees.
 

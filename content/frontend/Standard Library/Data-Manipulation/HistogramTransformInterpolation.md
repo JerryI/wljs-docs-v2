@@ -1,4 +1,6 @@
-# HistogramTransformInterpolation
+---
+title: HistogramTransformInterpolation
+---
 
 `HistogramTransformInterpolation[{x1, x2, ...}]` finds a function f so that the transformed values f(xi) are distributed nearly uniformly.
 

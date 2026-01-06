@@ -1,4 +1,6 @@
-# Labeled
+---
+title: Labeled
+---
 
 `Labeled[expr, lbl]` displays expr labeled with lbl.
 

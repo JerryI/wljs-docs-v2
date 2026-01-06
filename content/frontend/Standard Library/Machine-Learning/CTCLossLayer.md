@@ -1,4 +1,6 @@
-# CTCLossLayer
+---
+title: CTCLossLayer
+---
 
 `CTCLossLayer[]` represents a net layer that computes the connectionist temporal classification loss by comparing a sequence of class probability vectors with a sequence of indices representing the target classes.
 

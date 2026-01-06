@@ -1,4 +1,6 @@
-# BaseForm
+---
+title: BaseForm
+---
 
 `BaseForm[expr, n]` prints with the numbers in expr given in base n.
 

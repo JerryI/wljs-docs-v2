@@ -1,4 +1,6 @@
-# ParetoDistribution
+---
+title: ParetoDistribution
+---
 
 `ParetoDistribution[k, α]` represents a Pareto distribution with minimum value parameter *k* and shape parameter *α*.
 

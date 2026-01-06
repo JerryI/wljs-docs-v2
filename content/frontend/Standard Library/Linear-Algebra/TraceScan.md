@@ -1,4 +1,6 @@
-# TraceScan
+---
+title: TraceScan
+---
 
 `TraceScan[f, expr]` applies f to all expressions used in the evaluation of expr.
 

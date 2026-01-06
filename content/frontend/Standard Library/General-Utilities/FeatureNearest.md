@@ -1,4 +1,6 @@
-# FeatureNearest
+---
+title: FeatureNearest
+---
 
 `FeatureNearest[{elem1,elem2,…},x]` gives the list of elemi to which x is nearest in a computed feature space.
 

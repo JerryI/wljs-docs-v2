@@ -1,4 +1,6 @@
-# TemporalRegularity
+---
+title: TemporalRegularity
+---
 
 `TemporalRegularity` is an option for `TemporalData`, `TimeSeries`, and `EventSeries` that controls whether the paths are assumed to be uniformly spaced in time.
 

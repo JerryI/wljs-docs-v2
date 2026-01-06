@@ -1,4 +1,6 @@
-# KaiserWindow
+---
+title: KaiserWindow
+---
 
 `KaiserWindow[x]` represents a Kaiser window function of x.
 

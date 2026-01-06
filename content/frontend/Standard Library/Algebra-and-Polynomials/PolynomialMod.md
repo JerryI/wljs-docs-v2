@@ -1,4 +1,6 @@
-# PolynomialMod
+---
+title: PolynomialMod
+---
 
 `PolynomialMod[poly, m]` gives the polynomial poly reduced modulo m.
 

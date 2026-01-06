@@ -1,4 +1,6 @@
-# GeoBounds
+---
+title: GeoBounds
+---
 
 `GeoBounds[g]` gives the ranges of latitudes and longitudes in the geo region g.
 

@@ -1,4 +1,6 @@
-# StirlingS1
+---
+title: StirlingS1
+---
 
 `StirlingS1[n, m]` gives the Stirling number of the first kind, related to permutations with cycles.
 

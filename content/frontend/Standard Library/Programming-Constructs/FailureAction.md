@@ -1,4 +1,6 @@
-# FailureAction
+---
+title: FailureAction
+---
 
 `FailureAction` is an option to Query and related functions that determines what should happen when a failure or message is generated.
 

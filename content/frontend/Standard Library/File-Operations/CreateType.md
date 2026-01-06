@@ -1,4 +1,6 @@
-# CreateType
+---
+title: CreateType
+---
 
 `CreateType[type, parent, init, {fields}]` creates a new type for use in compiled code.
 

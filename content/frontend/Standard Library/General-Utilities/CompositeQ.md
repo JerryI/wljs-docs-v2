@@ -1,4 +1,6 @@
-# CompositeQ
+---
+title: CompositeQ
+---
 
 `CompositeQ[n]` yields True if n is a composite number, and yields False otherwise.
 

@@ -1,4 +1,6 @@
-# JaccardDissimilarity
+---
+title: JaccardDissimilarity
+---
 
 `JaccardDissimilarity[u, v]` gives the Jaccard dissimilarity between Boolean vectors u and v.
 

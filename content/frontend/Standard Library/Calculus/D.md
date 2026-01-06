@@ -1,4 +1,6 @@
-# D
+---
+title: D
+---
 
 `D[f, x]` gives the partial derivative of f with respect to x.
 

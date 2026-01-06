@@ -1,4 +1,6 @@
-# FindArgMin
+---
+title: FindArgMin
+---
 
 `FindArgMin[f,x]` gives the position xmin of a local minimum of f.
 

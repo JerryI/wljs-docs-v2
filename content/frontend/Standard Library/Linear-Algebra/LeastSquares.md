@@ -1,4 +1,6 @@
-# LeastSquares
+---
+title: LeastSquares
+---
 
 `LeastSquares[m, b]` finds the least-squares solution `x` that minimizes $||m \cdot x - b||$.
 

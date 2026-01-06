@@ -1,4 +1,6 @@
-# WeierstrassInvariantG3
+---
+title: WeierstrassInvariantG3
+---
 
 `WeierstrassInvariantG3[{ω,ω′}]` gives the invariant g3 for the Weierstrass elliptic functions corresponding to the half‐periods {ω,ω′}.
 

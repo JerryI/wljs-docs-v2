@@ -1,4 +1,6 @@
-# ListContourPlot
+---
+title: ListContourPlot
+---
 
 `ListContourPlot[data]` generates a contour plot from a 2D array of height values or from `{{x, y, z}, ...}` data points.
 

@@ -1,4 +1,6 @@
-# KVertexConnectedComponents
+---
+title: KVertexConnectedComponents
+---
 
 `KVertexConnectedComponents[g, k]` gives the k-vertex-connected components of the graph g.
 

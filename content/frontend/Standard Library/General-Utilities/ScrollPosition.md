@@ -1,4 +1,6 @@
-# ScrollPosition
+---
+title: ScrollPosition
+---
 
 `ScrollPosition` is an option for `Pane` that specifies the scroll position of the contents of the pane.
 

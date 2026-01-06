@@ -1,4 +1,6 @@
-# DefaultOptions
+---
+title: DefaultOptions
+---
 
 `DefaultOptions` is a style option that allows default options to be specified for particular formatting and related constructs.
 

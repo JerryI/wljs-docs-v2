@@ -1,4 +1,6 @@
-# ScalingMatrix
+---
+title: ScalingMatrix
+---
 
 `ScalingMatrix[{sx, sy, ...}]` gives the matrix corresponding to scaling by a factor si along each coordinate axis.
 

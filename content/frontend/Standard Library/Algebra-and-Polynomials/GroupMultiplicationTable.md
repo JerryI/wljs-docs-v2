@@ -1,4 +1,6 @@
-# GroupMultiplicationTable
+---
+title: GroupMultiplicationTable
+---
 
 `GroupMultiplicationTable[group]` gives the multiplication table of `group` as an array.
 

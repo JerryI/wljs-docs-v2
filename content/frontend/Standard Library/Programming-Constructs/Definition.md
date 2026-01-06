@@ -1,4 +1,6 @@
-# Definition
+---
+title: Definition
+---
 
 `Definition[symbol]` prints as the definitions given for a symbol, showing all rules and values.
 

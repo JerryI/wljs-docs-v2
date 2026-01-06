@@ -1,4 +1,6 @@
-# ToContinuousTimeModel
+---
+title: ToContinuousTimeModel
+---
 
 `ToContinuousTimeModel[lsys]` gives the continuous-time approximation of the discrete-time systems models lsys.
 

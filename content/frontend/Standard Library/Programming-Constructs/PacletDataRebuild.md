@@ -1,4 +1,6 @@
-# PacletDataRebuild
+---
+title: PacletDataRebuild
+---
 
 `PacletDataRebuild[]` rescans all the installed paclets to rebuild the internal cache of paclet data.
 

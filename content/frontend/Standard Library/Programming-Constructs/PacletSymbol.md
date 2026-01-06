@@ -1,4 +1,6 @@
-# PacletSymbol
+---
+title: PacletSymbol
+---
 
 `PacletSymbol[paclet, "sym"]` gives the symbol named "sym" in the primary context of paclet.
 

@@ -1,4 +1,6 @@
-# SpotLight
+---
+title: SpotLight
+---
 
 `SpotLight[col, pt, α]` is a 3D graphics directive specifying a spotlight of color col at position pt aimed at the center with half-angle α.
 

@@ -1,4 +1,6 @@
-# ParallelTable
+---
+title: ParallelTable
+---
 
 `ParallelTable[expr,{imax}]` generates in parallel a list of imax copies of expr.
 

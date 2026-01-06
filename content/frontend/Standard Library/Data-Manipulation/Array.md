@@ -1,4 +1,6 @@
-# Array
+---
+title: Array
+---
 
 `Array[f, n]` generates a list of length n, with elements f[i].
 

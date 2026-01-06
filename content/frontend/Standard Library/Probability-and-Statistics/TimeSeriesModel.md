@@ -1,4 +1,6 @@
-# TimeSeriesModel
+---
+title: TimeSeriesModel
+---
 
 `TimeSeriesModel[...]` represents the symbolic time series model obtained from `TimeSeriesModelFit`.
 

@@ -1,4 +1,6 @@
-# Erf
+---
+title: Erf
+---
 
 `Erf[z]` gives the error function erf(z), related to the normal distribution. `Erf[z0, z1]` gives erf(z1) - erf(z0).
 

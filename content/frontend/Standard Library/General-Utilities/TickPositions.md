@@ -1,4 +1,6 @@
-# TickPositions
+---
+title: TickPositions
+---
 
 `TickPositions` is an option for `AxisObject` that specifies where the tick marks should be positioned.
 

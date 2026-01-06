@@ -1,4 +1,6 @@
-# InverseJacobiNS
+---
+title: InverseJacobiNS
+---
 
 `InverseJacobiNS[v,m]` gives the inverse Jacobi elliptic function ns⁻¹(v|m).
 

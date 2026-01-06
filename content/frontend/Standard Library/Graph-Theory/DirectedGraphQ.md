@@ -1,4 +1,6 @@
-# DirectedGraphQ
+---
+title: DirectedGraphQ
+---
 
 `DirectedGraphQ[g]` yields `True` if graph g is a directed graph and `False` otherwise.
 

@@ -1,4 +1,6 @@
-# FeatureExtract
+---
+title: FeatureExtract
+---
 
 `FeatureExtract[{example1,example2,…}]` extracts features for each of the examplei using a feature extractor trained on all the examplei.
 

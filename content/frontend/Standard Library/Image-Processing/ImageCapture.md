@@ -1,4 +1,6 @@
-# ImageCapture
+---
+title: ImageCapture
+---
 
 `ImageCapture[]` opens a graphical user interface for capturing images from connected cameras.
 

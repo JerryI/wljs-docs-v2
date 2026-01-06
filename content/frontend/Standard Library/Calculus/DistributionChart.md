@@ -1,4 +1,6 @@
-# DistributionChart
+---
+title: DistributionChart
+---
 
 `DistributionChart[{data1, data2, ...}]` makes a distribution chart with a distribution symbol for each dataset.
 

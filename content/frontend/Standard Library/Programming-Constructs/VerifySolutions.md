@@ -1,4 +1,6 @@
-# VerifySolutions
+---
+title: VerifySolutions
+---
 
 `VerifySolutions` is an option to Solve and related functions that controls whether to verify solutions.
 

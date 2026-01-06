@@ -1,4 +1,6 @@
-# UpperTriangularMatrix
+---
+title: UpperTriangularMatrix
+---
 
 `UpperTriangularMatrix[umat]` converts the upper triangular matrix umat to a structured array.
 

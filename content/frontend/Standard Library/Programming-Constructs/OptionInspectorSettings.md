@@ -1,4 +1,6 @@
-# OptionInspectorSettings
+---
+title: OptionInspectorSettings
+---
 
 `OptionInspectorSettings` is a global option that specifies the display of options in the Option Inspector.
 

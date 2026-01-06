@@ -1,4 +1,6 @@
-# HeatFluxValue
+---
+title: HeatFluxValue
+---
 
 `HeatFluxValue[pred, vars, pars]` represents a thermal heat flux boundary condition for PDEs with predicate pred indicating where it applies, with model variables vars and global parameters pars.
 

@@ -1,4 +1,6 @@
-# PointProcessParameterQ
+---
+title: PointProcessParameterQ
+---
 
 `PointProcessParameterQ[proc]` yields `True` if proc is a valid random point process, and yields `False` otherwise.
 

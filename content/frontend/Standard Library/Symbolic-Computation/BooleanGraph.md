@@ -1,4 +1,6 @@
-# BooleanGraph
+---
+title: BooleanGraph
+---
 
 `BooleanGraph[bfunc, g1, ..., gn]` gives the Boolean graph defined by the Boolean function bfunc on the graphs g1, ..., gn.
 

@@ -1,4 +1,6 @@
-# StabilityMarginsStyle
+---
+title: StabilityMarginsStyle
+---
 
 `StabilityMarginsStyle` is an option to frequency response plots such as `BodePlot`, `NyquistPlot`, and `NicholsPlot` that specifies the styles in which the gain and phase margins are to be drawn.
 

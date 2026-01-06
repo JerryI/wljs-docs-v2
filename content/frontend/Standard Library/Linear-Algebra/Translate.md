@@ -1,4 +1,6 @@
-# Translate
+---
+title: Translate
+---
 
 `Translate[g, {x, y, ...}]` represents graphics primitives g translated by the vector {x, y, ...}.
 

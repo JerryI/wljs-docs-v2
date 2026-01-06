@@ -1,4 +1,6 @@
-# Backslash
+---
+title: Backslash
+---
 
 `Backslash[x, y, ...]` displays as x∖y∖....
 

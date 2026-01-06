@@ -1,4 +1,6 @@
-# ContourStyle
+---
+title: ContourStyle
+---
 
 `ContourStyle` is an option for contour plots that specifies the style in which contour lines or surfaces should be drawn.
 

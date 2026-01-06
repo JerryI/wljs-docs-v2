@@ -1,4 +1,6 @@
-# Databin
+---
+title: Databin
+---
 
 `Databin["id"]` represents a databin in the Wolfram Data Drop.
 

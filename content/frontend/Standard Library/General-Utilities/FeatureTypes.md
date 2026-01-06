@@ -1,4 +1,6 @@
-# FeatureTypes
+---
+title: FeatureTypes
+---
 
 `FeatureTypes` is an option for machine learning functions such as Classify or Predict that specifies what feature types to assume for elements of input data given.
 

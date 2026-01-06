@@ -1,4 +1,6 @@
-# HornerForm
+---
+title: HornerForm
+---
 
 `HornerForm[poly]` puts the polynomial poly in Horner form for efficient numerical evaluation.
 

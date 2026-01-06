@@ -1,4 +1,6 @@
-# SpheroidalJoiningFactor
+---
+title: SpheroidalJoiningFactor
+---
 
 `SpheroidalJoiningFactor[n, m, γ]` gives the spheroidal joining factor with degree n and order m.
 

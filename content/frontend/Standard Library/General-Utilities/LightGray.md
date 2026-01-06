@@ -1,4 +1,6 @@
-# LightGray
+---
+title: LightGray
+---
 
 `LightGray` represents a light gray color in graphics or style specifications.
 

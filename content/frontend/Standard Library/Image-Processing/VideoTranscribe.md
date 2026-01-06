@@ -1,4 +1,6 @@
-# VideoTranscribe
+---
+title: VideoTranscribe
+---
 
 `VideoTranscribe[video]` recognizes speech in an audio track and adds it to video as a subtitle track.
 

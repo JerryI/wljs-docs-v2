@@ -1,4 +1,6 @@
-# MailSearch
+---
+title: MailSearch
+---
 
 `MailSearch[folder, assoc]` searches the specified mail folder for messages with properties matching elements in assoc.
 

@@ -1,4 +1,6 @@
-# LatticeReduce
+---
+title: LatticeReduce
+---
 
 `LatticeReduce[{v1, v2, ...}]` gives a reduced basis for the set of vectors v_i using the LLL algorithm.
 

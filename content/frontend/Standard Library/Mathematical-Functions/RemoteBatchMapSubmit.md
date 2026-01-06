@@ -1,4 +1,6 @@
-# RemoteBatchMapSubmit
+---
+title: RemoteBatchMapSubmit
+---
 
 `RemoteBatchMapSubmit[env,f,list]` submits an array batch job in which f is applied to each element on the first level of list, using the remote batch submission environment env.
 

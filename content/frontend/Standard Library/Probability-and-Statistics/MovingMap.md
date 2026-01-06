@@ -1,4 +1,6 @@
-# MovingMap
+---
+title: MovingMap
+---
 
 `MovingMap[f,data,w]` applies f to size w windows in the specified data.
 

@@ -1,4 +1,6 @@
-# GraphDensity
+---
+title: GraphDensity
+---
 
 `GraphDensity[g]` gives the graph density of the graph `g`.
 

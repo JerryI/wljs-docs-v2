@@ -1,4 +1,6 @@
-# ListCurvePathPlot
+---
+title: ListCurvePathPlot
+---
 
 `ListCurvePathPlot[{{x1, y1}, {x2, y2}, ...}]` plots a curve that corresponds to a smooth path through the specified points.
 

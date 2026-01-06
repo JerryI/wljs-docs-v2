@@ -1,4 +1,6 @@
-# PeriodicBoundaryCondition
+---
+title: PeriodicBoundaryCondition
+---
 
 `PeriodicBoundaryCondition[u[x1, ...], pred, f]` represents a periodic boundary condition u(xtarget) = u(f(xtarget)) for all xtarget on the boundary of the region given to NDSolve where pred is True.
 

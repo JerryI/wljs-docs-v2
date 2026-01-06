@@ -1,4 +1,6 @@
-# WignerSemicircleDistribution
+---
+title: WignerSemicircleDistribution
+---
 
 `WignerSemicircleDistribution[r]` represents a Wigner semicircle distribution with radius r centered at the origin.
 

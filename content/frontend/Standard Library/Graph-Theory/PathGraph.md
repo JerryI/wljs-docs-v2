@@ -1,4 +1,6 @@
-# PathGraph
+---
+title: PathGraph
+---
 
 `PathGraph[{v1, v2, ...}]` creates a path graph connecting vertices in sequence.
 

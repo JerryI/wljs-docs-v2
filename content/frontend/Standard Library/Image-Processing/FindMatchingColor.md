@@ -1,4 +1,6 @@
-# FindMatchingColor
+---
+title: FindMatchingColor
+---
 
 `FindMatchingColor[image,color]` returns a color similar to the color that is present in image.
 

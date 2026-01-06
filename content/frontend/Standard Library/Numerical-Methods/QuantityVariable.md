@@ -1,4 +1,6 @@
-# QuantityVariable
+---
+title: QuantityVariable
+---
 
 `QuantityVariable[var, "pq"]` represents a variable with the label var and the corresponding physical quantity "pq".
 

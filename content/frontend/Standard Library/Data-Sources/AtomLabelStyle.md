@@ -1,4 +1,6 @@
-# AtomLabelStyle
+---
+title: AtomLabelStyle
+---
 
 `AtomLabelStyle` is an option for `MoleculePlot` and `MoleculePlot3D` that specifies the style to use for atom labels.
 

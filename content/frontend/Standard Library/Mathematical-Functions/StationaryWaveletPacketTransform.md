@@ -1,4 +1,6 @@
-# StationaryWaveletPacketTransform
+---
+title: StationaryWaveletPacketTransform
+---
 
 `StationaryWaveletPacketTransform[data]` gives the stationary wavelet packet transform (SWPT) of an array of data.
 

@@ -1,4 +1,6 @@
-# MineralData
+---
+title: MineralData
+---
 
 `MineralData[entity, property]` gives the value of the specified property for the mineral entity.
 

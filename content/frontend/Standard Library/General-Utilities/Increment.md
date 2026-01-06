@@ -1,4 +1,6 @@
-# Increment
+---
+title: Increment
+---
 
 `x++` increases the value of x by 1, returning the old value of x.
 

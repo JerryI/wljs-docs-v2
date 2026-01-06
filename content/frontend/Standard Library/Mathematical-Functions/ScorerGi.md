@@ -1,4 +1,6 @@
-# ScorerGi
+---
+title: ScorerGi
+---
 
 `ScorerGi[z]` gives the Scorer function Gi(z).
 

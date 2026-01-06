@@ -1,4 +1,6 @@
-# PoissonWindow
+---
+title: PoissonWindow
+---
 
 `PoissonWindow[x]` represents a Poisson window function of x.
 

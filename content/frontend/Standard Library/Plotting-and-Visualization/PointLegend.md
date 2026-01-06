@@ -1,4 +1,6 @@
-# PointLegend
+---
+title: PointLegend
+---
 
 `PointLegend[{col1, ...}, {lbl1, ...}]` generates a legend that associates points of colors coli with labels lbli.
 

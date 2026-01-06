@@ -1,4 +1,6 @@
-# FileNameDepth
+---
+title: FileNameDepth
+---
 
 `FileNameDepth["name"]` gives the number of path elements in the file name.
 

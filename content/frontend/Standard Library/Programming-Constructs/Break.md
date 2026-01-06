@@ -1,4 +1,6 @@
-# Break
+---
+title: Break
+---
 
 `Break[]` exits the nearest enclosing `Do`, `For`, `While`, or `Until` loop.
 

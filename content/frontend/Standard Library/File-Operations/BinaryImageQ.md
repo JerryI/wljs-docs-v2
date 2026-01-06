@@ -1,4 +1,6 @@
-# BinaryImageQ
+---
+title: BinaryImageQ
+---
 
 `BinaryImageQ[image]` yields True if image has the form of a binary Image or Image3D object, and False otherwise.
 

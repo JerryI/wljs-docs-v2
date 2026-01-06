@@ -1,4 +1,6 @@
-# StackComplete
+---
+title: StackComplete
+---
 
 `StackComplete[expr]` evaluates *expr* with intermediate expressions in evaluation chains included on the stack.
 

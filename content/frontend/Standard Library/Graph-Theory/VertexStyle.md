@@ -1,4 +1,6 @@
-# VertexStyle
+---
+title: VertexStyle
+---
 
 `VertexStyle` is an option and annotation for Graph and related functions that specifies what style to use for vertices.
 

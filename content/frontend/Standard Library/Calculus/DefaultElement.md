@@ -1,4 +1,6 @@
-# DefaultElement
+---
+title: DefaultElement
+---
 
 `DefaultElement` is an option for `Grid` and related constructs which specifies what to insert when a new element is interactively created.
 

@@ -1,4 +1,6 @@
-# ContourShading
+---
+title: ContourShading
+---
 
 `ContourShading` is an option for contour plots that specifies how the regions between contour lines should be shaded.
 

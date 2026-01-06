@@ -1,4 +1,6 @@
-# WaveletMatrixPlot
+---
+title: WaveletMatrixPlot
+---
 
 `WaveletMatrixPlot[dwd]` plots the basis tree of wavelet matrix coefficients in the DiscreteWaveletData dwd.
 

@@ -1,4 +1,6 @@
-# PutAppend
+---
+title: PutAppend
+---
 
 `expr>>>filename` appends expr to a file.
 

@@ -1,4 +1,6 @@
-# RelationalDatabase
+---
+title: RelationalDatabase
+---
 
 `RelationalDatabase[...]` represents schema information about a relational database.
 

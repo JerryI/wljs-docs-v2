@@ -1,4 +1,6 @@
-# CountDistinctBy
+---
+title: CountDistinctBy
+---
 
 `CountDistinctBy[{e1, e2, ...}, f]` gives the number of distinct values of f[ei] that occur.
 

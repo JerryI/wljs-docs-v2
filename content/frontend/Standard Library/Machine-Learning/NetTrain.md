@@ -1,4 +1,6 @@
-# NetTrain
+---
+title: NetTrain
+---
 
 `NetTrain[net, {input1 -> output1, input2 -> output2, ...}]` trains the specified neural net by giving the inputi as input and minimizing the discrepancy between the outputi and the actual output of the net, using an automatically chosen loss function.
 

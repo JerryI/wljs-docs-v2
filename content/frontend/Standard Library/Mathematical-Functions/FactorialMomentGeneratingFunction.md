@@ -1,4 +1,6 @@
-# FactorialMomentGeneratingFunction
+---
+title: FactorialMomentGeneratingFunction
+---
 
 `FactorialMomentGeneratingFunction[dist, t]` gives the factorial moment-generating function for the distribution dist as a function of t.
 

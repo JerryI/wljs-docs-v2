@@ -1,4 +1,6 @@
-# RecurrenceFilter
+---
+title: RecurrenceFilter
+---
 
 `RecurrenceFilter[{α,β},x]` filters x using a linear recurrence equation with coefficients α and β.
 

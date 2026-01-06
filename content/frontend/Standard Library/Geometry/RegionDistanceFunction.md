@@ -1,4 +1,6 @@
-# RegionDistanceFunction
+---
+title: RegionDistanceFunction
+---
 
 `RegionDistanceFunction[reg, …]` represents a function whose values give the distance from a point to the region reg.
 

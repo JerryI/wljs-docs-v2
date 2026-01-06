@@ -1,4 +1,6 @@
-# TanDegrees
+---
+title: TanDegrees
+---
 
 `TanDegrees[θ]` gives the tangent of θ degrees.
 

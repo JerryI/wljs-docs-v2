@@ -1,4 +1,6 @@
-# SierpinskiCurve
+---
+title: SierpinskiCurve
+---
 
 `SierpinskiCurve[n]` gives the line segments representing the nth-step Sierpiński curve.
 

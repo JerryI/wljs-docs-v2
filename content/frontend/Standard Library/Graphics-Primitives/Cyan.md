@@ -1,4 +1,6 @@
-# Cyan
+---
+title: Cyan
+---
 
 `Cyan` represents the color cyan in graphics or style specifications.
 

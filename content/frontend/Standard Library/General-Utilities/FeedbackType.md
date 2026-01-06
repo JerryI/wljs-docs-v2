@@ -1,4 +1,6 @@
-# FeedbackType
+---
+title: FeedbackType
+---
 
 `FeedbackType` is an option for some control system functions that specifies the feedback type.
 

@@ -1,4 +1,6 @@
-# ExtractLayer
+---
+title: ExtractLayer
+---
 
 `ExtractLayer[]` represents a net layer that takes an array and a position specification as inputs and extracts the specified parts from the array.
 

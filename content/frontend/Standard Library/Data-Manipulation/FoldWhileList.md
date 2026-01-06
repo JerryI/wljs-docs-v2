@@ -1,4 +1,6 @@
-# FoldWhileList
+---
+title: FoldWhileList
+---
 
 `FoldWhileList[f, x, {a1, a2, ...}, test]` returns {x, f[x, a1], f[f[x, a1], a2], ...}, repeatedly applying f with subsequent values ai until applying test to the result does not yield True.
 

@@ -1,4 +1,6 @@
-# NicholsGridLines
+---
+title: NicholsGridLines
+---
 
 `NicholsGridLines` is an option to `NicholsPlot` that specifies contours of constant magnitude and constant phase of the closed-loop system.
 

@@ -1,4 +1,6 @@
-# TranslationOptions
+---
+title: TranslationOptions
+---
 
 `TranslationOptions -> {opt1 -> val1, opt2 -> val2, ...}` is an option for `Style` and `Cell` that controls how code translations are displayed.
 

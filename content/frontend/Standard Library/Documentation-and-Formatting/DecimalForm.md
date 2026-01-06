@@ -1,4 +1,6 @@
-# DecimalForm
+---
+title: DecimalForm
+---
 
 `DecimalForm[expr]` prints with approximate real numbers in expr always given in decimal form, without scientific notation.
 

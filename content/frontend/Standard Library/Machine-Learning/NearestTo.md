@@ -1,4 +1,6 @@
-# NearestTo
+---
+title: NearestTo
+---
 
 `NearestTo[x]` is an operator form that yields Nearest[elems,x] when applied to a list elems.
 

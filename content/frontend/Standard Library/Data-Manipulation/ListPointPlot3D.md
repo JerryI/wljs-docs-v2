@@ -1,4 +1,6 @@
-# ListPointPlot3D
+---
+title: ListPointPlot3D
+---
 
 `ListPointPlot3D[{{x1, y1, z1}, {x2, y2, z2}, ...}]` generates a 3D scatter plot of points with coordinates {x_i, y_i, z_i}.
 

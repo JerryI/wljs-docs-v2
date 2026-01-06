@@ -1,4 +1,6 @@
-# DisplayString
+---
+title: DisplayString
+---
 
 `DisplayString[graphics]` generates a string giving graphics or sound in PostScript format.
 

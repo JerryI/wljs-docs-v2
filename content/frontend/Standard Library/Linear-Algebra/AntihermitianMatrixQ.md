@@ -1,4 +1,6 @@
-# AntihermitianMatrixQ
+---
+title: AntihermitianMatrixQ
+---
 
 `AntihermitianMatrixQ[m]` gives `True` if m is explicitly antihermitian, and `False` otherwise.
 

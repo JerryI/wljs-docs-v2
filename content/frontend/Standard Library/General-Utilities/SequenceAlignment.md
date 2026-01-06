@@ -1,4 +1,6 @@
-# SequenceAlignment
+---
+title: SequenceAlignment
+---
 
 `SequenceAlignment[s1, s2]` finds an optimal alignment of sequences of elements in the strings, lists or biomolecular sequences s1 and s2, and yields a list of successive matching and differing sequences.
 

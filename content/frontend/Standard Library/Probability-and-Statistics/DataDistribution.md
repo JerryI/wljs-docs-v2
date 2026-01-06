@@ -1,4 +1,6 @@
-# DataDistribution
+---
+title: DataDistribution
+---
 
 `DataDistribution[ddist, ...]` represents a probability distribution of type ddist, estimated from a set of data.
 

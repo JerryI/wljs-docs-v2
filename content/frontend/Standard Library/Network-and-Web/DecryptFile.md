@@ -1,4 +1,6 @@
-# DecryptFile
+---
+title: DecryptFile
+---
 
 `DecryptFile["password", file]` generates a decrypted version of a file, using the specified password.
 

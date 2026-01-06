@@ -1,4 +1,6 @@
-# LessLess
+---
+title: LessLess
+---
 
 `LessLess[x, y, ...]` displays as x≪y≪....
 

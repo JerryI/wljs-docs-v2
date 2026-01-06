@@ -1,4 +1,6 @@
-# ParentCell
+---
+title: ParentCell
+---
 
 `ParentCell[obj]` returns the `CellObject` that contains obj.
 

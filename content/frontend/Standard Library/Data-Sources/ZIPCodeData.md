@@ -1,4 +1,6 @@
-# ZIPCodeData
+---
+title: ZIPCodeData
+---
 
 `ZIPCodeData[entity, property]` gives the value of the specified property for the ZIP code entity.
 

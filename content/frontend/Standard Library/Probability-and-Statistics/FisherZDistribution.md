@@ -1,4 +1,6 @@
-# FisherZDistribution
+---
+title: FisherZDistribution
+---
 
 `FisherZDistribution[n, m]` represents a Fisher z distribution with n numerator and m denominator degrees of freedom.
 

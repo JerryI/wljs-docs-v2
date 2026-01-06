@@ -1,4 +1,6 @@
-# IncludePods
+---
+title: IncludePods
+---
 
 `IncludePods` is an option for WolframAlpha that determines specific pod IDs to include in the results.
 

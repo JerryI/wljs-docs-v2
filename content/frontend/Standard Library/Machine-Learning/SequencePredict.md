@@ -1,4 +1,6 @@
-# SequencePredict
+---
+title: SequencePredict
+---
 
 `SequencePredict[{seq1, seq2, …}]` generates a `SequencePredictorFunction[…]` based on the sequences given.
 

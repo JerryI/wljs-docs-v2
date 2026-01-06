@@ -1,4 +1,6 @@
-# End
+---
+title: End
+---
 
 `End[]` returns the present context, and reverts to the previous one.
 

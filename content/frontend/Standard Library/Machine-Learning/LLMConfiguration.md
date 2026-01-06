@@ -1,4 +1,6 @@
-# LLMConfiguration
+---
+title: LLMConfiguration
+---
 
 `LLMConfiguration[...]` represents a configuration for an LLM.
 

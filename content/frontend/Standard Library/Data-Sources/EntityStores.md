@@ -1,4 +1,6 @@
-# EntityStores
+---
+title: EntityStores
+---
 
 `EntityStores[]` gives a list of all registered entity stores that are accessed when `Entity` is used.
 

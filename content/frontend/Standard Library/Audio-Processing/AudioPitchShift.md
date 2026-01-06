@@ -1,4 +1,6 @@
-# AudioPitchShift
+---
+title: AudioPitchShift
+---
 
 `AudioPitchShift[audio, r]` applies pitch shifting to audio by the ratio r, shifting every frequency f to r*f.
 

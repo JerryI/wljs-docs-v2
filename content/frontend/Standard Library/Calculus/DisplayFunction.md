@@ -1,4 +1,6 @@
-# DisplayFunction
+---
+title: DisplayFunction
+---
 
 `DisplayFunction` is an option for graphics and sound functions that specifies a function to apply to graphics and sound objects before returning them.
 

@@ -1,4 +1,6 @@
-# NestGraph
+---
+title: NestGraph
+---
 
 `NestGraph[f,expr,n]` gives the graph obtained by starting with expr and applying f successively n times.
 

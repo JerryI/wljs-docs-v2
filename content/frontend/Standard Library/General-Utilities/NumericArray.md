@@ -1,4 +1,6 @@
-# NumericArray
+---
+title: NumericArray
+---
 
 `NumericArray[array, type]` creates a numeric array of the specified type.
 

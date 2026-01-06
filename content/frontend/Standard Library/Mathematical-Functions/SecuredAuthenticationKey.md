@@ -1,4 +1,6 @@
-# SecuredAuthenticationKey
+---
+title: SecuredAuthenticationKey
+---
 
 `SecuredAuthenticationKey[assoc]` represents a secured authentication key with credentials and details specified by the association assoc.
 

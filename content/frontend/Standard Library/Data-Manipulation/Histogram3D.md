@@ -1,4 +1,6 @@
-# Histogram3D
+---
+title: Histogram3D
+---
 
 `Histogram3D[{{x1, y1}, {x2, y2}, ...}]` plots a 3D histogram of the values.
 

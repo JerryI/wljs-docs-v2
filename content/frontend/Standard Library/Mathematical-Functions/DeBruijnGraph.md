@@ -1,4 +1,6 @@
-# DeBruijnGraph
+---
+title: DeBruijnGraph
+---
 
 `DeBruijnGraph[m, n]` gives the n-dimensional De Bruijn graph with m symbols.
 

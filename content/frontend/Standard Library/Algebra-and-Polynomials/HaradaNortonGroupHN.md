@@ -1,4 +1,6 @@
-# HaradaNortonGroupHN
+---
+title: HaradaNortonGroupHN
+---
 
 `HaradaNortonGroupHN[]` represents the sporadic simple Harada–Norton group HN.
 

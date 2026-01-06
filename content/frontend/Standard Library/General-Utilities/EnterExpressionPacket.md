@@ -1,4 +1,6 @@
-# EnterExpressionPacket
+---
+title: EnterExpressionPacket
+---
 
 `EnterExpressionPacket[expr]` is a WSTP packet that requests the evaluation of expr.
 

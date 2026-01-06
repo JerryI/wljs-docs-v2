@@ -1,4 +1,6 @@
-# DeviceClose
+---
+title: DeviceClose
+---
 
 `DeviceClose[device]` closes the connection to a device and frees related resources.
 

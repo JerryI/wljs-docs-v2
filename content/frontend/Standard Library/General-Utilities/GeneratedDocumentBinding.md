@@ -1,4 +1,6 @@
-# GeneratedDocumentBinding
+---
+title: GeneratedDocumentBinding
+---
 
 `GeneratedDocumentBinding` is an option for supplying parameters to a DocumentGenerator during manual evaluation.
 

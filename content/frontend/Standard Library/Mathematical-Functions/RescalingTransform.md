@@ -1,4 +1,6 @@
-# RescalingTransform
+---
+title: RescalingTransform
+---
 
 `RescalingTransform[{{xmin, xmax}, {ymin, ymax}, ...}, {{xpmin, xpmax}, ...}]` gives a TransformationFunction that rescales the region with coordinate ranges xmin to xmax, etc. to the region with coordinate ranges xpmin to xpmax, etc.
 

@@ -1,4 +1,6 @@
-# FactorInteger
+---
+title: FactorInteger
+---
 
 `FactorInteger[n]` gives a list of the prime factors of the integer n, together with their exponents.
 

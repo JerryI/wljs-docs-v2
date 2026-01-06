@@ -1,4 +1,6 @@
-# Level
+---
+title: Level
+---
 
 `Level[expr, levelspec]` gives a list of all subexpressions of expr on the specified levels.
 

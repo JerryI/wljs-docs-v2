@@ -1,4 +1,6 @@
-# NormalizationLayer
+---
+title: NormalizationLayer
+---
 
 `NormalizationLayer[]` represents a trainable net layer that normalizes its input data across the second and subsequent dimensions and applies an independent scaling and bias to each component of the first dimension.
 

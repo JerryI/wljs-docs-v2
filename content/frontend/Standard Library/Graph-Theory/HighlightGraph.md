@@ -1,4 +1,6 @@
-# HighlightGraph
+---
+title: HighlightGraph
+---
 
 `HighlightGraph[g, {a1, a2, ...}]` highlights vertices, edges, or subgraphs ai of the graph g.
 

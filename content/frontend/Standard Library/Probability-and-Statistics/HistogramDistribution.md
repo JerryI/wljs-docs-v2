@@ -1,4 +1,6 @@
-# HistogramDistribution
+---
+title: HistogramDistribution
+---
 
 `HistogramDistribution[{x1, x2, …}]` represents the probability distribution corresponding to a histogram of the data values `xi`.
 

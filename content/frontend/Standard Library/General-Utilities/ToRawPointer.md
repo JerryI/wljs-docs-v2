@@ -1,4 +1,6 @@
-# ToRawPointer
+---
+title: ToRawPointer
+---
 
 `ToRawPointer[]` creates a new pointer object in compiled code, suitable for use with external libraries.
 

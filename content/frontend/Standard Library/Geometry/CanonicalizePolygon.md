@@ -1,4 +1,6 @@
-# CanonicalizePolygon
+---
+title: CanonicalizePolygon
+---
 
 `CanonicalizePolygon[poly]` gives a canonical representation of the polygon poly with shared coordinates and with inner and outer boundaries.
 

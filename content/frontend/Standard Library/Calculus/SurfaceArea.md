@@ -1,4 +1,6 @@
-# SurfaceArea
+---
+title: SurfaceArea
+---
 
 `SurfaceArea[reg]` gives the surface area of the three-dimensional region reg.
 

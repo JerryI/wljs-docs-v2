@@ -1,4 +1,6 @@
-# WaveletThreshold
+---
+title: WaveletThreshold
+---
 
 `WaveletThreshold[dwd]` thresholds the detail wavelet coefficients in the `DiscreteWaveletData` object dwd.
 

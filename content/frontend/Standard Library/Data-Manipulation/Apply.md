@@ -1,4 +1,6 @@
-# Apply
+---
+title: Apply
+---
 
 `f @@ expr` or `Apply[f, expr]` replaces the head of expr by f.
 

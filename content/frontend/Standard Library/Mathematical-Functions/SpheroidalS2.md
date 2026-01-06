@@ -1,4 +1,6 @@
-# SpheroidalS2
+---
+title: SpheroidalS2
+---
 
 `SpheroidalS2[n, m, γ, z]` gives the radial spheroidal function of the second kind.
 

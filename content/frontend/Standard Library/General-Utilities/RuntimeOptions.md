@@ -1,4 +1,6 @@
-# RuntimeOptions
+---
+title: RuntimeOptions
+---
 
 `RuntimeOptions` is an option for `Compile` that specifies runtime settings for the compiled function it creates.
 

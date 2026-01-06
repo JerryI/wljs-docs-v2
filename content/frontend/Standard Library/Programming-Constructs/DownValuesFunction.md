@@ -1,4 +1,6 @@
-# DownValuesFunction
+---
+title: DownValuesFunction
+---
 
 `DownValuesFunction[sym]` represents a function that uses definitions attached to sym when compiling.
 

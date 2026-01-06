@@ -1,4 +1,6 @@
-# Direction
+---
+title: Direction
+---
 
 `Direction` is an option for `Limit` and related functions that specifies the direction in which the limit is taken.
 

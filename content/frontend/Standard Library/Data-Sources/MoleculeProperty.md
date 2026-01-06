@@ -1,4 +1,6 @@
-# MoleculeProperty
+---
+title: MoleculeProperty
+---
 
 `MoleculeProperty[pname]` represents a property identified by pname for use in `MoleculeValue`.
 

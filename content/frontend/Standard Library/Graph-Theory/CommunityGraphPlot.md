@@ -1,4 +1,6 @@
-# CommunityGraphPlot
+---
+title: CommunityGraphPlot
+---
 
 `CommunityGraphPlot[g]` generates a plot showing the community structure of the graph g.
 

@@ -1,4 +1,6 @@
-# EpilogFunction
+---
+title: EpilogFunction
+---
 
 `EpilogFunction` is an option for `DocumentGenerator` allowing arbitrary code to be executed after a document is generated.
 

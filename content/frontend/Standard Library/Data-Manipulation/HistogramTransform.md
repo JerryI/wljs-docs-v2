@@ -1,4 +1,6 @@
-# HistogramTransform
+---
+title: HistogramTransform
+---
 
 `HistogramTransform[image]` transforms pixel values of image so that its histogram is nearly flat.
 

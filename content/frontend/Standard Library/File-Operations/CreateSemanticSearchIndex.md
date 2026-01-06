@@ -1,4 +1,6 @@
-# CreateSemanticSearchIndex
+---
+title: CreateSemanticSearchIndex
+---
 
 `CreateSemanticSearchIndex[source]` creates a search index from the data in source.
 

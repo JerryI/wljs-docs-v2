@@ -1,4 +1,6 @@
-# TreeMap
+---
+title: TreeMap
+---
 
 `TreeMap[f, tree]` applies f to the data of each subtree of tree.
 

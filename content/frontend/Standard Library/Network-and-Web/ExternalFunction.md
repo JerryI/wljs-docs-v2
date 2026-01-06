@@ -1,4 +1,6 @@
-# ExternalFunction
+---
+title: ExternalFunction
+---
 
 `ExternalFunction[sys,"f"]` represents an external function named "f" defined in the external evaluator sys.
 

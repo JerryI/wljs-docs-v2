@@ -1,4 +1,6 @@
-# Assuming
+---
+title: Assuming
+---
 
 `Assuming[assum, expr]` evaluates expr with assum appended to $Assumptions, so that assum is included in the default assumptions used by functions such as Refine, Simplify, and Integrate.
 

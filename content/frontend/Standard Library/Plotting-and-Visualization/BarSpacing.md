@@ -1,4 +1,6 @@
-# BarSpacing
+---
+title: BarSpacing
+---
 
 `BarSpacing` is an option to `BarChart` and related functions that controls the spacing between bars and groups of bars.
 

@@ -1,4 +1,6 @@
-# SubStar
+---
+title: SubStar
+---
 
 `SubStar[expr]` displays as expr*.
 

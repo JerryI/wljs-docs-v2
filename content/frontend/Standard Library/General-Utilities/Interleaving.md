@@ -1,4 +1,6 @@
-# Interleaving
+---
+title: Interleaving
+---
 
 `Interleaving` is an option for `Image` and related functions that specifies whether data corresponding to different channels in an object such as an image should be interleaved.
 

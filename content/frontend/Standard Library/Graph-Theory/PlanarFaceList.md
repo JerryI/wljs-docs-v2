@@ -1,4 +1,6 @@
-# PlanarFaceList
+---
+title: PlanarFaceList
+---
 
 `PlanarFaceList[g]` gives the list of faces of the planar graph g.
 

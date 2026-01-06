@@ -1,4 +1,6 @@
-# CircleDot
+---
+title: CircleDot
+---
 
 `CircleDot[x, y, ...]` displays as x⊙y⊙....
 

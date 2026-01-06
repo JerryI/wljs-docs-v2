@@ -1,4 +1,6 @@
-# BesselFilterModel
+---
+title: BesselFilterModel
+---
 
 `BesselFilterModel[n]` designs a lowpass Bessel filter of order n and cutoff frequency 1.
 

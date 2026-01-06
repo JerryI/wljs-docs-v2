@@ -1,4 +1,6 @@
-# HermitianMatrixQ
+---
+title: HermitianMatrixQ
+---
 
 `HermitianMatrixQ[m]` gives `True` if m is explicitly Hermitian (equal to its conjugate transpose), and `False` otherwise.
 

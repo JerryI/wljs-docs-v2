@@ -1,4 +1,6 @@
-# InterquartileRange
+---
+title: InterquartileRange
+---
 
 `InterquartileRange[data]` gives the difference between the upper and lower quartiles for the elements in data.
 

@@ -1,4 +1,6 @@
-# ListLogLogPlot
+---
+title: ListLogLogPlot
+---
 
 `ListLogLogPlot[{y1, y2, ...}]` makes a log-log plot with logarithmic scales on both axes.
 

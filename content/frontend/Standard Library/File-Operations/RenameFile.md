@@ -1,4 +1,6 @@
-# RenameFile
+---
+title: RenameFile
+---
 
 `RenameFile[file1, file2]` renames or moves file1 to file2.
 

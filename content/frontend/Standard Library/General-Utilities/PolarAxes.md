@@ -1,4 +1,6 @@
-# PolarAxes
+---
+title: PolarAxes
+---
 
 `PolarAxes` is an option for sector charts and polar plots that specifies whether polar axes should be drawn.
 

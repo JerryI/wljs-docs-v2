@@ -1,4 +1,6 @@
-# ResourceSubmit
+---
+title: ResourceSubmit
+---
 
 `ResourceSubmit[resource]` submits the specified resource object to be reviewed for publication.
 

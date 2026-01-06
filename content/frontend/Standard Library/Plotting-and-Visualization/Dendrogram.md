@@ -1,4 +1,6 @@
-# Dendrogram
+---
+title: Dendrogram
+---
 
 `Dendrogram[{e1, e2, ...}]` constructs a dendrogram from the hierarchical clustering of the elements e1, e2, ....
 

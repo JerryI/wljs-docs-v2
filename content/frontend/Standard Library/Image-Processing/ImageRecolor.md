@@ -1,4 +1,6 @@
-# ImageRecolor
+---
+title: ImageRecolor
+---
 
 `ImageRecolor[image, region -> color]` recolors pixels in image specified by region using the specified color.
 

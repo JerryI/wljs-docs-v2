@@ -1,4 +1,6 @@
-# GraphHighlight
+---
+title: GraphHighlight
+---
 
 `GraphHighlight` is an option to `Graph` and related objects that specifies graph elements to highlight.
 

@@ -1,4 +1,6 @@
-# PartitionsQ
+---
+title: PartitionsQ
+---
 
 `PartitionsQ[n]` gives the number q(n) of partitions of the integer n into distinct parts.
 

@@ -1,4 +1,6 @@
-# FullAxes
+---
+title: FullAxes
+---
 
 `FullAxes[graphics]` returns the axes options of a graphics object.
 

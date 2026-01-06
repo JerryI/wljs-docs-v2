@@ -1,4 +1,6 @@
-# Rational
+---
+title: Rational
+---
 
 `Rational` is the head used for rational numbers.
 

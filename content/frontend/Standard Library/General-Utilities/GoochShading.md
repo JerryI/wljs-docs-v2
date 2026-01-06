@@ -1,4 +1,6 @@
-# GoochShading
+---
+title: GoochShading
+---
 
 `GoochShading[]` is a three-dimensional graphics directive specifying that surfaces that follow are to be drawn with a warm color facing toward the light and a cool color facing away.
 

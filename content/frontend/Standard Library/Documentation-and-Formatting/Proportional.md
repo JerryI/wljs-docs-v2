@@ -1,4 +1,6 @@
-# Proportional
+---
+title: Proportional
+---
 
 `Proportional[x, y, ...]` displays as x∝y∝....
 

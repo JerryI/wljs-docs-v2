@@ -1,4 +1,6 @@
-# ElectricFluxDensityValue
+---
+title: ElectricFluxDensityValue
+---
 
 `ElectricFluxDensityValue[pred, vars, pars]` represents an electric flux density boundary condition for PDEs with predicate pred indicating where it applies, with model variables vars and global parameters pars.
 

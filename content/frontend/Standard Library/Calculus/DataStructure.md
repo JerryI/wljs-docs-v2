@@ -1,4 +1,6 @@
-# DataStructure
+---
+title: DataStructure
+---
 
 `DataStructure["type",data]` represents a data structure.
 

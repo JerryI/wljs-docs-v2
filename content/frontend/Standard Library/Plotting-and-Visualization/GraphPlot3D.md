@@ -1,4 +1,6 @@
-# GraphPlot3D
+---
+title: GraphPlot3D
+---
 
 `GraphPlot3D[g]` generates a 3D plot of the graph g.
 

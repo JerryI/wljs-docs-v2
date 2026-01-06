@@ -1,4 +1,6 @@
-# PrimePi
+---
+title: PrimePi
+---
 
 `PrimePi[x]` gives the number of primes π(x) less than or equal to x.
 

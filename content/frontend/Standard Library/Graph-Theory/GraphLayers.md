@@ -1,4 +1,6 @@
-# GraphLayers
+---
+title: GraphLayers
+---
 
 `GraphLayers` is an option for `LayeredGraphPlot3D` and related functions that specifies layers to draw on the plot.
 

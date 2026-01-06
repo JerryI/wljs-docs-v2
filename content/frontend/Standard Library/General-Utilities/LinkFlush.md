@@ -1,4 +1,6 @@
-# LinkFlush
+---
+title: LinkFlush
+---
 
 `LinkFlush[link]` transmits immediately any locally buffered outgoing expressions.
 

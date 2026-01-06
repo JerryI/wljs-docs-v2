@@ -1,4 +1,6 @@
-# AudioAnnotationLookup
+---
+title: AudioAnnotationLookup
+---
 
 `AudioAnnotationLookup[audio]` gives all annotations associated to audio.
 

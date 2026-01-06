@@ -1,4 +1,6 @@
-# RipleyRassonRegion
+---
+title: RipleyRassonRegion
+---
 
 `RipleyRassonRegion[pdata]` gives an estimated observation based on the point data pdata.
 

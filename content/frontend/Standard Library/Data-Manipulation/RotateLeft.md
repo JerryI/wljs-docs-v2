@@ -1,4 +1,6 @@
-# RotateLeft
+---
+title: RotateLeft
+---
 
 `RotateLeft[expr, n]` cycles the elements in expr n positions to the left.
 

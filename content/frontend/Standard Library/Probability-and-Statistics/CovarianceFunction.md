@@ -1,4 +1,6 @@
-# CovarianceFunction
+---
+title: CovarianceFunction
+---
 
 `CovarianceFunction[data, hspec]` estimates the covariance function at lags hspec from data.
 

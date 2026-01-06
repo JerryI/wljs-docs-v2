@@ -1,4 +1,6 @@
-# TreeMapAt
+---
+title: TreeMapAt
+---
 
 `TreeMapAt[f, tree, pos]` applies f to the data at the position specified by pos in tree.
 

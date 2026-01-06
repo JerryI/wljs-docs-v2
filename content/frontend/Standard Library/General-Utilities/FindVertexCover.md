@@ -1,4 +1,6 @@
-# FindVertexCover
+---
+title: FindVertexCover
+---
 
 `FindVertexCover[g]` finds a vertex cover of the graph g with a minimum number of vertices.
 

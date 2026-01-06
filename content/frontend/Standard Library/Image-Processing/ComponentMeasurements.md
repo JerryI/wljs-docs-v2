@@ -1,4 +1,6 @@
-# ComponentMeasurements
+---
+title: ComponentMeasurements
+---
 
 `ComponentMeasurements[{image,lmat},"prop"]` computes the property "prop" for components of image indicated by the label matrix lmat.
 

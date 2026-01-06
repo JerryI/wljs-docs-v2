@@ -1,4 +1,6 @@
-# BinnedVariogramList
+---
+title: BinnedVariogramList
+---
 
 `BinnedVariogramList[{loc1 -> val1, loc2 -> val2, ...}]` computes a variogram using binned values.
 

@@ -1,4 +1,6 @@
-# AbsoluteTime
+---
+title: AbsoluteTime
+---
 
 `AbsoluteTime[]` gives the total number of seconds since the beginning of January 1, 1900, in your time zone.
 

@@ -1,4 +1,6 @@
-# Maximize
+---
+title: Maximize
+---
 
 `Maximize[f, x]` maximizes f symbolically with respect to x.
 

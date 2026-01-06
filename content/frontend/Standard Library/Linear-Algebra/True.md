@@ -1,4 +1,6 @@
-# True
+---
+title: True
+---
 
 `True` is the symbol for the Boolean value true.
 

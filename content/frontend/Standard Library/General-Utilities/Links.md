@@ -1,4 +1,6 @@
-# Links
+---
+title: Links
+---
 
 `Links[]` gives a list of all WSTP connections that are currently open.
 

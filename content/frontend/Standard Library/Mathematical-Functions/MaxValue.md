@@ -1,4 +1,6 @@
-# MaxValue
+---
+title: MaxValue
+---
 
 `MaxValue[f, x]` gives the maximum value of f with respect to x.
 

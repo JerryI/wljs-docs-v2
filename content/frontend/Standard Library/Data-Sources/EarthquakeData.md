@@ -1,4 +1,6 @@
-# EarthquakeData
+---
+title: EarthquakeData
+---
 
 `EarthquakeData[loc]` gives all earthquake properties for the location corresponding to loc.
 

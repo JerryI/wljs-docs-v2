@@ -1,4 +1,6 @@
-# WilksW
+---
+title: WilksW
+---
 
 `WilksW[m1, m2]` gives Wilks's W for the matrices m1 and m2.
 

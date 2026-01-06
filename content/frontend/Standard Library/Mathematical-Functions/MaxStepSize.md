@@ -1,4 +1,6 @@
-# MaxStepSize
+---
+title: MaxStepSize
+---
 
 `MaxStepSize` is an option to functions like `NDSolve` that specifies the maximum size of a single step used in generating a result.
 

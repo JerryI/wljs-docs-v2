@@ -1,4 +1,6 @@
-# ApartSquareFree
+---
+title: ApartSquareFree
+---
 
 `ApartSquareFree[expr]` rewrites a rational expression as a sum of terms whose denominators are powers of square-free polynomials.
 

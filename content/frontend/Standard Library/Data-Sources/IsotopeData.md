@@ -1,4 +1,6 @@
-# IsotopeData
+---
+title: IsotopeData
+---
 
 `IsotopeData[{Z, A}, "property"]` gives the value of the specified property for the isotope with atomic number `Z` and mass number `A`.
 

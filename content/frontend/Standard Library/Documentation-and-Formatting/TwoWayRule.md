@@ -1,4 +1,6 @@
-# TwoWayRule
+---
+title: TwoWayRule
+---
 
 `x <-> y` or `TwoWayRule[x, y]` represents a two-way rule expressing exchange or correspondence of x and y.
 

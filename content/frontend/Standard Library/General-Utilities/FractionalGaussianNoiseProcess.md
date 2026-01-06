@@ -1,4 +1,6 @@
-# FractionalGaussianNoiseProcess
+---
+title: FractionalGaussianNoiseProcess
+---
 
 `FractionalGaussianNoiseProcess[μ,σ,h]` represents a fractional Gaussian noise process with drift μ, volatility σ, and Hurst index h.
 

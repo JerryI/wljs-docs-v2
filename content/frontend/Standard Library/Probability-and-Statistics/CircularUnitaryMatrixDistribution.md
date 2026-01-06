@@ -1,4 +1,6 @@
-# CircularUnitaryMatrixDistribution
+---
+title: CircularUnitaryMatrixDistribution
+---
 
 `CircularUnitaryMatrixDistribution[n]` represents a circular unitary matrix distribution with matrix dimensions {n, n}.
 

@@ -1,4 +1,6 @@
-# GroupActionBase
+---
+title: GroupActionBase
+---
 
 `GroupActionBase` is an option to specify a base for a group.
 

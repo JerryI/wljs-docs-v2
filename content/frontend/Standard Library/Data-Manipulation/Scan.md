@@ -1,4 +1,6 @@
-# Scan
+---
+title: Scan
+---
 
 `Scan[f, expr]` evaluates f applied to each element of expr in turn (for side effects).
 

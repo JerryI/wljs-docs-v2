@@ -1,4 +1,6 @@
-# WordSpacings
+---
+title: WordSpacings
+---
 
 `WordSpacings` is an option for `WordCloud` that specifies the empty space to be added around each word.
 

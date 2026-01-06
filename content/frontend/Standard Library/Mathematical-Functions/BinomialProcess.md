@@ -1,4 +1,6 @@
-# BinomialProcess
+---
+title: BinomialProcess
+---
 
 `BinomialProcess[p]` represents a binomial process with event probability p.
 

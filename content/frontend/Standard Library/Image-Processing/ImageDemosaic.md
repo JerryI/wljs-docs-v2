@@ -1,4 +1,6 @@
-# ImageDemosaic
+---
+title: ImageDemosaic
+---
 
 `ImageDemosaic[image, cfa]` reconstructs a color image using the specified color filter array cfa.
 

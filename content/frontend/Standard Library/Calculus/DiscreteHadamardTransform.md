@@ -1,4 +1,6 @@
-# DiscreteHadamardTransform
+---
+title: DiscreteHadamardTransform
+---
 
 `DiscreteHadamardTransform[list]` gives the discrete Hadamard transform of list.
 

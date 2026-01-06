@@ -1,4 +1,6 @@
-# ColumnForm
+---
+title: ColumnForm
+---
 
 `ColumnForm[{e1, e2, ...}]` prints as a column with e1 above e2, etc.
 

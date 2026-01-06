@@ -1,4 +1,6 @@
-# Plus
+---
+title: Plus
+---
 
 `x + y + z` represents a sum of terms.
 

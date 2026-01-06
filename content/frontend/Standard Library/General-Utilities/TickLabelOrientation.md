@@ -1,4 +1,6 @@
-# TickLabelOrientation
+---
+title: TickLabelOrientation
+---
 
 `TickLabelOrientation` is an option for AxisObject that specifies how the tick labels should be oriented relative to the axis.
 

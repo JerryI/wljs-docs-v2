@@ -1,4 +1,6 @@
-# Yellow
+---
+title: Yellow
+---
 
 `Yellow` represents the color yellow in graphics or style specifications.
 

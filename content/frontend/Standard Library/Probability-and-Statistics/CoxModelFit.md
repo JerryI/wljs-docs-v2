@@ -1,4 +1,6 @@
-# CoxModelFit
+---
+title: CoxModelFit
+---
 
 `CoxModelFit[{e1, ..., en}]` constructs a model of the baseline hazard h0(t) for events times ei.
 

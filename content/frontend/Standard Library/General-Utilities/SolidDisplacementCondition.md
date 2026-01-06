@@ -1,4 +1,6 @@
-# SolidDisplacementCondition
+---
+title: SolidDisplacementCondition
+---
 
 `SolidDisplacementCondition[pred,vars,pars]` represents a prescribed displacement on a solid boundary for PDEs with predicate pred indicating where it applies, with model variables vars and global parameters pars.
 

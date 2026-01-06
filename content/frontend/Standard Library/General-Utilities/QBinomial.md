@@ -1,4 +1,6 @@
-# QBinomial
+---
+title: QBinomial
+---
 
 `QBinomial[n, m, q]` gives the q-binomial coefficient (Gaussian binomial).
 

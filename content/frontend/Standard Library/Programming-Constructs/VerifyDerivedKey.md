@@ -1,4 +1,6 @@
-# VerifyDerivedKey
+---
+title: VerifyDerivedKey
+---
 
 `VerifyDerivedKey[key, password]` verifies that password matches the password used to generate the derived key.
 

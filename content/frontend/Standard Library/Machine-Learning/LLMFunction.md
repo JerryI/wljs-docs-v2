@@ -1,4 +1,6 @@
-# LLMFunction
+---
+title: LLMFunction
+---
 
 `LLMFunction[prompt]` represents a template for a large language model (LLM) prompt.
 

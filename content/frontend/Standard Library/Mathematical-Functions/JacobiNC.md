@@ -1,4 +1,6 @@
-# JacobiNC
+---
+title: JacobiNC
+---
 
 `JacobiNC[u, m]` gives the Jacobi elliptic function nc(u|m).
 

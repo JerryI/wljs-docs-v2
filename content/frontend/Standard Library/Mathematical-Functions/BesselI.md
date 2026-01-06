@@ -1,4 +1,6 @@
-# BesselI
+---
+title: BesselI
+---
 
 `BesselI[n, z]` gives the modified Bessel function of the first kind I_n(z).
 

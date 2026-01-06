@@ -1,4 +1,6 @@
-# PixelValue
+---
+title: PixelValue
+---
 
 `PixelValue[image, pos]` gives the pixel value of image at position pos.
 

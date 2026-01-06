@@ -1,4 +1,6 @@
-# MeshCellMarker
+---
+title: MeshCellMarker
+---
 
 `MeshCellMarker` is an option to `MeshRegion` and `BoundaryMeshRegion` that specifies integer markers to associate with mesh cells.
 

@@ -1,4 +1,6 @@
-# VideoReplace
+---
+title: VideoReplace
+---
 
 `VideoReplace[video, {t1, t2} -> new]` replaces the video between t1 and t2 with the new video new.
 

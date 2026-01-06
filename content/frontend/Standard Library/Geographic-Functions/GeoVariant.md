@@ -1,4 +1,6 @@
-# GeoVariant
+---
+title: GeoVariant
+---
 
 `GeoVariant[obj, qual]` represents a geographic object `obj` with qualifier `qual`.
 

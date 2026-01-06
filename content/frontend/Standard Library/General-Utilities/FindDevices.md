@@ -1,4 +1,6 @@
-# FindDevices
+---
+title: FindDevices
+---
 
 `FindDevices[]` searches for available devices on your computer system.
 

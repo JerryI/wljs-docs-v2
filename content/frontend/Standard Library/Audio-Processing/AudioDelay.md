@@ -1,4 +1,6 @@
-# AudioDelay
+---
+title: AudioDelay
+---
 
 `AudioDelay[audio, delay]` creates audio by adding repeated decaying echos to audio spaced by the specified delay.
 

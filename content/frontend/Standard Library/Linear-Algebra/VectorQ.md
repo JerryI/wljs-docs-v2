@@ -1,4 +1,6 @@
-# VectorQ
+---
+title: VectorQ
+---
 
 `VectorQ[expr]` gives `True` if expr is a list with no nested lists (a flat vector).
 

@@ -1,4 +1,6 @@
-# PartitionsP
+---
+title: PartitionsP
+---
 
 `PartitionsP[n]` gives the number p(n) of unrestricted partitions of the integer n.
 

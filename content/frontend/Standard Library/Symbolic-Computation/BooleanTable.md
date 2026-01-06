@@ -1,4 +1,6 @@
-# BooleanTable
+---
+title: BooleanTable
+---
 
 `BooleanTable[bf]` gives a list of truth values for all possible combinations of variable values supplied to the Boolean function bf.
 

@@ -1,4 +1,6 @@
-# MultinormalDistribution
+---
+title: MultinormalDistribution
+---
 
 `MultinormalDistribution[Σ]` represents a multivariate normal distribution with zero mean and covariance matrix Σ.
 

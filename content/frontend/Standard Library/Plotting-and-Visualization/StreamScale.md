@@ -1,4 +1,6 @@
-# StreamScale
+---
+title: StreamScale
+---
 
 `StreamScale` is an option to `StreamPlot`, `ListStreamPlot`, and related functions that determines the length and arrowhead size of streamlines that are drawn.
 

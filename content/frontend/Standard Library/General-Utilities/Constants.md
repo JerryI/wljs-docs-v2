@@ -1,4 +1,6 @@
-# Constants
+---
+title: Constants
+---
 
 `Constants` is an option for Dt which gives a list of objects to be taken as constants.
 

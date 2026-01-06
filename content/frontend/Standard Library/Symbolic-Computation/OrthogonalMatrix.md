@@ -1,4 +1,6 @@
-# OrthogonalMatrix
+---
+title: OrthogonalMatrix
+---
 
 `OrthogonalMatrix[omat]` converts the orthogonal matrix omat to a structured array.
 

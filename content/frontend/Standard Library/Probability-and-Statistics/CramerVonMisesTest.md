@@ -1,4 +1,6 @@
-# CramerVonMisesTest
+---
+title: CramerVonMisesTest
+---
 
 `CramerVonMisesTest[data]` tests whether data is normally distributed using the Cramér–von Mises test.
 

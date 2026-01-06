@@ -1,4 +1,6 @@
-# KeypointStrength
+---
+title: KeypointStrength
+---
 
 `KeypointStrength` is an option for `ImageKeypoints` and related functions to specify a minimum strength of detected keypoints.
 

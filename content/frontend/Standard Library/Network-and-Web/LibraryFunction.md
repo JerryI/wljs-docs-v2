@@ -1,4 +1,6 @@
-# LibraryFunction
+---
+title: LibraryFunction
+---
 
 `LibraryFunction[args]` represents a function that has been loaded from a Wolfram Library.
 

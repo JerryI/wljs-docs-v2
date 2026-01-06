@@ -1,4 +1,6 @@
-# FrameTicks
+---
+title: FrameTicks
+---
 
 `FrameTicks` is an option for 2D graphics functions that specifies tick marks for the edges of a frame.
 

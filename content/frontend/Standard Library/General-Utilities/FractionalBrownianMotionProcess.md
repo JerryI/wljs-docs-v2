@@ -1,4 +1,6 @@
-# FractionalBrownianMotionProcess
+---
+title: FractionalBrownianMotionProcess
+---
 
 `FractionalBrownianMotionProcess[μ, σ, h]` represents fractional Brownian motion process with drift μ, volatility σ, and Hurst index h.
 

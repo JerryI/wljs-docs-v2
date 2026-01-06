@@ -1,4 +1,6 @@
-# Hexahedron
+---
+title: Hexahedron
+---
 
 `Hexahedron[{p1, p2, ..., p8}]` represents a filled hexahedron (6-faced polyhedron) with 8 corners.
 

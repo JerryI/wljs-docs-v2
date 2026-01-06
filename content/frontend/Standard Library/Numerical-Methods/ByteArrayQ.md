@@ -1,4 +1,6 @@
-# ByteArrayQ
+---
+title: ByteArrayQ
+---
 
 `ByteArrayQ[expr]` gives True if expr is a valid ByteArray object, and False otherwise.
 

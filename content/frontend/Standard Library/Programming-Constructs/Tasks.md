@@ -1,4 +1,6 @@
-# Tasks
+---
+title: Tasks
+---
 
 `Tasks[type]` gives a list of `TaskObject` expressions representing currently submitted tasks of given type.
 

@@ -1,4 +1,6 @@
-# SpectralLineData
+---
+title: SpectralLineData
+---
 
 `SpectralLineData[entity]` gives the values of all known properties for an atomic state or state transition.
 

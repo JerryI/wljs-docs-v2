@@ -1,4 +1,6 @@
-# ListLogLinearPlot
+---
+title: ListLogLinearPlot
+---
 
 `ListLogLinearPlot[{y1, y2, ...}]` makes a log-linear plot of the y_i, assumed to correspond to x coordinates 1, 2, ....
 

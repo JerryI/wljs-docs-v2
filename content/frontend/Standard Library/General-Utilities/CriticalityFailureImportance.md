@@ -1,4 +1,6 @@
-# CriticalityFailureImportance
+---
+title: CriticalityFailureImportance
+---
 
 `CriticalityFailureImportance[rdist, t]` gives the criticality failure importances for all components in the ReliabilityDistribution rdist at time t.
 

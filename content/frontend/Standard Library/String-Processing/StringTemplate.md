@@ -1,4 +1,6 @@
-# StringTemplate
+---
+title: StringTemplate
+---
 
 `StringTemplate["string"]` yields a TemplateObject expression that represents a string template to be applied to arguments.
 

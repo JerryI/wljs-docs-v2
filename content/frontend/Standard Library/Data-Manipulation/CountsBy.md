@@ -1,4 +1,6 @@
-# CountsBy
+---
+title: CountsBy
+---
 
 `CountsBy[{e1, e2, ...}, f]` gives an association whose keys are the distinct values of the f[ei], and whose values give the number of times these f[ei] values appear.
 

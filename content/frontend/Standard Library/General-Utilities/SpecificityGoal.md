@@ -1,4 +1,6 @@
-# SpecificityGoal
+---
+title: SpecificityGoal
+---
 
 `SpecificityGoal` is an option for `ImageIdentify` and related functions that defines what specificity of object to seek to identify.
 

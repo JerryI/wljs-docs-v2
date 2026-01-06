@@ -1,4 +1,6 @@
-# AnyOrder
+---
+title: AnyOrder
+---
 
 `AnyOrder[p1, p2, ...]` is a grammar rules pattern object that represents a sequence of elements matching p1, p2, ... in any order.
 

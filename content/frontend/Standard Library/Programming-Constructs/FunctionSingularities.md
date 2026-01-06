@@ -1,4 +1,6 @@
-# FunctionSingularities
+---
+title: FunctionSingularities
+---
 
 `FunctionSingularities[f, x]` finds the singularities of f(x) for x ∈ Reals.
 

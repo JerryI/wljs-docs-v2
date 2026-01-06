@@ -1,4 +1,6 @@
-# GridGraph
+---
+title: GridGraph
+---
 
 `GridGraph[{m, n}]` gives the m×n grid graph. `GridGraph[{n1, n2, ..., nk}]` gives a k-dimensional grid graph.
 

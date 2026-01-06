@@ -1,4 +1,6 @@
-# FractionLine
+---
+title: FractionLine
+---
 
 `FractionLine` is an option for fractions that specifies the thickness of the line separating the numerator and denominator.
 

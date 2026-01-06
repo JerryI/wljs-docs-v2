@@ -1,4 +1,6 @@
-# AppearanceElements
+---
+title: AppearanceElements
+---
 
 `AppearanceElements` is an option for functions like `Manipulate` that specifies what elements should be included in the displayed form of the object generated.
 

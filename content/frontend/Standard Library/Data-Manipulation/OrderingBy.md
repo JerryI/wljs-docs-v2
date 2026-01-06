@@ -1,4 +1,6 @@
-# OrderingBy
+---
+title: OrderingBy
+---
 
 `OrderingBy[list, f]` gives the positions in list at which each successive element of `SortBy[list, f]` appears.
 

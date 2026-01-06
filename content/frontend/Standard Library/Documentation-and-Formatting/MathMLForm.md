@@ -1,4 +1,6 @@
-# MathMLForm
+---
+title: MathMLForm
+---
 
 `MathMLForm[expr]` gives the MathML representation of expr.
 

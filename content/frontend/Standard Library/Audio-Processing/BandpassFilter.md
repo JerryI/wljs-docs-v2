@@ -1,4 +1,6 @@
-# BandpassFilter
+---
+title: BandpassFilter
+---
 
 `BandpassFilter[data, {ω1, ω2}]` applies a bandpass filter with cutoff frequencies ω1 and ω2 to an array of data.
 

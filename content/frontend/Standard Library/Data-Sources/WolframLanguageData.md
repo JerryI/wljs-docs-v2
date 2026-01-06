@@ -1,4 +1,6 @@
-# WolframLanguageData
+---
+title: WolframLanguageData
+---
 
 `WolframLanguageData[entity, property]` gives the value of the specified property for the Wolfram Language symbol entity.
 

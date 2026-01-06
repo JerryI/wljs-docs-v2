@@ -1,4 +1,6 @@
-# Replace
+---
+title: Replace
+---
 
 `Replace[expr, rules]` applies a rule or list of rules in an attempt to transform the entire expression expr.
 

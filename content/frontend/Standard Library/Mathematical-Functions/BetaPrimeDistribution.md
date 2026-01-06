@@ -1,4 +1,6 @@
-# BetaPrimeDistribution
+---
+title: BetaPrimeDistribution
+---
 
 `BetaPrimeDistribution[p, q]` represents a beta prime distribution with shape parameters p and q.
 

@@ -1,4 +1,6 @@
-# Transparent
+---
+title: Transparent
+---
 
 `Transparent` represents perfect transparency in graphics or style specifications.
 

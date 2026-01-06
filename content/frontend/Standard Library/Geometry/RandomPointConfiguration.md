@@ -1,4 +1,6 @@
-# RandomPointConfiguration
+---
+title: RandomPointConfiguration
+---
 
 `RandomPointConfiguration[pproc, reg]` generates a pseudorandom spatial point configuration from the spatial point process pproc in the observation region reg.
 

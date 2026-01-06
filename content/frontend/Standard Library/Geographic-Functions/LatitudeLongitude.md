@@ -1,4 +1,6 @@
-# LatitudeLongitude
+---
+title: LatitudeLongitude
+---
 
 `LatitudeLongitude[pos]` gives a list of the latitude and longitude in degrees of a geographic position specified by *pos*.
 

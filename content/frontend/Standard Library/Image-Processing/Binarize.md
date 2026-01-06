@@ -1,4 +1,6 @@
-# Binarize
+---
+title: Binarize
+---
 
 `Binarize[image]` creates a binary image from image by replacing all values above a globally determined threshold with 1 and others with 0.
 

@@ -1,4 +1,6 @@
-# ImageCaptureFunction
+---
+title: ImageCaptureFunction
+---
 
 `ImageCaptureFunction` is an option for `ImageCapture` that specifies the function to apply to images acquired by the imaging device.
 

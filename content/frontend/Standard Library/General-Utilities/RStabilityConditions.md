@@ -1,4 +1,6 @@
-# RStabilityConditions
+---
+title: RStabilityConditions
+---
 
 `RStabilityConditions[eqn, a[n], n]` gives the fixed points and stability conditions for a recurrence equation.
 

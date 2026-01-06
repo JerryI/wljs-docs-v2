@@ -1,4 +1,6 @@
-# NotLessFullEqual
+---
+title: NotLessFullEqual
+---
 
 `NotLessFullEqual[x, y, ...]` displays as x ≨ y ≨ ....
 

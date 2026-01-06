@@ -1,4 +1,6 @@
-# Periodogram
+---
+title: Periodogram
+---
 
 `Periodogram[list]` plots the squared magnitude of the discrete Fourier transform (power spectrum) of list.
 

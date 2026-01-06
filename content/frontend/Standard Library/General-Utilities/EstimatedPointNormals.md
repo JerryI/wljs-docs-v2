@@ -1,4 +1,6 @@
-# EstimatedPointNormals
+---
+title: EstimatedPointNormals
+---
 
 `EstimatedPointNormals[{p1,p2,...}]` estimates normal vectors for the points p1, p2, ....
 

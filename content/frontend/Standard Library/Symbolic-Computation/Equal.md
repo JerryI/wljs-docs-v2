@@ -1,4 +1,6 @@
-# Equal
+---
+title: Equal
+---
 
 `lhs == rhs` returns `True` if lhs and rhs are identical.
 

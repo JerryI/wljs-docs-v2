@@ -1,4 +1,6 @@
-# VectorPoints
+---
+title: VectorPoints
+---
 
 `VectorPoints` is an option to `VectorPlot`, `ListVectorPlot`, and related functions that determines where to draw arrows.
 

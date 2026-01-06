@@ -1,4 +1,6 @@
-# SecuredAuthenticationKeys
+---
+title: SecuredAuthenticationKeys
+---
 
 `SecuredAuthenticationKeys[]` retrieves a list of all instances of `SecuredAuthenticationKey` owned by the currently connected user.
 

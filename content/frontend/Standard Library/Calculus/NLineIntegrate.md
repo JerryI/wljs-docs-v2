@@ -1,4 +1,6 @@
-# NLineIntegrate
+---
+title: NLineIntegrate
+---
 
 `NLineIntegrate[f, {x, y, ...} ∈ curve]` computes the numerical scalar line integral of the function f[x, y, ...] over the curve.
 

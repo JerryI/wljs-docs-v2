@@ -1,4 +1,6 @@
-# EdgeQ
+---
+title: EdgeQ
+---
 
 `EdgeQ[g, e]` yields `True` if e is an edge in the graph g and `False` otherwise.
 

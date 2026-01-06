@@ -1,4 +1,6 @@
-# SASTriangle
+---
+title: SASTriangle
+---
 
 `SASTriangle[a, γ, b]` returns a filled triangle with sides of length a and b and angle γ between them.
 

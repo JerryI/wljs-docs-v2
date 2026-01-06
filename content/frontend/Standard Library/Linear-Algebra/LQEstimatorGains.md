@@ -1,4 +1,6 @@
-# LQEstimatorGains
+---
+title: LQEstimatorGains
+---
 
 `LQEstimatorGains[ssm, {w, v}]` gives the optimal estimator gain matrix for the StateSpaceModel ssm, with process and measurement noise covariance matrices w and v.
 

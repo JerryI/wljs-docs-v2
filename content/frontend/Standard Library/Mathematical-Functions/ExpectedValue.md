@@ -1,4 +1,6 @@
-# ExpectedValue
+---
+title: ExpectedValue
+---
 
 `ExpectedValue[f, list]` gives the expected value of the pure function f with respect to the values in list.
 

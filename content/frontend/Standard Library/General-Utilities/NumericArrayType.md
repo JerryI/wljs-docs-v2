@@ -1,4 +1,6 @@
-# NumericArrayType
+---
+title: NumericArrayType
+---
 
 `NumericArrayType[array]` gives the underlying type of values used for each element in the NumericArray object.
 

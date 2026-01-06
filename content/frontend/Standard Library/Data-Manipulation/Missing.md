@@ -1,4 +1,6 @@
-# Missing
+---
+title: Missing
+---
 
 `Missing[]` represents data that is missing.
 

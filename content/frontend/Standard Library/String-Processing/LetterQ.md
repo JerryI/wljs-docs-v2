@@ -1,4 +1,6 @@
-# LetterQ
+---
+title: LetterQ
+---
 
 `LetterQ[string]` yields `True` if all the characters in the string are letters, and `False` otherwise.
 

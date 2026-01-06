@@ -1,4 +1,6 @@
-# FunctionDomain
+---
+title: FunctionDomain
+---
 
 `FunctionDomain[f, x]` finds the largest domain of definition of the real function f.
 

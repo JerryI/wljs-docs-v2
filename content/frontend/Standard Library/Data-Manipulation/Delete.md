@@ -1,4 +1,6 @@
-# Delete
+---
+title: Delete
+---
 
 `Delete[expr, n]` deletes the element at position n in expr.
 

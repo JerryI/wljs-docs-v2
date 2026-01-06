@@ -1,4 +1,6 @@
-# VideoExtractFrames
+---
+title: VideoExtractFrames
+---
 
 `VideoExtractFrames[video,t]` extracts a frame at time t from video.
 

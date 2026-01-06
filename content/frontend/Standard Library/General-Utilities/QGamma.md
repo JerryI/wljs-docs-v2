@@ -1,4 +1,6 @@
-# QGamma
+---
+title: QGamma
+---
 
 `QGamma[z, q]` gives the q-gamma function Γq(z).
 

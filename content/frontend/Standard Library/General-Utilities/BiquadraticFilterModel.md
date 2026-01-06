@@ -1,4 +1,6 @@
-# BiquadraticFilterModel
+---
+title: BiquadraticFilterModel
+---
 
 `BiquadraticFilterModel[{ω, q}]` creates a lowpass biquadratic filter using the characteristic frequency ω and the quality factor q.
 

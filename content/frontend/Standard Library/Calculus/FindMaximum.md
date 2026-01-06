@@ -1,4 +1,6 @@
-# FindMaximum
+---
+title: FindMaximum
+---
 
 `FindMaximum[f, {x, x0}]` searches for a local maximum in f, starting from the point x=x0.
 

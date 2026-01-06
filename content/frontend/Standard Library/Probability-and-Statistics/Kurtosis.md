@@ -1,4 +1,6 @@
-# Kurtosis
+---
+title: Kurtosis
+---
 
 `Kurtosis[data]` gives the coefficient of kurtosis for the elements in `data`.
 

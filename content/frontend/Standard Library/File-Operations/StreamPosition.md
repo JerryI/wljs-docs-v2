@@ -1,4 +1,6 @@
-# StreamPosition
+---
+title: StreamPosition
+---
 
 `StreamPosition[stream]` returns an integer that specifies the position of the current point in an open stream.
 

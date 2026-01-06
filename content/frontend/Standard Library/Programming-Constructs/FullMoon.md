@@ -1,4 +1,6 @@
-# FullMoon
+---
+title: FullMoon
+---
 
 `FullMoon[]` gives the date of the next full moon.
 

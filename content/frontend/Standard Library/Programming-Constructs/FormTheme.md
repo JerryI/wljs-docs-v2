@@ -1,4 +1,6 @@
-# FormTheme
+---
+title: FormTheme
+---
 
 `FormTheme` is an option for FormObject and related functions that specifies an overall theme for a form and its elements.
 

@@ -1,4 +1,6 @@
-# SingularValueList
+---
+title: SingularValueList
+---
 
 `SingularValueList[m]` gives a list of the nonzero singular values of a matrix m.
 

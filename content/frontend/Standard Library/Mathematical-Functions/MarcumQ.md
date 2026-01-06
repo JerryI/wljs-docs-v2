@@ -1,4 +1,6 @@
-# MarcumQ
+---
+title: MarcumQ
+---
 
 `MarcumQ[m, a, b]` gives Marcum's Q function Q_m(a, b).
 

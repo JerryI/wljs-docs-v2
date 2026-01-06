@@ -1,4 +1,6 @@
-# SecurityCertificate
+---
+title: SecurityCertificate
+---
 
 `SecurityCertificate[assoc]` represents the security certificate issued for a public key.
 

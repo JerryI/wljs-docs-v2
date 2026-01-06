@@ -1,4 +1,6 @@
-# TextStyle
+---
+title: TextStyle
+---
 
 `TextStyle` is an option for graphics functions and for `Text` which specifies the default style and font options with which text should be rendered.
 

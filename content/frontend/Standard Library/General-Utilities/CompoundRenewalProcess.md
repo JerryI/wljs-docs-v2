@@ -1,4 +1,6 @@
-# CompoundRenewalProcess
+---
+title: CompoundRenewalProcess
+---
 
 `CompoundRenewalProcess[rdist, jdist]` represents a compound renewal process with renewal-time distribution rdist and jump size distribution jdist.
 

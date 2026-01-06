@@ -1,4 +1,6 @@
-# Greater
+---
+title: Greater
+---
 
 `x > y` yields `True` if x is greater than y.
 

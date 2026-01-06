@@ -1,4 +1,6 @@
-# DensityPlot3D
+---
+title: DensityPlot3D
+---
 
 `DensityPlot3D[f, {x, xmin, xmax}, {y, ymin, ymax}, {z, zmin, zmax}]` makes a density plot of f as a function of x, y, and z.
 

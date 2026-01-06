@@ -1,4 +1,6 @@
-# ExpGammaDistribution
+---
+title: ExpGammaDistribution
+---
 
 `ExpGammaDistribution[κ, θ, μ]` represents an exp-gamma distribution with shape parameter κ, scale parameter θ, and location parameter μ.
 

@@ -1,4 +1,6 @@
-# CityData
+---
+title: CityData
+---
 
 `CityData["name", "property"]` gives the value of the specified property for the city with the specified name.
 

@@ -1,4 +1,6 @@
-# KeyIntersection
+---
+title: KeyIntersection
+---
 
 `KeyIntersection[{assoc1, assoc2, ...}]` generates a list of associations in which only elements whose keys appear in all the *associ* are retained.
 

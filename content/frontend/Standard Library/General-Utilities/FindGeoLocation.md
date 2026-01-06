@@ -1,4 +1,6 @@
-# FindGeoLocation
+---
+title: FindGeoLocation
+---
 
 `FindGeoLocation[]` attempts to find the current geo location of your computer.
 

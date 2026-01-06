@@ -1,4 +1,6 @@
-# EngineeringForm
+---
+title: EngineeringForm
+---
 
 `EngineeringForm[expr]` prints with all real numbers in expr given in engineering notation.
 

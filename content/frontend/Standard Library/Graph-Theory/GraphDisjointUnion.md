@@ -1,4 +1,6 @@
-# GraphDisjointUnion
+---
+title: GraphDisjointUnion
+---
 
 `GraphDisjointUnion[g1, g2]` gives the disjoint union of graphs g1 and g2 (vertices and edges from both, kept separate).
 

@@ -1,4 +1,6 @@
-# GraphEmbedding
+---
+title: GraphEmbedding
+---
 
 `GraphEmbedding[g]` gives coordinates of the vertices of the graph `g`.
 

@@ -1,4 +1,6 @@
-# PrimePowerQ
+---
+title: PrimePowerQ
+---
 
 `PrimePowerQ[expr]` yields True if expr is a power of a prime number, and yields False otherwise.
 

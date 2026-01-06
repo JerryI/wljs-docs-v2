@@ -1,4 +1,6 @@
-# DeleteAdjacentDuplicates
+---
+title: DeleteAdjacentDuplicates
+---
 
 `DeleteAdjacentDuplicates[list]` deletes all duplicates in runs of identical elements in list.
 

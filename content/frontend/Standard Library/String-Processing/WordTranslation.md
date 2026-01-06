@@ -1,4 +1,6 @@
-# WordTranslation
+---
+title: WordTranslation
+---
 
 `WordTranslation["word", lang]` gives translations for word into the language lang.
 

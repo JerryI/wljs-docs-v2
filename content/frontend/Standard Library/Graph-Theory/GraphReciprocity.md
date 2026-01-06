@@ -1,4 +1,6 @@
-# GraphReciprocity
+---
+title: GraphReciprocity
+---
 
 `GraphReciprocity[g]` gives the reciprocity of a graph g.
 

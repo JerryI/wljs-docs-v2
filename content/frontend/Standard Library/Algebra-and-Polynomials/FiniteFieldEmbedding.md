@@ -1,4 +1,6 @@
-# FiniteFieldEmbedding
+---
+title: FiniteFieldEmbedding
+---
 
 `FiniteFieldEmbedding[ff1, ff2]` gives an embedding of the finite field ff1 in the finite field ff2.
 

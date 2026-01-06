@@ -1,4 +1,6 @@
-# ContourPlot3D
+---
+title: ContourPlot3D
+---
 
 `ContourPlot3D[f, {x, xmin, xmax}, {y, ymin, ymax}, {z, zmin, zmax}]` produces a three-dimensional contour plot of f as a function of x, y, and z.
 

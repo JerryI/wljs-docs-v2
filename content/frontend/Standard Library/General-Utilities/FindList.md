@@ -1,4 +1,6 @@
-# FindList
+---
+title: FindList
+---
 
 `FindList["file","text"]` gives a list of lines in the file that contain the specified string. 
 

@@ -1,4 +1,6 @@
-# WatsonUSquareTest
+---
+title: WatsonUSquareTest
+---
 
 `WatsonUSquareTest[data]` tests whether data is normally distributed using the Watson U² test.
 

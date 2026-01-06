@@ -1,4 +1,6 @@
-# VertexNormals
+---
+title: VertexNormals
+---
 
 `VertexNormals` is an option for graphics primitives which specifies the normal directions to assign to 3D vertices.
 

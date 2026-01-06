@@ -1,4 +1,6 @@
-# Cepstrogram
+---
+title: Cepstrogram
+---
 
 `Cepstrogram[data]` plots the array of power cepstra computed on each partition of data.
 

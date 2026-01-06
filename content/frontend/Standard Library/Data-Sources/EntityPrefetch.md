@@ -1,4 +1,6 @@
-# EntityPrefetch
+---
+title: EntityPrefetch
+---
 
 `EntityPrefetch["type"]` fetches cacheable values associated with all entities of the specified type.
 

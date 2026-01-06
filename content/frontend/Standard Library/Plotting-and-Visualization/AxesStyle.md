@@ -1,4 +1,6 @@
-# AxesStyle
+---
+title: AxesStyle
+---
 
 `AxesStyle` is an option for graphics functions that specifies how axes should be rendered.
 

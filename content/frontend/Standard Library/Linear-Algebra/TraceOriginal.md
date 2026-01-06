@@ -1,4 +1,6 @@
-# TraceOriginal
+---
+title: TraceOriginal
+---
 
 `TraceOriginal` is an option for `Trace` that specifies whether to test the form of each expression before its head and arguments are evaluated.
 

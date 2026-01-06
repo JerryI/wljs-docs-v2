@@ -1,4 +1,6 @@
-# GradientOrientationFilter
+---
+title: GradientOrientationFilter
+---
 
 `GradientOrientationFilter[data, r]` gives the local orientation parallel to the gradient of `data`, computed using discrete derivatives of a Gaussian of pixel radius `r`, returning values between -π/2 and π/2.
 

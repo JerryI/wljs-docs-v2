@@ -1,4 +1,6 @@
-# TemplateIf
+---
+title: TemplateIf
+---
 
 `TemplateIf[condition, tclause]` represents an element of a template object that inserts tclause if the condition evaluates to True.
 

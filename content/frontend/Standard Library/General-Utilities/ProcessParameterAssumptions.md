@@ -1,4 +1,6 @@
-# ProcessParameterAssumptions
+---
+title: ProcessParameterAssumptions
+---
 
 `ProcessParameterAssumptions[proc]` gives a logical expression for assumptions on parameters in the random process proc.
 

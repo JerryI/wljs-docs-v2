@@ -1,4 +1,6 @@
-# ChemicalFormula
+---
+title: ChemicalFormula
+---
 
 `ChemicalFormula[<|elem1 -> n1, elem2 -> n2, ...|>]` represents a chemical species with ni atoms of the element elemi.
 

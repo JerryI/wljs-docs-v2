@@ -1,4 +1,6 @@
-# BooleanMinimize
+---
+title: BooleanMinimize
+---
 
 `BooleanMinimize[expr]` finds a minimal-length disjunctive normal form representation of expr.
 

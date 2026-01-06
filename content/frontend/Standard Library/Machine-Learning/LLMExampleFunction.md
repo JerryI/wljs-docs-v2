@@ -1,4 +1,6 @@
-# LLMExampleFunction
+---
+title: LLMExampleFunction
+---
 
 `LLMExampleFunction[{in1 -> out1, in2 -> out2, ...}]` creates an LLMFunction from few-shot examples.
 

@@ -1,4 +1,6 @@
-# NetInformation
+---
+title: NetInformation
+---
 
 `NetInformation[net]` gives a report about the neural network net.
 

@@ -1,4 +1,6 @@
-# WordStem
+---
+title: WordStem
+---
 
 `WordStem["word"]` gives a stemmed form of word, removing plurals, inflections, etc.
 

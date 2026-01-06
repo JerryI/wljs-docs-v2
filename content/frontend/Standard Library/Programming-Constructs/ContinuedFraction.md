@@ -1,4 +1,6 @@
-# ContinuedFraction
+---
+title: ContinuedFraction
+---
 
 `ContinuedFraction[x, n]` generates a list of the first n terms in the continued fraction representation of x.
 

@@ -1,4 +1,6 @@
-# SingularValueDecomposition
+---
+title: SingularValueDecomposition
+---
 
 `SingularValueDecomposition[m]` gives the singular value decomposition for a numerical matrix m as a list `{u, σ, v}`, where m = u.σ.ConjugateTranspose[v].
 

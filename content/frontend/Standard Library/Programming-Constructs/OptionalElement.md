@@ -1,4 +1,6 @@
-# OptionalElement
+---
+title: OptionalElement
+---
 
 `OptionalElement[patt]` is a grammar rules pattern object that represents 0 or 1 instances of patt.
 

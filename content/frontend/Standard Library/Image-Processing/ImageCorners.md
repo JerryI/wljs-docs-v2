@@ -1,4 +1,6 @@
-# ImageCorners
+---
+title: ImageCorners
+---
 
 `ImageCorners[image]` finds corners in image and returns their coordinates.
 

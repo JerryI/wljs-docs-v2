@@ -1,4 +1,6 @@
-# Wronskian
+---
+title: Wronskian
+---
 
 `Wronskian[{y1, y2, ...}, x]` gives the Wronskian determinant for the functions y1, y2, … depending on x.
 

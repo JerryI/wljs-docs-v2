@@ -1,4 +1,6 @@
-# UpEquilibrium
+---
+title: UpEquilibrium
+---
 
 `UpEquilibrium[x, y, …]` displays as x⥮y⥮….
 

@@ -1,4 +1,6 @@
-# ConicGradientFilling
+---
+title: ConicGradientFilling
+---
 
 `ConicGradientFilling[{col1, col2, ..., coln}]` is a two-dimensional graphics directive specifying that faces of polygons and other filled graphics objects are to be drawn using a progressive transition between colors coli along a circle.
 

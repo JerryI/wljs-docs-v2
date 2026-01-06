@@ -1,4 +1,6 @@
-# ImageFilter
+---
+title: ImageFilter
+---
 
 `ImageFilter[f, image, r]` applies the function f to the range-r neighborhood of each pixel in each channel of image.
 

@@ -1,4 +1,6 @@
-# MatchingDissimilarity
+---
+title: MatchingDissimilarity
+---
 
 `MatchingDissimilarity[u, v]` gives the matching dissimilarity between Boolean vectors u and v.
 

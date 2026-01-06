@@ -1,4 +1,6 @@
-# ConstantPlusLayer
+---
+title: ConstantPlusLayer
+---
 
 `ConstantPlusLayer[]` represents a layer that adds a learnable bias to its input.
 

@@ -1,4 +1,6 @@
-# IntegerString
+---
+title: IntegerString
+---
 
 `IntegerString[n]` gives a string consisting of the decimal digits in integer n.
 

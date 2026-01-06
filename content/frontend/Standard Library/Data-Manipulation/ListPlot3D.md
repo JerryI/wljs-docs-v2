@@ -1,4 +1,6 @@
-# ListPlot3D
+---
+title: ListPlot3D
+---
 
 `ListPlot3D[data]` generates a 3D surface from a 2D array of height values or from `{x, y, z}` data points.
 

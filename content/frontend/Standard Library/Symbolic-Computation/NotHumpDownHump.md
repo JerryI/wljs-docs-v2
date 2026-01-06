@@ -1,4 +1,6 @@
-# NotHumpDownHump
+---
+title: NotHumpDownHump
+---
 
 `NotHumpDownHump[x, y, ...]` displays as x ≎̸ y ≎̸ ....
 

@@ -1,4 +1,6 @@
-# NetworkPacketTrace
+---
+title: NetworkPacketTrace
+---
 
 `NetworkPacketTrace[expr]` evaluates expr and returns information on network packets transmitted or received through all network interfaces during the evaluation.
 

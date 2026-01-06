@@ -1,4 +1,6 @@
-# FindMinValue
+---
+title: FindMinValue
+---
 
 `FindMinValue[f,x]` gives the value at a local minimum of f.
 

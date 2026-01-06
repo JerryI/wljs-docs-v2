@@ -1,4 +1,6 @@
-# ModularInverse
+---
+title: ModularInverse
+---
 
 `ModularInverse[k, n]` gives the modular inverse of k modulo n.
 

@@ -1,4 +1,6 @@
-# Squiggled
+---
+title: Squiggled
+---
 
 `Squiggled[expr]` displays expr with text underlined with a squiggly red underline.
 

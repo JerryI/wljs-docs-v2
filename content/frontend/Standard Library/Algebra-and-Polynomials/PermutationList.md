@@ -1,4 +1,6 @@
-# PermutationList
+---
+title: PermutationList
+---
 
 `PermutationList[perm]` returns a permutation list representation of permutation perm.
 

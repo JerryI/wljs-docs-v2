@@ -1,4 +1,6 @@
-# Enabled
+---
+title: Enabled
+---
 
 `Enabled` is an option for objects such as `Slider` that specifies whether the objects should be enabled for interactive manipulation.
 

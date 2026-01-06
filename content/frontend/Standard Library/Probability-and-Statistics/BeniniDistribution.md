@@ -1,4 +1,6 @@
-# BeniniDistribution
+---
+title: BeniniDistribution
+---
 
 `BeniniDistribution[α,β,σ]` represents a Benini distribution with shape parameters α and β and scale parameter σ.
 

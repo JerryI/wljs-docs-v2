@@ -1,4 +1,6 @@
-# ClusteringComponents
+---
+title: ClusteringComponents
+---
 
 `ClusteringComponents[array]` gives an array where each element is replaced by an integer index representing its cluster.
 

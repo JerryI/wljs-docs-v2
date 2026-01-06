@@ -1,4 +1,6 @@
-# ColorFunctionBinning
+---
+title: ColorFunctionBinning
+---
 
 `ColorFunctionBinning` is an option for plotting functions that divides values into a limited set of bins for styling.
 

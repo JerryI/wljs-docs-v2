@@ -1,4 +1,6 @@
-# GeoRange
+---
+title: GeoRange
+---
 
 `GeoRange` is an option for geographic functions that specifies the range of latitude and longitude to include.
 

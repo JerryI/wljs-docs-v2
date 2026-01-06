@@ -1,4 +1,6 @@
-# NumberCompose
+---
+title: NumberCompose
+---
 
 `NumberCompose[{c1, ..., cn}, {u1, ..., un}]` returns the quantity c₁u₁ + ... + cₙuₙ.
 

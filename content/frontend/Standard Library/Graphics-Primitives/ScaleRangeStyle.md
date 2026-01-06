@@ -1,4 +1,6 @@
-# ScaleRangeStyle
+---
+title: ScaleRangeStyle
+---
 
 `ScaleRangeStyle` is an option for gauge functions to describe how to style different sections of the scale.
 

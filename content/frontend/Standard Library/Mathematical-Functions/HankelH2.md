@@ -1,4 +1,6 @@
-# HankelH2
+---
+title: HankelH2
+---
 
 `HankelH2[n, z]` gives the Hankel function of the second kind $H_n^{(2)}(z)$.
 

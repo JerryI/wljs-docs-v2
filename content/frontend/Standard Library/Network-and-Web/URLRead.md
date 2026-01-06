@@ -1,4 +1,6 @@
-# URLRead
+---
+title: URLRead
+---
 
 `URLRead[url]` sends a request to a URL and reads back the response, returning it as a response object.
 

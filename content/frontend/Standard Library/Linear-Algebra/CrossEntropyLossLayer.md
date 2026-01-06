@@ -1,4 +1,6 @@
-# CrossEntropyLossLayer
+---
+title: CrossEntropyLossLayer
+---
 
 `CrossEntropyLossLayer["Index"]` represents a net layer that computes the cross-entropy loss by comparing input class probability vectors with indices representing the target class.
 

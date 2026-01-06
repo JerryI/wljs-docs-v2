@@ -1,4 +1,6 @@
-# Piecewise
+---
+title: Piecewise
+---
 
 `Piecewise[{{val1, cond1}, {val2, cond2}, ...}]` represents a piecewise function with values in regions defined by conditions.
 

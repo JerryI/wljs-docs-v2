@@ -1,4 +1,6 @@
-# MakeRules
+---
+title: MakeRules
+---
 
 `MakeRules` is an option to `Solve` and related functions. With `MakeRules -> True`, the result is presented as an `AlgebraicRulesData` object. With `MakeRules -> False`, the result is presented as a list of rules.
 

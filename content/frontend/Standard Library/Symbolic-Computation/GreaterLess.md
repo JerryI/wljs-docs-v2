@@ -1,4 +1,6 @@
-# GreaterLess
+---
+title: GreaterLess
+---
 
 `GreaterLess[x, y, …]` displays as x≷y≷….
 

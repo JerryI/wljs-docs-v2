@@ -1,4 +1,6 @@
-# Chebyshev1FilterModel
+---
+title: Chebyshev1FilterModel
+---
 
 `Chebyshev1FilterModel[n]` creates a lowpass Chebyshev type 1 filter of order n.
 

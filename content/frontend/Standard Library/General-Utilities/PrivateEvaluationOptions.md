@@ -1,4 +1,6 @@
-# PrivateEvaluationOptions
+---
+title: PrivateEvaluationOptions
+---
 
 `PrivateEvaluationOptions` is an option for selections that specifies settings for evaluation-related suboptions.
 

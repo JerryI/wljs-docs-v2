@@ -1,4 +1,6 @@
-# SymmetricGroup
+---
+title: SymmetricGroup
+---
 
 `SymmetricGroup[n]` represents the symmetric group of degree n.
 

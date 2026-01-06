@@ -1,4 +1,6 @@
-# DefaultFaceGridsStyle
+---
+title: DefaultFaceGridsStyle
+---
 
 `DefaultFaceGridsStyle` is a low-level option for 3D graphics functions that specifies the default style to use in rendering face grids.
 

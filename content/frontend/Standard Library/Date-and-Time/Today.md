@@ -1,4 +1,6 @@
-# Today
+---
+title: Today
+---
 
 `Today` gives a `DateObject` representing the current day (without time).
 

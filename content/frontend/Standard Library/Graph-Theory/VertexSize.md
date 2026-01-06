@@ -1,4 +1,6 @@
-# VertexSize
+---
+title: VertexSize
+---
 
 `VertexSize` is an option and property for Graph and related functions that specifies the size used for vertices.
 

@@ -1,4 +1,6 @@
-# AddToSearchIndex
+---
+title: AddToSearchIndex
+---
 
 `AddToSearchIndex[obj, content]` adds the specified content to the existing search index object obj.
 

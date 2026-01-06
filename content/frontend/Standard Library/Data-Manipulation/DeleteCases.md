@@ -1,4 +1,6 @@
-# DeleteCases
+---
+title: DeleteCases
+---
 
 `DeleteCases[expr, pattern]` removes all elements of expr that match pattern.
 

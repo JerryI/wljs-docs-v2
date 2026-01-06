@@ -1,4 +1,6 @@
-# VideoQ
+---
+title: VideoQ
+---
 
 `VideoQ[video]` yields `True` if video has the form of a valid `Video` object, and `False` otherwise.
 

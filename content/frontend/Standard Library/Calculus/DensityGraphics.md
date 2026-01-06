@@ -1,4 +1,6 @@
-# DensityGraphics
+---
+title: DensityGraphics
+---
 
 `DensityGraphics[array]` is a representation of a density plot.
 

@@ -1,4 +1,6 @@
-# LogRankTest
+---
+title: LogRankTest
+---
 
 `LogRankTest[{data1, data2, ...}]` tests for equal hazard rates among the datai using a log-rank type test.
 

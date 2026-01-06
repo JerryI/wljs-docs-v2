@@ -1,4 +1,6 @@
-# UnitVector
+---
+title: UnitVector
+---
 
 `UnitVector[n, k]` gives the n-dimensional unit vector in the kth direction.
 

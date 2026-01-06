@@ -1,4 +1,6 @@
-# ImageSubtract
+---
+title: ImageSubtract
+---
 
 `ImageSubtract[image, x]` subtracts a constant amount x from each channel value in image.
 

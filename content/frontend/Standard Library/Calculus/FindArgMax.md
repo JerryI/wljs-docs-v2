@@ -1,4 +1,6 @@
-# FindArgMax
+---
+title: FindArgMax
+---
 
 `FindArgMax[f,x]` gives the position xmax of a local maximum of f.
 

@@ -1,4 +1,6 @@
-# FullInformationOutputRegulator
+---
+title: FullInformationOutputRegulator
+---
 
 `FullInformationOutputRegulator[sys, rspec]` gives the full state information output regulator for sys using specification rspec.
 

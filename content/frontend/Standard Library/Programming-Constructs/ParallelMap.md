@@ -1,4 +1,6 @@
-# ParallelMap
+---
+title: ParallelMap
+---
 
 `ParallelMap[f, expr]` applies f in parallel to each element on the first level in expr.
 

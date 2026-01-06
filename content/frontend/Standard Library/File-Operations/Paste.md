@@ -1,4 +1,6 @@
-# Paste
+---
+title: Paste
+---
 
 `Paste[expr]` pastes expr at the current insertion point in the input notebook.
 

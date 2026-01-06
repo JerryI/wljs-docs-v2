@@ -1,4 +1,6 @@
-# BarabasiAlbertGraphDistribution
+---
+title: BarabasiAlbertGraphDistribution
+---
 
 `BarabasiAlbertGraphDistribution[n, k]` represents a Barabási–Albert graph distribution for n-vertex graphs where a new vertex with k edges is added at each step.
 

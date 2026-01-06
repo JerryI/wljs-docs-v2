@@ -1,4 +1,6 @@
-# SyntaxLength
+---
+title: SyntaxLength
+---
 
 `SyntaxLength["string"]` finds the number of characters starting at the beginning of a string that correspond to syntactically correct input for a single Wolfram Language expression.
 

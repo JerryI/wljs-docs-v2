@@ -1,4 +1,6 @@
-# ImageLines
+---
+title: ImageLines
+---
 
 `ImageLines[image]` finds line segments in image and returns the coordinates of their endpoints.
 

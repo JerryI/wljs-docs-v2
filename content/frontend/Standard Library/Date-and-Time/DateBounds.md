@@ -1,4 +1,6 @@
-# DateBounds
+---
+title: DateBounds
+---
 
 `DateBounds[{date1, date2, …}]` gives the earliest and latest of the datei.
 

@@ -1,4 +1,6 @@
-# FresnelG
+---
+title: FresnelG
+---
 
 `FresnelG[z]` gives the Fresnel auxiliary function G(z).
 

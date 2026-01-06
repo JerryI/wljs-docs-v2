@@ -1,4 +1,6 @@
-# MatrixPlot
+---
+title: MatrixPlot
+---
 
 `MatrixPlot[m]` generates a plot that gives a visual representation of the values of elements in a matrix.
 

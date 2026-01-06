@@ -1,4 +1,6 @@
-# DoubleUpDownArrow
+---
+title: DoubleUpDownArrow
+---
 
 `DoubleUpDownArrow[x,y,…]` displays as x⇕y⇕….
 

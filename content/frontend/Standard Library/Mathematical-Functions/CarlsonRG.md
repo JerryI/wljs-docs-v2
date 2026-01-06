@@ -1,4 +1,6 @@
-# CarlsonRG
+---
+title: CarlsonRG
+---
 
 `CarlsonRG[x, y, z]` gives Carlson's elliptic integral RG(x, y, z).
 

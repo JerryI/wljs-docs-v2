@@ -1,4 +1,6 @@
-# None
+---
+title: None
+---
 
 `None` is a setting used for certain options to indicate no value or disabled feature.
 

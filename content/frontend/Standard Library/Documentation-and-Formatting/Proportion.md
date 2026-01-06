@@ -1,4 +1,6 @@
-# Proportion
+---
+title: Proportion
+---
 
 `Proportion[x, y, ...]` displays as x∷y∷....
 

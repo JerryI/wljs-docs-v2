@@ -1,4 +1,6 @@
-# AbsoluteCorrelationFunction
+---
+title: AbsoluteCorrelationFunction
+---
 
 `AbsoluteCorrelationFunction[data, hspec]` estimates the absolute correlation function at lags hspec from data.
 

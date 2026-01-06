@@ -1,4 +1,6 @@
-# CoreNilpotentDecomposition
+---
+title: CoreNilpotentDecomposition
+---
 
 `CoreNilpotentDecomposition[m]` yields the core-nilpotent decomposition of a square matrix m.
 

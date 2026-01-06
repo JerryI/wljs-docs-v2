@@ -1,4 +1,6 @@
-# GenomeLookup
+---
+title: GenomeLookup
+---
 
 `GenomeLookup["seq"]` returns the positions of exact matches for the DNA sequence `seq` on the reference human genome.
 

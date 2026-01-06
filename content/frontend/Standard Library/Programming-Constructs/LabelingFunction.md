@@ -1,4 +1,6 @@
-# LabelingFunction
+---
+title: LabelingFunction
+---
 
 `LabelingFunction` is an option for data visualization functions to automatically label elements of a visualization.
 

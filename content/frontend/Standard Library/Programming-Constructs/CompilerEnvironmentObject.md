@@ -1,4 +1,6 @@
-# CompilerEnvironmentObject
+---
+title: CompilerEnvironmentObject
+---
 
 `CompilerEnvironmentObject` represents a collection of definitions that can be included in compilations by `FunctionCompile` and related functions.
 

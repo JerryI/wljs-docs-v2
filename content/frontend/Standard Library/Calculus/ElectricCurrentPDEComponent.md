@@ -1,4 +1,6 @@
-# ElectricCurrentPDEComponent
+---
+title: ElectricCurrentPDEComponent
+---
 
 `ElectricCurrentPDEComponent[vars,pars]` yields an electric current PDE term with variables vars and parameters pars.
 

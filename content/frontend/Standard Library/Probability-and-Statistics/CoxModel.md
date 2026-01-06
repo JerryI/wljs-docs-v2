@@ -1,4 +1,6 @@
-# CoxModel
+---
+title: CoxModel
+---
 
 `CoxModel[...]` represents the symbolic proportional hazards model obtained from CoxModelFit.
 

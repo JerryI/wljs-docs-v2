@@ -1,4 +1,6 @@
-# FiniteFieldElementPrimitiveQ
+---
+title: FiniteFieldElementPrimitiveQ
+---
 
 `FiniteFieldElementPrimitiveQ[a]` tests whether a is a primitive element of its ambient field.
 

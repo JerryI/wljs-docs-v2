@@ -1,4 +1,6 @@
-# SphericalDistance
+---
+title: SphericalDistance
+---
 
 `SphericalDistance[{θ1,ϕ1},{θ2,ϕ2}]` returns the great-circle distance between points {θ1,ϕ1} and {θ2,ϕ2} on the surface of a unit sphere.
 

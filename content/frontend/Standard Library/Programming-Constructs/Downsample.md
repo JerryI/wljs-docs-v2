@@ -1,4 +1,6 @@
-# Downsample
+---
+title: Downsample
+---
 
 `Downsample[array, n]` returns a downsampled version of the array by sampling every nth element.
 

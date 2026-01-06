@@ -1,4 +1,6 @@
-# Key
+---
+title: Key
+---
 
 `Key[key]` represents a key used to access a value in an association or a column in a Tabular object.
 

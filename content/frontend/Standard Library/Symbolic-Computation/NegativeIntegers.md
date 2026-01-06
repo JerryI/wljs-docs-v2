@@ -1,4 +1,6 @@
-# NegativeIntegers
+---
+title: NegativeIntegers
+---
 
 `NegativeIntegers` represents the domain of strictly negative integers, as in x ∈ NegativeIntegers.
 

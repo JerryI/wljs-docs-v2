@@ -1,4 +1,6 @@
-# TraceBackward
+---
+title: TraceBackward
+---
 
 `TraceBackward` is an option for `Trace` and related functions that specifies whether to include preceding expressions on the evaluation chain that contains the pattern form sought.
 

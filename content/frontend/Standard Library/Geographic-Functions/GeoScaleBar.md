@@ -1,4 +1,6 @@
-# GeoScaleBar
+---
+title: GeoScaleBar
+---
 
 `GeoScaleBar` is an option for `GeoGraphics` that determines what scale to show on the map.
 

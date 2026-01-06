@@ -1,4 +1,6 @@
-# ImageMultiply
+---
+title: ImageMultiply
+---
 
 `ImageMultiply[image, x]` multiplies each channel value in image by a factor x.
 

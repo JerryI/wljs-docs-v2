@@ -1,4 +1,6 @@
-# LaplacianFilter
+---
+title: LaplacianFilter
+---
 
 `LaplacianFilter[data, r]` convolves data with a radius-r Laplacian kernel.
 

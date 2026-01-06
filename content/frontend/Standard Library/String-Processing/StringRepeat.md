@@ -1,4 +1,6 @@
-# StringRepeat
+---
+title: StringRepeat
+---
 
 `StringRepeat["str", n]` creates a string consisting of "str" repeated n times.
 

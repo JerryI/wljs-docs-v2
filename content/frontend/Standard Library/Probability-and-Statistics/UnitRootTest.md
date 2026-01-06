@@ -1,4 +1,6 @@
-# UnitRootTest
+---
+title: UnitRootTest
+---
 
 `UnitRootTest[data]` tests whether data came from an autoregressive time series process with unit root.
 

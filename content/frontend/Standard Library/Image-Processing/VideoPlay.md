@@ -1,4 +1,6 @@
-# VideoPlay
+---
+title: VideoPlay
+---
 
 `VideoPlay[video]` returns a new `VideoStream` object from video and starts the playback.
 

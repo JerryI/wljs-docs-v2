@@ -1,4 +1,6 @@
-# SquaredEuclideanDistance
+---
+title: SquaredEuclideanDistance
+---
 
 `SquaredEuclideanDistance[u, v]` gives the squared Euclidean distance between vectors u and v.
 

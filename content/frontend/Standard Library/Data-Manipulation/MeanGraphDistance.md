@@ -1,4 +1,6 @@
-# MeanGraphDistance
+---
+title: MeanGraphDistance
+---
 
 `MeanGraphDistance[g]` gives the mean distance between all pairs of vertices in the graph g.
 

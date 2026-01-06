@@ -1,4 +1,6 @@
-# LineSpacing
+---
+title: LineSpacing
+---
 
 `LineSpacing` is an option for `Style` and `Cell` that specifies the spacing between successive lines of text.
 

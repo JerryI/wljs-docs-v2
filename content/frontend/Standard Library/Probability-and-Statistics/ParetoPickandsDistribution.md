@@ -1,4 +1,6 @@
-# ParetoPickandsDistribution
+---
+title: ParetoPickandsDistribution
+---
 
 `ParetoPickandsDistribution[μ,σ,ξ]` gives a Pareto–Pickands distribution with location parameter μ, scale parameter σ and shape parameter ξ.
 

@@ -1,4 +1,6 @@
-# PowerSpectralDensity
+---
+title: PowerSpectralDensity
+---
 
 `PowerSpectralDensity[data, ω]` estimates the power spectral density for data.
 

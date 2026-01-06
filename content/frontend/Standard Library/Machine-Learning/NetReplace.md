@@ -1,4 +1,6 @@
-# NetReplace
+---
+title: NetReplace
+---
 
 `NetReplace[net, patt -> layer]` gives a net in which all layers matching patt are replaced with layer.
 

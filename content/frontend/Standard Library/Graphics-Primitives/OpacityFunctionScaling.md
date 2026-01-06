@@ -1,4 +1,6 @@
-# OpacityFunctionScaling
+---
+title: OpacityFunctionScaling
+---
 
 `OpacityFunctionScaling` is an option to visualization functions such as `DensityPlot3D` that specifies whether arguments supplied to `OpacityFunction` should be scaled to lie between 0 and 1.
 

@@ -1,4 +1,6 @@
-# CarlsonRJ
+---
+title: CarlsonRJ
+---
 
 `CarlsonRJ[x, y, z, ρ]` gives Carlson's elliptic integral RJ(x, y, z, ρ).
 

@@ -1,4 +1,6 @@
-# PoolingLayer
+---
+title: PoolingLayer
+---
 
 `PoolingLayer[sz]` represents a pooling net layer using kernels of size sz.
 

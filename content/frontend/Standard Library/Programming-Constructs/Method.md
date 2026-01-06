@@ -1,4 +1,6 @@
-# Method
+---
+title: Method
+---
 
 `Method` is an option for various algorithm-intensive functions that specifies what internal methods they should use.
 

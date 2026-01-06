@@ -1,4 +1,6 @@
-# Succeeds
+---
+title: Succeeds
+---
 
 `Succeeds[x,y,…]` displays as x≻y≻….
 

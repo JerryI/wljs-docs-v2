@@ -1,4 +1,6 @@
-# ImageDifference
+---
+title: ImageDifference
+---
 
 `ImageDifference[image1, image2]` gives an image where each pixel is the absolute difference of the corresponding pixels in image1 and image2.
 

@@ -1,4 +1,6 @@
-# VideoDelete
+---
+title: VideoDelete
+---
 
 `VideoDelete[video, t]` deletes the first t seconds of video.
 

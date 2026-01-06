@@ -1,4 +1,6 @@
-# DirectoryQ
+---
+title: DirectoryQ
+---
 
 `DirectoryQ["name"]` gives `True` if the directory exists, and `False` otherwise.
 

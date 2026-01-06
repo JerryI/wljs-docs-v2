@@ -1,4 +1,6 @@
-# SpellingCorrection
+---
+title: SpellingCorrection
+---
 
 `SpellingCorrection` is an option for `StringMatchQ`, `Names`, and related functions that specifies whether strings should be considered to match even when a small fraction of the characters in them are different.
 

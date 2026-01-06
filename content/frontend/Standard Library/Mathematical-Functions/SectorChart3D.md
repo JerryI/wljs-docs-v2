@@ -1,4 +1,6 @@
-# SectorChart3D
+---
+title: SectorChart3D
+---
 
 `SectorChart3D[{{x1, y1, z1}, {x2, y2, z2}, ...}]` makes a 3D sector chart with sector angle proportional to xi, radius yi, and height zi.
 

@@ -1,4 +1,6 @@
-# HilbertCurve
+---
+title: HilbertCurve
+---
 
 `HilbertCurve[n]` gives the line segments representing the nth-step Hilbert curve.
 

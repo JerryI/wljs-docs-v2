@@ -1,4 +1,6 @@
-# WordFrequencyData
+---
+title: WordFrequencyData
+---
 
 `WordFrequencyData[word]` gives the frequency of word in typical published English text.
 

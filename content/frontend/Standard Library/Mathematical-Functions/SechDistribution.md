@@ -1,4 +1,6 @@
-# SechDistribution
+---
+title: SechDistribution
+---
 
 `SechDistribution[μ, σ]` represents the hyperbolic secant distribution with location parameter μ and scale parameter σ.
 

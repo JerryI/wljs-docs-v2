@@ -1,4 +1,6 @@
-# TransformedField
+---
+title: TransformedField
+---
 
 `TransformedField[t, f, {x1, x2, ..., xn} -> {y1, y2, ..., yn}]` uses the coordinate transformation t to transform the scalar, vector, or tensor field f from coordinates xi to yi.
 

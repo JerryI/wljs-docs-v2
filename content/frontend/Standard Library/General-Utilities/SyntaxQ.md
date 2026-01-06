@@ -1,4 +1,6 @@
-# SyntaxQ
+---
+title: SyntaxQ
+---
 
 `SyntaxQ["string"]` returns True if the string corresponds to syntactically correct input for a single Wolfram Language expression, and returns False otherwise.
 

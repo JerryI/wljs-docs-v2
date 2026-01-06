@@ -1,4 +1,6 @@
-# Context
+---
+title: Context
+---
 
 `Context[]` gives the current context. `Context[symbol]` gives the context in which a symbol appears.
 

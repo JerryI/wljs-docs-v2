@@ -1,4 +1,6 @@
-# SatisfiabilityCount
+---
+title: SatisfiabilityCount
+---
 
 `SatisfiabilityCount[bf]` counts the number of possible combinations of variable values that yield `True` when supplied as arguments to the Boolean function bf.
 

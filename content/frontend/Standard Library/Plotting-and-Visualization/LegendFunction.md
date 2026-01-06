@@ -1,4 +1,6 @@
-# LegendFunction
+---
+title: LegendFunction
+---
 
 `LegendFunction` is an option for legends that specifies an overall function to apply to the generated legend.
 

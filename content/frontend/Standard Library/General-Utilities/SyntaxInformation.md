@@ -1,4 +1,6 @@
-# SyntaxInformation
+---
+title: SyntaxInformation
+---
 
 `SyntaxInformation[f]` gives information used to generate syntax coloring and other advisories when f[...] is entered as input.
 

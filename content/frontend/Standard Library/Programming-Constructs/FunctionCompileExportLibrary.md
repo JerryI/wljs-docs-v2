@@ -1,4 +1,6 @@
-# FunctionCompileExportLibrary
+---
+title: FunctionCompileExportLibrary
+---
 
 `FunctionCompileExportLibrary[file, fspec]` exports a compiled version of function specification fspec as a shared library suitable for external use.
 

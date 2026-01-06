@@ -1,4 +1,6 @@
-# AudioLooping
+---
+title: AudioLooping
+---
 
 `AudioLooping` is an option for AudioStream and related functions to specify the playback looping.
 

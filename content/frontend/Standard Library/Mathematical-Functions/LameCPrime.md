@@ -1,4 +1,6 @@
-# LameCPrime
+---
+title: LameCPrime
+---
 
 `LameCPrime[ν,j,z,m]` gives the z-derivative of the jth Lamé function Ecν(j)(zm) of order ν with elliptic parameter m.
 

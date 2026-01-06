@@ -1,4 +1,6 @@
-# GoodmanKruskalGammaTest
+---
+title: GoodmanKruskalGammaTest
+---
 
 `GoodmanKruskalGammaTest[v1, v2]` tests whether the vectors `v1` and `v2` are independent.
 

@@ -1,4 +1,6 @@
-# PIDTune
+---
+title: PIDTune
+---
 
 `PIDTune[sys]` gives a feedback PID controller for the system sys.
 

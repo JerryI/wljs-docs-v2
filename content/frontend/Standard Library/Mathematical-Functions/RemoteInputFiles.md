@@ -1,4 +1,6 @@
-# RemoteInputFiles
+---
+title: RemoteInputFiles
+---
 
 `RemoteInputFiles` is an option for `RemoteBatchSubmit` and `RemoteBatchMapSubmit` that specifies local files to be uploaded and made available within remote jobs.
 

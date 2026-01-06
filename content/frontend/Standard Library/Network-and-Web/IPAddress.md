@@ -1,4 +1,6 @@
-# IPAddress
+---
+title: IPAddress
+---
 
 `IPAddress["address"]` is a symbolic representation of an IPv4 or IPv6 IP address.
 

@@ -1,4 +1,6 @@
-# ExternalStoragePut
+---
+title: ExternalStoragePut
+---
 
 `ExternalStoragePut[expr]` writes expr to an external storage specified by $ExternalStorageBase.
 

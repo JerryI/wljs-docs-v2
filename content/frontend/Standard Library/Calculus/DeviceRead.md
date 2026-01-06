@@ -1,4 +1,6 @@
-# DeviceRead
+---
+title: DeviceRead
+---
 
 `DeviceRead[devobj]` reads a single default item from the open device corresponding to the specified DeviceObject.
 

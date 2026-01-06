@@ -1,4 +1,6 @@
-# IndexEdgeTaggedGraph
+---
+title: IndexEdgeTaggedGraph
+---
 
 `IndexEdgeTaggedGraph[g]` sets tags of edges in the graph g to their edge indices.
 

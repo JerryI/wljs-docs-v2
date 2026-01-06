@@ -1,4 +1,6 @@
-# LinebreakAdjustments
+---
+title: LinebreakAdjustments
+---
 
 `LinebreakAdjustments` is an option for selections that sets parameters used for calculating where automatic line breaks should be inserted.
 

@@ -1,4 +1,6 @@
-# GeoHemisphere
+---
+title: GeoHemisphere
+---
 
 `GeoHemisphere[]` is a two-dimensional `GeoGraphics` primitive that represents the half of the Earth centered at your current geo location.
 

@@ -1,4 +1,6 @@
-# DeviceExecuteAsynchronous
+---
+title: DeviceExecuteAsynchronous
+---
 
 `DeviceExecuteAsynchronous[device, "command", fun]` initiates asynchronous execution of the specified command on a device, calling the handler function fun when an event occurs.
 

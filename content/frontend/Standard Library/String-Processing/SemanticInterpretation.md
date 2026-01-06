@@ -1,4 +1,6 @@
-# SemanticInterpretation
+---
+title: SemanticInterpretation
+---
 
 `SemanticInterpretation["string"]` attempts to give the best semantic interpretation of the specified free-form string as a Wolfram Language expression.
 

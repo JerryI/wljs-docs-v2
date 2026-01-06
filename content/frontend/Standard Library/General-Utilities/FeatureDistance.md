@@ -1,4 +1,6 @@
-# FeatureDistance
+---
+title: FeatureDistance
+---
 
 `FeatureDistance[example1,example2,extractor]` gives the distance between example1 and example2 in the feature space defined by extractor.
 

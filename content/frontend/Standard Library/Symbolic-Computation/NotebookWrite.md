@@ -1,4 +1,6 @@
-# NotebookWrite
+---
+title: NotebookWrite
+---
 
 `NotebookWrite[nb, expr]` writes expr as a cell, or group of cells to the notebook nb.
 

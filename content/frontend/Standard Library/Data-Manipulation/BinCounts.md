@@ -1,4 +1,6 @@
-# BinCounts
+---
+title: BinCounts
+---
 
 `BinCounts[data]` counts the number of elements of data whose values lie in successive integer bins.
 

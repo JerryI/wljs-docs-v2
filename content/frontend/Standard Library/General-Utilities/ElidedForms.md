@@ -1,4 +1,6 @@
-# ElidedForms
+---
+title: ElidedForms
+---
 
 `ElidedForms` is an option to TextString and related functions that specifies which expressions should be elided.
 

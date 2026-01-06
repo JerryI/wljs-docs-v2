@@ -1,4 +1,6 @@
-# WishartMatrixDistribution
+---
+title: WishartMatrixDistribution
+---
 
 `WishartMatrixDistribution[ν, Σ]` represents a Wishart matrix distribution with ν degrees of freedom and covariance matrix Σ.
 

@@ -1,4 +1,6 @@
-# RidgeFilter
+---
+title: RidgeFilter
+---
 
 `RidgeFilter[data]` computes a measure for the presence of a ridge at every position of data.
 

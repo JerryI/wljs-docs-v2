@@ -1,4 +1,6 @@
-# GeometricScene
+---
+title: GeometricScene
+---
 
 `GeometricScene[{p1, p2, …}, {hyp1, hyp2, …}]` represents an abstract 2D geometric scene defined by the hypotheses `hypi` in terms of the symbolic points `pi`.
 

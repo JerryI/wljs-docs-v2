@@ -1,4 +1,6 @@
-# Square
+---
+title: Square
+---
 
 `Square[x]` displays as x.
 

@@ -1,4 +1,6 @@
-# Reverse
+---
+title: Reverse
+---
 
 `Reverse[expr]` reverses the order of the elements in expr.
 

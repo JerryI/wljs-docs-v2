@@ -1,4 +1,6 @@
-# CompleteGraphQ
+---
+title: CompleteGraphQ
+---
 
 `CompleteGraphQ[g]` yields True if the graph g is a complete graph, and False otherwise.
 

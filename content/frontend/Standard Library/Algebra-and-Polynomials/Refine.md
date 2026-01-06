@@ -1,4 +1,6 @@
-# Refine
+---
+title: Refine
+---
 
 `Refine[expr, assum]` gives the form of expr that would be obtained if symbols in it were replaced by explicit numerical expressions satisfying the assumptions.
 

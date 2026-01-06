@@ -1,4 +1,6 @@
-# Join
+---
+title: Join
+---
 
 `Join[list1, list2, ...]` concatenates lists or other expressions that share the same head.
 

@@ -1,4 +1,6 @@
-# CapitalDifferentialD
+---
+title: CapitalDifferentialD
+---
 
 `CapitalDifferentialD[x]` displays as ⅅx, representing a differential operator.
 

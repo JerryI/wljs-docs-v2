@@ -1,4 +1,6 @@
-# InsertionFunction
+---
+title: InsertionFunction
+---
 
 `InsertionFunction` is an option for template functions that specifies how expressions are to be processed before they are inserted when the template is applied.
 

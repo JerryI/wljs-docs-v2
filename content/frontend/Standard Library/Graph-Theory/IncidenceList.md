@@ -1,4 +1,6 @@
-# IncidenceList
+---
+title: IncidenceList
+---
 
 `IncidenceList[g, v]` gives a list of edges incident to vertex v.
 

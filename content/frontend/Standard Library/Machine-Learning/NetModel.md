@@ -1,4 +1,6 @@
-# NetModel
+---
+title: NetModel
+---
 
 `NetModel["name"]` obtains a neural net model with the specified name from the Neural Net Repository.
 

@@ -1,4 +1,6 @@
-# ReImStyle
+---
+title: ReImStyle
+---
 
 `ReImStyle` is an option for ReImPlot that specifies styles to use for the real and imaginary components.
 

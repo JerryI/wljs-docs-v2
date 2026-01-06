@@ -1,4 +1,6 @@
-# SetAccuracy
+---
+title: SetAccuracy
+---
 
 `SetAccuracy[expr, a]` yields a version of expr in which all numbers have been set to have accuracy a.
 

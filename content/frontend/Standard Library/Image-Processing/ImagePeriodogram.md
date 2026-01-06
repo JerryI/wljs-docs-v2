@@ -1,4 +1,6 @@
-# ImagePeriodogram
+---
+title: ImagePeriodogram
+---
 
 `ImagePeriodogram[image]` shows the squared magnitude of the discrete Fourier transform (power spectrum) of image.
 

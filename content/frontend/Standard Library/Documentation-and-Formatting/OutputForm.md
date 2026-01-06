@@ -1,4 +1,6 @@
-# OutputForm
+---
+title: OutputForm
+---
 
 `OutputForm[expr]` prints a 2D representation using only keyboard characters.
 

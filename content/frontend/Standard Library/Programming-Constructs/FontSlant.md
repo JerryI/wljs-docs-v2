@@ -1,4 +1,6 @@
-# FontSlant
+---
+title: FontSlant
+---
 
 `FontSlant` is an option for `Style`, `Cell`, and related constructs that specifies how slanted text characters should be.
 

@@ -1,4 +1,6 @@
-# ForeignPointerLookup
+---
+title: ForeignPointerLookup
+---
 
 `ForeignPointerLookup[lib,fun]` returns the pointer to the function fun in the library lib.
 

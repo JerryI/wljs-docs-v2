@@ -1,4 +1,6 @@
-# TrueQ
+---
+title: TrueQ
+---
 
 `TrueQ[expr]` yields `True` if expr is explicitly `True`, and `False` otherwise.
 

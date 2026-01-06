@@ -1,4 +1,6 @@
-# IncludedContexts
+---
+title: IncludedContexts
+---
 
 `IncludedContexts` is an option for `FullDefinition`, `Manipulate` and related symbols that gives contexts whose symbols will have their definitions recursively saved.
 

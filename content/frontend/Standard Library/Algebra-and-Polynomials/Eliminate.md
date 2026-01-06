@@ -1,4 +1,6 @@
-# Eliminate
+---
+title: Eliminate
+---
 
 `Eliminate[eqns, vars]` eliminates variables between a set of simultaneous equations.
 

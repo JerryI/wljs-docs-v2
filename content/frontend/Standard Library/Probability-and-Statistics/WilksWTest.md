@@ -1,4 +1,6 @@
-# WilksWTest
+---
+title: WilksWTest
+---
 
 `WilksWTest[m1, m2]` tests whether the matrices m1 and m2 are independent.
 

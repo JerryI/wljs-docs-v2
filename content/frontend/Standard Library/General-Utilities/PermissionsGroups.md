@@ -1,4 +1,6 @@
-# PermissionsGroups
+---
+title: PermissionsGroups
+---
 
 `PermissionsGroups[]` gives a list of permissions groups belonging to the current user.
 

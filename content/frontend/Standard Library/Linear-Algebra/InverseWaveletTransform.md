@@ -1,4 +1,6 @@
-# InverseWaveletTransform
+---
+title: InverseWaveletTransform
+---
 
 `InverseWaveletTransform[dwd]` gives the inverse wavelet transform of a `DiscreteWaveletData` object dwd.
 

@@ -1,4 +1,6 @@
-# LinkFunction
+---
+title: LinkFunction
+---
 
 `LinkFunction` is an option for `GeneralizedLinearModelFit` that specifies the link function for the generalized linear model.
 

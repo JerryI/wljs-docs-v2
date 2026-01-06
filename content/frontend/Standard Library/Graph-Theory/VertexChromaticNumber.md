@@ -1,4 +1,6 @@
-# VertexChromaticNumber
+---
+title: VertexChromaticNumber
+---
 
 `VertexChromaticNumber[g]` gives the chromatic number for the vertices of the graph g.
 

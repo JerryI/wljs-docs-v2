@@ -1,4 +1,6 @@
-# Polygon
+---
+title: Polygon
+---
 
 `Polygon[{p1, p2, ..., pn}]` represents a filled polygon with vertices at the specified points.
 

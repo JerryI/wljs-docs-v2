@@ -1,4 +1,6 @@
-# AggregatedEntityClass
+---
+title: AggregatedEntityClass
+---
 
 `AggregatedEntityClass[class,"prop"->f]` represents an entity class containing a single entity with the property prop whose value is the result of applying the function f to the whole specified entity class.
 

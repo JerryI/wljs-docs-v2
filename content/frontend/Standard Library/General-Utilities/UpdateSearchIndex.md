@@ -1,4 +1,6 @@
-# UpdateSearchIndex
+---
+title: UpdateSearchIndex
+---
 
 `UpdateSearchIndex[obj]` updates the given search index object.
 

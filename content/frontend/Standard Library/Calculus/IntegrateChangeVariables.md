@@ -1,4 +1,6 @@
-# IntegrateChangeVariables
+---
+title: IntegrateChangeVariables
+---
 
 `IntegrateChangeVariables[integral, u, trans]` changes the variable in integral to the new variable u using the transformation trans.
 

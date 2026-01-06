@@ -1,4 +1,6 @@
-# Algebraics
+---
+title: Algebraics
+---
 
 `Algebraics` represents the domain of algebraic numbers, as in x∈Algebraics.
 

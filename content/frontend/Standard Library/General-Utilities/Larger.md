@@ -1,4 +1,6 @@
-# Larger
+---
+title: Larger
+---
 
 `Larger` is a style or option setting that specifies that objects should be larger.
 

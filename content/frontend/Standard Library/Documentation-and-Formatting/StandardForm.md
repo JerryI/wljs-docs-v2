@@ -1,4 +1,6 @@
-# StandardForm
+---
+title: StandardForm
+---
 
 `StandardForm[expr]` prints as the standard Wolfram Language two-dimensional representation of expr.
 

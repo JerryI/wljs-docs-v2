@@ -1,4 +1,6 @@
-# IntegerName
+---
+title: IntegerName
+---
 
 `IntegerName[n]` gives a string containing the full English name of the integer `n`.
 

@@ -1,4 +1,6 @@
-# Coth
+---
+title: Coth
+---
 
 `Coth[z]` gives the hyperbolic cotangent of z.
 

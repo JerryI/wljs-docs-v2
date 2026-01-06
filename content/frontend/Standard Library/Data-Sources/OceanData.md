@@ -1,4 +1,6 @@
-# OceanData
+---
+title: OceanData
+---
 
 `OceanData[entity,property]` gives the value of the specified property for the ocean entity.
 

@@ -1,4 +1,6 @@
-# KeyValuePattern
+---
+title: KeyValuePattern
+---
 
 `KeyValuePattern[{patt1, ...}]` is a pattern object that represents an association or list of rules that includes elements matching each of the patti.
 

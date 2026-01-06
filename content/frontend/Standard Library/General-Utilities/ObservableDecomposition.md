@@ -1,4 +1,6 @@
-# ObservableDecomposition
+---
+title: ObservableDecomposition
+---
 
 `ObservableDecomposition[sys]` yields the observable subsystem of the system sys.
 

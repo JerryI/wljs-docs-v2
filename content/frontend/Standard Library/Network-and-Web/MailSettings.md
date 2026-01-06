@@ -1,4 +1,6 @@
-# MailSettings
+---
+title: MailSettings
+---
 
 `MailSettings` is an option for `SendMail` and `MailServerConnect` to specify mail settings.
 

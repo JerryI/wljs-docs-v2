@@ -1,4 +1,6 @@
-# UndirectedGraphQ
+---
+title: UndirectedGraphQ
+---
 
 `UndirectedGraphQ[g]` yields `True` if the graph g is an undirected graph and `False` otherwise.
 

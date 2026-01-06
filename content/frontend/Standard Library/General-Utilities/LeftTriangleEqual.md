@@ -1,4 +1,6 @@
-# LeftTriangleEqual
+---
+title: LeftTriangleEqual
+---
 
 `LeftTriangleEqual[x,y,…]` displays as x⊴y⊴….
 

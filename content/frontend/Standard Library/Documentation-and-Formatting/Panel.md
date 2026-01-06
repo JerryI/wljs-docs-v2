@@ -1,4 +1,6 @@
-# Panel
+---
+title: Panel
+---
 
 `Panel[expr]` displays as a panel containing expr.
 

@@ -1,4 +1,6 @@
-# ArrayRules
+---
+title: ArrayRules
+---
 
 `ArrayRules[SparseArray[...]]` gives the rules {pos1 -> val1, pos2 -> val2, ...} specifying elements in a sparse array.
 

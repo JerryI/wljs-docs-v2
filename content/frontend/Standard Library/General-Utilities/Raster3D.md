@@ -1,4 +1,6 @@
-# Raster3D
+---
+title: Raster3D
+---
 
 `Raster3D[{{{a11, a12, …}, …}, …}]` is a three-dimensional graphics primitive that represents a cubical array of gray cells.
 

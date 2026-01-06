@@ -1,4 +1,6 @@
-# ToDiscreteTimeModel
+---
+title: ToDiscreteTimeModel
+---
 
 `ToDiscreteTimeModel[lsys, τ]` gives the discrete-time approximation, with sampling period τ, of the continuous-time systems models lsys.
 

@@ -1,4 +1,6 @@
-# BernoulliGraphDistribution
+---
+title: BernoulliGraphDistribution
+---
 
 `BernoulliGraphDistribution[n, p]` represents a Bernoulli graph distribution for n-vertex graphs with edge probability p.
 

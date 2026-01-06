@@ -1,4 +1,6 @@
-# ActivePrediction
+---
+title: ActivePrediction
+---
 
 `ActivePrediction[f, {conf1, conf2, ...}]` gives an object representing the result of active prediction obtained by using the function f to determine values for the example configurations confi.
 

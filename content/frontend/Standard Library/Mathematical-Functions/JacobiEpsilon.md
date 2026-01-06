@@ -1,4 +1,6 @@
-# JacobiEpsilon
+---
+title: JacobiEpsilon
+---
 
 `JacobiEpsilon[u, m]` gives the Jacobi epsilon function ℰ(u|m).
 

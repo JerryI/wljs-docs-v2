@@ -1,4 +1,6 @@
-# ReconstructionMesh
+---
+title: ReconstructionMesh
+---
 
 `ReconstructionMesh[{pt1, pt2, …}]` reconstructs a mesh from a set of points pt1, pt2, ….
 

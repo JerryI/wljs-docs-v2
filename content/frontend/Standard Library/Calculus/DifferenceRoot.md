@@ -1,4 +1,6 @@
-# DifferenceRoot
+---
+title: DifferenceRoot
+---
 
 `DifferenceRoot[lde][k]` gives the holonomic sequence h(k), specified by the linear difference equation lde[h, k].
 

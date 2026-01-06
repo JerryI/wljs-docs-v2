@@ -1,4 +1,6 @@
-# Dot
+---
+title: Dot
+---
 
 `a . b` or `Dot[a, b]` gives products of vectors, matrices, and tensors.
 

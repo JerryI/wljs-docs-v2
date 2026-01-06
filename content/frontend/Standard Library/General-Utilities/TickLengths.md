@@ -1,4 +1,6 @@
-# TickLengths
+---
+title: TickLengths
+---
 
 `TickLengths` is an option for `AxisObject` that specifies the lengths of the tick marks.
 

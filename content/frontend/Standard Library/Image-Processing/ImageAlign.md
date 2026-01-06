@@ -1,4 +1,6 @@
-# ImageAlign
+---
+title: ImageAlign
+---
 
 `ImageAlign[ref,image]` returns a version of image that is aligned with the reference image ref.
 

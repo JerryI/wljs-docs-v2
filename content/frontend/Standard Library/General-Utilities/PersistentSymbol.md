@@ -1,4 +1,6 @@
-# PersistentSymbol
+---
+title: PersistentSymbol
+---
 
 `PersistentSymbol["name"]` represents the persistent symbol associated with the key "name".
 

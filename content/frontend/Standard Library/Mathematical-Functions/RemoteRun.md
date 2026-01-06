@@ -1,4 +1,6 @@
-# RemoteRun
+---
+title: RemoteRun
+---
 
 `RemoteRun["host", "command"]` runs the specified operating system command on the remote host, returning the exit code obtained.
 

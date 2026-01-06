@@ -1,4 +1,6 @@
-# StateSpaceTransform
+---
+title: StateSpaceTransform
+---
 
 `StateSpaceTransform[sys,{p,q}]` transforms the state-space model sys using the matrices p and q.
 

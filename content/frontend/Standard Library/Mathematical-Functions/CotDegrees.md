@@ -1,4 +1,6 @@
-# CotDegrees
+---
+title: CotDegrees
+---
 
 `CotDegrees[θ]` gives the cotangent of θ degrees.
 

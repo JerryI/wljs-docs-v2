@@ -1,4 +1,6 @@
-# ReleaseHold
+---
+title: ReleaseHold
+---
 
 `ReleaseHold[expr]` removes `Hold`, `HoldForm`, `HoldPattern`, and `HoldComplete` from expr, allowing evaluation.
 

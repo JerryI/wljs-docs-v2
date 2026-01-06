@@ -1,4 +1,6 @@
-# Discriminant
+---
+title: Discriminant
+---
 
 `Discriminant[poly, var]` computes the discriminant of the polynomial poly with respect to var.
 

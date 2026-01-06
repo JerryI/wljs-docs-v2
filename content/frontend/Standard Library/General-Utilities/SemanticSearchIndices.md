@@ -1,4 +1,6 @@
-# SemanticSearchIndices
+---
+title: SemanticSearchIndices
+---
 
 `SemanticSearchIndices[]` returns a list with all the known instances of SemanticSearchIndex.
 

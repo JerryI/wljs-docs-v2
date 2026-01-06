@@ -1,4 +1,6 @@
-# ImageDisplacements
+---
+title: ImageDisplacements
+---
 
 `ImageDisplacements[{image1, image2, …, imagen}]` gives estimated horizontal and vertical displacements between consecutive images.
 

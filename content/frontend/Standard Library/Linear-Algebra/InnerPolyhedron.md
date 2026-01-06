@@ -1,4 +1,6 @@
-# InnerPolyhedron
+---
+title: InnerPolyhedron
+---
 
 `InnerPolyhedron[poly]` gives the inner polyhedron of the polyhedron poly.
 

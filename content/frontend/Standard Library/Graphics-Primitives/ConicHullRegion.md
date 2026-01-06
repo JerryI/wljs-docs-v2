@@ -1,4 +1,6 @@
-# ConicHullRegion
+---
+title: ConicHullRegion
+---
 
 `ConicHullRegion[{p1, ..., pm+1}]` represents the m-dimensional affine hull region passing through points pi.
 

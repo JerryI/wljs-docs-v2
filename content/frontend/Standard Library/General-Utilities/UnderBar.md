@@ -1,4 +1,6 @@
-# UnderBar
+---
+title: UnderBar
+---
 
 `UnderBar[expr]` displays with a bar under expr.
 

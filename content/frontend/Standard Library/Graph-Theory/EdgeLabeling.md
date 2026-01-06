@@ -1,4 +1,6 @@
-# EdgeLabeling
+---
+title: EdgeLabeling
+---
 
 `EdgeLabeling` is an option for `GraphPlot` and related functions that specifies whether labeling specified for edges should be displayed by default.
 

@@ -1,4 +1,6 @@
-# MultivariatePoissonDistribution
+---
+title: MultivariatePoissonDistribution
+---
 
 `MultivariatePoissonDistribution[μ0, {μ1, μ2, ...}]` represents a multivariate Poisson distribution with mean vector {μ0 + μ1, μ0 + μ2, ...}.
 

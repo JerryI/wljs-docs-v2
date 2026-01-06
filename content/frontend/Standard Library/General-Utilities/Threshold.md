@@ -1,4 +1,6 @@
-# Threshold
+---
+title: Threshold
+---
 
 `Threshold[data]` thresholds data by replacing values close to zero by zero.
 

@@ -1,4 +1,6 @@
-# Cashflow
+---
+title: Cashflow
+---
 
 `Cashflow[{c0, c1, ..., cn}]` represents a series of cash flows occurring at unit time intervals.
 

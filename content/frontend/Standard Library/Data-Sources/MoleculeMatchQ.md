@@ -1,4 +1,6 @@
-# MoleculeMatchQ
+---
+title: MoleculeMatchQ
+---
 
 `MoleculeMatchQ[mol, patt]` returns `True` if the Molecule matches the given pattern.
 

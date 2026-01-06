@@ -1,4 +1,6 @@
-# Stub
+---
+title: Stub
+---
 
 `Stub` is an attribute which specifies that if a symbol is ever used, `Needs` should automatically be called on the context of the symbol.
 

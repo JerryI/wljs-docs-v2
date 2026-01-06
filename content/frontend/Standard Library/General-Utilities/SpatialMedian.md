@@ -1,4 +1,6 @@
-# SpatialMedian
+---
+title: SpatialMedian
+---
 
 `SpatialMedian[{x1, x2, ...}]` gives the spatial median of the elements xi.
 

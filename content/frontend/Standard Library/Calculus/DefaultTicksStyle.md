@@ -1,4 +1,6 @@
-# DefaultTicksStyle
+---
+title: DefaultTicksStyle
+---
 
 `DefaultTicksStyle` is a low-level option for graphics functions that specifies the default style to use in rendering ticks.
 

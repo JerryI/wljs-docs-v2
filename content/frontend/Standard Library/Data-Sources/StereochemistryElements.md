@@ -1,4 +1,6 @@
-# StereochemistryElements
+---
+title: StereochemistryElements
+---
 
 `StereochemistryElements` is an option for Molecule that specifies the local stereochemical arrangement of atoms in a molecule.
 

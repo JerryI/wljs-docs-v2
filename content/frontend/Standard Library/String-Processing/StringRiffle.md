@@ -1,4 +1,6 @@
-# StringRiffle
+---
+title: StringRiffle
+---
 
 `StringRiffle[{s1, s2, s3, ...}]` concatenates strings with spaces between them.
 

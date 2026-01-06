@@ -1,4 +1,6 @@
-# WordCharacter
+---
+title: WordCharacter
+---
 
 `WordCharacter` represents a letter or digit character in `StringExpression`.
 

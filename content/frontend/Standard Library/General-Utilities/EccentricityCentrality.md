@@ -1,4 +1,6 @@
-# EccentricityCentrality
+---
+title: EccentricityCentrality
+---
 
 `EccentricityCentrality[g]` gives a list of eccentricity centralities for the vertices in the graph g.
 

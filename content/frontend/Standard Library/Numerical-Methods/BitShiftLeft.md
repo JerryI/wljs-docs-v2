@@ -1,4 +1,6 @@
-# BitShiftLeft
+---
+title: BitShiftLeft
+---
 
 `BitShiftLeft[n, k]` shifts the binary bits in the integer n to the left by k places, padding with zeros on the right.
 

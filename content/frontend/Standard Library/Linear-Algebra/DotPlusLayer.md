@@ -1,4 +1,6 @@
-# DotPlusLayer
+---
+title: DotPlusLayer
+---
 
 `DotPlusLayer[n]` is equivalent to LinearLayer[n] and should no longer be used.
 

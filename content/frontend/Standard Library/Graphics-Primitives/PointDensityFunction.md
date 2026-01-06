@@ -1,4 +1,6 @@
-# PointDensityFunction
+---
+title: PointDensityFunction
+---
 
 `PointDensityFunction[...]` represents a function whose values give the density at a given location.
 

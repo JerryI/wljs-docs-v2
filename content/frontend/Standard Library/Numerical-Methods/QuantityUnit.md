@@ -1,4 +1,6 @@
-# QuantityUnit
+---
+title: QuantityUnit
+---
 
 `QuantityUnit[quantity]` returns the unit associated with the specified quantity.
 

@@ -1,4 +1,6 @@
-# ValenceFilling
+---
+title: ValenceFilling
+---
 
 `ValenceFilling` is an option for Molecule that specifies whether to fill open valences with hydrogen atoms.
 

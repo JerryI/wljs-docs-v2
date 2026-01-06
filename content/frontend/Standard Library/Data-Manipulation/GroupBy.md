@@ -1,4 +1,6 @@
-# GroupBy
+---
+title: GroupBy
+---
 
 `GroupBy[{elem1, elem2, ...}, f]` gives an association that groups elements into lists associated with distinct keys `f[elemi]`.
 

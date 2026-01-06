@@ -1,4 +1,6 @@
-# KVertexConnectedGraphQ
+---
+title: KVertexConnectedGraphQ
+---
 
 `KVertexConnectedGraphQ[g, k]` yields `True` if the graph g is k-vertex-connected and `False` otherwise.
 

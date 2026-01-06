@@ -1,4 +1,6 @@
-# InverseShortTimeFourier
+---
+title: InverseShortTimeFourier
+---
 
 `InverseShortTimeFourier[input]` reconstructs the signal from short-time Fourier data.
 

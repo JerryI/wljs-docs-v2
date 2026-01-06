@@ -1,4 +1,6 @@
-# CircularOrthogonalMatrixDistribution
+---
+title: CircularOrthogonalMatrixDistribution
+---
 
 `CircularOrthogonalMatrixDistribution[n]` represents a circular orthogonal matrix distribution with matrix dimensions {n, n}.
 

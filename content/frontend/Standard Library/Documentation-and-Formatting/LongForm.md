@@ -1,4 +1,6 @@
-# LongForm
+---
+title: LongForm
+---
 
 `LongForm` is an option for `Information`. With `LongForm -> True`, the full information of a symbol is printed. With `LongForm -> False` the usage of a symbol is printed.
 

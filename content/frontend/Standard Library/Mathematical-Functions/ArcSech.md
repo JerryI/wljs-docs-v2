@@ -1,4 +1,6 @@
-# ArcSech
+---
+title: ArcSech
+---
 
 `ArcSech[z]` gives the inverse hyperbolic secant sech⁻¹(z) of the complex number z.
 

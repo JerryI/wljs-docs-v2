@@ -1,4 +1,6 @@
-# ShowAutoStyles
+---
+title: ShowAutoStyles
+---
 
 `ShowAutoStyles` is an option for `Cell` that specifies whether styles that are specified to be automatically used for various syntactic and other constructs should be shown.
 

@@ -1,4 +1,6 @@
-# LocalTimeZone
+---
+title: LocalTimeZone
+---
 
 `LocalTimeZone[]` gives the current time zone for the current geo location.
 

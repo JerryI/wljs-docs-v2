@@ -1,4 +1,6 @@
-# ExpIntegralEi
+---
+title: ExpIntegralEi
+---
 
 `ExpIntegralEi[z]` gives the exponential integral function Ei(z).
 

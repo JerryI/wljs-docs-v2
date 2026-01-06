@@ -1,4 +1,6 @@
-# TaskSuspend
+---
+title: TaskSuspend
+---
 
 `TaskSuspend[task]` suspends the execution of the specified task.
 

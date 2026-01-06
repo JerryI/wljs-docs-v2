@@ -1,4 +1,6 @@
-# GraphAutomorphismGroup
+---
+title: GraphAutomorphismGroup
+---
 
 `GraphAutomorphismGroup[g]` gives the automorphism group of a graph `g`.
 

@@ -1,4 +1,6 @@
-# MomentOfInertia
+---
+title: MomentOfInertia
+---
 
 `MomentOfInertia[reg, pt, v]` computes the moment of inertia for the region reg rotating around an axis through the point pt in direction v.
 

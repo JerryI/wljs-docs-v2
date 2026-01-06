@@ -1,4 +1,6 @@
-# Pane
+---
+title: Pane
+---
 
 `Pane[expr]` displays as a pane containing expr.
 

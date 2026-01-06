@@ -1,4 +1,6 @@
-# InverseFourierCosTransform
+---
+title: InverseFourierCosTransform
+---
 
 `InverseFourierCosTransform[expr, ω, t]` gives the symbolic inverse Fourier cosine transform of `expr`.
 

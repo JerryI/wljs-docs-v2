@@ -1,4 +1,6 @@
-# AllTrue
+---
+title: AllTrue
+---
 
 `AllTrue[{e1, e2, ...}, test]` yields `True` if `test[ei]` is `True` for all elements.
 

@@ -1,4 +1,6 @@
-# MomentEvaluate
+---
+title: MomentEvaluate
+---
 
 `MomentEvaluate[mexpr, dist]` evaluates formal moments in the moment expression mexpr on the distribution dist.
 

@@ -1,4 +1,6 @@
-# SolidMechanicsPDEComponent
+---
+title: SolidMechanicsPDEComponent
+---
 
 `SolidMechanicsPDEComponent[vars,pars]` yields solid mechanics PDE terms with variables vars and parameters pars.
 

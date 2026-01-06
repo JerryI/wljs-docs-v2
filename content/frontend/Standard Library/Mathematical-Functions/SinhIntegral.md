@@ -1,4 +1,6 @@
-# SinhIntegral
+---
+title: SinhIntegral
+---
 
 `SinhIntegral[z]` gives the hyperbolic sine integral function Shi(z).
 

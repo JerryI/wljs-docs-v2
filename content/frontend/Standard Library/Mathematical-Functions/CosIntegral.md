@@ -1,4 +1,6 @@
-# CosIntegral
+---
+title: CosIntegral
+---
 
 `CosIntegral[z]` gives the cosine integral function Ci(z).
 

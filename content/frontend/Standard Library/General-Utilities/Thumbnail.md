@@ -1,4 +1,6 @@
-# Thumbnail
+---
+title: Thumbnail
+---
 
 `Thumbnail[image]` gives a thumbnail version of an image.
 

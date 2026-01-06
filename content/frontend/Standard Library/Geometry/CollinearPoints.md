@@ -1,4 +1,6 @@
-# CollinearPoints
+---
+title: CollinearPoints
+---
 
 `CollinearPoints[{p1, p2, p3, ..., pn}]` tests whether the points p1, p2, p3, ..., pn are collinear.
 

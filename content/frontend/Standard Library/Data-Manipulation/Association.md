@@ -1,4 +1,6 @@
-# Association
+---
+title: Association
+---
 
 `Association[key1 -> val1, key2 -> val2, ...]` or `<|key1 -> val1, key2 -> val2, ...|>` represents an association between keys and values.
 

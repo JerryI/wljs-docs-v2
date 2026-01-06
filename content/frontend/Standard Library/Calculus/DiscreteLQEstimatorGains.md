@@ -1,4 +1,6 @@
-# DiscreteLQEstimatorGains
+---
+title: DiscreteLQEstimatorGains
+---
 
 `DiscreteLQEstimatorGains[ssm, {w, v}, τ]` gives the optimal discrete-time estimator gain matrix with sampling period τ for the continuous-time `StateSpaceModel` ssm.
 

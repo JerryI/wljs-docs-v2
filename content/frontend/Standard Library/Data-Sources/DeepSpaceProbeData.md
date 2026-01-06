@@ -1,4 +1,6 @@
-# DeepSpaceProbeData
+---
+title: DeepSpaceProbeData
+---
 
 `DeepSpaceProbeData[entity, property]` gives the value of the specified property for the deep space probe entity.
 

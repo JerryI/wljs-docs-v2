@@ -1,4 +1,6 @@
-# DeletePermissionsKey
+---
+title: DeletePermissionsKey
+---
 
 `DeletePermissionsKey[key]` deletes a permissions key, rendering it invalid.
 

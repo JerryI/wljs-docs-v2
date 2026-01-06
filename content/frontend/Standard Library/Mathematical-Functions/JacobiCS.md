@@ -1,4 +1,6 @@
-# JacobiCS
+---
+title: JacobiCS
+---
 
 `JacobiCS[u, m]` gives the Jacobi elliptic function cs(u|m).
 

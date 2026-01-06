@@ -1,4 +1,6 @@
-# MaxPlotPoints
+---
+title: MaxPlotPoints
+---
 
 `MaxPlotPoints` is an option for plotting functions like `ArrayPlot` and `ListPlot3D` that specifies the maximum number of points that will explicitly be included in the output.
 

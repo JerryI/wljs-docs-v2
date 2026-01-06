@@ -1,4 +1,6 @@
-# TypeEvaluate
+---
+title: TypeEvaluate
+---
 
 `TypeEvaluate[expr]` represents a type created by evaluating expr.
 

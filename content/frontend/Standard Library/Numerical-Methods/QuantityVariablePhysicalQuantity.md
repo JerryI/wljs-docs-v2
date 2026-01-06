@@ -1,4 +1,6 @@
-# QuantityVariablePhysicalQuantity
+---
+title: QuantityVariablePhysicalQuantity
+---
 
 `QuantityVariablePhysicalQuantity[var]` returns the physical quantity associated with the quantity variable var.
 

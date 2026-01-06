@@ -1,4 +1,6 @@
-# Differences
+---
+title: Differences
+---
 
 `Differences[list]` gives the successive differences between consecutive elements: `{e2-e1, e3-e2, ...}`.
 

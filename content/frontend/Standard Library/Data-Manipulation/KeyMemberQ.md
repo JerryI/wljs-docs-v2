@@ -1,4 +1,6 @@
-# KeyMemberQ
+---
+title: KeyMemberQ
+---
 
 `KeyMemberQ[assoc, form]` yields `True` if a key in the association assoc matches form, and `False` otherwise.
 

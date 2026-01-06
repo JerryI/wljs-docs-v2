@@ -1,4 +1,6 @@
-# LessFullEqual
+---
+title: LessFullEqual
+---
 
 `LessFullEqual[x, y, ...]` displays as x≦y≦....
 

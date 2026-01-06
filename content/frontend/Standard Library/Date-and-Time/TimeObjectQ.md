@@ -1,4 +1,6 @@
-# TimeObjectQ
+---
+title: TimeObjectQ
+---
 
 `TimeObjectQ[expr]` gives `True` if expr is a `TimeObject` with valid arguments, and `False` otherwise.
 

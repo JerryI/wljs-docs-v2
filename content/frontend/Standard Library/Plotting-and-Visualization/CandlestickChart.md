@@ -1,4 +1,6 @@
-# CandlestickChart
+---
+title: CandlestickChart
+---
 
 `CandlestickChart[{{date1, {open1, high1, low1, close1}}, ...}]` makes a chart with candles representing open, high, low, and close prices for each date.
 

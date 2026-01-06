@@ -1,4 +1,6 @@
-# MorphologicalBranchPoints
+---
+title: MorphologicalBranchPoints
+---
 
 `MorphologicalBranchPoints[image]` gives a version of a binary image image in which white pixels represent the morphological branch points.
 

@@ -1,4 +1,6 @@
-# ChebyshevT
+---
+title: ChebyshevT
+---
 
 `ChebyshevT[n, x]` gives the Chebyshev polynomial of the first kind T_n(x).
 

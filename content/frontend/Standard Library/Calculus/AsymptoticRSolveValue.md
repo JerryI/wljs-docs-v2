@@ -1,4 +1,6 @@
-# AsymptoticRSolveValue
+---
+title: AsymptoticRSolveValue
+---
 
 `AsymptoticRSolveValue[eqn,f,x->∞]` computes an asymptotic approximation to the difference equation eqn for f[x] near ∞.
 

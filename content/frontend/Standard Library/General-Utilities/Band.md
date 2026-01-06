@@ -1,4 +1,6 @@
-# Band
+---
+title: Band
+---
 
 `Band[{i, j}]` represents the sequence of positions on the diagonal band that starts with {i, j} in a sparse array.
 

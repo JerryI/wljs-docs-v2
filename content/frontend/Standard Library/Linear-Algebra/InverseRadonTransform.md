@@ -1,4 +1,6 @@
-# InverseRadonTransform
+---
+title: InverseRadonTransform
+---
 
 `InverseRadonTransform[expr, {p, ϕ}, {x, y}]` gives the inverse Radon transform of expr.
 

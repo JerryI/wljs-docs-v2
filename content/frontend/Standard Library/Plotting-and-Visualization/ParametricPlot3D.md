@@ -1,4 +1,6 @@
-# ParametricPlot3D
+---
+title: ParametricPlot3D
+---
 
 `ParametricPlot3D[{fx, fy, fz}, {u, umin, umax}]` produces a three-dimensional space curve parametrized by variable u.
 

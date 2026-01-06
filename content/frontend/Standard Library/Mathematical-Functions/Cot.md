@@ -1,4 +1,6 @@
-# Cot
+---
+title: Cot
+---
 
 `Cot[z]` gives the cotangent of z.
 

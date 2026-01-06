@@ -1,4 +1,6 @@
-# GraphComplement
+---
+title: GraphComplement
+---
 
 `GraphComplement[g]` gives the graph complement of the graph g (edges become non-edges and vice versa).
 

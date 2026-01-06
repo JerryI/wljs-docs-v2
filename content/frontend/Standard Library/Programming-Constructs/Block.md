@@ -1,4 +1,6 @@
-# Block
+---
+title: Block
+---
 
 `Block[{x, y, ...}, expr]` specifies that expr is to be evaluated with local values for the symbols x, y, ....
 

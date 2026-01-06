@@ -1,4 +1,6 @@
-# CircularRealMatrixDistribution
+---
+title: CircularRealMatrixDistribution
+---
 
 `CircularRealMatrixDistribution[n]` represents a circular real matrix distribution with matrix dimensions {n, n}.
 

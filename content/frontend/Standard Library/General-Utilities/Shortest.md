@@ -1,4 +1,6 @@
-# Shortest
+---
+title: Shortest
+---
 
 `Shortest[p]` is a pattern object that matches the shortest sequence consistent with the pattern p.
 

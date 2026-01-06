@@ -1,4 +1,6 @@
-# ImportedObject
+---
+title: ImportedObject
+---
 
 `ImportedObject[…]` represents a piece of imported data that has no special representation in the Wolfram Language.
 

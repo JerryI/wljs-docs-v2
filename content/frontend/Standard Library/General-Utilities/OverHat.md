@@ -1,4 +1,6 @@
-# OverHat
+---
+title: OverHat
+---
 
 `OverHat[expr]` displays with a hat over expr.
 

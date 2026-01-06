@@ -1,4 +1,6 @@
-# ReadProtected
+---
+title: ReadProtected
+---
 
 `ReadProtected` is an attribute that prevents values associated with a symbol from being seen.
 

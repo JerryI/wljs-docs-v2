@@ -1,4 +1,6 @@
-# TensorExpand
+---
+title: TensorExpand
+---
 
 `TensorExpand[texpr]` expands out tensor-related products in the symbolic tensor expression *texpr*.
 

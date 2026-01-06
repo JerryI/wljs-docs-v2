@@ -1,4 +1,6 @@
-# InverseFourier
+---
+title: InverseFourier
+---
 
 `InverseFourier[list]` finds the discrete inverse Fourier transform of a list of complex numbers.
 

@@ -1,4 +1,6 @@
-# PersistentObject
+---
+title: PersistentObject
+---
 
 `PersistentObject["name",loc]` represents a persistent object stored at persistence location loc.
 

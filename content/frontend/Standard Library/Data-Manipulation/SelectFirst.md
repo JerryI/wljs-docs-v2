@@ -1,4 +1,6 @@
-# SelectFirst
+---
+title: SelectFirst
+---
 
 `SelectFirst[data, crit]` gives the first element for which `crit[ei]` is `True`, or `Missing["NotFound"]` if none is found.
 

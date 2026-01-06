@@ -1,4 +1,6 @@
-# Annotation
+---
+title: Annotation
+---
 
 `Annotation[expr, data]` represents an expression expr, with annotation data.
 

@@ -1,4 +1,6 @@
-# TreeCases
+---
+title: TreeCases
+---
 
 `TreeCases[tree, pattern]` gives a list of subtrees of tree with data matching pattern.
 

@@ -1,4 +1,6 @@
-# BezierCurve
+---
+title: BezierCurve
+---
 
 `BezierCurve[{pt1, pt2, ...}]` is a graphics primitive that represents a Bézier curve with control points pti.
 

@@ -1,4 +1,6 @@
-# NyquistPlot
+---
+title: NyquistPlot
+---
 
 `NyquistPlot[lsys]` generates a Nyquist plot of the transfer function for the system *lsys*.
 

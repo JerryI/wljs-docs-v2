@@ -1,4 +1,6 @@
-# NormalMatrixQ
+---
+title: NormalMatrixQ
+---
 
 `NormalMatrixQ[m]` gives `True` if m is an explicitly normal matrix, and `False` otherwise.
 

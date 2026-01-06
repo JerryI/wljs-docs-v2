@@ -1,4 +1,6 @@
-# KeyDrop
+---
+title: KeyDrop
+---
 
 `KeyDrop[assoc, {key1, key2, ...}]` yields an association from which elements with keys key_i have been dropped.
 

@@ -1,4 +1,6 @@
-# PolyhedronGenus
+---
+title: PolyhedronGenus
+---
 
 `PolyhedronGenus[poly]` gives the genus of the polyhedron poly.
 

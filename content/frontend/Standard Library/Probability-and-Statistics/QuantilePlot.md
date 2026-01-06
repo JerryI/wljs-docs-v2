@@ -1,4 +1,6 @@
-# QuantilePlot
+---
+title: QuantilePlot
+---
 
 `QuantilePlot[list]` generates a plot of quantiles of list against the quantiles of a normal distribution.
 

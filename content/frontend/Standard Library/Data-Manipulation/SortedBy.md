@@ -1,4 +1,6 @@
-# SortedBy
+---
+title: SortedBy
+---
 
 `SortedBy` is an option that specifies a function by which to sort the results of a computation.
 

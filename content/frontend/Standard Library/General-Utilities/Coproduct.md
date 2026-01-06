@@ -1,4 +1,6 @@
-# Coproduct
+---
+title: Coproduct
+---
 
 `Coproduct[x, y, ...]` displays as x∐y∐....
 

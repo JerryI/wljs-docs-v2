@@ -1,4 +1,6 @@
-# CompleteGraph
+---
+title: CompleteGraph
+---
 
 `CompleteGraph[n]` creates a complete graph $K_n$ with `n` vertices where every vertex is connected to every other.
 

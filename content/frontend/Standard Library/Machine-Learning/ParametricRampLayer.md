@@ -1,4 +1,6 @@
-# ParametricRampLayer
+---
+title: ParametricRampLayer
+---
 
 `ParametricRampLayer[]` represents a net layer that computes a leaky ReLU activation with a slope that can be learned.
 

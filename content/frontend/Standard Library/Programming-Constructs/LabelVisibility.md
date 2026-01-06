@@ -1,4 +1,6 @@
-# LabelVisibility
+---
+title: LabelVisibility
+---
 
 `LabelVisibility` is an option for `Callout` and `Labeled` in plotting functions that determines which labels are shown.
 

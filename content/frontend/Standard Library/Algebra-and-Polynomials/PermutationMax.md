@@ -1,4 +1,6 @@
-# PermutationMax
+---
+title: PermutationMax
+---
 
 `PermutationMax[perm]` returns the largest integer moved by the permutation perm.
 

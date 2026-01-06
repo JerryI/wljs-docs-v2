@@ -1,4 +1,6 @@
-# ComplexRegionPlot
+---
+title: ComplexRegionPlot
+---
 
 `ComplexRegionPlot[pred, {z, zmin, zmax}]` makes a plot showing the region in the complex plane for which pred is True.
 

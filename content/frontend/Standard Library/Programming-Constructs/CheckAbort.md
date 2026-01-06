@@ -1,4 +1,6 @@
-# CheckAbort
+---
+title: CheckAbort
+---
 
 `CheckAbort[expr, failexpr]` evaluates expr, returning failexpr if an abort occurs.
 

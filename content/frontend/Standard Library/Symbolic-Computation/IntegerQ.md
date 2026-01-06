@@ -1,4 +1,6 @@
-# IntegerQ
+---
+title: IntegerQ
+---
 
 `IntegerQ[expr]` gives `True` if expr is an integer, and `False` otherwise.
 

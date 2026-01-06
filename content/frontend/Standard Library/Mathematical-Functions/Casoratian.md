@@ -1,4 +1,6 @@
-# Casoratian
+---
+title: Casoratian
+---
 
 `Casoratian[{y1, y2, ...}, n]` gives the Casoratian determinant for the sequences y1, y2, ... depending on n.
 

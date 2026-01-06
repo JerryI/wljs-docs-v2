@@ -1,4 +1,6 @@
-# WordBoundary
+---
+title: WordBoundary
+---
 
 `WordBoundary` represents a boundary between words for purposes of matching in `StringExpression`.
 

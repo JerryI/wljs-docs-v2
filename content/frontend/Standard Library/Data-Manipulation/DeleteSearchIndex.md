@@ -1,4 +1,6 @@
-# DeleteSearchIndex
+---
+title: DeleteSearchIndex
+---
 
 `DeleteSearchIndex[obj]` deletes the search index represented by the search index object obj.
 

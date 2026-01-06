@@ -1,4 +1,6 @@
-# NormalDistribution
+---
+title: NormalDistribution
+---
 
 `NormalDistribution[μ, σ]` represents a normal (Gaussian) distribution with mean `μ` and standard deviation `σ`. `NormalDistribution[]` represents the standard normal distribution.
 

@@ -1,4 +1,6 @@
-# VideoCombine
+---
+title: VideoCombine
+---
 
 `VideoCombine[{obj1, obj2, ...}]` creates a multi-track video by combining all audio, video and subtitle tracks in all *obji*.
 

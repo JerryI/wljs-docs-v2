@@ -1,4 +1,6 @@
-# MixedRadixQuantity
+---
+title: MixedRadixQuantity
+---
 
 `MixedRadixQuantity[{value1, …, valuen}, {unit1, …, unitn}]` yields a single `Quantity` expression representing the addition of compatible units with magnitude values.
 

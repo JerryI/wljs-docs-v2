@@ -1,4 +1,6 @@
-# TuringMachine
+---
+title: TuringMachine
+---
 
 `TuringMachine[rule, init, t]` generates a list representing the evolution of the Turing machine with the specified rule from initial condition init for t steps.
 

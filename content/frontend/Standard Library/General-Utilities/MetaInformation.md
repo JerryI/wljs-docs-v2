@@ -1,4 +1,6 @@
-# MetaInformation
+---
+title: MetaInformation
+---
 
 `MetaInformation` is an option giving metainformation for `Image`, and other objects.
 

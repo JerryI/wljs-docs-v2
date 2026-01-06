@@ -1,4 +1,6 @@
-# CentralFeature
+---
+title: CentralFeature
+---
 
 `CentralFeature[{x1, x2, ...}]` gives the central feature of the elements xi.
 

@@ -1,4 +1,6 @@
-# PlanetaryMoonData
+---
+title: PlanetaryMoonData
+---
 
 `PlanetaryMoonData[entity, property]` gives the value of the specified property for the moon entity of a planet or minor planet.
 

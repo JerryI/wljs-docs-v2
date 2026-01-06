@@ -1,4 +1,6 @@
-# CaseOrdering
+---
+title: CaseOrdering
+---
 
 `CaseOrdering` is an option for AlphabeticSort and related functions that specifies how upper versus lower case should be sorted.
 

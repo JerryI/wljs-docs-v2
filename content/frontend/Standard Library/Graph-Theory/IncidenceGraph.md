@@ -1,4 +1,6 @@
-# IncidenceGraph
+---
+title: IncidenceGraph
+---
 
 `IncidenceGraph[m]` gives the graph with incidence matrix m.
 

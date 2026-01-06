@@ -1,4 +1,6 @@
-# MorphologicalEulerNumber
+---
+title: MorphologicalEulerNumber
+---
 
 `MorphologicalEulerNumber[image]` computes the morphological Euler number of regions in a binary image.
 

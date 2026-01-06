@@ -1,4 +1,6 @@
-# FormProtectionMethod
+---
+title: FormProtectionMethod
+---
 
 `FormProtectionMethod` is an option for form generation functions that specifies what method to use for protecting the form against spam and other undesired submissions.
 

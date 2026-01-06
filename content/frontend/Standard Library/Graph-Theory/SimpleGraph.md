@@ -1,4 +1,6 @@
-# SimpleGraph
+---
+title: SimpleGraph
+---
 
 `SimpleGraph[g]` gives the underlying simple graph from the graph g.
 

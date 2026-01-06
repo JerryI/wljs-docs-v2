@@ -1,4 +1,6 @@
-# ArrayFlatten
+---
+title: ArrayFlatten
+---
 
 `ArrayFlatten[{{m11, m12, ...}, {m21, m22, ...}, ...}]` creates a single flattened matrix from a matrix of matrices mij.
 

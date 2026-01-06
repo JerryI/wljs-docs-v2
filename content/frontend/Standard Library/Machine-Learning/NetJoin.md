@@ -1,4 +1,6 @@
-# NetJoin
+---
+title: NetJoin
+---
 
 `NetJoin[net1, net2, ...]` connects a series of NetChain or NetGraph objects to form a single NetChain or NetGraph.
 

@@ -1,4 +1,6 @@
-# Contours
+---
+title: Contours
+---
 
 `Contours` is an option for contour plots that specifies the contours to draw.
 

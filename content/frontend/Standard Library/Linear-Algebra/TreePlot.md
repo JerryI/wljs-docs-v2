@@ -1,4 +1,6 @@
-# TreePlot
+---
+title: TreePlot
+---
 
 `TreePlot[g]` generates a tree plot of the graph *g*.
 

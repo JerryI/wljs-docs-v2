@@ -1,4 +1,6 @@
-# StratonovichProcess
+---
+title: StratonovichProcess
+---
 
 `StratonovichProcess[{a, b}, x, t]` represents a Stratonovich process x(t), where dx(t) = a(t,x(t))dt + b(t,x(t)) ∘ dw(t).
 

@@ -1,4 +1,6 @@
-# Riffle
+---
+title: Riffle
+---
 
 `Riffle[{e1, e2, ...}, x]` interleaves `x` between elements: `{e1, x, e2, x, ...}`.
 

@@ -1,4 +1,6 @@
-# KatzCentrality
+---
+title: KatzCentrality
+---
 
 `KatzCentrality[g,α]` gives a list of Katz centralities for the vertices in the graph g and weight α.
 

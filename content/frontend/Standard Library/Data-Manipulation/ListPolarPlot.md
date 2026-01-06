@@ -1,4 +1,6 @@
-# ListPolarPlot
+---
+title: ListPolarPlot
+---
 
 `ListPolarPlot[{r1, r2, ...}]` plots points equally spaced in angle at radii ri.
 

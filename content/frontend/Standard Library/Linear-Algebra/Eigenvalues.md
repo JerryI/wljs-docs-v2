@@ -1,4 +1,6 @@
-# Eigenvalues
+---
+title: Eigenvalues
+---
 
 `Eigenvalues[m]` gives a list of the eigenvalues of the square matrix m.
 

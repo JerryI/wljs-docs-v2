@@ -1,4 +1,6 @@
-# Find
+---
+title: Find
+---
 
 `Find[stream,"text"]` finds the first line in an input stream that contains the specified string. 
 

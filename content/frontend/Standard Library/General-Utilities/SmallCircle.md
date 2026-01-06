@@ -1,4 +1,6 @@
-# SmallCircle
+---
+title: SmallCircle
+---
 
 `SmallCircle[x, y, …]` displays as x∘y∘….
 

@@ -1,4 +1,6 @@
-# Asymptotic
+---
+title: Asymptotic
+---
 
 `Asymptotic[expr, x -> x0]` gives an asymptotic approximation for expr near x0.
 

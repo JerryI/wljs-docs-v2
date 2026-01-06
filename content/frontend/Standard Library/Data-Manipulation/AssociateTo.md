@@ -1,4 +1,6 @@
-# AssociateTo
+---
+title: AssociateTo
+---
 
 `AssociateTo[a, key -> val]` changes the association a by adding the key-value pair key->val.
 

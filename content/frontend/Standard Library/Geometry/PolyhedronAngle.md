@@ -1,4 +1,6 @@
-# PolyhedronAngle
+---
+title: PolyhedronAngle
+---
 
 `PolyhedronAngle[poly,p]` gives the solid angle at the point p and spanned by edges with common point p.
 

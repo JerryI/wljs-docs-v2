@@ -1,4 +1,6 @@
-# GeoGridDirectionDifference
+---
+title: GeoGridDirectionDifference
+---
 
 `GeoGridDirectionDifference[proj, loc, β]` gives the difference between the angle from north to direction `β` on the geo grid obtained with projection `proj` and the actual angle from north to direction `β` at location `loc`.
 

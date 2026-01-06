@@ -1,4 +1,6 @@
-# RunThrough
+---
+title: RunThrough
+---
 
 `RunThrough["command", expr]` executes an external command, giving the printed form of expr as input and taking the output, reading it as Wolfram Language input, and returning the result.
 

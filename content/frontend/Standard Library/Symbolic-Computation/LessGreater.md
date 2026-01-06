@@ -1,4 +1,6 @@
-# LessGreater
+---
+title: LessGreater
+---
 
 `LessGreater[x, y, …]` displays as x ≶ y ≶ ….
 

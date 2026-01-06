@@ -1,4 +1,6 @@
-# Interpretation
+---
+title: Interpretation
+---
 
 `Interpretation[e, expr]` represents an object that displays as e, but is interpreted as the unevaluated form of expr if supplied as input.
 

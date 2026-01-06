@@ -1,4 +1,6 @@
-# DistributionParameterAssumptions
+---
+title: DistributionParameterAssumptions
+---
 
 `DistributionParameterAssumptions[dist]` gives a logical expression for assumptions on parameters in the symbolic distribution dist.
 

@@ -1,4 +1,6 @@
-# CoordinateBounds
+---
+title: CoordinateBounds
+---
 
 `CoordinateBounds[coords]` gives a list {{xmin, xmax}, {ymin, ymax}, ...} of the bounds in each dimension of the region defined by coords.
 

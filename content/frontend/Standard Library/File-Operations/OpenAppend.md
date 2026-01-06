@@ -1,4 +1,6 @@
-# OpenAppend
+---
+title: OpenAppend
+---
 
 `OpenAppend["file"]` opens a file to append output to it, and returns an OutputStream object.
 

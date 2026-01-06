@@ -1,4 +1,6 @@
-# VertexReplace
+---
+title: VertexReplace
+---
 
 `VertexReplace[g, {v1 -> w1, v2 -> w2, ...}]` replaces each vertex vi in the graph g by wi.
 

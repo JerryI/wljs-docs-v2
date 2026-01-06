@@ -1,4 +1,6 @@
-# PaddedForm
+---
+title: PaddedForm
+---
 
 `PaddedForm[expr, n]` prints with all numbers in expr padded to leave room for a total of n digits.
 

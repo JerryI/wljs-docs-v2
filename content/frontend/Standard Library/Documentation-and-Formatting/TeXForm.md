@@ -1,4 +1,6 @@
-# TeXForm
+---
+title: TeXForm
+---
 
 `TeXForm[expr]` gives the TeX (LaTeX) representation of expr.
 

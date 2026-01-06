@@ -1,4 +1,6 @@
-# PointFigureChart
+---
+title: PointFigureChart
+---
 
 `PointFigureChart[{{date1, p1}, {date2, p2}, ...}]` makes a point and figure chart with prices pi at date datei.
 

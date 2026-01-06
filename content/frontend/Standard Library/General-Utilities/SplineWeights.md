@@ -1,4 +1,6 @@
-# SplineWeights
+---
+title: SplineWeights
+---
 
 `SplineWeights` is an option for B-spline functions and graphics primitives that specifies weights of control points.
 

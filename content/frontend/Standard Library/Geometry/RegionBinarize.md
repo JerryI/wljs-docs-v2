@@ -1,4 +1,6 @@
-# RegionBinarize
+---
+title: RegionBinarize
+---
 
 `RegionBinarize[image, marker, d]` gives a binary version of image that includes the foreground pixels of marker and also connected regions whose pixel values are within a distance d.
 

@@ -1,4 +1,6 @@
-# ApplyTo
+---
+title: ApplyTo
+---
 
 `ApplyTo[x, f]` or `x //= f` computes `f[x]` and resets x to the result.
 

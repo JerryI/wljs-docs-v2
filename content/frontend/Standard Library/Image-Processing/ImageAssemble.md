@@ -1,4 +1,6 @@
-# ImageAssemble
+---
+title: ImageAssemble
+---
 
 `ImageAssemble[{{im11, ..., im1n}, ..., {imm1, ..., immn}}]` assembles a single image from an array of images.
 

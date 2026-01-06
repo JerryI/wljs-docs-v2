@@ -1,4 +1,6 @@
-# IdentityMatrix
+---
+title: IdentityMatrix
+---
 
 `IdentityMatrix[n]` gives the n×n identity matrix.
 

@@ -1,4 +1,6 @@
-# IrreduciblePolynomialQ
+---
+title: IrreduciblePolynomialQ
+---
 
 `IrreduciblePolynomialQ[poly]` tests whether poly is an irreducible polynomial over the rationals.
 

@@ -1,4 +1,6 @@
-# ReplacePart
+---
+title: ReplacePart
+---
 
 `ReplacePart[expr, i -> new]` yields an expression in which the ith part is replaced by new.
 

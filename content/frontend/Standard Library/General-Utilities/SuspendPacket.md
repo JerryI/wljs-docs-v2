@@ -1,4 +1,6 @@
-# SuspendPacket
+---
+title: SuspendPacket
+---
 
 `SuspendPacket[]` is a WSTP packet used for synchronization with the Wolfram Language kernel.
 

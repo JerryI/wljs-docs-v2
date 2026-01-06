@@ -1,4 +1,6 @@
-# TriangleCenter
+---
+title: TriangleCenter
+---
 
 `TriangleCenter[tri, type]` gives the specified type of center for the triangle tri.
 

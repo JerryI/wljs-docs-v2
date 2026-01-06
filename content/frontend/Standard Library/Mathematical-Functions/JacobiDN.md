@@ -1,4 +1,6 @@
-# JacobiDN
+---
+title: JacobiDN
+---
 
 `JacobiDN[u, m]` gives the Jacobi elliptic function dn(u|m).
 

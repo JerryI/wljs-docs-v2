@@ -1,4 +1,6 @@
-# LineLegend
+---
+title: LineLegend
+---
 
 `LineLegend[{col1, ...}, {lbl1, ...}]` generates a legend that associates color col_i with label lbl_i.
 

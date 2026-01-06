@@ -1,4 +1,6 @@
-# EditDistance
+---
+title: EditDistance
+---
 
 `EditDistance[u,v]` gives the edit or Levenshtein distance between strings, vectors or biomolecular sequences u and v.
 

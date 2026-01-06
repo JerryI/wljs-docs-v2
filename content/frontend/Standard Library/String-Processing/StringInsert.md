@@ -1,4 +1,6 @@
-# StringInsert
+---
+title: StringInsert
+---
 
 `StringInsert["string", "snew", n]` inserts "snew" starting at position n.
 

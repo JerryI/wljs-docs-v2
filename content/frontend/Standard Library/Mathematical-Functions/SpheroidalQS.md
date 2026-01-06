@@ -1,4 +1,6 @@
-# SpheroidalQS
+---
+title: SpheroidalQS
+---
 
 `SpheroidalQS[n, m, γ, z]` gives the angular spheroidal function QS_n,m(γ,z) of the second kind.
 

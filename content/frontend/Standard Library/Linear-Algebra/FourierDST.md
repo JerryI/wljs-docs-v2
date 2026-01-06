@@ -1,4 +1,6 @@
-# FourierDST
+---
+title: FourierDST
+---
 
 `FourierDST[list]` finds the Fourier discrete sine transform of a list of real numbers.
 

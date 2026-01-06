@@ -1,4 +1,6 @@
-# DatabinRemove
+---
+title: DatabinRemove
+---
 
 `DatabinRemove[bin, i]` removes the ith entry from a databin.
 

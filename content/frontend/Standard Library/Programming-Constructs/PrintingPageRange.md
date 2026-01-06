@@ -1,4 +1,6 @@
-# PrintingPageRange
+---
+title: PrintingPageRange
+---
 
 `PrintingPageRange` is an option for notebooks that specifies the range of pages of a notebook to be printed.
 

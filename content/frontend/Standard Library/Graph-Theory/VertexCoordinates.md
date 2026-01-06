@@ -1,4 +1,6 @@
-# VertexCoordinates
+---
+title: VertexCoordinates
+---
 
 `VertexCoordinates` is an option to `Graph` and related functions that specifies the coordinates to use to place the center of vertices.
 

@@ -1,4 +1,6 @@
-# PassEventsDown
+---
+title: PassEventsDown
+---
 
 `PassEventsDown` is an option to `EventHandler` which specifies whether events handled by a particular event handler should be passed down to event handlers nested inside.
 

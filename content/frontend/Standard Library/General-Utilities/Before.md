@@ -1,4 +1,6 @@
-# Before
+---
+title: Before
+---
 
 `Before` is a symbol that represents the region before an object for purposes of placement.
 

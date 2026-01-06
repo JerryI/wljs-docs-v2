@@ -1,4 +1,6 @@
-# FileNameTake
+---
+title: FileNameTake
+---
 
 `FileNameTake["name"]` gives the last path element (filename) from a path.
 

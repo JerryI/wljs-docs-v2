@@ -1,4 +1,6 @@
-# FourierMatrix
+---
+title: FourierMatrix
+---
 
 `FourierMatrix[n]` returns an n×n Fourier matrix.
 

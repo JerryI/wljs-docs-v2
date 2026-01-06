@@ -1,4 +1,6 @@
-# CurvatureFlowFilter
+---
+title: CurvatureFlowFilter
+---
 
 `CurvatureFlowFilter[image]` applies a mean curvature flow filter to image.
 

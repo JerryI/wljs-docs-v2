@@ -1,4 +1,6 @@
-# EscapeRadius
+---
+title: EscapeRadius
+---
 
 `EscapeRadius` is an option to `MandelbrotSetPlot` that specifies the criterion to use to decide that a point is not in the Mandelbrot set.
 

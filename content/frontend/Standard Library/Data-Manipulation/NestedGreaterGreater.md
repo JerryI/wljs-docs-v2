@@ -1,4 +1,6 @@
-# NestedGreaterGreater
+---
+title: NestedGreaterGreater
+---
 
 `NestedGreaterGreater[x, y, ...]` displays as x⪢y⪢....
 

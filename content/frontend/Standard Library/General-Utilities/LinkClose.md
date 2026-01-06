@@ -1,4 +1,6 @@
-# LinkClose
+---
+title: LinkClose
+---
 
 `LinkClose[link]` closes an open WSTP connection.
 

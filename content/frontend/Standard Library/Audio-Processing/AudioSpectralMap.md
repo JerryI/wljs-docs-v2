@@ -1,4 +1,6 @@
-# AudioSpectralMap
+---
+title: AudioSpectralMap
+---
 
 `AudioSpectralMap[f,audio]` transforms audio by applying the function f to its short-time Fourier transform.
 

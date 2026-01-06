@@ -1,4 +1,6 @@
-# BilateralZTransform
+---
+title: BilateralZTransform
+---
 
 `BilateralZTransform[expr,n,z]` gives the bilateral Z transform of expr.
 

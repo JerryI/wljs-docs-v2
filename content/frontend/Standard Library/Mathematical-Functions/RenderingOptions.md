@@ -1,4 +1,6 @@
-# RenderingOptions
+---
+title: RenderingOptions
+---
 
 `RenderingOptions` is an option for `Style`, `Cell` and related constructs that specifies options related to 3D rendering.
 

@@ -1,4 +1,6 @@
-# ObservableModelQ
+---
+title: ObservableModelQ
+---
 
 `ObservableModelQ[sys]` gives `True` if the system *sys* is observable, and `False` otherwise.
 

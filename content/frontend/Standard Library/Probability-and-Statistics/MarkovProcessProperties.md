@@ -1,4 +1,6 @@
-# MarkovProcessProperties
+---
+title: MarkovProcessProperties
+---
 
 `MarkovProcessProperties[mproc]` gives a summary of properties for the finite state Markov process mproc.
 

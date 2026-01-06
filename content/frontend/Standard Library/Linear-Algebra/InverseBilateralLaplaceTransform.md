@@ -1,4 +1,6 @@
-# InverseBilateralLaplaceTransform
+---
+title: InverseBilateralLaplaceTransform
+---
 
 `InverseBilateralLaplaceTransform[expr,s,t]` gives the inverse bilateral Laplace transform of expr.
 

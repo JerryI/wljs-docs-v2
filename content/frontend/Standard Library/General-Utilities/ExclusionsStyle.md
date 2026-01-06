@@ -1,4 +1,6 @@
-# ExclusionsStyle
+---
+title: ExclusionsStyle
+---
 
 `ExclusionsStyle` is an option to plotting functions that specifies how to render subregions excluded according to `Exclusions`.
 

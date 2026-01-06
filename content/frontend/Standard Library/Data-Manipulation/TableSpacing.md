@@ -1,4 +1,6 @@
-# TableSpacing
+---
+title: TableSpacing
+---
 
 `TableSpacing` is an option for `TableForm` and `MatrixForm` that specifies how many spaces should be left between each successive row or column.
 

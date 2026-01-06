@@ -1,4 +1,6 @@
-# Integers
+---
+title: Integers
+---
 
 `Integers` represents the domain of integers, as in x ∈ Integers.
 

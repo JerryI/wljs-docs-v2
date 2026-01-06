@@ -1,4 +1,6 @@
-# GeoProjectionData
+---
+title: GeoProjectionData
+---
 
 `GeoProjectionData["projection", "property"]` gives the value of the specified property for the specified cartographic projection.
 

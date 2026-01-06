@@ -1,4 +1,6 @@
-# BeveledPolyhedron
+---
+title: BeveledPolyhedron
+---
 
 `BeveledPolyhedron[poly]` gives the beveled polyhedron of poly by beveling each edge.
 

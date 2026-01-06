@@ -1,4 +1,6 @@
-# ResidueSum
+---
+title: ResidueSum
+---
 
 `ResidueSum[f, z]` finds the sum of residues of the meromorphic function f with the variable z.
 

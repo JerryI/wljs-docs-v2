@@ -1,4 +1,6 @@
-# TextStructure
+---
+title: TextStructure
+---
 
 `TextStructure["text"]` generates a nested collection of `TextElement` objects representing the grammatical structure of natural language text.
 

@@ -1,4 +1,6 @@
-# MaxDetect
+---
+title: MaxDetect
+---
 
 `MaxDetect[image]` gives a binary image in which white pixels correspond to constant extended maxima in image.
 

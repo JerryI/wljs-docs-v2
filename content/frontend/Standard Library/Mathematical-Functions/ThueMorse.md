@@ -1,4 +1,6 @@
-# ThueMorse
+---
+title: ThueMorse
+---
 
 `ThueMorse[n]` gives the nth term in the Thue–Morse sequence.
 

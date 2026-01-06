@@ -1,4 +1,6 @@
-# ZernikeR
+---
+title: ZernikeR
+---
 
 `ZernikeR[n, m, r]` gives the radial Zernike polynomial $R_n^m(r)$.
 

@@ -1,4 +1,6 @@
-# BitXor
+---
+title: BitXor
+---
 
 `BitXor[n1, n2, ...]` gives the bitwise XOR of the integers ni.
 

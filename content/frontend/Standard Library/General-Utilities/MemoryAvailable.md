@@ -1,4 +1,6 @@
-# MemoryAvailable
+---
+title: MemoryAvailable
+---
 
 `MemoryAvailable[]` gives the estimated number of bytes readily available for storing additional data in the current Wolfram Language kernel session.
 

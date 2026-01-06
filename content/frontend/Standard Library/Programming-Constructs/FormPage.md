@@ -1,4 +1,6 @@
-# FormPage
+---
+title: FormPage
+---
 
 `FormPage[formspec,func]` represents an active page that takes input from a form and generates results on the same page by applying func to the values obtained from the form whose structure is defined by formspec.
 

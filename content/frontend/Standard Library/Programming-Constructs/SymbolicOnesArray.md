@@ -1,4 +1,6 @@
-# SymbolicOnesArray
+---
+title: SymbolicOnesArray
+---
 
 `SymbolicOnesArray[]` represents an array of ones with unspecified dimensions.
 

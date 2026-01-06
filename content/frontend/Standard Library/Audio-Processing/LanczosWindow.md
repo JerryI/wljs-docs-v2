@@ -1,4 +1,6 @@
-# LanczosWindow
+---
+title: LanczosWindow
+---
 
 `LanczosWindow[x]` represents a Lanczos window function of x.
 

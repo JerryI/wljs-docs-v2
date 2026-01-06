@@ -1,4 +1,6 @@
-# InverseFourierSequenceTransform
+---
+title: InverseFourierSequenceTransform
+---
 
 `InverseFourierSequenceTransform[expr, ω, n]` gives the inverse discrete-time Fourier transform of expr.
 

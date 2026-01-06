@@ -1,4 +1,6 @@
-# FindFit
+---
+title: FindFit
+---
 
 `FindFit[data, expr, params, vars]` finds parameter values that make `expr` best fit the data.
 

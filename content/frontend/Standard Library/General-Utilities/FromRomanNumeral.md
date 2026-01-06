@@ -1,4 +1,6 @@
-# FromRomanNumeral
+---
+title: FromRomanNumeral
+---
 
 `FromRomanNumeral["string"]` gives the integer corresponding to the Roman numeral "string".
 

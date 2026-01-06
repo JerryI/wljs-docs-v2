@@ -1,4 +1,6 @@
-# DatabinAdd
+---
+title: DatabinAdd
+---
 
 `DatabinAdd[bin,data]` adds the specified data to a databin.
 

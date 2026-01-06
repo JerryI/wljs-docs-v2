@@ -1,4 +1,6 @@
-# Placeholder
+---
+title: Placeholder
+---
 
 `Placeholder[name]` represents a placeholder labeled with name that indicates a place to type.
 

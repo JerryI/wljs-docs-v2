@@ -1,4 +1,6 @@
-# DifferentialD
+---
+title: DifferentialD
+---
 
 `DifferentialD[x]` displays as dx, representing a differential.
 

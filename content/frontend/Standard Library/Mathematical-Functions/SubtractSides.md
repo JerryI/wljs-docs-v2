@@ -1,4 +1,6 @@
-# SubtractSides
+---
+title: SubtractSides
+---
 
 `SubtractSides[rel, x]` subtracts x from each side of the equation or inequality rel.
 

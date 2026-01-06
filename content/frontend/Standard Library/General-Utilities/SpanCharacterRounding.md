@@ -1,4 +1,6 @@
-# SpanCharacterRounding
+---
+title: SpanCharacterRounding
+---
 
 `SpanCharacterRounding` is an option for selections that specifies the method used for rounding a spanning character when its size is to be adjusted.
 

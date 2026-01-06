@@ -1,4 +1,6 @@
-# PadLeft
+---
+title: PadLeft
+---
 
 `PadLeft[list, n]` pads a list to length `n` with zeros on the left. `PadLeft[list, n, x]` uses element `x` for padding.
 

@@ -1,4 +1,6 @@
-# MathieuGroupM22
+---
+title: MathieuGroupM22
+---
 
 `MathieuGroupM22[]` represents the sporadic simple Mathieu group M22.
 

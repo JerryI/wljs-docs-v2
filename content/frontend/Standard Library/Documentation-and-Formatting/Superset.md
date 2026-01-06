@@ -1,4 +1,6 @@
-# Superset
+---
+title: Superset
+---
 
 `Superset[x, y, ...]` displays as x⊃y⊃….
 

@@ -1,4 +1,6 @@
-# PacletFindRemote
+---
+title: PacletFindRemote
+---
 
 `PacletFindRemote["name"]` gives a list of paclets that match "name" available on known paclet sites.
 

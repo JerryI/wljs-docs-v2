@@ -1,4 +1,6 @@
-# Decrypt
+---
+title: Decrypt
+---
 
 `Decrypt["password", enc]` attempts to decrypt the encrypted object enc using the specified password.
 

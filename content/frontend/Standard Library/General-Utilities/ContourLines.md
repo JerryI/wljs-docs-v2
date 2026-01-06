@@ -1,4 +1,6 @@
-# ContourLines
+---
+title: ContourLines
+---
 
 `ContourLines` is an option for contour plots that specifies whether to draw explicit contour lines.
 

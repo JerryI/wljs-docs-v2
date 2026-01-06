@@ -1,4 +1,6 @@
-# RemoveProperty
+---
+title: RemoveProperty
+---
 
 `RemoveProperty[{obj, itemspec}]` removes all properties associated with itemspec in obj.
 

@@ -1,4 +1,6 @@
-# Min
+---
+title: Min
+---
 
 `Min[x1, x2, ...]` yields the numerically smallest of the xi.
 

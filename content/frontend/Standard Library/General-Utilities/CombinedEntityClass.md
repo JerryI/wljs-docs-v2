@@ -1,4 +1,6 @@
-# CombinedEntityClass
+---
+title: CombinedEntityClass
+---
 
 `CombinedEntityClass[class1, class2, prop]` represents a class of entities obtained by combining pairs from class1 and class2 where the property prop has the same value.
 

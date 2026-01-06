@@ -1,4 +1,6 @@
-# ConfirmBy
+---
+title: ConfirmBy
+---
 
 `ConfirmBy[expr, f]` confirms that `f[expr]` returns `True`, otherwise throws an error to the nearest `Enclose`.
 

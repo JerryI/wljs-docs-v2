@@ -1,4 +1,6 @@
-# BattleLemarieWavelet
+---
+title: BattleLemarieWavelet
+---
 
 `BattleLemarieWavelet[]` represents the Battle-Lemarié wavelet of order 3.
 

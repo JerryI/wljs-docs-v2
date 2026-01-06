@@ -1,4 +1,6 @@
-# ConstantArrayLayer
+---
+title: ConstantArrayLayer
+---
 
 `ConstantArrayLayer[]` represents a layer that has no input and produces as output a constant array.
 

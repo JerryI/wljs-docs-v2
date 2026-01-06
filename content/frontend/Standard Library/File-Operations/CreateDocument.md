@@ -1,4 +1,6 @@
-# CreateDocument
+---
+title: CreateDocument
+---
 
 `CreateDocument[{expr1, expr2, ...}]` creates an empty notebook and populates it with the content. Use the option `Visible -> False` to create the content and the notebook offscreen.
 

@@ -1,4 +1,6 @@
-# FieldHintStyle
+---
+title: FieldHintStyle
+---
 
 `FieldHintStyle` is an option for InputField that specifies the style to use for displaying the field hint.
 

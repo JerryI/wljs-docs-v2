@@ -1,4 +1,6 @@
-# GradientFittedMesh
+---
+title: GradientFittedMesh
+---
 
 `GradientFittedMesh[{p1,p2,…}]` gives a MeshRegion whose gradient best fits the normals at points p1,p2,….
 

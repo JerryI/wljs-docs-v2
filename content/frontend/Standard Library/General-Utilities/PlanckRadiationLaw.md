@@ -1,4 +1,6 @@
-# PlanckRadiationLaw
+---
+title: PlanckRadiationLaw
+---
 
 `PlanckRadiationLaw[temperature, λ]` returns the spectral radiance for the specified temperature and wavelength λ.
 

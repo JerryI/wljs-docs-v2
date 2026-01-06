@@ -1,4 +1,6 @@
-# Kernels
+---
+title: Kernels
+---
 
 `Kernels[]` gives the list of running kernels available for parallel computing.
 

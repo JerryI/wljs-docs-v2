@@ -1,4 +1,6 @@
-# GenerateSymmetricKey
+---
+title: GenerateSymmetricKey
+---
 
 `GenerateSymmetricKey[]` randomly generates a SymmetricKey object suitable for use with cryptographic functions.
 

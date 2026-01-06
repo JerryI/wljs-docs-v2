@@ -1,4 +1,6 @@
-# IsomorphicSubgraphQ
+---
+title: IsomorphicSubgraphQ
+---
 
 `IsomorphicSubgraphQ[g1, g2]` yields `True` if the graph g1 is isomorphic to a subgraph of the graph g2.
 

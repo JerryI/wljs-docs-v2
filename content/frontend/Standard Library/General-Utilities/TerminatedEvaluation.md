@@ -1,4 +1,6 @@
-# TerminatedEvaluation
+---
+title: TerminatedEvaluation
+---
 
 `TerminatedEvaluation["reason"]` represents an expression whose evaluation overran global kernel session limits and was terminated.
 

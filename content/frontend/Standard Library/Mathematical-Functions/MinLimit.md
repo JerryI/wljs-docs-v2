@@ -1,4 +1,6 @@
-# MinLimit
+---
+title: MinLimit
+---
 
 `MinLimit[f, x -> x*]` gives the min limit as x approaches x*.
 

@@ -1,4 +1,6 @@
-# ByteArray
+---
+title: ByteArray
+---
 
 `ByteArray[{b1, b2, ...}]` constructs a ByteArray object containing the byte values bi.
 

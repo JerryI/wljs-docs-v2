@@ -1,4 +1,6 @@
-# LineIntegrate
+---
+title: LineIntegrate
+---
 
 `LineIntegrate[f, {x, y, ...} ∈ curve]` computes the scalar line integral of the function f[x, y, ...] over the curve.
 

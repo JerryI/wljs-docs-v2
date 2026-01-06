@@ -1,4 +1,6 @@
-# Flatten
+---
+title: Flatten
+---
 
 `Flatten[list]` flattens out nested lists.
 

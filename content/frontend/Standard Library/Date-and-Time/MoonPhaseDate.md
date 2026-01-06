@@ -1,4 +1,6 @@
-# MoonPhaseDate
+---
+title: MoonPhaseDate
+---
 
 `MoonPhaseDate[]` returns the date of the next new moon.
 

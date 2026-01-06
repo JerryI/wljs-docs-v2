@@ -1,4 +1,6 @@
-# AiryAiPrime
+---
+title: AiryAiPrime
+---
 
 `AiryAiPrime[z]` gives the derivative of the Airy function Ai'(z).
 

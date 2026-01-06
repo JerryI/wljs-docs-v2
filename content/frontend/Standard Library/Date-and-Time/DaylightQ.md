@@ -1,4 +1,6 @@
-# DaylightQ
+---
+title: DaylightQ
+---
 
 `DaylightQ[]` gives `True` if it is currently daylight from the user's location.
 

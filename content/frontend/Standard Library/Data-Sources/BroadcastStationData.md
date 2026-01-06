@@ -1,4 +1,6 @@
-# BroadcastStationData
+---
+title: BroadcastStationData
+---
 
 `BroadcastStationData[entity, property]` gives the value of the specified property for the broadcast station entity.
 

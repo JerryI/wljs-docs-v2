@@ -1,4 +1,6 @@
-# TextContents
+---
+title: TextContents
+---
 
 `TextContents[text]` gives a dataset of information about entities, dates, quantities and other content-related elements found in text.
 

@@ -1,4 +1,6 @@
-# Perimeter
+---
+title: Perimeter
+---
 
 `Perimeter[reg]` gives the perimeter of the two-dimensional region reg.
 

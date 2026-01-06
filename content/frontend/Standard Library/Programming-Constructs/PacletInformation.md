@@ -1,4 +1,6 @@
-# PacletInformation
+---
+title: PacletInformation
+---
 
 The experimental function `PacletInformation` is now obsolete. Use `Information[PacletObject["pacletname"]]`, or property-extraction syntax like `PacletObject["pacletname"]["prop"]` or `PacletObject["pacletname"][All]` instead.
 

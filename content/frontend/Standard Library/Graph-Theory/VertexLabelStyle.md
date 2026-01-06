@@ -1,4 +1,6 @@
-# VertexLabelStyle
+---
+title: VertexLabelStyle
+---
 
 `VertexLabelStyle` is an option and property for `Graph` and related functions that specifies the style to use for vertex labels.
 

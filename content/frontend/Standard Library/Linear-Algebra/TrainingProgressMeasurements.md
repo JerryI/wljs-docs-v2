@@ -1,4 +1,6 @@
-# TrainingProgressMeasurements
+---
+title: TrainingProgressMeasurements
+---
 
 `TrainingProgressMeasurements` is an option for `NetTrain` that specifies measurements to make while training is in progress.
 

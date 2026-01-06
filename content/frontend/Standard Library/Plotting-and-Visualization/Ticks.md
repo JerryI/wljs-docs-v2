@@ -1,4 +1,6 @@
-# Ticks
+---
+title: Ticks
+---
 
 `Ticks` is an option for graphics functions that specifies tick marks for axes.
 

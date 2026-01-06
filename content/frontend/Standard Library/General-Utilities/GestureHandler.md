@@ -1,4 +1,6 @@
-# GestureHandler
+---
+title: GestureHandler
+---
 
 `GestureHandler[expr, {gesture1 -> fun1, gesture2 -> fun2, …}]` displays as `expr`, evaluating `funi[value, velocity]` whenever `"gesturei"` occurs within the screen space occupied by `expr`.
 

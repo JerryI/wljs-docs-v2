@@ -1,4 +1,6 @@
-# DiscreteVariables
+---
+title: DiscreteVariables
+---
 
 `DiscreteVariables` is an option for `NDSolve` and other functions that specifies variables that only change at discrete times in a temporal integration.
 

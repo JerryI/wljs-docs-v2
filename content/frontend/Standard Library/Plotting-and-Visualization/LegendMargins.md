@@ -1,4 +1,6 @@
-# LegendMargins
+---
+title: LegendMargins
+---
 
 `LegendMargins` is an option for legends that specifies the margins to leave around the legend.
 

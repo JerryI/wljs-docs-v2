@@ -1,4 +1,6 @@
-# Audio
+---
+title: Audio
+---
 
 `Audio[file]` represents audio stored in the given file.
 

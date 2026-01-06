@@ -1,4 +1,6 @@
-# CosineDistance
+---
+title: CosineDistance
+---
 
 `CosineDistance[u, v]` gives the angular cosine distance between vectors u and v.
 

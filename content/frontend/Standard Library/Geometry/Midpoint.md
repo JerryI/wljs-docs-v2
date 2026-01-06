@@ -1,4 +1,6 @@
-# Midpoint
+---
+title: Midpoint
+---
 
 `Midpoint[{p1,p2}]` gives the midpoint of the line segment connecting the points p1 and p2.
 

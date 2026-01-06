@@ -1,4 +1,6 @@
-# ServiceSubmit
+---
+title: ServiceSubmit
+---
 
 `ServiceSubmit[ServiceRequest[assoc]]` submits a request to be executed by an external service specified by assoc.
 

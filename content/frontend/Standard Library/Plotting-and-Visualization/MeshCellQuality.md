@@ -1,4 +1,6 @@
-# MeshCellQuality
+---
+title: MeshCellQuality
+---
 
 `MeshCellQuality` is an annotation of MeshRegion and BoundaryMeshRegion objects that gives a quality measure for mesh cells.
 

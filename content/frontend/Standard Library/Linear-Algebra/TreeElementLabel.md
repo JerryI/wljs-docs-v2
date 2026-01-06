@@ -1,4 +1,6 @@
-# TreeElementLabel
+---
+title: TreeElementLabel
+---
 
 `TreeElementLabel` is an option for `Tree` and related functions that specifies what labels should be used for subtree elements.
 

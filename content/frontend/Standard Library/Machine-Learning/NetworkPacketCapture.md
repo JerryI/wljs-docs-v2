@@ -1,4 +1,6 @@
-# NetworkPacketCapture
+---
+title: NetworkPacketCapture
+---
 
 `NetworkPacketCapture[]` creates a temporary interactive interface for capturing information on network packets transmitted or received through all network interfaces on your computer.
 

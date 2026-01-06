@@ -1,4 +1,6 @@
-# NetExternalObject
+---
+title: NetExternalObject
+---
 
 `NetExternalObject[...]` represents a net model in an external framework format.
 

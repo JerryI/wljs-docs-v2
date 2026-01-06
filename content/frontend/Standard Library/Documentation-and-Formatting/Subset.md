@@ -1,4 +1,6 @@
-# Subset
+---
+title: Subset
+---
 
 `Subset[x, y, ...]` displays as x⊂y⊂….
 

@@ -1,4 +1,6 @@
-# ListVectorDisplacementPlot3D
+---
+title: ListVectorDisplacementPlot3D
+---
 
 `ListVectorDisplacementPlot3D[{{{vx11, vy11, vz11}, ..., {vx1n, vy1n, vz1n}}, ..., {{vxm1, vym1, vzm1}, ..., {vxmn, vymn, vzmn}}}]` generates a displacement plot from an array of vector displacements {vxij, vyij, vzij}.
 

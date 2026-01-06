@@ -1,4 +1,6 @@
-# DMSList
+---
+title: DMSList
+---
 
 `DMSList[θ]` converts an angle θ given in decimal degrees to a DMS list {degree, minute, second}.
 

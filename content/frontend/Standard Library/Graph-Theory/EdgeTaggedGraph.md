@@ -1,4 +1,6 @@
-# EdgeTaggedGraph
+---
+title: EdgeTaggedGraph
+---
 
 `EdgeTaggedGraph[{e1, e2, ...}]` yields a graph with edges ej tagged with unique tags.
 

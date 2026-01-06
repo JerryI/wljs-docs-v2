@@ -1,4 +1,6 @@
-# Orange
+---
+title: Orange
+---
 
 `Orange` represents the color orange in graphics or style specifications.
 

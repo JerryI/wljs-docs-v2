@@ -1,4 +1,6 @@
-# ClassifierMeasurements
+---
+title: ClassifierMeasurements
+---
 
 `ClassifierMeasurements[classifier, testset, prop]` gives measurements associated with property prop when classifier is evaluated on testset.
 

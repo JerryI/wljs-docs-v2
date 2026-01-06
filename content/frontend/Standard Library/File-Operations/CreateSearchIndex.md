@@ -1,4 +1,6 @@
-# CreateSearchIndex
+---
+title: CreateSearchIndex
+---
 
 `CreateSearchIndex[dir]` creates a search index from all files in the directory dir and its subdirectories.
 

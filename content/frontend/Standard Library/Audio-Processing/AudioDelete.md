@@ -1,4 +1,6 @@
-# AudioDelete
+---
+title: AudioDelete
+---
 
 `AudioDelete[audio, t]` deletes the first t seconds of audio.
 

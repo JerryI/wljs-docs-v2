@@ -1,4 +1,6 @@
-# StartOfLine
+---
+title: StartOfLine
+---
 
 `StartOfLine` represents the start of a line in a string for purposes of matching in `StringExpression`.
 

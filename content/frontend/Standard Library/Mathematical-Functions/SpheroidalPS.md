@@ -1,4 +1,6 @@
-# SpheroidalPS
+---
+title: SpheroidalPS
+---
 
 `SpheroidalPS[n, m, γ, z]` gives the angular spheroidal function PSn,m(γ, z) of the first kind.
 

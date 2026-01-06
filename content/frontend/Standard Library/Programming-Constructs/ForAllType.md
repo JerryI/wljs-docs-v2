@@ -1,4 +1,6 @@
-# ForAllType
+---
+title: ForAllType
+---
 
 `ForAllType[x, type]` represents a type parameterized by x.
 

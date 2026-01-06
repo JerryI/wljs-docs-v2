@@ -1,4 +1,6 @@
-# NightHemisphere
+---
+title: NightHemisphere
+---
 
 `NightHemisphere[]` is a two-dimensional GeoGraphics primitive that represents the half of the Earth currently in darkness.
 

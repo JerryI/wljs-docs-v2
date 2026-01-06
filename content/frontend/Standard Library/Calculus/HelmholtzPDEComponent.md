@@ -1,4 +1,6 @@
-# HelmholtzPDEComponent
+---
+title: HelmholtzPDEComponent
+---
 
 `HelmholtzPDEComponent[vars,pars]` yields a Helmholtz PDE term ∇2{x1,…,xn}u+k2u with model variables vars and model parameters pars.
 

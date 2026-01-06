@@ -1,4 +1,6 @@
-# DateHistogram
+---
+title: DateHistogram
+---
 
 `DateHistogram[{date1,date2,…}]` plots a histogram of the dates datei.
 

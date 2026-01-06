@@ -1,4 +1,6 @@
-# Variables
+---
+title: Variables
+---
 
 `Variables[poly]` gives a list of all independent variables in a polynomial.
 

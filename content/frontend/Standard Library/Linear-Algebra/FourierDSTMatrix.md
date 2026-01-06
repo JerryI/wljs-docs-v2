@@ -1,4 +1,6 @@
-# FourierDSTMatrix
+---
+title: FourierDSTMatrix
+---
 
 `FourierDSTMatrix[n]` returns an n×n discrete sine transform matrix of type 2.
 

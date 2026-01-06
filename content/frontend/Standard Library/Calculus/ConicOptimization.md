@@ -1,4 +1,6 @@
-# ConicOptimization
+---
+title: ConicOptimization
+---
 
 `ConicOptimization[f, cons, vars]` finds values of variables vars that minimize the linear objective f subject to conic constraints cons.
 

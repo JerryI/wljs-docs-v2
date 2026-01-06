@@ -1,4 +1,6 @@
-# DSolve
+---
+title: DSolve
+---
 
 `DSolve[eqn, u, x]` solves a differential equation for the function u with independent variable x.
 

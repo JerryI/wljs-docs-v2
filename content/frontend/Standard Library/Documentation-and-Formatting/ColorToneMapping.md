@@ -1,4 +1,6 @@
-# ColorToneMapping
+---
+title: ColorToneMapping
+---
 
 `ColorToneMapping[image]` applies a tone mapping to color values in image so as to make variations of luminance visible even in small intervals of the dynamic range.
 

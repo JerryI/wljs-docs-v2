@@ -1,4 +1,6 @@
-# TextSearchReport
+---
+title: TextSearchReport
+---
 
 `TextSearchReport[source, form]` gives a structured report of files referenced by source that contain text matching form.
 

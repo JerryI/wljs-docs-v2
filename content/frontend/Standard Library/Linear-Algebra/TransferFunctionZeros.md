@@ -1,4 +1,6 @@
-# TransferFunctionZeros
+---
+title: TransferFunctionZeros
+---
 
 `TransferFunctionZeros[tfm]` gives a matrix of roots of the numerators in the TransferFunctionModel tfm.
 

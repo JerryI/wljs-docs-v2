@@ -1,4 +1,6 @@
-# DirichletEta
+---
+title: DirichletEta
+---
 
 `DirichletEta[s]` gives the Dirichlet eta function η(s).
 

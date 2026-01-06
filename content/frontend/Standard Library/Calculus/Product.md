@@ -1,4 +1,6 @@
-# Product
+---
+title: Product
+---
 
 `Product[f, {i, imin, imax}]` evaluates the product of f as i ranges from imin to imax.
 

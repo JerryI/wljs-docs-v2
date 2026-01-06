@@ -1,4 +1,6 @@
-# GeoVectorXYZ
+---
+title: GeoVectorXYZ
+---
 
 `GeoVectorXYZ[loc->{vX,vY,vZ}]` represents a three-dimensional vector of Cartesian components vX, vY, vZ in an orthonormal frame parallel to the geocentric frame, at location loc.
 

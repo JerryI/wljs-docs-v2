@@ -1,4 +1,6 @@
-# LegendLabel
+---
+title: LegendLabel
+---
 
 `LegendLabel` is an option for legends that specifies an overall label for a legend.
 

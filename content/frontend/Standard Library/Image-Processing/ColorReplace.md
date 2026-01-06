@@ -1,4 +1,6 @@
-# ColorReplace
+---
+title: ColorReplace
+---
 
 `ColorReplace[image, color]` finds regions in image whose pixel values are similar to color and replaces them with transparent pixels.
 

@@ -1,4 +1,6 @@
-# AiryAi
+---
+title: AiryAi
+---
 
 `AiryAi[z]` gives the Airy function Ai(z).
 

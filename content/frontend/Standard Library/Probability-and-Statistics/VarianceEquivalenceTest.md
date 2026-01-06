@@ -1,4 +1,6 @@
-# VarianceEquivalenceTest
+---
+title: VarianceEquivalenceTest
+---
 
 `VarianceEquivalenceTest[{data1,data2,…}]` tests whether the variances of the datai are equal.
 

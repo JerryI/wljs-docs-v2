@@ -1,4 +1,6 @@
-# KeyCollisionFunction
+---
+title: KeyCollisionFunction
+---
 
 `KeyCollisionFunction` is an option for `JoinAcross` that specifies how to handle pairs of elements that are not being joined but nevertheless have the same key.
 

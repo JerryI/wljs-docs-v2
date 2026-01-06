@@ -1,4 +1,6 @@
-# EndOfLine
+---
+title: EndOfLine
+---
 
 `EndOfLine` represents the end of a line in a string for purposes of matching in `StringExpression`.
 

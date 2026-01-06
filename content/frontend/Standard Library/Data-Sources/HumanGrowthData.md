@@ -1,4 +1,6 @@
-# HumanGrowthData
+---
+title: HumanGrowthData
+---
 
 `HumanGrowthData[spec]` returns the range of values within one standard deviation of the mean for all properties of human growth at the specification spec.
 

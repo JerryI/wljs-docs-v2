@@ -1,4 +1,6 @@
-# ObjectExistsQ
+---
+title: ObjectExistsQ
+---
 
 `ObjectExistsQ` is a system symbol for checking if an object exists.
 

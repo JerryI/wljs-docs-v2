@@ -1,4 +1,6 @@
-# RemoteKernelObject
+---
+title: RemoteKernelObject
+---
 
 `RemoteKernelObject[spec]` specifies a remote kernel that can be used for `RemoteEvaluate` or `LaunchKernels`.
 

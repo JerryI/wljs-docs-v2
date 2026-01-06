@@ -1,4 +1,6 @@
-# JarqueBeraALMTest
+---
+title: JarqueBeraALMTest
+---
 
 `JarqueBeraALMTest[data]` tests whether data is normally distributed using the Jarque–Bera ALM test.
 

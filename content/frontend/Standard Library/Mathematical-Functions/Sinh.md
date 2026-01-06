@@ -1,4 +1,6 @@
-# Sinh
+---
+title: Sinh
+---
 
 `Sinh[z]` gives the hyperbolic sine of `z`, defined as $(e^z - e^{-z})/2$.
 

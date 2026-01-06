@@ -1,4 +1,6 @@
-# ArcCoth
+---
+title: ArcCoth
+---
 
 `ArcCoth[z]` gives the inverse hyperbolic cotangent coth⁻¹(z) of the complex number z.
 

@@ -1,4 +1,6 @@
-# ResourceUpdate
+---
+title: ResourceUpdate
+---
 
 `ResourceUpdate[resource]` updates to the latest version of the specified resource object.
 

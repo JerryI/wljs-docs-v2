@@ -1,4 +1,6 @@
-# FreeQ
+---
+title: FreeQ
+---
 
 `FreeQ[expr, form]` yields `True` if no subexpression in expr matches form, and `False` otherwise.
 

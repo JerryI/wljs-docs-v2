@@ -1,4 +1,6 @@
-# PIDDerivativeFilter
+---
+title: PIDDerivativeFilter
+---
 
 `PIDDerivativeFilter` is an option to `PIDTune` that controls the filtering used for derivative terms.
 

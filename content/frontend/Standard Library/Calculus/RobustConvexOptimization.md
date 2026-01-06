@@ -1,4 +1,6 @@
-# RobustConvexOptimization
+---
+title: RobustConvexOptimization
+---
 
 `RobustConvexOptimization[f, ForAll[pars, pcons, vcons], vars]` finds values of vars that give the minimum value of f for vars that satisfy the constraints vcons for all possible values of the parameters pars that satisfy the parametric constraints pcons.
 

@@ -1,4 +1,6 @@
-# ShortTimeFourier
+---
+title: ShortTimeFourier
+---
 
 `ShortTimeFourier[data]` returns the short-time Fourier transform (STFT) of data as a ShortTimeFourierData object.
 

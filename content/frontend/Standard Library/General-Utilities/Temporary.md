@@ -1,4 +1,6 @@
-# Temporary
+---
+title: Temporary
+---
 
 `Temporary` is an attribute assigned to symbols which are created as local variables by Module.
 

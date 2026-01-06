@@ -1,4 +1,6 @@
-# Transliterate
+---
+title: Transliterate
+---
 
 `Transliterate["string"]` attempts to transliterate string into plain ASCII.
 

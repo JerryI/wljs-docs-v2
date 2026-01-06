@@ -1,4 +1,6 @@
-# Arrays
+---
+title: Arrays
+---
 
 `Arrays[{d1, ..., dr}]` represents the domain of arrays of rank r and dimensions di.
 

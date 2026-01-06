@@ -1,4 +1,6 @@
-# ClearAttributes
+---
+title: ClearAttributes
+---
 
 `ClearAttributes[symbol, attr]` removes attr from the list of attributes of the symbol.
 

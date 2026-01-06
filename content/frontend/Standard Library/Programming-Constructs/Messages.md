@@ -1,4 +1,6 @@
-# Messages
+---
+title: Messages
+---
 
 `Messages[symbol]` gives all the messages assigned to a particular symbol.
 

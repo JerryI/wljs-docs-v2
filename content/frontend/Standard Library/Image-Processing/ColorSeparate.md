@@ -1,4 +1,6 @@
-# ColorSeparate
+---
+title: ColorSeparate
+---
 
 `ColorSeparate[image]` gives a list of single-channel images corresponding to each of the color channels in image.
 

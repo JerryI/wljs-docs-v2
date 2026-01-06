@@ -1,4 +1,6 @@
-# GroupCentralizer
+---
+title: GroupCentralizer
+---
 
 `GroupCentralizer[group, g]` returns the centralizer of the element `g` in `group`.
 

@@ -1,4 +1,6 @@
-# RegionCentroid
+---
+title: RegionCentroid
+---
 
 `RegionCentroid[reg]` gives the centroid of the region.
 

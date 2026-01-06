@@ -1,4 +1,6 @@
-# LocationTest
+---
+title: LocationTest
+---
 
 `LocationTest[data]` tests whether the mean or median of the data is zero.
 

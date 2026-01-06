@@ -1,4 +1,6 @@
-# VertexLabels
+---
+title: VertexLabels
+---
 
 `VertexLabels` is an option and annotation for `Graph` and related functions that specifies what labels and label positions should be used for vertices.
 

@@ -1,4 +1,6 @@
-# DedekindEta
+---
+title: DedekindEta
+---
 
 `DedekindEta[τ]` gives the Dedekind eta modular elliptic function η(τ).
 

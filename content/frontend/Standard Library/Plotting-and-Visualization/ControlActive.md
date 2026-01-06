@@ -1,4 +1,6 @@
-# ControlActive
+---
+title: ControlActive
+---
 
 `ControlActive[act, norm]` evaluates to act if a control that affects act is actively being used, and to norm otherwise.
 

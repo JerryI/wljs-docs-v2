@@ -1,4 +1,6 @@
-# UtilityFunction
+---
+title: UtilityFunction
+---
 
 `UtilityFunction` is an option for `Predict`, `Classify`, and related functions that specifies the utility value to assign to each possible pairing of actual and predicted values.
 

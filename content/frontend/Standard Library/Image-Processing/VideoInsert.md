@@ -1,4 +1,6 @@
-# VideoInsert
+---
+title: VideoInsert
+---
 
 `VideoInsert[video, t -> new]` inserts the video new at time t.
 

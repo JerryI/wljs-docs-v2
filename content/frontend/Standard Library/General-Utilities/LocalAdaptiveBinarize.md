@@ -1,4 +1,6 @@
-# LocalAdaptiveBinarize
+---
+title: LocalAdaptiveBinarize
+---
 
 `LocalAdaptiveBinarize[image, r]` creates a binary image from image by replacing values above the mean of the range-r neighborhood with 1 and others with 0.
 

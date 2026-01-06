@@ -1,4 +1,6 @@
-# Tree
+---
+title: Tree
+---
 
 `Tree[{subtree1, subtree2, ...}]` represents a tree with a list of child subtrees subtreei.
 

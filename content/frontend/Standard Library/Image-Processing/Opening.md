@@ -1,4 +1,6 @@
-# Opening
+---
+title: Opening
+---
 
 `Opening[image, ker]` gives the morphological opening of image with respect to the structuring element ker.
 

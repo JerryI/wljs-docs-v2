@@ -1,4 +1,6 @@
-# RegisterExternalEvaluator
+---
+title: RegisterExternalEvaluator
+---
 
 `RegisterExternalEvaluator[sys, evaluator]` registers the *evaluator* for use as an external evaluator with the language or system *sys*.
 

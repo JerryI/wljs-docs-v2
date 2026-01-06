@@ -1,4 +1,6 @@
-# FlowPolynomial
+---
+title: FlowPolynomial
+---
 
 `FlowPolynomial[g, k]` gives the flow polynomial of the graph g.
 

@@ -1,4 +1,6 @@
-# Inactivate
+---
+title: Inactivate
+---
 
 `Inactivate[expr]` replaces all instances of *f* with `Inactive[f]` for symbols *f* used as heads in *expr*.
 

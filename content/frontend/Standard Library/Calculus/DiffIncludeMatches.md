@@ -1,4 +1,6 @@
-# DiffIncludeMatches
+---
+title: DiffIncludeMatches
+---
 
 `DiffIncludeMatches` is an option for `Diff` and related functions that specifies whether to include matching data in the resulting `DiffObject`.
 

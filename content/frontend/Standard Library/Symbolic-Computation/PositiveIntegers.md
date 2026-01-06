@@ -1,4 +1,6 @@
-# PositiveIntegers
+---
+title: PositiveIntegers
+---
 
 `PositiveIntegers` represents the domain of strictly positive integers, as in x ∈ PositiveIntegers.
 

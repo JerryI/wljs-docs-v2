@@ -1,4 +1,6 @@
-# EdgeTaggedGraphQ
+---
+title: EdgeTaggedGraphQ
+---
 
 `EdgeTaggedGraphQ[g]` yields True if the graph g has edges tagged and False otherwise.
 

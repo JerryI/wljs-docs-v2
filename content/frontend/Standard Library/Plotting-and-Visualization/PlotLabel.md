@@ -1,4 +1,6 @@
-# PlotLabel
+---
+title: PlotLabel
+---
 
 `PlotLabel` is an option that specifies an overall title/label for a plot.
 

@@ -1,4 +1,6 @@
-# UnlabeledTree
+---
+title: UnlabeledTree
+---
 
 `UnlabeledTree[tree]` returns a tree of the same shape as tree in which the nodes and edges are displayed without labels.
 

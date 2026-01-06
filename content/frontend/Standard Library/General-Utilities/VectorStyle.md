@@ -1,4 +1,6 @@
-# VectorStyle
+---
+title: VectorStyle
+---
 
 `VectorStyle` is an option to `VectorPlot`, `ListVectorPlot`, and related functions that determines the style to use for drawing field vectors.
 

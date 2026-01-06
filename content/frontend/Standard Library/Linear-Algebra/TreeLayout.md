@@ -1,4 +1,6 @@
-# TreeLayout
+---
+title: TreeLayout
+---
 
 `TreeLayout` is an option to `Tree` and related functions that specifies what layout to use.
 

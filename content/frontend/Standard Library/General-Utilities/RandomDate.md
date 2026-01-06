@@ -1,4 +1,6 @@
-# RandomDate
+---
+title: RandomDate
+---
 
 `RandomDate[]` gives a pseudorandom date in the current calendar year.
 

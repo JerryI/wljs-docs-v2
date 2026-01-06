@@ -1,4 +1,6 @@
-# URL
+---
+title: URL
+---
 
 `URL["url"]` is a symbolic representation of a URL.
 

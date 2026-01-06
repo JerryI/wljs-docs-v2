@@ -1,4 +1,6 @@
-# FunctionDeclaration
+---
+title: FunctionDeclaration
+---
 
 `FunctionDeclaration[name, typedfun]` declares name to be a typed function suitable for use in a compiler environment.
 

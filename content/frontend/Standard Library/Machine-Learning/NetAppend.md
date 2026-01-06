@@ -1,4 +1,6 @@
-# NetAppend
+---
+title: NetAppend
+---
 
 `NetAppend[net, layer]` appends a layer or a net onto a `NetChain`, a layer or a `NetGraph` with one output port.
 

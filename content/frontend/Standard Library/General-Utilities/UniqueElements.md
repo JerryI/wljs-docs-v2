@@ -1,4 +1,6 @@
-# UniqueElements
+---
+title: UniqueElements
+---
 
 `UniqueElements[{list1, list2, ...}]` gives the elements for each listi that are not in any other list.
 

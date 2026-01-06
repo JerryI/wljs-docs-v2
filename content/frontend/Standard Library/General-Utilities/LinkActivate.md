@@ -1,4 +1,6 @@
-# LinkActivate
+---
+title: LinkActivate
+---
 
 `LinkActivate[lnk]` activates a WSTP connection, waiting for the program at the other end to respond.
 

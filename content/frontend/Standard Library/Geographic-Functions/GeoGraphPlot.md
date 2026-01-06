@@ -1,4 +1,6 @@
-# GeoGraphPlot
+---
+title: GeoGraphPlot
+---
 
 `GeoGraphPlot[{e1, e2, …}]` generates a plot of the geographic graph with edges `ei`.
 

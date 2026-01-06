@@ -1,4 +1,6 @@
-# HarmonicNumber
+---
+title: HarmonicNumber
+---
 
 `HarmonicNumber[n]` gives the nth harmonic number Hn.
 

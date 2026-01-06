@@ -1,4 +1,6 @@
-# ConformAudio
+---
+title: ConformAudio
+---
 
 `ConformAudio[{audio1, audio2, ...}]` returns a list of audio objects where all audioi are made to have conforming properties, including duration, data type, and number of channels.
 

@@ -1,4 +1,6 @@
-# SuzukiDistribution
+---
+title: SuzukiDistribution
+---
 
 `SuzukiDistribution[μ, ν]` represents the Suzuki distribution with shape parameters μ and ν.
 

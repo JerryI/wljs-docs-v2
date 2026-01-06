@@ -1,4 +1,6 @@
-# CreateDataStructure
+---
+title: CreateDataStructure
+---
 
 `CreateDataStructure["type", arg1, arg2, ...]` creates a data structure with the specified type.
 

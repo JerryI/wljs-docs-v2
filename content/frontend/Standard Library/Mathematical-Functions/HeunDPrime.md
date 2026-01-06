@@ -1,4 +1,6 @@
-# HeunDPrime
+---
+title: HeunDPrime
+---
 
 `HeunDPrime[q, α, γ, δ, ϵ, z]` gives the z-derivative of the `HeunD` function.
 

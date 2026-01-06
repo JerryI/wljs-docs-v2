@@ -1,4 +1,6 @@
-# LongLeftArrow
+---
+title: LongLeftArrow
+---
 
 `LongLeftArrow[x, y, …]` displays as x⟵y⟵….
 

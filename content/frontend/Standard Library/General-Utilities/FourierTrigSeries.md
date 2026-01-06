@@ -1,4 +1,6 @@
-# FourierTrigSeries
+---
+title: FourierTrigSeries
+---
 
 `FourierTrigSeries[expr, t, n]` gives the nth-order Fourier trigonometric series expansion of expr in t.
 

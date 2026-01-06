@@ -1,4 +1,6 @@
-# LinkReadHeld
+---
+title: LinkReadHeld
+---
 
 `LinkReadHeld[link]` reads an expression via WSTP from link and returns it wrapped in Hold.
 

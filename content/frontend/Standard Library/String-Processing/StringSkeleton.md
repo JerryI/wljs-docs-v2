@@ -1,4 +1,6 @@
-# StringSkeleton
+---
+title: StringSkeleton
+---
 
 `StringSkeleton[n]` represents a sequence of n omitted characters in a string printed with `Short`. The standard print form for StringSkeleton is an ellipsis.
 

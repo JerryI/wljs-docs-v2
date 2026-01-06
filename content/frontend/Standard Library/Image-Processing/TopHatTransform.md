@@ -1,4 +1,6 @@
-# TopHatTransform
+---
+title: TopHatTransform
+---
 
 `TopHatTransform[image, ker]` gives the morphological top-hat transform of *image* with respect to structuring element *ker*.
 

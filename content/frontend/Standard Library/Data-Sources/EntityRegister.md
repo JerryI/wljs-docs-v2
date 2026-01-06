@@ -1,4 +1,6 @@
-# EntityRegister
+---
+title: EntityRegister
+---
 
 `EntityRegister[estore]` registers the entities in the entity store estore so that they can be accessed directly using Entity.
 

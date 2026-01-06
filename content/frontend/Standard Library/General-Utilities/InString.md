@@ -1,4 +1,6 @@
-# InString
+---
+title: InString
+---
 
 `InString[n]` is a global object that is assigned to be the text of the nth input line.
 

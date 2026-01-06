@@ -1,4 +1,6 @@
-# CallPacket
+---
+title: CallPacket
+---
 
 `CallPacket[integer, list]` is a WSTP packet encapsulating a request to invoke the external function numbered integer with the arguments contained in list.
 

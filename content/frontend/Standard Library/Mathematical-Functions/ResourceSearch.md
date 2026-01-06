@@ -1,4 +1,6 @@
-# ResourceSearch
+---
+title: ResourceSearch
+---
 
 `ResourceSearch[form]` gives a dataset of resources that contain text matching *form*.
 

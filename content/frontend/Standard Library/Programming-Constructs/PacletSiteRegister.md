@@ -1,4 +1,6 @@
-# PacletSiteRegister
+---
+title: PacletSiteRegister
+---
 
 `PacletSiteRegister[url]` registers url as a known paclet site.
 

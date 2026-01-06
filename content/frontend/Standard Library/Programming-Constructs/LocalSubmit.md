@@ -1,4 +1,6 @@
-# LocalSubmit
+---
+title: LocalSubmit
+---
 
 `LocalSubmit[expr]` submits a task to evaluate expr in a separate kernel.
 

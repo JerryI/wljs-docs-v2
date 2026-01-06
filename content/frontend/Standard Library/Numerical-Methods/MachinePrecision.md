@@ -1,4 +1,6 @@
-# MachinePrecision
+---
+title: MachinePrecision
+---
 
 `MachinePrecision` is a symbol used to indicate machine-number precision.
 

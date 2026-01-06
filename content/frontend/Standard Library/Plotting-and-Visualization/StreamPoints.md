@@ -1,4 +1,6 @@
-# StreamPoints
+---
+title: StreamPoints
+---
 
 `StreamPoints` is an option to `StreamPlot`, `ListStreamPlot`, and related functions that determines how many streamlines to draw.
 

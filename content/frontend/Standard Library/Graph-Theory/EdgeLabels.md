@@ -1,4 +1,6 @@
-# EdgeLabels
+---
+title: EdgeLabels
+---
 
 `EdgeLabels` is an option and annotation for `Graph` and related functions that specifies what labels and label positions should be used for edges.
 

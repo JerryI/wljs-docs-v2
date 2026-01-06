@@ -1,4 +1,6 @@
-# CalendarType
+---
+title: CalendarType
+---
 
 `CalendarType` is an option that determines the calendar system in which all dates are to be interpreted and output.
 

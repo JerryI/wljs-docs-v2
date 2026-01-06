@@ -1,4 +1,6 @@
-# SphericalShell
+---
+title: SphericalShell
+---
 
 `SphericalShell[c, {rinner, router}]` represents a filled spherical shell centered at c with inner radius rinner and outer radius router.
 

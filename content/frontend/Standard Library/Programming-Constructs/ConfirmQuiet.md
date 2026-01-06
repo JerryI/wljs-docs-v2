@@ -1,4 +1,6 @@
-# ConfirmQuiet
+---
+title: ConfirmQuiet
+---
 
 `ConfirmQuiet[expr]` confirms that no messages are generated during the evaluation of expr, otherwise quieting them and throwing an error to the nearest surrounding Enclose.
 

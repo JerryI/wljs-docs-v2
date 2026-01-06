@@ -1,4 +1,6 @@
-# TriangleConstruct
+---
+title: TriangleConstruct
+---
 
 `TriangleConstruct[tri, type]` gives the specified type of construct for the triangle tri.
 

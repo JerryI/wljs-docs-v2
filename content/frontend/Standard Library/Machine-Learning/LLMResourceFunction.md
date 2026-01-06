@@ -1,4 +1,6 @@
-# LLMResourceFunction
+---
+title: LLMResourceFunction
+---
 
 `LLMResourceFunction["name"]` retrieves an LLMFunction with the specified name.
 

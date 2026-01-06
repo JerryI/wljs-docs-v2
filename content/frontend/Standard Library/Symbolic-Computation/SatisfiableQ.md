@@ -1,4 +1,6 @@
-# SatisfiableQ
+---
+title: SatisfiableQ
+---
 
 `SatisfiableQ[bf]` gives True if a combination of values of variables exists that makes the Boolean function bf yield True.
 

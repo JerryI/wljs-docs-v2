@@ -1,4 +1,6 @@
-# MaxItems
+---
+title: MaxItems
+---
 
 `MaxItems` is an option that specifies the maximum number of items to be used or shown.
 

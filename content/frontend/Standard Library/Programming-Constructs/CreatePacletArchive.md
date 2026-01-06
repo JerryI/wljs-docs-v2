@@ -1,4 +1,6 @@
-# CreatePacletArchive
+---
+title: CreatePacletArchive
+---
 
 `CreatePacletArchive[source]` creates a paclet archive file from source.
 

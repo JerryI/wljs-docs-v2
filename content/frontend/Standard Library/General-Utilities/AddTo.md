@@ -1,4 +1,6 @@
-# AddTo
+---
+title: AddTo
+---
 
 `x += dx` adds dx to x and returns the new value of x.
 

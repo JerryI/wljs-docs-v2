@@ -1,4 +1,6 @@
-# SliceContourPlot3D
+---
+title: SliceContourPlot3D
+---
 
 `SliceContourPlot3D[f,surf,{x,xmin,xmax},{y,ymin,ymax},{z,zmin,zmax}]` generates a contour plot of f over the slice surface surf as a function of x, y, and z.
 

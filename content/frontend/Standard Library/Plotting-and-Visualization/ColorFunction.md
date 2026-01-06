@@ -1,4 +1,6 @@
-# ColorFunction
+---
+title: ColorFunction
+---
 
 `ColorFunction` is an option for graphics functions that specifies a function to apply to determine colors of elements.
 

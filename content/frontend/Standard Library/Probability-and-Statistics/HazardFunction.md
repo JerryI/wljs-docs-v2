@@ -1,4 +1,6 @@
-# HazardFunction
+---
+title: HazardFunction
+---
 
 `HazardFunction[dist, x]` gives the hazard function for the distribution dist evaluated at x.
 

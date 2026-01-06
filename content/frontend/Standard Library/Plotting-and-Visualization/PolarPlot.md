@@ -1,4 +1,6 @@
-# PolarPlot
+---
+title: PolarPlot
+---
 
 `PolarPlot[r, {θ, θmin, θmax}]` generates a polar plot of a curve with radius r as a function of angle θ.
 

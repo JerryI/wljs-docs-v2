@@ -1,4 +1,6 @@
-# AlgebraicNumberDenominator
+---
+title: AlgebraicNumberDenominator
+---
 
 `AlgebraicNumberDenominator[a]` gives the smallest positive integer n such that n*a is an algebraic integer.
 

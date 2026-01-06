@@ -1,4 +1,6 @@
-# ReactionBalance
+---
+title: ReactionBalance
+---
 
 `ReactionBalance[rxn]` returns a version of the reaction rxn in which the stoichiometric coefficients for elements in the reactants and products are balanced.
 

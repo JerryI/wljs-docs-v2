@@ -1,4 +1,6 @@
-# ResamplingMethod
+---
+title: ResamplingMethod
+---
 
 `ResamplingMethod` is an option for functions such as `TemporalData` and `MovingMap` that specifies how values in between given times should be computed.
 

@@ -1,4 +1,6 @@
-# StringByteCount
+---
+title: StringByteCount
+---
 
 `StringByteCount["string"]` gives the total number of bytes used to store the characters in a string.
 

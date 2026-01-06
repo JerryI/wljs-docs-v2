@@ -1,4 +1,6 @@
-# LegendMarkerSize
+---
+title: LegendMarkerSize
+---
 
 `LegendMarkerSize` is an option for legends such as `PointLegend` that specifies the size of marker regions for each element.
 

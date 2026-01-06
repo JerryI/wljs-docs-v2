@@ -1,4 +1,6 @@
-# RegularPolygon
+---
+title: RegularPolygon
+---
 
 `RegularPolygon[n]` gives the regular polygon with n vertices equally spaced around the unit circle.
 

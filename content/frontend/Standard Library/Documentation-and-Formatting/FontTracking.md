@@ -1,4 +1,6 @@
-# FontTracking
+---
+title: FontTracking
+---
 
 `FontTracking` is an option for Style and Cell that specifies how condensed or expanded the font in which text is rendered should be.
 

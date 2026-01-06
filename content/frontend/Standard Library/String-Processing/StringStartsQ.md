@@ -1,4 +1,6 @@
-# StringStartsQ
+---
+title: StringStartsQ
+---
 
 `StringStartsQ["string", patt]` yields `True` if the beginning of the string matches the pattern.
 

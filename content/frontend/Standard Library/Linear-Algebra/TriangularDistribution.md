@@ -1,4 +1,6 @@
-# TriangularDistribution
+---
+title: TriangularDistribution
+---
 
 `TriangularDistribution[{min, max}]` represents a symmetric triangular statistical distribution giving values between min and max.
 

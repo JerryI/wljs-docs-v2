@@ -1,4 +1,6 @@
-# JacobiND
+---
+title: JacobiND
+---
 
 `JacobiND[u, m]` gives the Jacobi elliptic function nd(u|m).
 

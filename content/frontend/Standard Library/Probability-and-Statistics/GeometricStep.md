@@ -1,4 +1,6 @@
-# GeometricStep
+---
+title: GeometricStep
+---
 
 `GeometricStep[{hyp1, hyp2, …}]` gives a symbolic representation of a step in the definition of a geometric scene, in which the hypotheses `hypi` are introduced.
 

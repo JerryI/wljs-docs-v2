@@ -1,4 +1,6 @@
-# InterpolatingPolynomial
+---
+title: InterpolatingPolynomial
+---
 
 `InterpolatingPolynomial[{{x1, f1}, {x2, f2}, ...}, x]` constructs a polynomial in x passing through the given points.
 

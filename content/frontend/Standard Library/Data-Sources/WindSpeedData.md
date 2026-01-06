@@ -1,4 +1,6 @@
-# WindSpeedData
+---
+title: WindSpeedData
+---
 
 `WindSpeedData[]` gives the most recent measurement for wind speed near the current location.
 

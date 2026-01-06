@@ -1,4 +1,6 @@
-# BooleanMaxterms
+---
+title: BooleanMaxterms
+---
 
 `BooleanMaxterms[k, n]` represents the kth maxterm in n variables.
 

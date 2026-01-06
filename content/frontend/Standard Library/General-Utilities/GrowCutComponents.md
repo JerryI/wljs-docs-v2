@@ -1,4 +1,6 @@
-# GrowCutComponents
+---
+title: GrowCutComponents
+---
 
 `GrowCutComponents[image, {marker1, marker2, …}]` creates a segmentation from image by growing each markeri.
 

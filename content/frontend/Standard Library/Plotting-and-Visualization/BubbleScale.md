@@ -1,4 +1,6 @@
-# BubbleScale
+---
+title: BubbleScale
+---
 
 `BubbleScale` is an option to `BubbleChart` and related functions that specifies how the scale of each bubble should be determined from the value of each data element.
 

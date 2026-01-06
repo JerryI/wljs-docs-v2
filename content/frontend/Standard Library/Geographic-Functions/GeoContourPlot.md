@@ -1,4 +1,6 @@
-# GeoContourPlot
+---
+title: GeoContourPlot
+---
 
 `GeoContourPlot[{loc1 -> val1, loc2 -> val2, …}]` makes a geo contour plot from values `vali` defined at specified locations `loci`.
 

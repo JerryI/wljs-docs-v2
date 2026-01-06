@@ -1,4 +1,6 @@
-# ImplicitRegion
+---
+title: ImplicitRegion
+---
 
 `ImplicitRegion[cond, {x1, ..., xn}]` represents a region that satisfies the conditions cond.
 

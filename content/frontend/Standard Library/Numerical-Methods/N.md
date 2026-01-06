@@ -1,4 +1,6 @@
-# N
+---
+title: N
+---
 
 `N[expr]` gives the numerical value of expr.
 

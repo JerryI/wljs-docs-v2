@@ -1,4 +1,6 @@
-# BrownianBridgeProcess
+---
+title: BrownianBridgeProcess
+---
 
 `BrownianBridgeProcess[σ, {t1, a}, {t2, b}]` represents the Brownian bridge process from value a at time t1 to value b at time t2 with volatility σ.
 

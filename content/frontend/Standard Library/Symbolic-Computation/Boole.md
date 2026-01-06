@@ -1,4 +1,6 @@
-# Boole
+---
+title: Boole
+---
 
 `Boole[expr]` yields 1 if expr is True and 0 if it is False.
 

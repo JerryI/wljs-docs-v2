@@ -1,4 +1,6 @@
-# ArcCscDegrees
+---
+title: ArcCscDegrees
+---
 
 `ArcCscDegrees[z]` gives the arc cosecant in degrees of the complex number z.
 

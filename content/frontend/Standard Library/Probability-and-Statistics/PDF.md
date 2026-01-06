@@ -1,4 +1,6 @@
-# PDF
+---
+title: PDF
+---
 
 `PDF[dist, x]` gives the probability density function for distribution dist evaluated at x.
 

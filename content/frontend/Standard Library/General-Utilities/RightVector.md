@@ -1,4 +1,6 @@
-# RightVector
+---
+title: RightVector
+---
 
 `RightVector[x, y, ...]` displays as x⇀y⇀….
 

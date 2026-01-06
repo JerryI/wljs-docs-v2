@@ -1,4 +1,6 @@
-# LogLogisticDistribution
+---
+title: LogLogisticDistribution
+---
 
 `LogLogisticDistribution[γ, σ]` represents a log-logistic distribution with shape parameter γ and scale parameter σ.
 

@@ -1,4 +1,6 @@
-# InstanceNormalizationLayer
+---
+title: InstanceNormalizationLayer
+---
 
 `InstanceNormalizationLayer[]` is equivalent to `NormalizationLayer[]`.
 

@@ -1,4 +1,6 @@
-# DistanceFunction
+---
+title: DistanceFunction
+---
 
 `DistanceFunction` is an option for functions such as `Nearest` that specifies the distance value to assume between any two specified points.
 

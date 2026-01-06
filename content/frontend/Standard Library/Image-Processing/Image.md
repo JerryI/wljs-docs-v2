@@ -1,4 +1,6 @@
-# Image
+---
+title: Image
+---
 
 `Image[data]` represents a raster image with pixel values given by the array data.
 

@@ -1,4 +1,6 @@
-# FindMinimumCostFlow
+---
+title: FindMinimumCostFlow
+---
 
 `FindMinimumCostFlow[g,{sd1,sd2,…}]` finds the minimum cost flow in the graph g with sd1, sd2, … vertex supplies or demands.
 

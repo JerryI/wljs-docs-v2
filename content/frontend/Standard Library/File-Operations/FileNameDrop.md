@@ -1,4 +1,6 @@
-# FileNameDrop
+---
+title: FileNameDrop
+---
 
 `FileNameDrop["name", n]` drops the first n path elements.
 

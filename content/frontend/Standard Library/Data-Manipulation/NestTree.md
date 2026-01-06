@@ -1,4 +1,6 @@
-# NestTree
+---
+title: NestTree
+---
 
 `NestTree[f,tree]` adds children to each leaf of tree, with f[expr] giving the list of data for the new children of a leaf with data expr.
 

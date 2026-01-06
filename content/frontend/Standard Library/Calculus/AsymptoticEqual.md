@@ -1,4 +1,6 @@
-# AsymptoticEqual
+---
+title: AsymptoticEqual
+---
 
 `AsymptoticEqual[f, g, x -> x*]` gives conditions for f(x) ≍ g(x) or f(x) ∈ Θ(g(x)) as x -> x*.
 

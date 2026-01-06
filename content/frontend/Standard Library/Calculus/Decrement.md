@@ -1,4 +1,6 @@
-# Decrement
+---
+title: Decrement
+---
 
 `x--` decreases the value of x by 1, returning the old value of x.
 

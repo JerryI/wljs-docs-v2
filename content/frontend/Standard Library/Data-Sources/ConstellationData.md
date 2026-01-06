@@ -1,4 +1,6 @@
-# ConstellationData
+---
+title: ConstellationData
+---
 
 `ConstellationData[entity, property]` gives the value of the specified property for the constellation entity.
 

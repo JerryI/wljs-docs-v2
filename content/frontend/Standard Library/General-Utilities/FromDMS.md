@@ -1,4 +1,6 @@
-# FromDMS
+---
+title: FromDMS
+---
 
 `FromDMS[{d, m, s}]` converts from degrees, minutes, and seconds to decimal degrees.
 

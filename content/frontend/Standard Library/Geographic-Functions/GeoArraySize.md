@@ -1,4 +1,6 @@
-# GeoArraySize
+---
+title: GeoArraySize
+---
 
 `GeoArraySize` is an option for geographic data functions that determines the dimensions of the array generated.
 

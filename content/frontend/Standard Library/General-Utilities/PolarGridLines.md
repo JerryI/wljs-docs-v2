@@ -1,4 +1,6 @@
-# PolarGridLines
+---
+title: PolarGridLines
+---
 
 `PolarGridLines` is an option for sector charts and polar plots that specifies polar grid lines.
 

@@ -1,4 +1,6 @@
-# FractionalPart
+---
+title: FractionalPart
+---
 
 `FractionalPart[x]` gives the fractional part of x.
 

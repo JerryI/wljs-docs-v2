@@ -1,4 +1,6 @@
-# ImageStitch
+---
+title: ImageStitch
+---
 
 `ImageStitch[{image1, image2, ...}]` gives a composed image from an unordered list of imagei.
 

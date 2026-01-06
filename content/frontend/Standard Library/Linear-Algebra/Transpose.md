@@ -1,4 +1,6 @@
-# Transpose
+---
+title: Transpose
+---
 
 `Transpose[list]` transposes the first two levels in list.
 

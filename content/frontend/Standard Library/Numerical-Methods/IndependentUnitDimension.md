@@ -1,4 +1,6 @@
-# IndependentUnitDimension
+---
+title: IndependentUnitDimension
+---
 
 `IndependentUnitDimension[dim]` represents the base dimension dim associated with an independent physical quantity or unit.
 

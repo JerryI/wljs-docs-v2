@@ -1,4 +1,6 @@
-# PermissionsKeys
+---
+title: PermissionsKeys
+---
 
 `PermissionsKeys[]` gives a list of all valid permissions keys created by the currently authenticated user.
 

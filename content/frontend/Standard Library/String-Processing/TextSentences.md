@@ -1,4 +1,6 @@
-# TextSentences
+---
+title: TextSentences
+---
 
 `TextSentences["string"]` gives a list of the runs of characters identified as sentences in string.
 

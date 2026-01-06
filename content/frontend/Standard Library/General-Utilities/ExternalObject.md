@@ -1,4 +1,6 @@
-# ExternalObject
+---
+title: ExternalObject
+---
 
 `ExternalObject[…]` represents an external object bound to an ExternalSessionObject.
 

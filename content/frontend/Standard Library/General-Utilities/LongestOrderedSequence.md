@@ -1,4 +1,6 @@
-# LongestOrderedSequence
+---
+title: LongestOrderedSequence
+---
 
 `LongestOrderedSequence[list]` finds the longest ordered sequence of contiguous or disjoint elements in `list`.
 

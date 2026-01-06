@@ -1,4 +1,6 @@
-# DefaultNaturalLanguage
+---
+title: DefaultNaturalLanguage
+---
 
 `DefaultNaturalLanguage` is an option for character selections that specifies the language used when checking the spelling of a word in a human natural language selection.
 

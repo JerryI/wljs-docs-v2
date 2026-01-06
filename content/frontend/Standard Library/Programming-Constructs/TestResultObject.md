@@ -1,4 +1,6 @@
-# TestResultObject
+---
+title: TestResultObject
+---
 
 `TestResultObject[...]` gives an object that represents the results of a `VerificationTest`.
 

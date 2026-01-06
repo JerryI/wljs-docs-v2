@@ -1,4 +1,6 @@
-# Nothing
+---
+title: Nothing
+---
 
 `Nothing` represents an element of a list that will automatically be removed.
 

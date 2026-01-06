@@ -1,4 +1,6 @@
-# ConvexHullRegion
+---
+title: ConvexHullRegion
+---
 
 `ConvexHullRegion[{p1,p2,…}]` gives the convex hull from the points p1, p2, ….
 

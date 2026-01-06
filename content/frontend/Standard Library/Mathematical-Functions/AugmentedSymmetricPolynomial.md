@@ -1,4 +1,6 @@
-# AugmentedSymmetricPolynomial
+---
+title: AugmentedSymmetricPolynomial
+---
 
 `AugmentedSymmetricPolynomial[{r1, r2, ...}]` represents a formal augmented symmetric polynomial with exponents r1, r2, ....
 

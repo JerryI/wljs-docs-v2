@@ -1,4 +1,6 @@
-# WikidataSearch
+---
+title: WikidataSearch
+---
 
 `WikidataSearch["keywords"]` returns a list of Wikidata items whose labels include the given keywords.
 

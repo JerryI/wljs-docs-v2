@@ -1,4 +1,6 @@
-# SimplePolygonQ
+---
+title: SimplePolygonQ
+---
 
 `SimplePolygonQ[poly]` gives `True` if the polygon poly is simple and `False` otherwise.
 

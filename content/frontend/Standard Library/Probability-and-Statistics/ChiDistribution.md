@@ -1,4 +1,6 @@
-# ChiDistribution
+---
+title: ChiDistribution
+---
 
 `ChiDistribution[ν]` represents a chi distribution with ν degrees of freedom.
 

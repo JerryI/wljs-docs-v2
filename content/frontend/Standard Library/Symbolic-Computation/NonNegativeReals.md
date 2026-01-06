@@ -1,4 +1,6 @@
-# NonNegativeReals
+---
+title: NonNegativeReals
+---
 
 `NonNegativeReals` represents the domain of non-negative real numbers.
 

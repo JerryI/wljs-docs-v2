@@ -1,4 +1,6 @@
-# NotSucceeds
+---
+title: NotSucceeds
+---
 
 `NotSucceeds[x, y, ...]` displays as x⊁y⊁....
 

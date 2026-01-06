@@ -1,4 +1,6 @@
-# HTTPResponse
+---
+title: HTTPResponse
+---
 
 `HTTPResponse[body]` is an object that represents a successful response to an HTTP request, with the specified body and default metadata.
 

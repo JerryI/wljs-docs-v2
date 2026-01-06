@@ -1,4 +1,6 @@
-# GeoLength
+---
+title: GeoLength
+---
 
 `GeoLength[g]` gives the length of the geo path `g`.
 

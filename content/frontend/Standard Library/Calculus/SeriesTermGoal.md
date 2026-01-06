@@ -1,4 +1,6 @@
-# SeriesTermGoal
+---
+title: SeriesTermGoal
+---
 
 `SeriesTermGoal` is an option for `Asymptotic`, `DiscreteAsymptotic` and similar functions that specifies the number of desired terms in an asymptotic approximation.
 

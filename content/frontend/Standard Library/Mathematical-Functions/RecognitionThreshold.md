@@ -1,4 +1,6 @@
-# RecognitionThreshold
+---
+title: RecognitionThreshold
+---
 
 `RecognitionThreshold` is an option for `ImageInstanceQ` and related functions that specifies the minimum estimated probability at which recognition is considered acceptable.
 

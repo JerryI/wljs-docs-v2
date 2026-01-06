@@ -1,4 +1,6 @@
-# Minimize
+---
+title: Minimize
+---
 
 `Minimize[f, x]` minimizes f symbolically with respect to x.
 

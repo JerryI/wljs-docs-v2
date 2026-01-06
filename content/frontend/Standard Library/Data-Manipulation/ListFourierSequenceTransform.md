@@ -1,4 +1,6 @@
-# ListFourierSequenceTransform
+---
+title: ListFourierSequenceTransform
+---
 
 `ListFourierSequenceTransform[list, ω]` gives the discrete-time Fourier transform (DTFT) of a list as a function of the parameter ω.
 

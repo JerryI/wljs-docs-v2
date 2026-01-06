@@ -1,4 +1,6 @@
-# PreprocessingRules
+---
+title: PreprocessingRules
+---
 
 `PreprocessingRules` is an option that specifies how the input should be preprocessed.
 

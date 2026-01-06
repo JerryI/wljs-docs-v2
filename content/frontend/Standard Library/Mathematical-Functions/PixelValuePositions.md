@@ -1,4 +1,6 @@
-# PixelValuePositions
+---
+title: PixelValuePositions
+---
 
 `PixelValuePositions[image, val]` returns a list of pixel positions in image that exactly match the value val.
 

@@ -1,4 +1,6 @@
-# ArrayPlot3D
+---
+title: ArrayPlot3D
+---
 
 `ArrayPlot3D[array]` generates a plot in which the values in an array are shown in a discrete array of cubes.
 

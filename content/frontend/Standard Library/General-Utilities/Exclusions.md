@@ -1,4 +1,6 @@
-# Exclusions
+---
+title: Exclusions
+---
 
 `Exclusions` is an option that specifies where to exclude in regions used by functions like `Plot`, `Plot3D`, and `NIntegrate`.
 

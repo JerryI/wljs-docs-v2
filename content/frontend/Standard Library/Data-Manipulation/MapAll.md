@@ -1,4 +1,6 @@
-# MapAll
+---
+title: MapAll
+---
 
 `MapAll[f, expr]` or `f //@ expr` applies f to every subexpression in expr.
 

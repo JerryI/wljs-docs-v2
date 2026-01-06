@@ -1,4 +1,6 @@
-# Tolerance
+---
+title: Tolerance
+---
 
 `Tolerance` is an option for various numerical functions which specifies the tolerance that should be allowed in computing results.
 

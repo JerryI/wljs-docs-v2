@@ -1,4 +1,6 @@
-# ClusterDissimilarityFunction
+---
+title: ClusterDissimilarityFunction
+---
 
 `ClusterDissimilarityFunction` is an option for `ClusteringTree` and `Dendrogram` that specifies the intercluster dissimilarity.
 

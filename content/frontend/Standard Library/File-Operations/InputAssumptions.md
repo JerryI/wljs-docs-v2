@@ -1,4 +1,6 @@
-# InputAssumptions
+---
+title: InputAssumptions
+---
 
 `InputAssumptions` is an option for `WolframAlpha` that specifies assumptions for current query input.
 

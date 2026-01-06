@@ -1,4 +1,6 @@
-# SimpleGraphQ
+---
+title: SimpleGraphQ
+---
 
 `SimpleGraphQ[g]` yields `True` if the graph g is a simple graph and `False` otherwise.
 

@@ -1,4 +1,6 @@
-# CurrentImage
+---
+title: CurrentImage
+---
 
 `CurrentImage[]` returns the current image captured from a connected camera.
 

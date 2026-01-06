@@ -1,4 +1,6 @@
-# Sort
+---
+title: Sort
+---
 
 `Sort[list]` sorts the elements of list into canonical order.
 

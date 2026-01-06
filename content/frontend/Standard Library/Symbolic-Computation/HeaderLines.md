@@ -1,4 +1,6 @@
-# HeaderLines
+---
+title: HeaderLines
+---
 
 `HeaderLines` is an option for `SemanticImport` and related functions that specifies how many of the initial rows should be considered part of a column header.
 

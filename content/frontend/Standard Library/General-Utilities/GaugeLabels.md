@@ -1,4 +1,6 @@
-# GaugeLabels
+---
+title: GaugeLabels
+---
 
 `GaugeLabels` is an option for gauge functions that specifies labels to be placed on the gauge.
 

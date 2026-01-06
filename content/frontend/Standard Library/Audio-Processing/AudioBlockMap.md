@@ -1,4 +1,6 @@
-# AudioBlockMap
+---
+title: AudioBlockMap
+---
 
 `AudioBlockMap[f, audio, dur]` applies f to non-overlapping partitions of length dur in audio.
 

@@ -1,4 +1,6 @@
-# IsomorphicGraphQ
+---
+title: IsomorphicGraphQ
+---
 
 `IsomorphicGraphQ[g1, g2]` yields `True` if graphs g1 and g2 are isomorphic, and `False` otherwise.
 

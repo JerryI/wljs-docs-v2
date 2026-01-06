@@ -1,4 +1,6 @@
-# FindGeneratingFunction
+---
+title: FindGeneratingFunction
+---
 
 `FindGeneratingFunction[{a0,a1,…},x]` attempts to find a simple generating function in x whose nth series coefficient is an.
 

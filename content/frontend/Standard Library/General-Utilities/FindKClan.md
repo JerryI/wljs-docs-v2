@@ -1,4 +1,6 @@
-# FindKClan
+---
+title: FindKClan
+---
 
 `FindKClan[g,k]` finds a largest k-clan in the graph g.
 

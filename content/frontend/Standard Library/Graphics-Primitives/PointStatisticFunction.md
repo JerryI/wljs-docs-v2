@@ -1,4 +1,6 @@
-# PointStatisticFunction
+---
+title: PointStatisticFunction
+---
 
 `PointStatisticFunction[...]` represents a function whose values give the statistic of a points collection pdata at a supplied radius.
 

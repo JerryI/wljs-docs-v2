@@ -1,4 +1,6 @@
-# MeshRegionQ
+---
+title: MeshRegionQ
+---
 
 `MeshRegionQ[reg]` yields True if the region reg is a valid MeshRegion object and False otherwise.
 

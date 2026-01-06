@@ -1,4 +1,6 @@
-# NetEvaluationMode
+---
+title: NetEvaluationMode
+---
 
 `NetEvaluationMode` is an option that can be given when applying neural net functions to input data, specifying whether the net should use training-specific behavior.
 

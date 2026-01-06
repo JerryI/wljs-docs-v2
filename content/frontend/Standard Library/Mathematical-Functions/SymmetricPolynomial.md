@@ -1,4 +1,6 @@
-# SymmetricPolynomial
+---
+title: SymmetricPolynomial
+---
 
 `SymmetricPolynomial[k, {x1, ..., xn}]` gives the kth elementary symmetric polynomial in the variables x1, ..., xn.
 

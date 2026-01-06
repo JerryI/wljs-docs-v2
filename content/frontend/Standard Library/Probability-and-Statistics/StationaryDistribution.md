@@ -1,4 +1,6 @@
-# StationaryDistribution
+---
+title: StationaryDistribution
+---
 
 `StationaryDistribution[proc]` represents the stationary distribution of the process proc, when it exists.
 

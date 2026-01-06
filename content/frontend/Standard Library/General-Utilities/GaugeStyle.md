@@ -1,4 +1,6 @@
-# GaugeStyle
+---
+title: GaugeStyle
+---
 
 `GaugeStyle` is an option for gauge functions that specifies styles in which the markers are to be drawn.
 

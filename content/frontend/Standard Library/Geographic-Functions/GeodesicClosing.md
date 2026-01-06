@@ -1,4 +1,6 @@
-# GeodesicClosing
+---
+title: GeodesicClosing
+---
 
 `GeodesicClosing[image, ker]` gives the geodesic closing of image with respect to the structuring element ker.
 

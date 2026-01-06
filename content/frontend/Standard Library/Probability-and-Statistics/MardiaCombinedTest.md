@@ -1,4 +1,6 @@
-# MardiaCombinedTest
+---
+title: MardiaCombinedTest
+---
 
 `MardiaCombinedTest[data]` tests whether data follows a `MultinormalDistribution` using the Mardia combined test.
 

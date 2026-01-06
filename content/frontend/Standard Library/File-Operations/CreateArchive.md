@@ -1,4 +1,6 @@
-# CreateArchive
+---
+title: CreateArchive
+---
 
 `CreateArchive[source]` creates a compressed archive in the current directory from source.
 

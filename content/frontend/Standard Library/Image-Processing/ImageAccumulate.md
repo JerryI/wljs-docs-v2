@@ -1,4 +1,6 @@
-# ImageAccumulate
+---
+title: ImageAccumulate
+---
 
 `ImageAccumulate[image]` gives an image in which each pixel represents a sum of all pixels below and to the left of that pixel in image.
 

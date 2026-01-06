@@ -1,4 +1,6 @@
-# WhittakerM
+---
+title: WhittakerM
+---
 
 `WhittakerM[k,m,z]` gives the Whittaker function $M_{k,m}(z)$.
 

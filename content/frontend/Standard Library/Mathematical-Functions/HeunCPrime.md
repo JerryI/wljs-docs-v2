@@ -1,4 +1,6 @@
-# HeunCPrime
+---
+title: HeunCPrime
+---
 
 `HeunCPrime[q,α,γ,δ,ϵ,z]` gives the z-derivative of the HeunC function.
 

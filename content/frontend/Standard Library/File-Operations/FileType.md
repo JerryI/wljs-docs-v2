@@ -1,4 +1,6 @@
-# FileType
+---
+title: FileType
+---
 
 `FileType["file"]` gives the type of a file, typically File, Directory, or None.
 

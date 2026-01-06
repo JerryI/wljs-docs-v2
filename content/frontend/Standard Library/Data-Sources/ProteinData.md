@@ -1,4 +1,6 @@
-# ProteinData
+---
+title: ProteinData
+---
 
 `ProteinData[entity]` gives the reference amino acid sequence for the protein entity.
 

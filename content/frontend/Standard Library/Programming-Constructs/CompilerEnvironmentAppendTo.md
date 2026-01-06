@@ -1,4 +1,6 @@
-# CompilerEnvironmentAppendTo
+---
+title: CompilerEnvironmentAppendTo
+---
 
 `CompilerEnvironmentAppendTo[{def1, def2, ...}]` appends declarations to `$CompilerEnvironment`.
 

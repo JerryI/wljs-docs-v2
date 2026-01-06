@@ -1,4 +1,6 @@
-# MeanDegreeConnectivity
+---
+title: MeanDegreeConnectivity
+---
 
 `MeanDegreeConnectivity[g]` gives a list of k-mean degree connectivity for the graph g for successive k=0,1,2....
 

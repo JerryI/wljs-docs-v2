@@ -1,4 +1,6 @@
-# UnregisterExternalEvaluator
+---
+title: UnregisterExternalEvaluator
+---
 
 `UnregisterExternalEvaluator[sys, evaluator]` unregisters the external evaluator referenced by evaluator for system sys so that it is not used by `ExternalEvaluate` and related functions.
 

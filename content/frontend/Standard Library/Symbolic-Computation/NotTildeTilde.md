@@ -1,4 +1,6 @@
-# NotTildeTilde
+---
+title: NotTildeTilde
+---
 
 `NotTildeTilde[x,y,…]` displays as x≉y≉….
 

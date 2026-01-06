@@ -1,4 +1,6 @@
-# Show
+---
+title: Show
+---
 
 `Show[graphics, options]` displays graphics with specified options added. `Show[g1, g2, ...]` combines multiple graphics.
 

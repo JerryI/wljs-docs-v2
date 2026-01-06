@@ -1,4 +1,6 @@
-# PrecisionGoal
+---
+title: PrecisionGoal
+---
 
 `PrecisionGoal` is an option for various numerical operations which specifies how many effective digits of precision should be sought in the final result.
 

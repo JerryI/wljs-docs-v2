@@ -1,4 +1,6 @@
-# EndOfBuffer
+---
+title: EndOfBuffer
+---
 
 `EndOfBuffer` is a symbol that represents the end of currently available data in the buffer for a process or stream.
 

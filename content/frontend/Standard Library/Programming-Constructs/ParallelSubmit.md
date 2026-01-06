@@ -1,4 +1,6 @@
-# ParallelSubmit
+---
+title: ParallelSubmit
+---
 
 `ParallelSubmit[expr]` submits expr for evaluation on the next available parallel kernel and returns an EvaluationObject expression representing the submitted evaluation.
 

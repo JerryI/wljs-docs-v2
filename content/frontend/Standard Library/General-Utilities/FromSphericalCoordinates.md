@@ -1,4 +1,6 @@
-# FromSphericalCoordinates
+---
+title: FromSphericalCoordinates
+---
 
 `FromSphericalCoordinates[{r, θ, ϕ}]` gives the {x, y, z} Cartesian coordinates corresponding to the spherical coordinates {r, θ, ϕ}.
 

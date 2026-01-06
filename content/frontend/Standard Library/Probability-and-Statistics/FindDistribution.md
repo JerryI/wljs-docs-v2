@@ -1,4 +1,6 @@
-# FindDistribution
+---
+title: FindDistribution
+---
 
 `FindDistribution[data]` finds a simple functional form to fit the distribution of data.
 

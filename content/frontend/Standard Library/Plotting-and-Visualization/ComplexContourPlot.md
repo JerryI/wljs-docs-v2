@@ -1,4 +1,6 @@
-# ComplexContourPlot
+---
+title: ComplexContourPlot
+---
 
 `ComplexContourPlot[f, {z, zmin, zmax}]` generates a filled contour plot of f as a function of z.
 

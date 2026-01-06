@@ -1,4 +1,6 @@
-# VerifyDigitalSignature
+---
+title: VerifyDigitalSignature
+---
 
 `VerifyDigitalSignature[{expr, sig}, key]` verifies the digital signature sig for expr using the specified public key.
 

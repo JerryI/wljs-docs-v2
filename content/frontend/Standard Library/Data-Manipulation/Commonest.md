@@ -1,4 +1,6 @@
-# Commonest
+---
+title: Commonest
+---
 
 `Commonest[list]` gives a list of the elements that are the most common in list.
 

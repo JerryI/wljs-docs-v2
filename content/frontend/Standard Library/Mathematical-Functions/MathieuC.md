@@ -1,4 +1,6 @@
-# MathieuC
+---
+title: MathieuC
+---
 
 `MathieuC[a, q, z]` gives the even Mathieu function with characteristic value a and parameter q.
 

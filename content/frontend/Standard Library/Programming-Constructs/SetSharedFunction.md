@@ -1,4 +1,6 @@
-# SetSharedFunction
+---
+title: SetSharedFunction
+---
 
 `SetSharedFunction[f1, f2, ...]` declares the symbols fi as shared functions that are synchronized among all parallel kernels.
 

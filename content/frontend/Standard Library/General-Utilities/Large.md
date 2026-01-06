@@ -1,4 +1,6 @@
-# Large
+---
+title: Large
+---
 
 `Large` is a style or option setting that specifies that objects should be large.
 

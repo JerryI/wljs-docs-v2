@@ -1,4 +1,6 @@
-# ExactNumberQ
+---
+title: ExactNumberQ
+---
 
 `ExactNumberQ[expr]` returns `True` if expr is an exact real or complex number, and `False` otherwise.
 

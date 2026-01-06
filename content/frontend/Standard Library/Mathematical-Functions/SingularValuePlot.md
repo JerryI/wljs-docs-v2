@@ -1,4 +1,6 @@
-# SingularValuePlot
+---
+title: SingularValuePlot
+---
 
 `SingularValuePlot[lsys]` generates a plot of the singular values of the transfer function for the system lsys.
 

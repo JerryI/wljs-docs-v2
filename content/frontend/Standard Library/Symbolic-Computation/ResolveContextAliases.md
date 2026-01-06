@@ -1,4 +1,6 @@
-# ResolveContextAliases
+---
+title: ResolveContextAliases
+---
 
 `ResolveContextAliases` is an option for `Names`, `Contexts` and related functions to control whether to resolve aliases when searching for symbols that match a string pattern.
 

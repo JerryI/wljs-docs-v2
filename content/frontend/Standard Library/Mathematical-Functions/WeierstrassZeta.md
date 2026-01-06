@@ -1,4 +1,6 @@
-# WeierstrassZeta
+---
+title: WeierstrassZeta
+---
 
 `WeierstrassZeta[u,{g2,g3}]` gives the Weierstrass zeta function ζ(u;g2,g3).
 

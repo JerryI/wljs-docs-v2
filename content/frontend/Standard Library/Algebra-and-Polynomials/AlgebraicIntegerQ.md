@@ -1,4 +1,6 @@
-# AlgebraicIntegerQ
+---
+title: AlgebraicIntegerQ
+---
 
 `AlgebraicIntegerQ[a]` yields `True` if a is an algebraic integer, and yields `False` otherwise.
 

@@ -1,4 +1,6 @@
-# GraphPropertyDistribution
+---
+title: GraphPropertyDistribution
+---
 
 `GraphPropertyDistribution[expr, x \[Distributed] gdist]` represents the distribution of the property expr where the random variable x follows the graph distribution gdist.
 

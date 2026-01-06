@@ -1,4 +1,6 @@
-# InertEvaluate
+---
+title: InertEvaluate
+---
 
 `InertEvaluate[inertExpr]` evaluates an "InertExpression", returning a new "InertExpression" in compiled code.
 

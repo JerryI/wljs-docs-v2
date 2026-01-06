@@ -1,4 +1,6 @@
-# BesselYZero
+---
+title: BesselYZero
+---
 
 `BesselYZero[n, k]` represents the kth zero of the Bessel function of the second kind Yn(x).
 

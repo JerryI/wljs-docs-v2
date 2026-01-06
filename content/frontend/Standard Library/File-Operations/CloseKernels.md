@@ -1,4 +1,6 @@
-# CloseKernels
+---
+title: CloseKernels
+---
 
 `CloseKernels[]` terminates all parallel kernels from the list `ParallelKernels[]`.
 

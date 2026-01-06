@@ -1,4 +1,6 @@
-# Alternatives
+---
+title: Alternatives
+---
 
 `p1 | p2 | ...` is a pattern object that represents any of the patterns pi.
 

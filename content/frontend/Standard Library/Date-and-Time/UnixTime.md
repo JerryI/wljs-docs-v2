@@ -1,4 +1,6 @@
-# UnixTime
+---
+title: UnixTime
+---
 
 `UnixTime[]` gives the total number of seconds since January 1, 1970, in the GMT time zone. `UnixTime[date]` converts a date to Unix timestamp.
 

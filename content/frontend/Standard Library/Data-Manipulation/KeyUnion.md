@@ -1,4 +1,6 @@
-# KeyUnion
+---
+title: KeyUnion
+---
 
 `KeyUnion[{assoc1, assoc2, …}]` generates a list of associations in which each association has the union of the keys of the `associ`, padding by inserting values of `Missing[…]` if necessary.
 

@@ -1,4 +1,6 @@
-# GeneratedAssetLocation
+---
+title: GeneratedAssetLocation
+---
 
 `GeneratedAssetLocation` is an option for functions like VideoGenerator that specifies the location of the resulting asset.
 

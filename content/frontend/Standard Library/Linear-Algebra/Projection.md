@@ -1,4 +1,6 @@
-# Projection
+---
+title: Projection
+---
 
 `Projection[u, v]` finds the projection of the vector u onto the vector v.
 

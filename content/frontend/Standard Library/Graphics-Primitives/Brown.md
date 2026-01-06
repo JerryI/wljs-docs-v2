@@ -1,4 +1,6 @@
-# Brown
+---
+title: Brown
+---
 
 `Brown` represents the color brown in graphics or style specifications.
 

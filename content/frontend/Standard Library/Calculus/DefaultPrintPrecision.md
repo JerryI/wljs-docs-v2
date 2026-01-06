@@ -1,4 +1,6 @@
-# DefaultPrintPrecision
+---
+title: DefaultPrintPrecision
+---
 
 `DefaultPrintPrecision` is an option for NumberForm, DecimalForm and related functions that specifies the default number of digits of precision with which to print machine numbers.
 

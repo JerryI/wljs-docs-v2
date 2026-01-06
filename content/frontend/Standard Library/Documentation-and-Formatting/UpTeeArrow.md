@@ -1,4 +1,6 @@
-# UpTeeArrow
+---
+title: UpTeeArrow
+---
 
 `UpTeeArrow[x, y, ...]` displays as x↥y↥....
 

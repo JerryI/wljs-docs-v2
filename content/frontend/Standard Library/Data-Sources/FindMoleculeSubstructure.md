@@ -1,4 +1,6 @@
-# FindMoleculeSubstructure
+---
+title: FindMoleculeSubstructure
+---
 
 `FindMoleculeSubstructure[mol,patt]` finds a mapping between the atom indices in mol and an occurrence of patt in mol.
 

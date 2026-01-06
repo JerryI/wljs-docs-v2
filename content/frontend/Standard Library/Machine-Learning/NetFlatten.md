@@ -1,4 +1,6 @@
-# NetFlatten
+---
+title: NetFlatten
+---
 
 `NetFlatten[net]` collapses nested NetChain and NetGraph objects within net.
 

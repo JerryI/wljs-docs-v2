@@ -1,4 +1,6 @@
-# EstimatedProcess
+---
+title: EstimatedProcess
+---
 
 `EstimatedProcess[data,proc]` estimates the parametric process proc from data.
 

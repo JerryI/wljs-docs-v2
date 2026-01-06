@@ -1,4 +1,6 @@
-# DSolveChangeVariables
+---
+title: DSolveChangeVariables
+---
 
 `DSolveChangeVariables[dsolve, u, t, trans]` changes the solution function in dsolve to u(t) using the transformation trans.
 

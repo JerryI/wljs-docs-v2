@@ -1,4 +1,6 @@
-# ElectricPotentialCondition
+---
+title: ElectricPotentialCondition
+---
 
 `ElectricPotentialCondition[pred, vars, pars]` represents an electric potential surface boundary condition for PDEs with predicate pred indicating where it applies, with model variables vars and global parameters pars.
 

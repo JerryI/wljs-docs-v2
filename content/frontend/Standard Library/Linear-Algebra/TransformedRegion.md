@@ -1,4 +1,6 @@
-# TransformedRegion
+---
+title: TransformedRegion
+---
 
 `TransformedRegion[reg, f]` represents the transformed region {f(p)|p∈reg}, where reg is a region and f is a function.
 

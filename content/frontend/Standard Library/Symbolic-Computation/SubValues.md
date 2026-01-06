@@ -1,4 +1,6 @@
-# SubValues
+---
+title: SubValues
+---
 
 `SubValues[f]` gives a list of transformation rules corresponding to all subvalues (values for f[...][...]...) defined for the symbol f.
 

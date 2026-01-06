@@ -1,4 +1,6 @@
-# KnightTourGraph
+---
+title: KnightTourGraph
+---
 
 `KnightTourGraph[m, n]` gives a Knight's tour graph on an m×n chessboard.
 

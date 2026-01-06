@@ -1,4 +1,6 @@
-# NextScheduledTaskTime
+---
+title: NextScheduledTaskTime
+---
 
 `NextScheduledTaskTime[obj]` gives the next execution time of the scheduled task represented by obj.
 

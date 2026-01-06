@@ -1,4 +1,6 @@
-# Alphabet
+---
+title: Alphabet
+---
 
 `Alphabet[]` gives a list of the lowercase letters a through z in the English alphabet.
 

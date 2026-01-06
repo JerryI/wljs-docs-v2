@@ -1,4 +1,6 @@
-# SparseArray
+---
+title: SparseArray
+---
 
 `SparseArray[{pos1 -> v1, pos2 -> v2, ...}]` yields a sparse array with values at specified positions.
 

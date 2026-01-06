@@ -1,4 +1,6 @@
-# Compress
+---
+title: Compress
+---
 
 `Compress[expr]` gives a compressed representation of expr as a string.
 

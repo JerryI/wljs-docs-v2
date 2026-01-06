@@ -1,4 +1,6 @@
-# EmbeddedSQLExpression
+---
+title: EmbeddedSQLExpression
+---
 
 `EmbeddedSQLExpression[string]` represents an SQL expression to be evaluated verbatim within an `EntityFunction` object.
 

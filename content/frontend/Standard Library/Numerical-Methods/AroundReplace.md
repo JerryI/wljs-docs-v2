@@ -1,4 +1,6 @@
-# AroundReplace
+---
+title: AroundReplace
+---
 
 `AroundReplace[expr, {s1 -> Around[x1, δ1], s2 -> Around[x2, δ2], ...}]` propagates uncertainty in expr by replacing all occurrences of si by `Around[xi, δi]`.
 

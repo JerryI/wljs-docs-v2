@@ -1,4 +1,6 @@
-# Highlighted
+---
+title: Highlighted
+---
 
 `Highlighted[expr]` displays a highlighted version of expr.
 

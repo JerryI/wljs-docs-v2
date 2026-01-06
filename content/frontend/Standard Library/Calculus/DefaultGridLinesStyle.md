@@ -1,4 +1,6 @@
-# DefaultGridLinesStyle
+---
+title: DefaultGridLinesStyle
+---
 
 `DefaultGridLinesStyle` is a low-level option for 2D graphics functions that specifies the default style to use in rendering grid lines.
 

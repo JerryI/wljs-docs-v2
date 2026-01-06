@@ -1,4 +1,6 @@
-# Range
+---
+title: Range
+---
 
 `Range[imax]` generates the list `{1, 2, ..., imax}`.
 

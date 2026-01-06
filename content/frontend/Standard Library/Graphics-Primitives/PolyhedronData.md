@@ -1,4 +1,6 @@
-# PolyhedronData
+---
+title: PolyhedronData
+---
 
 `PolyhedronData[poly, "property"]` gives the value of the specified property for the polyhedron named poly.
 

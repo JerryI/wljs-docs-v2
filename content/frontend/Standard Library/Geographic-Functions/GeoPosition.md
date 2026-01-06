@@ -1,4 +1,6 @@
-# GeoPosition
+---
+title: GeoPosition
+---
 
 `GeoPosition[{lat, lon}]` represents a geodetic position with latitude `lat` and longitude `lon`.
 

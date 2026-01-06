@@ -1,4 +1,6 @@
-# FindLinearRecurrence
+---
+title: FindLinearRecurrence
+---
 
 `FindLinearRecurrence[list]` finds if possible the minimal linear recurrence that generates list.
 

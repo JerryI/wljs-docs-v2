@@ -1,4 +1,6 @@
-# Label
+---
+title: Label
+---
 
 `Label[tag]` represents a point in a compound expression to which control can be transferred using `Goto`.
 

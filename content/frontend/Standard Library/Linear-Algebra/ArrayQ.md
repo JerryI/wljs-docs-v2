@@ -1,4 +1,6 @@
-# ArrayQ
+---
+title: ArrayQ
+---
 
 `ArrayQ[expr]` gives `True` if expr is a full array or a `SparseArray` object, and gives `False` otherwise.
 

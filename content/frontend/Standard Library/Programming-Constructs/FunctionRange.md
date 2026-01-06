@@ -1,4 +1,6 @@
-# FunctionRange
+---
+title: FunctionRange
+---
 
 `FunctionRange[f, x, y]` finds the range of the real function f of variable x, returning the result in terms of y.
 

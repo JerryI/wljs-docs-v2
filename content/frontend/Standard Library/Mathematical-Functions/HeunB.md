@@ -1,4 +1,6 @@
-# HeunB
+---
+title: HeunB
+---
 
 `HeunB[q, α, γ, δ, ϵ, z]` gives the bi-confluent Heun function.
 

@@ -1,4 +1,6 @@
-# LinkOpen
+---
+title: LinkOpen
+---
 
 `LinkOpen["prog"]` starts the external program prog and opens a MathLink connection to it.
 

@@ -1,4 +1,6 @@
-# RadialGradientFilling
+---
+title: RadialGradientFilling
+---
 
 `RadialGradientFilling[{col1, col2, ..., coln}]` is a two-dimensional graphics directive specifying that faces of polygons and other filled graphics objects are to be drawn using concentric circles of colors coli.
 

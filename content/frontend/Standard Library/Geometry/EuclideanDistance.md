@@ -1,4 +1,6 @@
-# EuclideanDistance
+---
+title: EuclideanDistance
+---
 
 `EuclideanDistance[u, v]` gives the Euclidean distance between vectors u and v.
 

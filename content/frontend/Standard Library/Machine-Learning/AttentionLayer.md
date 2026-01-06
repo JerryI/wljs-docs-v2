@@ -1,4 +1,6 @@
-# AttentionLayer
+---
+title: AttentionLayer
+---
 
 `AttentionLayer[]` represents a trainable net layer that learns to pay attention to certain portions of its input.
 

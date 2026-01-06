@@ -1,4 +1,6 @@
-# LocalClusteringCoefficient
+---
+title: LocalClusteringCoefficient
+---
 
 `LocalClusteringCoefficient[g]` gives the list of local clustering coefficients of all vertices in the graph g.
 

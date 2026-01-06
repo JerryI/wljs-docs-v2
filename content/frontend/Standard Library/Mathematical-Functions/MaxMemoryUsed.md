@@ -1,4 +1,6 @@
-# MaxMemoryUsed
+---
+title: MaxMemoryUsed
+---
 
 `MaxMemoryUsed[]` gives the maximum number of bytes used to store all data during the current session. `MaxMemoryUsed[expr]` gives the peak memory during evaluation of expr.
 

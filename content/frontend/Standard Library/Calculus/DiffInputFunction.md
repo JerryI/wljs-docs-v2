@@ -1,4 +1,6 @@
-# DiffInputFunction
+---
+title: DiffInputFunction
+---
 
 `DiffInputFunction` is an option for `Diff` and related functions that specifies how the input expressions should be preprocessed.
 

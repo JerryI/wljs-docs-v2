@@ -1,4 +1,6 @@
-# SchurDecomposition
+---
+title: SchurDecomposition
+---
 
 `SchurDecomposition[m]` yields the Schur decomposition for a numerical matrix m, given as a list `{q, t}` where q is orthonormal and t is block upper-triangular.
 

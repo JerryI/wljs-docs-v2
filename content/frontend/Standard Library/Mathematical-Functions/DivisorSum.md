@@ -1,4 +1,6 @@
-# DivisorSum
+---
+title: DivisorSum
+---
 
 `DivisorSum[n,form]` represents the sum of form[i] for all i that divide n.
 

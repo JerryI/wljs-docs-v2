@@ -1,4 +1,6 @@
-# EvaluateScheduledTask
+---
+title: EvaluateScheduledTask
+---
 
 `EvaluateScheduledTask[expr]` triggers immediate local execution of the specified task object.
 

@@ -1,4 +1,6 @@
-# SimilarityRules
+---
+title: SimilarityRules
+---
 
 `SimilarityRules` is an option for functions such as `SequenceAlignment` that gives a list of rules for similarity scores to assume between pairs of elements.
 

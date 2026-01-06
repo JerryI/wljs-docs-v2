@@ -1,4 +1,6 @@
-# AbsoluteThickness
+---
+title: AbsoluteThickness
+---
 
 `AbsoluteThickness[d]` is a graphics directive which specifies that lines which follow are to be drawn with absolute thickness d.
 

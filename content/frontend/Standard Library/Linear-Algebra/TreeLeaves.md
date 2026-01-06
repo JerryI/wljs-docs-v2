@@ -1,4 +1,6 @@
-# TreeLeaves
+---
+title: TreeLeaves
+---
 
 `TreeLeaves[tree]` returns the list of leaves of the tree.
 

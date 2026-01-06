@@ -1,4 +1,6 @@
-# RotateLabel
+---
+title: RotateLabel
+---
 
 `RotateLabel` is an option for graphics and related functions that specifies whether labels on vertical frame axes should be rotated to be vertical.
 

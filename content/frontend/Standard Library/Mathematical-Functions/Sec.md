@@ -1,4 +1,6 @@
-# Sec
+---
+title: Sec
+---
 
 `Sec[z]` gives the secant of z.
 

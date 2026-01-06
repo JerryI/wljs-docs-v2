@@ -1,4 +1,6 @@
-# ImageResolution
+---
+title: ImageResolution
+---
 
 `ImageResolution` is an option for `Export`, `Rasterize`, and related functions that specifies at what resolution bitmap images should be rendered.
 

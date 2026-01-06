@@ -1,4 +1,6 @@
-# WeaklyConnectedComponents
+---
+title: WeaklyConnectedComponents
+---
 
 `WeaklyConnectedComponents[g]` gives the weakly connected components of the graph g.
 

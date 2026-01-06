@@ -1,4 +1,6 @@
-# Series
+---
+title: Series
+---
 
 `Series[f, {x, x0, n}]` generates a power series expansion for f about the point x=x0 to order n.
 

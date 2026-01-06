@@ -1,4 +1,6 @@
-# VertexDegree
+---
+title: VertexDegree
+---
 
 `VertexDegree[g]` gives the list of vertex degrees for all vertices in graph g. `VertexDegree[g, v]` gives the degree for vertex v.
 

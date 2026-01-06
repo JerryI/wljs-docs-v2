@@ -1,4 +1,6 @@
-# VerticalTilde
+---
+title: VerticalTilde
+---
 
 `VerticalTilde[x, y, ...]` displays as x≀y≀….
 

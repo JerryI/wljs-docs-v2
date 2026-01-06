@@ -1,4 +1,6 @@
-# ContourLabels
+---
+title: ContourLabels
+---
 
 `ContourLabels` is an option for contour plots that specifies how to label contours.
 

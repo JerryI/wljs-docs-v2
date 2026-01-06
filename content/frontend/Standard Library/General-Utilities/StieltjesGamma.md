@@ -1,4 +1,6 @@
-# StieltjesGamma
+---
+title: StieltjesGamma
+---
 
 `StieltjesGamma[n]` gives the Stieltjes constant γn.
 

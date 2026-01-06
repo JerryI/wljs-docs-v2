@@ -1,4 +1,6 @@
-# BulletGauge
+---
+title: BulletGauge
+---
 
 `BulletGauge[value,reference,{min,max}]` draws a bullet gauge showing value and reference in a range of min to max.
 

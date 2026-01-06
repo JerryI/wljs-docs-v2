@@ -1,4 +1,6 @@
-# DiffIgnore
+---
+title: DiffIgnore
+---
 
 `DiffIgnore` is an option to Diff and related functions that specifies what elements to ignore when computing diffs.
 

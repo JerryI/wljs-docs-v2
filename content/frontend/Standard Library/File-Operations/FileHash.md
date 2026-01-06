@@ -1,4 +1,6 @@
-# FileHash
+---
+title: FileHash
+---
 
 `FileHash[file]` gives an integer hash code for the contents of the file.
 

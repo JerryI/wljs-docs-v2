@@ -1,4 +1,6 @@
-# GeoArea
+---
+title: GeoArea
+---
 
 `GeoArea[g]` gives the area of the geo region `g`.
 

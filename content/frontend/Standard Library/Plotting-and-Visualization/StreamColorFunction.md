@@ -1,4 +1,6 @@
-# StreamColorFunction
+---
+title: StreamColorFunction
+---
 
 `StreamColorFunction` is an option for `StreamPlot` and related functions that specifies a function to apply to determine colors along streamlines.
 

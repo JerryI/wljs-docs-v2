@@ -1,4 +1,6 @@
-# Plain
+---
+title: Plain
+---
 
 `Plain` represents a font that is not bold, italic, or underlined.
 

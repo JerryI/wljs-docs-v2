@@ -1,4 +1,6 @@
-# IndefiniteMatrixQ
+---
+title: IndefiniteMatrixQ
+---
 
 `IndefiniteMatrixQ[m]` gives `True` if m is explicitly indefinite (has both positive and negative eigenvalues), and `False` otherwise.
 

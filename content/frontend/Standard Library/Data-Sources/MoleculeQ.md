@@ -1,4 +1,6 @@
-# MoleculeQ
+---
+title: MoleculeQ
+---
 
 `MoleculeQ[mol]` returns `True` if mol is a valid `Molecule` expression, and `False` otherwise.
 

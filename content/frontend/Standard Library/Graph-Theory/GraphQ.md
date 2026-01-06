@@ -1,4 +1,6 @@
-# GraphQ
+---
+title: GraphQ
+---
 
 `GraphQ[g]` yields `True` if g is a valid `Graph` object and `False` otherwise.
 

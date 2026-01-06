@@ -1,4 +1,6 @@
-# URLResponseTime
+---
+title: URLResponseTime
+---
 
 `URLResponseTime[url]` gives the total number of seconds to request one byte from the specified URL.
 

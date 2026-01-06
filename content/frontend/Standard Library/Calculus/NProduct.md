@@ -1,4 +1,6 @@
-# NProduct
+---
+title: NProduct
+---
 
 `NProduct[f, {i, imin, imax}]` gives a numerical approximation to the product.
 

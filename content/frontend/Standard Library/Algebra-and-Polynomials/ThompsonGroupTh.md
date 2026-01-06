@@ -1,4 +1,6 @@
-# ThompsonGroupTh
+---
+title: ThompsonGroupTh
+---
 
 `ThompsonGroupTh[]` represents the sporadic simple Thompson group Th.
 

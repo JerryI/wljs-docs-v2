@@ -1,4 +1,6 @@
-# LeafCount
+---
+title: LeafCount
+---
 
 `LeafCount[expr]` gives the total number of indivisible subexpressions (atoms) in expr.
 

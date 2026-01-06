@@ -1,4 +1,6 @@
-# BondLabels
+---
+title: BondLabels
+---
 
 `BondLabels` is an option for `MoleculePlot` and `MoleculePlot3D` that specifies what labels and label positions should be used for bonds.
 

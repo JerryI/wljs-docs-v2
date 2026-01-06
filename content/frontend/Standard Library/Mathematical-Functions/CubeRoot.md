@@ -1,4 +1,6 @@
-# CubeRoot
+---
+title: CubeRoot
+---
 
 `CubeRoot[x]` gives the real-valued cube root of x.
 

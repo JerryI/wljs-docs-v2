@@ -1,4 +1,6 @@
-# MathieuCPrime
+---
+title: MathieuCPrime
+---
 
 `MathieuCPrime[a, q, z]` gives the derivative with respect to z of the even Mathieu function with characteristic value a and parameter q.
 

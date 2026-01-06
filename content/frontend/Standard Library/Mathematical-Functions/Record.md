@@ -1,4 +1,6 @@
-# Record
+---
+title: Record
+---
 
 `Record` represents a record in `Read`, `Find`, and related functions.
 

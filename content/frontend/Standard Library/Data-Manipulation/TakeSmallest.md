@@ -1,4 +1,6 @@
-# TakeSmallest
+---
+title: TakeSmallest
+---
 
 `TakeSmallest[data, n]` gives the n smallest elements of data, sorted in ascending order.
 

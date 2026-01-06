@@ -1,4 +1,6 @@
-# Upsample
+---
+title: Upsample
+---
 
 `Upsample[array, n]` returns an upsampled version of the array by inserting n-1 zeros between array elements.
 

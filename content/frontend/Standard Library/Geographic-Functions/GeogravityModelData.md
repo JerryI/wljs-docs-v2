@@ -1,4 +1,6 @@
-# GeogravityModelData
+---
+title: GeogravityModelData
+---
 
 `GeogravityModelData[]` returns the gravitational field data for the current location.
 

@@ -1,4 +1,6 @@
-# CompoundPoissonDistribution
+---
+title: CompoundPoissonDistribution
+---
 
 `CompoundPoissonDistribution[λ,dist]` represents a compound Poisson distribution with rate parameter λ and jump size distribution dist.
 

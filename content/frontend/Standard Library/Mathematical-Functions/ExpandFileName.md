@@ -1,4 +1,6 @@
-# ExpandFileName
+---
+title: ExpandFileName
+---
 
 `ExpandFileName["name"]` expands name to an absolute file path for your OS.
 

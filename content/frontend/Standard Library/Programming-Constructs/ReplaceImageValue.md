@@ -1,4 +1,6 @@
-# ReplaceImageValue
+---
+title: ReplaceImageValue
+---
 
 `ReplaceImageValue[image,pos->val]` changes the pixel values at position pos in image to val.
 

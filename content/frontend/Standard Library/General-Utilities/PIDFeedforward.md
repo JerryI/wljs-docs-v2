@@ -1,4 +1,6 @@
-# PIDFeedforward
+---
+title: PIDFeedforward
+---
 
 `PIDFeedforward` is an option to `PIDTune` that controls the reference weights used for the feedforward filter.
 

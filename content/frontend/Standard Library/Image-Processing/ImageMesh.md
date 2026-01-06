@@ -1,4 +1,6 @@
-# ImageMesh
+---
+title: ImageMesh
+---
 
 `ImageMesh[image]` returns the foreground region in image as a `BoundaryMeshRegion` object.
 

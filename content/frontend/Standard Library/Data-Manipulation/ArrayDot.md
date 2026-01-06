@@ -1,4 +1,6 @@
-# ArrayDot
+---
+title: ArrayDot
+---
 
 `ArrayDot[a, b, k]` computes the product of arrays a and b obtained by summing up products of terms over the last k dimensions of a and the first k dimensions of b.
 

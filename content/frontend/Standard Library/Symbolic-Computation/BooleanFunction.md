@@ -1,4 +1,6 @@
-# BooleanFunction
+---
+title: BooleanFunction
+---
 
 `BooleanFunction[k, n]` represents the kth Boolean function in n variables.
 

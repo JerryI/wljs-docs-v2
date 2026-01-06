@@ -1,4 +1,6 @@
-# AspectRatio
+---
+title: AspectRatio
+---
 
 `AspectRatio` is an option for `Graphics` and related functions that specifies the ratio of height to width for a plot.
 

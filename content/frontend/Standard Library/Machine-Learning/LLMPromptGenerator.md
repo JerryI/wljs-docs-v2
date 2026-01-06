@@ -1,4 +1,6 @@
-# LLMPromptGenerator
+---
+title: LLMPromptGenerator
+---
 
 `LLMPromptGenerator[f]` represents a prompt generator that uses the function *f*.
 

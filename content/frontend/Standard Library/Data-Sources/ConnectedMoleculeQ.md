@@ -1,4 +1,6 @@
-# ConnectedMoleculeQ
+---
+title: ConnectedMoleculeQ
+---
 
 `ConnectedMoleculeQ[mol]` returns True if the atoms in mol are connected by bonds, and False otherwise.
 

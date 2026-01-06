@@ -1,4 +1,6 @@
-# RightUpTeeVector
+---
+title: RightUpTeeVector
+---
 
 `RightUpTeeVector[x, y, ...]` displays as x⥜y⥜….
 

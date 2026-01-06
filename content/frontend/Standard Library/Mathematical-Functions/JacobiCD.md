@@ -1,4 +1,6 @@
-# JacobiCD
+---
+title: JacobiCD
+---
 
 `JacobiCD[u,m]` gives the Jacobi elliptic function cd(u|m).
 

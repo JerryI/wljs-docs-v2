@@ -1,4 +1,6 @@
-# ActiveClassification
+---
+title: ActiveClassification
+---
 
 `ActiveClassification[f, {conf1, conf2, ...}]` gives an object representing the result of active classification obtained by using the function f to determine classes for the example configurations confi.
 

@@ -1,4 +1,6 @@
-# StringSplit
+---
+title: StringSplit
+---
 
 `StringSplit["string"]` splits a string into a list of substrings separated by whitespace.
 

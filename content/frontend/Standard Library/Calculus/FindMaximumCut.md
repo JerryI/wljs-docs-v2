@@ -1,4 +1,6 @@
-# FindMaximumCut
+---
+title: FindMaximumCut
+---
 
 `FindMaximumCut[g]` gives the maximum cut of the graph g.
 

@@ -1,4 +1,6 @@
-# ForeignCallback
+---
+title: ForeignCallback
+---
 
 `ForeignCallback[func]` represents a foreign callback that can be called from external libraries loaded via `LibraryLink`.
 

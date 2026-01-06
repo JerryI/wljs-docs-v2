@@ -1,4 +1,6 @@
-# PolarCurve
+---
+title: PolarCurve
+---
 
 `PolarCurve[r, {θ, θmin, θmax}]` gives a polar curve with radius r as a function of angle θ.
 

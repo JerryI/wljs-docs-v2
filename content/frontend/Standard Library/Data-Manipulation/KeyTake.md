@@ -1,4 +1,6 @@
-# KeyTake
+---
+title: KeyTake
+---
 
 `KeyTake[assoc, {key1, key2, ...}]` yields an association containing only the elements with keys key_i.
 

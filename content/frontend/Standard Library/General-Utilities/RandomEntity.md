@@ -1,4 +1,6 @@
-# RandomEntity
+---
+title: RandomEntity
+---
 
 `RandomEntity[spec]` gives a pseudorandom entity with a type determined by the specification *spec*.
 

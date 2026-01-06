@@ -1,4 +1,6 @@
-# EdgeTags
+---
+title: EdgeTags
+---
 
 `EdgeTags[g]` gives the list of tags for all edges in the graph g.
 

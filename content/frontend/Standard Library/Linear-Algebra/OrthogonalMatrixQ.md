@@ -1,4 +1,6 @@
-# OrthogonalMatrixQ
+---
+title: OrthogonalMatrixQ
+---
 
 `OrthogonalMatrixQ[m]` gives `True` if m is an explicitly orthogonal matrix, and `False` otherwise.
 

@@ -1,4 +1,6 @@
-# KeyValueMap
+---
+title: KeyValueMap
+---
 
 `KeyValueMap[f, assoc]` applies `f` to each key-value pair and returns a list of results `{f[key1, val1], f[key2, val2], ...}`.
 

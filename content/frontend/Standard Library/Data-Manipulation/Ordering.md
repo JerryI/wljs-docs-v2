@@ -1,4 +1,6 @@
-# Ordering
+---
+title: Ordering
+---
 
 `Ordering[list]` gives the positions that would sort the list. `Ordering[list, n]` gives positions of the `n` smallest elements.
 

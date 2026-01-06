@@ -1,4 +1,6 @@
-# ArrayFilter
+---
+title: ArrayFilter
+---
 
 `ArrayFilter[f, array, r]` applies f to all range-r blocks in the specified array.
 

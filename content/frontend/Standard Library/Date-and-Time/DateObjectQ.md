@@ -1,4 +1,6 @@
-# DateObjectQ
+---
+title: DateObjectQ
+---
 
 `DateObjectQ[expr]` gives `True` if expr is a `DateObject` with valid arguments, and `False` otherwise.
 

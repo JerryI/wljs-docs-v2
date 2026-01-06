@@ -1,4 +1,6 @@
-# DatabaseConnect
+---
+title: DatabaseConnect
+---
 
 `DatabaseConnect[db]` activates a connection to the database db.
 

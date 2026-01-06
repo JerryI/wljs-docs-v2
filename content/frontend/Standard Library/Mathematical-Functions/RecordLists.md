@@ -1,4 +1,6 @@
-# RecordLists
+---
+title: RecordLists
+---
 
 `RecordLists` is an option for `ReadList` that specifies whether objects from separate records should be returned in separate sublists.
 

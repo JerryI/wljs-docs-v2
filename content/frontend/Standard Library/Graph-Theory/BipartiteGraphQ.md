@@ -1,4 +1,6 @@
-# BipartiteGraphQ
+---
+title: BipartiteGraphQ
+---
 
 `BipartiteGraphQ[g]` yields `True` if the graph g is a bipartite graph and `False` otherwise.
 

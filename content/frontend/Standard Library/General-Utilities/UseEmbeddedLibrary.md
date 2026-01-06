@@ -1,4 +1,6 @@
-# UseEmbeddedLibrary
+---
+title: UseEmbeddedLibrary
+---
 
 `UseEmbeddedLibrary` is an option of `FunctionCompile` that embeds a shared library in a CompiledCodeFunction.
 

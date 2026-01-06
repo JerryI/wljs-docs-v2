@@ -1,4 +1,6 @@
-# BernoulliB
+---
+title: BernoulliB
+---
 
 `BernoulliB[n]` gives the Bernoulli number B_n. `BernoulliB[n, x]` gives the Bernoulli polynomial B_n(x).
 

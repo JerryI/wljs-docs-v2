@@ -1,4 +1,6 @@
-# WeightedAdjacencyGraph
+---
+title: WeightedAdjacencyGraph
+---
 
 `WeightedAdjacencyGraph[wmat]` gives the graph with weighted adjacency matrix wmat.
 

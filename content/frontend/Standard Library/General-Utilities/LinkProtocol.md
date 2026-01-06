@@ -1,4 +1,6 @@
-# LinkProtocol
+---
+title: LinkProtocol
+---
 
 `LinkProtocol` is an option to `LinkLaunch`, `Install`, and related functions that specifies the underlying data transport protocol to use for a new WSTP link.
 

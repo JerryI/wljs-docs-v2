@@ -1,4 +1,6 @@
-# ListDensityPlot3D
+---
+title: ListDensityPlot3D
+---
 
 `ListDensityPlot3D[farr]` generates a smooth density plot from a 3D array of values farr.
 

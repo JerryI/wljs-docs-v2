@@ -1,4 +1,6 @@
-# SSSTriangle
+---
+title: SSSTriangle
+---
 
 `SSSTriangle[a, b, c]` returns a filled triangle with sides of lengths a, b, and c.
 

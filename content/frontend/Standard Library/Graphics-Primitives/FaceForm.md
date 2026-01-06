@@ -1,4 +1,6 @@
-# FaceForm
+---
+title: FaceForm
+---
 
 `FaceForm[g]` is a graphics directive specifying that faces of polygons and other filled graphics objects are to be drawn using the directive g.
 

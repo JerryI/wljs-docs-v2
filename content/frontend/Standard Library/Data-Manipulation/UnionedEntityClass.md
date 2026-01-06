@@ -1,4 +1,6 @@
-# UnionedEntityClass
+---
+title: UnionedEntityClass
+---
 
 `UnionedEntityClass[class1, ...]` represents an entity class containing all the distinct entities in all the classi.
 

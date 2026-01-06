@@ -1,4 +1,6 @@
-# While
+---
+title: While
+---
 
 `While[test, body]` evaluates test, then body, repetitively, until test first fails to give True.
 

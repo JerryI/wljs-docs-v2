@@ -1,4 +1,6 @@
-# ServiceConnect
+---
+title: ServiceConnect
+---
 
 `ServiceConnect["service"]` creates a connection to an external service.
 

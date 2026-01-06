@@ -1,4 +1,6 @@
-# NetFoldOperator
+---
+title: NetFoldOperator
+---
 
 `NetFoldOperator[net]` represents a net in which net is folded over a sequence of inputs, maintaining a recurrent state.
 

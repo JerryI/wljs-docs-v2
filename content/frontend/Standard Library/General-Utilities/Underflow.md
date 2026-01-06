@@ -1,4 +1,6 @@
-# Underflow
+---
+title: Underflow
+---
 
 `Underflow[]` represents a number too small to represent explicitly on your computer system.
 

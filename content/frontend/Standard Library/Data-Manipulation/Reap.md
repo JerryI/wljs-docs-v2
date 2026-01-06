@@ -1,4 +1,6 @@
-# Reap
+---
+title: Reap
+---
 
 `Reap[expr]` gives the value of expr together with all expressions to which Sow has been applied during its evaluation. Expressions sown using Sow[e] or Sow[e,tagi] with different tags are given in different lists.
 

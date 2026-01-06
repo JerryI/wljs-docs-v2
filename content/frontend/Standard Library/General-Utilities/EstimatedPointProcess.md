@@ -1,4 +1,6 @@
-# EstimatedPointProcess
+---
+title: EstimatedPointProcess
+---
 
 `EstimatedPointProcess[pdata, pproc]` estimates the parametric point process pproc from point data pdata.
 

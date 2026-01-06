@@ -1,4 +1,6 @@
-# ConnectedMeshComponents
+---
+title: ConnectedMeshComponents
+---
 
 `ConnectedMeshComponents[mr]` gives a list {c1, c2, ...} of disjoint path connected meshed regions.
 

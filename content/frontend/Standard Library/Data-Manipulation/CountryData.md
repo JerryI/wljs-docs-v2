@@ -1,4 +1,6 @@
-# CountryData
+---
+title: CountryData
+---
 
 `CountryData["tag", property]` gives the value of the specified property for the country, country-like entity, or group of countries specified by "tag".
 

@@ -1,4 +1,6 @@
-# ExpandDenominator
+---
+title: ExpandDenominator
+---
 
 `ExpandDenominator[expr]` expands out products and powers that appear as denominators in expr.
 

@@ -1,4 +1,6 @@
-# TooBig
+---
+title: TooBig
+---
 
 `TooBig` is an internal symbol.
 

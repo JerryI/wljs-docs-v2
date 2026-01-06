@@ -1,4 +1,6 @@
-# NuttallWindow
+---
+title: NuttallWindow
+---
 
 `NuttallWindow[x]` represents a Nuttall window function of x.
 

@@ -1,4 +1,6 @@
-# Standardize
+---
+title: Standardize
+---
 
 `Standardize[list]` shifts and rescales the elements of list to have zero mean and unit sample variance.
 

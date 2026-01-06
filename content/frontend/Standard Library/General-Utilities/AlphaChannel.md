@@ -1,4 +1,6 @@
-# AlphaChannel
+---
+title: AlphaChannel
+---
 
 `AlphaChannel[color]` returns the opacity of color.
 

@@ -1,4 +1,6 @@
-# Bottom
+---
+title: Bottom
+---
 
 `Bottom` is a symbol that represents the bottom for purposes of alignment and positioning.
 

@@ -1,4 +1,6 @@
-# ClassifierInformation
+---
+title: ClassifierInformation
+---
 
 `ClassifierInformation[classifier]` generates a report giving information on the classifier function.
 

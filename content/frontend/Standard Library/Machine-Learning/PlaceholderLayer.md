@@ -1,4 +1,6 @@
-# PlaceholderLayer
+---
+title: PlaceholderLayer
+---
 
 `PlaceholderLayer[]` represents a net layer whose operation is undefined.
 

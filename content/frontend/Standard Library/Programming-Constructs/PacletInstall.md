@@ -1,4 +1,6 @@
-# PacletInstall
+---
+title: PacletInstall
+---
 
 `PacletInstall[paclet]` installs or updates paclet.
 

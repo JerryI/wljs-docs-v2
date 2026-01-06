@@ -1,4 +1,6 @@
-# Image3DProjection
+---
+title: Image3DProjection
+---
 
 `Image3DProjection[image]` takes a 3D image and returns a 2D image of maximum projection onto the x-y plane.
 

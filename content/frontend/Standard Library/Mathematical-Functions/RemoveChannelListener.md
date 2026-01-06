@@ -1,4 +1,6 @@
-# RemoveChannelListener
+---
+title: RemoveChannelListener
+---
 
 `RemoveChannelListener[obj]` removes obj from the list of currently active channel listeners.
 

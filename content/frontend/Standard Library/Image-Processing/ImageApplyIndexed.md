@@ -1,4 +1,6 @@
-# ImageApplyIndexed
+---
+title: ImageApplyIndexed
+---
 
 `ImageApplyIndexed[f,image]` applies the function f to the list of channel values for each pixel in image, giving the row and column index of each pixel as a second argument to f.
 

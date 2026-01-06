@@ -1,4 +1,6 @@
-# NotSupersetEqual
+---
+title: NotSupersetEqual
+---
 
 `NotSupersetEqual[x, y, ...]` displays as x⊉y⊉….
 

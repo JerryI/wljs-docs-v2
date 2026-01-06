@@ -1,4 +1,6 @@
-# Arrowheads
+---
+title: Arrowheads
+---
 
 `Arrowheads[size]` is a graphics directive specifying arrowhead size. `Arrowheads[{spec1, spec2, ...}]` allows multiple arrowheads.
 

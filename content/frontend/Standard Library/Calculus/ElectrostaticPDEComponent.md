@@ -1,4 +1,6 @@
-# ElectrostaticPDEComponent
+---
+title: ElectrostaticPDEComponent
+---
 
 `ElectrostaticPDEComponent[vars, pars]` yields an electrostatic PDE term with variables vars and parameters pars.
 

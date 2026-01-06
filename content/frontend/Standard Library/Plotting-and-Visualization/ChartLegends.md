@@ -1,4 +1,6 @@
-# ChartLegends
+---
+title: ChartLegends
+---
 
 `ChartLegends` is an option for charting functions that specifies what legends should be used for chart elements.
 

@@ -1,4 +1,6 @@
-# PacletDirectoryLoad
+---
+title: PacletDirectoryLoad
+---
 
 `PacletDirectoryLoad[dir]` makes paclets in dir visible in the current session.
 

@@ -1,4 +1,6 @@
-# RankedMin
+---
+title: RankedMin
+---
 
 `RankedMin[list, n]` gives the nth smallest element in list.
 

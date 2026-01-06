@@ -1,4 +1,6 @@
-# GuidedFilter
+---
+title: GuidedFilter
+---
 
 `GuidedFilter[image, guide, r, ε]` filters *image* using the guide image *guide* over range-*r* neighborhoods with pixel-value regularizer *ε*.
 

@@ -1,4 +1,6 @@
-# URLEncode
+---
+title: URLEncode
+---
 
 `URLEncode["string"]` converts "string" into a URL-style, percent-encoded ASCII string.
 

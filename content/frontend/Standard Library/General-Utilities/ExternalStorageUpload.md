@@ -1,4 +1,6 @@
-# ExternalStorageUpload
+---
+title: ExternalStorageUpload
+---
 
 `ExternalStorageUpload[file]` uploads file to an external storage specified by $ExternalStorageBase.
 

@@ -1,4 +1,6 @@
-# Sunday
+---
+title: Sunday
+---
 
 `Sunday` is a day of the week.
 

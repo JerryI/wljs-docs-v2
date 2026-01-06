@@ -1,4 +1,6 @@
-# CarlsonRE
+---
+title: CarlsonRE
+---
 
 `CarlsonRE[x, y]` gives Carlson's elliptic integral RE(x, y).
 

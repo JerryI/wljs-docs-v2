@@ -1,4 +1,6 @@
-# InverseHaversine
+---
+title: InverseHaversine
+---
 
 `InverseHaversine[z]` gives the inverse haversine function hav⁻¹(z).
 

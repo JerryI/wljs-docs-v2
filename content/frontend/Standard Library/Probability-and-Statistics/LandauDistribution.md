@@ -1,4 +1,6 @@
-# LandauDistribution
+---
+title: LandauDistribution
+---
 
 `LandauDistribution[μ, σ]` represents a Landau distribution with location parameter μ and scale parameter σ.
 

@@ -1,4 +1,6 @@
-# SphericalHankelH1
+---
+title: SphericalHankelH1
+---
 
 `SphericalHankelH1[n, z]` gives the spherical Hankel function of the first kind h_n^(1)(z).
 

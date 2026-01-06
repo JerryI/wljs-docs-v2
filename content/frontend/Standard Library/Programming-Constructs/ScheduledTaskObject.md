@@ -1,4 +1,6 @@
-# ScheduledTaskObject
+---
+title: ScheduledTaskObject
+---
 
 `ScheduledTaskObject[id, expr, spec, ...]` is a task object specifying future evaluation of expr according to spec.
 

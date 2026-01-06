@@ -1,4 +1,6 @@
-# Wedge
+---
+title: Wedge
+---
 
 `Wedge[x, y, ...]` displays as x ∧ y ∧ ... and represents the wedge product (exterior product).
 

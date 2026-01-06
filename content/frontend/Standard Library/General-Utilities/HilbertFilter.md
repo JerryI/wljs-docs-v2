@@ -1,4 +1,6 @@
-# HilbertFilter
+---
+title: HilbertFilter
+---
 
 `HilbertFilter[data, ωc]` applies a Hilbert filter with a cutoff frequency ωc to an array of data.
 

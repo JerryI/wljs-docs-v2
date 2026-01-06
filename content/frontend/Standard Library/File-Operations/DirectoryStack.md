@@ -1,4 +1,6 @@
-# DirectoryStack
+---
+title: DirectoryStack
+---
 
 `DirectoryStack[]` gives the directory stack that represents the sequence of current directories used.
 

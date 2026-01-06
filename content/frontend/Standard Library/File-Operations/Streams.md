@@ -1,4 +1,6 @@
-# Streams
+---
+title: Streams
+---
 
 `Streams[]` gives a list of all streams that are currently open.
 

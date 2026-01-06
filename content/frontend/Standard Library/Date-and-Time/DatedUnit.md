@@ -1,4 +1,6 @@
-# DatedUnit
+---
+title: DatedUnit
+---
 
 `DatedUnit[unit, date]` represents the specified unit at a specific date.
 

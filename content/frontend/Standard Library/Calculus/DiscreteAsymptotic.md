@@ -1,4 +1,6 @@
-# DiscreteAsymptotic
+---
+title: DiscreteAsymptotic
+---
 
 `DiscreteAsymptotic[expr, n -> ∞]` gives an asymptotic approximation for expr as n tends to infinity over the integers.
 

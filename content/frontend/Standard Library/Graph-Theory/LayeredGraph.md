@@ -1,4 +1,6 @@
-# LayeredGraph
+---
+title: LayeredGraph
+---
 
 `LayeredGraph[g]` creates a graph with vertices and edges from the graph g represented as a layered plot.
 

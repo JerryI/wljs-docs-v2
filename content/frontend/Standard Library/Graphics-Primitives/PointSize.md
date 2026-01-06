@@ -1,4 +1,6 @@
-# PointSize
+---
+title: PointSize
+---
 
 `PointSize[d]` is a graphics directive specifying that points are to be shown with diameter `d` (as a fraction of plot width).
 

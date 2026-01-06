@@ -1,4 +1,6 @@
-# PartOfSpeech
+---
+title: PartOfSpeech
+---
 
 `PartOfSpeech["word"]` returns the possible parts of speech for the specified word.
 

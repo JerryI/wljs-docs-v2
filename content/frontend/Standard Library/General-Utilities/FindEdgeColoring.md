@@ -1,4 +1,6 @@
-# FindEdgeColoring
+---
+title: FindEdgeColoring
+---
 
 `FindEdgeColoring[g]` finds a coloring with minimal size for the edges in the graph g.
 

@@ -1,4 +1,6 @@
-# StackedListPlot
+---
+title: StackedListPlot
+---
 
 `StackedListPlot[{data1, data2, ...}]` plots lines for each of the datai, with the ith curve being the accumulation of values in data1 through datai.
 

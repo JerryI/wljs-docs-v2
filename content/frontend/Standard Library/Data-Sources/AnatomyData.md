@@ -1,4 +1,6 @@
-# AnatomyData
+---
+title: AnatomyData
+---
 
 `AnatomyData[entity, property]` gives the value of the specified property for the anatomical structure entity.
 

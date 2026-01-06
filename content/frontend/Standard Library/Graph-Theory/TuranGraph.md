@@ -1,4 +1,6 @@
-# TuranGraph
+---
+title: TuranGraph
+---
 
 `TuranGraph[n, k]` gives the k-partite Turán graph with n vertices T(n,k).
 

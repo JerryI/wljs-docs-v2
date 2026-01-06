@@ -1,4 +1,6 @@
-# DateReduction
+---
+title: DateReduction
+---
 
 `DateReduction` is an option for `DateHistogram` that specifies the length for cyclic periods of time.
 

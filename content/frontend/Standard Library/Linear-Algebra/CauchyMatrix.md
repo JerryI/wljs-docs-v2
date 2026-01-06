@@ -1,4 +1,6 @@
-# CauchyMatrix
+---
+title: CauchyMatrix
+---
 
 `CauchyMatrix[x, y]` represents the Cauchy matrix given by the generating vectors x and y as a structured array.
 

@@ -1,4 +1,6 @@
-# ExpressionGraph
+---
+title: ExpressionGraph
+---
 
 `ExpressionGraph[expr]` gives the tree graph with different levels at different depths.
 

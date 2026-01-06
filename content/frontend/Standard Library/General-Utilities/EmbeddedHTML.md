@@ -1,4 +1,6 @@
-# EmbeddedHTML
+---
+title: EmbeddedHTML
+---
 
 `EmbeddedHTML["string"]` is an object that formats as a web frame containing the HTML content "string".
 

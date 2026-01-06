@@ -1,4 +1,6 @@
-# SubtitleTrackSelection
+---
+title: SubtitleTrackSelection
+---
 
 `SubtitleTrackSelection` is an option that specifies the subtitle tracks of interest.
 

@@ -1,4 +1,6 @@
-# NotPrecedesEqual
+---
+title: NotPrecedesEqual
+---
 
 `NotPrecedesEqual[x, y, ...]` displays as x⋠y⋠….
 

@@ -1,4 +1,6 @@
-# KelvinKei
+---
+title: KelvinKei
+---
 
 `KelvinKei[z]` gives the Kelvin function kei(z).
 

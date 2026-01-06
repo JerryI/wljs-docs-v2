@@ -1,4 +1,6 @@
-# MassOutflowValue
+---
+title: MassOutflowValue
+---
 
 `MassOutflowValue[pred, vars, pars]` represents a mass outflow boundary condition for PDEs with predicate pred indicating where it applies, with model variables vars and global parameters pars.
 

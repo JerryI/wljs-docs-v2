@@ -1,4 +1,6 @@
-# EqualTilde
+---
+title: EqualTilde
+---
 
 `EqualTilde[x, y, ...]` displays as x≂y≂....
 

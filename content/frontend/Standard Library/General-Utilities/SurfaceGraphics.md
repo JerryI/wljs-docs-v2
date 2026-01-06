@@ -1,4 +1,6 @@
-# SurfaceGraphics
+---
+title: SurfaceGraphics
+---
 
 `SurfaceGraphics[array]` is a representation of a three-dimensional plot of a surface, with heights of each point on a grid specified by values in array.
 

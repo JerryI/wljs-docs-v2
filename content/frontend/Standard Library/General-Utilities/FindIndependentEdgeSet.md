@@ -1,4 +1,6 @@
-# FindIndependentEdgeSet
+---
+title: FindIndependentEdgeSet
+---
 
 `FindIndependentEdgeSet[g]` finds an independent edge set of the graph g with a maximum number of edges.
 

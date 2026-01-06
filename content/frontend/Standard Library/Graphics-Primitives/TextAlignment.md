@@ -1,4 +1,6 @@
-# TextAlignment
+---
+title: TextAlignment
+---
 
 `TextAlignment` is an option for `Cell`, `Style`, and related constructs which specifies how successive lines of text should be aligned.
 

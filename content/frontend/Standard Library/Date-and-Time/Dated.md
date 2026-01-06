@@ -1,4 +1,6 @@
-# Dated
+---
+title: Dated
+---
 
 `Dated[obj, year]` represents the object obj associated with a particular year.
 

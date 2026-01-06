@@ -1,4 +1,6 @@
-# VonMisesDistribution
+---
+title: VonMisesDistribution
+---
 
 `VonMisesDistribution[μ, κ]` represents a von Mises distribution with mean μ and concentration κ.
 

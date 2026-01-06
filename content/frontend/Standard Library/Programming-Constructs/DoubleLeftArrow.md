@@ -1,4 +1,6 @@
-# DoubleLeftArrow
+---
+title: DoubleLeftArrow
+---
 
 `DoubleLeftArrow[x, y, ...]` displays as x⇐y⇐….
 

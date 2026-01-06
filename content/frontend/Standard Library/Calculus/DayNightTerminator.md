@@ -1,4 +1,6 @@
-# DayNightTerminator
+---
+title: DayNightTerminator
+---
 
 `DayNightTerminator[]` is a one-dimensional GeoGraphics primitive that represents the separation line between the halves of the Earth currently in daytime and nighttime.
 

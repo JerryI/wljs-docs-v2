@@ -1,4 +1,6 @@
-# RemoteBatchSubmit
+---
+title: RemoteBatchSubmit
+---
 
 `RemoteBatchSubmit[env, expr]` submits expr for evaluation using the remote batch submission environment env.
 

@@ -1,4 +1,6 @@
-# Multicolumn
+---
+title: Multicolumn
+---
 
 `Multicolumn[list, cols]` is an object that formats with the elements of list arranged in a grid with the indicated number of columns.
 

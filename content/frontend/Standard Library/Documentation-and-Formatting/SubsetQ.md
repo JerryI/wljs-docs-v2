@@ -1,4 +1,6 @@
-# SubsetQ
+---
+title: SubsetQ
+---
 
 `SubsetQ[list1, list2]` yields True if list2 is a subset of list1, and False otherwise.
 

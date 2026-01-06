@@ -1,4 +1,6 @@
-# Share
+---
+title: Share
+---
 
 `Share[expr]` changes the way expr is stored internally, to try and minimize the amount of memory used.
 

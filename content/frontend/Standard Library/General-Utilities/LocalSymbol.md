@@ -1,4 +1,6 @@
-# LocalSymbol
+---
+title: LocalSymbol
+---
 
 `LocalSymbol["name"]` represents a symbol whose value is persistently stored in the local file system.
 

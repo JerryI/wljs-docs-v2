@@ -1,4 +1,6 @@
-# UpArrow
+---
+title: UpArrow
+---
 
 `UpArrow[x, y, ...]` displays as x↑y↑….
 

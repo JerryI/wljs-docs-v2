@@ -1,4 +1,6 @@
-# Cases
+---
+title: Cases
+---
 
 `Cases[{e1, e2, ...}, pattern]` gives a list of the ei that match the pattern.
 

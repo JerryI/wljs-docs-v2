@@ -1,4 +1,6 @@
-# GeneratorDescription
+---
+title: GeneratorDescription
+---
 
 `GeneratorDescription` is an option for providing a textual description for a DocumentGenerator.
 

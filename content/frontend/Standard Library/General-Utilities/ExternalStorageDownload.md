@@ -1,4 +1,6 @@
-# ExternalStorageDownload
+---
+title: ExternalStorageDownload
+---
 
 `ExternalStorageDownload[location]` downloads content from the specified location.
 

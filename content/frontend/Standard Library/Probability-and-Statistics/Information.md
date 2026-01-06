@@ -1,4 +1,6 @@
-# Information
+---
+title: Information
+---
 
 `Information[expr]` gives information about the expression expr.
 

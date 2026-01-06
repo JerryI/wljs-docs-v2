@@ -1,4 +1,6 @@
-# URLDecode
+---
+title: URLDecode
+---
 
 `URLDecode["string"]` decodes a URL-style percent-encoded string.
 

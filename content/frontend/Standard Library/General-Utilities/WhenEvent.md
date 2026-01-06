@@ -1,4 +1,6 @@
-# WhenEvent
+---
+title: WhenEvent
+---
 
 `WhenEvent[event, action]` specifies an action that occurs when the event triggers it for equations in `NDSolve` and related functions.
 

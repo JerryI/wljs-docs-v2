@@ -1,4 +1,6 @@
-# SquaresR
+---
+title: SquaresR
+---
 
 `SquaresR[d, n]` gives the number of ways to represent the integer n as a sum of d squares.
 

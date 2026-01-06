@@ -1,4 +1,6 @@
-# TreeDelete
+---
+title: TreeDelete
+---
 
 `TreeDelete[tree,pos]` deletes the subtree of tree at the position specified by pos.
 

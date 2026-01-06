@@ -1,4 +1,6 @@
-# ImageIdentify
+---
+title: ImageIdentify
+---
 
 `ImageIdentify[image]` attempts to identify what image is a picture of.
 

@@ -1,4 +1,6 @@
-# SphericalAngle
+---
+title: SphericalAngle
+---
 
 `SphericalAngle[{θ0, ϕ0} -> {{θ1, ϕ1}, {θ2, ϕ2}}]` gives the signed angle in radians between the great circles through point {θ0, ϕ0} and points {θ1, ϕ1} and {θ2, ϕ2}.
 

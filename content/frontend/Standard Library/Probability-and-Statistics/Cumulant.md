@@ -1,4 +1,6 @@
-# Cumulant
+---
+title: Cumulant
+---
 
 `Cumulant[data, r]` gives the rth cumulant κr of data.
 

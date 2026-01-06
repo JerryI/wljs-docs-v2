@@ -1,4 +1,6 @@
-# SolarEclipse
+---
+title: SolarEclipse
+---
 
 `SolarEclipse[]` gives the date of the next solar eclipse.
 

@@ -1,4 +1,6 @@
-# Sqrt
+---
+title: Sqrt
+---
 
 `Sqrt[z]` gives the square root of z.
 

@@ -1,4 +1,6 @@
-# RowReduce
+---
+title: RowReduce
+---
 
 `RowReduce[m]` gives the row-reduced form of the matrix m.
 

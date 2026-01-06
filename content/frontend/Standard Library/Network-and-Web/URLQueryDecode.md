@@ -1,4 +1,6 @@
-# URLQueryDecode
+---
+title: URLQueryDecode
+---
 
 `URLQueryDecode["string"]` decodes a URL-style query string into a list of key-value rules.
 

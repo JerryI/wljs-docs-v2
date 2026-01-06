@@ -1,4 +1,6 @@
-# FindEdgeIndependentPaths
+---
+title: FindEdgeIndependentPaths
+---
 
 `FindEdgeIndependentPaths[g,s,t,k]` finds at most k edge-independent paths from vertex s to vertex t in the graph g.
 

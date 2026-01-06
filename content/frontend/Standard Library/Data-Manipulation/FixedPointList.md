@@ -1,4 +1,6 @@
-# FixedPointList
+---
+title: FixedPointList
+---
 
 `FixedPointList[f, expr]` generates a list of results from applying f repeatedly until the result no longer changes.
 

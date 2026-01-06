@@ -1,4 +1,6 @@
-# DagumDistribution
+---
+title: DagumDistribution
+---
 
 `DagumDistribution[p,a,b]` represents a Dagum distribution with shape parameters p and a and scale parameter b.
 

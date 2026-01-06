@@ -1,4 +1,6 @@
-# GainPhaseMargins
+---
+title: GainPhaseMargins
+---
 
 `GainPhaseMargins[lsys]` gives the gain and phase margins of the linear time-invariant system lsys.
 

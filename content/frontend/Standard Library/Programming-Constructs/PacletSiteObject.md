@@ -1,4 +1,6 @@
-# PacletSiteObject
+---
+title: PacletSiteObject
+---
 
 `PacletSiteObject[assoc]` represents a site from which paclets can be automatically downloaded.
 

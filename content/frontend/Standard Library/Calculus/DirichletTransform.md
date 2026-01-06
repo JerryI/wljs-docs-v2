@@ -1,4 +1,6 @@
-# DirichletTransform
+---
+title: DirichletTransform
+---
 
 `DirichletTransform[expr, n, s]` gives the Dirichlet transform of expr with respect to n.
 

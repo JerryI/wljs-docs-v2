@@ -1,4 +1,6 @@
-# LocalObjects
+---
+title: LocalObjects
+---
 
 `LocalObjects[]` gives a list of local objects in your current local base directory.
 

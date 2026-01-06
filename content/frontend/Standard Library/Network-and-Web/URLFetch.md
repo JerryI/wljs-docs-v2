@@ -1,4 +1,6 @@
-# URLFetch
+---
+title: URLFetch
+---
 
 `URLFetch[url]` returns the contents of a URL as a string.
 

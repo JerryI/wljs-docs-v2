@@ -1,4 +1,6 @@
-# VertexWeight
+---
+title: VertexWeight
+---
 
 `VertexWeight` is an option and annotation for `Graph` and related functions that specifies a vertex weight.
 

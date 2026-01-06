@@ -1,4 +1,6 @@
-# SkellamDistribution
+---
+title: SkellamDistribution
+---
 
 `SkellamDistribution[μ1, μ2]` represents a Skellam distribution with shape parameters μ1 and μ2.
 

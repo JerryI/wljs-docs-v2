@@ -1,4 +1,6 @@
-# Map
+---
+title: Map
+---
 
 `Map[f, expr]` or `f /@ expr` applies f to each element on the first level in expr.
 

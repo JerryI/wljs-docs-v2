@@ -1,4 +1,6 @@
-# TimeSeriesAggregate
+---
+title: TimeSeriesAggregate
+---
 
 `TimeSeriesAggregate[tseries, dt]` computes the mean value of tseries over non-overlapping windows of width dt.
 

@@ -1,4 +1,6 @@
-# TimeValue
+---
+title: TimeValue
+---
 
 `TimeValue[s, i, t]` calculates the time value of a security s at time t for an interest specified by i.
 

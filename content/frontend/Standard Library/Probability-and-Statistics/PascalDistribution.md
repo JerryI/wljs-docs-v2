@@ -1,4 +1,6 @@
-# PascalDistribution
+---
+title: PascalDistribution
+---
 
 `PascalDistribution[n, p]` represents a Pascal distribution with parameters n and p.
 

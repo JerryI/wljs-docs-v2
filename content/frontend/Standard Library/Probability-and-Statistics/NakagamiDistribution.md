@@ -1,4 +1,6 @@
-# NakagamiDistribution
+---
+title: NakagamiDistribution
+---
 
 `NakagamiDistribution[μ,ω]` represents a Nakagami distribution with shape parameter μ and spread parameter ω.
 

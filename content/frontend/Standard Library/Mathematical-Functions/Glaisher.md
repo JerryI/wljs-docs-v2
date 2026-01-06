@@ -1,4 +1,6 @@
-# Glaisher
+---
+title: Glaisher
+---
 
 `Glaisher` is Glaisher's constant with numerical value ≈1.28243.
 

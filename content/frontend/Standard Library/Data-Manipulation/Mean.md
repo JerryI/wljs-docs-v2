@@ -1,4 +1,6 @@
-# Mean
+---
+title: Mean
+---
 
 `Mean[data]` gives the arithmetic mean of the elements in data.
 

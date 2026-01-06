@@ -1,4 +1,6 @@
-# FindDivisions
+---
+title: FindDivisions
+---
 
 `FindDivisions[{xmin,xmax},n]` finds a list of about n "nice" numbers that divide the interval around xmin to xmax into equally spaced parts. 
 

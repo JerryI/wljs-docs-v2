@@ -1,4 +1,6 @@
-# HighpassFilter
+---
+title: HighpassFilter
+---
 
 `HighpassFilter[data, ωc]` applies a highpass filter with a cutoff frequency `ωc` to an array of data.
 

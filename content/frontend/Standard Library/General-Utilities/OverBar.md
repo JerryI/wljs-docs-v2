@@ -1,4 +1,6 @@
-# OverBar
+---
+title: OverBar
+---
 
 `OverBar[expr]` displays with a bar over expr.
 

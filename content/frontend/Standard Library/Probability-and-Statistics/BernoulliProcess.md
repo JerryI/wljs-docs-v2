@@ -1,4 +1,6 @@
-# BernoulliProcess
+---
+title: BernoulliProcess
+---
 
 `BernoulliProcess[p]` represents a Bernoulli process with event probability p.
 

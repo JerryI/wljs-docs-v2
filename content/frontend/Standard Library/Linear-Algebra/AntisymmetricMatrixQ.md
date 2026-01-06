@@ -1,4 +1,6 @@
-# AntisymmetricMatrixQ
+---
+title: AntisymmetricMatrixQ
+---
 
 `AntisymmetricMatrixQ[m]` gives `True` if m is explicitly antisymmetric, and `False` otherwise.
 

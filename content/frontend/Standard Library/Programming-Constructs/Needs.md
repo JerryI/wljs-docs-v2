@@ -1,4 +1,6 @@
-# Needs
+---
+title: Needs
+---
 
 `Needs["context`"]` loads an appropriate file if the specified context is not already in `$Packages`.
 

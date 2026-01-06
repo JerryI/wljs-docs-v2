@@ -1,4 +1,6 @@
-# PatternTest
+---
+title: PatternTest
+---
 
 `p?test` is a pattern object that stands for any expression that matches p, and on which the application of test gives `True`.
 

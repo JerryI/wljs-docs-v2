@@ -1,4 +1,6 @@
-# CreateFile
+---
+title: CreateFile
+---
 
 `CreateFile["file"]` creates a file with name file.
 

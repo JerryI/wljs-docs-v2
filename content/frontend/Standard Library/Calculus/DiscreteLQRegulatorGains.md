@@ -1,4 +1,6 @@
-# DiscreteLQRegulatorGains
+---
+title: DiscreteLQRegulatorGains
+---
 
 `DiscreteLQRegulatorGains[sspec, wts, τ]` gives the discrete-time state feedback gains with sampling period τ for the continuous-time system specification sspec that minimizes a cost function with weights wts.
 

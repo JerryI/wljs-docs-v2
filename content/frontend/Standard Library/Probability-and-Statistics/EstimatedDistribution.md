@@ -1,4 +1,6 @@
-# EstimatedDistribution
+---
+title: EstimatedDistribution
+---
 
 `EstimatedDistribution[data, dist]` estimates the parametric distribution dist from data.
 

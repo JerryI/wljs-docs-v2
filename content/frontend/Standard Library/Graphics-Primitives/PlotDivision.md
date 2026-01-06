@@ -1,4 +1,6 @@
-# PlotDivision
+---
+title: PlotDivision
+---
 
 `PlotDivision` is an option for `Plot` that specifies the maximum amount of subdivision to be used.
 

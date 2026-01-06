@@ -1,4 +1,6 @@
-# WarpingCorrespondence
+---
+title: WarpingCorrespondence
+---
 
 `WarpingCorrespondence[s1, s2]` gives the time warping (DTW) similarity path between sequences *s1* and *s2*.
 

@@ -1,4 +1,6 @@
-# FindGraphIsomorphism
+---
+title: FindGraphIsomorphism
+---
 
 `FindGraphIsomorphism[g1,g2]` finds an isomorphism that maps the graph g1 to g2 by renaming vertices.
 

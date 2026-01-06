@@ -1,4 +1,6 @@
-# GraphCenter
+---
+title: GraphCenter
+---
 
 `GraphCenter[g]` gives the set of vertices with minimum eccentricity (most central vertices) in graph g.
 

@@ -1,4 +1,6 @@
-# TextGrid
+---
+title: TextGrid
+---
 
 `TextGrid[{{expr11, expr12, ...}, {expr21, expr22, ...}, ...}]` formats expressions as a two-dimensional text grid.
 

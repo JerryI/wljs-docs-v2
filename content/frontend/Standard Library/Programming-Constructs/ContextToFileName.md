@@ -1,4 +1,6 @@
-# ContextToFileName
+---
+title: ContextToFileName
+---
 
 `ContextToFileName["context"]` gives the string specifying the file name that is by convention associated with a particular context.
 

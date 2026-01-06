@@ -1,4 +1,6 @@
-# SequenceRestLayer
+---
+title: SequenceRestLayer
+---
 
 `SequenceRestLayer[]` represents a net that takes a sequence of inputs and removes its first element.
 

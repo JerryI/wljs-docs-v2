@@ -1,4 +1,6 @@
-# IgnoreDiacritics
+---
+title: IgnoreDiacritics
+---
 
 `IgnoreDiacritics` is an option for string, grammar, and related functions that specifies whether diacritics should be ignored in strings.
 

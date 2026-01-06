@@ -1,4 +1,6 @@
-# LUVColor
+---
+title: LUVColor
+---
 
 `LUVColor[l, u, v]` represents a color in the LUV color space with lightness `l` and color components `u` and `v`.
 

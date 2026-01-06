@@ -1,4 +1,6 @@
-# Hypergeometric0F1
+---
+title: Hypergeometric0F1
+---
 
 `Hypergeometric0F1[a, z]` is the confluent hypergeometric function $_0F_1(;a;z)$.
 

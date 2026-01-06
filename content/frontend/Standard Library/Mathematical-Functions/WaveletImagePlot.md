@@ -1,4 +1,6 @@
-# WaveletImagePlot
+---
+title: WaveletImagePlot
+---
 
 `WaveletImagePlot[dwd]` plots the basis tree of wavelet image coefficients in the DiscreteWaveletData dwd.
 

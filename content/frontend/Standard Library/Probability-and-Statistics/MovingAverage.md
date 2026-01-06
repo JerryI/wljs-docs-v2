@@ -1,4 +1,6 @@
-# MovingAverage
+---
+title: MovingAverage
+---
 
 `MovingAverage[list, r]` gives the moving average of list, computed by averaging runs of r elements.
 

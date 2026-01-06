@@ -1,4 +1,6 @@
-# DensityPlot
+---
+title: DensityPlot
+---
 
 `DensityPlot[f, {x, xmin, xmax}, {y, ymin, ymax}]` makes a density plot showing `f` as colors over the x-y plane.
 

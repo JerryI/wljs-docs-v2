@@ -1,4 +1,6 @@
-# ExponentFunction
+---
+title: ExponentFunction
+---
 
 `ExponentFunction` is an option for `NumberForm` and related functions that determines the exponent to use in printing approximate real numbers.
 

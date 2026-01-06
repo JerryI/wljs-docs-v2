@@ -1,4 +1,6 @@
-# MathieuS
+---
+title: MathieuS
+---
 
 `MathieuS[a, q, z]` gives the odd Mathieu function with characteristic value a and parameter q.
 

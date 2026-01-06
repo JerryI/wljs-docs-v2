@@ -1,4 +1,6 @@
-# TsallisQExponentialDistribution
+---
+title: TsallisQExponentialDistribution
+---
 
 `TsallisQExponentialDistribution[λ, q]` represents a Tsallis q-exponential distribution with scale inversely proportional to parameter λ.
 

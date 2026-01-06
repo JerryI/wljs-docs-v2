@@ -1,4 +1,6 @@
-# ChessboardDistance
+---
+title: ChessboardDistance
+---
 
 `ChessboardDistance[u, v]` gives the chessboard, Chebyshev, or sup norm distance between vectors u and v.
 

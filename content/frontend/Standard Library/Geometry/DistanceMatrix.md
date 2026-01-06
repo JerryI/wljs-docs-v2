@@ -1,4 +1,6 @@
-# DistanceMatrix
+---
+title: DistanceMatrix
+---
 
 `DistanceMatrix[{u1, u2, ...}]` gives the matrix of distances between each pair of elements ui, uj.
 

@@ -1,4 +1,6 @@
-# ConnectedGraphComponents
+---
+title: ConnectedGraphComponents
+---
 
 `ConnectedGraphComponents[g]` gives the connected components of the graph g.
 

@@ -1,4 +1,6 @@
-# SliceDensityPlot3D
+---
+title: SliceDensityPlot3D
+---
 
 `SliceDensityPlot3D[f, surf, {x, xmin, xmax}, {y, ymin, ymax}, {z, zmin, zmax}]` generates a density plot of f over the slice surface surf as a function of x, y, and z.
 

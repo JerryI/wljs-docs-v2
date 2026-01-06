@@ -1,4 +1,6 @@
-# SmithDecomposition
+---
+title: SmithDecomposition
+---
 
 `SmithDecomposition[m]` gives the Smith normal form decomposition of an integer matrix m.
 

@@ -1,4 +1,6 @@
-# Khinchin
+---
+title: Khinchin
+---
 
 `Khinchin` is Khinchin's constant, with numerical value ≈ 2.68545.
 

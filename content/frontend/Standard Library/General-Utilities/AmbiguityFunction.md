@@ -1,4 +1,6 @@
-# AmbiguityFunction
+---
+title: AmbiguityFunction
+---
 
 `AmbiguityFunction` is an option for `SemanticInterpretation`, `Interpreter`, and related functions that specifies how to resolve ambiguities generated during semantic interpretation.
 

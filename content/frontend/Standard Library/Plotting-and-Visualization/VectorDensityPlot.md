@@ -1,4 +1,6 @@
-# VectorDensityPlot
+---
+title: VectorDensityPlot
+---
 
 `VectorDensityPlot[{{vx, vy}, r}, {x, xmin, xmax}, {y, ymin, ymax}]` generates vectors superimposed on a density plot of scalar field r.
 

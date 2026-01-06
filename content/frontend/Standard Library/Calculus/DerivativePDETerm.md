@@ -1,4 +1,6 @@
-# DerivativePDETerm
+---
+title: DerivativePDETerm
+---
 
 `DerivativePDETerm[vars, γ]` represents a load derivative term ∇{x1,...,xn}·(γ) with load derivative coefficient γ and model variables vars.
 

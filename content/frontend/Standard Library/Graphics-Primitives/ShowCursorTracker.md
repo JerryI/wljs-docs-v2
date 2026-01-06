@@ -1,4 +1,6 @@
-# ShowCursorTracker
+---
+title: ShowCursorTracker
+---
 
 `ShowCursorTracker` is an option for `Cell` that specifies whether an elliptical spot should appear momentarily to guide the eye if the cursor position jumps.
 

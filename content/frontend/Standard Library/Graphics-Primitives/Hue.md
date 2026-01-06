@@ -1,4 +1,6 @@
-# Hue
+---
+title: Hue
+---
 
 `Hue[h]` represents a color with hue `h` (0 to 1). `Hue[h, s, b]` specifies hue, saturation, and brightness.
 

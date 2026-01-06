@@ -1,4 +1,6 @@
-# Ceiling
+---
+title: Ceiling
+---
 
 `Ceiling[x]` gives the smallest integer greater than or equal to x.
 

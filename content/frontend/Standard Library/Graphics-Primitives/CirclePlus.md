@@ -1,4 +1,6 @@
-# CirclePlus
+---
+title: CirclePlus
+---
 
 `CirclePlus[x, y, ...]` displays as x⊕y⊕....
 

@@ -1,4 +1,6 @@
-# AlignmentPoint
+---
+title: AlignmentPoint
+---
 
 `AlignmentPoint` is an option which specifies how objects should by default be aligned when they appear in `Inset`.
 

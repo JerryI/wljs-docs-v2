@@ -1,4 +1,6 @@
-# EigenvectorCentrality
+---
+title: EigenvectorCentrality
+---
 
 `EigenvectorCentrality[g]` gives a list of eigenvector centralities for the vertices in the graph g.
 

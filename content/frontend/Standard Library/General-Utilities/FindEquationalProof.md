@@ -1,4 +1,6 @@
-# FindEquationalProof
+---
+title: FindEquationalProof
+---
 
 `FindEquationalProof[thm,axms]` tries to find an equational proof of the symbolic theorem thm using the axioms axms.
 

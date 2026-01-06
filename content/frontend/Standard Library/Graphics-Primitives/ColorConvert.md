@@ -1,4 +1,6 @@
-# ColorConvert
+---
+title: ColorConvert
+---
 
 `ColorConvert[color,colspace]` converts the color space of a color to the specified color space colspace.
 

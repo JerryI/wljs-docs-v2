@@ -1,4 +1,6 @@
-# RootLocusPlot
+---
+title: RootLocusPlot
+---
 
 `RootLocusPlot[lsys, {k, kmin, kmax}]` generates a root locus plot of a linear time-invariant system lsys as the parameter k ranges from kmin to kmax.
 

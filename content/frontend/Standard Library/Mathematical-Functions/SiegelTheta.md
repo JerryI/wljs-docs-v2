@@ -1,4 +1,6 @@
-# SiegelTheta
+---
+title: SiegelTheta
+---
 
 `SiegelTheta[Ω, s]` gives the Siegel theta function with Riemann modular matrix Ω and vector s.
 

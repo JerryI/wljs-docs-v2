@@ -1,4 +1,6 @@
-# Less
+---
+title: Less
+---
 
 `x < y` yields `True` if x is less than y.
 

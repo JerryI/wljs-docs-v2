@@ -1,4 +1,6 @@
-# SetSharedVariable
+---
+title: SetSharedVariable
+---
 
 `SetSharedVariable[s1, s2, ...]` declares the symbols si as shared variables whose values are synchronized among all parallel kernels.
 

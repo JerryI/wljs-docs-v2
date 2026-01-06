@@ -1,4 +1,6 @@
-# DateInterval
+---
+title: DateInterval
+---
 
 `DateInterval[{start, end}]` represents the continuous interval of time between start and end.
 

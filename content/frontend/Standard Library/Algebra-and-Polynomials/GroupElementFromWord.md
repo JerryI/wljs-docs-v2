@@ -1,4 +1,6 @@
-# GroupElementFromWord
+---
+title: GroupElementFromWord
+---
 
 `GroupElementFromWord[group, w]` returns the element of `group` determined by the word `w` in the generators of `group`.
 

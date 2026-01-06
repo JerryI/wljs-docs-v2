@@ -1,4 +1,6 @@
-# DiscreteWaveletTransform
+---
+title: DiscreteWaveletTransform
+---
 
 `DiscreteWaveletTransform[data]` gives the discrete wavelet transform (DWT) of an array of data.
 

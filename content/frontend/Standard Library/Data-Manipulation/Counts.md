@@ -1,4 +1,6 @@
-# Counts
+---
+title: Counts
+---
 
 `Counts[list]` gives an association whose keys are the distinct elements and values are their counts.
 

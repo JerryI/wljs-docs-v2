@@ -1,4 +1,6 @@
-# MannWhitneyTest
+---
+title: MannWhitneyTest
+---
 
 `MannWhitneyTest[{data1, data2}]` tests whether the medians of data1 and data2 are equal.
 

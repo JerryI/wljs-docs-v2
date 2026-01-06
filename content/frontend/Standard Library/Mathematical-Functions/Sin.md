@@ -1,4 +1,6 @@
-# Sin
+---
+title: Sin
+---
 
 `Sin[z]` gives the sine of z.
 

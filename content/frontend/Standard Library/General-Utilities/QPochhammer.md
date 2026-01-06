@@ -1,4 +1,6 @@
-# QPochhammer
+---
+title: QPochhammer
+---
 
 `QPochhammer[a, q, n]` gives the q-Pochhammer symbol (a;q)ₙ.
 

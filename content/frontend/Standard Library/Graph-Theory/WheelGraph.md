@@ -1,4 +1,6 @@
-# WheelGraph
+---
+title: WheelGraph
+---
 
 `WheelGraph[n]` gives the wheel graph with n vertices Wn.
 

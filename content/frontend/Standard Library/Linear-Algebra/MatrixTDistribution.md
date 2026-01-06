@@ -1,4 +1,6 @@
-# MatrixTDistribution
+---
+title: MatrixTDistribution
+---
 
 `MatrixTDistribution[Σrow, Σcol, ν]` represents zero mean matrix t distribution with row covariance matrix `Σrow`, column covariance matrix `Σcol`, and degrees of freedom parameter `ν`.
 

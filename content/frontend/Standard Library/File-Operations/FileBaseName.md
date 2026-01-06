@@ -1,4 +1,6 @@
-# FileBaseName
+---
+title: FileBaseName
+---
 
 `FileBaseName["file"]` gives the base name without extension.
 

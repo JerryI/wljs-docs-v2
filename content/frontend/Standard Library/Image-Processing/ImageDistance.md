@@ -1,4 +1,6 @@
-# ImageDistance
+---
+title: ImageDistance
+---
 
 `ImageDistance[image1, image2]` returns a distance measure between image1 and image2.
 

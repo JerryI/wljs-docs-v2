@@ -1,4 +1,6 @@
-# ActiveClassificationObject
+---
+title: ActiveClassificationObject
+---
 
 `ActiveClassificationObject[...]` represents the result of an `ActiveClassification` process.
 

@@ -1,4 +1,6 @@
-# NextPrime
+---
+title: NextPrime
+---
 
 `NextPrime[x]` gives the smallest prime above *x*.
 

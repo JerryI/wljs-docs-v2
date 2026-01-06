@@ -1,4 +1,6 @@
-# ErlangDistribution
+---
+title: ErlangDistribution
+---
 
 `ErlangDistribution[k, λ]` represents the Erlang distribution with shape parameter k and rate λ.
 

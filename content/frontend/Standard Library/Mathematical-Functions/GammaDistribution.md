@@ -1,4 +1,6 @@
-# GammaDistribution
+---
+title: GammaDistribution
+---
 
 `GammaDistribution[α, β]` represents a gamma distribution with shape parameter α and scale parameter β.
 

@@ -1,4 +1,6 @@
-# FunctionExpand
+---
+title: FunctionExpand
+---
 
 `FunctionExpand[expr]` tries to expand out special and certain other functions in expr, when possible reducing compound arguments to simpler ones.
 

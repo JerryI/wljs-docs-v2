@@ -1,4 +1,6 @@
-# LicenseEntitlementObject
+---
+title: LicenseEntitlementObject
+---
 
 `LicenseEntitlementObject[…]` represents an on-demand license entitlement.
 

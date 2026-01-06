@@ -1,4 +1,6 @@
-# WelchWindow
+---
+title: WelchWindow
+---
 
 `WelchWindow[x]` represents a Welch window function of x.
 

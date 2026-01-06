@@ -1,4 +1,6 @@
-# MomentConvert
+---
+title: MomentConvert
+---
 
 `MomentConvert[mexpr, form]` converts the moment expression mexpr to the specified form.
 

@@ -1,4 +1,6 @@
-# Pi
+---
+title: Pi
+---
 
 `Pi` is π, with numerical value ≈ 3.14159.
 

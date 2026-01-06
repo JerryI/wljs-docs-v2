@@ -1,4 +1,6 @@
-# DifferentiatorFilter
+---
+title: DifferentiatorFilter
+---
 
 `DifferentiatorFilter[data,ωc]` applies a differentiator filter with a cutoff frequency ωc to an array of data.
 

@@ -1,4 +1,6 @@
-# PlaceholderReplace
+---
+title: PlaceholderReplace
+---
 
 `PlaceholderReplace` is an option to `Paste` that determines whether to replace a selection placeholder with the selected contents.
 

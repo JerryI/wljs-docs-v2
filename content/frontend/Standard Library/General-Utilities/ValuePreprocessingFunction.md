@@ -1,4 +1,6 @@
-# ValuePreprocessingFunction
+---
+title: ValuePreprocessingFunction
+---
 
 `ValuePreprocessingFunction` is an option for functions such as PersistentSymbol and InitializationValue that specifies a function to apply to a new value that is being assigned.
 

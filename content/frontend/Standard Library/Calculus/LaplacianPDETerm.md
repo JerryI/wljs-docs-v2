@@ -1,4 +1,6 @@
-# LaplacianPDETerm
+---
+title: LaplacianPDETerm
+---
 
 `LaplacianPDETerm[vars]` represents a Laplacian term ∇²u with model variables vars.
 

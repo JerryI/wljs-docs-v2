@@ -1,4 +1,6 @@
-# Throw
+---
+title: Throw
+---
 
 `Throw[value]` stops evaluation and returns value as the value of the nearest enclosing `Catch`.
 

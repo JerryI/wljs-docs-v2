@@ -1,4 +1,6 @@
-# VolcanoData
+---
+title: VolcanoData
+---
 
 `VolcanoData[entity, property]` gives the value of the specified property for the volcano entity.
 

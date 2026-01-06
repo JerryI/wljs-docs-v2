@@ -1,4 +1,6 @@
-# StreamMarkers
+---
+title: StreamMarkers
+---
 
 `StreamMarkers` is an option for `StreamPlot`, `ListStreamPlot` and related functions that specifies what markers to draw at the field points plotted.
 

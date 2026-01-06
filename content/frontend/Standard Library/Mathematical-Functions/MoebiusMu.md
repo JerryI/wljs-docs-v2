@@ -1,4 +1,6 @@
-# MoebiusMu
+---
+title: MoebiusMu
+---
 
 `MoebiusMu[n]` gives the Möbius function μ(n).
 

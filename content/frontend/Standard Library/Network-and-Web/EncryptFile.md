@@ -1,4 +1,6 @@
-# EncryptFile
+---
+title: EncryptFile
+---
 
 `EncryptFile["password", file]` generates an encrypted version of a file, using the specified password.
 

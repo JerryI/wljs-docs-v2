@@ -1,4 +1,6 @@
-# Abs
+---
+title: Abs
+---
 
 `Abs[z]` gives the absolute value of the real or complex number z.
 

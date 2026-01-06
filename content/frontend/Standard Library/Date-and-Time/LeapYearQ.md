@@ -1,4 +1,6 @@
-# LeapYearQ
+---
+title: LeapYearQ
+---
 
 `LeapYearQ[date]` returns `True` if the year corresponding to date is a leap year.
 

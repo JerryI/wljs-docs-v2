@@ -1,4 +1,6 @@
-# PropertyValue
+---
+title: PropertyValue
+---
 
 `PropertyValue[{obj, item}, name]` gives the property value associated with name for item in obj.
 

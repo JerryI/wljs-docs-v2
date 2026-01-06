@@ -1,4 +1,6 @@
-# ConfidenceLevel
+---
+title: ConfidenceLevel
+---
 
 `ConfidenceLevel` is an option for LinearModelFit and other fitting functions that specifies the level to use in various confidence and prediction intervals and bands.
 

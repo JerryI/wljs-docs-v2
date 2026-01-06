@@ -1,4 +1,6 @@
-# FinancialBond
+---
+title: FinancialBond
+---
 
 `FinancialBond[params,ambientparams]` gives the value of a financial bond instrument.
 

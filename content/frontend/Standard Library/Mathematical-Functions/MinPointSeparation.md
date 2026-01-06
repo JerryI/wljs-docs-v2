@@ -1,4 +1,6 @@
-# MinPointSeparation
+---
+title: MinPointSeparation
+---
 
 `MinPointSeparation` is an option for `GeoGraphValuePlot` that determines when to merge nearby vertices into a single vertex.
 

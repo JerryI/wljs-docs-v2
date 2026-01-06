@@ -1,4 +1,6 @@
-# Volume
+---
+title: Volume
+---
 
 `Volume[reg]` gives the volume of a three-dimensional region.
 

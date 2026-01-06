@@ -1,4 +1,6 @@
-# Read
+---
+title: Read
+---
 
 `Read[stream]` reads one expression from an input stream and returns the expression.
 

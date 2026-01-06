@@ -1,4 +1,6 @@
-# FileExistsQ
+---
+title: FileExistsQ
+---
 
 `FileExistsQ["name"]` gives `True` if the file exists, and `False` otherwise.
 

@@ -1,4 +1,6 @@
-# BooleanQ
+---
+title: BooleanQ
+---
 
 `BooleanQ[expr]` returns True if expr is either True or False.
 

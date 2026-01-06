@@ -1,4 +1,6 @@
-# SemanticSearchIndex
+---
+title: SemanticSearchIndex
+---
 
 `SemanticSearchIndex[...]` represents a semantic search index object.
 

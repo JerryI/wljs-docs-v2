@@ -1,4 +1,6 @@
-# AudioLocalMeasurements
+---
+title: AudioLocalMeasurements
+---
 
 `AudioLocalMeasurements[audio, "prop"]` computes the property "prop" locally for partitions of audio.
 

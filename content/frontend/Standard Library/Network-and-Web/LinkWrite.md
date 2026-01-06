@@ -1,4 +1,6 @@
-# LinkWrite
+---
+title: LinkWrite
+---
 
 `LinkWrite[link, expr]` writes expr to the specified WSTP connection.
 

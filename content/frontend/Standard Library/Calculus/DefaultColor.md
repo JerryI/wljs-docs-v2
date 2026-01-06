@@ -1,4 +1,6 @@
-# DefaultColor
+---
+title: DefaultColor
+---
 
 `DefaultColor` is an option for graphics functions that specifies the default color to use for lines, points, etc.
 

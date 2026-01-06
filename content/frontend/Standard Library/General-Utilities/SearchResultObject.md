@@ -1,4 +1,6 @@
-# SearchResultObject
+---
+title: SearchResultObject
+---
 
 `SearchResultObject[...]` represents a result from `TextSearch[...]` and related functions.
 

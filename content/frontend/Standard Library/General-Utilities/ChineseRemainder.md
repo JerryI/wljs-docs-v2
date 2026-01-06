@@ -1,4 +1,6 @@
-# ChineseRemainder
+---
+title: ChineseRemainder
+---
 
 `ChineseRemainder[{r1, r2, ...}, {m1, m2, ...}]` gives the smallest non-negative x that satisfies all the integer congruences x ≡ ri (mod mi).
 

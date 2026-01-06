@@ -1,4 +1,6 @@
-# ProbabilityScalePlot
+---
+title: ProbabilityScalePlot
+---
 
 `ProbabilityScalePlot[{x1, x2, ...}]` generates a normal probability plot of the samples.
 

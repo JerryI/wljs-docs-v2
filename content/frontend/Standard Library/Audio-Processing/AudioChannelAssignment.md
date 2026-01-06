@@ -1,4 +1,6 @@
-# AudioChannelAssignment
+---
+title: AudioChannelAssignment
+---
 
 `AudioChannelAssignment` is an option for `Audio` and related functions that specifies a mapping from audio channels to available speakers of the output audio device.
 

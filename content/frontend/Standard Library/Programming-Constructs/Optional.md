@@ -1,4 +1,6 @@
-# Optional
+---
+title: Optional
+---
 
 `patt:def` or `Optional[patt, def]` is a pattern object that represents an expression of the form patt, which, if omitted, should be replaced by the default value def.
 

@@ -1,4 +1,6 @@
-# ClickToCopy
+---
+title: ClickToCopy
+---
 
 `ClickToCopy[expr]` represents a button that copies expr whenever it is clicked.
 

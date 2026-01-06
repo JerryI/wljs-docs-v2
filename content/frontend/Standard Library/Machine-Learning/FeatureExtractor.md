@@ -1,4 +1,6 @@
-# FeatureExtractor
+---
+title: FeatureExtractor
+---
 
 `FeatureExtractor` is an option for functions such as Classify that specifies how features should be extracted.
 

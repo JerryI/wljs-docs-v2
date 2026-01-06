@@ -1,4 +1,6 @@
-# SortBy
+---
+title: SortBy
+---
 
 `SortBy[list, f]` sorts the elements of list in the order defined by applying f to each of them.
 

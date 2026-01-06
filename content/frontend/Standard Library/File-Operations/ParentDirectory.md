@@ -1,4 +1,6 @@
-# ParentDirectory
+---
+title: ParentDirectory
+---
 
 `ParentDirectory[]` gives the parent of the current working directory.
 

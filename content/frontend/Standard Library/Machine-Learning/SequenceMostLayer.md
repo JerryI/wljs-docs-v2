@@ -1,4 +1,6 @@
-# SequenceMostLayer
+---
+title: SequenceMostLayer
+---
 
 `SequenceMostLayer[]` represents a net that takes a sequence of inputs and removes its last element.
 

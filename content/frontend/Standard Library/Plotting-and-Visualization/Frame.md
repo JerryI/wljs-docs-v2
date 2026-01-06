@@ -1,4 +1,6 @@
-# Frame
+---
+title: Frame
+---
 
 `Frame` is an option for `Graphics`, `Grid`, and other constructs that specifies whether to include a frame.
 

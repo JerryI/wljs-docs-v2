@@ -1,4 +1,6 @@
-# DStabilityConditions
+---
+title: DStabilityConditions
+---
 
 `DStabilityConditions[eqn, x[t], t]` gives the fixed points and stability conditions for a differential equation.
 

@@ -1,4 +1,6 @@
-# Apart
+---
+title: Apart
+---
 
 `Apart[expr]` rewrites a rational expression as a sum of terms with minimal denominators.
 

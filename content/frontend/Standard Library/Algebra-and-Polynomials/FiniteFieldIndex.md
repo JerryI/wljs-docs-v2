@@ -1,4 +1,6 @@
-# FiniteFieldIndex
+---
+title: FiniteFieldIndex
+---
 
 `FiniteFieldIndex[u]` gives the index of the FiniteFieldElement object u.
 

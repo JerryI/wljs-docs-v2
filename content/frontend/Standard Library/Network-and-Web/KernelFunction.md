@@ -1,4 +1,6 @@
-# KernelFunction
+---
+title: KernelFunction
+---
 
 `KernelFunction[f]` represents a function to be evaluated in the Wolfram Language kernel, even when called from compiled code.
 

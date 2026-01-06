@@ -1,4 +1,6 @@
-# RepeatedNull
+---
+title: RepeatedNull
+---
 
 `p...` or `RepeatedNull[p]` is a pattern object that represents a sequence of zero or more expressions, each matching p.
 

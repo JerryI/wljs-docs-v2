@@ -1,4 +1,6 @@
-# ExpandNumerator
+---
+title: ExpandNumerator
+---
 
 `ExpandNumerator[expr]` expands out products and powers that appear in the numerator of expr.
 

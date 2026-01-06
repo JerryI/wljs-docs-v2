@@ -1,4 +1,6 @@
-# Offset
+---
+title: Offset
+---
 
 `Offset[{dx, dy}, position]` gives the position of a graphical object obtained by starting at the specified position and then moving by absolute offset {dx, dy}.
 

@@ -1,4 +1,6 @@
-# SpheroidalPSPrime
+---
+title: SpheroidalPSPrime
+---
 
 `SpheroidalPSPrime[n, m, γ, z]` gives the derivative with respect to z of the angular spheroidal function PS_n,m(γ, z) of the first kind.
 

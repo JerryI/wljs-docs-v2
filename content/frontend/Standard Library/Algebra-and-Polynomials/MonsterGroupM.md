@@ -1,4 +1,6 @@
-# MonsterGroupM
+---
+title: MonsterGroupM
+---
 
 `MonsterGroupM[]` represents the sporadic simple monster group M.
 

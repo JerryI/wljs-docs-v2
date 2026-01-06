@@ -1,4 +1,6 @@
-# Dashing
+---
+title: Dashing
+---
 
 `Dashing[{r1, r2, ...}]` specifies that lines are drawn dashed with segment lengths `r1`, `r2`, ... repeated cyclically.
 

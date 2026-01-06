@@ -1,4 +1,6 @@
-# RemoteBatchJobAbort
+---
+title: RemoteBatchJobAbort
+---
 
 `RemoteBatchJobAbort[job]` aborts a remote batch job.
 

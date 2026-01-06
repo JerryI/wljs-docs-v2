@@ -1,4 +1,6 @@
-# RuleCondition
+---
+title: RuleCondition
+---
 
 `RuleCondition` is an internal symbol used in pattern matching.
 

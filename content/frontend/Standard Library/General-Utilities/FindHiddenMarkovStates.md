@@ -1,4 +1,6 @@
-# FindHiddenMarkovStates
+---
+title: FindHiddenMarkovStates
+---
 
 `FindHiddenMarkovStates[data,hmm]` finds the most likely hidden states of the HiddenMarkovProcess hmm corresponding to the emissions data.
 

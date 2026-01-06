@@ -1,4 +1,6 @@
-# AudioReverse
+---
+title: AudioReverse
+---
 
 `AudioReverse[audio]` reverses audio so that the signal is played backward.
 

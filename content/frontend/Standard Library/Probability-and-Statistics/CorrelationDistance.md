@@ -1,4 +1,6 @@
-# CorrelationDistance
+---
+title: CorrelationDistance
+---
 
 `CorrelationDistance[u, v]` gives the correlation coefficient distance between vectors u and v.
 

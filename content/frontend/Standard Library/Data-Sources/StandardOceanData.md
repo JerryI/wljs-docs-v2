@@ -1,4 +1,6 @@
-# StandardOceanData
+---
+title: StandardOceanData
+---
 
 `StandardOceanData[spec]` returns the thermodynamic properties of seawater for the specified parameters.
 

@@ -1,4 +1,6 @@
-# LibraryFunctionUnload
+---
+title: LibraryFunctionUnload
+---
 
 `LibraryFunctionUnload[fun]` unloads a LibraryFunction so that it cannot be used.
 

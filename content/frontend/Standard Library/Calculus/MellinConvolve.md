@@ -1,4 +1,6 @@
-# MellinConvolve
+---
+title: MellinConvolve
+---
 
 `MellinConvolve[f, g, x, y]` gives the Mellin convolution with respect to x of the expressions f and g.
 

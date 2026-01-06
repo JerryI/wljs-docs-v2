@@ -1,4 +1,6 @@
-# AcceptanceThreshold
+---
+title: AcceptanceThreshold
+---
 
 `AcceptanceThreshold` is an option that specifies the minimum threshold at which a result is considered acceptable.
 

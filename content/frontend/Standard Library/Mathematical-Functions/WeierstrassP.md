@@ -1,4 +1,6 @@
-# WeierstrassP
+---
+title: WeierstrassP
+---
 
 `WeierstrassP[u, {g2, g3}]` gives the Weierstrass elliptic function ℘(u; g2, g3).
 

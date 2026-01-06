@@ -1,4 +1,6 @@
-# ExternalOperation
+---
+title: ExternalOperation
+---
 
 `ExternalOperation["Eval","code"]` represents an external evaluation of "code".
 

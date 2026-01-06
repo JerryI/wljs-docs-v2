@@ -1,4 +1,6 @@
-# RelationGraph
+---
+title: RelationGraph
+---
 
 `RelationGraph[f, {v1, v2, ...}]` gives the graph with vertices vi and edges from vi to vj whenever f[vi, vj] is `True`.
 

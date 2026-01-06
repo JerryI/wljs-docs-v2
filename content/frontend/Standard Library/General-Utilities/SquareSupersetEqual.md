@@ -1,4 +1,6 @@
-# SquareSupersetEqual
+---
+title: SquareSupersetEqual
+---
 
 `SquareSupersetEqual[x, y, ...]` displays as x⊒y⊒....
 

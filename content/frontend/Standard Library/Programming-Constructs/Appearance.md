@@ -1,4 +1,6 @@
-# Appearance
+---
+title: Appearance
+---
 
 `Appearance` is an option for displayed objects such as `Button` and `Slider` that specifies the general type of appearance they should have.
 

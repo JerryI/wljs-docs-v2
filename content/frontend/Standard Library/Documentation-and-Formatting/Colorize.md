@@ -1,4 +1,6 @@
-# Colorize
+---
+title: Colorize
+---
 
 `Colorize[m]` generates an image from an integer matrix m, using colors for positive integers and black for non-positive integers.
 

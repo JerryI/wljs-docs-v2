@@ -1,4 +1,6 @@
-# Probability
+---
+title: Probability
+---
 
 `Probability[pred, x \[Distributed] dist]` gives the probability for an event that satisfies the predicate pred.
 

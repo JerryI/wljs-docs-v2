@@ -1,4 +1,6 @@
-# Hash
+---
+title: Hash
+---
 
 `Hash[expr]` gives an integer hash code for the expression expr.
 

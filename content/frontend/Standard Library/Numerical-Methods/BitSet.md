@@ -1,4 +1,6 @@
-# BitSet
+---
+title: BitSet
+---
 
 `BitSet[n, k]` sets to 1 the bit corresponding to the coefficient of 2^k in the integer n.
 

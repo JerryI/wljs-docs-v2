@@ -1,4 +1,6 @@
-# NonlinearStateSpaceModel
+---
+title: NonlinearStateSpaceModel
+---
 
 `NonlinearStateSpaceModel[{f,g},x,u]` represents the model x'(t)=f(x(t),u(t)), y(t)=g(x(t),u(t)).
 

@@ -1,4 +1,6 @@
-# IncludeHydrogens
+---
+title: IncludeHydrogens
+---
 
 `IncludeHydrogens` is an option that specifies whether hydrogen atoms should be explicitly included in the results.
 

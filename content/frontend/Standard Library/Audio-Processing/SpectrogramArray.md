@@ -1,4 +1,6 @@
-# SpectrogramArray
+---
+title: SpectrogramArray
+---
 
 `SpectrogramArray[list]` returns the spectrogram data of list.
 

@@ -1,4 +1,6 @@
-# ConstantArray
+---
+title: ConstantArray
+---
 
 `ConstantArray[c, n]` generates a list of n copies of the element c.
 

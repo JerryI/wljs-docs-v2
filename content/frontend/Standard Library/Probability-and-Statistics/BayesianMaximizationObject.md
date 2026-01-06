@@ -1,4 +1,6 @@
-# BayesianMaximizationObject
+---
+title: BayesianMaximizationObject
+---
 
 `BayesianMaximizationObject[...]` represents the result of a Bayesian maximization process.
 

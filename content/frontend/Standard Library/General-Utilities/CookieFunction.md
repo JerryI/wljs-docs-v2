@@ -1,4 +1,6 @@
-# CookieFunction
+---
+title: CookieFunction
+---
 
 `CookieFunction` is an option for `URLRead`, `HTTPRequest`, and related functions that gives a function to apply to each cookie received when an HTTP response is received.
 

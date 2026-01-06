@@ -1,4 +1,6 @@
-# EdgeIndex
+---
+title: EdgeIndex
+---
 
 `EdgeIndex[g, e]` gives the integer index for the edge e in the graph g.
 

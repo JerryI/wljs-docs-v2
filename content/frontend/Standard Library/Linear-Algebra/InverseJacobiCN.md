@@ -1,4 +1,6 @@
-# InverseJacobiCN
+---
+title: InverseJacobiCN
+---
 
 `InverseJacobiCN[v, m]` gives the inverse Jacobi elliptic function cn⁻¹(v|m).
 

@@ -1,4 +1,6 @@
-# ImageSize
+---
+title: ImageSize
+---
 
 `ImageSize` is an option that specifies the overall size of an image to display for an object.
 

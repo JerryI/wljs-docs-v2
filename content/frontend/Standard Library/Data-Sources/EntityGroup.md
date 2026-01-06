@@ -1,4 +1,6 @@
-# EntityGroup
+---
+title: EntityGroup
+---
 
 `EntityGroup[{entity1, entity2, ...}]` represents a group of entities.
 

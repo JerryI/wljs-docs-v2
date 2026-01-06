@@ -1,4 +1,6 @@
-# SoundVolume
+---
+title: SoundVolume
+---
 
 `SoundVolume` is an option to `Sound` and `SoundNote` and related functions that specifies the relative volume of the sound produced.
 

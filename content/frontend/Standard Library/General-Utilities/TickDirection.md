@@ -1,4 +1,6 @@
-# TickDirection
+---
+title: TickDirection
+---
 
 `TickDirection` is an option for `AxisObject` that specifies where the ticks are drawn relative to the axis.
 

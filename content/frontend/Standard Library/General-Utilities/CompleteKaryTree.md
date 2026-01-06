@@ -1,4 +1,6 @@
-# CompleteKaryTree
+---
+title: CompleteKaryTree
+---
 
 `CompleteKaryTree[n]` gives the complete binary tree with n levels.
 

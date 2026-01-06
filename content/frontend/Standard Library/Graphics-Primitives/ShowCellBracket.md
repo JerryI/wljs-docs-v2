@@ -1,4 +1,6 @@
-# ShowCellBracket
+---
+title: ShowCellBracket
+---
 
 `ShowCellBracket` is an option for `Cell` that specifies whether to display the bracket that indicates the extent of the cell.
 

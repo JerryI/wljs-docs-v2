@@ -1,4 +1,6 @@
-# TreeExtract
+---
+title: TreeExtract
+---
 
 `TreeExtract[tree,pos]` extracts the subtree of tree at the position specified by pos.
 

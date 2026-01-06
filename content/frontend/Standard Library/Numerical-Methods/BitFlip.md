@@ -1,4 +1,6 @@
-# BitFlip
+---
+title: BitFlip
+---
 
 `BitFlip[n, k]` flips the bit corresponding to the coefficient of 2^k in the integer n.
 

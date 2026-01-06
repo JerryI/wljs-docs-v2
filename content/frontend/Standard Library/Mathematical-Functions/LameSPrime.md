@@ -1,4 +1,6 @@
-# LameSPrime
+---
+title: LameSPrime
+---
 
 `LameSPrime[ν,j,z,m]` gives the z-derivative of the jth Lamé function Esν(j)(zm) of order ν with elliptic parameter m.
 

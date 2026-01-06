@@ -1,4 +1,6 @@
-# HistoricalPeriodData
+---
+title: HistoricalPeriodData
+---
 
 `HistoricalPeriodData[entity, property]` gives the value of the specified property for the historical period entity.
 

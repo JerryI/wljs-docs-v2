@@ -1,4 +1,6 @@
-# StreamPlot3D
+---
+title: StreamPlot3D
+---
 
 `StreamPlot3D[{vx, vy, vz}, {x, xmin, xmax}, {y, ymin, ymax}, {z, zmin, zmax}]` plots streamlines for the 3D vector field {vx, vy, vz} as functions of x, y and z.
 

@@ -1,4 +1,6 @@
-# PermutationListQ
+---
+title: PermutationListQ
+---
 
 `PermutationListQ[expr]` returns `True` if expr is a valid permutation list and `False` otherwise.
 

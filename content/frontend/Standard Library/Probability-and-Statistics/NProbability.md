@@ -1,4 +1,6 @@
-# NProbability
+---
+title: NProbability
+---
 
 `NProbability[pred,x\[Distributed]dist]` gives the numerical probability for an event that satisfies the predicate pred under the assumption that x follows the probability distribution dist.
 

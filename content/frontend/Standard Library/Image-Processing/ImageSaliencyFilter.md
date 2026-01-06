@@ -1,4 +1,6 @@
-# ImageSaliencyFilter
+---
+title: ImageSaliencyFilter
+---
 
 `ImageSaliencyFilter[image]` returns a saliency map for image, highlighting visually prominent regions.
 

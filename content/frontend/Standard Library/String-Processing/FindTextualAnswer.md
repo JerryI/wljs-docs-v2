@@ -1,4 +1,6 @@
-# FindTextualAnswer
+---
+title: FindTextualAnswer
+---
 
 `FindTextualAnswer[text, "question"]` gives the substring of text that best appears to answer the question.
 

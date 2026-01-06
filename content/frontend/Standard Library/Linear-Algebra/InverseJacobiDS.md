@@ -1,4 +1,6 @@
-# InverseJacobiDS
+---
+title: InverseJacobiDS
+---
 
 `InverseJacobiDS[v, m]` gives the inverse Jacobi elliptic function ds⁻¹(v|m).
 

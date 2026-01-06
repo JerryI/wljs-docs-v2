@@ -1,4 +1,6 @@
-# LinkService
+---
+title: LinkService
+---
 
 `LinkService["service", l]` is an object that represents an active connection to the WSTP service.
 

@@ -1,4 +1,6 @@
-# AbsArgPlot
+---
+title: AbsArgPlot
+---
 
 `AbsArgPlot[f, {x, xmin, xmax}]` generates a plot of `Abs[f]` colored by `Arg[f]` as a function of x from xmin to xmax.
 

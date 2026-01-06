@@ -1,4 +1,6 @@
-# CreateDirectory
+---
+title: CreateDirectory
+---
 
 `CreateDirectory["dir"]` creates a directory with the given name.
 

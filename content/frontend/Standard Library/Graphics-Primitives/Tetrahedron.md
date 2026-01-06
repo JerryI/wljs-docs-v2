@@ -1,4 +1,6 @@
-# Tetrahedron
+---
+title: Tetrahedron
+---
 
 `Tetrahedron[]` represents a regular tetrahedron. `Tetrahedron[{p1, p2, p3, p4}]` creates a tetrahedron with specified corners.
 

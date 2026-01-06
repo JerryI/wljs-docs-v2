@@ -1,4 +1,6 @@
-# SoundNote
+---
+title: SoundNote
+---
 
 `SoundNote[pitch]` represents a music-like sound note with the specified pitch.
 

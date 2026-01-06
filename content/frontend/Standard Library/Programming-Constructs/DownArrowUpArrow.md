@@ -1,4 +1,6 @@
-# DownArrowUpArrow
+---
+title: DownArrowUpArrow
+---
 
 `DownArrowUpArrow[x, y, ...]` displays as x⇵y⇵....
 

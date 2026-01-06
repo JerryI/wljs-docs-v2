@@ -1,4 +1,6 @@
-# Characters
+---
+title: Characters
+---
 
 `Characters["string"]` gives a list of the characters in a string.
 

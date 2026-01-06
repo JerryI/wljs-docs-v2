@@ -1,4 +1,6 @@
-# EmbedCode
+---
+title: EmbedCode
+---
 
 `EmbedCode[obj]` generates the code necessary to embed the object obj on a webpage.
 

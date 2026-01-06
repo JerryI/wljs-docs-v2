@@ -1,4 +1,6 @@
-# MardiaSkewnessTest
+---
+title: MardiaSkewnessTest
+---
 
 `MardiaSkewnessTest[data]` tests whether data follows a `MultinormalDistribution` using the Mardia skewness test.
 

@@ -1,4 +1,6 @@
-# ListLinePlot
+---
+title: ListLinePlot
+---
 
 `ListLinePlot[{y1, ..., yn}]` plots a line through points {1, y1}, ..., {n, yn}.
 

@@ -1,4 +1,6 @@
-# PunctuationCharacter
+---
+title: PunctuationCharacter
+---
 
 `PunctuationCharacter` represents a punctuation character in `StringExpression`.
 

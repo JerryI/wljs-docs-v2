@@ -1,4 +1,6 @@
-# ContainsNone
+---
+title: ContainsNone
+---
 
 `ContainsNone[list1, list2]` yields True if list1 contains none of the elements in list2.
 

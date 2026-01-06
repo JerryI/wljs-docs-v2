@@ -1,4 +1,6 @@
-# NearestNeighborG
+---
+title: NearestNeighborG
+---
 
 `NearestNeighborG[pdata,r]` estimates the nearest neighbor function G(r) at radius r in the point data pdata.
 

@@ -1,4 +1,6 @@
-# InverseRadon
+---
+title: InverseRadon
+---
 
 `InverseRadon[image]` gives the inverse discrete Radon transform of *image*.
 

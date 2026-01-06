@@ -1,4 +1,6 @@
-# SuperDagger
+---
+title: SuperDagger
+---
 
 `SuperDagger[expr]` displays as expr†.
 

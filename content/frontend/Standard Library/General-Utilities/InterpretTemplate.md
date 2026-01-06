@@ -1,4 +1,6 @@
-# InterpretTemplate
+---
+title: InterpretTemplate
+---
 
 `InterpretTemplate` is an experimental function used for interpreting Mathematica input.
 

@@ -1,4 +1,6 @@
-# TransitionDirection
+---
+title: TransitionDirection
+---
 
 `TransitionDirection` is an option for `PaneSelector` that specifies the direction in which a transition moves.
 

@@ -1,4 +1,6 @@
-# ImagePerspectiveTransformation
+---
+title: ImagePerspectiveTransformation
+---
 
 `ImagePerspectiveTransformation[image, m]` applies a linear fractional transform specified by matrix m to pixel positions.
 

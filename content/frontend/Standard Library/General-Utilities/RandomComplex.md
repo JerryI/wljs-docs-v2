@@ -1,4 +1,6 @@
-# RandomComplex
+---
+title: RandomComplex
+---
 
 `RandomComplex[]` gives a pseudorandom complex number with real and imaginary parts in the range 0 to 1.
 

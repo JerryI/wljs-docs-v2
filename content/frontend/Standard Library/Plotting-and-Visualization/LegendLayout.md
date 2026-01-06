@@ -1,4 +1,6 @@
-# LegendLayout
+---
+title: LegendLayout
+---
 
 `LegendLayout` is an option for legends that specifies how to format the legend content.
 

@@ -1,4 +1,6 @@
-# InverseEllipticNomeQ
+---
+title: InverseEllipticNomeQ
+---
 
 `InverseEllipticNomeQ[q]` gives the parameter `m` corresponding to the nome `q` in an elliptic function.
 

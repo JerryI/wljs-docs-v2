@@ -1,4 +1,6 @@
-# EdgeConnectivity
+---
+title: EdgeConnectivity
+---
 
 `EdgeConnectivity[g]` gives the edge connectivity of the graph g.
 

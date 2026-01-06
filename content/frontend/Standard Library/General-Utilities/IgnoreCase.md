@@ -1,4 +1,6 @@
-# IgnoreCase
+---
+title: IgnoreCase
+---
 
 `IgnoreCase` is an option for string manipulation and searching functions that specifies whether lowercase and uppercase letters should be treated as equivalent.
 

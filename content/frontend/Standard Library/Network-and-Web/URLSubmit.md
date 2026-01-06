@@ -1,4 +1,6 @@
-# URLSubmit
+---
+title: URLSubmit
+---
 
 `URLSubmit[url]` submits the specified URL to be executed asynchronously.
 

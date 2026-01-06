@@ -1,4 +1,6 @@
-# Total
+---
+title: Total
+---
 
 `Total[list]` gives the total of the elements in list.
 

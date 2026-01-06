@@ -1,4 +1,6 @@
-# SmoothDensityHistogram
+---
+title: SmoothDensityHistogram
+---
 
 `SmoothDensityHistogram[{{x1, y1}, {x2, y2}, ...}]` plots a smooth kernel histogram of the values {xi, yi}.
 

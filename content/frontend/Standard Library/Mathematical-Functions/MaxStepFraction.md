@@ -1,4 +1,6 @@
-# MaxStepFraction
+---
+title: MaxStepFraction
+---
 
 `MaxStepFraction` is an option to functions like `NDSolve` that specifies the maximum fraction of the total range to cover in a single step.
 

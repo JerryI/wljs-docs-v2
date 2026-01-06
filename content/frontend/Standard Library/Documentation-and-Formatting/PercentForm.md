@@ -1,4 +1,6 @@
-# PercentForm
+---
+title: PercentForm
+---
 
 `PercentForm[expr]` prints with numbers in expr given as percentages.
 

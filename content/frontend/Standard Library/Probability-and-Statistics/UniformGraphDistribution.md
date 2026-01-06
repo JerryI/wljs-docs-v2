@@ -1,4 +1,6 @@
-# UniformGraphDistribution
+---
+title: UniformGraphDistribution
+---
 
 `UniformGraphDistribution[n, m]` represents a uniform graph distribution on n-vertex, m-edge graphs.
 

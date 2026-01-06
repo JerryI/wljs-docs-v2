@@ -1,4 +1,6 @@
-# Unique
+---
+title: Unique
+---
 
 `Unique[]` generates a new symbol with a name of the form `$nnn`.
 

@@ -1,4 +1,6 @@
-# InputForm
+---
+title: InputForm
+---
 
 `InputForm[expr]` prints expr in a form suitable for input to the Wolfram Language.
 

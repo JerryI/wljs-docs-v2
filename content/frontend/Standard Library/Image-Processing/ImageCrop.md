@@ -1,4 +1,6 @@
-# ImageCrop
+---
+title: ImageCrop
+---
 
 `ImageCrop[image]` crops image by removing borders of uniform color.
 

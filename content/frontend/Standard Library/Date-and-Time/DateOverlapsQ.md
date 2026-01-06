@@ -1,4 +1,6 @@
-# DateOverlapsQ
+---
+title: DateOverlapsQ
+---
 
 `DateOverlapsQ[date1, date2]` returns `True` if the calendar dates date1 and date2 overlap, and `False` otherwise.
 

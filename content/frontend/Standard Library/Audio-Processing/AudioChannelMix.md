@@ -1,4 +1,6 @@
-# AudioChannelMix
+---
+title: AudioChannelMix
+---
 
 `AudioChannelMix[audio]` mixes channels of audio by averaging and returns a center-panned stereo audio object.
 

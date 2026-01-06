@@ -1,4 +1,6 @@
-# RemoteBatchSubmissionEnvironment
+---
+title: RemoteBatchSubmissionEnvironment
+---
 
 `RemoteBatchSubmissionEnvironment["provider",assoc]` represents a remote batch job submission environment for provider with properties assoc.
 

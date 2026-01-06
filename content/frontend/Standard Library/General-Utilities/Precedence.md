@@ -1,4 +1,6 @@
-# Precedence
+---
+title: Precedence
+---
 
 `Precedence[sym]` returns the precedence of the output operator associated to the symbol sym.
 

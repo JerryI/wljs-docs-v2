@@ -1,4 +1,6 @@
-# WaveletScalogram
+---
+title: WaveletScalogram
+---
 
 `WaveletScalogram[wd]` plots wavelet vector coefficients in a DiscreteWaveletData or ContinuousWaveletData object wd.
 

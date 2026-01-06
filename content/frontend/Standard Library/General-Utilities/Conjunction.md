@@ -1,4 +1,6 @@
-# Conjunction
+---
+title: Conjunction
+---
 
 `Conjunction[expr, {a1, a2, ...}]` gives the conjunction of expr over all choices of the Boolean variables ai.
 

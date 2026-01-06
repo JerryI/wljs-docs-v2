@@ -1,4 +1,6 @@
-# BaringhausHenzeTest
+---
+title: BaringhausHenzeTest
+---
 
 `BaringhausHenzeTest[data]` tests whether data follows a MultinormalDistribution using the Baringhaus–Henze test.
 

@@ -1,4 +1,6 @@
-# Cosh
+---
+title: Cosh
+---
 
 `Cosh[z]` gives the hyperbolic cosine of `z`, defined as $(e^z + e^{-z})/2$.
 

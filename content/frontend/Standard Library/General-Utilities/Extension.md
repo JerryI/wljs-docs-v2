@@ -1,4 +1,6 @@
-# Extension
+---
+title: Extension
+---
 
 `Extension` is an option for various polynomial and algebraic functions that specifies generators for the algebraic number field to be used.
 

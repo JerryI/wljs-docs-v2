@@ -1,4 +1,6 @@
-# NetworkPacketRecording
+---
+title: NetworkPacketRecording
+---
 
 `NetworkPacketRecording[t]` records information on network packets transmitted or received through all network interfaces on your computer for t seconds.
 

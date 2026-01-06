@@ -1,4 +1,6 @@
-# Pochhammer
+---
+title: Pochhammer
+---
 
 `Pochhammer[a, n]` gives the Pochhammer symbol (a)_n = a(a+1)(a+2)...(a+n-1), also called the rising factorial.
 

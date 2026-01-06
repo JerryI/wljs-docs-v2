@@ -1,4 +1,6 @@
-# PrimeQ
+---
+title: PrimeQ
+---
 
 `PrimeQ[n]` yields `True` if n is a prime number, and `False` otherwise.
 

@@ -1,4 +1,6 @@
-# SpatialBinnedPointData
+---
+title: SpatialBinnedPointData
+---
 
 `SpatialBinnedPointData[{reg1 -> val1, reg2 -> val2, ...}]` represents values vali associated with disjoint regions regi.
 

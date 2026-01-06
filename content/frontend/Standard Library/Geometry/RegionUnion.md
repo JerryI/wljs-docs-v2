@@ -1,4 +1,6 @@
-# RegionUnion
+---
+title: RegionUnion
+---
 
 `RegionUnion[reg1, reg2, ...]` gives the union of the regions.
 

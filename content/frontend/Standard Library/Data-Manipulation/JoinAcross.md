@@ -1,4 +1,6 @@
-# JoinAcross
+---
+title: JoinAcross
+---
 
 `JoinAcross[{a1, a2, ...}, {b1, b2, ...}, key]` gives a list of associations obtained by joining those pairs of associations ai and bj in which the values associated with key are the same.
 

@@ -1,4 +1,6 @@
-# VideoTrackSelection
+---
+title: VideoTrackSelection
+---
 
 `VideoTrackSelection` is an option that specifies the video tracks of interest.
 

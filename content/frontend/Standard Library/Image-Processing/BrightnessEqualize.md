@@ -1,4 +1,6 @@
-# BrightnessEqualize
+---
+title: BrightnessEqualize
+---
 
 `BrightnessEqualize[image]` adjusts the brightness across image, correcting uneven illumination.
 

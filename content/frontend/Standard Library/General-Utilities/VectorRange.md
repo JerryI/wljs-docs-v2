@@ -1,4 +1,6 @@
-# VectorRange
+---
+title: VectorRange
+---
 
 `VectorRange` is an option for `VectorPlot` and related functions that specifies the range of vector magnitudes to include in a plot.
 

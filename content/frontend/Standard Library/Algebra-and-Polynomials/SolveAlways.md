@@ -1,4 +1,6 @@
-# SolveAlways
+---
+title: SolveAlways
+---
 
 `SolveAlways[eqns, vars]` gives the values of parameters that make the equations eqns valid for all values of the variables vars.
 

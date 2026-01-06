@@ -1,4 +1,6 @@
-# SearchQueryString
+---
+title: SearchQueryString
+---
 
 `SearchQueryString["query"]` represents a search engine-style query in `TextSearch` and related functions.
 

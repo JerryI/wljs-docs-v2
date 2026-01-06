@@ -1,4 +1,6 @@
-# GeoBoundary
+---
+title: GeoBoundary
+---
 
 `GeoBoundary[g]` returns the boundary line of the geo region `g`.
 

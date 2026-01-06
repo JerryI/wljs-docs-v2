@@ -1,4 +1,6 @@
-# TriangleWave
+---
+title: TriangleWave
+---
 
 `TriangleWave[x]` gives a triangle wave that varies between -1 and +1 with unit period.
 

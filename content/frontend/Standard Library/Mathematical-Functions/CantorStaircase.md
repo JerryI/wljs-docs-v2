@@ -1,4 +1,6 @@
-# CantorStaircase
+---
+title: CantorStaircase
+---
 
 `CantorStaircase[x]` gives the Cantor staircase function FC(x).
 

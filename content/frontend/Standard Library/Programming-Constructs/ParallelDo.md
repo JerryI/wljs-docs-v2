@@ -1,4 +1,6 @@
-# ParallelDo
+---
+title: ParallelDo
+---
 
 `ParallelDo[expr, {imax}]` evaluates expr in parallel imax times.
 

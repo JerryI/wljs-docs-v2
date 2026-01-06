@@ -1,4 +1,6 @@
-# TreeScan
+---
+title: TreeScan
+---
 
 `TreeScan[f, tree]` evaluates f applied to the data of each subtree of tree in turn.
 

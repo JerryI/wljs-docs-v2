@@ -1,4 +1,6 @@
-# MultigraphQ
+---
+title: MultigraphQ
+---
 
 `MultigraphQ[g]` yields `True` if the graph g is a multigraph and `False` otherwise.
 

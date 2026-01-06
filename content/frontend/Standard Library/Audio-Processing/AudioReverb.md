@@ -1,4 +1,6 @@
-# AudioReverb
+---
+title: AudioReverb
+---
 
 `AudioReverb[audio]` adds reverberation to audio.
 

@@ -1,4 +1,6 @@
-# FinancialDerivative
+---
+title: FinancialDerivative
+---
 
 `FinancialDerivative[instrument,params,ambientparams]` gives the value of the specified financial instrument.
 

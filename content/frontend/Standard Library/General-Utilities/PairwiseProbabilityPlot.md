@@ -1,4 +1,6 @@
-# PairwiseProbabilityPlot
+---
+title: PairwiseProbabilityPlot
+---
 
 `PairwiseProbabilityPlot[{{y11, ..., y1n}, ..., {ym1, ..., ymn}}]` plots a CDF of columns in the data against each other.
 

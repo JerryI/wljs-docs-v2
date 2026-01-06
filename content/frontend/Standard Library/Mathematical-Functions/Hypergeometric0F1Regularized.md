@@ -1,4 +1,6 @@
-# Hypergeometric0F1Regularized
+---
+title: Hypergeometric0F1Regularized
+---
 
 `Hypergeometric0F1Regularized[a, z]` is the regularized confluent hypergeometric function ₀F₁(;a;z)/Γ(a).
 

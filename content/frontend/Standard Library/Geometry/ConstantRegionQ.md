@@ -1,4 +1,6 @@
-# ConstantRegionQ
+---
+title: ConstantRegionQ
+---
 
 `ConstantRegionQ[reg]` gives `True` if the reg is a constant region and `False` otherwise.
 

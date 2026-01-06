@@ -1,4 +1,6 @@
-# StateFeedbackGains
+---
+title: StateFeedbackGains
+---
 
 `StateFeedbackGains[sspec,{p1,…,pn}]` gives the state feedback gains for the system specification sspec to place its closed-loop poles at pi.
 

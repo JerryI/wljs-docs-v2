@@ -1,4 +1,6 @@
-# VertexDataCoordinates
+---
+title: VertexDataCoordinates
+---
 
 `VertexDataCoordinates` is an option to `Raster3D` that determines how to map data to the displayed range.
 

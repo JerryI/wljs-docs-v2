@@ -1,4 +1,6 @@
-# NotebookClose
+---
+title: NotebookClose
+---
 
 `NotebookClose[nb]` closes opened notebook nb.
 

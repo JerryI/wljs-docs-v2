@@ -1,4 +1,6 @@
-# SpaceForm
+---
+title: SpaceForm
+---
 
 `SpaceForm[n]` prints as n spaces.
 

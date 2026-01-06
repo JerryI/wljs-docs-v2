@@ -1,4 +1,6 @@
-# ObservabilityMatrix
+---
+title: ObservabilityMatrix
+---
 
 `ObservabilityMatrix[ssm]` gives the observability matrix of the state-space model ssm.
 

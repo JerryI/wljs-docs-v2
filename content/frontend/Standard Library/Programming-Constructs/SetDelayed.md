@@ -1,4 +1,6 @@
-# SetDelayed
+---
+title: SetDelayed
+---
 
 `lhs := rhs` assigns rhs to be the delayed value of lhs. The rhs is maintained unevaluated and evaluated afresh each time lhs appears.
 

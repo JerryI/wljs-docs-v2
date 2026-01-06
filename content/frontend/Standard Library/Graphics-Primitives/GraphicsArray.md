@@ -1,4 +1,6 @@
-# GraphicsArray
+---
+title: GraphicsArray
+---
 
 `GraphicsArray[{g1, g2, ...}]` represents a row of graphics objects.
 

@@ -1,4 +1,6 @@
-# AudioPartition
+---
+title: AudioPartition
+---
 
 `AudioPartition[audio, dur]` partitions an audio object into non-overlapping segments of duration dur.
 

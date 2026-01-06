@@ -1,4 +1,6 @@
-# Multiselection
+---
+title: Multiselection
+---
 
 `Multiselection` is an option to `ListPicker` that specifies whether multiple values may be selected.
 

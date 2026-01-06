@@ -1,4 +1,6 @@
-# Nor
+---
+title: Nor
+---
 
 `Nor[e1,e2,…]` is the logical NOR function. It evaluates its arguments in order, giving False immediately if any of them are True, and True if they are all False.
 

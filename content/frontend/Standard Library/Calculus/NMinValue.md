@@ -1,4 +1,6 @@
-# NMinValue
+---
+title: NMinValue
+---
 
 `NMinValue[f, x]` gives the global minimum value of *f* with respect to *x*.
 

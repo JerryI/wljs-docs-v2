@@ -1,4 +1,6 @@
-# Resampling
+---
+title: Resampling
+---
 
 `Resampling` is an option that specifies the method to be used for resampling images or arrays.
 

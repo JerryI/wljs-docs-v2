@@ -1,4 +1,6 @@
-# SymmetricDifference
+---
+title: SymmetricDifference
+---
 
 `SymmetricDifference[list1, list2, ...]` gives the symmetric difference of the lists listi.
 

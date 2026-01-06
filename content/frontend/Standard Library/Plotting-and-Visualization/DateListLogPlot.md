@@ -1,4 +1,6 @@
-# DateListLogPlot
+---
+title: DateListLogPlot
+---
 
 `DateListLogPlot[{{date1, y1}, {date2, y2}, ...}]` makes a log plot with values yi at a sequence of dates.
 

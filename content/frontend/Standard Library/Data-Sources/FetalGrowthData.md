@@ -1,4 +1,6 @@
-# FetalGrowthData
+---
+title: FetalGrowthData
+---
 
 `FetalGrowthData[age]` returns the values for all properties of fetal development for the specified age of the fetus.
 

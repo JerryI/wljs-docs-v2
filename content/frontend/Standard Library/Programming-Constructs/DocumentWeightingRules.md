@@ -1,4 +1,6 @@
-# DocumentWeightingRules
+---
+title: DocumentWeightingRules
+---
 
 `DocumentWeightingRules` is an option for `TextSearch` and related functions that allows the specification of weights for documents based on the values of fields in the search index.
 

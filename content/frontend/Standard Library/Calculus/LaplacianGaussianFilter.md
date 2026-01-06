@@ -1,4 +1,6 @@
-# LaplacianGaussianFilter
+---
+title: LaplacianGaussianFilter
+---
 
 `LaplacianGaussianFilter[data, r]` convolves data with a Laplacian of Gaussian kernel of pixel radius r.
 

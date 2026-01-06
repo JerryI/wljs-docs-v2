@@ -1,4 +1,6 @@
-# WordOrientation
+---
+title: WordOrientation
+---
 
 `WordOrientation` is an option for `WordCloud` that specifies the orientations in which words appear.
 

@@ -1,4 +1,6 @@
-# Permanent
+---
+title: Permanent
+---
 
 `Permanent[m]` gives the permanent of the square matrix m.
 

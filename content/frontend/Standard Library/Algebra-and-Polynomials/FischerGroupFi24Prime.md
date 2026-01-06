@@ -1,4 +1,6 @@
-# FischerGroupFi24Prime
+---
+title: FischerGroupFi24Prime
+---
 
 `FischerGroupFi24Prime[]` represents the sporadic simple Fischer group Fi24′.
 

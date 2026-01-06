@@ -1,4 +1,6 @@
-# ComplexPlot
+---
+title: ComplexPlot
+---
 
 `ComplexPlot[f, {z, zmin, zmax}]` generates a plot of Arg[f] over the complex rectangle with corners zmin and zmax.
 

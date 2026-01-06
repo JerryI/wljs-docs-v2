@@ -1,4 +1,6 @@
-# GeoElevationData
+---
+title: GeoElevationData
+---
 
 `GeoElevationData[]` gives the elevation above sea level at `$GeoLocation`.
 

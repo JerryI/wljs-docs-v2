@@ -1,4 +1,6 @@
-# PageBreakWithin
+---
+title: PageBreakWithin
+---
 
 `PageBreakWithin` is an option for Cell which specifies whether a page break should be allowed within the cell if the notebook that contains the cell is printed.
 

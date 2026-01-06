@@ -1,4 +1,6 @@
-# BlockMap
+---
+title: BlockMap
+---
 
 `BlockMap[f, list, n]` applies f to non-overlapping sublists of length n in list.
 

@@ -1,4 +1,6 @@
-# Pink
+---
+title: Pink
+---
 
 `Pink` represents the color pink in graphics or style specifications.
 

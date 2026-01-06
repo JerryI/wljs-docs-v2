@@ -1,4 +1,6 @@
-# ExtractPacletArchive
+---
+title: ExtractPacletArchive
+---
 
 `ExtractPacletArchive[file]` extracts the contents of the paclet archive file into the directory in which file resides.
 

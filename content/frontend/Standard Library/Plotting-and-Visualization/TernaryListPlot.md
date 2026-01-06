@@ -1,4 +1,6 @@
-# TernaryListPlot
+---
+title: TernaryListPlot
+---
 
 `TernaryListPlot[{{u1, v1, w1}, ..., {un, vn, wn}}]` plots a list of points with specified *u*, *v* and *w* coordinates in a barycentric coordinate system.
 

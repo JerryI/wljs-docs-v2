@@ -1,4 +1,6 @@
-# CombinatorY
+---
+title: CombinatorY
+---
 
 `CombinatorY` represents the **Y** combinator (fixed-point combinator).
 

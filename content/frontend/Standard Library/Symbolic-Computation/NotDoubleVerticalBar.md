@@ -1,4 +1,6 @@
-# NotDoubleVerticalBar
+---
+title: NotDoubleVerticalBar
+---
 
 `NotDoubleVerticalBar[x, y, ...]` displays as x∦y∦….
 

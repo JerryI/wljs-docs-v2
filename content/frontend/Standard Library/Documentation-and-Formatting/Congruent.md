@@ -1,4 +1,6 @@
-# Congruent
+---
+title: Congruent
+---
 
 `Congruent[x, y, ...]` displays as x≡y≡....
 

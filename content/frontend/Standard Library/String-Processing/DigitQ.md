@@ -1,4 +1,6 @@
-# DigitQ
+---
+title: DigitQ
+---
 
 `DigitQ[string]` yields `True` if all characters in the string are digits 0-9, and `False` otherwise.
 

@@ -1,4 +1,6 @@
-# HeaderDisplayFunction
+---
+title: HeaderDisplayFunction
+---
 
 `HeaderDisplayFunction` is an option for `Dataset` that specifies a function to apply to headers before displaying them.
 

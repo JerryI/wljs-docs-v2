@@ -1,4 +1,6 @@
-# AudioOverlay
+---
+title: AudioOverlay
+---
 
 `AudioOverlay[{audio1,audio2,…}]` returns an audio object by overlaying all audioi.
 

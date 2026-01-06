@@ -1,4 +1,6 @@
-# CommonName
+---
+title: CommonName
+---
 
 `CommonName[entity]` gives the common name for the entity specified by entity.
 

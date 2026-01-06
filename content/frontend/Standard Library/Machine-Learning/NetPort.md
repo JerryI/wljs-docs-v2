@@ -1,4 +1,6 @@
-# NetPort
+---
+title: NetPort
+---
 
 `NetPort["port"]` represents the specified input or output port for a complete net.
 

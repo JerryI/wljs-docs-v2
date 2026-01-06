@@ -1,4 +1,6 @@
-# WhitespaceCharacter
+---
+title: WhitespaceCharacter
+---
 
 `WhitespaceCharacter` represents a single whitespace character in `StringExpression`.
 

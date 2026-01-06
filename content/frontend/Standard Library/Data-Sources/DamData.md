@@ -1,4 +1,6 @@
-# DamData
+---
+title: DamData
+---
 
 `DamData[entity, property]` gives the value of the specified property for the dam entity.
 

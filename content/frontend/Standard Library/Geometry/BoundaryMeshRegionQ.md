@@ -1,4 +1,6 @@
-# BoundaryMeshRegionQ
+---
+title: BoundaryMeshRegionQ
+---
 
 `BoundaryMeshRegionQ[reg]` yields True if the region reg is a valid BoundaryMeshRegion object and False otherwise.
 

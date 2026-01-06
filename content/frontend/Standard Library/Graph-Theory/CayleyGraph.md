@@ -1,4 +1,6 @@
-# CayleyGraph
+---
+title: CayleyGraph
+---
 
 `CayleyGraph[group]` returns a Cayley graph representation of a group.
 

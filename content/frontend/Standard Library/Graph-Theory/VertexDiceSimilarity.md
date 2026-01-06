@@ -1,4 +1,6 @@
-# VertexDiceSimilarity
+---
+title: VertexDiceSimilarity
+---
 
 `VertexDiceSimilarity[g, u, v]` gives the Dice similarity between vertices u and v of the graph g.
 

@@ -1,4 +1,6 @@
-# Repeated
+---
+title: Repeated
+---
 
 `p..` or `Repeated[p]` is a pattern object that represents a sequence of one or more expressions, each matching p.
 

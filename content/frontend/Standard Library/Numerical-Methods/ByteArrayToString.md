@@ -1,4 +1,6 @@
-# ByteArrayToString
+---
+title: ByteArrayToString
+---
 
 `ByteArrayToString[ba]` returns a string by decoding the data in the byte array ba, assuming UTF-8 encoding.
 

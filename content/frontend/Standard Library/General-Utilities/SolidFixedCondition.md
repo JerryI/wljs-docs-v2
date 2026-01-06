@@ -1,4 +1,6 @@
-# SolidFixedCondition
+---
+title: SolidFixedCondition
+---
 
 `SolidFixedCondition[pred, vars, pars]` represents a fully constrained solid boundary for PDEs with predicate pred indicating where it applies, with model variables vars and global parameters pars.
 

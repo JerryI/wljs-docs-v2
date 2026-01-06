@@ -1,4 +1,6 @@
-# MathieuCharacteristicExponent
+---
+title: MathieuCharacteristicExponent
+---
 
 `MathieuCharacteristicExponent[a, q]` gives the characteristic exponent `r` for Mathieu functions with characteristic value `a` and parameter `q`.
 

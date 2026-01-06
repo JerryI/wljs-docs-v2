@@ -1,4 +1,6 @@
-# GraphPeriphery
+---
+title: GraphPeriphery
+---
 
 `GraphPeriphery[g]` gives vertices that are maximally distant to at least one vertex in the graph g.
 

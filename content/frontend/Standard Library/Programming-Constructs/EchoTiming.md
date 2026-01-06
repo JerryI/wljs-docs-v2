@@ -1,4 +1,6 @@
-# EchoTiming
+---
+title: EchoTiming
+---
 
 `EchoTiming[expr]` evaluates expr, prints the time in seconds used and returns the result.
 

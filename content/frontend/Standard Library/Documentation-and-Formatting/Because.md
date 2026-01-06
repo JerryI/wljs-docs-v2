@@ -1,4 +1,6 @@
-# Because
+---
+title: Because
+---
 
 `Because[x, y]` displays as x ∵ y.
 

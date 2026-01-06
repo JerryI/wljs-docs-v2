@@ -1,4 +1,6 @@
-# FileFormat
+---
+title: FileFormat
+---
 
 `FileFormat[source]` attempts to determine what Import format could be used to import the file.
 

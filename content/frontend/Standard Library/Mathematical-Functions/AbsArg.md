@@ -1,4 +1,6 @@
-# AbsArg
+---
+title: AbsArg
+---
 
 `AbsArg[z]` gives the list `{Abs[z], Arg[z]}` of the number z.
 

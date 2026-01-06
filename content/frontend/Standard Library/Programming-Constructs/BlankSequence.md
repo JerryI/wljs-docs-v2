@@ -1,4 +1,6 @@
-# BlankSequence
+---
+title: BlankSequence
+---
 
 `__` (two underscores) or `BlankSequence[]` is a pattern that can stand for any sequence of one or more expressions.
 

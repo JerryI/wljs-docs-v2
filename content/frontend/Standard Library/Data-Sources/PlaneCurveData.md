@@ -1,4 +1,6 @@
-# PlaneCurveData
+---
+title: PlaneCurveData
+---
 
 `PlaneCurveData[entity, property]` gives the value of the specified property for the plane curve entity.
 

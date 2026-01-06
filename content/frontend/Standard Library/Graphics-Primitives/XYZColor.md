@@ -1,4 +1,6 @@
-# XYZColor
+---
+title: XYZColor
+---
 
 `XYZColor[x, y, z]` represents a color in the XYZ color space with tristimulus values x, y, and z.
 

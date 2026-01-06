@@ -1,4 +1,6 @@
-# Trace
+---
+title: Trace
+---
 
 `Trace[expr]` generates a list of all expressions used in the evaluation of expr. `Trace[expr, form]` includes only expressions matching form.
 

@@ -1,4 +1,6 @@
-# PageFooterLines
+---
+title: PageFooterLines
+---
 
 `PageFooterLines` is an option for notebooks that specifies whether a horizontal line is inserted at the bottom of each page when the notebook is printed.
 

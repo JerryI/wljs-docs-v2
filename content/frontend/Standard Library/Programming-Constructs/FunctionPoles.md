@@ -1,4 +1,6 @@
-# FunctionPoles
+---
+title: FunctionPoles
+---
 
 `FunctionPoles[f, x]` finds the poles of the meromorphic function f with the variable x.
 

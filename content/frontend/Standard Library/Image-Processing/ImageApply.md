@@ -1,4 +1,6 @@
-# ImageApply
+---
+title: ImageApply
+---
 
 `ImageApply[f, image]` applies the function f to the list of channel values for each pixel in image.
 

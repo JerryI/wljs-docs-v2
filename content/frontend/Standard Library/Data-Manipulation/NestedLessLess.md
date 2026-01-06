@@ -1,4 +1,6 @@
-# NestedLessLess
+---
+title: NestedLessLess
+---
 
 `NestedLessLess[x, y, …]` displays as x⪡y⪡….
 

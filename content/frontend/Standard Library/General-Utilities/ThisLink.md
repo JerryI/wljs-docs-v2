@@ -1,4 +1,6 @@
-# ThisLink
+---
+title: ThisLink
+---
 
 `ThisLink` is used in patterns for external packages to distinguish between several instances of the same package.
 

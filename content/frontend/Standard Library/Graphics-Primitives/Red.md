@@ -1,4 +1,6 @@
-# Red
+---
+title: Red
+---
 
 `Red` represents the color red in graphics or style specifications.
 

@@ -1,4 +1,6 @@
-# Append
+---
+title: Append
+---
 
 `Append[expr, elem]` gives expr with elem appended.
 

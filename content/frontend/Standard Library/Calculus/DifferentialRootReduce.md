@@ -1,4 +1,6 @@
-# DifferentialRootReduce
+---
+title: DifferentialRootReduce
+---
 
 `DifferentialRootReduce[expr, x]` attempts to reduce expr to a single `DifferentialRoot` object as a function of x.
 

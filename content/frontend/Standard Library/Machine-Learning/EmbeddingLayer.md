@@ -1,4 +1,6 @@
-# EmbeddingLayer
+---
+title: EmbeddingLayer
+---
 
 `EmbeddingLayer[size,n]` represents a trainable net layer that embeds integers between 1 and n into a continuous vector space of dimension size.
 

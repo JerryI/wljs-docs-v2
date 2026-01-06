@@ -1,4 +1,6 @@
-# SimplePolyhedronQ
+---
+title: SimplePolyhedronQ
+---
 
 `SimplePolyhedronQ[poly]` gives `True` if the polyhedron poly is simple and `False` otherwise.
 

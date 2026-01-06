@@ -1,4 +1,6 @@
-# CreateDatabin
+---
+title: CreateDatabin
+---
 
 `CreateDatabin[]` creates a databin in the Wolfram Data Drop and returns the corresponding Databin object.
 

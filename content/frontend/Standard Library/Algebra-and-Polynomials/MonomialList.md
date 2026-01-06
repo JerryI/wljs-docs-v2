@@ -1,4 +1,6 @@
-# MonomialList
+---
+title: MonomialList
+---
 
 `MonomialList[poly]` gives the list of all monomials in the polynomial poly.
 

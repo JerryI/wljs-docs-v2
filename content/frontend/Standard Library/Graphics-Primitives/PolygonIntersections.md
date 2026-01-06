@@ -1,4 +1,6 @@
-# PolygonIntersections
+---
+title: PolygonIntersections
+---
 
 `PolygonIntersections` is an option for `Graphics3D` which specifies whether intersecting polygons should be left unchanged.
 

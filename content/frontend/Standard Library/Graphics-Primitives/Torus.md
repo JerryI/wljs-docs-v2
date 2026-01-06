@@ -1,4 +1,6 @@
-# Torus
+---
+title: Torus
+---
 
 `Torus[{x, y, z}, {rinner, router}]` represents a torus centered at the point with given radii.
 

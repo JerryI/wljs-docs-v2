@@ -1,4 +1,6 @@
-# TimelinePlot
+---
+title: TimelinePlot
+---
 
 `TimelinePlot[{date1,date2,…}]` makes a timeline plot with dates date1, date2, ….
 

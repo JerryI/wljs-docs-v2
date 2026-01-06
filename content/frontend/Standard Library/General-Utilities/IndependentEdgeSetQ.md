@@ -1,4 +1,6 @@
-# IndependentEdgeSetQ
+---
+title: IndependentEdgeSetQ
+---
 
 `IndependentEdgeSetQ[g, elist]` yields `True` if the edge list elist is an independent edge set of the graph g, and `False` otherwise.
 

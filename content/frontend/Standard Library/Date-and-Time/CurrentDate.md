@@ -1,4 +1,6 @@
-# CurrentDate
+---
+title: CurrentDate
+---
 
 `CurrentDate[gran]` gives the current date of the specified granularity type gran.
 

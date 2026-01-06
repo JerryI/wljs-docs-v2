@@ -1,4 +1,6 @@
-# FindShortestTour
+---
+title: FindShortestTour
+---
 
 `FindShortestTour[{v1, v2, ...}]` attempts to find an ordering of the vi that minimizes the total distance on a tour that visits all the vi once.
 

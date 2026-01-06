@@ -1,4 +1,6 @@
-# VideoJoin
+---
+title: VideoJoin
+---
 
 `VideoJoin[video1, video2, ...]` concatenates all videoi and returns a video object.
 

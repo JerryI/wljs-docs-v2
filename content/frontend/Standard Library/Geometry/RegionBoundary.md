@@ -1,4 +1,6 @@
-# RegionBoundary
+---
+title: RegionBoundary
+---
 
 `RegionBoundary[reg]` represents the boundary of the region reg.
 

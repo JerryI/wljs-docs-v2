@@ -1,4 +1,6 @@
-# SmoothHistogram
+---
+title: SmoothHistogram
+---
 
 `SmoothHistogram[{x1, x2, ...}]` plots a smooth kernel histogram for the PDF of the values.
 

@@ -1,4 +1,6 @@
-# AnnuityDue
+---
+title: AnnuityDue
+---
 
 `AnnuityDue[p,t]` represents an annuity due of fixed payments p made over t periods.
 

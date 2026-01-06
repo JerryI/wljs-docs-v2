@@ -1,4 +1,6 @@
-# Printout3DPreviewer
+---
+title: Printout3DPreviewer
+---
 
 `Printout3DPreviewer` is an option for Printout3D that specifies a previewer for generating outputs to print.
 

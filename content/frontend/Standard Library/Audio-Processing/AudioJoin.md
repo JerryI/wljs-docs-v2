@@ -1,4 +1,6 @@
-# AudioJoin
+---
+title: AudioJoin
+---
 
 `AudioJoin[audio1, audio2, ...]` or `AudioJoin[{audio1, audio2, ...}]` concatenates all audioi and returns an audio object.
 

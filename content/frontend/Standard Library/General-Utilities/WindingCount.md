@@ -1,4 +1,6 @@
-# WindingCount
+---
+title: WindingCount
+---
 
 `WindingCount[contour, p]` gives the count of the number of times a closed curve winds around a point p.
 

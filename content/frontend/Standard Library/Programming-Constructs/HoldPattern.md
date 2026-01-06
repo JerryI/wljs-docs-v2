@@ -1,4 +1,6 @@
-# HoldPattern
+---
+title: HoldPattern
+---
 
 `HoldPattern[expr]` is equivalent to expr for pattern matching, but maintains expr in an unevaluated form.
 

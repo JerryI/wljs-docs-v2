@@ -1,4 +1,6 @@
-# QuantityForm
+---
+title: QuantityForm
+---
 
 `QuantityForm[expr, form]` prints expr with all Quantity expressions using the specified unit display form form.
 

@@ -1,4 +1,6 @@
-# TreeElementSize
+---
+title: TreeElementSize
+---
 
 `TreeElementSize` is an option for `Tree` and related functions that specifies what size should be used for subtree elements.
 

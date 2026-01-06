@@ -1,4 +1,6 @@
-# PositiveDefiniteMatrixQ
+---
+title: PositiveDefiniteMatrixQ
+---
 
 `PositiveDefiniteMatrixQ[m]` gives `True` if m is explicitly positive definite, and `False` otherwise.
 

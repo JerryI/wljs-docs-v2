@@ -1,4 +1,6 @@
-# RemoveChannelSubscribers
+---
+title: RemoveChannelSubscribers
+---
 
 `RemoveChannelSubscribers[channel]` removes all subscribers from the specified *channel*.
 

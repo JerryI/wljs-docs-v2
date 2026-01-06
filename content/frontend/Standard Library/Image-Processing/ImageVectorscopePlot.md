@@ -1,4 +1,6 @@
-# ImageVectorscopePlot
+---
+title: ImageVectorscopePlot
+---
 
 `ImageVectorscopePlot[image]` plots the chrominance of image.
 

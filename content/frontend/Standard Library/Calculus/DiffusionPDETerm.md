@@ -1,4 +1,6 @@
-# DiffusionPDETerm
+---
+title: DiffusionPDETerm
+---
 
 `DiffusionPDETerm[vars]` represents a diffusion term ∇{x1,…,xn}·(-∇{x1,…,xn}u) with model variables vars.
 

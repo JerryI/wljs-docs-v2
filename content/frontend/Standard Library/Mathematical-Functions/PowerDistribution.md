@@ -1,4 +1,6 @@
-# PowerDistribution
+---
+title: PowerDistribution
+---
 
 `PowerDistribution[k, a]` represents a power distribution with domain parameter k and shape parameter a.
 

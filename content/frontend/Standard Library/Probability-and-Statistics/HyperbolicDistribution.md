@@ -1,4 +1,6 @@
-# HyperbolicDistribution
+---
+title: HyperbolicDistribution
+---
 
 `HyperbolicDistribution[α, β, δ, μ]` represents a hyperbolic distribution with location parameter μ, scale parameter δ, shape parameter α, and skewness parameter β.
 

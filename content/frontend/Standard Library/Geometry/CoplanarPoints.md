@@ -1,4 +1,6 @@
-# CoplanarPoints
+---
+title: CoplanarPoints
+---
 
 `CoplanarPoints[{p1,p2,p3,p4,…,pn}]` tests whether the points p1,p2,p3,p4,…,pn are coplanar.
 

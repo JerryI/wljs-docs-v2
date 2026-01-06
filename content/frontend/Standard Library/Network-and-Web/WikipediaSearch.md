@@ -1,4 +1,6 @@
-# WikipediaSearch
+---
+title: WikipediaSearch
+---
 
 `WikipediaSearch[keywords]` returns a list of Wikipedia articles whose titles include the given keywords.
 

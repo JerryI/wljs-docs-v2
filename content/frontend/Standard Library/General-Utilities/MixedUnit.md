@@ -1,4 +1,6 @@
-# MixedUnit
+---
+title: MixedUnit
+---
 
 `MixedUnit[{unit1, unit2, ..., unitn}]` represents a mixed-unit expression consisting of units unit1 through unitn.
 

@@ -1,4 +1,6 @@
-# FindHamiltonianCycle
+---
+title: FindHamiltonianCycle
+---
 
 `FindHamiltonianCycle[g]` finds a Hamiltonian cycle in the graph g.
 

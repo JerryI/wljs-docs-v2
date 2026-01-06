@@ -1,4 +1,6 @@
-# RemoveUsers
+---
+title: RemoveUsers
+---
 
 `RemoveUsers[group, {user1, ...}]` removes the users useri from the permissions group group.
 

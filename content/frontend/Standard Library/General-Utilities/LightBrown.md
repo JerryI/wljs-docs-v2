@@ -1,4 +1,6 @@
-# LightBrown
+---
+title: LightBrown
+---
 
 `LightBrown` represents a light brown color in graphics or style specifications.
 

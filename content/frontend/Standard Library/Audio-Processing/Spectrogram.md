@@ -1,4 +1,6 @@
-# Spectrogram
+---
+title: Spectrogram
+---
 
 `Spectrogram[list]` plots the spectrogram of list.
 

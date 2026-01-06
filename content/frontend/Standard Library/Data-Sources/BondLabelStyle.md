@@ -1,4 +1,6 @@
-# BondLabelStyle
+---
+title: BondLabelStyle
+---
 
 `BondLabelStyle` is an option for `MoleculePlot` and `MoleculePlot3D` that specifies the style to use for bond labels.
 

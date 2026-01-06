@@ -1,4 +1,6 @@
-# Operate
+---
+title: Operate
+---
 
 `Operate[p, f[x, y, ...]]` gives `p[f][x, y, ...]`, applying `p` to the head of the expression.
 

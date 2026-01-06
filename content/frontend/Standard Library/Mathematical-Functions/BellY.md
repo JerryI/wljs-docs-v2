@@ -1,4 +1,6 @@
-# BellY
+---
+title: BellY
+---
 
 `BellY[n, k, {x1, ..., xn-k+1}]` gives the partial Bell polynomial Yn,k(x1, ..., xn-k+1).
 

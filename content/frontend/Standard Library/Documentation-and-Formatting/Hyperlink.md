@@ -1,4 +1,6 @@
-# Hyperlink
+---
+title: Hyperlink
+---
 
 `Hyperlink[uri]` represents a hyperlink that jumps to the specified URI when clicked.
 

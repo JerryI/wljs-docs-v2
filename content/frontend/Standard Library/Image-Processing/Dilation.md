@@ -1,4 +1,6 @@
-# Dilation
+---
+title: Dilation
+---
 
 `Dilation[image, ker]` gives the morphological dilation of image with respect to the structuring element ker.
 

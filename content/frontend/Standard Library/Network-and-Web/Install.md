@@ -1,4 +1,6 @@
-# Install
+---
+title: Install
+---
 
 `Install["name"]` starts a WSTP-compatible external program and installs Wolfram Language definitions to call functions in it.
 

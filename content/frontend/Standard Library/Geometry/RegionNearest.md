@@ -1,4 +1,6 @@
-# RegionNearest
+---
+title: RegionNearest
+---
 
 `RegionNearest[reg, p]` gives a point in the region that is nearest to point p.
 

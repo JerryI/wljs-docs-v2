@@ -1,4 +1,6 @@
-# InverseGammaRegularized
+---
+title: InverseGammaRegularized
+---
 
 `InverseGammaRegularized[a, s]` gives the inverse of the regularized incomplete gamma function.
 

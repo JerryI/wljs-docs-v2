@@ -1,4 +1,6 @@
-# EdgeChromaticNumber
+---
+title: EdgeChromaticNumber
+---
 
 `EdgeChromaticNumber[g]` gives the chromatic number for the edges of the graph g.
 

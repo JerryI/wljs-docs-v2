@@ -1,4 +1,6 @@
-# GeoRegionValuePlot
+---
+title: GeoRegionValuePlot
+---
 
 `GeoRegionValuePlot[{reg1 -> val1, reg2 -> val2, …}]` generates a plot in which the geographic regions `regi` are colored according to the values `vali`.
 

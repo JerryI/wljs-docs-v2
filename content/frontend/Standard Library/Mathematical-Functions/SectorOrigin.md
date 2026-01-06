@@ -1,4 +1,6 @@
-# SectorOrigin
+---
+title: SectorOrigin
+---
 
 `SectorOrigin` is an option to `PieChart` and related functions that specifies where sectors should start.
 

@@ -1,4 +1,6 @@
-# LongestCommonSequencePositions
+---
+title: LongestCommonSequencePositions
+---
 
 `LongestCommonSequencePositions[s1, s2]` finds the longest sequence of contiguous or disjoint elements common to the strings, lists or biomolecular sequences s1 and s2 and returns their positions.
 

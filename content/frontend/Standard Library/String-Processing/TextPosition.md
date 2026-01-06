@@ -1,4 +1,6 @@
-# TextPosition
+---
+title: TextPosition
+---
 
 `TextPosition[text,form]` gives a list of the starting and ending positions at which instances of form occur in text.
 

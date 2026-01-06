@@ -1,4 +1,6 @@
-# PrintingOptions
+---
+title: PrintingOptions
+---
 
 `PrintingOptions` is an option that specifies settings for printing.
 

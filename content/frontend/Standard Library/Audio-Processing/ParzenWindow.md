@@ -1,4 +1,6 @@
-# ParzenWindow
+---
+title: ParzenWindow
+---
 
 `ParzenWindow[x]` represents a Parzen window function of x.
 

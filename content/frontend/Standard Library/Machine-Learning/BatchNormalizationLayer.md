@@ -1,4 +1,6 @@
-# BatchNormalizationLayer
+---
+title: BatchNormalizationLayer
+---
 
 `BatchNormalizationLayer[]` represents a trainable net layer that normalizes its input data by learning the data mean and variance.
 

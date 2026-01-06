@@ -1,4 +1,6 @@
-# RevolutionPlot3D
+---
+title: RevolutionPlot3D
+---
 
 `RevolutionPlot3D[fz, {t, tmin, tmax}]` generates a plot of the surface of revolution with height fz at radius t.
 

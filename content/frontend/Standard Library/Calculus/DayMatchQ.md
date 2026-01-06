@@ -1,4 +1,6 @@
-# DayMatchQ
+---
+title: DayMatchQ
+---
 
 `DayMatchQ[date, daytype]` returns True if the date matches the daytype specification and returns False otherwise.
 

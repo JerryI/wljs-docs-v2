@@ -1,4 +1,6 @@
-# LeaderSize
+---
+title: LeaderSize
+---
 
 `LeaderSize` is an option for `Callout` that specifies what sizes to use for leader lines.
 

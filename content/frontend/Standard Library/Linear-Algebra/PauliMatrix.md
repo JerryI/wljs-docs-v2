@@ -1,4 +1,6 @@
-# PauliMatrix
+---
+title: PauliMatrix
+---
 
 `PauliMatrix[k]` gives the kth Pauli spin matrix σk.
 

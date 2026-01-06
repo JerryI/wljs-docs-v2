@@ -1,4 +1,6 @@
-# SuchThat
+---
+title: SuchThat
+---
 
 `SuchThat[x,y]` displays as x∍y.
 

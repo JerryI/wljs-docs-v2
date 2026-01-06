@@ -1,4 +1,6 @@
-# ConnectionSettings
+---
+title: ConnectionSettings
+---
 
 `ConnectionSettings` is an option for `URLRead` and related functions to specify advanced connection settings.
 

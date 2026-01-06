@@ -1,4 +1,6 @@
-# ImageLegends
+---
+title: ImageLegends
+---
 
 `ImageLegends` is an option for image highlighting that specifies what legends to use.
 

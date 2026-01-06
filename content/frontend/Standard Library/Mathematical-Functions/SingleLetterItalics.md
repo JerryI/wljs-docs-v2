@@ -1,4 +1,6 @@
-# SingleLetterItalics
+---
+title: SingleLetterItalics
+---
 
 `SingleLetterItalics` is an option for `Cell` that specifies whether single‐letter names should be displayed in italics.
 

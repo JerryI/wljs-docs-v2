@@ -1,4 +1,6 @@
-# ExternalDataCharacterEncoding
+---
+title: ExternalDataCharacterEncoding
+---
 
 `ExternalDataCharacterEncoding` is a global option that specifies the character encoding used in reading and writing plain text data outside of the Wolfram System.
 

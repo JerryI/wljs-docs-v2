@@ -1,4 +1,6 @@
-# HumpDownHump
+---
+title: HumpDownHump
+---
 
 `HumpDownHump[x,y,…]` displays as x≎y≎….
 

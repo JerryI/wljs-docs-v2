@@ -1,4 +1,6 @@
-# LunarEclipse
+---
+title: LunarEclipse
+---
 
 `LunarEclipse[]` gives the time of the next lunar eclipse.
 

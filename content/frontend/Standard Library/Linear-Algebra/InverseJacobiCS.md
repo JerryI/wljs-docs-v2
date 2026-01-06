@@ -1,4 +1,6 @@
-# InverseJacobiCS
+---
+title: InverseJacobiCS
+---
 
 `InverseJacobiCS[v, m]` gives the inverse Jacobi elliptic function cs⁻¹(v|m).
 

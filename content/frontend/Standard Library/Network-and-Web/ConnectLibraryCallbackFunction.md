@@ -1,4 +1,6 @@
-# ConnectLibraryCallbackFunction
+---
+title: ConnectLibraryCallbackFunction
+---
 
 `ConnectLibraryCallbackFunction[mname, cf]` connects a CompiledFunction cf with the library callback manager with name mname.
 

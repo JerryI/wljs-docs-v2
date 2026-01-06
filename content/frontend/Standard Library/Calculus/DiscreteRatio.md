@@ -1,4 +1,6 @@
-# DiscreteRatio
+---
+title: DiscreteRatio
+---
 
 `DiscreteRatio[f, i]` gives the discrete ratio f(i+1)/f(i).
 

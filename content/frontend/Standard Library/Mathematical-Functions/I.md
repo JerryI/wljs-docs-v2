@@ -1,4 +1,6 @@
-# I
+---
+title: I
+---
 
 `I` represents the imaginary unit $\sqrt{-1}$.
 

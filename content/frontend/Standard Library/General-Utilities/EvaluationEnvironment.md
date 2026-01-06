@@ -1,4 +1,6 @@
-# EvaluationEnvironment
+---
+title: EvaluationEnvironment
+---
 
 `EvaluationEnvironment` is an option for functions such as `InitializationValue` and `InitializationObjects` that specifies the environment in which an initialization is intended to be used.
 

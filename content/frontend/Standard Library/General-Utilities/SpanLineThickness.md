@@ -1,4 +1,6 @@
-# SpanLineThickness
+---
+title: SpanLineThickness
+---
 
 `SpanLineThickness` is an option for selections that specifies the thickness in printer's points of line-spanning characters such as `\[VerticalLine]` and `\[HorizontalLine]`.
 

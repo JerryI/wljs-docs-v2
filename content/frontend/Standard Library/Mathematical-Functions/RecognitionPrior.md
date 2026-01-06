@@ -1,4 +1,6 @@
-# RecognitionPrior
+---
+title: RecognitionPrior
+---
 
 `RecognitionPrior` is an option for recognition functions that specifies the prior probability or class for recognition.
 

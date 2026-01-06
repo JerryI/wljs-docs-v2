@@ -1,4 +1,6 @@
-# Postfix
+---
+title: Postfix
+---
 
 `Postfix[f[expr]]` prints with f[expr] given in default postfix form: expr//f.
 

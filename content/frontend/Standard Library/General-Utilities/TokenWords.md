@@ -1,4 +1,6 @@
-# TokenWords
+---
+title: TokenWords
+---
 
 `TokenWords` is an option for `Read` and related functions which gives a list of token words to be used to delimit words.
 

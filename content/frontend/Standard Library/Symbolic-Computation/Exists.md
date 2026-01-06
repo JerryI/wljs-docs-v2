@@ -1,4 +1,6 @@
-# Exists
+---
+title: Exists
+---
 
 `Exists[x, expr]` represents the statement that there exists a value of x for which expr is `True`.
 

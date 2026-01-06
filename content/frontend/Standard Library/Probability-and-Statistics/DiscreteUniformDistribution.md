@@ -1,4 +1,6 @@
-# DiscreteUniformDistribution
+---
+title: DiscreteUniformDistribution
+---
 
 `DiscreteUniformDistribution[{imin, imax}]` represents a discrete uniform distribution over integers from imin to imax.
 

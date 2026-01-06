@@ -1,4 +1,6 @@
-# ExtentMarkers
+---
+title: ExtentMarkers
+---
 
 `ExtentMarkers` is an option to DiscretePlot and DiscretePlot3D that specifies markers to draw at extent boundaries.
 

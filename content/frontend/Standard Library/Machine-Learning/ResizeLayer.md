@@ -1,4 +1,6 @@
-# ResizeLayer
+---
+title: ResizeLayer
+---
 
 `ResizeLayer[{d}]` represents a layer performing one-dimensional resizing of a two-dimensional array.
 

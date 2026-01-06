@@ -1,4 +1,6 @@
-# Point
+---
+title: Point
+---
 
 `Point[p]` is a graphics primitive representing a point at position `p`. `Point[{p1, p2, ...}]` represents multiple points.
 

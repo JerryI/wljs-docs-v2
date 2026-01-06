@@ -1,4 +1,6 @@
-# Rationals
+---
+title: Rationals
+---
 
 `Rationals` represents the domain of rational numbers, as in x ∈ Rationals.
 

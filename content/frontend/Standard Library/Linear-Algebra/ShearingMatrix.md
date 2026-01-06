@@ -1,4 +1,6 @@
-# ShearingMatrix
+---
+title: ShearingMatrix
+---
 
 `ShearingMatrix[θ, v, n]` gives the matrix corresponding to shearing by θ radians along the direction of the vector v, and normal to the vector n.
 

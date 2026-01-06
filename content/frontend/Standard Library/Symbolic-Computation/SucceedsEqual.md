@@ -1,4 +1,6 @@
-# SucceedsEqual
+---
+title: SucceedsEqual
+---
 
 `SucceedsEqual[x, y, …]` displays as x⪰y⪰….
 

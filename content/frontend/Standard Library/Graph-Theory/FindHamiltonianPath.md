@@ -1,4 +1,6 @@
-# FindHamiltonianPath
+---
+title: FindHamiltonianPath
+---
 
 `FindHamiltonianPath[g]` finds a Hamiltonian path in the graph g with the smallest total length.
 

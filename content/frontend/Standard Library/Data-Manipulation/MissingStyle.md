@@ -1,4 +1,6 @@
-# MissingStyle
+---
+title: MissingStyle
+---
 
 `MissingStyle` is an option for `GeoRegionValuePlot` that specifies how locations with missing data should be displayed.
 

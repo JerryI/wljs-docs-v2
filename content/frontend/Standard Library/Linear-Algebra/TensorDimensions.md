@@ -1,4 +1,6 @@
-# TensorDimensions
+---
+title: TensorDimensions
+---
 
 `TensorDimensions[tensor]` gives the list of dimensions of tensor.
 

@@ -1,4 +1,6 @@
-# EvaluationMonitor
+---
+title: EvaluationMonitor
+---
 
 `EvaluationMonitor` is an option for various numerical computation and plotting functions that gives an expression to evaluate whenever functions derived from the input are evaluated numerically.
 

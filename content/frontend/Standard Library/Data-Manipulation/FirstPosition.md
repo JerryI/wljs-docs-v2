@@ -1,4 +1,6 @@
-# FirstPosition
+---
+title: FirstPosition
+---
 
 `FirstPosition[expr, pattern]` gives the position of the first element matching pattern, or `Missing["NotFound"]` if none is found.
 

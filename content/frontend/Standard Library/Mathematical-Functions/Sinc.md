@@ -1,4 +1,6 @@
-# Sinc
+---
+title: Sinc
+---
 
 `Sinc[z]` gives sinc(z).
 

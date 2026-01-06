@@ -1,4 +1,6 @@
-# PositiveSemidefiniteMatrixQ
+---
+title: PositiveSemidefiniteMatrixQ
+---
 
 `PositiveSemidefiniteMatrixQ[m]` gives `True` if m is explicitly positive semidefinite, and `False` otherwise.
 

@@ -1,4 +1,6 @@
-# GraphicsGrid
+---
+title: GraphicsGrid
+---
 
 `GraphicsGrid[{{g11, g12, ...}, ...}]` generates a graphic in which the gij are laid out in a two-dimensional grid.
 

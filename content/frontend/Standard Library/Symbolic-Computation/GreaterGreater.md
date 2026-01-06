@@ -1,4 +1,6 @@
-# GreaterGreater
+---
+title: GreaterGreater
+---
 
 `GreaterGreater[x, y, …]` displays as x≫y≫….
 

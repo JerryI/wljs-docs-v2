@@ -1,4 +1,6 @@
-# Padding
+---
+title: Padding
+---
 
 `Padding` is an option to various array and image operations that specifies what padding to use when extending beyond the original data specified.
 

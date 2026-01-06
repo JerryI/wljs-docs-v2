@@ -1,4 +1,6 @@
-# LetterCounts
+---
+title: LetterCounts
+---
 
 `LetterCounts["string"]` gives an association whose keys are the distinct letters in string, and whose values give the number of times those letters appear in string.
 

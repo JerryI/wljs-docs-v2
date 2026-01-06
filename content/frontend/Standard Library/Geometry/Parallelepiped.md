@@ -1,4 +1,6 @@
-# Parallelepiped
+---
+title: Parallelepiped
+---
 
 `Parallelepiped[p, {v1, ..., vk}]` represents a parallelepiped with origin p and edge directions vi.
 

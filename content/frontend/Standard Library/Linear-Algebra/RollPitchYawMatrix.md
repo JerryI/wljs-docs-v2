@@ -1,4 +1,6 @@
-# RollPitchYawMatrix
+---
+title: RollPitchYawMatrix
+---
 
 `RollPitchYawMatrix[{α,β,γ}]` gives the 3D rotation matrix formed by rotating by α around the initial z axis, then by β around the initial y axis, and then by γ around the initial x axis.
 

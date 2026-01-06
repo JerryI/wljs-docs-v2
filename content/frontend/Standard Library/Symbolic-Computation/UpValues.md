@@ -1,4 +1,6 @@
-# UpValues
+---
+title: UpValues
+---
 
 `UpValues[f]` gives a list of transformation rules corresponding to all upvalues (definitions for expressions containing `f`) defined for the symbol f.
 

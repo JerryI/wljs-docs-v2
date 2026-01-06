@@ -1,4 +1,6 @@
-# RightCosetRepresentative
+---
+title: RightCosetRepresentative
+---
 
 `RightCosetRepresentative[group, g]` returns the smallest element in the right coset of products of the elements of *group* by *g*.
 

@@ -1,4 +1,6 @@
-# KleinInvariantJ
+---
+title: KleinInvariantJ
+---
 
 `KleinInvariantJ[τ]` gives the Klein invariant modular elliptic function J(τ).
 

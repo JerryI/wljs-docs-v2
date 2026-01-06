@@ -1,4 +1,6 @@
-# Gray
+---
+title: Gray
+---
 
 `Gray` represents the color gray in graphics or style specifications.
 

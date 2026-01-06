@@ -1,4 +1,6 @@
-# SpherePoints
+---
+title: SpherePoints
+---
 
 `SpherePoints[n]` gives the positions of n uniformly distributed points on the surface of a unit sphere.
 

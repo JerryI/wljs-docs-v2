@@ -1,4 +1,6 @@
-# StringRotateRight
+---
+title: StringRotateRight
+---
 
 `StringRotateRight[string, n]` cycles the characters in *string* *n* positions to the right.
 

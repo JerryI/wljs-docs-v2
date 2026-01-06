@@ -1,4 +1,6 @@
-# ArcCos
+---
+title: ArcCos
+---
 
 `ArcCos[z]` gives the arc cosine (inverse cosine) of `z`, returning a value in the range $0$ to $\pi$.
 

@@ -1,4 +1,6 @@
-# BinLists
+---
+title: BinLists
+---
 
 `BinLists[data]` gives lists of the elements of data whose values lie in successive integer bins.
 

@@ -1,4 +1,6 @@
-# Rule
+---
+title: Rule
+---
 
 `lhs -> rhs` represents a rule that transforms lhs to rhs.
 

@@ -1,4 +1,6 @@
-# BooleanStrings
+---
+title: BooleanStrings
+---
 
 `BooleanStrings` is an option to `TextString` and related functions that determines what strings correspond to the Wolfram Language symbols `True` and `False`.
 

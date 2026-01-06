@@ -1,4 +1,6 @@
-# ReverseGraph
+---
+title: ReverseGraph
+---
 
 `ReverseGraph[g]` gives the reverse graph of the directed graph g.
 

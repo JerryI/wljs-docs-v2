@@ -1,4 +1,6 @@
-# SplineKnots
+---
+title: SplineKnots
+---
 
 `SplineKnots` is an option for B-spline functions and graphics primitives that specifies the positions of knots.
 

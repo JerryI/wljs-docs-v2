@@ -1,4 +1,6 @@
-# Inpaint
+---
+title: Inpaint
+---
 
 `Inpaint[image, region]` retouches parts of image that correspond to nonzero elements in region.
 

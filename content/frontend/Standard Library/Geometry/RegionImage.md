@@ -1,4 +1,6 @@
-# RegionImage
+---
+title: RegionImage
+---
 
 `RegionImage[reg]` returns a rasterized grayscale 2D or 3D image of reg.
 

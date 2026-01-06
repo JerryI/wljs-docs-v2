@@ -1,4 +1,6 @@
-# PlotLabels
+---
+title: PlotLabels
+---
 
 `PlotLabels` is an option for visualization functions that specifies what labels to use for each data source.
 

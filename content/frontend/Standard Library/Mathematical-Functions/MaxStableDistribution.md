@@ -1,4 +1,6 @@
-# MaxStableDistribution
+---
+title: MaxStableDistribution
+---
 
 `MaxStableDistribution[μ, σ, ξ]` represents a generalized maximum extreme value distribution with location parameter μ, scale parameter σ, and shape parameter ξ.
 

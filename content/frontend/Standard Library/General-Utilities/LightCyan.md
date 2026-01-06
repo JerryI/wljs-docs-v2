@@ -1,4 +1,6 @@
-# LightCyan
+---
+title: LightCyan
+---
 
 `LightCyan` represents a light cyan color in graphics or style specifications.
 

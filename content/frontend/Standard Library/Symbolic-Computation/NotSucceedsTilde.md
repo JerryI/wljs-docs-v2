@@ -1,4 +1,6 @@
-# NotSucceedsTilde
+---
+title: NotSucceedsTilde
+---
 
 `NotSucceedsTilde[x, y, ...]` displays as x⋩y⋩....
 

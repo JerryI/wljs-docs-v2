@@ -1,4 +1,6 @@
-# TernaryPlotCorners
+---
+title: TernaryPlotCorners
+---
 
 `TernaryPlotCorners` is an option for `TernaryListPlot` that determines how the triangle and axes are positioned.
 

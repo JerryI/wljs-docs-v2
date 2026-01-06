@@ -1,4 +1,6 @@
-# GeoProjection
+---
+title: GeoProjection
+---
 
 `GeoProjection` is an option for `GeoGraphics` that specifies the cartographic projection to use for the map.
 

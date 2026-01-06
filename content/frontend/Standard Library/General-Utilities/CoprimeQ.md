@@ -1,4 +1,6 @@
-# CoprimeQ
+---
+title: CoprimeQ
+---
 
 `CoprimeQ[n1, n2]` yields True if n1 and n2 are relatively prime, and yields False otherwise.
 

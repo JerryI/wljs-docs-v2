@@ -1,4 +1,6 @@
-# First
+---
+title: First
+---
 
 `First[expr]` gives the first element in expr.
 

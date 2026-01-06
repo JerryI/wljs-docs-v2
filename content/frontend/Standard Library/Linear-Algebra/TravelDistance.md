@@ -1,4 +1,6 @@
-# TravelDistance
+---
+title: TravelDistance
+---
 
 `TravelDistance[{loc1,loc2,…}]` gives the estimated distance for travel from loc1 to loc2, ….
 

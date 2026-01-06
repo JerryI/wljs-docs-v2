@@ -1,4 +1,6 @@
-# PlotLegends
+---
+title: PlotLegends
+---
 
 `PlotLegends` is an option for plot functions that specifies what legends to use.
 

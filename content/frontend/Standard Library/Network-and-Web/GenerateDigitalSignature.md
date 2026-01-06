@@ -1,4 +1,6 @@
-# GenerateDigitalSignature
+---
+title: GenerateDigitalSignature
+---
 
 `GenerateDigitalSignature[expr, key]` generates a digital signature for expr using the specified private key.
 

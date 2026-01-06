@@ -1,4 +1,6 @@
-# Stack
+---
+title: Stack
+---
 
 `Stack[]` shows the current evaluation stack, giving a list of the tags associated with evaluations that are currently being done.
 

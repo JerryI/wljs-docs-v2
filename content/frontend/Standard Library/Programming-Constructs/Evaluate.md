@@ -1,4 +1,6 @@
-# Evaluate
+---
+title: Evaluate
+---
 
 `Evaluate[expr]` causes expr to be evaluated even if it appears inside a function that holds its arguments.
 

@@ -1,4 +1,6 @@
-# NotPrecedesTilde
+---
+title: NotPrecedesTilde
+---
 
 `NotPrecedesTilde[x, y, ...]` displays as x⋨y⋨….
 

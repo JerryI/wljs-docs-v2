@@ -1,4 +1,6 @@
-# QRDecomposition
+---
+title: QRDecomposition
+---
 
 `QRDecomposition[m]` yields the QR decomposition for a numerical matrix m. The result is a list `{q, r}`, where q is unitary and r is upper-triangular.
 

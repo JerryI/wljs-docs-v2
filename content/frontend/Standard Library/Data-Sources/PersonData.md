@@ -1,4 +1,6 @@
-# PersonData
+---
+title: PersonData
+---
 
 `PersonData[entity, property]` gives the value of the specified property for the person entity.
 

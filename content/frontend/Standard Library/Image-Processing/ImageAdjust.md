@@ -1,4 +1,6 @@
-# ImageAdjust
+---
+title: ImageAdjust
+---
 
 `ImageAdjust[image]` adjusts the levels in image, rescaling them to cover the range 0 to 1.
 

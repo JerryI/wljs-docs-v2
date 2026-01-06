@@ -1,4 +1,6 @@
-# ParallelArray
+---
+title: ParallelArray
+---
 
 `ParallelArray[f,n]` generates in parallel a list of length n, with elements f[i], evaluated.
 

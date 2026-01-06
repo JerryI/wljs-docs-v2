@@ -1,4 +1,6 @@
-# CirculantGraph
+---
+title: CirculantGraph
+---
 
 `CirculantGraph[n, j]` gives the circulant graph with n vertices and jump j.
 

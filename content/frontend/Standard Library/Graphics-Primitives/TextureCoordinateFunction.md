@@ -1,4 +1,6 @@
-# TextureCoordinateFunction
+---
+title: TextureCoordinateFunction
+---
 
 `TextureCoordinateFunction` is an option to `Plot3D` and similar functions that specifies a function that computes texture coordinates.
 

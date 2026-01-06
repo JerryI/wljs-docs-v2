@@ -1,4 +1,6 @@
-# AngleVector
+---
+title: AngleVector
+---
 
 `AngleVector[θ]` gives the list representing the 2D unit vector at angle θ relative to the x axis.
 

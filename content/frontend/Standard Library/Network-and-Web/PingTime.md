@@ -1,4 +1,6 @@
-# PingTime
+---
+title: PingTime
+---
 
 `PingTime[host]` gives the round-trip ping time for the specified network host.
 

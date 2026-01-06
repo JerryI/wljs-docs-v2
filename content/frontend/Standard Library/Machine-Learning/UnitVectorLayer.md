@@ -1,4 +1,6 @@
-# UnitVectorLayer
+---
+title: UnitVectorLayer
+---
 
 `UnitVectorLayer[n]` represents a net layer that transforms integers between 1 and n into n-dimensional unit vectors.
 

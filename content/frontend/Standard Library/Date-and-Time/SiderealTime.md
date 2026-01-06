@@ -1,4 +1,6 @@
-# SiderealTime
+---
+title: SiderealTime
+---
 
 `SiderealTime[]` gives the right ascension of the local meridian for the current date and location.
 

@@ -1,4 +1,6 @@
-# ScriptBaselineShifts
+---
+title: ScriptBaselineShifts
+---
 
 `ScriptBaselineShifts` is an option for `Style` that specifies the minimum distance in x-heights to shift subscripts and superscripts.
 

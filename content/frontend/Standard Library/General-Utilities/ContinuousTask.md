@@ -1,4 +1,6 @@
-# ContinuousTask
+---
+title: ContinuousTask
+---
 
 `ContinuousTask[expr]` represents a task in which expr is continuously reevaluated.
 

@@ -1,4 +1,6 @@
-# NicholsPlot
+---
+title: NicholsPlot
+---
 
 `NicholsPlot[lsys]` generates a Nichols plot of the transfer function for the system lsys.
 

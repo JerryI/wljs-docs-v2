@@ -1,4 +1,6 @@
-# Interactive
+---
+title: Interactive
+---
 
 `Interactive` is an option that specifies whether a function should create a user prompt when mimicking an action that would have created a user prompt if invoked manually.
 

@@ -1,4 +1,6 @@
-# RandomReal
+---
+title: RandomReal
+---
 
 `RandomReal[]` gives a pseudorandom real number in the range 0 to 1.
 

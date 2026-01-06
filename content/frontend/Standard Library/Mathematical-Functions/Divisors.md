@@ -1,4 +1,6 @@
-# Divisors
+---
+title: Divisors
+---
 
 `Divisors[n]` gives a list of the integers that divide n.
 

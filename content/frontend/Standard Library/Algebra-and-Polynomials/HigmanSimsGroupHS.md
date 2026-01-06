@@ -1,4 +1,6 @@
-# HigmanSimsGroupHS
+---
+title: HigmanSimsGroupHS
+---
 
 `HigmanSimsGroupHS[]` represents the sporadic simple Higman–Sims group HS.
 

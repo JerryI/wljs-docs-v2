@@ -1,4 +1,6 @@
-# Binomial
+---
+title: Binomial
+---
 
 `Binomial[n, m]` gives the binomial coefficient "n choose m", the number of ways to choose m items from n.
 

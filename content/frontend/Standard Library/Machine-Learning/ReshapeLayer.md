@@ -1,4 +1,6 @@
-# ReshapeLayer
+---
+title: ReshapeLayer
+---
 
 `ReshapeLayer[spec]` represents a net layer that reshapes the input array according to the specification spec.
 

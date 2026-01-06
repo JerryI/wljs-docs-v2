@@ -1,4 +1,6 @@
-# VideoSplit
+---
+title: VideoSplit
+---
 
 `VideoSplit[video, t]` splits video at time t.
 

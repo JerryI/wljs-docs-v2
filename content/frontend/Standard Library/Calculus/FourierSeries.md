@@ -1,4 +1,6 @@
-# FourierSeries
+---
+title: FourierSeries
+---
 
 `FourierSeries[expr, t, n]` gives the nth-order Fourier series expansion of expr in t.
 

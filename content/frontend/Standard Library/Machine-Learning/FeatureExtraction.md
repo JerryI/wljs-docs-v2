@@ -1,4 +1,6 @@
-# FeatureExtraction
+---
+title: FeatureExtraction
+---
 
 `FeatureExtraction[{example1,example2,…}]` generates a FeatureExtractorFunction[…] trained from the examples given.
 

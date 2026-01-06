@@ -1,4 +1,6 @@
-# PrintingCopies
+---
+title: PrintingCopies
+---
 
 `PrintingCopies` is an option for notebooks that specifies the number of copies of a notebook printed when a print command is given.
 

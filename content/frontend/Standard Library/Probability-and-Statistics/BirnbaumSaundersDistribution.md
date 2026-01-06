@@ -1,4 +1,6 @@
-# BirnbaumSaundersDistribution
+---
+title: BirnbaumSaundersDistribution
+---
 
 `BirnbaumSaundersDistribution[α, λ]` represents the Birnbaum–Saunders distribution with shape parameter α and scale parameter λ.
 

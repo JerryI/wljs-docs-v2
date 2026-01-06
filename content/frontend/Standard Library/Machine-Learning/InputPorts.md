@@ -1,4 +1,6 @@
-# InputPorts
+---
+title: InputPorts
+---
 
 `InputPorts` is an option to specify the number, names or shapes of input ports for some neural net layers.
 

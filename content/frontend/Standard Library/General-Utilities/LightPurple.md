@@ -1,4 +1,6 @@
-# LightPurple
+---
+title: LightPurple
+---
 
 `LightPurple` represents a light purple color in graphics or style specifications.
 

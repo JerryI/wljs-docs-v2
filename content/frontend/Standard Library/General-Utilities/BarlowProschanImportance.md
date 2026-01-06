@@ -1,4 +1,6 @@
-# BarlowProschanImportance
+---
+title: BarlowProschanImportance
+---
 
 `BarlowProschanImportance[rdist]` gives the Barlow–Proschan importances for all components in the ReliabilityDistribution rdist.
 

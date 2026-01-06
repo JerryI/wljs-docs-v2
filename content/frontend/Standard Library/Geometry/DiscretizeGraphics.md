@@ -1,4 +1,6 @@
-# DiscretizeGraphics
+---
+title: DiscretizeGraphics
+---
 
 `DiscretizeGraphics[g]` discretizes a 2D or 3D graphic g into a MeshRegion.
 

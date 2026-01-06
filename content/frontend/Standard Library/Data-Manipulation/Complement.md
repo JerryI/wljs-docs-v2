@@ -1,4 +1,6 @@
-# Complement
+---
+title: Complement
+---
 
 `Complement[eall, e1, e2, ...]` gives the elements in eall that are not in any of the ei.
 

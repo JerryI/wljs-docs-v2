@@ -1,4 +1,6 @@
-# FunctionDiscontinuities
+---
+title: FunctionDiscontinuities
+---
 
 `FunctionDiscontinuities[f, x]` finds the discontinuities of f(x) for x ∈ Reals.
 

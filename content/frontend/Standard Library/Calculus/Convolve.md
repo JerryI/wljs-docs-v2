@@ -1,4 +1,6 @@
-# Convolve
+---
+title: Convolve
+---
 
 `Convolve[f, g, x, y]` gives the convolution of expressions f and g with respect to x.
 

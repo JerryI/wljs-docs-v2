@@ -1,4 +1,6 @@
-# FunctionConvexity
+---
+title: FunctionConvexity
+---
 
 `FunctionConvexity[f,{x1,x2,…}]` finds the convexity of the function f with variables x1,x2,… over the reals.
 

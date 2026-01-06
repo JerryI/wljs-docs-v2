@@ -1,4 +1,6 @@
-# SphericalHarmonicY
+---
+title: SphericalHarmonicY
+---
 
 `SphericalHarmonicY[l, m, θ, ϕ]` gives the spherical harmonic Ylm(θ,ϕ).
 

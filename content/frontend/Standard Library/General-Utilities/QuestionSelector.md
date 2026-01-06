@@ -1,4 +1,6 @@
-# QuestionSelector
+---
+title: QuestionSelector
+---
 
 `QuestionSelector[{qo1, qo2, …}]` represents a list of questions from which one of the question objects qoi can be randomly selected.
 

@@ -1,4 +1,6 @@
-# EmptyGraphQ
+---
+title: EmptyGraphQ
+---
 
 `EmptyGraphQ[g]` yields `True` if g is an empty graph and `False` otherwise.
 

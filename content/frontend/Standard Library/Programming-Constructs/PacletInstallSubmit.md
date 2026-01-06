@@ -1,4 +1,6 @@
-# PacletInstallSubmit
+---
+title: PacletInstallSubmit
+---
 
 `PacletInstallSubmit[paclet]` asynchronously installs or updates paclet.
 

@@ -1,4 +1,6 @@
-# ContraharmonicMean
+---
+title: ContraharmonicMean
+---
 
 `ContraharmonicMean[list]` gives the contraharmonic mean of the values in list.
 

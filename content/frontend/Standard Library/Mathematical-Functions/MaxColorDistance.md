@@ -1,4 +1,6 @@
-# MaxColorDistance
+---
+title: MaxColorDistance
+---
 
 `MaxColorDistance` is an option to specify the maximum distance allowed between colors.
 

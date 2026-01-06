@@ -1,4 +1,6 @@
-# Take
+---
+title: Take
+---
 
 `Take[list, n]` gives the first n elements of list.
 

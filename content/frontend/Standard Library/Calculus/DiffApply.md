@@ -1,4 +1,6 @@
-# DiffApply
+---
+title: DiffApply
+---
 
 `DiffApply[diffobj, expr]` returns the result of applying the given `DiffObject` to the expression expr.
 

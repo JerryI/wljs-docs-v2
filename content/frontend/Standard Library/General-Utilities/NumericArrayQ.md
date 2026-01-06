@@ -1,4 +1,6 @@
-# NumericArrayQ
+---
+title: NumericArrayQ
+---
 
 `NumericArrayQ[expr]` gives True if expr is a valid NumericArray object, and False otherwise.
 

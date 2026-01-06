@@ -1,4 +1,6 @@
-# CircumscribedBall
+---
+title: CircumscribedBall
+---
 
 `CircumscribedBall[{p1, p2, ...}]` gives a ball with minimal radius that encloses the points p1, p2, ....
 

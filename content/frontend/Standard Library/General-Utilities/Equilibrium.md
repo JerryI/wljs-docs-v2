@@ -1,4 +1,6 @@
-# Equilibrium
+---
+title: Equilibrium
+---
 
 `Equilibrium[x, y, ...]` displays as x⇌y⇌....
 

@@ -1,4 +1,6 @@
-# PlanarGraph
+---
+title: PlanarGraph
+---
 
 `PlanarGraph[{e1, e2, ...}]` yields a planar graph with edges ej.
 

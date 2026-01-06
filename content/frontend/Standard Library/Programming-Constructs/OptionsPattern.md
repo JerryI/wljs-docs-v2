@@ -1,4 +1,6 @@
-# OptionsPattern
+---
+title: OptionsPattern
+---
 
 `OptionsPattern[]` is a pattern object that represents a collection of options given as rules, where the values of the options can be accessed using `OptionValue`.
 

@@ -1,4 +1,6 @@
-# GraphSum
+---
+title: GraphSum
+---
 
 `GraphSum[g1, g2]` gives the graph sum of the graphs `g1` and `g2`.
 

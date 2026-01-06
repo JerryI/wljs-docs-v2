@@ -1,4 +1,6 @@
-# TukeyWindow
+---
+title: TukeyWindow
+---
 
 `TukeyWindow[x]` represents a Tukey window function of x.
 

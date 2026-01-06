@@ -1,4 +1,6 @@
-# Cos
+---
+title: Cos
+---
 
 `Cos[z]` gives the cosine of z.
 

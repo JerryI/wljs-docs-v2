@@ -1,4 +1,6 @@
-# BandstopFilter
+---
+title: BandstopFilter
+---
 
 `BandstopFilter[data, {ω1, ω2}]` applies a bandstop filter with cutoff frequencies ω1 and ω2 to an array of data.
 

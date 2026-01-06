@@ -1,4 +1,6 @@
-# DMSString
+---
+title: DMSString
+---
 
 `DMSString[θ]` converts an angle θ given in decimal degrees to a degrees-minutes-seconds string.
 

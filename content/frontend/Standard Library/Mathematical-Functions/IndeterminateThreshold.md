@@ -1,4 +1,6 @@
-# IndeterminateThreshold
+---
+title: IndeterminateThreshold
+---
 
 `IndeterminateThreshold` is an option for `Classify`, `Predict`, and related functions that specifies below what probability or probability density a result should be considered indeterminate.
 

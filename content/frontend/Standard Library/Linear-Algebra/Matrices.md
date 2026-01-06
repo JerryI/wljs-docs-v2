@@ -1,4 +1,6 @@
-# Matrices
+---
+title: Matrices
+---
 
 `Matrices[{d1, d2}]` represents the domain of matrices of dimensions d1×d2.
 

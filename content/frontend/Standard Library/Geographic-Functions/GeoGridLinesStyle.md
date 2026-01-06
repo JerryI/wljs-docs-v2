@@ -1,4 +1,6 @@
-# GeoGridLinesStyle
+---
+title: GeoGridLinesStyle
+---
 
 `GeoGridLinesStyle` is an option for `GeoGraphics` that specifies how parallels and meridians should be rendered.
 

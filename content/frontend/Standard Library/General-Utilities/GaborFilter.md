@@ -1,4 +1,6 @@
-# GaborFilter
+---
+title: GaborFilter
+---
 
 `GaborFilter[data, r, k]` filters data by convolving with a Gabor kernel of pixel radius r and wave vector k.
 

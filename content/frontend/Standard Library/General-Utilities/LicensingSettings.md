@@ -1,4 +1,6 @@
-# LicensingSettings
+---
+title: LicensingSettings
+---
 
 `LicensingSettings` is an option for `RemoteBatchSubmit` and related functions to configure licensing for remote kernels.
 

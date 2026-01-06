@@ -1,4 +1,6 @@
-# NotNestedGreaterGreater
+---
+title: NotNestedGreaterGreater
+---
 
 `NotNestedGreaterGreater[x, y, ...]` displays as x⪢̸y⪢̸....
 

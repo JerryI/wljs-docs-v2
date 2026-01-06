@@ -1,4 +1,6 @@
-# CompiledCodeFunction
+---
+title: CompiledCodeFunction
+---
 
 `CompiledCodeFunction[...]` is a function created by `FunctionCompile` that contains compiled code that is run when the CompiledCodeFunction is applied to suitable arguments.
 

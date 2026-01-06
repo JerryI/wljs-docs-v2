@@ -1,4 +1,6 @@
-# RandomFunction
+---
+title: RandomFunction
+---
 
 `RandomFunction[proc,{tmin,tmax}]` generates a pseudorandom function from the process proc from tmin to tmax.
 

@@ -1,4 +1,6 @@
-# Inactive
+---
+title: Inactive
+---
 
 `Inactive[f]` is an inactive form of f that does not evaluate.
 

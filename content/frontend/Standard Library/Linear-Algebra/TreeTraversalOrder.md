@@ -1,4 +1,6 @@
-# TreeTraversalOrder
+---
+title: TreeTraversalOrder
+---
 
 `TreeTraversalOrder` is an option for `TreeMap` and related functions that specifies the order to visit subtrees.
 

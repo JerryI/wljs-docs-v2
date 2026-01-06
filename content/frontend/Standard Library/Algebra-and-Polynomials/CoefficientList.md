@@ -1,4 +1,6 @@
-# CoefficientList
+---
+title: CoefficientList
+---
 
 `CoefficientList[poly, var]` gives a list of coefficients of powers of var in poly, starting with power 0.
 

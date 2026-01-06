@@ -1,4 +1,6 @@
-# SampleRate
+---
+title: SampleRate
+---
 
 `SampleRate` is an option that specifies the number of samples per second for sound and signal processing functions.
 

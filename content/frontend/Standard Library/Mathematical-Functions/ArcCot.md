@@ -1,4 +1,6 @@
-# ArcCot
+---
+title: ArcCot
+---
 
 `ArcCot[z]` gives the arc cotangent cot⁻¹(z) of the complex number z.
 

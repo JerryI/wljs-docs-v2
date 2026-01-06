@@ -1,4 +1,6 @@
-# LinearOffsetFunction
+---
+title: LinearOffsetFunction
+---
 
 `LinearOffsetFunction` is an option for linear and generalized linear model fitting functions that specifies a component for the model that is to be assumed known.
 

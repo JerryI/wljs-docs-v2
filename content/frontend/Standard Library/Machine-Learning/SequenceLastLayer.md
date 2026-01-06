@@ -1,4 +1,6 @@
-# SequenceLastLayer
+---
+title: SequenceLastLayer
+---
 
 `SequenceLastLayer[]` represents a net that takes a sequence of inputs and returns the last element of the sequence.
 

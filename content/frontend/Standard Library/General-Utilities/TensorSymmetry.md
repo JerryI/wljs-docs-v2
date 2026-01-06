@@ -1,4 +1,6 @@
-# TensorSymmetry
+---
+title: TensorSymmetry
+---
 
 `TensorSymmetry[tensor]` gives the symmetry of tensor under permutations of its slots.
 

@@ -1,4 +1,6 @@
-# FunctionCompileExport
+---
+title: FunctionCompileExport
+---
 
 `FunctionCompileExport["file.ext", fspec]` exports a compiled version of functions fspec in the format specified by the file extension ext.
 

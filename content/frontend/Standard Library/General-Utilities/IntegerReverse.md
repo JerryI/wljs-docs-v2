@@ -1,4 +1,6 @@
-# IntegerReverse
+---
+title: IntegerReverse
+---
 
 `IntegerReverse[n]` gives the integer whose digits are reversed with respect to those of the integer n.
 

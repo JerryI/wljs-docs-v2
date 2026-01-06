@@ -1,4 +1,6 @@
-# Subtract
+---
+title: Subtract
+---
 
 `x-y` is equivalent to `x+(-1*y)`.
 

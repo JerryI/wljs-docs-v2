@@ -1,4 +1,6 @@
-# AssessmentResultObject
+---
+title: AssessmentResultObject
+---
 
 `AssessmentResultObject[assoc]` represents the results of an assessment.
 

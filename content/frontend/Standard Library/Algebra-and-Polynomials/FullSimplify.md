@@ -1,4 +1,6 @@
-# FullSimplify
+---
+title: FullSimplify
+---
 
 `FullSimplify[expr]` tries a wide range of transformations involving elementary and special functions to find the simplest form.
 

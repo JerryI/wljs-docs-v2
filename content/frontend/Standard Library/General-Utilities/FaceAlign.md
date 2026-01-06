@@ -1,4 +1,6 @@
-# FaceAlign
+---
+title: FaceAlign
+---
 
 `FaceAlign[image]` attempts to find faces in image and align them.
 

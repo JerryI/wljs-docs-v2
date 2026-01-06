@@ -1,4 +1,6 @@
-# ProcessInformation
+---
+title: ProcessInformation
+---
 
 `ProcessInformation[proc]` gives information about an external process proc.
 

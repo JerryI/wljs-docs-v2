@@ -1,4 +1,6 @@
-# ExcludePods
+---
+title: ExcludePods
+---
 
 `ExcludePods` is an option to `WolframAlpha` that specifies pod IDs to exclude from the results.
 

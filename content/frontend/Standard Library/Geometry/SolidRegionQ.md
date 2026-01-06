@@ -1,4 +1,6 @@
-# SolidRegionQ
+---
+title: SolidRegionQ
+---
 
 `SolidRegionQ[reg]` gives True if the 3D region reg is a solid region and False otherwise.
 

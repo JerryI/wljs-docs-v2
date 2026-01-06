@@ -1,4 +1,6 @@
-# EventHandler
+---
+title: EventHandler
+---
 
 `EventHandler[expr, {event1 :> action1, event2 :> action2, ...}]` displays as expr, evaluating action_i whenever event_i occurs in connection with expr.
 

@@ -1,4 +1,6 @@
-# Radon
+---
+title: Radon
+---
 
 `Radon[image]` gives an image representing the discrete Radon transform of image.
 

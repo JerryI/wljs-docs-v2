@@ -1,4 +1,6 @@
-# ChemicalReaction
+---
+title: ChemicalReaction
+---
 
 `ChemicalReaction[reactants -> products]` represents a chemical reaction between the given reactants and products.
 

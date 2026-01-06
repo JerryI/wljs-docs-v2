@@ -1,4 +1,6 @@
-# DiscreteChirpZTransform
+---
+title: DiscreteChirpZTransform
+---
 
 `DiscreteChirpZTransform[list]` gives the chirp Z transform of list.
 

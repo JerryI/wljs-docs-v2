@@ -1,4 +1,6 @@
-# AsymptoticProbability
+---
+title: AsymptoticProbability
+---
 
 `AsymptoticProbability[pred, x \[Distributed] dist, a -> a0]` computes an asymptotic approximation for the probability of pred centered at a0, under the assumption that x follows the probability distribution dist.
 

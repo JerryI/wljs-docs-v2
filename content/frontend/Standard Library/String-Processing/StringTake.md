@@ -1,4 +1,6 @@
-# StringTake
+---
+title: StringTake
+---
 
 `StringTake["string", n]` gives a string containing the first n characters.
 

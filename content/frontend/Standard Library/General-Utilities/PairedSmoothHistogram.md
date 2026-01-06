@@ -1,4 +1,6 @@
-# PairedSmoothHistogram
+---
+title: PairedSmoothHistogram
+---
 
 `PairedSmoothHistogram[{x1, x2, ...}, {y1, y2, ...}]` plots a paired smooth histogram of the values xi and yi.
 

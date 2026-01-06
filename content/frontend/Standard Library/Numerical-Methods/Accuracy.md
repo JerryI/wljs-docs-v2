@@ -1,4 +1,6 @@
-# Accuracy
+---
+title: Accuracy
+---
 
 `Accuracy[x]` gives the effective number of digits to the right of the decimal point in the number x.
 

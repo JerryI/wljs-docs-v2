@@ -1,4 +1,6 @@
-# SolidMechanicsStrain
+---
+title: SolidMechanicsStrain
+---
 
 `SolidMechanicsStrain[vars, pars, displ]` yields a solid mechanics total strain with variables vars, parameters pars, and displacements displ.
 

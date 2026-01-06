@@ -1,4 +1,6 @@
-# LevyDistribution
+---
+title: LevyDistribution
+---
 
 `LevyDistribution[μ, σ]` represents a Lévy distribution with location parameter `μ` and dispersion parameter `σ`.
 

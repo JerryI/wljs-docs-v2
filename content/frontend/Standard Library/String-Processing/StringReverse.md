@@ -1,4 +1,6 @@
-# StringReverse
+---
+title: StringReverse
+---
 
 `StringReverse["string"]` reverses the order of characters in the string.
 

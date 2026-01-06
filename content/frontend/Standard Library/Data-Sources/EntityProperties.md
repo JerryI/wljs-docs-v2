@@ -1,4 +1,6 @@
-# EntityProperties
+---
+title: EntityProperties
+---
 
 `EntityProperties[type]` lists properties associated with entity type type.
 

@@ -1,4 +1,6 @@
-# TriangulateMesh
+---
+title: TriangulateMesh
+---
 
 `TriangulateMesh[mr]` generates a triangulation of the mesh region mr.
 

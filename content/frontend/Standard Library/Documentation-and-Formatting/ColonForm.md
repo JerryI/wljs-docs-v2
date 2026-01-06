@@ -1,4 +1,6 @@
-# ColonForm
+---
+title: ColonForm
+---
 
 `ColonForm[a, b]` prints as a: b.
 

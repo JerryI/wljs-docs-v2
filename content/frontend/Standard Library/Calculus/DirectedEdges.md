@@ -1,4 +1,6 @@
-# DirectedEdges
+---
+title: DirectedEdges
+---
 
 `DirectedEdges` is an option for `Graph`, `GraphPlot`, and related functions that specifies whether edges should be taken to be directed.
 

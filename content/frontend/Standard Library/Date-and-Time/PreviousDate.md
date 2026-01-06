@@ -1,4 +1,6 @@
-# PreviousDate
+---
+title: PreviousDate
+---
 
 `PreviousDate[gran]` gives the previously occurring date of the specified granularity type gran.
 

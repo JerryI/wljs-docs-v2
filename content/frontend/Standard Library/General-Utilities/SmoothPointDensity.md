@@ -1,4 +1,6 @@
-# SmoothPointDensity
+---
+title: SmoothPointDensity
+---
 
 `SmoothPointDensity[pdata]` estimates the point density function μ(x) for point data pdata.
 

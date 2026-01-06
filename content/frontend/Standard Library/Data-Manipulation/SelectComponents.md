@@ -1,4 +1,6 @@
-# SelectComponents
+---
+title: SelectComponents
+---
 
 `SelectComponents[{image, lmat}, crit]` selects components of image indicated by the label matrix lmat that satisfy crit, replacing other parts with black.
 

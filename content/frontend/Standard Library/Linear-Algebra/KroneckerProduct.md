@@ -1,4 +1,6 @@
-# KroneckerProduct
+---
+title: KroneckerProduct
+---
 
 `KroneckerProduct[m1, m2, ...]` constructs the Kronecker product of the arrays m_i.
 

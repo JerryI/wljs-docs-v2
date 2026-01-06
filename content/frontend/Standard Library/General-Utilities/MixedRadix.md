@@ -1,4 +1,6 @@
-# MixedRadix
+---
+title: MixedRadix
+---
 
 `MixedRadix[{b1,…,bn}]` represents the list of bases of a numerical system in which different digits have different bases.
 

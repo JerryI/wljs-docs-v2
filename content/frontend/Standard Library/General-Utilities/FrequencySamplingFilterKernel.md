@@ -1,4 +1,6 @@
-# FrequencySamplingFilterKernel
+---
+title: FrequencySamplingFilterKernel
+---
 
 `FrequencySamplingFilterKernel[{a1, ..., ak}]` creates a finite impulse response (FIR) filter kernel using a frequency sampling method from amplitude values ai.
 

@@ -1,4 +1,6 @@
-# FilePrint
+---
+title: FilePrint
+---
 
 `FilePrint["file"]` prints out the raw textual contents of a file.
 

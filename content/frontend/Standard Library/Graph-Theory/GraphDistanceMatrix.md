@@ -1,4 +1,6 @@
-# GraphDistanceMatrix
+---
+title: GraphDistanceMatrix
+---
 
 `GraphDistanceMatrix[g]` gives the matrix of shortest path distances between all pairs of vertices.
 

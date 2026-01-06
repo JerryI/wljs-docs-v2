@@ -1,4 +1,6 @@
-# Icosahedron
+---
+title: Icosahedron
+---
 
 `Icosahedron[]` represents a regular icosahedron centered at the origin with unit edge length.
 

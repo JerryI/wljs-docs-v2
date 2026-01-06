@@ -1,4 +1,6 @@
-# VideoSummaryPlot
+---
+title: VideoSummaryPlot
+---
 
 `VideoSummaryPlot[video]` plots a summary of video and audio tracks of video.
 

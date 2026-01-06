@@ -1,4 +1,6 @@
-# LogLikelihood
+---
+title: LogLikelihood
+---
 
 `LogLikelihood[dist, {x1, x2, ...}]` gives the log‐likelihood function for observations x1, x2, … from the distribution dist.
 

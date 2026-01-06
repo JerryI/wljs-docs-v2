@@ -1,4 +1,6 @@
-# VoigtDistribution
+---
+title: VoigtDistribution
+---
 
 `VoigtDistribution[δ, σ]` represents Voigt distribution with parameters δ and σ.
 

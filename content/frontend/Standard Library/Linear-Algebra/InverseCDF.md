@@ -1,4 +1,6 @@
-# InverseCDF
+---
+title: InverseCDF
+---
 
 `InverseCDF[dist,q]` gives the inverse of the cumulative distribution function for the distribution dist as a function of the variable q.
 

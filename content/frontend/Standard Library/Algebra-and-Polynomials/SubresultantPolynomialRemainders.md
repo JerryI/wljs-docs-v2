@@ -1,4 +1,6 @@
-# SubresultantPolynomialRemainders
+---
+title: SubresultantPolynomialRemainders
+---
 
 `SubresultantPolynomialRemainders[poly1, poly2, var]` gives the subresultant polynomial remainder sequence of the polynomials poly1 and poly2 with respect to the variable var.
 

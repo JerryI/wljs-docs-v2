@@ -1,4 +1,6 @@
-# ControllabilityGramian
+---
+title: ControllabilityGramian
+---
 
 `ControllabilityGramian[ssm]` gives the controllability Gramian of the state-space model ssm.
 

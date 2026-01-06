@@ -1,4 +1,6 @@
-# Graph
+---
+title: Graph
+---
 
 `Graph[{e1, e2, ...}]` creates a graph with specified edges. `Graph[{v1, v2, ...}, {e1, e2, ...}]` specifies both vertices and edges.
 

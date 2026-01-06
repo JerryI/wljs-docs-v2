@@ -1,4 +1,6 @@
-# StationaryWaveletTransform
+---
+title: StationaryWaveletTransform
+---
 
 `StationaryWaveletTransform[data]` gives the stationary wavelet transform (SWT) of an array of data.
 

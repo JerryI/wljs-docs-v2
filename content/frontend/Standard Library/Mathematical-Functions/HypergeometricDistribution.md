@@ -1,4 +1,6 @@
-# HypergeometricDistribution
+---
+title: HypergeometricDistribution
+---
 
 `HypergeometricDistribution[n, nsucc, ntot]` represents a hypergeometric distribution for n draws from a population of ntot with nsucc successes.
 

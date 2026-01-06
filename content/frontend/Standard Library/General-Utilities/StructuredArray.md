@@ -1,4 +1,6 @@
-# StructuredArray
+---
+title: StructuredArray
+---
 
 `StructuredArray[st, {d1, d2, ...}, data]` represents a d1×d2×… array with structure type st and specific content data.
 

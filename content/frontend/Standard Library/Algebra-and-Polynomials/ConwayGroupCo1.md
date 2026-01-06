@@ -1,4 +1,6 @@
-# ConwayGroupCo1
+---
+title: ConwayGroupCo1
+---
 
 `ConwayGroupCo1[]` represents the sporadic simple Conway group Co1.
 

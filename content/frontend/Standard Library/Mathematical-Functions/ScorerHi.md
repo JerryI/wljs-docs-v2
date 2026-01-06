@@ -1,4 +1,6 @@
-# ScorerHi
+---
+title: ScorerHi
+---
 
 `ScorerHi[z]` gives the Scorer function Hi(z).
 

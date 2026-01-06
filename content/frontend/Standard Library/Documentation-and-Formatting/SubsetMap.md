@@ -1,4 +1,6 @@
-# SubsetMap
+---
+title: SubsetMap
+---
 
 `SubsetMap[f,{e1,e2,…},{i,j,…}]` yields an expression in which the elements ei, ej, … in the list {e1,e2,…} are replaced with the corresponding elements of the list obtained by evaluating f[{ei,ej,…}].
 

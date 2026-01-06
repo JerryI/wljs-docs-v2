@@ -1,4 +1,6 @@
-# O
+---
+title: O
+---
 
 `O[x]^n` represents a term of order x^n in power series, indicating omitted higher-order terms.
 

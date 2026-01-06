@@ -1,4 +1,6 @@
-# FirstCase
+---
+title: FirstCase
+---
 
 `FirstCase[{e1, e2, ...}, pattern]` gives the first element matching pattern, or `Missing["NotFound"]` if none is found.
 

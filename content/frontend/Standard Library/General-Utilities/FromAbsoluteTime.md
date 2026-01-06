@@ -1,4 +1,6 @@
-# FromAbsoluteTime
+---
+title: FromAbsoluteTime
+---
 
 `FromAbsoluteTime[time]` gives a date object corresponding to an absolute time specification as given by AbsoluteTime.
 

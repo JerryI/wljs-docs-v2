@@ -1,4 +1,6 @@
-# FunctionSign
+---
+title: FunctionSign
+---
 
 `FunctionSign[f, {x1, x2, ...}]` finds the real sign of the function f with variables x1, x2, ... over the reals.
 

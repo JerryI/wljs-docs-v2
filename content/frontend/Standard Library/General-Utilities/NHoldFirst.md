@@ -1,4 +1,6 @@
-# NHoldFirst
+---
+title: NHoldFirst
+---
 
 `NHoldFirst` is an attribute which specifies that the first argument to a function should not be affected by `N`.
 

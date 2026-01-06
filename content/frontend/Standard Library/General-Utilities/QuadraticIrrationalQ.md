@@ -1,4 +1,6 @@
-# QuadraticIrrationalQ
+---
+title: QuadraticIrrationalQ
+---
 
 `QuadraticIrrationalQ[x]` gives `True` if x is a quadratic irrational and `False` otherwise.
 

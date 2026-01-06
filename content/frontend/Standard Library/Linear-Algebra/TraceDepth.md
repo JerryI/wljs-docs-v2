@@ -1,4 +1,6 @@
-# TraceDepth
+---
+title: TraceDepth
+---
 
 `TraceDepth` is an option for `Trace` and related functions which specifies the maximum nesting of evaluation chains that are to be included.
 

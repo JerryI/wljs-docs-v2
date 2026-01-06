@@ -1,4 +1,6 @@
-# RussellRaoDissimilarity
+---
+title: RussellRaoDissimilarity
+---
 
 `RussellRaoDissimilarity[u, v]` gives the Russell–Rao dissimilarity between Boolean vectors u and v.
 

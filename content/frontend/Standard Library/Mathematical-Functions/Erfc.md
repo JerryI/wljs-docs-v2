@@ -1,4 +1,6 @@
-# Erfc
+---
+title: Erfc
+---
 
 `Erfc[z]` gives the complementary error function erfc(z) = 1 - erf(z).
 

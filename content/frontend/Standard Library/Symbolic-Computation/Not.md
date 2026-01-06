@@ -1,4 +1,6 @@
-# Not
+---
+title: Not
+---
 
 `!expr` is the logical NOT function. It gives `False` if expr is `True`, and `True` if it is `False`.
 

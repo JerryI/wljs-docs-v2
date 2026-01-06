@@ -1,4 +1,6 @@
-# TargetStructure
+---
+title: TargetStructure
+---
 
 `TargetStructure` is an option for linear algebra functions that specifies the representation of the result produced by the function.
 

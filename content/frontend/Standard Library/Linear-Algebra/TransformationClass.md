@@ -1,4 +1,6 @@
-# TransformationClass
+---
+title: TransformationClass
+---
 
 `TransformationClass` is an option that specifies the class of geometric transformations to be used.
 

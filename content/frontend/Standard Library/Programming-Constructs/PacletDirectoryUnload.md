@@ -1,4 +1,6 @@
-# PacletDirectoryUnload
+---
+title: PacletDirectoryUnload
+---
 
 `PacletDirectoryUnload[dir]` makes paclets in dir no longer visible in the current session.
 

@@ -1,4 +1,6 @@
-# WattsStrogatzGraphDistribution
+---
+title: WattsStrogatzGraphDistribution
+---
 
 `WattsStrogatzGraphDistribution[n, p]` represents the Watts–Strogatz graph distribution for n-vertex graphs with rewiring probability p.
 

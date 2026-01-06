@@ -1,4 +1,6 @@
-# StopAsynchronousTask
+---
+title: StopAsynchronousTask
+---
 
 `StopAsynchronousTask[task]` stops asynchronous evaluations from task.
 

@@ -1,4 +1,6 @@
-# ArcSin
+---
+title: ArcSin
+---
 
 `ArcSin[z]` gives the arc sine (inverse sine) of `z`, returning a value in the range $-\frac{\pi}{2}$ to $\frac{\pi}{2}$.
 

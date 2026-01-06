@@ -1,4 +1,6 @@
-# PacletSite
+---
+title: PacletSite
+---
 
 `PacletSite` is an option for `PacletInstall` and `PacletInstallSubmit` that specifies the URL of a paclet site on which to look for the paclet.
 

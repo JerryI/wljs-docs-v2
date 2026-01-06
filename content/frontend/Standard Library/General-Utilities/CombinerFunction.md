@@ -1,4 +1,6 @@
-# CombinerFunction
+---
+title: CombinerFunction
+---
 
 `CombinerFunction` is an option for template functions that specifies how fragments should be assembled to give the result of applying a template.
 

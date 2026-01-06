@@ -1,4 +1,6 @@
-# DiscreteInputOutputModel
+---
+title: DiscreteInputOutputModel
+---
 
 `DiscreteInputOutputModel[{g0, g1, ..., gn-1}, u]` represents a discrete-time model with input u and output y=gi(u) at sampling instant i.
 

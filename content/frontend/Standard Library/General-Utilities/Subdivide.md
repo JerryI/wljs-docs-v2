@@ -1,4 +1,6 @@
-# Subdivide
+---
+title: Subdivide
+---
 
 `Subdivide[n]` generates the list `{0, 1/n, 2/n, ..., 1}`.
 

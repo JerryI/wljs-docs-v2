@@ -1,4 +1,6 @@
-# StringExpression
+---
+title: StringExpression
+---
 
 `s1 ~~ s2 ~~ ...` or `StringExpression[s1, s2, ...]` represents a sequence of strings and symbolic string objects si.
 

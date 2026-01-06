@@ -1,4 +1,6 @@
-# SolveDelayed
+---
+title: SolveDelayed
+---
 
 `SolveDelayed` is an obsolete option to `NDSolve`. The option `"EquationSimplification"` should be used instead.
 

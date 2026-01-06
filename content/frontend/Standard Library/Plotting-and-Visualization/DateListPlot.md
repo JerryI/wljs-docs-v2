@@ -1,4 +1,6 @@
-# DateListPlot
+---
+title: DateListPlot
+---
 
 `DateListPlot[{{date1, y1}, {date2, y2}, ..., {daten, yn}}]` plots points with values yi at a sequence of dates.
 

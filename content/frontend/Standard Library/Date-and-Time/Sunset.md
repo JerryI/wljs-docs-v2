@@ -1,4 +1,6 @@
-# Sunset
+---
+title: Sunset
+---
 
 `Sunset[]` gives the time of the next sunset for the current date and location.
 

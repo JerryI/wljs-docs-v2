@@ -1,4 +1,6 @@
-# QuartileSkewness
+---
+title: QuartileSkewness
+---
 
 `QuartileSkewness[data]` gives the coefficient of quartile skewness for the elements in list.
 

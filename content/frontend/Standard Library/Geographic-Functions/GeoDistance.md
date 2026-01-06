@@ -1,4 +1,6 @@
-# GeoDistance
+---
+title: GeoDistance
+---
 
 `GeoDistance[{lat1, lon1}, {lat2, lon2}]` gives the geodesic distance between latitude-longitude positions on the Earth.
 

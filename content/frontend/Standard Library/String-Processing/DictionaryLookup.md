@@ -1,4 +1,6 @@
-# DictionaryLookup
+---
+title: DictionaryLookup
+---
 
 `DictionaryLookup[patt]` finds all words in an English dictionary that match the string pattern patt.
 

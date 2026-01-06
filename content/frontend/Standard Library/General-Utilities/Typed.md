@@ -1,4 +1,6 @@
-# Typed
+---
+title: Typed
+---
 
 `Typed[expr, type]` represents an expression that should be assumed to be of a specified type for compilation and other purposes.
 

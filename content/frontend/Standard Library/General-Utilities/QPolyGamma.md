@@ -1,4 +1,6 @@
-# QPolyGamma
+---
+title: QPolyGamma
+---
 
 `QPolyGamma[z, q]` gives the q-digamma function ψ_q(z).
 

@@ -1,4 +1,6 @@
-# VertexInDegree
+---
+title: VertexInDegree
+---
 
 `VertexInDegree[g]` gives the list of vertex in-degrees for all vertices in the graph g.
 

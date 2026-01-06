@@ -1,4 +1,6 @@
-# ProcessStatus
+---
+title: ProcessStatus
+---
 
 `ProcessStatus[proc]` gives the current status of the external process represented by the ProcessObject proc.
 

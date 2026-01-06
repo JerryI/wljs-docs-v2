@@ -1,4 +1,6 @@
-# VertexList
+---
+title: VertexList
+---
 
 `VertexList[g]` gives the list of vertices in graph `g`.
 

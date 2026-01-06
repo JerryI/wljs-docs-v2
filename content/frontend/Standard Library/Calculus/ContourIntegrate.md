@@ -1,4 +1,6 @@
-# ContourIntegrate
+---
+title: ContourIntegrate
+---
 
 `ContourIntegrate[f, z ∈ cont]` gives the integral of f along the contour defined by cont in the complex plane.
 

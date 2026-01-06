@@ -1,4 +1,6 @@
-# Video
+---
+title: Video
+---
 
 `Video[file]` represents video stored in the given file.
 

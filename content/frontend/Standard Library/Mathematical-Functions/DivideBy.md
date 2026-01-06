@@ -1,4 +1,6 @@
-# DivideBy
+---
+title: DivideBy
+---
 
 `x /= c` divides x by c and returns the new value of x.
 

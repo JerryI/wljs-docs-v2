@@ -1,4 +1,6 @@
-# Back
+---
+title: Back
+---
 
 `Back` is a symbol that represents the back of a graphic for purposes of placement and alignment.
 

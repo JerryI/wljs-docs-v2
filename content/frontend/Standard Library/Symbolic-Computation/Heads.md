@@ -1,4 +1,6 @@
-# Heads
+---
+title: Heads
+---
 
 `Heads` is an option for functions that use level specifications, determining whether heads of expressions should be included.
 

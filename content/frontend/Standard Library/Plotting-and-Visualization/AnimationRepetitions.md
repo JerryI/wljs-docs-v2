@@ -1,4 +1,6 @@
-# AnimationRepetitions
+---
+title: AnimationRepetitions
+---
 
 `AnimationRepetitions` is an option to `Animate` and related functions that specifies how many times the animation they create runs before stopping.
 

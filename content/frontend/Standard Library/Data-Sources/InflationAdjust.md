@@ -1,4 +1,6 @@
-# InflationAdjust
+---
+title: InflationAdjust
+---
 
 `InflationAdjust[quantity, targetdate]` attempts to adjust the specified quantity purchasing power to `targetdate`.
 

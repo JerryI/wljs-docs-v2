@@ -1,4 +1,6 @@
-# PermissionsGroup
+---
+title: PermissionsGroup
+---
 
 `PermissionsGroup["name"]` represents a permissions group with the specified name, owned by the current user.
 

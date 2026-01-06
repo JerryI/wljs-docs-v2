@@ -1,4 +1,6 @@
-# HatchFilling
+---
+title: HatchFilling
+---
 
 `HatchFilling[]` is a two-dimensional graphics directive that specifies that faces of polygons and other filled graphics objects are to be drawn using closely spaced parallel lines.
 

@@ -1,4 +1,6 @@
-# SpheroidalRadialFactor
+---
+title: SpheroidalRadialFactor
+---
 
 `SpheroidalRadialFactor[n, m, c]` gives the spheroidal radial factor with degree n and order m.
 

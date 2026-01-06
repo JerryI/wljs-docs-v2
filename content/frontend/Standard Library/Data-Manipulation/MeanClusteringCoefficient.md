@@ -1,4 +1,6 @@
-# MeanClusteringCoefficient
+---
+title: MeanClusteringCoefficient
+---
 
 `MeanClusteringCoefficient[g]` gives the mean clustering coefficient of the graph g.
 

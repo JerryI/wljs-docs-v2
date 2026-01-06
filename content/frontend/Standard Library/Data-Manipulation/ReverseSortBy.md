@@ -1,4 +1,6 @@
-# ReverseSortBy
+---
+title: ReverseSortBy
+---
 
 `ReverseSortBy[list, f]` sorts the elements of list using the reverse canonical order defined by applying f to each of them.
 

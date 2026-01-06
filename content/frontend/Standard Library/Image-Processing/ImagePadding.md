@@ -1,4 +1,6 @@
-# ImagePadding
+---
+title: ImagePadding
+---
 
 `ImagePadding` is an option for graphics functions that specifies extra padding for thick lines and annotations like tick labels.
 

@@ -1,4 +1,6 @@
-# CombinatorW
+---
+title: CombinatorW
+---
 
 `CombinatorW` represents the **W** combinator (duplication combinator).
 

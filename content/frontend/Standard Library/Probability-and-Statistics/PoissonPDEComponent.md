@@ -1,4 +1,6 @@
-# PoissonPDEComponent
+---
+title: PoissonPDEComponent
+---
 
 `PoissonPDEComponent[vars, pars]` yields a Poisson PDE term ∇²u - f with model variables vars and model parameters pars.
 

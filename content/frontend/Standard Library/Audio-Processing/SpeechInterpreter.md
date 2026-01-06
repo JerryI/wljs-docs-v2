@@ -1,4 +1,6 @@
-# SpeechInterpreter
+---
+title: SpeechInterpreter
+---
 
 `SpeechInterpreter[form]` represents an interpreter object that can be applied to a speech input to try to interpret it as an object of the specified form.
 

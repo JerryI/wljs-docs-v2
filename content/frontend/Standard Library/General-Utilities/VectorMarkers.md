@@ -1,4 +1,6 @@
-# VectorMarkers
+---
+title: VectorMarkers
+---
 
 `VectorMarkers` is an option for graphics functions like `VectorPlot`, `ListVectorPlot` and related functions that specifies what markers to draw at the field points plotted.
 

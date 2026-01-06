@@ -1,4 +1,6 @@
-# PlotRange
+---
+title: PlotRange
+---
 
 `PlotRange` is an option that specifies the coordinate range to include in a plot. Use `All` to show everything, or explicit ranges.
 

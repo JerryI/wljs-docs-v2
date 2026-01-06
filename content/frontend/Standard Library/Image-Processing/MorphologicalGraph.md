@@ -1,4 +1,6 @@
-# MorphologicalGraph
+---
+title: MorphologicalGraph
+---
 
 `MorphologicalGraph[image]` gives a graph object that represents the connectivity of the morphological branch points and endpoints of the objects in image after applying morphological thinning.
 

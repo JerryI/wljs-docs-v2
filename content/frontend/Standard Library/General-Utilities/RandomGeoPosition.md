@@ -1,4 +1,6 @@
-# RandomGeoPosition
+---
+title: RandomGeoPosition
+---
 
 `RandomGeoPosition[]` gives a pseudorandom geo position uniformly distributed on the surface of the Earth.
 

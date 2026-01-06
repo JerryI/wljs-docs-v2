@@ -1,4 +1,6 @@
-# IncludeConstantBasis
+---
+title: IncludeConstantBasis
+---
 
 `IncludeConstantBasis` is an option for `LinearModelFit` and other fitting functions that specifies whether a constant term should be included if not explicitly given in the list of basis functions.
 

@@ -1,4 +1,6 @@
-# BoundaryMesh
+---
+title: BoundaryMesh
+---
 
 `BoundaryMesh[mreg]` gives a BoundaryMeshRegion from a MeshRegion mreg.
 

@@ -1,4 +1,6 @@
-# GaugeFrameSize
+---
+title: GaugeFrameSize
+---
 
 `GaugeFrameSize` is an option for gauge functions that controls the size of the frame around the gauge.
 

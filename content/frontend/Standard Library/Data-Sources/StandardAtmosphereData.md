@@ -1,4 +1,6 @@
-# StandardAtmosphereData
+---
+title: StandardAtmosphereData
+---
 
 `StandardAtmosphereData[altitude, property]` returns the value of the property at the specified geometrical altitude for the chosen model of the standard Earth atmosphere.
 

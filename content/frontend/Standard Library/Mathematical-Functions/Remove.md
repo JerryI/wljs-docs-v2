@@ -1,4 +1,6 @@
-# Remove
+---
+title: Remove
+---
 
 `Remove[s1, s2, ...]` removes the symbols completely, so their names are no longer recognized by the Wolfram Language.
 

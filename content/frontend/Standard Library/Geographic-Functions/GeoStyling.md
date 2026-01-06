@@ -1,4 +1,6 @@
-# GeoStyling
+---
+title: GeoStyling
+---
 
 `GeoStyling[mapstyle]` displays faces of polygons and other filled geo objects using mapstyle.
 

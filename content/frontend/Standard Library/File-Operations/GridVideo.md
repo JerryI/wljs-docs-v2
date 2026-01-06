@@ -1,4 +1,6 @@
-# GridVideo
+---
+title: GridVideo
+---
 
 `GridVideo[{v1, v2, …}]` creates a video in which each frame is a grid of frames of all `vi` at the corresponding time.
 

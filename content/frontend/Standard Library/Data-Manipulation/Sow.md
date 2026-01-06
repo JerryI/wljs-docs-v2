@@ -1,4 +1,6 @@
-# Sow
+---
+title: Sow
+---
 
 `Sow[e]` specifies that e should be collected by the nearest enclosing Reap.
 

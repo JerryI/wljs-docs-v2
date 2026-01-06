@@ -1,4 +1,6 @@
-# UniformPolyhedron
+---
+title: UniformPolyhedron
+---
 
 `UniformPolyhedron["name"]` gives the uniform polyhedron with the given name.
 

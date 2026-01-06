@@ -1,4 +1,6 @@
-# RegionPlot3D
+---
+title: RegionPlot3D
+---
 
 `RegionPlot3D[pred, {x, xmin, xmax}, {y, ymin, ymax}, {z, zmin, zmax}]` makes a 3D plot showing the region where pred is True.
 

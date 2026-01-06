@@ -1,4 +1,6 @@
-# Re
+---
+title: Re
+---
 
 `Re[z]` gives the real part of the complex number z.
 

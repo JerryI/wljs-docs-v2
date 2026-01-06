@@ -1,4 +1,6 @@
-# GridFrame
+---
+title: GridFrame
+---
 
 `GridFrame` is an option for grids that specifies whether a surrounding frame is drawn.
 

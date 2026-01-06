@@ -1,4 +1,6 @@
-# McLaughlinGroupMcL
+---
+title: McLaughlinGroupMcL
+---
 
 `McLaughlinGroupMcL[]` represents the sporadic simple McLaughlin group McL.
 

@@ -1,4 +1,6 @@
-# TagUnset
+---
+title: TagUnset
+---
 
 `f /: lhs =.` removes any rules defined for lhs, associated with the symbol f.
 

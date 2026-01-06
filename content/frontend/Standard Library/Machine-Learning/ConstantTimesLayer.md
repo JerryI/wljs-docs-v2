@@ -1,4 +1,6 @@
-# ConstantTimesLayer
+---
+title: ConstantTimesLayer
+---
 
 `ConstantTimesLayer[]` represents a layer that multiplies its input by a learnable scaling array.
 

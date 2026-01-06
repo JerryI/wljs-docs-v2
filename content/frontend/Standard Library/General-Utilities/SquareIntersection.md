@@ -1,4 +1,6 @@
-# SquareIntersection
+---
+title: SquareIntersection
+---
 
 `SquareIntersection[x, y, ...]` displays as x⊓y⊓….
 

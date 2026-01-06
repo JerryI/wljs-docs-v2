@@ -1,4 +1,6 @@
-# NameQ
+---
+title: NameQ
+---
 
 `NameQ["string"]` yields True if there are any symbols whose names match the string pattern given, and yields False otherwise.
 

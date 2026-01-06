@@ -1,4 +1,6 @@
-# IgnoreIsotopes
+---
+title: IgnoreIsotopes
+---
 
 `IgnoreIsotopes` is an option for `MoleculeMatchQ` that determines whether isotopes should be ignored for pattern matching.
 

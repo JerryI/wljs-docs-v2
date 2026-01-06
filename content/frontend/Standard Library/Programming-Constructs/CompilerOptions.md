@@ -1,4 +1,6 @@
-# CompilerOptions
+---
+title: CompilerOptions
+---
 
 `CompilerOptions` is an option for `FunctionCompile` and related functions that allows options for the compilation pipeline to be specified.
 

@@ -1,4 +1,6 @@
-# NotebookDirectory
+---
+title: NotebookDirectory
+---
 
 `NotebookDirectory[]` gives the directory of the current evaluation notebook.
 

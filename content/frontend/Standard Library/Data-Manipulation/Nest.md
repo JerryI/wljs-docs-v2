@@ -1,4 +1,6 @@
-# Nest
+---
+title: Nest
+---
 
 `Nest[f, expr, n]` gives an expression with f applied n times to expr.
 

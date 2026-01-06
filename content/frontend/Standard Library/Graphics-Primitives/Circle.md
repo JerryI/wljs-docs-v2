@@ -1,4 +1,6 @@
-# Circle
+---
+title: Circle
+---
 
 `Circle[{x, y}, r]` represents a circle of radius `r` centered at `{x, y}`. `Circle[{x, y}]` gives a unit circle.
 

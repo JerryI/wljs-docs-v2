@@ -1,4 +1,6 @@
-# AbsolutePointSize
+---
+title: AbsolutePointSize
+---
 
 `AbsolutePointSize[d]` is a graphics directive which specifies that points which follow are to be shown if possible as circular regions with absolute diameter d.
 

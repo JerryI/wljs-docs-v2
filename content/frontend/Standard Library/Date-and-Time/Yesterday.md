@@ -1,4 +1,6 @@
-# Yesterday
+---
+title: Yesterday
+---
 
 `Yesterday` gives a DateObject representing the previous day.
 

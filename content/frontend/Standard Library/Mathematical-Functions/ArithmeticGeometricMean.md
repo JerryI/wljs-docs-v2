@@ -1,4 +1,6 @@
-# ArithmeticGeometricMean
+---
+title: ArithmeticGeometricMean
+---
 
 `ArithmeticGeometricMean[a, b]` gives the arithmetic-geometric mean of a and b.
 

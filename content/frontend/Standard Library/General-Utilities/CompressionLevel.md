@@ -1,4 +1,6 @@
-# CompressionLevel
+---
+title: CompressionLevel
+---
 
 `CompressionLevel` is an option for `Export` and `CreateArchive` that specifies the amount of compression to use when compressing data.
 

@@ -1,4 +1,6 @@
-# After
+---
+title: After
+---
 
 `After` is a symbol that represents the region after an object for purposes of placement.
 

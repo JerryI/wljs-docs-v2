@@ -1,4 +1,6 @@
-# StrataVariables
+---
+title: StrataVariables
+---
 
 `StrataVariables` is an option for fitting functions such as `CoxModelFit` that specify the variables on which the model should be stratified.
 

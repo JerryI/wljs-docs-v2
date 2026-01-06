@@ -1,4 +1,6 @@
-# ForAll
+---
+title: ForAll
+---
 
 `ForAll[x, expr]` represents the statement that expr is `True` for all values of x.
 

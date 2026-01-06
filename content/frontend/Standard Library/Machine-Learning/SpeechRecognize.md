@@ -1,4 +1,6 @@
-# SpeechRecognize
+---
+title: SpeechRecognize
+---
 
 `SpeechRecognize[audio]` recognizes speech in audio and returns it as a string.
 

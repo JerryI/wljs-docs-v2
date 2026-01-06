@@ -1,4 +1,6 @@
-# NotGreater
+---
+title: NotGreater
+---
 
 `NotGreater[x, y, ...]` displays as x≯y≯….
 

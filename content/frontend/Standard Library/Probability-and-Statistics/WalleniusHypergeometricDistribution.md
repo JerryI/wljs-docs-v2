@@ -1,4 +1,6 @@
-# WalleniusHypergeometricDistribution
+---
+title: WalleniusHypergeometricDistribution
+---
 
 `WalleniusHypergeometricDistribution[n, nsucc, ntot, w]` represents a Wallenius noncentral hypergeometric distribution.
 

@@ -1,4 +1,6 @@
-# ResetScheduledTask
+---
+title: ResetScheduledTask
+---
 
 `ResetScheduledTask[obj,timespec]` resets the timing for a scheduled task to timespec.
 

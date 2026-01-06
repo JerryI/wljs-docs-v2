@@ -1,4 +1,6 @@
-# ForeignFunctionLoad
+---
+title: ForeignFunctionLoad
+---
 
 `ForeignFunctionLoad[lib, fun, {argtype1, argtype2, ...} -> rettype]` loads the function fun with the specified argument and output types from the library lib.
 

@@ -1,4 +1,6 @@
-# PersistenceTime
+---
+title: PersistenceTime
+---
 
 `PersistenceTime` is an option for various functions that specifies when a persistent value should be treated as expired.
 

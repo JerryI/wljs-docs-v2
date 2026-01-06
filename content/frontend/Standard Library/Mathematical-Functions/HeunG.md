@@ -1,4 +1,6 @@
-# HeunG
+---
+title: HeunG
+---
 
 `HeunG[a, q, α, β, γ, δ, z]` gives the general Heun function.
 

@@ -1,4 +1,6 @@
-# MinimalPolynomial
+---
+title: MinimalPolynomial
+---
 
 `MinimalPolynomial[s, x]` gives the minimal polynomial in x for which the algebraic number s is a root.
 

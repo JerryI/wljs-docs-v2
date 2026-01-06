@@ -1,4 +1,6 @@
-# LocationEquivalenceTest
+---
+title: LocationEquivalenceTest
+---
 
 `LocationEquivalenceTest[{data1, data2, ...}]` tests whether the means or medians of the *datai* are equal.
 

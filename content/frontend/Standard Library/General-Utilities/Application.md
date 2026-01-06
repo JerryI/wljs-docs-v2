@@ -1,4 +1,6 @@
-# Application
+---
+title: Application
+---
 
 `f @ g` or `Application[f, g]` represents the formal application of f to g.
 

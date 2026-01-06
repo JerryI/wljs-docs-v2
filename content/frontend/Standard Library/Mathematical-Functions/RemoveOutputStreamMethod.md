@@ -1,4 +1,6 @@
-# RemoveOutputStreamMethod
+---
+title: RemoveOutputStreamMethod
+---
 
 `RemoveOutputStreamMethod["name"]` removes a custom output stream method.
 

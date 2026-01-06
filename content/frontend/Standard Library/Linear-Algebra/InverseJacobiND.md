@@ -1,4 +1,6 @@
-# InverseJacobiND
+---
+title: InverseJacobiND
+---
 
 `InverseJacobiND[v,m]` gives the inverse Jacobi elliptic function nd-1(vm).
 

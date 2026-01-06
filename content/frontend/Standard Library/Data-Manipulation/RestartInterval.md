@@ -1,4 +1,6 @@
-# RestartInterval
+---
+title: RestartInterval
+---
 
 `RestartInterval` is an option controlling the restart behavior of functions such as `ContinuousTask`.
 

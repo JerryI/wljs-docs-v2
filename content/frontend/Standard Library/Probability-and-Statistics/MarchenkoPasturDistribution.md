@@ -1,4 +1,6 @@
-# MarchenkoPasturDistribution
+---
+title: MarchenkoPasturDistribution
+---
 
 `MarchenkoPasturDistribution[λ, σ]` represents a Marchenko–Pastur distribution with asymptotic ratio λ and scale parameter σ.
 

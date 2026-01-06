@@ -1,4 +1,6 @@
-# TimeSeriesMap
+---
+title: TimeSeriesMap
+---
 
 `TimeSeriesMap[f, tseries]` applies f to the values in tseries.
 

@@ -1,4 +1,6 @@
-# HTTPRedirect
+---
+title: HTTPRedirect
+---
 
 `HTTPRedirect[uri]` represents an HTTP redirect to the specified `uri`.
 

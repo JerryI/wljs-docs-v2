@@ -1,4 +1,6 @@
-# HamiltonianGraphQ
+---
+title: HamiltonianGraphQ
+---
 
 `HamiltonianGraphQ[g]` yields `True` if the graph g is Hamiltonian (has a Hamiltonian cycle), and `False` otherwise.
 

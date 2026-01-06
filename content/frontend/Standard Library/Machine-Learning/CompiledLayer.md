@@ -1,4 +1,6 @@
-# CompiledLayer
+---
+title: CompiledLayer
+---
 
 `CompiledLayer[func]` represents a net layer whose computation is defined by the compilable function func.
 

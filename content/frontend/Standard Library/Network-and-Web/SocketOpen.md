@@ -1,4 +1,6 @@
-# SocketOpen
+---
+title: SocketOpen
+---
 
 `SocketOpen[port]` opens a socket that accepts TCP connections to localhost:port and returns a SocketObject representing the socket.
 

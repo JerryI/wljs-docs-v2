@@ -1,4 +1,6 @@
-# Gamma
+---
+title: Gamma
+---
 
 `Gamma[z]` is the Euler gamma function Γ(z). `Gamma[a, z]` is the incomplete gamma function.
 

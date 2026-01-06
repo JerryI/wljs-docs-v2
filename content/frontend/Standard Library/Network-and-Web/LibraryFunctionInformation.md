@@ -1,4 +1,6 @@
-# LibraryFunctionInformation
+---
+title: LibraryFunctionInformation
+---
 
 `LibraryFunctionInformation[fun]` returns information about a `LibraryFunction`.
 

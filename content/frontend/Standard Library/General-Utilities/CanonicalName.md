@@ -1,4 +1,6 @@
-# CanonicalName
+---
+title: CanonicalName
+---
 
 `CanonicalName[entity]` gives the canonical name for the entity specified by entity.
 

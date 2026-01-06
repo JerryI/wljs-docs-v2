@@ -1,4 +1,6 @@
-# PhongShading
+---
+title: PhongShading
+---
 
 `PhongShading[]` is a three-dimensional graphics directive that specifies that faces of polygons and other filled graphics objects are to be drawn to reflect as a smooth surface using normal-vector interpolation shading.
 

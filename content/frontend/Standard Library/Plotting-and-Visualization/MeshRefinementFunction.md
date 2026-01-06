@@ -1,4 +1,6 @@
-# MeshRefinementFunction
+---
+title: MeshRefinementFunction
+---
 
 `MeshRefinementFunction` is an option for `DiscretizeRegion` and related functions that specifies a function to indicate whether mesh cells should be refined or not.
 

@@ -1,4 +1,6 @@
-# FindFormula
+---
+title: FindFormula
+---
 
 `FindFormula[data]` finds a pure function that approximates data.
 

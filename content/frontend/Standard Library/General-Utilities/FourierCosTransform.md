@@ -1,4 +1,6 @@
-# FourierCosTransform
+---
+title: FourierCosTransform
+---
 
 `FourierCosTransform[expr, t, ω]` gives the symbolic Fourier cosine transform of expr.
 

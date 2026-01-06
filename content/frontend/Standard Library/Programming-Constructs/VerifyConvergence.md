@@ -1,4 +1,6 @@
-# VerifyConvergence
+---
+title: VerifyConvergence
+---
 
 `VerifyConvergence` is an option to `Sum`, `NSum`, and similar functions that specifies whether convergence checking should be done.
 

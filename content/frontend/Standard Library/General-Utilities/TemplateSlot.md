@@ -1,4 +1,6 @@
-# TemplateSlot
+---
+title: TemplateSlot
+---
 
 `TemplateSlot[n]` represents a template slot to be filled from the nth argument when the template is applied.
 

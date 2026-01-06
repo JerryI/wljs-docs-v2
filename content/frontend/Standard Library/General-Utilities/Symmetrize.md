@@ -1,4 +1,6 @@
-# Symmetrize
+---
+title: Symmetrize
+---
 
 `Symmetrize[tensor, sym]` returns the symmetrization of tensor under the symmetry sym.
 

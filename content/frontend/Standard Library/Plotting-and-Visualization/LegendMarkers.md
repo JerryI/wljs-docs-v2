@@ -1,4 +1,6 @@
-# LegendMarkers
+---
+title: LegendMarkers
+---
 
 `LegendMarkers` is an option for legends such as `PointLegend` that specifies markers for each element.
 

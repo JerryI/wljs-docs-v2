@@ -1,4 +1,6 @@
-# CharacteristicPolynomial
+---
+title: CharacteristicPolynomial
+---
 
 `CharacteristicPolynomial[m, x]` gives the characteristic polynomial for the matrix m.
 

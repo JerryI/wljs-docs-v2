@@ -1,4 +1,6 @@
-# ImageGraphics
+---
+title: ImageGraphics
+---
 
 `ImageGraphics[image]` returns the content of image in the form of scalable vector graphics.
 

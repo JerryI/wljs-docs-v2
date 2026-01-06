@@ -1,4 +1,6 @@
-# NumberString
+---
+title: NumberString
+---
 
 `NumberString` represents the characters of a number in StringExpression.
 

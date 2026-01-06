@@ -1,4 +1,6 @@
-# JoinForm
+---
+title: JoinForm
+---
 
 `JoinForm[type]` is a graphics directive that specifies what type of joins should be used to connect segments of lines, tubes, edges, and related primitives.
 

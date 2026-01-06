@@ -1,4 +1,6 @@
-# GeneratedAssetFormat
+---
+title: GeneratedAssetFormat
+---
 
 `GeneratedAssetFormat` is an option for functions like VideoGenerator that specifies the format of the resulting asset.
 

@@ -1,4 +1,6 @@
-# GeoVisibleRegionBoundary
+---
+title: GeoVisibleRegionBoundary
+---
 
 `GeoVisibleRegionBoundary[{lat, lon, h}]` is a one-dimensional GeoGraphics primitive that represents the boundary of the region on the surface of the Earth visible from the point of coordinates lat, lon and height h above the reference ellipsoid.
 

@@ -1,4 +1,6 @@
-# QuestionObject
+---
+title: QuestionObject
+---
 
 `QuestionObject[q, assess]` represents the question q and the corresponding assessment assess.
 

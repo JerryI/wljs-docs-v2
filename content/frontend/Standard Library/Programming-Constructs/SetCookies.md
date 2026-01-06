@@ -1,4 +1,6 @@
-# SetCookies
+---
+title: SetCookies
+---
 
 `SetCookies[assoc]` sets cookies with attributes specified by the association assoc, to be used by functions such as `URLExecute`.
 

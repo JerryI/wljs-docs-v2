@@ -1,4 +1,6 @@
-# RemoteFile
+---
+title: RemoteFile
+---
 
 `RemoteFile[URL["uri"]]` is a symbolic representation of a file on a remote machine.
 

@@ -1,4 +1,6 @@
-# Equivalent
+---
+title: Equivalent
+---
 
 `Equivalent[e1, e2, ...]` represents the logical equivalence e1⇔e2⇔..., giving True when all of the ei are the same.
 

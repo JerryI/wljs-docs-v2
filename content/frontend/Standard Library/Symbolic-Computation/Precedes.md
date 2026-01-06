@@ -1,4 +1,6 @@
-# Precedes
+---
+title: Precedes
+---
 
 `Precedes[x, y, ...]` displays as x≺y≺....
 

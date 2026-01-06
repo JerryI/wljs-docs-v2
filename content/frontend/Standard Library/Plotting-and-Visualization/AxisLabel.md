@@ -1,4 +1,6 @@
-# AxisLabel
+---
+title: AxisLabel
+---
 
 `AxisLabel` is an option for `AxisObject` that specifies a label for the axis.
 

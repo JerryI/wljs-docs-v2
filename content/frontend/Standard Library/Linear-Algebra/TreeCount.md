@@ -1,4 +1,6 @@
-# TreeCount
+---
+title: TreeCount
+---
 
 `TreeCount[tree, pattern]` gives the number of subtrees of tree whose data matches pattern.
 

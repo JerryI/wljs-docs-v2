@@ -1,4 +1,6 @@
-# For
+---
+title: For
+---
 
 `For[start, test, incr, body]` executes start, then repeatedly evaluates body and incr until test fails to give True.
 

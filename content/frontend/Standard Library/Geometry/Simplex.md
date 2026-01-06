@@ -1,4 +1,6 @@
-# Simplex
+---
+title: Simplex
+---
 
 `Simplex[{p1, ..., pk}]` represents the simplex spanned by points pi.
 

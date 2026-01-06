@@ -1,4 +1,6 @@
-# RarerProbability
+---
+title: RarerProbability
+---
 
 `RarerProbability[dist, example]` computes the probability for distribution dist to generate a sample that has a lower or equal PDF than example.
 

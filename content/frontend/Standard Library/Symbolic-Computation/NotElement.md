@@ -1,4 +1,6 @@
-# NotElement
+---
+title: NotElement
+---
 
 `NotElement[x, dom]` or `x∉dom` asserts that x is not an element of the domain dom.
 

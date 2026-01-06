@@ -1,4 +1,6 @@
-# Inverse
+---
+title: Inverse
+---
 
 `Inverse[m]` gives the inverse of a square matrix `m`.
 

@@ -1,4 +1,6 @@
-# EdgeStyle
+---
+title: EdgeStyle
+---
 
 `EdgeStyle` is an option and annotation for Graph and related functions that specifies what style to use for edges.
 

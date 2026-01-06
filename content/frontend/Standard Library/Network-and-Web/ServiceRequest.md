@@ -1,4 +1,6 @@
-# ServiceRequest
+---
+title: ServiceRequest
+---
 
 `ServiceRequest[service,"req"]` represents a service request built from service, which might be a connected ServiceObject or a valid service name, and request "req".
 

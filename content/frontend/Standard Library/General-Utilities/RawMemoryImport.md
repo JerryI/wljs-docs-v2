@@ -1,4 +1,6 @@
-# RawMemoryImport
+---
+title: RawMemoryImport
+---
 
 `RawMemoryImport[ptr, format]` imports raw memory from the pointer ptr with the specified format.
 

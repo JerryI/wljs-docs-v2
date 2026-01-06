@@ -1,4 +1,6 @@
-# EdgeCoverQ
+---
+title: EdgeCoverQ
+---
 
 `EdgeCoverQ[g, elist]` yields `True` if the edge list elist is an edge cover of the graph g and `False` otherwise.
 

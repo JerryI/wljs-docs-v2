@@ -1,4 +1,6 @@
-# RegionPlot
+---
+title: RegionPlot
+---
 
 `RegionPlot[pred, {x, xmin, xmax}, {y, ymin, ymax}]` makes a plot showing the region where pred is True.
 

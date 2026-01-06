@@ -1,4 +1,6 @@
-# Norm
+---
+title: Norm
+---
 
 `Norm[v]` gives the Euclidean norm (length) of a vector. `Norm[v, p]` gives the $p$-norm.
 

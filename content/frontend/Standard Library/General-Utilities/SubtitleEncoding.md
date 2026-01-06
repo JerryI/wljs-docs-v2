@@ -1,4 +1,6 @@
-# SubtitleEncoding
+---
+title: SubtitleEncoding
+---
 
 `SubtitleEncoding` is an option for `Export` and other functions that specifies the subtitle encoding to use when creating a video file.
 

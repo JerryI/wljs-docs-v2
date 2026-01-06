@@ -1,4 +1,6 @@
-# FoldList
+---
+title: FoldList
+---
 
 `FoldList[f, x, {a, b, ...}]` gives `{x, f[x, a], f[f[x, a], b], ...}`.
 

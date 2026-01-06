@@ -1,4 +1,6 @@
-# Roots
+---
+title: Roots
+---
 
 `Roots[lhs == rhs, var]` yields a disjunction of equations which represent the roots of a polynomial equation.
 

@@ -1,4 +1,6 @@
-# IntervalIntersection
+---
+title: IntervalIntersection
+---
 
 `IntervalIntersection[interval1, interval2, ...]` gives the interval of points common to all intervals.
 

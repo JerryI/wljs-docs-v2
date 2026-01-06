@@ -1,4 +1,6 @@
-# PermutationPower
+---
+title: PermutationPower
+---
 
 `PermutationPower[perm, n]` gives the nth permutation power of the permutation perm.
 

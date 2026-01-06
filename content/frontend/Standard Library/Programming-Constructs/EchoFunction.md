@@ -1,4 +1,6 @@
-# EchoFunction
+---
+title: EchoFunction
+---
 
 `EchoFunction[f][expr]` prints f[expr] and returns expr.
 

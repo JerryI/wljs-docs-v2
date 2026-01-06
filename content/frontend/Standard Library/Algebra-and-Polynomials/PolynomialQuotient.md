@@ -1,4 +1,6 @@
-# PolynomialQuotient
+---
+title: PolynomialQuotient
+---
 
 `PolynomialQuotient[p, q, x]` gives the quotient of p and q, treated as polynomials in x, with any remainder dropped.
 

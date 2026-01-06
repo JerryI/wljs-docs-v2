@@ -1,4 +1,6 @@
-# BooleanConvert
+---
+title: BooleanConvert
+---
 
 `BooleanConvert[expr]` converts the Boolean expression expr to disjunctive normal form.
 

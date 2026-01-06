@@ -1,4 +1,6 @@
-# NumericalSort
+---
+title: NumericalSort
+---
 
 `NumericalSort[list]` sorts the elements of list into numerical order.
 

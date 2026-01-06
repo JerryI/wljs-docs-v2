@@ -1,4 +1,6 @@
-# CensoredDistribution
+---
+title: CensoredDistribution
+---
 
 `CensoredDistribution[{xmin, xmax}, dist]` represents the distribution of values that come from dist and are censored to be between xmin and xmax.
 

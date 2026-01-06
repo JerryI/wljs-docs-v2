@@ -1,4 +1,6 @@
-# NSolve
+---
+title: NSolve
+---
 
 `NSolve[expr, vars]` attempts to find numerical approximations to the solutions of the system.
 

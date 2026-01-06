@@ -1,4 +1,6 @@
-# KeySort
+---
+title: KeySort
+---
 
 `KeySort[assoc]` orders the elements of an association by sorting its keys.
 

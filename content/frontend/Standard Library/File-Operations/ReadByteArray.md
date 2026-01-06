@@ -1,4 +1,6 @@
-# ReadByteArray
+---
+title: ReadByteArray
+---
 
 `ReadByteArray[src]` gives the contents of src as a ByteArray object.
 

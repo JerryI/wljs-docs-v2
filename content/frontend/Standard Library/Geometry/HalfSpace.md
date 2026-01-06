@@ -1,4 +1,6 @@
-# HalfSpace
+---
+title: HalfSpace
+---
 
 `HalfSpace[n, p]` represents the half-space of points x such that n.(x-p)≤0.
 

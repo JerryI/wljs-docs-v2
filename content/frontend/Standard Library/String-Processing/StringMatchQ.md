@@ -1,4 +1,6 @@
-# StringMatchQ
+---
+title: StringMatchQ
+---
 
 `StringMatchQ["string", patt]` tests whether the entire string matches the pattern.
 

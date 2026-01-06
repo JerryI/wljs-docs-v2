@@ -1,4 +1,6 @@
-# FindIsomorphicSubgraph
+---
+title: FindIsomorphicSubgraph
+---
 
 `FindIsomorphicSubgraph[g1,g2]` finds a subgraph of g1 that is isomorphic to g2.
 

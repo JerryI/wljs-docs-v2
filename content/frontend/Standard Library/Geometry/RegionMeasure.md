@@ -1,4 +1,6 @@
-# RegionMeasure
+---
+title: RegionMeasure
+---
 
 `RegionMeasure[reg]` gives the measure (length, area, volume) of the region.
 

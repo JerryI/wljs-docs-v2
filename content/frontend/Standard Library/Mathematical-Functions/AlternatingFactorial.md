@@ -1,4 +1,6 @@
-# AlternatingFactorial
+---
+title: AlternatingFactorial
+---
 
 `AlternatingFactorial[n]` gives the alternating factorial af(n).
 

@@ -1,4 +1,6 @@
-# GapPenalty
+---
+title: GapPenalty
+---
 
 `GapPenalty` is an option for SequenceAlignment and related functions that gives the additional cost associated with each gap corresponding to a run of insertions or deletions.
 

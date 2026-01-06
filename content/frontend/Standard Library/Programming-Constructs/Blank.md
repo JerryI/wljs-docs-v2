@@ -1,4 +1,6 @@
-# Blank
+---
+title: Blank
+---
 
 `_` or `Blank[]` is a pattern object that can stand for any expression.
 

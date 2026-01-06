@@ -1,4 +1,6 @@
-# PassEventsUp
+---
+title: PassEventsUp
+---
 
 `PassEventsUp` is an option to EventHandler that specifies whether events handled by a particular event handler should be passed up to event handlers in outer expressions.
 

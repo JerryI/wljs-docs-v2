@@ -1,4 +1,6 @@
-# VectorDisplacementPlot
+---
+title: VectorDisplacementPlot
+---
 
 `VectorDisplacementPlot[{vx, vy}, {x, xmin, xmax}, {y, ymin, ymax}]` generates a displacement plot for the vector field {vx, vy} as a function of x and y.
 

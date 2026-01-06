@@ -1,4 +1,6 @@
-# CompanyData
+---
+title: CompanyData
+---
 
 `CompanyData[entity, property]` gives the value of the specified property for the company entity.
 

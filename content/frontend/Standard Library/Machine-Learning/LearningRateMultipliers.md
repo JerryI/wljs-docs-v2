@@ -1,4 +1,6 @@
-# LearningRateMultipliers
+---
+title: LearningRateMultipliers
+---
 
 `LearningRateMultipliers` is an option for net layers and for `NetTrain`, `NetChain`, `NetGraph` that specifies learning rate multipliers to apply during training.
 

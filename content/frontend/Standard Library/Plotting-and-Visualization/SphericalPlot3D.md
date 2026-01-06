@@ -1,4 +1,6 @@
-# SphericalPlot3D
+---
+title: SphericalPlot3D
+---
 
 `SphericalPlot3D[r, {θ, θmin, θmax}, {ϕ, ϕmin, ϕmax}]` generates a 3D plot with spherical radius r as a function of spherical coordinates θ and ϕ.
 

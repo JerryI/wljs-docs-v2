@@ -1,4 +1,6 @@
-# Protected
+---
+title: Protected
+---
 
 `Protected` is an attribute that prevents any values associated with a symbol from being modified.
 

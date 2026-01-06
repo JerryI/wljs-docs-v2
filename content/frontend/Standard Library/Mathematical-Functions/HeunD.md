@@ -1,4 +1,6 @@
-# HeunD
+---
+title: HeunD
+---
 
 `HeunD[q, α, γ, δ, ϵ, z]` gives the double-confluent Heun function.
 

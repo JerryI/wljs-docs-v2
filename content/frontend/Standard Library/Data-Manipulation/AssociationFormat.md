@@ -1,4 +1,6 @@
-# AssociationFormat
+---
+title: AssociationFormat
+---
 
 `AssociationFormat` is an option to TextString and related functions that determines how associations are formatted.
 

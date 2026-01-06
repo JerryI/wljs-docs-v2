@@ -1,4 +1,6 @@
-# LibraryFunctionError
+---
+title: LibraryFunctionError
+---
 
 `LibraryFunctionError[name,code]` represents an error returned from a LibraryFunction.
 

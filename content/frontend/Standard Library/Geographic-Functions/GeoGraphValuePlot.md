@@ -1,4 +1,6 @@
-# GeoGraphValuePlot
+---
+title: GeoGraphValuePlot
+---
 
 `GeoGraphValuePlot[{{src1,dest1,flow1},{src2,dest2,flow2},…}]` plots the flows between geo locations.
 

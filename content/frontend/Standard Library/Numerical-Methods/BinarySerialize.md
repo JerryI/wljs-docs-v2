@@ -1,4 +1,6 @@
-# BinarySerialize
+---
+title: BinarySerialize
+---
 
 `BinarySerialize[expr]` gives a binary representation of any expression expr as a ByteArray object.
 

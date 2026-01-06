@@ -1,4 +1,6 @@
-# PermutationProduct
+---
+title: PermutationProduct
+---
 
 `PermutationProduct[a, b, c]` gives the product of permutations a, b, c.
 

@@ -1,4 +1,6 @@
-# FileDate
+---
+title: FileDate
+---
 
 `FileDate["file"]` gives the date and time the file was last modified.
 

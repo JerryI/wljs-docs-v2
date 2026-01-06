@@ -1,4 +1,6 @@
-# LetterCharacter
+---
+title: LetterCharacter
+---
 
 `LetterCharacter` represents a letter character in `StringExpression`.
 

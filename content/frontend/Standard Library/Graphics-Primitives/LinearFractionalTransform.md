@@ -1,4 +1,6 @@
-# LinearFractionalTransform
+---
+title: LinearFractionalTransform
+---
 
 `LinearFractionalTransform[m]` gives a TransformationFunction that represents a linear fractional transformation defined by the homogeneous matrix m.
 

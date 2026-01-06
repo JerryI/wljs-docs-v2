@@ -1,4 +1,6 @@
-# ChebyshevU
+---
+title: ChebyshevU
+---
 
 `ChebyshevU[n, x]` gives the Chebyshev polynomial of the second kind U_n(x).
 

@@ -1,4 +1,6 @@
-# VideoPause
+---
+title: VideoPause
+---
 
 `VideoPause[]` pauses the playback of all VideoStream objects.
 

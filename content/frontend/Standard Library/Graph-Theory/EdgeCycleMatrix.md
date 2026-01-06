@@ -1,4 +1,6 @@
-# EdgeCycleMatrix
+---
+title: EdgeCycleMatrix
+---
 
 `EdgeCycleMatrix[g]` gives the edge cycle matrix of a graph g.
 

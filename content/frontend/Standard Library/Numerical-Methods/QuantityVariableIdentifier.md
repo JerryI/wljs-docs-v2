@@ -1,4 +1,6 @@
-# QuantityVariableIdentifier
+---
+title: QuantityVariableIdentifier
+---
 
 `QuantityVariableIdentifier[quantityvariable]` returns the identifier associated with the specified *quantityvariable*.
 

@@ -1,4 +1,6 @@
-# SatelliteData
+---
+title: SatelliteData
+---
 
 `SatelliteData[entity, property]` gives the value of the specified property for the satellite entity.
 

@@ -1,4 +1,6 @@
-# ImagePyramidApply
+---
+title: ImagePyramidApply
+---
 
 `ImagePyramidApply[f, pyr]` applies f to all images in the `ImagePyramid` object pyr.
 

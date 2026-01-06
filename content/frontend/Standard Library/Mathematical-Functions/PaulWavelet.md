@@ -1,4 +1,6 @@
-# PaulWavelet
+---
+title: PaulWavelet
+---
 
 `PaulWavelet[]` represents a Paul wavelet of order 4.
 

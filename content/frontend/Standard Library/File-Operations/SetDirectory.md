@@ -1,4 +1,6 @@
-# SetDirectory
+---
+title: SetDirectory
+---
 
 `SetDirectory["dir"]` sets the current working directory to dir.
 

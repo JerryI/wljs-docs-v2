@@ -1,4 +1,6 @@
-# PermutationLength
+---
+title: PermutationLength
+---
 
 `PermutationLength[perm]` returns the number of integers moved by the permutation perm.
 

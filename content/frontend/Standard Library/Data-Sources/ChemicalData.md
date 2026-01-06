@@ -1,4 +1,6 @@
-# ChemicalData
+---
+title: ChemicalData
+---
 
 `ChemicalData["name", "property"]` gives the value of the specified property for the chemical named.
 

@@ -1,4 +1,6 @@
-# HurwitzLerchPhi
+---
+title: HurwitzLerchPhi
+---
 
 `HurwitzLerchPhi[z,s,a]` gives the Hurwitz–Lerch transcendent Φ(z,s,a).
 

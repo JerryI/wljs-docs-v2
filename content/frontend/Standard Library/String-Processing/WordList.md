@@ -1,4 +1,6 @@
-# WordList
+---
+title: WordList
+---
 
 `WordList[]` gives a list of common words.
 

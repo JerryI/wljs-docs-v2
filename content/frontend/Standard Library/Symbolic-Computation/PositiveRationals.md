@@ -1,4 +1,6 @@
-# PositiveRationals
+---
+title: PositiveRationals
+---
 
 `PositiveRationals` represents the domain of strictly positive rational numbers, as in `x∈PositiveRationals`.
 

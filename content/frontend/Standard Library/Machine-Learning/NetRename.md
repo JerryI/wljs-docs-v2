@@ -1,4 +1,6 @@
-# NetRename
+---
+title: NetRename
+---
 
 `NetRename[net, "old" -> "new"]` gives a net in which the name old for a layer is replaced with new.
 

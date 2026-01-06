@@ -1,4 +1,6 @@
-# ImageType
+---
+title: ImageType
+---
 
 `ImageType[image]` gives the underlying type of values used for each pixel element in the Image object.
 

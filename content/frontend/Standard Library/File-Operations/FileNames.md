@@ -1,4 +1,6 @@
-# FileNames
+---
+title: FileNames
+---
 
 `FileNames[]` lists all files in the current working directory.
 

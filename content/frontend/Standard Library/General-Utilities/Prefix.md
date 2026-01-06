@@ -1,4 +1,6 @@
-# Prefix
+---
+title: Prefix
+---
 
 `Prefix[f[expr]]` prints with `f[expr]` given in default prefix form: `f @ expr`.
 

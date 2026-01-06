@@ -1,4 +1,6 @@
-# ElementwiseLayer
+---
+title: ElementwiseLayer
+---
 
 `ElementwiseLayer[f]` represents a net layer that applies a unary function f to every element of the input array.
 

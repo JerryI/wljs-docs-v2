@@ -1,4 +1,6 @@
-# InverseImagePyramid
+---
+title: InverseImagePyramid
+---
 
 `InverseImagePyramid[pyr]` reconstructs an image from an `ImagePyramid` object pyr.
 

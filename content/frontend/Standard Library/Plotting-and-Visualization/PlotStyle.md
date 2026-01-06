@@ -1,4 +1,6 @@
-# PlotStyle
+---
+title: PlotStyle
+---
 
 `PlotStyle` is an option that specifies styles for plot elements. Use colors, thickness, dashing, or lists for multiple curves.
 

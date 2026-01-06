@@ -1,4 +1,6 @@
-# ImageDeconvolve
+---
+title: ImageDeconvolve
+---
 
 `ImageDeconvolve[image,ker]` gives a deconvolution of image using kernel ker.
 

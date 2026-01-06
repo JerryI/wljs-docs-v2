@@ -1,4 +1,6 @@
-# AlgebraicNumberNorm
+---
+title: AlgebraicNumberNorm
+---
 
 `AlgebraicNumberNorm[a]` gives the norm of the algebraic number a.
 

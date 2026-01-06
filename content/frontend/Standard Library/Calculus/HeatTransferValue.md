@@ -1,4 +1,6 @@
-# HeatTransferValue
+---
+title: HeatTransferValue
+---
 
 `HeatTransferValue[pred, vars, pars]` represents a thermal transfer boundary condition for PDEs with predicate `pred` indicating where it applies, with model variables `vars` and global parameters `pars`.
 

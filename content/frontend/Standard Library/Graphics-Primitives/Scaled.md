@@ -1,4 +1,6 @@
-# Scaled
+---
+title: Scaled
+---
 
 `Scaled[{x, y, ...}]` gives the position of a graphical object in terms of coordinates scaled to run from 0 to 1 across the whole plot range in each direction.
 

@@ -1,4 +1,6 @@
-# AudioPlot
+---
+title: AudioPlot
+---
 
 `AudioPlot[audio]` plots the waveform of audio.
 

@@ -1,4 +1,6 @@
-# DuplicateFreeQ
+---
+title: DuplicateFreeQ
+---
 
 `DuplicateFreeQ[list]` gives True if list has no duplicates, and False otherwise.
 

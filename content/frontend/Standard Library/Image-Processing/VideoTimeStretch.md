@@ -1,4 +1,6 @@
-# VideoTimeStretch
+---
+title: VideoTimeStretch
+---
 
 `VideoTimeStretch[video,spec]` applies time stretching to video using the specified spec.
 

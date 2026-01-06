@@ -1,4 +1,6 @@
-# FunctionBijective
+---
+title: FunctionBijective
+---
 
 `FunctionBijective[f, x]` tests whether f(x) = y has exactly one solution x ∈ Reals for each y ∈ Reals.
 

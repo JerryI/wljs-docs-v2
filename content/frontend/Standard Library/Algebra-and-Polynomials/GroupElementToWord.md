@@ -1,4 +1,6 @@
-# GroupElementToWord
+---
+title: GroupElementToWord
+---
 
 `GroupElementToWord[group, g]` decomposes the group element g as a product of generators of group.
 

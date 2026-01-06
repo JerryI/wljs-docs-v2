@@ -1,4 +1,6 @@
-# MultiaxisArrangement
+---
+title: MultiaxisArrangement
+---
 
 `MultiaxisArrangement` is an option to plotting functions that specifies how multiple axes are arranged.
 

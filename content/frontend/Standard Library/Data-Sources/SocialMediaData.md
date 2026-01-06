@@ -1,4 +1,6 @@
-# SocialMediaData
+---
+title: SocialMediaData
+---
 
 `SocialMediaData["name"]` gives information about the social media entity "name".
 

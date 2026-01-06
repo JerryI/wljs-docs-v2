@@ -1,4 +1,6 @@
-# NotLeftTriangleBar
+---
+title: NotLeftTriangleBar
+---
 
 `NotLeftTriangleBar[x, y, …]` displays as x⧏̸y⧏̸….
 

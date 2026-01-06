@@ -1,4 +1,6 @@
-# MassTransferValue
+---
+title: MassTransferValue
+---
 
 `MassTransferValue[pred, vars, pars]` represents a mass transfer boundary condition for PDEs with predicate pred indicating where it applies, with model variables vars and global parameters pars.
 

@@ -1,4 +1,6 @@
-# ComplexityFunction
+---
+title: ComplexityFunction
+---
 
 `ComplexityFunction` is an option for Simplify and other functions which gives a function to rank the complexity of different forms of an expression.
 

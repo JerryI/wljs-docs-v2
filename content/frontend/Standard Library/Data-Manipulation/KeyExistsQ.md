@@ -1,4 +1,6 @@
-# KeyExistsQ
+---
+title: KeyExistsQ
+---
 
 `KeyExistsQ[assoc, key]` returns `True` if the specified key exists in the association assoc, and `False` otherwise.
 

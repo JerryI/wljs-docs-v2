@@ -1,4 +1,6 @@
-# MaxRecursion
+---
+title: MaxRecursion
+---
 
 `MaxRecursion` is an option for functions like `NIntegrate` and `Plot` that specifies how many recursive subdivisions can be made.
 

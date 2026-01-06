@@ -1,4 +1,6 @@
-# VideoTranscode
+---
+title: VideoTranscode
+---
 
 `VideoTranscode[video, "format"]` converts video to the specified format.
 

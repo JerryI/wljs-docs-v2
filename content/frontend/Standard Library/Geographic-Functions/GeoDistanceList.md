@@ -1,4 +1,6 @@
-# GeoDistanceList
+---
+title: GeoDistanceList
+---
 
 `GeoDistanceList[{loc1, loc2, …, locn}]` returns the list of geodesic distances between consecutive pairs of locations.
 

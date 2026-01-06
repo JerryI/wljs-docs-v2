@@ -1,4 +1,6 @@
-# VideoFrameMap
+---
+title: VideoFrameMap
+---
 
 `VideoFrameMap[f, video]` applies f to each frame of the `Video` object video, returning a new `Video` object.
 

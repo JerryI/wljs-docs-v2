@@ -1,4 +1,6 @@
-# SurfaceColor
+---
+title: SurfaceColor
+---
 
 `SurfaceColor[dcol]` is a three-dimensional graphics directive which specifies that the surfaces which follow should act as diffuse reflectors of light with a color given by dcol.
 

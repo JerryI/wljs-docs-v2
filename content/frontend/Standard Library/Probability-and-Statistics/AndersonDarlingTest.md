@@ -1,4 +1,6 @@
-# AndersonDarlingTest
+---
+title: AndersonDarlingTest
+---
 
 `AndersonDarlingTest[data]` tests whether data is normally distributed using the Anderson-Darling test.
 

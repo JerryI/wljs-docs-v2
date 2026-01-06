@@ -1,4 +1,6 @@
-# DateFunction
+---
+title: DateFunction
+---
 
 `DateFunction` is an option for `DateListPlot` and `TemporalData` that specifies how dates given as input should be interpreted.
 

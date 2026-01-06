@@ -1,4 +1,6 @@
-# Circumsphere
+---
+title: Circumsphere
+---
 
 `Circumsphere[{p1, ..., pn+1}]` gives the sphere that circumscribes the points pi in n dimensions.
 

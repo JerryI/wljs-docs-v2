@@ -1,4 +1,6 @@
-# TableAlignments
+---
+title: TableAlignments
+---
 
 `TableAlignments` is an option for `TableForm` and `MatrixForm` which specifies how entries in each dimension should be aligned.
 

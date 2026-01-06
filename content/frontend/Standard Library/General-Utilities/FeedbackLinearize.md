@@ -1,4 +1,6 @@
-# FeedbackLinearize
+---
+title: FeedbackLinearize
+---
 
 `FeedbackLinearize[asys]` input-output linearizes the AffineStateSpaceModel asys by state transformation and feedback.
 

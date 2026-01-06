@@ -1,4 +1,6 @@
-# GeoImage
+---
+title: GeoImage
+---
 
 `GeoImage[reg]` gives a satellite image of the geo region reg.
 

@@ -1,4 +1,6 @@
-# OutputAutoOverwrite
+---
+title: OutputAutoOverwrite
+---
 
 `OutputAutoOverwrite` is an option for notebooks that specifies whether the output of a command should replace any existing output from a previous evaluation.
 

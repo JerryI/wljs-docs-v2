@@ -1,4 +1,6 @@
-# RunProcess
+---
+title: RunProcess
+---
 
 `RunProcess["command"]` runs the specified external command, returning information on the outcome.
 

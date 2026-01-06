@@ -1,4 +1,6 @@
-# DominantColors
+---
+title: DominantColors
+---
 
 `DominantColors[image]` returns dominant colors in image.
 

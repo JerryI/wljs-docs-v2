@@ -1,4 +1,6 @@
-# MedicalTestData
+---
+title: MedicalTestData
+---
 
 `MedicalTestData[entity, property]` gives the value of the specified property for the medical test entity.
 

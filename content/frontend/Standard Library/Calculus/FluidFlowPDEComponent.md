@@ -1,4 +1,6 @@
-# FluidFlowPDEComponent
+---
+title: FluidFlowPDEComponent
+---
 
 `FluidFlowPDEComponent[vars,pars]` yields a flow PDE term with variables vars and parameters pars.
 

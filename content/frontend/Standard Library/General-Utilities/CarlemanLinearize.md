@@ -1,4 +1,6 @@
-# CarlemanLinearize
+---
+title: CarlemanLinearize
+---
 
 `CarlemanLinearize[sys, spec]` Carleman linearizes the nonlinear state-space model sys according to spec.
 

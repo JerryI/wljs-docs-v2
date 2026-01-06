@@ -1,4 +1,6 @@
-# Purple
+---
+title: Purple
+---
 
 `Purple` represents the color purple in graphics or style specifications.
 

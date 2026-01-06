@@ -1,4 +1,6 @@
-# MorphologicalTransform
+---
+title: MorphologicalTransform
+---
 
 `MorphologicalTransform[image, f]` applies the function f to the 3×3 neighborhood of each pixel in a binary image image.
 

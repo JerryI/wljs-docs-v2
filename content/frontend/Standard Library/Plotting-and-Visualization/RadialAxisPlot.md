@@ -1,4 +1,6 @@
-# RadialAxisPlot
+---
+title: RadialAxisPlot
+---
 
 `RadialAxisPlot[{y1, y2, ..., yn}]` generates a radial axis plot where the yi are displayed on radial axes equally spaced around the origin.
 

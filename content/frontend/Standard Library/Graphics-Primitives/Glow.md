@@ -1,4 +1,6 @@
-# Glow
+---
+title: Glow
+---
 
 `Glow[col]` is a graphics directive which specifies that surfaces of 3D graphics objects that follow are to be taken to glow with color `col`.
 

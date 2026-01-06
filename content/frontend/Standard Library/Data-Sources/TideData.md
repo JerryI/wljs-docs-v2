@@ -1,4 +1,6 @@
-# TideData
+---
+title: TideData
+---
 
 `TideData[spec]` returns the tidal properties for a location or a set of tidal parameters.
 

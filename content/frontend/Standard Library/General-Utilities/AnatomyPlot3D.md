@@ -1,4 +1,6 @@
-# AnatomyPlot3D
+---
+title: AnatomyPlot3D
+---
 
 `AnatomyPlot3D[primitives, options]` represents a three-dimensional graphical image that works with anatomical entities as well as standard 3D graphics primitives and directives.
 

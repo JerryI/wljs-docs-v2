@@ -1,4 +1,6 @@
-# ExtremeValueDistribution
+---
+title: ExtremeValueDistribution
+---
 
 `ExtremeValueDistribution[α, β]` represents an extreme value distribution with location parameter α and scale parameter β.
 

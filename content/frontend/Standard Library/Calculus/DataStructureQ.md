@@ -1,4 +1,6 @@
-# DataStructureQ
+---
+title: DataStructureQ
+---
 
 `DataStructureQ[ds]` yields `True` if ds is a valid data structure and `False` otherwise.
 

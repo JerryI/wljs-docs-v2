@@ -1,4 +1,6 @@
-# ContourGraphics
+---
+title: ContourGraphics
+---
 
 `ContourGraphics[array]` is a representation of a contour plot.
 

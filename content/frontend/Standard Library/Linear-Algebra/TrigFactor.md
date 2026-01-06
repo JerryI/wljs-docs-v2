@@ -1,4 +1,6 @@
-# TrigFactor
+---
+title: TrigFactor
+---
 
 `TrigFactor[expr]` factors trigonometric functions in expr.
 

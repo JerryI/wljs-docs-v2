@@ -1,4 +1,6 @@
-# FourierSinSeries
+---
+title: FourierSinSeries
+---
 
 `FourierSinSeries[expr, t, n]` gives the nth-order Fourier sine series expansion of expr in t.
 

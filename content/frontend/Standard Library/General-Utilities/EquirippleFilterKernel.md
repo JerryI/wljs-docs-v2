@@ -1,4 +1,6 @@
-# EquirippleFilterKernel
+---
+title: EquirippleFilterKernel
+---
 
 `EquirippleFilterKernel[{{{ωL1, ωR1}, {ωL2, ωR2}, ...}, {a1, a2, ...}}, n]` creates a finite impulse response (FIR) filter kernel of length n with an equiripple amplitude response.
 

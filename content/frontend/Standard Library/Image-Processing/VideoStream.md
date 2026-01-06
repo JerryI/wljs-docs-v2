@@ -1,4 +1,6 @@
-# VideoStream
+---
+title: VideoStream
+---
 
 `VideoStream[source]` creates a new VideoStream object from source.
 

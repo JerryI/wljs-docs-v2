@@ -1,4 +1,6 @@
-# PlotLayout
+---
+title: PlotLayout
+---
 
 `PlotLayout` is an option for plotting functions that specifies the layout of multiple components in a plot.
 

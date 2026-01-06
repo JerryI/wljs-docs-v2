@@ -1,4 +1,6 @@
-# HalfLine
+---
+title: HalfLine
+---
 
 `HalfLine[{p1, p2}]` represents the half-line from the point p1 through p2.
 

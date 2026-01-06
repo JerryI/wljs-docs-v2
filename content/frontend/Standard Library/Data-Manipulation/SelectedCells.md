@@ -1,4 +1,6 @@
-# SelectedCells
+---
+title: SelectedCells
+---
 
 `SelectedCells[notebook]` returns a list of `CellObject` expressions corresponding to the currently selected cells in notebook.
 

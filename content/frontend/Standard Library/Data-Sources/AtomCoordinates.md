@@ -1,4 +1,6 @@
-# AtomCoordinates
+---
+title: AtomCoordinates
+---
 
 `AtomCoordinates` is an option for `Molecule` and related functions that specifies the three-dimensional coordinates of the atoms.
 

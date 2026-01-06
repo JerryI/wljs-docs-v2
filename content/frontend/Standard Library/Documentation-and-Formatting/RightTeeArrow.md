@@ -1,4 +1,6 @@
-# RightTeeArrow
+---
+title: RightTeeArrow
+---
 
 `RightTeeArrow[x, y, …]` displays as x↦y↦….
 

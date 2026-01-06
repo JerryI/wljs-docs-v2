@@ -1,4 +1,6 @@
-# FindTransientRepeat
+---
+title: FindTransientRepeat
+---
 
 `FindTransientRepeat[list,n]` returns a pair of lists `{transient,repeat}` where the elements of repeat occur successively at least n times after the elements of the transient part of list.
 

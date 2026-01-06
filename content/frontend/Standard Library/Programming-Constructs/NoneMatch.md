@@ -1,4 +1,6 @@
-# NoneMatch
+---
+title: NoneMatch
+---
 
 `NoneMatch[{e1, e2, ...}, form]` yields True if ei does not match the pattern form for any of the ei.
 

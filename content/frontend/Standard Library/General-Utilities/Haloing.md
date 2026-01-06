@@ -1,4 +1,6 @@
-# Haloing
+---
+title: Haloing
+---
 
 `Haloing[]` is a two‐dimensional directive specifying that graphics objects are to be drawn with a halo.
 

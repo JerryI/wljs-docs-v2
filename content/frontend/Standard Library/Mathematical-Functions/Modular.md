@@ -1,4 +1,6 @@
-# Modular
+---
+title: Modular
+---
 
 `Modular` is a setting for the option `Mode` in `Solve` and related functions, which specifies that equations need be satisfied only modulo an integer.
 

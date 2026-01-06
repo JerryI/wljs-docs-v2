@@ -1,4 +1,6 @@
-# SurvivalModel
+---
+title: SurvivalModel
+---
 
 `SurvivalModel[...]` represents the symbolic survival model obtained from functions like SurvivalModelFit.
 

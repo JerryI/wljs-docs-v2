@@ -1,4 +1,6 @@
-# WeightedAdjacencyMatrix
+---
+title: WeightedAdjacencyMatrix
+---
 
 `WeightedAdjacencyMatrix[g]` gives the adjacency matrix of edge weights of the graph g.
 

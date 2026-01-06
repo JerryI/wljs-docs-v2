@@ -1,4 +1,6 @@
-# IncludeGeneratorTasks
+---
+title: IncludeGeneratorTasks
+---
 
 `IncludeGeneratorTasks` is an option controlling the scope of scheduled task listings.
 

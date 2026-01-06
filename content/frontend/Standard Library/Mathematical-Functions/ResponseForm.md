@@ -1,4 +1,6 @@
-# ResponseForm
+---
+title: ResponseForm
+---
 
 `ResponseForm[expr,"fmt"]` represents a response record to be given in a specified format when requested during the execution of a function specified by `APIFunction`, `FormFunction`, etc.
 

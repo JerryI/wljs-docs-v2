@@ -1,4 +1,6 @@
-# StringCases
+---
+title: StringCases
+---
 
 `StringCases["string", patt]` gives a list of substrings that match the pattern.
 

@@ -1,4 +1,6 @@
-# EllipticNomeQ
+---
+title: EllipticNomeQ
+---
 
 `EllipticNomeQ[m]` gives the nome q corresponding to the parameter m in an elliptic function.
 

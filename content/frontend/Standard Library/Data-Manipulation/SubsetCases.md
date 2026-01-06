@@ -1,4 +1,6 @@
-# SubsetCases
+---
+title: SubsetCases
+---
 
 `SubsetCases[list,patt]` gives a list of the sublists in list that match the pattern patt in any order.
 

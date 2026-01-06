@@ -1,4 +1,6 @@
-# DirichletCharacter
+---
+title: DirichletCharacter
+---
 
 `DirichletCharacter[k, j, n]` gives the Dirichlet character χk,j(n) with modulus k and index j.
 

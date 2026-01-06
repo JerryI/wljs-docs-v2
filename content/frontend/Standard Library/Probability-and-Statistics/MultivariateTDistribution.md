@@ -1,4 +1,6 @@
-# MultivariateTDistribution
+---
+title: MultivariateTDistribution
+---
 
 `MultivariateTDistribution[Σ, ν]` represents the multivariate Student t distribution with scale matrix Σ and degrees of freedom parameter ν.
 

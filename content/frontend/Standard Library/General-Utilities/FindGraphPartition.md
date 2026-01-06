@@ -1,4 +1,6 @@
-# FindGraphPartition
+---
+title: FindGraphPartition
+---
 
 `FindGraphPartition[g]` gives a partition of vertices of the graph g.
 

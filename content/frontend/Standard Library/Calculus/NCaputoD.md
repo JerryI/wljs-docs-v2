@@ -1,4 +1,6 @@
-# NCaputoD
+---
+title: NCaputoD
+---
 
 `NCaputoD[f, {x, α}, x0]` gives a numerical approximation to the Caputo fractional derivative C₀Dₓᵅf(x) of order α of the function f at the point x0.
 

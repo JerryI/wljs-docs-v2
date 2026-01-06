@@ -1,4 +1,6 @@
-# DirichletConvolve
+---
+title: DirichletConvolve
+---
 
 `DirichletConvolve[f, g, n, m]` gives the Dirichlet convolution of expressions f and g.
 

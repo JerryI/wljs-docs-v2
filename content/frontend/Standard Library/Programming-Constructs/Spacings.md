@@ -1,4 +1,6 @@
-# Spacings
+---
+title: Spacings
+---
 
 `Spacings` is an option to `Grid` and related constructs that specifies the spacings to leave between successive objects.
 

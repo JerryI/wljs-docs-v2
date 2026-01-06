@@ -1,4 +1,6 @@
-# MinValue
+---
+title: MinValue
+---
 
 `MinValue[f,x]` gives the minimum value of f with respect to x.
 

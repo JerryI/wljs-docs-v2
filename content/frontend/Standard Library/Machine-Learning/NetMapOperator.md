@@ -1,4 +1,6 @@
-# NetMapOperator
+---
+title: NetMapOperator
+---
 
 `NetMapOperator[net]` represents a net in which net is mapped over a sequence of inputs to give a sequence of outputs.
 

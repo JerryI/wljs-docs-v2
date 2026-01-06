@@ -1,4 +1,6 @@
-# Quotient
+---
+title: Quotient
+---
 
 `Quotient[m, n]` gives the integer quotient of m and n.
 

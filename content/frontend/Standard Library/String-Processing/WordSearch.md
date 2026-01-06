@@ -1,4 +1,6 @@
-# WordSearch
+---
+title: WordSearch
+---
 
 `WordSearch` is an option for `Find` and `FindList` that specifies whether the text searched for must appear as a word.
 

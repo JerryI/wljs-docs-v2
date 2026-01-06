@@ -1,4 +1,6 @@
-# Zeta
+---
+title: Zeta
+---
 
 `Zeta[s]` gives the Riemann zeta function ζ(s). `Zeta[s, a]` gives the generalized Hurwitz zeta function.
 

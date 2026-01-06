@@ -1,4 +1,6 @@
-# FindSequenceFunction
+---
+title: FindSequenceFunction
+---
 
 `FindSequenceFunction[{a1, a2, a3, ...}]` attempts to find a simple function that yields the sequence an when given successive integer arguments.
 

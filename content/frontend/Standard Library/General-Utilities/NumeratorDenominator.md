@@ -1,4 +1,6 @@
-# NumeratorDenominator
+---
+title: NumeratorDenominator
+---
 
 `NumeratorDenominator[expr]` gives the list `{Numerator[expr], Denominator[expr]}` of expr.
 

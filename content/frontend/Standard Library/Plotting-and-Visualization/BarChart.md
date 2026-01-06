@@ -1,4 +1,6 @@
-# BarChart
+---
+title: BarChart
+---
 
 `BarChart[{y1, y2, ...}]` creates a bar chart with bar heights `y1`, `y2`, etc.
 

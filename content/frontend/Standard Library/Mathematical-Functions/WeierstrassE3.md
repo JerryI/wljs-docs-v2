@@ -1,4 +1,6 @@
-# WeierstrassE3
+---
+title: WeierstrassE3
+---
 
 `WeierstrassE3[{g2, g3}]` gives the value $e_3$ of the Weierstrass elliptic function ℘ at the half-period $ω_3(g_2, g_3)$.
 

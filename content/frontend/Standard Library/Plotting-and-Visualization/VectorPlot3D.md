@@ -1,4 +1,6 @@
-# VectorPlot3D
+---
+title: VectorPlot3D
+---
 
 `VectorPlot3D[{vx, vy, vz}, {x, xmin, xmax}, {y, ymin, ymax}, {z, zmin, zmax}]` generates a 3D vector plot.
 

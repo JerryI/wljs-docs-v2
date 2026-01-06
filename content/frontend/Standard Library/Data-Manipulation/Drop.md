@@ -1,4 +1,6 @@
-# Drop
+---
+title: Drop
+---
 
 `Drop[list, n]` gives list with its first n elements dropped.
 

@@ -1,4 +1,6 @@
-# NContourIntegrate
+---
+title: NContourIntegrate
+---
 
 `NContourIntegrate[f, z ∈ cont]` gives the numerical integral of f along the contour defined by cont in the complex plane.
 

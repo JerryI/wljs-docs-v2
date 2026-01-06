@@ -1,4 +1,6 @@
-# CreatePermissionsGroup
+---
+title: CreatePermissionsGroup
+---
 
 `CreatePermissionsGroup["name"]` creates a permissions group with the specified name.
 

@@ -1,4 +1,6 @@
-# LerchPhi
+---
+title: LerchPhi
+---
 
 `LerchPhi[z, s, a]` gives the Lerch transcendent Φ(z, s, a).
 

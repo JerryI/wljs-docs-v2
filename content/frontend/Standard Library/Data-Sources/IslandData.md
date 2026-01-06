@@ -1,4 +1,6 @@
-# IslandData
+---
+title: IslandData
+---
 
 `IslandData[entity, property]` gives the value of the specified property for the island entity.
 

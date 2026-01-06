@@ -1,4 +1,6 @@
-# ContainsExactly
+---
+title: ContainsExactly
+---
 
 `ContainsExactly[list1, list2]` yields True if list1 contains exactly the same elements as list2.
 

@@ -1,4 +1,6 @@
-# NonlocalMeansFilter
+---
+title: NonlocalMeansFilter
+---
 
 `NonlocalMeansFilter[image,r]` applies a nonlocal means filter to image by comparing a range r neighborhood to its nearby neighborhoods.
 

@@ -1,4 +1,6 @@
-# GeoVectorPlot
+---
+title: GeoVectorPlot
+---
 
 `GeoVectorPlot[vecs]` generates a vector plot from the field of geo vectors vecs.
 

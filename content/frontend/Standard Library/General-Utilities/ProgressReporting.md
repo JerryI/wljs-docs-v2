@@ -1,4 +1,6 @@
-# ProgressReporting
+---
+title: ProgressReporting
+---
 
 `ProgressReporting` is an option for various algorithmic functions that specifies whether to report the progress of the computation.
 

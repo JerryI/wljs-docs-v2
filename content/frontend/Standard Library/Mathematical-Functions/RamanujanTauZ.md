@@ -1,4 +1,6 @@
-# RamanujanTauZ
+---
+title: RamanujanTauZ
+---
 
 `RamanujanTauZ[t]` gives the Ramanujan tau Z-function Z(t).
 

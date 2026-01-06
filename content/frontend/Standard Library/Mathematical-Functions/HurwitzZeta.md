@@ -1,4 +1,6 @@
-# HurwitzZeta
+---
+title: HurwitzZeta
+---
 
 `HurwitzZeta[s, a]` gives the Hurwitz zeta function ζ(s, a).
 

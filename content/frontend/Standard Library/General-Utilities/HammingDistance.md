@@ -1,4 +1,6 @@
-# HammingDistance
+---
+title: HammingDistance
+---
 
 `HammingDistance[u, v]` gives the Hamming distance between strings or vectors u and v (the number of positions at which they differ).
 

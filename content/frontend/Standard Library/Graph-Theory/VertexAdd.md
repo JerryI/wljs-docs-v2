@@ -1,4 +1,6 @@
-# VertexAdd
+---
+title: VertexAdd
+---
 
 `VertexAdd[g, v]` makes a graph by adding the vertex v to the graph g.
 

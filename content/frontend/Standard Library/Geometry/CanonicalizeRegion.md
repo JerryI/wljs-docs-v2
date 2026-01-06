@@ -1,4 +1,6 @@
-# CanonicalizeRegion
+---
+title: CanonicalizeRegion
+---
 
 `CanonicalizeRegion[reg]` gives a canonical representation of the region reg.
 

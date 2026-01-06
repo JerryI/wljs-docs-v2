@@ -1,4 +1,6 @@
-# General
+---
+title: General
+---
 
 `General` is a symbol to which general system messages are attached.
 

@@ -1,4 +1,6 @@
-# InscribedBall
+---
+title: InscribedBall
+---
 
 `InscribedBall[{p1,p2,…}]` gives the largest ball that lies inside the convex hull of the points p1,p2,….
 

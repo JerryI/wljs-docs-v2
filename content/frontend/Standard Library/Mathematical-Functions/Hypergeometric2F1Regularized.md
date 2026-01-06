@@ -1,4 +1,6 @@
-# Hypergeometric2F1Regularized
+---
+title: Hypergeometric2F1Regularized
+---
 
 `Hypergeometric2F1Regularized[a, b, c, z]` is the regularized hypergeometric function 2F1(a, b; c; z)/Γ(c).
 

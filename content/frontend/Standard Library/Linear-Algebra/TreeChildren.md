@@ -1,4 +1,6 @@
-# TreeChildren
+---
+title: TreeChildren
+---
 
 `TreeChildren[tree]` extracts the children of the root of the `Tree` object tree.
 

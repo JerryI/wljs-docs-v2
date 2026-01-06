@@ -1,4 +1,6 @@
-# DiagonalizableMatrixQ
+---
+title: DiagonalizableMatrixQ
+---
 
 `DiagonalizableMatrixQ[m]` gives True if m is diagonalizable, and False otherwise.
 

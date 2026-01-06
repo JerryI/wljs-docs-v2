@@ -1,4 +1,6 @@
-# Disk
+---
+title: Disk
+---
 
 `Disk[{x, y}, r]` represents a filled disk of radius `r` centered at `{x, y}`. `Disk[{x, y}]` gives a unit disk.
 

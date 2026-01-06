@@ -1,4 +1,6 @@
-# Prepend
+---
+title: Prepend
+---
 
 `Prepend[expr, elem]` gives expr with elem prepended.
 

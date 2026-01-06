@@ -1,4 +1,6 @@
-# ColorQ
+---
+title: ColorQ
+---
 
 `ColorQ[color]` yields True if color is a valid color directive and False otherwise.
 

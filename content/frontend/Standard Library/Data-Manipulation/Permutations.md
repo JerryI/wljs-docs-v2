@@ -1,4 +1,6 @@
-# Permutations
+---
+title: Permutations
+---
 
 `Permutations[list]` generates all permutations of the elements. `Permutations[list, {n}]` gives permutations of exactly `n` elements.
 

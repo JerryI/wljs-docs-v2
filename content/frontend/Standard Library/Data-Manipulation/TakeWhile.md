@@ -1,4 +1,6 @@
-# TakeWhile
+---
+title: TakeWhile
+---
 
 `TakeWhile[list, crit]` gives elements ei from the beginning of list, continuing so long as crit[ei] is True.
 

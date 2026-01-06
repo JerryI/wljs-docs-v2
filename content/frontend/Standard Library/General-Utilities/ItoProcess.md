@@ -1,4 +1,6 @@
-# ItoProcess
+---
+title: ItoProcess
+---
 
 `ItoProcess[{a, b}, x, t]` represents an Ito process x(t), where dx(t) = a(t,x(t))dt + b(t,x(t))·dw(t).
 

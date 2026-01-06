@@ -1,4 +1,6 @@
-# Pluralize
+---
+title: Pluralize
+---
 
 `Pluralize["noun"]` gives the plural form of the English word "noun".
 

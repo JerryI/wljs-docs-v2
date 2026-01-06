@@ -1,4 +1,6 @@
-# DeBruijnSequence
+---
+title: DeBruijnSequence
+---
 
 `DeBruijnSequence[list, n]` gives a de Bruijn sequence on the elements in list taken n at a time.
 

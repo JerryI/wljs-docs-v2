@@ -1,4 +1,6 @@
-# EllipticTheta
+---
+title: EllipticTheta
+---
 
 `EllipticTheta[a,u,q]` gives the theta function ϑa(u,q) (a=1,…,4).
 

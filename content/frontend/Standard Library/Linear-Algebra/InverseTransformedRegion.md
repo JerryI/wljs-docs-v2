@@ -1,4 +1,6 @@
-# InverseTransformedRegion
+---
+title: InverseTransformedRegion
+---
 
 `InverseTransformedRegion[reg, f, n]` represents the inverse transformed region {p ∈ ℝⁿ | f(p) ∈ reg}, where `reg` is a region and `f` is a function.
 

@@ -1,4 +1,6 @@
-# NonlinearModelFit
+---
+title: NonlinearModelFit
+---
 
 `NonlinearModelFit[data, form, params, x]` fits data to a nonlinear model with statistical analysis.
 

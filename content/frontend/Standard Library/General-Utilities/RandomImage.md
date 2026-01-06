@@ -1,4 +1,6 @@
-# RandomImage
+---
+title: RandomImage
+---
 
 `RandomImage[max]` gives an image with pseudorandom pixel values in the range 0 to *max*.
 

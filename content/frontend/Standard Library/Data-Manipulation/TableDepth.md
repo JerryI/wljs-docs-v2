@@ -1,4 +1,6 @@
-# TableDepth
+---
+title: TableDepth
+---
 
 `TableDepth` is an option for `TableForm` and `MatrixForm` that specifies the maximum number of levels to be printed in tabular or matrix format.
 

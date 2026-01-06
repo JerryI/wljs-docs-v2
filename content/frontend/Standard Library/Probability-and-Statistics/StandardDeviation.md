@@ -1,4 +1,6 @@
-# StandardDeviation
+---
+title: StandardDeviation
+---
 
 `StandardDeviation[data]` gives the sample standard deviation estimate of the elements in `data`. `StandardDeviation[dist]` gives the standard deviation of the distribution `dist`.
 

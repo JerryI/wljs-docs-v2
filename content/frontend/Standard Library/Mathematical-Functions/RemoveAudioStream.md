@@ -1,4 +1,6 @@
-# RemoveAudioStream
+---
+title: RemoveAudioStream
+---
 
 `RemoveAudioStream[]` deletes all AudioStream objects.
 

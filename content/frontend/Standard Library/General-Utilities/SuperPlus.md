@@ -1,4 +1,6 @@
-# SuperPlus
+---
+title: SuperPlus
+---
 
 `SuperPlus[expr]` displays as expr⁺.
 

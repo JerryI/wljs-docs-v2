@@ -1,4 +1,6 @@
-# Intersection
+---
+title: Intersection
+---
 
 `Intersection[list1, list2, ...]` gives a sorted list of the elements common to all the lists.
 

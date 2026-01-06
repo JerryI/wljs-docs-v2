@@ -1,4 +1,6 @@
-# EulerPhi
+---
+title: EulerPhi
+---
 
 `EulerPhi[n]` gives the Euler totient function ϕ(n), which counts integers up to n that are coprime to n.
 

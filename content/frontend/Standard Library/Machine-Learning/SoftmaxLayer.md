@@ -1,4 +1,6 @@
-# SoftmaxLayer
+---
+title: SoftmaxLayer
+---
 
 `SoftmaxLayer[]` represents a softmax net layer.
 

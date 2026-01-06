@@ -1,4 +1,6 @@
-# FactorialPower
+---
+title: FactorialPower
+---
 
 `FactorialPower[x, n]` gives the falling factorial x(x-1)(x-2)...(x-n+1).
 

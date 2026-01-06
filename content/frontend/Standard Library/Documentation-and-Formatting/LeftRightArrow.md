@@ -1,4 +1,6 @@
-# LeftRightArrow
+---
+title: LeftRightArrow
+---
 
 `LeftRightArrow[x, y, ...]` displays as x↔y↔….
 

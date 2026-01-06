@@ -1,4 +1,6 @@
-# PairedZTest
+---
+title: PairedZTest
+---
 
 `PairedZTest[data]` tests whether the mean of the data is zero.
 

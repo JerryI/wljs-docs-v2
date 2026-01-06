@@ -1,4 +1,6 @@
-# FunctionSurjective
+---
+title: FunctionSurjective
+---
 
 `FunctionSurjective[f, x]` tests whether f(x) = y has at least one solution x ∈ Reals for each y ∈ Reals.
 

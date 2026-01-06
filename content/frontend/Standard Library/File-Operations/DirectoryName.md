@@ -1,4 +1,6 @@
-# DirectoryName
+---
+title: DirectoryName
+---
 
 `DirectoryName["name"]` extracts the directory name from the specification for a file.
 

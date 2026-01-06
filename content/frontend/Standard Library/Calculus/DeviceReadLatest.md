@@ -1,4 +1,6 @@
-# DeviceReadLatest
+---
+title: DeviceReadLatest
+---
 
 `DeviceReadLatest[device]` returns the most recently collected default item from a device.
 

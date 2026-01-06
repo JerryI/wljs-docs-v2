@@ -1,4 +1,6 @@
-# PsychrometricPropertyData
+---
+title: PsychrometricPropertyData
+---
 
 `PsychrometricPropertyData[spec]` returns the psychrometric properties of moist air for the specified parameters.
 

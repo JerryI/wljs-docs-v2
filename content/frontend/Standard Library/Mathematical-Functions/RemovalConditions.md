@@ -1,4 +1,6 @@
-# RemovalConditions
+---
+title: RemovalConditions
+---
 
 `RemovalConditions` is an option for `AttachCell` that specifies conditions under which to remove the attached cell.
 

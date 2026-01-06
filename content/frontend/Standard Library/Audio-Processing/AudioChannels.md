@@ -1,4 +1,6 @@
-# AudioChannels
+---
+title: AudioChannels
+---
 
 `AudioChannels[audio]` returns the number of channels in the Audio object audio.
 

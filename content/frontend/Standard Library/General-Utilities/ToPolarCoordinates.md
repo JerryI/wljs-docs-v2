@@ -1,4 +1,6 @@
-# ToPolarCoordinates
+---
+title: ToPolarCoordinates
+---
 
 `ToPolarCoordinates[{x, y}]` gives the {r, θ} polar coordinates corresponding to the Cartesian coordinates {x, y}.
 

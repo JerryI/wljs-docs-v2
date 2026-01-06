@@ -1,4 +1,6 @@
-# FieldMasked
+---
+title: FieldMasked
+---
 
 `FieldMasked` is an option to InputField that determines whether to mask user input.
 

@@ -1,4 +1,6 @@
-# Histogram
+---
+title: Histogram
+---
 
 `Histogram[{x1, x2, ...}]` plots a histogram of the values. `Histogram[data, bspec]` uses bin width specification `bspec`.
 

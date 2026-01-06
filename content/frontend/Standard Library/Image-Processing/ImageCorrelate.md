@@ -1,4 +1,6 @@
-# ImageCorrelate
+---
+title: ImageCorrelate
+---
 
 `ImageCorrelate[image, ker]` gives the correlation of image with kernel ker.
 

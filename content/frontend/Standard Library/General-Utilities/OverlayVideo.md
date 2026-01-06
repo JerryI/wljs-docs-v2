@@ -1,4 +1,6 @@
-# OverlayVideo
+---
+title: OverlayVideo
+---
 
 `OverlayVideo[background, o]` gives the result of overlaying o onto a background video or image background.
 

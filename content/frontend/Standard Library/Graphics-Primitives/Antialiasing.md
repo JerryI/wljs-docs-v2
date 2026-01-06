@@ -1,4 +1,6 @@
-# Antialiasing
+---
+title: Antialiasing
+---
 
 `Antialiasing` is an option that specifies whether antialiasing should be done.
 

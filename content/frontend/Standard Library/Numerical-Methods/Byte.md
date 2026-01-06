@@ -1,4 +1,6 @@
-# Byte
+---
+title: Byte
+---
 
 `Byte` represents a single byte of data when used with `Read` and related functions.
 

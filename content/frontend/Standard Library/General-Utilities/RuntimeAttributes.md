@@ -1,4 +1,6 @@
-# RuntimeAttributes
+---
+title: RuntimeAttributes
+---
 
 `RuntimeAttributes` is an option for `Compile` that specifies attributes for the compiled function it creates.
 

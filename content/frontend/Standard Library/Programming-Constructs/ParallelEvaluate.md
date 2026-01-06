@@ -1,4 +1,6 @@
-# ParallelEvaluate
+---
+title: ParallelEvaluate
+---
 
 `ParallelEvaluate[expr]` evaluates the expression expr on all available parallel kernels and returns the list of results obtained.
 

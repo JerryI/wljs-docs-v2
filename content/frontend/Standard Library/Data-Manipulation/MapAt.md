@@ -1,4 +1,6 @@
-# MapAt
+---
+title: MapAt
+---
 
 `MapAt[f, expr, n]` applies f to the element at position n in expr.
 

@@ -1,4 +1,6 @@
-# GeoHemisphereBoundary
+---
+title: GeoHemisphereBoundary
+---
 
 `GeoHemisphereBoundary[]` is a one-dimensional `GeoGraphics` primitive that represents the boundary line of a hemisphere of the Earth centered at the current geo location.
 

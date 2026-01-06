@@ -1,4 +1,6 @@
-# ComplexListPlot
+---
+title: ComplexListPlot
+---
 
 `ComplexListPlot[{z1, z2, ...}]` plots complex numbers z1, z2, ... as points in the complex plane.
 

@@ -1,4 +1,6 @@
-# ArgumentsOptions
+---
+title: ArgumentsOptions
+---
 
 `ArgumentsOptions[f[args], n]` tries to separate args into a list of n positional arguments followed by a list of valid options for f.
 

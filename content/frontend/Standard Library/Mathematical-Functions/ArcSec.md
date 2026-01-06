@@ -1,4 +1,6 @@
-# ArcSec
+---
+title: ArcSec
+---
 
 `ArcSec[z]` gives the arc secant of the complex number z.
 

@@ -1,4 +1,6 @@
-# ScientificNotationThreshold
+---
+title: ScientificNotationThreshold
+---
 
 `ScientificNotationThreshold` is an option for `NumberForm` and related functions that specifies the threshold between the use of decimal notation and scientific notation to represent real numbers.
 

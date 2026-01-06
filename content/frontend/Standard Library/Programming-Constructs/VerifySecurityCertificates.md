@@ -1,4 +1,6 @@
-# VerifySecurityCertificates
+---
+title: VerifySecurityCertificates
+---
 
 `VerifySecurityCertificates` is an option for `URLRead` and related functions that specifies whether to verify security certificates when making an HTTPS connection.
 

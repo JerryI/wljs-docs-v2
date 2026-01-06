@@ -1,4 +1,6 @@
-# MatrixExp
+---
+title: MatrixExp
+---
 
 `MatrixExp[m]` gives the matrix exponential of m.
 

@@ -1,4 +1,6 @@
-# HypergeometricPFQ
+---
+title: HypergeometricPFQ
+---
 
 `HypergeometricPFQ[{a1,…,ap},{b1,…,bq},z]` is the generalized hypergeometric function pFq(a;b;z).
 

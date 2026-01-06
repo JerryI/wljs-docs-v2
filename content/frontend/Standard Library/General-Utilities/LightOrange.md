@@ -1,4 +1,6 @@
-# LightOrange
+---
+title: LightOrange
+---
 
 `LightOrange` represents a light orange color in graphics or style specifications.
 

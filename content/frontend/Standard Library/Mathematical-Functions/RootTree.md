@@ -1,4 +1,6 @@
-# RootTree
+---
+title: RootTree
+---
 
 `RootTree[tree]` returns the root node of tree as a `Tree` object.
 

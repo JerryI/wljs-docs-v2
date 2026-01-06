@@ -1,4 +1,6 @@
-# CoulombH2
+---
+title: CoulombH2
+---
 
 `CoulombH2[l, η, r]` gives the incoming irregular Coulomb wavefunction Hl(-)(η, r).
 

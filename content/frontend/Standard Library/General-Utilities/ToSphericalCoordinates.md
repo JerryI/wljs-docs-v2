@@ -1,4 +1,6 @@
-# ToSphericalCoordinates
+---
+title: ToSphericalCoordinates
+---
 
 `ToSphericalCoordinates[{x, y, z}]` gives the {r, θ, ϕ} spherical coordinates corresponding to the Cartesian coordinates {x, y, z}.
 

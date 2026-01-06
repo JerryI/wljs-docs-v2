@@ -1,4 +1,6 @@
-# MassImpermeableBoundaryValue
+---
+title: MassImpermeableBoundaryValue
+---
 
 `MassImpermeableBoundaryValue[pred, vars, pars]` represents a mass impermeable boundary condition for PDEs with predicate pred indicating where it applies, with model variables vars and global parameters pars.
 

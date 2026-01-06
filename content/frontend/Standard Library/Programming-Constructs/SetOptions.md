@@ -1,4 +1,6 @@
-# SetOptions
+---
+title: SetOptions
+---
 
 `SetOptions[s, name1 -> value1, ...]` sets the specified default options for a symbol s.
 

@@ -1,4 +1,6 @@
-# EntityProperty
+---
+title: EntityProperty
+---
 
 `EntityProperty[type, pname]` represents a property identified by pname for use in EntityValue.
 

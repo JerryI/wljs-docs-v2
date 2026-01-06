@@ -1,4 +1,6 @@
-# SymmetricMatrixQ
+---
+title: SymmetricMatrixQ
+---
 
 `SymmetricMatrixQ[m]` gives True if m is explicitly symmetric, and False otherwise.
 

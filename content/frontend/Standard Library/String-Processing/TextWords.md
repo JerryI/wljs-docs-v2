@@ -1,4 +1,6 @@
-# TextWords
+---
+title: TextWords
+---
 
 `TextWords["string"]` gives a list of the runs of characters identified as words in string.
 

@@ -1,4 +1,6 @@
-# MailFolder
+---
+title: MailFolder
+---
 
 `MailFolder[…]` represents a mail folder associated with an active mail server connection.
 

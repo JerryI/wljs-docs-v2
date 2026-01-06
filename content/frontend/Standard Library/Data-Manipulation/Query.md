@@ -1,4 +1,6 @@
-# Query
+---
+title: Query
+---
 
 `Query[op1, op2, ...]` represents a query that can be applied to a `Dataset`, with successive operators applied at deeper levels.
 

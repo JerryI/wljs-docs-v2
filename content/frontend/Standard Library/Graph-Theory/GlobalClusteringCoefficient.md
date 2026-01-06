@@ -1,4 +1,6 @@
-# GlobalClusteringCoefficient
+---
+title: GlobalClusteringCoefficient
+---
 
 `GlobalClusteringCoefficient[g]` gives the global clustering coefficient of the graph `g`.
 

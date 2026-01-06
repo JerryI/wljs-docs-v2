@@ -1,4 +1,6 @@
-# VertexContract
+---
+title: VertexContract
+---
 
 `VertexContract[g,{v1,v2,…}]` contracts a collection of vertices v1, v2, … into a single vertex of the graph g.
 

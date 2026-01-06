@@ -1,4 +1,6 @@
-# EllipticFilterModel
+---
+title: EllipticFilterModel
+---
 
 `EllipticFilterModel[n]` designs a lowpass elliptic filter of order n.
 

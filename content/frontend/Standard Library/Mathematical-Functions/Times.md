@@ -1,4 +1,6 @@
-# Times
+---
+title: Times
+---
 
 `x * y * z` or `x y z` represents a product of terms.
 

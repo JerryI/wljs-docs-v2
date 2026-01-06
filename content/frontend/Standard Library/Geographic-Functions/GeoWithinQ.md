@@ -1,4 +1,6 @@
-# GeoWithinQ
+---
+title: GeoWithinQ
+---
 
 `GeoWithinQ[reg, loc]` returns `True` if the location `loc` is contained within the region `reg`, and `False` otherwise.
 

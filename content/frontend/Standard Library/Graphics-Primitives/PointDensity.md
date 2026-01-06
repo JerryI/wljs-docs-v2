@@ -1,4 +1,6 @@
-# PointDensity
+---
+title: PointDensity
+---
 
 `PointDensity[pdata]` estimates the point density function μ(x) from point data pdata.
 

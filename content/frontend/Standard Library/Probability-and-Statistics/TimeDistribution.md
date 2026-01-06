@@ -1,4 +1,6 @@
-# TimeDistribution
+---
+title: TimeDistribution
+---
 
 `TimeDistribution[dist, tunit]` represents a linear distribution of time of day according to dist with time scale unit tunit originating at midnight.
 

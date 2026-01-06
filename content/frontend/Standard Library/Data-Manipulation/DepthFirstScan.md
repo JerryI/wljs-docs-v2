@@ -1,4 +1,6 @@
-# DepthFirstScan
+---
+title: DepthFirstScan
+---
 
 `DepthFirstScan[g, s, {event1 -> f1, event2 -> f2, ...}]` performs a depth-first scan of the graph g starting at the vertex s and evaluates fi whenever "eventi" occurs.
 

@@ -1,4 +1,6 @@
-# RegionFit
+---
+title: RegionFit
+---
 
 `RegionFit[{p1, p2, ...}, "model"]` finds a geometric region "model" that best fits the points p1, p2, ….
 

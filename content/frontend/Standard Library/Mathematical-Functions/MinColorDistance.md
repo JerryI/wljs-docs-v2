@@ -1,4 +1,6 @@
-# MinColorDistance
+---
+title: MinColorDistance
+---
 
 `MinColorDistance` is an option for DominantColors that specifies the minimum distance between returned colors.
 

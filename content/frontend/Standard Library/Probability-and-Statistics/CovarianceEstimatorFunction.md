@@ -1,4 +1,6 @@
-# CovarianceEstimatorFunction
+---
+title: CovarianceEstimatorFunction
+---
 
 `CovarianceEstimatorFunction` is an option for generalized linear model fitting functions that specifies the estimator for the parameter covariance matrix.
 

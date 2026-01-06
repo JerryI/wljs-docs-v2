@@ -1,4 +1,6 @@
-# Inset
+---
+title: Inset
+---
 
 `Inset[obj, pos]` places an object at position `pos` in a graphic. Useful for embedding plots, images, or text.
 

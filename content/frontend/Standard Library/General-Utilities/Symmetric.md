@@ -1,4 +1,6 @@
-# Symmetric
+---
+title: Symmetric
+---
 
 `Symmetric[{s1, ..., sn}]` represents the symmetry of a tensor that is symmetric in the slots *si*.
 

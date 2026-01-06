@@ -1,4 +1,6 @@
-# PointCountDistribution
+---
+title: PointCountDistribution
+---
 
 `PointCountDistribution[pproc, reg]` represents the distribution of point counts for the point process pproc in the region reg.
 

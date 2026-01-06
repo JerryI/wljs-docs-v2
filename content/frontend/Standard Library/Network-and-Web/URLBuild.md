@@ -1,4 +1,6 @@
-# URLBuild
+---
+title: URLBuild
+---
 
 `URLBuild["path",{param1->val1,param2->val2,...}]` builds a URL with the specified path and query parameters and values parami and vali.
 

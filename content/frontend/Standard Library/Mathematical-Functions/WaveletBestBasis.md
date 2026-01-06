@@ -1,4 +1,6 @@
-# WaveletBestBasis
+---
+title: WaveletBestBasis
+---
 
 `WaveletBestBasis[dwd]` computes a best basis representation in the `DiscreteWaveletData` object dwd.
 

@@ -1,4 +1,6 @@
-# SatisfiabilityInstances
+---
+title: SatisfiabilityInstances
+---
 
 `SatisfiabilityInstances[bf]` attempts to find a choice of variables that makes the Boolean function bf yield True.
 

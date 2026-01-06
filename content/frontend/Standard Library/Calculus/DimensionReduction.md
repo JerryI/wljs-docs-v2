@@ -1,4 +1,6 @@
-# DimensionReduction
+---
+title: DimensionReduction
+---
 
 `DimensionReduction[{example1,example2,…}]` generates a `DimensionReducerFunction[…]` that projects from the space defined by the examplei to a lower-dimensional approximating manifold.
 

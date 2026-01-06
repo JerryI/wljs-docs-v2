@@ -1,4 +1,6 @@
-# Properties
+---
+title: Properties
+---
 
 `Properties` is an option that allows specification of properties to objects and items of objects.
 

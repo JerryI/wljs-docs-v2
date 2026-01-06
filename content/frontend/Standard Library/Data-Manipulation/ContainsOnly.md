@@ -1,4 +1,6 @@
-# ContainsOnly
+---
+title: ContainsOnly
+---
 
 `ContainsOnly[list1, list2]` yields `True` if list1 contains only elements that appear in list2.
 

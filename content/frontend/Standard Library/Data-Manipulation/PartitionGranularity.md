@@ -1,4 +1,6 @@
-# PartitionGranularity
+---
+title: PartitionGranularity
+---
 
 `PartitionGranularity` is an option for audio analysis functions that specifies the partitioning of the audio.
 

@@ -1,4 +1,6 @@
-# RGBColor
+---
+title: RGBColor
+---
 
 `RGBColor[r, g, b]` represents a color using red, green, and blue components (0 to 1). `RGBColor[r, g, b, a]` adds an opacity value.
 

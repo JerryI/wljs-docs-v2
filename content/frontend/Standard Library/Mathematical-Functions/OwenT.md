@@ -1,4 +1,6 @@
-# OwenT
+---
+title: OwenT
+---
 
 `OwenT[x, a]` gives Owen's T function T(x, a).
 

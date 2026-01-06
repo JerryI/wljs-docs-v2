@@ -1,4 +1,6 @@
-# JacobiCN
+---
+title: JacobiCN
+---
 
 `JacobiCN[u, m]` gives the Jacobi elliptic function cn(u|m).
 

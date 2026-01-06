@@ -1,4 +1,6 @@
-# FresnelC
+---
+title: FresnelC
+---
 
 `FresnelC[z]` gives the Fresnel cosine integral C(z).
 

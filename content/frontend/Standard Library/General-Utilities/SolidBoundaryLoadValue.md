@@ -1,4 +1,6 @@
-# SolidBoundaryLoadValue
+---
+title: SolidBoundaryLoadValue
+---
 
 `SolidBoundaryLoadValue[pred, vars, pars]` represents a boundary load condition for PDEs with predicate pred indicating where it applies, with model variables vars and global parameters pars.
 

@@ -1,4 +1,6 @@
-# AssessmentFunction
+---
+title: AssessmentFunction
+---
 
 `AssessmentFunction[key]` represents a tool for assessing whether answers are correct according to the key.
 

@@ -1,4 +1,6 @@
-# ConstantImage
+---
+title: ConstantImage
+---
 
 `ConstantImage[val, size]` gives an image of the specified size with constant pixel values of val.
 

@@ -1,4 +1,6 @@
-# E
+---
+title: E
+---
 
 `E` is the exponential constant (base of natural logarithms), with numerical value ≃2.71828.
 

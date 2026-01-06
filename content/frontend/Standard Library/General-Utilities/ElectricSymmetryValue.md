@@ -1,4 +1,6 @@
-# ElectricSymmetryValue
+---
+title: ElectricSymmetryValue
+---
 
 `ElectricSymmetryValue[pred, vars, pars]` represents an electric symmetry boundary condition for PDEs with predicate pred indicating where it applies, with model variables vars and global parameters pars.
 

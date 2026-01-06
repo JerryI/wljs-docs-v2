@@ -1,4 +1,6 @@
-# CompilationTarget
+---
+title: CompilationTarget
+---
 
 `CompilationTarget` is an option for `Compile` that specifies the target runtime for the compiled function.
 

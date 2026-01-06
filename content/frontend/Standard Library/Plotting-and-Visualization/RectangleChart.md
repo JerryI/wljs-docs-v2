@@ -1,4 +1,6 @@
-# RectangleChart
+---
+title: RectangleChart
+---
 
 `RectangleChart[{{x1, y1}, {x2, y2}, ...}]` makes a rectangle chart with bars of width xi and height yi.
 

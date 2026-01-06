@@ -1,4 +1,6 @@
-# CarmichaelLambda
+---
+title: CarmichaelLambda
+---
 
 `CarmichaelLambda[n]` gives the Carmichael function λ(n).
 

@@ -1,4 +1,6 @@
-# ParallelCombine
+---
+title: ParallelCombine
+---
 
 `ParallelCombine[f, h[e1, e2, …], comb]` evaluates f[h[e1,e2,…]] in parallel by distributing parts of the computation to all parallel kernels and combining the partial results with comb.
 

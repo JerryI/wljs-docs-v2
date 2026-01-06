@@ -1,4 +1,6 @@
-# MoyalDistribution
+---
+title: MoyalDistribution
+---
 
 `MoyalDistribution[μ, σ]` represents a Moyal distribution with location parameter μ and scale parameter σ.
 

@@ -1,4 +1,6 @@
-# FindVertexCut
+---
+title: FindVertexCut
+---
 
 `FindVertexCut[g]` finds a smallest vertex cut of the graph g.
 

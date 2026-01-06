@@ -1,4 +1,6 @@
-# NegativeSemidefiniteMatrixQ
+---
+title: NegativeSemidefiniteMatrixQ
+---
 
 `NegativeSemidefiniteMatrixQ[m]` gives True if m is explicitly negative semidefinite, and False otherwise.
 

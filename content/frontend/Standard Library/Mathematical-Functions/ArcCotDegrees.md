@@ -1,4 +1,6 @@
-# ArcCotDegrees
+---
+title: ArcCotDegrees
+---
 
 `ArcCotDegrees[z]` gives the arc cotangent in degrees of the complex number z.
 

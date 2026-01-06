@@ -1,4 +1,6 @@
-# GeoGridLines
+---
+title: GeoGridLines
+---
 
 `GeoGridLines` is an option for `GeoGraphics` that specifies what parallels and meridians to show.
 

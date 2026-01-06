@@ -1,4 +1,6 @@
-# Longest
+---
+title: Longest
+---
 
 `Longest[p]` is a pattern object that matches the longest sequence consistent with the pattern p.
 

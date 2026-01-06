@@ -1,4 +1,6 @@
-# Therefore
+---
+title: Therefore
+---
 
 `Therefore[x,y]` displays as x∴y.
 

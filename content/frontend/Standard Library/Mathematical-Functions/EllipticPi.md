@@ -1,4 +1,6 @@
-# EllipticPi
+---
+title: EllipticPi
+---
 
 `EllipticPi[n, m]` gives the complete elliptic integral of the third kind Π(n|m).
 

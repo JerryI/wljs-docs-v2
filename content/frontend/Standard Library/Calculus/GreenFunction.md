@@ -1,4 +1,6 @@
-# GreenFunction
+---
+title: GreenFunction
+---
 
 `GreenFunction[{ℒ[u[x]], ℬ[u[x]]}, u, {x, xmin, xmax}, y]` gives a Green's function for the linear differential operator ℒ with boundary conditions ℬ in the range xmin to xmax.
 

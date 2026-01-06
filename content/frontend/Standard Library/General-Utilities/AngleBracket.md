@@ -1,4 +1,6 @@
-# AngleBracket
+---
+title: AngleBracket
+---
 
 `AngleBracket[x,y,…]` displays as 〈x,y,…〉.
 

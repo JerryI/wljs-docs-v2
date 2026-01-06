@@ -1,4 +1,6 @@
-# RepeatingElement
+---
+title: RepeatingElement
+---
 
 `RepeatingElement[spec]` represents an arbitrarily repeated type of element in an interpreter, API or form specification.
 

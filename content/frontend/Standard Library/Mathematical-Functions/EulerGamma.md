@@ -1,4 +1,6 @@
-# EulerGamma
+---
+title: EulerGamma
+---
 
 `EulerGamma` is Euler's constant γ, with numerical value ≈ 0.577216.
 

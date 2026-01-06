@@ -1,4 +1,6 @@
-# SecDegrees
+---
+title: SecDegrees
+---
 
 `SecDegrees[θ]` gives the secant of θ degrees.
 

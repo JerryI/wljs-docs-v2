@@ -1,4 +1,6 @@
-# WordFrequency
+---
+title: WordFrequency
+---
 
 `WordFrequency[text, word]` gives the frequency of word in text.
 

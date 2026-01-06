@@ -1,4 +1,6 @@
-# TopologicalSort
+---
+title: TopologicalSort
+---
 
 `TopologicalSort[g]` gives a list of vertices of g in topologically sorted order for a directed acyclic graph g.
 

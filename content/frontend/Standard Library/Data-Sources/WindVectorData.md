@@ -1,4 +1,6 @@
-# WindVectorData
+---
+title: WindVectorData
+---
 
 `WindVectorData[]` gives the most recent weather station measurement for wind vector near the current location.
 

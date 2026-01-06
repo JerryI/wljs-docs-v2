@@ -1,4 +1,6 @@
-# AiryBiPrime
+---
+title: AiryBiPrime
+---
 
 `AiryBiPrime[z]` gives the derivative of the Airy function Bi'(z).
 

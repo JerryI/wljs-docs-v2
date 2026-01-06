@@ -1,4 +1,6 @@
-# BinaryWrite
+---
+title: BinaryWrite
+---
 
 `BinaryWrite[channel, b]` writes a byte of data, specified as an integer from 0 to 255.
 

@@ -1,4 +1,6 @@
-# CenterArray
+---
+title: CenterArray
+---
 
 `CenterArray[a, n]` creates a list of length n with the elements of a at the center and zeros elsewhere.
 

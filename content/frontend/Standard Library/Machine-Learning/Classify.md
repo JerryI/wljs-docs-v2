@@ -1,4 +1,6 @@
-# Classify
+---
+title: Classify
+---
 
 `Classify[{in1 -> class1, in2 -> class2, ...}]` generates a ClassifierFunction that attempts to predict class from input examples.
 

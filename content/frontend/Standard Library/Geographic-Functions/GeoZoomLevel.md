@@ -1,4 +1,6 @@
-# GeoZoomLevel
+---
+title: GeoZoomLevel
+---
 
 `GeoZoomLevel` is an option for specifying the resolution at which to render a map.
 

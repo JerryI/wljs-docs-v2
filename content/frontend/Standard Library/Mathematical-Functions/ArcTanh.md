@@ -1,4 +1,6 @@
-# ArcTanh
+---
+title: ArcTanh
+---
 
 `ArcTanh[z]` gives the inverse hyperbolic tangent tanh⁻¹(z) of the complex number z.
 

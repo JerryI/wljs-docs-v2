@@ -1,4 +1,6 @@
-# HeunT
+---
+title: HeunT
+---
 
 `HeunT[q, α, γ, δ, ϵ, z]` gives the tri-confluent Heun function.
 

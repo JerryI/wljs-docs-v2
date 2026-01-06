@@ -1,4 +1,6 @@
-# ExternalStorageObject
+---
+title: ExternalStorageObject
+---
 
 `ExternalStorageObject[location]` represents a file stored in an external location.
 

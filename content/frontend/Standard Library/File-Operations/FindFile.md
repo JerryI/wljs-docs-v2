@@ -1,4 +1,6 @@
-# FindFile
+---
+title: FindFile
+---
 
 `FindFile[name]` finds the file with the specified name that would be loaded by Get[name] and related functions.
 

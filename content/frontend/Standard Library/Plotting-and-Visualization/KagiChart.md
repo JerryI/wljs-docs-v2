@@ -1,4 +1,6 @@
-# KagiChart
+---
+title: KagiChart
+---
 
 `KagiChart[{{date1, p1}, {date2, p2}, ...}]` makes a Kagi chart with prices pi at date datei.
 

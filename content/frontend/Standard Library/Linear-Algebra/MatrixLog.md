@@ -1,4 +1,6 @@
-# MatrixLog
+---
+title: MatrixLog
+---
 
 `MatrixLog[m]` gives the matrix logarithm of a matrix m.
 

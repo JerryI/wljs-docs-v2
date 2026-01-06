@@ -1,4 +1,6 @@
-# SequenceFoldList
+---
+title: SequenceFoldList
+---
 
 `SequenceFoldList[f, {x1, ..., xn}, {a1, a2, ...}]` gives {x1, ..., xn, f[x1, ..., xn, a1], f[x2, ..., xn, f[x1, ..., xn, a1], a2], ...}.
 

@@ -1,4 +1,6 @@
-# HararyGraph
+---
+title: HararyGraph
+---
 
 `HararyGraph[k,n]` generates the minimal k-connected graph on n vertices Hk,n.
 

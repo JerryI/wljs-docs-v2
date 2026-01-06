@@ -1,4 +1,6 @@
-# ProcessEstimator
+---
+title: ProcessEstimator
+---
 
 `ProcessEstimator` is an option to `EstimatedProcess` and `FindProcessParameters` that specifies what process parameter estimator to use.
 

@@ -1,4 +1,6 @@
-# CrossingPolygon
+---
+title: CrossingPolygon
+---
 
 `CrossingPolygon[{p1,p2,…,pn}]` gives a Polygon representing all points for which a ray from the point in any direction in the plane crosses the line segments {p1,p2},…,{pn-1,pn},{pn,p1} an odd number of times.
 

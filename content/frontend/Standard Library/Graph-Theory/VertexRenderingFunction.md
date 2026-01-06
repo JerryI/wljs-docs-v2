@@ -1,4 +1,6 @@
-# VertexRenderingFunction
+---
+title: VertexRenderingFunction
+---
 
 `VertexRenderingFunction` is an option for `GraphPlot` and related functions that gives a function to generate the graphics primitives to use in rendering each vertex.
 

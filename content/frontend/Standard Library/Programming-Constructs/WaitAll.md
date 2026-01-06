@@ -1,4 +1,6 @@
-# WaitAll
+---
+title: WaitAll
+---
 
 `WaitAll[expr]` waits for all concurrent evaluations represented by EvaluationObject expressions in expr to finish, then returns the resulting expression obtained.
 

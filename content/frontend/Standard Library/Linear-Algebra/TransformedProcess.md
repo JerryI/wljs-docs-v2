@@ -1,4 +1,6 @@
-# TransformedProcess
+---
+title: TransformedProcess
+---
 
 `TransformedProcess[expr, x ⟼ proc, t]` represents the transformed process of expr where the variable x follows the random process proc and t denotes the time.
 

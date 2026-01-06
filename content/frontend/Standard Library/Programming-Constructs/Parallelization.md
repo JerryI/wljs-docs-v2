@@ -1,4 +1,6 @@
-# Parallelization
+---
+title: Parallelization
+---
 
 `Parallelization` is an option for `Compile` that specifies whether it should create a compiled function that could run in parallel.
 

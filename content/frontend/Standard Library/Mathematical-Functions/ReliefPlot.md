@@ -1,4 +1,6 @@
-# ReliefPlot
+---
+title: ReliefPlot
+---
 
 `ReliefPlot[array]` generates a relief plot of an array of height values.
 

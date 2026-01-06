@@ -1,4 +1,6 @@
-# VertexCorrelationSimilarity
+---
+title: VertexCorrelationSimilarity
+---
 
 `VertexCorrelationSimilarity[g, u, v]` gives the correlation similarity between vertices u and v of the graph g.
 

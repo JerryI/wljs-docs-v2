@@ -1,4 +1,6 @@
-# EntityPropertyClass
+---
+title: EntityPropertyClass
+---
 
 `EntityPropertyClass[type,pcname]` represents a class of properties identified by the name pcname.
 

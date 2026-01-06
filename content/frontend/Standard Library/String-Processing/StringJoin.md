@@ -1,4 +1,6 @@
-# StringJoin
+---
+title: StringJoin
+---
 
 `StringJoin["s1", "s2", ...]` or `"s1" <> "s2" <> ...` yields a string consisting of the concatenation of the strings.
 

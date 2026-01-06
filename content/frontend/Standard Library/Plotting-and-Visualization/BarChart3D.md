@@ -1,4 +1,6 @@
-# BarChart3D
+---
+title: BarChart3D
+---
 
 `BarChart3D[{y1, y2, ...}]` makes a 3D bar chart with bar lengths y1, y2, ....
 

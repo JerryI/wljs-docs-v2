@@ -1,4 +1,6 @@
-# TimeConstrained
+---
+title: TimeConstrained
+---
 
 `TimeConstrained[expr, t]` evaluates expr, stopping after t seconds. `TimeConstrained[expr, t, failexpr]` returns failexpr if the time constraint is not met.
 

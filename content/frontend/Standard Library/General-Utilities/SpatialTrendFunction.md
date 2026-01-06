@@ -1,4 +1,6 @@
-# SpatialTrendFunction
+---
+title: SpatialTrendFunction
+---
 
 `SpatialTrendFunction` is an option to `SpatialEstimate` that specifies what global trend model to use for data.
 

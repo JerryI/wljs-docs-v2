@@ -1,4 +1,6 @@
-# MaxwellDistribution
+---
+title: MaxwellDistribution
+---
 
 `MaxwellDistribution[σ]` represents a Maxwell distribution with scale parameter σ.
 

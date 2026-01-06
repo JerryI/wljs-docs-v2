@@ -1,4 +1,6 @@
-# MeshCellStyle
+---
+title: MeshCellStyle
+---
 
 `MeshCellStyle` is an option and annotation of `MeshRegion`, `BoundaryMeshRegion`, and related functions that specifies styles to use for mesh cells.
 

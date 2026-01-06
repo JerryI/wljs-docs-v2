@@ -1,4 +1,6 @@
-# BarcodeRecognize
+---
+title: BarcodeRecognize
+---
 
 `BarcodeRecognize[image]` recognizes a barcode in image and returns it as a string.
 

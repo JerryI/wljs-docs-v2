@@ -1,4 +1,6 @@
-# TruncatedDistribution
+---
+title: TruncatedDistribution
+---
 
 `TruncatedDistribution[{xmin, xmax}, dist]` represents the distribution obtained by truncating the values of dist to lie between xmin and xmax.
 

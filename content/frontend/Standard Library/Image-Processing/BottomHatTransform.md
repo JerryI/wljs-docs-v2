@@ -1,4 +1,6 @@
-# BottomHatTransform
+---
+title: BottomHatTransform
+---
 
 `BottomHatTransform[image, ker]` gives the morphological bottom-hat transform of image with respect to structuring element ker.
 

@@ -1,4 +1,6 @@
-# RegionBounds
+---
+title: RegionBounds
+---
 
 `RegionBounds[reg]` gives the bounding box for the region.
 

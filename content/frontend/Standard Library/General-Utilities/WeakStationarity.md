@@ -1,4 +1,6 @@
-# WeakStationarity
+---
+title: WeakStationarity
+---
 
 `WeakStationarity[proc]` gives conditions for the process proc to be weakly stationary.
 

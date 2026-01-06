@@ -1,4 +1,6 @@
-# NetUnfold
+---
+title: NetUnfold
+---
 
 `NetUnfold[fnet]` produces the elementary net of the folded net fnet, exposing the recurrent states.
 

@@ -1,4 +1,6 @@
-# RamanujanTauL
+---
+title: RamanujanTauL
+---
 
 `RamanujanTauL[s]` gives the Ramanujan tau Dirichlet L-function L(s).
 

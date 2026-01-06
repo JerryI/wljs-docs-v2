@@ -1,4 +1,6 @@
-# MantissaExponent
+---
+title: MantissaExponent
+---
 
 `MantissaExponent[x]` gives a list containing the mantissa and exponent of a number x.
 

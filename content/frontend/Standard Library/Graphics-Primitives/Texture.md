@@ -1,4 +1,6 @@
-# Texture
+---
+title: Texture
+---
 
 `Texture[obj]` is a graphics directive that specifies that obj should be used as a texture on faces of polygons and other filled graphics objects.
 

@@ -1,4 +1,6 @@
-# LinkRankCentrality
+---
+title: LinkRankCentrality
+---
 
 `LinkRankCentrality[g, α]` gives the link-rank centralities for edges in the graph g and weight α.
 

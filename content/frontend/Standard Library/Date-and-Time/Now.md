@@ -1,4 +1,6 @@
-# Now
+---
+title: Now
+---
 
 `Now` gives a `DateObject` representing the current moment in time, including date and time.
 

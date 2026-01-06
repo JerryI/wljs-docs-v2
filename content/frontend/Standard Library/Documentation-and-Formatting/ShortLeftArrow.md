@@ -1,4 +1,6 @@
-# ShortLeftArrow
+---
+title: ShortLeftArrow
+---
 
 `ShortLeftArrow[x, y, ...]` displays as x←y←….
 

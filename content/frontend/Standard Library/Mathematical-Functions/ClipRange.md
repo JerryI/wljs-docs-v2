@@ -1,4 +1,6 @@
-# ClipRange
+---
+title: ClipRange
+---
 
 `ClipRange` is an option to `Raster3D` that specifies a rectangular region that is cut away from the resulting view.
 

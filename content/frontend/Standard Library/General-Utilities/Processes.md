@@ -1,4 +1,6 @@
-# Processes
+---
+title: Processes
+---
 
 `Processes[]` returns a list of currently running external processes, started in this Wolfram Language session.
 

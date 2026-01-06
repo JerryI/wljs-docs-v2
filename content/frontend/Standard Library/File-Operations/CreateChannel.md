@@ -1,4 +1,6 @@
-# CreateChannel
+---
+title: CreateChannel
+---
 
 `CreateChannel[]` creates a new channel for channel communication, with a generated name.
 

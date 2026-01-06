@@ -1,4 +1,6 @@
-# ListSliceContourPlot3D
+---
+title: ListSliceContourPlot3D
+---
 
 `ListSliceContourPlot3D[farr, surf]` generates a contour plot of the 3D array of values sliced to the surface surf.
 

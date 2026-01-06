@@ -1,4 +1,6 @@
-# GaussianUnitaryMatrixDistribution
+---
+title: GaussianUnitaryMatrixDistribution
+---
 
 `GaussianUnitaryMatrixDistribution[σ, n]` represents a Gaussian unitary matrix distribution with matrix dimensions {n, n} and scale parameter σ.
 

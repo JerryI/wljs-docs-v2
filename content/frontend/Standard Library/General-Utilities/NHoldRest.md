@@ -1,4 +1,6 @@
-# NHoldRest
+---
+title: NHoldRest
+---
 
 `NHoldRest` is an attribute which specifies that all but the first argument to a function should not be affected by `N`.
 

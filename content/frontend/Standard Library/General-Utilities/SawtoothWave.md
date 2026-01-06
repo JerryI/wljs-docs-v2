@@ -1,4 +1,6 @@
-# SawtoothWave
+---
+title: SawtoothWave
+---
 
 `SawtoothWave[x]` gives a sawtooth wave that varies from 0 to 1 with unit period.
 

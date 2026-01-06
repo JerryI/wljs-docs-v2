@@ -1,4 +1,6 @@
-# MaximalBy
+---
+title: MaximalBy
+---
 
 `MaximalBy[data, f]` returns a list of the elements e_i of data for which the value of f[e_i] is maximal.
 

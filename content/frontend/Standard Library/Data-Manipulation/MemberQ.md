@@ -1,4 +1,6 @@
-# MemberQ
+---
+title: MemberQ
+---
 
 `MemberQ[list, form]` returns `True` if an element of list matches form, and `False` otherwise.
 

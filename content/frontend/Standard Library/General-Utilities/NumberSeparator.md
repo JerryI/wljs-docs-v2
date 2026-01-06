@@ -1,4 +1,6 @@
-# NumberSeparator
+---
+title: NumberSeparator
+---
 
 `NumberSeparator` is an option for NumberForm and related functions that gives the string to insert at breaks between digits.
 

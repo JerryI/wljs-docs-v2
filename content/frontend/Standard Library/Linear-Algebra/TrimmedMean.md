@@ -1,4 +1,6 @@
-# TrimmedMean
+---
+title: TrimmedMean
+---
 
 `TrimmedMean[list, f]` gives the mean of the elements in list after dropping a fraction f of the smallest and largest elements.
 

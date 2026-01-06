@@ -1,4 +1,6 @@
-# PlusMinus
+---
+title: PlusMinus
+---
 
 `PlusMinus[x]` displays as ±x.
 

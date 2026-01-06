@@ -1,4 +1,6 @@
-# RegionSimilar
+---
+title: RegionSimilar
+---
 
 `RegionSimilar[reg1, reg2]` tests whether the regions reg1 and reg2 are similar.
 

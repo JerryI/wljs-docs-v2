@@ -1,4 +1,6 @@
-# Indexed
+---
+title: Indexed
+---
 
 `Indexed[expr, i]` represents the component of expr with index i and formats as expr_i.
 

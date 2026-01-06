@@ -1,4 +1,6 @@
-# ListStepPlot
+---
+title: ListStepPlot
+---
 
 `ListStepPlot[{y1, y2, ...}]` plots the values y1, y2, ... in steps at points 1, 2, ....
 

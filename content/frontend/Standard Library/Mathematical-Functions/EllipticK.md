@@ -1,4 +1,6 @@
-# EllipticK
+---
+title: EllipticK
+---
 
 `EllipticK[m]` gives the complete elliptic integral of the first kind K(m).
 

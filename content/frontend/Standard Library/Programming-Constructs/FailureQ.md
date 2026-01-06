@@ -1,4 +1,6 @@
-# FailureQ
+---
+title: FailureQ
+---
 
 `FailureQ[expr]` gives `True` if expr has head `Failure` or is `$Failed` or `$Aborted`.
 

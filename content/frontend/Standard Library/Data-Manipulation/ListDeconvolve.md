@@ -1,4 +1,6 @@
-# ListDeconvolve
+---
+title: ListDeconvolve
+---
 
 `ListDeconvolve[ker, list]` gives a deconvolution of list using kernel ker.
 

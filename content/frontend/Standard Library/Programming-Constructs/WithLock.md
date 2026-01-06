@@ -1,4 +1,6 @@
-# WithLock
+---
+title: WithLock
+---
 
 `WithLock[File["path"], expr]` locks the file path, evaluates expr, then releases the file.
 

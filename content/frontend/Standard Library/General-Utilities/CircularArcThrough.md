@@ -1,4 +1,6 @@
-# CircularArcThrough
+---
+title: CircularArcThrough
+---
 
 `CircularArcThrough[{p1, p2, ...}]` represents a circular arc passing through the points pi.
 

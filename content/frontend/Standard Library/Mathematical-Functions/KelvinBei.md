@@ -1,4 +1,6 @@
-# KelvinBei
+---
+title: KelvinBei
+---
 
 `KelvinBei[z]` gives the Kelvin function bei(z).
 

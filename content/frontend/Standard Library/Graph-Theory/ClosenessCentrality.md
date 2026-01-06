@@ -1,4 +1,6 @@
-# ClosenessCentrality
+---
+title: ClosenessCentrality
+---
 
 `ClosenessCentrality[g]` gives a list of closeness centralities for the vertices in the graph g.
 

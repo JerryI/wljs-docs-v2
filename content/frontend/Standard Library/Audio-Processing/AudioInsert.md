@@ -1,4 +1,6 @@
-# AudioInsert
+---
+title: AudioInsert
+---
 
 `AudioInsert[audio, t -> new]` inserts the audio signal new at time t.
 

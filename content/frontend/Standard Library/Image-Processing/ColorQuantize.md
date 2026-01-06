@@ -1,4 +1,6 @@
-# ColorQuantize
+---
+title: ColorQuantize
+---
 
 `ColorQuantize[image]` gives an approximation to image by quantizing to distinct colors.
 

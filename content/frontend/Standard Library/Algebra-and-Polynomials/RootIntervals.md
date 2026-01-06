@@ -1,4 +1,6 @@
-# RootIntervals
+---
+title: RootIntervals
+---
 
 `RootIntervals[{poly1, poly2, ...}]` gives a list of isolating intervals for the real roots of any of the polyi, together with a list of which polynomials actually have each successive root.
 

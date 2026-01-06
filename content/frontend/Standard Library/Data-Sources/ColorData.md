@@ -1,4 +1,6 @@
-# ColorData
+---
+title: ColorData
+---
 
 `ColorData["scheme"]` gives a function that generates colors in the named color scheme when applied to parameter values.
 

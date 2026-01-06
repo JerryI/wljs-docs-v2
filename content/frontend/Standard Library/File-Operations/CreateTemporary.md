@@ -1,4 +1,6 @@
-# CreateTemporary
+---
+title: CreateTemporary
+---
 
 `CreateTemporary[]` creates a temporary file with a unique name in the default temporary directory and returns the name of the file.
 

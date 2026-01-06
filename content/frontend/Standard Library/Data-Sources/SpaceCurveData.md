@@ -1,4 +1,6 @@
-# SpaceCurveData
+---
+title: SpaceCurveData
+---
 
 `SpaceCurveData[entity, property]` gives the value of the specified property for the space curve entity.
 

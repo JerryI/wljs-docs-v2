@@ -1,4 +1,6 @@
-# FullDefinition
+---
+title: FullDefinition
+---
 
 `FullDefinition[symbol]` prints as the definitions given for symbol, and all symbols on which these depend.
 

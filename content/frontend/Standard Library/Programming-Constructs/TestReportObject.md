@@ -1,4 +1,6 @@
-# TestReportObject
+---
+title: TestReportObject
+---
 
 `TestReportObject[...]` gives an object that represents the results of `TestReport`.
 

@@ -1,4 +1,6 @@
-# AdjacencyList
+---
+title: AdjacencyList
+---
 
 `AdjacencyList[g,v]` gives a list of vertices adjacent to vertex v.
 

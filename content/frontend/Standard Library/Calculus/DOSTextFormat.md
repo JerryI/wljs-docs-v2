@@ -1,4 +1,6 @@
-# DOSTextFormat
+---
+title: DOSTextFormat
+---
 
 `DOSTextFormat` is an option for `OpenRead`, `OpenWrite`, and `OpenAppend` that specifies whether files should be opened in text mode. With `DOSTextFormat -> True`, Mathematica uses the normal text format for the type of computer on which Mathematica is running. Text mode typically entails translation of a text file's line-ending characters into the newline character "\\n". With `DOSTextFormat -> False`, files are opened in "binary mode", in which no such translation is performed.
 

@@ -1,4 +1,6 @@
-# ConfirmAssert
+---
+title: ConfirmAssert
+---
 
 `ConfirmAssert[test]` confirms that test is True, otherwise throwing an error to the nearest surrounding Enclose.
 

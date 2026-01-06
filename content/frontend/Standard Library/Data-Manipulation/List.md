@@ -1,4 +1,6 @@
-# List
+---
+title: List
+---
 
 `{e1, e2, ...}` is a list of elements.
 

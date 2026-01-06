@@ -1,4 +1,6 @@
-# Del
+---
+title: Del
+---
 
 `Del[x]` displays as ∇x.
 

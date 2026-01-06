@@ -1,4 +1,6 @@
-# PeakDetect
+---
+title: PeakDetect
+---
 
 `PeakDetect[list]` gives a binary list in which 1s correspond to peak positions in *list*.
 

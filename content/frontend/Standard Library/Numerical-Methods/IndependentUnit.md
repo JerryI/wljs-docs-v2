@@ -1,4 +1,6 @@
-# IndependentUnit
+---
+title: IndependentUnit
+---
 
 `IndependentUnit[string]` represents a unit string with no relationship to other units within a Quantity.
 

@@ -1,4 +1,6 @@
-# SocketObject
+---
+title: SocketObject
+---
 
 `SocketObject[...]` represents a network socket connection.
 

@@ -1,4 +1,6 @@
-# StartProcess
+---
+title: StartProcess
+---
 
 `StartProcess["executable"]` executes an external program, yielding a ProcessObject to represent the resulting subprocess.
 

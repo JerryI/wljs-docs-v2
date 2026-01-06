@@ -1,4 +1,6 @@
-# HiddenMarkovProcess
+---
+title: HiddenMarkovProcess
+---
 
 `HiddenMarkovProcess[i0, m, em]` represents a discrete-time, finite-state hidden Markov process with transition matrix m, emission matrix em, and initial hidden state i0.
 

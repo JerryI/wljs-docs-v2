@@ -1,4 +1,6 @@
-# Octahedron
+---
+title: Octahedron
+---
 
 `Octahedron[]` represents a regular octahedron centered at the origin with unit edge length.
 

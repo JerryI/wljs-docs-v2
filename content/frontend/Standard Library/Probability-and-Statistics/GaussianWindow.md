@@ -1,4 +1,6 @@
-# GaussianWindow
+---
+title: GaussianWindow
+---
 
 `GaussianWindow[x]` represents a Gaussian window function of x.
 

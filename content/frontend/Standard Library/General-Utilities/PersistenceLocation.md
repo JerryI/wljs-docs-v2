@@ -1,4 +1,6 @@
-# PersistenceLocation
+---
+title: PersistenceLocation
+---
 
 `PersistenceLocation["type"]` represents a persistence location of the given type.
 

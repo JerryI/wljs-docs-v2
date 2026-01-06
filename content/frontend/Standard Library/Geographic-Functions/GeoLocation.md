@@ -1,4 +1,6 @@
-# GeoLocation
+---
+title: GeoLocation
+---
 
 `GeoLocation` is an option for `Interpreter` and related functions that specifies the location to assume for semantic interpretation.
 

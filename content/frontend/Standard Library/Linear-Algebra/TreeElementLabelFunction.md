@@ -1,4 +1,6 @@
-# TreeElementLabelFunction
+---
+title: TreeElementLabelFunction
+---
 
 `TreeElementLabelFunction` is an option for `Tree` and related functions that specifies functions to use to generate subtree element labels.
 

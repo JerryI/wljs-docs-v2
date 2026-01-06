@@ -1,4 +1,6 @@
-# Skip
+---
+title: Skip
+---
 
 `Skip[stream,type]` skips one object of the specified type in an input stream.
 

@@ -1,4 +1,6 @@
-# MinDetect
+---
+title: MinDetect
+---
 
 `MinDetect[image]` gives a binary image in which white pixels correspond to constant extended minima in image.
 

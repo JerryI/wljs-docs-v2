@@ -1,4 +1,6 @@
-# RadialGradientImage
+---
+title: RadialGradientImage
+---
 
 `RadialGradientImage[gcol]` returns an image with values radially changing from center to corners based on gradient color gcol.
 

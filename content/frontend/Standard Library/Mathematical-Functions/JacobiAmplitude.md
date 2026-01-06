@@ -1,4 +1,6 @@
-# JacobiAmplitude
+---
+title: JacobiAmplitude
+---
 
 `JacobiAmplitude[u, m]` gives the amplitude am(u|m) for Jacobi elliptic functions.
 

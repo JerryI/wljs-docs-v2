@@ -1,4 +1,6 @@
-# NoneTrue
+---
+title: NoneTrue
+---
 
 `NoneTrue[{e1, e2, ...}, test]` yields `True` if `test[ei]` is `False` for all elements.
 

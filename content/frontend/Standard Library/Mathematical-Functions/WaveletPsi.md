@@ -1,4 +1,6 @@
-# WaveletPsi
+---
+title: WaveletPsi
+---
 
 `WaveletPsi[wave, x]` gives the wavelet function ψ(x) for the symbolic wavelet wave evaluated at x.
 

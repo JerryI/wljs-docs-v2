@@ -1,4 +1,6 @@
-# FortranForm
+---
+title: FortranForm
+---
 
 `FortranForm[expr]` prints expr in Fortran language syntax.
 

@@ -1,4 +1,6 @@
-# PolyGamma
+---
+title: PolyGamma
+---
 
 `PolyGamma[z]` gives the digamma function ψ(z).
 

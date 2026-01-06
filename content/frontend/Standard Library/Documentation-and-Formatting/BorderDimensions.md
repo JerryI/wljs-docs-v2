@@ -1,4 +1,6 @@
-# BorderDimensions
+---
+title: BorderDimensions
+---
 
 `BorderDimensions[image]` gives the pixel width of uniform borders of image in the form {{left, right}, {bottom, top}}.
 

@@ -1,4 +1,6 @@
-# QuestionInterface
+---
+title: QuestionInterface
+---
 
 `QuestionInterface[type, <|p1 -> s1, p2 -> s2, ...|>]` defines an interface for a QuestionObject using the given type and properties pi with settings si.
 

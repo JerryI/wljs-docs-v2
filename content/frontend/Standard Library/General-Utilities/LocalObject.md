@@ -1,4 +1,6 @@
-# LocalObject
+---
+title: LocalObject
+---
 
 `LocalObject[]` represents a new anonymous local object.
 

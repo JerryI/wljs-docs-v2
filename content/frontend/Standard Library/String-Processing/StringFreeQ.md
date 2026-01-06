@@ -1,4 +1,6 @@
-# StringFreeQ
+---
+title: StringFreeQ
+---
 
 `StringFreeQ["string", patt]` yields `True` if no substring matches the pattern, and `False` otherwise.
 

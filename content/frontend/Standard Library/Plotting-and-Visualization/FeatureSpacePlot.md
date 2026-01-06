@@ -1,4 +1,6 @@
-# FeatureSpacePlot
+---
+title: FeatureSpacePlot
+---
 
 `FeatureSpacePlot[{example1,example2,…}]` plots features extracted from the examplei as a scatter plot.
 

@@ -1,4 +1,6 @@
-# TreeLeafCount
+---
+title: TreeLeafCount
+---
 
 `TreeLeafCount[tree]` gives the number of leaves of tree.
 

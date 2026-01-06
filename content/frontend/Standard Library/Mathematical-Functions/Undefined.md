@@ -1,4 +1,6 @@
-# Undefined
+---
+title: Undefined
+---
 
 `Undefined` is a symbol that represents a quantity with no defined value.
 

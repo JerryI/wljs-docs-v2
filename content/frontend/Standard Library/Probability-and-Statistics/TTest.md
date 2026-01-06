@@ -1,4 +1,6 @@
-# TTest
+---
+title: TTest
+---
 
 `TTest[data]` tests whether the mean of data is zero.
 

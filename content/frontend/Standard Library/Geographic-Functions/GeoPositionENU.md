@@ -1,4 +1,6 @@
-# GeoPositionENU
+---
+title: GeoPositionENU
+---
 
 `GeoPositionENU[{east, north, up}, p]` represents a position with local Cartesian coordinates `{east, north, up}` in a reference system centered at the position `p`.
 

@@ -1,4 +1,6 @@
-# Except
+---
+title: Except
+---
 
 `Except[c]` is a pattern object that matches any expression except one that matches c.
 

@@ -1,4 +1,6 @@
-# PositivelyOrientedPoints
+---
+title: PositivelyOrientedPoints
+---
 
 `PositivelyOrientedPoints[{p1, p2, p3, …, pd+1}]` tests whether the sequence of points p1, p2, p3, …, pd+1 is positively oriented.
 

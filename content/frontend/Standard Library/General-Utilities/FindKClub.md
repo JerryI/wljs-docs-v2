@@ -1,4 +1,6 @@
-# FindKClub
+---
+title: FindKClub
+---
 
 `FindKClub[g,k]` finds a largest k-club in the graph g.
 

@@ -1,4 +1,6 @@
-# ToLowerCase
+---
+title: ToLowerCase
+---
 
 `ToLowerCase[string]` yields a string in which all letters have been converted to lowercase.
 

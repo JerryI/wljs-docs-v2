@@ -1,4 +1,6 @@
-# RFixedPoints
+---
+title: RFixedPoints
+---
 
 `RFixedPoints[eqn, a[n], n]` gives the fixed points for a recurrence equation.
 

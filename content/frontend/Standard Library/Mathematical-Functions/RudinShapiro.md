@@ -1,4 +1,6 @@
-# RudinShapiro
+---
+title: RudinShapiro
+---
 
 `RudinShapiro[n]` gives the nth term in the Rudin–Shapiro sequence.
 

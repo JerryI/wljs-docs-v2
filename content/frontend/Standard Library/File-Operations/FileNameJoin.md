@@ -1,4 +1,6 @@
-# FileNameJoin
+---
+title: FileNameJoin
+---
 
 `FileNameJoin[{name1, name2, ...}]` joins path components into a file path.
 

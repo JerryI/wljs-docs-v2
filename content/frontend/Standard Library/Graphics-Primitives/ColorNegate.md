@@ -1,4 +1,6 @@
-# ColorNegate
+---
+title: ColorNegate
+---
 
 `ColorNegate[color]` gives the negative of a color.
 

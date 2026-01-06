@@ -1,4 +1,6 @@
-# ChanVeseBinarize
+---
+title: ChanVeseBinarize
+---
 
 `ChanVeseBinarize[image]` finds a two-level segmentation of image by computing optimal contours around regions of consistent intensity in image.
 

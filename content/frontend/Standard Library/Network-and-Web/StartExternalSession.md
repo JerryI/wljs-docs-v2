@@ -1,4 +1,6 @@
-# StartExternalSession
+---
+title: StartExternalSession
+---
 
 `StartExternalSession["sys"]` starts an external session using the external evaluator sys, returning an external session object.
 

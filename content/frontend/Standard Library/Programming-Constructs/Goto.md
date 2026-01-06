@@ -1,4 +1,6 @@
-# Goto
+---
+title: Goto
+---
 
 `Goto[tag]` scans for `Label[tag]`, and transfers control to that point.
 

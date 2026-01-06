@@ -1,4 +1,6 @@
-# CompatibleUnitQ
+---
+title: CompatibleUnitQ
+---
 
 `CompatibleUnitQ[quantity1, quantity2]` returns True if quantity1 and quantity2 have compatible units, and False otherwise.
 

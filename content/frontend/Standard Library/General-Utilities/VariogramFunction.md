@@ -1,4 +1,6 @@
-# VariogramFunction
+---
+title: VariogramFunction
+---
 
 `VariogramFunction` is an option to `SpatialEstimate` that specifies the local variation model to use.
 

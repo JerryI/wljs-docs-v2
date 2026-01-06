@@ -1,4 +1,6 @@
-# PacletDirectoryAdd
+---
+title: PacletDirectoryAdd
+---
 
 The experimental function `PacletDirectoryAdd` is now obsolete and is superseded by `PacletDirectoryLoad`.
 

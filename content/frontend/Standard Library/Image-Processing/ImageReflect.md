@@ -1,4 +1,6 @@
-# ImageReflect
+---
+title: ImageReflect
+---
 
 `ImageReflect[image]` reverses image by top-bottom mirror reflection.
 

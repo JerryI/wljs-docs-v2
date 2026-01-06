@@ -1,4 +1,6 @@
-# SpeciesData
+---
+title: SpeciesData
+---
 
 `SpeciesData[name, property]` gives the value of the specified property for the species entity.
 

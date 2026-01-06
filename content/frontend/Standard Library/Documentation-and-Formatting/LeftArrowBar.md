@@ -1,4 +1,6 @@
-# LeftArrowBar
+---
+title: LeftArrowBar
+---
 
 `LeftArrowBar[x,y,…]` displays as x⇤y⇤….
 

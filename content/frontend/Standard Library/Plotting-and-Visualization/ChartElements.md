@@ -1,4 +1,6 @@
-# ChartElements
+---
+title: ChartElements
+---
 
 `ChartElements` is an option to charting functions such as BarChart that specifies the graphics to use as the basis for bars or other chart elements.
 

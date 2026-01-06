@@ -1,4 +1,6 @@
-# MapApply
+---
+title: MapApply
+---
 
 `f @@@ expr` or `MapApply[f, expr]` replaces heads at level 1 of expr by f.
 

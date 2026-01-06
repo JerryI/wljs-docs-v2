@@ -1,4 +1,6 @@
-# ArrayResample
+---
+title: ArrayResample
+---
 
 `ArrayResample[array, {n1, n2, ...}]` resamples array to have dimensions {n1, n2, ...}.
 

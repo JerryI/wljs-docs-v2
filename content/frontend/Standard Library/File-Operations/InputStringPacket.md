@@ -1,4 +1,6 @@
-# InputStringPacket
+---
+title: InputStringPacket
+---
 
 `InputStringPacket[]` is a WSTP packet that requests input in string form.
 

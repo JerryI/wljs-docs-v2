@@ -1,4 +1,6 @@
-# Language
+---
+title: Language
+---
 
 `Language` is an option that specifies the language to use.
 

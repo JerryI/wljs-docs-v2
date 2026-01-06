@@ -1,4 +1,6 @@
-# GeoOrientationData
+---
+title: GeoOrientationData
+---
 
 `GeoOrientationData[date,prop]` gives the value of the property prop about the orientation of the Earth on the given date.
 

@@ -1,4 +1,6 @@
-# PrimitivePolynomialQ
+---
+title: PrimitivePolynomialQ
+---
 
 `PrimitivePolynomialQ[poly, p]` tests whether poly is a primitive polynomial modulo a prime p.
 

@@ -1,4 +1,6 @@
-# SpellingOptions
+---
+title: SpellingOptions
+---
 
 `SpellingOptions` is an option for notebooks that specifies settings for spellchecking.
 

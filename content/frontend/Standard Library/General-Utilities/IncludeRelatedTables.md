@@ -1,4 +1,6 @@
-# IncludeRelatedTables
+---
+title: IncludeRelatedTables
+---
 
 `IncludeRelatedTables` is an option for RelationalDatabase that specifies whether to include tables specified in foreign keys.
 

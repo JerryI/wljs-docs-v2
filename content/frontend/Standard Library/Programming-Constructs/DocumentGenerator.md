@@ -1,4 +1,6 @@
-# DocumentGenerator
+---
+title: DocumentGenerator
+---
 
 `DocumentGenerator[template, timespec]` represents a document generator with template template to be evaluated on the schedule defined by timespec.
 

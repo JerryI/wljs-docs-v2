@@ -1,4 +1,6 @@
-# NestList
+---
+title: NestList
+---
 
 `NestList[f, expr, n]` gives a list of the results of applying f to expr 0 through n times.
 

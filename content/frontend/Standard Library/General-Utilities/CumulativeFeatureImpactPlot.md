@@ -1,4 +1,6 @@
-# CumulativeFeatureImpactPlot
+---
+title: CumulativeFeatureImpactPlot
+---
 
 `CumulativeFeatureImpactPlot[model,data]` plots the cumulative impact of the value of each feature in data on the result of model.
 

@@ -1,4 +1,6 @@
-# Import
+---
+title: Import
+---
 
 `Import[source]` imports data from source, returning a Wolfram Language representation of it.
 

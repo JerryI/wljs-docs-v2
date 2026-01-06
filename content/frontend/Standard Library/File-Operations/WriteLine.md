@@ -1,4 +1,6 @@
-# WriteLine
+---
+title: WriteLine
+---
 
 `WriteLine[stream, "string"]` writes "string", followed by a newline, to the specified output stream.
 

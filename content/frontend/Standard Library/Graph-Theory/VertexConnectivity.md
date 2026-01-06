@@ -1,4 +1,6 @@
-# VertexConnectivity
+---
+title: VertexConnectivity
+---
 
 `VertexConnectivity[g]` gives the vertex connectivity of the graph g.
 

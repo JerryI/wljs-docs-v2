@@ -1,4 +1,6 @@
-# SecondOrderConeOptimization
+---
+title: SecondOrderConeOptimization
+---
 
 `SecondOrderConeOptimization[f, cons, vars]` finds values of variables vars that minimize the linear objective f subject to second-order cone and/or linear constraints cons.
 

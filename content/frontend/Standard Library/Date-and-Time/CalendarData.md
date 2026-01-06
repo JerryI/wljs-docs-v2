@@ -1,4 +1,6 @@
-# CalendarData
+---
+title: CalendarData
+---
 
 `CalendarData[cal]` gives the default parameters associated with the date calendar cal.
 

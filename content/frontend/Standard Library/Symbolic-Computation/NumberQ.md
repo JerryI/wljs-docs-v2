@@ -1,4 +1,6 @@
-# NumberQ
+---
+title: NumberQ
+---
 
 `NumberQ[expr]` gives `True` if expr is an explicit number, and `False` otherwise.
 

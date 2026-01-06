@@ -1,4 +1,6 @@
-# EdgeDelete
+---
+title: EdgeDelete
+---
 
 `EdgeDelete[g, e]` makes a graph by deleting the edge e from the graph g.
 

@@ -1,4 +1,6 @@
-# ResourceObject
+---
+title: ResourceObject
+---
 
 `ResourceObject["name"]` represents a resource with the specified name.
 

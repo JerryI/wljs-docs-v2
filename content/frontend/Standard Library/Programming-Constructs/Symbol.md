@@ -1,4 +1,6 @@
-# Symbol
+---
+title: Symbol
+---
 
 `Symbol["name"]` refers to a symbol with the specified name, creating it if necessary.
 

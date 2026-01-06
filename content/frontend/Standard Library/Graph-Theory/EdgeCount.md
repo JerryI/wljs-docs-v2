@@ -1,4 +1,6 @@
-# EdgeCount
+---
+title: EdgeCount
+---
 
 `EdgeCount[g]` gives the number of edges in graph g. `EdgeCount[g, patt]` counts edges matching the pattern.
 

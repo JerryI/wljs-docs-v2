@@ -1,4 +1,6 @@
-# TableDirections
+---
+title: TableDirections
+---
 
 `TableDirections` is an option for `TableForm` and `MatrixForm` which specifies whether successive dimensions should be arranged as rows or columns.
 

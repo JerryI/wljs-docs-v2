@@ -1,4 +1,6 @@
-# NumericalOrder
+---
+title: NumericalOrder
+---
 
 `NumericalOrder[e1, e2]` gives 1 if e1 < e2, -1 if e1 > e2, 0 if e1 and e2 are numerically the same, and orders by type or using canonical order if e1 and e2 are not numerically comparable.
 

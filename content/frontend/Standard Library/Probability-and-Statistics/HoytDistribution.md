@@ -1,4 +1,6 @@
-# HoytDistribution
+---
+title: HoytDistribution
+---
 
 `HoytDistribution[q, ω]` represents a Hoyt distribution with shape parameter q and spread parameter ω.
 

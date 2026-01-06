@@ -1,4 +1,6 @@
-# NyquistGridLines
+---
+title: NyquistGridLines
+---
 
 `NyquistGridLines` is an option to `NyquistPlot` that specifies contours of constant magnitude and phase of a closed-loop system.
 

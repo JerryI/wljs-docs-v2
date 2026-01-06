@@ -1,4 +1,6 @@
-# ChromaticPolynomial
+---
+title: ChromaticPolynomial
+---
 
 `ChromaticPolynomial[g, k]` gives the chromatic polynomial of the graph g.
 

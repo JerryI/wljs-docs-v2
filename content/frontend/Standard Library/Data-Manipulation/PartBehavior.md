@@ -1,4 +1,6 @@
-# PartBehavior
+---
+title: PartBehavior
+---
 
 `PartBehavior` is an option to `Query` and related functions that specifies how nonexistent parts should be resolved.
 

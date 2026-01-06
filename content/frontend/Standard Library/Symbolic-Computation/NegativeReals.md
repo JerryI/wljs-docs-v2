@@ -1,4 +1,6 @@
-# NegativeReals
+---
+title: NegativeReals
+---
 
 `NegativeReals` represents the domain of strictly negative real numbers.
 

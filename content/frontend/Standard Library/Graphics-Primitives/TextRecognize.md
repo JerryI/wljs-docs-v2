@@ -1,4 +1,6 @@
-# TextRecognize
+---
+title: TextRecognize
+---
 
 `TextRecognize[image]` recognizes text in image and returns it as a string.
 

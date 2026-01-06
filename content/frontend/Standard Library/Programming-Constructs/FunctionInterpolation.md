@@ -1,4 +1,6 @@
-# FunctionInterpolation
+---
+title: FunctionInterpolation
+---
 
 `FunctionInterpolation[expr,{x,xmin,xmax}]` evaluates expr with x running from xmin to xmax and constructs an InterpolatingFunction object which represents an approximate function corresponding to the result.
 

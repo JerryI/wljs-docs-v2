@@ -1,4 +1,6 @@
-# SemanticImportString
+---
+title: SemanticImportString
+---
 
 `SemanticImportString["string"]` attempts to import a string semantically to give a Dataset object.
 

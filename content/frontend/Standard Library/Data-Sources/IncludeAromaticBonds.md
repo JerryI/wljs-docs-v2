@@ -1,4 +1,6 @@
-# IncludeAromaticBonds
+---
+title: IncludeAromaticBonds
+---
 
 `IncludeAromaticBonds` is an option for `Molecule` that specifies whether aromatic bonds should be detected and labeled.
 

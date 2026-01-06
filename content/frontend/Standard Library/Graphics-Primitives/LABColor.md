@@ -1,4 +1,6 @@
-# LABColor
+---
+title: LABColor
+---
 
 `LABColor[l, a, b]` represents a color in the CIELAB color space with lightness l and color components a and b.
 

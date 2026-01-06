@@ -1,4 +1,6 @@
-# BilateralFilter
+---
+title: BilateralFilter
+---
 
 `BilateralFilter[data, σ, μ]` applies a bilateral filter of spatial spread σ and pixel value spread μ to data.
 

@@ -1,4 +1,6 @@
-# ImageDimensions
+---
+title: ImageDimensions
+---
 
 `ImageDimensions[image]` gives the pixel dimensions of an Image or Image3D object image.
 

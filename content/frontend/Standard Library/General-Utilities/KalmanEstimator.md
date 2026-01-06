@@ -1,4 +1,6 @@
-# KalmanEstimator
+---
+title: KalmanEstimator
+---
 
 `KalmanEstimator[ssm, {w, v}]` constructs the Kalman estimator for the `StateSpaceModel` `ssm` with process and measurement noise covariance matrices `w` and `v`.
 

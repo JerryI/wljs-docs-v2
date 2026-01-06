@@ -1,4 +1,6 @@
-# SpatialObservationRegionQ
+---
+title: SpatialObservationRegionQ
+---
 
 `SpatialObservationRegionQ[reg]` tests whether the geometric or geographic region *reg* can be an observation in spatial statistics.
 

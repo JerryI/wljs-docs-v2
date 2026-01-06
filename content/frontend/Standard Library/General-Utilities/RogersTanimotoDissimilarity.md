@@ -1,4 +1,6 @@
-# RogersTanimotoDissimilarity
+---
+title: RogersTanimotoDissimilarity
+---
 
 `RogersTanimotoDissimilarity[u,v]` gives the Rogers–Tanimoto dissimilarity between Boolean vectors u and v.
 

@@ -1,4 +1,6 @@
-# AffineTransform
+---
+title: AffineTransform
+---
 
 `AffineTransform[m]` gives a `TransformationFunction` that represents an affine transform that maps r to m.r.
 

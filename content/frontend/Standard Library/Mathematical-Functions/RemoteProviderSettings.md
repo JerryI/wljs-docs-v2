@@ -1,4 +1,6 @@
-# RemoteProviderSettings
+---
+title: RemoteProviderSettings
+---
 
 `RemoteProviderSettings` is an option for `RemoteBatchSubmit` and `RemoteBatchMapSubmit` that specifies provider-specific settings for a batch job.
 

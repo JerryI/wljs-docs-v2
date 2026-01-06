@@ -1,4 +1,6 @@
-# PolyLog
+---
+title: PolyLog
+---
 
 `PolyLog[n, z]` gives the polylogarithm function Li_n(z).
 

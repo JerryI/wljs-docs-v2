@@ -1,4 +1,6 @@
-# ChartLayout
+---
+title: ChartLayout
+---
 
 `ChartLayout` is an option to charting functions that specifies the overall layout to use.
 

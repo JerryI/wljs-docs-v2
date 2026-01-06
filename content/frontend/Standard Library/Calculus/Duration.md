@@ -1,4 +1,6 @@
-# Duration
+---
+title: Duration
+---
 
 `Duration[expr]` returns the duration of expr.
 

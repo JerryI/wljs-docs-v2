@@ -1,4 +1,6 @@
-# ClusterClassify
+---
+title: ClusterClassify
+---
 
 `ClusterClassify[data]` generates a ClassifierFunction[…] by partitioning data into clusters of similar elements.
 

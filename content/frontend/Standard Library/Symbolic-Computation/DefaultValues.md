@@ -1,4 +1,6 @@
-# DefaultValues
+---
+title: DefaultValues
+---
 
 `DefaultValues[f]` gives a list of transformation rules corresponding to default values of f.
 

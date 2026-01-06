@@ -1,4 +1,6 @@
-# ImagePad
+---
+title: ImagePad
+---
 
 `ImagePad[image, m]` pads image on all sides with m background pixels.
 
