@@ -2,7 +2,7 @@
 
 `StringTemplate["string"]` yields a TemplateObject expression that represents a string template to be applied to arguments.
 
-`StringTemplate[src]` uses File[...], URL[...] or CloudObject[...] as the source for the string template.
+`StringTemplate[src]` uses File[...], URL[...]  as the source for the string template.
 
 ## Examples
 

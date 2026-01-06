@@ -2,7 +2,6 @@
 
 `URLShorten["url"]` creates a shortened URL that redirects to "url".
 
-- `URLShorten[CloudObject[…]]` creates a shortened URL that redirects to the URL for the specified cloud object.
 
 ## Examples
 

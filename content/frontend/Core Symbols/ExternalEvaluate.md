@@ -6,7 +6,7 @@
 - `ExternalEvaluate[assoc,"cmd"]` evaluates cmd using the external evaluator specified by assoc.
 - `ExternalEvaluate[session,"cmd"]` evaluates cmd in the specified running ExternalSessionObject.
 - `ExternalEvaluate[sys->"type",…]` returns output converted to the specified type. 
-- `ExternalEvaluate[spec,obj]` evaluates the content of the specified ExternalObject, ExternalOperation, File, URL or CloudObject.
+- `ExternalEvaluate[spec,obj]` evaluates the content of the specified ExternalObject, ExternalOperation, File, URL.
 - `ExternalEvaluate[spec,assoc]` evaluates the command specified by assoc.
 - `ExternalEvaluate[spec,{cmd1,cmd2,…}]` evaluates the list of commands cmdi.
 - `ExternalEvaluate[DatabaseReference[ref],"cmd"]` evaluates cmd using the database specified by ref.

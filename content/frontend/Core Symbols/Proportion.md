@@ -17,10 +17,5 @@ Create a ratio relationship:
 Proportion[a, b] == Proportion[c, d]
 ```
 
-In traditional mathematical notation:
-
-```wolfram
-TraditionalForm[Proportion[x, y, z]]
-```
 
 *Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Proportion.html) for more details.*

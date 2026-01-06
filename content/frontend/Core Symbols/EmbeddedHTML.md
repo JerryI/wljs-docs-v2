@@ -4,7 +4,6 @@
 
 `EmbeddedHTML[URL["url"]]` formats as a rendering of the webpage corresponding to the specified URL.
 
-`EmbeddedHTML[CloudObject[...]]` formats as a web rendering of the specified cloud object.
 
 ## Examples
 

@@ -6,7 +6,7 @@
 - `RunScheduledTask[expr, {time}]` schedules and starts a task that will evaluate expr once after time seconds.
 - `RunScheduledTask[expr, {time, count}]` schedules and starts a task that will try evaluating expr once every time seconds up to count times.
 - `RunScheduledTask[expr, timespec, start]` schedules a task that will automatically start at start time.
-- `RunScheduledTask[CloudObject[...]]` asynchronously executes an existing cloud task or document generator.
+
 
 ## Examples
 

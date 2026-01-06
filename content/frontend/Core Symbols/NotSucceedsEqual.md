@@ -8,8 +8,6 @@
 NotSucceedsEqual[a, b]
 ```
 
-```wolfram
-NotSucceedsEqual[x, y, z] // TraditionalForm
-```
+
 
 *Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/NotSucceedsEqual.html) for more details.*

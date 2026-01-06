@@ -4,13 +4,6 @@
 
 `DeleteObject[{obj1,obj2,…}]` deletes all the obji.
 
-## Examples
 
-Delete a cloud object:
-
-```wolfram
-obj = CloudPut["data"];
-DeleteObject[obj]
-```
 
 *Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/DeleteObject.html) for more details.*

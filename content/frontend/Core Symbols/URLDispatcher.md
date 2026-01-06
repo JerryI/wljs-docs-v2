@@ -8,8 +8,5 @@
 URLDispatcher[{"/" -> "Home", "/about" -> "About Us"}]
 ```
 
-```wolfram
-CloudDeploy[URLDispatcher[{"/api" -> APIFunction[{}, "OK" &]}]]
-```
 
 *Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/URLDispatcher.html) for more details.*

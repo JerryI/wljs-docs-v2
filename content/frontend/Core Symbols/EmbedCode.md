@@ -10,10 +10,6 @@
 
 Generate embed code for a cloud object:
 
-```wolfram
-EmbedCode[CloudObject["myapp"]]
-```
-
 Generate HTML embed code:
 
 ```wolfram

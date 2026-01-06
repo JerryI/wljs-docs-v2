@@ -8,8 +8,6 @@
 URLRead[url, HandlerFunctions -> <|"HeadersReceived" -> Print|>]
 ```
 
-```wolfram
-WebSocketConnect[url, HandlerFunctions -> <|"MessageReceived" -> handleMessage|>]
-```
+
 
 *Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/HandlerFunctions.html) for more details.*

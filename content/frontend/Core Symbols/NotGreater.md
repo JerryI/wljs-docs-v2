@@ -8,8 +8,6 @@
 NotGreater[a, b]
 ```
 
-```wolfram
-NotGreater[x, y, z] // TraditionalForm
-```
+
 
 *Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/NotGreater.html) for more details.*

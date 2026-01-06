@@ -11,10 +11,5 @@ Congruent[a, b, c]
 (* a ≡ b ≡ c *)
 ```
 
-Use in mathematical notation:
-
-```wolfram
-TraditionalForm[Congruent[x, y]]
-```
 
 *Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Congruent.html) for more details.*

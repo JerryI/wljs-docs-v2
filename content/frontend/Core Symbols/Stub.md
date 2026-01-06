@@ -15,9 +15,6 @@ Attributes[MyPackage`myFunction] = {Stub}
 MemberQ[Attributes[symbol], Stub]
 ```
 
-```wolfram
-(* Many built-in symbols use Stub for lazy loading *)
-Attributes[CloudDeploy]
-```
+
 
 *See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Stub.html) for more details.*

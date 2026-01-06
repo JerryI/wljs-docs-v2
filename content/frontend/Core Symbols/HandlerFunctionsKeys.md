@@ -4,10 +4,7 @@
 
 ## Examples
 
-Use with WebSocketConnect:
-```wolfram
-WebSocketConnect[url, HandlerFunctionsKeys -> {"Body", "Headers"}]
-```
+
 
 Specify keys for handler functions:
 ```wolfram

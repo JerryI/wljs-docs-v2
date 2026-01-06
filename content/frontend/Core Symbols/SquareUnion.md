@@ -14,8 +14,5 @@ SquareUnion[a, b]
 SquareUnion[x, y, z]
 ```
 
-```wolfram
-TraditionalForm[SquareUnion[A, B, C]]
-```
 
 *See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/SquareUnion.html) for more details.*

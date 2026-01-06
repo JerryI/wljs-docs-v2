@@ -2,7 +2,7 @@
 
 `XMLTemplate["string"]` yields a TemplateObject that represents an XML template to be applied using functions like `TemplateApply`.
 
-- `XMLTemplate[src]` uses File[...], URL[...], or CloudObject[...] as the source for the string template.
+- `XMLTemplate[src]` uses File[...], URL[...] as the source for the string template.
 - `XMLTemplate[form, args]` yields a TemplateObject with arguments, suitable for cloud deployment or other evaluation.
 
 ## Examples

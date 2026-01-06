@@ -14,8 +14,6 @@ Superset[A, B]
 Superset[X, Y, Z]
 ```
 
-```wolfram
-TraditionalForm[Superset[S, T]]
-```
+
 
 *See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Superset.html) for more details.*

@@ -1,6 +1,6 @@
 # ScheduledTasks
 
-`ScheduledTasks[]` returns a list of `ScheduledTaskObject` and `CloudObject` expressions that represent current tasks.
+`ScheduledTasks[]` returns a list of `ScheduledTaskObject` expressions that represent current tasks.
 
 ## Examples
 

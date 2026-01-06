@@ -6,7 +6,6 @@
 
 `URLExecute[url, params, format]` imports the result using the specified format.
 
-`URLExecute[CloudObject[…], …]` executes a cloud object with current authentication settings.
 
 `URLExecute[HTTPRequest[…], …]` executes the specified HTTP request.
 

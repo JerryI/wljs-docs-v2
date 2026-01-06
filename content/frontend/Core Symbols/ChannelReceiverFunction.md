@@ -11,10 +11,6 @@ receiver = ChannelReceiverFunction[Function[msg, Print["Received: ", msg]]]
 (* ChannelReceiverFunction[...] *)
 ```
 
-Deploy a receiver function:
 
-```wolfram
-CloudDeploy[ChannelReceiverFunction[Print]]
-```
 
 *Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ChannelReceiverFunction.html) for more details.*

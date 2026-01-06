@@ -8,8 +8,6 @@
 Underscript[a, b]
 ```
 
-```wolfram
-Underscript[x, "limit"] // TraditionalForm
-```
+
 
 *Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Underscript.html) for more details.*
