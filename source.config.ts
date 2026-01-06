@@ -7,6 +7,7 @@ import {
 import { visit } from 'unist-util-visit';
 import path from 'path';
 import fs from 'fs';
+import { z } from 'zod';
 
 
 
@@ -70,7 +71,10 @@ function remarkFixRelativeUrls() {
 export const docs = defineDocs({
   dir: 'content/frontend',
   docs: {
-    schema: frontmatterSchema,
+    schema: frontmatterSchema.extend({
+      env: z.array(z.string()).optional(),
+      update: z.any().optional(),
+    }),
     postprocess: {
       includeProcessedMarkdown: true,
     },

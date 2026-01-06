@@ -6,7 +6,7 @@ env:
 package: wljs-editor
 source: https://github.com/JerryI/wljs-editor/blob/dev/src/StoreKernel.wl
 ---
-An access to a permanent local notebook storage. You can carry the raw data within the notebook, ***regardless if it has been exported*** to [Static HTML](frontend/Exporting/Static%20HTML) and imported back.
+An access to a permanent local notebook storage. You can carry the raw data within the notebook, ***regardless if it has been exported*** to [Static HTML](./../Share/Standalone-HTML) and imported back.
 
 ```wolfram
 NotebookStore[key_String, opts___] _
@@ -64,6 +64,3 @@ With[{n = EvaluationNotebook[]},
 ]
 ```
 </Callout>
-
-### `"Timeout"`
-A timeout for data to be piped from the notebook to the kernel in seconds. Default values is 80.

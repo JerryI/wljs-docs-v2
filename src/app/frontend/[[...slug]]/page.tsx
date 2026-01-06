@@ -21,6 +21,23 @@ export default async function Page(props: PageProps<'/frontend/[[...slug]]'>) {
     <DocsPage toc={page.data.toc} full={page.data.full}>
       <DocsTitle>{page.data.title}</DocsTitle>
       <DocsDescription>{page.data.description}</DocsDescription>
+      {(page.data.env?.length || page.data.update) && (
+        <div className="flex flex-wrap gap-2 not-prose mb-4">
+          {page.data.update && (
+            <span className="inline-flex items-center rounded-md bg-green-100 dark:bg-green-900 px-2 py-1 text-xs font-medium text-green-700 dark:text-green-300">
+              Supports Offload
+            </span>
+          )}
+          {page.data.env?.map((env) => (
+            <span
+              key={env}
+              className="inline-flex items-center rounded-md bg-fd-secondary px-2 py-1 text-xs font-medium text-fd-secondary-foreground"
+            >
+              {env.replace('WLJS', 'Frontend')}
+            </span>
+          ))}
+        </div>
+      )}
       <DocsBody>
         <MDX
           components={getMDXComponents({
