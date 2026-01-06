@@ -1,10 +1,19 @@
 # Brown
 
+`Brown` represents the color brown in graphics or style specifications.
+
+## Examples
+
+Use in graphics:
+
+```wolfram
+Graphics[{Brown, Disk[]}]
 ```
-Brown represents the color brown in graphics or style specifications. 
+
+Style text:
+
+```wolfram
+Style["Brown text", Brown]
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Brown.html) for more details.*

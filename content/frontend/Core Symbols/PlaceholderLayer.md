@@ -1,12 +1,17 @@
 # PlaceholderLayer
 
+`PlaceholderLayer[]` represents a net layer whose operation is undefined.
+
+- `PlaceholderLayer["tag", assoc]` indicates a tag and information given by the association assoc.
+
+## Examples
+
+```wolfram
+PlaceholderLayer[]
 ```
-PlaceholderLayer[] represents a net layer whose operation is undefined.
 
-PlaceholderLayer["tag",assoc] indicates a tag and information given by the association assoc.
+```wolfram
+PlaceholderLayer["conv", <|"Input" -> {3, 28, 28}|>]
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/PlaceholderLayer.html) for more details.*

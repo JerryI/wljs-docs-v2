@@ -1,16 +1,25 @@
 # DeleteMissing
 
+`DeleteMissing[list]` drops elements with head `Missing` from a list.
+
+`DeleteMissing[assoc]` drops elements whose values have head `Missing` from an association.
+
+`DeleteMissing[expr, n]` applies `DeleteMissing` to lists or associations within the first n levels of expr.
+
+## Examples
+
+Remove missing values:
+
+```wolfram
+DeleteMissing[{1, Missing[], 2, Missing["NotFound"], 3}]
+(* {1, 2, 3} *)
 ```
-DeleteMissing[list] drops elements with head Missing from a list.
 
-DeleteMissing[assoc] drops elements whose values have head Missing from the association assoc.
+From an association:
 
-DeleteMissing[expr,n] applies DeleteMissing to any lists or associations that occur within the first n levels of expr.
-
-DeleteMissing[expr,n,d] considers an element at level n to be missing if Missing occurs within the first d levels of the element.
+```wolfram
+DeleteMissing[<|"a" -> 1, "b" -> Missing[], "c" -> 3|>]
+(* <|"a" -> 1, "c" -> 3|> *)
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/DeleteMissing.html) for more details.*

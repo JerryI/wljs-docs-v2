@@ -1,16 +1,21 @@
 # EdgeTaggedGraph
 
+`EdgeTaggedGraph[{e1, e2, ...}]` yields a graph with edges ej tagged with unique tags.
+
+`EdgeTaggedGraph[{e1, e2, ...} -> {t1, t2, ...}]` yields a graph with edges ej tagged with tj.
+
+## Examples
+
+Create edge-tagged graph:
+
+```wolfram
+EdgeTaggedGraph[{1 -> 2, 2 -> 3} -> {"a", "b"}]
 ```
-EdgeTaggedGraph[{e1,e2,…}] yields a graph with edges ej tagged with unique tags.
 
-EdgeTaggedGraph[{e1,e2,…}->{t1,t2,…}] yields a graph with edges ej tagged with tj.
+Auto-tagged edges:
 
-EdgeTaggedGraph[{v1,v2,…},{e1,e2,…}->{t1,t2,…}] yields a graph with vertices vi and edges ej tagged with tj.
-
-EdgeTaggedGraph[{…,wi[vi],…},{…,wj[ej],…}->{t1,t2,…}] yields a graph with vertex and edge annotations defined by the symbolic wrappers wk.
+```wolfram
+EdgeTaggedGraph[{1 <-> 2, 2 <-> 3, 1 <-> 3}]
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/EdgeTaggedGraph.html) for more details.*

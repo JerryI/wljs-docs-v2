@@ -1,10 +1,17 @@
 # Hyperfactorial
 
+`Hyperfactorial[n]` gives the hyperfactorial function H(n).
+
+## Examples
+
+Compute hyperfactorial:
+```wolfram
+Hyperfactorial[5]
 ```
-Hyperfactorial[n] gives the hyperfactorial function H(n).
+
+Numerical value:
+```wolfram
+N[Hyperfactorial[10]]
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Hyperfactorial.html) for more details.*

@@ -1,14 +1,23 @@
 # ContourPlot3D
 
+`ContourPlot3D[f, {x, xmin, xmax}, {y, ymin, ymax}, {z, zmin, zmax}]` produces a three-dimensional contour plot of f as a function of x, y, and z.
+
+`ContourPlot3D[f == g, {x, xmin, xmax}, {y, ymin, ymax}, {z, zmin, zmax}]` plots the contour surface for which f = g.
+
+`ContourPlot3D[..., {x, y, z} ∈ reg]` takes the variables {x, y, z} to be in the geometric region reg.
+
+## Examples
+
+Plot a sphere surface:
+
+```wolfram
+ContourPlot3D[x^2 + y^2 + z^2 == 1, {x, -1, 1}, {y, -1, 1}, {z, -1, 1}]
 ```
-ContourPlot3D[f,{x,xmin,xmax},{y,ymin,ymax},{z,zmin,zmax}] produces a three-dimensional contour plot of f as a function of x, y, and z. 
 
-ContourPlot3D[f==g,{x,xmin,xmax},{y,ymin,ymax},{z,zmin,zmax}] plots the contour surface for which f=g. 
+Plot multiple surfaces:
 
-ContourPlot3D[…,{x,y,z}∈reg] takes the variables {x,y,z} to be in the geometric region reg. 
+```wolfram
+ContourPlot3D[{x^2 + y^2 == 1, z == x}, {x, -2, 2}, {y, -2, 2}, {z, -2, 2}]
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ContourPlot3D.html) for more details.*

@@ -1,12 +1,21 @@
 # StreamPlot3D
 
+`StreamPlot3D[{vx, vy, vz}, {x, xmin, xmax}, {y, ymin, ymax}, {z, zmin, zmax}]` plots streamlines for the 3D vector field {vx, vy, vz} as functions of x, y and z.
+
+`StreamPlot3D[{vx, vy, vz}, {x, y, z} ∈ reg]` takes the variables to be in the geometric region reg.
+
+## Examples
+
+Plot 3D streamlines:
+
+```wolfram
+StreamPlot3D[{-y, x, 0}, {x, -2, 2}, {y, -2, 2}, {z, -2, 2}]
 ```
-StreamPlot3D[{vx,vy,vz},{x,xmin,xmax},{y,ymin,ymax},{z,zmin,zmax}] plots streamlines for the vector field {vx,vy,vz} as functions of x, y and z.
 
-StreamPlot3D[{vx,vy,vz},{x,y,z}∈reg] takes the variables {x,y,z} to be in the geometric region reg. 
+Helical flow:
+
+```wolfram
+StreamPlot3D[{-y, x, 1}, {x, -2, 2}, {y, -2, 2}, {z, -2, 2}]
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/StreamPlot3D.html) for more details.*

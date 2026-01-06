@@ -1,12 +1,19 @@
 # NetFlatten
 
+`NetFlatten[net]` collapses nested NetChain and NetGraph objects within net.
+
+- `NetFlatten[net, n]` collapses up to nesting level n.
+
+## Examples
+
+Flatten a nested network:
+```wolfram
+NetFlatten[NetChain[{NetChain[{LinearLayer[], Ramp}], LinearLayer[]}]]
 ```
-NetFlatten[net] collapses nested NetChain and NetGraph objects within net.
 
-NetFlatten[net,n] collapses up to nesting level n.
+Flatten to specific level:
+```wolfram
+NetFlatten[net, 1]
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/NetFlatten.html) for more details.*

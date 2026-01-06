@@ -1,10 +1,14 @@
 # BoundaryMesh
 
+`BoundaryMesh[mreg]` gives a BoundaryMeshRegion from a MeshRegion mreg.
+
+## Examples
+
+Create boundary mesh from region:
+
+```wolfram
+mesh = MeshRegion[{{0, 0}, {1, 0}, {1, 1}, {0, 1}}, Polygon[{1, 2, 3, 4}]];
+BoundaryMesh[mesh]
 ```
-BoundaryMesh[mreg] gives a BoundaryMeshRegion from a MeshRegion mreg. 
-```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/BoundaryMesh.html) for more details.*

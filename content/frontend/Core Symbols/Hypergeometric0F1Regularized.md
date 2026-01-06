@@ -1,10 +1,15 @@
 # Hypergeometric0F1Regularized
 
+`Hypergeometric0F1Regularized[a, z]` is the regularized confluent hypergeometric function ₀F₁(;a;z)/Γ(a).
+
+## Examples
+
+```wolfram
+Hypergeometric0F1Regularized[2, 1]
 ```
-Hypergeometric0F1Regularized[a,z] is the regularized confluent hypergeometric function 0F1(;a;z)/Γ(a). 
+
+```wolfram
+Plot[Hypergeometric0F1Regularized[3, x], {x, -10, 10}]
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Hypergeometric0F1Regularized.html) for more details.*

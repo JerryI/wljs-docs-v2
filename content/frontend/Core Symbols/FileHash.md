@@ -1,18 +1,28 @@
 # FileHash
 
+`FileHash[file]` gives an integer hash code for the contents of the file.
+
+`FileHash[file, "type"]` gives a hash of the specified type (e.g., "MD5", "SHA256").
+
+## Examples
+
+Get default hash:
+
+```wolfram
+FileHash["document.txt"]
+(* 123456789012345678901234567890 *)
 ```
-FileHash[file] gives an integer hash code for the contents of the specified file.
 
-FileHash[file,"type"] gives an integer hash of the specified type.
+Get SHA-256 hash:
 
-FileHash[file,"type","format"] gives a hash code in the specified format.
-
-FileHash[{file,range},…] gives the hash code for the specified range of bytes.
-
-FileHash[{filespec1,filespec2,…},…] gives the hash codes for a list of files.
+```wolfram
+FileHash["document.txt", "SHA256"]
 ```
 
+As hexadecimal string:
 
+```wolfram
+FileHash["document.txt", "MD5", "HexString"]
+```
 
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/FileHash.html) for more details.*

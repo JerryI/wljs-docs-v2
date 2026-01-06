@@ -1,14 +1,16 @@
 # GraphIntersection
 
+`GraphIntersection[g1, g2]` gives the graph intersection (edges present in both g1 and g2).
+
+## Examples
+
+Intersection of two graphs:
+
+```wolfram
+g1 = Graph[{1 <-> 2, 2 <-> 3, 3 <-> 4}]
+g2 = Graph[{2 <-> 3, 3 <-> 4, 4 <-> 5}]
+GraphIntersection[g1, g2]
+(* Graph with edges 2 <-> 3, 3 <-> 4 *)
 ```
-GraphIntersection[g1,g2] gives the graph intersection of the graphs g1 and g2.
 
-GraphIntersection[g1,g2,…] gives the graph intersection of g1, g2, … .
-
-GraphIntersection[{v->w,…},…] uses rules v->w to specify the graph g.
-```
-
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/GraphIntersection.html) for more details.*

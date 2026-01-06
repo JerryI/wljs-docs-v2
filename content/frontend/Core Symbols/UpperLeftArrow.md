@@ -1,10 +1,15 @@
 # UpperLeftArrow
 
+`UpperLeftArrow[x, y, ...]` displays as x ↖ y ↖ ....
+
+## Examples
+
+```wolfram
+UpperLeftArrow[a, b, c]
 ```
-UpperLeftArrow[x,y,…] displays as x↖y↖….
+
+```wolfram
+a \[UpperLeftArrow] b
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/UpperLeftArrow.html) for more details.*

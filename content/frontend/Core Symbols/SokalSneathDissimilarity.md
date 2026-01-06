@@ -1,10 +1,21 @@
 # SokalSneathDissimilarity
 
+`SokalSneathDissimilarity[u, v]` gives the Sokal–Sneath dissimilarity between Boolean vectors u and v.
+
+This is a measure of dissimilarity between binary vectors used in clustering and classification.
+
+## Examples
+
+```wolfram
+SokalSneathDissimilarity[{1, 0, 1, 1}, {1, 1, 0, 1}]
 ```
-SokalSneathDissimilarity[u,v] gives the Sokal–Sneath dissimilarity between Boolean vectors u and v.
+
+```wolfram
+SokalSneathDissimilarity[{True, False, True}, {False, False, True}]
 ```
 
+```wolfram
+DistanceMatrix[data, DistanceFunction -> SokalSneathDissimilarity]
+```
 
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/SokalSneathDissimilarity.html) for more details.*

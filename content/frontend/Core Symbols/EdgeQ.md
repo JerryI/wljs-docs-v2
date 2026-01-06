@@ -1,10 +1,20 @@
 # EdgeQ
 
+`EdgeQ[g, e]` yields `True` if e is an edge in the graph g and `False` otherwise.
+
+## Examples
+
+Check if edge exists:
+
+```wolfram
+g = Graph[{1 -> 2, 2 -> 3}];
+EdgeQ[g, 1 -> 2]
+(* True *)
 ```
-EdgeQ[g,e] yields True if e is an edge in the graph g and False otherwise.
+
+```wolfram
+EdgeQ[g, 1 -> 3]
+(* False *)
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/EdgeQ.html) for more details.*

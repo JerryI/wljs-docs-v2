@@ -1,18 +1,23 @@
 # DiscretePlot
 
+`DiscretePlot[f, {n, nmax}]` generates a plot of f as a function of n for n=1, ..., nmax.
+
+`DiscretePlot[f, {n, nmin, nmax}]` generates a plot when n runs from nmin to nmax.
+
+`DiscretePlot[f, {n, nmin, nmax, dn}]` uses steps dn.
+
+## Examples
+
+Plot Fibonacci numbers:
+
+```wolfram
+DiscretePlot[Fibonacci[n], {n, 1, 20}]
 ```
-DiscretePlot[f,{n,nmax}] generates a plot of f as a function of n when n=1,…,nmax.
 
-DiscretePlot[f,{n,nmin,nmax}] generates a plot when n runs from nmin to nmax.
+With custom styling:
 
-DiscretePlot[f,{n,nmin,nmax,dn}] uses steps dn. 
-
-DiscretePlot[f,{n,{n1,…,nm}}] uses the successive values n1, …, nm.
-
-DiscretePlot[{f1,f2,…},…] plots the values of all the fi.
+```wolfram
+DiscretePlot[n^2, {n, 1, 10}, PlotStyle -> Red, Filling -> Axis]
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/DiscretePlot.html) for more details.*

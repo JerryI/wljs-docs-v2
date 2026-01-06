@@ -1,10 +1,15 @@
 # SectorSpacing
 
+`SectorSpacing` is an option to `PieChart` and related functions that specifies radial spacing of sectors.
+
+## Examples
+
+```wolfram
+PieChart[{1, 2, 3, 4}, SectorSpacing -> 0.1]
 ```
-SectorSpacing is an option to PieChart and related functions that specifies radial spacing of sectors. 
+
+```wolfram
+PieChart[{1, 1, 1}, SectorSpacing -> "Exploded"]
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/SectorSpacing.html) for more details.*

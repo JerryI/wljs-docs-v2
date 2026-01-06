@@ -1,16 +1,19 @@
 # ResourceObject
 
+`ResourceObject["name"]` represents a resource with the specified name.
+
+- `ResourceObject["uuid"]` represents a resource with the specified UUID.
+- `ResourceObject[loc]` imports a resource from the specified location.
+- `ResourceObject[assoc]` gives a resource with content and metadata specified by the association assoc.
+
+## Examples
+
+```wolfram
+ResourceObject["Wolfram Language Neural Net Repository"]
 ```
-ResourceObject["name"] represents a resource with the specified name.
 
-ResourceObject["uuid"] represents a resource with the specified UUID.
-
-ResourceObject[loc] imports a resource from the specified location.
-
-ResourceObject[assoc] gives a resource with content and metadata specified by the association assoc.
+```wolfram
+ResourceObject["MNIST"]
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ResourceObject.html) for more details.*

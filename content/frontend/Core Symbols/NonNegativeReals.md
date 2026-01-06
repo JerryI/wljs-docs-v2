@@ -1,10 +1,21 @@
 # NonNegativeReals
 
+`NonNegativeReals` represents the domain of non-negative real numbers.
+
+## Examples
+
+Test membership:
+
+```wolfram
+Element[0, NonNegativeReals]
+(* True *)
 ```
-NonNegativeReals represents the domain of non-negative real numbers.
+
+Negative fails:
+
+```wolfram
+Element[-0.5, NonNegativeReals]
+(* False *)
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/NonNegativeReals.html) for more details.*

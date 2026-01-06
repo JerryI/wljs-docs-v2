@@ -1,10 +1,13 @@
 # CaputoD
 
+`CaputoD[f, {x, α}]` gives the Caputo fractional differintegral of the function f(x).
+
+## Examples
+
+Caputo fractional derivative:
+
+```wolfram
+CaputoD[x^2, {x, 0.5}]
 ```
-CaputoD[f,{x,α}] gives the Caputo fractional differintegral C0Dxαf(x) of the function f(x).
-```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/CaputoD.html) for more details.*

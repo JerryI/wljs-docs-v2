@@ -1,10 +1,24 @@
 # TaskResume
 
+`TaskResume[task]` resumes execution of the specified task.
+
+This function continues a task that was previously suspended with `TaskSuspend`.
+
+## Examples
+
+```wolfram
+task = SessionSubmit[ScheduledTask[Print["tick"], 1]];
+TaskSuspend[task];
+TaskResume[task]
 ```
-TaskResume[task] resumes execution of the specified task.
+
+```wolfram
+(* Resume a suspended scheduled task *)
+TaskResume[$ScheduledTask]
 ```
 
+```wolfram
+TaskResume[TaskObject[...]]
+```
 
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/TaskResume.html) for more details.*

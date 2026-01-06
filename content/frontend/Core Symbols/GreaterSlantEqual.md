@@ -1,10 +1,15 @@
 # GreaterSlantEqual
 
+`GreaterSlantEqual[x, y, …]` displays as x⩾y⩾….
+
+## Examples
+
+```wolfram
+GreaterSlantEqual[a, b, c]
 ```
-GreaterSlantEqual[x,y,…] displays as x⩾y⩾….
+
+```wolfram
+GreaterSlantEqual[10, 5, 5]
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/GreaterSlantEqual.html) for more details.*

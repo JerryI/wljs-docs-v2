@@ -1,10 +1,15 @@
 # InterpretTemplate
 
+`InterpretTemplate` is an experimental function used for interpreting Mathematica input.
+
+## Examples
+
+```wolfram
+InterpretTemplate["1 + 2"]
 ```
-InterpretTemplate is an experimental function used for interpreting Mathematica input.
+
+```wolfram
+InterpretTemplate[template, data]
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/InterpretTemplate.html) for more details.*

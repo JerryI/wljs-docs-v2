@@ -1,16 +1,22 @@
 # ImageCrop
 
+`ImageCrop[image]` crops image by removing borders of uniform color.
+
+`ImageCrop[image, size]` crops image to the specified size.
+
+## Examples
+
+Automatic crop:
+
+```wolfram
+img = ExampleData[{"TestImage", "Lena"}];
+ImageCrop[img]
 ```
-ImageCrop[image] crops image by removing borders of uniform color. 
 
-ImageCrop[image,size] crops image based on the size specification size.
+Crop to specific size:
 
-ImageCrop[image,size,spec] crops image by removing pixels from sides specified by spec.
-
-ImageCrop[video,…] crops frames of video.
+```wolfram
+ImageCrop[img, {200, 200}]
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ImageCrop.html) for more details.*

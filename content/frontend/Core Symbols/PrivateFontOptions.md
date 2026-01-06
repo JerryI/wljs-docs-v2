@@ -1,10 +1,21 @@
 # PrivateFontOptions
 
+`PrivateFontOptions` is an option for selections that specifies settings for various font suboptions.
+
+This option provides fine-grained control over font rendering.
+
+## Examples
+
+```wolfram
+Style["Hello", PrivateFontOptions -> {"OperatorSubstitution" -> False}]
 ```
-PrivateFontOptions is an option for selections that specifies settings for various font suboptions.
+
+```wolfram
+Cell["Text", PrivateFontOptions -> {"FontType" -> "Outline"}]
 ```
 
+```wolfram
+Style[expr, PrivateFontOptions -> {"CharacterEncoding" -> "UTF-8"}]
+```
 
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/PrivateFontOptions.html) for more details.*

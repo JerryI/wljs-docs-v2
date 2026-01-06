@@ -1,14 +1,21 @@
 # SectorChart
 
+`SectorChart[{{x1, y1}, {x2, y2}, ...}]` makes a sector chart with sector angles proportional to xi and radii yi.
+
+`SectorChart[{data1, data2, ...}]` makes a sector chart from multiple datasets.
+
+## Examples
+
+Create a sector chart:
+
+```wolfram
+SectorChart[{{1, 1}, {2, 2}, {3, 1}}]
 ```
-SectorChart[{{x1,y1},{x1,y2},…}] makes a sector chart with sector angles proportional to xi and radii yi.
 
-SectorChart[{…,wi[{xi,yi},…],…,wj[{xj,yj},…],…}] makes a sector chart with sector features defined by the symbolic wrappers wk.
+With labels:
 
-SectorChart[{data1,data2,…}] makes a sector chart from multiple datasets datai.
+```wolfram
+SectorChart[{{1, 1}, {2, 2}, {3, 3}}, ChartLabels -> {"A", "B", "C"}]
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/SectorChart.html) for more details.*

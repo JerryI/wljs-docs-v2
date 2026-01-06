@@ -1,22 +1,21 @@
 # ImageCollage
 
-```
-ImageCollage[{image1,image2,…}] creates a collage of images imagei.
+`ImageCollage[{image1, image2, ...}]` creates a collage of images.
 
-ImageCollage[{w1->image1,w2->image2,…}] creates a collage of images imagei based on their corresponding weights wi.
+`ImageCollage[{w1 -> image1, w2 -> image2, ...}]` creates a weighted collage.
 
-ImageCollage[<|image1->w1,image2->w2,…|>] also creates a collage of images imagei based on their corresponding weights wi.
+## Examples
 
-ImageCollage[{w1,w2,…}->{image1,image2,…}] also creates a collage of images imagei based on their corresponding weights wi.
+Create a simple collage:
 
-ImageCollage[{{image1,w1},{image2,w2},…}] also creates a collage of images imagei based on their corresponding weights wi.
-
-ImageCollage[…,fitting] uses the fitting method to create the collage.
-
-ImageCollage[…,fitting,size] creates a collage of the specified size.
+```wolfram
+ImageCollage[{ExampleData[{"TestImage", "Lena"}], ExampleData[{"TestImage", "Mandrill"}]}]
 ```
 
+Weighted collage:
 
+```wolfram
+ImageCollage[{2 -> img1, 1 -> img2}]
+```
 
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ImageCollage.html) for more details.*

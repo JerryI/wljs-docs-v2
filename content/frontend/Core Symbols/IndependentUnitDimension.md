@@ -1,10 +1,15 @@
 # IndependentUnitDimension
 
+`IndependentUnitDimension[dim]` represents the base dimension dim associated with an independent physical quantity or unit.
+
+## Examples
+
+```wolfram
+IndependentUnitDimension["Length"]
 ```
-IndependentUnitDimension[dim] represents the base dimension dim associated with an independent physical quantity or unit.
+
+```wolfram
+UnitDimensions[Quantity[1, "Meters"]]
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/IndependentUnitDimension.html) for more details.*

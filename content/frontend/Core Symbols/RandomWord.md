@@ -1,16 +1,35 @@
 # RandomWord
 
+`RandomWord[]` gives a pseudorandom commonly used word.
+
+- `RandomWord[n]` gives a list of n pseudorandom words.
+- `RandomWord[type]` gives a pseudorandom word of the specified type.
+- `RandomWord[type, n]` gives a list of n pseudorandom words of the specified type.
+
+## Examples
+
+Single random word:
+
+```wolfram
+RandomWord[]
 ```
-RandomWord[] gives a pseudorandom commonly used word.
 
-RandomWord[n] gives a list of n pseudorandom words.
+Multiple random words:
 
-RandomWord[type] gives a pseudorandom word of the specified type.
-
-RandomWord[type,n] gives a list of n pseudorandom words of the specified type.
+```wolfram
+RandomWord[5]
 ```
 
+Random nouns:
 
+```wolfram
+RandomWord["Noun", 5]
+```
 
+Random adjectives:
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+```wolfram
+RandomWord["Adjective", 3]
+```
+
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/RandomWord.html) for more details.*

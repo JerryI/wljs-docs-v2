@@ -1,10 +1,15 @@
 # VideoQ
 
+`VideoQ[video]` yields `True` if video has the form of a valid `Video` object, and `False` otherwise.
+
+## Examples
+
+```wolfram
+VideoQ[Video["test.mp4"]]
 ```
-VideoQ[video] yields True if video has the form of a valid Video object, and False otherwise.
+
+```wolfram
+VideoQ["not a video"]
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/VideoQ.html) for more details.*

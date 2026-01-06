@@ -1,10 +1,15 @@
 # LowerRightArrow
 
+`LowerRightArrow[x, y, ...]` displays as x↘y↘….
+
+## Examples
+
+```wolfram
+LowerRightArrow[a, b]
 ```
-LowerRightArrow[x,y,…] displays as x↘y↘….
+
+```wolfram
+LowerRightArrow[x, y, z] // TraditionalForm
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/LowerRightArrow.html) for more details.*

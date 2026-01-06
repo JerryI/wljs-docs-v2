@@ -1,10 +1,15 @@
 # RemoveUsers
 
+`RemoveUsers[group, {user1, ...}]` removes the users useri from the permissions group group.
+
+## Examples
+
+```wolfram
+RemoveUsers["MyGroup", {"user1@example.com"}]
 ```
-RemoveUsers[group,{user1,…}] removes the users useri from the permissions group group.
+
+```wolfram
+RemoveUsers[PermissionsGroup["Editors"], {"john@wolfram.com", "jane@wolfram.com"}]
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/RemoveUsers.html) for more details.*

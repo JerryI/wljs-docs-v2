@@ -1,10 +1,15 @@
 # GreaterGreater
 
+`GreaterGreater[x, y, …]` displays as x≫y≫….
+
+## Examples
+
+```wolfram
+GreaterGreater[a, b, c]
 ```
-GreaterGreater[x,y,…] displays as x≫y≫….
+
+```wolfram
+GreaterGreater[100, 10, 1]
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/GreaterGreater.html) for more details.*

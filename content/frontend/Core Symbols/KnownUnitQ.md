@@ -1,12 +1,17 @@
 # KnownUnitQ
 
+`KnownUnitQ[expr]` returns `True` if `expr` is a canonical unit, and `False` otherwise.
+
+- `KnownUnitQ[expr, dims]` gives `True` if `expr` is a canonical unit with physical dimensions `dims`, and `False` otherwise.
+
+## Examples
+
+```wolfram
+KnownUnitQ["Meters"]
 ```
-KnownUnitQ[expr] returns True if expr is a canonical unit, and False otherwise.
 
-KnownUnitQ[expr,dims] gives True if expr is a canonical unit with physical dimensions dims, and False otherwise.
+```wolfram
+KnownUnitQ["Joules", "Energy"]
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/KnownUnitQ.html) for more details.*

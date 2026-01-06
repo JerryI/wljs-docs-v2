@@ -1,10 +1,21 @@
 # NotSupersetEqual
 
+`NotSupersetEqual[x, y, ...]` displays as x⊉y⊉….
+
+This is a symbolic representation that displays as the "not superset or equal" relation symbol.
+
+## Examples
+
+```wolfram
+NotSupersetEqual[A, B]
 ```
-NotSupersetEqual[x,y,…] displays as x⊉y⊉….
+
+```wolfram
+NotSupersetEqual[X, Y, Z]
 ```
 
+```wolfram
+A \[NotSupersetEqual] B
+```
 
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/NotSupersetEqual.html) for more details.*

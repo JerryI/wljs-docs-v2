@@ -1,14 +1,19 @@
 # NDEigenvalues
 
+`NDEigenvalues[ℒ[u[x, y, ...]], u, {x, y, ...} ∈ Ω, n]` gives the n smallest magnitude eigenvalues for the linear differential operator ℒ over the region Ω.
+
+- `NDEigenvalues[{ℒ1[u, v, ...], ℒ2[u, v, ...], ...}, {u, v, ...}, {x, y, ...} ∈ Ω, n]` gives eigenvalues for the coupled differential operators over the region Ω.
+- `NDEigenvalues[eqns, {u, ...}, t, {x, y, ...} ∈ Ω, n]` gives the eigenvalues in the spatial variables for solutions of the coupled time-dependent differential equations eqns.
+
+## Examples
+
+```wolfram
+NDEigenvalues[{-Laplacian[u[x, y], {x, y}], DirichletCondition[u[x, y] == 0, True]}, 
+  u, {x, y} \[Element] Disk[], 5]
 ```
-NDEigenvalues[ℒ[u[x,y,…]],u,{x,y,…}∈Ω,n] gives the n smallest magnitude eigenvalues for the linear differential operator ℒ over the region Ω.
 
-NDEigenvalues[{ℒ1[u[x,y,…],v[x,y,…],…],ℒ2[u[x,y,…],v[x,y,…],…],…},{u,v,…},{x,y,…}∈Ω,n]  gives eigenvalues for the coupled differential operators {op1,op2,…} over the region Ω.
-
-NDEigenvalues[eqns,{u,…},t,{x,y,…}∈Ω,n] gives the eigenvalues in the spatial variables {x,y,…} for solutions u,… of the coupled time-dependent differential equations eqns.
+```wolfram
+NDEigenvalues[-u''[x], u, {x, 0, Pi}, 3]
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/NDEigenvalues.html) for more details.*

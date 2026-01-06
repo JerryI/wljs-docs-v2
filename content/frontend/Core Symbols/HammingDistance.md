@@ -1,12 +1,21 @@
 # HammingDistance
 
+`HammingDistance[u, v]` gives the Hamming distance between strings or vectors u and v (the number of positions at which they differ).
+
+## Examples
+
+Distance between strings:
+
+```wolfram
+HammingDistance["karolin", "kathrin"]
+(* 3 *)
 ```
-HammingDistance[u,v] gives the Hamming distance between strings or vectors u and v.
 
-HammingDistance[u,v] gives the Hamming distance between strings, vectors or biomolecular sequences u and v.
+Distance between lists:
+
+```wolfram
+HammingDistance[{1, 0, 1, 1}, {1, 1, 1, 0}]
+(* 2 *)
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/HammingDistance.html) for more details.*

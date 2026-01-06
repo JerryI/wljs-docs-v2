@@ -1,10 +1,21 @@
 # NotRightTriangle
 
+`NotRightTriangle[x, y, ...]` displays as x⋫y⋫….
+
+This is a symbolic representation that displays as the "not right triangle" relation symbol.
+
+## Examples
+
+```wolfram
+NotRightTriangle[a, b]
 ```
-NotRightTriangle[x,y,…] displays as x⋫y⋫….
+
+```wolfram
+NotRightTriangle[x, y, z]
 ```
 
+```wolfram
+x \[NotRightTriangle] y
+```
 
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/NotRightTriangle.html) for more details.*

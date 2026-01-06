@@ -1,16 +1,22 @@
 # ImageTrim
 
+`ImageTrim[image, roi]` gives the smallest subimage that includes the specified region of interest roi.
+
+`ImageTrim[image, roi, r]` adds a margin of size r.
+
+## Examples
+
+Trim to bounding box:
+
+```wolfram
+img = ExampleData[{"TestImage", "Lena"}];
+ImageTrim[img, Rectangle[{100, 100}, {300, 300}]]
 ```
-ImageTrim[image,roi] gives the smallest subimage of image that includes the specified region of interest roi.
 
-ImageTrim[image,roi,r] adds a margin of size r back to the resulting image.
+With margin:
 
-ImageTrim[image,{roi1,roi2,…},…] extracts multiple subimages specified by roii from image.
-
-ImageTrim[video,…] extracts the subimages from video.
+```wolfram
+ImageTrim[img, Disk[{256, 256}, 100], 20]
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ImageTrim.html) for more details.*

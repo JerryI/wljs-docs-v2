@@ -1,10 +1,13 @@
 # AudioTrackSelection
 
+`AudioTrackSelection` is an option that specifies the audio tracks of interest.
+
+## Examples
+
+Select specific audio track:
+
+```wolfram
+VideoExtractFrames[video, All, AudioTrackSelection -> 1]
 ```
-AudioTrackSelection is an option that specifies the audio tracks of interest.
-```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/AudioTrackSelection.html) for more details.*

@@ -1,12 +1,23 @@
 # CharacterRange
 
+`CharacterRange["c1", "c2"]` yields a list of the characters in the range from c1 to c2.
+
+`CharacterRange[n1, n2]` yields a list of the characters with character codes in the range n1 to n2.
+
+## Examples
+
+Range of uppercase letters:
+
+```wolfram
+CharacterRange["A", "Z"]
+(* {"A", "B", "C", ..., "Z"} *)
 ```
-CharacterRange[c1,c2] yields a list of the characters in the range from "c1" to "c2". 
 
-CharacterRange[n1,n2] yields a list of the characters with character codes in the range n1 to n2.
+Range using character codes:
+
+```wolfram
+CharacterRange[97, 102]
+(* {"a", "b", "c", "d", "e", "f"} *)
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/CharacterRange.html) for more details.*

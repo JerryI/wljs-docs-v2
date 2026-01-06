@@ -1,10 +1,17 @@
 # OwenT
 
+`OwenT[x, a]` gives Owen's T function T(x, a).
+
+## Examples
+
+Compute Owen's T function:
+```wolfram
+OwenT[1, 0.5]
 ```
-OwenT[x,a] gives Owen's T function T(x,a).
+
+Numerical evaluation:
+```wolfram
+N[OwenT[2, 1]]
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/OwenT.html) for more details.*

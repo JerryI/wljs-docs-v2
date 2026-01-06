@@ -1,10 +1,24 @@
 # Cot
 
+`Cot[z]` gives the cotangent of z.
+
+## Examples
+
+Cotangent of common angles:
+
+```wolfram
+Cot[Pi/4]
+(* 1 *)
+
+Cot[Pi/6]
+(* Sqrt[3] *)
 ```
-Cot[z] gives the cotangent of z. 
+
+Numerical evaluation:
+
+```wolfram
+Cot[1.0]
+(* 0.642093 *)
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Cot.html) for more details.*

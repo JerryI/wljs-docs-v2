@@ -1,14 +1,24 @@
 # VerifyDigitalSignature
 
+`VerifyDigitalSignature[{expr, sig}, key]` verifies the digital signature sig for expr using the specified public key.
+
+- `VerifyDigitalSignature[{{expr1, sig1}, {expr2, sig2}, ...}, key]` verifies signatures for multiple expressions.
+- `VerifyDigitalSignature[key]` is an operator form suitable for application to {expr, sig} pairs.
+
+## Examples
+
+```wolfram
+VerifyDigitalSignature[{message, signature}, publicKey]
 ```
-VerifyDigitalSignature[{expr,sig},key] verifies the digital signature sig for expr using the specified public key.
 
-VerifyDigitalSignature[{{expr1,sig1},{expr2,sig2},…},key] verifies the digital signatures sigi for each of the expri, all using the specified public key.
-
-VerifyDigitalSignature[key] is an operator form of VerifyDigitalSignature, suitable for application to {expr,sig} or a list of such pairs.
+```wolfram
+key = GenerateAsymmetricKeyPair[];
+sig = GenerateDigitalSignature["Hello", key["PrivateKey"]];
+VerifyDigitalSignature[{"Hello", sig}, key["PublicKey"]]
 ```
 
+```wolfram
+VerifyDigitalSignature[myPublicKey][{data, sig}]
+```
 
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/VerifyDigitalSignature.html) for more details.*

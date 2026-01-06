@@ -1,12 +1,24 @@
 # MarkovProcessProperties
 
+`MarkovProcessProperties[mproc]` gives a summary of properties for the finite state Markov process mproc.
+
+- `MarkovProcessProperties[mproc, "property"]` gives the specified "property" for the process mproc.
+
+This function provides analytical properties of discrete and continuous-time Markov chains.
+
+## Examples
+
+```wolfram
+proc = DiscreteMarkovProcess[1, {{0.5, 0.5}, {0.3, 0.7}}];
+MarkovProcessProperties[proc]
 ```
-MarkovProcessProperties[mproc] gives a summary of properties for the finite state Markov process mproc.
 
-MarkovProcessProperties[mproc,"property"] gives the specified "property" for the process mproc.
+```wolfram
+MarkovProcessProperties[proc, "StationaryDistribution"]
 ```
 
+```wolfram
+MarkovProcessProperties[proc, "CommunicatingClasses"]
+```
 
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/MarkovProcessProperties.html) for more details.*

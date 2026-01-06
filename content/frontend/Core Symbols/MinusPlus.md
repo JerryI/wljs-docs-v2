@@ -1,12 +1,13 @@
 # MinusPlus
 
+`MinusPlus[x]` displays as ∓x.
+
+- `MinusPlus[x, y, …]` displays as x∓y∓….
+
+## Examples
+
+```wolfram
+MinusPlus[a, b]
 ```
-MinusPlus[x] displays as ∓x.
 
-MinusPlus[x,y,…] displays as x∓y∓….
-```
-
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/MinusPlus.html) for more details.*

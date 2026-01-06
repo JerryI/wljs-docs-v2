@@ -1,10 +1,21 @@
 # PrimeOmega
 
+`PrimeOmega[n]` gives the number of prime factors counting multiplicities Ω(n) in n.
+
+## Examples
+
+Count prime factors with multiplicity:
+
+```wolfram
+PrimeOmega[12]
+(* 3 - because 12 = 2*2*3 *)
 ```
-PrimeOmega[n] gives the number of prime factors counting multiplicities Ω(n) in n.
+
+Compare with PrimeNu (distinct factors):
+
+```wolfram
+PrimeOmega[100]
+(* 4 - because 100 = 2^2 * 5^2 *)
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/PrimeOmega.html) for more details.*

@@ -1,10 +1,21 @@
 # MassTransportPDEComponent
 
+`MassTransportPDEComponent[vars, pars]` yields a mass transport PDE term with variables vars and parameters pars.
+
+This is used for modeling mass transport in partial differential equations.
+
+## Examples
+
+```wolfram
+MassTransportPDEComponent[{c[x, t], {x}}, {D, v}]
 ```
-MassTransportPDEComponent[vars,pars] yields a mass transport PDE term with variables vars and parameters pars.
+
+```wolfram
+MassTransportPDEComponent[{u[x, y, t], {x, y}}, params]
 ```
 
+```wolfram
+pde = MassTransportPDEComponent[vars, {diffusion, velocity}]
+```
 
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/MassTransportPDEComponent.html) for more details.*

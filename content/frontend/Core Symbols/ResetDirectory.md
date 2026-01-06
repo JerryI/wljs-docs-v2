@@ -1,10 +1,16 @@
 # ResetDirectory
 
+`ResetDirectory[]` resets the current working directory to its previous value.
+
+## Examples
+
+```wolfram
+SetDirectory["~"]
+ResetDirectory[]
 ```
-ResetDirectory[] resets the current working directory to its previous value. 
+
+```wolfram
+Directory[]
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ResetDirectory.html) for more details.*

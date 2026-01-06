@@ -1,12 +1,21 @@
 # BesselYZero
 
+`BesselYZero[n, k]` represents the kth zero of the Bessel function of the second kind Yn(x).
+
+`BesselYZero[n, k, x0]` represents the kth zero greater than x0.
+
+## Examples
+
+Find zeros of Bessel Y:
+
+```wolfram
+N[BesselYZero[0, 1]]
+(* 0.893577 *)
 ```
-BesselYZero[n,k] represents the kth zero of the Bessel function of the second kind Yn(x).
 
-BesselYZero[n,k,x0] represents the kth zero greater than x0.
+```wolfram
+N[BesselYZero[1, 2]]
+(* 5.4297 *)
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/BesselYZero.html) for more details.*

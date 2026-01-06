@@ -1,14 +1,24 @@
 # SocialMediaData
 
+`SocialMediaData["name"]` gives information about the social media entity "name".
+
+- `SocialMediaData["name", "property"]` gives the value of the specified property for the social media entity "name".
+- `SocialMediaData[{"name", id}, "property"]` gives the value of a property for the specified identifier id.
+
+This function retrieves data from connected social media platforms.
+
+## Examples
+
+```wolfram
+SocialMediaData["Twitter"]
 ```
-SocialMediaData["name"] gives information about the social media entity "name".
 
-SocialMediaData["name","property"] gives the value of the specified property for the social media entity "name".
-
-SocialMediaData[{"name",id},"property"] gives the value of a property for the specified identifier id.
+```wolfram
+SocialMediaData["Facebook", "Properties"]
 ```
 
+```wolfram
+SocialMediaData[{"Twitter", "username"}, "Followers"]
+```
 
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/SocialMediaData.html) for more details.*

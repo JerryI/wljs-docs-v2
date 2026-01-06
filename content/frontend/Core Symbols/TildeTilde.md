@@ -1,10 +1,15 @@
 # TildeTilde
 
+`TildeTilde[x, y, ...]` displays as x ≈ y ≈ ....
+
+## Examples
+
+```wolfram
+TildeTilde[a, b, c]
 ```
-TildeTilde[x,y,…] displays as x≈y≈….
+
+```wolfram
+a \[TildeTilde] b
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/TildeTilde.html) for more details.*

@@ -1,10 +1,21 @@
 # SecDegrees
 
+`SecDegrees[θ]` gives the secant of θ degrees.
+
+This is equivalent to `Sec[θ Degree]` but more convenient for degree input.
+
+## Examples
+
+```wolfram
+SecDegrees[60]
 ```
-SecDegrees[θ] gives the secant of θ degrees. 
+
+```wolfram
+SecDegrees[45]
 ```
 
+```wolfram
+Plot[SecDegrees[x], {x, -80, 80}]
+```
 
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/SecDegrees.html) for more details.*

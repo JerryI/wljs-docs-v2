@@ -1,10 +1,19 @@
 # Bond
 
+`Bond[{idi, idj}, type]` represents a chemical bond between atoms with indices idi and idj of the specified type.
+
+## Examples
+
+Create a single bond:
+
+```wolfram
+Bond[{1, 2}, "Single"]
 ```
-Bond[{idi,idj},type] represents a chemical bond between atoms with indices idi and idj of the specified type.
+
+Double bond:
+
+```wolfram
+Bond[{1, 2}, "Double"]
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Bond.html) for more details.*

@@ -1,10 +1,13 @@
 # CounterIncrements
 
+`CounterIncrements` is an option for selections that specifies whether the value of a specified counter is incremented by one.
+
+## Examples
+
+Increment a counter:
+
+```wolfram
+Cell["text", CounterIncrements -> "Section"]
 ```
-CounterIncrements is an option for selections that specifies whether the value of a specified counter is incremented by one.
-```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/CounterIncrements.html) for more details.*

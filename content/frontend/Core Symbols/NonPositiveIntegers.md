@@ -1,10 +1,21 @@
 # NonPositiveIntegers
 
+`NonPositiveIntegers` represents the domain of non-positive integers, as in x ∈ NonPositiveIntegers.
+
+## Examples
+
+Test membership:
+
+```wolfram
+Element[0, NonPositiveIntegers]
+(* True *)
 ```
-NonPositiveIntegers represents the domain of non-positive integers, as in x∈NonPositiveIntegers. 
+
+Positive fails:
+
+```wolfram
+Element[1, NonPositiveIntegers]
+(* False *)
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/NonPositiveIntegers.html) for more details.*

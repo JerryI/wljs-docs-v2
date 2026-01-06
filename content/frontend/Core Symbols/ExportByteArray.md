@@ -1,12 +1,15 @@
 # ExportByteArray
 
+`ExportByteArray[expr, "format"]` generates a `ByteArray` object corresponding to expr exported in the specified format.
+
+`ExportByteArray[exprs, elems]` generates a `ByteArray` object by treating exprs as elements specified by elems.
+
+## Examples
+
+Export an image to byte array:
+
+```wolfram
+ExportByteArray[Graphics[Circle[]], "PNG"]
 ```
-ExportByteArray[expr,"format"] generates a ByteArray object corresponding to expr exported in the specified format. 
 
-ExportByteArray[exprs,elems] generates a ByteArray object by treating exprs as elements specified by elems.
-```
-
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ExportByteArray.html) for more details.*

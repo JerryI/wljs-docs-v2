@@ -1,10 +1,21 @@
 # CanberraDistance
 
+`CanberraDistance[u, v]` gives the Canberra distance between vectors u and v.
+
+## Examples
+
+Calculate Canberra distance:
+
+```wolfram
+CanberraDistance[{1, 2, 3}, {4, 5, 6}]
+(* 9/10 *)
 ```
-CanberraDistance[u,v] gives the Canberra distance between vectors u and v.
+
+Distance of zero for identical vectors:
+
+```wolfram
+CanberraDistance[{1, 2, 3}, {1, 2, 3}]
+(* 0 *)
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/CanberraDistance.html) for more details.*

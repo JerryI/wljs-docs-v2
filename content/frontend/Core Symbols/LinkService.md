@@ -1,10 +1,15 @@
 # LinkService
 
+`LinkService["service", l]` is an object that represents an active connection to the WSTP service.
+
+## Examples
+
+```wolfram
+LinkService["MyService", link]
 ```
-LinkService["service", l] is an object that represents an active connection to the WSTP service.
+
+```wolfram
+LinkServiceConnect["ServiceName"]
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/LinkService.html) for more details.*

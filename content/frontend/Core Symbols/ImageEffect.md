@@ -1,14 +1,22 @@
 # ImageEffect
 
+`ImageEffect[image, "effect"]` applies the specified image effect to image.
+
+`ImageEffect[image, {"effect", params}]` uses parameters params.
+
+## Examples
+
+Apply blur effect:
+
+```wolfram
+img = ExampleData[{"TestImage", "Lena"}];
+ImageEffect[img, "OilPainting"]
 ```
-ImageEffect[image,"effect"] applies the specified image effect to image.
 
-ImageEffect[image,{"effect",params}] uses parameters params.
+With parameters:
 
-ImageEffect[video,…] applies the image effect to frames of video.
+```wolfram
+ImageEffect[img, {"Posterization", 4}]
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ImageEffect.html) for more details.*

@@ -1,10 +1,21 @@
 # PerfectNumberQ
 
+`PerfectNumberQ[n]` returns `True` if n is a perfect number, and `False` otherwise.
+
+## Examples
+
+Test for perfect number:
+
+```wolfram
+PerfectNumberQ[6]
+(* True *)
 ```
-PerfectNumberQ[n] returns True if n is a perfect number, and False otherwise.
+
+Non-perfect number:
+
+```wolfram
+PerfectNumberQ[10]
+(* False *)
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/PerfectNumberQ.html) for more details.*

@@ -1,10 +1,21 @@
 # ArcCosDegrees
 
+`ArcCosDegrees[z]` gives the arc cosine in degrees of the complex number z.
+
+## Examples
+
+Get arc cosine in degrees:
+
+```wolfram
+ArcCosDegrees[0.5]
+(* 60. *)
 ```
-ArcCosDegrees[z] gives the arc cosine in degrees of the complex number z.
+
+Compare with ArcCos:
+
+```wolfram
+ArcCosDegrees[0] 
+(* 90 *)
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ArcCosDegrees.html) for more details.*

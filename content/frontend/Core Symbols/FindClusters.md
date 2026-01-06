@@ -1,14 +1,22 @@
 # FindClusters
 
+`FindClusters[{e1, e2, ...}]` partitions the elements into clusters of similar elements.
+
+`FindClusters[data, n]` partitions data into n clusters.
+
+## Examples
+
+Cluster numerical data:
+
+```wolfram
+FindClusters[{1, 2, 10, 11, 100, 101}]
+(* {{1, 2}, {10, 11}, {100, 101}} *)
 ```
-FindClusters[{e1,e2,…}] partitions the ei into clusters of similar elements. 
 
-FindClusters[{e1->v1,e2->v2,…}] returns the vi corresponding to the ei in each cluster.
+Specify number of clusters:
 
-FindClusters[data,n] partitions data into n clusters. 
+```wolfram
+FindClusters[RandomReal[1, {20, 2}], 3]
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/FindClusters.html) for more details.*

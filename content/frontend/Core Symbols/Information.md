@@ -1,14 +1,21 @@
 # Information
 
+`Information[expr]` gives information about the expression expr.
+
+`Information[expr, prop]` gives the value of the property prop.
+
+## Examples
+
+Get symbol information:
+
+```wolfram
+Information[Sin]
 ```
-Information[expr] gives information about the expression expr. 
 
-Information[expr,prop] gives the value of the property prop for expr.
+Get specific property:
 
-Information[{expr1,expr2,…},…] gives information about all of the expri.
+```wolfram
+Information[Sin, "Usage"]
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Information.html) for more details.*

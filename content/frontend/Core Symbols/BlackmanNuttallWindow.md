@@ -1,10 +1,19 @@
 # BlackmanNuttallWindow
 
+`BlackmanNuttallWindow[x]` represents a Blackman–Nuttall window function of x.
+
+## Examples
+
+Plot the Blackman-Nuttall window:
+
+```wolfram
+Plot[BlackmanNuttallWindow[x], {x, -1, 1}]
 ```
-BlackmanNuttallWindow[x] represents a Blackman–Nuttall window function of x.
+
+Apply to a list:
+
+```wolfram
+Table[BlackmanNuttallWindow[x], {x, -1, 1, 0.25}]
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/BlackmanNuttallWindow.html) for more details.*

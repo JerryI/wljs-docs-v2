@@ -1,12 +1,23 @@
 # Indexed
 
+`Indexed[expr, i]` represents the component of expr with index i and formats as expr_i.
+
+`Indexed[expr, {i, j, ...}]` uses multiple indices.
+
+## Examples
+
+Indexed variable:
+
+```wolfram
+Indexed[x, 1]
+(* x_1 displayed with subscript *)
 ```
-Indexed[expr,i] represents the component of expr with index i and formats as expri.
 
-Indexed[expr,{i,j,…}] represents the component with indices i, j, … and formats as expri,j,….
+Multi-index:
+
+```wolfram
+Indexed[A, {i, j}]
+(* A_{i,j} *)
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Indexed.html) for more details.*

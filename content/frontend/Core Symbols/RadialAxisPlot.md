@@ -1,12 +1,17 @@
 # RadialAxisPlot
 
+`RadialAxisPlot[{y1, y2, ..., yn}]` generates a radial axis plot where the yi are displayed on radial axes equally spaced around the origin.
+
+- `RadialAxisPlot[{data1, data2, ...}]` plots several datasets datai on the axes.
+
+## Examples
+
+```wolfram
+RadialAxisPlot[{1, 2, 3, 4, 5}]
 ```
-RadialAxisPlot[{y1,y2,…,yn}] generates a radial axis plot where the yi are displayed on radial axes equally spaced around the origin.
 
-RadialAxisPlot[{data1,data2,…}] plots several datasets datai on the axes.
+```wolfram
+RadialAxisPlot[{{1, 2, 3, 4, 5}, {2, 3, 4, 5, 1}}]
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/RadialAxisPlot.html) for more details.*

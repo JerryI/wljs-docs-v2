@@ -1,16 +1,22 @@
 # InterpolatingPolynomial
 
+`InterpolatingPolynomial[{{x1, f1}, {x2, f2}, ...}, x]` constructs a polynomial in x passing through the given points.
+
+`InterpolatingPolynomial[{f1, f2, ...}, x]` uses successive integer x values.
+
+## Examples
+
+Through three points:
+
+```wolfram
+InterpolatingPolynomial[{{0, 1}, {1, 3}, {2, 7}}, x]
+(* 1 + x + x^2 *)
 ```
-InterpolatingPolynomial[{f1,f2,…},x] constructs an interpolating polynomial in x which reproduces the function values fi at successive integer values 1, 2, … of x. 
 
-InterpolatingPolynomial[{{x1,f1},{x2,f2},…},x] constructs an interpolating polynomial for the function values fi corresponding to x values xi.
+Simplified:
 
-InterpolatingPolynomial[{{{x1,y1,…},f1},{{x2,y2,…},f2},…},{x,y,…}] constructs a multidimensional interpolating polynomial in the variables x, y, ….
-
-InterpolatingPolynomial[{{{x1,…},f1,df1,…},…},{x,…}] constructs an interpolating polynomial that reproduces derivatives as well as function values.
+```wolfram
+Expand[%]
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/InterpolatingPolynomial.html) for more details.*

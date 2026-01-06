@@ -1,14 +1,23 @@
 # ImageMultiply
 
+`ImageMultiply[image, x]` multiplies each channel value in image by a factor x.
+
+`ImageMultiply[image1, image2]` gives an image where each pixel is the product of corresponding pixels.
+
+## Examples
+
+Darken an image:
+
+```wolfram
+img = ExampleData[{"TestImage", "Lena"}];
+ImageMultiply[img, 0.5]
 ```
-ImageMultiply[image,x] multiplies each channel value in image by a factor x.
 
-ImageMultiply[image1,image2] gives an image in which each pixel is the product of the corresponding pixels in image1 and image2.
+Multiply two images:
 
-ImageMultiply[image,expr1,expr2,…] multiplies all expri with image, where each expri can be either an image, a number, or a color value.
+```wolfram
+mask = DiskMatrix[100];
+ImageMultiply[img, Image[mask]]
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ImageMultiply.html) for more details.*

@@ -1,10 +1,15 @@
 # SuperDagger
 
+`SuperDagger[expr]` displays as expr†.
+
+## Examples
+
+```wolfram
+SuperDagger[a]
 ```
-SuperDagger[expr] displays as expr†.
+
+```wolfram
+a\[SuperDagger]
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/SuperDagger.html) for more details.*

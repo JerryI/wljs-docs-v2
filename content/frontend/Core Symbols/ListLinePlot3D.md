@@ -1,14 +1,22 @@
 # ListLinePlot3D
 
+`ListLinePlot3D[{{x1, y1, z1}, {x2, y2, z2}, ..., {xn, yn, zn}}]` plots a curve through the 3D points {x_i, y_i, z_i}.
+
+`ListLinePlot3D[{data1, data2, ...}]` plots curves through multiple sets of {x, y, z} points.
+
+## Examples
+
+Plot a 3D curve:
+
+```wolfram
+data = Table[{Cos[t], Sin[t], t}, {t, 0, 4 Pi, 0.1}];
+ListLinePlot3D[data]
 ```
-ListLinePlot3D[{{x1,y1,z1},{x2,y2,z2},…,{xn,yn,zn}}] plots a curve through the 3D points {xi,yi,zi}.
 
-ListLinePlot3D[{{z11,z12,…,z1n},…,{zm1,zm2,…,zmn}}] plots each row {zi1,zi2,…,zin} as a curve in the x direction, with successive curves stacked in the y direction. 
+Multiple curves:
 
-ListLinePlot3D[{data1,data2,…}] plots curves through multiple sets of {x,y,z} points.
+```wolfram
+ListLinePlot3D[{data, RotationTransform[Pi/4, {0, 0, 1}] /@ data}]
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ListLinePlot3D.html) for more details.*

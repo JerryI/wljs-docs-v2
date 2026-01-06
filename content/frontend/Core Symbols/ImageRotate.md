@@ -1,18 +1,22 @@
 # ImageRotate
 
+`ImageRotate[image]` rotates image by 90° about its center.
+
+`ImageRotate[image, θ]` rotates image by θ radians.
+
+## Examples
+
+Rotate 90 degrees:
+
+```wolfram
+img = ExampleData[{"TestImage", "Lena"}];
+ImageRotate[img]
 ```
-ImageRotate[image] rotates image by 90° about its center in the x-y plane. 
 
-ImageRotate[image,θ] rotates image by θ radians.
+Rotate by 45 degrees:
 
-ImageRotate[image,{θ,w}] rotates a 3D image around the 3D vector w.
-
-ImageRotate[image,…,size] gives an image of the specified size.
-
-ImageRotate[video,…] rotate frames of video.
+```wolfram
+ImageRotate[img, Pi/4]
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ImageRotate.html) for more details.*

@@ -1,10 +1,21 @@
 # InverseGammaRegularized
 
+`InverseGammaRegularized[a, s]` gives the inverse of the regularized incomplete gamma function.
+
+## Examples
+
+Compute inverse:
+
+```wolfram
+InverseGammaRegularized[2, 0.5]
+(* 1.67835 *)
 ```
-InverseGammaRegularized[a,s] gives the inverse of the regularized incomplete gamma function. 
+
+Verify relationship:
+
+```wolfram
+GammaRegularized[2, InverseGammaRegularized[2, 0.5]]
+(* 0.5 *)
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/InverseGammaRegularized.html) for more details.*

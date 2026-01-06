@@ -1,12 +1,19 @@
 # JoinedCurve
 
+`JoinedCurve[{segment1, segment2, ...}]` represents a curve consisting of connected segments.
+
+## Examples
+
+Connected line segments:
+
+```wolfram
+Graphics[JoinedCurve[{Line[{{0, 0}, {1, 1}}], Line[{{1, 1}, {2, 0}}]}]]
 ```
-JoinedCurve[{segment1,segment2,…}] represents a curve consisting of segment1 followed by segment2 etc. 
 
-JoinedCurve[{component1,component2,…}] represents a list of separate component curves component1, component2, etc. 
+With Bezier curves:
+
+```wolfram
+Graphics[JoinedCurve[{BezierCurve[{{0, 0}, {0.5, 1}, {1, 0}}], Line[{{1, 0}, {2, 1}}]}]]
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/JoinedCurve.html) for more details.*

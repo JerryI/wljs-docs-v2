@@ -1,10 +1,19 @@
 # StarGraph
 
+`StarGraph[n]` gives the star graph with n vertices.
+
+## Examples
+
+Create a star graph:
+
+```wolfram
+StarGraph[5]
 ```
-StarGraph[n] gives the star graph with n vertices Sn.
+
+With styling:
+
+```wolfram
+StarGraph[7, VertexLabels -> Automatic]
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/StarGraph.html) for more details.*

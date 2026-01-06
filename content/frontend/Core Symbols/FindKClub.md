@@ -1,10 +1,16 @@
 # FindKClub
 
+`FindKClub[g,k]` finds a largest k-club in the graph g.
+
+## Examples
+
+```wolfram
+(* Find a 2-club *)
+g = RandomGraph[{10, 20}];
+FindKClub[g, 2]
+
+(* Find a 3-club *)
+FindKClub[g, 3]
 ```
-FindKClub[g,k] finds a largest k-club in the graph g.
-```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/FindKClub.html) for more details.*

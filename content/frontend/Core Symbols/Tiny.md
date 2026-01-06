@@ -1,10 +1,21 @@
 # Tiny
 
+`Tiny` is a style or option setting that specifies that objects should be tiny.
+
+This is one of several symbolic size specifications (Tiny, Small, Medium, Large).
+
+## Examples
+
+```wolfram
+Style["Hello", Tiny]
 ```
-Tiny is a style or option setting that specifies that objects should be tiny.
+
+```wolfram
+Graphics[{Disk[]}, ImageSize -> Tiny]
 ```
 
+```wolfram
+BarChart[{1, 2, 3}, ImageSize -> Tiny]
+```
 
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Tiny.html) for more details.*

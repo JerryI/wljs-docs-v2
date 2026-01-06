@@ -1,10 +1,11 @@
 # UpDownArrow
 
+`UpDownArrow[x, y, ...]` displays as x↕y↕....
+
+## Examples
+
+```wolfram
+UpDownArrow[a, b, c]
 ```
-UpDownArrow[x,y,…] displays as x↕y↕….
-```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/UpDownArrow.html) for more details.*

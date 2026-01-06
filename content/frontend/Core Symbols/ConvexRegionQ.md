@@ -1,10 +1,14 @@
 # ConvexRegionQ
 
+`ConvexRegionQ[reg]` gives True if reg is a convex region and False otherwise.
+
+## Examples
+
+Check if a region is convex:
+
+```wolfram
+ConvexRegionQ[Disk[]]
+(* True *)
 ```
-ConvexRegionQ[reg] gives True if reg is a convex region and False otherwise. 
-```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ConvexRegionQ.html) for more details.*

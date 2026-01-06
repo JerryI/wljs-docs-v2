@@ -1,10 +1,23 @@
 # Character
 
+`Character` represents a single character in `Read`.
+
+## Examples
+
+Read a single character from a stream:
+
+```wolfram
+stream = StringToStream["Hello"];
+Read[stream, Character]
+(* "H" *)
 ```
-Character represents a single character in Read. 
+
+Read multiple characters:
+
+```wolfram
+stream = StringToStream["ABC"];
+Table[Read[stream, Character], 3]
+(* {"A", "B", "C"} *)
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Character.html) for more details.*

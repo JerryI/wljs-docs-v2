@@ -1,10 +1,11 @@
 # ImageScan
 
+`ImageScan[f, image]` evaluates f applied to each pixel of image in turn.
+
+## Examples
+
+```wolfram
+ImageScan[Print, Image[{{0, 1}, {1, 0}}]]
 ```
-ImageScan[f,image] evaluates f applied to each pixel of image in turn.
-```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ImageScan.html) for more details.*

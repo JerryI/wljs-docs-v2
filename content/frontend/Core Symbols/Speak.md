@@ -1,10 +1,15 @@
 # Speak
 
+`Speak[expr]` speaks a spoken representation of the expression expr.
+
+## Examples
+
+```wolfram
+Speak["Hello, World!"]
 ```
-Speak[expr] speaks a spoken representation of the expression expr.
+
+```wolfram
+Speak[2 + 2]
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Speak.html) for more details.*

@@ -1,14 +1,26 @@
 # Out
 
+`%n` or `Out[n]` is a global object that is assigned to be the value produced on the nth output line.
+
+`%` gives the last result generated. `%%` gives the result before last.
+
+## Examples
+
+Reference previous output:
+
+```wolfram
+1 + 2
+(* 3 *)
+
+% * 2
+(* 6 *)
 ```
-%n or Out[n] is a global object that is assigned to be the value produced on the nth output line. 
 
-% gives the last result generated. 
+Specific output line:
 
-%% gives the result before last. %%…% (k times) gives the kth previous result. 
+```wolfram
+Out[1]
+(* value from first output line *)
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Out.html) for more details.*

@@ -1,14 +1,25 @@
 # SequenceReplace
 
+`SequenceReplace[list, rules]` replaces sequences in list according to the specified rule or list of rules.
+
+`SequenceReplace[list, rules, n]` does only the first n replacements.
+
+`SequenceReplace[rules]` represents an operator form that can be applied to an expression.
+
+## Examples
+
+Replace a sequence:
+
+```wolfram
+SequenceReplace[{a, b, c, d}, {a, b} -> x]
+(* {x, c, d} *)
 ```
-SequenceReplace[list,rules] replaces sequences in list according to the specified rule or list of rules. 
 
-SequenceReplace[list,rules,n] does only the first n replacements.
+Replace all consecutive pairs:
 
-SequenceReplace[rules] represents an operator form of SequenceReplace that can be applied to an expression.
+```wolfram
+SequenceReplace[{1, 2, 3, 4}, {x_, y_} -> x + y]
+(* {3, 7} *)
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/SequenceReplace.html) for more details.*

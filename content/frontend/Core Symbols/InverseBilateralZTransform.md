@@ -1,12 +1,17 @@
 # InverseBilateralZTransform
 
+`InverseBilateralZTransform[expr, z, n]` gives the inverse bilateral Z transform of expr.
+
+- `InverseBilateralZTransform[expr, {z1, ..., zk}, {n1, ..., nk}]` gives the multidimensional inverse bilateral Z transform of expr.
+
+## Examples
+
+```wolfram
+InverseBilateralZTransform[z/(z - 1), z, n]
 ```
-InverseBilateralZTransform[expr,z,n] gives the inverse bilateral Z transform of expr.
 
-InverseBilateralZTransform[expr,{z1,…,zk},{n1,…,nk}] gives the multidimensional inverse bilateral Z transform of expr.
+```wolfram
+InverseBilateralZTransform[1/(z - 2), z, n]
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/InverseBilateralZTransform.html) for more details.*

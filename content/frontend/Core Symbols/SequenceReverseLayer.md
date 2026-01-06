@@ -1,10 +1,22 @@
 # SequenceReverseLayer
 
+`SequenceReverseLayer[]` represents a net that reverses the order of an input sequence.
+
+This layer is used in neural networks to reverse temporal or sequential data.
+
+## Examples
+
+```wolfram
+SequenceReverseLayer[]
 ```
-SequenceReverseLayer[] represents a net that reverses the order of an input sequence.
+
+```wolfram
+layer = SequenceReverseLayer[];
+layer[{{1, 2, 3}, {4, 5, 6}}]
 ```
 
+```wolfram
+NetChain[{SequenceReverseLayer[], LongShortTermMemoryLayer[10]}]
+```
 
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/SequenceReverseLayer.html) for more details.*

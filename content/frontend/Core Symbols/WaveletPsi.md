@@ -1,12 +1,17 @@
 # WaveletPsi
 
+`WaveletPsi[wave, x]` gives the wavelet function ψ(x) for the symbolic wavelet wave evaluated at x.
+
+- `WaveletPsi[wave]` gives the wavelet function as a pure function.
+
+## Examples
+
+```wolfram
+WaveletPsi[HaarWavelet[], 0.5]
 ```
-WaveletPsi[wave,x] gives the wavelet function ψ(x) for the symbolic wavelet wave evaluated at x.
 
-WaveletPsi[wave] gives the wavelet function as a pure function.
+```wolfram
+Plot[WaveletPsi[DaubechiesWavelet[4], x], {x, 0, 7}]
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/WaveletPsi.html) for more details.*

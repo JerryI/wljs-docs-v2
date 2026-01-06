@@ -1,10 +1,19 @@
 # DeleteDirectory
 
+`DeleteDirectory["dir"]` deletes the specified directory.
+
+## Examples
+
+Delete an empty directory:
+
+```wolfram
+DeleteDirectory["emptyFolder"]
 ```
-DeleteDirectory["dir"] deletes the specified directory. 
+
+Delete with contents:
+
+```wolfram
+DeleteDirectory["myFolder", DeleteContents -> True]
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/DeleteDirectory.html) for more details.*

@@ -1,10 +1,20 @@
 # FresnelC
 
+`FresnelC[z]` gives the Fresnel cosine integral C(z).
+
+## Examples
+
+Compute Fresnel C:
+
+```wolfram
+FresnelC[1.0]
+(* 0.779893 *)
 ```
-FresnelC[z] gives the Fresnel integral C(z). 
+
+Plot the function:
+
+```wolfram
+Plot[FresnelC[x], {x, 0, 5}]
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/FresnelC.html) for more details.*

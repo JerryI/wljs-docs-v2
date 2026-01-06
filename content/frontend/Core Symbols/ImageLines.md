@@ -1,16 +1,23 @@
 # ImageLines
 
+`ImageLines[image]` finds line segments in image and returns the coordinates of their endpoints.
+
+`ImageLines[image, t]` uses threshold t for selecting lines.
+
+## Examples
+
+Detect lines in an image:
+
+```wolfram
+img = ExampleData[{"TestImage", "Lena"}];
+lines = ImageLines[img];
+HighlightImage[img, Line /@ lines]
 ```
-ImageLines[image] finds line segments in image and returns the coordinates of their endpoints.
 
-ImageLines[image,t] uses the threshold t for selecting image lines.
+With threshold:
 
-ImageLines[image,t,d] uses the parameter d to control the distinctness of the detected lines.
-
-ImageLines[video,…] finds lines in frames of video.
+```wolfram
+ImageLines[img, 0.5]
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ImageLines.html) for more details.*

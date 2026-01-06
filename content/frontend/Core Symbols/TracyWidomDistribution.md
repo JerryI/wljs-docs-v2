@@ -1,10 +1,16 @@
 # TracyWidomDistribution
 
+`TracyWidomDistribution[β]` represents a Tracy–Widom distribution with Dyson index β.
+
+## Examples
+
+```wolfram
+dist = TracyWidomDistribution[1];
+PDF[dist, x]
 ```
-TracyWidomDistribution[β] represents a Tracy–Widom distribution with Dyson index β.
+
+```wolfram
+Mean[TracyWidomDistribution[2]]
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/TracyWidomDistribution.html) for more details.*

@@ -1,10 +1,22 @@
 # TimeSeriesModel
 
+`TimeSeriesModel[...]` represents the symbolic time series model obtained from `TimeSeriesModelFit`.
+
+This object contains fitted model parameters and can be used for forecasting.
+
+## Examples
+
+```wolfram
+model = TimeSeriesModelFit[data]
+model["BestFit"]
 ```
-TimeSeriesModel[…] represents the symbolic time series model obtained from TimeSeriesModelFit.
+
+```wolfram
+TimeSeriesForecast[model, {10}]
 ```
 
+```wolfram
+model["Properties"]
+```
 
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/TimeSeriesModel.html) for more details.*

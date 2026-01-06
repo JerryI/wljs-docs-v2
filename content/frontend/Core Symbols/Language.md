@@ -1,10 +1,17 @@
 # Language
 
+`Language` is an option that specifies the language to use.
+
+## Examples
+
+Set the language for text analysis:
+```wolfram
+TextTranslation["Hello", Language -> "French"]
 ```
-Language is an option that specifies the language to use.
+
+Specify language for spell checking:
+```wolfram
+SpellingCorrectionList["colour", Language -> "BritishEnglish"]
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Language.html) for more details.*

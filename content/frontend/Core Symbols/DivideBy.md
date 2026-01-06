@@ -1,10 +1,24 @@
 # DivideBy
 
+`x /= c` divides x by c and returns the new value of x.
+
+## Examples
+
+Divide and assign:
+
+```wolfram
+x = 100;
+x /= 5
+(* 20 *)
 ```
-x/=c divides x by c and returns the new value of x. 
+
+Successive division:
+
+```wolfram
+y = 1000;
+y /= 10;
+y /= 2
+(* 50 *)
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/DivideBy.html) for more details.*

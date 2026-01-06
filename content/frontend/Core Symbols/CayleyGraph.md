@@ -1,10 +1,21 @@
 # CayleyGraph
 
+`CayleyGraph[group]` returns a Cayley graph representation of a group.
+
+## Examples
+
+Create the Cayley graph of a symmetric group:
+
+```wolfram
+CayleyGraph[SymmetricGroup[3]]
+(* Graph[...] *)
 ```
-CayleyGraph[group] returns a Cayley graph representation of group.
+
+Cayley graph of a dihedral group:
+
+```wolfram
+CayleyGraph[DihedralGroup[4]]
+(* Graph[...] *)
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/CayleyGraph.html) for more details.*

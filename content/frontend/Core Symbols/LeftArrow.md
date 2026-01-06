@@ -1,10 +1,17 @@
 # LeftArrow
 
+`LeftArrow[x, y, ...]` displays as x←y←....
+
+## Examples
+
+Display left arrow notation:
+```wolfram
+LeftArrow[a, b, c]
 ```
-LeftArrow[x,y,…] displays as x←y←….
+
+Use in expressions:
+```wolfram
+LeftArrow[x, y]
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/LeftArrow.html) for more details.*

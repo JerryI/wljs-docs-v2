@@ -1,12 +1,22 @@
 # Hyperplane
 
+`Hyperplane[n, p]` represents a hyperplane with normal n passing through point p.
+
+`Hyperplane[n, c]` represents a hyperplane where points x satisfy n·x = c.
+
+## Examples
+
+Define a plane in 3D:
+
+```wolfram
+Hyperplane[{0, 0, 1}, {0, 0, 0}]
 ```
-Hyperplane[n,p] represents the hyperplane with normal n passing through the point p.
 
-Hyperplane[n,c] represents the hyperplane with normal n given by the points x that satisfy n.xc. 
+Region membership:
+
+```wolfram
+RegionMember[Hyperplane[{1, 1}, 0], {1, -1}]
+(* True *)
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Hyperplane.html) for more details.*

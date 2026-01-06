@@ -1,10 +1,19 @@
 # ComplexPlot
 
+`ComplexPlot[f, {z, zmin, zmax}]` generates a plot of Arg[f] over the complex rectangle with corners zmin and zmax.
+
+## Examples
+
+Plot a complex function:
+
+```wolfram
+ComplexPlot[z^2, {z, -2 - 2 I, 2 + 2 I}]
 ```
-ComplexPlot[f,{z,zmin,zmax}] generates a plot of Arg[f] over the complex rectangle with corners zmin and zmax.
+
+Plot with singularities:
+
+```wolfram
+ComplexPlot[1/z, {z, -2 - 2 I, 2 + 2 I}]
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ComplexPlot.html) for more details.*

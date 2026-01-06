@@ -1,10 +1,21 @@
 # IndefiniteMatrixQ
 
+`IndefiniteMatrixQ[m]` gives `True` if m is explicitly indefinite (has both positive and negative eigenvalues), and `False` otherwise.
+
+## Examples
+
+Test for indefinite matrix:
+
+```wolfram
+IndefiniteMatrixQ[{{1, 0}, {0, -1}}]
+(* True *)
 ```
-IndefiniteMatrixQ[m] gives True if m is explicitly indefinite, and False otherwise. 
+
+Definite matrix:
+
+```wolfram
+IndefiniteMatrixQ[{{1, 0}, {0, 1}}]
+(* False *)
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/IndefiniteMatrixQ.html) for more details.*

@@ -1,10 +1,15 @@
 # GeoStylingImageFunction
 
+`GeoStylingImageFunction` is an option for specifying an image effect to apply to a geo style.
+
+## Examples
+
+```wolfram
+GeoGraphics[{}, GeoBackground -> GeoStyling["Satellite", GeoStylingImageFunction -> (ImageAdjust[#] &)]]
 ```
-GeoStylingImageFunction is an option for specifying an image effect to apply to a geo style.
+
+```wolfram
+GeoGraphics[{}, GeoStylingImageFunction -> (ColorNegate[#] &)]
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/GeoStylingImageFunction.html) for more details.*

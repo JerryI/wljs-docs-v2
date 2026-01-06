@@ -1,10 +1,11 @@
 # RemoveOutputStreamMethod
 
+`RemoveOutputStreamMethod["name"]` removes a custom output stream method.
+
+## Examples
+
+```wolfram
+RemoveOutputStreamMethod["MyCustomMethod"]
 ```
-RemoveOutputStreamMethod["name"] removes a custom output stream method.
-```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/RemoveOutputStreamMethod.html) for more details.*

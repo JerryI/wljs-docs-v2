@@ -1,12 +1,24 @@
 # SpeechSynthesize
 
+`SpeechSynthesize[expr]` synthesizes the contents of expr as an Audio object.
+
+- `SpeechSynthesize[expr, voice]` uses the specified voice to synthesize the speech signal.
+
+This function converts text to speech using text-to-speech synthesis.
+
+## Examples
+
+```wolfram
+SpeechSynthesize["Hello, world!"]
 ```
-SpeechSynthesize[expr] synthesizes the contents of expr as an Audio object. 
 
-SpeechSynthesize[expr,voice] uses the specified voice to synthesize the speech signal.
+```wolfram
+SpeechSynthesize["The answer is forty-two.", "Male"]
 ```
 
+```wolfram
+audio = SpeechSynthesize["Welcome to Wolfram Language"];
+AudioPlay[audio]
+```
 
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/SpeechSynthesize.html) for more details.*

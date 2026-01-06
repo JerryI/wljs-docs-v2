@@ -1,10 +1,21 @@
 # Superset
 
+`Superset[x, y, ...]` displays as x⊃y⊃….
+
+This is a symbolic representation of superset relations for mathematical typesetting.
+
+## Examples
+
+```wolfram
+Superset[A, B]
 ```
-Superset[x,y,…] displays as x⊃y⊃….
+
+```wolfram
+Superset[X, Y, Z]
 ```
 
+```wolfram
+TraditionalForm[Superset[S, T]]
+```
 
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Superset.html) for more details.*

@@ -1,10 +1,21 @@
 # NotDoubleVerticalBar
 
+`NotDoubleVerticalBar[x, y, ...]` displays as x∦y∦….
+
+This is a symbolic representation that displays as the "not parallel" relation symbol.
+
+## Examples
+
+```wolfram
+NotDoubleVerticalBar[a, b]
 ```
-NotDoubleVerticalBar[x,y,…] displays as x∦y∦….
+
+```wolfram
+NotDoubleVerticalBar[x, y, z]
 ```
 
+```wolfram
+x \[NotDoubleVerticalBar] y
+```
 
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/NotDoubleVerticalBar.html) for more details.*

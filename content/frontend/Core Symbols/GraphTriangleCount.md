@@ -1,10 +1,15 @@
 # GraphTriangleCount
 
+`GraphTriangleCount[g]` gives the number of triangles in the graph `g`.
+
+## Examples
+
+```wolfram
+GraphTriangleCount[CompleteGraph[5]]
 ```
-GraphTriangleCount[g] gives the number of triangles in the graph g.
+
+```wolfram
+GraphTriangleCount[RandomGraph[{20, 50}]]
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/GraphTriangleCount.html) for more details.*

@@ -1,10 +1,20 @@
 # HoldPattern
 
+`HoldPattern[expr]` is equivalent to expr for pattern matching, but maintains expr in an unevaluated form.
+
+## Examples
+
+Match unevaluated expressions:
+
+```wolfram
+Cases[{1 + 1, 2 + 2, Hold[3 + 3]}, HoldPattern[_ + _]]
+(* {1 + 1, 2 + 2} - matches before evaluation *)
 ```
-HoldPattern[expr] is equivalent to expr for pattern matching, but maintains expr in an unevaluated form. 
+
+Use in rules:
+
+```wolfram
+{1 + 1, 2 + 3} /. HoldPattern[a_ + b_] :> {a, b}
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/HoldPattern.html) for more details.*

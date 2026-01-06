@@ -1,12 +1,15 @@
 # NeedlemanWunschSimilarity
 
+`NeedlemanWunschSimilarity[u, v]` gives a number representing the Needleman–Wunsch similarity between strings, vectors, or biomolecular sequences u and v.
+
+## Examples
+
+```wolfram
+NeedlemanWunschSimilarity["ACGT", "ACTT"]
 ```
-NeedlemanWunschSimilarity[u,v] gives a number representing the Needleman–Wunsch similarity between strings or vectors u and v.
 
-NeedlemanWunschSimilarity[u,v] gives a number representing the Needleman–Wunsch similarity between strings, vectors or biomolecular sequences u and v.
+```wolfram
+NeedlemanWunschSimilarity[{1, 2, 3}, {1, 3, 3}]
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/NeedlemanWunschSimilarity.html) for more details.*

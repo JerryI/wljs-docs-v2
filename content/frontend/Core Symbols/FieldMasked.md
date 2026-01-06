@@ -1,10 +1,15 @@
 # FieldMasked
 
+`FieldMasked` is an option to InputField that determines whether to mask user input.
+
+## Examples
+
+```wolfram
+(* Create a password field with masked input *)
+InputField["", String, FieldMasked -> True]
+
+(* Unmasked input (default) *)
+InputField["", String, FieldMasked -> False]
 ```
-FieldMasked is an option to InputField that determines whether to mask user input.
-```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/FieldMasked.html) for more details.*

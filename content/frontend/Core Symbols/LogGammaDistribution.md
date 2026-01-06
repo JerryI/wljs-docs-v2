@@ -1,10 +1,16 @@
 # LogGammaDistribution
 
+`LogGammaDistribution[α, β, μ]` represents a log-gamma distribution with shape parameters α and β and location parameter μ.
+
+## Examples
+
+```wolfram
+dist = LogGammaDistribution[2, 1, 0];
+PDF[dist, x]
 ```
-LogGammaDistribution[α,β,μ] represents a log-gamma distribution with shape parameters α and β and location parameter μ.
+
+```wolfram
+RandomVariate[LogGammaDistribution[1, 2, 0], 5]
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/LogGammaDistribution.html) for more details.*

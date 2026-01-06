@@ -1,10 +1,20 @@
 # BayesianMaximizationObject
 
+`BayesianMaximizationObject[...]` represents the result of a Bayesian maximization process.
+
+## Examples
+
+Perform Bayesian maximization:
+
+```wolfram
+result = BayesianMaximization[-#^2 &, {-10, 10}]
+(* BayesianMaximizationObject[...] *)
 ```
-BayesianMaximizationObject[…] represents the result of a Bayesian maximization process.
+
+Extract the maximum:
+
+```wolfram
+result["MaximumConfiguration"]
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/BayesianMaximizationObject.html) for more details.*

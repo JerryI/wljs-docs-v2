@@ -1,10 +1,15 @@
 # LeftUpVectorBar
 
+`LeftUpVectorBar[x, y, …]` displays as x ⥘ y ⥘ ….
+
+## Examples
+
+```wolfram
+LeftUpVectorBar[a, b]
 ```
-LeftUpVectorBar[x,y,…] displays as x⥘y⥘….
+
+```wolfram
+LeftUpVectorBar[x, y, z]
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/LeftUpVectorBar.html) for more details.*

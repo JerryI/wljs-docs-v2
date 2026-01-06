@@ -1,14 +1,16 @@
 # DiscreteLQEstimatorGains
 
+`DiscreteLQEstimatorGains[ssm, {w, v}, τ]` gives the optimal discrete-time estimator gain matrix with sampling period τ for the continuous-time `StateSpaceModel` ssm.
+
+`DiscreteLQEstimatorGains[{ssm, sensors}, {w, v}, τ]` specifies sensors as the noisy measurements.
+
+## Examples
+
+Compute estimator gains:
+
+```wolfram
+sys = StateSpaceModel[{{-1}}, {{1}}, {{1}}, {{0}}];
+DiscreteLQEstimatorGains[sys, {{{1}}, {{1}}}, 0.1]
 ```
-DiscreteLQEstimatorGains[ssm,{w,v},τ] gives the optimal discrete-time estimator gain matrix with sampling period τ for the continuous-time StateSpaceModel ssm, with process and measurement noise covariance matrices w and v.
 
-DiscreteLQEstimatorGains[{ssm,sensors},{w,v},τ] specifies sensors as the noisy measurements of ssm.
-
-DiscreteLQEstimatorGains[{ssm,sensors,dinputs},{w,v},τ] specifies dinputs as the deterministic inputs of ssm.
-```
-
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/DiscreteLQEstimatorGains.html) for more details.*

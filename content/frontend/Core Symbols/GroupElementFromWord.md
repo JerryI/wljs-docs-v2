@@ -1,10 +1,15 @@
 # GroupElementFromWord
 
+`GroupElementFromWord[group, w]` returns the element of `group` determined by the word `w` in the generators of `group`.
+
+## Examples
+
+```wolfram
+GroupElementFromWord[SymmetricGroup[4], {1, 2, 1}]
 ```
-GroupElementFromWord[group,w] returns the element of group determined by the word w in the generators of group.
+
+```wolfram
+GroupElementFromWord[DihedralGroup[6], {1, -1, 2}]
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/GroupElementFromWord.html) for more details.*

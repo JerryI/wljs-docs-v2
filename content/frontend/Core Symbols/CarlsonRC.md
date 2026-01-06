@@ -1,10 +1,21 @@
 # CarlsonRC
 
+`CarlsonRC[x, y]` gives Carlson's elliptic integral RC(x, y).
+
+## Examples
+
+Evaluate Carlson RC:
+
+```wolfram
+N[CarlsonRC[1, 2]]
+(* 0.785398 *)
 ```
-CarlsonRC[x,y] gives the Carlson's elliptic integral RC(x,y).
+
+Symbolic form:
+
+```wolfram
+CarlsonRC[0, 1]
+(* Pi/2 *)
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/CarlsonRC.html) for more details.*

@@ -1,10 +1,15 @@
 # LineBreakWithin
 
+`LineBreakWithin` is an option for selections that specifies whether line breaks occur automatically when the end of a line is reached.
+
+## Examples
+
+```wolfram
+Style["Long text content here", LineBreakWithin -> False]
 ```
-LineBreakWithin is an option for selections that specifies whether line breaks occur automatically when the end of a line is reached.
+
+```wolfram
+Cell["Content", LineBreakWithin -> True]
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/LineBreakWithin.html) for more details.*

@@ -1,16 +1,22 @@
 # ListLogLinearPlot
 
+`ListLogLinearPlot[{y1, y2, ...}]` makes a log-linear plot of the y_i, assumed to correspond to x coordinates 1, 2, ....
+
+`ListLogLinearPlot[{{x1, y1}, {x2, y2}, ...}]` makes a log-linear plot of the specified list of x and y values.
+
+## Examples
+
+Log-linear plot:
+
+```wolfram
+ListLogLinearPlot[{10, 100, 1000, 10000}]
 ```
-ListLogLinearPlot[{y1,y2,…}] makes a log-linear plot of the yi, assumed to correspond to x coordinates 1, 2, ….
 
-ListLogLinearPlot[{{x1,y1},{x2,y2},…}] makes a log-linear plot of the specified list of x and y values.
+With coordinates:
 
-ListLogLinearPlot[{list1,list2,…}] plots several lists of values.
-
-ListLogLinearPlot[{…,w[datai,…],…}] plots datai with features defined by the symbolic wrapper w. 
+```wolfram
+data = Table[{Exp[x], x}, {x, 1, 5}];
+ListLogLinearPlot[data]
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ListLogLinearPlot.html) for more details.*

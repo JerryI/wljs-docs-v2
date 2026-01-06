@@ -1,14 +1,22 @@
 # ImageTransformation
 
+`ImageTransformation[image, f]` gives an image where each pixel at position p corresponds to position f[p] in image.
+
+`ImageTransformation[image, f, size]` gives an image of the specified size.
+
+## Examples
+
+Fisheye effect:
+
+```wolfram
+img = ExampleData[{"TestImage", "Lena"}];
+ImageTransformation[img, # (1 + 0.5 Norm[#]^2) &, DataRange -> Full]
 ```
-ImageTransformation[image,f] gives an image in which each pixel at position p corresponds to the position f[p] in image.
 
-ImageTransformation[image,f,size] gives an image of the specified size.
+Wave distortion:
 
-ImageTransformation[video,…] transforms frames of a video.
+```wolfram
+ImageTransformation[img, {#[[1]], #[[2]] + 10 Sin[#[[1]]/20]} &]
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ImageTransformation.html) for more details.*

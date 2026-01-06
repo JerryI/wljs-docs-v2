@@ -1,10 +1,18 @@
 # InnerPolyhedron
 
+`InnerPolyhedron[poly]` gives the inner polyhedron of the polyhedron poly.
+
+## Examples
+
+Get the inner polyhedron of a stellated shape:
+```wolfram
+InnerPolyhedron[PolyhedronData["GreatStellatedDodecahedron"]]
 ```
-InnerPolyhedron[poly] gives the inner polyhedron of the polyhedron poly.
+
+Compute the inner polyhedron of a custom polyhedron:
+```wolfram
+poly = ConvexHullMesh[RandomPoint[Sphere[], 20]];
+InnerPolyhedron[poly]
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/InnerPolyhedron.html) for more details.*

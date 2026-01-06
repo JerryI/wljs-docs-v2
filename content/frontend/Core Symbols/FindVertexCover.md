@@ -1,12 +1,22 @@
 # FindVertexCover
 
+`FindVertexCover[g]` finds a vertex cover of the graph g with a minimum number of vertices.
+
+## Examples
+
+Find minimum vertex cover:
+
+```wolfram
+g = Graph[{1 <-> 2, 2 <-> 3, 3 <-> 4}]
+FindVertexCover[g]
+(* {2, 3} *)
 ```
-FindVertexCover[g] finds a vertex cover of the graph g with a minimum number of vertices.
 
-FindVertexCover[{v->w,…}] uses rules v->w to specify the graph g. 
+For a complete graph:
+
+```wolfram
+FindVertexCover[CompleteGraph[4]]
+(* {1, 2, 3} *)
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/FindVertexCover.html) for more details.*

@@ -1,10 +1,17 @@
 # HandlerFunctionsKeys
 
+`HandlerFunctionsKeys` is an option that specifies the content of associations to which to apply handler functions.
+
+## Examples
+
+Use with WebSocketConnect:
+```wolfram
+WebSocketConnect[url, HandlerFunctionsKeys -> {"Body", "Headers"}]
 ```
-HandlerFunctionsKeys is an option that specifies the content of associations to which to apply handler functions. 
+
+Specify keys for handler functions:
+```wolfram
+URLRead[url, HandlerFunctionsKeys -> All]
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/HandlerFunctionsKeys.html) for more details.*

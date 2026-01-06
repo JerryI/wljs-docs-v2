@@ -1,12 +1,23 @@
 # PersistenceLocation
 
+`PersistenceLocation["type"]` represents a persistence location of the given type.
+
+- `PersistenceLocation["type", base]` includes the base address for a location type that allows multiple locations.
+
+This is used with `PersistentValue` to specify where persistent data is stored.
+
+## Examples
+
+```wolfram
+PersistenceLocation["Local"]
 ```
-PersistenceLocation["type"] represents a persistence location of the given type.
 
-PersistenceLocation["type",base] includes the base address for a location type that allows multiple locations.
+```wolfram
+PersistenceLocation["KernelSession"]
 ```
 
+```wolfram
+PersistenceLocation["FrontEndSession", "custom"]
+```
 
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/PersistenceLocation.html) for more details.*

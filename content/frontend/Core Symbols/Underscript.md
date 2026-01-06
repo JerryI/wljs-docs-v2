@@ -1,10 +1,15 @@
 # Underscript
 
+`Underscript[x, y]` is an object that formats as x with y underneath.
+
+## Examples
+
+```wolfram
+Underscript[a, b]
 ```
-Underscript[x,y] is an object that formats as x+y. 
+
+```wolfram
+Underscript[x, "limit"] // TraditionalForm
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Underscript.html) for more details.*

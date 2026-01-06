@@ -1,10 +1,15 @@
 # RudvalisGroupRu
 
+`RudvalisGroupRu[]` represents the sporadic simple Rudvalis group Ru.
+
+## Examples
+
+```wolfram
+RudvalisGroupRu[]
 ```
-RudvalisGroupRu[] represents the sporadic simple Rudvalis group Ru.
+
+```wolfram
+GroupOrder[RudvalisGroupRu[]]
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/RudvalisGroupRu.html) for more details.*

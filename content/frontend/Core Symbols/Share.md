@@ -1,12 +1,18 @@
 # Share
 
+`Share[expr]` changes the way expr is stored internally, to try and minimize the amount of memory used.
+
+- `Share[]` tries to minimize the memory used to store all expressions.
+
+## Examples
+
+```wolfram
+data = Table[{1, 2, 3}, 1000];
+Share[data]
 ```
-Share[expr] changes the way expr is stored internally, to try and minimize the amount of memory used. 
 
-Share[] tries to minimize the memory used to store all expressions. 
+```wolfram
+Share[]
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Share.html) for more details.*

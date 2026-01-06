@@ -1,14 +1,23 @@
 # DiscreteWaveletTransform
 
+`DiscreteWaveletTransform[data]` gives the discrete wavelet transform (DWT) of an array of data.
+
+`DiscreteWaveletTransform[data, wave]` gives the DWT using the wavelet wave.
+
+`DiscreteWaveletTransform[data, wave, r]` gives the DWT using r levels of refinement.
+
+## Examples
+
+Basic wavelet transform:
+
+```wolfram
+DiscreteWaveletTransform[{1, 2, 3, 4, 5, 6, 7, 8}]
 ```
-DiscreteWaveletTransform[data] gives the discrete wavelet transform (DWT) of an array of data.
 
-DiscreteWaveletTransform[data,wave] gives the discrete wavelet transform using the wavelet wave.
+With Daubechies wavelet:
 
-DiscreteWaveletTransform[data,wave,r] gives the discrete wavelet transform using r levels of refinement.
+```wolfram
+DiscreteWaveletTransform[Range[16], DaubechiesWavelet[4]]
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/DiscreteWaveletTransform.html) for more details.*

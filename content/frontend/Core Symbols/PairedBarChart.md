@@ -1,14 +1,19 @@
 # PairedBarChart
 
+`PairedBarChart[{y1, y2, …}, {z1, z2, …}]` makes a paired bar chart with bar lengths y1, y2, … and z1, z2, ….
+
+## Examples
+
+Basic paired bar chart:
+
+```wolfram
+PairedBarChart[{1, 2, 3}, {2, 3, 1}]
 ```
-PairedBarChart[{y1,y2,…},{z1,z2,…}] makes a paired bar chart with bar lengths y1,  y2, … and z1, z2, …, respectively.
 
-PairedBarChart[{…,wi[yi,…],…},{…,wj[zj,…],…}] makes a paired bar chart with bar features defined by the symbolic wrappers wk.
+With labels:
 
-PairedBarChart[{data11,…},{data21,…}] makes a paired bar chart from multiple datasets data1i and data2j.
+```wolfram
+PairedBarChart[{1, 2, 3}, {2, 3, 1}, ChartLabels -> {"A", "B", "C"}]
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/PairedBarChart.html) for more details.*

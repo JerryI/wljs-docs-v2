@@ -1,18 +1,24 @@
 # RandomComplex
 
+`RandomComplex[]` gives a pseudorandom complex number with real and imaginary parts in the range 0 to 1.
+
+`RandomComplex[{zmin, zmax}]` gives a pseudorandom complex number in the rectangle with corners given by zmin and zmax.
+
+`RandomComplex[range, n]` gives a list of n pseudorandom complex numbers.
+
+## Examples
+
+Random complex number:
+
+```wolfram
+RandomComplex[]
+(* 0.472 + 0.831 I *)
 ```
-RandomComplex[] gives a pseudorandom complex number with real and imaginary parts in the range 0 to 1.
 
-RandomComplex[{zmin,zmax}] gives a pseudorandom complex number in the rectangle with corners given by the complex numbers zmin and zmax.
+In a specific range:
 
-RandomComplex[zmax] gives a pseudorandom complex number in the rectangle whose corners are the origin and zmax.
-
-RandomComplex[range,n] gives a list of n pseudorandom complex numbers.
-
-RandomComplex[range,{n1,n2,…}] gives an n1×n2×… array of pseudorandom complex numbers.
+```wolfram
+RandomComplex[{-1 - I, 1 + I}]
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/RandomComplex.html) for more details.*

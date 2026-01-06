@@ -1,10 +1,13 @@
 # ExpIntegralEi
 
+`ExpIntegralEi[z]` gives the exponential integral function Ei(z).
+
+## Examples
+
+Compute exponential integral Ei:
+
+```wolfram
+ExpIntegralEi[2]
 ```
-ExpIntegralEi[z] gives the exponential integral function Ei(z). 
-```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ExpIntegralEi.html) for more details.*

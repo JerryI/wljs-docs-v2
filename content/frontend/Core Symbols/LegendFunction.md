@@ -1,10 +1,13 @@
 # LegendFunction
 
+`LegendFunction` is an option for legends that specifies an overall function to apply to the generated legend.
+
+## Examples
+
+```wolfram
+Plot[{Sin[x], Cos[x]}, {x, 0, 2 Pi}, 
+  PlotLegends -> Placed[{"Sin", "Cos"}, Right, 
+    LegendFunction -> (Framed[#, Background -> LightYellow] &)]]
 ```
-LegendFunction is an option for legends that specifies an overall function to apply to the generated legend.
-```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/LegendFunction.html) for more details.*

@@ -1,16 +1,25 @@
 # MaximalBy
 
+`MaximalBy[data, f]` returns a list of the elements e_i of data for which the value of f[e_i] is maximal.
+
+`MaximalBy[data, f, n]` returns a list of the elements corresponding to the n largest f[e_i].
+
+`MaximalBy[f]` represents an operator form of `MaximalBy` that can be applied to an expression.
+
+## Examples
+
+Find maximal elements:
+
+```wolfram
+MaximalBy[{1, -2, 3, -4}, Abs]
+(* {-4} *)
 ```
-MaximalBy[data,f] returns a list of the elements ei of data for which the value of f[ei] is maximal.
 
-MaximalBy[data,f,n] returns a list of the elements ei of data corresponding to the n largest f[ei].
+Find elements with longest length:
 
-MaximalBy[data,f,n,p] uses the ordering function p for sorting.
-
-MaximalBy[f] represents an operator form of MaximalBy that can be applied to an expression.
+```wolfram
+MaximalBy[{"a", "bb", "ccc", "dd"}, StringLength]
+(* {"ccc"} *)
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/MaximalBy.html) for more details.*

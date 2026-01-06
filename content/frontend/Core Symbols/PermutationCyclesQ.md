@@ -1,10 +1,15 @@
 # PermutationCyclesQ
 
+`PermutationCyclesQ[expr]` returns True if expr is a permutation in disjoint cyclic form, and False otherwise.
+
+## Examples
+
+```wolfram
+PermutationCyclesQ[Cycles[{{1, 2, 3}}]]
 ```
-PermutationCyclesQ[expr] returns True if expr is a permutation in disjoint cyclic form, and False otherwise.
+
+```wolfram
+PermutationCyclesQ[{1, 2, 3}]
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/PermutationCyclesQ.html) for more details.*

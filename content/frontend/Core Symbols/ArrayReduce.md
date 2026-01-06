@@ -1,16 +1,24 @@
 # ArrayReduce
 
+`ArrayReduce[f, array, n]` reduces dimension n of array by applying f.
+
+`ArrayReduce[f, array, n1;;n2]` reduces dimensions n1 through n2.
+
+`ArrayReduce[f, array, {n1, n2, ...}]` reduces dimensions n1, n2, etc.
+
+## Examples
+
+Sum over the first dimension:
+
+```wolfram
+ArrayReduce[Total, {{1, 2}, {3, 4}}, 1]
+(* {4, 6} *)
 ```
-ArrayReduce[f,array,n] reduces dimension n of array by applying f.
 
-ArrayReduce[f,array,n1;;n2] reduces dimensions n1 through n2.
+Reduce multiple dimensions:
 
-ArrayReduce[f,array,{n1,n2,…}] reduces dimensions n1, n2, etc.
-
-ArrayReduce[f,array,{{n11,n12,…},{n21,n22,…},…}] applies f to arrays formed by combining all dimensions nij to make each dimension i.
+```wolfram
+ArrayReduce[Max, RandomReal[1, {3, 4, 5}], {1, 2}]
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ArrayReduce.html) for more details.*

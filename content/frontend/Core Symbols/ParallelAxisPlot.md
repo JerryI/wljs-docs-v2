@@ -1,12 +1,28 @@
 # ParallelAxisPlot
 
+`ParallelAxisPlot[{{y11, ..., y1n}, ..., {ym1, ..., ymn}}]` generates a parallel axis plot for the points {yi1, ..., yin} using equally spaced axes.
+
+- `ParallelAxisPlot[{data1, data2, ...}]` plots several sets of points.
+
+## Examples
+
+Create a parallel axis plot:
+
+```wolfram
+ParallelAxisPlot[{{1, 2, 3}, {4, 3, 2}, {2, 4, 1}}]
 ```
-ParallelAxisPlot[{{y11,…,y1n},…,{ym1,…,ymn}}] generates a parallel axis plot for the points {yi1,…,yin} using equally spaced axes.
 
-ParallelAxisPlot[{data1,data2,…}] plots several sets of points.
+With multiple datasets:
+
+```wolfram
+ParallelAxisPlot[{{{1, 2, 3}, {2, 3, 4}}, {{5, 4, 3}, {6, 5, 4}}}]
 ```
 
+Visualize high-dimensional data:
 
+```wolfram
+data = RandomReal[{0, 1}, {20, 5}];
+ParallelAxisPlot[data]
+```
 
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ParallelAxisPlot.html) for more details.*

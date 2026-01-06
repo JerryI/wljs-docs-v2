@@ -1,12 +1,17 @@
 # TukeyWindow
 
+`TukeyWindow[x]` represents a Tukey window function of x.
+
+- `TukeyWindow[x, α]` uses the parameter α.
+
+## Examples
+
+```wolfram
+TukeyWindow[0.5]
 ```
-TukeyWindow[x] represents a Tukey window function of x.
 
-TukeyWindow[x,α] uses the parameter α.
+```wolfram
+Plot[TukeyWindow[x, 0.5], {x, -1, 1}]
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/TukeyWindow.html) for more details.*

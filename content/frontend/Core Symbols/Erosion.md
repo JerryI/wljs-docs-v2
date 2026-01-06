@@ -1,14 +1,22 @@
 # Erosion
 
+`Erosion[image, ker]` gives the morphological erosion of image with respect to the structuring element ker.
+
+`Erosion[image, r]` gives the erosion with respect to a range-r square.
+
+## Examples
+
+Erode a binary image:
+
+```wolfram
+img = Binarize[Import["ExampleData/lena.tif"]]
+Erosion[img, 2]
 ```
-Erosion[image,ker] gives the morphological erosion of image with respect to the structuring element ker.
 
-Erosion[image,r] gives the erosion with respect to a range-r square.
+With disk structuring element:
 
-Erosion[data,…] applies erosion to an array of data.
+```wolfram
+Erosion[img, DiskMatrix[3]]
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Erosion.html) for more details.*

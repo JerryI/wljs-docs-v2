@@ -1,10 +1,20 @@
 # MailSettings
 
+`MailSettings` is an option for `SendMail` and `MailServerConnect` to specify mail settings.
+
+## Examples
+
+```wolfram
+SendMail["To" -> "user@example.com", "Body" -> "Hello", 
+  MailSettings -> {"Username" -> "me", "Password" -> "secret"}]
 ```
-MailSettings is an option for SendMail and MailServerConnect to specify mail settings.
+
+```wolfram
+MailServerConnect[server, MailSettings -> settings]
 ```
 
+```wolfram
+$MailSettings
+```
 
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/MailSettings.html) for more details.*

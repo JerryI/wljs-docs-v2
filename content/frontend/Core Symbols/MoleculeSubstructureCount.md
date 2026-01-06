@@ -1,12 +1,23 @@
 # MoleculeSubstructureCount
 
+`MoleculeSubstructureCount[mol, patt]` gives a count of the number of times patt appears as a substructure in mol.
+
+- `MoleculeSubstructureCount[patt]` represents an operator form that can be applied to a molecule.
+
+This function counts occurrences of molecular substructures.
+
+## Examples
+
+```wolfram
+MoleculeSubstructureCount[Molecule["Caffeine"], Molecule["benzene"]]
 ```
-MoleculeSubstructureCount[mol,patt] gives a count of the number of times patt appears as a substructure in mol.
 
-MoleculeSubstructureCount[patt] represents an operator form of MoleculeSubstructureCount that can be applied to a molecule.
+```wolfram
+MoleculeSubstructureCount[Molecule["Aspirin"], "C=O"]
 ```
 
+```wolfram
+MoleculeSubstructureCount["OH"][Molecule["Glucose"]]
+```
 
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/MoleculeSubstructureCount.html) for more details.*

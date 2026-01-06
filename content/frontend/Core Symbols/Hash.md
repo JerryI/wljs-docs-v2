@@ -1,14 +1,23 @@
 # Hash
 
+`Hash[expr]` gives an integer hash code for the expression expr.
+
+`Hash[expr, type]` gives a hash digest of the specified type (e.g., "MD5", "SHA256").
+
+## Examples
+
+Default hash:
+
+```wolfram
+Hash["hello"]
+(* 2860851879461191 *)
 ```
-Hash[expr] gives an integer hash code for the expression expr.
 
-Hash[expr,type] gives an integer hash digest of the specified type for expr.
+SHA-256 hash:
 
-Hash[expr,type,"format"] gives a hash code in the specified format.
+```wolfram
+Hash["hello", "SHA256", "HexString"]
+(* "2cf24dba5fb0a30e26e83b2ac5b9e29e1b161e5c1fa7425e73043362938b9824" *)
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Hash.html) for more details.*

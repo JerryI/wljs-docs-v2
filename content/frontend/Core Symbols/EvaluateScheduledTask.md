@@ -1,10 +1,13 @@
 # EvaluateScheduledTask
 
+`EvaluateScheduledTask[expr]` triggers immediate local execution of the specified task object.
+
+## Examples
+
+Evaluate a scheduled task immediately:
+
+```wolfram
+EvaluateScheduledTask[task]
 ```
-EvaluateScheduledTask[expr] triggers immediate local execution of the specified task object.
-```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/EvaluateScheduledTask.html) for more details.*

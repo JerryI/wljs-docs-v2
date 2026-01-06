@@ -1,10 +1,15 @@
 # TitsGroupT
 
+`TitsGroupT[]` represents the simple Tits group T.
+
+## Examples
+
+```wolfram
+TitsGroupT[]
 ```
-TitsGroupT[] represents the simple Tits group T.
+
+```wolfram
+GroupOrder[TitsGroupT[]]
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/TitsGroupT.html) for more details.*

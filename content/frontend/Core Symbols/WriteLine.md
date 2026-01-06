@@ -1,12 +1,20 @@
 # WriteLine
 
+`WriteLine[stream, "string"]` writes "string", followed by a newline, to the specified output stream.
+
+- `WriteLine[proc, "string"]` writes "string" to an external process proc.
+
+## Examples
+
+```wolfram
+stream = OpenWrite["test.txt"];
+WriteLine[stream, "Hello World"];
+Close[stream];
 ```
-WriteLine[stream, "string"] writes "string", followed by a newline, to the specified output stream.
 
-WriteLine[proc, "string"] writes "string" to an external process proc.
+```wolfram
+proc = StartProcess[$SystemShell];
+WriteLine[proc, "echo hello"];
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/WriteLine.html) for more details.*

@@ -1,10 +1,21 @@
 # ExpandDenominator
 
+`ExpandDenominator[expr]` expands out products and powers that appear as denominators in expr.
+
+## Examples
+
+Expand a denominator:
+
+```wolfram
+ExpandDenominator[1/(a + b)^2]
+(* 1/(a^2 + 2 a b + b^2) *)
 ```
-ExpandDenominator[expr] expands out products and powers that appear as denominators in expr. 
+
+Only the denominator is expanded:
+
+```wolfram
+ExpandDenominator[(x + y)^2/(a + b)^2]
+(* (x + y)^2/(a^2 + 2 a b + b^2) *)
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ExpandDenominator.html) for more details.*

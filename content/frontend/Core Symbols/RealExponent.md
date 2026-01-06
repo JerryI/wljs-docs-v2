@@ -1,12 +1,21 @@
 # RealExponent
 
+`RealExponent[x]` gives log₁₀(|x|).
+
+- `RealExponent[x, b]` gives log_b(|x|).
+
+## Examples
+
+```wolfram
+RealExponent[1000]
 ```
-RealExponent[x] gives log10(x).
 
-RealExponent[x,b] gives logb(x).
+```wolfram
+RealExponent[8, 2]
 ```
 
+```wolfram
+RealExponent[100, 10]
+```
 
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/RealExponent.html) for more details.*

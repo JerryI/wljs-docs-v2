@@ -1,10 +1,21 @@
 # InverseBetaRegularized
 
+`InverseBetaRegularized[s, a, b]` gives the inverse of the regularized incomplete beta function.
+
+## Examples
+
+Compute inverse:
+
+```wolfram
+InverseBetaRegularized[0.5, 2, 3]
+(* 0.385728 *)
 ```
-InverseBetaRegularized[s,a,b] gives the inverse of the regularized incomplete beta function. 
+
+Verify relationship:
+
+```wolfram
+BetaRegularized[InverseBetaRegularized[0.5, 2, 3], 2, 3]
+(* 0.5 *)
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/InverseBetaRegularized.html) for more details.*

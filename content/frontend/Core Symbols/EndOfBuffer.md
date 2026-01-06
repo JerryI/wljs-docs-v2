@@ -1,10 +1,19 @@
 # EndOfBuffer
 
+`EndOfBuffer` is a symbol that represents the end of currently available data in the buffer for a process or stream.
+
+## Examples
+
+Read until end of buffer:
+
+```wolfram
+ReadString[process, EndOfBuffer]
 ```
-EndOfBuffer is a symbol that represents the end of currently available data in the buffer for a process or stream.
+
+Check for end of buffer:
+
+```wolfram
+If[Read[stream] === EndOfBuffer, "waiting for more data"]
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/EndOfBuffer.html) for more details.*

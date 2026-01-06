@@ -1,10 +1,15 @@
 # ComposeSeries
 
+`ComposeSeries[series1, series2, ...]` composes several power series.
+
+## Examples
+
+Compose two series:
+
+```wolfram
+s1 = Series[Exp[x], {x, 0, 3}];
+s2 = Series[Sin[y], {y, 0, 3}];
+ComposeSeries[s1, s2]
 ```
-ComposeSeries[series1,series2,…] composes several power series. 
-```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ComposeSeries.html) for more details.*

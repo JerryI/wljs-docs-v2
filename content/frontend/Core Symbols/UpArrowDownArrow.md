@@ -1,10 +1,15 @@
 # UpArrowDownArrow
 
+`UpArrowDownArrow[x, y, ...]` displays as x⇅y⇅….
+
+## Examples
+
+```wolfram
+UpArrowDownArrow[a, b]
 ```
-UpArrowDownArrow[x,y,…] displays as x⇅y⇅….
+
+```wolfram
+UpArrowDownArrow[x, y, z] // TraditionalForm
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/UpArrowDownArrow.html) for more details.*

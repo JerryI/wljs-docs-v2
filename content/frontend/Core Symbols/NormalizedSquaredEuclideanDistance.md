@@ -1,10 +1,17 @@
 # NormalizedSquaredEuclideanDistance
 
+`NormalizedSquaredEuclideanDistance[u, v]` gives the normalized squared Euclidean distance between vectors u and v.
+
+## Examples
+
+Compute normalized squared distance:
+```wolfram
+NormalizedSquaredEuclideanDistance[{1, 2, 3}, {4, 5, 6}]
 ```
-NormalizedSquaredEuclideanDistance[u,v] gives the normalized squared Euclidean distance between vectors u and v.
+
+Distance between identical vectors:
+```wolfram
+NormalizedSquaredEuclideanDistance[{1, 1, 1}, {1, 1, 1}]
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/NormalizedSquaredEuclideanDistance.html) for more details.*

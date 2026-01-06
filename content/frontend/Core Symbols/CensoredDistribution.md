@@ -1,12 +1,24 @@
 # CensoredDistribution
 
+`CensoredDistribution[{xmin, xmax}, dist]` represents the distribution of values that come from dist and are censored to be between xmin and xmax.
+
+`CensoredDistribution[{{xmin, xmax}, {ymin, ymax}, ...}, dist]` represents the distribution of values from a multivariate distribution dist censored to specified ranges.
+
+## Examples
+
+Create a censored normal distribution between 0 and 2:
+
+```wolfram
+dist = CensoredDistribution[{0, 2}, NormalDistribution[1, 1]];
+Mean[dist]
+(* 1.0 *)
 ```
-CensoredDistribution[{xmin,xmax},dist] represents the distribution of values that come from dist and are censored to be between xmin and xmax.
 
-CensoredDistribution[{{xmin,xmax},{ymin,ymax},…},dist] represents the distribution of values that come from the multivariate distribution dist and are censored to be between xmin and xmax, ymin and ymax, etc.
+Sample from a censored distribution:
+
+```wolfram
+RandomVariate[CensoredDistribution[{0, Infinity}, NormalDistribution[]], 5]
+(* {0.42, 1.21, 0.05, 0.87, 0.33} *)
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/CensoredDistribution.html) for more details.*

@@ -1,10 +1,17 @@
 # ProcessObject
 
+`ProcessObject[...]` is an object that represents a runnable external process.
+
+## Examples
+
+Start a process and get the object:
+```wolfram
+proc = StartProcess["notepad"]
 ```
-ProcessObject[...] is an object that represents a runnable external process.
+
+Check process status:
+```wolfram
+ProcessStatus[proc]
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ProcessObject.html) for more details.*

@@ -1,10 +1,17 @@
 # SquareIntersection
 
+`SquareIntersection[x, y, ...]` displays as x⊓y⊓….
+
+This is a symbolic representation typically used in set theory and lattice operations, representing the square intersection (meet) operator.
+
+## Examples
+
+```wolfram
+SquareIntersection[a, b]
 ```
-SquareIntersection[x,y,…] displays as x⊓y⊓….
+
+```wolfram
+SquareIntersection[x, y, z]
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/SquareIntersection.html) for more details.*

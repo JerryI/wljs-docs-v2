@@ -1,12 +1,21 @@
 # PolarPlot
 
+`PolarPlot[r, {θ, θmin, θmax}]` generates a polar plot of a curve with radius r as a function of angle θ.
+
+`PolarPlot[{r1, r2, …}, {θ, θmin, θmax}]` makes a polar plot of curves with radius functions r1, r2, ….
+
+## Examples
+
+Plot a spiral:
+
+```wolfram
+PolarPlot[θ, {θ, 0, 4 Pi}]
 ```
-PolarPlot[r,{θ,θmin,θmax}] generates a polar plot of a curve with radius r as a function of angle θ.
 
-PolarPlot[{r1,r2,…},{θ,θmin,θmax}] makes a polar plot of curves with radius functions r1, r2, ….
+Rose curve:
+
+```wolfram
+PolarPlot[Sin[3 θ], {θ, 0, Pi}]
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/PolarPlot.html) for more details.*

@@ -1,10 +1,17 @@
 # SquareSupersetEqual
 
+`SquareSupersetEqual[x, y, ...]` displays as x⊒y⊒....
+
+## Examples
+
+Display a square superset equal expression:
+```wolfram
+SquareSupersetEqual[A, B]
 ```
-SquareSupersetEqual[x,y,…] displays as x⊒y⊒….
+
+Use in formatted output:
+```wolfram
+SquareSupersetEqual[X, Y, Z] // TraditionalForm
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/SquareSupersetEqual.html) for more details.*

@@ -1,10 +1,11 @@
 # MinSize
 
+`MinSize` is an option of certain `BoxForm` primitives.
+
+## Examples
+
+```wolfram
+Style["text", MinSize -> 12]
 ```
-MinSize is an option of certain BoxForm primitives.
-```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/MinSize.html) for more details.*

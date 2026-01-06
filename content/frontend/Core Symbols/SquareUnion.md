@@ -1,10 +1,21 @@
 # SquareUnion
 
+`SquareUnion[x, y, ...]` displays as x⊔y⊔….
+
+This is a symbolic representation of square union notation used in mathematical typesetting.
+
+## Examples
+
+```wolfram
+SquareUnion[a, b]
 ```
-SquareUnion[x,y,…] displays as x⊔y⊔….
+
+```wolfram
+SquareUnion[x, y, z]
 ```
 
+```wolfram
+TraditionalForm[SquareUnion[A, B, C]]
+```
 
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/SquareUnion.html) for more details.*

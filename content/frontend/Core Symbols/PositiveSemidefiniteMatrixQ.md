@@ -1,10 +1,11 @@
 # PositiveSemidefiniteMatrixQ
 
+`PositiveSemidefiniteMatrixQ[m]` gives `True` if m is explicitly positive semidefinite, and `False` otherwise.
+
+## Examples
+
+```wolfram
+PositiveSemidefiniteMatrixQ[{{1, 0}, {0, 1}}]
 ```
-PositiveSemidefiniteMatrixQ[m] gives True if m is explicitly positive semidefinite, and False otherwise. 
-```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/PositiveSemidefiniteMatrixQ.html) for more details.*

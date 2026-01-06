@@ -1,10 +1,15 @@
 # GeneratorOutputType
 
+`GeneratorOutputType` is an option controlling the file format of documents produced by a `DocumentGenerator`.
+
+## Examples
+
+```wolfram
+DocumentGenerator[data, GeneratorOutputType -> "PDF"]
 ```
-GeneratorOutputType is an option controlling the file format of documents produced by a DocumentGenerator.
+
+```wolfram
+DocumentGenerator[template, GeneratorOutputType -> "HTML"]
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/GeneratorOutputType.html) for more details.*

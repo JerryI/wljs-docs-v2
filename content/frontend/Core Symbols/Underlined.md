@@ -1,10 +1,17 @@
 # Underlined
 
+`Underlined` represents an underlined font.
+
+## Examples
+
+Display underlined text:
+```wolfram
+Style["Important text", Underlined]
 ```
-Underlined represents an underlined font.
+
+Combine with other styles:
+```wolfram
+Style["Bold and underlined", Bold, Underlined]
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Underlined.html) for more details.*

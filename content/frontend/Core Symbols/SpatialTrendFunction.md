@@ -1,10 +1,15 @@
 # SpatialTrendFunction
 
+`SpatialTrendFunction` is an option to `SpatialEstimate` that specifies what global trend model to use for data.
+
+## Examples
+
+```wolfram
+SpatialEstimate[data, SpatialTrendFunction -> "Linear"]
 ```
-SpatialTrendFunction is an option to SpatialEstimate that specifies what global trend model to use for data. 
+
+```wolfram
+SpatialEstimate[data, SpatialTrendFunction -> None]
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/SpatialTrendFunction.html) for more details.*

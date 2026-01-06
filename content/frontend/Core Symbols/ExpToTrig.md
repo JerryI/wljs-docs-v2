@@ -1,10 +1,13 @@
 # ExpToTrig
 
+`ExpToTrig[expr]` converts exponentials in expr to trigonometric functions.
+
+## Examples
+
+Convert exponentials to trig:
+
+```wolfram
+ExpToTrig[E^(I x)]
 ```
-ExpToTrig[expr] converts exponentials in expr to trigonometric functions. 
-```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ExpToTrig.html) for more details.*

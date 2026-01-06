@@ -1,10 +1,16 @@
 # PacletInstallSubmit
 
+`PacletInstallSubmit[paclet]` asynchronously installs or updates paclet.
+
+## Examples
+
+```wolfram
+PacletInstallSubmit["Wolfram/Chatbook"]
 ```
-PacletInstallSubmit[paclet] asynchronously installs or updates paclet.
+
+```wolfram
+task = PacletInstallSubmit["MyPaclet"];
+TaskWait[task]
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/PacletInstallSubmit.html) for more details.*

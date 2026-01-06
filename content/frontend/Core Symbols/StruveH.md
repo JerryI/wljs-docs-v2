@@ -1,10 +1,17 @@
 # StruveH
 
+`StruveH[n, z]` gives the Struve function Hₙ(z).
+
+## Examples
+
+Compute Struve H function:
+```wolfram
+StruveH[1, 2.5]
 ```
-StruveH[n,z] gives the Struve function Hn(z). 
+
+Plot the function:
+```wolfram
+Plot[StruveH[0, x], {x, 0, 10}]
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/StruveH.html) for more details.*

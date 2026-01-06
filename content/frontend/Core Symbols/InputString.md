@@ -1,14 +1,21 @@
 # InputString
 
+`InputString[]` interactively reads in a character string.
+
+`InputString[prompt]` displays a prompt while requesting input.
+
+## Examples
+
+Basic string input:
+
+```wolfram
+name = InputString["Enter your name: "]
 ```
-InputString[] interactively reads in a character string. 
 
-InputString[prompt] requests input, displaying prompt as a "prompt". 
+With initial value:
 
-InputString[prompt,init] in a notebook front end uses init as the initial contents of the input field.
+```wolfram
+InputString["Enter text: ", "default"]
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/InputString.html) for more details.*

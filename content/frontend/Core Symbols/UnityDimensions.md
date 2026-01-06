@@ -1,10 +1,17 @@
 # UnityDimensions
 
+`UnityDimensions` is an option for `UnitSimplify` that specifies which `UnitDimensions` should be factored out.
+
+This option controls how dimensionless quantities are handled during unit simplification.
+
+## Examples
+
+```wolfram
+UnitSimplify[Quantity[100, "Centimeters"/"Meters"]]
 ```
-UnityDimensions is an option for UnitSimplify that specifies which UnitDimensions should be factored out.
+
+```wolfram
+UnitSimplify[Quantity[1, "Radians"], UnityDimensions -> {"AngleUnit"}]
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/UnityDimensions.html) for more details.*

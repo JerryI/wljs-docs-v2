@@ -1,12 +1,22 @@
 # Blur
 
+`Blur[image]` gives a blurred version of image.
+
+`Blur[image, r]` gives a version of image blurred over pixel radius r.
+
+## Examples
+
+Apply blur to an image:
+
+```wolfram
+img = ExampleData[{"TestImage", "Lena"}];
+Blur[img]
 ```
-Blur[image] gives a blurred version of image.
 
-Blur[image,r] gives a version of image blurred over pixel radius r.
+Stronger blur:
+
+```wolfram
+Blur[img, 10]
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Blur.html) for more details.*

@@ -1,12 +1,27 @@
 # SymletWavelet
 
+`SymletWavelet[]` represents the Symlet wavelet of order 4.
+
+- `SymletWavelet[n]` represents the Symlet wavelet of order n.
+
+## Examples
+
+Default Symlet wavelet:
+
+```wolfram
+SymletWavelet[]
 ```
-SymletWavelet[] represents the Symlet wavelet of order 4.
 
-SymletWavelet[n] represents the Symlet wavelet of order n.
+Symlet of order 8:
+
+```wolfram
+SymletWavelet[8]
 ```
 
+Plot the wavelet:
 
+```wolfram
+WaveletPsi[SymletWavelet[4], {x, 0, 8}]
+```
 
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/SymletWavelet.html) for more details.*

@@ -1,16 +1,21 @@
 # ParametricPlot3D
 
+`ParametricPlot3D[{fx, fy, fz}, {u, umin, umax}]` produces a three-dimensional space curve parametrized by variable u.
+
+`ParametricPlot3D[{fx, fy, fz}, {u, umin, umax}, {v, vmin, vmax}]` produces a three-dimensional surface parametrized by u and v.
+
+## Examples
+
+Space curve (helix):
+
+```wolfram
+ParametricPlot3D[{Cos[t], Sin[t], t/2}, {t, 0, 4 Pi}]
 ```
-ParametricPlot3D[{fx,fy,fz},{u,umin,umax}] produces a three-dimensional space curve parametrized by a variable u which runs from umin to umax. 
 
-ParametricPlot3D[{fx,fy,fz},{u,umin,umax},{v,vmin,vmax}] produces a three-dimensional surface parametrized by u and v. 
+Surface (sphere):
 
-ParametricPlot3D[{{fx,fy,fz},{gx,gy,gz},…},…] plots several objects together. 
-
-ParametricPlot3D[…,{u,v}∈reg] takes parameters {u,v} to be in the geometric region reg.
+```wolfram
+ParametricPlot3D[{Cos[u] Sin[v], Sin[u] Sin[v], Cos[v]}, {u, 0, 2 Pi}, {v, 0, Pi}]
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ParametricPlot3D.html) for more details.*

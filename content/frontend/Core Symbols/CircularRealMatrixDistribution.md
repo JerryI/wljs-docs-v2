@@ -1,10 +1,14 @@
 # CircularRealMatrixDistribution
 
+`CircularRealMatrixDistribution[n]` represents a circular real matrix distribution with matrix dimensions {n, n}.
+
+## Examples
+
+Sample a random real matrix:
+
+```wolfram
+RandomVariate[CircularRealMatrixDistribution[3]]
+(* {{...}, {...}, {...}} *)
 ```
-CircularRealMatrixDistribution[n] represents a circular real matrix distribution with matrix dimensions {n,n}.
-```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/CircularRealMatrixDistribution.html) for more details.*

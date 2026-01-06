@@ -1,14 +1,22 @@
 # PlanetData
 
+`PlanetData[entity, property]` gives the value of the specified property for the planet entity.
+
+- `PlanetData[{entity1, entity2, ...}, property]` gives a list of property values for multiple planet entities.
+- `PlanetData[entity, property, annotation]` gives the specified annotation associated with the property.
+
+## Examples
+
+```wolfram
+PlanetData["Mars", "Mass"]
 ```
-PlanetData[entity,property] gives the value of the specified property for the planet entity.
 
-PlanetData[{entity1,entity2,…},property] gives a list of property values for the specified planet entities.
-
-PlanetData[entity,property,annotation] gives the specified annotation associated with the property.
+```wolfram
+PlanetData["Jupiter", {"Radius", "OrbitalPeriod"}]
 ```
 
+```wolfram
+PlanetData[{"Earth", "Venus"}, "SurfaceGravity"]
+```
 
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/PlanetData.html) for more details.*

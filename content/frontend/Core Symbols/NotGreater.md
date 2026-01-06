@@ -1,10 +1,15 @@
 # NotGreater
 
+`NotGreater[x, y, ...]` displays as x≯y≯….
+
+## Examples
+
+```wolfram
+NotGreater[a, b]
 ```
-NotGreater[x,y,…] displays as x≯y≯….
+
+```wolfram
+NotGreater[x, y, z] // TraditionalForm
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/NotGreater.html) for more details.*

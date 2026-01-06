@@ -1,10 +1,15 @@
 # ScheduledTaskObject
 
+`ScheduledTaskObject[id, expr, spec, ...]` is a task object specifying future evaluation of expr according to spec.
+
+## Examples
+
+```wolfram
+task = SessionSubmit[ScheduledTask[Print["Hello"], {5}]]
 ```
-ScheduledTaskObject[id,expr,spec,…] is a task object specifying future evaluation of expr according to spec.
+
+```wolfram
+TaskRemove[ScheduledTaskObject[1]]
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ScheduledTaskObject.html) for more details.*

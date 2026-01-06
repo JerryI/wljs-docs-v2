@@ -1,10 +1,21 @@
 # SquaredEuclideanDistance
 
+`SquaredEuclideanDistance[u, v]` gives the squared Euclidean distance between vectors u and v.
+
+This is equivalent to `EuclideanDistance[u, v]^2` but more efficient.
+
+## Examples
+
+```wolfram
+SquaredEuclideanDistance[{1, 2, 3}, {4, 5, 6}]
 ```
-SquaredEuclideanDistance[u,v] gives the squared Euclidean distance between vectors u and v.
+
+```wolfram
+SquaredEuclideanDistance[{0, 0}, {3, 4}]
 ```
 
+```wolfram
+DistanceMatrix[data, DistanceFunction -> SquaredEuclideanDistance]
+```
 
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/SquaredEuclideanDistance.html) for more details.*

@@ -1,12 +1,23 @@
 # ImageCorrelate
 
+`ImageCorrelate[image, ker]` gives the correlation of image with kernel ker.
+
+`ImageCorrelate[image, ker, f]` computes a generalized correlation using function f.
+
+## Examples
+
+Correlate with a kernel:
+
+```wolfram
+img = ExampleData[{"TestImage", "Lena"}];
+ImageCorrelate[img, GaussianMatrix[3]]
 ```
-ImageCorrelate[image,ker] gives the correlation of image with kernel ker.
 
-ImageCorrelate[image,ker,f] computes a generalized correlation in which the function f is used in place of Dot.
+Template matching:
+
+```wolfram
+template = ImageTake[img, {100, 150}, {100, 150}];
+ImageCorrelate[img, template]
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ImageCorrelate.html) for more details.*

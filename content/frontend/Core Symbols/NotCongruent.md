@@ -1,10 +1,17 @@
 # NotCongruent
 
+`NotCongruent[x, y, ...]` displays as x≢y≢....
+
+## Examples
+
+Display a not congruent expression:
+```wolfram
+NotCongruent[a, b]
 ```
-NotCongruent[x,y,…] displays as x≢y≢….
+
+Use in formatted output:
+```wolfram
+NotCongruent[x, y, z] // TraditionalForm
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/NotCongruent.html) for more details.*

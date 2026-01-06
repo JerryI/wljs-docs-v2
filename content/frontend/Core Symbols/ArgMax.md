@@ -1,18 +1,25 @@
 # ArgMax
 
+`ArgMax[f, x]` gives a position xmax at which f is maximized.
+
+`ArgMax[f, {x, y, ...}]` gives a position {xmax, ymax, ...} at which f is maximized.
+
+`ArgMax[{f, cons}, {x, y, ...}]` gives a position at which f is maximized subject to the constraints cons.
+
+## Examples
+
+Find where a function is maximized:
+
+```wolfram
+ArgMax[Sin[x], x]
+(* Pi/2 *)
 ```
-ArgMax[f,x] gives a position xmax at which f is maximized.
 
-ArgMax[f,{x,y,…}] gives a position {xmax,ymax,…} at which f is maximized.
+With constraints:
 
-ArgMax[{f,cons},{x,y,…}] gives a position at which f is maximized subject to the constraints cons. 
-
-ArgMax[…,x∈rdom] constrains x to be in the region or domain rdom.
-
-ArgMax[…,…,dom] constrains variables to the domain dom, typically Reals or Integers.
+```wolfram
+ArgMax[{x + y, x^2 + y^2 <= 1}, {x, y}]
+(* {1/Sqrt[2], 1/Sqrt[2]} *)
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ArgMax.html) for more details.*

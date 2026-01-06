@@ -1,12 +1,19 @@
 # EdgeCycleMatrix
 
+`EdgeCycleMatrix[g]` gives the edge cycle matrix of a graph g.
+
+## Examples
+
+Get edge cycle matrix:
+
+```wolfram
+EdgeCycleMatrix[CycleGraph[4]]
 ```
-EdgeCycleMatrix[g] gives the edge cycle matrix of a graph g.
 
-EdgeCycleMatrix[{v->w,…}] uses rules v->w to specify the graph g. 
+For a complete graph:
+
+```wolfram
+EdgeCycleMatrix[CompleteGraph[4]]
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/EdgeCycleMatrix.html) for more details.*

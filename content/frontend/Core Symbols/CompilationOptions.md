@@ -1,10 +1,13 @@
 # CompilationOptions
 
+`CompilationOptions` is an option for `Compile` that specifies settings for the compilation process.
+
+## Examples
+
+Set compilation options:
+
+```wolfram
+Compile[{x}, x^2, CompilationOptions -> {"InlineCompiledFunctions" -> True}]
 ```
-CompilationOptions is an option for Compile that specifies settings for the compilation process. 
-```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/CompilationOptions.html) for more details.*

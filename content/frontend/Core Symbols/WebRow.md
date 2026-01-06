@@ -1,12 +1,13 @@
 # WebRow
 
+`WebRow[{expr1, expr2, ...}]` represents an HTML row containing the *expri*.
+
+- `WebRow[expr, options]` displays with *expr* formatted using the specified option settings.
+
+## Examples
+
+```wolfram
+WebRow[{"Column 1", "Column 2", "Column 3"}]
 ```
-WebRow[{expr1, expr2, …}] represents an HTML row containing the expri.
 
-WebRow[expr,options] displays with expr formatted using the specified option settings.
-```
-
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/WebRow.html) for more details.*

@@ -1,14 +1,22 @@
 # ImageHistogram
 
+`ImageHistogram[image]` plots a histogram of the pixel levels for each channel in image.
+
+`ImageHistogram[image, bspec]` uses bin specification bspec.
+
+## Examples
+
+Display image histogram:
+
+```wolfram
+img = ExampleData[{"TestImage", "Lena"}];
+ImageHistogram[img]
 ```
-ImageHistogram[image] plots a histogram of the pixel levels for each channel in image.
 
-ImageHistogram[image,bspec] uses bin specification bspec.
+With specific bins:
 
-ImageHistogram[image,bspec,range] plots the histogram of the pixel values in the given range.
+```wolfram
+ImageHistogram[img, 64]
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ImageHistogram.html) for more details.*

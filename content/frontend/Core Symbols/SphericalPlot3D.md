@@ -1,14 +1,21 @@
 # SphericalPlot3D
 
+`SphericalPlot3D[r, {θ, θmin, θmax}, {ϕ, ϕmin, ϕmax}]` generates a 3D plot with spherical radius r as a function of spherical coordinates θ and ϕ.
+
+`SphericalPlot3D[{r1, r2, ...}, ...]` generates a 3D spherical plot with multiple surfaces.
+
+## Examples
+
+Plot a sphere:
+
+```wolfram
+SphericalPlot3D[1, {θ, 0, Pi}, {ϕ, 0, 2 Pi}]
 ```
-SphericalPlot3D[r,θ,ϕ] generates a 3D plot with a spherical radius r as a function of spherical coordinates θ and ϕ.
 
-SphericalPlot3D[r,{θ,θmin,θmax},{ϕ,ϕmin,ϕmax}] generates a 3D spherical plot over the specified ranges of spherical coordinates.
+Plot a more complex surface:
 
-SphericalPlot3D[{r1,r2,…},{θ,θmin,θmax},{ϕ,ϕmin,ϕmax}] generates a 3D spherical plot with multiple surfaces.
+```wolfram
+SphericalPlot3D[1 + 0.5 Sin[5 θ] Sin[5 ϕ], {θ, 0, Pi}, {ϕ, 0, 2 Pi}]
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/SphericalPlot3D.html) for more details.*

@@ -1,10 +1,15 @@
 # TreeLeafCount
 
+`TreeLeafCount[tree]` gives the number of leaves of tree.
+
+## Examples
+
+```wolfram
+TreeLeafCount[Tree[a, {Tree[b, None], Tree[c, None]}]]
 ```
-TreeLeafCount[tree] gives the number of leaves of tree.
+
+```wolfram
+TreeLeafCount[ExpressionTree[a + b + c]]
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/TreeLeafCount.html) for more details.*

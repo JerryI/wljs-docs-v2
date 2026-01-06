@@ -1,10 +1,11 @@
 # LessTilde
 
+`LessTilde[x, y, …]` displays as x≲y≲….
+
+## Examples
+
+```wolfram
+LessTilde[a, b, c]
 ```
-LessTilde[x,y,…] displays as x≲y≲….
-```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/LessTilde.html) for more details.*

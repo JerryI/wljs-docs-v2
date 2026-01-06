@@ -1,10 +1,14 @@
 # CombinatorK
 
+`CombinatorK` represents the **K** combinator (constant combinator).
+
+## Examples
+
+Apply K combinator:
+
+```wolfram
+CombinatorK[x][y]
+(* x *)
 ```
-CombinatorK represents the <b>K</b> combinator.
-```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/CombinatorK.html) for more details.*

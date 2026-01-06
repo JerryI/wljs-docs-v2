@@ -1,10 +1,21 @@
 # ONanGroupON
 
+`ONanGroupON[]` represents the sporadic simple O'Nan group O'N.
+
+This is one of the 26 sporadic simple groups in the classification of finite simple groups.
+
+## Examples
+
+```wolfram
+ONanGroupON[]
 ```
-ONanGroupON[] represents the sporadic simple O'Nan group O'N.
+
+```wolfram
+GroupOrder[ONanGroupON[]]
 ```
 
+```wolfram
+FiniteGroupData["ONan", "Order"]
+```
 
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ONanGroupON.html) for more details.*

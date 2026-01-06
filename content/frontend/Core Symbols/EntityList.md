@@ -1,14 +1,21 @@
 # EntityList
 
+`EntityList[class]` gives a list of entities in the specified entity class.
+
+`EntityList["type"]` gives a list of entities of the specified type.
+
+## Examples
+
+List all countries:
+
+```wolfram
+EntityList["Country"] // Length
 ```
-EntityList[class] gives a list of entities in the specified entity class. 
 
-EntityList["type"] gives a list of entities of the specified type.
+List entities in a class:
 
-EntityList[class,simplify] gives a list of entities; simplify determines whether to reduce entities to the simplest possible type.
+```wolfram
+EntityList[EntityClass["Country", "European"]]
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/EntityList.html) for more details.*

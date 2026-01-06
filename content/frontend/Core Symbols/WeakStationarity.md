@@ -1,10 +1,15 @@
 # WeakStationarity
 
+`WeakStationarity[proc]` gives conditions for the process proc to be weakly stationary.
+
+## Examples
+
+```wolfram
+WeakStationarity[ARProcess[{a}, 1]]
 ```
-WeakStationarity[proc] gives conditions for the process proc to be weakly stationary. 
+
+```wolfram
+WeakStationarity[ARMAProcess[{0.5}, {0.3}, 1]]
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/WeakStationarity.html) for more details.*

@@ -1,10 +1,21 @@
 # BaseForm
 
+`BaseForm[expr, n]` prints with the numbers in expr given in base n.
+
+## Examples
+
+Display a number in binary:
+
+```wolfram
+BaseForm[255, 2]
+(* 11111111₂ *)
 ```
-BaseForm[expr,n] prints with the numbers in expr given in base n. 
+
+Display in hexadecimal:
+
+```wolfram
+BaseForm[255, 16]
+(* ff₁₆ *)
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/BaseForm.html) for more details.*

@@ -1,10 +1,13 @@
 # EdgeChromaticNumber
 
+`EdgeChromaticNumber[g]` gives the chromatic number for the edges of the graph g.
+
+## Examples
+
+Get edge chromatic number of a complete graph:
+
+```wolfram
+EdgeChromaticNumber[CompleteGraph[5]]
 ```
-EdgeChromaticNumber[g] gives the chromatic number for the edges of the graph g.
-```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/EdgeChromaticNumber.html) for more details.*

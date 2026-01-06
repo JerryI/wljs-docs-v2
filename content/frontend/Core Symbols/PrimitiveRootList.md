@@ -1,10 +1,15 @@
 # PrimitiveRootList
 
+`PrimitiveRootList[n]` gives a list of primitive roots of n.
+
+## Examples
+
+```wolfram
+PrimitiveRootList[7]
 ```
-PrimitiveRootList[n] gives a list of primitive roots of n.
+
+```wolfram
+PrimitiveRootList[23]
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/PrimitiveRootList.html) for more details.*

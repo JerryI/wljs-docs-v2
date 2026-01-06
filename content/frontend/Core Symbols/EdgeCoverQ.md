@@ -1,10 +1,21 @@
 # EdgeCoverQ
 
+`EdgeCoverQ[g, elist]` yields `True` if the edge list elist is an edge cover of the graph g and `False` otherwise.
+
+## Examples
+
+Check if edges cover all vertices:
+
+```wolfram
+EdgeCoverQ[CycleGraph[4], {1 <-> 2, 3 <-> 4}]
+(* True *)
 ```
-EdgeCoverQ[g,elist] yields True if the edge list elist is an edge cover of the graph g and False otherwise.
+
+Incomplete cover:
+
+```wolfram
+EdgeCoverQ[PathGraph[Range[5]], {1 <-> 2}]
+(* False *)
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/EdgeCoverQ.html) for more details.*

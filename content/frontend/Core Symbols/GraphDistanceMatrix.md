@@ -1,14 +1,20 @@
 # GraphDistanceMatrix
 
+`GraphDistanceMatrix[g]` gives the matrix of shortest path distances between all pairs of vertices.
+
+## Examples
+
+Distance matrix of a path:
+
+```wolfram
+GraphDistanceMatrix[PathGraph[{1, 2, 3, 4}]]
+(* {{0, 1, 2, 3}, {1, 0, 1, 2}, {2, 1, 0, 1}, {3, 2, 1, 0}} *)
 ```
-GraphDistanceMatrix[g] gives the matrix of distances between vertices for the graph g.
 
-GraphDistanceMatrix[g,d] gives the matrix of distances between vertices of maximal distance d in the graph g.
+For a complete graph:
 
-GraphDistanceMatrix[{v->w,…},…] uses rules v->w to specify the graph g.
+```wolfram
+GraphDistanceMatrix[CompleteGraph[4]]
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/GraphDistanceMatrix.html) for more details.*

@@ -1,10 +1,21 @@
 # RightTeeVector
 
+`RightTeeVector[x, y, ...]` displays as x⥛y⥛….
+
+This is a symbolic representation that displays as an arrow with a tee at the right.
+
+## Examples
+
+```wolfram
+RightTeeVector[a, b]
 ```
-RightTeeVector[x,y,…] displays as x⥛y⥛….
+
+```wolfram
+RightTeeVector[x, y, z]
 ```
 
+```wolfram
+x \[RightTeeVector] y
+```
 
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/RightTeeVector.html) for more details.*

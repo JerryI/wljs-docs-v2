@@ -1,10 +1,13 @@
 # CarlsonRE
 
+`CarlsonRE[x, y]` gives Carlson's elliptic integral RE(x, y).
+
+## Examples
+
+Evaluate Carlson RE:
+
+```wolfram
+N[CarlsonRE[1, 2]]
 ```
-CarlsonRE[x,y] gives the Carlson's elliptic integral RE(x,y).
-```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/CarlsonRE.html) for more details.*

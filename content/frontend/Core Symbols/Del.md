@@ -1,10 +1,14 @@
 # Del
 
+`Del[x]` displays as ∇x.
+
+## Examples
+
+Display the del operator:
+
+```wolfram
+Del[f]
+(* ∇f *)
 ```
-Del[x] displays as ∇x.
-```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Del.html) for more details.*

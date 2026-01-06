@@ -1,16 +1,23 @@
 # FunctionCompile
 
+`FunctionCompile[f]` generates a compiled code function from a pure function.
+
+- `FunctionCompile[{f1, f2, ...}]` generates a list of compiled code functions.
+- `FunctionCompile[<|k1 -> f1, k2 -> f2, ...|>]` generates an association of compiled code functions.
+- `FunctionCompile[defs, fspec]` uses local auxiliary definitions defs.
+
+## Examples
+
+Compile a simple function:
+
+```wolfram
+cf = FunctionCompile[Function[{Typed[x, "Real64"]}, x^2 + 1]]
 ```
-FunctionCompile[f] generates a compiled code function from a pure function.
 
-FunctionCompile[{f1,f2,…}] generates a list of compiled code functions from a list of pure functions.
+Use the compiled function:
 
-FunctionCompile[<|k1->f1,k2->f2,…|>] generates an association of compiled code functions from an association of Wolfram Language functions.
-
-FunctionCompile[defs,fspec] uses the local auxiliary definitions defs.
+```wolfram
+cf[3.0]
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/FunctionCompile.html) for more details.*

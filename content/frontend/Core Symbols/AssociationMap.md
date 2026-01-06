@@ -1,14 +1,23 @@
 # AssociationMap
 
+`AssociationMap[f, {key1, key2, ...}]` creates the association `<|key1 -> f[key1], key2 -> f[key2], ...|>`.
+
+`AssociationMap[f, <|key1 -> val1, key2 -> val2, ...|>]` creates `<|f[key1 -> val1], f[key2 -> val2], ...|>`.
+
+## Examples
+
+Map a function to create values:
+
+```wolfram
+AssociationMap[StringLength, {"cat", "dog", "elephant"}]
+(* <|"cat" -> 3, "dog" -> 3, "elephant" -> 8|> *)
 ```
-AssociationMap[f,{key1,key2,…}] creates the association <|key1->f[key1],key2->f[key2],…|>.
 
-AssociationMap[f,<|key1->val1,key2->val2,…|>] creates the association <|f[key1->val1],f[key2->val2],…|>.
+Transform key-value pairs:
 
-AssociationMap[f] represents an operator form of AssociationMap that can be applied to an expression.
+```wolfram
+AssociationMap[Reverse, <|a -> 1, b -> 2|>]
+(* <|1 -> a, 2 -> b|> *)
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/AssociationMap.html) for more details.*

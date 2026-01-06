@@ -1,12 +1,20 @@
 # FactorialMomentGeneratingFunction
 
+`FactorialMomentGeneratingFunction[dist, t]` gives the factorial moment-generating function for the distribution dist as a function of t.
+
+## Examples
+
+Factorial MGF of Poisson distribution:
+
+```wolfram
+FactorialMomentGeneratingFunction[PoissonDistribution[λ], t]
+(* E^(λ (-1 + t)) *)
 ```
-FactorialMomentGeneratingFunction[dist,t] gives the factorial moment-generating function for the distribution dist as a function of the variable t. 
 
-FactorialMomentGeneratingFunction[dist,{t1,t2,…}] gives the factorial moment-generating function for the multivariate distribution dist as a function of the variables t1, t2, …. 
+For binomial distribution:
+
+```wolfram
+FactorialMomentGeneratingFunction[BinomialDistribution[n, p], t]
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/FactorialMomentGeneratingFunction.html) for more details.*

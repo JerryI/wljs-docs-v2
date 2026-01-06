@@ -1,10 +1,15 @@
 # RightDownVector
 
+`RightDownVector[x, y, ...]` displays as x⇂y⇂….
+
+## Examples
+
+```wolfram
+RightDownVector[a, b]
 ```
-RightDownVector[x,y,…] displays as x⇂y⇂….
+
+```wolfram
+RightDownVector[x, y, z] // TraditionalForm
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/RightDownVector.html) for more details.*

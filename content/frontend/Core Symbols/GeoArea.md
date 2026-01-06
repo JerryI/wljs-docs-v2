@@ -1,10 +1,15 @@
 # GeoArea
 
+`GeoArea[g]` gives the area of the geo region `g`.
+
+## Examples
+
+```wolfram
+GeoArea[Entity["Country", "France"]]
 ```
-GeoArea[g] gives the area of the geo region g.
+
+```wolfram
+GeoArea[GeoDisk[Here, Quantity[100, "Kilometers"]]]
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/GeoArea.html) for more details.*

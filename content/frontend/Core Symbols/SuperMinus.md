@@ -1,10 +1,15 @@
 # SuperMinus
 
+`SuperMinus[expr]` displays as expr⁻.
+
+## Examples
+
+```wolfram
+SuperMinus[x]
 ```
-SuperMinus[expr] displays as expr-.
+
+```wolfram
+SuperMinus[a + b] // TraditionalForm
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/SuperMinus.html) for more details.*

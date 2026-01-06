@@ -1,14 +1,16 @@
 # ListSliceContourPlot3D
 
+`ListSliceContourPlot3D[farr, surf]` generates a contour plot of the 3D array of values sliced to the surface surf.
+
+`ListSliceContourPlot3D[{{x1, y1, z1, f1}, ...}, surf]` generates a slice contour plot for the values f_i at points {x_i, y_i, z_i}.
+
+## Examples
+
+Slice contour on plane:
+
+```wolfram
+data = Table[x^2 + y^2 + z^2, {x, -1, 1, 0.1}, {y, -1, 1, 0.1}, {z, -1, 1, 0.1}];
+ListSliceContourPlot3D[data, "CenterPlanes"]
 ```
-ListSliceContourPlot3D[farr,surf] generates a contour plot of the three-dimensional farr of values sliced to the surface surf.
 
-ListSliceContourPlot3D[{{x1,y1,z1,f1},{x2,y2,z2,f2},…},surf] generates a slice contour plot for the values fi at points {xi,yi,zi}.
-
-ListSliceContourPlot3D[…,{surf1,surf2,…}] generates slice contour plots over several slices surf1, surf2, ….
-```
-
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ListSliceContourPlot3D.html) for more details.*

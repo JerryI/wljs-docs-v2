@@ -1,10 +1,19 @@
 # FullRegion
 
+`FullRegion[n]` represents the full region in n dimensions.
+
+## Examples
+
+Create the full 2D region:
+
+```wolfram
+FullRegion[2]
 ```
-FullRegion[n] represents the full region n.
+
+Check if a point is in the full region:
+
+```wolfram
+RegionMember[FullRegion[3], {1, 2, 3}]
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/FullRegion.html) for more details.*

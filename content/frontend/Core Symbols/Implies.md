@@ -1,10 +1,21 @@
 # Implies
 
+`Implies[p, q]` represents the logical implication p ⇒ q.
+
+## Examples
+
+Basic implication:
+
+```wolfram
+Implies[True, False]
+(* False *)
 ```
-Implies[p,q] represents the logical implication p⇒q. 
+
+Symbolic implication:
+
+```wolfram
+Implies[a, b] // BooleanConvert
+(* !a || b *)
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Implies.html) for more details.*

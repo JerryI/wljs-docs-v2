@@ -1,14 +1,22 @@
 # Quartiles
 
+`Quartiles[data]` gives the {Q1, Q2, Q3} quantile estimates of the elements in data.
+
+`Quartiles[dist]` gives the quartiles of the distribution dist.
+
+## Examples
+
+Get quartiles:
+
+```wolfram
+Quartiles[{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}]
+(* {3, 11/2, 8} *)
 ```
-Quartiles[data] gives the {q&amp;^1/4,q&amp;^2/4,q&amp;^3/4} quantile estimates of the elements in data.
 
-Quartiles[data,{{a,b},{c,d}}] uses the quantile definition specified by parameters a, b, c, d. 
+For a distribution:
 
-Quartiles[dist] gives the {q1/4,q2/4,q3/4} quantiles of the distribution dist.
+```wolfram
+Quartiles[NormalDistribution[0, 1]]
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Quartiles.html) for more details.*

@@ -1,10 +1,15 @@
 # NotSucceedsEqual
 
+`NotSucceedsEqual[x, y, ...]` displays as x⋡y⋡….
+
+## Examples
+
+```wolfram
+NotSucceedsEqual[a, b]
 ```
-NotSucceedsEqual[x,y,…] displays as xy….
+
+```wolfram
+NotSucceedsEqual[x, y, z] // TraditionalForm
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/NotSucceedsEqual.html) for more details.*

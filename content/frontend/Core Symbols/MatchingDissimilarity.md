@@ -1,10 +1,21 @@
 # MatchingDissimilarity
 
+`MatchingDissimilarity[u, v]` gives the matching dissimilarity between Boolean vectors u and v.
+
+## Examples
+
+Compute matching dissimilarity:
+
+```wolfram
+MatchingDissimilarity[{1, 0, 1, 1}, {1, 1, 0, 1}]
+(* 1/2 *)
 ```
-MatchingDissimilarity[u,v] gives the matching dissimilarity between Boolean vectors u and v.
+
+Identical vectors:
+
+```wolfram
+MatchingDissimilarity[{1, 1, 0}, {1, 1, 0}]
+(* 0 *)
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/MatchingDissimilarity.html) for more details.*

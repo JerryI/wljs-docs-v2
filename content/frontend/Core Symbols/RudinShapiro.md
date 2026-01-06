@@ -1,10 +1,11 @@
 # RudinShapiro
 
+`RudinShapiro[n]` gives the nth term in the Rudin–Shapiro sequence.
+
+## Examples
+
+```wolfram
+Table[RudinShapiro[n], {n, 0, 15}]
 ```
-RudinShapiro[n] gives the nth term in the Rudin–Shapiro sequence.
-```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/RudinShapiro.html) for more details.*

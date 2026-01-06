@@ -1,10 +1,21 @@
 # NuttallWindow
 
+`NuttallWindow[x]` represents a Nuttall window function of x.
+
+The Nuttall window is a smoothing window used in signal processing with minimal spectral leakage.
+
+## Examples
+
+```wolfram
+NuttallWindow[0.5]
 ```
-NuttallWindow[x] represents a Nuttall window function of x.
+
+```wolfram
+Plot[NuttallWindow[x], {x, -1, 1}]
 ```
 
+```wolfram
+Periodogram[data, NuttallWindow]
+```
 
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/NuttallWindow.html) for more details.*

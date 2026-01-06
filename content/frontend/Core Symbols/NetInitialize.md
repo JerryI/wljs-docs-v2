@@ -1,12 +1,21 @@
 # NetInitialize
 
+`NetInitialize[net]` gives a net in which all uninitialized learnable parameters have been given initial values.
+
+- `NetInitialize[net, All]` reinitializes all learnable parameters.
+
+## Examples
+
+```wolfram
+NetInitialize[NetChain[{LinearLayer[10], Ramp, LinearLayer[5]}]]
 ```
-NetInitialize[net] gives a net in which all uninitialized learnable parameters in net have been given initial values.
 
-NetInitialize[net,All] gives a net in which all learnable parameters have been given initial values. 
+```wolfram
+NetInitialize[untrainedNet, All]
 ```
 
+```wolfram
+net = NetInitialize[NetChain[{5, Tanh, 3}], Method -> "Xavier"]
+```
 
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/NetInitialize.html) for more details.*

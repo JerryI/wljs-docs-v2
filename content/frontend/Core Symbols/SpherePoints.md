@@ -1,10 +1,21 @@
 # SpherePoints
 
+`SpherePoints[n]` gives the positions of n uniformly distributed points on the surface of a unit sphere.
+
+This function generates approximately evenly spaced points on a sphere.
+
+## Examples
+
+```wolfram
+SpherePoints[10]
 ```
-SpherePoints[n] gives the positions of n uniformly distributed points on the surface of a unit sphere.
+
+```wolfram
+Graphics3D[Point[SpherePoints[100]]]
 ```
 
+```wolfram
+ListPointPlot3D[SpherePoints[50]]
+```
 
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/SpherePoints.html) for more details.*

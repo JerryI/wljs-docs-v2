@@ -1,10 +1,17 @@
 # WebElementObject
 
+`WebElementObject[...]` represents an element of an open webpage operated on by WebExecute.
+
+## Examples
+
+Find an element on a page:
+```wolfram
+elem = WebExecute[session, "LocateElements" -> "id" -> "myButton"]
 ```
-WebElementObject[…] represents an element of an open webpage operated on by WebExecute.
+
+Click the element:
+```wolfram
+WebExecute[session, "ClickElement" -> elem]
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/WebElementObject.html) for more details.*

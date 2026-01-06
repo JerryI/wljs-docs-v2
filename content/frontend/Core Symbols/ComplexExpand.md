@@ -1,12 +1,23 @@
 # ComplexExpand
 
+`ComplexExpand[expr]` expands expr assuming that all variables are real.
+
+`ComplexExpand[expr, {x1, x2, ...}]` expands expr assuming that variables matching any of the xi are complex.
+
+## Examples
+
+Expand assuming real variables:
+
+```wolfram
+ComplexExpand[Re[a + b I]]
+(* a *)
 ```
-ComplexExpand[expr] expands expr assuming that all variables are real. 
 
-ComplexExpand[expr,{x1,x2,…}] expands expr assuming that variables matching any of the xi are complex. 
+Expand with complex variable:
+
+```wolfram
+ComplexExpand[Abs[z]^2, {z}]
+(* Re[z]^2 + Im[z]^2 *)
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ComplexExpand.html) for more details.*

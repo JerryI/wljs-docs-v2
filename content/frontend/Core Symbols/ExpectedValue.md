@@ -1,16 +1,23 @@
 # ExpectedValue
 
+`ExpectedValue[f, list]` gives the expected value of the pure function f with respect to the values in list.
+
+`ExpectedValue[f, dist]` gives the expected value of the pure function f with respect to the symbolic distribution dist.
+
+## Examples
+
+Expected value from a list:
+
+```wolfram
+ExpectedValue[#^2 &, {1, 2, 3, 4}]
+(* 15/2 *)
 ```
-ExpectedValue[f,list] gives the expected value of the pure function f with respect to the values in list. 
 
-ExpectedValue[f,list,x] gives the expected value of the function f of x with respect to the values of list.
+Expected value from a distribution:
 
-ExpectedValue[f,dist] gives the expected value of the pure function f with respect to the symbolic distribution dist.
-
-ExpectedValue[f,dist,x] gives the expected value of the function f of x with respect to the symbolic distribution dist.
+```wolfram
+ExpectedValue[x^2, NormalDistribution[0, 1], x]
+(* 1 *)
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ExpectedValue.html) for more details.*

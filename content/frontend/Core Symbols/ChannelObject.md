@@ -1,18 +1,25 @@
 # ChannelObject
 
+`ChannelObject[]` gives a new anonymous channel specification.
+
+`ChannelObject["relpath"]` represents a channel for the currently authenticated user at a relative path.
+
+`ChannelObject["id:path"]` represents a channel for the user with the specified Wolfram ID at the given path.
+
+## Examples
+
+Create an anonymous channel:
+
+```wolfram
+ch = ChannelObject[]
+(* ChannelObject[...] *)
 ```
-ChannelObject[] gives a new anonymous channel specification.
 
-� represents a channel specified by a given URL.
+Create a named channel:
 
-ChannelObject["relpath"] represents a channel for the currently authenticated user at a relative path.
-
-ChannelObject["id:�] represents a channel for the user with the specified Wolfram ID at the given path.
-
-ChannelObject["/�] represents a channel at an absolute path on the channel broker.
+```wolfram
+ch = ChannelObject["myChannel"]
+(* ChannelObject["myChannel"] *)
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ChannelObject.html) for more details.*

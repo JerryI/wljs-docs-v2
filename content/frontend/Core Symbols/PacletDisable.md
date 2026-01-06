@@ -1,10 +1,15 @@
 # PacletDisable
 
+`PacletDisable[paclet]` disables an installed paclet.
+
+## Examples
+
+```wolfram
+PacletDisable["Cryptography"]
 ```
-PacletDisable[paclet] disables an installed paclet.
+
+```wolfram
+PacletDisable[PacletObject["MyPaclet"]]
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/PacletDisable.html) for more details.*

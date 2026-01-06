@@ -1,10 +1,21 @@
 # ReverseElement
 
+`ReverseElement[x, y, ...]` displays as x∋y∋….
+
+This is a symbolic representation that displays as the "contains as member" relation symbol (reverse of ∈).
+
+## Examples
+
+```wolfram
+ReverseElement[A, x]
 ```
-ReverseElement[x,y,…] displays as x∋y∋….
+
+```wolfram
+ReverseElement[S, a, b]
 ```
 
+```wolfram
+A \[ReverseElement] x
+```
 
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ReverseElement.html) for more details.*

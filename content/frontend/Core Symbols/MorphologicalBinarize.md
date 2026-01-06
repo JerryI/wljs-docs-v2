@@ -1,14 +1,28 @@
 # MorphologicalBinarize
 
+`MorphologicalBinarize[image, {t1, t2}]` creates a binary image from image by replacing all values above the upper threshold t2 with 1, also including pixels with intensities above the lower threshold t1 that are connected to the foreground.
+
+- `MorphologicalBinarize[image, t]` uses t as the upper threshold, automatically choosing a suitable value for the lower threshold.
+- `MorphologicalBinarize[image]` chooses the lower and upper threshold automatically.
+
+## Examples
+
+Binarize an image with automatic thresholds:
+
+```wolfram
+MorphologicalBinarize[ExampleData[{"TestImage", "Lena"}]]
 ```
-MorphologicalBinarize[image,{t1,t2}] creates a binary image from image by replacing all values above the upper threshold t2 with 1, also including pixels with intensities above the lower threshold t1 that are connected to the foreground.
 
-MorphologicalBinarize[image,t] uses t as the upper threshold, automatically choosing a suitable value for the lower threshold.
+Use a specific upper threshold:
 
-MorphologicalBinarize[image] chooses the lower and the upper threshold automatically.
+```wolfram
+MorphologicalBinarize[ExampleData[{"TestImage", "Mandrill"}], 0.5]
 ```
 
+Specify both thresholds:
 
+```wolfram
+MorphologicalBinarize[ExampleData[{"TestImage", "Peppers"}], {0.3, 0.7}]
+```
 
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/MorphologicalBinarize.html) for more details.*

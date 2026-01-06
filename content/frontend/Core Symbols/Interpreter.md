@@ -1,14 +1,23 @@
 # Interpreter
 
+`Interpreter[form]` represents an interpreter object that can interpret input as an object of the specified form.
+
+`Interpreter[form, test]` validates with the test function.
+
+## Examples
+
+Interpret a date:
+
+```wolfram
+Interpreter["Date"]["January 1, 2020"]
+(* DateObject[{2020, 1, 1}] *)
 ```
-Interpreter[form] represents an interpreter object that can be applied to an input to try to interpret it as an object of the specified form. 
 
-Interpreter[form,test] returns the interpreted object only if applying test to it yields True; otherwise it returns a Failure object.
+Number interpretation:
 
-Interpreter[form,test,fail] returns the result of applying the function fail if the test fails.
+```wolfram
+Interpreter["Number"]["42.5"]
+(* 42.5 *)
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Interpreter.html) for more details.*

@@ -1,16 +1,22 @@
 # ImageAdjust
 
+`ImageAdjust[image]` adjusts the levels in image, rescaling them to cover the range 0 to 1.
+
+`ImageAdjust[image, {c, b, g}]` adjusts contrast c, brightness b, and gamma g.
+
+## Examples
+
+Adjust image levels:
+
+```wolfram
+img = ExampleData[{"TestImage", "Lena"}];
+ImageAdjust[img]
 ```
-ImageAdjust[image] adjusts the levels in image, rescaling them to cover the range 0 to 1.
 
-ImageAdjust[image,corr] adjusts the image according to the correction specification corr.
+Increase contrast and brightness:
 
-ImageAdjust[image,corr,{inmin,inmax}] first rescales so that the range of input values inmin to inmax is mapped to 0 to 1.
-
-ImageAdjust[image,corr,{inmin,inmax},{outmin,outmax}] rescales so that the range of input values inmin to inmax is mapped to outmin to outmax.
+```wolfram
+ImageAdjust[img, {0.5, 0.2}]
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ImageAdjust.html) for more details.*

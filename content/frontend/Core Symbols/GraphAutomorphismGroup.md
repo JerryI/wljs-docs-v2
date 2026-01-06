@@ -1,12 +1,17 @@
 # GraphAutomorphismGroup
 
+`GraphAutomorphismGroup[g]` gives the automorphism group of a graph `g`.
+
+- `GraphAutomorphismGroup[{v -> w, …}]` uses rules `v -> w` to specify the graph `g`.
+
+## Examples
+
+```wolfram
+GraphAutomorphismGroup[CycleGraph[5]]
 ```
-GraphAutomorphismGroup[g] gives the automorphism group of a graph g.
 
-GraphAutomorphismGroup[{v->w,…}] uses rules v->w to specify the graph g.
+```wolfram
+GraphAutomorphismGroup[CompleteGraph[4]]
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/GraphAutomorphismGroup.html) for more details.*

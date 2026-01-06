@@ -1,16 +1,23 @@
 # Moment
 
+`Moment[data, r]` gives the order r moment μ_r of data.
+
+`Moment[dist, r]` gives the moment of the distribution dist.
+
+## Examples
+
+Compute moment of data:
+
+```wolfram
+Moment[{1, 2, 3, 4, 5}, 2]
+(* 11 *)
 ```
-Moment[data,r] gives the order r moment μ r of data.
 
-Moment[data,{r1,…,rm}] gives the order {r1,…,rm} multivariate moment μ r1, …, rm of data.
+Moment of a distribution:
 
-Moment[dist,…] gives the moment of the distribution dist.
-
-Moment[r] represents the order r formal moment. 
+```wolfram
+Moment[NormalDistribution[0, 1], 2]
+(* 1 *)
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Moment.html) for more details.*

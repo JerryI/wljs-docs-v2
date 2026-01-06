@@ -1,10 +1,21 @@
 # ImageDifference
 
+`ImageDifference[image1, image2]` gives an image where each pixel is the absolute difference of the corresponding pixels in image1 and image2.
+
+## Examples
+
+Compute difference between images:
+
+```wolfram
+img1 = ExampleData[{"TestImage", "Lena"}];
+img2 = GaussianFilter[img1, 5];
+ImageDifference[img1, img2]
 ```
-ImageDifference[image1,image2] gives an image in which each pixel is the absolute difference of the corresponding pixels in image1 and image2. 
+
+Detect changes:
+
+```wolfram
+ImageDifference[img1, ColorNegate[img1]]
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ImageDifference.html) for more details.*

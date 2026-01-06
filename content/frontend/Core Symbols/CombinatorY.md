@@ -1,10 +1,14 @@
 # CombinatorY
 
+`CombinatorY` represents the **Y** combinator (fixed-point combinator).
+
+## Examples
+
+The Y combinator enables recursion:
+
+```wolfram
+CombinatorY[f]
+(* f[CombinatorY[f]] *)
 ```
-CombinatorY represents the <b>Y</b> combinator.
-```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/CombinatorY.html) for more details.*

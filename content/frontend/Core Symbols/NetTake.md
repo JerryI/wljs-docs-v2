@@ -1,12 +1,21 @@
 # NetTake
 
+`NetTake[net, end]` takes only those layers up to end in a NetChain or NetGraph.
+
+- `NetTake[net, {start, end}]` takes only layers between start and end.
+
+## Examples
+
+```wolfram
+NetTake[trainedNet, 5]
 ```
-NetTake[net,end] takes only those layers up to end in a NetChain or NetGraph.
 
-NetTake[net,{start,end}] takes only those layers between start and end in a NetChain or NetGraph.
+```wolfram
+NetTake[net, {"input", "conv3"}]
 ```
 
+```wolfram
+NetTake[NetModel["ResNet-50"], {1, 10}]
+```
 
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/NetTake.html) for more details.*

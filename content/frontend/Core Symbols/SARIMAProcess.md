@@ -1,18 +1,23 @@
 # SARIMAProcess
 
+`SARIMAProcess[{a1, ..., ap}, d, {b1, ..., bq}, {s, {α1, ..., αm}, δ, {β1, ..., βr}}, v]` represents a seasonal integrated autoregressive moving-average process with ARIMA coefficients, seasonal order s, and variance v.
+
+- `SARIMAProcess[..., Σ]` represents a vector SARIMA process with covariance matrix Σ.
+- `SARIMAProcess[..., init]` represents a SARIMA process with initial data init.
+- `SARIMAProcess[c, ...]` represents a SARIMA process with constant c.
+
+## Examples
+
+```wolfram
+SARIMAProcess[{0.5}, 1, {0.3}, {12, {0.2}, 1, {0.1}}, 1]
 ```
-SARIMAProcess[{a1,…,ap},d,{b1,…,bq},{s,{α1,…,αm},δ,{β1,…,βr}},v] represents a seasonal integrated autoregressive moving-average process with ARIMA coefficients ai, d, and bj; seasonal order s; seasonal ARIMA coefficients αi, δ, and βj; seasonal integration order δ; and normal white noise with variance v.
 
-SARIMAProcess[{a1,…,ap},d,{b1,…,bq},{s,{α1,…,αm},δ,{β1,…,βr}},Σ] represents a vector SARIMA process with coefficient matrices ai, bj, αi, and βj and covariance matrix Σ. 
-
-SARIMAProcess[{a1,…},{d1,…},{b1,…},{{s1,…},{α1,…},{δ1,…},{β1,…}},Σ] represents a vector SARIMA process with multiple integration orders di, seasonal orders sj, and seasonal integration orders δk. 
-
-SARIMAProcess[{a1,…,ap},d,{b1,…,bq},{s,{α1,…,αm},δ,{β1,…,βr}},v,init] represents a SARIMA process with initial data init. 
-
-SARIMAProcess[c,…] represents a SARIMA process with constant c.
+```wolfram
+RandomFunction[SARIMAProcess[...], {0, 100}]
 ```
 
+```wolfram
+TimeSeriesModelFit[data, "SARIMA"]
+```
 
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/SARIMAProcess.html) for more details.*

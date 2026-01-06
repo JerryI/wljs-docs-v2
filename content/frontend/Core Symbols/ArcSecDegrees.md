@@ -1,10 +1,21 @@
 # ArcSecDegrees
 
+`ArcSecDegrees[z]` gives the arc secant in degrees of the complex number z.
+
+## Examples
+
+Get arc secant in degrees:
+
+```wolfram
+ArcSecDegrees[2]
+(* 60 *)
 ```
-ArcSecDegrees[z] gives the arc secant in degrees of the complex number z. 
+
+Numerical evaluation:
+
+```wolfram
+ArcSecDegrees[1.5]
+(* 48.1897 *)
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ArcSecDegrees.html) for more details.*

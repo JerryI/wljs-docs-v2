@@ -1,16 +1,23 @@
 # OrderDistribution
 
+`OrderDistribution[{dist, n}, k]` represents the kth-order statistics distribution for n observations from the distribution dist.
+
+- `OrderDistribution[{dist, n}, {k1, k2, ...}]` represents the joint (k1,k2,...)th-order statistics distribution.
+- `OrderDistribution[{dist1, ..., distn}, ...]` represents the order statistics for independent distributions.
+- `OrderDistribution[mdist, ...]` represents the order statistics for multivariate distribution mdist.
+
+## Examples
+
+```wolfram
+OrderDistribution[{NormalDistribution[], 10}, 5]
 ```
-OrderDistribution[{dist,n},k] represents the kth-order statistics distribution for n observations from the distribution dist.
 
-OrderDistribution[{dist,n},{k1,k2,…}] represents the joint (k1,k2,…)th-order statistics distribution from n observations from the distribution dist. 
-
-OrderDistribution[{dist1,…,distn},…] represents the order statistics distribution for independent distributions disti.
-
-OrderDistribution[mdist,…] represents the order statistics distribution for multivariate distribution mdist.
+```wolfram
+Mean[OrderDistribution[{UniformDistribution[], 5}, 3]]
 ```
 
+```wolfram
+PDF[OrderDistribution[{ExponentialDistribution[1], 3}, 1], x]
+```
 
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/OrderDistribution.html) for more details.*

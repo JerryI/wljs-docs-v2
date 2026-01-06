@@ -1,18 +1,23 @@
 # ImageCompose
 
+`ImageCompose[image, overlay]` gives the result of overlaying overlay onto image.
+
+`ImageCompose[image, {overlay, α}]` uses alpha blending with fraction α.
+
+## Examples
+
+Overlay an image:
+
+```wolfram
+img = ExampleData[{"TestImage", "Lena"}];
+overlay = Image[Graphics[{Red, Disk[]}], ImageSize -> 100];
+ImageCompose[img, overlay]
 ```
-ImageCompose[image,overlay] gives the result of overlaying overlay onto image. 
 
-ImageCompose[image,{overlay,α}] gives the result of alpha blending overlay into image using blending fraction α.
+With transparency:
 
-ImageCompose[image,overlay,pos] places the center of overlay at position pos in image.
-
-ImageCompose[image,overlay,pos,opos] places the point opos in overlay at position pos in image.
-
-ImageCompose[image,overlay,pos,opos,{fi,fo,mode}] uses the compositing fractions fk and the specified compositing mode.
+```wolfram
+ImageCompose[img, {overlay, 0.5}]
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ImageCompose.html) for more details.*

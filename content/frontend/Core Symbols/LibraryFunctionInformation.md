@@ -1,10 +1,15 @@
 # LibraryFunctionInformation
 
+`LibraryFunctionInformation[fun]` returns information about a `LibraryFunction`.
+
+## Examples
+
+```wolfram
+LibraryFunctionInformation[myLibraryFunction]
 ```
-LibraryFunctionInformation[fun] returns information about a LibraryFunction.
+
+```wolfram
+LibraryFunctionInformation[LibraryFunctionLoad["mylib", "myfunction", {Integer}, Integer]]
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/LibraryFunctionInformation.html) for more details.*

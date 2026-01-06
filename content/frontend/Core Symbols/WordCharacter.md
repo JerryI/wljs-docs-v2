@@ -1,10 +1,15 @@
 # WordCharacter
 
+`WordCharacter` represents a letter or digit character in `StringExpression`.
+
+## Examples
+
+```wolfram
+StringMatchQ["a", WordCharacter]
 ```
-WordCharacter represents a letter or digit character in StringExpression.
+
+```wolfram
+StringCases["hello123!", WordCharacter ..]
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/WordCharacter.html) for more details.*

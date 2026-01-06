@@ -1,14 +1,22 @@
 # FunctionDiscontinuities
 
+`FunctionDiscontinuities[f, x]` finds the discontinuities of f(x) for x ∈ Reals.
+
+- `FunctionDiscontinuities[f, x, dom]` finds the discontinuities for x ∈ dom.
+- `FunctionDiscontinuities[{f1, f2, ...}, {x1, x2, ...}, dom]` finds discontinuities of multiple functions.
+
+## Examples
+
+Find discontinuities of 1/x:
+
+```wolfram
+FunctionDiscontinuities[1/x, x]
 ```
-FunctionDiscontinuities[f,x] finds the discontinuities of f(x) for x∈Reals. 
 
-FunctionDiscontinuities[f,x,dom] finds the discontinuities of f(x) for x∈dom.
+Find discontinuities of Tan:
 
-FunctionDiscontinuities[{f1,f2,…},{x1,x2,…},dom] finds the discontinuities of f1(x1,x2,…),f2(x1,x2,…),… for x1,x2,…∈dom.
+```wolfram
+FunctionDiscontinuities[Tan[x], x]
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/FunctionDiscontinuities.html) for more details.*

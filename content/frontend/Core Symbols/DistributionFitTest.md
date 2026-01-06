@@ -1,14 +1,25 @@
 # DistributionFitTest
 
+`DistributionFitTest[data]` tests whether data is normally distributed.
+
+`DistributionFitTest[data, dist]` tests whether data is distributed according to dist.
+
+`DistributionFitTest[data, dist, "property"]` returns the value of "property".
+
+## Examples
+
+Test for normality:
+
+```wolfram
+data = RandomVariate[NormalDistribution[], 100];
+DistributionFitTest[data]
+(* p-value *)
 ```
-DistributionFitTest[data] tests whether data is normally distributed. 
 
-DistributionFitTest[data,dist] tests whether data is distributed according to dist. 
+Test against specific distribution:
 
-DistributionFitTest[data,dist,"property"] returns the value of "property".
+```wolfram
+DistributionFitTest[data, ExponentialDistribution[1], "PValue"]
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/DistributionFitTest.html) for more details.*

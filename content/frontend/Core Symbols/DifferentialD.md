@@ -1,10 +1,20 @@
 # DifferentialD
 
+`DifferentialD[x]` displays as dx, representing a differential.
+
+## Examples
+
+Display differential:
+
+```wolfram
+DifferentialD[x]
+(* Displays as dx *)
 ```
-DifferentialD[x] displays as x.
+
+In integrals:
+
+```wolfram
+Integrate[f[x], DifferentialD[x]]
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/DifferentialD.html) for more details.*

@@ -1,12 +1,22 @@
 # ImageAspectRatio
 
+`ImageAspectRatio[image]` gives the ratio of height to width for image.
+
+## Examples
+
+Get aspect ratio:
+
+```wolfram
+img = ExampleData[{"TestImage", "Lena"}];
+ImageAspectRatio[img]
+(* 1. *)
 ```
-ImageAspectRatio[image] gives the ratio of height to width for image.
 
-ImageAspectRatio[video] gives the aspect ratio of video frames.
+Compare with dimensions:
+
+```wolfram
+ImageDimensions[img]
+(* {512, 512} *)
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ImageAspectRatio.html) for more details.*

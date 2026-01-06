@@ -1,10 +1,15 @@
 # HeaderDisplayFunction
 
+`HeaderDisplayFunction` is an option for `Dataset` that specifies a function to apply to headers before displaying them.
+
+## Examples
+
+```wolfram
+Dataset[{<|"a" -> 1, "b" -> 2|>}, HeaderDisplayFunction -> (Style[#, Bold] &)]
 ```
-HeaderDisplayFunction is an option for Dataset that specifies a function to apply to headers before displaying them.
+
+```wolfram
+Dataset[{<|"Name" -> "Alice"|>}, HeaderDisplayFunction -> ToUpperCase]
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/HeaderDisplayFunction.html) for more details.*

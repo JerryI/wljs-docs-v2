@@ -1,10 +1,21 @@
 # FileNameDepth
 
+`FileNameDepth["name"]` gives the number of path elements in the file name.
+
+## Examples
+
+Count path elements:
+
+```wolfram
+FileNameDepth["/path/to/file.txt"]
+(* 4 *)
 ```
-FileNameDepth["name"] gives the number of path elements in the file name "file".
+
+Relative path:
+
+```wolfram
+FileNameDepth["folder/subfolder/data.csv"]
+(* 3 *)
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/FileNameDepth.html) for more details.*

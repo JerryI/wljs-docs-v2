@@ -1,10 +1,15 @@
 # PacletDirectoryRemove
 
+`PacletDirectoryRemove` is an obsolete function that has been superseded by `PacletDirectoryUnload`.
+
+## Examples
+
+```wolfram
+PacletDirectoryUnload["path/to/paclet"]
 ```
-StringTemplate[The experimental function `1` is now obsolete and is superseded by `2`., PacletDirectoryRemove, PacletDirectoryUnload]
+
+```wolfram
+(* Use PacletDirectoryUnload instead *)
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/PacletDirectoryRemove.html) for more details.*

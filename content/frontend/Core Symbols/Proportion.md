@@ -1,10 +1,26 @@
 # Proportion
 
+`Proportion[x, y, ...]` displays as x∷y∷....
+
+## Examples
+
+Display a simple proportion:
+
+```wolfram
+Proportion[1, 2, 3]
+(* 1∷2∷3 *)
 ```
-Proportion[x,y,…] displays as x∷y∷….
+
+Create a ratio relationship:
+
+```wolfram
+Proportion[a, b] == Proportion[c, d]
 ```
 
+In traditional mathematical notation:
 
+```wolfram
+TraditionalForm[Proportion[x, y, z]]
+```
 
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Proportion.html) for more details.*

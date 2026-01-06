@@ -1,10 +1,11 @@
 # ObservabilityGramian
 
+`ObservabilityGramian[ssm]` gives the observability Gramian of the state-space model *ssm*.
+
+## Examples
+
+```wolfram
+ObservabilityGramian[StateSpaceModel[{{0, 1}, {-1, 0}}, {{0}, {1}}, {{1, 0}}, {{0}}]]
 ```
-ObservabilityGramian[ssm] gives the observability Gramian of the state-space model ssm.
-```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ObservabilityGramian.html) for more details.*

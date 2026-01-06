@@ -1,14 +1,23 @@
 # ForAll
 
+`ForAll[x, expr]` represents the statement that expr is `True` for all values of x.
+
+`ForAll[x, cond, expr]` states that expr is `True` for all x satisfying condition cond.
+
+## Examples
+
+Universal quantification:
+
+```wolfram
+Resolve[ForAll[x, x^2 >= 0], Reals]
+(* True *)
 ```
-ForAll[x,expr] represents the statement that expr is True for all values of x. 
 
-ForAll[x,cond,expr] states that expr is True for all x satisfying the condition cond. 
+With a condition:
 
-ForAll[{x1,x2,…},expr] states that expr is True for all values of all the xi. 
+```wolfram
+Resolve[ForAll[x, x > 0, Log[x] < x]]
+(* True *)
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ForAll.html) for more details.*

@@ -1,10 +1,19 @@
 # FromSphericalCoordinates
 
+`FromSphericalCoordinates[{r, θ, ϕ}]` gives the {x, y, z} Cartesian coordinates corresponding to the spherical coordinates {r, θ, ϕ}.
+
+## Examples
+
+Convert spherical to Cartesian coordinates:
+
+```wolfram
+FromSphericalCoordinates[{1, Pi/4, Pi/3}]
 ```
-FromSphericalCoordinates[{r,θ,ϕ}] gives the {x,y,z} Cartesian coordinates corresponding to the spherical coordinates {r,θ,ϕ}.
+
+Convert a unit vector:
+
+```wolfram
+FromSphericalCoordinates[{1, Pi/2, 0}]
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/FromSphericalCoordinates.html) for more details.*

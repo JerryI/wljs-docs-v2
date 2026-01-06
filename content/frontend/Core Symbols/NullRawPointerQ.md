@@ -1,10 +1,15 @@
 # NullRawPointerQ
 
+`NullRawPointerQ[ptr]` gives True if ptr is a null pointer, and False otherwise.
+
+## Examples
+
+```wolfram
+NullRawPointerQ[ToRawPointer[]]
 ```
-NullRawPointerQ[ptr] gives True if ptr is a null pointer, and False otherwise.
+
+```wolfram
+NullRawPointerQ[ptr]
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/NullRawPointerQ.html) for more details.*

@@ -1,10 +1,15 @@
 # TrainingProgressMeasurements
 
+`TrainingProgressMeasurements` is an option for `NetTrain` that specifies measurements to make while training is in progress.
+
+## Examples
+
+```wolfram
+NetTrain[net, data, TrainingProgressMeasurements -> {"Loss", "Accuracy"}]
 ```
-TrainingProgressMeasurements is an option for NetTrain that specifies measurements to make while training is in progress.
+
+```wolfram
+NetTrain[net, trainData, ValidationSet -> testData, TrainingProgressMeasurements -> All]
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/TrainingProgressMeasurements.html) for more details.*

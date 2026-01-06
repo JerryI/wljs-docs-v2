@@ -1,12 +1,23 @@
 # KeyExistsQ
 
+`KeyExistsQ[assoc, key]` returns `True` if the specified key exists in the association assoc, and `False` otherwise.
+
+`KeyExistsQ[key]` represents an operator form of `KeyExistsQ` that can be applied to an expression.
+
+## Examples
+
+Check if key exists:
+
+```wolfram
+KeyExistsQ[<|"a" -> 1, "b" -> 2|>, "a"]
+(* True *)
 ```
-KeyExistsQ[assoc,key] returns True if the specified key exists in the association assoc, and False otherwise.
 
-KeyExistsQ[key] represents an operator form of KeyExistsQ that can be applied to an expression.
+Non-existent key:
+
+```wolfram
+KeyExistsQ[<|"a" -> 1, "b" -> 2|>, "c"]
+(* False *)
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/KeyExistsQ.html) for more details.*

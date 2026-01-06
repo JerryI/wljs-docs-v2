@@ -1,10 +1,17 @@
 # XMLElement
 
+`XMLElement[tag, {attr1 -> val1, ...}, {data1, ...}]` represents an element in symbolic XML.
+
+## Examples
+
+Create an XML element:
+```wolfram
+XMLElement["book", {"id" -> "1"}, {"Title of Book"}]
 ```
-XMLElement[tag,{attr1->val1,…},{data1,…}] represents an element in symbolic XML.
+
+Nested elements:
+```wolfram
+XMLElement["root", {}, {XMLElement["child", {}, {"content"}]}]
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/XMLElement.html) for more details.*

@@ -1,12 +1,21 @@
 # ApartSquareFree
 
+`ApartSquareFree[expr]` rewrites a rational expression as a sum of terms whose denominators are powers of square-free polynomials.
+
+`ApartSquareFree[expr, var]` treats all variables other than var as constants.
+
+## Examples
+
+Decompose a rational expression:
+
+```wolfram
+ApartSquareFree[1/((x - 1)^2 (x + 1)), x]
 ```
-ApartSquareFree[expr] rewrites a rational expression as a sum of terms whose denominators are powers of square-free polynomials. 
 
-ApartSquareFree[expr,var] treats all variables other than var as constants. 
+Compare with standard Apart:
+
+```wolfram
+ApartSquareFree[x/((x^2 - 1)^2), x]
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ApartSquareFree.html) for more details.*

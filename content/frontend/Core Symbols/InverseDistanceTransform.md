@@ -1,10 +1,20 @@
 # InverseDistanceTransform
 
+`InverseDistanceTransform[image]` gives the inverse distance transform of image, returning a binary image.
+
+## Examples
+
+Apply inverse distance transform:
+
+```wolfram
+dist = DistanceTransform[Binarize[img]];
+InverseDistanceTransform[dist]
 ```
-InverseDistanceTransform[image] gives the inverse distance transform of image, returning the result as a binary image.
+
+Reconstruct from distance:
+
+```wolfram
+InverseDistanceTransform[Image[{{0, 1, 0}, {1, 2, 1}, {0, 1, 0}}]]
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/InverseDistanceTransform.html) for more details.*

@@ -1,14 +1,24 @@
 # ConcaveHullMesh
 
+`ConcaveHullMesh[{p1, p2, ...}]` gives the concave hull mesh from the points p1, p2, ....
+
+`ConcaveHullMesh[{p1, p2, ...}, α]` gives the concave hull mesh of the specified parameter α.
+
+`ConcaveHullMesh[{p1, p2, ...}, α, d]` gives the concave hull mesh of cells of dimension d.
+
+## Examples
+
+Create a concave hull mesh from random points:
+
+```wolfram
+pts = RandomReal[1, {50, 2}];
+ConcaveHullMesh[pts]
 ```
-ConcaveHullMesh[{p1,p2,…}] gives the concave hull mesh from the points p1,p2,….
 
-ConcaveHullMesh[{p1,p2,…},α] gives the concave hull mesh of the specified parameter α.
+With a specified alpha parameter:
 
-ConcaveHullMesh[{p1,p2,…},α,d] gives the concave hull mesh of cells of dimension d.
+```wolfram
+ConcaveHullMesh[pts, 0.1]
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ConcaveHullMesh.html) for more details.*

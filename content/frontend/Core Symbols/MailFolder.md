@@ -1,10 +1,15 @@
 # MailFolder
 
+`MailFolder[…]` represents a mail folder associated with an active mail server connection.
+
+## Examples
+
+```wolfram
+MailFolder["INBOX"]
 ```
-MailFolder[…] represents a mail folder associated with an active mail server connection.
+
+```wolfram
+MailServerConnect[]["Folders"]
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/MailFolder.html) for more details.*

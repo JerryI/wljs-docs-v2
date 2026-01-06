@@ -1,10 +1,21 @@
 # LogicalExpand
 
+`LogicalExpand[expr]` expands out logical combinations of equations, inequalities, and other functions.
+
+## Examples
+
+Expand logical expression:
+
+```wolfram
+LogicalExpand[(a || b) && c]
+(* (a && c) || (b && c) *)
 ```
-LogicalExpand[expr] expands out logical combinations of equations, inequalities, and other functions. 
+
+With inequalities:
+
+```wolfram
+LogicalExpand[Abs[x] < 1]
+(* -1 < x < 1 *)
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/LogicalExpand.html) for more details.*

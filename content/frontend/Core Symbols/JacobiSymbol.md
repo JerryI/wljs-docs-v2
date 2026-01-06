@@ -1,10 +1,21 @@
 # JacobiSymbol
 
+`JacobiSymbol[n, m]` gives the Jacobi symbol (n/m).
+
+## Examples
+
+Compute Jacobi symbol:
+
+```wolfram
+JacobiSymbol[3, 7]
+(* -1 *)
 ```
-JacobiSymbol[n,m] gives the Jacobi symbol (n/m). 
+
+For prime modulus (Legendre symbol):
+
+```wolfram
+JacobiSymbol[2, 11]
+(* -1 *)
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/JacobiSymbol.html) for more details.*

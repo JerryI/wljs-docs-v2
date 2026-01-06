@@ -1,14 +1,22 @@
 # FromDMS
 
+`FromDMS[{d, m, s}]` converts from degrees, minutes, and seconds to decimal degrees.
+
+- `FromDMS["dms"]` converts from a DMS string to decimal degrees.
+- `FromDMS["latlon"]` converts from a latitude-longitude string to latitude and longitude in decimal degrees.
+
+## Examples
+
+Convert degrees, minutes, seconds to decimal:
+
+```wolfram
+FromDMS[{40, 26, 46}]
 ```
-FromDMS[{d,m,s}] converts from degrees, minutes, and seconds to decimal degrees. 
 
-FromDMS["dms"] converts from a DMS string to decimal degrees.
+Convert a DMS string:
 
-FromDMS["latlon"] converts from a latitude-longitude string to latitude and longitude in decimal degrees.
+```wolfram
+FromDMS["40°26'46\"N"]
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/FromDMS.html) for more details.*

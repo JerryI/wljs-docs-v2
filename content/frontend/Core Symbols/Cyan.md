@@ -1,10 +1,13 @@
 # Cyan
 
+`Cyan` represents the color cyan in graphics or style specifications.
+
+## Examples
+
+Use cyan color in graphics:
+
+```wolfram
+Graphics[{Cyan, Disk[]}]
 ```
-Cyan represents the color cyan in graphics or style specifications. 
-```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Cyan.html) for more details.*

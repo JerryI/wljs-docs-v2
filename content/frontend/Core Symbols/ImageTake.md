@@ -1,20 +1,22 @@
 # ImageTake
 
+`ImageTake[image, n]` gives an image consisting of the first n rows.
+
+`ImageTake[image, {row1, row2}, {col1, col2}]` gives a subimage spanning the specified rows and columns.
+
+## Examples
+
+Take first 100 rows:
+
+```wolfram
+img = ExampleData[{"TestImage", "Lena"}];
+ImageTake[img, 100]
 ```
-ImageTake[image,n] gives an image consisting of the first n rows of image.
 
-ImageTake[image,-n] gives an image consisting of the last n rows of image.
+Extract a region:
 
-ImageTake[image,{row1,row2}] gives rows row1 through row2.
-
-ImageTake[image,{row1,row2},{col1,col2}] gives the image that spans row1 to row2 and col1 to col2.
-
-ImageTake[video,…] returns a video in which every frame consists of the specified region of interest.
-
-ImageTake[image3d,{slice1,slice2},{row1,row2},{col1,col2}] gives the 3D image consisting of the specified slices, rows, and columns.
+```wolfram
+ImageTake[img, {100, 200}, {150, 300}]
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ImageTake.html) for more details.*

@@ -1,10 +1,11 @@
 # NotExists
 
+`NotExists[x, y]` displays as ∄xy.
+
+## Examples
+
+```wolfram
+NotExists[x, f[x]]
 ```
-NotExists[x,y] displays as ∄xy.
-```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/NotExists.html) for more details.*

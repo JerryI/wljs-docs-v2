@@ -1,10 +1,21 @@
 # CheckAbort
 
+`CheckAbort[expr, failexpr]` evaluates expr, returning failexpr if an abort occurs.
+
+## Examples
+
+Handle an abort:
+
+```wolfram
+CheckAbort[Abort[], "Aborted!"]
+(* "Aborted!" *)
 ```
-CheckAbort[expr,failexpr] evaluates expr, returning failexpr if an abort occurs. 
+
+Normal evaluation without abort:
+
+```wolfram
+CheckAbort[1 + 2, "Aborted"]
+(* 3 *)
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/CheckAbort.html) for more details.*

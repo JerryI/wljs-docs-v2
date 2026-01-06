@@ -1,14 +1,21 @@
 # Input
 
+`Input[]` interactively reads in one Wolfram Language expression.
+
+`Input[prompt]` displays a prompt while requesting input.
+
+## Examples
+
+Basic input:
+
+```wolfram
+x = Input["Enter a number: "]
 ```
-Input[] interactively reads in one Wolfram Language expression. 
 
-Input[prompt] requests input, displaying prompt as a "prompt".
+With default value:
 
-Input[prompt,init] in a notebook front end uses init as the initial contents of the input field.
+```wolfram
+Input["Enter value: ", 42]
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Input.html) for more details.*

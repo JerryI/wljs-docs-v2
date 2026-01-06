@@ -1,10 +1,11 @@
 # Standardized
 
+`Standardized` is an option that determines whether to standardize the data.
+
+## Examples
+
+```wolfram
+PCA[data, Standardized -> True]
 ```
-Standardized is an option that determines whether to standardize the data.
-```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Standardized.html) for more details.*

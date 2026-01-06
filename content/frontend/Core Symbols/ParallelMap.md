@@ -1,12 +1,23 @@
 # ParallelMap
 
+`ParallelMap[f, expr]` applies f in parallel to each element on the first level in expr.
+
+- `ParallelMap[f, expr, levelspec]` applies f in parallel to parts of expr specified by levelspec.
+
+This function distributes computations across parallel kernels for improved performance.
+
+## Examples
+
+```wolfram
+ParallelMap[FactorInteger, Range[100, 110]]
 ```
-ParallelMap[f,expr] applies f in parallel to each element on the first level in expr.
 
-ParallelMap[f,expr,levelspec] applies f in parallel to parts of expr specified by levelspec.
+```wolfram
+ParallelMap[N[#, 100] &, {Pi, E, GoldenRatio}]
 ```
 
+```wolfram
+ParallelMap[PrimeQ, Range[1000], {1}]
+```
 
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ParallelMap.html) for more details.*

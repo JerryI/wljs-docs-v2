@@ -1,10 +1,21 @@
 # Complex
 
+`Complex` is the head used for complex numbers.
+
+## Examples
+
+Create a complex number:
+
+```wolfram
+Complex[3, 4]
+(* 3 + 4 I *)
 ```
-Complex is the head used for complex numbers. 
+
+Check the head of a complex number:
+
+```wolfram
+Head[2 + 3 I]
+(* Complex *)
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Complex.html) for more details.*

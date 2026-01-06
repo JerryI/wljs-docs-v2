@@ -1,12 +1,24 @@
 # QuantityVariablePhysicalQuantity
 
+`QuantityVariablePhysicalQuantity[var]` returns the physical quantity associated with the quantity variable var.
+
+- `QuantityVariablePhysicalQuantity[var, type]` returns the physical quantity using the format type.
+
+This function extracts the underlying physical quantity from a `QuantityVariable`.
+
+## Examples
+
+```wolfram
+QuantityVariablePhysicalQuantity[\[FormalT]]
 ```
-QuantityVariablePhysicalQuantity[var] returns the physical quantity associated with the quantity variable var.
 
-QuantityVariablePhysicalQuantity[var,type] returns the physical quantity using the format type.
+```wolfram
+v = QuantityVariable["velocity", "Speed"];
+QuantityVariablePhysicalQuantity[v]
 ```
 
+```wolfram
+QuantityVariablePhysicalQuantity[QuantityVariable["m", "Mass"], "Abbreviation"]
+```
 
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/QuantityVariablePhysicalQuantity.html) for more details.*

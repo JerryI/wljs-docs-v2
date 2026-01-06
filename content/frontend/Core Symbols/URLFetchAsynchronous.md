@@ -1,10 +1,17 @@
 # URLFetchAsynchronous
 
+`URLFetchAsynchronous[url, func]` performs a connection in the background, calling func when an event is raised.
+
+## Examples
+
+Fetch URL asynchronously:
+```wolfram
+URLFetchAsynchronous["https://example.com", Print]
 ```
-URLFetchAsynchronous[url,func] performs a connection in the background, calling func when an event is raised.
+
+Handle response events:
+```wolfram
+URLFetchAsynchronous[url, Function[{ev, data}, If[ev == "data", process[data]]]]
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/URLFetchAsynchronous.html) for more details.*

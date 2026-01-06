@@ -1,14 +1,23 @@
 # ColorBalance
 
+`ColorBalance[image]` adjusts the colors in image to achieve a balance simulating neutral lighting.
+
+`ColorBalance[image, ref]` adjusts colors so the reference color ref is mapped to white.
+
+`ColorBalance[image, ref -> target]` maps the reference color ref to target.
+
+## Examples
+
+Auto-balance an image:
+
+```wolfram
+ColorBalance[img]
 ```
-ColorBalance[image] adjusts the colors in image to achieve a balance that simulates the effect of neutral lighting.
 
-ColorBalance[image,ref] adjusts colors in image so that the reference color specified by ref is mapped to white. 
+Map a specific color to white:
 
-ColorBalance[image,ref->target] maps the reference color ref to target.
+```wolfram
+ColorBalance[img, Yellow]
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ColorBalance.html) for more details.*

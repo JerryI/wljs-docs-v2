@@ -1,10 +1,15 @@
 # LogisticSigmoid
 
+`LogisticSigmoid[z]` gives the logistic sigmoid function.
+
+## Examples
+
+```wolfram
+LogisticSigmoid[0]
 ```
-LogisticSigmoid[z] gives the logistic sigmoid function.
+
+```wolfram
+Plot[LogisticSigmoid[x], {x, -5, 5}]
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/LogisticSigmoid.html) for more details.*

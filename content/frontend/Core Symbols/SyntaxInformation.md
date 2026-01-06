@@ -1,10 +1,15 @@
 # SyntaxInformation
 
+`SyntaxInformation[f]` gives information used to generate syntax coloring and other advisories when f[...] is entered as input.
+
+## Examples
+
+```wolfram
+SyntaxInformation[Plot]
 ```
-SyntaxInformation[f] gives information used to generate syntax coloring and other advisories when f[…] is entered as input. 
+
+```wolfram
+SyntaxInformation[f] = {"ArgumentsPattern" -> {_, _.}};
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/SyntaxInformation.html) for more details.*

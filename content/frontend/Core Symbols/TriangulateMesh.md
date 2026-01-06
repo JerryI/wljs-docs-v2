@@ -1,10 +1,15 @@
 # TriangulateMesh
 
+`TriangulateMesh[mr]` generates a triangulation of the mesh region mr.
+
+## Examples
+
+```wolfram
+TriangulateMesh[Rectangle[]]
 ```
-TriangulateMesh[mr] generates a triangulation of the mesh region mr.
+
+```wolfram
+TriangulateMesh[Disk[], MaxCellMeasure -> 0.1]
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/TriangulateMesh.html) for more details.*

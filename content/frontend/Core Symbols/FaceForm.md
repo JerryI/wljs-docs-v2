@@ -1,12 +1,21 @@
 # FaceForm
 
+`FaceForm[g]` is a graphics directive specifying that faces of polygons and other filled graphics objects are to be drawn using the directive g.
+
+`FaceForm[g, gback]` specifies different directives for front and back faces of 3D polygons.
+
+## Examples
+
+Set face color:
+
+```wolfram
+Graphics3D[{FaceForm[Red], Cuboid[]}]
 ```
-FaceForm[g] is a graphics directive which specifies that faces of polygons and other filled graphics objects are to be drawn using the graphics directive or list of directives g. 
 
-FaceForm[g,gback] specifies that the front faces of three-dimensional polygons should be drawn with directives g, and the backs with directives gback. 
+Different front and back:
+
+```wolfram
+Graphics3D[{FaceForm[Blue, Yellow], Polygon[{{0, 0, 0}, {1, 0, 0}, {0.5, 1, 0.5}}]}]
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/FaceForm.html) for more details.*

@@ -1,18 +1,26 @@
 # DateListPlot
 
+`DateListPlot[{{date1, y1}, {date2, y2}, ..., {daten, yn}}]` plots points with values yi at a sequence of dates.
+
+`DateListPlot[{y1, y2, ..., yn}, datespec]` plots points with dates at equal intervals specified by datespec.
+
+`DateListPlot[tseries]` plots the time series tseries.
+
+`DateListPlot[{data1, data2, ...}]` plots data from all the datai.
+
+## Examples
+
+Plot time series data:
+
+```wolfram
+DateListPlot[{{{2020, 1}, 10}, {{2020, 6}, 15}, {{2021, 1}, 12}}]
 ```
-DateListPlot[{{date1,y1},{date2,y2},…,{daten,yn}}] plots points with values yi at a sequence of dates.
 
-DateListPlot[{y1,y2,…,yn},datespec] plots points with dates at equal intervals specified by datespec.
+From a TimeSeries object:
 
-DateListPlot[tseries] plots the time series tseries.
-
-DateListPlot[{data1,data2,…}] plots data from all the datai.
-
-DateListPlot[{…,w[datai],…}] plots datai with features defined by the symbolic wrapper w.
+```wolfram
+ts = TimeSeries[{1, 2, 3, 4}, {{2020, 1, 1}, Automatic, "Month"}];
+DateListPlot[ts]
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/DateListPlot.html) for more details.*

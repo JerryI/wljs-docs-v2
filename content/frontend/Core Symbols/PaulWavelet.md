@@ -1,12 +1,27 @@
 # PaulWavelet
 
+`PaulWavelet[]` represents a Paul wavelet of order 4.
+
+- `PaulWavelet[n]` represents a Paul wavelet of order n.
+
+## Examples
+
+Default Paul wavelet:
+
+```wolfram
+PaulWavelet[]
 ```
-PaulWavelet[] represents a Paul wavelet of order 4.
 
-PaulWavelet[n] represents a Paul wavelet of order n.
+Order 8 Paul wavelet:
+
+```wolfram
+PaulWavelet[8]
 ```
 
+Plot the wavelet:
 
+```wolfram
+WaveletPsi[PaulWavelet[], {x, -5, 5}]
+```
 
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/PaulWavelet.html) for more details.*

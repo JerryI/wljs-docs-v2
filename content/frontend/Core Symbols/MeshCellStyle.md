@@ -1,10 +1,19 @@
 # MeshCellStyle
 
+`MeshCellStyle` is an option and annotation of `MeshRegion`, `BoundaryMeshRegion`, and related functions that specifies styles to use for mesh cells.
+
+## Examples
+
+```wolfram
+MeshRegion[pts, cells, MeshCellStyle -> {2 -> LightBlue}]
 ```
-MeshCellStyle is an option and annotation of MeshRegion, BoundaryMeshRegion, and related functions that specifies styles to use for mesh cells. 
+
+```wolfram
+BoundaryMeshRegion[mesh, MeshCellStyle -> {{1, All} -> Red}]
 ```
 
+```wolfram
+MeshRegion[pts, Polygon[faces], MeshCellStyle -> {0 -> PointSize[Large]}]
+```
 
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/MeshCellStyle.html) for more details.*

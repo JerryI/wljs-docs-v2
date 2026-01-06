@@ -1,14 +1,18 @@
 # KnotData
 
+`KnotData[knot, "property"]` gives the specified property for a knot.
+
+- `KnotData[knot]` gives an image of the knot.
+- `KnotData["class"]` gives a list of knots in the specified class.
+
+## Examples
+
+```wolfram
+KnotData["Trefoil"]
 ```
-KnotData[knot,"property"] gives the specified property for a knot.
 
-KnotData[knot] gives an image of the knot.
-
-KnotData["class"] gives a list of knots in the specified class.
+```wolfram
+KnotData["FigureEight", "CrossingNumber"]
 ```
 
-
-
-
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/) for more details and examples on core symbols.*
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/KnotData.html) for more details.*
