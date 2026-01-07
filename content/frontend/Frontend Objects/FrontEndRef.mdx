@@ -2,7 +2,6 @@
 title: FrontEndRef
 internal: true
 env:
-  - WLJS
   - Wolfram Kernel
 
 source: https://github.com/JerryI/wljs-editor/blob/dev/src/FrontendObject.wl
@@ -12,6 +11,5 @@ package: wljs-editor
 FrontEndRef[uid_String]
 ```
 
-An executable reference to a frontend object (see [CreateFrontEndObject](../Frontend%20Objects/CreateFrontEndObject)), which does not have output forms defined.
+A static reference to a frontend object (see [CreateFrontEndObject](../Frontend%20Objects/CreateFrontEndObject)), which can only be evaluated on Kernel unlike [FrontEndExecutable](./FrontEndExecutable) that runs on the frontend (WLJS).
 
-After evaluation it is converted back to a normal Wolfram Language expression and is executed on Kernel.

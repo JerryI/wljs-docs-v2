@@ -8,30 +8,31 @@ source: https://github.com/JerryI/wljs-editor/blob/dev/src/Boxes.wl
 
 ---
 
-Used __to decorate__ Wolfram Expression with custom HTML elements
-
 ```wolfram
-(*BB[*)(expr)(*,*)(*view*)(*]BB*)
+BoxBox[expr_Boxes | _String, decorator_, opts___]
 ```
 
-This is used by `Ket`, `Frame` and other editable decorations
+is a low-level box used to decorate `expr` visibly with custom HTML/JS elements in `StandardForm`.
+
+This is used by `Ket`, `Frame`, `Style` and other editable decorations
+
+<Card>
 
 - the expression is __editable__
 - a common WL editor is spawned inside
 - only the container of the editor can be decorated (see [`Head`](#`Head`))
 
-There is a helper function to prevent an editor from rendering, if you want to write using this low-level representation
+</Card>
 
-```wolfram
-BoxBox[expr_Boxes | _String, decorator_, opts___]
-```
 
-it will substitute `expr` into a subeditor and decorate it using `decorator` expression executed on WLJS Interpreter.
+<Callout type="warning">`decorator` is a JavaScript function (i.e., executed by WLJS Interpreter) and must be defined in advance</Callout>
+
+{/* [TODO] */}
 
 ## Options
 
 ### `Head`
-Provides a head symbol of the wrapper expression, that will be hidden from the inner editor. It comes handy when you need to preserve the original from of the expression during the editing
+Provides the head symbol of the wrapper expression, which will be hidden from the inner editor. It comes in handy when you need to preserve the original form of the expression during editing
 
 <Callout type="tip">
 Use `Head` option to keep the wrapping expression
@@ -41,10 +42,10 @@ Use `Head` option to keep the wrapping expression
 Default is false. If it is set to `True`, double quotes will be cut and a simplified version of a widget will be used.
 
 ### `"HeadString"`
-Works only if `"String" -> True`. Specifies the opening sequence of a string, that will not be shown in the view.
+Only works if `"String" -> True`. Specifies the opening sequence of a string that will not be shown in the view.
 
 ### `"TailString"`
-Works only if `"String" -> True`. The same as above, but for the ending sequence. 
+Only works if `"String" -> True`. The same as above, but for the ending sequence. 
 
 ## Examples
 ### Change the display value and call arbitrary WLJS function
@@ -56,18 +57,24 @@ special /: MakeBoxes[special, StandardForm] := BoxBox["1+1", Alert["Hi"]]
 special
 ```
 
+Note that here `Alert` is a JavaScript function that lives only on the frontend (see [Alert](./../../Interpreter/Alert)).
+
 ### Styling expression using JS
-One can define its own style of cells boxes
+You can define your own style for cell boxes
 
 ```js
 .js
-core.Styler = async (args, env) => {
+core.MyStyler = async (args, env) => {
   env.element.style.boxShadow = "1px 1px 5px black";
 }
 ```
 
 ```wolfram
-wrapper /: MakeBoxes[wrapper[expr_], StandardForm] := BoxBox[MakeBoxes[expr, StandardForm], Styler, Head->wrapper]
+wrapper /: MakeBoxes[wrapper[expr_], StandardForm] := With[{
+  b = MakeBoxes[expr, StandardForm]
+},
+  BoxBox[b, MyStyler, Head->wrapper]
+]
 ```
 
 and then try
@@ -76,13 +83,8 @@ and then try
 wrapper[1/2]
 ```
 
-__Result__
 
-The neat thing is __you can edit the inner expression__
-
-<Callout type="note">
-This is how [Ket](../../Formatting/Ket), `Bra` are implemented for instance
-</Callout>
+The neat thing is that __you can edit the inner expression__
 
 ## Supported output forms
 - [StandardForm](../../Formatting/StandardForm)

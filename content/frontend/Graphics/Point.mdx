@@ -1,7 +1,5 @@
 ---
 title: Point
-env:
-  - WLJS
 package: wljs-graphics-d3
 update: true
 source: https://github.com/JerryI/wljs-graphics-d3/blob/dev/src/kernel.js
@@ -11,7 +9,7 @@ numericArray: true
 Point[p_List | _Offload]
 ```
 
-is a graphics and geometry primitive that represents a point at `p`,
+is a graphics and geometry primitive that represents a point at `p`,
 
 ```wolfram
 Point[{p1_List, p2_List, ...}]
@@ -53,9 +51,6 @@ where `event` can be
 - `"zoom"` detects zoom / mouse-wheel
 - `"click"` detects mouse clicks
 
-<Callout type="tip">
-See more in [Mouse and keyboard](frontend/Advanced/Events%20system/Mouse%20and%20keyboard)
-</Callout>
 
 ## Indexed geometry
 Using it inside [GraphicsComplex](../Graphics/GraphicsComplex) allows to specify only the indexes of vertices as arguments similar to faces like in [Indexed geometry](../Graphics/Polygon)

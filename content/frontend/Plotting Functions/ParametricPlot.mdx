@@ -1,28 +1,21 @@
 ---
 title: ParametricPlot
 ---
-The same as [Plot](../Plotting%20Functions/Plot), but accepts function generating pairs of `{x,y}`
 
-```wolfram
-ParametricPlot[{Sin[t], Cos[t]}Exp[-t], {t, 0, 2Pi}]
-```
+`ParametricPlot[{fx, fy}, {u, umin, umax}]` generates a parametric plot of a curve with x and y coordinates as functions of u.
 
 ## Examples
-Generate complex parametric plot
+
+Plot a circle:
+
 ```wolfram
-ParametricPlot[
- With[{z = u + I v}, {Re[z + 1/z], Im[z + 1/z]}], {u, -1/2, 
-  1/2}, {v, -1/2, 1/2}, PlotRange -> 5, Mesh -> Automatic]
+ParametricPlot[{Cos[t], Sin[t]}, {t, 0, 2 Pi}]
 ```
 
-Map a texture to parametric plot
-```wolfram @
-texture = Image[CellularAutomaton[30, {{1}, 0}, 40], "Bit", Magnification -> 2] // Texture
-```
-```wolfram @
-ParametricPlot[{r Cos[\[Theta]], r Sin[\[Theta]]}, {r, 1, 
-  2}, {\[Theta], 0, 2 Pi/3}, PlotRange -> All, Mesh -> 15, PlotStyle->texture]
+Plot a spiral:
+
+```wolfram
+ParametricPlot[{t Cos[t], t Sin[t]}, {t, 0, 4 Pi}]
 ```
 
-## Dynamics
-Consider to use [ManipulateParametricPlot](../Plotting%20Functions/ManipulateParametricPlot)  for manipulating parameters of a function in real time
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ParametricPlot.html) for more details.*

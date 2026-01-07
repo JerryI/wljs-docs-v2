@@ -1,7 +1,5 @@
 ---
 title: Text
-env:
-  - WLJS
 package: wljs-graphics-d3
 update: true
 source: https://github.com/JerryI/wljs-graphics-d3/blob/dev/src/kernel.js
@@ -62,7 +60,7 @@ where `event` can be
 Only strings, reals numbers or integers are supported
 </Callout>
 
-For both the position and text content [updates](frontend/Dynamics) are supported
+For both the position and text content updates are supported
 
 ```wolfram
 txt = RandomWord[];
@@ -106,7 +104,8 @@ In principle, it will anyway ends up in HTML, therefore one can use any special 
 ### Wolfram Language special characters
 It does support some of the WL's characters like `\[Alpha]` and others, which are compatible with unicode table
 
-```wolfram @
-Text["\[Omega] (THz)", {0,0}]
-```
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<wljs-editor type="Input" display="codemirror">{`Text["\[Omega] (THz)", {0,0}]`}</wljs-editor>
+</WLJSWrapper>
 

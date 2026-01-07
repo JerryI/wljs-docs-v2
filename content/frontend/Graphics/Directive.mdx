@@ -1,7 +1,5 @@
 ---
 title: Directive
-env:
-  - WLJS
 package: wljs-graphics-d3
 source: https://github.com/JerryI/wljs-graphics-d3/blob/dev/src/kernel.js
 ---
@@ -20,8 +18,8 @@ The support is quite limited compared to Mathematica's implementation
 ## Options
 ### `FontSize`
 ### `FontFamily`
-### `TransitionType`
-### `TransitionDuration`
+### `"TransitionType"`
+### `"TransitionDuration"`
 
 ## Examples
 ### Ticks of a plot
@@ -46,8 +44,8 @@ p1 = {0,0};
 p2 = {0,0};
 
 Graphics[{
-	Directive[TransitionDuration->500], Red, Disk[p1 // Offload, 0.2],
-	{Directive[TransitionDuration->100], Blue, Disk[p2 // Offload, 0.2]}}
+	Directive["TransitionDuration"->500], Red, Disk[p1 // Offload, 0.2],
+	{Directive["TransitionDuration"->100], Blue, Disk[p2 // Offload, 0.2]}}
 , PlotRange->{{-1,1}, {-1,1}}]
 ```
 

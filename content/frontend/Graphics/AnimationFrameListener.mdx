@@ -9,10 +9,15 @@ source: https://github.com/JerryI/wljs-graphics-d3/blob/dev/src/Kernel.wl
 ---
 signals once the beginning of a browser's frame (depends on OS settings, hardware). It can be reloaded again after any changes of dependent dynamic symbols similar to [`requestAnimationFrame`](https://developer.mozilla.org/en-US/docs/Web/API/window/requestAnimationFrame).
 
-The main idea is
+<Card>
+
+Why to use
+
 - to be in sync with a beginning of native browser's frame drawing
 - to animate something as fast as possible
 - don't fire next frame, before calculations are done
+
+</Card>
 
 Therefore this provides a balanced load to the system.
 
@@ -23,7 +28,8 @@ AnimationFrameListener[symbol_Offload, "Event"->event_String]
 where `symbol` can be any dynamic symbol wrapped in [Offload](../Interpreter/Offload), that will be changed each frame, it serves the purpose of a signal, that all calculations are done. `event` is a string representation of [`EventObject`](../Misc/Events) to which a handler function, that recalculates `symbol` is assigned.
 
 ## Options
-### `"Event"` (mandatory)
+### `"Event"` 
+
 Provides an event object in the form of a string
 
 ## Methods
@@ -33,21 +39,22 @@ Apply [`EventHandler`](../Misc/Events) on the `AnimationFrameListener` directly 
 EventHandler[AnimationFrameListener[symbol_Offload], handler_]
 ```
 
-where `handler` is handler function, that will be called.
+where `handler` is handler function, that will be called. 
 
 ## Example
 Here is an almost one-liner animation:
 
-```wolfram @
-Module[{p=RandomReal[{-1,1}, {100,2}]}, 
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<wljs-editor type="Input" display="codemirror">{`Module[{p=RandomReal[{-1,1}, {100,2}]}, 
   Graphics[{
     (*VB[*)(RGBColor[0.368417, 0.506779, 0.709798])(*,*)(*"1:eJxTTMoPSmNiYGAo5gUSYZmp5S6pyflFiSX5RcEsQBHn4PCQNGaQPAeQCHJ3cs7PyS8qKpg26anKlOv2RYbTXk7vMH9gX3S8ZYb3qm3P7AF5kRs6"*)(*]VB*), Point[p//Offload], 
     EventHandler[AnimationFrameListener[p//Offload], Function[Null,
       p = (# + Norm[#] 0.01 {#[[2]], -#[[1]]}) &/@ p;
     ]]
   }, ImageSize->Small]
-]
-```
+]`}</wljs-editor>
+</WLJSWrapper>
 
 Here is a basic example with many points and lines animated:
 
@@ -65,7 +72,7 @@ With[{pts = Unique[], event = CreateUUID[], n = Unique[]},
    Graphics[{
      Blue, Line[pts//Offload], Red, Point[pts//Offload],
      AnimationFrameListener[pts//Offload, "Event"->event]
-   }, Axes->True, PlotRange->{{0,10Pi}, {-0.15,0.3}}, TransitionType->None]
+   }, Axes->True, PlotRange->{{0,10Pi}, {-0.15,0.3}}, "TransitionType"->None]
 ]
 ```
 

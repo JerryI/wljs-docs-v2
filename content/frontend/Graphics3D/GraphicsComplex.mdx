@@ -1,7 +1,5 @@
 ---
 title: GraphicsComplex
-env:
-  - WLJS
 package: wljs-graphics3d-threejs
 source: https://github.com/JerryI/Mathematica-ThreeJS-graphics-engine/blob/dev/src/kernel.js
 update: true
@@ -177,29 +175,31 @@ sample[t_] := With[{
 now construct the scene
 
 ```wolfram
-LeakyModule[{
+Module[{
     vertices, normals, indices
   },
     {
       EventHandler[InputRange[0,1,0.1,0], Function[value,
         With[{res  = sample[value]},
+
+          
           normals = res[[3]];
           indices = res[[2]];
           vertices = res[[1]];
+          
         ];
       ]],
 
       {vertices, indices, normals} = sample[0];
       
       Graphics3D[{
-        MeshMaterial[MeshToonMaterial[]], Gray, 
         SpotLight[Red, 5 {1,1,1}], SpotLight[Blue, 5 {-1,-1,1}], 
         SpotLight[Green, 5 {1,-1,1}], 
         PointLight[Magenta, {10,10,10}],
         
         GraphicsComplex[vertices // Offload, {
           Polygon[indices // Offload]
-        }, VertexNormals->Offload[normals]]
+        }, VertexNormals->Offload[normals], "VertexFence"->True]
         
       }, Lighting->None]
     } // Column // Panel 
@@ -209,11 +209,4 @@ LeakyModule[{
 ### Non-indexed
 This is a another mode of working with [Non-indexed geometry](#Non-indexed%20geometry) in `Polygon`. The benefit of this approach, you can use fixed length buffer for vertices and limit your drawing range using two arguments of Polygon.
 
-<Callout type="tip">
-Use non-indexed geometry if your polygon count reaches __1 million__.
-</Callout>
-
-__Paint 3D__
-
-__Marching Cubes examples__
 

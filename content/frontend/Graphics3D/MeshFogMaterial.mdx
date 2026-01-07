@@ -1,8 +1,5 @@
 ---
 title: MeshFogMaterial
-env:
-  - WLJS
-  - Wolfram Kernel
 package: wljs-graphics3d-threejs
 ---
 <Callout type="warn">
@@ -15,8 +12,8 @@ defines a material for volumetric fog effect in [MeshMaterial](../Graphics3D/Mes
 MeshFogMaterial[density_:0.01]
 ```
 
-<Callout type="tip">
-Enable `"MultipleImportanceSampling"` to get the best results
+<Callout type="warning">
+Enable `"MultipleImportanceSampling"`
 </Callout>
 
 ## Example
@@ -25,6 +22,6 @@ Define a sphere-fog and place a [SpotLight](../Graphics3D/SpotLight) to light it
 ```wolfram
 Graphics3D[{
   {MeshMaterial[MeshFogMaterial[0.1]], Sphere[{0,0,0},5]}, {Red, Sphere[{0,0,0}, 1]}, {SpotLight[White, -{5,5,5}]}
-}, "Renderer"->"PathTracing", Background->Black, "Lighting"->None]
+}, "Renderer"->"PathTracing", Background->Black, "Lighting"->None, "MultipleImportanceSampling"->True]
 ```
 

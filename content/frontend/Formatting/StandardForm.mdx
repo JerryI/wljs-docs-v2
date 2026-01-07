@@ -8,18 +8,6 @@ source: https://github.com/JerryI/wljs-editor/blob/dev/src/StandardForm.wl
 ---
 A standard form for representing math, colors, dates, graphics, which comes with visual decorations
 
-__This is a default representation__ used in output cells. You can apply it to expressions before using in [EditorView](../GUI/EditorView) and [InputEditor](../GUI/InputEditor) and [CellPrint](../Cells%20and%20Notebook/CellPrint)
+__This is a default representation__ used in output cells. You can apply it to expressions before using in [EditorView](../GUI/EditorView) and [InputEditor](../GUI/InputEditor) and [CellPrint](../Cells%20and%20Notebook/CellPrint) and [Interpretation](./Interpretation)
 
-## Example
-Stylize an output form of a symbol
-
-```wolfram
-specialSymbol /: MakeBoxes[specialSymbol, StandardForm] := With[{
-	o = Graphics[Disk[], ImageSize->100, ImagePadding->None]
-},
-	ViewBox[specialSymbol, o]
-]
-```
-
-__An expression will not be revealed__
-
+<Callout type="note">`StandardForm` is a decorated `InputForm` in WLJS Notebook</Callout>

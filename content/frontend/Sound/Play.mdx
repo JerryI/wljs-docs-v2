@@ -1,22 +1,27 @@
 ---
 title: Play
-draft: false
-package: wljs-sound
-env:
-  - Wolfram Kernel
 ---
 
+`Play[f, {t, tmin, tmax}]` creates an object that plays as a sound whose amplitude is given by f as a function of time t in seconds between tmin and tmax.
+
+## Examples
+
+Play a sine wave:
+
 ```wolfram
-Play[f, {t, tmin, tmax}, opts___] _Sound
+Play[Sin[440 * 2 Pi * t], {t, 0, 1}]
 ```
 
-creates an object that plays as a sound whose amplitude is given by `f` as a function of time `t`.
+Frequency sweep:
 
-## Options
+```wolfram
+Play[Sin[2 Pi * t * (200 + 200 t)], {t, 0, 2}]
+```
 
-### `SampleRate`
-The default is `8000`
+Amplitude modulation:
 
-<Callout type="note">
-Is effectively generate [SampledSoundList](../Sound/SampledSoundList) and feed it to [Sound](../Sound/Sound)
-</Callout>
+```wolfram
+Play[Sin[2 Pi * 440 * t] * Exp[-t], {t, 0, 2}]
+```
+
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Play.html) for more details.*

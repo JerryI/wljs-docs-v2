@@ -14,7 +14,7 @@ InterpretationBox[display_, expr_]
 where `display` will be shown in the output cell, instead of `expr`, keeping `expr` for the evaluation. 
 
 <Callout type="info">
-`display` can be any Wolfram Expression wrapped in `MakeBoxes`
+`display` can be any Wolfram Expression [converted to boxes](./../MakeBoxes) in `StandardForm`
 </Callout>
 
 <Callout type="warn">
@@ -50,8 +50,6 @@ You can use it with the created alias `Ashort`
 
 __An expression will not be revealed__
 
-## Dev notes
-This is a wrapper for [ViewBox](../../Formatting/Low-level/ViewBox) with a read-only [EditorView](../../GUI/EditorView) inside.
 
 ## Supported output forms
 - [StandardForm](../../Formatting/StandardForm)

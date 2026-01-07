@@ -6,15 +6,15 @@ env:
 package: wljs-manipulate
 source: https://github.com/JerryI/wljs-manipulate/blob/main/Kernel.wl
 ---
-<Callout type="warn">
-Implementation differs from Mathematica
+<Callout type="warning">
+Implementation differs from Wolfram Standard Library
 </Callout>
 
 ```wolfram
 Refresh[expr_, interval_]
 ```
 
-produces a dynamic window with `expr` reevaluated each interval of time specified in seconds or in `Quantity` provided in `interval`
+produces a dynamic window with `expr` reevaluated each interval of time specified __in seconds__ or in `Quantity` 
 
 ```wolfram
 Refresh[expr_, trigger_EventObject | trigger_String]

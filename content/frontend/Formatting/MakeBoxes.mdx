@@ -8,26 +8,38 @@ env:
 MakeBoxes[expr_, form_]
 ```
 
-an output handler expression acting as `UpValues` for other expression converts it to a decorated form, which is then rendered by an editor.
+defines how `expr` is represented in the Wolfram output cells, [output slides](./../Cell%20types/Slide), output [WLX cells](./../Cell%20types/WLX). The representation is constructed using so-called *boxes* - a wrapper expressions, allowing to decorate or completely alter the visible content of expression.
 
-`MakeBoxes` is applied only to the output expressions in a normal Wolfram cells, [Slides](frontend/Advanced/Slides/Slides) and  [WLX](frontend/Cell%20types/WLX). It will not affect any intermediate operations.
+<Card>
+
+- `MakeBoxes` does not evaluate `expr`.
+- `form` can be `StandardForm`, `WLXForm`, or any other format represented using boxes.
+- You can give definitions for `MakeBoxes[expr,form]` to specify your own rules for how expressions should be converted to boxes.
+- You should define the output form using `TagSet`.
+
+</Card>
+
 
 <Callout type="info">
-`MakeBoxes[..., StandardForm]` is applied to any visible output from the cell. It is also a part of a pipeline for `ToString[..., StandardForm]` used in [CellPrint](../Cells%20and%20Notebook/CellPrint), and [EditorView](../GUI/EditorView) for various applications.
+`MakeBoxes[expr, StandardForm]` is applied to any visible output of Wolfram cells by default in WLJS Notebook
+</Callout>
+
+<Callout type="info">
+`MakeBoxes[expr, WLXForm]` is applied to any visible output of slides, WLX and markdown cells by default in WLJS Notebook
 </Callout>
 
 ## Supported forms
 - [StandardForm](../Formatting/StandardForm)
 - [WLXForm](../Formatting/WLXForm)
-- [InputForm](../Formatting/InputForm)
 
 ## Used together with
 - [BoxBox](../Formatting/Low-level/BoxBox)
 - [ViewBox](../Formatting/Low-level/ViewBox)
 - [InterpretationBox](../Formatting/Low-level/InterpretationBox)
+- [Interpretation](../Formatting/Interpretation)
 
 ## Applications
-It is a core concept of the Notebook interface
+It is a core concept of the notebook interface
 
 ### Creating interactive objects
 #### Used by
@@ -38,33 +50,55 @@ It is a core concept of the Notebook interface
 - [EventObject](../Misc/Events)
 - many more
 
-All graphics and interactive objects are running on WLJS interpreter, which is browser'a minimal Wolfram Language interpreter running on Javascript. It draws graphics, handles users interaction via JS. To explicitly run an expression on browser's side you need to apply [CreateFrontEndObject](../Frontend%20Objects/CreateFrontEndObject) or use [ViewBox](../Formatting/Low-level/ViewBox). This can be done automatically using [MakeBoxes](../Formatting/MakeBoxes) 
+All graphics and interactive objects run on <small>WLJS Interpreter</small>, which is a minimal Wolfram Language interpreter running in the browser using JavaScript. It draws graphics and handles user interaction via JS. To explicitly run an expression on the browser's side, you need to define an output representation with [ViewBox](../Formatting/Low-level/ViewBox). 
 
-for example
+{/* [TODO] */}
+
+For example
+
 ```wolfram
 ...
-ListLinePlotly /: MakeBoxes[ListLinePlotly[args__], StandardForm] := With[{o = CreateFrontEndObject[ListLinePlotly[args]]}, 
-	MakeBoxes[o, StandardForm]
-]
-
-ListPlotly /: MakeBoxes[ListPlotly[args__], StandardForm] := With[{o = CreateFrontEndObject[ListPlotly[args]]}, 
-	MakeBoxes[o, StandardForm]
-]
+MyJSPlot /: MakeBoxes[m: MyJSPlot[args__], StandardForm] := ViewBox[m, m]
 ...
 ```
 
-### Styling symbols
-Please consider to use `StandardForm` for `form` argument to achieve those effects. 
+where 
 
-__See [ViewBox](../Formatting/Low-level/ViewBox) and [BoxBox](../Formatting/Low-level/BoxBox)__
-### Data preview
-One can make a preview of the data for example
+```js
+.js
+
+core.MyJSPlot = async (args, env) => {
+	....plot the data
+}
+```
+
+<Callout type="idea">
+
+If the inner data is large, to avoid editor lags, please compress expressions into a reference using [CreateFrontEndObject](./../Frontend%20Objects/CreateFrontEndObject), i.e.:
 
 ```wolfram
-dataHolder /: MakeBoxes[dataHolder[data_], StandardForm] := With[{
-  display = ListPlot[data, ImageSize->200, Axes->False, ImagePadding->None] // CreateFrontEndObject
+MyJSPlot /: MakeBoxes[m: MyJSPlot[args__], StandardForm] := With[{
+	b = CreateFrontEndObject[m]
 },
-	InterpretationBox[MakeBoxes[display, StandardForm], data]
+	MakeBoxes[b, StandardForm]
+]
+```
+
+</Callout>
+
+### Styling symbols
+Please consider using `StandardForm` for the `form` argument to achieve these effects. 
+
+__See [ViewBox](../Formatting/Low-level/ViewBox) and [BoxBox](../Formatting/Low-level/BoxBox)__
+
+### Data preview
+You can create a data preview, for example:
+
+```wolfram
+dataHolder /: MakeBoxes[d:dataHolder[data_], StandardForm] := With[{
+  display = ListPlot[data, ImageSize->100, Axes->False, ImagePadding->None]//Panel
+},
+	InterpretationBox[MakeBoxes[display, StandardForm], d]
 ] 
 
 dataHolder /: ListLinePlot[d_dataHolder, opts___] := ListLinePlot[d//First, opts]
@@ -76,9 +110,6 @@ dataHolder[RandomReal[{-1,1}, 100]]
 dataHolder[RandomReal[{-1,1}, 100]] // ListLinePLot
 ```
 
-<Callout type="info">
-[ViewBox](../Formatting/Low-level/ViewBox) __creates less overhead  compared to__ [InterpretationBox](../Formatting/Low-level/InterpretationBox), when it comes to replacing symbols with [Graphics](../Graphics/Graphics) or other interactive objects.
-</Callout>
 
 <Callout type="tip">
 For just a one-time decoration - use [Interpretation](../Formatting/Interpretation)

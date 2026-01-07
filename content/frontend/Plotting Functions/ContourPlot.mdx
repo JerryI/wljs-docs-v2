@@ -1,24 +1,21 @@
 ---
 title: ContourPlot
-env:
-  - Wolfram Kernel
-update: 
-needsContainer: 
-origin: https://reference.wolfram.com/language/ref/ContourPlot.html?q=ContourPlot
 ---
-Generates a contour plot of $f$ as a function of $x$ and $y$
+
+`ContourPlot[f, {x, xmin, xmax}, {y, ymin, ymax}]` generates a contour plot of f as a function of x and y.
+
+## Examples
+
+Contour plot of a function:
+
 ```wolfram
-ContourPlot[Cos[x] + Cos[y], {x, 0, 4 Pi}, {y, 0, 4 Pi}]
+ContourPlot[Sin[x] Sin[y], {x, -Pi, Pi}, {y, -Pi, Pi}]
 ```
 
-Or plot contour lines for which the equation is satisfied
+Plot a specific contour:
+
 ```wolfram
-ContourPlot[x^2 - y^2 == x^3, {x, -2, 2}, {y, -2, 2}]
+ContourPlot[x^2 + y^2 == 1, {x, -2, 2}, {y, -2, 2}]
 ```
 
-<Callout type="note">
-Hardware accelerated
-</Callout>
-
-## Options
-Styling is limited to the current implementation of [Graphics](../Graphics/Graphics)
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ContourPlot.html) for more details.*

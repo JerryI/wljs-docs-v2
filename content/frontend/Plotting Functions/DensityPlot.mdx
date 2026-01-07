@@ -1,45 +1,21 @@
 ---
 title: DensityPlot
-env:
-  - Wolfram Kernel
-needsContainer: false
-update: false
-origin: https://reference.wolfram.com/language/ref/DensityPlot.html
 ---
-```wolfram
-DensityPlot[f, {x, xmin, xmax}, {y, ymin, ymax}]
-```
-makes a density plot of `f` as a function of `x` and `y`
 
-<Callout type="note">
-Hardware accelerated
-</Callout>
+`DensityPlot[f, {x, xmin, xmax}, {y, ymin, ymax}]` makes a density plot showing `f` as colors over the x-y plane.
 
-<Callout type="tip">
-For better performance use this option
-```wolfram
-PerformanceGoal->"Speed"
-```
-</Callout>
+## Examples
+
+Create density plots:
 
 ```wolfram
-DensityPlot[x y, {x,0,1}, {y,0,1}]
+DensityPlot[Sin[x] Sin[y], {x, 0, 2 Pi}, {y, 0, 2 Pi}]
+
+(* With custom color function *)
+DensityPlot[x^2 - y^2, {x, -2, 2}, {y, -2, 2},
+  ColorFunction -> "Rainbow",
+  PlotLegends -> Automatic
+]
 ```
 
-## Options
-
-### `ColorFunction`
-
-```wolfram
-CoolColor[ z_ ] := RGBColor[z, 1 - z, 1];
-DensityPlot[Sin[x y], {x, -1, 1}, {y, -1, 1}, 
- ColorFunction -> CoolColor]
-```
-
-or using predefined
-
-```wolfram
- DensityPlot[Sin[x] Sin[y], {x, -2, 2}, {y, -2, 2}, 
- ColorFunction -> ColorData["SolarColors"]]
-```
-
+*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/DensityPlot.html) for more details.*

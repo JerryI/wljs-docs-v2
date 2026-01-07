@@ -129,6 +129,12 @@ or
 Delete[ev_EventObject]
 ```
 
+Remove a specific pattern:
+
+```wolfram
+EventRemove[ev_String | _EventObject, pattern_]
+```
+
 is also valid. *Removing a cloned event only removes handlers from the cloned event object*
 
 ## `EventJoin`

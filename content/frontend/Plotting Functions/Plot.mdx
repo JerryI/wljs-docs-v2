@@ -52,15 +52,7 @@ Or by providing as pairs `{Number, String}` one can specify the displayed text
 Plot[x, {x, 0, 1}, Ticks->{{{0, "Zero"}, {0.5, "Half"}, {1,"One"}}, {}}]
 ```
 
-### `Controls` 💛
-This is more an option for [Graphics](../Graphics/Graphics), but with a bit of a hacking it can be used here as well. The features __allows to pan and zoom your plots__, that was never possible in Mathematica
 
-```wolfram
-Plot[Sin[1/x], {x, 0.001, 0.1}, MaxRecursion->1];
-Insert[%, Controls->True, {2,-1}]
-```
-
-*Try to use your mouse here*
 
 ### `Frame`
 Turns plot into the journals-like styled graph. In general it has much more options to customize the look
@@ -216,10 +208,11 @@ Plot[{Sin[x], Cos[x]}, {x, 0, 5},
 
 or 
 
-```wolfram @
-legend = PointLegend[{Red, Green, Blue}, {"red", "green", "blue"}];
-Plot[{x, (*SpB[*)Power[x(*|*),(*|*)2](*]SpB*), (*SpB[*)Power[x(*|*),(*|*)3](*]SpB*)}, {x,0,3}, PlotStyle->{(*VB[*)(RGBColor[1, 0, 0])(*,*)(*"1:eJxTTMoPSmNiYGAo5gUSYZmp5S6pyflFiSX5RcEsQBHn4PCQNGaQPAeQCHJ3cs7PyS8qYgCDD/ZQBgMDnAEA4iUPRg=="*)(*]VB*), (*VB[*)(RGBColor[0, 1, 0])(*,*)(*"1:eJxTTMoPSmNiYGAo5gUSYZmp5S6pyflFiSX5RcEsQBHn4PCQNGaQPAeQCHJ3cs7PyS8qYoACKOODPVwEANd+D0Y="*)(*]VB*), (*VB[*)(RGBColor[0, 0, 1])(*,*)(*"1:eJxTTMoPSmNiYGAo5gUSYZmp5S6pyflFiSX5RcEsQBHn4PCQNGaQPAeQCHJ3cs7PyS8qYoACdMYHewDM1w9G"*)(*]VB*)}, PlotLegends->legend]
-```
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<wljs-editor type="Input" display="codemirror">{`legend = PointLegend[{Red, Green, Blue}, {"red", "green", "blue"}];
+Plot[{x, (*SpB[*)Power[x(*|*),(*|*)2](*]SpB*), (*SpB[*)Power[x(*|*),(*|*)3](*]SpB*)}, {x,0,3}, PlotStyle->{(*VB[*)(RGBColor[1, 0, 0])(*,*)(*"1:eJxTTMoPSmNiYGAo5gUSYZmp5S6pyflFiSX5RcEsQBHn4PCQNGaQPAeQCHJ3cs7PyS8qYgCDD/ZQBgMDnAEA4iUPRg=="*)(*]VB*), (*VB[*)(RGBColor[0, 1, 0])(*,*)(*"1:eJxTTMoPSmNiYGAo5gUSYZmp5S6pyflFiSX5RcEsQBHn4PCQNGaQPAeQCHJ3cs7PyS8qYoACKOODPVwEANd+D0Y="*)(*]VB*), (*VB[*)(RGBColor[0, 0, 1])(*,*)(*"1:eJxTTMoPSmNiYGAo5gUSYZmp5S6pyflFiSX5RcEsQBHn4PCQNGaQPAeQCHJ3cs7PyS8qYoACdMYHewDM1w9G"*)(*]VB*)}, PlotLegends->legend]`}</wljs-editor>
+</WLJSWrapper>
 
 #### Legend placement 
 Use [Placed](../Formatting/Placed) to adjust the position of your legend, i.e.

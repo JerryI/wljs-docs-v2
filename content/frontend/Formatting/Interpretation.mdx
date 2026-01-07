@@ -3,41 +3,65 @@ title: Interpretation
 env:
   - Wolfram Kernel
 ---
-```wolfram
-Interpretation[display_, expression_]
-```
-allows to alter the displayed expression
 
-__An expression will be revealed after 1 evaluation__
-
-<Callout type="tip">
-For the best performance optimization __apply__ [CreateFrontEndObject](../Frontend%20Objects/CreateFrontEndObject) if you use interactive objects as `display` value.
-
-For example
+Make a formatting structure whose interpretation is not based on its appearance
 
 ```wolfram
-Interpretation[TextView["Hello"], 1]
-```
-has __more overhead__ than
-
-```wolfram
-Interpretation[TextView["Hello"] // CreateFrontEndObject, 1]
+Interpretation[display_, expr_]
 ```
 
-It will help interpreter to bypass extra layers of complexity.
+where `display` will be shown in the output cell, instead of `expr`, keeping `expr` for the evaluation. 
 
-Note that you don't need to do this for [Graphics](../Graphics/Graphics), [Graphics3D](../Graphics3D/Graphics3D), [Image](../Image/Image) and input elements, since it is done __automatically__
-</Callout>
 
 <Callout type="info">
-By the default [Interpretation](../Formatting/Interpretation) applies [StandardForm](../Formatting/StandardForm) to `display` expression before printing it to an output cell
+By the default [Interpretation](../Formatting/Interpretation) applies `MakeBoxes` with [StandardForm](../Formatting/StandardForm) to `display` expression before printing it to an output cell
 </Callout>
+
 ## Example
 Have a look at the following example
 
 ```wolfram
 Interpretation[Red, 1]
 ```
+
+<WLJSWrapper>
+<wljs-editor type="Input" display="codemirror">{`
+(*VB[*)(1)(*,*)(*"1:eJxTTMoPSmNiYGAo5gISrimZJflFYZmp5cFdQK6GVphTtJamRpC7k3N+Tn5RtKGOggEQxWpqaOkAxbWUDK1SvSpCQnzzA4Jz/TIj3R3zTdNDgyOjcgtMg80KKtNy3DKDI0yDkl2LA5088kwCnAP93BMDAxxTA509vIyTi80DKoMtCiPTnV1c9KMCndJ9XfIcXR1NMkMDgtJtbZVAdsSGOWlpQpzIAiSCSnNSgzlAjNTEFP+8nEqwaEhRaSoAIuc3cA=="*)(*]VB*) + 1
+`}</wljs-editor></WLJSWrapper>
+
+```wolfram
+2
+```
+
+You can create custom output form for certain symbols:
+
+<WLJSWrapper>
+<wljs-editor type="Input" display="codemirror">{`
+vec2 /: MakeBoxes[v: vec2[x_,y_], StandardForm] := With[{i = Interpretation[Row[{Hue[(*SpB[*)Power[Sin[x](*|*),(*|*)2](*]SpB*)], Hue[(*SpB[*)Power[Sin[y](*|*),(*|*)2](*]SpB*)]}]//Panel, v]},
+  MakeBoxes[i, StandardForm]
+]
+`}</wljs-editor></WLJSWrapper>
+
+Now if we evaluate this:
+
+```wolfram
+vec2[0.4,0.2]
+```
+
+<WLJSWrapper>
+<wljs-editor type="Input" display="codemirror">{`
+(*VB[*)(vec2[0.4, 0.2])(*,*)(*"1:eJy1kcFugkAURWnTRdO/qCtEU0EZlCZdDMhIbbTAoAjGBepIUUAUiVDrt/ZXitqk6aa7bu67977FO8m7n66NxTVFUcldIcrc3623Q5/s8ecVRdGMJI2ZMq25EQnGNNM5pcOBZobnWk3JmH3gACfwgsCDRl3guWZjUqaZarFlStwj6Wam2VtrOOz7dgeugTfAthPGAAtxvgiQj0fAmCmJLqkRr8l6v+PqGiS6rHYbs6Sp5bi1sT253a45CLU4K67kxsJKNGQhD0LoLrL+W+l0azKUTuODKVfP+huRbYi8IAK2LootAJo8EP4LUjbRFKFV+30XtA3DsyGMaspy9fQDeTwWplOYvxFmGA5GwHFW8QZHFQlbTmUUIdfee/KQ9xTHdaxUwGGcXQAzsycHL27YJS4U1S70sYyjPvZYpbcUTQU96zJUwQax7DeKVBBc/n5TiJEGBN+eDHHnr1GQn1tzm5Iv+HGbcQ=="*)(*]VB*)
+`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper>
+<wljs-editor type="Input" display="codemirror">{`
+(*VB[*)(vec2[0.4, 0.2])(*,*)(*"1:eJy1kcFugkAURWnTRdO/qCtEU0EZlCZdDMhIbbTAoAjGBepIUUAUiVDrt/ZXitqk6aa7bu67977FO8m7n66NxTVFUcldIcrc3623Q5/s8ecVRdGMJI2ZMq25EQnGNNM5pcOBZobnWk3JmH3gACfwgsCDRl3guWZjUqaZarFlStwj6Wam2VtrOOz7dgeugTfAthPGAAtxvgiQj0fAmCmJLqkRr8l6v+PqGiS6rHYbs6Sp5bi1sT253a45CLU4K67kxsJKNGQhD0LoLrL+W+l0azKUTuODKVfP+huRbYi8IAK2LootAJo8EP4LUjbRFKFV+30XtA3DsyGMaspy9fQDeTwWplOYvxFmGA5GwHFW8QZHFQlbTmUUIdfee/KQ9xTHdaxUwGGcXQAzsycHL27YJS4U1S70sYyjPvZYpbcUTQU96zJUwQax7DeKVBBc/n5TiJEGBN+eDHHnr1GQn1tzm5Iv+HGbcQ=="*)(*]VB*)[[1]]
+`}</wljs-editor></WLJSWrapper>
+
+```wolfram
+0.4
+```
+
 
 ## Supported output forms
 - [StandardForm](../Formatting/StandardForm)

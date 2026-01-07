@@ -7,7 +7,7 @@ source: https://github.com/JerryI/wljs-interpreter/blob/dev/src/Definitions.wl
 
 package: wljs-interpreter
 ---
-Holds (or offloads) an expression to be evaluated on frontend (WLJS)
+Holds an expression to be evaluated on frontend (WLJS)
 
 ```wolfram
 Offload[expr_, opts___]
@@ -16,11 +16,14 @@ Offload[expr_, opts___]
 It has `HoldFirst` attribute. 
 
 <Callout type="info">
-Please, see the tutorial [Dynamics](frontend/Dynamics)
+Please, see the guide 
+
+{/* [TODO] */}
+
 </Callout>
 
 <Callout type="info">
-Nested `Offload` is allowed
+Nested `Offload` are allowed
 </Callout>
 
 ## Options
@@ -52,7 +55,7 @@ Graphics[{PointSize[0.02], Point[pts // Offload]}, ImageSize->500]
 
 Now the symbol was actually evaluated on the frontend (browser/ client) using fetched data from the server.
 
-And then, change the variable from the separate task
+And then, change the variable from a timer
 ```wolfram
 task = SetInterval[With[{},
   pts = (# + 0.001 Sum[
@@ -61,13 +64,13 @@ task = SetInterval[With[{},
 ], 100]
 ```
 
-Don't forget to remove it afterwards
+Don't forget to remove before you've closed a notebook
 ```wolfram
 TaskRemove[task]
 ```
 
 ### Force WL Kernel to offload an expression 
-Looking back to the previous example, the function  `RandomReal` implemented on both sides. If you offload it to the `Point` expression
+Looking back to the previous example, the function  `RandomReal` implemented on both sides (Kernel and frontend). If you offload it to the `Point` expression
 
 ```wolfram
 Graphics[{PointSize[0.02], Point[RandomReal[{-1,1}, {64, 2}] // Offload]}]

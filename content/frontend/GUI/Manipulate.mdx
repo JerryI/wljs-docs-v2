@@ -104,15 +104,16 @@ Manipulate[
 
 Here is an example with mixed symbolics and graphics:
 
-```wolfram @
-Manipulate[
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<wljs-editor type="Input" display="codemirror">{`Manipulate[
   Row[{
     "m", "==", MatrixForm[m], 
     StreamPlot[Evaluate[m . {x, y}], {x, -1, 1}, {y, -1, 1}, 
       StreamScale -> Large, ImageSize -> Small
     ]
-  }], {{m, ((*GB[*){{1(*|*),(*|*)0}(*||*),(*||*){0(*|*),(*|*)2}}(*]GB*))}, { ((*GB[*){{1(*|*),(*|*)0}(*||*),(*||*){0(*|*),(*|*)2}}(*]GB*)) -> "Nodal source",  ((*GB[*){{1(*|*),(*|*)1}(*||*),(*||*){0(*|*),(*|*)1}}(*]GB*))  -> "Degenerate source",  ((*GB[*){{0(*|*),(*|*)1}(*||*),(*||*){-1(*|*),(*|*)1}}(*]GB*)) -> "Spiral source",  ((*GB[*){{-1(*|*),(*|*)0}(*||*),(*||*){0(*|*),(*|*)-2}}(*]GB*))  -> "Nodal sink",  ((*GB[*){{-1(*|*),(*|*)1}(*||*),(*||*){0(*|*),(*|*)-1}}(*]GB*)) -> "Degenerate sink",  ((*GB[*){{0(*|*),(*|*)1}(*||*),(*||*){-1(*|*),(*|*)-1}}(*]GB*)) -> "Spiral sink",  ((*GB[*){{0(*|*),(*|*)1}(*||*),(*||*){-1(*|*),(*|*)0}}(*]GB*)) -> "Center",  ((*GB[*){{1(*|*),(*|*)0}(*||*),(*||*){0(*|*),(*|*)-2}}(*]GB*))  -> "Saddle"}}]
-```
+  }], {{m, ((*GB[*){{1(*|*),(*|*)0}(*||*),(*||*){0(*|*),(*|*)2}}(*]GB*))}, { ((*GB[*){{1(*|*),(*|*)0}(*||*),(*||*){0(*|*),(*|*)2}}(*]GB*)) -> "Nodal source",  ((*GB[*){{1(*|*),(*|*)1}(*||*),(*||*){0(*|*),(*|*)1}}(*]GB*))  -> "Degenerate source",  ((*GB[*){{0(*|*),(*|*)1}(*||*),(*||*){-1(*|*),(*|*)1}}(*]GB*)) -> "Spiral source",  ((*GB[*){{-1(*|*),(*|*)0}(*||*),(*||*){0(*|*),(*|*)-2}}(*]GB*))  -> "Nodal sink",  ((*GB[*){{-1(*|*),(*|*)1}(*||*),(*||*){0(*|*),(*|*)-1}}(*]GB*)) -> "Degenerate sink",  ((*GB[*){{0(*|*),(*|*)1}(*||*),(*||*){-1(*|*),(*|*)-1}}(*]GB*)) -> "Spiral sink",  ((*GB[*){{0(*|*),(*|*)1}(*||*),(*||*){-1(*|*),(*|*)0}}(*]GB*)) -> "Center",  ((*GB[*){{1(*|*),(*|*)0}(*||*),(*||*){0(*|*),(*|*)-2}}(*]GB*))  -> "Saddle"}}]`}</wljs-editor>
+</WLJSWrapper>
 
 ## JIT Transpiler
 `Manipulate` as well as [Animate](../GUI/Animate) uses a diff algorithm that detects and tries to convert manipulated expressions to a more optimized dynamic ones using a low-level `Offload` technique. 
@@ -157,7 +158,7 @@ CoffeeLiqueur`Extensions`Manipulate`Diff`$lastJITFailure
 ```
 
 ## Portability
-The same as for [Animate](../GUI/Animate). `Manipulate` widgets can be exported to [Interactive HTML](frontend/Exporting/Interactive%20HTML) or [MDX](frontend/Exporting/MDX) in __automatic mode__.
+The same as for [Animate](../GUI/Animate). `Manipulate` widgets can be shared as MDX or HTML in automatic mode.
 
 <Callout type="warn">
 Please keep the number of possible state determined by all your sliders and selection boxes __below 500-600__.

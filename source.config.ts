@@ -9,6 +9,8 @@ import path from 'path';
 import fs from 'fs';
 import { z } from 'zod';
 
+import rehypeKatex from 'rehype-katex';
+import remarkMath from 'remark-math';
 
 
 // Custom remark plugin to fix relative URLs in custom web components
@@ -86,6 +88,7 @@ export const docs = defineDocs({
 
 export default defineConfig({
   mdxOptions: {
-    remarkPlugins: [remarkFixRelativeUrls],
+    remarkPlugins: [remarkFixRelativeUrls, remarkMath],
+    rehypePlugins: (v) => [rehypeKatex, ...v],
   },
 });

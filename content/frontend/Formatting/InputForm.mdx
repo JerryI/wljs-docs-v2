@@ -3,14 +3,33 @@ title: InputForm
 env:
   - Wolfram Kernel
 ---
-Prevents decorations to be set
+
 ```wolfram
 InputForm[expr_]
 ```
 
-Typical example to reveal the `InputForm`
+reveals true form of a given expression avoiding any transformations. It is one-dimensional output, suitable to be typed as lines of Wolfram Language input.
+
+<Callout>Standard output form of WLJS notebook output cells is decorated `InputForm`</Callout>
+
+For example:
 
 ```wolfram
 Red
 Red // InputForm
+```
+
+```wolfram
+RGBColor[1, 0, 0]
+```
+
+
+or as an input string:
+
+```wolfram
+ToString[Red, InputForm]
+```
+
+```wolfram
+"RGBColor[1, 0, 0]"
 ```

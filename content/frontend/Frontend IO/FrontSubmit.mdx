@@ -12,6 +12,12 @@ Sends an expression to be executed on WLJS Interpreter (frontend / browser)
 FrontSubmit[expr_, opts___]
 ```
 
+Sends an raw Javascript expression to be executed on frontend / browser
+
+```wolfram
+FrontSubmit[expr_String, opts___]
+```
+
 ## Options
 ### `"Window"`
 specifies a window socket, to which an expression will be sent. Use [CurrentWindow](../Frontend%20IO/CurrentWindow) to fetch a window object from the evaluation context.
@@ -34,12 +40,9 @@ With[{win = CurrentWindow[]},
 
 </Callout>
 
-<Callout type="tip">
-Please have a look at this guide - [Animation](frontend/Advanced/Dynamics/Animation)
-</Callout>
 
 ## Examples
-### Calling an WLJS (or Frontend) function
+### Calling an WLJS (Frontend) function
 
 ```wolfram
 FrontSubmit[Alert["Hello World!"]]
@@ -50,6 +53,7 @@ which will produce a pop-up modal window.
 Or to call a custom-defined Javascript function
 
 ```js title="cell 1"
+.js
 core.ShowReversed = async (args, env) => {
 	const text = await interpretate(args[0], env);
 	alert(text..split("").reverse().join(""));
@@ -80,7 +84,7 @@ to append an arrow to an existing graph.
 A typical graphics figure is usually a [ViewBox](../Formatting/Low-level/ViewBox). Here we can reference it using [FrontInstanceReference](../Frontend%20IO/FrontInstanceReference)
 
 ```wolfram
-plot.= FrontInstanceReference[];
+plot = FrontInstanceReference[];
 Plot[x, {x,0,1}, Epilog->{plot}]
 ```
 

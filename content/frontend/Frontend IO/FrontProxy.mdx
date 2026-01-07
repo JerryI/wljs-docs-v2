@@ -162,13 +162,15 @@ For processing many proxies use pure functions with `Map`, `Table` or `MapThread
 ### Spherical attracting molecules
 Here we will use Lennard-Jones potential to model a bunch of sphere-like molecules on 2D canvas aka [Graphics](../Graphics/Graphics) 
 
-```wolfram @
-disk = f`Proxy[{pos, c}, {
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<wljs-editor type="Input" display="codemirror">{`
+disk = f\`Proxy[{pos, c}, {
 	Opacity[0.2], RGBColor[With[{h=c}, {h, 1-h, 0.}]],
     Disk[pos, 0.1]
 }];
 
-disks = f`AddTo[disk, Sequence @@ Table[{RandomReal[{-1,1}, 2], 0.2}, {10}]];
+disks = f\`AddTo[disk, Sequence @@ Table[{RandomReal[{-1,1}, 2], 0.2}, {10}]];
 
 animation = CreateUUID[];
 scene = FrontInstanceReference[];
@@ -183,17 +185,17 @@ potential = Function[{a,b}, With[{r = Norm[a-b]+0.001, r0 = 0.22},
 
 EventHandler[animation, Function[Null,
   With[{
-    position = f`Buffer[disk, 1],
-    state    = f`Buffer[disk, 2]
+    position = f\`Buffer[disk, 1],
+    state    = f\`Buffer[disk, 2]
   },
     With[{velocity = Map[Total] @ Table[potential[a,b], {a, position}, {b, position}]},
       With[{
         character = Map[Clip[5.0 Norm[#], {0.2, 0.8}]&, velocity]
       },
-        f`BufferSet[disk, 1, position - 0.001 velocity];
-        f`BufferSet[disk, 2, character];
+        f\`BufferSet[disk, 1, position - 0.001 velocity];
+        f\`BufferSet[disk, 2, character];
 
-        f`Dispatch[disk];
+        f\`Dispatch[disk];
       ];
     ];
   ];
@@ -201,17 +203,17 @@ EventHandler[animation, Function[Null,
   trigger = 1;
 ]];
 
-add = With[{new = f`AddTo[disk, {#, 0.2}]},
-  f`Dispatch[disk];
-  FrontSubmit[f`FullForm[disk, new], scene];
+add = With[{new = f\`AddTo[disk, {#, 0.2}]},
+  f\`Dispatch[disk];
+  FrontSubmit[f\`FullForm[disk, new], scene];
 ]&;
 
 Graphics[{
-  f`FullForm[disk, disks], scene,
+  f\`FullForm[disk, disks], scene,
   AnimationFrameListener[trigger // Offload, "Event"->animation],
   EventHandler[Null, {"click" -> add}]
 }, PlotRange->{{-1,1}, {-1,1}}, TransitionType->None]
-```
+`}</wljs-editor></WLJSWrapper>
 
 ### Fireworks
 A crash test for the frontend system

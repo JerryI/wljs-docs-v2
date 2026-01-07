@@ -1,7 +1,5 @@
 ---
 title: SVGGroup
-env:
-  - WLJS
 package: wljs-graphics-d3
 origin: https://github.com/JerryI/wljs-graphics-d3/
 ---
@@ -11,7 +9,7 @@ SVGGroup[g_]
 
 represents an isolated group of 2D graphics primitives (see [Graphics](../Graphics/Graphics)). The common use case is to reset all attributes like [RGBColor](../Graphics/RGBColor), [Opacity](../Graphics/Opacity) and the rest defined in [Directive](../Graphics/Directive).
 
-Another handy property is that external attributes are applied solely to the group container, i.e. it does not propagate deeper. For example
+Another handy property is that external attributes are applied solely to the group container, i.e. __it does not propagate deeper__. For example
 
 ```wolfram
 o = 0.5;
