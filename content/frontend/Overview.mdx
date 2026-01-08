@@ -280,11 +280,38 @@ import cellProp from './../cell-prop.png'
 
 
 </div>
-<Image width={400} height={400} src={cellProp}/>
+<Image className="invertColor" width={400} height={400} src={cellProp}/>
 </div>
 
 
 <b>Project to a window</b> is a particularly useful feature that lets you evaluate a cell in a new window. This is especially helpful when presenting slides or distributing multiple controls / graphics outputs across windows.
+
+### Context menu
+Extended context menu provides you the following features on selected text
+
+import contextProp from './../context-prop.png'
+
+<div style={{'justifyContent': 'space-between'}}className="text-left align-right items-center w-full flex-start flex flex-wrap">
+<div className='text-xs' style={{maxWidth:'350px'}}>
+
+- __Evaluate in place__ - evaluates selected expression and replaces it with the result
+- __Iconize__ - compresses selected expression to encoded string or to a file (depending on size) and replaces it with an icon
+- __Store in notebook__ - copies an expression to a notebook storage (see [NotebookStore](./Cells%20and%20Notebook/NotebookStore) symbol)
+- __Simplify__ - applies [Simplify](./Algebra-and-Polynomials/Simplify) on selected 
+- __Speak__ - speaks any selected text using a voice synthesizer 
+- __Highlight__ - highlights WL expression with yellow
+- __Hidden comment__ - turns selection into a comment in WL
+- __Copy__
+
+
+</div>
+
+<Image className="invertColor" width={400} height={400} src={contextProp}/>
+</div>
+
+<Callout>
+Options except <small>Speak</small> and <small>Copy</small> are only valid in Wolfram Language cells. 
+</Callout>
 
 ## Math typesetting and shortcuts
 To be honest, typing mathicamtical expressions in the most modern IDE for programming languages did not evolve since 1964. Our goal is to change that in a similar way as Mathematica did (over nearly 20 years), but in open-source.

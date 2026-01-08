@@ -1,5 +1,34 @@
 ---
-title: Command Palette
+title: Notebook Tools
 ---
 
-Hey
+WLJS Notebook is fully accessible from the keyboard. One of the most important key combination to know is <kbd>Ctrl-P</kbd> or <kbd>⌘-P</kbd>, which brings up the Command Palette. From here, you have access to many small helper utilities, toolboxes, shortcuts and AI asistant: 
+
+
+<div className='relative group'>
+<div className="absolute -inset-0.5 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur blur-3xl opacity-5 group-hover:opacity-10 transition duration-500" />
+<div className="invertColor">
+![Command Palette](./imgs/palette.png)
+</div>
+</div>
+
+import { Share2, CircleQuestionMark } from 'lucide-react';
+
+Most of utilities are notebooks themself with specially tagged cells. You can find the information on each by clicking on <span className='inline-flex' ><CircleQuestionMark style={{height:"1rem"}}/></span> icon, that will open the source notebook.
+
+<Callout>User's utilities are stored in `~/Documents/WLJS Notebooks/User palette/`</Callout>
+
+
+
+## Shortcuts
+Type any of those words to call the action:
+
+<Card>
+
+- __New notebook__ - create a new notebook (in a new window)
+- __New notebook from template__ - create a new notebook from a template
+- __Rename notebook__ - rename current notebook
+- __Debug__ - attach a debugger
+- __Print__ - export an entire notebook to PDF
+
+</Card>
