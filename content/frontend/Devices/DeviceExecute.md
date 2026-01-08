@@ -14,4 +14,4 @@ Execute a command on a device:
 DeviceExecute[device, "Start"]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/DeviceExecute.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/DeviceExecute.html) for more details.

@@ -19,4 +19,4 @@ Compare to specific distribution:
 QuantilePlot[data, ExponentialDistribution[1]]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/QuantilePlot.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/QuantilePlot.html) for more details.

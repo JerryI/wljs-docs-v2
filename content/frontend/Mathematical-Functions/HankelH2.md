@@ -19,4 +19,4 @@ Plot the real part:
 Plot[Re[HankelH2[0, x]], {x, 0.1, 10}]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/HankelH2.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/HankelH2.html) for more details.

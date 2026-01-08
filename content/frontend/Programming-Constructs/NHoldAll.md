@@ -11,4 +11,4 @@ SetAttributes[f, NHoldAll];
 N[f[Pi]]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/NHoldAll.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/NHoldAll.html) for more details.

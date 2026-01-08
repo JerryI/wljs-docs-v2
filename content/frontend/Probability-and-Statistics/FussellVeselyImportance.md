@@ -15,4 +15,4 @@ rdist = ReliabilityDistribution[a && b, {a, b}];
 FussellVeselyImportance[rdist, 1]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/FussellVeselyImportance.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/FussellVeselyImportance.html) for more details.

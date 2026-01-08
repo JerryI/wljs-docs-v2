@@ -17,4 +17,4 @@ ReadString["myfile.txt"]
 (* "contents of file..." *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ReadString.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ReadString.html) for more details.

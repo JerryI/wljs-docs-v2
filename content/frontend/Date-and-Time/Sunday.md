@@ -24,4 +24,4 @@ In date patterns:
 DateSelect[dates, DayName[#] === Sunday &]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Sunday.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Sunday.html) for more details.

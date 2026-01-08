@@ -12,4 +12,4 @@ K appears as a summation index:
 Sum[f[k], {k, 1, n}]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/K.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/K.html) for more details.

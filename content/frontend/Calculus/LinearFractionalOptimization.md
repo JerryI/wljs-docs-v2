@@ -21,4 +21,4 @@ With matrix constraints:
 LinearFractionalOptimization[{c1, d1, c2, d2}, {A, b}]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/LinearFractionalOptimization.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/LinearFractionalOptimization.html) for more details.

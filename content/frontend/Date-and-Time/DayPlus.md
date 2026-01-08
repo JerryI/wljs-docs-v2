@@ -20,4 +20,4 @@ Get 5 business days from a specific date:
 DayPlus[{2024, 1, 1}, 5, "BusinessDay"]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/DayPlus.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/DayPlus.html) for more details.

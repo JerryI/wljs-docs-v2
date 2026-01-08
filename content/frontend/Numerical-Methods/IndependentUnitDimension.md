@@ -14,4 +14,4 @@ IndependentUnitDimension["Length"]
 UnitDimensions[Quantity[1, "Meters"]]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/IndependentUnitDimension.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/IndependentUnitDimension.html) for more details.

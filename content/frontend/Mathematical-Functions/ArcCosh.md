@@ -20,4 +20,4 @@ N[ArcCosh[2]]
 (* 1.31696 *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ArcCosh.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ArcCosh.html) for more details.

@@ -22,4 +22,4 @@ Activate[Inactive[Plus][Inactive[Times][2, 3], 4], Times]
 (* Inactive[Plus][6, 4] *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Activate.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Activate.html) for more details.

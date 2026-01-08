@@ -18,4 +18,4 @@ TimeObjectQ[Now]
 TimeObjectQ["not a time"]
 ```
 
-*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/TimeObjectQ.html) for more details.*
+*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/TimeObjectQ.html) for more details.

@@ -12,4 +12,4 @@ Create a link that listens for connections:
 LinkOpen["8000", LinkMode -> Listen]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Listen.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Listen.html) for more details.

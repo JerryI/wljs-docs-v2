@@ -19,4 +19,4 @@ Generate Fibonacci-like sequence:
 FoldPairList[{#1, #1 + #2} &, 1, Range[6]]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/FoldPairList.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/FoldPairList.html) for more details.

@@ -13,4 +13,4 @@ CreateTemporary[]
 (* "/tmp/m000001234567" *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/CreateTemporary.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/CreateTemporary.html) for more details.

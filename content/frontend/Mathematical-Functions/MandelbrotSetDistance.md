@@ -6,4 +6,4 @@ title: MandelbrotSetDistance
 
 `MandelbrotSetDistance[c, "Interior"]` estimates the distance from c to the nearest point in the complement of the Mandelbrot set.
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/MandelbrotSetDistance.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/MandelbrotSetDistance.html) for more details.

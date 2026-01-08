@@ -24,4 +24,4 @@ Open a folder:
 SystemOpen[Directory[]]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/SystemOpen.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/SystemOpen.html) for more details.

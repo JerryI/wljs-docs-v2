@@ -16,4 +16,4 @@ Log10[100.0]
 (* 2. *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Log10.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Log10.html) for more details.

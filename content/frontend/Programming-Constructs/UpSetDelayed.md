@@ -21,4 +21,4 @@ f[g[5]]
 (* 6 *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/UpSetDelayed.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/UpSetDelayed.html) for more details.

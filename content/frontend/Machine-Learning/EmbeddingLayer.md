@@ -14,4 +14,4 @@ Create an embedding layer for 1000 tokens with 128-dimensional vectors:
 EmbeddingLayer[128, 1000]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/EmbeddingLayer.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/EmbeddingLayer.html) for more details.

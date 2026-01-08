@@ -16,4 +16,4 @@ Count words in longer text:
 WordCount["Hello world. This is a test sentence."]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/WordCount.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/WordCount.html) for more details.

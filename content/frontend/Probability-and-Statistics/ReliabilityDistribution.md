@@ -22,4 +22,4 @@ ReliabilityDistribution[a || b, {{a, ExponentialDistribution[1]}, {b, Exponentia
 Mean[ReliabilityDistribution[x1 && x2, {{x1, WeibullDistribution[2, 1]}, {x2, WeibullDistribution[2, 1]}}]]
 ```
 
-*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ReliabilityDistribution.html) for more details.*
+*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ReliabilityDistribution.html) for more details.

@@ -22,4 +22,4 @@ MorphologicalEulerNumber[image, 0.5]
 MorphologicalEulerNumber[Binarize[img]]
 ```
 
-*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/MorphologicalEulerNumber.html) for more details.*
+*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/MorphologicalEulerNumber.html) for more details.

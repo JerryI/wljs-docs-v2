@@ -22,4 +22,4 @@ Map a specific color to white:
 ColorBalance[img, Yellow]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ColorBalance.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ColorBalance.html) for more details.

@@ -28,4 +28,4 @@ FindPeaks[{1, 3, 2, 5, 1, 4, 2}, 0, 0, 4]
 (* {{4, 5}, {6, 4}} *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/FindPeaks.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/FindPeaks.html) for more details.

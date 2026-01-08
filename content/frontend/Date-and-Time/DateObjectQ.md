@@ -13,4 +13,4 @@ DateObjectQ[DateObject[{2020, 1, 1}]]
 (* True *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/DateObjectQ.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/DateObjectQ.html) for more details.

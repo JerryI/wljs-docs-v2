@@ -13,4 +13,4 @@ Interpreter[Restricted["Integer", {1, 100}]]["50"]
 (* 50 *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Restricted.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Restricted.html) for more details.

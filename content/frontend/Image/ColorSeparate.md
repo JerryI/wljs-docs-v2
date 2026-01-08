@@ -22,4 +22,4 @@ Get the red channel:
 ColorSeparate[img, "R"]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ColorSeparate.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ColorSeparate.html) for more details.

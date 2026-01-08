@@ -12,4 +12,4 @@ Create an exact Blackman window:
 ExactBlackmanWindow[x]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ExactBlackmanWindow.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ExactBlackmanWindow.html) for more details.

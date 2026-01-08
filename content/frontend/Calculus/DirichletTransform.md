@@ -20,4 +20,4 @@ DirichletTransform[n^2, n, s]
 (* Zeta[s - 2] *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/DirichletTransform.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/DirichletTransform.html) for more details.

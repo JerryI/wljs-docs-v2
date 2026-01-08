@@ -22,4 +22,4 @@ Plot the path:
 Graphics[Line[AnglePath[Table[Pi/6, 12]]]]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/AnglePath.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/AnglePath.html) for more details.

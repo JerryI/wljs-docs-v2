@@ -26,4 +26,4 @@ MoonPhase["Name"]
 MoonPhase[Today, "Icon"]
 ```
 
-*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/MoonPhase.html) for more details.*
+*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/MoonPhase.html) for more details.

@@ -18,4 +18,4 @@ Compute the third cumulant:
 Cumulant[{1, 2, 3, 4, 5}, 3]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Cumulant.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Cumulant.html) for more details.

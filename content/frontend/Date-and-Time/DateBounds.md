@@ -27,4 +27,4 @@ ts = TimeSeries[{{1, 10}, {2, 20}, {3, 15}}];
 DateBounds[ts]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/DateBounds.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/DateBounds.html) for more details.

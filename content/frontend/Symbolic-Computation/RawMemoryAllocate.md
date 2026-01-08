@@ -12,4 +12,4 @@ title: RawMemoryAllocate
 RawMemoryAllocate["Integer32", 10]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/RawMemoryAllocate.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/RawMemoryAllocate.html) for more details.

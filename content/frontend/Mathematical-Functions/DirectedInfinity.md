@@ -29,4 +29,4 @@ DirectedInfinity[-1]
 (* -Infinity *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/DirectedInfinity.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/DirectedInfinity.html) for more details.

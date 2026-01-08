@@ -13,4 +13,4 @@ DateOverlapsQ[DateInterval[{{2020, 1}, {2020, 6}}], DateInterval[{{2020, 4}, {20
 (* True *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/DateOverlapsQ.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/DateOverlapsQ.html) for more details.

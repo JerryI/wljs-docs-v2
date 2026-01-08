@@ -11,4 +11,4 @@ t = Tree[a, {Tree[b, {c, d}], Tree[e, {f}]}];
 TreeChildren[t]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/TreeChildren.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/TreeChildren.html) for more details.

@@ -24,4 +24,4 @@ MatchQ[{a, b}, {Repeated[_, {2}]}]
 (* True *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Repeated.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Repeated.html) for more details.

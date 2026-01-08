@@ -26,4 +26,4 @@ Record only HTTP traffic:
 NetworkPacketRecording[5, "HTTP"]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/NetworkPacketRecording.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/NetworkPacketRecording.html) for more details.

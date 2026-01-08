@@ -18,4 +18,4 @@ Minimize a function using Bayesian optimization:
 BayesianMinimization[(#x - 2)^2 + (#y - 3)^2 &, {"x" -> {-5, 5}, "y" -> {-5, 5}}]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/BayesianMinimization.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/BayesianMinimization.html) for more details.

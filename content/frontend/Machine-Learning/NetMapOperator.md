@@ -14,4 +14,4 @@ NetMapOperator[LinearLayer[10]]
 NetMapOperator[ElementwiseLayer["ReLU"]]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/NetMapOperator.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/NetMapOperator.html) for more details.

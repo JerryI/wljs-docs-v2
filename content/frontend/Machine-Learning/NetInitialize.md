@@ -20,4 +20,4 @@ NetInitialize[untrainedNet, All]
 net = NetInitialize[NetChain[{5, Tanh, 3}], Method -> "Xavier"]
 ```
 
-*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/NetInitialize.html) for more details.*
+*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/NetInitialize.html) for more details.

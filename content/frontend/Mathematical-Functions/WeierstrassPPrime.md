@@ -12,4 +12,4 @@ Compute the derivative of the Weierstrass P function:
 WeierstrassPPrime[0.5, {1, 2}]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/WeierstrassPPrime.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/WeierstrassPPrime.html) for more details.

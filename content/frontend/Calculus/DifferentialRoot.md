@@ -12,4 +12,4 @@ title: DifferentialRoot
 DifferentialRoot[Function[{y, x}, {y''[x] + y[x] == 0, y[0] == 0, y'[0] == 1}]][x]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/DifferentialRoot.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/DifferentialRoot.html) for more details.

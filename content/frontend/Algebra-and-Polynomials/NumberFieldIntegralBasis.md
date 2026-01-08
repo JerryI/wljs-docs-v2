@@ -10,4 +10,4 @@ title: NumberFieldIntegralBasis
 NumberFieldIntegralBasis[Sqrt[5]]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/NumberFieldIntegralBasis.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/NumberFieldIntegralBasis.html) for more details.

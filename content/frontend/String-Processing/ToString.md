@@ -18,4 +18,4 @@ ToString[x^2 + 1]
 (* "1 + x^2" *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ToString.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ToString.html) for more details.

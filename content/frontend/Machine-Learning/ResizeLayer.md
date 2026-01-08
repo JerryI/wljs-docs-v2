@@ -21,4 +21,4 @@ layer = ResizeLayer[{32, 32}];
 layer[RandomImage[1, {100, 100}]]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ResizeLayer.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ResizeLayer.html) for more details.

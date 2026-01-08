@@ -20,4 +20,4 @@ ChessboardDistance[{1, 2, 3}, {4, 6, 5}]
 (* 4 *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ChessboardDistance.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ChessboardDistance.html) for more details.

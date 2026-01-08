@@ -14,4 +14,4 @@ Compute the reciprocity of a directed graph:
 GraphReciprocity[Graph[{1 -> 2, 2 -> 1, 2 -> 3}]]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/GraphReciprocity.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/GraphReciprocity.html) for more details.

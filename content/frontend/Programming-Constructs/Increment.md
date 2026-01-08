@@ -23,4 +23,4 @@ i = 0;
 While[i++ < 3, Print[i]]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Increment.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Increment.html) for more details.

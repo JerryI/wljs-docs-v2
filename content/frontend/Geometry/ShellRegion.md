@@ -22,4 +22,4 @@ ShellRegion[Cuboid[], 0.1]
 RegionPlot3D[ShellRegion[Sphere[], 0.2]]
 ```
 
-*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ShellRegion.html) for more details.*
+*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ShellRegion.html) for more details.

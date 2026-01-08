@@ -20,4 +20,4 @@ Compare graphs:
 CanonicalGraph[CycleGraph[5]] === CanonicalGraph[Graph[{1->2, 2->3, 3->4, 4->5, 5->1}]]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/CanonicalGraph.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/CanonicalGraph.html) for more details.

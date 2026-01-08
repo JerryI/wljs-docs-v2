@@ -22,4 +22,4 @@ StringRepeat["hello", 10, 20]
 (* "hellohellohelloHello" *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/StringRepeat.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/StringRepeat.html) for more details.

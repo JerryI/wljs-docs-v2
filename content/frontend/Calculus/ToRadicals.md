@@ -19,4 +19,4 @@ Solve and convert:
 ToRadicals[Solve[x^3 - 2 == 0, x]]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ToRadicals.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ToRadicals.html) for more details.

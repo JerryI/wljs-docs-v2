@@ -17,4 +17,4 @@ ShapiroWilkTest[data]
 ShapiroWilkTest[data, "PValue"]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ShapiroWilkTest.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ShapiroWilkTest.html) for more details.

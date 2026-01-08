@@ -20,4 +20,4 @@ LameEigenvalueA[1, 1, m]
 (* 1 + m *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/LameEigenvalueA.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/LameEigenvalueA.html) for more details.

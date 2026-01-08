@@ -14,4 +14,4 @@ Create a dropout layer with default probability:
 DropoutLayer[]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/DropoutLayer.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/DropoutLayer.html) for more details.

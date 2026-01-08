@@ -15,4 +15,4 @@ data = Table[Sin[x + y + z], {x, -2, 2, 0.2}, {y, -2, 2, 0.2}, {z, -2, 2, 0.2}];
 ListSliceDensityPlot3D[data, "CenterPlanes"]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ListSliceDensityPlot3D.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ListSliceDensityPlot3D.html) for more details.

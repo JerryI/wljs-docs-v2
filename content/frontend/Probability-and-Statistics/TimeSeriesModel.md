@@ -21,4 +21,4 @@ TimeSeriesForecast[model, {10}]
 model["Properties"]
 ```
 
-*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/TimeSeriesModel.html) for more details.*
+*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/TimeSeriesModel.html) for more details.

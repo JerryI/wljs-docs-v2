@@ -16,4 +16,4 @@ UnilateralDiscreteConvolve[a^k, b^k, k, n]
 UnilateralDiscreteConvolve[k, k^2, k, n]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/UnilateralDiscreteConvolve.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/UnilateralDiscreteConvolve.html) for more details.

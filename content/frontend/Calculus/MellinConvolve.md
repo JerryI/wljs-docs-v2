@@ -16,4 +16,4 @@ MellinConvolve[Exp[-x], Exp[-x], x, y]
 MellinConvolve[x^2, x^3, x, y]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/MellinConvolve.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/MellinConvolve.html) for more details.

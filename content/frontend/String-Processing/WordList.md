@@ -20,4 +20,4 @@ WordList["CommonWords"]
 WordList["KnownWords"]
 ```
 
-*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/WordList.html) for more details.*
+*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/WordList.html) for more details.

@@ -25,4 +25,4 @@ NDSolve[{SchrodingerPDEComponent[{u[x, t], t}, {x}] == 0,
   u[x, 0] == Exp[-x^2]}, u, {x, -5, 5}, {t, 0, 1}]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/SchrodingerPDEComponent.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/SchrodingerPDEComponent.html) for more details.

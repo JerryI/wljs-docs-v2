@@ -19,4 +19,4 @@ dwd = DiscreteWaveletTransform[Table[Sin[n], {n, 128}]];
 WaveletListPlot[dwd]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/WaveletListPlot.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/WaveletListPlot.html) for more details.

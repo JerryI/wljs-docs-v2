@@ -20,4 +20,4 @@ FindInstance[x^2 < 10, x, Integers, 5]
 (* {{x -> -3}, {x -> -2}, {x -> -1}, {x -> 0}, {x -> 1}} *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/FindInstance.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/FindInstance.html) for more details.

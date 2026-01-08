@@ -20,4 +20,4 @@ Solve[x^2 + 1 == 0, x, Complexes]
 (* {{x -> -I}, {x -> I}} *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Complexes.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Complexes.html) for more details.

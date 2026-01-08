@@ -20,4 +20,4 @@ Operate[h, f[g[x]], 2]
 (* f[h[g]][x] *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Operate.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Operate.html) for more details.

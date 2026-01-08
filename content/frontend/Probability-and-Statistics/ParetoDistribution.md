@@ -13,4 +13,4 @@ title: ParetoDistribution
 PDF[ParetoDistribution[1, 2], x]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ParetoDistribution.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ParetoDistribution.html) for more details.

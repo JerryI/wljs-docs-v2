@@ -30,4 +30,4 @@ Erfc[x] + Erf[x] == 1
 (* True *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Erfc.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Erfc.html) for more details.

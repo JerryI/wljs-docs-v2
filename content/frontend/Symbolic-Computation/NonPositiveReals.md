@@ -20,4 +20,4 @@ Element[0.5, NonPositiveReals]
 (* False *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/NonPositiveReals.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/NonPositiveReals.html) for more details.

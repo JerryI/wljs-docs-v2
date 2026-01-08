@@ -19,4 +19,4 @@ Use in rules:
 {1 + 1, 2 + 3} /. HoldPattern[a_ + b_] :> {a, b}
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/HoldPattern.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/HoldPattern.html) for more details.

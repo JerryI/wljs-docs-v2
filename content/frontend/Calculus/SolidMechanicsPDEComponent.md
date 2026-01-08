@@ -10,4 +10,4 @@ title: SolidMechanicsPDEComponent
 SolidMechanicsPDEComponent[{u[x, y], {x, y}}, <|"YoungsModulus" -> 1, "PoissonRatio" -> 0.3|>]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/SolidMechanicsPDEComponent.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/SolidMechanicsPDEComponent.html) for more details.

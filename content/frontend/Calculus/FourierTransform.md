@@ -20,4 +20,4 @@ FourierTransform[UnitBox[t], t, ω]
 (* Sinc[ω/2]/Sqrt[2 Pi] *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/FourierTransform.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/FourierTransform.html) for more details.

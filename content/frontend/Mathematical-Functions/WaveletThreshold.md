@@ -15,4 +15,4 @@ dwd = DiscreteWaveletTransform[data];
 WaveletThreshold[dwd]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/WaveletThreshold.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/WaveletThreshold.html) for more details.

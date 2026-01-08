@@ -21,4 +21,4 @@ Tree["root", {Tree["child1", {}], Tree["child2", {}]}]
 ExpressionTree[a + b * c]
 ```
 
-*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Tree.html) for more details.*
+*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Tree.html) for more details.

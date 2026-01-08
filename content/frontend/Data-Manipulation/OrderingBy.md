@@ -19,4 +19,4 @@ OrderingBy[{"apple", "pear", "banana"}, StringLength]
 OrderingBy[{-3, 1, 5, -2}, Abs, 2]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/OrderingBy.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/OrderingBy.html) for more details.

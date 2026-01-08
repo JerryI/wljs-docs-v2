@@ -14,4 +14,4 @@ LongestCommonSequence["abcdefg", "bdfijk"]
 LongestCommonSequence[{1, 2, 3, 4, 5}, {2, 4, 6}]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/LongestCommonSequence.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/LongestCommonSequence.html) for more details.

@@ -20,4 +20,4 @@ PermutationLength[{2, 3, 1, 4}]
 PermutationLength[Cycles[{}]]
 ```
 
-*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/PermutationLength.html) for more details.*
+*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/PermutationLength.html) for more details.

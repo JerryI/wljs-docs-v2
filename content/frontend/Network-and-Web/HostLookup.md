@@ -26,4 +26,4 @@ HostLookup["www.wolfram.com", All]
 (* <|"Name" -> "www.wolfram.com", "IPAddress" -> ...| *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/HostLookup.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/HostLookup.html) for more details.

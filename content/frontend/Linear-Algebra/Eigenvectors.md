@@ -19,4 +19,4 @@ Numerical eigenvectors:
 Eigenvectors[{{1., 2.}, {3., 4.}}] // Normalize /@ # &
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Eigenvectors.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Eigenvectors.html) for more details.

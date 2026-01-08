@@ -14,4 +14,4 @@ Graphics[SASTriangle[1, Pi/3, 1.5]]
 SASTriangle[2, Pi/4, 3]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/SASTriangle.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/SASTriangle.html) for more details.

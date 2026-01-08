@@ -19,4 +19,4 @@ TreeGraphQ[Graph[{1 <-> 2, 3 <-> 4}]]
 (* False - not connected *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/TreeGraphQ.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/TreeGraphQ.html) for more details.

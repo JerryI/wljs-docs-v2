@@ -18,4 +18,4 @@ Apply a Welch window to sampled data:
 ListLinePlot[WelchWindow[Range[-1, 1, 0.05]]]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/WelchWindow.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/WelchWindow.html) for more details.

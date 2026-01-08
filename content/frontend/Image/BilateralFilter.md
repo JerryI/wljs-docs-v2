@@ -20,4 +20,4 @@ noisy = ImageAdd[img, RandomImage[{-0.2, 0.2}]];
 BilateralFilter[noisy, 3, 0.15]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/BilateralFilter.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/BilateralFilter.html) for more details.

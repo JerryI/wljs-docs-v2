@@ -13,4 +13,4 @@ g = Graph[{1 -> 2, 2 -> 3, 3 -> 1}];
 IndexEdgeTaggedGraph[g]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/IndexEdgeTaggedGraph.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/IndexEdgeTaggedGraph.html) for more details.

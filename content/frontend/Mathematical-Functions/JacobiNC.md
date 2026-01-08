@@ -10,4 +10,4 @@ title: JacobiNC
 JacobiNC[0.5, 0.3]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/JacobiNC.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/JacobiNC.html) for more details.

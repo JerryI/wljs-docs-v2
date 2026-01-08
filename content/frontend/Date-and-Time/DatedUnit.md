@@ -18,4 +18,4 @@ Convert historical currency:
 UnitConvert[Quantity[100, DatedUnit["USDollars", {2010, 1, 1}]], "Euros"]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/DatedUnit.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/DatedUnit.html) for more details.

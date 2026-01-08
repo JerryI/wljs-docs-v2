@@ -24,4 +24,4 @@ Plot multiple functions:
 LogLinearPlot[{Log[x], Log[2, x]}, {x, 1, 1000}]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/LogLinearPlot.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/LogLinearPlot.html) for more details.

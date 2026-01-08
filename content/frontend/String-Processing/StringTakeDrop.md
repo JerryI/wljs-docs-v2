@@ -29,4 +29,4 @@ StringTakeDrop["Hello World", {1, 5}]
 (* {"Hello", " World"} *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/StringTakeDrop.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/StringTakeDrop.html) for more details.

@@ -20,4 +20,4 @@ PartitionsP[100]
 (* 190569292 *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/PartitionsP.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/PartitionsP.html) for more details.

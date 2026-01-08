@@ -13,4 +13,4 @@ NumberFieldSignature[Sqrt[2]]
 (* {2, 0} *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/NumberFieldSignature.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/NumberFieldSignature.html) for more details.

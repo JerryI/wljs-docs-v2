@@ -20,4 +20,4 @@ FillingTransform[image, 0.2]
 FillingTransform[image, markerImage]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/FillingTransform.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/FillingTransform.html) for more details.

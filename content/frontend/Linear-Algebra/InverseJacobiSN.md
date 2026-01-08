@@ -16,4 +16,4 @@ Verify the inverse:
 JacobiSN[InverseJacobiSN[0.7, 0.5], 0.5]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/InverseJacobiSN.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/InverseJacobiSN.html) for more details.

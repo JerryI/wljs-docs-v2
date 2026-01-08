@@ -14,4 +14,4 @@ InterpretTemplate["1 + 2"]
 InterpretTemplate[template, data]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/InterpretTemplate.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/InterpretTemplate.html) for more details.

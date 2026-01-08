@@ -16,4 +16,4 @@ Test independence:
 BlomqvistBetaTest[{1, 2, 3, 4}, {2, 4, 6, 8}]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/BlomqvistBetaTest.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/BlomqvistBetaTest.html) for more details.

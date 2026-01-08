@@ -18,4 +18,4 @@ WaveletMapIndexed[Abs, dwd]
 WaveletMapIndexed[# * 2 &, dwd, {1}]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/WaveletMapIndexed.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/WaveletMapIndexed.html) for more details.

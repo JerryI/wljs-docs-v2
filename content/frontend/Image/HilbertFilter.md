@@ -14,4 +14,4 @@ data = Table[Sin[2 Pi t] + Sin[4 Pi t], {t, 0, 1, 0.01}];
 HilbertFilter[data, 0.1]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/HilbertFilter.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/HilbertFilter.html) for more details.

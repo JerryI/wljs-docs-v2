@@ -20,4 +20,4 @@ SecDegrees[45]
 Plot[SecDegrees[x], {x, -80, 80}]
 ```
 
-*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/SecDegrees.html) for more details.*
+*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/SecDegrees.html) for more details.

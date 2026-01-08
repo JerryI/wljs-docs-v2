@@ -29,4 +29,4 @@ From URL:
 Thumbnail["https://example.com/image.png", 100]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Thumbnail.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Thumbnail.html) for more details.

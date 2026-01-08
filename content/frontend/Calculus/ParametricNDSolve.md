@@ -23,4 +23,4 @@ Access the parametric solution:
 y[2][0.5] /. sol
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ParametricNDSolve.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ParametricNDSolve.html) for more details.

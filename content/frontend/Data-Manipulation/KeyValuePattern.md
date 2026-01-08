@@ -20,4 +20,4 @@ Cases[{<|"x" -> 1|>, <|"y" -> 2|>, <|"x" -> 3|>}, KeyValuePattern[{"x" -> _}]]
 (* {<|"x" -> 1|>, <|"x" -> 3|>} *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/KeyValuePattern.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/KeyValuePattern.html) for more details.

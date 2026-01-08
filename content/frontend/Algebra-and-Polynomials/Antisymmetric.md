@@ -13,4 +13,4 @@ TensorSymmetry[LeviCivitaTensor[3]]
 (* Antisymmetric[{1, 2, 3}] *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Antisymmetric.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Antisymmetric.html) for more details.

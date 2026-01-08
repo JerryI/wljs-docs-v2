@@ -14,4 +14,4 @@ dist = VoigtDistribution[1, 2]
 Plot[PDF[dist, x], {x, -10, 10}]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/VoigtDistribution.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/VoigtDistribution.html) for more details.

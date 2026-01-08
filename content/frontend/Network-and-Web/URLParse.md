@@ -21,4 +21,4 @@ URLParse["https://user:pass@host.com/page", "Host"]
 URLParse["https://example.com/path", {"Scheme", "Path"}]
 ```
 
-*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/URLParse.html) for more details.*
+*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/URLParse.html) for more details.

@@ -22,4 +22,4 @@ AllSameBy[{1, 2, 3}, Sign]
 (* True *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/AllSameBy.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/AllSameBy.html) for more details.

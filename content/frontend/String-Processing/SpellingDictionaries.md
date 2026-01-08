@@ -20,4 +20,4 @@ SetOptions[$FrontEnd, SpellingDictionaries -> {"English"}]
 Options[$FrontEnd, SpellingDictionaries]
 ```
 
-*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/SpellingDictionaries.html) for more details.*
+*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/SpellingDictionaries.html) for more details.

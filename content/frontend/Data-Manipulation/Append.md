@@ -22,4 +22,4 @@ Append[x][{1, 2, 3}]
 (* {1, 2, 3, x} *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Append.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Append.html) for more details.

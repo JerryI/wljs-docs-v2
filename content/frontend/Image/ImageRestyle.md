@@ -18,4 +18,4 @@ ImageRestyle[ExampleData[{"TestImage", "Lena"}], ExampleData[{"TestImage", "Mand
 ImageRestyle[img, 0.5 -> styleImage]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ImageRestyle.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ImageRestyle.html) for more details.

@@ -20,4 +20,4 @@ Convolve[UnitBox[x], UnitBox[x], x, y]
 (* UnitTriangle[y] *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Convolve.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Convolve.html) for more details.

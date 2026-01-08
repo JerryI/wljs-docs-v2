@@ -12,4 +12,4 @@ Create a CTC loss layer:
 CTCLossLayer[]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/CTCLossLayer.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/CTCLossLayer.html) for more details.

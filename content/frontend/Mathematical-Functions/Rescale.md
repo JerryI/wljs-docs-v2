@@ -21,4 +21,4 @@ Rescale[data]
 (* {0., 0.25, 0.5, 0.75, 1.} *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Rescale.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Rescale.html) for more details.

@@ -14,4 +14,4 @@ PascalBinomial[5, 2]
 Table[PascalBinomial[n, k], {n, 0, 5}, {k, 0, n}]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/PascalBinomial.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/PascalBinomial.html) for more details.

@@ -17,4 +17,4 @@ MonomialList[x^2 + 3x*y + y^2, {x, y}]
 MonomialList[a + b x + c x^2, {x}]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/MonomialList.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/MonomialList.html) for more details.

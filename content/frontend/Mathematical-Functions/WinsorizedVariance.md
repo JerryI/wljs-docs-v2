@@ -24,4 +24,4 @@ WinsorizedVariance[{1, 2, 3, 4, 5, 6, 7, 8, 9, 100}, 0.1]
 WinsorizedVariance[NormalDistribution[], 0.1]
 ```
 
-*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/WinsorizedVariance.html) for more details.*
+*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/WinsorizedVariance.html) for more details.

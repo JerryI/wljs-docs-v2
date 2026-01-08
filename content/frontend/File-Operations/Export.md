@@ -20,4 +20,4 @@ Export an image:
 Export["plot.png", Plot[Sin[x], {x, 0, 2 Pi}]]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Export.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Export.html) for more details.

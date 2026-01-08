@@ -15,4 +15,4 @@ ArrayComponents[{a, b, a, c, b, a}]
 (* {1, 2, 1, 3, 2, 1} *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ArrayComponents.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ArrayComponents.html) for more details.

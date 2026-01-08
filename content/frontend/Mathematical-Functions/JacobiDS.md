@@ -16,4 +16,4 @@ N[JacobiDS[1, 0.5]]
 (* 1.02881 *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/JacobiDS.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/JacobiDS.html) for more details.

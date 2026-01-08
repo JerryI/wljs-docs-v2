@@ -20,4 +20,4 @@ FindLinearRecurrence[{1, 2, 4, 8, 16, 32}, 1]
 LinearRecurrence[{1, 1}, {1, 1}, 10]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/FindLinearRecurrence.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/FindLinearRecurrence.html) for more details.

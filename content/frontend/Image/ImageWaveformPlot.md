@@ -19,4 +19,4 @@ Plot in a specific color space:
 ImageWaveformPlot[img, "RGB"]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ImageWaveformPlot.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ImageWaveformPlot.html) for more details.

@@ -20,4 +20,4 @@ DayMatchQ[{2024, 1, 5}, "BusinessDay"]
 (* True - Friday *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/DayMatchQ.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/DayMatchQ.html) for more details.

@@ -27,4 +27,4 @@ s2 = "GCTAAGC";
 LongestCommonSequencePositions[s1, s2]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/LongestCommonSequencePositions.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/LongestCommonSequencePositions.html) for more details.

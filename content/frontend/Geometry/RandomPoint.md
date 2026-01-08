@@ -28,4 +28,4 @@ In 3D region:
 RandomPoint[Ball[], 100]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/RandomPoint.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/RandomPoint.html) for more details.

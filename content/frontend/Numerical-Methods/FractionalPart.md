@@ -20,4 +20,4 @@ FractionalPart[-2.3]
 (* -0.3 *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/FractionalPart.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/FractionalPart.html) for more details.

@@ -25,4 +25,4 @@ Plot[{Re[SphericalHankelH1[1, x]], Im[SphericalHankelH1[1, x]]},
   {x, 0.1, 10}, PlotLegends -> {"Re", "Im"}]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/SphericalHankelH1.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/SphericalHankelH1.html) for more details.

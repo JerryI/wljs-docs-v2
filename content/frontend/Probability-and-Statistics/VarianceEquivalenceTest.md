@@ -22,4 +22,4 @@ Get the p-value:
 VarianceEquivalenceTest[{data1, data2}, "PValue"]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/VarianceEquivalenceTest.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/VarianceEquivalenceTest.html) for more details.

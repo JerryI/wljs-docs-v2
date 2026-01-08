@@ -29,4 +29,4 @@ Length[TextWords["One two three four five"]]
 (* 5 *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/TextWords.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/TextWords.html) for more details.

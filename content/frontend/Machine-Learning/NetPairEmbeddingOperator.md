@@ -23,4 +23,4 @@ NetPairEmbeddingOperator[NetChain[{LinearLayer[20], Ramp, LinearLayer[10]}],
 NetPairEmbeddingOperator[encoder, "DistanceFunction" -> EuclideanDistance]
 ```
 
-*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/NetPairEmbeddingOperator.html) for more details.*
+*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/NetPairEmbeddingOperator.html) for more details.

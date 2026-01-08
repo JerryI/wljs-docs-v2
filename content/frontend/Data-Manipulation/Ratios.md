@@ -20,4 +20,4 @@ Ratios[{3, 9, 27, 81}]
 (* {3, 3, 3} *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Ratios.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Ratios.html) for more details.

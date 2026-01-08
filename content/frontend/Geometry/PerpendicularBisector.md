@@ -18,4 +18,4 @@ Visualize the perpendicular bisector:
 Graphics[{Line[{{0, 0}, {4, 2}}], Red, PerpendicularBisector[{{0, 0}, {4, 2}}]}]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/PerpendicularBisector.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/PerpendicularBisector.html) for more details.

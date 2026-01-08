@@ -14,4 +14,4 @@ PermutationProduct[Cycles[{{1, 2}}], Cycles[{{2, 3}}]]
 PermutationProduct[{2, 3, 1}, {3, 1, 2}]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/PermutationProduct.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/PermutationProduct.html) for more details.

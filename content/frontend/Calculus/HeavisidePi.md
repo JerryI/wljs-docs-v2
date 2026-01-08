@@ -20,4 +20,4 @@ Plot[HeavisidePi[x], {x, -1, 1}]
 HeavisidePi[0.2, 0.3]
 ```
 
-*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/HeavisidePi.html) for more details.*
+*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/HeavisidePi.html) for more details.

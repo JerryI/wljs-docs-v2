@@ -25,4 +25,4 @@ ListVectorDisplacementPlot[RandomReal[0.1, {10, 10, 2}]]
 ListVectorDisplacementPlot[Table[{0.05 x, 0.05 y}, {x, -5, 5}, {y, -5, 5}]]
 ```
 
-*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ListVectorDisplacementPlot.html) for more details.*
+*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ListVectorDisplacementPlot.html) for more details.

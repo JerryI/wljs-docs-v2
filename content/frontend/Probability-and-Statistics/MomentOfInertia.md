@@ -16,4 +16,4 @@ Compute the moment of inertia matrix for a disk:
 MomentOfInertia[Disk[]]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/MomentOfInertia.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/MomentOfInertia.html) for more details.

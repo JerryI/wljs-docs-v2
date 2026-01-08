@@ -16,4 +16,4 @@ ToDate[AbsoluteTime[]]
 (* current date and time *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ToDate.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ToDate.html) for more details.

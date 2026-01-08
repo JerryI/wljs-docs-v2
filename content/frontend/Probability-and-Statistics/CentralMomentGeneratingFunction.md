@@ -21,4 +21,4 @@ For a Poisson distribution:
 CentralMomentGeneratingFunction[PoissonDistribution[λ], t]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/CentralMomentGeneratingFunction.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/CentralMomentGeneratingFunction.html) for more details.

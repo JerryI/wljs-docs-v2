@@ -19,4 +19,4 @@ Replace end of lines:
 StringReplace["abc\ndef", EndOfLine -> ";"]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/EndOfLine.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/EndOfLine.html) for more details.

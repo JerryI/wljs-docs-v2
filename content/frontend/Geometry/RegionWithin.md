@@ -20,4 +20,4 @@ RegionWithin[Disk[{0, 0}, 1], Disk[{2, 0}, 1]]
 (* False *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/RegionWithin.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/RegionWithin.html) for more details.

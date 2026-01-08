@@ -14,4 +14,4 @@ TimeConstrained[While[True, If[TimeRemaining[] < 0.5, Break[]]]; "done", 2]
 TimeConstrained[TimeRemaining[], 5]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/TimeRemaining.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/TimeRemaining.html) for more details.

@@ -17,4 +17,4 @@ data = Table[Sin[x], {x, 0, 2 Pi, 0.1}];
 StationaryWaveletPacketTransform[data]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/StationaryWaveletPacketTransform.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/StationaryWaveletPacketTransform.html) for more details.

@@ -20,4 +20,4 @@ Visualize the correspondences:
 HighlightImage[img1, pts1]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ImageCorrespondingPoints.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ImageCorrespondingPoints.html) for more details.

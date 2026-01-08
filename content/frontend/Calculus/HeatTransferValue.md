@@ -16,4 +16,4 @@ HeatTransferValue[x == 0, {T, {x}}, <|"AmbientTemperature" -> 300|>]
 HeatTransferPDEComponent[{T[x, t], t}, {x}, <|"ThermalConductivity" -> 1|>]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/HeatTransferValue.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/HeatTransferValue.html) for more details.

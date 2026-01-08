@@ -25,4 +25,4 @@ Use a specific variogram model:
 EstimatedVariogramModel[data, "Spherical"]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/EstimatedVariogramModel.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/EstimatedVariogramModel.html) for more details.

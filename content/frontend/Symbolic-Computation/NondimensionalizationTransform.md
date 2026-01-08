@@ -12,4 +12,4 @@ title: NondimensionalizationTransform
 NondimensionalizationTransform[x^2 + y^2 == 1, {x, y}, {u, v}]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/NondimensionalizationTransform.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/NondimensionalizationTransform.html) for more details.

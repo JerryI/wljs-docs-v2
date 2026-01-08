@@ -6,4 +6,4 @@ title: TimeWarpingCorrespondence
 
 `TimeWarpingCorrespondence[s1, s2, r]` uses a window of radius r for local search.
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/TimeWarpingCorrespondence.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/TimeWarpingCorrespondence.html) for more details.

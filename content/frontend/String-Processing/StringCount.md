@@ -22,4 +22,4 @@ StringCount["abc123def456", DigitCharacter]
 (* 6 *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/StringCount.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/StringCount.html) for more details.

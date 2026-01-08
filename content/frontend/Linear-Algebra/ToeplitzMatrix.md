@@ -27,4 +27,4 @@ Specify both first column and first row:
 ToeplitzMatrix[{1, 2, 3}, {1, 4, 5, 6}] // MatrixForm
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ToeplitzMatrix.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ToeplitzMatrix.html) for more details.

@@ -19,4 +19,4 @@ FeatureValueImpactPlot[classifier, testData]
 FeatureValueImpactPlot[classifier -> "income", testData]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/FeatureValueImpactPlot.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/FeatureValueImpactPlot.html) for more details.

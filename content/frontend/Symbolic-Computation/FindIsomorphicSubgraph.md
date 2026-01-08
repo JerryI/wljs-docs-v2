@@ -18,4 +18,4 @@ FindIsomorphicSubgraph[g, triangle]
 FindIsomorphicSubgraph[g, triangle, 5]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/FindIsomorphicSubgraph.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/FindIsomorphicSubgraph.html) for more details.

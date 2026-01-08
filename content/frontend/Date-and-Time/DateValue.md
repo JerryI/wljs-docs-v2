@@ -27,4 +27,4 @@ DateValue[DateObject[{2024, 12, 25, 10, 30, 0}], "Hour"]
 (* 10 *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/DateValue.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/DateValue.html) for more details.

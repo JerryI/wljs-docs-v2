@@ -21,4 +21,4 @@ myType /: Plus[myType[a_], myType[b_]] := myType[a + b]
 vec /: Dot[vec[a_], vec[b_]] := a.b
 ```
 
-*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/TagSet.html) for more details.*
+*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/TagSet.html) for more details.

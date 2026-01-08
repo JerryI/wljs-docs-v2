@@ -20,4 +20,4 @@ NetUnfold[trainedRNN]
 unfoldedNet = NetUnfold[NetModel["...RNN..."]]
 ```
 
-*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/NetUnfold.html) for more details.*
+*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/NetUnfold.html) for more details.

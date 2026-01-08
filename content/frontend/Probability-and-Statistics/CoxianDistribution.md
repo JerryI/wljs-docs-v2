@@ -12,4 +12,4 @@ Create a Coxian distribution:
 CoxianDistribution[{0.5}, {1, 2}]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/CoxianDistribution.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/CoxianDistribution.html) for more details.

@@ -22,4 +22,4 @@ SatisfiabilityCount[a && b && c, {a, b, c}]
 SatisfiabilityCount[(a || b) && (!a || c), {a, b, c}]
 ```
 
-*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/SatisfiabilityCount.html) for more details.*
+*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/SatisfiabilityCount.html) for more details.

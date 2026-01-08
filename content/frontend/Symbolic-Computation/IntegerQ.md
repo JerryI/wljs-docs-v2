@@ -25,4 +25,4 @@ Select[{1, 2.5, 3, 4.2, 5}, IntegerQ]
 (* {1, 3, 5} *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/IntegerQ.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/IntegerQ.html) for more details.

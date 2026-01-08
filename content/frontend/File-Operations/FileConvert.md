@@ -20,4 +20,4 @@ FileConvert["document.docx", "PDF"]
 FileConvert["data.csv" -> "data.xlsx", "CSV" -> "XLSX"]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/FileConvert.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/FileConvert.html) for more details.

@@ -23,4 +23,4 @@ Visualize circle points:
 Graphics[Point[CirclePoints[12]]]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/CirclePoints.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/CirclePoints.html) for more details.

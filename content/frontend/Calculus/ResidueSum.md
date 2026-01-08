@@ -27,4 +27,4 @@ For a rational function:
 ResidueSum[1/((z - 1)(z - 2)), z]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ResidueSum.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ResidueSum.html) for more details.

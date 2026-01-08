@@ -14,4 +14,4 @@ GeoBoundary[Entity["Country", "Germany"]]
 GeoGraphics[GeoBoundary[Entity["AdministrativeDivision", {"California", "UnitedStates"}]]]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/GeoBoundary.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/GeoBoundary.html) for more details.

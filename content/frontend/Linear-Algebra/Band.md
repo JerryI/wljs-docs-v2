@@ -17,4 +17,4 @@ SparseArray[Band[{1, 1}] -> {a, b, c}]
 (* diagonal matrix with a, b, c on the diagonal *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Band.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Band.html) for more details.

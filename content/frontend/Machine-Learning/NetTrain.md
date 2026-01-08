@@ -25,4 +25,4 @@ NetTrain[NetChain[{5, Ramp, 1}], data, MaxTrainingRounds -> 100]
 NetTrain[net, trainingData, All]["FinalLoss"]
 ```
 
-*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/NetTrain.html) for more details.*
+*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/NetTrain.html) for more details.

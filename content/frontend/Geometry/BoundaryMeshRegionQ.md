@@ -14,4 +14,4 @@ BoundaryMeshRegionQ[reg]
 (* True *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/BoundaryMeshRegionQ.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/BoundaryMeshRegionQ.html) for more details.

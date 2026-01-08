@@ -15,4 +15,4 @@ data = Table[{-y, x, z}, {x, -2, 2, 0.5}, {y, -2, 2, 0.5}, {z, -2, 2, 0.5}];
 ListVectorPlot3D[data]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ListVectorPlot3D.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ListVectorPlot3D.html) for more details.

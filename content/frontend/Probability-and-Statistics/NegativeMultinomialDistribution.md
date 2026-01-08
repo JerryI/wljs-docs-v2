@@ -15,4 +15,4 @@ Mean[dist]
 RandomVariate[NegativeMultinomialDistribution[3, {0.4, 0.3}], 5]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/NegativeMultinomialDistribution.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/NegativeMultinomialDistribution.html) for more details.

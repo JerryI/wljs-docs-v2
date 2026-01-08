@@ -21,4 +21,4 @@ layer[{{1, 2, 3}, {4, 5, 6}}]
 NetChain[{SequenceReverseLayer[], LongShortTermMemoryLayer[10]}]
 ```
 
-*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/SequenceReverseLayer.html) for more details.*
+*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/SequenceReverseLayer.html) for more details.

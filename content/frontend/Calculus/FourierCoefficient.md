@@ -20,4 +20,4 @@ Get Fourier coefficients for a square wave:
 FourierCoefficient[SquareWave[t], t, 1]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/FourierCoefficient.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/FourierCoefficient.html) for more details.

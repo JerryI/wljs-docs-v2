@@ -22,4 +22,4 @@ DayName[{2024, 12, 25}]
 (* Wednesday *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/DayName.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/DayName.html) for more details.

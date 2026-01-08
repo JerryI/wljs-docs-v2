@@ -22,4 +22,4 @@ Min[{-5, 3, 7, -2}]
 (* -5 *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Min.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Min.html) for more details.

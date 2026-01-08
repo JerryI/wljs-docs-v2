@@ -23,4 +23,4 @@ NetInsert[NetChain[{LinearLayer[5], SoftmaxLayer[]}], DropoutLayer[], 2]
 NetInsert[chain, "bn" -> BatchNormalizationLayer[], 2]
 ```
 
-*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/NetInsert.html) for more details.*
+*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/NetInsert.html) for more details.

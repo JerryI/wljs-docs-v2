@@ -24,4 +24,4 @@ result
 (* {1, 4, 9, 16, 25} *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/AppendTo.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/AppendTo.html) for more details.

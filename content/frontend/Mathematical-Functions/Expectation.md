@@ -20,4 +20,4 @@ Expectation[x^2, x \[Distributed] UniformDistribution[{0, 1}]]
 (* 1/3 *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Expectation.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Expectation.html) for more details.

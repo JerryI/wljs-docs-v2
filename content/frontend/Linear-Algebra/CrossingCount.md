@@ -21,4 +21,4 @@ CrossingCount[polygon, {2, 2}]
 (* 0 - point is outside *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/CrossingCount.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/CrossingCount.html) for more details.

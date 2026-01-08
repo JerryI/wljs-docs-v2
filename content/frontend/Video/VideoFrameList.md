@@ -22,4 +22,4 @@ VideoFrameList[Video["ExampleData/Caminandes.mp4"], {0, 1, 2}]
 VideoFrameList[Video["ExampleData/Caminandes.mp4"], 10] // Length
 ```
 
-*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/VideoFrameList.html) for more details.*
+*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/VideoFrameList.html) for more details.

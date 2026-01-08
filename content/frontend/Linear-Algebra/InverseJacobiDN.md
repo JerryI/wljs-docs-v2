@@ -21,4 +21,4 @@ N[InverseJacobiDN[0.8, 1/2]]
 JacobiDN[InverseJacobiDN[v, m], m] // Simplify
 ```
 
-*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/InverseJacobiDN.html) for more details.*
+*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/InverseJacobiDN.html) for more details.

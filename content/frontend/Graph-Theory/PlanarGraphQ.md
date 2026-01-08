@@ -23,4 +23,4 @@ PlanarGraphQ[GridGraph[{10, 10}]]
 (* True *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/PlanarGraphQ.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/PlanarGraphQ.html) for more details.

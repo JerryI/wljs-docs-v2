@@ -26,4 +26,4 @@ In a network:
 net = NetChain[{LinearLayer[10], ThreadingLayer[Ramp]}];
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ThreadingLayer.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ThreadingLayer.html) for more details.

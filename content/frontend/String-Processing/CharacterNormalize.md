@@ -20,4 +20,4 @@ CharacterNormalize["naïve", "NFD"]
 (* "naïve" *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/CharacterNormalize.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/CharacterNormalize.html) for more details.

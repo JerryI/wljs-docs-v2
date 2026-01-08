@@ -23,4 +23,4 @@ EdgeCount[GridGraph[{3, 3}]]
 (* 12 *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/EdgeCount.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/EdgeCount.html) for more details.

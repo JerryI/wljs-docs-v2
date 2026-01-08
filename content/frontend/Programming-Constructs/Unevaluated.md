@@ -23,4 +23,4 @@ Head[{1, 2, 3}]
 (* List - same result here *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Unevaluated.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Unevaluated.html) for more details.

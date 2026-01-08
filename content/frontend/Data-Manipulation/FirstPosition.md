@@ -22,4 +22,4 @@ FirstPosition[{{a, b}, {c, d}}, d]
 (* {2, 2} *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/FirstPosition.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/FirstPosition.html) for more details.

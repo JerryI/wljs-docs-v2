@@ -14,4 +14,4 @@ MatchQ[Inactive[Plus][1, 2], IgnoringInactive[Plus[1, 2]]]
 Cases[{Inactive[f][x], g[x]}, IgnoringInactive[f[_]]]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/IgnoringInactive.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/IgnoringInactive.html) for more details.

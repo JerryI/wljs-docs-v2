@@ -21,4 +21,4 @@ Specify threading level:
 {{1, 2}, {3, 4}} + Threaded[{100, 200}, 1]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Threaded.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Threaded.html) for more details.

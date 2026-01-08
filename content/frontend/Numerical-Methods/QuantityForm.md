@@ -26,4 +26,4 @@ Multiple forms:
 QuantityForm[Quantity[9.8, "Meters/Seconds^2"], {"Abbreviation"}]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/QuantityForm.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/QuantityForm.html) for more details.

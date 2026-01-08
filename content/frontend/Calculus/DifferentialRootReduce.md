@@ -21,4 +21,4 @@ With initial point:
 DifferentialRootReduce[Exp[x], {x, 0}]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/DifferentialRootReduce.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/DifferentialRootReduce.html) for more details.

@@ -23,4 +23,4 @@ Get the p-value:
 AutocorrelationTest[data, 5, "PValue"]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/AutocorrelationTest.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/AutocorrelationTest.html) for more details.

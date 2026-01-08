@@ -16,4 +16,4 @@ GeometricStep[{Triangle[{a, b, c}]}]
 GeometricStep[{GeometricAssertion[Triangle[{a, b, c}], "Isosceles"]}, "Step 2"]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/GeometricStep.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/GeometricStep.html) for more details.

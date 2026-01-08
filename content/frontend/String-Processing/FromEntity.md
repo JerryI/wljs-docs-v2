@@ -18,4 +18,4 @@ Convert a color entity:
 FromEntity[Entity["Color", "Red"]]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/FromEntity.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/FromEntity.html) for more details.

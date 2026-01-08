@@ -20,4 +20,4 @@ StirlingS2[5, 3]
 (* 25 - ways to partition 5 elements into 3 groups *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/StirlingS2.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/StirlingS2.html) for more details.

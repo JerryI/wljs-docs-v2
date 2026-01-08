@@ -28,4 +28,4 @@ Mixed evaluation:
 MomentEvaluate[Moment[2] - SampleMoment[2], NormalDistribution[], data]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/MomentEvaluate.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/MomentEvaluate.html) for more details.

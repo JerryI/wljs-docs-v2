@@ -13,4 +13,4 @@ OverHat[x]
 (* x̂ *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/OverHat.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/OverHat.html) for more details.

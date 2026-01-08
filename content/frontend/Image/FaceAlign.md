@@ -21,4 +21,4 @@ FaceAlign[photo, Automatic, {100, 100}]
 FaceAlign[{photo1, photo2, photo3}]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/FaceAlign.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/FaceAlign.html) for more details.

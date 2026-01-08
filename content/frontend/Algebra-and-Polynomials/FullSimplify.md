@@ -27,4 +27,4 @@ FullSimplify[Log[Exp[x]], x \[Element] Reals]
 (* x *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/FullSimplify.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/FullSimplify.html) for more details.

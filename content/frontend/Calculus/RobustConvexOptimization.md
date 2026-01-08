@@ -25,4 +25,4 @@ RobustConvexOptimization[x^2 + y^2,
   ForAll[{a, b}, a^2 + b^2 <= 1, a*x + b*y <= 1], {x, y}]
 ```
 
-*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/RobustConvexOptimization.html) for more details.*
+*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/RobustConvexOptimization.html) for more details.

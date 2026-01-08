@@ -13,4 +13,4 @@ pts = Table[{i, j, Sin[i + j]}, {i, 0, 3}, {j, 0, 3}];
 Graphics3D[BSplineSurface[pts]]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/BSplineSurface.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/BSplineSurface.html) for more details.

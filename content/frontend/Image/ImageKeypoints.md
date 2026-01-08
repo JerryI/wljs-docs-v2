@@ -20,4 +20,4 @@ ImageKeypoints[img, "Scale"]
 (* Scale values for each keypoint *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ImageKeypoints.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ImageKeypoints.html) for more details.

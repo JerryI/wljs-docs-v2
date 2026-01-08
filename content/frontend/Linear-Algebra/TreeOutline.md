@@ -8,4 +8,4 @@ title: TreeOutline
 
 `TreeOutline[tree, {pos1, pos2, …}]` opens the outline to several positions.
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/TreeOutline.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/TreeOutline.html) for more details.

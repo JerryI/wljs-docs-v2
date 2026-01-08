@@ -25,4 +25,4 @@ Use markers for guided segmentation:
 ImageForestingComponents[img, {{100, 100} -> 1, {200, 200} -> 2}]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ImageForestingComponents.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ImageForestingComponents.html) for more details.

@@ -13,4 +13,4 @@ ptr = RawMemoryAllocate["Integer32", 10];
 RawMemoryRead[ptr]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/RawMemoryRead.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/RawMemoryRead.html) for more details.

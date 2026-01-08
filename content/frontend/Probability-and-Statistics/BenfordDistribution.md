@@ -12,4 +12,4 @@ Sample from Benford distribution in base 10:
 RandomVariate[BenfordDistribution[10], 10]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/BenfordDistribution.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/BenfordDistribution.html) for more details.

@@ -27,4 +27,4 @@ Count words in multiple strings:
 WordCounts[{"hello world", "world hello hello"}]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/WordCounts.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/WordCounts.html) for more details.

@@ -14,4 +14,4 @@ Decompose a matrix:
 CoreNilpotentDecomposition[{{1, 2}, {0, 0}}]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/CoreNilpotentDecomposition.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/CoreNilpotentDecomposition.html) for more details.

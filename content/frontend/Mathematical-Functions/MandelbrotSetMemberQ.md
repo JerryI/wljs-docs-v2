@@ -18,4 +18,4 @@ MandelbrotSetMemberQ[2 + 2 I]
 (* False *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/MandelbrotSetMemberQ.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/MandelbrotSetMemberQ.html) for more details.

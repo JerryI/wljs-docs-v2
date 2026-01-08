@@ -14,4 +14,4 @@ title: SphericalAngle
 SphericalAngle[{0, 0} -> {{Pi/4, 0}, {0, Pi/4}}]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/SphericalAngle.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/SphericalAngle.html) for more details.

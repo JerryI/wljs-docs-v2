@@ -17,4 +17,4 @@ KuiperTest[RandomReal[1, 100]]
 KuiperTest[RandomVariate[UniformDistribution[], 100], UniformDistribution[]]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/KuiperTest.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/KuiperTest.html) for more details.

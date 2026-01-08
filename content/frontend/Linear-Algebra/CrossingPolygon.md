@@ -14,4 +14,4 @@ Create a crossing polygon from a list of points:
 CrossingPolygon[{{0, 0}, {1, 1}, {2, 0}, {0, 1}, {2, 1}}]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/CrossingPolygon.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/CrossingPolygon.html) for more details.

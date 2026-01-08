@@ -16,4 +16,4 @@ IntegrateChangeVariables[Integrate[Sin[x]^2, x], u, u == Sin[x]]
 IntegrateChangeVariables[Integrate[x^2 Exp[x^3], x], u, u == x^3]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/IntegrateChangeVariables.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/IntegrateChangeVariables.html) for more details.

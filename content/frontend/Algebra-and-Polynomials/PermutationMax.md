@@ -16,4 +16,4 @@ For a permutation involving larger indices:
 PermutationMax[Cycles[{{2, 7}, {4, 10, 6}}]]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/PermutationMax.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/PermutationMax.html) for more details.

@@ -20,4 +20,4 @@ NIntegrate[x y, {x, 0, 1}, {y, 0, 1}]
 (* 0.25 *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/NIntegrate.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/NIntegrate.html) for more details.

@@ -18,4 +18,4 @@ MatrixSymbol["A", {3, 3}]
 MatrixSymbol["M", {2, 2}, Reals, "Symmetric"]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/MatrixSymbol.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/MatrixSymbol.html) for more details.

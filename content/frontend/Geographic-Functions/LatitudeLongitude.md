@@ -12,4 +12,4 @@ title: LatitudeLongitude
 LatitudeLongitude[Entity["City", {"NewYork", "NewYork", "UnitedStates"}]]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/LatitudeLongitude.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/LatitudeLongitude.html) for more details.

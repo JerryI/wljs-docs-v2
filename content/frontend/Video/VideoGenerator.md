@@ -17,4 +17,4 @@ VideoGenerator[RandomImage[], 5]
 VideoGenerator[Table[Graphics[{Hue[t], Disk[]}], {t, 0, 1, 0.1}], 3]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/VideoGenerator.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/VideoGenerator.html) for more details.

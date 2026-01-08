@@ -13,4 +13,4 @@ DateWithinQ[DateObject[{2020}], DateObject[{2020, 6, 15}]]
 (* True *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/DateWithinQ.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/DateWithinQ.html) for more details.

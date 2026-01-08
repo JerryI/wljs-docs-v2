@@ -13,4 +13,4 @@ RegionMoment[Disk[], {0, 0}]
 (* Pi *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/RegionMoment.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/RegionMoment.html) for more details.

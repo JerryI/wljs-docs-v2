@@ -14,4 +14,4 @@ VertexWeightedGraphQ[Graph[{1 -> 2}, VertexWeight -> {1 -> 5}]]
 VertexWeightedGraphQ[Graph[{a -> b, b -> c}]]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/VertexWeightedGraphQ.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/VertexWeightedGraphQ.html) for more details.

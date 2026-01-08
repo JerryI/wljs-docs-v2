@@ -20,4 +20,4 @@ SubresultantPolynomialRemainders[x^4 - 1, x^2 - 1, x]
 SubresultantPolynomialRemainders[x^3 + 2 x + 1, x^2 + x, x, Modulus -> 5]
 ```
 
-*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/SubresultantPolynomialRemainders.html) for more details.*
+*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/SubresultantPolynomialRemainders.html) for more details.

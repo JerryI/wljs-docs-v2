@@ -20,4 +20,4 @@ Weighted collage:
 ImageCollage[{2 -> img1, 1 -> img2}]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ImageCollage.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ImageCollage.html) for more details.

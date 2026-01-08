@@ -23,4 +23,4 @@ Clip[{-5, 3, 12}, {0, 10}]
 (* {0, 3, 10} *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Clip.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Clip.html) for more details.

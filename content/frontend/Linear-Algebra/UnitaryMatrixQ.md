@@ -20,4 +20,4 @@ UnitaryMatrixQ[{{1, 1}, {1, -1}}/Sqrt[2]]
 UnitaryMatrixQ[{{1, 2}, {3, 4}}]
 ```
 
-*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/UnitaryMatrixQ.html) for more details.*
+*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/UnitaryMatrixQ.html) for more details.

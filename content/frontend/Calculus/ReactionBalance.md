@@ -18,4 +18,4 @@ ReactionBalance["Fe + O2 -> Fe2O3"]
 ReactionBalance["C6H12O6 + O2 -> CO2 + H2O"]
 ```
 
-*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ReactionBalance.html) for more details.*
+*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ReactionBalance.html) for more details.

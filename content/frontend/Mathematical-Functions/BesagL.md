@@ -17,4 +17,4 @@ pts = RandomPointConfiguration[PoissonPointProcess[1], Rectangle[]];
 BesagL[pts, 0.1]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/BesagL.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/BesagL.html) for more details.

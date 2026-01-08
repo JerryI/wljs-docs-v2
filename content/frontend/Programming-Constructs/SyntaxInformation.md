@@ -14,4 +14,4 @@ SyntaxInformation[Plot]
 SyntaxInformation[f] = {"ArgumentsPattern" -> {_, _.}};
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/SyntaxInformation.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/SyntaxInformation.html) for more details.

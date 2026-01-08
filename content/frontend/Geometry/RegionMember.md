@@ -24,4 +24,4 @@ mf[{0.5, 0.5, 0.5}]
 (* True *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/RegionMember.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/RegionMember.html) for more details.

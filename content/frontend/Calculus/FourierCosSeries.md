@@ -15,4 +15,4 @@ FourierCosSeries[t^2, t, 3]
 (* Pi^2/3 - 4 Cos[t] + Cos[2 t] - 4/9 Cos[3 t] *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/FourierCosSeries.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/FourierCosSeries.html) for more details.

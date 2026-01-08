@@ -23,4 +23,4 @@ RandomVariate[CensoredDistribution[{0, Infinity}, NormalDistribution[]], 5]
 (* {0.42, 1.21, 0.05, 0.87, 0.33} *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/CensoredDistribution.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/CensoredDistribution.html) for more details.

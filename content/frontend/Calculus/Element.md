@@ -22,4 +22,4 @@ Integrate[1/(1 + x^2), {x, -Infinity, Infinity}, Assumptions -> Element[x, Reals
 (* Pi *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Element.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Element.html) for more details.

@@ -27,4 +27,4 @@ Plot the unit step function:
 Plot[UnitStep[x], {x, -2, 2}]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/UnitStep.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/UnitStep.html) for more details.

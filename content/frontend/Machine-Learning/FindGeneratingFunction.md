@@ -16,4 +16,4 @@ FindGeneratingFunction[{1, 1, 2, 3, 5, 8, 13}, x]
 FindGeneratingFunction[{1, 1, 2, 6, 24, 120}, x]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/FindGeneratingFunction.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/FindGeneratingFunction.html) for more details.

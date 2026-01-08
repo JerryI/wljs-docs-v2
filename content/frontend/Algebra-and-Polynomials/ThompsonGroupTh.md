@@ -16,4 +16,4 @@ Get group order:
 GroupOrder[ThompsonGroupTh[]]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ThompsonGroupTh.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ThompsonGroupTh.html) for more details.

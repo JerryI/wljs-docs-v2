@@ -19,4 +19,4 @@ EdgeQ[g, 1 -> 3]
 (* False *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/EdgeQ.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/EdgeQ.html) for more details.

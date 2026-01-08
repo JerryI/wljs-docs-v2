@@ -22,4 +22,4 @@ layer = CompiledLayer[Function[x, Sin[x]]];
 layer[{0, Pi/2, Pi}]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/CompiledLayer.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/CompiledLayer.html) for more details.

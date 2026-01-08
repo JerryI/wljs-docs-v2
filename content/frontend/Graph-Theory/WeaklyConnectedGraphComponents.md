@@ -20,4 +20,4 @@ Components containing specific vertex:
 WeaklyConnectedGraphComponents[graph, {1}]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/WeaklyConnectedGraphComponents.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/WeaklyConnectedGraphComponents.html) for more details.

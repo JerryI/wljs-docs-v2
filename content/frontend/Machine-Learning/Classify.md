@@ -25,4 +25,4 @@ cf["grape", "Probabilities"]
 (* <|"animal" -> 0.1, "fruit" -> 0.9|> *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Classify.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Classify.html) for more details.

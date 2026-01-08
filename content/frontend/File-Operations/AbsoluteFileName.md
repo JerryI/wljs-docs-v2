@@ -19,4 +19,4 @@ Resolve relative paths:
 AbsoluteFileName["../other/file.m"]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/AbsoluteFileName.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/AbsoluteFileName.html) for more details.

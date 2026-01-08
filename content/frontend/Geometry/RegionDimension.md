@@ -20,4 +20,4 @@ RegionDimension[Disk[]]
 RegionDimension[Ball[{0, 0, 0}]]
 ```
 
-*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/RegionDimension.html) for more details.*
+*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/RegionDimension.html) for more details.

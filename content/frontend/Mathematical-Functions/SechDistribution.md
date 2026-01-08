@@ -23,4 +23,4 @@ Mean[SechDistribution[2, 3]]
 RandomVariate[SechDistribution[], 5]
 ```
 
-*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/SechDistribution.html) for more details.*
+*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/SechDistribution.html) for more details.

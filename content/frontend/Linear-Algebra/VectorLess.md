@@ -22,4 +22,4 @@ VectorLess[{{1, 2, 3}, {4, 5, 6}}]
 VectorLess[{{1, 1}, {2, 0}}]
 ```
 
-*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/VectorLess.html) for more details.*
+*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/VectorLess.html) for more details.

@@ -24,4 +24,4 @@ PowerRange[1, 100, 2]
 (* {1, 2, 4, 8, 16, 32, 64} *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/PowerRange.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/PowerRange.html) for more details.

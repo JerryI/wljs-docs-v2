@@ -20,4 +20,4 @@ InversePermutation[Cycles[{{1, 3, 2}}]]
 (* Cycles[{{1, 2, 3}}] *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/InversePermutation.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/InversePermutation.html) for more details.

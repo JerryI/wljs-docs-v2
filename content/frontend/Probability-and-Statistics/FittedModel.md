@@ -14,4 +14,4 @@ model["BestFit"]
 (* 0.666667 + 1.5 x *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/FittedModel.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/FittedModel.html) for more details.

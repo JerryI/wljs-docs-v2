@@ -24,4 +24,4 @@ RandomPrime[{100, 200}, 5]
 (* {103, 179, 127, 191, 157} *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/RandomPrime.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/RandomPrime.html) for more details.

@@ -17,4 +17,4 @@ NetPrepend[LinearLayer[10], LinearLayer[5]]
 NetPrepend[NetChain[{LinearLayer[10]}], ElementwiseLayer[Tanh]]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/NetPrepend.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/NetPrepend.html) for more details.

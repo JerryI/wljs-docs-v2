@@ -24,4 +24,4 @@ Use in date calculations:
 DayCount[Today, NextDate[Friday]]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Friday.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Friday.html) for more details.

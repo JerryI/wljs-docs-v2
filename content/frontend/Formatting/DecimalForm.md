@@ -17,4 +17,4 @@ DecimalForm[1.23456789*^-5, 10]
 (* 0.0000123457 *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/DecimalForm.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/DecimalForm.html) for more details.

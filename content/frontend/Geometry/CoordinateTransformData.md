@@ -22,4 +22,4 @@ CoordinateTransformData["Cartesian" -> "Polar", "Mapping", {1, 1}]
 (* {Sqrt[2], Pi/4} *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/CoordinateTransformData.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/CoordinateTransformData.html) for more details.

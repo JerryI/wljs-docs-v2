@@ -21,4 +21,4 @@ AdjacencyMatrix[g] // MatrixForm
 AdjacencyMatrix[CompleteGraph[4]] // MatrixForm
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/AdjacencyMatrix.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/AdjacencyMatrix.html) for more details.

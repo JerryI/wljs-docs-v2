@@ -15,4 +15,4 @@ ResetDirectory[]
 Directory[]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ResetDirectory.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ResetDirectory.html) for more details.

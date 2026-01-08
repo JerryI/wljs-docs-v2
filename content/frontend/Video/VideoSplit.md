@@ -18,4 +18,4 @@ Split at multiple time points:
 VideoSplit[video, {Quantity[2, "Seconds"], Quantity[5, "Seconds"]}]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/VideoSplit.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/VideoSplit.html) for more details.

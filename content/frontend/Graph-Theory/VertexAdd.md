@@ -17,4 +17,4 @@ VertexAdd[Graph[{1 -> 2, 2 -> 3}], 4]
 VertexAdd[CycleGraph[4], {5, 6}]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/VertexAdd.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/VertexAdd.html) for more details.

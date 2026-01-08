@@ -19,4 +19,4 @@ FindFit[data, a Exp[-b x], {a, b}, x]
 model = a Exp[-b x] /. %
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/FindFit.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/FindFit.html) for more details.

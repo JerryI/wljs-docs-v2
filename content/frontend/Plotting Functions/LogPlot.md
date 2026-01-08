@@ -16,4 +16,4 @@ title: LogPlot
 LogPlot[Exp[x], {x, 0, 5}]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/LogPlot.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/LogPlot.html) for more details.

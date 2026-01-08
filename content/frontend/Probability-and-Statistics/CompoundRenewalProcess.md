@@ -18,4 +18,4 @@ Sample a path:
 RandomFunction[CompoundRenewalProcess[ExponentialDistribution[2], UniformDistribution[]], {0, 10}]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/CompoundRenewalProcess.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/CompoundRenewalProcess.html) for more details.

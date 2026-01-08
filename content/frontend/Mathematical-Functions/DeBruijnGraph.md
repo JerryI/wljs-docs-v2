@@ -20,4 +20,4 @@ Binary De Bruijn sequence graph:
 DeBruijnGraph[2, 4]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/DeBruijnGraph.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/DeBruijnGraph.html) for more details.

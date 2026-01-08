@@ -20,4 +20,4 @@ Replace with multiple patterns:
 StringReplaceList["abc", {"a" -> "1", "b" -> "2"}]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/StringReplaceList.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/StringReplaceList.html) for more details.

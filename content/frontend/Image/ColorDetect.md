@@ -12,4 +12,4 @@ Detect red regions in an image:
 ColorDetect[img, Red]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ColorDetect.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ColorDetect.html) for more details.

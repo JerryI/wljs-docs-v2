@@ -12,4 +12,4 @@ title: MatrixPropertyDistribution
 MatrixPropertyDistribution[Det[m], m \[Distributed] WishartMatrixDistribution[5, IdentityMatrix[3]]]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/MatrixPropertyDistribution.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/MatrixPropertyDistribution.html) for more details.

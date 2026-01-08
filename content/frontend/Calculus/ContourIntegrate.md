@@ -13,4 +13,4 @@ ContourIntegrate[1/z, z ∈ Circle[0, 1]]
 (* 2 π I *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ContourIntegrate.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ContourIntegrate.html) for more details.

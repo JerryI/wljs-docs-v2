@@ -16,4 +16,4 @@ GroupOrder[AlternatingGroup[5]]
 (* 60 *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/AlternatingGroup.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/AlternatingGroup.html) for more details.

@@ -21,4 +21,4 @@ CurrentImage[5]
 (* List of 5 images *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/CurrentImage.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/CurrentImage.html) for more details.

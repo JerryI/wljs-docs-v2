@@ -20,4 +20,4 @@ Insert[{a, b, c}, x, -1]
 (* {a, b, c, x} *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Insert.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Insert.html) for more details.

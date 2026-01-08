@@ -21,4 +21,4 @@ FindEulerianCycle[g, 3]
 EulerianGraphQ[g]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/FindEulerianCycle.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/FindEulerianCycle.html) for more details.

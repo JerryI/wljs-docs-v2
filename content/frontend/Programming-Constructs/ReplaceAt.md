@@ -22,4 +22,4 @@ ReplaceAt[{{1, 2}, {3, 4}}, x_ :> 10 x, {2, 1}]
 ReplaceAt[x_ :> -x, 1][{a, b, c}]
 ```
 
-*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ReplaceAt.html) for more details.*
+*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ReplaceAt.html) for more details.

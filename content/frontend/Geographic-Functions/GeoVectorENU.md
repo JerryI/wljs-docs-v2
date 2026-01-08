@@ -19,4 +19,4 @@ GeoVectorENU[GeoPosition[{40.7, -74.0}] -> {1, 0}]
 GeoVectorPlot[GeoVectorENU[Here -> {1, 1}]]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/GeoVectorENU.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/GeoVectorENU.html) for more details.

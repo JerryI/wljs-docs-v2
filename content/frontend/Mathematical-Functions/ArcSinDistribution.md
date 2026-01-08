@@ -26,4 +26,4 @@ Plot the PDF:
 Plot[PDF[ArcSinDistribution[], x], {x, 0, 1}]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ArcSinDistribution.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ArcSinDistribution.html) for more details.

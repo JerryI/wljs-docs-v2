@@ -29,4 +29,4 @@ Solve[{x + y == 3, x - y == 1}, {x, y}]
 (* {{x -> 2, y -> 1}} *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Solve.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Solve.html) for more details.

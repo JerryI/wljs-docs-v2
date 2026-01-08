@@ -21,4 +21,4 @@ Generate an ECC key pair:
 GenerateAsymmetricKeyPair["EllipticCurve"]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/GenerateAsymmetricKeyPair.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/GenerateAsymmetricKeyPair.html) for more details.

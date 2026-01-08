@@ -20,4 +20,4 @@ pyLen = ExternalFunction["Python", "len"];
 pyLen["hello"]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ExternalFunction.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ExternalFunction.html) for more details.

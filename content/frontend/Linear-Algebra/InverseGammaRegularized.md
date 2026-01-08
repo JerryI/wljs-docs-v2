@@ -20,4 +20,4 @@ GammaRegularized[2, InverseGammaRegularized[2, 0.5]]
 (* 0.5 *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/InverseGammaRegularized.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/InverseGammaRegularized.html) for more details.

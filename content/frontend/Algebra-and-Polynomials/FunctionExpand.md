@@ -20,4 +20,4 @@ Expand special functions:
 FunctionExpand[Gamma[n + 1/2], n ∈ Integers && n >= 0]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/FunctionExpand.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/FunctionExpand.html) for more details.

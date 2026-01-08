@@ -20,4 +20,4 @@ PrintableASCIIQ["Hello\nWorld"]
 PrintableASCIIQ["café"]
 ```
 
-*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/PrintableASCIIQ.html) for more details.*
+*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/PrintableASCIIQ.html) for more details.

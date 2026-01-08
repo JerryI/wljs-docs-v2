@@ -10,4 +10,4 @@ title: SolidMechanicsStrain
 SolidMechanicsStrain[{x, y}, <||>, {u[x, y], v[x, y]}]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/SolidMechanicsStrain.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/SolidMechanicsStrain.html) for more details.

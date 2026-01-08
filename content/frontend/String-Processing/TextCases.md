@@ -18,4 +18,4 @@ TextCases["The cat and dog ran.", "Noun"]
 TextCases["Call me at 555-1234.", "PhoneNumber"]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/TextCases.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/TextCases.html) for more details.

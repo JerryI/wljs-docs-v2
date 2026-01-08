@@ -17,4 +17,4 @@ t = Tree[a, {Tree[b, {c, d}], Tree[e, {f}]}];
 TreeDelete[t, {1}]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/TreeDelete.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/TreeDelete.html) for more details.

@@ -16,4 +16,4 @@ Accuracy[N[Pi, 50]]
 (* 49.5086 *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Accuracy.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Accuracy.html) for more details.

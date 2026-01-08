@@ -23,4 +23,4 @@ TreeCases[tree, b | e]
 TreeCases[tree, _, 2]
 ```
 
-*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/TreeCases.html) for more details.*
+*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/TreeCases.html) for more details.

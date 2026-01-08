@@ -20,4 +20,4 @@ Use a specific kernel length:
 LowpassFilter[data, 0.2, 10]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/LowpassFilter.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/LowpassFilter.html) for more details.

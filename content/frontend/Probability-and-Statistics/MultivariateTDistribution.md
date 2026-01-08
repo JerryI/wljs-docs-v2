@@ -13,4 +13,4 @@ dist = MultivariateTDistribution[{{1, 0.5}, {0.5, 1}}, 5];
 PDF[dist, {x, y}]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/MultivariateTDistribution.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/MultivariateTDistribution.html) for more details.

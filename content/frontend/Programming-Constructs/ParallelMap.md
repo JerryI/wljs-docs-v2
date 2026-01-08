@@ -22,4 +22,4 @@ ParallelMap[N[#, 100] &, {Pi, E, GoldenRatio}]
 ParallelMap[PrimeQ, Range[1000], {1}]
 ```
 
-*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ParallelMap.html) for more details.*
+*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ParallelMap.html) for more details.

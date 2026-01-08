@@ -15,4 +15,4 @@ PDF[dist, x]
 RandomVariate[LogLogisticDistribution[3, 2], 5]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/LogLogisticDistribution.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/LogLogisticDistribution.html) for more details.

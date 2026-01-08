@@ -23,4 +23,4 @@ TemplateApply[StringTemplate["The `item` costs `price`."],
 (* "The book costs $10." *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/TemplateApply.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/TemplateApply.html) for more details.

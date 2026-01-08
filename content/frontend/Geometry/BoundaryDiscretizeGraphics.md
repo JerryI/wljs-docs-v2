@@ -14,4 +14,4 @@ Discretize a graphics object:
 BoundaryDiscretizeGraphics[Graphics[Disk[]]]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/BoundaryDiscretizeGraphics.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/BoundaryDiscretizeGraphics.html) for more details.

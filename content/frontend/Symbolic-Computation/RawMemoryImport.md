@@ -13,4 +13,4 @@ ptr = RawMemoryAllocate["UnsignedInteger8", 10];
 RawMemoryImport[ptr, "UnsignedInteger8"]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/RawMemoryImport.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/RawMemoryImport.html) for more details.

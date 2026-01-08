@@ -10,4 +10,4 @@ title: SymmetrizedIndependentComponents
 SymmetrizedIndependentComponents[{3, 3}, Symmetric[{1, 2}]]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/SymmetrizedIndependentComponents.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/SymmetrizedIndependentComponents.html) for more details.

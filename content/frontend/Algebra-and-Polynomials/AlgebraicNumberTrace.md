@@ -20,4 +20,4 @@ AlgebraicNumberTrace[Root[#^3 - 2 &, 1]]
 (* 0 *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/AlgebraicNumberTrace.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/AlgebraicNumberTrace.html) for more details.

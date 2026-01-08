@@ -26,4 +26,4 @@ g = HypercubeGraph[5];
 (* {32, 80} *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/HypercubeGraph.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/HypercubeGraph.html) for more details.

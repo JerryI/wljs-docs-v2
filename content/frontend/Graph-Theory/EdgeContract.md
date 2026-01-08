@@ -24,4 +24,4 @@ EdgeContract[CompleteGraph[4], {1 <-> 2, 3 <-> 4}]
 (* Graph with 2 vertices *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/EdgeContract.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/EdgeContract.html) for more details.

@@ -15,4 +15,4 @@ AsymptoticGreater[x^3, x^2, x -> Infinity]
 (* True *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/AsymptoticGreater.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/AsymptoticGreater.html) for more details.

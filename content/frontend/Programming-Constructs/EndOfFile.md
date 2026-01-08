@@ -19,4 +19,4 @@ Check for end of file:
 Read[stream] === EndOfFile
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/EndOfFile.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/EndOfFile.html) for more details.

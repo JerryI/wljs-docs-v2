@@ -26,4 +26,4 @@ Specify radius and standard deviation:
 LaplacianGaussianFilter[ExampleData[{"TestImage", "Peppers"}], {3, 1.5}]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/LaplacianGaussianFilter.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/LaplacianGaussianFilter.html) for more details.

@@ -11,4 +11,4 @@ dist = PascalDistribution[5, 0.3];
 Mean[dist]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/PascalDistribution.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/PascalDistribution.html) for more details.

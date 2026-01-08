@@ -14,4 +14,4 @@ UnionedEntityClass[EntityClass["Country", "G8"], EntityClass["Country", "BRICS"]
 UnionedEntityClass[class1, class2, class3]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/UnionedEntityClass.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/UnionedEntityClass.html) for more details.

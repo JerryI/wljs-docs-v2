@@ -22,4 +22,4 @@ Random[Integer, 100]
 Random[Real, {-1, 1}]
 ```
 
-*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Random.html) for more details.*
+*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Random.html) for more details.

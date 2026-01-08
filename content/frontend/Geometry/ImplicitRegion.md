@@ -19,4 +19,4 @@ RegionPlot[reg]
 ImplicitRegion[x^2 + y^2 + z^2 <= 1, {x, y, z}]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ImplicitRegion.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ImplicitRegion.html) for more details.

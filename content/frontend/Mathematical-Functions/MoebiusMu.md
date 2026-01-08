@@ -21,4 +21,4 @@ MoebiusMu[30]
 
 The Möbius function is 0 if n has a squared prime factor.
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/MoebiusMu.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/MoebiusMu.html) for more details.

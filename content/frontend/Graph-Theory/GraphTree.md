@@ -17,4 +17,4 @@ GraphTree[TreeGraph[{1 -> 2, 1 -> 3, 2 -> 4, 2 -> 5}]]
 GraphTree[TreeGraph[{a -> b, a -> c, b -> d}], a]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/GraphTree.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/GraphTree.html) for more details.

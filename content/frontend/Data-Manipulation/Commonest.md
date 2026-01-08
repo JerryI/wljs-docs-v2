@@ -22,4 +22,4 @@ Commonest[{a, b, a, c, a, b, c, c}, 2]
 (* {a, c} *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Commonest.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Commonest.html) for more details.

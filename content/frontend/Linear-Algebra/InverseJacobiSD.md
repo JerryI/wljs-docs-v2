@@ -14,4 +14,4 @@ InverseJacobiSD[0.5, 0.3]
 InverseJacobiSD[1, 0.5] // N
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/InverseJacobiSD.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/InverseJacobiSD.html) for more details.

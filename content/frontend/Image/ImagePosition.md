@@ -28,4 +28,4 @@ Cat positions:
 ImagePosition[img, Entity["Concept", "Cat::7x3bv"]]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ImagePosition.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ImagePosition.html) for more details.

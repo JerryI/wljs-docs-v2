@@ -24,4 +24,4 @@ Extract first element or default:
 (* 1 *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/BlankNullSequence.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/BlankNullSequence.html) for more details.

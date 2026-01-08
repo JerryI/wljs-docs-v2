@@ -16,4 +16,4 @@ Create an augmented symmetric polynomial:
 AugmentedSymmetricPolynomial[{2, 1}][{a, b, c}]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/AugmentedSymmetricPolynomial.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/AugmentedSymmetricPolynomial.html) for more details.

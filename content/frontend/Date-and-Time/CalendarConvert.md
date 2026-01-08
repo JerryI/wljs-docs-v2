@@ -20,4 +20,4 @@ Convert from Islamic calendar:
 CalendarConvert[DateObject[{1445, 1, 1}, CalendarType -> "Islamic"], "Gregorian"]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/CalendarConvert.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/CalendarConvert.html) for more details.

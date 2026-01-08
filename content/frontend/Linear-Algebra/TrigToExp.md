@@ -11,4 +11,4 @@ TrigToExp[Sin[x]]
 (* (E^(I x) - E^(-I x))/(2 I) *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/TrigToExp.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/TrigToExp.html) for more details.

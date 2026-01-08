@@ -22,4 +22,4 @@ AccountingForm[-1234.56]
 (* (1,234.56) *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/AccountingForm.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/AccountingForm.html) for more details.

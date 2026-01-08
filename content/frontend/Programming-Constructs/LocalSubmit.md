@@ -21,4 +21,4 @@ TaskWait[task]
 LocalSubmit[ScheduledTask[UpdateData[], Quantity[1, "Hours"]]]
 ```
 
-*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/LocalSubmit.html) for more details.*
+*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/LocalSubmit.html) for more details.

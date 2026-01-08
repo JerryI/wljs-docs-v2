@@ -20,4 +20,4 @@ Expand a periodic function:
 FourierTrigSeries[SquareWave[t], t, 5]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/FourierTrigSeries.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/FourierTrigSeries.html) for more details.

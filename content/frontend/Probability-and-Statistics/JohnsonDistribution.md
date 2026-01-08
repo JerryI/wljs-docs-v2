@@ -14,4 +14,4 @@ title: JohnsonDistribution
 PDF[JohnsonDistribution["SU", 0, 1, 0, 1], x]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/JohnsonDistribution.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/JohnsonDistribution.html) for more details.

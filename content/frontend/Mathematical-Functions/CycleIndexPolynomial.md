@@ -21,4 +21,4 @@ For a symmetric group:
 CycleIndexPolynomial[SymmetricGroup[3], {x1, x2, x3}]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/CycleIndexPolynomial.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/CycleIndexPolynomial.html) for more details.

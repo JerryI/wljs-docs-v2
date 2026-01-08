@@ -12,4 +12,4 @@ title: RandomPointConfiguration
 RandomPointConfiguration[PoissonPointProcess[1], Rectangle[]]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/RandomPointConfiguration.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/RandomPointConfiguration.html) for more details.

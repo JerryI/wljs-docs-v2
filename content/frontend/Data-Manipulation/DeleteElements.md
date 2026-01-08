@@ -20,4 +20,4 @@ DeleteElements[{a, a, a, b, b}, 1 -> {a}]
 (* {a, a, b, b} *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/DeleteElements.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/DeleteElements.html) for more details.

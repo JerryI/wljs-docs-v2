@@ -27,4 +27,4 @@ Specify both thresholds:
 MorphologicalBinarize[ExampleData[{"TestImage", "Peppers"}], {0.3, 0.7}]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/MorphologicalBinarize.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/MorphologicalBinarize.html) for more details.

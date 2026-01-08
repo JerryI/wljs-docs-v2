@@ -12,4 +12,4 @@ mask = DiskMatrix[20];
 Inpaint[img, mask]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Inpaint.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Inpaint.html) for more details.

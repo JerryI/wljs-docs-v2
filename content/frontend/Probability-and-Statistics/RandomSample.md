@@ -22,4 +22,4 @@ RandomSample[{a, b, c, d}]
 (* {c, a, d, b} *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/RandomSample.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/RandomSample.html) for more details.

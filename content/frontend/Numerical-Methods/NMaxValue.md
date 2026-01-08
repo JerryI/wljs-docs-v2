@@ -20,4 +20,4 @@ Maximum with constraints:
 NMaxValue[{x^2 + y^2, x + y <= 1}, {x, y}]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/NMaxValue.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/NMaxValue.html) for more details.

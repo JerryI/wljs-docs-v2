@@ -20,4 +20,4 @@ Dimensions[{a, b, c, d}]
 (* {4} *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Dimensions.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Dimensions.html) for more details.

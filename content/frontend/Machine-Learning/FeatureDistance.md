@@ -20,4 +20,4 @@ distFunc = FeatureDistance["Image"];
 distFunc[img1, img2]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/FeatureDistance.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/FeatureDistance.html) for more details.

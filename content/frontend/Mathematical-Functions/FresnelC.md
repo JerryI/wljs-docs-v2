@@ -19,4 +19,4 @@ Plot the function:
 Plot[FresnelC[x], {x, 0, 5}]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/FresnelC.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/FresnelC.html) for more details.

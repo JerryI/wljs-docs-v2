@@ -27,4 +27,4 @@ data = Table[Sin[2 Pi 5 t], {t, 0, 1, 0.01}];
 ListLinePlot[data KaiserWindow[Range[-50, 50]/100, 5]]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/KaiserWindow.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/KaiserWindow.html) for more details.

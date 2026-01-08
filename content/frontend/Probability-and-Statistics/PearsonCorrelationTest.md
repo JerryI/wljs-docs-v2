@@ -24,4 +24,4 @@ PearsonCorrelationTest[v1, v2, "PValue"]
 (* 0.0417 *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/PearsonCorrelationTest.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/PearsonCorrelationTest.html) for more details.

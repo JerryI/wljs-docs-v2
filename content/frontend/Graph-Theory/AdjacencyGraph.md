@@ -20,4 +20,4 @@ Create a named graph:
 AdjacencyGraph[{a, b, c}, {{0, 1, 0}, {1, 0, 1}, {0, 1, 0}}]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/AdjacencyGraph.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/AdjacencyGraph.html) for more details.

@@ -22,4 +22,4 @@ ReapVideo[Table[SowVideo[Plot[Sin[x + t], {x, 0, 2 Pi}]], {t, 0, 2 Pi, 0.1}]]
 SowVideo[frame, 5]  (* Repeat frame 5 times *)
 ```
 
-*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/SowVideo.html) for more details.*
+*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/SowVideo.html) for more details.

@@ -19,4 +19,4 @@ axioms = {ForAll[{x, y}, f[x, y] == f[y, x]]};
 FindEquationalProof[f[a, b] == f[b, a], axioms]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/FindEquationalProof.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/FindEquationalProof.html) for more details.

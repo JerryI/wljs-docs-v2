@@ -21,4 +21,4 @@ Mean[FrechetDistribution[3, 1]]
 (* Gamma[1 - 1/3] *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/FrechetDistribution.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/FrechetDistribution.html) for more details.

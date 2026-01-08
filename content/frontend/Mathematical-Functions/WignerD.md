@@ -17,4 +17,4 @@ WignerD[{2, 1, 0}, Pi/4]
 (* -Sqrt[3/8] *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/WignerD.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/WignerD.html) for more details.

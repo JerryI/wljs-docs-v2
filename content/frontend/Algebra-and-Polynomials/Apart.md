@@ -18,4 +18,4 @@ Apart[(x + 1)/(x (x + 2))]
 (* 1/(2 x) + 1/(2 (2 + x)) *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Apart.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Apart.html) for more details.

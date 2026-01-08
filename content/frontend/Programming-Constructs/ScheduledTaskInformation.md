@@ -20,4 +20,4 @@ ScheduledTaskInformation[cloudTask, "NextEvaluationTime"]
 ScheduledTaskInformation[task, "Status"]
 ```
 
-*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ScheduledTaskInformation.html) for more details.*
+*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ScheduledTaskInformation.html) for more details.

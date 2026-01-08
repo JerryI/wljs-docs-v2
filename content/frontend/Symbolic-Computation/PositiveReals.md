@@ -20,4 +20,4 @@ Simplify[Sqrt[x^2], x ∈ PositiveReals]
 (* x *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/PositiveReals.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/PositiveReals.html) for more details.

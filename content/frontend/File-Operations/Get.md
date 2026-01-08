@@ -19,4 +19,4 @@ Get["definitions.m"]
 (* last expression in file *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Get.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Get.html) for more details.

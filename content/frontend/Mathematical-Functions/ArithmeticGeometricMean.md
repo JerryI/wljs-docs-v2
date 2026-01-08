@@ -19,4 +19,4 @@ N[ArithmeticGeometricMean[1, 2]]
 (* 1.45679 *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ArithmeticGeometricMean.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ArithmeticGeometricMean.html) for more details.

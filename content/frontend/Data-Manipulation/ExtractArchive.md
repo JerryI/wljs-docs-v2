@@ -20,4 +20,4 @@ ExtractArchive["archive.tar.gz", "/tmp/extracted"]
 ExtractArchive["package.zip", "/tmp", "*.txt"]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ExtractArchive.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ExtractArchive.html) for more details.

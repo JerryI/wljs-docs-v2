@@ -20,4 +20,4 @@ LogicalExpand[Abs[x] < 1]
 (* -1 < x < 1 *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/LogicalExpand.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/LogicalExpand.html) for more details.

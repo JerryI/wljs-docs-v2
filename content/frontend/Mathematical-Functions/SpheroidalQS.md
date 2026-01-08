@@ -20,4 +20,4 @@ Plot[SpheroidalQS[2, 0, 1, x], {x, -1, 1}]
 N[SpheroidalQS[3, 1, 2, 0.3]]
 ```
 
-*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/SpheroidalQS.html) for more details.*
+*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/SpheroidalQS.html) for more details.

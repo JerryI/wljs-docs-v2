@@ -19,4 +19,4 @@ Filter directories from files:
 Select[FileNames["*"], DirectoryQ]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/DirectoryQ.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/DirectoryQ.html) for more details.

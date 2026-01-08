@@ -11,4 +11,4 @@ DifferenceRootReduce[Fibonacci[n], n]
 (* DifferenceRoot[...] *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/DifferenceRootReduce.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/DifferenceRootReduce.html) for more details.

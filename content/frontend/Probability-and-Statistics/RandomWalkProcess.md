@@ -12,4 +12,4 @@ title: RandomWalkProcess
 RandomFunction[RandomWalkProcess[0.5], {0, 100}]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/RandomWalkProcess.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/RandomWalkProcess.html) for more details.

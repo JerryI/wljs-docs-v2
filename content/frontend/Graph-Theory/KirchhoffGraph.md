@@ -16,4 +16,4 @@ KirchhoffGraph[{{2, -1, -1}, {-1, 2, -1}, {-1, -1, 2}}]
 KirchhoffGraph[KirchhoffMatrix[CompleteGraph[4]]]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/KirchhoffGraph.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/KirchhoffGraph.html) for more details.

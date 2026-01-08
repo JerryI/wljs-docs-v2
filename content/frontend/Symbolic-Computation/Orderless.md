@@ -21,4 +21,4 @@ Attributes[Plus]
 (* {Flat, Listable, NumericFunction, OneIdentity, Orderless, Protected} *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Orderless.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Orderless.html) for more details.

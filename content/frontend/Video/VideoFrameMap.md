@@ -14,4 +14,4 @@ title: VideoFrameMap
 VideoFrameMap[ImageAdjust, video]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/VideoFrameMap.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/VideoFrameMap.html) for more details.

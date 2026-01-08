@@ -17,4 +17,4 @@ Sample from the distribution:
 RandomVariate[NoncentralBetaDistribution[2, 5, 2], 10]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/NoncentralBetaDistribution.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/NoncentralBetaDistribution.html) for more details.

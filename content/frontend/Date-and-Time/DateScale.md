@@ -12,4 +12,4 @@ Create a date scale:
 DateScale[]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/DateScale.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/DateScale.html) for more details.

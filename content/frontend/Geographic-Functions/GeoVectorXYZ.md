@@ -10,4 +10,4 @@ title: GeoVectorXYZ
 
 `GeoVectorXYZ[vec]` represents a geo vector whose associated location has been implicitly specified.
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/GeoVectorXYZ.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/GeoVectorXYZ.html) for more details.

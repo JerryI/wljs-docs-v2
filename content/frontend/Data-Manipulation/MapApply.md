@@ -22,4 +22,4 @@ Plus @@@ {{1, 2}, {3, 4, 5}}
 (* {3, 12} *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/MapApply.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/MapApply.html) for more details.

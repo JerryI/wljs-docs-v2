@@ -16,4 +16,4 @@ title: JulianDate
 JulianDate[]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/JulianDate.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/JulianDate.html) for more details.

@@ -18,4 +18,4 @@ Use in debugging:
 f[x_] := (If[x < 0, Interrupt[]]; Sqrt[x])
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Interrupt.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Interrupt.html) for more details.

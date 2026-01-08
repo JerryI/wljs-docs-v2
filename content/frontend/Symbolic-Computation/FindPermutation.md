@@ -22,4 +22,4 @@ FindPermutation[{a, b, c}, {c, a, b}]
 (* Cycles[{{1, 3, 2}}] *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/FindPermutation.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/FindPermutation.html) for more details.

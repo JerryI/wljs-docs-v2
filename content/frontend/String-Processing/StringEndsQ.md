@@ -27,4 +27,4 @@ Select[{"file.txt", "image.png", "data.txt"}, StringEndsQ[".txt"]]
 (* {"file.txt", "data.txt"} *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/StringEndsQ.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/StringEndsQ.html) for more details.

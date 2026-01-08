@@ -16,4 +16,4 @@ RarerProbability[NormalDistribution[], 2]
 RarerProbability[PoissonDistribution[3], {0, 1, 5, 10}]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/RarerProbability.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/RarerProbability.html) for more details.

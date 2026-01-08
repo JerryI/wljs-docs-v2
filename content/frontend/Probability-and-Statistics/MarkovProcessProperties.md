@@ -23,4 +23,4 @@ MarkovProcessProperties[proc, "StationaryDistribution"]
 MarkovProcessProperties[proc, "CommunicatingClasses"]
 ```
 
-*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/MarkovProcessProperties.html) for more details.*
+*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/MarkovProcessProperties.html) for more details.

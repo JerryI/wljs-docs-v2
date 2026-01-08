@@ -20,4 +20,4 @@ Fit[data, {1, x, x^2}, x]
 (* 0.05 + 0.02 x + 1.0 x^2 *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Fit.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Fit.html) for more details.

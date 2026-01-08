@@ -22,4 +22,4 @@ Plot[PoissonWindow[x], {x, -1, 1}]
 Plot[PoissonWindow[x, 2], {x, -1, 1}]
 ```
 
-*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/PoissonWindow.html) for more details.*
+*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/PoissonWindow.html) for more details.

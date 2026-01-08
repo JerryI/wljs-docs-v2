@@ -17,4 +17,4 @@ PersistentValue["mykey"] = 42
 PersistentValue["mykey"]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/PersistentValue.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/PersistentValue.html) for more details.

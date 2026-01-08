@@ -20,4 +20,4 @@ Table[If[OddQ[n], n, Nothing], {n, 1, 6}]
 (* {1, 3, 5} *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Nothing.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Nothing.html) for more details.

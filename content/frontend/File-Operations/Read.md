@@ -24,4 +24,4 @@ Read specific type:
 Read[stream, Number]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Read.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Read.html) for more details.

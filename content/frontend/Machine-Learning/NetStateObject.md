@@ -21,4 +21,4 @@ stateObj[input]
 NetStateObject[LongShortTermMemoryLayer[10]]
 ```
 
-*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/NetStateObject.html) for more details.*
+*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/NetStateObject.html) for more details.

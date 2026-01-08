@@ -15,4 +15,4 @@ v2 = {5, 6, 7, 8, 7};
 SpearmanRankTest[v1, v2]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/SpearmanRankTest.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/SpearmanRankTest.html) for more details.

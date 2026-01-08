@@ -29,4 +29,4 @@ NoneTrue[PrimeQ][{4, 6, 8, 9}]
 (* True *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/NoneTrue.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/NoneTrue.html) for more details.

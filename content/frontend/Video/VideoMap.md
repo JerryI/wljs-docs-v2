@@ -14,4 +14,4 @@ title: VideoMap
 VideoMap[ImageAdjust, video]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/VideoMap.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/VideoMap.html) for more details.

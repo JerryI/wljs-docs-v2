@@ -22,4 +22,4 @@ FindSubgraphIsomorphism[PathGraph[{1, 2}], CompleteGraph[4], 3]
 (* Three edge mappings *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/FindSubgraphIsomorphism.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/FindSubgraphIsomorphism.html) for more details.

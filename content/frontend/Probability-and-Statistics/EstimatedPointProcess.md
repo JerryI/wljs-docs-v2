@@ -14,4 +14,4 @@ Estimate a Poisson point process:
 EstimatedPointProcess[data, PoissonPointProcess[λ]]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/EstimatedPointProcess.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/EstimatedPointProcess.html) for more details.

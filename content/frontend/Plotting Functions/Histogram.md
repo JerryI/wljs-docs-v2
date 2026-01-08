@@ -15,4 +15,4 @@ Histogram[RandomReal[1, 100]]
 Histogram[RandomVariate[NormalDistribution[], 1000], 20]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Histogram.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Histogram.html) for more details.

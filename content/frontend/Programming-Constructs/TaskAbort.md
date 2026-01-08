@@ -25,4 +25,4 @@ TaskAbort[task];
 TaskStatus[task]
 ```
 
-*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/TaskAbort.html) for more details.*
+*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/TaskAbort.html) for more details.

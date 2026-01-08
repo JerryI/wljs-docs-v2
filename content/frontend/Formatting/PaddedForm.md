@@ -26,4 +26,4 @@ Format table:
 Column[PaddedForm[#, {6, 2}] & /@ {1.5, 12.75, 123.456}]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/PaddedForm.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/PaddedForm.html) for more details.

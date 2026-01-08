@@ -20,4 +20,4 @@ SquaredEuclideanDistance[{0, 0}, {3, 4}]
 DistanceMatrix[data, DistanceFunction -> SquaredEuclideanDistance]
 ```
 
-*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/SquaredEuclideanDistance.html) for more details.*
+*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/SquaredEuclideanDistance.html) for more details.

@@ -17,4 +17,4 @@ LambdaComponents[Graph[{1 -> 2, 2 -> 3, 3 -> 1}]]
 LambdaComponents[PetersenGraph[5, 2]]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/LambdaComponents.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/LambdaComponents.html) for more details.

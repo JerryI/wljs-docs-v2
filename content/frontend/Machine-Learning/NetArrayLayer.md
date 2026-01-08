@@ -22,4 +22,4 @@ NetArrayLayer["Array" -> {1, 2, 3}]
 NetInitialize[NetArrayLayer["Output" -> {2, 3}]]
 ```
 
-*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/NetArrayLayer.html) for more details.*
+*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/NetArrayLayer.html) for more details.

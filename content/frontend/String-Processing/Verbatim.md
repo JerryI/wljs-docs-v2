@@ -27,4 +27,4 @@ Cases[{f[_], g[x], f[y]}, Verbatim[f[_]]]
 (* {f[_]} *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Verbatim.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Verbatim.html) for more details.

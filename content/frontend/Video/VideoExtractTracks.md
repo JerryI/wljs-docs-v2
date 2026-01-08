@@ -23,4 +23,4 @@ VideoExtractTracks[Video["ExampleData/Caminandes.mp4"], "Audio"]
 VideoExtractTracks[Video["ExampleData/Caminandes.mp4"], "Video"]
 ```
 
-*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/VideoExtractTracks.html) for more details.*
+*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/VideoExtractTracks.html) for more details.

@@ -24,4 +24,4 @@ FileNameTake["/path/to/file.txt", -2]
 (* "to/file.txt" *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/FileNameTake.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/FileNameTake.html) for more details.

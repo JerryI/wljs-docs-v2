@@ -28,4 +28,4 @@ Custom equivalence:
 UniqueElements[{{"A", "B"}, {"a", "c"}}, SameQ[ToLowerCase[#1], ToLowerCase[#2]] &]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/UniqueElements.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/UniqueElements.html) for more details.

@@ -19,4 +19,4 @@ Plot the function:
 Plot[SpheroidalS2[2, 0, 1, z], {z, 1, 3}]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/SpheroidalS2.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/SpheroidalS2.html) for more details.

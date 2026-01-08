@@ -27,4 +27,4 @@ List all properties:
 NetInformation[NetChain[{LinearLayer[10]}], "Properties"]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/NetInformation.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/NetInformation.html) for more details.

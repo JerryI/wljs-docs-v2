@@ -20,4 +20,4 @@ extractor[{img4, img5, img6}]
 extractor["FeatureTypes"]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/FeatureExtractorFunction.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/FeatureExtractorFunction.html) for more details.

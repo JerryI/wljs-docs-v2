@@ -30,4 +30,4 @@ Gamma[2, 1] // N
 (* 0.735759 *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Gamma.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Gamma.html) for more details.

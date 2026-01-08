@@ -13,4 +13,4 @@ Select[{3, 5, 7, 2, 8}, GreaterEqualThan[5]]
 (* {5, 7, 8} *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/GreaterEqualThan.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/GreaterEqualThan.html) for more details.

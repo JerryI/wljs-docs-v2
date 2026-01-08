@@ -14,4 +14,4 @@ URLQueryDecode["name=John&age=30"]
 URLQueryDecode["key=value%20with%20spaces"]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/URLQueryDecode.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/URLQueryDecode.html) for more details.

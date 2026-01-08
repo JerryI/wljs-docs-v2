@@ -15,4 +15,4 @@ rdist = ReliabilityDistribution[a && b, {{a, 0.9}, {b, 0.8}}];
 CriticalityFailureImportance[rdist, 1]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/CriticalityFailureImportance.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/CriticalityFailureImportance.html) for more details.

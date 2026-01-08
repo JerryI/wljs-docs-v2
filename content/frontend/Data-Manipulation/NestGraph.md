@@ -16,4 +16,4 @@ Create a graph by nesting a function:
 NestGraph[{# + 1, 2 #} &, 1, 4]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/NestGraph.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/NestGraph.html) for more details.

@@ -22,4 +22,4 @@ Read only the first 100 bytes:
 ReadByteArray["example.bin", 100]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ReadByteArray.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ReadByteArray.html) for more details.

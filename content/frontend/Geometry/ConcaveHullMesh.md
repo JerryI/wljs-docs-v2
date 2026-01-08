@@ -23,4 +23,4 @@ With a specified alpha parameter:
 ConcaveHullMesh[pts, 0.1]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ConcaveHullMesh.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ConcaveHullMesh.html) for more details.

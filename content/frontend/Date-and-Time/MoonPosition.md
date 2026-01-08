@@ -20,4 +20,4 @@ MoonPosition[]
 MoonPosition[DateObject[{2024, 1, 15}]]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/MoonPosition.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/MoonPosition.html) for more details.

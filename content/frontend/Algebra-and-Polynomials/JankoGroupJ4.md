@@ -13,4 +13,4 @@ GroupOrder[JankoGroupJ4[]]
 (* 86775571046077562880 *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/JankoGroupJ4.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/JankoGroupJ4.html) for more details.

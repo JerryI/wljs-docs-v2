@@ -22,4 +22,4 @@ RankedMin[{3, 1, 4, 1, 5, 9, 2, 6}, -3]
 (* 5 *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/RankedMin.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/RankedMin.html) for more details.

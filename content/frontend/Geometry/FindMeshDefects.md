@@ -21,4 +21,4 @@ FindMeshDefects[mesh, {"DegenerateCell", "SelfIntersection"}]
 FindMeshDefects[mesh, All, "Association"]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/FindMeshDefects.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/FindMeshDefects.html) for more details.

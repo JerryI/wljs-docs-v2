@@ -30,4 +30,4 @@ Sunrise on a specific date:
 Sunrise[Here, DateObject[{2024, 6, 21}]]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Sunrise.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Sunrise.html) for more details.

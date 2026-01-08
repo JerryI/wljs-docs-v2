@@ -24,4 +24,4 @@ Missing values propagate through computations:
 (* {2, 3, Missing[], 5} *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Missing.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Missing.html) for more details.

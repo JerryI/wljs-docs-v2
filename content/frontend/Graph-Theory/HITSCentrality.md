@@ -18,4 +18,4 @@ For a web-like graph:
 HITSCentrality[DirectedGraph[RandomGraph[{10, 20}]]]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/HITSCentrality.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/HITSCentrality.html) for more details.

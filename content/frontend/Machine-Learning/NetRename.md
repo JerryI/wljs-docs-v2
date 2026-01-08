@@ -16,4 +16,4 @@ net = NetChain[{LinearLayer[10], Ramp}, "layer1", "layer2"];
 NetRename[net, "layer1" -> "input_layer"]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/NetRename.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/NetRename.html) for more details.

@@ -19,4 +19,4 @@ Query multiple asteroids:
 MinorPlanetData[{Entity["MinorPlanet", "Ceres"], Entity["MinorPlanet", "Vesta"]}, "Mass"]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/MinorPlanetData.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/MinorPlanetData.html) for more details.

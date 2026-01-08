@@ -24,4 +24,4 @@ Time value with compound interest:
 TimeValue[1000, EffectiveInterest[.06, 12], 5]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/TimeValue.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/TimeValue.html) for more details.

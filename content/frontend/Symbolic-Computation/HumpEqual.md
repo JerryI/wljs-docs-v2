@@ -14,4 +14,4 @@ HumpEqual[a, b]
 HumpEqual[x, y, z]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/HumpEqual.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/HumpEqual.html) for more details.

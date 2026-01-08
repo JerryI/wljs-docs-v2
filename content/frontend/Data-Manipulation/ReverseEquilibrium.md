@@ -11,4 +11,4 @@ ReverseEquilibrium[a, b]
 (* a ⇋ b *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ReverseEquilibrium.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ReverseEquilibrium.html) for more details.

@@ -17,4 +17,4 @@ SubsetPosition[{a, b, c, d, e}, {b, d}]
 SubsetPosition[{1, 2, 3, 4, 5}, {2, 4}, 1]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/SubsetPosition.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/SubsetPosition.html) for more details.

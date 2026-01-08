@@ -20,4 +20,4 @@ Det[{{1, 2, 3}, {4, 5, 6}, {7, 8, 9}}]
 (* 0 *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Det.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Det.html) for more details.

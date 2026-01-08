@@ -20,4 +20,4 @@ Import["model.onnx", "NetExternalObject"]
 NetImport["external_model.onnx"]
 ```
 
-*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/NetExternalObject.html) for more details.*
+*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/NetExternalObject.html) for more details.

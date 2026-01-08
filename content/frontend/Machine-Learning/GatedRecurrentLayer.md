@@ -20,4 +20,4 @@ Use in a neural network:
 NetChain[{GatedRecurrentLayer[32], LinearLayer[10]}]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/GatedRecurrentLayer.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/GatedRecurrentLayer.html) for more details.

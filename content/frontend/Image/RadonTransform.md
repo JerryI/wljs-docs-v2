@@ -16,4 +16,4 @@ Transform a rectangle function:
 RadonTransform[Boole[Abs[x] < 1 && Abs[y] < 1], {x, y}, {p, phi}]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/RadonTransform.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/RadonTransform.html) for more details.

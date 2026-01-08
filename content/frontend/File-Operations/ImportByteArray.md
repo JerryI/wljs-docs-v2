@@ -17,4 +17,4 @@ ImportByteArray[ByteArray[{72, 101, 108, 108, 111}], "Text"]
 ImportByteArray[ExportByteArray[{1, 2, 3}, "JSON"], "JSON"]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ImportByteArray.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ImportByteArray.html) for more details.

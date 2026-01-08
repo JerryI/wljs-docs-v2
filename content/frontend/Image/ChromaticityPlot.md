@@ -22,4 +22,4 @@ Plot specific colors:
 ChromaticityPlot[{Red, Green, Blue}]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ChromaticityPlot.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ChromaticityPlot.html) for more details.

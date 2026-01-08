@@ -17,4 +17,4 @@ FindEdgeIndependentPaths[g, 1, 4, 2]
 FindEdgeIndependentPaths[g, 1, 4, Infinity]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/FindEdgeIndependentPaths.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/FindEdgeIndependentPaths.html) for more details.

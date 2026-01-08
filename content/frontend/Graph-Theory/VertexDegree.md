@@ -28,4 +28,4 @@ VertexDegree[CompleteGraph[5]]
 (* {4, 4, 4, 4, 4} *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/VertexDegree.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/VertexDegree.html) for more details.

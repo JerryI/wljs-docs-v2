@@ -14,4 +14,4 @@ title: MeanShift
 MeanShift[{1, 2, 3, 10, 11, 12}, 2]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/MeanShift.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/MeanShift.html) for more details.

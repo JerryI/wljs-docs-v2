@@ -23,4 +23,4 @@ QuadraticOptimization[(x - 1)^2 + (y - 2)^2, {x >= 0, y >= 0}, {x, y}]
 QuadraticOptimization[{{{2, 0}, {0, 2}}, {-1, -1}}, {{{1, 1}}, {-1}}]
 ```
 
-*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/QuadraticOptimization.html) for more details.*
+*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/QuadraticOptimization.html) for more details.

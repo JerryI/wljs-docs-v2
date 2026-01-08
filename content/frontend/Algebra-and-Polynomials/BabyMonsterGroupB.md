@@ -12,4 +12,4 @@ Get the order of the baby monster group:
 GroupOrder[BabyMonsterGroupB[]]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/BabyMonsterGroupB.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/BabyMonsterGroupB.html) for more details.

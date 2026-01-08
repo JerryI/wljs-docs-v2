@@ -24,4 +24,4 @@ Echo[{1, 2, 3}, "value: "]
 (* prints: value: {1, 2, 3} *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Echo.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Echo.html) for more details.

@@ -20,4 +20,4 @@ PrimePi[1000]
 (* 168 *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/PrimePi.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/PrimePi.html) for more details.

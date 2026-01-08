@@ -22,4 +22,4 @@ MantissaExponent[8, 2]
 (* {0.5, 4} *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/MantissaExponent.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/MantissaExponent.html) for more details.

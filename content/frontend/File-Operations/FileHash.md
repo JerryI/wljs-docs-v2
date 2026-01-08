@@ -27,4 +27,4 @@ As hexadecimal string:
 FileHash["document.txt", "MD5", "HexString"]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/FileHash.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/FileHash.html) for more details.

@@ -10,4 +10,4 @@ title: NContourIntegrate
 NContourIntegrate[1/z, z \[Element] Circle[]]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/NContourIntegrate.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/NContourIntegrate.html) for more details.

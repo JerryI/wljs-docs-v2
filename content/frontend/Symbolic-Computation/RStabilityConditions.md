@@ -24,4 +24,4 @@ RStabilityConditions[{x[n + 1] == x[n] + y[n], y[n + 1] == x[n]*y[n]},
   {x[n], y[n]}, n]
 ```
 
-*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/RStabilityConditions.html) for more details.*
+*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/RStabilityConditions.html) for more details.

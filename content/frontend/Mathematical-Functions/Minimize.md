@@ -20,4 +20,4 @@ Minimize[{x + y, x >= 0, y >= 0, x + y >= 1}, {x, y}]
 (* {1, {x -> 0, y -> 1}} *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Minimize.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Minimize.html) for more details.

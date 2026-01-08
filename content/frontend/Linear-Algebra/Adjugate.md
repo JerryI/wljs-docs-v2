@@ -21,4 +21,4 @@ Adjugate[m] == Det[m] * Inverse[m]
 (* True *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Adjugate.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Adjugate.html) for more details.

@@ -16,4 +16,4 @@ SymmetrizedArray[{{1, 2} -> a, {2, 1} -> a}, {3, 3}, Symmetric[{1, 2}]]
 SymmetrizedArray[{{1, 0}, {0, 1}}]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/SymmetrizedArray.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/SymmetrizedArray.html) for more details.

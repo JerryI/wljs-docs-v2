@@ -13,4 +13,4 @@ WeierstrassHalfPeriodW3[{1, 0}]
 (* 1.8541 + 1.8541 I *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/WeierstrassHalfPeriodW3.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/WeierstrassHalfPeriodW3.html) for more details.

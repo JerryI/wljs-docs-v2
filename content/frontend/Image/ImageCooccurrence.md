@@ -14,4 +14,4 @@ Compute a 256×256 co-occurrence matrix for an image:
 ImageCooccurrence[img, 256]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ImageCooccurrence.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ImageCooccurrence.html) for more details.

@@ -26,4 +26,4 @@ FiniteGroupData["McLaughlinGroup", "SimpleGroupQ"]
 (* True *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/McLaughlinGroupMcL.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/McLaughlinGroupMcL.html) for more details.

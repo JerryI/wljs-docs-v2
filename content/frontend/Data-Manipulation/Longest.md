@@ -21,4 +21,4 @@ Compare with Shortest:
 (* {{"aabbc"}, {"abc"}} *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Longest.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Longest.html) for more details.

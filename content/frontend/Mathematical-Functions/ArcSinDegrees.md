@@ -20,4 +20,4 @@ ArcSinDegrees[1]
 (* 90 *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ArcSinDegrees.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ArcSinDegrees.html) for more details.

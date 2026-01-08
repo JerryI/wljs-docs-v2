@@ -24,4 +24,4 @@ MinimalBy[{"a", "bb", "ccc", "dd"}, StringLength]
 (* {"a"} *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/MinimalBy.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/MinimalBy.html) for more details.

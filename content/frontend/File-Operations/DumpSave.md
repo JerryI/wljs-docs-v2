@@ -26,4 +26,4 @@ f[3]
 (* 9 *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/DumpSave.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/DumpSave.html) for more details.

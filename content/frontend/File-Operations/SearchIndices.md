@@ -10,4 +10,4 @@ title: SearchIndices
 SearchIndices[]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/SearchIndices.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/SearchIndices.html) for more details.

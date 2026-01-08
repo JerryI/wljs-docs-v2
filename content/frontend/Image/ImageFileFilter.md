@@ -14,4 +14,4 @@ ImageFileFilter[Mean, "input.png", 2, "output.png"]
 ImageFileFilter[Max, "image.tiff", 3, "filtered.tiff"]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ImageFileFilter.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ImageFileFilter.html) for more details.

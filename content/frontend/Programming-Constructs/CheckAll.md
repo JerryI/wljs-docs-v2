@@ -13,4 +13,4 @@ CheckAll[Throw[5], List]
 (* {Null, HoldComplete[Throw[5]]} *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/CheckAll.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/CheckAll.html) for more details.

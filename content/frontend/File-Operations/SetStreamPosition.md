@@ -26,4 +26,4 @@ SetStreamPosition[stream, 50];
 ReadLine[stream]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/SetStreamPosition.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/SetStreamPosition.html) for more details.

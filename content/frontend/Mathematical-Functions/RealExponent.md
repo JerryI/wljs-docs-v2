@@ -20,4 +20,4 @@ RealExponent[8, 2]
 RealExponent[100, 10]
 ```
 
-*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/RealExponent.html) for more details.*
+*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/RealExponent.html) for more details.

@@ -23,4 +23,4 @@ InverseImagePyramid[pyramid, "Gaussian", 3]
 InverseImagePyramid[pyr, "Laplacian", {256, 256}]
 ```
 
-*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/InverseImagePyramid.html) for more details.*
+*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/InverseImagePyramid.html) for more details.

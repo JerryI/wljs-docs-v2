@@ -20,4 +20,4 @@ N[BesselJZero[1, 2]]
 (* 7.01559 *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/BesselJZero.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/BesselJZero.html) for more details.

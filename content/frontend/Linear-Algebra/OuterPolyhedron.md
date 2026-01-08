@@ -14,4 +14,4 @@ OuterPolyhedron[PolyhedronData["Icosahedron"]]
 Graphics3D[OuterPolyhedron[PolyhedronData["Dodecahedron"]]]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/OuterPolyhedron.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/OuterPolyhedron.html) for more details.

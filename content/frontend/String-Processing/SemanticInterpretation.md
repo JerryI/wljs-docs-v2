@@ -17,4 +17,4 @@ SemanticInterpretation["population of France"]
 SemanticInterpretation["5 feet 10 inches", _Quantity]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/SemanticInterpretation.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/SemanticInterpretation.html) for more details.

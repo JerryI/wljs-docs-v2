@@ -22,4 +22,4 @@ BinCounts[{0.1, 0.5, 1.2, 1.8, 2.5}, 1]
 (* {2, 2, 1} *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/BinCounts.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/BinCounts.html) for more details.

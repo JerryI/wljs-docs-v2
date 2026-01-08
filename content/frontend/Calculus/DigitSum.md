@@ -19,4 +19,4 @@ DigitSum[12345]
 (* 15 *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/DigitSum.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/DigitSum.html) for more details.

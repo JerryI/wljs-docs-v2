@@ -16,4 +16,4 @@ Check if a date is a Monday:
 DayName[DateObject[{2024, 1, 1}]] === Monday
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Monday.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Monday.html) for more details.

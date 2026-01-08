@@ -16,4 +16,4 @@ Compute a partial Bell polynomial:
 BellY[3, 2, {x1, x2}]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/BellY.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/BellY.html) for more details.

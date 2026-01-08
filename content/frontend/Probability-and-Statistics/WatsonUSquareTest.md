@@ -22,4 +22,4 @@ Get the p-value:
 WatsonUSquareTest[RandomReal[1, 100], UniformDistribution[], "PValue"]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/WatsonUSquareTest.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/WatsonUSquareTest.html) for more details.

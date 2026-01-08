@@ -21,4 +21,4 @@ Apply to multiple images:
 ImageApply[Mean, {img, ColorNegate[img]}]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ImageApply.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ImageApply.html) for more details.

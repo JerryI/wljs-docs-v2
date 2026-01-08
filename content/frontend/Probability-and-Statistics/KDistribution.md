@@ -17,4 +17,4 @@ Sample from the distribution:
 RandomVariate[KDistribution[3, 2], 10]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/KDistribution.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/KDistribution.html) for more details.

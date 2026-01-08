@@ -14,4 +14,4 @@ GraphSum[PathGraph[{1, 2, 3}], PathGraph[{a, b, c}]]
 GraphSum[CycleGraph[4], CycleGraph[3]]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/GraphSum.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/GraphSum.html) for more details.

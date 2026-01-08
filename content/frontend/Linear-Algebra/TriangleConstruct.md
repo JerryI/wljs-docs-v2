@@ -25,4 +25,4 @@ Incircle:
 TriangleConstruct[tri, "Incircle"]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/TriangleConstruct.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/TriangleConstruct.html) for more details.

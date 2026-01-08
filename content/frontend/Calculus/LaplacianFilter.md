@@ -16,4 +16,4 @@ LaplacianFilter[ExampleData[{"TestImage", "Lena"}], 2]
 LaplacianFilter[{1, 2, 5, 2, 1}, 1]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/LaplacianFilter.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/LaplacianFilter.html) for more details.

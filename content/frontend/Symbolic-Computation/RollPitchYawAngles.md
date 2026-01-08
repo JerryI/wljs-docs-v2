@@ -18,4 +18,4 @@ Specify rotation order:
 RollPitchYawAngles[rotMatrix, {3, 2, 1}]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/RollPitchYawAngles.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/RollPitchYawAngles.html) for more details.

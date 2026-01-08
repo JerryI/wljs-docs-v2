@@ -22,4 +22,4 @@ Plot[HannPoissonWindow[x], {x, -1, 1}]
 Plot[HannPoissonWindow[x, 2], {x, -1, 1}]
 ```
 
-*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/HannPoissonWindow.html) for more details.*
+*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/HannPoissonWindow.html) for more details.

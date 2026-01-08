@@ -17,4 +17,4 @@ VandermondeMatrix[{1, 2, 3}]
 VandermondeMatrix[{a, b, c, d}, 3]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/VandermondeMatrix.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/VandermondeMatrix.html) for more details.

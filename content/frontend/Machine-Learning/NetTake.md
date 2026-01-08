@@ -20,4 +20,4 @@ NetTake[net, {"input", "conv3"}]
 NetTake[NetModel["ResNet-50"], {1, 10}]
 ```
 
-*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/NetTake.html) for more details.*
+*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/NetTake.html) for more details.

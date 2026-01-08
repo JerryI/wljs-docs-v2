@@ -13,4 +13,4 @@ obj = ActiveClassification[If[# > 0.5, "A", "B"] &, {0.1, 0.9}];
 obj["TrainingExamples"]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ActiveClassificationObject.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ActiveClassificationObject.html) for more details.

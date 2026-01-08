@@ -27,4 +27,4 @@ With granularity:
 MaxDate[DateInterval[{DateObject[{2020, 1}], DateObject[{2023, 6}]}], "Month"]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/MaxDate.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/MaxDate.html) for more details.

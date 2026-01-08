@@ -16,4 +16,4 @@ Perform active prediction on a region:
 predictor = ActivePrediction[Sin[#] &, {0, Pi, 2 Pi}]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ActivePrediction.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ActivePrediction.html) for more details.

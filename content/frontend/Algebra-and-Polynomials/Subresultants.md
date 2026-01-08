@@ -12,4 +12,4 @@ title: Subresultants
 Subresultants[x^3 + 2 x + 1, x^2 - 1, x]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Subresultants.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Subresultants.html) for more details.

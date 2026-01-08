@@ -14,4 +14,4 @@ f[1 + 1, 2 + 2]
 (* f[2, 2 + 2] *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/HoldRest.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/HoldRest.html) for more details.

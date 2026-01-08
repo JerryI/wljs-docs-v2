@@ -13,4 +13,4 @@ ts = TimeSeries[{1, 2, 3, 4}, {0, 3}];
 TimeSeriesMapThread[{#1, #2^2} &, ts]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/TimeSeriesMapThread.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/TimeSeriesMapThread.html) for more details.

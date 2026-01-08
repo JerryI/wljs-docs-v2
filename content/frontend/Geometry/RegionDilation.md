@@ -23,4 +23,4 @@ RegionDilation[Rectangle[], 0.2] // RegionPlot
 RegionDilation[Point[{0, 0}], Disk[]]
 ```
 
-*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/RegionDilation.html) for more details.*
+*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/RegionDilation.html) for more details.

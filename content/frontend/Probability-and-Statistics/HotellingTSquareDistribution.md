@@ -15,4 +15,4 @@ Mean[dist]
 PDF[HotellingTSquareDistribution[2, 5], x]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/HotellingTSquareDistribution.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/HotellingTSquareDistribution.html) for more details.

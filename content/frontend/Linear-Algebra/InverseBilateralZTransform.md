@@ -16,4 +16,4 @@ InverseBilateralZTransform[z/(z - 1), z, n]
 InverseBilateralZTransform[1/(z - 2), z, n]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/InverseBilateralZTransform.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/InverseBilateralZTransform.html) for more details.

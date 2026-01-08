@@ -20,4 +20,4 @@ Roots[x^3 - 1 == 0, x]
 (* x == 1 || x == -1/2 - I Sqrt[3]/2 || x == -1/2 + I Sqrt[3]/2 *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Roots.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Roots.html) for more details.

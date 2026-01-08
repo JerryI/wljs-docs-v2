@@ -22,4 +22,4 @@ CompleteKaryTree[3, 3]
 (* Graph[...] *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/CompleteKaryTree.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/CompleteKaryTree.html) for more details.

@@ -18,4 +18,4 @@ RepeatedTiming[Prime[10000], 1]
 (* {2.3*10^-6, 104729} *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/RepeatedTiming.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/RepeatedTiming.html) for more details.

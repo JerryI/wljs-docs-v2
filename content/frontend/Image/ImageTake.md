@@ -21,4 +21,4 @@ Extract a region:
 ImageTake[img, {100, 200}, {150, 300}]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ImageTake.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ImageTake.html) for more details.

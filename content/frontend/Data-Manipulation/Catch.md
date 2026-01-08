@@ -22,4 +22,4 @@ Catch[Throw[42, "myTag"], "myTag"]
 (* 42 *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Catch.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Catch.html) for more details.

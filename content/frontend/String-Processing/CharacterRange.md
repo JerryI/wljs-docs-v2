@@ -22,4 +22,4 @@ CharacterRange[97, 102]
 (* {"a", "b", "c", "d", "e", "f"} *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/CharacterRange.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/CharacterRange.html) for more details.

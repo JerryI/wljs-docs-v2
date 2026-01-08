@@ -16,4 +16,4 @@ NetGANOperator[{generatorNet, discriminatorNet}]
 NetGANOperator[{gen, disc}, "WassersteinLoss"]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/NetGANOperator.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/NetGANOperator.html) for more details.

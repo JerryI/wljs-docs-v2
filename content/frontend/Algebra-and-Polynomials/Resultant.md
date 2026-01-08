@@ -20,4 +20,4 @@ Resultant[a*x + b, c*x + d, x]
 (* a d - b c *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Resultant.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Resultant.html) for more details.

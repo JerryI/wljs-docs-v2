@@ -20,4 +20,4 @@ Table[MersennePrimeExponent[n], {n, 1, 5}]
 (* {2, 3, 5, 7, 13} *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/MersennePrimeExponent.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/MersennePrimeExponent.html) for more details.

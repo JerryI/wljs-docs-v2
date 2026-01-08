@@ -21,4 +21,4 @@ task = PacletInstallSubmit["PackageName"];
 PacletInstall[task]
 ```
 
-*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/PacletInstall.html) for more details.*
+*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/PacletInstall.html) for more details.

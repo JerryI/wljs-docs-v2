@@ -14,4 +14,4 @@ Bilateral Laplace transform:
 BilateralLaplaceTransform[Exp[-Abs[t]], t, s]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/BilateralLaplaceTransform.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/BilateralLaplaceTransform.html) for more details.

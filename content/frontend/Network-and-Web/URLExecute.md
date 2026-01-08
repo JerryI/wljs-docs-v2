@@ -23,4 +23,4 @@ URLExecute["https://httpbin.org/post", {"key" -> "value"}, "JSON"]
 (* <|"data" -> ...|> *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/URLExecute.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/URLExecute.html) for more details.

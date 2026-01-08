@@ -24,4 +24,4 @@ DeBruijnSequence["ab", 2]
 (* {"a", "a", "b", "b"} *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/DeBruijnSequence.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/DeBruijnSequence.html) for more details.

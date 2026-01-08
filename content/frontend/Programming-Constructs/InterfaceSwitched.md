@@ -18,4 +18,4 @@ Switch on parameter:
 InterfaceSwitched["Theme", <|"Light" -> lightStyle, "Dark" -> darkStyle|>]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/InterfaceSwitched.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/InterfaceSwitched.html) for more details.

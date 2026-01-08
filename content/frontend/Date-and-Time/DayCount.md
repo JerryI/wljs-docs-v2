@@ -22,4 +22,4 @@ DayCount[{2020, 1, 1}, {2020, 1, 31}, "BusinessDay"]
 (* 22 *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/DayCount.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/DayCount.html) for more details.

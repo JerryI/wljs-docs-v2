@@ -23,4 +23,4 @@ Multiply while less than 100:
 FoldWhileList[Times, 1, Range[10], # < 100 &]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/FoldWhileList.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/FoldWhileList.html) for more details.

@@ -20,4 +20,4 @@ SolveAlways[a + b x + c x^2 == 3 + 2 x - x^2, x]
 (* {{a -> 3, b -> 2, c -> -1}} *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/SolveAlways.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/SolveAlways.html) for more details.

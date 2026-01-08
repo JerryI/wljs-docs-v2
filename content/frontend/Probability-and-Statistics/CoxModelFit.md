@@ -22,4 +22,4 @@ data = {{{0.5}, {1.2}, {0.8}}, {1, 2, 3}};
 CoxModelFit[data, x, {x}]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/CoxModelFit.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/CoxModelFit.html) for more details.

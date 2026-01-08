@@ -26,4 +26,4 @@ Table[i*j, {i, 3}, {j, 3}]
 (* {{1, 2, 3}, {2, 4, 6}, {3, 6, 9}} *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Table.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Table.html) for more details.

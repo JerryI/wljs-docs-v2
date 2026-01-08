@@ -21,4 +21,4 @@ Polar transformation:
 ImageForwardTransformation[img, {Norm[#], ArcTan @@ #} &, {256, 256}]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ImageForwardTransformation.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ImageForwardTransformation.html) for more details.

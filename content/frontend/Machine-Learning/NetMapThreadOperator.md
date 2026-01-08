@@ -24,4 +24,4 @@ net[RandomReal[1, {4, 10}]]
 NetMapThreadOperator[ElementwiseLayer["ReLU"], 2]
 ```
 
-*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/NetMapThreadOperator.html) for more details.*
+*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/NetMapThreadOperator.html) for more details.

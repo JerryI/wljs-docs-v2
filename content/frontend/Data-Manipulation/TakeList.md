@@ -17,4 +17,4 @@ TakeList[{a, b, c, d, e, f, g}, {2, 3, 2}]
 (* {{a, b}, {c, d, e}, {f, g}} *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/TakeList.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/TakeList.html) for more details.

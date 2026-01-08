@@ -12,4 +12,4 @@ Write[stream, "test data"];
 Close[stream]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/OpenTemporary.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/OpenTemporary.html) for more details.

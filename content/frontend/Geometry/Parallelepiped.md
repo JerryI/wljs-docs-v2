@@ -18,4 +18,4 @@ Graphics3D[Parallelepiped[{0, 0, 0}, {{1, 0, 0}, {0.5, 1, 0}, {0, 0.5, 1}}]]
 Graphics[Parallelepiped[{0, 0}, {{1, 0}, {0.5, 1}}]]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Parallelepiped.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Parallelepiped.html) for more details.

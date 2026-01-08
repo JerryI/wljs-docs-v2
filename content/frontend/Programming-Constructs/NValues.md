@@ -19,4 +19,4 @@ N[myConst] ^= 2.71828;
 NValues[myConst]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/NValues.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/NValues.html) for more details.

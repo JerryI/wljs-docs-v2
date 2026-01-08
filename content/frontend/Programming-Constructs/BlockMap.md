@@ -24,4 +24,4 @@ BlockMap[Total, {1, 2, 3, 4, 5, 6}, 2]
 (* {3, 7, 11} *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/BlockMap.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/BlockMap.html) for more details.

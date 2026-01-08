@@ -18,4 +18,4 @@ Union of rectangles:
 RegionUnion[Rectangle[{0, 0}, {1, 1}], Rectangle[{0.5, 0.5}, {1.5, 1.5}]]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/RegionUnion.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/RegionUnion.html) for more details.

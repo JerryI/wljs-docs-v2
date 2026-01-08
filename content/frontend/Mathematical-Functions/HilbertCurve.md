@@ -16,4 +16,4 @@ Graphics[HilbertCurve[3]]
 Graphics3D[HilbertCurve[2, 3]]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/HilbertCurve.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/HilbertCurve.html) for more details.

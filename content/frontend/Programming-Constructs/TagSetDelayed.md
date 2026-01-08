@@ -22,4 +22,4 @@ bar[foo]
 (* "result" *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/TagSetDelayed.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/TagSetDelayed.html) for more details.

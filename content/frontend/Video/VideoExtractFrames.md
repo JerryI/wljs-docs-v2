@@ -14,4 +14,4 @@ Extract a frame at 5 seconds:
 VideoExtractFrames[video, Quantity[5, "Seconds"]]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/VideoExtractFrames.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/VideoExtractFrames.html) for more details.

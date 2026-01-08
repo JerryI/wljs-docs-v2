@@ -20,4 +20,4 @@ Flow polynomial of a complete graph:
 FlowPolynomial[CompleteGraph[4], k]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/FlowPolynomial.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/FlowPolynomial.html) for more details.

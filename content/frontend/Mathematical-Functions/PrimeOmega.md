@@ -20,4 +20,4 @@ PrimeOmega[100]
 (* 4 - because 100 = 2^2 * 5^2 *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/PrimeOmega.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/PrimeOmega.html) for more details.

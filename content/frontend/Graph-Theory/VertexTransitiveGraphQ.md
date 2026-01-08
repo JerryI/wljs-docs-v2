@@ -20,4 +20,4 @@ VertexTransitiveGraphQ[CycleGraph[6]]
 VertexTransitiveGraphQ[PathGraph[{1, 2, 3}]]
 ```
 
-*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/VertexTransitiveGraphQ.html) for more details.*
+*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/VertexTransitiveGraphQ.html) for more details.

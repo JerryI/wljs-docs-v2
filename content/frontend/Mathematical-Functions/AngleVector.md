@@ -24,4 +24,4 @@ AngleVector[{3, Pi/6}]
 (* {3 Sqrt[3]/2, 3/2} *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/AngleVector.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/AngleVector.html) for more details.

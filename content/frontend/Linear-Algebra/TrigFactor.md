@@ -20,4 +20,4 @@ TrigFactor[Cos[x] - Cos[y]]
 (* -2 Sin[(x - y)/2] Sin[(x + y)/2] *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/TrigFactor.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/TrigFactor.html) for more details.

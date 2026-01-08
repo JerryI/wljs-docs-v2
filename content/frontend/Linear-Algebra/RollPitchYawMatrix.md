@@ -14,4 +14,4 @@ Create a rotation matrix with specified angles:
 RollPitchYawMatrix[{Pi/4, Pi/6, Pi/3}]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/RollPitchYawMatrix.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/RollPitchYawMatrix.html) for more details.

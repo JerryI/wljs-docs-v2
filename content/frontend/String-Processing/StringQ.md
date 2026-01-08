@@ -25,4 +25,4 @@ Select[{1, "a", 2, "b"}, StringQ]
 (* {"a", "b"} *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/StringQ.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/StringQ.html) for more details.

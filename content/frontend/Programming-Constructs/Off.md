@@ -27,4 +27,4 @@ Turn back on with On:
 On[General::spell1]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Off.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Off.html) for more details.

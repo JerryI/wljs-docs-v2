@@ -21,4 +21,4 @@ Outer[Times, {1, 2}, {3, 4}]
 (* {{3, 4}, {6, 8}} *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Outer.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Outer.html) for more details.

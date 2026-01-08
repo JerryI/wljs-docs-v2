@@ -24,4 +24,4 @@ Animate the curve development:
 Table[Graphics[SierpinskiCurve[n]], {n, 1, 6}]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/SierpinskiCurve.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/SierpinskiCurve.html) for more details.

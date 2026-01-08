@@ -17,4 +17,4 @@ SurfaceArea[Sphere[]]
 SurfaceArea[Cylinder[{{0, 0, 0}, {0, 0, 1}}, 1]]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/SurfaceArea.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/SurfaceArea.html) for more details.

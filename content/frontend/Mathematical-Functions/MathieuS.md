@@ -16,4 +16,4 @@ Plot the function:
 Plot[MathieuS[1, 2, z], {z, 0, 2 Pi}]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/MathieuS.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/MathieuS.html) for more details.

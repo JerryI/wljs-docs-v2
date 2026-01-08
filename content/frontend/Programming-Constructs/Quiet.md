@@ -21,4 +21,4 @@ Suppress specific messages:
 Quiet[Log[-1], {Log::argx}]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Quiet.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Quiet.html) for more details.

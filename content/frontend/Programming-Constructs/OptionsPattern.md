@@ -14,4 +14,4 @@ f[x_, opts : OptionsPattern[{a -> 1}]] := {x, OptionValue[a]}
 f[5, a -> 10]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/OptionsPattern.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/OptionsPattern.html) for more details.

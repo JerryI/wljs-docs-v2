@@ -15,4 +15,4 @@ data = Table[x^2 + y^2 - z^2, {x, -1, 1, 0.1}, {y, -1, 1, 0.1}, {z, -1, 1, 0.1}]
 ListContourPlot3D[data]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ListContourPlot3D.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ListContourPlot3D.html) for more details.

@@ -22,4 +22,4 @@ NExpectation[x + y, {x \[Distributed] UniformDistribution[], y \[Distributed] Un
 (* 1. *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/NExpectation.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/NExpectation.html) for more details.

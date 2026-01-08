@@ -22,4 +22,4 @@ Reap[Sow[a, x]; Sow[b, y]; Sow[c, x], x]
 (* {c, {{a, c}}} *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Reap.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Reap.html) for more details.

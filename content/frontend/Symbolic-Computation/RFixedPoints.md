@@ -20,4 +20,4 @@ RFixedPoints[a[n + 1] == a[n]^2, a[n], n]
 RFixedPoints[{x[n + 1] == y[n], y[n + 1] == x[n]}, {x[n], y[n]}, n]
 ```
 
-*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/RFixedPoints.html) for more details.*
+*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/RFixedPoints.html) for more details.

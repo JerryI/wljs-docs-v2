@@ -22,4 +22,4 @@ VertexDelete[graph, {1, 2, 3}]
 VertexDelete[g, _?OddQ]
 ```
 
-*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/VertexDelete.html) for more details.*
+*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/VertexDelete.html) for more details.

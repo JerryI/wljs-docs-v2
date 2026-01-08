@@ -20,4 +20,4 @@ Graphics3D[Point[SpherePoints[100]]]
 ListPointPlot3D[SpherePoints[50]]
 ```
 
-*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/SpherePoints.html) for more details.*
+*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/SpherePoints.html) for more details.

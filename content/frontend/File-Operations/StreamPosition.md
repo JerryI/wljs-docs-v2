@@ -11,4 +11,4 @@ str = OpenRead["ExampleFile.txt"];
 StreamPosition[str]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/StreamPosition.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/StreamPosition.html) for more details.

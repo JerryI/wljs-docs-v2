@@ -14,4 +14,4 @@ Create a basic recurrent layer:
 BasicRecurrentLayer[128]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/BasicRecurrentLayer.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/BasicRecurrentLayer.html) for more details.

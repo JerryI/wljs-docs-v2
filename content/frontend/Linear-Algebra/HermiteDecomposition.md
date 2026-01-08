@@ -14,4 +14,4 @@ HermiteDecomposition[{{1, 2}, {3, 4}}]
 HermiteDecomposition[{{2, 4, 6}, {1, 3, 5}, {0, 2, 4}}]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/HermiteDecomposition.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/HermiteDecomposition.html) for more details.

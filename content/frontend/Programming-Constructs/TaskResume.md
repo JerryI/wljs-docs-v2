@@ -23,4 +23,4 @@ TaskResume[$ScheduledTask]
 TaskResume[TaskObject[...]]
 ```
 
-*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/TaskResume.html) for more details.*
+*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/TaskResume.html) for more details.

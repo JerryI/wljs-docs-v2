@@ -15,4 +15,4 @@ ByteArrayToString[ByteArray[{72, 101, 108, 108, 111}]]
 (* "Hello" *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ByteArrayToString.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ByteArrayToString.html) for more details.

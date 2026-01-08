@@ -22,4 +22,4 @@ FactorialMoment[PoissonDistribution[3], 2]
 (* 9 *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/FactorialMoment.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/FactorialMoment.html) for more details.

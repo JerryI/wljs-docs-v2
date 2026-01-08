@@ -14,4 +14,4 @@ Delete a permissions key:
 DeletePermissionsKey[myKey]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/DeletePermissionsKey.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/DeletePermissionsKey.html) for more details.

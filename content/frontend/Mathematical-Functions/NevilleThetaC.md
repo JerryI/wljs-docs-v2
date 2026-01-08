@@ -14,4 +14,4 @@ NevilleThetaC[0.5, 0.3]
 Plot3D[NevilleThetaC[x + I y, 0.5], {x, -2, 2}, {y, -2, 2}]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/NevilleThetaC.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/NevilleThetaC.html) for more details.

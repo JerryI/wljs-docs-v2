@@ -16,4 +16,4 @@ HilbertMatrix[3]
 HilbertMatrix[{2, 4}] // MatrixForm
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/HilbertMatrix.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/HilbertMatrix.html) for more details.

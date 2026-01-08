@@ -10,4 +10,4 @@ title: Hypergeometric1F1Regularized
 Hypergeometric1F1Regularized[1, 2, 1]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Hypergeometric1F1Regularized.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Hypergeometric1F1Regularized.html) for more details.

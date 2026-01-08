@@ -18,4 +18,4 @@ KeyValueMap[Rule, assoc]
 (* {"a" -> 1, "b" -> 2, "c" -> 3} *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/KeyValueMap.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/KeyValueMap.html) for more details.

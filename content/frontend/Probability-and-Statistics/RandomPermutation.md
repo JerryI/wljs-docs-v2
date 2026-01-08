@@ -23,4 +23,4 @@ Multiple permutations:
 RandomPermutation[4, 3]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/RandomPermutation.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/RandomPermutation.html) for more details.

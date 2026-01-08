@@ -20,4 +20,4 @@ Sample a random unitary matrix:
 RandomVariate[GaussianUnitaryMatrixDistribution[3]]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/GaussianUnitaryMatrixDistribution.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/GaussianUnitaryMatrixDistribution.html) for more details.

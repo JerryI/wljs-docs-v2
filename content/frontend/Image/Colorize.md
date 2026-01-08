@@ -20,4 +20,4 @@ Colorize a grayscale image:
 Colorize[Image[RandomReal[1, {50, 50}]]]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Colorize.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Colorize.html) for more details.

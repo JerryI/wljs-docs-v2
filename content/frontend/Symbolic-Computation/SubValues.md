@@ -21,4 +21,4 @@ g[a_][b_][c_] := a*b*c;
 SubValues[g]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/SubValues.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/SubValues.html) for more details.

@@ -22,4 +22,4 @@ Read specific parameters:
 DeviceReadTimeSeries[device, {5, 0.5}, "Temperature"]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/DeviceReadTimeSeries.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/DeviceReadTimeSeries.html) for more details.

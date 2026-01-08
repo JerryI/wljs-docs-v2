@@ -14,4 +14,4 @@ URLExpand["https://bit.ly/3example"]
 URLExpand["https://tinyurl.com/abc123"]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/URLExpand.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/URLExpand.html) for more details.

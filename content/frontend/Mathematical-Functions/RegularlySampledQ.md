@@ -16,4 +16,4 @@ ts2 = TimeSeries[{1, 2, 3}, {0, 1, 3}];
 RegularlySampledQ[ts2]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/RegularlySampledQ.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/RegularlySampledQ.html) for more details.

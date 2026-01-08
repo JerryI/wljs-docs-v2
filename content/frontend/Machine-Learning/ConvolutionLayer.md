@@ -24,4 +24,4 @@ Create a 1D convolutional layer:
 ConvolutionLayer[16, {5}]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ConvolutionLayer.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ConvolutionLayer.html) for more details.

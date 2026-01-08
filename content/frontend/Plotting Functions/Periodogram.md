@@ -23,4 +23,4 @@ Periodogram[Table[Sin[2 Pi 0.1 n], {n, 100}]]
 Periodogram[RandomReal[1, 256], 64]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Periodogram.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Periodogram.html) for more details.

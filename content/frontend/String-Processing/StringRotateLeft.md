@@ -22,4 +22,4 @@ StringRotateLeft["hello", 2]
 (* "llohe" *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/StringRotateLeft.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/StringRotateLeft.html) for more details.

@@ -27,4 +27,4 @@ Test statistic:
 MardiaKurtosisTest[data, "TestStatistic"]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/MardiaKurtosisTest.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/MardiaKurtosisTest.html) for more details.

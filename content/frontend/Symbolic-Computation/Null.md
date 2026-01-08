@@ -19,4 +19,4 @@ Explicit Null:
 (* {1, Null, 2, Null, 3} *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Null.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Null.html) for more details.

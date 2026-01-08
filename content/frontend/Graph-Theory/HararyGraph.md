@@ -13,4 +13,4 @@ HararyGraph[3, 8]
 (* Graph[...] *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/HararyGraph.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/HararyGraph.html) for more details.

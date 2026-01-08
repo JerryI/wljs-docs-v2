@@ -14,4 +14,4 @@ Precision[3.14159265358979]
 Precision[N[Pi, 50]]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Precision.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Precision.html) for more details.

@@ -22,4 +22,4 @@ GatherBy[{"a", "ab", "abc", "bc", "c"}, StringLength]
 (* {{"a", "c"}, {"ab", "bc"}, {"abc"}} *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/GatherBy.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/GatherBy.html) for more details.

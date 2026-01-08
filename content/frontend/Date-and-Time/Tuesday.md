@@ -20,4 +20,4 @@ NextDate[Tuesday]
 DateSelect[DateRange[Today, Today + Quantity[30, "Days"]], DayName[#] === Tuesday &]
 ```
 
-*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Tuesday.html) for more details.*
+*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Tuesday.html) for more details.

@@ -16,4 +16,4 @@ Solve a recurrence relation:
 RSolveValue[{a[n] == a[n - 1] + a[n - 2], a[0] == 1, a[1] == 1}, a[n], n]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/RSolveValue.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/RSolveValue.html) for more details.

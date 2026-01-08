@@ -27,4 +27,4 @@ QuantityUnit[Quantity[10, "Newtons"]*Quantity[2, "Meters"]]
 (* "Joules" *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/QuantityUnit.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/QuantityUnit.html) for more details.

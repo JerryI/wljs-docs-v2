@@ -16,4 +16,4 @@ x = 5;
 (* no output, suppressed by trailing semicolon *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/CompoundExpression.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/CompoundExpression.html) for more details.

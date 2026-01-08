@@ -21,4 +21,4 @@ Multiple datasets:
 ListPointPlot3D[{RandomReal[1, {50, 3}], RandomReal[{1, 2}, {50, 3}]}]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ListPointPlot3D.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ListPointPlot3D.html) for more details.

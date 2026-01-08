@@ -20,4 +20,4 @@ FileByteCount["image.png"] / 1024.0
 (* 256.5 kilobytes *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/FileByteCount.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/FileByteCount.html) for more details.

@@ -21,4 +21,4 @@ Resize to exact dimensions:
 ImageResize[img, {200, 300}]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ImageResize.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ImageResize.html) for more details.

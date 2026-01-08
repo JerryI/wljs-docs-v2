@@ -20,4 +20,4 @@ ToRules[Reduce[x^2 == 4, x]]
 (* {{x -> -2}, {x -> 2}} *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ToRules.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ToRules.html) for more details.

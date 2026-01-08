@@ -18,4 +18,4 @@ Sample from the process:
 RandomPointConfiguration[BinomialPointProcess[20, Disk[]]]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/BinomialPointProcess.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/BinomialPointProcess.html) for more details.

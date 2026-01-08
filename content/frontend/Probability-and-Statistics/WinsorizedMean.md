@@ -18,4 +18,4 @@ WinsorizedMean[{1, 2, 3, 4, 100}, 0.2]
 WinsorizedMean[{1, 2, 3, 4, 5, 6, 7, 8, 9, 100}]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/WinsorizedMean.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/WinsorizedMean.html) for more details.

@@ -19,4 +19,4 @@ Focus stacking for macro photography:
 ImageFocusCombine[Import /@ FileNames["focus*.jpg"]]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ImageFocusCombine.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ImageFocusCombine.html) for more details.

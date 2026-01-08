@@ -18,4 +18,4 @@ With named layers:
 net = NetChain[<|"fc1" -> LinearLayer[64], "relu" -> Ramp, "fc2" -> LinearLayer[10]|>]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/NetChain.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/NetChain.html) for more details.

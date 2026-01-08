@@ -27,4 +27,4 @@ N[Degree]
 (* 0.0174533 *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Degree.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Degree.html) for more details.

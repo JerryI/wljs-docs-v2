@@ -12,4 +12,4 @@ Find complete integral of a PDE:
 CompleteIntegral[D[u[x, y], x] + D[u[x, y], y] == 1, u[x, y], {x, y}]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/CompleteIntegral.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/CompleteIntegral.html) for more details.

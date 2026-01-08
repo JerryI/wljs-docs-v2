@@ -22,4 +22,4 @@ N[AiryAiZero[1]]
 (* -2.33811 *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/AiryAiZero.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/AiryAiZero.html) for more details.

@@ -18,4 +18,4 @@ Plot a variogram model:
 Plot[VariogramModel["Gaussian", {1, 5}][h], {h, 0, 20}]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/VariogramModel.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/VariogramModel.html) for more details.

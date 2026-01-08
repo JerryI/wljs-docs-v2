@@ -25,4 +25,4 @@ list[[1;;-1;;2]]
 (* {a, c, e} *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Span.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Span.html) for more details.

@@ -24,4 +24,4 @@ Create a layered graph from an existing graph:
 LayeredGraph[CompleteGraph[4]]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/LayeredGraph.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/LayeredGraph.html) for more details.

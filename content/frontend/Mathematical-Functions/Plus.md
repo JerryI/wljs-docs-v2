@@ -20,4 +20,4 @@ a + b + a
 (* 2a + b *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Plus.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Plus.html) for more details.

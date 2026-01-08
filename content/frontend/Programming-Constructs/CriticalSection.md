@@ -14,4 +14,4 @@ Use a critical section for thread-safe operations:
 CriticalSection[lock, counter = counter + 1]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/CriticalSection.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/CriticalSection.html) for more details.

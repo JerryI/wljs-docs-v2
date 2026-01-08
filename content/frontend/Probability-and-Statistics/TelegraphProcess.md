@@ -20,4 +20,4 @@ RandomFunction[TelegraphProcess[2], {0, 10}]
 Mean[TelegraphProcess[0.5]]
 ```
 
-*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/TelegraphProcess.html) for more details.*
+*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/TelegraphProcess.html) for more details.

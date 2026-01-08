@@ -24,4 +24,4 @@ Edge count:
 EdgeCount[TuranGraph[10, 5]]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/TuranGraph.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/TuranGraph.html) for more details.

@@ -16,4 +16,4 @@ Table[RandomGraph[UniformGraphDistribution[6, 8]], 3]
 (* {Graph[...], Graph[...], Graph[...]} *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/UniformGraphDistribution.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/UniformGraphDistribution.html) for more details.

@@ -14,4 +14,4 @@ GreaterSlantEqual[a, b, c]
 GreaterSlantEqual[10, 5, 5]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/GreaterSlantEqual.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/GreaterSlantEqual.html) for more details.

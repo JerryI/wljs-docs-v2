@@ -11,4 +11,4 @@ pts = SpatialPointData[RandomPoint[Disk[], 100]];
 SpatialPointSelect[pts, RegionMember[Rectangle[]]]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/SpatialPointSelect.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/SpatialPointSelect.html) for more details.

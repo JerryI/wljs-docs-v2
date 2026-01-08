@@ -21,4 +21,4 @@ Specify length:
 Short[Table[x^i, {i, 50}], 2]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Short.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Short.html) for more details.

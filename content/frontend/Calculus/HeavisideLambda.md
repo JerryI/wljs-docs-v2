@@ -16,4 +16,4 @@ HeavisideLambda[0.5]
 Plot[HeavisideLambda[x], {x, -2, 2}]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/HeavisideLambda.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/HeavisideLambda.html) for more details.

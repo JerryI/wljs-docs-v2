@@ -20,4 +20,4 @@ jobs = Table[SessionSubmit[Pause[1]; i], {i, 3}];
 WaitAll[jobs]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/WaitAll.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/WaitAll.html) for more details.

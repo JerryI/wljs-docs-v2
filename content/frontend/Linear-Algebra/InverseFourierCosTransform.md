@@ -16,4 +16,4 @@ InverseFourierCosTransform[1/(1 + ω^2), ω, t]
 InverseFourierCosTransform[Exp[-ω], ω, t]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/InverseFourierCosTransform.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/InverseFourierCosTransform.html) for more details.

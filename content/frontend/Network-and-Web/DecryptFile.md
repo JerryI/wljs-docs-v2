@@ -16,4 +16,4 @@ Decrypt a file:
 DecryptFile["mypassword", "encrypted.dat", "decrypted.dat"]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/DecryptFile.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/DecryptFile.html) for more details.

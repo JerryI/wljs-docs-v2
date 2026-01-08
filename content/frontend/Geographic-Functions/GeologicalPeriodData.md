@@ -17,4 +17,4 @@ GeologicalPeriodData["Jurassic", "StartDate"]
 GeologicalPeriodData["Cretaceous", "Duration"]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/GeologicalPeriodData.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/GeologicalPeriodData.html) for more details.

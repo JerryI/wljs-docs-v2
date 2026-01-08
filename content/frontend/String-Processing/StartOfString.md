@@ -20,4 +20,4 @@ StringReplace["test string", StartOfString ~~ x_ :> ToUpperCase[x]]
 StringCases["abc123", StartOfString ~~ LetterCharacter ..]
 ```
 
-*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/StartOfString.html) for more details.*
+*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/StartOfString.html) for more details.

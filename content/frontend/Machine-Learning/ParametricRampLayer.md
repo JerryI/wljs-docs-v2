@@ -26,4 +26,4 @@ Use in a neural network:
 NetChain[{LinearLayer[10], ParametricRampLayer[], LinearLayer[2]}]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ParametricRampLayer.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ParametricRampLayer.html) for more details.

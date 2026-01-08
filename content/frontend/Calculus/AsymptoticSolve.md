@@ -16,4 +16,4 @@ Find asymptotic solutions:
 AsymptoticSolve[y^2 + x y + x^2 == 0, y -> 0, x -> 0]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/AsymptoticSolve.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/AsymptoticSolve.html) for more details.

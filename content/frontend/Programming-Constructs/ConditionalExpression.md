@@ -19,4 +19,4 @@ Solve[x^2 == 4, x]
 (* {{x -> ConditionalExpression[-2, True]}, {x -> ConditionalExpression[2, True]}} *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ConditionalExpression.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ConditionalExpression.html) for more details.

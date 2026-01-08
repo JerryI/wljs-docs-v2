@@ -30,4 +30,4 @@ Set Temporary attribute manually:
 SetAttributes[myVar, Temporary]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Temporary.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Temporary.html) for more details.

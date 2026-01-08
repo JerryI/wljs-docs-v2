@@ -29,4 +29,4 @@ Sin[Interval[{0, Pi}]]
 (* Interval[{0, 1}] *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Interval.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Interval.html) for more details.

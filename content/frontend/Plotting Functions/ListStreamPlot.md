@@ -16,4 +16,4 @@ Create a stream plot from a vector array:
 ListStreamPlot[Table[{y, -x}, {x, -3, 3}, {y, -3, 3}]]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ListStreamPlot.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ListStreamPlot.html) for more details.

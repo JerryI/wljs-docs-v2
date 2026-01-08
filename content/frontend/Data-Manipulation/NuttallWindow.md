@@ -20,4 +20,4 @@ Plot[NuttallWindow[x], {x, -1, 1}]
 Periodogram[data, NuttallWindow]
 ```
 
-*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/NuttallWindow.html) for more details.*
+*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/NuttallWindow.html) for more details.

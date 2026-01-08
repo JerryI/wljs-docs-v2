@@ -29,4 +29,4 @@ Trace packets on a specific port:
 NetworkPacketTrace[URLRead["https://www.wolfram.com"], 443]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/NetworkPacketTrace.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/NetworkPacketTrace.html) for more details.

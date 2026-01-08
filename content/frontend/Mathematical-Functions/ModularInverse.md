@@ -21,4 +21,4 @@ Mod[3 * ModularInverse[3, 7], 7]
 ModularInverse[17, 100]
 ```
 
-*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ModularInverse.html) for more details.*
+*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ModularInverse.html) for more details.

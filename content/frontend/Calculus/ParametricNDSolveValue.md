@@ -19,4 +19,4 @@ f = ParametricNDSolveValue[{y'[x] == a y[x], y[0] == 1}, y, {x, 0, 10}, {a}];
 Plot[f[-0.5][x], {x, 0, 10}]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ParametricNDSolveValue.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ParametricNDSolveValue.html) for more details.

@@ -20,4 +20,4 @@ MapThread[f, {{a, b}, {1, 2}, {x, y}}]
 (* {f[a, 1, x], f[b, 2, y]} *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/MapThread.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/MapThread.html) for more details.

@@ -14,4 +14,4 @@ LevyDistribution[0, 1]
 PDF[LevyDistribution[0, 1], x]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/LevyDistribution.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/LevyDistribution.html) for more details.

@@ -20,4 +20,4 @@ QuantityMagnitude[Quantity[100, "Celsius"], "Fahrenheit"]
 (* 212 *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/QuantityMagnitude.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/QuantityMagnitude.html) for more details.

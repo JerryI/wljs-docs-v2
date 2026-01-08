@@ -12,4 +12,4 @@ Evaluate the Appell F4 function:
 AppellF4[1, 2, 3, 4, 0.1, 0.1]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/AppellF4.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/AppellF4.html) for more details.

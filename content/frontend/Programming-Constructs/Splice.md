@@ -22,4 +22,4 @@ f[a, Splice[{b, c}], d]
 (* f[a, b, c, d] *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Splice.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Splice.html) for more details.

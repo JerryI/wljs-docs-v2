@@ -16,4 +16,4 @@ Change variables in a DSolve solution:
 DSolveChangeVariables[DSolve[y'[x] == y[x], y, x], u, t, {y -> u, x -> t}]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/DSolveChangeVariables.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/DSolveChangeVariables.html) for more details.

@@ -14,4 +14,4 @@ PowerModList[2, 1/2, 17]
 PowerModList[1, 1/3, 13]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/PowerModList.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/PowerModList.html) for more details.

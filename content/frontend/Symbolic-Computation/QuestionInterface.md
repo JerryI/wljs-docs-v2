@@ -16,4 +16,4 @@ Define a text input question:
 QuestionInterface["FreeForm", <|"Hint" -> "Enter your answer"|>]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/QuestionInterface.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/QuestionInterface.html) for more details.

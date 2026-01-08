@@ -14,4 +14,4 @@ marker = Binarize[img, 0.8];
 RegionBinarize[img, marker, 0.1]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/RegionBinarize.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/RegionBinarize.html) for more details.

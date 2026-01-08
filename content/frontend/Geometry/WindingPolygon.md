@@ -24,4 +24,4 @@ WindingPolygon[CirclePoints[5, 2]]
 Graphics[WindingPolygon[CirclePoints[{1, 0}, {1, 2}, 5]]]
 ```
 
-*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/WindingPolygon.html) for more details.*
+*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/WindingPolygon.html) for more details.

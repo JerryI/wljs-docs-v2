@@ -23,4 +23,4 @@ extractor[newImage]
 FeatureExtraction[data, {"StandardizedVector", {"PCA", 3}}]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/FeatureExtraction.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/FeatureExtraction.html) for more details.

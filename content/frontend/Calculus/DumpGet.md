@@ -12,4 +12,4 @@ Load a previously saved dump file:
 DumpGet["mydata.mx"]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/DumpGet.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/DumpGet.html) for more details.

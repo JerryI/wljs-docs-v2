@@ -24,4 +24,4 @@ Specify monthly bins:
 DateHistogram[{"2020-01-01", "2020-02-15", "2020-03-10"}, "Month"]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/DateHistogram.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/DateHistogram.html) for more details.

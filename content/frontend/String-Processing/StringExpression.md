@@ -20,4 +20,4 @@ StringCases["The cat sat", "c" ~~ __ ~~ "t"]
 (* {"cat sat"} *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/StringExpression.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/StringExpression.html) for more details.

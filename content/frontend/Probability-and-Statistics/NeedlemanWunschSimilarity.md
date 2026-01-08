@@ -14,4 +14,4 @@ NeedlemanWunschSimilarity["ACGT", "ACTT"]
 NeedlemanWunschSimilarity[{1, 2, 3}, {1, 3, 3}]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/NeedlemanWunschSimilarity.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/NeedlemanWunschSimilarity.html) for more details.

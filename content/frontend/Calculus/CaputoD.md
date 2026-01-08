@@ -12,4 +12,4 @@ Caputo fractional derivative:
 CaputoD[x^2, {x, 0.5}]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/CaputoD.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/CaputoD.html) for more details.

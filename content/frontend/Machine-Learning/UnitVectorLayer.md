@@ -21,4 +21,4 @@ UnitVectorLayer[5][3]
 (* {0., 0., 1., 0., 0.} *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/UnitVectorLayer.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/UnitVectorLayer.html) for more details.

@@ -21,4 +21,4 @@ Plot[HammingWindow[x], {x, -1/2, 1/2}]
 ListLinePlot[Table[HammingWindow[x], {x, -0.5, 0.5, 0.01}]]
 ```
 
-*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/HammingWindow.html) for more details.*
+*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/HammingWindow.html) for more details.

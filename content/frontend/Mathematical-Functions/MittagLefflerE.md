@@ -16,4 +16,4 @@ MittagLefflerE[1, 1]
 MittagLefflerE[0.5, 1.0, 0.5] // N
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/MittagLefflerE.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/MittagLefflerE.html) for more details.

@@ -20,4 +20,4 @@ StructuredArray[DiagonalMatrix, {3, 3}, {1, 2, 3}]
 Normal[StructuredArray[SymmetricMatrix, {2, 2}, {a, b, c}]]
 ```
 
-*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/StructuredArray.html) for more details.*
+*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/StructuredArray.html) for more details.

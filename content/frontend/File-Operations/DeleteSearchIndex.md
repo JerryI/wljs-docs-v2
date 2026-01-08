@@ -14,4 +14,4 @@ Delete a search index:
 DeleteSearchIndex["myindex"]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/DeleteSearchIndex.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/DeleteSearchIndex.html) for more details.

@@ -20,4 +20,4 @@ TableView[RandomReal[1, {5, 4}]]
 TableView[Table[i + j, {i, 3}, {j, 4}]]
 ```
 
-*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/TableView.html) for more details.*
+*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/TableView.html) for more details.

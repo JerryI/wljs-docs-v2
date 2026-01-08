@@ -20,4 +20,4 @@ For a specific date:
 GeoGraphics[DayNightTerminator[DateObject[{2024, 6, 21}]]]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/DayNightTerminator.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/DayNightTerminator.html) for more details.

@@ -13,4 +13,4 @@ net = NetChain[{LinearLayer[10], Tanh, LinearLayer[5]}];
 NetReplace[net, Tanh -> Ramp]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/NetReplace.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/NetReplace.html) for more details.

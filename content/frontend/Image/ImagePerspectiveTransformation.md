@@ -21,4 +21,4 @@ With size specification:
 ImagePerspectiveTransformation[img, ScalingMatrix[{1.5, 1}], {400, 400}]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ImagePerspectiveTransformation.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ImagePerspectiveTransformation.html) for more details.

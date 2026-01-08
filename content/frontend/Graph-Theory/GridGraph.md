@@ -27,4 +27,4 @@ Vertex and edge counts:
 (* {12, 17} *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/GridGraph.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/GridGraph.html) for more details.

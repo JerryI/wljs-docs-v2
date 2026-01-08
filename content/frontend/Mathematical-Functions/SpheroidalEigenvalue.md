@@ -20,4 +20,4 @@ N[SpheroidalEigenvalue[3, 1, 0.5]]
 Table[SpheroidalEigenvalue[n, 0, 1], {n, 0, 4}]
 ```
 
-*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/SpheroidalEigenvalue.html) for more details.*
+*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/SpheroidalEigenvalue.html) for more details.

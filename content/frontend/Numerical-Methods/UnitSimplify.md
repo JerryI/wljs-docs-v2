@@ -16,4 +16,4 @@ UnitSimplify[Quantity[1, "Kilograms" "Meters"/"Seconds"^2]]
 (* Quantity[1, "Newtons"] *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/UnitSimplify.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/UnitSimplify.html) for more details.

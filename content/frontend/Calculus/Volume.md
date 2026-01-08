@@ -20,4 +20,4 @@ Volume[Cylinder[{{0, 0, 0}, {0, 0, 1}}, 1]]
 (* Pi *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Volume.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Volume.html) for more details.

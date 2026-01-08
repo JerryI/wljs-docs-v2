@@ -22,4 +22,4 @@ Evaluate in parallel 10 times:
 ParallelDo[Print[$KernelID], {10}]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ParallelDo.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ParallelDo.html) for more details.

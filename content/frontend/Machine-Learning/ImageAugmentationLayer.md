@@ -14,4 +14,4 @@ ImageAugmentationLayer[{224, 224}]
 ImageAugmentationLayer[{128, 128}, "Rotation" -> 15 Degree]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ImageAugmentationLayer.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ImageAugmentationLayer.html) for more details.

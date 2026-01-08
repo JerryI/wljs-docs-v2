@@ -18,4 +18,4 @@ CompleteGraph[{3, 3}]
 CompleteGraph[6, GraphStyle -> "DiagramBlue"]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/CompleteGraph.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/CompleteGraph.html) for more details.

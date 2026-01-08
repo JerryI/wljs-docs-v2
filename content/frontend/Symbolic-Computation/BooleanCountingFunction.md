@@ -23,4 +23,4 @@ Exactly 2 variables true:
 BooleanCountingFunction[{2}, {a, b, c}]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/BooleanCountingFunction.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/BooleanCountingFunction.html) for more details.

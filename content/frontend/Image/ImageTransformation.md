@@ -21,4 +21,4 @@ Wave distortion:
 ImageTransformation[img, {#[[1]], #[[2]] + 10 Sin[#[[1]]/20]} &]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ImageTransformation.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ImageTransformation.html) for more details.

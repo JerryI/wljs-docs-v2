@@ -14,4 +14,4 @@ title: TropicalStormData
 TropicalStormData[Entity["TropicalStorm", "Katrina2005"], "MaximumSustainedWindSpeed"]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/TropicalStormData.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/TropicalStormData.html) for more details.

@@ -22,4 +22,4 @@ Mean[UniformSumDistribution[10]]
 Plot[PDF[UniformSumDistribution[5], x], {x, 0, 5}]
 ```
 
-*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/UniformSumDistribution.html) for more details.*
+*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/UniformSumDistribution.html) for more details.

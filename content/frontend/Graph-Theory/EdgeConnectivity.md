@@ -21,4 +21,4 @@ Between specific vertices:
 EdgeConnectivity[GridGraph[{3, 3}], 1, 9]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/EdgeConnectivity.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/EdgeConnectivity.html) for more details.

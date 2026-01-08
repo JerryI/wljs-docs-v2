@@ -18,4 +18,4 @@ Create a date interval:
 DateInterval[{DateObject[{2024, 1, 1}], DateObject[{2024, 12, 31}]}]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/DateInterval.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/DateInterval.html) for more details.

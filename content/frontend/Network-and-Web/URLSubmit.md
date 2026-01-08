@@ -16,4 +16,4 @@ title: URLSubmit
 URLSubmit["https://httpbin.org/get"]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/URLSubmit.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/URLSubmit.html) for more details.

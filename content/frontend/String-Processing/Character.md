@@ -22,4 +22,4 @@ Table[Read[stream, Character], 3]
 (* {"A", "B", "C"} *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Character.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Character.html) for more details.

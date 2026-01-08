@@ -20,4 +20,4 @@ pts3D = RandomReal[1, {50, 3}];
 DelaunayMesh[pts3D]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/DelaunayMesh.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/DelaunayMesh.html) for more details.

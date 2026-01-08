@@ -26,4 +26,4 @@ NetPortGradient[All]
 (* NetPortGradient[All] *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/NetPortGradient.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/NetPortGradient.html) for more details.

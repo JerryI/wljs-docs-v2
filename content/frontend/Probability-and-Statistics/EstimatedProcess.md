@@ -18,4 +18,4 @@ EstimatedProcess[data, ARProcess[{a}, v]]
 (* ARProcess[{0.498...}, 1.02...] *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/EstimatedProcess.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/EstimatedProcess.html) for more details.

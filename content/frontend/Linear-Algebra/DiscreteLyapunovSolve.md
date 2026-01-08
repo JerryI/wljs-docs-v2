@@ -18,4 +18,4 @@ Solve discrete Lyapunov equation:
 DiscreteLyapunovSolve[{{0.5}}, {{1}}]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/DiscreteLyapunovSolve.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/DiscreteLyapunovSolve.html) for more details.

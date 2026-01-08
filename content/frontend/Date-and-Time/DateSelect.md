@@ -23,4 +23,4 @@ Select Mondays:
 DateSelect[dates, DayName[#] === Monday &]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/DateSelect.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/DateSelect.html) for more details.

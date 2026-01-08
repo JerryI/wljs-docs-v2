@@ -23,4 +23,4 @@ ClearAttributes[g, NHoldRest];
 N[g[1/2, 1/3]]
 ```
 
-*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/NHoldRest.html) for more details.*
+*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/NHoldRest.html) for more details.

@@ -19,4 +19,4 @@ GeoGraphics[GeoPolygon[{GeoPosition[{40, -74}], GeoPosition[{45, -73}], GeoPosit
 GeoGraphics[{EdgeForm[Red], FaceForm[Opacity[0.3, Blue]], GeoPolygon[Entity["Country", "France"]]}]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/GeoPolygon.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/GeoPolygon.html) for more details.

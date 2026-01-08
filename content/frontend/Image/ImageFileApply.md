@@ -18,4 +18,4 @@ Apply a grayscale transformation:
 ImageFileApply[Mean, "color.png", "gray.png"]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ImageFileApply.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ImageFileApply.html) for more details.

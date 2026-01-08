@@ -28,4 +28,4 @@ Test statistic:
 HoeffdingDTest[v1, v2, "TestStatistic"]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/HoeffdingDTest.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/HoeffdingDTest.html) for more details.

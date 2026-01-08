@@ -16,4 +16,4 @@ tree = Tree[a, {Tree[b, {c, d}], e}];
 TreeReplacePart[tree, {1, 2} -> x]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/TreeReplacePart.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/TreeReplacePart.html) for more details.

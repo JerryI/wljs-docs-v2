@@ -16,4 +16,4 @@ PlaceholderLayer[]
 PlaceholderLayer["conv", <|"Input" -> {3, 28, 28}|>]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/PlaceholderLayer.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/PlaceholderLayer.html) for more details.

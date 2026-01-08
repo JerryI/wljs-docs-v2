@@ -22,4 +22,4 @@ Permute[{1, 2, 3, 4}, {2, 3, 4, 1}]
 Permute[{a, b, c}, SymmetricGroup[3]]
 ```
 
-*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Permute.html) for more details.*
+*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Permute.html) for more details.

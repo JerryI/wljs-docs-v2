@@ -26,4 +26,4 @@ f @@@ {{a, b}, {c, d}}
 (* {f[a, b], f[c, d]} *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Apply.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Apply.html) for more details.

@@ -16,4 +16,4 @@ NumberFieldRootsOfUnity[Exp[2 Pi I/6]]
 (* {6, E^(I Pi/3)} *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/NumberFieldRootsOfUnity.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/NumberFieldRootsOfUnity.html) for more details.

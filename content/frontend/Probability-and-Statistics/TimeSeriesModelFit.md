@@ -17,4 +17,4 @@ TimeSeriesModelFit[{1, 2, 4, 7, 11, 16}]
 TimeSeriesModelFit[data, "ARMA"]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/TimeSeriesModelFit.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/TimeSeriesModelFit.html) for more details.

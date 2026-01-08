@@ -17,4 +17,4 @@ QuartileDeviation[{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}]
 QuartileDeviation[NormalDistribution[0, 1]]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/QuartileDeviation.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/QuartileDeviation.html) for more details.

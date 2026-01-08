@@ -20,4 +20,4 @@ Convert a modified Julian date:
 FromJulianDate["ModifiedJulian", 51545]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/FromJulianDate.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/FromJulianDate.html) for more details.

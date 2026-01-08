@@ -15,4 +15,4 @@ Latitude[Entity["City", {"Paris", "IleDeFrance", "France"}]]
 (* 48.8566 *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Latitude.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Latitude.html) for more details.

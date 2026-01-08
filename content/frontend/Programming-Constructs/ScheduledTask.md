@@ -22,4 +22,4 @@ ScheduledTask[SendMail["report"], {Hourly}]
 ScheduledTask[Beep[], DateObject[{2024, 12, 1, 9, 0, 0}]]
 ```
 
-*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ScheduledTask.html) for more details.*
+*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ScheduledTask.html) for more details.

@@ -26,4 +26,4 @@ With tags:
 DirectedEdge["A", "B", "route1"]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/DirectedEdge.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/DirectedEdge.html) for more details.

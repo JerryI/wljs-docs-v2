@@ -16,4 +16,4 @@ SphericalHarmonicY[1, 0, Pi/4, 0]
 (* Sqrt[3/(4 π)] Cos[Pi/4] *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/SphericalHarmonicY.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/SphericalHarmonicY.html) for more details.

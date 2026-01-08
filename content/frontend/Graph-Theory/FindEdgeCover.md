@@ -18,4 +18,4 @@ cover = FindEdgeCover[g];
 HighlightGraph[g, cover]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/FindEdgeCover.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/FindEdgeCover.html) for more details.

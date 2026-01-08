@@ -24,4 +24,4 @@ ArgMin[{x^2 + y^2, x + y == 1}, {x, y}]
 (* {1/2, 1/2} *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ArgMin.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ArgMin.html) for more details.

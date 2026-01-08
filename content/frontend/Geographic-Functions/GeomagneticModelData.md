@@ -18,4 +18,4 @@ title: GeomagneticModelData
 GeomagneticModelData[Entity["City", {"Paris", "IleDeFrance", "France"}]]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/GeomagneticModelData.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/GeomagneticModelData.html) for more details.

@@ -24,4 +24,4 @@ NArgMin[{x + y, x >= 0, y >= 0, x + y >= 1}, {x, y}]
 (* {0., 1.} *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/NArgMin.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/NArgMin.html) for more details.

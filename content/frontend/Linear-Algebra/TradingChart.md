@@ -17,4 +17,4 @@ TradingChart[{"AAPL", {2020, 2021}}]
 TradingChart[{"GOOG", {2021}}, {"Volume", "BollingerBands"}]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/TradingChart.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/TradingChart.html) for more details.

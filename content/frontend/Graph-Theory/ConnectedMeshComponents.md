@@ -20,4 +20,4 @@ r = RegionUnion[Ball[{0, 0, 0}], Ball[{5, 0, 0}]];
 ConnectedMeshComponents[BoundaryDiscretizeRegion[r]]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ConnectedMeshComponents.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ConnectedMeshComponents.html) for more details.

@@ -18,4 +18,4 @@ MengerMesh[2]
 MengerMesh[4, 2]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/MengerMesh.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/MengerMesh.html) for more details.

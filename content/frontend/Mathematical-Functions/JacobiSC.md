@@ -24,4 +24,4 @@ Relation to other Jacobi functions:
 JacobiSC[u, m] == JacobiSN[u, m]/JacobiCN[u, m]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/JacobiSC.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/JacobiSC.html) for more details.

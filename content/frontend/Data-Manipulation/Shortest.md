@@ -20,4 +20,4 @@ Cases[{{a, b}, {a, b, c}, {a}}, {Shortest[__]}]
 (* {{a}} *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Shortest.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Shortest.html) for more details.

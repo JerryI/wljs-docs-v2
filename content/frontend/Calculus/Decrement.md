@@ -24,4 +24,4 @@ While[i-- > 0, Print[i]]
 (* prints 2, 1, 0 *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Decrement.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Decrement.html) for more details.

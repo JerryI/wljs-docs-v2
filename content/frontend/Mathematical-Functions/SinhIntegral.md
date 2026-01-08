@@ -20,4 +20,4 @@ Plot[SinhIntegral[x], {x, -5, 5}]
 (* Graphics[...] *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/SinhIntegral.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/SinhIntegral.html) for more details.

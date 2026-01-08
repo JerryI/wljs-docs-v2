@@ -16,4 +16,4 @@ data = {1, 1, 2, 1, 2};
 FindHiddenMarkovStates[data, hmm]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/FindHiddenMarkovStates.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/FindHiddenMarkovStates.html) for more details.

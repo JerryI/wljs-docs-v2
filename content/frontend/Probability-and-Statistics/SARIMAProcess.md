@@ -22,4 +22,4 @@ RandomFunction[SARIMAProcess[...], {0, 100}]
 TimeSeriesModelFit[data, "SARIMA"]
 ```
 
-*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/SARIMAProcess.html) for more details.*
+*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/SARIMAProcess.html) for more details.

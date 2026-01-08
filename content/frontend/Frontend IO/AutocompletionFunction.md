@@ -14,4 +14,4 @@ acf["hel"]
 (* {"hello", "help"} *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/AutocompletionFunction.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/AutocompletionFunction.html) for more details.

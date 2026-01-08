@@ -12,4 +12,4 @@ title: ImagePyramid
 
 `ImagePyramid[image, pyrtype, n, s]` returns a pyramid with successive levels downsampled by factor s.
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ImagePyramid.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ImagePyramid.html) for more details.

@@ -20,4 +20,4 @@ Limit[1/x, x -> Infinity]
 (* 0 *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Limit.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Limit.html) for more details.

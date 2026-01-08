@@ -20,4 +20,4 @@ DSolveValue[y''[x] + y[x] == 0, y[x], x]
 (* C[1] Cos[x] + C[2] Sin[x] *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/DSolveValue.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/DSolveValue.html) for more details.

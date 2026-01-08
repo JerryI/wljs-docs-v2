@@ -18,4 +18,4 @@ Module[{i = 1},
 Do[If[i == 3, Goto[done]]; Print[i], {i, 5}]; Label[done];
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Goto.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Goto.html) for more details.

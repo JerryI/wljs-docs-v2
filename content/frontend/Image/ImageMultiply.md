@@ -22,4 +22,4 @@ mask = DiskMatrix[100];
 ImageMultiply[img, Image[mask]]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ImageMultiply.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ImageMultiply.html) for more details.

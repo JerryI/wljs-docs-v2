@@ -27,4 +27,4 @@ Generate a random tree with a specific distribution:
 RandomTree[12, TreeLayout -> "RadialEmbedding"]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/RandomTree.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/RandomTree.html) for more details.

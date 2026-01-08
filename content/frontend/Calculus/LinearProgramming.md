@@ -22,4 +22,4 @@ LinearProgramming[{-1, -1}, {{1, 1}}, {{5, 0}}]
 (* {5, 0} or equivalent *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/LinearProgramming.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/LinearProgramming.html) for more details.

@@ -21,4 +21,4 @@ GraphData["Planar", 6]
 (* Named planar graphs on 6 vertices *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/GraphData.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/GraphData.html) for more details.

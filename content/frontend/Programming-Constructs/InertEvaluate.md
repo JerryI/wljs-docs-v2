@@ -14,4 +14,4 @@ InertEvaluate[Inactive[Plus][1, 2]]
 InertEvaluate[Inactive[Sin][Pi]]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/InertEvaluate.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/InertEvaluate.html) for more details.

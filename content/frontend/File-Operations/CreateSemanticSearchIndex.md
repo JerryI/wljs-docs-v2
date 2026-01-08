@@ -18,4 +18,4 @@ Create a semantic search index:
 CreateSemanticSearchIndex[{"text1", "text2", "text3"}]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/CreateSemanticSearchIndex.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/CreateSemanticSearchIndex.html) for more details.

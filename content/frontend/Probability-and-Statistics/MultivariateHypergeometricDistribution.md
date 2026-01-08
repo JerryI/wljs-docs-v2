@@ -17,4 +17,4 @@ Sample from the distribution:
 RandomVariate[MultivariateHypergeometricDistribution[10, {5, 5, 5}], 5]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/MultivariateHypergeometricDistribution.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/MultivariateHypergeometricDistribution.html) for more details.

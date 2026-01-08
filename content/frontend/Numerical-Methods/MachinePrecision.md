@@ -26,4 +26,4 @@ NDSolve[{y'[x] == y[x], y[0] == 1}, y, {x, 0, 1},
   WorkingPrecision -> MachinePrecision]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/MachinePrecision.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/MachinePrecision.html) for more details.

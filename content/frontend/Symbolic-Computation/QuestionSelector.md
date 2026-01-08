@@ -11,4 +11,4 @@ title: QuestionSelector
 QuestionSelector[{QuestionObject["What is 1+1?", 2], QuestionObject["What is 2+2?", 4]}]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/QuestionSelector.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/QuestionSelector.html) for more details.

@@ -14,4 +14,4 @@ VideoQ[Video["test.mp4"]]
 VideoQ["not a video"]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/VideoQ.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/VideoQ.html) for more details.

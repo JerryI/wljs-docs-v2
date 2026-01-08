@@ -27,4 +27,4 @@ StringFreeQ["Hello123", DigitCharacter]
 (* False *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/StringFreeQ.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/StringFreeQ.html) for more details.

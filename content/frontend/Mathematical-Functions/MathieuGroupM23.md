@@ -20,4 +20,4 @@ GroupOrder[MathieuGroupM23[]]
 GroupGenerators[MathieuGroupM23[]]
 ```
 
-*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/MathieuGroupM23.html) for more details.*
+*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/MathieuGroupM23.html) for more details.

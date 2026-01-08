@@ -26,4 +26,4 @@ Check for specific messages:
 Check[Log[-1], "Invalid", {Log::argx}]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Check.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Check.html) for more details.

@@ -20,4 +20,4 @@ LUDecomposition[{{2, 1, 1}, {4, 3, 3}, {8, 7, 9}}]
 (* {{{8, 7, 9}, {1/4, -3/4, -5/4}, {1/2, 2/3, 2/3}}, {3, 2, 1}, 1} *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/LUDecomposition.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/LUDecomposition.html) for more details.

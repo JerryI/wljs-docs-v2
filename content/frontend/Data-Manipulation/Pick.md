@@ -13,4 +13,4 @@ Pick[{a, b, c, d}, {True, False, True, False}]
 (* {a, c} *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Pick.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Pick.html) for more details.

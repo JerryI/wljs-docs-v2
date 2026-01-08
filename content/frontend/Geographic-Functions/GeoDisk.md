@@ -16,4 +16,4 @@ GeoGraphics[GeoDisk[Entity["City", {"Tokyo", "Tokyo", "Japan"}], Quantity[200, "
 GeoGraphics[GeoDisk[Here, Quantity[100, "Miles"], {0, 180}]]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/GeoDisk.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/GeoDisk.html) for more details.

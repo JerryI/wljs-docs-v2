@@ -16,4 +16,4 @@ Create a diffusion term for a 2D problem:
 DiffusionPDETerm[{u[x, y], {x, y}}]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/DiffusionPDETerm.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/DiffusionPDETerm.html) for more details.

@@ -20,4 +20,4 @@ IsomorphicSubgraphQ[CycleGraph[3], PetersenGraph[]]
 IsomorphicSubgraphQ[CompleteGraph[4], CompleteGraph[3]]
 ```
 
-*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/IsomorphicSubgraphQ.html) for more details.*
+*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/IsomorphicSubgraphQ.html) for more details.

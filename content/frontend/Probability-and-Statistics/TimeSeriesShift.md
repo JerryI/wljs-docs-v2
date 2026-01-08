@@ -17,4 +17,4 @@ Shift backward by 2 units:
 TimeSeriesShift[TimeSeries[Range[10]], -2]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/TimeSeriesShift.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/TimeSeriesShift.html) for more details.

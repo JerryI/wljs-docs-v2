@@ -22,4 +22,4 @@ TemplateApply[StringTemplate["Hello, `name`!"], <|"name" -> "Alice"|>]
 (* "Hello, Alice!" *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/TemplateSlot.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/TemplateSlot.html) for more details.

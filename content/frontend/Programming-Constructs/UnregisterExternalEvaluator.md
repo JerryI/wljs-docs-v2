@@ -10,4 +10,4 @@ title: UnregisterExternalEvaluator
 UnregisterExternalEvaluator["Python", "MyPythonEvaluator"]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/UnregisterExternalEvaluator.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/UnregisterExternalEvaluator.html) for more details.

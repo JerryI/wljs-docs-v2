@@ -16,4 +16,4 @@ WaveletPhi[HaarWavelet[], x]
 Plot[WaveletPhi[DaubechiesWavelet[4], x], {x, 0, 7}]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/WaveletPhi.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/WaveletPhi.html) for more details.

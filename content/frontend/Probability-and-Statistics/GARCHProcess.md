@@ -20,4 +20,4 @@ Simulate the process:
 RandomFunction[GARCHProcess[0.1, {0.2}, {0.7}], {0, 100}]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/GARCHProcess.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/GARCHProcess.html) for more details.

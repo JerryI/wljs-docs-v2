@@ -16,4 +16,4 @@ Maximize a function using Bayesian optimization:
 BayesianMaximization[-((#x - 2)^2 + (#y - 3)^2) &, {"x" -> {-5, 5}, "y" -> {-5, 5}}]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/BayesianMaximization.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/BayesianMaximization.html) for more details.

@@ -24,4 +24,4 @@ TreeMapAt[# + 1 &, Tree[1, {Tree[2, {3, 4}], 5}], {1, 1}]
 TreeMapAt[Style[#, Red] &, {1, 2}][Tree[a, {b, c, d}]]
 ```
 
-*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/TreeMapAt.html) for more details.*
+*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/TreeMapAt.html) for more details.

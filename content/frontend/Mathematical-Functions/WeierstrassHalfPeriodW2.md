@@ -12,4 +12,4 @@ Compute the half-period ω2:
 WeierstrassHalfPeriodW2[{1, 2}]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/WeierstrassHalfPeriodW2.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/WeierstrassHalfPeriodW2.html) for more details.

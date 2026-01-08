@@ -14,4 +14,4 @@ tree = Tree[a, {Tree[b, {c, d}], Tree[b, {e}]}];
 TreeCount[tree, b]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/TreeCount.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/TreeCount.html) for more details.

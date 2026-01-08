@@ -23,4 +23,4 @@ If[True, "yes", "no"]
 (* "yes" *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/True.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/True.html) for more details.

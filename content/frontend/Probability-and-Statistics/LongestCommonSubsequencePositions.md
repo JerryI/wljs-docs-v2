@@ -16,4 +16,4 @@ LongestCommonSubsequencePositions[{a, b, c, d}, {x, b, c, y}]
 (* {{2, 3}, {2, 3}} *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/LongestCommonSubsequencePositions.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/LongestCommonSubsequencePositions.html) for more details.

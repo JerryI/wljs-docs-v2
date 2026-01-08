@@ -12,4 +12,4 @@ Create a date distribution:
 DateDistribution[NormalDistribution[0, 1], "Day", DateObject[{2020, 1, 1}]]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/DateDistribution.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/DateDistribution.html) for more details.

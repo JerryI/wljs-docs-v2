@@ -16,4 +16,4 @@ TreeDepth[Tree[a, {Tree[b, {c, d}], e}]]
 TreeDepth[Tree[1, {Tree[2, {3}], 4}]]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/TreeDepth.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/TreeDepth.html) for more details.

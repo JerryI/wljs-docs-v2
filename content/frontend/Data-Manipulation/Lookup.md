@@ -23,4 +23,4 @@ Lookup[assoc, {"a", "c"}]
 (* {1, 3} *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Lookup.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Lookup.html) for more details.

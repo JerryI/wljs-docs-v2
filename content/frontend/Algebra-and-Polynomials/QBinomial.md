@@ -16,4 +16,4 @@ Evaluate at a specific q value:
 QBinomial[4, 2, 2]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/QBinomial.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/QBinomial.html) for more details.

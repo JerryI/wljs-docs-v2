@@ -20,4 +20,4 @@ N[WeierstrassEta3[{1, 2}]]
 (* Numerical result *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/WeierstrassEta3.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/WeierstrassEta3.html) for more details.

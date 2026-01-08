@@ -13,4 +13,4 @@ AugmentedPolyhedron[Tetrahedron[]]
 (* augmented tetrahedron *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/AugmentedPolyhedron.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/AugmentedPolyhedron.html) for more details.

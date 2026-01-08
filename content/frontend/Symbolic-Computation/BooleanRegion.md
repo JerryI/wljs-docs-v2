@@ -20,4 +20,4 @@ Union:
 BooleanRegion[Or, {c1, c2}]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/BooleanRegion.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/BooleanRegion.html) for more details.

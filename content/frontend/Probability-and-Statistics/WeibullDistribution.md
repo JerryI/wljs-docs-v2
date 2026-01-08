@@ -12,4 +12,4 @@ title: WeibullDistribution
 PDF[WeibullDistribution[2, 1], x]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/WeibullDistribution.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/WeibullDistribution.html) for more details.

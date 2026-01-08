@@ -14,4 +14,4 @@ Three-way diff of strings:
 Diff3["abc", "ab", "acd"]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Diff3.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Diff3.html) for more details.

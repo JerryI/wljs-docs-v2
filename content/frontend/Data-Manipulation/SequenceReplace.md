@@ -24,4 +24,4 @@ SequenceReplace[{1, 2, 3, 4}, {x_, y_} -> x + y]
 (* {3, 7} *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/SequenceReplace.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/SequenceReplace.html) for more details.

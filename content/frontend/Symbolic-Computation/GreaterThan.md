@@ -20,4 +20,4 @@ GreaterThan[5] /@ {3, 5, 7}
 (* {False, False, True} *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/GreaterThan.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/GreaterThan.html) for more details.

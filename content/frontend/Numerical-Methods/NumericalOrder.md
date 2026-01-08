@@ -14,4 +14,4 @@ NumericalOrder[3.5, 2.1]
 NumericalOrder[Pi, 3.14]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/NumericalOrder.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/NumericalOrder.html) for more details.

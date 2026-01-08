@@ -20,4 +20,4 @@ GeoElevationData[Entity["Mountain", {"MountEverest", "Himalaya", "Nepal"}]]
 GeoElevationData[Entity["City", {"Denver", "Colorado", "UnitedStates"}]]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/GeoElevationData.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/GeoElevationData.html) for more details.

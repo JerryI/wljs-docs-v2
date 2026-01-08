@@ -14,4 +14,4 @@ Apply a function that uses pixel position:
 ImageApplyIndexed[#2[[1]]/100 &, Image[RandomReal[1, {100, 100}]]]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ImageApplyIndexed.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ImageApplyIndexed.html) for more details.

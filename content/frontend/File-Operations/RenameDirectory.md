@@ -22,4 +22,4 @@ RenameDirectory[FileNameJoin[{$TemporaryDirectory, "test"}],
   FileNameJoin[{$HomeDirectory, "test"}]]
 ```
 
-*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/RenameDirectory.html) for more details.*
+*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/RenameDirectory.html) for more details.

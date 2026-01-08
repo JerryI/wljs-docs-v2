@@ -16,4 +16,4 @@ TrigFactorList[Sin[x] Cos[x]]
 (* {{Cos[x], 1}, {Sin[x], 1}} *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/TrigFactorList.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/TrigFactorList.html) for more details.

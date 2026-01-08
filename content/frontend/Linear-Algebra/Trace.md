@@ -27,4 +27,4 @@ f[x_] := x^2 + 1;
 Trace[f[3]]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Trace.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Trace.html) for more details.

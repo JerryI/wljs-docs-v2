@@ -22,4 +22,4 @@ ChromaticPolynomial[CycleGraph[5], k]
 (* (k - 1)^5 + (k - 1) *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ChromaticPolynomial.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ChromaticPolynomial.html) for more details.

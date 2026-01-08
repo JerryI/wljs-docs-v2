@@ -16,4 +16,4 @@ Read multiple values from a device:
 DeviceReadList[sensor, 10]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/DeviceReadList.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/DeviceReadList.html) for more details.

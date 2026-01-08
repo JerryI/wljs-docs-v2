@@ -20,4 +20,4 @@ Encode with password:
 Encode["secret.m", "secret.mx", "mypassword"]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Encode.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Encode.html) for more details.

@@ -11,4 +11,4 @@ img = Binarize[ExampleData[{"TestImage", "Lena"}]];
 MorphologicalGraph[img]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/MorphologicalGraph.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/MorphologicalGraph.html) for more details.

@@ -14,4 +14,4 @@ LameEigenvalueB[2, 1, 0.5]
 Table[LameEigenvalueB[3, j, 0.3], {j, 1, 3}]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/LameEigenvalueB.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/LameEigenvalueB.html) for more details.

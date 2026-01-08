@@ -20,4 +20,4 @@ Get eclipse type:
 SolarEclipse["Type"]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/SolarEclipse.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/SolarEclipse.html) for more details.

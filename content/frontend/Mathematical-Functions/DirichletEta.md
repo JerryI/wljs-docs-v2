@@ -19,4 +19,4 @@ Related to Riemann zeta:
 DirichletEta[s] == (1 - 2^(1 - s)) Zeta[s]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/DirichletEta.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/DirichletEta.html) for more details.

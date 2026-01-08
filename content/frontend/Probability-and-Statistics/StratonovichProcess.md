@@ -27,4 +27,4 @@ RandomFunction[proc, {0, 1, 0.01}]
 StratonovichProcess[{0, x[t]}, x[t], t, {x, 1}, {t, 0}]
 ```
 
-*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/StratonovichProcess.html) for more details.*
+*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/StratonovichProcess.html) for more details.

@@ -24,4 +24,4 @@ PalindromeQ[12321]
 (* True *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/PalindromeQ.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/PalindromeQ.html) for more details.

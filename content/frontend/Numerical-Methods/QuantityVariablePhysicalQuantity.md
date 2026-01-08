@@ -23,4 +23,4 @@ QuantityVariablePhysicalQuantity[v]
 QuantityVariablePhysicalQuantity[QuantityVariable["m", "Mass"], "Abbreviation"]
 ```
 
-*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/QuantityVariablePhysicalQuantity.html) for more details.*
+*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/QuantityVariablePhysicalQuantity.html) for more details.

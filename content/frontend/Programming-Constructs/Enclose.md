@@ -32,4 +32,4 @@ Handle failure:
 Enclose[computation[], "Message" &]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Enclose.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Enclose.html) for more details.

@@ -16,4 +16,4 @@ KarhunenLoeveDecomposition[RandomReal[1, {10, 5}]]
 {transformed, matrix} = KarhunenLoeveDecomposition[data]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/KarhunenLoeveDecomposition.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/KarhunenLoeveDecomposition.html) for more details.

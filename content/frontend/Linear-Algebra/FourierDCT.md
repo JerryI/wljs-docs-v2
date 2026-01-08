@@ -18,4 +18,4 @@ FourierDCT[{1, 0, -1, 0}, 2]
 (* DCT type 2 result *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/FourierDCT.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/FourierDCT.html) for more details.

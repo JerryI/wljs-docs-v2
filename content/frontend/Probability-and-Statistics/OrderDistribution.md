@@ -22,4 +22,4 @@ Mean[OrderDistribution[{UniformDistribution[], 5}, 3]]
 PDF[OrderDistribution[{ExponentialDistribution[1], 3}, 1], x]
 ```
 
-*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/OrderDistribution.html) for more details.*
+*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/OrderDistribution.html) for more details.

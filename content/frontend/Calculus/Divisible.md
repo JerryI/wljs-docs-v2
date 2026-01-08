@@ -25,4 +25,4 @@ Select[Range[20], Divisible[#, 3] &]
 (* {3, 6, 9, 12, 15, 18} *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Divisible.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Divisible.html) for more details.

@@ -17,4 +17,4 @@ Comap[{Sin, Cos, Tan}, Pi/4]
 (* {1/Sqrt[2], 1/Sqrt[2], 1} *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Comap.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Comap.html) for more details.

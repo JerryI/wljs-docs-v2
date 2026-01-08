@@ -24,4 +24,4 @@ KeyDrop[{"b"}][<|"a" -> 1, "b" -> 2|>]
 (* <|"a" -> 1|> *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/KeyDrop.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/KeyDrop.html) for more details.

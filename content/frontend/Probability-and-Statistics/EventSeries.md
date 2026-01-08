@@ -16,4 +16,4 @@ EventSeries[{{0, "start"}, {1, "middle"}, {2, "end"}}]
 EventSeries[{1, 0, 1, 0}, {0, 4}]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/EventSeries.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/EventSeries.html) for more details.

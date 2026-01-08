@@ -23,4 +23,4 @@ First k eigenvalues:
 Eigensystem[HilbertMatrix[5], 2]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Eigensystem.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Eigensystem.html) for more details.

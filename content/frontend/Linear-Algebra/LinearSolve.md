@@ -20,4 +20,4 @@ m . {1, 2}
 (* {5, 11} *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/LinearSolve.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/LinearSolve.html) for more details.

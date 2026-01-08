@@ -22,4 +22,4 @@ WordFrequency[ExampleData[{"Text", "AliceInWonderland"}], "Alice"]
 WordFrequency["hello world hello", {"hello", "world"}]
 ```
 
-*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/WordFrequency.html) for more details.*
+*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/WordFrequency.html) for more details.

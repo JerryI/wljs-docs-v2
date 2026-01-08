@@ -13,4 +13,4 @@ Date[]
 (* {2024, 1, 15, 10, 30, 45} *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Date.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Date.html) for more details.

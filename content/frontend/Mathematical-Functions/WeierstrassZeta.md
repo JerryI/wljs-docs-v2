@@ -13,4 +13,4 @@ WeierstrassZeta[0.5, {1, 2}]
 (* 1.94773 *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/WeierstrassZeta.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/WeierstrassZeta.html) for more details.

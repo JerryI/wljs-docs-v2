@@ -25,4 +25,4 @@ recognizer[newPhoto]
 recognizer[newPhoto, "Probabilities"]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/FaceRecognize.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/FaceRecognize.html) for more details.

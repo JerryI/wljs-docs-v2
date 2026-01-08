@@ -17,4 +17,4 @@ Use in a neural network:
 NetChain[{SequenceIndicesLayer[], LinearLayer[10]}]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/SequenceIndicesLayer.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/SequenceIndicesLayer.html) for more details.

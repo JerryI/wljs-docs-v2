@@ -14,4 +14,4 @@ Chop[m . ConjugateTranspose[m]]
 (* IdentityMatrix[3] *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/CircularUnitaryMatrixDistribution.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/CircularUnitaryMatrixDistribution.html) for more details.

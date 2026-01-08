@@ -22,4 +22,4 @@ FeatureExtract[data, {"StandardizedVector", "PCA"}]
 FeatureExtract[{"hello", "world", "test"}, "TFIDF"]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/FeatureExtract.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/FeatureExtract.html) for more details.

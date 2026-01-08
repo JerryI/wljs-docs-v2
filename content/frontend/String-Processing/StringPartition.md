@@ -22,4 +22,4 @@ StringPartition["abcdef", 3, 1]
 (* {"abc", "bcd", "cde", "def"} *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/StringPartition.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/StringPartition.html) for more details.

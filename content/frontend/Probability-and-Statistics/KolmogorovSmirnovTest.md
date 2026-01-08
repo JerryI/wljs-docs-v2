@@ -17,4 +17,4 @@ KolmogorovSmirnovTest[RandomReal[1, 100]]
 KolmogorovSmirnovTest[RandomVariate[NormalDistribution[], 100], NormalDistribution[]]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/KolmogorovSmirnovTest.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/KolmogorovSmirnovTest.html) for more details.

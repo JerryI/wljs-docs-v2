@@ -25,4 +25,4 @@ Ceiling[17, 5]
 (* 20 *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Ceiling.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Ceiling.html) for more details.

@@ -14,4 +14,4 @@ Solve a conic optimization problem:
 ConicOptimization[x + y, {x^2 + y^2 <= 1}, {x, y}]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ConicOptimization.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ConicOptimization.html) for more details.

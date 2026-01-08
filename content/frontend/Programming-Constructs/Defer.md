@@ -27,4 +27,4 @@ Useful for generating code:
 Defer[Plot[Sin[x], {x, 0, 2 Pi}]]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Defer.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Defer.html) for more details.

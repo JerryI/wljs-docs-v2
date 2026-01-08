@@ -19,4 +19,4 @@ DateObject[{2024, 12, 25}]
 DateObject[{2024, 1, 1, 12, 0, 0}]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/DateObject.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/DateObject.html) for more details.

@@ -15,4 +15,4 @@ For[i = 0, i < 5, i++, Print[i]]
 
 Note: In Wolfram Language, `Table` or `Do` are often preferred over `For` loops.
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/For.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/For.html) for more details.

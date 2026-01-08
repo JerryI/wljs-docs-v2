@@ -20,4 +20,4 @@ LogGamma[10.0]
 (* 12.8018 *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/LogGamma.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/LogGamma.html) for more details.

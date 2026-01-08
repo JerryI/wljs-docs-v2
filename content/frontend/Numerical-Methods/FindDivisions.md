@@ -21,4 +21,4 @@ FindDivisions[{0, 10, 0.5}, 5]
 FindDivisions[{0, 100}, {5, 2}]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/FindDivisions.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/FindDivisions.html) for more details.

@@ -23,4 +23,4 @@ VertexDiceSimilarity[CompleteGraph[5], 1, 2]
 VertexDiceSimilarity[{1 -> 2, 2 -> 3, 1 -> 3}, 1, 2]
 ```
 
-*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/VertexDiceSimilarity.html) for more details.*
+*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/VertexDiceSimilarity.html) for more details.

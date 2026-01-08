@@ -20,4 +20,4 @@ Compare with PartitionsP:
 (* {42, 10} *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/PartitionsQ.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/PartitionsQ.html) for more details.

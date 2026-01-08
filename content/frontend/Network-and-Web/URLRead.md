@@ -26,4 +26,4 @@ URLRead["https://example.com", "Body"]
 (* "<!doctype html>..." *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/URLRead.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/URLRead.html) for more details.

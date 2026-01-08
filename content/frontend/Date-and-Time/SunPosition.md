@@ -16,4 +16,4 @@ title: SunPosition
 SunPosition[]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/SunPosition.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/SunPosition.html) for more details.

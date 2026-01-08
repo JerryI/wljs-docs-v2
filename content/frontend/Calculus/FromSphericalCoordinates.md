@@ -18,4 +18,4 @@ Convert a unit vector:
 FromSphericalCoordinates[{1, Pi/2, 0}]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/FromSphericalCoordinates.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/FromSphericalCoordinates.html) for more details.

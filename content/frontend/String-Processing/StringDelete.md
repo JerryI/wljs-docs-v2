@@ -22,4 +22,4 @@ StringDelete["abc123def", DigitCharacter]
 (* "abcdef" *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/StringDelete.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/StringDelete.html) for more details.

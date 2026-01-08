@@ -13,4 +13,4 @@ pts = RandomPoint[Sphere[], 100];
 EstimatedPointNormals[pts]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/EstimatedPointNormals.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/EstimatedPointNormals.html) for more details.

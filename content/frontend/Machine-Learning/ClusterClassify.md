@@ -24,4 +24,4 @@ cf[{5, 6}]
 (* 2 *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ClusterClassify.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ClusterClassify.html) for more details.

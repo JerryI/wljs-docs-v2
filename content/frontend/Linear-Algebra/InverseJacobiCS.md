@@ -21,4 +21,4 @@ N[InverseJacobiCS[1, 1/2]]
 JacobiCS[InverseJacobiCS[v, m], m] // Simplify
 ```
 
-*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/InverseJacobiCS.html) for more details.*
+*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/InverseJacobiCS.html) for more details.

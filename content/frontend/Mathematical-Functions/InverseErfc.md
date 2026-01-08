@@ -20,4 +20,4 @@ Erfc[InverseErfc[1.5]]
 (* 1.5 *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/InverseErfc.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/InverseErfc.html) for more details.

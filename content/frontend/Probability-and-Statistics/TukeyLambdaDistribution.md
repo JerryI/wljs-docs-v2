@@ -13,4 +13,4 @@ title: TukeyLambdaDistribution
 PDF[TukeyLambdaDistribution[0.5], x]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/TukeyLambdaDistribution.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/TukeyLambdaDistribution.html) for more details.

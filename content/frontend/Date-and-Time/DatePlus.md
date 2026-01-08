@@ -19,4 +19,4 @@ DatePlus[DateObject[{2024, 1, 15}], {3, "Month"}]
 DatePlus[Today, {{1, "Year"}, {6, "Month"}}]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/DatePlus.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/DatePlus.html) for more details.

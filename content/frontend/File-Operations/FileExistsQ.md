@@ -19,4 +19,4 @@ Conditional loading:
 If[FileExistsQ["config.m"], Get["config.m"]]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/FileExistsQ.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/FileExistsQ.html) for more details.

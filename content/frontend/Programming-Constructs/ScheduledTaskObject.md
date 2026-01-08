@@ -14,4 +14,4 @@ task = SessionSubmit[ScheduledTask[Print["Hello"], {5}]]
 TaskRemove[ScheduledTaskObject[1]]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ScheduledTaskObject.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ScheduledTaskObject.html) for more details.

@@ -20,4 +20,4 @@ URLDecode["test%3Dvalue%26key%3D123"]
 (* "test=value&key=123" *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/URLDecode.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/URLDecode.html) for more details.

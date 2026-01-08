@@ -14,4 +14,4 @@ PrependLayer[]
 PrependLayer[][<|"Input" -> {1, 2, 3}, "Element" -> 0|>]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/PrependLayer.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/PrependLayer.html) for more details.

@@ -12,4 +12,4 @@ Create a CIR process:
 CoxIngersollRossProcess[0.05, 0.1, 0.5, 0.03]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/CoxIngersollRossProcess.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/CoxIngersollRossProcess.html) for more details.

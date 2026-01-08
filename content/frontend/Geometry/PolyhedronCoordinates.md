@@ -12,4 +12,4 @@ Get the vertex coordinates of a tetrahedron:
 PolyhedronCoordinates[Tetrahedron[]]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/PolyhedronCoordinates.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/PolyhedronCoordinates.html) for more details.

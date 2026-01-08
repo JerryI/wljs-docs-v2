@@ -14,4 +14,4 @@ RiemannR[100]
 Plot[{RiemannR[x], PrimePi[x]}, {x, 2, 100}]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/RiemannR.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/RiemannR.html) for more details.

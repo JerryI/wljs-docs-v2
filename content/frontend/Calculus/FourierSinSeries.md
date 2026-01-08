@@ -20,4 +20,4 @@ Expand a function as a sine series:
 FourierSinSeries[t (Pi - t), t, 3]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/FourierSinSeries.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/FourierSinSeries.html) for more details.

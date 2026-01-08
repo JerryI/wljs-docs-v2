@@ -19,4 +19,4 @@ imgs = Table[ExampleData[{"TestImage", "Mandrill"}], 2, 2];
 ImageAssemble[imgs]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ImageAssemble.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ImageAssemble.html) for more details.

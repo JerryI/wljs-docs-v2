@@ -10,4 +10,4 @@ title: AggregationLayer
 
 `AggregationLayer[f, {n1, n2, …}]` aggregates an array at levels n1, n2, ….
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/AggregationLayer.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/AggregationLayer.html) for more details.

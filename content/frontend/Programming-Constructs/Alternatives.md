@@ -20,4 +20,4 @@ StringCases["cat dog bird", "cat" | "dog"]
 (* {"cat", "dog"} *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Alternatives.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Alternatives.html) for more details.

@@ -16,4 +16,4 @@ Check the current setting:
 CurrentValue[$FrontEnd, MultilaunchWarning]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/MultilaunchWarning.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/MultilaunchWarning.html) for more details.

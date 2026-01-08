@@ -18,4 +18,4 @@ KEdgeConnectedGraphQ[PathGraph[{1, 2, 3}], 2]
 (* False *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/KEdgeConnectedGraphQ.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/KEdgeConnectedGraphQ.html) for more details.

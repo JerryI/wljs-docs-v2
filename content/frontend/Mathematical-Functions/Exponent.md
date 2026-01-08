@@ -20,4 +20,4 @@ Exponent[x^2 * (1 + x)^3, x]
 (* 5 *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Exponent.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Exponent.html) for more details.

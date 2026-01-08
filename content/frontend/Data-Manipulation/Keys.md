@@ -22,4 +22,4 @@ Keys[{x -> 1, y -> 2}]
 (* {x, y} *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Keys.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Keys.html) for more details.

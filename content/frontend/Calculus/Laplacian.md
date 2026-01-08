@@ -20,4 +20,4 @@ Laplacian[Sin[x] Cos[y], {x, y}]
 (* -2 Cos[y] Sin[x] *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Laplacian.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Laplacian.html) for more details.

@@ -21,4 +21,4 @@ Create nested directories:
 CreateDirectory["path/to/new/folder"]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/CreateDirectory.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/CreateDirectory.html) for more details.

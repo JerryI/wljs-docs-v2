@@ -20,4 +20,4 @@ URLSaveAsynchronous[url, file,
 task = URLSaveAsynchronous["https://example.com/data.csv", "data.csv", callback]
 ```
 
-*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/URLSaveAsynchronous.html) for more details.*
+*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/URLSaveAsynchronous.html) for more details.

@@ -20,4 +20,4 @@ ArcCsc[2.0]
 (* 0.523599 *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ArcCsc.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ArcCsc.html) for more details.

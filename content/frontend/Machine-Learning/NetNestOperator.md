@@ -21,4 +21,4 @@ op[{1, 2, 3}]
 NetNestOperator[NetChain[{LinearLayer[10], Ramp}], 4]
 ```
 
-*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/NetNestOperator.html) for more details.*
+*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/NetNestOperator.html) for more details.

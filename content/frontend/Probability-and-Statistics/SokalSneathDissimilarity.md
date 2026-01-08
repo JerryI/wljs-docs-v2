@@ -20,4 +20,4 @@ SokalSneathDissimilarity[{True, False, True}, {False, False, True}]
 DistanceMatrix[data, DistanceFunction -> SokalSneathDissimilarity]
 ```
 
-*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/SokalSneathDissimilarity.html) for more details.*
+*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/SokalSneathDissimilarity.html) for more details.

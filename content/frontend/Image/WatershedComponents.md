@@ -14,4 +14,4 @@ img = GradientFilter[ExampleData[{"TestImage", "Mandrill"}], 2];
 WatershedComponents[img] // Colorize
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/WatershedComponents.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/WatershedComponents.html) for more details.

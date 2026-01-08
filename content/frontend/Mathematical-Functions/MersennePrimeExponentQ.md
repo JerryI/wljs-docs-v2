@@ -27,4 +27,4 @@ Select[Range[100], MersennePrimeExponentQ]
 (* {2, 3, 5, 7, 13, 17, 19, 31, 61, 89} *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/MersennePrimeExponentQ.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/MersennePrimeExponentQ.html) for more details.

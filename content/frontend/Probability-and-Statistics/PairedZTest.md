@@ -23,4 +23,4 @@ PairedZTest[{{1, 2, 3}, {2, 3, 4}}]
 PairedZTest[data, 1, 0, "PValue"]
 ```
 
-*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/PairedZTest.html) for more details.*
+*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/PairedZTest.html) for more details.

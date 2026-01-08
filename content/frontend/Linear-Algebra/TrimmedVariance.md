@@ -26,4 +26,4 @@ TrimmedVariance[Range[100]]
 (* 841.25 *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/TrimmedVariance.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/TrimmedVariance.html) for more details.

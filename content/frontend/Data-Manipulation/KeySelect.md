@@ -22,4 +22,4 @@ KeySelect[<|"x" -> 1, "y" -> 2, "z" -> 3|>, StringMatchQ[#, "x" | "z"] &]
 (* <|"x" -> 1, "z" -> 3|> *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/KeySelect.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/KeySelect.html) for more details.

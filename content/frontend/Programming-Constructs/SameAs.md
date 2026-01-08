@@ -20,4 +20,4 @@ Select[{1, 2, 5, 3, 5}, SameAs[5]]
 Cases[{a, b, a, c, a}, SameAs[a]]
 ```
 
-*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/SameAs.html) for more details.*
+*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/SameAs.html) for more details.

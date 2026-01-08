@@ -28,4 +28,4 @@ ImageInstanceQ[img, Entity["Concept", "Cat::7865n"]]
 (* False *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ImageInstanceQ.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ImageInstanceQ.html) for more details.

@@ -23,4 +23,4 @@ VertexReplace[CycleGraph[4], {1 -> "A", 2 -> "B", 3 -> "C", 4 -> "D"}]
 VertexReplace[{1 -> 2, 2 -> 3}, {1 -> x, 3 -> z}]
 ```
 
-*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/VertexReplace.html) for more details.*
+*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/VertexReplace.html) for more details.

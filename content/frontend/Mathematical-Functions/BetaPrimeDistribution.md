@@ -14,4 +14,4 @@ title: BetaPrimeDistribution
 PDF[BetaPrimeDistribution[2, 3], x]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/BetaPrimeDistribution.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/BetaPrimeDistribution.html) for more details.

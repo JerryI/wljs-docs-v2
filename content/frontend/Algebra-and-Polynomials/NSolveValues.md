@@ -13,4 +13,4 @@ NSolveValues[x^2 - 2 == 0, x]
 (* {-1.41421, 1.41421} *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/NSolveValues.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/NSolveValues.html) for more details.

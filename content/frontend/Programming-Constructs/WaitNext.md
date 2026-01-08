@@ -15,4 +15,4 @@ eids = ParallelSubmit /@ {Pause[1]; 1, Pause[2]; 2};
 {result, eid, rest} = WaitNext[eids]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/WaitNext.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/WaitNext.html) for more details.

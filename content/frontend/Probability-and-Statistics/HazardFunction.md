@@ -19,4 +19,4 @@ Plot the hazard function:
 Plot[HazardFunction[WeibullDistribution[2, 1], t], {t, 0, 5}]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/HazardFunction.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/HazardFunction.html) for more details.

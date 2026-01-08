@@ -19,4 +19,4 @@ Get antonyms for multiple words:
 Antonyms /@ {"big", "fast", "happy"}
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Antonyms.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Antonyms.html) for more details.

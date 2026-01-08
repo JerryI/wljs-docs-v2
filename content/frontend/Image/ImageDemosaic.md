@@ -20,4 +20,4 @@ ImageDemosaic[image, {"RGGB", {1, 1}}]
 ImageDemosaic[sensorData, "GRBG"]
 ```
 
-*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ImageDemosaic.html) for more details.*
+*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ImageDemosaic.html) for more details.

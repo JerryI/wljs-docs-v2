@@ -8,23 +8,60 @@
     "Cell types",
     "Guides",
     "Share",
-    "---Advanced---",
-    "---Reference---",
+    "---Symbols Reference---",
+    "---Data Visualization---",
     "Formatting",
     "Plotting Functions",
-    "Graphics",
-    "Graphics3D",
+    "Plotly",
+    "---Programming & Logic---",
+    "File-Operations",
+    "String-Processing",
+    "Date-and-Time",
+    "Data-Manipulation",
+    "Programming-Constructs",
+    "Misc",
+    "---Media Formats---",
     "Image",
     "Image3D",
-    "GUI",
-    "Misc",
-    "Plotly",
-    "Slides",
-    "Sound",
+    "Graphics",
+    "Graphics3D",
     "Video",
+    "Sound",
+    "---User Interface---",
     "Cells and Notebook",
+    "GUI",
+    "---Frontend Integration---",
     "Frontend IO",
     "Frontend Objects",
-    "Interpreter"
+    "Interpreter",
+    "---Presentation---",
+    "Slides",
+    "---Mathematics & Computation---",
+    "Symbolic-Computation",
+    "Calculus",
+    "Algebra-and-Polynomials",
+    "Mathematical-Functions",
+    "Linear-Algebra",
+    "Numerical-Methods",
+    "Probability-and-Statistics",
+    "Graph-Theory",
+    "Geometry",
+    "---Geographic & Mapping---",
+    "Geographic-Functions",
+    "---Machine Learning---",
+    "Machine-Learning",
+    "---External Integration---",
+    "Devices",
+    "Network-and-Web"
   ]
 }
+
+                                                                        
+                                                                                  
+                                                                                
+                                                                
+                                                         
+                                                     
+                                                                 
+                                                                         
+                                                           

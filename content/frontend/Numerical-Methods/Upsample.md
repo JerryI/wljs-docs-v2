@@ -31,4 +31,4 @@ Upsample[{1, 2, 3}, 2, 1, -1]
 (* {1, -1, 2, -1, 3, -1} *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Upsample.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Upsample.html) for more details.

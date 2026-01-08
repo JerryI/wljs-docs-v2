@@ -21,4 +21,4 @@ Add white padding:
 ImagePad[img, 20, White]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ImagePad.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ImagePad.html) for more details.

@@ -18,4 +18,4 @@ Create a nearest neighbor graph from 2D points:
 NearestNeighborGraph[RandomReal[1, {10, 2}], 2]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/NearestNeighborGraph.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/NearestNeighborGraph.html) for more details.

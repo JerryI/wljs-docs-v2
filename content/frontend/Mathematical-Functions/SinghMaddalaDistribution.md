@@ -21,4 +21,4 @@ Mean[SinghMaddalaDistribution[3, 2, 1]]
 RandomVariate[SinghMaddalaDistribution[2, 2, 1], 5]
 ```
 
-*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/SinghMaddalaDistribution.html) for more details.*
+*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/SinghMaddalaDistribution.html) for more details.

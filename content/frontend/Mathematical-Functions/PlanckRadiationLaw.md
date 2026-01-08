@@ -23,4 +23,4 @@ PlanckRadiationLaw[Quantity[6000, "Kelvins"], "PeakWavelength"]
 Plot[PlanckRadiationLaw[5800, Quantity[λ, "Nanometers"]], {λ, 100, 2000}]
 ```
 
-*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/PlanckRadiationLaw.html) for more details.*
+*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/PlanckRadiationLaw.html) for more details.

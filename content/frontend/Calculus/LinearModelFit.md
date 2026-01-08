@@ -22,4 +22,4 @@ lm["RSquared"]
 (* 0.9973 *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/LinearModelFit.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/LinearModelFit.html) for more details.

@@ -19,4 +19,4 @@ Sample from the distribution:
 RandomVariate[MoyalDistribution[2, 0.5], 10]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/MoyalDistribution.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/MoyalDistribution.html) for more details.

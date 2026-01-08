@@ -19,4 +19,4 @@ pts = RandomReal[1, {100, 2}];
 NearestNeighborG[pts, 0.1]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/NearestNeighborG.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/NearestNeighborG.html) for more details.

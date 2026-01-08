@@ -14,4 +14,4 @@ layer = OrderingLayer[3];
 layer[{5, 2, 8, 1, 9}]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/OrderingLayer.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/OrderingLayer.html) for more details.

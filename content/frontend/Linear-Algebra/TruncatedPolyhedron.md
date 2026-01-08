@@ -20,4 +20,4 @@ TruncatedPolyhedron[PolyhedronData["Tetrahedron"], 0.3]
 Graphics3D[TruncatedPolyhedron[PolyhedronData["Octahedron"]]]
 ```
 
-*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/TruncatedPolyhedron.html) for more details.*
+*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/TruncatedPolyhedron.html) for more details.

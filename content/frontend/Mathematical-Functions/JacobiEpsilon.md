@@ -20,4 +20,4 @@ N[JacobiEpsilon[1, 1/2]]
 Plot[JacobiEpsilon[u, 0.5], {u, 0, 4}]
 ```
 
-*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/JacobiEpsilon.html) for more details.*
+*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/JacobiEpsilon.html) for more details.

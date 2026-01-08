@@ -14,4 +14,4 @@ MathieuCharacteristicExponent[1, 0.5]
 Plot[MathieuCharacteristicExponent[a, 1], {a, 0, 10}]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/MathieuCharacteristicExponent.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/MathieuCharacteristicExponent.html) for more details.

@@ -19,4 +19,4 @@ Compare to specific distribution:
 ProbabilityPlot[data, UniformDistribution[]]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ProbabilityPlot.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ProbabilityPlot.html) for more details.

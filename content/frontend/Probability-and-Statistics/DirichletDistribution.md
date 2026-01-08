@@ -18,4 +18,4 @@ Generate random samples:
 RandomVariate[DirichletDistribution[{1, 1, 1}], 5]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/DirichletDistribution.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/DirichletDistribution.html) for more details.

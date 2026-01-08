@@ -29,4 +29,4 @@ Select specific columns:
 SemanticImport["data.csv", <|"Name" -> "String", "Age" -> "Number"|>]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/SemanticImport.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/SemanticImport.html) for more details.

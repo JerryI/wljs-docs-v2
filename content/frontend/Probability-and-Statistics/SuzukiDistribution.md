@@ -20,4 +20,4 @@ Mean[SuzukiDistribution[1, 1]]
 Plot[PDF[SuzukiDistribution[1, 2], x], {x, 0, 5}]
 ```
 
-*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/SuzukiDistribution.html) for more details.*
+*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/SuzukiDistribution.html) for more details.

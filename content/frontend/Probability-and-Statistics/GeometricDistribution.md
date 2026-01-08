@@ -20,4 +20,4 @@ Mean[GeometricDistribution[p]]
 (* (1 - p)/p *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/GeometricDistribution.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/GeometricDistribution.html) for more details.

@@ -14,4 +14,4 @@ Solve a convex optimization problem:
 ConvexOptimization[x^2 + y^2, {x + y >= 1}, {x, y}]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ConvexOptimization.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ConvexOptimization.html) for more details.

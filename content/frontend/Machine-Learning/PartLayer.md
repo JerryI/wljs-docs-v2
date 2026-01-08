@@ -24,4 +24,4 @@ Extract elements 2 through 4:
 PartLayer[2;;4]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/PartLayer.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/PartLayer.html) for more details.

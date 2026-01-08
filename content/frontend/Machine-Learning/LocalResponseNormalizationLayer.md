@@ -19,4 +19,4 @@ layer = LocalResponseNormalizationLayer[];
 layer[RandomReal[1, {5, 10, 10}]]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/LocalResponseNormalizationLayer.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/LocalResponseNormalizationLayer.html) for more details.

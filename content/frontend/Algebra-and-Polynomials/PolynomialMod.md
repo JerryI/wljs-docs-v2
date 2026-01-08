@@ -21,4 +21,4 @@ Multiple moduli:
 PolynomialMod[12 x^2 + 15 x + 9, {2, 3}]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/PolynomialMod.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/PolynomialMod.html) for more details.

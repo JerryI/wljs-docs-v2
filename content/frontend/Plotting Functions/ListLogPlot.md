@@ -19,4 +19,4 @@ data = Table[{x, Exp[x]}, {x, 1, 5}];
 ListLogPlot[data]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ListLogPlot.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ListLogPlot.html) for more details.

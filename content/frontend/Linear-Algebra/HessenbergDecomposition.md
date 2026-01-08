@@ -15,4 +15,4 @@ HessenbergDecomposition[{{1, 2, 3}, {4, 5, 6}, {7, 8, 9}}]
 p . h . ConjugateTranspose[p]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/HessenbergDecomposition.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/HessenbergDecomposition.html) for more details.

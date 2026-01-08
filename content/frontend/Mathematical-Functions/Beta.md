@@ -30,4 +30,4 @@ Beta[a, b] == Gamma[a] Gamma[b] / Gamma[a + b]
 (* True *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Beta.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Beta.html) for more details.

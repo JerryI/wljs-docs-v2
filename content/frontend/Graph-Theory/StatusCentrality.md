@@ -13,4 +13,4 @@ g = Graph[{1 -> 2, 2 -> 3, 3 -> 1}];
 StatusCentrality[g]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/StatusCentrality.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/StatusCentrality.html) for more details.

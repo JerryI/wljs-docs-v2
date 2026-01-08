@@ -17,4 +17,4 @@ layer[<|"Array" -> {1, 2, 3, 4}, "Position" -> 2|>]
 net = NetChain[{LinearLayer[10], ExtractLayer[]}]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ExtractLayer.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ExtractLayer.html) for more details.

@@ -20,4 +20,4 @@ Compare with Euler's totient:
 (* {20, 40} *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/CarmichaelLambda.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/CarmichaelLambda.html) for more details.

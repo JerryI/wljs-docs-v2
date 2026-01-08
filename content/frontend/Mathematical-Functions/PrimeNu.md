@@ -14,4 +14,4 @@ PrimeNu[60]
 Table[PrimeNu[n], {n, 1, 20}]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/PrimeNu.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/PrimeNu.html) for more details.

@@ -22,4 +22,4 @@ Array domain with integer components:
 Arrays[{2, 2}, Integers]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Arrays.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Arrays.html) for more details.

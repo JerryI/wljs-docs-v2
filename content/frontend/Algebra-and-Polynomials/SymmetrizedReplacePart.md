@@ -20,4 +20,4 @@ asa = SymmetrizedArray[{{1, 2} -> x}, {3, 3}, Antisymmetric[{1, 2}]];
 SymmetrizedReplacePart[asa, {{1, 3} -> y}]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/SymmetrizedReplacePart.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/SymmetrizedReplacePart.html) for more details.

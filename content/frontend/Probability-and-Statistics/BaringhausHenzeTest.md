@@ -23,4 +23,4 @@ Get the p-value:
 BaringhausHenzeTest[data, "PValue"]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/BaringhausHenzeTest.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/BaringhausHenzeTest.html) for more details.

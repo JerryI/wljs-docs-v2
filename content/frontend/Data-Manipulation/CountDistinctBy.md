@@ -22,4 +22,4 @@ CountDistinctBy[{"cat", "dog", "bird", "fish"}, StringLength]
 (* 2 *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/CountDistinctBy.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/CountDistinctBy.html) for more details.

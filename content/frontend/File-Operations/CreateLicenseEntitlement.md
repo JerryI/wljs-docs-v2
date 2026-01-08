@@ -14,4 +14,4 @@ Create a license entitlement:
 CreateLicenseEntitlement[]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/CreateLicenseEntitlement.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/CreateLicenseEntitlement.html) for more details.

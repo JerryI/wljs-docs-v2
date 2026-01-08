@@ -25,4 +25,4 @@ FileExtension["README"]
 (* "" *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/FileExtension.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/FileExtension.html) for more details.

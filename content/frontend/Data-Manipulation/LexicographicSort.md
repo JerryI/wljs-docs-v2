@@ -22,4 +22,4 @@ LexicographicSort[{"apple", "apricot", "banana"}]
 (* {"apple", "apricot", "banana"} *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/LexicographicSort.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/LexicographicSort.html) for more details.

@@ -26,4 +26,4 @@ Plot the wavelet:
 WaveletPsi[PaulWavelet[], {x, -5, 5}]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/PaulWavelet.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/PaulWavelet.html) for more details.

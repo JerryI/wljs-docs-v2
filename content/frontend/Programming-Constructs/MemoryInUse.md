@@ -23,4 +23,4 @@ after - before
 (* Bytes used by data *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/MemoryInUse.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/MemoryInUse.html) for more details.

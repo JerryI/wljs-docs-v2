@@ -20,4 +20,4 @@ Compute the assortativity of a random graph:
 GraphAssortativity[RandomGraph[{20, 50}]]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/GraphAssortativity.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/GraphAssortativity.html) for more details.

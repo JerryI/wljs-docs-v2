@@ -22,4 +22,4 @@ CityData["Paris", "Coordinates"]
 (* GeoPosition[{48.8567, 2.3508}] *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/CityData.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/CityData.html) for more details.

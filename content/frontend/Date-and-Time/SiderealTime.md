@@ -30,4 +30,4 @@ Get sidereal time for a specific location:
 SiderealTime[Entity["City", {"London", "GreaterLondon", "UnitedKingdom"}]]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/SiderealTime.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/SiderealTime.html) for more details.

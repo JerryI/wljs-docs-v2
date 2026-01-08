@@ -24,4 +24,4 @@ KeyTake[{"b"}][<|"a" -> 1, "b" -> 2, "c" -> 3|>]
 (* <|"b" -> 2|> *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/KeyTake.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/KeyTake.html) for more details.

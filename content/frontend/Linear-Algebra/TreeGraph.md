@@ -17,4 +17,4 @@ TreeGraph[{"root" -> "child1", "root" -> "child2"},
   VertexLabels -> "Name"]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/TreeGraph.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/TreeGraph.html) for more details.

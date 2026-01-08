@@ -16,4 +16,4 @@ A graph with a self-loop:
 LoopFreeGraphQ[Graph[{1 -> 1, 1 -> 2}]]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/LoopFreeGraphQ.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/LoopFreeGraphQ.html) for more details.

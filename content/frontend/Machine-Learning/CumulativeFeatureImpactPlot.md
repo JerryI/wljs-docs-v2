@@ -20,4 +20,4 @@ CumulativeFeatureImpactPlot[classifier, testData]
 CumulativeFeatureImpactPlot[predictor -> "Age"]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/CumulativeFeatureImpactPlot.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/CumulativeFeatureImpactPlot.html) for more details.

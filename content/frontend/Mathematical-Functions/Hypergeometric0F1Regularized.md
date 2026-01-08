@@ -14,4 +14,4 @@ Hypergeometric0F1Regularized[2, 1]
 Plot[Hypergeometric0F1Regularized[3, x], {x, -10, 10}]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Hypergeometric0F1Regularized.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Hypergeometric0F1Regularized.html) for more details.

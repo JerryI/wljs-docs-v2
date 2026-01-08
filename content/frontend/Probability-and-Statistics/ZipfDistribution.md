@@ -21,4 +21,4 @@ Probability mass function:
 PDF[ZipfDistribution[100, 1], k]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ZipfDistribution.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ZipfDistribution.html) for more details.

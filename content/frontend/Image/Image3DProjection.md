@@ -28,4 +28,4 @@ Mean projection:
 Image3DProjection[img3d, "Z", "Mean"]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Image3DProjection.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Image3DProjection.html) for more details.

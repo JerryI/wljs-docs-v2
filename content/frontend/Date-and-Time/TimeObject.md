@@ -26,4 +26,4 @@ TimeObject[{10, 30, 0}]
 (* TimeObject[{10, 30, 0}] *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/TimeObject.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/TimeObject.html) for more details.

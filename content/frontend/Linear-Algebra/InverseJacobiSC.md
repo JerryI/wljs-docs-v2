@@ -16,4 +16,4 @@ InverseJacobiSC[2, 1/2] // N
 (* 1.08879 *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/InverseJacobiSC.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/InverseJacobiSC.html) for more details.

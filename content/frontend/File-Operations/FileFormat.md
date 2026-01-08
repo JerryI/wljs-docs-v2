@@ -22,4 +22,4 @@ FileFormat["data.csv", {"CSV", "TSV", "JSON"}]
 (* "CSV" *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/FileFormat.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/FileFormat.html) for more details.

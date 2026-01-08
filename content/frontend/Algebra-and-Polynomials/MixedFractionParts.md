@@ -27,4 +27,4 @@ MixedFractionParts[3.75]
 (* {3, 0.75} *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/MixedFractionParts.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/MixedFractionParts.html) for more details.

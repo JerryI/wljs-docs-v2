@@ -29,4 +29,4 @@ Multiple iterations:
 MorphologicalTransform[img, "Thin", 5]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/MorphologicalTransform.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/MorphologicalTransform.html) for more details.

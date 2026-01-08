@@ -21,4 +21,4 @@ MaxDetect[image, 0.1]
 MaxDetect[GaussianFilter[img, 5]]
 ```
 
-*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/MaxDetect.html) for more details.*
+*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/MaxDetect.html) for more details.

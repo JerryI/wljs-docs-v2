@@ -14,4 +14,4 @@ GroupOrder[SymmetricGroup[5]]
 GroupOrder[AlternatingGroup[4]]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/GroupOrder.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/GroupOrder.html) for more details.

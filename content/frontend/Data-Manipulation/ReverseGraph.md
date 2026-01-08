@@ -23,4 +23,4 @@ ReverseGraph[g]
 ReverseGraph[{a -> b, b -> c, c -> d}]
 ```
 
-*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ReverseGraph.html) for more details.*
+*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ReverseGraph.html) for more details.

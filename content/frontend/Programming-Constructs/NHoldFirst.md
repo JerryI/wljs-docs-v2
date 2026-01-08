@@ -15,4 +15,4 @@ N[f[Pi, E]]
 Attributes[f]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/NHoldFirst.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/NHoldFirst.html) for more details.

@@ -24,4 +24,4 @@ layer[{1, 2, 3}]
 SoftmaxLayer[1][{{1, 2}, {3, 4}}]
 ```
 
-*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/SoftmaxLayer.html) for more details.*
+*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/SoftmaxLayer.html) for more details.

@@ -20,4 +20,4 @@ NetEncoder[{"Image", 224}]
 NetEncoder[{"Class", {"cat", "dog", "bird"}}]
 ```
 
-*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/NetEncoder.html) for more details.*
+*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/NetEncoder.html) for more details.

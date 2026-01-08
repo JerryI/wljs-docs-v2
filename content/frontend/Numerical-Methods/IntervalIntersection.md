@@ -20,4 +20,4 @@ IntervalIntersection[Interval[{0, 2}], Interval[{5, 10}]]
 (* Interval[] *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/IntervalIntersection.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/IntervalIntersection.html) for more details.

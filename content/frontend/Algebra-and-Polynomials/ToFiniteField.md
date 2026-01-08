@@ -16,4 +16,4 @@ Convert an integer to a finite field element:
 ToFiniteField[5, GF[7]]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ToFiniteField.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ToFiniteField.html) for more details.

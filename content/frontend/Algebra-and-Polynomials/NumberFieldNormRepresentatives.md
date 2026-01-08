@@ -10,4 +10,4 @@ title: NumberFieldNormRepresentatives
 NumberFieldNormRepresentatives[Sqrt[5], 4]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/NumberFieldNormRepresentatives.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/NumberFieldNormRepresentatives.html) for more details.

@@ -12,4 +12,4 @@ Create a type by evaluating an expression:
 TypeEvaluate["Integer"]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/TypeEvaluate.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/TypeEvaluate.html) for more details.

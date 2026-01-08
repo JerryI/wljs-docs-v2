@@ -19,4 +19,4 @@ Quantity[100, "Kilometers"] / Quantity[2, "Hours"]
 Quantity[1, "Meters"] + Quantity[50, "Centimeters"]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Quantity.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Quantity.html) for more details.

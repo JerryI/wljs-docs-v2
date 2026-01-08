@@ -20,4 +20,4 @@ N[ArcSinh[2]]
 (* 1.44364 *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ArcSinh.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ArcSinh.html) for more details.

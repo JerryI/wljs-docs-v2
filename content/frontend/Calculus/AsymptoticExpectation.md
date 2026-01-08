@@ -15,4 +15,4 @@ AsymptoticExpectation[x^2, x \[Distributed] NormalDistribution[a, 1],
   a -> Infinity]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/AsymptoticExpectation.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/AsymptoticExpectation.html) for more details.

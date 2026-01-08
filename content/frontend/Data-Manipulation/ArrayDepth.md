@@ -27,4 +27,4 @@ ArrayDepth[{{1, 2}, {3}}]
 (* 1 - not rectangular at depth 2 *)
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ArrayDepth.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ArrayDepth.html) for more details.

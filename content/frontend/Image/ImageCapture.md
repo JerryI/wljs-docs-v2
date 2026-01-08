@@ -18,4 +18,4 @@ Capture with a specific device:
 ImageCapture["FaceTime HD Camera"]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ImageCapture.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ImageCapture.html) for more details.

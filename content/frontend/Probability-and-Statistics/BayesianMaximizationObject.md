@@ -19,4 +19,4 @@ Extract the maximum:
 result["MaximumConfiguration"]
 ```
 
-*Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/BayesianMaximizationObject.html) for more details.*
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/BayesianMaximizationObject.html) for more details.

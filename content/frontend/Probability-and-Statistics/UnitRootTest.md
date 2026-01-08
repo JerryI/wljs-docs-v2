@@ -23,4 +23,4 @@ UnitRootTest[RandomReal[1, 100]]
 UnitRootTest[data, Automatic, "PValue"]
 ```
 
-*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/UnitRootTest.html) for more details.*
+*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/UnitRootTest.html) for more details.
