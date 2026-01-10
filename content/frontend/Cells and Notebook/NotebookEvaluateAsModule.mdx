@@ -1,0 +1,66 @@
+---
+title: NotebookEvaluateAsModule
+env:
+  - Wolfram Kernel
+---
+
+```wolfram
+NotebookEvaluateAsModule[path_String | f_File]
+NotebookEvaluateAsModule[notebook_RemoteNotebook]
+```
+
+imports WLJS notebook as an isolated module/library:
+
+```wolfram
+{exports} = NotebookEvaluateAsModule["mySecondNotebook.wln"];
+```
+
+<Callout type="warning">This breaks the evaluation order. The caller cell will be evaluated last in the queue. Consider using the __safer__ async version [NotebookEvaluateAsModuleAsync](./NotebookEvaluateAsModuleAsync) instead.</Callout>
+
+The following rules apply:
+
+<Card>
+
+- Initialization cells __are evaluated once__ for a given notebook object 
+- The last __Wolfram input cell__ is evaluated on every call and its result is exported
+- All other cells are ignored
+
+</Card>
+
+This allows you to create reusable components using plain notebooks. For example:
+
+<Card>
+
+*Notebook-1.wln*
+
+```jsx title="Initialization cell"
+.wlx
+BigHeader[Text_String] := <h1><Text/></h1>;
+```
+
+```wolfram title="Last cell"
+{BigHeader}
+```
+
+</Card>
+
+Then in the host notebook we can import the result of the previous notebook as a component:
+
+<Card>
+
+*Notebook-2.wln*
+
+```wolfram title="Cell 1"
+{HeaderComponent} = NotebookEvaluateAsModule["Notebook-1.wln"];
+```
+
+```markdown title="Cell 2"
+.slide
+
+<HeaderComponent>Here is my presentation</HeaderComponent>
+
+Hi there!
+```
+
+</Card>
+

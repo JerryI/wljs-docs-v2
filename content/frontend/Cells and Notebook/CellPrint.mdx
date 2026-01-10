@@ -6,90 +6,66 @@ env:
 source: https://github.com/JerryI/wljs-editor/blob/dev/src/RemoteCellsKernel.wl
 package: wljs-editor
 ---
-Creates a new cell with the given content in a notebook
 
 ```wolfram
-CellPrint[str_String, opts___] _RemoteCellObj
+CellPrint[expr_] _RemoteCellObj
 ```
 
 ```wolfram
-CellPrint[any_, opts___] _RemoteCellObj
+CellPrint[cellExpr_] _RemoteCellObj
 ```
 
-where `str` is a text representation of an expression to be inserted into a new cell, or `any` is an arbitrary expression:
+Inserts a new cell directly below the currently evaluated one. The expression `expr` is automatically converted to a [StandardForm](../Formatting/StandardForm) output cell.
 
+Alternatively, `cellExpr` can be any of the following cell types:
+
+<Card>
+
+- `Cell[expr_String, "Input"]`
+- `Cell[expr_String, "Output"]`
+- `Cell[expr_String, "Input"]`
+- `Cell[expr_String, "Output", subtype_String]`
+- `TextCell[expr_String]`
+- `TextCell[expr_String, "Title"]`
+- `TextCell[expr_String, "Section"]`
+- `TextCell[expr_String, "Subsection"]`
 - `ExpressionCell[expr_, "Input"]`
 - `ExpressionCell[expr_, "Output"]`
-- `TextCell[expr_]`
-- `TextCell[expr_, "Title"]`
-- `TextCell[expr_, "Section"]`
-- `TextCell[expr_, "Subsection"]`
-- any other expression will be converted to [StandardForm](../Formatting/StandardForm) 
 
-See also [RemoteCellObj](../Cells%20and%20Notebook/RemoteCellObj) for available methods.
+where the `subtype` property can be any view component from the available cell types:
 
-## Options
-By default, it prints an output Wolfram Language cell after the current parent input cell, but you can override this behavior.
+- `"WLX"` or `"wlx"`
+- `"HTML"` or `"html"`
+- `"JS"` or `"js"` or `"javascript"`
+- `"MERMAID"` or `"mermaid"`
+- ...
 
-### `"After"`
-Specifies a [RemoteCellObj](../Cells%20and%20Notebook/RemoteCellObj) after which a new cell will be inserted. Sequence patterns are also supported.
+</Card>
 
-### `"Type"`
-The default value is `"Output"`.
+`CellPrint` returns the created [RemoteCellObj](./RemoteCellObj), which can be further manipulated.
 
-### `"Target"`
-Default is `"Notebook"`. Specifies the target where a cell will be printed. Possible values:
+<Callout type="idea">
+See also the more comprehensive functions [NotebookWrite](./NotebookWrite) and [CreateWindow](./CreateWindow) for generating cells.
+</Callout>
 
-- `"Notebook"` or `Automatic` or `Null`
-- `"Window"` or `_` projects to a new window (projected cells can emit more events, see [RemoteCellObj](../Cells%20and%20Notebook/RemoteCellObj))
-
-### `"Display"`
-Default is `"codemirror"`. Sets which renderer will be used. The following renderers are available:
-
-- `"codemirror"` — default renderer for all input cells and output WL cells
-- `"markdown"` 
-- `"wlx"`
-- `"html"`
-- `"js"`
-
-and others depending on the cell types available on your system (see [Cell types](Cell%20types)).
-
-### `"EvaluatedQ"`
-Sets whether evaluation is required. Default is `True` (no evaluation, display as provided).
-
-### `"Notebook"`
-If the evaluation context is not available (e.g., when `After` is not provided and the call is triggered by a button or other async event), you should provide a reference to the notebook (see [EvaluationNotebook](../Cells%20and%20Notebook/EvaluationNotebook)).
-
-### `ImageSize`
-The preferred window size for printed cells when `Target` is `_` (new window).
 
 ## Examples
 
-### Basic
-Print a cell after the current one displaying the current date:
+### Basic usage
+Print a cell after the current one, displaying the current date:
 
 ```wolfram
-With[{cell = ResultCell[]},
-  EventHandler[InputButton[], Function[Null,
-    CellPrint[ToString[Now, StandardForm], "After"->cell]
-  ]]
-]
+cell = CellPrint[Now];
 ```
 
-Or print to a new window:
+Then remove it:
 
 ```wolfram
-cell = CellPrint[ToString[Plot[x,{x,0,1}], StandardForm], "Target"->_];
+NotebookDelete[cell];
 ```
 
-Then delete it:
-
-```wolfram
-Delete[cell];
-```
-
-### Different renderers
-You can use [WLX](frontend/Cell%20types/WLX) as well. For example, create a template in a separate cell:
+### Using different renderers
+You can use [WLX](frontend/Cell%20types/WLX) view components as well. First, create a template in a separate cell:
 
 ```jsx
 .wlx
@@ -97,43 +73,8 @@ You can use [WLX](frontend/Cell%20types/WLX) as well. For example, create a temp
 wlTest[P_] := <div class="p-1 rounded" style="border: 1px solid blue"><P/></div>
 ```
 
-Since this function returns a string, you can pass it directly to `CellPrint`:
+Then wrap it in the corresponding cell representation:
 
 ```wolfram
-CellPrint[wlTest[Plot[x, {x,0,1}]], "Display"->"wlx"];
+CellPrint[Cell[wlTest[Plot[x, {x,0,1}]], "Output", "wlx"]];
 ```
-
-### A window that opens another window
-This is possible if you provide the notebook in [Options](#Options); otherwise, the system does not know where to open it:
-
-```wolfram
-man := ManipulatePlot[Sin[x w], {x,-1,1}, {w,1,5}];
-
-open[n_] := CellPrint[ToString[man, StandardForm], "Target"->_, "Notebook"->n];
-
-CellPrint[ToString[
-	With[{n = EvaluationNotebook[]}, 
-		EventHandler[InputButton[], Function[Null, open[n]]]
-	]
-, StandardForm], "Target"->_]
-```
-
-This will continue to work even if you close the original notebook.
-
-### Tracking a projected cell
-You can assign handlers to events from the window:
-
-```wolfram
-state = "";
-TextView[state // Offload, "Label"->"State"]
-
-cell = CellPrint[Plot[x,{x,0,1}], "Target"->_];
-EventHandler[cell, {
-	"Mounted" -> Function[Null, state = "Mounted"],
-	"Closed" -> Function[Null, state = "Closed"]
-}]
-```
-
-<Callout type="note">
-The `Mounted` event contains a `WindowObj`, which can be used together with `FrontSubmit` and `FrontFetch` to trigger actions there.
-</Callout>

@@ -1,0 +1,109 @@
+---
+title: CreateWindow
+---
+
+```wolfram
+CreateWindow[notebook_RemoteNotebook]
+```
+
+opens a notebook in a new window
+
+```wolfram
+CreateWindow[expr, opts]
+```
+
+creates a new window with `expr` shown in `StandardForm`. `CreateWindow` returns [RemoteCellObj](./RemoteCellObj).
+
+```wolfram
+CreateWindow[cellExpr, opts]
+```
+
+creates a new window with `cellExpr` rendered:
+
+<Card>
+
+- `Cell[expr_String, "Input"]`
+- `Cell[expr_String, "Output"]`
+- `Cell[expr_String, "Input"]`
+- `Cell[expr_String, "Output", subtype_String]`
+- `TextCell[expr_String]`
+- `TextCell[expr_String, "Title"]`
+- `TextCell[expr_String, "Section"]`
+- `TextCell[expr_String, "Subsection"]`
+- `ExpressionCell[expr_, "Input"]`
+- `ExpressionCell[expr_, "Output"]`
+
+`subtype` property can be any view-component provided by known cell types:
+
+- `"WLX"` or `"wlx"`
+- `"HTML"` or `"html"`
+- `"JS"` or `"js"` or `"javascript"`
+- `"MERMAID"` or `"mermaid"`
+- ...
+
+</Card>
+
+here `CreateWindow` also returns [RemoteCellObj](./RemoteCellObj).
+
+## Options
+### `WindowSize`
+Sets size `{w,h}` of the created window in pixels. 
+
+### `WindowTitle`
+Sets the name of created window.
+
+### `"Notebook"`
+Specify the notebook (optional) associated with a created window.
+
+## Examples
+
+### Basic examples
+Print graphics to a new window:
+
+```wolfram
+win = CreateWindow[Graphics3D[Cuboid[]]];
+```
+
+then close it:
+
+```wolfram
+NotebookClose[win];
+```
+
+Print HTML content to a new window:
+
+```wolfram
+CreateWindow[Cell["<h2 style=\"color:red\">Hello World</h2>", "Output", "HTML"]];
+```
+
+### A window that opens another window
+This is possible if you provide the notebook in [Options](#Options); otherwise, the system does not know where to open it:
+
+```wolfram
+man := ManipulatePlot[Sin[x w], {x,-1,1}, {w,1,5}];
+
+open[n_] := CreateWindow[man];
+
+CreateWindow[EventHandler[InputButton[], Function[Null, open[n]]]]
+```
+
+This will continue to work even if you close the original notebook.
+
+#### Tracking created window
+You can assign handlers to events from the window:
+
+```wolfram
+state = "";
+TextView[state // Offload, "Label"->"State"]
+
+win = CreateWindow[ExpressionCell[Plot[x,{x,0,1}], "Output"]];
+EventHandler[win, {
+	"Mounted" -> Function[Null, state = "Mounted"],
+	"Closed" -> Function[Null, state = "Closed"]
+}];
+```
+
+<Callout type="idea">
+The `Mounted` event provides `WindowObj`, which can be used together with `FrontSubmit` and `FrontFetch` to trigger actions in the created window.
+</Callout>
+

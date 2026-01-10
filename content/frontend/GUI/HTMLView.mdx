@@ -28,10 +28,10 @@ A function to be executed on the frontend before embedding HTML into DOM. You pr
 {/* [TODO] */}
 
 ```js
-env.htmlString //mutable HTML expression as string
+env.htmlContent //mutable HTML expression
 ```
 
-There is a built-in feature for modifying the string - see below [Post-template engine](#Post-template%20engine)
+There is a built-in feature for modifying the string - see below [Post-template processor](#Template%20processor)
 
 ### `Epilog`
 **works only if a string or a list of strings provided as input**
@@ -47,7 +47,7 @@ a string, which sets CSS style attribute
 ### `"Class"`
 a string, which sets CSS class attribute
 
-## Post-template engine
+## Template processor
 There is built-in tool for post-processing HTML elements before embedding them into DOM. It can be included to the pipeline using `Prolog` option
 
 ```wolfram
@@ -71,8 +71,36 @@ HTMLView["<div>Unique Id #instanceId</div>", Prolog->HTMLView`TemplateProcessor[
 
 It will generate a new UID for each instance even if you copy and paste one.
 
-## Dynamic updates
-It fully supports updates. Use [Offload](../Interpreter/Offload). For example
+## WLX processor
+This allows to hydrate all interactive elements inseted to HTML template in `WLXForm` if it would be a normal WLX cell. It can be included to the pipeline using `Prolog` option
+
+```wolfram
+HTMLView`WLXProcessor[]
+```
+
+for example, you have WLX component, that decorates a `Plot`:
+
+```html
+.wlx
+
+wlTest[P_] := <div class="p-1 rounded" style="border: 1px solid blue"><P/></div>
+```
+
+```html
+.wlx
+
+wlTest[Plot[x, {x,0,1}]]
+```
+
+it works perfectly fine within WLX cells. To embed it as `HTMLView` you provide it directly as a first argument with WLX processor in `Prolog`:
+
+```wolfram
+HTMLView[wlTest[Plot[x, {x,0,1}]], Prolog->HTMLView`WLXProcessor[]]
+```
+
+
+## Dynamics
+It fully supports updates. Use [Offload](../Interpreter/Offload) on the first argument. For example
 
 ```wolfram
 word = "";

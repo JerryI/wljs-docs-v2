@@ -2,7 +2,7 @@
 title: Notebook Tools
 ---
 
-WLJS Notebook is fully accessible from the keyboard. One of the most important key combination to know is <kbd>Ctrl-P</kbd> or <kbd>⌘-P</kbd>, which brings up the Command Palette. From here, you have access to many small helper utilities, toolboxes, shortcuts and AI asistant: 
+WLJS Notebook is fully accessible from the keyboard. One of the most important key combination to know is <kbd>Ctrl-P</kbd> or <kbd>⌘-P</kbd>, which brings up the Command Palette. From here, you have access to many small helper utilities, toolboxes, shortcuts and AI copilot: 
 
 
 <div className='relative group'>
@@ -14,7 +14,7 @@ WLJS Notebook is fully accessible from the keyboard. One of the most important k
 
 import { Share2, CircleQuestionMark } from 'lucide-react';
 
-Most of utilities are notebooks themself with specially tagged cells. You can find the information on each by clicking on <span className='inline-flex' ><CircleQuestionMark style={{height:"1rem"}}/></span> icon, that will open the source notebook.
+Most of utilities are notebooks themself, which are evaluated in the isolated context whever you click on a command palette item. You can find the information on each by clicking on <span className='inline-flex' ><CircleQuestionMark style={{height:"1rem"}}/></span> icon, that will open the source notebook.
 
 <Callout>User's utilities are stored in `~/Documents/WLJS Notebooks/User palette/`</Callout>
 
@@ -31,4 +31,21 @@ Type any of those words to call the action:
 - __Debug__ - attach a debugger
 - __Print__ - export an entire notebook to PDF
 
+<Callout>Notebooks are heavily cached to avoid excessive writting on a disk, therefore avoid renaming an opened notebook outside the WLJS application</Callout>
+
 </Card>
+
+## Utilities
+Every tool is a normal notebook, which is evaluated in the background and manipulate you working notebook, create temporal cells whenever you call it from the palette. 
+
+## Debugger
+
+
+## AI Copilot
+
+## Printing option
+
+
+
+
+

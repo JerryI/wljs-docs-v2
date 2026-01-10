@@ -1,14 +1,92 @@
 ---
 title: NotebookWrite
 ---
-writes the content to the given notebook
+Writes content to a notebook or replaces the content of a specific cell.
 
+## Syntax
+
+**Writing to a notebook:**
 ```wolfram
-NotebookWrite[_RemoteNotebook, expr_]
-NotebookWrite[_RemoteNotebook, {expr1_, ...}]
+NotebookWrite[notebook_RemoteNotebook, expr_]
+NotebookWrite[notebook_RemoteNotebook, {expr1_, expr2_, ...}]
 ```
 
-For example this will act similar to [CellPrint](../Cells%20and%20Notebook/CellPrint):
+**Writing to a cell:**
 ```wolfram
-NotebookWrite[EvaluationNotebook[], Plot[x, {x,0,1}]];
+NotebookWrite[cell_RemoteCellObj, expr_String]
+NotebookWrite[cell_RemoteCellObj, expr_]
+```
+
+## Basic Usage
+
+<Callout>See also [CreateWindow](./CreateWindow) and [CellPrint](./CellPrint)</Callout>
+
+### Appending to a Notebook
+
+Writing to a notebook appends new cells, similar to [CellPrint](../Cells%20and%20Notebook/CellPrint):
+
+```wolfram
+NotebookWrite[EvaluationNotebook[], Plot[x, {x, 0, 1}]];
+```
+
+### Overwriting a Cell
+
+Writing to a `RemoteCellObj` replaces the content of that cell:
+
+```wolfram
+NotebookWrite[NotebookFocusedCell[], Plot[x, {x, 0, 1}]];
+```
+
+<Callout type="warning">Only input cells can be overwritten.</Callout>
+
+## Controlling Insertion Location
+
+Use `NotebookLocationSpecifier` to control exactly where content is written:
+
+**Insert after a specific cell:**
+```wolfram
+NotebookWrite[NotebookLocationSpecifier[cell, "After"], expr]
+```
+
+**Overwrite a specific cell:**
+```wolfram
+NotebookWrite[NotebookLocationSpecifier[cell, "On"], expr]
+```
+
+## Cell Types
+Using `Cell`, `ExpressionCell` or `TextCell` wrapper you can specify the properties of inserted cell:
+
+```wolfram
+NotebookWrite[EvaluationNotebook[], cell]
+```
+
+where `cell` can be
+
+<Card>
+
+- `Cell[expr_String, "Input"]`
+- `Cell[expr_String, "Output"]`
+- `Cell[expr_String, "Input"]`
+- `Cell[expr_String, "Output", subtype_String]`
+- `TextCell[expr_String]`
+- `TextCell[expr_String, "Title"]`
+- `TextCell[expr_String, "Section"]`
+- `TextCell[expr_String, "Subsection"]`
+- `ExpressionCell[expr_, "Input"]`
+- `ExpressionCell[expr_, "Output"]`
+
+`subtype` property can be any view-component provided by known cell types:
+
+- `"WLX"` or `"wlx"`
+- `"HTML"` or `"html"`
+- `"JS"` or `"js"` or `"javascript"`
+- `"MERMAID"` or `"mermaid"`
+- ...
+
+</Card>
+
+For example to create an output HTML cell:
+
+```wolfram
+NotebookWrite[EvaluationNotebook[], Cell["<h1>Hello World</h1>", "Output", "HTML"]]
 ```

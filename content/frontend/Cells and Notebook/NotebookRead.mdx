@@ -1,0 +1,26 @@
+---
+title: NotebookRead
+---
+Reads the content for the notebook or from a given cell
+
+## Syntax
+
+**Read focused cell:**
+```wolfram
+NotebookRead[notebook_RemoteNotebook]
+```
+
+**Read multiple items:**
+```wolfram
+NotebookRead[{item1, item2, ...}]
+```
+
+**Read cell content:**
+```wolfram
+NotebookRead[cell_RemoteCellObj]
+```
+
+For example:
+```wolfram
+NotebookRead[NotebookFocusedCell[]]
+```
