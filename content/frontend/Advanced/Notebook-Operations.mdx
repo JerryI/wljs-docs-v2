@@ -10,7 +10,7 @@ WLJS Notebook provides a rich API for programmatic manipulation of notebooks, ce
 
 You can create and manipulate notebooks programmatically using several core WL functions.
 
-> API uses `RemoteCellObj` and `RemoteNotebook` objects to operate with cells and notebooks. We call them remote, since the evaluation kernel is generally isolated from the notebooks and in theory it is not necessary needed to be run on the same physical machine, while all actual operations are performed by the host process of the app.
+> The API uses `RemoteCellObj` and `RemoteNotebook` objects to operate with cells and notebooks. We call them remote, since the evaluation kernel is generally isolated from the notebooks and in theory it is not necessary to run on the same physical machine, while all actual operations are performed by the host process of the app.
 
 ### Creating notebooks
 
@@ -39,9 +39,9 @@ Use `Defer` to prevent evaluation:
 CreateDocument[Defer[1 + 1]];
 ```
 
-<Callout type="note">Notebook structure is flat. Nested cell groups will be automatically flattened</Callout>
+<Callout type="note">The notebook structure is flat. Nested cell groups will be automatically flattened</Callout>
 
-To put created notebook to a file - use `NotebookSave`:
+To save a created notebook to a file, use `NotebookSave`:
 
 ```wolfram
 NotebookSave[nb, "path/to/notebook.wln"];
@@ -69,7 +69,7 @@ Here is a list of supported expressions in [CreateDocument](./../Cells%20and%20N
     - `"mermaid"` or `"Mermaid"` will render text content as [Mermaid diagram](./../Cell%20types/Misc),
     - ...
 
-The number of cell subtypes rougly corresponds to the number of available [cell types](./../Cell%20types/Misc) in WLJS Notebook.
+The number of cell subtypes roughly corresponds to the number of available [cell types](./../Cell%20types/Misc) in WLJS Notebook.
 
 </Card>
 
@@ -94,7 +94,7 @@ nb = NotebookOpen["path/to/notebook.wln"];
 nb = NotebookOpen["path/to/notebook.wln", Visible -> False];
 ```
 
-or to show an imported one 
+or to show an imported one: 
 
 ```wolfram
 nb = NotebookOpen["path/to/notebook.wln", Visible -> False];
@@ -173,7 +173,7 @@ NotebookWrite[NotebookLocationSpecifier[cell, "After"], expr];
 NotebookWrite[NotebookLocationSpecifier[cell, "On"], expr];
 ```
 
-`NotebookWrite` return a list of created cell objects or a single cell object.
+`NotebookWrite` returns a list of created cell objects or a single cell object.
 
 #### Accessing evaluation context
 
@@ -183,7 +183,7 @@ Use [EvaluationNotebook](../Cells%20and%20Notebook/EvaluationNotebook) to get th
 nb = EvaluationNotebook[];
 ```
 
-Here is an example, where you can create append a cell by clicking a button (which is it not possible with `CellPrint`):
+Here is an example where you can append a cell by clicking a button (which is not possible with `CellPrint`):
 
 ```wolfram
 nb = EvaluationNotebook[];
@@ -208,7 +208,7 @@ Use [ResultCell](../Cells%20and%20Notebook/ResultCell) to get a *future referenc
 outputCell = ResultCell[];
 ```
 
-<Callout type="idea">`ResultCell` can be useful for tracking [cell events](#Cell%20event%20handlers) or deleting it at some conditions automatically</Callout>
+<Callout type="idea">`ResultCell` can be useful for tracking [cell events](#Cell%20event%20handlers) or deleting it under certain conditions automatically</Callout>
 
 Use [NotebookFocusedCell](./../Cells%20and%20Notebook/NotebookFocusedCell) to get a focused / selected cell in the notebook:
 
@@ -216,20 +216,20 @@ Use [NotebookFocusedCell](./../Cells%20and%20Notebook/NotebookFocusedCell) to ge
 focusedCell = NotebookFocusedCell[]
 ```
 
-alternatively you can apply `NotebookRead` to get selected cells of a given notebook:
+Alternatively, you can apply `NotebookRead` to get selected cells of a given notebook:
 
 ```wolfram
 focusedCell = NotebookRead[EvaluationNotebook[]]
 ```
 
-### Writting to existing cells
+### Writing to existing cells
 Use [NotebookWrite](../Cells%20and%20Notebook/NotebookWrite) on cell objects to overwrite their content:
 
 ```wolfram
 NotebookWrite[EvaluationCell[], "Hi there!"];
 ```
 
-here is another example with live updates:
+Here is another example with live updates:
 
 ```wolfram
 cell = NotebookWrite[EvaluationNotebook[], Cell["Timer", "Input"]];
@@ -240,7 +240,7 @@ Button["Delete cell",
 ]
 ```
 
-<Callout type="warning">Only __input cells__ can be rewritten for now. Updating output cells is not possible unless you remove and create a new one manually</Callout>
+<Callout type="warning">Only __input cells__ can be rewritten for now. Updating output cells is not possible unless you manually remove and create a new one</Callout>
 
 ### Reading cells
 
@@ -276,7 +276,7 @@ With[{cell = ResultCell[]},
 ]
 ```
 
-This can come handy to remove listeners, stop timers or other processes when you reevaluate the same cell.
+This can come in handy to remove listeners, stop timers, or other processes when you reevaluate the same cell.
 
 #### Example: Self-destructing cell
 
@@ -290,7 +290,7 @@ With[{cell = EvaluationCell[]},
 
 ## Expression windows manipulation
 
-> Note that created expression windows and cells in fact share the same object structure [RemoteCellObj](./../Cells%20and%20Notebook/RemoteCellObj)
+> Note that created expression windows and cells in fact share the same object structure: [RemoteCellObj](./../Cells%20and%20Notebook/RemoteCellObj)
 
 ### Creating windows
 
@@ -340,7 +340,7 @@ EventHandler[win, {
 ```
 
 ## Application windows manipulation
-Each visible window of WLJS Notebook can be retrived from the context using [CurrentWindow](./../Frontend%20IO/CurrentWindow)
+Each visible window of WLJS Notebook can be retrieved from the context using [CurrentWindow](./../Frontend%20IO/CurrentWindow)
 
 ```wolfram
 appWindow = CurrentWindow[]
@@ -348,16 +348,16 @@ appWindow = CurrentWindow[]
 
 This returns `WindowObj`, that keeps socket connection to it.
 
-<Callout>If you refresh page/window, window object changes as well</Callout>
+<Callout>If you refresh the page/window, the window object changes as well</Callout>
 
 The following rules apply:
 
 <Card>
 
 - Each opened application window has a unique `WindowObj`
-- Any function calls by UI events provide implicitly `WindowObj` as well, that can be taken using `CurrentWindow[]`
+- Any function calls by UI events implicitly provide `WindowObj` as well, which can be accessed using `CurrentWindow[]`
 - Evaluation context also contains current `WindowObj` if the notebook is open
-- `WindowObj` is required for certain actions such as scripts execution on window done by [FrontSubmit](./../Frontend%20IO/FrontSubmit) and others
+- `WindowObj` is required for certain actions such as script execution on the window done by [FrontSubmit](./../Frontend%20IO/FrontSubmit) and others
 
 </Card>
 
@@ -375,7 +375,7 @@ EventHandler[CurrentWindow[], {
 TextView[state // Offload]
 ```
 
-Now try to reload a window or close/open a notebook - you will see the change in the state.
+Now try to reload a window or close/open a notebook—you will see the change in the state.
 
 
 ## Notebooks as modules
@@ -588,7 +588,7 @@ Apply <small>Lock</small> and <small>Hide</small> properties of a cell group to 
 
 #### Step 5: Add boilerplate cells 
 
-Create an many preformatted cells as you want
+Create as many preformatted cells as you want
 
 </Step>
 
@@ -780,7 +780,7 @@ Model = Manipulate[model = RevolutionPlot3D[{Sin[t] +  Sin[y t] /m,
   BoundaryStyle -> Black, PlotStyle -> Thickness[.1], MaxRecursion->1, Axes->False, ImageSize->400], {{x,5, "tX"}, 1, 10, 1}, {{y, 5, "tY"},1,10,1}, {{m,5.5,"Scale"},1,10,0.5}, Appearance->None, ContinuousAction->True];
 ```
 
-<Callout>All global variables we define in this notebook will be automatically scoped to it, when we run it as a mini app. There is no need in a context isolation</Callout>
+<Callout>All global variables we define in this notebook will be automatically scoped to it when we run it as a mini app. There is no need for context isolation</Callout>
 
 Now create another one, where we define an exporting function:
 
@@ -793,9 +793,9 @@ export := Then[SystemDialogInputAsync["FileSave", {Null, {"STL" -> {"*.stl"}}}],
 ]; 
 ```
 
-Here we used `SystemDialogInputAsync` instead of `SystemDialogInput`, since the last one is blocking and cannot be used in calls generated by external asynchronious evens such as button clicks.
+Here we used `SystemDialogInputAsync` instead of `SystemDialogInput`, since the latter is blocking and cannot be used in calls generated by external asynchronous events such as button clicks.
 
-Notebooks exported as [mini apps](./../Share/Mini-apps) use the very last cell's output as a main window. To take advantage of better customization we use [WLX](./../Cell%20types/WLX) cell as the output instead of plain Wolfram language cell:
+Notebooks exported as [mini apps](./../Share/Mini-apps) use the very last cell's output as the main window. To take advantage of better customization, we use a [WLX](./../Cell%20types/WLX) cell as the output instead of a plain Wolfram language cell:
 
 ```jsx title="Last cell in the notebook"
 .wlx
@@ -873,7 +873,7 @@ choice = ChoiceDialog["Select option:", {
 }];
 ```
 
-`ChoiceDialog` is  blocking function. Avoid using it in timers like `SetTimeout`, external event handlers such as `InputButton` or `Button`, or within `AsyncFunction`. Use `ChoiceDialogAsync` instead:
+`ChoiceDialog` is a blocking function. Avoid using it in timers like `SetTimeout`, external event handlers such as `InputButton` or `Button`, or within `AsyncFunction`. Use `ChoiceDialogAsync` instead:
 
 ```wolfram
 n = EvaluationNotebook[];
@@ -889,7 +889,7 @@ Input["Enter expression:", x^2]
 InputString["Enter your name:"]
 ```
 
-Both of them are blocking functions. Again, use async versions in `Button` and other even handlers:
+Both of them are blocking functions. Again, use async versions in `Button` and other event handlers:
 
 ```wolfram
 nb = EvaluationNotebook[];
@@ -920,7 +920,7 @@ path = SystemDialogInput["FileSave"];
 dir = SystemDialogInput["Directory"];
 ```
 
-System dialogs are no longer associated with notebooks, instead it requires `WindowObj` to be provided, which spesifies the parent application window:
+System dialogs are no longer associated with notebooks; instead they require `WindowObj` to be provided, which specifies the parent application window:
 
 ```wolfram
 w = CurrentWindow[];
@@ -928,7 +928,7 @@ SetTimeout[Then[SystemDialogInputAsync["FileSave", "Window"->w], Print], 1000];
 ```
 
 
-However, you do not have to provide `"Window"` if the dialog is called from a click of a button. Event context carries `"Window"` implicitly:
+However, you do not have to provide `"Window"` if the dialog is called from a button click. The event context carries `"Window"` implicitly:
 
 ```wolfram
 Button["Save", Then[SystemDialogInputAsync["FileSave"], Print]]
@@ -1051,12 +1051,90 @@ NotebookWrite[NotebookStore["settings"], <|"theme" -> "dark", "fontSize" -> 14|>
 data = NotebookRead[NotebookStore["myKey"]];
 ```
 
-Note, that `NotebookRead` is a blocking function, use `NotebookReadAsync` in the case if you need to read out the data by a timer or user's actions.
+Note, that `NotebookRead` is a blocking function; use `NotebookReadAsync` if you need to read out the data by a timer or user actions.
 
 
 ## Notebooks as command palette tools
 
+We already mentioned our command palette in the [very first guide](./../Guides/Command-palette). Every tool is a normal notebook, which is evaluated in the background and manipulates your working notebook, creating temporal cells whenever you call it from the palette. 
 
+<Callout>User's utilities are stored in `~/Documents/WLJS Notebooks/User palette/`</Callout>
+
+What you should note before starting:
+
+<Card>
+
+1. Initialization cells are evaluated once
+2. All other cells are evaluated every time you call a tool (except text/markdown cells)
+4. All "global" symbols in tool notebook will be contextually isolated
+5. `CurrentWindow` will return the window of the host notebook (not tool's notebook!)
+6. `NotebookDirectory`, `NotebookWrite`, `NotebookRead`, `NotebookFocusedCell`, `EvaluationNotebook` will be in the context of the host notebook (not tool's notebook!)
+7. `Directory[]` will return the directory of tool's notebook (not host!)
+8. Icon can be set using a specially tagged WLX cell (see examples)
+9. Title of the tool has to be in the first markdown cell of the tool's notebook
+10. You do not need to evaluate any of cells in the tool's notebook
+
+</Card>
+
+All manipulations on the notebook's data can be performed using all symbols we discussed in all sections of this guide.
+
+### Example-1: search text in a cell and print results
+In this example we prompt a user to enter a string, then read the content of focused cell, find all matches and print them in the output cell.
+
+<Card>
+
+First cell - tool name:
+
+```wolfram
+.md
+# Search in cell
+This tool finds a string in a focused cell and prints the results 
+```
+
+This example does not require any initialization cells, then we can skip this part and define our "action" cell:
+
+```wolfram
+focused = NotebookFocusedCell[];
+content = NotebookRead[focused][[1]];
+Then[InputStringAsync["Enter a string to search"], Function[string,
+  If[!TrueQ[StringLength[string] > 3], EchoLabel["Warning"]["String is too short"],
+    With[{cases = StringCases[content, (WordCharacter..|"")~~string~~(WordCharacter..|""), 
+IgnoreCase->True]},
+      NotebookWrite[NotebookLocationSpecifier[focused, "After"], ExpressionCell[TableForm[cases], "Output"]]
+    ]
+]]];
+```
+
+As the last thing, we make a nice icon. This is a __specially tagged__ WLX cell:
+
+```wolfram
+icon.wlx
+Component[OptionsPattern[]] := With[{Title = OptionValue["Title"], Kbd = OptionValue["Shortcut"], UTag = OptionValue["Tag"], Btn = OptionValue["Button"]},
+    <li tabindex="-1" tag="{UTag}" class="list-none nooline group flex cursor-default select-none items-center rounded-md px-2 py-1 focus:bg-teal-500/25">
+             <svg class="h-4 ml-1  w-4 flex-none text-gray-900  dark:text-gray-400 text-opacity-40" fill="none" viewBox="0 0 24 24"><path d="M21 4H3M20 8H6M18 12H9M15 16H8M17 20H12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> 
+              <span class="ml-3 flex-auto truncate"><Title/></span><span class="ml-3 flex-none text-xs font-semibold text-gray-500">
+                <kbd class="font-sans"><Kbd/></kbd>
+                <button class="p-0.5 rounded hover:bg-gray-100 dark:hover:bg-gray-200" btag="{Btn}">
+                  <svg class="w-4 h-4 text-gray-400" viewBox="0 0 24 24" fill="none">
+                    
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2.75C6.89137 2.75 2.75 6.89137 2.75 12C2.75 17.1086 6.89137 21.25 12 21.25C17.1086 21.25 21.25 17.1086 21.25 12C21.25 6.89137 17.1086 2.75 12 2.75ZM1.25 12C1.25 6.06294 6.06294 1.25 12 1.25C17.9371 1.25 22.75 6.06294 22.75 12C22.75 17.9371 17.9371 22.75 12 22.75C6.06294 22.75 1.25 17.9371 1.25 12ZM12 7.75C11.3787 7.75 10.875 8.25368 10.875 8.875C10.875 9.28921 10.5392 9.625 10.125 9.625C9.71079 9.625 9.375 9.28921 9.375 8.875C9.375 7.42525 10.5503 6.25 12 6.25C13.4497 6.25 14.625 7.42525 14.625 8.875C14.625 9.83834 14.1056 10.6796 13.3353 11.1354C13.1385 11.2518 12.9761 11.3789 12.8703 11.5036C12.7675 11.6246 12.75 11.7036 12.75 11.75V13C12.75 13.4142 12.4142 13.75 12 13.75C11.5858 13.75 11.25 13.4142 11.25 13V11.75C11.25 11.2441 11.4715 10.8336 11.7266 10.533C11.9786 10.236 12.2929 10.0092 12.5715 9.84439C12.9044 9.64739 13.125 9.28655 13.125 8.875C13.125 8.25368 12.6213 7.75 12 7.75ZM12 17C12.5523 17 13 16.5523 13 16C13 15.4477 12.5523 15 12 15C11.4477 15 11 15.4477 11 16C11 16.5523 11.4477 17 12 17Z" fill="currentColor"/>
+                  </svg>                  
+                </button>
+              </span>
+    </li>    
+];
+
+Options[Component] = {"Title"->"Example", "Shortcut"->"", "Tag"->"generic", "Button"->Null};
+
+Component
+```
+
+If you are looking for some nice icons, visit the SVGRepo website. In this example it uses 2 SVG icons, one for a tool and another one for a question mark.
+
+
+</Card>
+
+Now we save this notebook to the directory `~/Documents/WLJS Notebooks/User palette/` and restart the WLJS application.
 
 
 
