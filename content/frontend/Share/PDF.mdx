@@ -76,3 +76,6 @@ For the PDF format, there are a few extra options you can provide:
 - `"ExposureTime"` - time delay to wait before capturing (to let the layout settle), the default is 2.5 seconds
 - `"Landscape"` - printing mode, by default is `True`
 
+<Callout type="warning">
+When `Export` is used with `"PDF"` it internally uses blocking functions. Avoid using it in timers like `SetTimeout`, external event handlers such as `InputButton` or `Button`, or within `AsyncFunction`. Use [ExportAsync](./../File-Operations/ExportAsync)
+</Callout>

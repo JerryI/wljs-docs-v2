@@ -1,0 +1,1063 @@
+---
+title: Notebooks
+---
+
+WLJS Notebook provides a rich API for programmatic manipulation of notebooks, cells, and windows compatible with Mathematica.
+
+
+
+## Programmatic notebook generation
+
+You can create and manipulate notebooks programmatically using several core WL functions.
+
+> API uses `RemoteCellObj` and `RemoteNotebook` objects to operate with cells and notebooks. We call them remote, since the evaluation kernel is generally isolated from the notebooks and in theory it is not necessary needed to be run on the same physical machine, while all actual operations are performed by the host process of the app.
+
+### Creating notebooks
+
+Use [CreateDocument](../Cells%20and%20Notebook/CreateDocument) to create a new notebook populated with cells:
+
+```wolfram
+(* Create a notebook with text and a plot *)
+nb = CreateDocument[{
+  "Here is a plot example", 
+  Plot[x, {x, 0, 1}]
+}];
+
+(* Create with specific cell styles *)
+CreateDocument[{
+  TextCell["My Section", "Section"], 
+  ExpressionCell[Plot[x, {x,0,1}], "Input"]
+}];
+
+(* Create invisibly for background processing *)
+nb = CreateDocument[{"Content"}, Visible -> False];
+```
+
+Use `Defer` to prevent evaluation:
+
+```wolfram
+CreateDocument[Defer[1 + 1]];
+```
+
+<Callout type="note">Notebook structure is flat. Nested cell groups will be automatically flattened</Callout>
+
+To put created notebook to a file - use `NotebookSave`:
+
+```wolfram
+NotebookSave[nb, "path/to/notebook.wln"];
+```
+
+### Cell Expressions
+Here is a list of supported expressions in [CreateDocument](./../Cells%20and%20Notebook/CreateDocument), [CellPrint](./../Cells%20and%20Notebook/CellPrint), [NotebookWrite](./../Cells%20and%20Notebook/NotebookWrite) and [CreateWindow](./../Cells%20and%20Notebook/CreateWindow):
+
+<Card>
+
+- Any expression → converted `StandardForm` input cell
+- `_String` → converted to text/markdown cell
+- `ExpressionCell[expr_, "Input"]`
+- `ExpressionCell[expr_, "Output"]` where `expr` will be converted to `StandardForm`
+- `TextCell[expr_]` represent text/markdown cells
+- `TextCell[expr_, "Title"]`
+- `TextCell[expr_, "Section"]`
+- `TextCell[expr_, "Subsection"]` represent styled markdown cells
+- `Cell[expr_String, "Input"]`
+- `Cell[expr_String, "Output"]` represents complete input and output cells
+- `Cell[expr_String, "Input", subtype]` represents complete output cell with a `subtype`, which sets a renderer for `expr` content:
+    - `"md"` or `"markdown"` or `"Markdown"` will use markdown renderer,
+    - `"js"` or `"javascript"` will treat `expr` as Javascript expression aka [Javascript Cells](./../Cell%20types/Javascript),
+    - `"html"` or `"HTML"` will render text content as HTML document,
+    - `"mermaid"` or `"Mermaid"` will render text content as [Mermaid diagram](./../Cell%20types/Misc),
+    - ...
+
+The number of cell subtypes rougly corresponds to the number of available [cell types](./../Cell%20types/Misc) in WLJS Notebook.
+
+</Card>
+
+For example, let's create a document with HTML output cell:
+
+```wolfram
+CreateDocument[{
+    Cell["<h2>Hello World</h2>", "Input", "html"],
+    Cell["<h2>Hello World</h2>", "Output", "html"]
+}]
+```
+
+### Importing and opening notebooks
+
+Use [NotebookOpen](../Cells%20and%20Notebook/NotebookOpen) to import a notebook:
+
+```wolfram
+(* Open a notebook by path *)
+nb = NotebookOpen["path/to/notebook.wln"];
+
+(* Open invisibly for background processing *)
+nb = NotebookOpen["path/to/notebook.wln", Visible -> False];
+```
+
+or to show an imported one 
+
+```wolfram
+nb = NotebookOpen["path/to/notebook.wln", Visible -> False];
+
+(* do something with a notebook *)
+
+(* Open in a window *)
+NotebookOpen[nb];
+```
+
+### Accessing evaluation context
+
+Use [EvaluationNotebook](../Cells%20and%20Notebook/EvaluationNotebook) to get a reference to the notebook where your code is running:
+
+```wolfram
+nb = EvaluationNotebook[];
+```
+
+<Callout type="warning">
+
+`EvaluationNotebook[]` uses evaluation context to get the caller notebook object. __It will not work correctly__ if called from a button click, timer or any other event: 
+
+```wolfram
+Button[
+    "Click", 
+    (* context is lost ❌ *)
+    Print[EvaluationNotebook[]]
+] 
+```
+
+</Callout>
+
+### Notebook evaluation
+To evaluate a notebook in the global context, use [NotebookEvaluate](./../Cells%20and%20Notebook/NotebookEvaluate.mdx)
+
+```wolfram
+NotebookEvaluate["path/to/notebook.wln"]
+```
+
+This will evaluate __all cells__ in the provided notebook using the same Kernel. 
+
+## Cells manipulation
+
+### Creating cells
+
+Use [CellPrint](../Cells%20and%20Notebook/CellPrint) to insert a new cell below the currently evaluated one:
+
+```wolfram
+(* Print an expression as output *)
+cell = CellPrint[Plot[Sin[x], {x, 0, 2Pi}]];
+
+(* Print with specific cell type *)
+CellPrint[Cell["<h1>Hello World</h1>", "Output", "HTML"]];
+
+(* Print a text cell *)
+CellPrint[TextCell["This is a section", "Section"]];
+```
+
+To delete created cell, simply call `NotebookDelete` on `cell`:
+
+```wolfram
+NotebookDelete[cell];
+```
+
+Use [NotebookWrite](../Cells%20and%20Notebook/NotebookWrite) for more control over where cells are inserted:
+
+```wolfram
+(* Append to a notebook *)
+nb = EvaluationNotebook[];
+NotebookWrite[nb, Plot[x, {x, 0, 1}]];
+
+(* Insert after a specific cell *)
+NotebookWrite[NotebookLocationSpecifier[cell, "After"], expr];
+
+(* Replace a specific cell *)
+NotebookWrite[NotebookLocationSpecifier[cell, "On"], expr];
+```
+
+`NotebookWrite` return a list of created cell objects or a single cell object.
+
+#### Accessing evaluation context
+
+Use [EvaluationNotebook](../Cells%20and%20Notebook/EvaluationNotebook) to get the notebook containing the currently evaluated cell:
+
+```wolfram
+nb = EvaluationNotebook[];
+```
+
+Here is an example, where you can create append a cell by clicking a button (which is it not possible with `CellPrint`):
+
+```wolfram
+nb = EvaluationNotebook[];
+Button["Create", NotebookWrite[nb, Style["Hi there!", Bold]]]
+```
+
+Use [EvaluationCell](../Cells%20and%20Notebook/EvaluationCell) to get a reference to the input cell that triggered the current evaluation:
+
+```wolfram
+cell = EvaluationCell[];
+```
+
+and add a cell after:
+
+```wolfram
+NotebookWrite[NotebookLocationSpecifier[cell, "After"], Red];
+```
+
+Use [ResultCell](../Cells%20and%20Notebook/ResultCell) to get a *future reference* to the output cell (even before it's created):
+
+```wolfram
+outputCell = ResultCell[];
+```
+
+<Callout type="idea">`ResultCell` can be useful for tracking [cell events](#Cell%20event%20handlers) or deleting it at some conditions automatically</Callout>
+
+Use [NotebookFocusedCell](./../Cells%20and%20Notebook/NotebookFocusedCell) to get a focused / selected cell in the notebook:
+
+```wolfram
+focusedCell = NotebookFocusedCell[]
+```
+
+alternatively you can apply `NotebookRead` to get selected cells of a given notebook:
+
+```wolfram
+focusedCell = NotebookRead[EvaluationNotebook[]]
+```
+
+### Writting to existing cells
+Use [NotebookWrite](../Cells%20and%20Notebook/NotebookWrite) on cell objects to overwrite their content:
+
+```wolfram
+NotebookWrite[EvaluationCell[], "Hi there!"];
+```
+
+here is another example with live updates:
+
+```wolfram
+cell = NotebookWrite[EvaluationNotebook[], Cell["Timer", "Input"]];
+timer = SetInterval[NotebookWrite[cell, Now], 1000];
+Button["Delete cell",
+    TaskRemove[timer];
+    NotebookDelete[cell];
+]
+```
+
+<Callout type="warning">Only __input cells__ can be rewritten for now. Updating output cells is not possible unless you remove and create a new one manually</Callout>
+
+### Reading cells
+
+Use [NotebookRead](../Cells%20and%20Notebook/NotebookRead) to read cell contents:
+
+```wolfram
+(* Read the focused cell *)
+content = NotebookRead[NotebookFocusedCell[]];
+```
+
+### Deleting cells
+
+Use [NotebookDelete](../Cells%20and%20Notebook/NotebookDelete) to remove cells:
+
+```wolfram
+cell = CellPrint[Now];
+(* Later... *)
+NotebookDelete[cell];
+```
+
+
+### Cell event handlers
+
+You can attach event handlers to cells to react to lifecycle events:
+
+```wolfram
+With[{cell = ResultCell[]},
+  EventHandler[cell, {
+    "Destroy" -> (Print["Cell was removed!"]&)
+  }];
+
+  "Delete me"
+]
+```
+
+This can come handy to remove listeners, stop timers or other processes when you reevaluate the same cell.
+
+#### Example: Self-destructing cell
+
+```wolfram
+With[{cell = EvaluationCell[]},
+  EventHandler[InputButton["Delete me"], Function[Null,
+    cell // NotebookDelete
+  ]]
+]
+```
+
+## Expression windows manipulation
+
+> Note that created expression windows and cells in fact share the same object structure [RemoteCellObj](./../Cells%20and%20Notebook/RemoteCellObj)
+
+### Creating windows
+
+Use [CreateWindow](../Cells%20and%20Notebook/CreateWindow) to open content in a new expression window:
+
+```wolfram
+(* Open graphics in a new window *)
+win = CreateWindow[Graphics3D[Cuboid[]]];
+
+(* With size and title *)
+CreateWindow[Plot[Sin[x], {x, 0, 2Pi}, ImageSize->{300,300}], 
+  WindowSize -> {400, 400}, 
+  WindowTitle -> "My Plot"
+];
+
+(* HTML content *)
+CreateWindow[Cell["<h2 style=\"color:red\">Hello</h2>", "Output", "HTML"]];
+```
+
+### Closing windows
+
+```wolfram
+win = CreateWindow[Graphics3D[Sphere[]]];
+Pause[3];
+NotebookClose[win];
+```
+
+### Create window from another window
+
+```wolfram
+CreateWindow[Button["Open", CreateWindow[Plot3D[x y, {x,-1,1}, {y,-1,1}]]]]
+```
+
+### Tracking window events
+
+You can attach event handlers to created windows:
+
+```wolfram
+state = "";
+TextView[state // Offload, "Label" -> "State"]
+
+win = CreateWindow[ExpressionCell[Plot[x, {x, 0, 1}], "Output"]];
+EventHandler[win, {
+  "Mounted" -> Function[Null, state = "Mounted"],
+  "Closed" -> Function[Null, state = "Closed"]
+}];
+```
+
+## Application windows manipulation
+Each visible window of WLJS Notebook can be retrived from the context using [CurrentWindow](./../Frontend%20IO/CurrentWindow)
+
+```wolfram
+appWindow = CurrentWindow[]
+```
+
+This returns `WindowObj`, that keeps socket connection to it.
+
+<Callout>If you refresh page/window, window object changes as well</Callout>
+
+The following rules apply:
+
+<Card>
+
+- Each opened application window has a unique `WindowObj`
+- Any function calls by UI events provide implicitly `WindowObj` as well, that can be taken using `CurrentWindow[]`
+- Evaluation context also contains current `WindowObj` if the notebook is open
+- `WindowObj` is required for certain actions such as scripts execution on window done by [FrontSubmit](./../Frontend%20IO/FrontSubmit) and others
+
+</Card>
+
+### Tracking window events
+
+You can attach event handlers to `WindowObj`:
+
+```wolfram
+state = "Open";
+EventHandler[CurrentWindow[], {
+    "Closed" -> Function[Null,
+        state = "Closed";
+    ]
+}];
+TextView[state // Offload]
+```
+
+Now try to reload a window or close/open a notebook - you will see the change in the state.
+
+
+## Notebooks as modules
+
+Use [NotebookEvaluateAsModule](../Cells%20and%20Notebook/NotebookEvaluateAsModule) to import notebooks as reusable modules:
+
+```wolfram
+{exports} = NotebookEvaluateAsModule["myLibrary.wln"];
+```
+
+<Callout type="danger">`NotebookEvaluateAsModule` call breaks the evaluation order and may cause double evaluation of the caller cell. Please consider to use non-blocking `NotebookEvaluateAsModuleAsync`</Callout>
+
+The following rules apply:
+
+<Card>
+
+- Initialization cells are evaluated once per notebook object
+- The last Wolfram input cell is evaluated on every call and its result is exported
+- All other cells are ignored
+- Context of all global symbols will be completely isolated (lexically scoped)
+
+</Card>
+
+### Example 1: Creating a component library
+
+<Card>
+
+**Library.wln:**
+```jsx title="Initialization cell"
+.wlx
+BigHeader[Text_String] := <h1><Text/></h1>;
+```
+
+```wolfram title="Last cell (exports)"
+{BigHeader}
+```
+
+**Main.wln:**
+```wolfram
+{HeaderComponent} = NotebookEvaluateAsModule["Library.wln"];
+```
+
+```jsx
+.slide
+
+<HeaderComponent>Hi there!</HeaderComponent>
+This is my slide
+```
+
+</Card>
+
+For non-blocking imports, use [NotebookEvaluateAsModuleAsync](../Cells%20and%20Notebook/NotebookEvaluateAsModuleAsync):
+
+```wolfram
+Then[NotebookEvaluateAsModuleAsync["Library.wln"], Function[exports,
+  {HeaderComponent} = exports;
+]];
+```
+
+### Example 2: Creating a component library
+
+<Card>
+
+**Library.wln:**
+```wolfram title="Initialization cell"
+w3D[x_,y_,t_] := Total@Table[With[{kx = 1.0 \[Omega], ky = 1.0 \[Omega]}, 
+  Cos[ kx x + ky y - \[Omega] t]
+], {\[Omega], 0, 3, 1.0}];
+
+widget[] := Animate[Plot3D[w3D[x,y,t], {x,-Pi,Pi}, {y,-Pi,Pi}, MaxRecursion->0, Mesh->None, PlotRange->Full], {t,0,5}];
+```
+
+```wolfram title="Last cell (exports)"
+widget
+```
+
+**Main.wln:**
+```wolfram
+animation = NotebookEvaluateAsModule["Library.wln"];
+```
+
+```wolfram
+(* use it *)
+animation[]
+```
+
+</Card>
+
+This approach may be more preferable for small modules than a traditional Wolfram Package:
+
+<Card>
+
+1. Easy to use, automatic context isolation
+2. All tests and examples are in the same notebook
+3. It allows to utilize non-standard cell types
+
+</Card>
+
+
+## Notebooks as templates
+
+WLJS Notebook includes a template system for quickly creating new notebooks with predefined styles, content, and structure. Templates are accessible via the [Command Palette](./../Guides/Command-palette) or via <small>File</small> menu.
+
+### Template locations
+
+| Location | Path |
+|----------|------|
+| User templates | `~/Documents/WLJS Notebooks/UserTemplates/` |
+| Built-in templates | `AppExeFolder/app/wljs-packages/wljs-templates/Library/` |
+
+### How templates work
+
+A template is simply a regular notebook. When you create a new notebook from a template:
+
+1. The notebook file is copied to your project directory
+2. If an `attachments` folder exists alongside the template, it is also copied
+3. The notebook opens with all cells and styles intact
+
+The filename of the template notebook becomes the title shown in the template list.
+
+### Creating a custom template
+
+Templates typically contain:
+
+<Card>
+
+- **Style cells** — HTML/CSS that override default notebook appearance
+- **Banner or header content** (optionally) — Images or formatted text or Javascript code
+- **Boilerplate cells** — Pre-written code or documentation structure
+
+</Card>
+
+import { Step, Steps } from 'fumadocs-ui/components/steps';
+
+<Steps>
+
+<Step>
+
+#### Step 1: Create the notebook
+
+Start with a new empty notebook and add your content.
+
+</Step>
+
+<Step>
+
+#### Step 2: Add custom styles (optional)
+
+Create an `.html` cell with CSS to customize the notebook appearance:
+
+```html
+.html
+<style>
+  :root {
+    --editor-key-keyword: #708;
+    --editor-key-string: #a11;
+  }
+  
+  body {
+    background: #fafafa;
+  }
+  
+  h1 {
+    color: #5e8a8b;
+  }
+</style>
+```
+
+Evaluate the cell to apply the styles.
+
+<Callout type="idea">
+
+See [Global Styling](##Global%20styling) for a complete list of available CSS classes and variables.
+
+</Callout>
+
+</Step>
+
+<Step>
+
+#### Step 3: Hide style cells
+
+For a clean template experience, you should hide the style cells using [cell group properties](./../Overview):
+
+- **Vanish** — Makes the cell completely invisible and uneditable, but its output remains in the DOM (ideal for CSS/JS injection)
+- **Lock + Hide** — Keeps the output visible but prevents editing
+
+<Callout type="info">
+Vanished cells can be viewed and edited in `Expert` mode (see Settings).
+</Callout>
+
+</Step>
+
+<Step>
+
+#### Step 4: Add a banner (optional)
+
+Create an `.md` cell with a banner image:
+
+```md
+.md
+<img src="/attachments/banner.png" style="width: 100%; height: 200px; object-fit: cover;"/>
+```
+
+Apply <small>Lock</small> and <small>Hide</small> properties of a cell group to keep the banner visible but uneditable.
+
+</Step>
+
+<Step>
+
+#### Step 5: Add boilerplate cells 
+
+Create an many preformatted cells as you want
+
+</Step>
+
+<Step>
+
+#### Step 6: Save and install
+
+1. Save your notebook
+2. Create a folder in `~/Documents/WLJS Notebooks/UserTemplates/` with a descriptive name
+3. Move your notebook (and `attachments` folder if any) into this folder
+4. Restart the app
+
+Your template will now appear in the Command Palette under "New from Template".
+
+</Step>
+
+</Steps>
+
+
+## Global Styling
+
+You can apply custom CSS styles to all notebooks by adding them via **Settings → Custom CSS**. These styles are injected into the document head and apply globally.
+
+### Adding global styles
+
+import { Settings, Dot } from 'lucide-react';
+
+<div class="fd-steps">
+    <div class="fd-step py-3 items-center flex flex-row">
+        <div class="flex flex-row items-center text-sm gap-x-2"> <Settings width={"1rem"}/> Settings</div>
+    </div>
+    <div class="fd-step py-3 items-center flex flex-row">
+        <div class="flex flex-row items-center text-sm gap-x-2"> <Dot width={"1rem"}/> General</div>
+    </div>
+    <div class="fd-step">
+        <div class="flex flex-row items-center text-sm gap-x-2"> <Dot width={"1rem"}/> Custom CSS</div>
+    </div>
+    <div class="fd-step">
+        <div class="flex flex-row items-center text-sm gap-x-2"> Add your CSS rules</div>
+    </div>  
+    <div class="fd-step">
+        <div class="flex flex-row items-center text-sm gap-x-2"> Restart app</div>
+    </div>       
+</div>
+
+The styles will be applied to all windows automatically.
+
+### Available CSS classes
+
+WLJS Notebook exposes predefined CSS classes for styling various elements:
+
+#### Document structure
+
+| Selector | Description |
+|----------|-------------|
+| `body` | The whole document |
+| `main` | Main window container |
+| `.ccontainer` | Cells container (extends to full size of main) |
+| `.cgroup` | A single group of cells: input + outputs + tools |
+| `.cframe` | Inner group of cells: input + outputs |
+| `.cborder` | Vertical line at the right side of cell group |
+| `.cwrapper` | Input/output cell wrapper |
+| `.cseparator` | Thin space between cells |
+
+#### Cell states and types
+
+| Selector | Description |
+|----------|-------------|
+| `.cinit` | Initialization cells |
+| `.cin` | Input cells parent element |
+| `.cout` | Output cells parent element |
+| `.ttint` | Focused cells |
+| `.cgi-ico` | Initialization cell group icon (teal dot) |
+| `#sidebar-right` | Right sidebar in exported HTML |
+
+#### Input cell languages
+
+| Selector | Description |
+|----------|-------------|
+| `.clang-generic` | Unknown cell type / language |
+| `.clang-markdown` | Markdown cells |
+| `.clang-html` | HTML cells |
+| `.clang-wlx` | WLX cells |
+| `.clang-js` | JavaScript cells |
+| `.clang-slide` | Slide cells |
+
+<Callout type="info">
+Wolfram Language input cells have an empty class field.
+</Callout>
+
+#### Markdown output
+
+| Selector | Description |
+|----------|-------------|
+| `.cout.markdown` | Markdown output cells |
+| `.markdown h1` | Heading level 1 in markdown |
+| `.markdown h2` | Heading level 2 in markdown |
+| `.markdown p` | Paragraphs in markdown |
+
+### Styling examples
+
+#### Change notebook background
+
+```css
+.ccontainer {
+  background: lightblue;
+}
+
+body {
+  background: lightblue !important;
+}
+
+main {
+  background: lightblue !important;
+}
+```
+
+#### Style the input cell border marker
+
+The vertical line on the left side of input cells:
+
+```css
+.cin > :nth-child(2)::after {
+  border-color: #5e8a8b;
+}
+```
+
+#### Custom heading colors
+
+```css
+.markdown h1 {
+  color: #2e7d32;
+}
+
+.markdown h2 {
+  color: #1565c0;
+}
+```
+
+### Editor color variables
+
+The following CSS variables control syntax highlighting and UI colors. Override them in `:root`:
+
+```css
+:root {
+  /* Syntax highlighting */
+  --editor-key-meta: #404740;
+  --editor-key-keyword: #708;
+  --editor-key-atom: #219;
+  --editor-key-literal: #164;
+  --editor-key-string: #a11;
+  --editor-key-escape: #e40;
+  --editor-key-variable: #00f;
+  --editor-local-variable: #30a;
+  --editor-key-type: #085;
+  --editor-key-class: #167;
+  --editor-special-variable: #256;
+  --editor-key-property: #00c;
+  --editor-key-comment: #940;
+  --editor-key-invalid: #f00;
+  --editor-outline: #696969;
+  
+  /* Typography */
+  font-size: medium;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 
+    'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 
+    'Open Sans', 'Helvetica Neue', sans-serif;
+}
+```
+
+<Callout type="info">
+Global styles are also copied to exported standalone HTML files.
+</Callout>
+
+
+## Notebooks as Mini Apps
+
+Let's transform an interactive notebook to a [mini app](./../Share/Mini-apps.mdx). We will parameterize this 3D plot and add export to an STL file:
+
+<Card>
+
+Create our first cell and add it to initialization group
+
+```wolfram title="Initialization cell 1"
+model;
+Model = Manipulate[model = RevolutionPlot3D[{Sin[t] +  Sin[y t] /m,
+   Cos[t] +  Cos[x t] /m}, {t, 0, Pi},
+  RegionFunction -> (Sin[5 (#4 + #5)] > 0 &), Mesh -> None,
+  BoundaryStyle -> Black, PlotStyle -> Thickness[.1], MaxRecursion->1, Axes->False, ImageSize->400], {{x,5, "tX"}, 1, 10, 1}, {{y, 5, "tY"},1,10,1}, {{m,5.5,"Scale"},1,10,0.5}, Appearance->None, ContinuousAction->True];
+```
+
+<Callout>All global variables we define in this notebook will be automatically scoped to it, when we run it as a mini app. There is no need in a context isolation</Callout>
+
+Now create another one, where we define an exporting function:
+
+```wolfram title="Initialization cell 2"
+export := Then[SystemDialogInputAsync["FileSave", {Null, {"STL" -> {"*.stl"}}}],
+  Function[path,
+    If[!StringQ[path], Return[]];
+    Export[path, model];
+  ]
+]; 
+```
+
+Here we used `SystemDialogInputAsync` instead of `SystemDialogInput`, since the last one is blocking and cannot be used in calls generated by external asynchronious evens such as button clicks.
+
+Notebooks exported as [mini apps](./../Share/Mini-apps) use the very last cell's output as a main window. To take advantage of better customization we use [WLX](./../Cell%20types/WLX) cell as the output instead of plain Wolfram language cell:
+
+```jsx title="Last cell in the notebook"
+.wlx
+
+With[{
+  ExportButton = Button["Export", export]
+},
+  <div class="bg-white p-4 w-full h-full">
+    <div class="flex flex-row gap-x-2 justify-between">
+      <Model/>
+      <div class="mt-4"><ExportButton/></div>
+    </div>
+  </div>
+
+]
+```
+
+You can try to evaluate this notebook and check the result. 
+
+</Card>
+
+To export it as a mini app, follow:
+
+import { Share2, CircleQuestionMark } from 'lucide-react';
+
+Call <small>Share</small> from the top menu or click the <span className='inline-flex' ><Share2 style={{height:"1rem"}}/></span> icon and choose <small>Mini app</small>:
+
+<div class="fd-steps">
+    <div class="fd-step py-3 items-center flex flex-row">
+        <div class="flex flex-row items-center text-sm gap-x-2"> <Share2 width={"1rem"}/> Share</div>
+    </div>
+    <div class="fd-step py-3 items-center flex flex-row">
+        <div class="flex flex-row items-center text-sm gap-x-2"> <Dot width={"1rem"}/> Mini app</div>
+    </div>
+</div>
+
+
+
+Then double-click on the exported file to open it with WLJS as a runtime.
+
+
+
+## User dialogs
+
+Use [MessageDialog](../Frontend%20IO/MessageDialog) for notifications:
+
+```wolfram
+MessageDialog["Operation completed!"];
+```
+
+```wolfram
+MessageDialog[Graphics[Disk[{0,0}, 1]]];
+```
+
+In the case of lost context, i.e. `MessageDialog` is called by a timer, button click - provide `"Notebook"` as an option:
+
+```wolfram
+n = EvaluationNotebook[];
+Button["Message", MessageDialog["Operation completed!", "Notebook"->n]]
+```
+
+
+Use [ChoiceDialog](../Frontend%20IO/ChoiceDialog) for user choices:
+
+```wolfram
+(* Simple OK/Cancel *)
+result = ChoiceDialog["Proceed with operation?"];
+```
+
+```wolfram
+(* Custom choices *)
+choice = ChoiceDialog["Select option:", {
+  "Option A" -> "a",
+  "Option B" -> "b"
+}];
+```
+
+`ChoiceDialog` is  blocking function. Avoid using it in timers like `SetTimeout`, external event handlers such as `InputButton` or `Button`, or within `AsyncFunction`. Use `ChoiceDialogAsync` instead:
+
+```wolfram
+n = EvaluationNotebook[];
+Button["Message", Then[ChoiceDialogAsync["Proceed with operation?", "Notebook"->n], Function[choise,
+  Print[choise];
+]]]
+```
+
+Use [Input](../Frontend%20IO/Input) or [InputString](../Frontend%20IO/InputString) for user input:
+
+```wolfram
+Input["Enter expression:", x^2]
+InputString["Enter your name:"]
+```
+
+Both of them are blocking functions. Again, use async versions in `Button` and other even handlers:
+
+```wolfram
+nb = EvaluationNotebook[];
+Button["Enter expr", Then[InputAsync["Enter expression:", x^2, "Notebook"->nb],
+  Function[expr,
+    NotebookWrite[nb, expr];
+  ]
+]]
+```
+
+## System File dialogs
+
+<Callout type="warning">This requires WLJS desktop application</Callout>
+
+Use [SystemDialogInput](../Frontend%20IO/SystemDialogInput) for file operations:
+
+```wolfram
+(* Open file *)
+file = SystemDialogInput["FileOpen", {Null, {
+  "Images" -> {"*.png", "*.jpg"},
+  "All Files" -> {"*.*"}
+}}];
+
+(* Save file *)
+path = SystemDialogInput["FileSave"];
+
+(* Select directory *)
+dir = SystemDialogInput["Directory"];
+```
+
+System dialogs are no longer associated with notebooks, instead it requires `WindowObj` to be provided, which spesifies the parent application window:
+
+```wolfram
+w = CurrentWindow[];
+SetTimeout[Then[SystemDialogInputAsync["FileSave", "Window"->w], Print], 1000];
+```
+
+
+However, you do not have to provide `"Window"` if the dialog is called from a click of a button. Event context carries `"Window"` implicitly:
+
+```wolfram
+Button["Save", Then[SystemDialogInputAsync["FileSave"], Print]]
+```
+
+
+## Editor commands
+You can send direct commands to the cells editor using [FrontEditorSelected](./../Interpreter/FrontEditorSelected). This function is defined only on frontend, i.e. it has to be executed using [FrontSubmit](./../Frontend%20IO/FrontSubmit) or [FrontFetch](./../Frontend%20IO/FrontFetch).
+
+To read the last selected text in a cell:
+
+```wolfram
+FrontFetch[FrontEditorSelected["Get"]]
+```
+
+<Callout>`FrontFetch` is a blocking function, please, consider `FrontFetchAsync`</Callout>
+
+Or using a button:
+
+```wolfram
+Button["Read selected", Then[FrontFetchAsync[FrontEditorSelected["Get"]], Print]]
+```
+
+Read cursor position:
+
+```wolfram
+Button["Read selected", Then[FrontFetchAsync[FrontEditorSelected["Cursor"]], Print]]
+```
+
+To insert or overwrite:
+
+```wolfram
+Button["Overwrite", FrontSubmit[FrontEditorSelected["Set", "1+1"]] ]
+```
+
+
+## Clipboard
+
+### Copying to clipboard
+
+Use [CopyToClipboard](../Frontend%20IO/CopyToClipboard) to programmatically copy:
+
+```wolfram
+CopyToClipboard[{1, 2, 3, 4, 5}];
+```
+
+<Callout>
+
+In the case of context loss, provide `"Window"` object as an option, i.e.
+
+```wolfram
+win = CurrentWindow[];
+SetTimeout[CopyToClipboard[RandomWord[], "Window"->win]; Echo["Copied"], 1000];
+```
+
+</Callout>
+
+Use [ClickToCopy](../Frontend%20IO/ClickToCopy) for interactive copy buttons:
+
+```wolfram
+ClickToCopy["Click to copy this text"]
+ClickToCopy["Copy Code", "Plot[Sin[x], {x, 0, 2Pi}]"]
+```
+
+### Pasting from clipboard
+
+Use [Paste](../Frontend%20IO/Paste) to paste clipboard content as a new cell:
+
+```wolfram
+Paste[];
+```
+
+Use [PasteButton](../Frontend%20IO/PasteButton) for interactive paste buttons:
+
+```wolfram
+PasteButton["Paste"]
+```
+
+### Directly read clipboard
+`ReadClipboard` is symbol is defined on the frontend and allows to directly read clipboard from a given window. Since this is a frontend-only function, you need to use `FrontFetch` or `FrontFetchAsync`:
+
+```wolfram
+FrontFetch[ReadClipboard[]]
+```
+
+or by a click on a button:
+
+```wolfram
+Button["Read", Then[FrontFetchAsync[ReadClipboard[]], Print]]
+```
+
+<Callout>Note, that events generated by button clicks or other UI interactions provide `"Window"` object to `FrontFetchAsync` implicitly. This will not work automatically for timers, i.e. `SetTimeout` or events generated by parallel kernels</Callout>
+
+
+## Notebook storage
+
+Use [NotebookStore](../Cells%20and%20Notebook/NotebookStore) to persist data within a notebook. This data survives export/import cycles, including [Static HTML](../Share/Standalone-HTML) export.
+
+```wolfram
+NotebookStore[key_String ]
+```
+
+this object represents a data stored with `key` in the notebook. Or excplicitly specify the notebook:
+
+```wolfram
+NotebookStore[nb, key_String ]
+```
+
+
+### Writting data
+
+```wolfram
+NotebookWrite[NotebookStore["myKey"], {1, 2, 3, 4, 5}];
+NotebookWrite[NotebookStore["settings"], <|"theme" -> "dark", "fontSize" -> 14|>];
+```
+
+### Reading data
+
+```wolfram
+data = NotebookRead[NotebookStore["myKey"]];
+```
+
+Note, that `NotebookRead` is a blocking function, use `NotebookReadAsync` in the case if you need to read out the data by a timer or user's actions.
+
+
+## Notebooks as command palette tools
+
+
+
+
+
+

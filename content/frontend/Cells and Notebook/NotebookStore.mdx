@@ -6,61 +6,68 @@ env:
 package: wljs-editor
 source: https://github.com/JerryI/wljs-editor/blob/dev/src/StoreKernel.wl
 ---
-An access to a permanent local notebook storage. You can carry the raw data within the notebook, ***regardless if it has been exported*** to [Static HTML](./../Share/Standalone-HTML) and imported back.
+Represents a key in the permanent local notebook storage. You can carry the raw data within the notebook, ***regardless if it has been exported*** to [Static HTML](./../Share/Standalone-HTML) and imported back.
+
+Representation of a single key:
 
 ```wolfram
-NotebookStore[key_String, opts___] _
+NotebookStore[key_String]
 ```
+
+Representation of multiple keys:
 
 ```wolfram
-NotebookStore[nb_RemoteNotebook, key_String, opts___] _
+NotebookStore[{key1, key2, key3, ..}]
 ```
 
-accesses a `key` and returns the data. 
+Explicitly specify a notebook:
 
-It works like an association or key-value storage.
+```wolfram
+NotebookStore[nb_RemoteNotebook, key_String] _
+```
+
+It works like a key-value storage.
 
 ## Methods
-### `Set`
-To assign any Wolfram Expression, use
+### Write
+To assign any Wolfram Expression using [NotebookWrite](./NotebookWrite):
 
 ```wolfram
-NotebookStore[key_, opts___] = data_
+NotebookWrite[NotebookStore["key"], expr_]
 ```
 
-### `Unset`
-To remove the data and its key
+### Read
+To get the data use [NotebookRead](./NotebookRead):
 
 ```wolfram
-NotebookStore[key_, opts___] = .
+NotebookRead[NotebookStore["key"]]
 ```
 
-### `Keys`
-Returns all keys
-
-```wolfram
-NotebookStore[opts___] // Keys 
-```
-
-## Options
-### `"Notebook"`
-Specifies the notebook from which the storage will be operated
 
 <Callout type="warn">
 Be aware of a __evaluation context loss__, use [EvaluationNotebook](../Cells%20and%20Notebook/EvaluationNotebook) for such cases if it is called from an external handler, i.e.
 
 ```wolfram
 (* evaluation context is ok *)
-NotebookStore["key"] = 123;
+NotebookWrite[NotebookStore["key"], 123];
 
 With[{n = EvaluationNotebook[]},
 	(* evaluation context is ok *)
-	EventHandler[InputButton[], Function[Null,
+	EventHandler[InputButton[], AsyncFunction[Null, Module[{data},
 		(* evaluation context is lost!!! *)
 		
-		NotebookStore["key", "Notebook"->n] = 124;
-							(* manually restore lost info *)
-	]]
+		data = NotebookReadAsync[NotebookStore[n, "key"]] // Await;
+        NotebookWrite[NotebookStore[n, "key"], data+1];
+	]]]
 ]
 ```
+
+Then check:
+
+```wolfram
+NotebookRead[NotebookStore["key"]]
+```
 </Callout>
+
+
+

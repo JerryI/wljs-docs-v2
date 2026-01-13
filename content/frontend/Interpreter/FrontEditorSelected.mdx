@@ -12,16 +12,17 @@ Manipulates the last selected input cell's editor
 FrontEditorSelected[op_String, arguments__, opt___] Null | _String
 ```
 
-<Callout type="warn">
+<Callout type="note">
 This has to be executed in WLJS interpreter, i.e. using [FrontSubmit](../Frontend%20IO/FrontSubmit) or [FrontFetchAsync](../Frontend%20IO/FrontFetchAsync)
 </Callout>
+
 ## Methods
 There are following methods available
 
 ### Get selected content
 
 ```wolfram
-FrontEndEditorSelected["Get", opt___] _String
+FrontEditorSelected["Get", opt___] _String
 ```
 
 Returns __selected string__. For example
@@ -41,16 +42,16 @@ With[{win = CurrentWindow[]},
 ### Insert or replace selected content
 
 ```wolfram
-FrontEndEditorSelected["Set", data_String, opt___] 
+FrontEditorSelected["Set", data_String, opt___] 
 ```
 
 Inserts or replaces selected text with a provided string
 
 ```wolfram
-With[{win = CurrentWindow[]},
+With[{},
   EventHandler[InputButton["Replace"],
     Function[Null, 
-      FrontSubmit[FrontEditorSelected["Set", "Yo"], "Window"->win];
+      FrontSubmit[FrontEditorSelected["Set", "Yo"]];
     ]
   ]
 ] 

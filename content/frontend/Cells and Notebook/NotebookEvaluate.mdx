@@ -26,7 +26,7 @@ By the default is `False`, i.e. all notebook content is placed to `Global` and w
 Allows to manually provide evaluation context, i.e. `System`$EvaluationContext`.
 
 <Callout type="warning">
-`NotebookEvaluate` is non-blocking. Use [NotebookEvaluateAsync](./NotebookEvaluateAsync) to check if the evaluation has been finished.
+Blocking function. Avoid using it in timers like `SetTimeout`, external event handlers such as `InputButton` or `Button`, or within `AsyncFunction`. Use [NotebookEvaluateAsync](./NotebookEvaluateAsync) instead.
 </Callout>
 
 <Callout type="idea">

@@ -10,8 +10,8 @@ SystemDialogInput[type_String, opts___]
 
 opens a OS dialog window to operate with IO.
 
-<Callout type="warn">
-This call blocks the whole Wolfram Kernel, use [SystemDialogInputAsync](../Frontend%20IO/SystemDialogInputAsync) for asynchronous dialog window
+<Callout type="warning">
+Blocking function. Avoid using it in timers like `SetTimeout`, external event handlers such as `InputButton` or `Button`, or within `AsyncFunction`. Use [SystemDialogInputAsync](./SystemDialogInputAsync) instead
 </Callout>
 
 <Callout type="note">

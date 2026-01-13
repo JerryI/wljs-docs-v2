@@ -1,0 +1,38 @@
+---
+title: NotebookReadAsync
+---
+Reads the content for the notebook or from a given cell, storage async and safe:
+
+## Syntax
+
+**Read focused cell:**
+```wolfram
+NotebookReadAsync[notebook_RemoteNotebook]
+```
+
+**Read multiple items:**
+```wolfram
+NotebookReadAsync[{item1, item2, ...}]
+```
+
+**Read cell content:**
+```wolfram
+NotebookReadAsync[cell_RemoteCellObj]
+```
+
+**Read notebook storage:**
+```wolfram
+NotebookReadAsync[store_NotebookStore]
+```
+
+it will always return `Promise` or a list of them. 
+Use `Then` or `Await` to resolve them, for example:
+
+```wolfram
+nb = EvaluationNotebook[];
+Button["Print focused", Then[NotebookReadAsync[nb], Function[focused,
+    Then[NotebookReadAsync[focused], Function[cell,
+        Print[cell[[1]]];
+    ]]
+]]]
+```

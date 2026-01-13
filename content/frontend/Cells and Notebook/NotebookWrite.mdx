@@ -53,6 +53,13 @@ NotebookWrite[NotebookLocationSpecifier[cell, "After"], expr]
 NotebookWrite[NotebookLocationSpecifier[cell, "On"], expr]
 ```
 
+## Writting to NotebookStore
+Use [NotebookStore](./NotebookStore) to write the raw data into local notebook storage:
+
+```wolfram
+NotebookWrite[NotebookStore["key"], Now];
+```
+
 ## Cell Types
 Using `Cell`, `ExpressionCell` or `TextCell` wrapper you can specify the properties of inserted cell:
 

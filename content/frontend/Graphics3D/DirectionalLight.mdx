@@ -1,0 +1,24 @@
+---
+title: DirectionalLight
+virtual: true
+update: true
+origin: https://github.com/JerryI/wljs-graphics-d3/
+---
+```wolfram
+DirectionalLight[color_RGBColor, opts___]
+DirectionalLight[color_RGBColor, position_, opts___]
+DirectionalLight[color_RGBColor, {position_, target_}, opts___]
+```
+
+places a fake source of directional light in a 3D scene (see [Graphics3D](../Graphics3D/Graphics3D)). The default `target` is $\{0,0,0\}$. 
+
+
+## Options
+### `"Intensity"`
+By the default is 10
+### `"ShadowBias"`
+### `"ShadowMapSize"`
+See THREE.js docs
+
+## Dynamics
+`position` and `target` do support updates

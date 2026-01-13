@@ -23,7 +23,11 @@ MMAView[_Graphics3D]
 
 attempts to use Mathematica's frontend (technically backend) to render given expression to a raster [Image](../Image/Image) and return it back.
 
-__Note: `MMAView` has `HoldFirst` attribute__
+<Callout>Note: `MMAView` has `HoldFirst` attribute</Callout>
+
+<Callout type="warning">
+Blocking function. Avoid using it in timers like `SetTimeout`, external event handlers such as `InputButton` or `Button`, or within `AsyncFunction`. Use `MMAViewAsync` instead.
+</Callout>
 
 WLJS Notebook does not support all possible styling and diagram types compared to Wolfram Mathematica. Here we give a user a workaround, which might be suitable for some cases.
 

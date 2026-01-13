@@ -3,6 +3,10 @@ title: NotebookRead
 ---
 Reads the content for the notebook or from a given cell
 
+<Callout type="warning">
+Blocking function. Avoid using it in timers like `SetTimeout`, external event handlers such as `InputButton` or `Button`, or within `AsyncFunction`. Use [NotebookReadAsync](./NotebookReadAsync) instead.
+</Callout>
+
 ## Syntax
 
 **Read focused cell:**
@@ -18,6 +22,11 @@ NotebookRead[{item1, item2, ...}]
 **Read cell content:**
 ```wolfram
 NotebookRead[cell_RemoteCellObj]
+```
+
+**Read notebook storage:**
+```wolfram
+NotebookRead[store_NotebookStore]
 ```
 
 For example:

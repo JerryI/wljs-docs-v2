@@ -49,3 +49,124 @@ Every tool is a normal notebook, which is evaluated in the background and manipu
 
 
 
+## Installing Packages
+
+#### How to install new packages locally?
+
+##### Via Command Palette
+Open your notebook and **paste the GitHub link to a repo**<sup>+</sup> or **URL to `.paclet` file** in the command palette located on the top bar.
+
+![](./../../Screenshot%202024-05-10%20at%2021.35.19.png)
+
+:::warning
+<sup>+</sup> It must contain a `PacletInfo.wl` file in the root directory of the repository.
+:::
+
+##### Via LPM
+Create a new cell and insert:
+
+```mathematica
+LPMRepositories[{
+    "Github" -> "https://github.com/user/MyLibrary"
+}]
+
+<<MyLibrary`
+```
+
+*or using direct link to a paclet file*
+
+```mathematica
+LPMRepositories[{
+    "Github" -> "https://publicURL/MyLibrary.paclet"
+}]
+
+<<MyLibrary`
+```
+
+This will create a local folder named `wl_packages`, where installed packages will be stored.
+
+#### Global Installation (Classic)
+
+##### Via Paclets
+If the package is hosted on the Wolfram repository, then you can simply run:
+
+```mathematica
+PacletInstall["Username/Paclet"]
+
+<<PacletContextName`
+```
+
+Or from a local paclet file:
+
+```mathematica
+PacletInstall["path_to_it.paclet"]
+
+<<PacletContextName`
+```
+
+#### Namespaces
+If you have conflicting symbol names or want to scope loaded package into a alias context:
+
+```mathematica
+Needs["PacletContextName`"->"myAlias`"]
+```
+
+
+## Cli 
+
+WLJS Notebook app registers (if you allowed this during the installation) CLI-tool globally in your operating system.
+
+Here is a list of commands you can use
+
+## Open current folder
+```bash
+wljs .
+```
+
+## Open a file by path
+```bash
+wljs "full path..."
+```
+
+## Execute a command
+```bash
+wljs -c [command] [args...]
+```
+
+This pattern sends a command to all extensions used by WLJS Notebook. The list of known commands follows
+
+### share
+It is handled by `wljs-export-html` extension, that allows to share notebooks programmatically in different forms
+
+```bash
+wljs -c share -i "path to wln notebook" -o "path to output file"
+```
+*exports to [Static HTML](frontend/Exporting/Static%20HTML.md)*
+
+```bash
+wljs -c share -i "path to wln notebook"
+```
+*exports to [Static HTML](frontend/Exporting/Static%20HTML.md) using the same path*
+
+```bash
+wljs -c share -i "path to wln notebook" -t html
+```
+*exports to [Static HTML](frontend/Exporting/Static%20HTML.md)*
+
+```bash
+wljs -c share -i "path to wln notebook" -t html --cdn
+```
+*exports to [Static HTML](frontend/Exporting/Static%20HTML.md) and enables CDN*
+
+List of supported output types:
+- `html` [Static HTML](frontend/Exporting/Static%20HTML.md)
+- `nb` [Mathematica](frontend/Exporting/Mathematica.md)
+- `md` [Markdown](frontend/Exporting/Markdown.md)
+- `mdx` [MDX](frontend/Exporting/MDX.md) (Static only)
+
+
+## Version of CLI
+```bash
+wljs -v
+```
+

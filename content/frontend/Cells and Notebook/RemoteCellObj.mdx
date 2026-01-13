@@ -13,20 +13,13 @@ RemoteCellObj[uid_String] _RemoteCellObj
 ```
 
 ## Methods
-### `Delete`
-Deletes a given cell in the notebook
-
-```wolfram title="Self destruction"
-With[{cell = EvaluationCell[]},
-	EventHandler[InputButton["Bye"], Function[Null,
-		cell // Delete
-	]]
-]
-```
-*removes an input cell*
+### `NotebookDelete`
+### `NotebookWrite`
+### `NotebookRead`
+### `NotebookReadAsync`
 
 ### `EventHandler`
-There is an adapter for [`EventHandler`](../Misc/Events) method. You can listen a cell's events from the evaluation Kernel  
+You can listen a cell's events from the evaluation Kernel  
 
 ```wolfram
 With[{cell = EvaluationCell[]},
@@ -39,8 +32,7 @@ With[{cell = EvaluationCell[]},
 ##### Normal cells
 - `"Destroy"` when a cell was removed
 
-##### Projected cells 
-*See [CellPrint](../Cells%20and%20Notebook/CellPrint) with window Target*
+##### Expression Windows
 
 - `"Mounted"` fired once cell is mounted and is ready, returns [WindowObj](../Frontend%20IO/WindowObj);
 
@@ -49,30 +41,3 @@ With[{cell = EvaluationCell[]},
 </Callout>
 
 - `"Closed"` fired when user closes window (or connection breaks), returns [WindowObj](../Frontend%20IO/WindowObj)
-
-## Properties
-To get all properties of a given cell:
-
-```wolfram
-cell = EvaluationCell[]
-cell["Properties"]
-```
-
-### Get/Set patterns
-Use
-```wolfram
-cell[name_String]
-```
-
-### Setting content
-Use `"Data"` field to mutate the content live
-
-```wolfram
-With[{cell = EvaluationCell[]},
-  cell["Data"] = "1+1"
-]
-```
-
-<Callout type="warn">
-For now only works for input cells
-</Callout>
