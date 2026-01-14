@@ -2,7 +2,7 @@
 title: Notebook Tools
 ---
 
-WLJS Notebook is fully accessible from the keyboard. One of the most important key combination to know is <kbd>Ctrl-P</kbd> or <kbd>⌘-P</kbd>, which brings up the Command Palette. From here, you have access to many small helper utilities, toolboxes, shortcuts and AI copilot: 
+WLJS Notebook is fully accessible from the keyboard. One of the most important key combinations to know is <kbd>Ctrl-P</kbd> or <kbd>⌘-P</kbd>, which brings up the Command Palette. From here, you have access to many small helper utilities, toolboxes, shortcuts, and AI copilot: 
 
 
 <div className='relative group'>
@@ -14,7 +14,7 @@ WLJS Notebook is fully accessible from the keyboard. One of the most important k
 
 import { Share2, CircleQuestionMark } from 'lucide-react';
 
-Most of utilities are notebooks themself, which are evaluated in the isolated context whever you click on a command palette item. You can find the information on each by clicking on <span className='inline-flex' ><CircleQuestionMark style={{height:"1rem"}}/></span> icon, that will open the source notebook.
+Most of the utilities are notebooks themselves, which are evaluated in an isolated context whenever you click on a command palette item. You can find the information on each by clicking on <span className='inline-flex' ><CircleQuestionMark style={{height:"1rem"}}/></span> icon, that will open the source notebook.
 
 <Callout>User's utilities are stored in `~/Documents/WLJS Notebooks/User palette/`</Callout>
 
@@ -31,17 +31,18 @@ Type any of those words to call the action:
 - __Debug__ - attach a debugger
 - __Print__ - export an entire notebook to PDF
 
-<Callout>Notebooks are heavily cached to avoid excessive writting on a disk, therefore avoid renaming an opened notebook outside the WLJS application</Callout>
+<Callout>Notebooks are heavily cached to avoid excessive writing to disk, therefore avoid renaming an opened notebook outside the WLJS application</Callout>
 
 </Card>
 
 ## Utilities
-Every tool is a normal notebook, which is evaluated in the background and manipulate you working notebook, create temporal cells whenever you call it from the palette. 
+Every tool is a normal notebook, which is evaluated in the background and manipulates your working notebook, creating temporal cells whenever you call it from the palette. 
 
 import { Accordion, Accordions } from 'fumadocs-ui/components/accordion';
 
 
 ### Insert matrix
+Creates a small widget in the cell below the focused one that helps to generate and insert matrices (lists of lists).
 
 <Accordions>
 <Accordion title="Demonstration">
@@ -51,7 +52,11 @@ import { Accordion, Accordions } from 'fumadocs-ui/components/accordion';
 </Accordion>
 </Accordions>
 
+Place a cursor to the desired place in the cell and click <small>Insert</small> on the widget.
+
+
 ### Special characters
+Adds a toolbar to the notebook with special characters and snippets for writing nice-looking integrals, sums, and other constructs. 
 
 <Accordions>
 <Accordion title="Demonstration">
@@ -61,17 +66,26 @@ import { Accordion, Accordions } from 'fumadocs-ui/components/accordion';
 </Accordion>
 </Accordions>
 
+Select the piece of code and apply operation from the toolbar. Or place a cursor to a cell and insert a symbol/expression from the toolbar.
+
 ### Format text
+Adds a toolbar to the notebook for formatting code (font size, color, background, font face). 
+
+<Callout>The widget automatically detect the cell type (Wolfram, Markdown or HTML) of the selected text and adjust wrapping accordingly</Callout>
+
+Select the piece of code and apply operation from the toolbar. 
 
 ### Upload ASCII data file
+Creates a widget with importing wizard allowing to import CSV/TSV/DAT files, strip headers and insert a file to a cell as an iconized expression
 
 ### Upload file
+Basic widget for uploading files
 
 ### Escape string
-
-### Format code 
+A helper tool to safely insert strings containing double quotes or other "unsafe" sequences. It will prompt a user to enter text and print a cell with the result.
 
 ### Beautify code 
+Formats selected code or entire Wolfram input cell and attempts to apply syntax sugar if possible. If it fails, try <small>Format code</small> instead.
 
 <Accordions>
 <Accordion title="Demonstration">
@@ -81,9 +95,18 @@ import { Accordion, Accordions } from 'fumadocs-ui/components/accordion';
 </Accordion>
 </Accordions>
 
+Select the code or place a cursor in the desired cell and call this tool from the command palette.
+
+### Format code 
+Formats selected code or entire Wolfram input cell. Action is the same as the previous one, but syntactic sugar is not applied.
+
 ### Find in cells
+Creates a floating search window and tries to find given expression in all visible cells of the notebook.
+
+<Callout>You can still use a standard search box locally in the individial cells with <kbd>Ctrl/⌘-F</kbd></Callout>
 
 ### Show options
+Attempts to discover the possible options of the given symbol in the cell and present them as an interactive table.
 
 <Accordions>
 <Accordion title="Demonstration">
@@ -93,9 +116,21 @@ import { Accordion, Accordions } from 'fumadocs-ui/components/accordion';
 </Accordion>
 </Accordions>
 
+Start typing:
+
+```Wolfram
+Plot[x, {x,0} 
+```
+
+and then call this widget. It will automatically __find the unclosed bracket__ and fetch the head `Plot`. Click on the desired options in the table to insert them later, once you click on the green mark icon.
+
 ### Notebook directory
+Opens a notebook directory using OS's explorer.
+
+<Callout type="warning">This will only work with WLJS desktop application</Callout>
 
 ### Inline navigation helper (Slider)
+A helper tool that creates a syntactic sugar inline widget on a selected number. It is used in 2D and 3D graphics or any other expression that supports [Offload](./../Interpreter/Offload) aka live-updates:
 
 <Accordions>
 <Accordion title="Demonstration">
@@ -105,7 +140,12 @@ import { Accordion, Accordions } from 'fumadocs-ui/components/accordion';
 </Accordion>
 </Accordions>
 
+For example: select a number you want to manipulate and call this tool. It will create an inline widget with a slider. Evaluate your cell, manipulate the slider, and once you are satisfied, click on the mark icon.
+
+<Callout type="idea">Check the reference for primitives, that support live updates with `Offload`</Callout>
+
 ### Inline navigation helper (Drag)
+A helper tool that creates a syntactic sugar inline widget on a selected pair `{x,y}` or triplet of numbers `{x,y,z}`. It is used in 2D and 3D graphics that support [Offload](./../Interpreter/Offload) aka live-updates:
 
 <Accordions>
 <Accordion title="Demonstration">
@@ -115,7 +155,10 @@ import { Accordion, Accordions } from 'fumadocs-ui/components/accordion';
 </Accordion>
 </Accordions>
 
+For example: select a parameter's initial value you want to manipulate and call this tool. It will create an inline widget with a display and place a dragging gizmo on your 2D or 3D canvas. Evaluate your cell, drag the red dot (or 3D sphere), and once you are satisfied, click on the mark icon.
+
 ### Inline navigation helper (Joystick)
+A helper tool that creates a syntactic sugar inline widget on a selected pair `{x,y}`. It is used in 2D and any other expression that supports [Offload](./../Interpreter/Offload) aka live-updates and accepts a pair of numbers:
 
 <Accordions>
 <Accordion title="Demonstration">
@@ -125,40 +168,435 @@ import { Accordion, Accordions } from 'fumadocs-ui/components/accordion';
 </Accordion>
 </Accordions>
 
+For example: select a parameter's initial value you want to manipulate and call this tool. It will create an inline widget with a joystick. Evaluate your cell, manipulate the joystick, and once you are satisfied, click on the mark icon.
+
 ### Take a picture
+Creates a widget, which uses any available video recording device to take a picture and place it as `Image` to a notebook's cell.
 
 ### Record voice
+Creates a widget which uses any available audio recording device to record live audio and place it to a cell as `Audio` object.
 
 ### Crop image
+Select an image or image-producing expression in your cell and call this tool. It will evaluate the selected expression and append an interactive widget allowing to do rectangular cropping.
 
 ### Copy InputForm
-
+Select the code in the cell and call this tool. It will strip all syntactic sugar from it and copy the pure `InputForm` of the expression to your clipboard.
 
 ## Debugger
+Debugger can be called from the top <small>Misc</small> menu or from the command palette. It is a tool that attaches to a notebook and a working kernel to intercept the evaluation process and monitor symbol changes.
+
+
+__What it can do:__
+
+<Card>
+
+- Interrupt cell evaluation and possibly inspect the intermediate results
+- Track changes in symbols values
+- Break on assertions or symbol changes 
+- See low-level system log
+
+</Card>
+
+
+
+__What it cannot do:__
+
+<Card>
+
+- Profile and trace evaluation
+- Step in / step out
+
+</Card>
+
+Let's have a look at the interface:
+
+<div className='relative group'>
+<div className="absolute -inset-0.5 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur blur-3xl opacity-5 group-hover:opacity-10 transition duration-500" />
+<div className="invertColor">
+![Command Palette](./imgs/debugger.png)
+</div>
+</div>
+
+__Inspect__ is a central mode for debugging.
+
+## Inspecting Mode
+It stops the current execution and allows you to interact with any other cells in the sub-session, enabling you to check the status of various symbols. You can write and evaluate other cells in `Inspect` mode.
+
+For example, evaluate this one:
+
+```wolfram
+Do[k = i; Pause[1], {i, 100}];
+```
+
+Then switch to `Inspect` mode; it will pause the evaluation. Now, you can check the state of the `k` symbol by running a new cell with:
+
+```wolfram
+k
+```
+
+<Callout>
+You can always continue execution from this mode by clicking <small>Continue</small> until the next possible break. All transitions take time and depend on the current kernel occupancy.
+</Callout>
+
+## Watching Symbols
+You can add a symbol to a tracking list to monitor its `OwnValue` in real-time automatically. It won't interrupt your execution unless you enable the checkbox for that option.
+
+<Callout>
+Live updates are supported only for assignments, i.e., when `symbol = *newValue*`. If you mutate a part of a `List`, it won't trigger an update.
+</Callout>
+
+## Breakpoints
+In Wolfram Language, traditional breakpoints are difficult to implement since there is no *source code file* in the classical sense. Everything is an expression, and a breakpoint must be an expression as well.
+
+There are two sources for breaking events, both of which immediately switch the kernel to <small>Inspecting Mode</small>.
+
+### Asserts
+First, __enable breaking on assertions__ from the dropdown menu in the top bar of the debugger. Then, whenever execution encounters `False` in an [Assert](./../Misc/Assert), it will break.
+
+For example:
+
+```wolfram
+Do[k = i; If[i > 6, Assert[False, "Hey"]]; Pause[1], {i, 100}];
+```
+
+This code will break automatically after 6 seconds. In <small>Inspect</small> mode, evaluating `k` will return `7`.
+
+If you track the `k` symbol at the same time, you will see it changing in the debugger window.
+
+### Symbols
+When a symbol is assigned a new value, it generates an event in the debugger. Use the <small>Break on</small> checkbox to enable breaking.
+
+For example:
+
+```wolfram
+Do[k = i; If[i > 6, test = Now]; Pause[1], {i, 100}];
+```
+
+This code will break after 6 iterations.
 
 
 ## AI Copilot
+If nothing is selected, text typed into the command palette is sent to a remote LLM, which __has access to the notebook__. We use a "knowledge on demand" concept, meaning that additional notebook-specific information (like cell types) is only fetched when needed — __saving tokens__ if your request is unrelated.
+
+Given tools:
+
+<Card>
+
+- __Create, remove, evaluate, and edit cells__ in any language
+- __Read notebook structure__
+- __See and edit the focused cell__ where your cursor is
+- __See and edit your selection__ in any editor area
+- __Access the knowledge library__
+- ~~Google~~ __Use WolframAlpha__ to fetch real-world data
+- Evaluate any WL expresson in the background
+
+</Card>
+
+<Accordions>
+
+<Accordion title="Demonstration">
+
+- YTS: [We made AI Copilot in your Notebook 🤖](https://youtube.com/shorts/6s9m5ZGPkdE?feature=share)
+- YTS: [AI Copilot in your Notebook. Part 2 🤖](https://youtube.com/shorts/B_ZVjN9cvQM?feature=share)
+
+</Accordion>
+
+<Accordion title="FAQ">
+
+### FAQ
+
+
+#### How to *restart* chat
+Type and send the following message:
+
+```
+reset chat
+```
+
+#### Asking to fix any errors
+When your cursor is inside a cell (whether *JavaScript*, *Wolfram Language*, or any other), it is called the `focused cell`.
+
+AI can access it. Mention this explicitly:
+
+> Fix my errors in the focused cell
+
+#### Fixing typos in selected text
+When you select text inside a cell, you can ask the AI bot to perform actions on it. For example, press <kbd>⌘/Ctrl-P</kbd> and type:
+
+> Fix selected
+
+or more explicitly:
+
+> Fix grammar in selected
+
+#### Reading or editing selected text
+AI can also access currently selected text. However, it does not receive information about the language. By default, it assumes the main language is WL.
+
+For example, you can ask:
+
+> What is this symbol I selected?
+
+#### Removing or adding cells
+You can place your cursor in any cell and request to remove all cells starting from the focused one:
+
+> Remove all cells starting from the focused
+
+#### Saying "do it" in a single message
+If the assistant hesitates to apply changes and only prints them in chat, simply say:
+
+> Apply changes
+
+#### Creating new cells
+You can ask:
+
+> Show me an example in JavaScript
+
+By default, it will be added to the end of your notebook. To specify a location, mention the `focused` cell:
+
+> Show me an example in JavaScript and print it 
+
+#### Changing attributes of cells
+AI can toggle input cell visibility:
+
+> Unhide all input markdown cells
+
+#### Evaluating cells
+You can ask AI to evaluate specific types of cells. For example:
+
+> Evaluate all markdown cells
+
+You can also chain commands:
+
+> Evaluate all markdown cells and hide inputs
+
+#### Asking to redo something
+If AI made a mistake or if you want something different, ask it to edit the cell it created:
+
+> I need a red background instead of white. Edit your cell
+
+#### Asking for comments
+You can ask AI to check all code cells and add descriptions:
+
+You can also chain commands:
+
+> Read all my cells and comment on them using Markdown. Insert your Markdown cells at the corresponding places in the notebook. Evaluate them and hide them.
+
+#### Accessing the internet
+By default, AI can use Wolfram Alpha to retrieve real-time data.
+
+> Where am I?
+
+#### AI is not responding ⌛️
+Sometimes operations take up to 1 minute to complete. If that's not the case, try waking it up with a dummy message:
+
+> So?
+
+If that doesn't work:
+- Type and send `reset chat` to restart the session.
+- You may have run out of tokens. Check the OpenAI API page under `Billing`.
+
+</Accordion>
+</Accordions>
+
+### Endpoints, Models, and Local LLMs
+There is a dedicated section in the settings menu of WLJS Notebook: 
+
+import { Dot, Settings } from 'lucide-react';
+
+<div class="fd-steps">
+    <div class="fd-step py-3 items-center flex flex-row">
+        <div class="flex flex-row items-center text-sm gap-x-2"> <Settings width={"1rem"}/> Settings</div>
+    </div>
+    <div class="fd-step py-3 items-center flex flex-row">
+        <div class="flex flex-row items-center text-sm gap-x-2"> <Dot width={"1rem"}/> Command palette</div>
+    </div> 
+    <div class="fd-step py-3 items-center flex flex-row">
+        <div class="flex flex-row items-center text-sm gap-x-2"> <Dot width={"1rem"}/> AI Assistant</div>
+    </div> 
+</div>
+
+You can configure the following:
+
+- **Endpoint**: By default, WLJS Notebook sends OpenAI-compatible requests to the address: `<endpoint>/v1/chat/completions`
+- **Model**: By default, OpenAI's `gpt-4o` is selected
+- **Max tokens**
+- **Temperature**
+
+#### Local LLM
+We recommend using the Ollama server to take advantage of locally running smaller models. For example, the following parameters can be set initially:
+
+- **Endpoint**: `http://localhost:11434/` — the default Ollama server
+- **Model**: `qwen3:8b`, a small 5 GB tested model
+
+<Callout type="warning">
+With local LLMs, the performance and quality of the AI assistant may depend on many parameters. In general, the waiting time increases significantly compared to `gpt-4-*` models.
+</Callout>
+
+### Note on cell types
+The assistant is aware of being in a notebook environment. The following cell types are described in the initial system prompt:
+
+- Wolfram
+- JavaScript
+- HTML
+- Slides
+- Mermaid diagrams
+
+Additionally, differences between Wolfram Mathematica and WLJS Notebook are included in the initial prompt.
+
+<Accordions>
+
+<Accordion title="Prompt Examples">
+
+### Prompt Examples
+
+#### Fixing Errors
+For example, if you type:
+
+```mathematica title="cell"
+Plot[x, {x,0,1,0.1}]
+
+               ^^^
+```
+
+Then, with your cursor inside the cell, open the command palette with `Cmd/Ctrl+P` and type:
+
+```
+Fix my errors in the focused cell
+```
+
+If the assistant hesitates to apply changes, add:
+
+```
+Apply changes
+```
+
+:::note
+The assistant can help with any language. Make sure your cursor is inside the correct cell.
+:::
+
+#### Fixing Grammar
+Simply ask:
+
+```
+Fix my grammar in the focused cell
+```
+
+If it does not apply changes, add:
+
+```
+Apply changes
+```
+
+#### Working with Dynamics
+The assistant is aware of new libraries. For example:
+
+```
+Make a dynamic example where a green ball follows your cursor on a 2D graph
+```
+
+```mathematica title="sample output"
+pt = {0.,0.};
+
+Graphics[{
+  White, EventHandler[Rectangle[{-10,-10}, {10,10}], {
+    "mousemove" -> Function[pos, pt = pos]
+  }],
+  Green, Disk[pt // Offload, 0.5]
+}, PlotRange -> {{-10, 10}, {-10, 10}}]
+```
+
+
+#### Creating Code Examples
+Ask directly in the command palette:
+
+``` title="prompt"
+Make an example slide
+```
+
+This creates a new [slide cell](./../Cell%20types/Slide):
+
+```jsx title="sample output"
+.slide
+# Welcome to the Presentation
+
+This slide introduces you to the world of presentations in notebooks.
+
+---
+
+# The Power of Slides
+
+Slides can convey complex ideas succinctly and engagingly.
+
+---
+
+# Thank You!
+
+We hope you found this introduction useful.
+```
+
+
+Or, for a JavaScript example with animation:
+
+``` title="prompt"
+Write some JavaScript with animation
+```
+
+```js title="sample output"
+.js
+let posX = 0;
+let speed = 2;
+
+function draw() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  ctx.fillStyle = 'red';
+  ctx.fillRect(posX, 75, 50, 50);
+  posX += speed;
+  if (posX > canvas.width || posX < 0) speed *= -1;
+}
+
+animate();
+```
+
+#### Restarting the Session
+To flush the session, type:
+
+```
+reset chat
+```
+
+</Accordion>
+
+</Accordions>
 
 ## Printing option
+Locate <small>Print</small> from the <small>File</small> menu or from the command palette to print an entire notebook as PDF.
 
+<Callout>This feature requires WLJS desktop application and will not work from a web-browser</Callout>
+
+### Page breaks
+Use [Markdown cell](./../Cell%20types/Markdown) with `PageBreakAbove` or `PageBreakBelow` symbols to force page breaks, i.e.:
+
+```markdown
+.md
+
+<PageBreakAbove/>
+```
 
 
 
 
 ## Installing Packages
 
-#### How to install new packages locally?
+### How to install new packages locally?
 
-##### Via Command Palette
-Open your notebook and **paste the GitHub link to a repo**<sup>+</sup> or **URL to `.paclet` file** in the command palette located on the top bar.
+#### Via Command Palette
+Open your notebook and **paste the GitHub link to a repo**<sup>+</sup> or **URL to `.paclet` file** to the command palette located on the top bar.
 
-![](./../../Screenshot%202024-05-10%20at%2021.35.19.png)
-
-:::warning
+<Callout>
 <sup>+</sup> It must contain a `PacletInfo.wl` file in the root directory of the repository.
-:::
+</Callout>
 
-##### Via LPM
+#### Via LPM
 Create a new cell and insert:
 
 ```mathematica
@@ -181,9 +619,9 @@ LPMRepositories[{
 
 This will create a local folder named `wl_packages`, where installed packages will be stored.
 
-#### Global Installation (Classic)
+### Global Installation (Classic)
 
-##### Via Paclets
+#### Via Paclets
 If the package is hosted on the Wolfram repository, then you can simply run:
 
 ```mathematica
@@ -200,8 +638,8 @@ PacletInstall["path_to_it.paclet"]
 <<PacletContextName`
 ```
 
-#### Namespaces
-If you have conflicting symbol names or want to scope loaded package into a alias context:
+### Namespaces
+If you have conflicting symbol names or want to scope loaded package into an alias context:
 
 ```mathematica
 Needs["PacletContextName`"->"myAlias`"]
@@ -210,7 +648,7 @@ Needs["PacletContextName`"->"myAlias`"]
 
 ## Cli 
 
-WLJS Notebook app registers (if you allowed this during the installation) CLI-tool globally in your operating system.
+WLJS Notebook app registers (if you allowed this during the installation) a tiny CLI-tool globally in your operating system.
 
 Here is a list of commands you can use
 
@@ -232,33 +670,25 @@ wljs -c [command] [args...]
 This pattern sends a command to all extensions used by WLJS Notebook. The list of known commands follows
 
 ### share
-It is handled by `wljs-export-html` extension, that allows to share notebooks programmatically in different forms
+It allows to share notebooks programmatically in different forms
+
+*Export notebook to HTML*
 
 ```bash
-wljs -c share -i "path to wln notebook" -o "path to output file"
+wljs -c share -i "path to wln notebook" -o "path to output file" -t html
 ```
-*exports to [Static HTML](frontend/Exporting/Static%20HTML.md)*
 
-```bash
-wljs -c share -i "path to wln notebook"
-```
-*exports to [Static HTML](frontend/Exporting/Static%20HTML.md) using the same path*
+*Export notebook to HTML using the same path*
 
 ```bash
 wljs -c share -i "path to wln notebook" -t html
 ```
-*exports to [Static HTML](frontend/Exporting/Static%20HTML.md)*
-
-```bash
-wljs -c share -i "path to wln notebook" -t html --cdn
-```
-*exports to [Static HTML](frontend/Exporting/Static%20HTML.md) and enables CDN*
 
 List of supported output types:
-- `html` [Static HTML](frontend/Exporting/Static%20HTML.md)
-- `nb` [Mathematica](frontend/Exporting/Mathematica.md)
-- `md` [Markdown](frontend/Exporting/Markdown.md)
-- `mdx` [MDX](frontend/Exporting/MDX.md) (Static only)
+- `html` 
+- `nb` 
+- `md` 
+- `mdx` 
 
 
 ## Version of CLI
