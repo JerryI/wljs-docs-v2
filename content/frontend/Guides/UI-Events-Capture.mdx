@@ -1,0 +1,507 @@
+---
+title: Handling user input
+
+---
+
+This section discusses how to handle user interactions with sliders, graphics primitives, and other input building blocks. 
+
+<Cards>
+  <Card
+    href="./../Guide/Dynamics"
+    title="Interactive evaluation and granular updates"
+  >
+    A guide on interactive evaluation, updates and animation
+  </Card>
+
+  <Card
+    href="./../Misc/Events"
+    title="Events"
+  >
+    Reference on event objects
+  </Card> 
+
+</Cards>
+
+## UI Elements
+We provide a large set of basic UI elements used for creating buttons, sliders, text fields, and more.
+
+<Callout>
+
+If you need a custom element, you can create it directly in the notebook using [WLX](./../Cell%20types/WLX) or [JavaScript](./../Cell%20types/Javascript) cell types. Please see the guides
+
+{/* [TODO] */}
+
+</Callout>
+
+Input elements such as [Button](./../GUI/Button), [InputRange](./../GUI/InputRange), [InputText](./../GUI/InputText), [InputFile](./../GUI/InputFile), etc., can be found in the `GUI` section of the symbols reference documentation.
+
+
+Each standard input element generates [`EventObject`](frontend/Reference/Misc/Events.md#`EventObject`), to which you can assign a handler function. You don't necessarily need to assign it to a variable. For example (see [InputButton](frontend/Reference/GUI/InputButton.md)):
+
+```wolfram
+EventHandler[InputButton["Click"], Beep]
+```
+
+is equally valid:
+
+```wolfram
+btn = InputButton["Click"];
+EventHandler[btn, Beep];
+
+btn
+```
+
+There is also a helper symbol `Button` that allows you to assign handlers implicitly:
+
+```wolfram
+Button["Click", Beep[]]
+```
+
+<wljs-store kernel="./attachments/kernel-3138499539191000322.txt" json="./attachments/1ae741de-2491-47ea-90ab-b807369d30e4.txt"></wljs-store>
+
+The second argument has the `Hold` attribute.
+
+Here are some other examples with [InputRange](./../GUI/InputRange):
+
+```wolfram
+EventHandler[InputRange[0, 1, 0.1], Function[value, radius = value]]
+% // EventFire; (* just to initialize radius symbol *)
+
+Graphics[{LightBlue, Disk[], Pink, Disk[{0,0}, radius // Offload]}]
+```
+
+<WLJSWrapper>
+<wljs-editor lazy="true" display="codemirror" type="Output"  >{`(*VB[*)(EventObject[<|"Id" -> "336f83ac-9d9b-4410-9d68-912362efc04e", "Initial" -> 0.5, "View" -> "adf30b2b-4369-48ec-a191-08e3e8ff65e4"|>])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKJ6akGRskGSXpmhibWeqaWKQm6yYaWhrqGlikGqdapKWZmaaaAACJ9hXa"*)(*]VB*)`}</wljs-editor>
+</WLJSWrapper>
+
+<WLJSWrapper>
+<wljs-editor lazy="true" display="codemirror" type="Output"  >{`(*VB[*)(Graphics[{RGBColor[0.87, 0.94, 1], Disk[{0, 0}], RGBColor[1, 0.5, 0.5], Disk[{0, 0}, Offload[radius]]}, ImageSize -> 200, "Controls" -> False])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KWnMIB4HkHAvSizIyEwuTmOByftkFpcg5IPcnZzzc/KLiq4vLrDluv7avkhknfvDKpF39pkgExHGumQWZ6cxIRuSCaQZwASmcWDNRQxg8MAezkAYgNc4sKXsQMI/LS0nPzGlmA1kWmJKZmkxQk9QaU5qMSeQ4ZmbmJ4anFmVmnkCpBlFQTDIUc75eSVF+TnFxaxAjltiTnEqAKV9QJ4="*)(*]VB*)`}</wljs-editor>
+</WLJSWrapper>
+
+<Callout type="idea">
+Apply `EventFire` to any `EventObject` to manually fire an event with a default value to initialize your variables, if needed.
+</Callout>
+
+You can also add a label to an [InputRange](frontend/Reference/GUI/InputRange.md):
+
+```wolfram
+InputRange[0, 1, 0.1, "Label" -> "Radius"]
+```
+
+And an initial value as the fourth argument:
+
+```wolfram
+InputRange[0, 1, 0.1, 0.7, "Label" -> "Radius"]
+```
+
+Here is an example using [InputSelect](frontend/Reference/GUI/InputSelect.md):
+
+```wolfram
+angle = 45 Degree;
+EventHandler[
+    InputSelect[{Pi/2 -> "90", Pi/4 -> "45", 0 -> "0"}, Pi/4], 
+    Function[value, angle = value]
+]
+
+Graphics[{Rotate[Rectangle[{0,0}, {1,1}], angle // Offload]}]
+```
+
+Here is a simple text input:
+
+```wolfram
+text = "Example";
+EventHandler[InputText[], Function[value, text = value]]
+
+Graphics[Table[{
+  Hue[i/10., 1., 1.], Rotate[Text[Style[text // Offload, FontSize -> RandomInteger[{12, 24}]], RandomReal[{-1,1}, 2]], RandomChoice[{Pi, Pi/4, Pi/2, 0}]]
+}, {i, 10}]]
+```
+
+import { Accordion, Accordions } from 'fumadocs-ui/components/accordion';
+
+<Accordions>
+
+<Accordion title="A few more examples">
+
+
+This button changes the color of the disk each time you click it:
+
+```wolfram
+Module[{b = List @@ Red}, {Button["change", 
+   b = RandomReal[{0, 1}, 3]],
+   Graphics[{RGBColor[Offload[b]], Disk[]}]}]
+```
+
+This button changes position each time you click it:
+
+```wolfram
+Module[{pt = {0, 0}}, 
+ Framed@Graphics[
+   Inset[Button["Click Me", pt = RandomReal[{-1, 1}, 2]], Offload[pt]],
+    PlotRange -> {{-1,1}, {-1,1}}, Controls->False]]
+```
+
+</Accordion>
+
+</Accordions>
+
+
+### Grouping
+
+<Callout type="tip">
+If you only need visual grouping, consider using [Row](./../Formatting/Row) or [Column](./../Formatting/Column):
+
+```wolfram
+slider = InputRange[0, 1, 0.1]; 
+checkbox = InputCheckbox[];
+
+{slider, checkbox} // Column 
+```
+
+</Callout>
+
+To group elements both visually and at the event level, use [InputGroup](./../GUI/InputGroup):
+
+```wolfram
+slider = InputRange[0, 1, 0.1]; 
+checkbox = InputCheckbox[];
+n = EvaluationNotebook[];
+
+joined = InputGroup[<|"Checkbox" -> checkbox, "Slider" -> slider|>, "Label" -> "Group"];
+EventHandler[joined, NotebookWrite[n, #]&]
+```
+
+It merges an association (as above) or a list of `EventObjects` into a new one. You do not need to assign separate `EventHandler`s - __just one__ `joined` handler is enough. It fires an event preserving the original structure of the association or list:
+
+```wolfram title="Printed cell"
+<|"Slider" -> 0.5, "Button" -> True|>
+```
+
+#### Joining Different Events
+You can also merge event objects underlying UI elements using `Join`. Here’s a simple example:
+
+```wolfram
+button = InputButton[]
+slider = InputRange[0, 1, 0.1]
+
+EventHandler[Join[button, slider], Function[data,
+  Print[data]
+]];
+```
+
+You'll get either `True` or a number like `0.5`, depending on which element triggered the event. To distinguish between them, [use patterns](./../Misc/Events) (or topics):
+
+```wolfram
+button = InputButton["Topic" -> "Button"]
+slider = InputRange[0, 1, 0.1, "Topic" -> "Slider"]
+
+EventHandler[Join[button, slider], {type_ :> Function[data,
+  Print[type <> ":" <> ToString[data]]
+]}];
+```
+
+Or capture them individually:
+
+```wolfram
+button = InputButton["Topic" -> "Button"]
+slider = InputRange[0, 1, 0.1, "Topic" -> "Slider"]
+
+EventHandler[Join[button, slider], {
+  "Button" -> Beep,
+  "Slider" -> Print
+}];
+```
+
+The slider prints a message; the button triggers *beep*.
+
+#### Chaining Events
+Most GUI elements support chaining, where each reuses the same `EventObject`. It’s passed as the first argument:
+
+```wolfram
+ev = EventObject[];
+
+InputButton[ev, "Topic" -> "Button"]
+InputRange[ev, 0, 1, 0.1, "Topic" -> "Slider"]
+
+EventHandler[ev, {
+  "Button" -> Beep,
+  "Slider" -> Print
+}];
+```
+
+With this approach, there's no need to create and join new events. This leaves a smaller footprint and reduces overhead.
+
+## Dialog windows, user prompts
+
+<Cards>
+  <Card
+    href="./../Advanced/Notebook-Operations"
+    title="Notebooks IO"
+  >
+    A comprehensive guide to handling dialog windows and notebook operations
+  </Card> 
+</Cards>
+
+## 2D Graphics
+Some primitives, as well as the entire canvas, support the `EventHandler` method. Let's start with the `Graphics` expression itself.
+
+### Graphics as an Event Generator
+You can attach event handlers to a `Graphics` expression, which represents the SVG container of your 2D graph.
+
+This approach offers some benefits over using [Primitives](#Primitives). For instance, events like `"mousemove"` or `"click"` are captured even if other objects are layered on top. The following event patterns are supported:
+
+<Card>
+
+- `"keydown"`: Captures keyboard input after the canvas is clicked
+- `"capturekeydown"`: Same as above but also prevents page scrolling
+- `"mousemove"`: Captures mouse movement
+- `"mouseup"`: Captures mouse up
+- `"mousedown"`: Captures mouse down
+- `"click"`: Captures clicks (without the Alt key)
+- `"altclick"`: Captures clicks with the Alt key held
+- `"onload"`: Fired once the canvas has loaded
+
+</Card>
+
+For example:
+
+```wolfram
+pt = {};
+EventHandler[
+  Graphics[{
+    PointSize[0.05], Blue, Opacity[0.5],
+    Point[pt // Offload]
+  }, PlotRange -> {{-1, 1}, {-1, 1}}],
+  {"mousemove" -> Function[xy, pt = Append[pt, xy]]}
+]
+```
+
+
+You can do the same with [Plot](./../Plotting%20Functions/Plot) and many others, since they produce a `Graphics` symbol:
+
+```wolfram
+pt = {};
+EventHandler[Plot[x, {x,-1,1}, Epilog->{
+  PointSize[0.05], Blue, Opacity[0.5],
+  Point[pt // Offload]
+}], {"mousemove" -> Function[xy, pt = Append[pt, xy]]}]
+```
+
+#### Alternative Way
+An alternative approach is to place the handler inside `Epilog` or `Prolog` with `Null`:
+
+```wolfram
+pt = {};
+Plot[x, {x,-1,1}, Epilog->{
+  PointSize[0.05], Blue, Opacity[0.5],
+  Point[pt // Offload],
+  EventHandler[Null, {"mousemove" -> Function[xy, pt = Append[pt, xy]]}]
+}]
+```
+
+or directly:
+
+```wolfram
+pt = {};
+Graphics[{
+  PointSize[0.05], Blue, Opacity[0.5],
+  Point[pt // Offload],
+  EventHandler[Null, {"mousemove" -> Function[xy, pt = Append[pt, xy]]}]
+}, PlotRange -> {{-1, 1}, {-1, 1}}]
+```
+
+When `EventHandler` sees `Null` as its argument, it internally attaches to the nearest parent. Similarly, you can attach handlers using `Epilog` or `Prolog`.
+
+### Primitives
+Certain graphic primitives also support `EventHandler`. Some supported primitives include:
+
+- [Point](./../Graphics/Point)
+- [Disk](./../Graphics/Disk)
+- [Rectangle](./../Graphics/Rectangle)
+- ...
+
+They support these patterns:
+
+<Card>
+
+- `"drag"`: Makes the primitive draggable and returns coordinates
+- `"dragsignal"`: Captures dragging without moving the primitive itself; returns coordinates
+- `"dragall"`: Like `"drag"`, but also fires events at drag start and end
+- `"click"`: Captures clicks without the Alt key
+- `"altclick"`: Captures clicks with the Alt key
+- `"mousedown"`: Fires on mouse press
+- `"mouseup"`: Fires on mouse release
+- `"mousemove"`: Captures movement
+- `"mouseover"`: Captures entry into element area
+- `"zoom"`: Captures mouse wheel input
+
+</Card>
+
+For example, combining `"zoom"` and `"drag"`, you can create a widget for manually fitting Gaussian curves:
+
+```wolfram
+getGauss[x0_, A_, width_] := (
+  Table[{x, A * Exp[-((x - x0)^2) / (2 * width^2)]}, {x, -1, 1, 0.01}] // Quiet
+);
+getGauss[{x0_, A_}, width_] := getGauss[x0, A, width];
+getGauss[{x0_, A_, width_}] := getGauss[x0, A, width];
+```
+
+```wolfram
+Module[{line, initial},
+  initial = {-0.2, 0.8, 0.1};
+  line = getGauss[initial];
+
+  Graphics[{
+    Red, PointSize[0.1],
+    EventHandler[
+      Point[initial[[1 ;; 2]]],
+      {
+        "drag" -> Function[c, initial[[1 ;; 2]] = c; line = getGauss[initial]],
+        "zoom" -> Function[k, initial[[3]] = k/10.0; line = getGauss[initial]]
+      }
+    ],
+    Cyan, Line[line // Offload]
+  }, PlotRange -> {{-1, 1}, {0, 1}}, Axes -> {True, False}]
+]
+```
+
+*Try moving your mouse wheel on the red dot and then drag it.*
+
+You can also create a basic mouse follower using a white rectangle with a `"mousemove"` pattern:
+
+```wolfram
+pt = {0, 0};
+Graphics[{
+  White,
+  EventHandler[
+    Rectangle[{-2, -2}, {2, 2}],
+    {"mousemove" -> Function[xy, pt = xy]}
+  ],
+  PointSize[0.05], Cyan,
+  Point[pt // Offload]
+}]
+```
+
+<WLJSWrapper>
+<wljs-editor lazy="true" display="codemirror" type="Output"  >{`(*VB[*)(Graphics[{GrayLevel[1], EventListener[Rectangle[{-2, -2}, {2, 2}], {"mousemove" -> "1e94315e-217b-4d61-a9e5-55993e4c7b51"}], PointSize[0.05], RGBColor[0, 1, 1], Point[Offload[pt]], ImageSize -> 250, "Controls" -> False}])(*,*)(*"1:eJxdUMtOwzAQTHkIOPARSFxzMI2pckKigoJUiSr5AidZF0uOt4rdSPAn8Af8IgdC1pZTqT6MNLPrndm9qbCQsyRJ7NkIL6ibwC5HWHVi965qKy9ifa2sC/WrUP9YQw9akSRPSL8e4akH46gVDHRBpvYCaifMVkOQ4jz1NwyDhyOdmIdDPu8/dRV7DSVNbnFvocUeytuRMcizOeOQ3rFFlWbNPUtFDjzlPM/nkNWLirPDEhtUxpXqE7rvL3o/D/I0HqBYPS5RY6cSijKLED6fx8+B0o3epNQoGksJd0dBvdlrK7ZAZup3uti0CTku0bgOtfXTn4W28A+1kmGT"*)(*]VB*)`}</wljs-editor>
+</WLJSWrapper>
+
+
+Here is another example where we make an object draggable but update its position manually. This approach allows you to apply additional constraints:
+
+```wolfram
+outer = RegionDifference[
+  Rectangle[{-1,-1}, {1,1}],
+  RegionUnion[
+    Rectangle[{-0.9,-0.9}, {0.9,-0.4}]  ,
+    Rectangle[{0.4,-0.9}, {0.9,0.4}]  
+  ]
+];
+
+outer = Rationalize[outer, 0]; (* WL14 bug *)
+RegionPlot[outer];
+
+distanceOp = RegionDistance[outer, Translate[Rectangle[-{0.2,0.2}, {0.2,0.2}], #]]&;
+
+rect = {0.65, 0.15};
+
+RegionPlot[outer, Epilog->{
+  Red, 
+  Translate[EventHandler[
+    Rectangle[-{0.2,0.2}, {0.2,0.2}], 
+    {"dragsignal" -> Function[target,
+      If[distanceOp[target] > 0, rect = target]
+    ]}
+  ], Offload[rect]]
+}]
+```
+
+
+### Image
+You can attach event handlers to an [Image](./../Image/Image) expression, similar to `Graphics`.
+
+The following event patterns are supported:
+
+<Card>
+
+- `"mousemove"`: Captures mouse movement
+- `"mouseup"`: Captures mouse up
+- `"mousedown"`: Captures mouse down
+- `"click"`: Captures clicks (without the Alt key)
+- `"altclick"`: Captures clicks with the Alt key held
+
+</Card>
+
+For example:
+
+```wolfram
+lena = ExampleData[{"TestImage", "Lena"}];
+point = {0,0};
+move = Function[xy, point = xy];
+
+EventHandler[Image[lena], {"mousemove"->move}]
+TextView[point // Offload]
+```
+
+<WLJSWrapper>
+<wljs-editor display="codemirror" lazy="true" type="Output"  >{`(*VB[*)(FrontEndRef["cba7e783-d623-455a-9472-bb6693e86d85"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKJyclmqeaWxjrppgZGeuamJom6lqamBvpJiWZmVkap1qYpViYAgCEixVb"*)(*]VB*)`}</wljs-editor>
+</WLJSWrapper>
+
+<WLJSWrapper>
+<wljs-editor display="codemirror" lazy="true" type="Output"  >{`(*VB[*)(FrontEndRef["f5069ff4-e9bf-4d45-8038-baf522638ca4"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKp5kamFmmpZnoplompemapJiY6loYGFvoJiWmmRoZmRlbJCeaAACIuhWy"*)(*]VB*)`}</wljs-editor>
+</WLJSWrapper>
+
+## 3D Graphics
+Currently, event listeners in [Graphics3D](./../Graphics3D/Graphics3D) are limited.
+
+### Primitives
+The following 3D primitives support `EventHandler` methods:
+
+- [Sphere](./../Graphics3D/Sphere)
+
+The following patterns are supported:
+
+<Card>
+
+- `"drag"`: Makes the object draggable, adds guide lines, and sends the coordinates
+
+</Card>
+
+This is especially useful for dynamic lighting. For example:
+
+```wolfram
+point = {1, 1, 1};
+
+Graphics3D[{
+  Directive["Shadows"->True],
+  Polygon[{{-5, 5, -1}, {5, 5, -1}, {5, -5, -1}, {-5, -5, -1}}],
+  White,
+  Cuboid[{-1, -1, -1}, {1, 1, 1}],
+  Directive["Shadows"->False],
+  PointLight[Red, {1.5075, 4.1557, 2.6129}, "Intensity"->100],
+  Directive["Shadows"->True],
+  SpotLight[Cyan, point // Offload],
+
+  EventHandler[Sphere[point, 0.1], {
+    "drag" -> Function[pos, point = pos]
+  }]
+}, Lighting -> None]
+```
+
+This can also be applied to `Plot3D`, since it returns a `Graphics3D` expression:
+
+```wolfram
+Plot3D[Sin[x] Cos[y], {x,-10,10}, {y,-10,10}, Epilog->{
+  Directive["Shadows"->True],
+  SpotLight[Cyan, point // Offload],
+
+  EventHandler[Sphere[point, 0.1], {
+    "drag" -> Function[pos, point = pos]
+  }]
+}, Lighting -> None]
+```
+
+<WLJSWrapper>
+<wljs-editor lazy="true" display="codemirror" type="Output"  >{`(*VB[*)(FrontEndRef["87832d9c-716f-4dc8-86e8-5f60b5c4b269"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKW5hbGBulWCbrmhuapemapCRb6FqYpVromqaZGSSZJpskGZlZAgB92xVj"*)(*]VB*)`}</wljs-editor></WLJSWrapper>
+

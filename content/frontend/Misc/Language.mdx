@@ -5,12 +5,12 @@ title: Language
 ## `LeakyModule`
 
 
-A variation of `Module`, which comes with its own garbage collector, that prevents symbols from being purged by WL 
+A variation of `Module`, which comes with its own garbage collector, that prevents symbols from being garbage collected by WL 
 
 ```wolfram
 LeakyModule[symbols_List, expr_, opts___] _
 ```
-The only difference compared to traditional module-function is an optional argument
+The only difference compared to traditional `Module` is an optional argument
 - `"Garbage" :> _List` a held symbol, that points to a list.
 
 Then a user can manually purge them.

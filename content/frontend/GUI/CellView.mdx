@@ -7,13 +7,23 @@ update: false
 package: wljs-editor
 
 ---
-A low-level view component to spawn a cell wrapper (fully functional) 
+A component, that renders the content as a cell according to the provided view-component:
 
 ```wolfram
 CellView[content_String, opts___]
 ```
 
 where `content` is a string, that represents an expression needed by a view component of a cell. View-components are provided by different cell types used by the default to render the notebook in a window.
+
+`CellView` supports [complete cell objects](./../Advanced/Notebook-Operations) representation as an input:
+
+```wolfram
+CellView[ExpressionCell[expr, "Input"]]
+CellView[Cell[expr_String, "Input"]]
+CellView[Cell[expr_String, "Output", "html"]]
+CellView[Cell[expr_String, "Output", "js"]]
+CellView[Cell[expr_String, "Output", "markdown"]]
+```
 
 ## Supported output forms
 - [StandardForm](../Formatting/StandardForm)

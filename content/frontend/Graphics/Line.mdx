@@ -79,7 +79,7 @@ With[{f = {Cos[x] + Sin[x], Sin[x]}},
   Table[{LABColor[t/(2 Pi), 1, .8], Line[{f, Normalize[D[f, x]] + f}]} /. x -> t, {t, 0, 2 Pi, .1}]]]
 ```
 
-### Dynamics
+### Transitions and updates
 This is a main ingredient for displaying any dynamic plots, since [Plot](../Plotting%20Functions/Plot) function works only for the static data.
 
 #### Manipulation

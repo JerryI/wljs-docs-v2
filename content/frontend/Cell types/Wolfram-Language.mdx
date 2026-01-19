@@ -36,7 +36,10 @@ Once a symbol is defined in the `Global`` context of a Wolfram Kernel session, i
 At startup, the Wolfram Kernel loads all imported packages, reads `::usage` directives for defined symbols.
 
 ### Autocomplete for loaded packages
-You can enable in the editor's settings to periodically check for new loaded packages (not user-defined symbols) info upon `Get` or `Needs` commands.
+You can enable periodic checking in the editor's settings for newly loaded packages (not user-defined symbols) information upon `Get` or `Needs` commands.
 
 ## Access to Documentation
 Click the 🔎 icon in the autocomplete window to open the documentation for a symbol in a new tab.
+
+<Callout type="idea">Opening documentation for another symbol will not create an extra window, but it will refresh the existing one. Therefore you can safely arrange the windows __in a fixed layout__</Callout>
+

@@ -6,13 +6,18 @@ update: false
 virtual: 
 registered: true
 ---
-A Swiss knife for displaying 2D data
+A Swiss Knife for displaying `y[x]` curves
 
 ```wolfram
 Plot[expr_, {variable, min, max, step}, opts__]
 ```
 
-has `HoldFirst` attribute. See the list of supported options (`opts`) down below
+has `HoldFirst` attribute. See the list of supported options (`opts`) down below.
+
+
+<Callout type="idea">You can zoom and pan any plots with a mouse. Right-click on the canvas to reset axes</Callout>
+
+
 ## Options
 ### `PlotStyle` 
 Works as in Mathematica, i.e. per element in `expr` array, supports color, opacity and etc
@@ -248,5 +253,5 @@ Show or hide axes of the plot
 Plot[Sinc[x], {x, 0, 10}, Axes -> False]
 ```
 
-## Dynamics
+## Interactivity
 Consider to use [ManipulatePlot](../Plotting%20Functions/ManipulatePlot) for manipulating parameters of a function in real time

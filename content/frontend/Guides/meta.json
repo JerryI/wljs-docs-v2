@@ -3,6 +3,8 @@
   "icon": "Book",
   "pages": [
     "Command-palette",
-    "Dynamic"
+    "Dynamic",
+    "UI-Events-Capture",
+    "Styling-HTML"
   ]
 }

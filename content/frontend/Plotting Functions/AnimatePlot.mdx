@@ -10,9 +10,9 @@ source: https://github.com/JerryI/wljs-manipulate/blob/main/Kernel.wl
 AnimatePlot[f_, {x, min, max}, {t, min, max}, opts___]
 ```
 
-a dynamic alternative to [Plot](../Plotting%20Functions/Plot) and Mathematica's `Animate`, that samples all frames and creates live animation using them.
+a animated version of [Plot](../Plotting%20Functions/Plot), that samples all frames and creates live animation using them.
 
-`f` has return `_Real` or `{__Real}` (in a case of multiple curves)
+<Callout>`f` must return `_Real` or `{__Real}` (in a case of multiple curves)</Callout>
 
 <Callout type="info">
 The output is safe for exporting as a static HTML file, since it keeps all data inside the notebook. No Wolfram Kernel is required for playing the animation.
@@ -29,10 +29,10 @@ It inherits some of [Graphics](../Graphics/Graphics) options as well
 ### `AnimationRate`
 Specifies the number of updates *per second*
 
-### `TransitionType`
+### `"TransitionType"`
 See [TransitionType](../Graphics/TransitionType)
 
-### `TransitionDuration`
+### `"TransitionDuration"`
 See [TransitionDuration](../Graphics/TransitionDuration)
 
 ### `ImageSize`
@@ -45,8 +45,6 @@ Specifies colors for each curve
 ### `Prolog`
 Appends graphics primitives to the plot. See [Graphics](../Graphics/Graphics)
 
-## Exporting
-See "exporting" section of [Animate](../GUI/Animate)
 
 ## Example
 Plot the simplest sine function
@@ -55,8 +53,6 @@ Plot the simplest sine function
 AnimatePlot[{Sin[x c], Sinc[x c]}, {x,-10,10}, {c,1,10,0.1}]
 ```
 
-## Portability
-Fully portable
 
 ### More examples
 
@@ -66,12 +62,28 @@ Fully portable
 </WLJSWrapper>
 
 <Callout type="tip">
-Here it is important to keep `n` integer, otherwise it will be converted into a symbolic sum with `LerchPhi` function, which is not defined at some points.
+Here it is important to keep `n` integer, otherwise it will be converted into a symbolic sum with `LerchPhi` function, which is not defined at some values.
 </Callout>
 
 ## Supported output forms
 - [StandardForm](../Formatting/StandardForm)
 - [WLXForm](../Formatting/WLXForm)
+
+## Exporting as GIF or video
+
+<Callout type="warn">
+This feature is only available for WLJS Notebook desktop application, since we rely on our custom Electron.js renderer
+</Callout>
+
+You can wrap it with [AnimatedImage](../Image/AnimatedImage) to rasterize frames into the series of images and export to a file as GIF or video
+
+```wolfram
+Export["animation.gif", 
+  AnimatedImage @ AnimatePlot[{Sin[x c], Sinc[x c]}, {x,-10,10}, {c,1,10,0.1}] 
+]
+```
+
+where `AnimatedImage` can be extended with options alike [Rasterize](../Image/Rasterize)
 
 ## Issues
 

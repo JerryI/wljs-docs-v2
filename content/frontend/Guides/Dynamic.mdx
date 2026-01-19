@@ -1,5 +1,309 @@
 ---
-title: Introduction to Dynamic
+title: Interactive evaluation and granular updates
 ---
 
-Hey
+<Cards>
+  <Card
+    href="./../Guide/UI-Events-Capture"
+    title="Handling user input"
+  >
+    How to handle user interaction with sliders, graphics primitives and other input building blocks
+  </Card>
+
+</Cards>
+
+import { Accordion, Accordions } from 'fumadocs-ui/components/accordion';
+
+
+<wljs-store kernel="./attachments/kernel-1138499539191000322.txt" json="./attachments/1428538d-8ba6-4739-b6f6-48430d6f459b.txt"></wljs-store>
+
+## Manipulate and Animate Functionality
+WLJS Notebook partially iherits a well-known killer feature of Wolfram Mathematica - [Manipulate](./../GUI/Manipulate) and [Animate](./../GUI/Animate) and others allowing an interactive evaluation of arbitrary expressions:
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-10 group-hover:opacity-50 transition duration-500" />
+<wljs-editor type="Input" display="codemirror">{`
+Manipulate[
+    Plot[Sin[a x + b], {x, 0, 6}], 
+    {{a, 2, "Frequency"}, 1, 4, 1}, 
+    {{b, 0, "Phase"}, 0, 10, 1}, 
+    ContinuousAction->True
+]
+`}</wljs-editor>
+</WLJSWrapper>
+
+<WLJSWrapper>
+<wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(FrontEndRef["ce2264d6-e74f-462b-9e17-08fcbeb7437b"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKJ6caGZmZpJjpppqbpOmamBkl6VqmGprrGlikJSelJpmbGJsnAQCG2BXe"*)(*]VB*)`}</wljs-editor></WLJSWrapper>
+
+Text strings or any other symbolic expressions can also be manipulated:
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-10 group-hover:opacity-50 transition duration-500" />
+<wljs-editor type="Input" display="codemirror">{`
+Manipulate[Column[{
+    Style[StringTemplate["\`\` m/s"][v], Blue],
+    Table["🚗", {i, Floor[v/25]}] // Row 
+}], {v,10,100}, ContinuousAction->True]
+`}</wljs-editor>
+</WLJSWrapper>
+
+<WLJSWrapper>
+<wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(FrontEndRef["654d9ea0-69e9-4448-abea-c729bba1ed7f"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKm5mapFimJhromlmmWuqamJhY6CYmpSbqJpsbWSYlJRqmppinAQCGahZA"*)(*]VB*)`}</wljs-editor></WLJSWrapper>
+
+Under the hood it uses diff alorythm to interpretate changes between old and new expressions evaluated using corresponding parameters. Then if possible the expression is transformed into more optimized one that uses [granular updates](#Granular%20Updates) instead of full reevaluation. 
+
+<Callout type="idea">To publish interactive widgets on web - export a notebook to [HTML](./../Share/Standalone-HTML) or MDX</Callout>
+
+`Animate` works in a similar way, but scans the parameter automatically:
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-10 group-hover:opacity-50 transition duration-500" />
+<wljs-editor type="Input" display="codemirror">{`
+Animate[
+    ParametricPlot[ReIm @ Exp[-I (\\[Phi] + \\[Gamma] I \\[Phi])], {\\[Phi],0,5Pi}, 
+      PlotLabel->StringTemplate["\\[Gamma] = \`\`"][\\[Gamma]]
+    ]
+, {\\[Gamma],0,0.5}]
+`}</wljs-editor>
+</WLJSWrapper>
+
+<WLJSWrapper>
+<wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(FrontEndRef["ac784f29-dc89-4ee5-86a8-582b311c6466"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKJyabW5ikGVnqpiRbWOqapKaa6lqYJVromloYJRkbGiabmZiZAQCHwxVc"*)(*]VB*)`}</wljs-editor></WLJSWrapper>
+
+<Callout type="idea">To export animations as GIF use [AnimatedImage](./../Image/AnimatedImage). To publish live animations export a notebook to [HTML](./../Share/Standalone-HTML) or MDX</Callout>
+
+For symbolic data it works too:
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-10 group-hover:opacity-50 transition duration-500" />
+<wljs-editor type="Input" display="codemirror">{`
+Animate[{x, (*SpB[*)Power[x(*|*),(*|*)2](*]SpB*)} // NumberForm, {x,0,10}]
+`}</wljs-editor>
+</WLJSWrapper>
+
+If you need to periodically check the symbol or reevaluate an expression, use [Refresh](./../GUI/Refresh):
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-10 group-hover:opacity-50 transition duration-500" />
+<wljs-editor type="Input" display="codemirror">{`
+Refresh[Now, 1]
+`}</wljs-editor>
+</WLJSWrapper>
+
+<Callout>Syntax for `Refresh` expression differs from one used in Mathematica</Callout>
+
+### More specialized functions
+We do recommend to use [ManipulatePlot](./../Plotting%20Functions/ManipulatePlot), [ManipulateParametricPlot](./../Plotting%20Functions/ManipulateParametricPlot) for simple interactive curves plotting, since they are more optimized and does not require diff algorythm to run:
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-10 group-hover:opacity-50 transition duration-500" />
+<wljs-editor type="Input" display="codemirror">{`
+ManipulatePlot[
+    (*TB[*)Sum[(*|*)(*FB[*)((Sin[2π(2j - 1) x])(*,*)/(*,*)(2j-1))(*]FB*)(*|*), {(*|*)j(*|*),(*|*)1.0(*|*),(*|*)n(*|*)}](*|*)(*1:eJxTTMoPSmNiYGAoZgMSwaW5TvkVmYwgPguQCCkqTQUAeAcHBQ==*)(*]TB*)
+, {x, -1,1}, {{n,4}, 1,7, 1}]
+`}</wljs-editor>
+</WLJSWrapper>
+
+<WLJSWrapper>
+<wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(FrontEndRef["4580b8e8-5239-41bc-b46e-541b291fce69"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKm5haGCRZpFromhoZW+qaGCYl6yaZmKXqmgKZRpaGacmpZpYAeLYVTg=="*)(*]VB*)`}</wljs-editor></WLJSWrapper>
+
+[AnimatePlot](./../Plotting%20Functions/AnimatePlot) and [AnimateParametricPlot](./../Plotting%20Functions/AnimateParametericPlot) use different strategy and precalculate all curves before animating it:
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-10 group-hover:opacity-50 transition duration-500" />
+<wljs-editor type="Input" display="codemirror">{`
+AnimateParametricPlot[
+      With[{t = If[x > lim,lim,x]},
+        N[Exp[-(*FB[*)((1)(*,*)/(*,*)(3))(*]FB*) Floor[(*FB[*)((x)(*,*)/(*,*)(4 \\[Pi]))(*]FB*)]] ReIm[(*SpB[*)Power[I(*|*),(*|*)-t](*]SpB*) + 3 ((*SpB[*)Power[I(*|*),(*|*)t/3](*]SpB*))]]
+      ]
+      , {x, 0.1\`, 16 \\[Pi]}, {lim, 0.1\`, 16 \\[Pi]}
+]
+`}</wljs-editor>
+</WLJSWrapper>
+
+<WLJSWrapper>
+<wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(FrontEndRef["7d570729-f4d3-47d7-947e-3022f973c962"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKm6eYmhuYG1nqppmkGOuamKeY61qamKfqGhsYGaVZmhsnW5oZAQB2dBTQ"*)(*]VB*)`}</wljs-editor></WLJSWrapper>
+
+
+## Granular Updates
+
+The way how you update things like points and lines on your plots, images, or bind those elements to the changes of data differs from one used in [Pluto.jl](https://plutojl.org/en/docs/bind/), [Marimo](https://docs.marimo.io/#a-reactive-programming-environment) and [Wolfram Mathematica](https://reference.wolfram.com/language/ref/Dynamic.html?q=Dynamic). If the last one uses 2-ways binding, we rely on 1-way. The key changes were made for the sake of [performance](./../Overview/###%20Performance) and simplicity. 
+
+## Architecture
+
+WLJS mostly uses retained mode of managing objects on screen, that means `Line` or `Point` has a dedicated method to update itself when the dependencies change. Not all primitives have update method implemented, please, enshure this with our symbols reference section. The dependencies are resolved and the changes are propagated by the frontend (browser), not by an evaluation kernel. To create such dependency you need to "offload" an expression to be executed on the frontend, for example:
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-10 group-hover:opacity-50 transition duration-500" />
+<wljs-editor type="Input" display="codemirror">{`
+l = 1;
+
+Graphics[{Cyan,
+    Rectangle[{-1, -1}, {l // Offload, 1}]
+}]
+`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper>
+<wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(Graphics[{RGBColor[0, 1, 1], Rectangle[{-1, -1}, {Offload[l], 1}]}, ImageSize -> {200, 50}])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KWlMIB4HkHAvSizIyEwuhoiA5H0yi0vSmGHyQe5Ozvk5+UWZQDZDJiOMgCjnBClITS5JzEvPSUU1IfM/EIAJNJPB7mAHEv5paTn5iSnFIIEcJENBKoNKc1LBpnvmJqanBmdWoZt+AuQQIyABAKYtMQs="*)(*]VB*)`}</wljs-editor>
+</WLJSWrapper>
+
+Here we used [Offload](./../Interpreter/Offload) to tell Wolfram Kernel not to evaluate symbol `l` and keep it for evaluating on the frontend. In this example above the binding happens between [Rectangle](./../Graphics/Rectangle) and `l`. Nothing stops us from offloading a derived expression from the same symbol:
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-10 group-hover:opacity-50 transition duration-500" />
+<wljs-editor type="Input" display="codemirror">{`
+Graphics[{Pink,
+    Disk[{l, l}//Offload, (*SpB[*)Power[l(*|*),(*|*)2](*]SpB*) // Offload]
+}, PlotRange->{{0,1}, {0,1}}]
+`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper>
+<wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(Graphics[{RGBColor[1, 0.5, 0.5], Disk[Offload[{l, l}], Offload[l^2]]}, PlotRange -> {{0, 1}, {0, 1}}, ImageSize -> 200])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KWnMIB4HkHAvSizIyEwuTmOCyftkFpcg5IPcnZzzc/KLMkH6ixjA4IE9nIHQ5pJZnA2xhB1I+Kel5eQnpqCaWgySzoGQOJSyAomA/PLUIoiqTJAgwpCg0pzUYk6Qkpz8kqDEvPRUNGej8DJBTgS7m7A43GTP3MT01ODMqtTME0AeACW2OtE="*)(*]VB*)`}</wljs-editor></WLJSWrapper>
+
+Here the radius of `Disk` depends on `l^2`, threfore when `l` changes, it recalcualtes the derived square of this symbol. Now let's try to update our symbol:
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-10 group-hover:opacity-50 transition duration-500" />
+<wljs-editor type="Input" display="codemirror">{`
+l = 0.33;
+`}</wljs-editor></WLJSWrapper>
+
+Using a [slider](./UI-Events-Capture) we can observe the change easier:
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-10 group-hover:opacity-50 transition duration-500" />
+<wljs-editor type="Input" display="codemirror">{`
+EventHandler[InputRange[0,1,.1], Function[val, l=val]]
+`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper>
+<wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(EventObject[<|"Id" -> "f9254465-73cd-4a66-a54d-97a1a96543a4", "Initial" -> 0.5, "View" -> "13864cb4-9741-4d0f-9746-459803ffa629"|>])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKGxpbmJkkJ5noWpqbGOqapBikgVhmuiamlhYGxmlpiWZGlgByOxTK"*)(*]VB*)`}</wljs-editor></WLJSWrapper>
+
+Here we used a built-in UI element `InputRange` with a basic event handler assigned to it, that updates our symbol with a new value. When a new value is assigned to `l` symbol, Wolfram Kernel pushes a new value using a <abbr title="Binary WebSockets">fast binary protocol</abbr> to the frontend, that updates all visible instances coupled to `l`. 
+
+<Accordions>
+<Accordion title="Why and how this works">
+
+Booba
+
+</Accordion>
+</Accordions>
+
+## More examples
+The provided data does not have to be numerical, it can be textual as well. Here is an example with __text spray__:
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-10 group-hover:opacity-50 transition duration-500" />
+<wljs-editor type="Input" display="codemirror">{`
+Module[{
+  text = "Hello World"
+},
+  Column[{
+    EventHandler[InputText[text], (text = #)&],
+    Graphics[Table[{
+      RandomColor[],
+      Rotate[
+        Text[text // Offload, RandomReal[{-1, 1}, 2]],
+        RandomReal[{0, 3.14}]
+      ]
+    }, {40}]]
+  }]
+]
+`}</wljs-editor></WLJSWrapper>
+
+One can stream lists, arrays. This example showcase a basic FABRIK solver written in 3 cells of Wolfram Language:
+
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-10 group-hover:opacity-50 transition duration-500" />
+<wljs-editor type="Input" display="codemirror">{`
+handler = Function[target,
+  Module[{buffer = chain, origin = {-1,0}, prev = chain, lengths = Norm /@ (chain // Reverse // Differences) // Reverse},
+    buffer = Table[With[{p = chain[[-i]]},
+      If[i === 1,
+        prev = target;
+        target
+      ,
+    
+        prev = prev - Normalize[(prev - p)] lengths[[1-i]];
+        prev 
+      ]
+    ]   
+    , {i, chain // Length}] // Reverse;
+
+    buffer = Table[With[{p = buffer[[i]]},
+      If[i === 1,
+        prev = origin;
+        origin
+      ,
+    
+        prev = prev - Normalize[(prev - p)] lengths[[i-1]];
+        prev 
+      ]
+    ]
+    , {i, chain // Length}];
+
+    chain = buffer;
+   ]
+];
+`}</wljs-editor></WLJSWrapper>
+
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-10 group-hover:opacity-50 transition duration-500" />
+<wljs-editor type="Input" display="codemirror">{`
+chain = Table[Exp[-ϕ]{-Cos[ϕ], Sin[ϕ]}, {ϕ, 0, π - π/7, π/7.0}];
+Graphics[{
+    Line[chain // Offload], Black, 
+    PointSize[0.04], Point[chain // Offload], Red,
+    EventHandler[Point[chain // Last], {
+      "drag" -> handler
+    }]
+  },
+  Axes->True, PlotRange->{{-1,0.2}, {0,0.4}}
+]
+`}</wljs-editor></WLJSWrapper>
+
+
+
+ or even binary blobs. For example here is how real-time image processing may look like:
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-10 group-hover:opacity-50 transition duration-500" />
+<wljs-editor type="Input" display="codemirror">{`
+testImage = ExampleData[{"TestImage", "Lena"}];
+toBuf[image_Image] := NumericArray[ImageData[image, "Byte"],"Byte"];
+
+buffer = testImage // toBuf;
+Image[buffer//Offload, "Byte"]
+`}</wljs-editor></WLJSWrapper>
+
+and then we perform `Opening` with a provided radius
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-10 group-hover:opacity-50 transition duration-500" />
+<wljs-editor type="Input" display="codemirror">{`
+EventHandler[InputRange[0,50,.1], Function[r,
+  buffer = Opening[testImage, r] // toBuf;
+]]
+`}</wljs-editor></WLJSWrapper>
+
+
+## Colors and Opacity
+
+
+
+
+
+## Animation
+
+### Transitions
+
+### Frames
+
+
+
+## How to update many objects
+
+## How to append/remove objects
+

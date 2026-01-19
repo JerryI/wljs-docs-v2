@@ -118,7 +118,7 @@ Attempts to discover the possible options of the given symbol in the cell and pr
 
 Start typing:
 
-```Wolfram
+```wolfram
 Plot[x, {x,0} 
 ```
 
@@ -219,7 +219,7 @@ Let's have a look at the interface:
 
 __Inspect__ is a central mode for debugging.
 
-## Inspecting Mode
+### Inspecting Mode
 It stops the current execution and allows you to interact with any other cells in the sub-session, enabling you to check the status of various symbols. You can write and evaluate other cells in `Inspect` mode.
 
 For example, evaluate this one:
@@ -238,19 +238,19 @@ k
 You can always continue execution from this mode by clicking <small>Continue</small> until the next possible break. All transitions take time and depend on the current kernel occupancy.
 </Callout>
 
-## Watching Symbols
+### Watching Symbols
 You can add a symbol to a tracking list to monitor its `OwnValue` in real-time automatically. It won't interrupt your execution unless you enable the checkbox for that option.
 
 <Callout>
 Live updates are supported only for assignments, i.e., when `symbol = *newValue*`. If you mutate a part of a `List`, it won't trigger an update.
 </Callout>
 
-## Breakpoints
+### Breakpoints
 In Wolfram Language, traditional breakpoints are difficult to implement since there is no *source code file* in the classical sense. Everything is an expression, and a breakpoint must be an expression as well.
 
 There are two sources for breaking events, both of which immediately switch the kernel to <small>Inspecting Mode</small>.
 
-### Asserts
+#### Asserts
 First, __enable breaking on assertions__ from the dropdown menu in the top bar of the debugger. Then, whenever execution encounters `False` in an [Assert](./../Misc/Assert), it will break.
 
 For example:
@@ -263,7 +263,7 @@ This code will break automatically after 6 seconds. In <small>Inspect</small> mo
 
 If you track the `k` symbol at the same time, you will see it changing in the debugger window.
 
-### Symbols
+#### Symbols
 When a symbol is assigned a new value, it generates an event in the debugger. Use the <small>Break on</small> checkbox to enable breaking.
 
 For example:
@@ -292,6 +292,8 @@ Given tools:
 
 </Card>
 
+<br/><br/>
+
 <Accordions>
 
 <Accordion title="Demonstration">
@@ -300,6 +302,7 @@ Given tools:
 - YTS: [AI Copilot in your Notebook. Part 2 🤖](https://youtube.com/shorts/B_ZVjN9cvQM?feature=share)
 
 </Accordion>
+
 
 <Accordion title="FAQ">
 
@@ -381,6 +384,12 @@ You can also chain commands:
 
 > Read all my cells and comment on them using Markdown. Insert your Markdown cells at the corresponding places in the notebook. Evaluate them and hide them.
 
+#### Accessing Wolfram Kernel
+
+> What time is it now?
+
+> What is the value of my symbol X?
+
 #### Accessing the internet
 By default, AI can use Wolfram Alpha to retrieve real-time data.
 
@@ -394,6 +403,12 @@ Sometimes operations take up to 1 minute to complete. If that's not the case, tr
 If that doesn't work:
 - Type and send `reset chat` to restart the session.
 - You may have run out of tokens. Check the OpenAI API page under `Billing`.
+
+#### Complex requests
+AI copilot can do complex tasks:
+
+> Read all input markdown cells, fix grammar and improve clarity, apply edits, evaluate them all.
+
 
 </Accordion>
 </Accordions>
@@ -452,7 +467,7 @@ Additionally, differences between Wolfram Mathematica and WLJS Notebook are incl
 #### Fixing Errors
 For example, if you type:
 
-```mathematica title="cell"
+```wolfram title="cell"
 Plot[x, {x,0,1,0.1}]
 
                ^^^
@@ -470,9 +485,7 @@ If the assistant hesitates to apply changes, add:
 Apply changes
 ```
 
-:::note
-The assistant can help with any language. Make sure your cursor is inside the correct cell.
-:::
+<Callout>The assistant can help with any language. Make sure your cursor is inside the correct cell.</Callout>
 
 #### Fixing Grammar
 Simply ask:
@@ -487,14 +500,14 @@ If it does not apply changes, add:
 Apply changes
 ```
 
-#### Working with Dynamics
-The assistant is aware of new libraries. For example:
+#### Working with dynamic symbols
+For example:
 
 ```
 Make a dynamic example where a green ball follows your cursor on a 2D graph
 ```
 
-```mathematica title="sample output"
+```wolfram title="sample output"
 pt = {0.,0.};
 
 Graphics[{
@@ -509,7 +522,7 @@ Graphics[{
 #### Creating Code Examples
 Ask directly in the command palette:
 
-``` title="prompt"
+```text title="prompt"
 Make an example slide
 ```
 
@@ -537,7 +550,7 @@ We hope you found this introduction useful.
 
 Or, for a JavaScript example with animation:
 
-``` title="prompt"
+```text title="prompt"
 Write some JavaScript with animation
 ```
 
@@ -599,7 +612,7 @@ Open your notebook and **paste the GitHub link to a repo**<sup>+</sup> or **URL 
 #### Via LPM
 Create a new cell and insert:
 
-```mathematica
+```wolfram
 LPMRepositories[{
     "Github" -> "https://github.com/user/MyLibrary"
 }]
@@ -609,7 +622,7 @@ LPMRepositories[{
 
 *or using direct link to a paclet file*
 
-```mathematica
+```wolfram
 LPMRepositories[{
     "Github" -> "https://publicURL/MyLibrary.paclet"
 }]
@@ -624,7 +637,7 @@ This will create a local folder named `wl_packages`, where installed packages wi
 #### Via Paclets
 If the package is hosted on the Wolfram repository, then you can simply run:
 
-```mathematica
+```wolfram
 PacletInstall["Username/Paclet"]
 
 <<PacletContextName`
@@ -632,7 +645,7 @@ PacletInstall["Username/Paclet"]
 
 Or from a local paclet file:
 
-```mathematica
+```wolfram
 PacletInstall["path_to_it.paclet"]
 
 <<PacletContextName`
@@ -641,7 +654,7 @@ PacletInstall["path_to_it.paclet"]
 ### Namespaces
 If you have conflicting symbol names or want to scope loaded package into an alias context:
 
-```mathematica
+```wolfram
 Needs["PacletContextName`"->"myAlias`"]
 ```
 

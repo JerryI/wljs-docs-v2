@@ -1,1 +1,227 @@
-Talk about Async, Promises and AsyncFunctions mb about EventHandlers
+---
+title: Asynchronous programming
+---
+
+> Asynchronous programming is a technique that enables your program to start potentially long-running tasks while remaining responsive to other events. Rather than blocking until a task finishes, your program can continue handling user input or other operations, and then process the result once the task completes.
+
+<Cards>
+  <Card
+    href="./../Guide/UI-Events-Capture"
+    title="Handling user interaction"
+  >
+    An introductory guide to handling user interaction
+  </Card>
+  <Card
+    href="./../Misc/Events"
+    title="Event objects and handlers"
+  >
+    A reference and guide on basic event handling
+  </Card>
+  <Card
+    href="./../Misc/Promise"
+    title="Promise"
+  >
+    An object that represents the eventual completion (or failure) of an asynchronous operation and its resulting value
+  </Card>  
+</Cards>
+
+The WLJS ecosystem uses asynchronous programming as the primary technique for handling user interactions and polling long-running tasks. A common pattern looks like this:
+
+```wolfram
+Button["Press me", foo[]]
+```
+
+Or more explicitly:
+
+```wolfram
+EventHandler[InputButton["Press me"], foo]
+```
+
+Here, a button can be pressed at any time and generate an event captured by a handler function. The `foo[]` function (or a `DownValue` of the `foo` symbol) must be a **non-blocking expression**; otherwise, it will hang the evaluation kernel.
+
+For example, `foo` **cannot call** [Input](./../Frontend%20IO/Input), [NotebookRead](./../Cells%20and%20Notebook/NotebookRead), [SystemInputDialog](./../Frontend%20IO/SystemDialogInput), `Rasterize`, `FrontFetch`, `WaitAll`, or similar blocking functions—which are explicitly marked as <small>blocking</small> in their documentation pages.
+
+import { Accordion, Accordions } from 'fumadocs-ui/components/accordion';
+
+<Accordions>
+
+<Accordion title="Example: How to hang a kernel">
+
+This will never work ❌
+
+```wolfram
+n = EvaluationNotebook[];
+Button[
+    "Ask"
+    ,
+    With[{result = InputString["1+1", "Notebook"->n]},
+        MessageDialog[
+            If[result =!= "2",
+                "Wrong"
+                ,
+                "Correct"
+            ]
+        , "Notebook"->n]
+    ]
+]
+```
+
+</Accordion>
+
+<Accordion title="Example: How to avoid hanging the kernel">
+
+This will work ✅
+
+```wolfram
+n = EvaluationNotebook[];
+Button[
+    "Ask"
+    ,
+    Then[InputStringAsync["1+1", "Notebook"->n], Function[result,
+        MessageDialog[
+            If[result =!= "2",
+                "Wrong"
+                ,
+                "Correct"
+            ]
+        , "Notebook"->n] 
+    ] ]
+]
+```
+
+</Accordion>
+
+</Accordions>
+
+
+## Asynchronous functions
+
+<Callout type="warning">Experimental feature</Callout>
+
+Consider a scenario where the user wants to create a cell with content provided through a series of dialog windows, triggered by a button press:
+
+```wolfram
+n = EvaluationNotebook[];
+EventHandler[InputButton["Add cell"], Function[Null,
+    Then[ChoiceDialogAsync["Create a cell?", "Notebook"->n], Function[choice,
+      If[choice =!= True, Return[]];
+      Then[InputStringAsync["Enter the content", "Notebook"->n], Function[content,
+        If[!StringQ[content], Return[]];
+
+        NotebookWrite[n, Cell[content, "Input"]];
+      ] ]
+    ]]
+]]
+```
+
+This is known as **callback hell**—deeply nested callbacks that become hard to read and maintain. This pattern often appears when working with animations (see [Animation Framework](./Animation-framework/Overview)), timers, and async parallel kernels.
+
+To solve this problem, WLJS introduces **coroutines** (or **async functions**), similar to those found in many modern programming languages. Here's the same code rewritten using async/await syntax:
+
+```wolfram
+n = EvaluationNotebook[];
+
+EventHandler[InputButton["Add cell"], AsyncFunction[Null,
+  Module[{choice, content},
+    choice = ChoiceDialogAsync["Create a cell?", "Notebook"->n];
+    choice = choice // Await;
+    
+    If[choice =!= True, Return[Null, Module]];
+    content = InputStringAsync["Enter the content", "Notebook"->n];
+    content = content // Await;    
+
+    If[!StringQ[content], Return[Null, Module]];
+    NotebookWrite[n, Cell[content, "Input"]];
+  ];
+]]
+```
+
+The `AsyncFunction` and `Await` expressions provide syntactic sugar over `Function`, `Promise`, and chains of `Then`, allowing you to write asynchronous code in a sequential, readable style.
+
+<Callout type="note">`AsyncFunction` returns a `Promise`, so it can be awaited from other async functions using `Await`.</Callout>
+
+### Comparison: Promises vs Async/Await
+
+import {Tabs, Tab} from 'fumadocs-ui/components/tabs';
+
+<Tabs items={['Using promises', 'Using Async/Await']}>
+  <Tab value="Using promises">
+  
+```wolfram 
+temperature = "Loading";
+TextView[temperature // Offload]
+
+Then[ParallelSubmitAsync[URLRead["https://api.open-meteo.com/v1/forecast?latitude=52.52&longitude=13.41&current=temperature_2m"]], Function[response, 
+    temperature = ImportByteArray[response["BodyByteArray"], "RawJSON"]["current", "temperature_2m"];
+]]
+```
+  </Tab>
+  <Tab value="Using Async/Await">
+  
+```wolfram
+temperature = "";
+TextView[temperature // Offload]
+
+AsyncFunction[Null, Module[{response},
+  temperature = "Loading";
+  response = ParallelSubmitAsync[URLRead["https://api.open-meteo.com/v1/forecast?latitude=52.52&longitude=13.41&current=temperature_2m"]] // Await;
+  temperature = ImportByteArray[response["BodyByteArray"], "RawJSON"]["current", "temperature_2m"];
+]][]
+```
+  
+  
+  </Tab>
+</Tabs>
+
+### Advanced example: Branching and assignments
+
+This example demonstrates **branching**, **assignments**, and compound expressions within async functions:
+
+```wolfram
+p1 = Promise[];
+p2 = Promise[];
+p3 = Promise[];
+
+win = CurrentWindow[];
+
+f = AsyncFunction[Null, With[{},
+  Speak["Press p1", "Window"->win];
+  p1 // Await;
+  Speak["Press p2A or p2B", "Window"->win];
+  Module[{m = -100},
+    m = Await[p2];
+    Speak["Pause 2 seconds", "Window"->win];
+    PauseAsync[2] // Await;
+    
+    If[m > 4,
+      Speak["Press p3", "Window"->win];
+      m = Await[p3];
+    ];
+
+    StringTemplate["Result: ``"][m]
+  ]
+]];
+
+Then[f[], Speak];
+```
+
+To simulate async events, use these buttons:
+
+```wolfram
+Button["p1", EventFire[p1, Resolve, True]]
+Button["p2A", EventFire[p2, Resolve, 1]]
+Button["p2B", EventFire[p2, Resolve, 5]]
+Button["p3", EventFire[p3, Resolve, 10]]
+```
+
+## Async pause
+
+Use [PauseAsync](./../Misc/Async) to introduce delays in async code without blocking the kernel.
+
+## Finding async functions
+
+Check the symbol reference section for functions ending in `*Async`.
+
+
+
+

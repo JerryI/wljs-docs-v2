@@ -7,15 +7,28 @@ update: true
 package: wljs-editor
 
 ---
-A view component to spawn an code-editor (fully functional) 
+
+A component, that renders Wolfram Expressions as in the code editor:
+
 ```wolfram
 EditorView[expr_String | expr_Offload, opts___]
 ```
+
 where `expr` is a string, that represents an expression. It can receive updates and emit, when a user change the inner content.
 
+`EditorView` supports [complete cell objects](./../Advanced/Notebook-Operations) representation as an input:
+
+```wolfram
+EditorView[ExpressionCell[expr, "Input"]]
+EditorView[Cell[expr_String, "Input"]]
+EditorView[TextCell[expr_String]]
+EditorView[TextCell[expr_String, "Section"]]
+```
+
 <Callout type="warn">
-Editor is usually quite slow, when it comes to updates, because of many decoration widgets used there. Please, __do not use it on a rapid changing data__, consider [TextView](../GUI/TextView) instead.
+Editor is usually quite slow, when it comes to updates, because of many decoration widgets used there. Please, __do not use it on a rapidly changing data__, consider [TextView](../GUI/TextView) instead.
 </Callout>
+
 ## Event generation
 When `"Event"` option is provided, it will send a new data in a form of a string.
 

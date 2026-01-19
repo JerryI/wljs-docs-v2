@@ -250,6 +250,7 @@ The features __allows to pan and zoom your plots__, that was never possible in M
 "Controls"->True
 ```
 
+<Callout type="tip">Right-click on the canvas to reset axes</Callout>
 
 ### `Frame`
 Turns plot into the journals-like styled graph. In general it has much more options to customize the look
@@ -317,7 +318,7 @@ or together with [FrontInstanceReference](../Frontend%20IO/FrontInstanceReferenc
 The same as [`Epilog`](#`Epilog`), but acts before plotting the data.
 
 ### `"TransitionType"`
-See [Dynamics](#Dynamics). The possible values
+See [Transitions](#Transitions). The possible values
 
 <Callout type="info">
 It can also be applied locally, see [TransitionType](../Graphics/TransitionType)
@@ -357,7 +358,7 @@ It can also be applied locally, see [TransitionDuration](../Graphics/TransitionD
 ## Combining two graphics plots
 One can put `Graphics` into another `Graphics` canvas using [Inset](../Graphics/Inset) or merge them using `Show`.
 
-## Dynamics
+## Transitions
 Updates are supported with [Offload](./../Interpreter/Offload) on the level of graphics primitives such as [Line](../Graphics/Line), [Point](../Graphics/Point), [Rectangle](../Graphics/Rectangle), [Text](../Graphics/Text) and etc... 
 
 <Callout type="warning">Not all primitives do support updates, please, check individually <small>Supports Offload</small>.</Callout>

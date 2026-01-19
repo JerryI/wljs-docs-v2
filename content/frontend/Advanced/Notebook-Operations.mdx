@@ -261,6 +261,14 @@ cell = CellPrint[Now];
 NotebookDelete[cell];
 ```
 
+### Hidden input cells
+You can create a pair of *input-output* cell with a hidden input one using `CellOpen->False`:
+
+```wolfram
+focused = NotebookFocusedCell[];
+input = NotebookWrite[NotebookLocationSpecifier[focused, "After"], Cell["1+1", "Input", CellOpen->False]];
+NotebookWrite[NotebookLocationSpecifier[input, "After"], Cell["2", "Output"]];
+```
 
 ### Cell event handlers
 

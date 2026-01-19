@@ -95,8 +95,8 @@ Image[img_Image, Magnification->Offload[Graphics`DPR[]]]
 
 Here ``Graphics`DPR `` will be executed on the frontend (WLJS Interpreter), there is no need in revaluation. 
 
-## Dynamics
-It does support dynamic variables. 
+## Transitions and updates
+It does support dynamic symbols. 
 
 ### Clouds
 Gaussian clouds (Perlin noise)
@@ -151,7 +151,6 @@ task = SetInterval[board = NumericArray[CellularAutomaton["GameOfLife",
 SetTimeout[TaskRemove[task], 5000];
 ```
 
-See more examples in [Raster animation](frontend/Advanced/Dynamics/Raster%20animation)
 
 ## Supported output forms
 - [StandardForm](../Formatting/StandardForm)

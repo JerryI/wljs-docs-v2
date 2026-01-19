@@ -1,0 +1,190 @@
+---
+title: Styling with HTML
+---
+
+
+<wljs-store kernel="./attachments/kernel-5918612404859052916.txt" json="./attachments/b85c3ff2-cf11-4fd2-9c39-a851a7371de4.txt"></wljs-store>
+
+
+
+You can take advantage of [HTML](./../Cell%20types/HTML) and [WLX](./../Cell%20types/WLX) to shape your data using all the tools of the modern web that you can imagine.
+
+
+## HTML Cells
+
+You can use basic HTML together with insets of WL using PHP-like syntax:
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl  opacity-10 group-hover:opacity-50 transition duration-500" />
+<wljs-editor display="codemirror" type="Input"  >{`.html
+
+Current time: <b><?wsp TextString[Now] ?></b>`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper>
+<wljs-html encoded="true">{`%0ACurrent%20time%3A%20%3Cb%3ESat%2017%20Jan%202026%2020%3A09%3A53%3C%2Fb%3E`}</wljs-html></WLJSWrapper>
+
+Let's generate some data in the form of a table.
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl  opacity-10 group-hover:opacity-50 transition duration-500" />
+<wljs-editor display="codemirror" type="Input"  >{`data = Table[RandomWord[], {i, 4}, {j, 4}];`}</wljs-editor></WLJSWrapper>
+
+The `wsp` template allows you to break the expressions.
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl  opacity-10 group-hover:opacity-50 transition duration-500" />
+<wljs-editor display="codemirror" type="Input"  >{`.html
+
+<table>
+<?wsp Table[ ?>
+  <tr class="bg-white border-b">
+  <?wsp Table[ ?>
+    <td class="px-3 py-2">
+      <?wsp Item ?>
+    </td>    
+  <?wsp , {Item, Rows}] ?>
+  </tr>
+<?wsp , {Rows, data}] ?>
+</table>`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper>
+<wljs-html encoded="true">{`%0A%3Ctable%3E%0A%0A%20%20%3Ctr%20class%3D%22bg-white%20border-b%22%3E%0A%20%20%0A%20%20%20%20%3Ctd%20class%3D%22px-3%20py-2%22%3E%0A%20%20%20%20%20%20terror%0A%20%20%20%20%3C%2Ftd%3E%20%20%20%20%0A%20%20%0A%20%20%20%20%3Ctd%20class%3D%22px-3%20py-2%22%3E%0A%20%20%20%20%20%20squeeze%0A%20%20%20%20%3C%2Ftd%3E%20%20%20%20%0A%20%20%0A%20%20%20%20%3Ctd%20class%3D%22px-3%20py-2%22%3E%0A%20%20%20%20%20%20trimming%0A%20%20%20%20%3C%2Ftd%3E%20%20%20%20%0A%20%20%0A%20%20%20%20%3Ctd%20class%3D%22px-3%20py-2%22%3E%0A%20%20%20%20%20%20unmovable%0A%20%20%20%20%3C%2Ftd%3E%20%20%20%20%0A%20%20%0A%20%20%3C%2Ftr%3E%0A%0A%20%20%3Ctr%20class%3D%22bg-white%20border-b%22%3E%0A%20%20%0A%20%20%20%20%3Ctd%20class%3D%22px-3%20py-2%22%3E%0A%20%20%20%20%20%20skydiver%0A%20%20%20%20%3C%2Ftd%3E%20%20%20%20%0A%20%20%0A%20%20%20%20%3Ctd%20class%3D%22px-3%20py-2%22%3E%0A%20%20%20%20%20%20typology%0A%20%20%20%20%3C%2Ftd%3E%20%20%20%20%0A%20%20%0A%20%20%20%20%3Ctd%20class%3D%22px-3%20py-2%22%3E%0A%20%20%20%20%20%20stitched%0A%20%20%20%20%3C%2Ftd%3E%20%20%20%20%0A%20%20%0A%20%20%20%20%3Ctd%20class%3D%22px-3%20py-2%22%3E%0A%20%20%20%20%20%20overfull%0A%20%20%20%20%3C%2Ftd%3E%20%20%20%20%0A%20%20%0A%20%20%3C%2Ftr%3E%0A%0A%20%20%3Ctr%20class%3D%22bg-white%20border-b%22%3E%0A%20%20%0A%20%20%20%20%3Ctd%20class%3D%22px-3%20py-2%22%3E%0A%20%20%20%20%20%20untried%0A%20%20%20%20%3C%2Ftd%3E%20%20%20%20%0A%20%20%0A%20%20%20%20%3Ctd%20class%3D%22px-3%20py-2%22%3E%0A%20%20%20%20%20%20passageway%0A%20%20%20%20%3C%2Ftd%3E%20%20%20%20%0A%20%20%0A%20%20%20%20%3Ctd%20class%3D%22px-3%20py-2%22%3E%0A%20%20%20%20%20%20denigration%0A%20%20%20%20%3C%2Ftd%3E%20%20%20%20%0A%20%20%0A%20%20%20%20%3Ctd%20class%3D%22px-3%20py-2%22%3E%0A%20%20%20%20%20%20thole%0A%20%20%20%20%3C%2Ftd%3E%20%20%20%20%0A%20%20%0A%20%20%3C%2Ftr%3E%0A%0A%20%20%3Ctr%20class%3D%22bg-white%20border-b%22%3E%0A%20%20%0A%20%20%20%20%3Ctd%20class%3D%22px-3%20py-2%22%3E%0A%20%20%20%20%20%20wormy%0A%20%20%20%20%3C%2Ftd%3E%20%20%20%20%0A%20%20%0A%20%20%20%20%3Ctd%20class%3D%22px-3%20py-2%22%3E%0A%20%20%20%20%20%20worldly-wise%0A%20%20%20%20%3C%2Ftd%3E%20%20%20%20%0A%20%20%0A%20%20%20%20%3Ctd%20class%3D%22px-3%20py-2%22%3E%0A%20%20%20%20%20%20respectability%0A%20%20%20%20%3C%2Ftd%3E%20%20%20%20%0A%20%20%0A%20%20%20%20%3Ctd%20class%3D%22px-3%20py-2%22%3E%0A%20%20%20%20%20%20shiner%0A%20%20%20%20%3C%2Ftd%3E%20%20%20%20%0A%20%20%0A%20%20%3C%2Ftr%3E%0A%0A%3C%2Ftable%3E`}</wljs-html></WLJSWrapper>
+
+In general, we recommend using the WLX component instead of HTML `wsp` templates, as it provides better readability and better integration with the Wolfram Language.
+
+## WLX Cells
+Wolfram Language XML Extension is a superset of HTML and WL. It requires to learn some rules before using it, but gives much more freedom to a user. The same example with time looks more natural in WLX:
+
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl  opacity-10 group-hover:opacity-50 transition duration-500" />
+<wljs-editor display="codemirror" type="Input"  >{`.wlx
+
+<div>
+  Current time: <b><Now/></b>
+</div>`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper>
+<wljs-editor display="wlx" type="Output"  >{`<div > Current time: <b >Sat 17 Jan 2026 20:35:23</b></div>`}</wljs-editor></WLJSWrapper>
+
+Make a custom layout for the table with WLX cells:
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl  opacity-10 group-hover:opacity-50 transition duration-500" />
+<wljs-editor display="codemirror" type="Input"  >{`.wlx
+
+makeTable[data_List] := With[{ TableBody = 
+  Table[
+    With[{Row = Table[
+      <td class="px-3 py-2">
+        <Item/>
+      </td>
+    , {Item, Rows}]},
+      <tr class="bg-white border-b">
+        <Row/>
+      </tr>
+    ]
+  , {Rows, data}]
+},
+  <table style="font-family: system-ui">
+    <TableBody/>
+  </table>
+];
+
+makeTable[data]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper>
+<wljs-editor display="wlx" type="Output"  >{`<table style="font-family: system-ui"><tr class="bg-white border-b"><td class="px-3 py-2">terror</td>
+<td class="px-3 py-2">squeeze</td>
+<td class="px-3 py-2">trimming</td>
+<td class="px-3 py-2">unmovable</td></tr>
+<tr class="bg-white border-b"><td class="px-3 py-2">skydiver</td>
+<td class="px-3 py-2">typology</td>
+<td class="px-3 py-2">stitched</td>
+<td class="px-3 py-2">overfull</td></tr>
+<tr class="bg-white border-b"><td class="px-3 py-2">untried</td>
+<td class="px-3 py-2">passageway</td>
+<td class="px-3 py-2">denigration</td>
+<td class="px-3 py-2">thole</td></tr>
+<tr class="bg-white border-b"><td class="px-3 py-2">wormy</td>
+<td class="px-3 py-2">worldly-wise</td>
+<td class="px-3 py-2">respectability</td>
+<td class="px-3 py-2">shiner</td></tr></table>`}</wljs-editor></WLJSWrapper>
+
+WLX cells can render many Wolfram Expressions as long as they have a defined `WLXForm`. For example, any graphics object or input slider can be shown properly:
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl  opacity-10 group-hover:opacity-50 transition duration-500" />
+<wljs-editor display="codemirror" type="Input"  >{`GraphicsObject = Graphics[{Line@Table[ReIm@Exp[I x - 0.03 x], {x,0,40Pi,.1}]}, ImageSize->300];`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl  opacity-10 group-hover:opacity-50 transition duration-500" />
+<wljs-editor display="codemirror" type="Input"  >{`.wlx
+
+<div class="relative">
+  <div class="absolute" style="filter: blur(3px)">
+    <GraphicsObject/>
+  </div>
+  <GraphicsObject/>
+</div>`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper>
+<wljs-editor display="wlx" type="Output"  >{`<div class="relative"><div class="absolute" style="filter: blur(3px)">FrontEndExecutable[025bbbf5-f5d7-4c9b-8cb3-42ccf0ff7e3b]</div>FrontEndExecutable[d511ddb3-5ad6-428c-83a5-ff53174c5c73]</div>`}</wljs-editor></WLJSWrapper>
+
+
+
+
+### Integration with Wolfram Cells
+To use WLX components within normal Wolfram cells, you need to use a wrapper. The most general one is [CellView](./../GUI/CellView), which allows you to create an inset of a virtual cell. For example:
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl  opacity-10 group-hover:opacity-50 transition duration-500" />
+<wljs-editor display="codemirror" type="Input"  >{`tableComponent[data_] := CellView[Cell[makeTable[data], "Output", "wlx"]];`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl  opacity-10 group-hover:opacity-50 transition duration-500" />
+<wljs-editor display="codemirror" type="Input"  >{`tableComponent[data] // Framed `}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper>
+<wljs-editor display="codemirror" type="Output"  >{`(*BB[*)((*VB[*)(FrontEndRef["4c5143c4-df98-40d8-9b6c-da56a68fb682"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKmySbGpoYJ5vopqRZWuiaGKRY6FommSXrpiSamiWaWaQlmVkYAQCDEBW0"*)(*]VB*))(*,*)(*"1:eJxTTMoPSmNiYGAo5gMSwSWVOakuqcn5RYkl+UUQcRYgEVSak1rMA1ZQlFngn+eZV1BaUswKFHBLzClORVUYDBYvSsxNBQuFFJWmAgAQ7xjr"*)(*]BB*)`}</wljs-editor>
+</WLJSWrapper>
+
+Now you can freely use it as if it were a normal WL expression.
+
+#### Alternative Way
+Another way is to utilize [HTMLView](./../GUI/HTMLView) with the `WLXProcessor` preprocessor, which is slightly faster than `CellView`.
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl  opacity-10 group-hover:opacity-50 transition duration-500" />
+<wljs-editor display="codemirror" type="Input"  >{`tableComponent[data_] := HTMLView[
+  makeTable[data], Prolog->HTMLView\`WLXProcessor[]
+];
+
+tableComponent[data] // Framed `}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper>
+<wljs-editor display="codemirror" type="Output"  >{`(*BB[*)((*VB[*)(FrontEndRef["7fdd8ba5-1f6d-439c-973e-c69aa673bbb7"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKm6elpFgkJZrqGqaZpeiaGFsm61qaG6fqJptZJiaamRsnJSWZAwCSLRZF"*)(*]VB*))(*,*)(*"1:eJxTTMoPSmNiYGAo5gMSwSWVOakuqcn5RYkl+UUQcRYgEVSak1rMA1ZQlFngn+eZV1BaUswKFHBLzClORVUYDBYvSsxNBQuFFJWmAgAQ7xjr"*)(*]BB*)`}</wljs-editor></WLJSWrapper>
+
+### Interactive Widgets
+One can create an entire widget using only WLX cells with properly scoped dynamic symbols. For example:
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl  opacity-10 group-hover:opacity-50 transition duration-500" />
+<wljs-editor display="codemirror" type="Input"  >{`.wlx
+
+Module[{Slider = InputRange[0.1,1,0.1,0.5], Figure, lines},
+  EventHandler[Slider, Function[s, lines = {#, Sinc[#/s]}& /@ Range[-5,5,0.1]]];
+  Slider // EventFire;
+
+  Figure = Graphics[Line[lines // Offload], ImageSize->300];
+
+  <div class="flex flex-col items-center">
+    <div><Slider/></div>
+    <div><Figure/></div>
+  </div>
+]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper>
+<wljs-editor display="wlx" type="Output"  >{`<div class="flex flex-col items-center"><div >FrontEndExecutable[b1721958-a760-4342-b6c6-199f87faa928]</div><div >FrontEndExecutable[6ff307a7-9049-442a-9180-b5eec8302a11]</div></div>`}</wljs-editor></WLJSWrapper>
+
+Try to drag this slider.

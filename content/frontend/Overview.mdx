@@ -36,9 +36,10 @@ Let's write a function to generate notes in the given scale:
 <wljs-editor type="Input" display="codemirror">{`
 scale["Major"] = {2, 2, 1, 2, 2, 2, 1};
 
-makeScale[root_, sc_, pos_] := With[{b = Accumulate @ Prepend[sc, root]},
-    (Cycle[b][[pos]] + 12 Quotient[pos, Length[b]]) // MapThread[Plus, {#, 0 #}] & @ pos
-]`}</wljs-editor>
+makeScale[root_, sc_, pos_] := With[
+  {b = Accumulate @ Prepend[sc, root], n = Length[sc] + 1},
+  b[[Mod[pos - 1, n - 1] + 1]] + 12 Quotient[pos, n]
+];`}</wljs-editor>
 </WLJSWrapper>
 
 <WLJSWrapper>
@@ -51,9 +52,10 @@ Now we can generate any chord progressions in a major scale, for ex. **I-V-VI-IV
 
 <WLJSWrapper>
 <span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-10 group-hover:opacity-50 transition duration-500" />
-<wljs-editor type="Input" display="codemirror">{`SoundNote[makeScale[1, scale["Major"], {#,2+#,4+#}]] &/@ {
+<wljs-editor type="Input" display="codemirror">{`chords = makeScale[1, scale["Major"], {#,2+#,4+#}] &/@ {
     1, 1, 5, 5, 6, 6, 4, 4, 1 
-} // Sound `}</wljs-editor>
+};
+SoundNote /@ chords // Sound`}</wljs-editor>
 </WLJSWrapper>
 
 <WLJSWrapper>
@@ -70,7 +72,7 @@ Visualize it on imaginary piano
 <WLJSWrapper>
 <span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-10 group-hover:opacity-50 transition duration-500" />
 <wljs-editor type="Input" display="codemirror">{`blackQ[y_] := MemberQ[{2,4,7,9,11}, Mod[y-1,12]+1];
-ListStepPlot[d, PlotStyle->(*VB[*)(Hue[0.03561231666487014, 0.8918383801498982, 0.8795337025157177, 1.])(*,*)(*"1:eJxTTMoPSmNiYGAo5gUSYZmp5S6pyflFiSX5RcEsQBHn4PCQNBCjmANIBLk7Oefn5BcVicky3lVWfWNfpLliouDmCxfsi/5vOjStL2qHfREDGHywBwA7SBsq"*)(*]VB*), Prolog->Flatten@Table[{If[blackQ[y],(*VB[*)(RGBColor[0.5666666666666667, 0.5666666666666667, 0.5666666666666667])(*,*)(*"1:eJxTTMoPSmNiYGAo5gUSYZmp5S6pyflFiSX5RcEsQBHn4PCQNGaQPAeQCHJ3cs7PyS8qUgKDR/aYDAAR9RPe"*)(*]VB*),(*VB[*)(GrayLevel[0.95])(*,*)(*"1:eJxTTMoPSmNiYGAo5gUSYZmp5S6pyflFiSX5RcEsQBHn4PCQNGaQPAeQCHJ3cs7PyS8qSgODd/aYDABY1RjK"*)(*]VB*)], Rectangle[{.5,y-.5},{9.5,y+.5}], (*VB[*)(GrayLevel[0])(*,*)(*"1:eJxTTMoPSmNiYGAo5gUSYZmp5S6pyflFiSX5RcEsQBHn4PCQNGaQPAeQCHJ3cs7PyS8qYoACTAYAyrgOFw=="*)(*]VB*), Line[{{.5,y-.5},{9.5,y-.5}}]}, {y, 0, 18}]]`}</wljs-editor>
+ListStepPlot[(*BB[*)(Transpose[chords])(*,*)(*"1:eJxTTMoPSmNmYGAo5gcSAUX5ZZkpqSn+BSWZ+XnFaYwgCRYg4ZGfkwLh8QCJkKLEvOKC/OJUp/yKYJBoSBoTTGVQaU5qMFhLamJKMCeyajRFrECGa1lqXglYyK80JwcAFSsgcg=="*)(*]BB*), PlotStyle->(*VB[*)(Hue[0.03561231666487014, 0.8918383801498982, 0.8795337025157177, 1.])(*,*)(*"1:eJxTTMoPSmNiYGAo5gUSYZmp5S6pyflFiSX5RcEsQBHn4PCQNBCjmANIBLk7Oefn5BcVicky3lVWfWNfpLliouDmCxfsi/5vOjStL2qHfREDGHywBwA7SBsq"*)(*]VB*), Prolog->Flatten@Table[{If[blackQ[y],(*VB[*)(RGBColor[0.5666666666666667, 0.5666666666666667, 0.5666666666666667])(*,*)(*"1:eJxTTMoPSmNiYGAo5gUSYZmp5S6pyflFiSX5RcEsQBHn4PCQNGaQPAeQCHJ3cs7PyS8qUgKDR/aYDAAR9RPe"*)(*]VB*),(*VB[*)(GrayLevel[0.95])(*,*)(*"1:eJxTTMoPSmNiYGAo5gUSYZmp5S6pyflFiSX5RcEsQBHn4PCQNGaQPAeQCHJ3cs7PyS8qSgODd/aYDABY1RjK"*)(*]VB*)], Rectangle[{.5,y-.5},{9.5,y+.5}], (*VB[*)(GrayLevel[0])(*,*)(*"1:eJxTTMoPSmNiYGAo5gUSYZmp5S6pyflFiSX5RcEsQBHn4PCQNGaQPAeQCHJ3cs7PyS8qYoACTAYAyrgOFw=="*)(*]VB*), Line[{{.5,y-.5},{9.5,y-.5}}]}, {y, 0, 18}]]`}</wljs-editor>
 </WLJSWrapper>
 
 <WLJSWrapper>
@@ -283,8 +285,11 @@ import cellProp from './../cell-prop.png'
 <Image className="invertColor" width={400} height={400} src={cellProp}/>
 </div>
 
+import {Projector} from 'lucide-react'
 
-<b>Project to a window</b> is a particularly useful feature that lets you evaluate a cell in a new window. This is especially helpful when presenting slides or distributing multiple controls / graphics outputs across windows.
+<b>Project to a window</b> <span className='inline-flex' ><Projector style={{height:"1rem"}}/></span>> is a particularly useful feature that lets you evaluate a cell in a new window. This is especially helpful when presenting slides or distributing multiple controls / graphics outputs across windows.
+
+<Callout type="idea">Projecting the same cell will refresh the content of the existing window</Callout>
 
 ### Context menu
 Extended context menu provides you the following features on selected text
@@ -380,6 +385,7 @@ To assist with writing basic mathematical expressions, we provide special keyboa
 
 - <kbd>Shift-Enter</kbd>: Evaluate cell
 - <kbd>Ctrl-Enter</kbd> or <kbd>⌘-Enter</kbd>: Evaluate cell and jump to the next
+- <kbd>Ctrl-Shift-Enter</kbd> or <kbd>⌘-Shift-Enter</kbd>: Project cell to a window
 - <kbd>Alt-I</kbd> or <kbd>⌘-I</kbd>: Evaluate initialization cells
 
 </div>

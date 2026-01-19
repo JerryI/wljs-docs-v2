@@ -1,28 +1,53 @@
 ---
 title: Async
 ---
+
+<Cards>
+
+  <Card
+    href="./Events"
+    title="Events"
+  >
+    Reference on event objects
+  </Card> 
+
+  <Card
+    href="./Promise"
+    title="Events"
+  >
+    Reference on promises 
+  </Card>   
+</Cards>
+
 ## Utils
 
 ### `SetTimeout`
-Spawns an asynchronous task (a wrapper over `SchelduleTask`), that evaluates an expression once
+Spawns an asynchronous task (a wrapper over `ScheduledTask`) that evaluates an expression once.
+
 ```wolfram
 SetTimeout[expr_, interval_Real | interval_Quantity] _TaskObject
 ```
-A symbol has `HoldFirst` attribute. An `interval` is in __milliseconds__. To cancel it, use
+
+This symbol has the `HoldFirst` attribute. The `interval` is specified in __milliseconds__ or as a `Quantity` object. To cancel it, use:
+
 ```wolfram
 CancelTimeout[_TaskObject]
 ```
 
+
 ### `SetInterval`
-Spawns an asynchronous task (a wrapper over `SchelduleTask`), that evaluates an expression every `interval` __milliseconds__
+Spawns an asynchronous task (a wrapper over `ScheduledTask`) that evaluates an expression every `interval` __milliseconds__.
+
 ```wolfram
 SetInterval[expr_, interval_Real | interval_Quantity] _TaskObject
 ```
-A symbol has `HoldFirst` attribute. To cancel this task use
+
+This symbol has the `HoldFirst` attribute. To cancel this task, use:
 
 ```wolfram
 TaskRemove[_TaskObject]
 ```
+
 or
 
 ```wolfram
@@ -30,30 +55,33 @@ CancelInterval[_TaskObject]
 ```
 
 ### `PauseAsync`
-It works similar to `Pause`, but returns [Promise](../Misc/Promise)
+Works similarly to `Pause`, but returns a [Promise](../Misc/Promise).
 
 ```wolfram
 Then[PauseAsync[3], Beep];
 ```
 
 ### `TableAsync`
-It works similar to `Table`, but the inner expression can be implicit `AsyncFunction`
+Works similarly to `Table`, but the inner expression can be an implicit `AsyncFunction`.
 
 ```wolfram
 n = EvaluationCell[];
 
-Then[TableAsync[
+TableAsync[
   PauseAsync[1] // Await;
   i
-, {i,3}], CellPrint[#, "After"->n]&];
+, {i,3}] // WaitAll
 ```
 
 ### `DoAsync`
-Works in the same way as `TableAsync`
+Works in the same way as `TableAsync`.
 
 ### More
-Note, that there are more expressions in the standard library, which support patterns of async programming:
+There are more expressions in the standard library that support async programming patterns:
 
+<Card>
+
+- Any `EventObject`: [InputButton](../GUI/InputButton) and etc
 - [FrontFetchAsync](../Frontend%20IO/FrontFetchAsync)
 - [ChoiceDialogAsync](../Frontend%20IO/ChoiceDialogAsync)
 - [SystemDialogInputAsync](../Frontend%20IO/SystemDialogInputAsync)
@@ -61,35 +89,43 @@ Note, that there are more expressions in the standard library, which support pat
 - [`ParallelSubmitFunctionAsync`](../Misc/Parallel)
 - [ExportAsync](../Misc/ExportAsync)
 - [RasterizeAsync](../Image/RasterizeAsync)
-- `DoAsync`
-- `TableAsync`
-- `PauseAsync`
-- `MMAViewAsync`
-- `AsyncFunction`
-- Any `EventObject`: [InputButton](../GUI/InputButton) and etc
+- __Any symbol named as__ `*Async`
+
+</Card>
 
 ## Asynchronous Functions
 
+<Cards>
+  <Card
+    href="./../Advanced/Asynchronous-programming"
+    title="Asynchronous programming"
+  >
+    An advanced guide on promises, async-await methods
+  </Card>
+</Cards>
+
+
 ### `AsyncFunction`
-It works similar to `Function`
+Works similarly to `Function`.
 
 ```wolfram
 AsyncFunction[args, body] _Promise
 ```
 
-One can use it as normal function, but utilizing [`Await`](#`Await`) keyword. On the background it restructures `body` in the runtime. 
+You can use it as a normal function while utilizing the [`Await`](#`Await`) keyword. Behind the scenes, it restructures the `body` at runtime.
 
 ### `Await`
-Holds the execution (non blocking to threads) until the promise is resolved and returns the result
+Pauses execution (non-blocking to threads) until the promise is resolved and returns the result.
 
 ```wolfram
 Await[_ | _Promise] _
 ```
 
-If the argument is not `Promise` it won't pause the execution and return the result without changes.
+If the argument is not a `Promise`, execution continues without pausing and the argument is returned unchanged.
 
 <Card>
 
+**Supported expressions:**
 - `Set`
 - `CompoundExpression`
 - `If` 
@@ -98,12 +134,13 @@ If the argument is not `Promise` it won't pause the execution and return the res
 - `TableAsync`
 - `DoAsync`
 - `PauseAsync`
-- any expression, that returns `Promise` or `EventObject`
+- Any expression that returns `Promise` or `EventObject`
 
-What is not supported (by now)
+**Not yet supported:**
 - Loops: `While`, `For`, `Do`
+- `Await` inside the first argument of `With`
 - Tables and maps: `Map`, `Table`
-- `Return` will not work correctly inside `AsyncFunction`
+- `Return` does not work correctly inside `AsyncFunction`
 
 </Card>
 

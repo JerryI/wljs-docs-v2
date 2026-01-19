@@ -22,8 +22,6 @@ Manipulate[expr_, {{u_Symbol, initial_}, min_, max_, step_}..]
 Manipulate[expr_, {{u_Symbol, initial_, label_String}, min_, max_, step_}..]
 ```
 
-generates a version of `expr` with controls added to allow interactive reevaluation
-
 ```wolfram
 Manipulate[expr_, {{u_Symbol}, values_List}..]
 ```
@@ -36,16 +34,17 @@ Manipulate[expr_, {{u_Symbol, initial_}, values_List}..]
 Manipulate[expr_, {{u_Symbol, initial_, label_String}, values_List}..]
 ```
 
-`Manipulate` can be used on any valid Wolfram Expression. 2D/3D plots and images passed as `expr` or part of it will be automatically optimized using __Just-in-Time__ (JIT) transpiler if possible. This provides an __immediate mode__ for a user to construct dynamic interactive widgets.
+generates a version of `expr` with controls added to allow interactive reevaluation.
+
+
+`Manipulate` can be used on any Wolfram expression. Graphics or images passed as `expr` or part of it will be automatically optimized using <abbr title="Just In Time">JIT</abbr> transpiler if possible. This provides an immediate mode for a user to construct interactive widgets.
 
 <Callout type="note">
-By its nature all interactivity in WLJS Notebooks are implemented in retained mode, while `Manipulate` is a wrapper over low-level building blocks such as [Offload](../Interpreter/Offload), [InputRange](../GUI/InputRange) and etc with a diff algorithm used to optimize evaluation of changes.  
+By its nature, all interactivity in WLJS Notebooks is implemented in retained mode, while `Manipulate` is a wrapper over low-level building blocks such as [Offload](../Interpreter/Offload), [InputRange](../GUI/InputRange), etc., with a diff algorithm used to optimize evaluation of changes. For frequently changing data or complex visuals, we still recommend using these low-level building blocks.
 </Callout>
 
 <Callout type="tip">
-For frequently changing data or complex visuals we still do recommend to use low-level building blocks.
-
-Use [ManipulatePlot](../Plotting%20Functions/ManipulatePlot) and [ManipulateParametricPlot](../Plotting%20Functions/ManipulateParametricPlot) for basic plots.
+Consider also [ManipulatePlot](../Plotting%20Functions/ManipulatePlot) and [ManipulateParametricPlot](../Plotting%20Functions/ManipulateParametricPlot) for basic interactive curve plotting.
 </Callout>
 
 ## Examples
@@ -55,7 +54,7 @@ Here is a basic example involving symbolics:
 Manipulate[Series[Sinc[x], {x, 0, n}], {n, 1, 5, 1}]
 ```
 
-Here is a few examples with [Plot](../Plotting%20Functions/Plot) expression, which effectively use JIT:
+Here are a few examples with [Plot](../Plotting%20Functions/Plot) expressions that effectively use JIT:
 
 ```wolfram
 Manipulate[
@@ -69,7 +68,7 @@ Manipulate[Plot[1.0 + Sin[w] Sin[x + w],{x,0,5Pi}, Epilog->{
 }], {w,0,Pi}, ContinuousAction->True]
 ```
 
-Another example, that solves ODE on-fly:
+Another example that solves an ODE on the fly:
 
 ```wolfram
 Manipulate[
@@ -115,56 +114,24 @@ Here is an example with mixed symbolics and graphics:
   }], {{m, ((*GB[*){{1(*|*),(*|*)0}(*||*),(*||*){0(*|*),(*|*)2}}(*]GB*))}, { ((*GB[*){{1(*|*),(*|*)0}(*||*),(*||*){0(*|*),(*|*)2}}(*]GB*)) -> "Nodal source",  ((*GB[*){{1(*|*),(*|*)1}(*||*),(*||*){0(*|*),(*|*)1}}(*]GB*))  -> "Degenerate source",  ((*GB[*){{0(*|*),(*|*)1}(*||*),(*||*){-1(*|*),(*|*)1}}(*]GB*)) -> "Spiral source",  ((*GB[*){{-1(*|*),(*|*)0}(*||*),(*||*){0(*|*),(*|*)-2}}(*]GB*))  -> "Nodal sink",  ((*GB[*){{-1(*|*),(*|*)1}(*||*),(*||*){0(*|*),(*|*)-1}}(*]GB*)) -> "Degenerate sink",  ((*GB[*){{0(*|*),(*|*)1}(*||*),(*||*){-1(*|*),(*|*)-1}}(*]GB*)) -> "Spiral sink",  ((*GB[*){{0(*|*),(*|*)1}(*||*),(*||*){-1(*|*),(*|*)0}}(*]GB*)) -> "Center",  ((*GB[*){{1(*|*),(*|*)0}(*||*),(*||*){0(*|*),(*|*)-2}}(*]GB*))  -> "Saddle"}}]`}</wljs-editor>
 </WLJSWrapper>
 
-## JIT Transpiler
-`Manipulate` as well as [Animate](../GUI/Animate) uses a diff algorithm that detects and tries to convert manipulated expressions to a more optimized dynamic ones using a low-level `Offload` technique. 
-
-If something else goes wrong, it will *deoptimize* it back and send an original expression to the output. 
-
-Our transpiler does not cover all symbols and is limited to the following for now:
-
-- `Line`, `Point`, `Polygon`, `Tube`, `Arrow`, `Disk`, `Circle`, `Sphere`, `Cuboid`, `Rectangle`, `Text`
-- `GraphicsComplex` in the context of `Graphics3D`
-- `Image`
-- `PlotLabel` in the context of `Graphics`
-- `LineLegend`, `PointLegend`, `SwatchLegend`
-
-which is a good subset to cover the output produced by `Plot`, `Plot3D` and many others standard functions. What will not be supported in the near future:
-
-- `PlotRange` mutations are ignored
-- adding/removing `Line`, `Point` and etc primitives at runtime leads to deoptimization
-- changing color or opacity leads to deoptimization
-
-### Tips for better performance
-If you still want to use `Manipulate` on some complex expressions, there are some tricks to avoid deoptimization of JIT engine
-
-<Callout type="tip">
-- Try to keep the number of curves/traces/polygons expressions the same if possible. Try not to add new entities to your graphs.
-- `PerformanceGoal->"Speed"` is also a good option for 3D plots.
-- `Mesh->None` might also help.
-- `PlotRange->Full` can help to avoid fragmentation of line segments
-- Avoid changing colors, opacity at runtime
-</Callout>
-
-<Callout type="note">
-In any case you can still animate anything with a great performance using __low-level building blocks__ [Offload](../Interpreter/Offload) and [AnimationFrameListener](../Graphics/AnimationFrameListener).
-
-See __Advanced section__ of the documentation
-</Callout>
-
-### Debugging
-To see the latest message of JIT failure - evaluate the symbol:
-```wolfram
-CoffeeLiqueur`Extensions`Manipulate`Diff`$lastJITFailure
-```
-
-## Portability
-The same as for [Animate](../GUI/Animate). `Manipulate` widgets can be shared as MDX or HTML in automatic mode.
-
-<Callout type="warn">
-Please keep the number of possible state determined by all your sliders and selection boxes __below 500-600__.
-</Callout>
 
 ## Options
+
+### `ContinuousAction`
+By default, this is `False`, which means that any update happens after the user's action, not before.
+
+### `"ControlsLayout"`
+By default, this is `"Vertical"`. Another possible value is `"Horizontal"`.
+
+### `PerformanceGoal`
+By default, this is `"Speed"`, which involves the [JIT Transpiler](#JIT%20Transpiler). Change it to any other value to disable it completely.
+
+### `"JITFeature"`
+By default, this is `True`, which involves the [JIT Transpiler](#JIT%20Transpiler). If either `PerformanceGoal` or `"JITFeature"` is set to a non-default value, the JIT transpiler will be disabled.
+
+### `Appearance`
+By default, this is `"Default"`. Set it to `None` to remove the frame and info boxes.
+
 ### `"UpdateFunction"`
 Allows to alter the expression, prevent default actions or cause side-effects upon update. The following return values are expected
 
@@ -194,33 +161,61 @@ Module[{r},
 
 However, *we do recommend to use* [InputRange](../GUI/InputRange) directly instead of `Manipulate` for such cases.
 
-### `ContinuousAction`
-By the default is `False`, which means that any update happens after users action, but not before.
 
-### `"ControlsLayout"`
-By the default is `"Vertical"`, another possible value is `"Horisontal"`
+## JIT Transpiler
+`Manipulate`, as well as [Animate](../GUI/Animate), uses a diff algorithm that detects and tries to convert manipulated expressions to more optimized ones that utilize granular updates. If the diff algorithm fails, it will use full reevaluation and update the shown expression accordingly. 
 
-### `PerformanceGoal`
-By the default is `"Speed"`, which involves [JIT Transpiler](#JIT%20Transpiler). Change it to any other value to disable it completely
+<Card>
 
-### `"JITFeature"`
-By the default is `True`, which involves [JIT Transpiler](#JIT%20Transpiler). If either of `PerformanceGoal` or `"JITFeature"` is set no a non-default value JIT transpiler will be disabled.
+Our transpiler does not cover all symbols and is limited to the following for now:
 
-### `Appearance`
-By the default is `"Default"`. Set it to `None` to remove the frame and info boxes.
+- `Line`, `Point`, `Polygon`, `Tube`, `Arrow`, `Disk`, `Circle`, `Sphere`, `Cuboid`, `Rectangle`, `Text`
+- `GraphicsComplex` in the context of `Graphics3D`
+- `Image`
+- `PlotLabel` in the context of `Graphics`
+- `LineLegend`, `PointLegend`, `SwatchLegend`
+
+which is a good subset to cover the output produced by `Plot`, `Plot3D` and many others standard functions. What will not be supported in the near future:
+
+- `PlotRange` mutations are ignored
+- adding/removing `Line`, `Point` and etc primitives at runtime leads to deoptimization
+- changing color or opacity __leads to full reevaluation__
+
+</Card>
+
+### Tips for better performance
+If you still want to use `Manipulate` on some complex expressions, there are some tricks to avoid JIT engine failures:
+
+<Callout type="tip">
+- Try to keep the number of curves/traces/polygons expressions the same if possible. Try not to add new entities to your graphs.
+- `PerformanceGoal->"Speed"` is also a good option for 3D plots.
+- `Mesh->None` might also help.
+- `PlotRange->Full` or set it manually, it can help to avoid fragmentation of line segments
+- Avoid changing colors, opacity
+</Callout>
+
+
+### Debugging
+To see the latest message of JIT failure - evaluate the symbol:
+```wolfram
+CoffeeLiqueur`Extensions`Manipulate`Diff`$lastJITFailure
+```
+
+## Portability
+Same as for [Animate](../GUI/Animate), `Manipulate` widgets can be shared as [MDX](./../Share/Markdown-React) or [HTML](./../Share/Standalone-HTML) in automatic mode.
+
+<Callout type="warn">
+Keep the number of possible states determined by all your sliders and selection boxes __below 500-600__.
+</Callout>
 
 ## MMAView
-[MMAView](../GUI/MMAView) wrapper allows to use **native Wolfram Engine rendering engine** for manipulate expressions, **any expression**. It uses a parallel kernel to rasterize the provided expression and stream updates to the frontend.
+[MMAView](../GUI/MMAView) wrapper allows to use **native Wolfram Engine rendering engine** for manipulated expressions. It uses a parallel kernel to rasterize the provided expression and stream updates to the frontend.
 
 ```wolfram
 Manipulate[Plot3D[Sin[n x] Cos[n y], {x,-1,1}, {y,-1,1}], {n, 1, 5, 1}] // MMAView
 ```
 
-**Try to drag and rotate the plot** We automatically detect if the manipulate expression is [[Graphics3D]] and if so, we provide additional mouse controls.
-
-<Callout type="warn">
-It literally streams uncompressed raster images in real-time. Please do not overuse it, and try to use WLJS dynamics in general if possible.
-</Callout>
+It literally streams uncompressed raster images in real-time. Please __do not overuse it__
 
 ## Supported output forms
 - [StandardForm](../Formatting/StandardForm)

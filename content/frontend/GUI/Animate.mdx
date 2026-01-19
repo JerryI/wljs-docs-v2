@@ -15,9 +15,9 @@ Animate[expr_, {u_Symbol, min_, max_, step_}, opts___]
 
 generates a version of `expr` allowing automatic repeated reevaluation for each `u` though `min`, `max` with a defined frame rate.
 
-<Callout type="warn">
-Please consider to use [AnimatePlot](../Plotting%20Functions/AnimatePlot) for basic animated plots or use low-level tools: [Offload](../Interpreter/Offload) and [AnimationFrameListener](../Graphics3D/AnimationFrameListener).
+<Callout type="idea">Consider to use [AnimatePlot](../Plotting%20Functions/AnimatePlot) for basic animated plots or use low-level tools: [Offload](../Interpreter/Offload) and [AnimationFrameListener](../Graphics/AnimationFrameListener).</Callout>
 
+<Callout type="warn">
 `Animate` uses __Just-In-Time__ transpilation of expressions to optimized ones. It might not work in all cases and may fall back to full reevaluation.
 </Callout>
 
@@ -69,52 +69,20 @@ Here we tried to lower the computation costs by reducing mesh quality, so that t
 </Callout>
 
 ## JIT Transpiler
-`Animate` as well as [Manipulate](../GUI/Manipulate) uses a diff algorithm that detects and tries to convert manipulated expressions to a more optimized dynamic ones using a low-level `Offload` technique. 
+`Animate` as well as [Manipulate](../GUI/Manipulate) uses a diff algorithm that detects and tries to convert manipulated expressions to a more optimized ones using a low-level granular updates with `Offload`. 
 
 If something else goes wrong, it will *deoptimize* it back and send an original expression to the output. 
 
-Our transpiler does not cover all symbols and is limited to the following for now:
-
-- `Line`, `Point`, `Polygon`, `Tube`, `Arrow`, `Disk`, `Circle`, `Sphere`, `Cuboid`, `Rectangle`, `Text`
-- `GraphicsComplex` in the context of `Graphics3D`
-- `Image`
-- `PlotLabel` in the context of `Graphics`
-- `LineLegend`, `PointLegend`, `SwatchLegend`
-
-which is a good subset to cover the output produced by `Plot`, `Plot3D` and many others standard functions. What will not be supported in the near future:
-
-- `PlotRange` mutations are ignored
-- adding/removing `Line`, `Point` and etc primitives at runtime leads to deoptimization
-- changing color or opacity leads to deoptimization
-
 ### Tips for better performance
-If you still want to use `Animate` on some complex expressions, there are some tricks to avoid deoptimization of JIT engine
-
-<Callout type="tip">
-- Try to keep the number of curves/traces/polygons expressions the same if possible. Try not to add new entities to your graphs.
-- `PerformanceGoal->"Speed"` is also a good option for 3D plots.
-- `Mesh->None` might also help.
-- `PlotRange->Full` can help to avoid fragmentation of line segments
-- Avoid changing colors, opacity on runtime
-</Callout>
-
-<Callout type="note">
-In any case you can still animate anything with a great performance using __low-level building blocks__ [Offload](../Interpreter/Offload) and [AnimationFrameListener](../Graphics/AnimationFrameListener).
-
-See [Animation](frontend/Advanced/Dynamics/Animation) in Advanced section
-</Callout>
+See [Manipulate](../GUI/Manipulate)
 
 ## Portability
-The same as for [Manipulate](../GUI/Manipulate). `Animate` widgets can be exported to [Interactive HTML](frontend/Exporting/Interactive%20HTML) or [MDX](frontend/Exporting/MDX) in __automatic mode__.
-
-<Callout type="warn">
-Please do not use infinite `AnimationRepetitions` 
-</Callout>
+See [Manipulate](../GUI/Manipulate)
 
 ## Exporting as GIF or video
 
 <Callout type="warn">
-This feature is only available for WLJS Notebook desktop application, since we rely on our custom Electron.js raster renderer
+This feature is only available for WLJS Notebook desktop application, since we rely on our custom Electron.js renderer
 </Callout>
 
 You can wrap [Animate](../GUI/Animate), [AnimatePlot](../Plotting%20Functions/AnimatePlot), [AnimateParametericPlot](../Plotting%20Functions/AnimateParametericPlot) expressions with [AnimatedImage](../Image/AnimatedImage) to rasterize them into the series of images and export to a file as GIF or video
