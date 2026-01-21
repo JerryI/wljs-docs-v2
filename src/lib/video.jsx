@@ -6,7 +6,8 @@ import React, { useState, useEffect, useRef } from 'react';
 export function LazyAutoplayVideo ({url}) {
 
     const [hasBeenInView, setHasBeenInView] = useState(false); // State to track if video has ever been in view 
-    const videoRef = useRef(null); // Ref to access the video element 
+    const containerRef = useRef(null); // Ref to access the container element 
+    const videoElementRef = useRef(null); // Ref to access the video element
     const debounceTimerRef = useRef(null); // Ref to store debounce timer
 
     useEffect(() => {
@@ -21,20 +22,28 @@ export function LazyAutoplayVideo ({url}) {
                 
                 // Debounce the state change to prevent flickering
                 debounceTimerRef.current = setTimeout(() => {
-                    // Once video has been in view, keep it loaded to prevent layout shifts
                     if (entry.isIntersecting) {
-                        setHasBeenInView(true);
+                        // Load video if not already loaded
+                        setHasBeenInView(prev => prev || true);
+                        // Play video when in view (only if paused)
+                        const video = videoElementRef.current;
+                        if (video && video.paused) {
+                            video.play();
+                        }
+                    } else {
+                        // Pause video when out of view
+                        videoElementRef.current?.pause();
                     }
                 }, 100); // 100ms debounce delay
             },
             { threshold: 0.5 } // Trigger when at least 50% of the video is in view 
         );
 
-        if (videoRef.current) {
-            observer.observe(videoRef.current); // Observe the video element 
+        if (containerRef.current) {
+            observer.observe(containerRef.current); // Observe the container element 
             
             // Check if element is already in view (important for accordion reopening)
-            const rect = videoRef.current.getBoundingClientRect();
+            const rect = containerRef.current.getBoundingClientRect();
             const isInViewport = rect.top < window.innerHeight && rect.bottom > 0;
             if (isInViewport) {
                 setHasBeenInView(true);
@@ -51,9 +60,10 @@ export function LazyAutoplayVideo ({url}) {
 
     return (
 
-        <div ref={videoRef} className="my-4 bg-fd-card rounded-xl relative border shadow-sm not-prose overflow-hidden text-sm github-light github-dark" style={{ minHeight: '150px' }}> {/* Wrapper with minimum height */}
+        <div ref={containerRef} className="my-4 bg-fd-card rounded-xl relative border shadow-sm not-prose overflow-hidden text-sm github-light github-dark" style={{ minHeight: '150px' }}> {/* Wrapper with minimum height */}
             {hasBeenInView && (
                 <video
+                    ref={videoElementRef}
                     src={url}
                     className='invertColor'
                     autoPlay
