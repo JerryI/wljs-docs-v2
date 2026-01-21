@@ -45,7 +45,7 @@ The following `pattern`s are available to be attached to
 - `"Mounted"` fires once a widget is visible. A unique identifier is provided as a payload in a form of association
 - `"Destroy"` fires once it was removed
 
-Once mounted, it provides a unique ID as a string from the key `Instance` in the `"Mounted"` event, which can be used in the constructor [FrontInstanceReference](../../Frontend%20IO/FrontInstanceReference). You can also apply [``ViewBox`InnerExpression``](#``ViewBox`InnerExpression``) and [``ViewBox`OuterExpression``](#``ViewBox`OuterExpression``).
+Once mounted, it provides a unique ID as a string from the key `Instance` in the `"Mounted"` event, which can be used in the constructor [FrontInstanceReference](../../Frontend-IO/FrontInstanceReference). You can also apply [``ViewBox`InnerExpression``](#``ViewBox`InnerExpression``) and [``ViewBox`OuterExpression``](#``ViewBox`OuterExpression``).
 
 ## Examples
 
@@ -90,10 +90,10 @@ Please see methods below
 Used to replace a covered expression in a `ViewBox` with a given string. 
 
 <Callout type="warn">
-It must be evaluated in the context of an instance of `ViewBox`, use [FrontInstanceReference](../../Frontend%20IO/FrontInstanceReference) and [FrontSubmit](../../Frontend%20IO/FrontSubmit) in order to apply this to a specific box
+It must be evaluated in the context of an instance of `ViewBox`, use [FrontInstanceReference](../../Frontend-IO/FrontInstanceReference) and [FrontSubmit](../../Frontend-IO/FrontSubmit) in order to apply this to a specific box
 </Callout>
 
-__Returns the current content if no string is specified as an argument__. Use it with [FrontInstanceReference](../../Frontend%20IO/FrontInstanceReference) and [FrontFetch](../../Frontend%20IO/FrontFetch).
+__Returns the current content if no string is specified as an argument__. Use it with [FrontInstanceReference](../../Frontend-IO/FrontInstanceReference) and [FrontFetch](../../Frontend-IO/FrontFetch).
 
 For example, let's make a dummy view-box that covers a simple string with a disk
 

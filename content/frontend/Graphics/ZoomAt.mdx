@@ -13,13 +13,13 @@ ZoomAt[k_, position_:{width/2,height/2}]
 zooms `k` times at the given position `position` (in the coordinate system of the plot). `position` defines the center of view.
 
 <Callout type="info">
-This has to be called inside the instance of [Graphics](../Graphics/Graphics) using [FrontSubmit](../Frontend%20IO/FrontSubmit)
+This has to be called inside the instance of [Graphics](../Graphics/Graphics) using [FrontSubmit](../Frontend-IO/FrontSubmit)
 </Callout>
 
 *All transition effects are applied here as well*
 
 ## Example
-Let us make a simple plot and reference it using [FrontInstanceReference](../Frontend%20IO/FrontInstanceReference)
+Let us make a simple plot and reference it using [FrontInstanceReference](../Frontend-IO/FrontInstanceReference)
 
 ```wolfram
 ref = FrontInstanceReference[];

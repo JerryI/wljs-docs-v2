@@ -15,7 +15,7 @@ Animate[expr_, {u_Symbol, min_, max_, step_}, opts___]
 
 generates a version of `expr` allowing automatic repeated reevaluation for each `u` though `min`, `max` with a defined frame rate.
 
-<Callout type="idea">Consider to use [AnimatePlot](../Plotting%20Functions/AnimatePlot) for basic animated plots or use low-level tools: [Offload](../Interpreter/Offload) and [AnimationFrameListener](../Graphics/AnimationFrameListener).</Callout>
+<Callout type="idea">Consider to use [AnimatePlot](../Plotting-Functions/AnimatePlot) for basic animated plots or use low-level tools: [Offload](../Interpreter/Offload) and [AnimationFrameListener](../Graphics/AnimationFrameListener).</Callout>
 
 <Callout type="warn">
 `Animate` uses __Just-In-Time__ transpilation of expressions to optimized ones. It might not work in all cases and may fall back to full reevaluation.
@@ -28,7 +28,7 @@ Symbolic expressions
 Animate[Row[{Sin[x], "==", Series[Sin[x], {x,0,n}], Invisible[1/2]}], {n, 1, 10, 1}, RefreshRate->3]
 ```
 
-Animate [Plot](../Plotting%20Functions/Plot) expression
+Animate [Plot](../Plotting-Functions/Plot) expression
 
 ```wolfram
 Animate[Plot[1.0 + Sin[w] Sin[x + w],{x,0,5Pi}, Epilog->{
@@ -52,7 +52,7 @@ Animate[
 , {u, 0.001, 4Pi}, RefreshRate->30, Appearance->None]
 `}</wljs-editor></WLJSWrapper>
 
-Animate [Plot3D](../Plotting%20Functions/Plot3D) expression
+Animate [Plot3D](../Plotting-Functions/Plot3D) expression
 
 <WLJSWrapper>
 <span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
@@ -85,7 +85,7 @@ See [Manipulate](../GUI/Manipulate)
 This feature is only available for WLJS Notebook desktop application, since we rely on our custom Electron.js renderer
 </Callout>
 
-You can wrap [Animate](../GUI/Animate), [AnimatePlot](../Plotting%20Functions/AnimatePlot), [AnimateParametericPlot](../Plotting%20Functions/AnimateParametericPlot) expressions with [AnimatedImage](../Image/AnimatedImage) to rasterize them into the series of images and export to a file as GIF or video
+You can wrap [Animate](../GUI/Animate), [AnimatePlot](../Plotting-Functions/AnimatePlot), [AnimateParametericPlot](../Plotting-Functions/AnimateParametericPlot) expressions with [AnimatedImage](../Image/AnimatedImage) to rasterize them into the series of images and export to a file as GIF or video
 
 ```wolfram
 Export["animation.gif", AnimatedImage @ Animate[
@@ -97,7 +97,7 @@ where `AnimatedImage` can be extended with options alike [Rasterize](../Image/Ra
 
 #### Options
 - `FrameRate` playback speed (does not affect rasterization). By the default is taken from `Animate` options (as `RefhreshRate` or `AnimationRate`)
-- `"Window"` by the default is [CurrentWindow](../Frontend%20IO/CurrentWindow) 
+- `"Window"` by the default is [CurrentWindow](../Frontend-IO/CurrentWindow) 
 - `"ExposureTime"` sets waiting time before each frame is captured. By the default it is `Automatic` and the actual values is taken from the animation rate of the widget
 - `"Asynchronous"` sets async rasterization mode, where the constructor returns `Promise` immediately. By the default is `False`.
 

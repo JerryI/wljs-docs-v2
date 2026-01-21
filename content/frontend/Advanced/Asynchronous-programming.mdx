@@ -39,7 +39,7 @@ EventHandler[InputButton["Press me"], foo]
 
 Here, a button can be pressed at any time and generate an event captured by a handler function. The `foo[]` function (or a `DownValue` of the `foo` symbol) must be a **non-blocking expression**; otherwise, it will hang the evaluation kernel.
 
-For example, `foo` **cannot call** [Input](./../Frontend%20IO/Input), [NotebookRead](./../Cells%20and%20Notebook/NotebookRead), [SystemInputDialog](./../Frontend%20IO/SystemDialogInput), `Rasterize`, `FrontFetch`, `WaitAll`, or similar blocking functions—which are explicitly marked as <small>blocking</small> in their documentation pages.
+For example, `foo` **cannot call** [Input](./../Frontend-IO/Input), [NotebookRead](./../Cells-and-Notebook/NotebookRead), [SystemInputDialog](./../Frontend-IO/SystemDialogInput), `Rasterize`, `FrontFetch`, `WaitAll`, or similar blocking functions—which are explicitly marked as <small>blocking</small> in their documentation pages.
 
 import { Accordion, Accordions } from 'fumadocs-ui/components/accordion';
 

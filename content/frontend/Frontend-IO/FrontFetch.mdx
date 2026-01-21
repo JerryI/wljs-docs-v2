@@ -1,0 +1,13 @@
+---
+title: FrontFetch
+env:
+  - Wolfram Kernel
+source: https://github.com/JerryI/wljs-editor/blob/dev/src/FrontSubmitKernel.wl
+package: wljs-editor
+
+---
+is a synchronous version of [FrontFetchAsync](../Frontend-IO/FrontFetchAsync).
+
+<Callout type="warning">
+Blocking function. Avoid using it in timers like `SetTimeout`, external event handlers such as `InputButton` or `Button`, or within `AsyncFunction`.
+</Callout>

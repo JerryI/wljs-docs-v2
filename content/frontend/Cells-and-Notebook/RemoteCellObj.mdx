@@ -1,0 +1,43 @@
+---
+title: RemoteCellObj
+env:
+  - Wolfram Kernel
+package: wljs-editor
+
+source: https://github.com/JerryI/wljs-editor/blob/dev/src/RemoteCellsKernel.wl
+---
+a remote representation of a notebook cell for evaluation Kernel
+
+```wolfram
+RemoteCellObj[uid_String] _RemoteCellObj
+```
+
+## Methods
+### `NotebookDelete`
+### `NotebookWrite`
+### `NotebookRead`
+### `NotebookReadAsync`
+
+### `EventHandler`
+You can listen a cell's events from the evaluation Kernel  
+
+```wolfram
+With[{cell = EvaluationCell[]},
+	EventHandler[cell, {any_ :> (Print[any, ": ", #]&)}];
+]
+```
+*listen all events from the input cell*
+
+#### Possible events
+##### Normal cells
+- `"Destroy"` when a cell was removed
+
+##### Expression Windows
+
+- `"Mounted"` fired once cell is mounted and is ready, returns [WindowObj](../Frontend-IO/WindowObj);
+
+<Callout type="note">
+`"Mounted"` can be fired multiple times in the case if a window was refreshed (or reconnected)
+</Callout>
+
+- `"Closed"` fired when user closes window (or connection breaks), returns [WindowObj](../Frontend-IO/WindowObj)

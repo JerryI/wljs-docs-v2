@@ -1,0 +1,73 @@
+---
+title: NotebookStore
+env:
+  - Wolfram Kernel
+
+package: wljs-editor
+source: https://github.com/JerryI/wljs-editor/blob/dev/src/StoreKernel.wl
+---
+Represents a key in the permanent local notebook storage. You can carry the raw data within the notebook, ***regardless if it has been exported*** to [Static HTML](./../Share/Standalone-HTML) and imported back.
+
+Representation of a single key:
+
+```wolfram
+NotebookStore[key_String]
+```
+
+Representation of multiple keys:
+
+```wolfram
+NotebookStore[{key1, key2, key3, ..}]
+```
+
+Explicitly specify a notebook:
+
+```wolfram
+NotebookStore[nb_RemoteNotebook, key_String] _
+```
+
+It works like a key-value storage.
+
+## Methods
+### Write
+To assign any Wolfram Expression using [NotebookWrite](./NotebookWrite):
+
+```wolfram
+NotebookWrite[NotebookStore["key"], expr_]
+```
+
+### Read
+To get the data use [NotebookRead](./NotebookRead):
+
+```wolfram
+NotebookRead[NotebookStore["key"]]
+```
+
+
+<Callout type="warn">
+Be aware of a __evaluation context loss__, use [EvaluationNotebook](../Cells-and-Notebook/EvaluationNotebook) for such cases if it is called from an external handler, i.e.
+
+```wolfram
+(* evaluation context is ok *)
+NotebookWrite[NotebookStore["key"], 123];
+
+With[{n = EvaluationNotebook[]},
+	(* evaluation context is ok *)
+	EventHandler[InputButton[], AsyncFunction[Null, Module[{data},
+		(* evaluation context is lost!!! *)
+		
+		data = NotebookReadAsync[NotebookStore[n, "key"]] // Await;
+        NotebookWrite[NotebookStore[n, "key"], data+1];
+	]]]
+]
+```
+
+Then check:
+
+```wolfram
+NotebookRead[NotebookStore["key"]]
+```
+</Callout>
+
+
+

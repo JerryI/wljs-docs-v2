@@ -1,0 +1,18 @@
+---
+title: ResultCell
+env:
+  - Wolfram Kernel
+package: wljs-editor
+
+source: https://github.com/JerryI/wljs-editor/blob/dev/src/RemoteCellsKernel.wl
+---
+returns an future output cell identifier as an [RemoteCellObj](../Cells-and-Notebook/RemoteCellObj) *even if it was not yet created* from the evaluation context
+
+```wolfram
+ResultCell[] _RemoteCellObj
+```
+
+<Callout type="note">
+Works in all output cells
+</Callout>
+

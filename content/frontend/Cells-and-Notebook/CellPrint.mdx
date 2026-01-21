@@ -1,0 +1,80 @@
+---
+title: CellPrint
+env:
+  - Wolfram Kernel
+
+source: https://github.com/JerryI/wljs-editor/blob/dev/src/RemoteCellsKernel.wl
+package: wljs-editor
+---
+
+```wolfram
+CellPrint[expr_] _RemoteCellObj
+```
+
+```wolfram
+CellPrint[cellExpr_] _RemoteCellObj
+```
+
+Inserts a new cell directly below the currently evaluated one. The expression `expr` is automatically converted to a [StandardForm](../Formatting/StandardForm) output cell.
+
+Alternatively, `cellExpr` can be any of the following cell types:
+
+<Card>
+
+- `Cell[expr_String, "Input"]`
+- `Cell[expr_String, "Output"]`
+- `Cell[expr_String, "Input"]`
+- `Cell[expr_String, "Output", subtype_String]`
+- `TextCell[expr_String]`
+- `TextCell[expr_String, "Title"]`
+- `TextCell[expr_String, "Section"]`
+- `TextCell[expr_String, "Subsection"]`
+- `ExpressionCell[expr_, "Input"]`
+- `ExpressionCell[expr_, "Output"]`
+
+where the `subtype` property can be any view component from the available cell types:
+
+- `"WLX"` or `"wlx"`
+- `"HTML"` or `"html"`
+- `"JS"` or `"js"` or `"javascript"`
+- `"MERMAID"` or `"mermaid"`
+- ...
+
+</Card>
+
+`CellPrint` returns the created [RemoteCellObj](./RemoteCellObj), which can be further manipulated.
+
+<Callout type="idea">
+See also the more comprehensive functions [NotebookWrite](./NotebookWrite) and [CreateWindow](./CreateWindow) for generating cells.
+</Callout>
+
+
+## Examples
+
+### Basic usage
+Print a cell after the current one, displaying the current date:
+
+```wolfram
+cell = CellPrint[Now];
+```
+
+Then remove it:
+
+```wolfram
+NotebookDelete[cell];
+```
+
+### Using different renderers
+You can use [WLX](frontend/Cell-types/WLX) view components as well. First, create a template in a separate cell:
+
+```jsx
+.wlx
+
+wlTest[P_] := <div class="p-1 rounded" style="border: 1px solid blue"><P/></div>
+```
+
+Then wrap it in the corresponding cell representation:
+
+```wolfram
+CellPrint[Cell[wlTest[Plot[x, {x,0,1}]], "Output", "wlx"]];
+```

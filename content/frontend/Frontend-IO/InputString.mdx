@@ -1,0 +1,8 @@
+---
+title: InputString
+---
+Similar to [Input](../Frontend-IO/Input), but returns a string.
+
+<Callout type="warning">
+Blocking function. Avoid using it in timers like `SetTimeout`, external event handlers such as `InputButton` or `Button`, or within `AsyncFunction`. Use [InputStringAsync](./InputStringAsync) instead
+</Callout>

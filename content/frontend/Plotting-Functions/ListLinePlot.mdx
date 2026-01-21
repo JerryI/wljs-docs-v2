@@ -1,0 +1,37 @@
+---
+title: ListLinePlot
+env:
+  - Wolfram Kernel
+update: 
+needsContainer: 
+registered: true
+---
+Plots a line like [Plot](../Plotting-Functions/Plot) through the list of points provided
+```wolfram
+ListLinePlot[{y1, y2, y3, ...}]
+```
+
+## Options
+The same as for [Plot](../Plotting-Functions/Plot)
+
+## Examples
+Plot a list of $y$ values
+
+```wolfram
+ListLinePlot[{1, 1, 2, 3, 5, 8}]
+```
+
+Add a filling under the line
+
+```wolfram
+ListLinePlot[Prime[Range[25]], Filling -> Axis]
+```
+
+Random walk
+
+```wolfram
+ListLinePlot[Accumulate[RandomReal[{-1, 1}, {250, 2}]]]
+```
+
+## Dev notes
+This function does not support updates, please use raw `Graphics` or alternative way - [ListLinePlotly](../Plotly/ListLinePlotly) to animate your data.

@@ -100,7 +100,7 @@ Refresh[Now, 1]
 <Callout>Syntax for `Refresh` expression differs from one used in Mathematica</Callout>
 
 ### More specialized functions
-We do recommend to use [ManipulatePlot](./../Plotting%20Functions/ManipulatePlot), [ManipulateParametricPlot](./../Plotting%20Functions/ManipulateParametricPlot) for simple interactive curves plotting, since they are more optimized and does not require diff algorythm to run:
+We do recommend to use [ManipulatePlot](./../Plotting-Functions/ManipulatePlot), [ManipulateParametricPlot](./../Plotting-Functions/ManipulateParametricPlot) for simple interactive curves plotting, since they are more optimized and does not require diff algorythm to run:
 
 <WLJSWrapper>
 <span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-10 group-hover:opacity-50 transition duration-500" />
@@ -114,7 +114,7 @@ ManipulatePlot[
 <WLJSWrapper>
 <wljs-editor display="codemirror" lazy="true" type="Output"  >{`(*VB[*)(FrontEndRef["4580b8e8-5239-41bc-b46e-541b291fce69"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKm5haGCRZpFromhoZW+qaGCYl6yaZmKXqmgKZRpaGacmpZpYAeLYVTg=="*)(*]VB*)`}</wljs-editor></WLJSWrapper>
 
-[AnimatePlot](./../Plotting%20Functions/AnimatePlot) and [AnimateParametricPlot](./../Plotting%20Functions/AnimateParametericPlot) use different strategy and precalculate all curves before animating it:
+[AnimatePlot](./../Plotting-Functions/AnimatePlot) and [AnimateParametricPlot](./../Plotting-Functions/AnimateParametericPlot) use different strategy and precalculate all curves before animating it:
 
 <WLJSWrapper>
 <span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-10 group-hover:opacity-50 transition duration-500" />
@@ -505,7 +505,7 @@ The naive way of animating things could be something like a loop with `Pause`:
 Do[data = animate[i]; Pause[0.01], {i, 99999}]
 ```
 
-It will work. However this is a suboptimal way, it blocks kernel, it is not in sync with a screen refresh, which may cause flickering and there is no reliable way to embed it to [a presentation](./../Cell%20types/Slide) or simply suspend it. 
+It will work. However this is a suboptimal way, it blocks kernel, it is not in sync with a screen refresh, which may cause flickering and there is no reliable way to embed it to [a presentation](./../Cell-types/Slide) or simply suspend it. 
 
 To solve those issues for any type of animated graphics is [AnimationFrameListener](./../Graphics/AnimationFrameListener). It does a few things:
 
@@ -790,7 +790,7 @@ To append new complex objects to an existing visible plot or graphical canvas, i
 
 <Callout type="info">Expressions that support updates (`Offload`) usually can be appended or removed to or from the existing graphical instance as well</Callout>
 
-The  particular context of the instance can be referenced with [FrontInstanceReference](./../Frontend%20IO/FrontInstanceReference):
+The  particular context of the instance can be referenced with [FrontInstanceReference](./../Frontend-IO/FrontInstanceReference):
 
 ```wolfram
 ref = FrontInstanceReference[];
@@ -802,7 +802,7 @@ Plot[x, {x,0,1}, Prolog->{
 
 `ref` will point directly to what is inside `Prolog`, if any colors directives are presented,  they will be applied autoamtically to the submitted expressions. 
 
-To submit anything for frontend evaluation use - [FrontSubmit](./../Frontend%20IO/FrontSubmit). Using the second optional argument we specify the __where__ to evaluate the expression. For example to add a red cicle on our existing plot we do:
+To submit anything for frontend evaluation use - [FrontSubmit](./../Frontend-IO/FrontSubmit). Using the second optional argument we specify the __where__ to evaluate the expression. For example to add a red cicle on our existing plot we do:
 
 ```wolfram
 FrontSubmit[{Red, Disk[{0.5,0.5}, 0.5]}, ref]
@@ -841,7 +841,7 @@ EventHandler[Plot[x, {x,0,1}, Epilog->{
 
 
 ### Removing
-To append and remove some objects, you need to create a group first - [FrontInstanceGroup](./../Frontend%20IO/FrontInstanceGroup)
+To append and remove some objects, you need to create a group first - [FrontInstanceGroup](./../Frontend-IO/FrontInstanceGroup)
 
 ```wolfram
 group = FrontInstanceGroup[];
@@ -862,7 +862,7 @@ FrontInstanceGroupRemove[group]
 
 We can go further and animate bubbles. The problem arises when we create a bubble. In fact, we need to provide a graphical primitive (let’s say `Disk`) and a *dynamic symbol* to control its properties. Creating 1000 extra symbols is a significant overhead for the system, especially if we want to update all of them.
 
-<Callout type="info">We generally recommend to use [Canvas 2D](./../Advanced/Canvas-2D/Overview) for such animations or [FrontProxy](./../Frontend%20IO/FrontProxy) abstraction for better developer experience</Callout>
+<Callout type="info">We generally recommend to use [Canvas 2D](./../Advanced/Canvas-2D/Overview) for such animations or [FrontProxy](./../Frontend-IO/FrontProxy) abstraction for better developer experience</Callout>
 
 Let us use a limited number of dynamic symbols—buffers—and bind each animated `Disk` or bubble to one of its parts.
 

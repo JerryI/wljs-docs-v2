@@ -1,0 +1,47 @@
+---
+title: CreateDocument
+env:
+  - Wolfram Kernel
+---
+
+```wolfram
+CreateDocument[{cell1, cell2, ...}, opts___] _RemoteNotebook
+```
+
+creates a notebook in memory and populates it with cells, where `celli` can be:
+
+- `_` any expressions (automatically converted to the input cell)
+- `_String` expression (automatically converted to text cells aka markdown)
+- `ExpressionCell[expr_, "Input"]`
+- `ExpressionCell[expr_, "Output"]`
+- `TextCell[expr_]`
+- `TextCell[expr_, "Title"]`
+- `TextCell[expr_, "Section"]`
+- `TextCell[expr_, "Subsection"]`
+- `CellGroup[{cells...}]` a group of cells (it will be flattened and it is kept only for compatibility with Mathematica)
+
+The expression returns [RemoteNotebook](../Cells-and-Notebook/RemoteNotebook)
+
+For example:
+
+```wolfram
+CreateDocument[{"Here is a plot example", Plot[x, {x,0,1}]}, Visible->False]  // NotebookOpen 
+```
+
+Specify the cells style:
+```wolfram
+CreateDocument[{TextCell["S1", "Section"], ExpressionCell[x^2, "Input"]}];
+```
+
+Use `Defer`
+
+```wolfram
+CreateDocument[Defer[1 + 1]];
+```
+
+## Options
+### `Visible`
+By the default is `True`, that opens a notebook automatically after using provided `"Window"`
+
+### `"Window"`
+For the case if `Visible->True` it will use [CurrentWindow](../Frontend-IO/CurrentWindow) by the default to pop up a new window

@@ -1,0 +1,29 @@
+---
+title: Speak
+env:
+  - Wolfram Kernel
+---
+
+```wolfram
+Speak[expr_, opts___]
+```
+
+speaks a spoken representation of the expression `expr`
+
+For example
+
+```wolfram
+Speak[Red]
+```
+
+## Options
+### `"Window"`
+By the default is [CurrentWindow](../Frontend-IO/CurrentWindow)
+
+## Audio object
+To get an audio object (see [Audio](../Sound/Audio))
+
+```wolfram
+SpeechSynthesize[SpokenString[Red], GeneratedAssetLocation -> None]
+```
+

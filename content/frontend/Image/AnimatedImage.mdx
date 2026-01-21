@@ -48,7 +48,7 @@ AnimatedImage[Rasterize[Style[#, 40]] & /@ Range[0, 9],
 ```
 
 ### From Animate
-You can wrap [Animate](../GUI/Animate), [AnimatePlot](../Plotting%20Functions/AnimatePlot), [AnimateParametericPlot](../Plotting%20Functions/AnimateParametericPlot) expressions with `AnimatedImage` to rasterize them into the series of images:
+You can wrap [Animate](../GUI/Animate), [AnimatePlot](../Plotting-Functions/AnimatePlot), [AnimateParametericPlot](../Plotting-Functions/AnimateParametericPlot) expressions with `AnimatedImage` to rasterize them into the series of images:
 
 ```wolfram
 AnimatedImage[AnimatePlot[Sinc[x z], {x,0,4Pi}, {z,1,5}], FrameRate->60]
@@ -58,7 +58,7 @@ where it is extended with options alike [Rasterize](../Image/Rasterize)
 
 #### Options
 - `FrameRate` playback speed (does not affect rasterization)
-- `"Window"` by the default is [CurrentWindow](../Frontend%20IO/CurrentWindow) 
+- `"Window"` by the default is [CurrentWindow](../Frontend-IO/CurrentWindow) 
 - `"ExposureTime"` sets waiting time before each frame is captured. By the default it is `Automatic` and the actual values is taken from the animation rate of the widget
 - `"Asynchronous"` sets async rasterization mode, where the constructor returns `Promise` immediately. By the default is `False`.
 

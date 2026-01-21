@@ -1,21 +1,6 @@
-import { DocsLayout } from 'fumadocs-ui/layouts/docs';
-import { baseOptions } from '@/lib/layout.shared';
-import { Book, Share2, BetweenVerticalEnd, CircleQuestionMark, Drum, Rocket, Pyramid, AppWindowMac } from 'lucide-react';
-
-
-import { source } from '@/lib/source';
+import { ClientDocsLayout } from './layout.client';
 import type { ReactNode } from 'react';
-export default function Layout({ children }: { children: ReactNode }) {
-  return (
-    <DocsLayout
-      {...baseOptions()}
-      
-      links={[
 
-      ]}
-      tree={source.pageTree}
-    >
-      {children}
-    </DocsLayout>
-  );
+export default function Layout({ children }: { children: ReactNode }) {
+  return <ClientDocsLayout>{children}</ClientDocsLayout>;
 }

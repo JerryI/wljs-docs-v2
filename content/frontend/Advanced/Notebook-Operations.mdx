@@ -14,7 +14,7 @@ You can create and manipulate notebooks programmatically using several core WL f
 
 ### Creating notebooks
 
-Use [CreateDocument](../Cells%20and%20Notebook/CreateDocument) to create a new notebook populated with cells:
+Use [CreateDocument](../Cells-and-Notebook/CreateDocument) to create a new notebook populated with cells:
 
 ```wolfram
 (* Create a notebook with text and a plot *)
@@ -48,7 +48,7 @@ NotebookSave[nb, "path/to/notebook.wln"];
 ```
 
 ### Cell Expressions
-Here is a list of supported expressions in [CreateDocument](./../Cells%20and%20Notebook/CreateDocument), [CellPrint](./../Cells%20and%20Notebook/CellPrint), [NotebookWrite](./../Cells%20and%20Notebook/NotebookWrite) and [CreateWindow](./../Cells%20and%20Notebook/CreateWindow):
+Here is a list of supported expressions in [CreateDocument](./../Cells-and-Notebook/CreateDocument), [CellPrint](./../Cells-and-Notebook/CellPrint), [NotebookWrite](./../Cells-and-Notebook/NotebookWrite) and [CreateWindow](./../Cells-and-Notebook/CreateWindow):
 
 <Card>
 
@@ -64,12 +64,12 @@ Here is a list of supported expressions in [CreateDocument](./../Cells%20and%20N
 - `Cell[expr_String, "Output"]` represents complete input and output cells
 - `Cell[expr_String, "Input", subtype]` represents complete output cell with a `subtype`, which sets a renderer for `expr` content:
     - `"md"` or `"markdown"` or `"Markdown"` will use markdown renderer,
-    - `"js"` or `"javascript"` will treat `expr` as Javascript expression aka [Javascript Cells](./../Cell%20types/Javascript),
+    - `"js"` or `"javascript"` will treat `expr` as Javascript expression aka [Javascript Cells](./../Cell-types/Javascript),
     - `"html"` or `"HTML"` will render text content as HTML document,
-    - `"mermaid"` or `"Mermaid"` will render text content as [Mermaid diagram](./../Cell%20types/Misc),
+    - `"mermaid"` or `"Mermaid"` will render text content as [Mermaid diagram](./../Cell-types/Misc),
     - ...
 
-The number of cell subtypes roughly corresponds to the number of available [cell types](./../Cell%20types/Misc) in WLJS Notebook.
+The number of cell subtypes roughly corresponds to the number of available [cell types](./../Cell-types/Misc) in WLJS Notebook.
 
 </Card>
 
@@ -84,7 +84,7 @@ CreateDocument[{
 
 ### Importing and opening notebooks
 
-Use [NotebookOpen](../Cells%20and%20Notebook/NotebookOpen) to import a notebook:
+Use [NotebookOpen](../Cells-and-Notebook/NotebookOpen) to import a notebook:
 
 ```wolfram
 (* Open a notebook by path *)
@@ -107,7 +107,7 @@ NotebookOpen[nb];
 
 ### Accessing evaluation context
 
-Use [EvaluationNotebook](../Cells%20and%20Notebook/EvaluationNotebook) to get a reference to the notebook where your code is running:
+Use [EvaluationNotebook](../Cells-and-Notebook/EvaluationNotebook) to get a reference to the notebook where your code is running:
 
 ```wolfram
 nb = EvaluationNotebook[];
@@ -128,7 +128,7 @@ Button[
 </Callout>
 
 ### Notebook evaluation
-To evaluate a notebook in the global context, use [NotebookEvaluate](./../Cells%20and%20Notebook/NotebookEvaluate.mdx)
+To evaluate a notebook in the global context, use [NotebookEvaluate](./../Cells-and-Notebook/NotebookEvaluate.mdx)
 
 ```wolfram
 NotebookEvaluate["path/to/notebook.wln"]
@@ -140,7 +140,7 @@ This will evaluate __all cells__ in the provided notebook using the same Kernel.
 
 ### Creating cells
 
-Use [CellPrint](../Cells%20and%20Notebook/CellPrint) to insert a new cell below the currently evaluated one:
+Use [CellPrint](../Cells-and-Notebook/CellPrint) to insert a new cell below the currently evaluated one:
 
 ```wolfram
 (* Print an expression as output *)
@@ -159,7 +159,7 @@ To delete created cell, simply call `NotebookDelete` on `cell`:
 NotebookDelete[cell];
 ```
 
-Use [NotebookWrite](../Cells%20and%20Notebook/NotebookWrite) for more control over where cells are inserted:
+Use [NotebookWrite](../Cells-and-Notebook/NotebookWrite) for more control over where cells are inserted:
 
 ```wolfram
 (* Append to a notebook *)
@@ -177,7 +177,7 @@ NotebookWrite[NotebookLocationSpecifier[cell, "On"], expr];
 
 #### Accessing evaluation context
 
-Use [EvaluationNotebook](../Cells%20and%20Notebook/EvaluationNotebook) to get the notebook containing the currently evaluated cell:
+Use [EvaluationNotebook](../Cells-and-Notebook/EvaluationNotebook) to get the notebook containing the currently evaluated cell:
 
 ```wolfram
 nb = EvaluationNotebook[];
@@ -190,7 +190,7 @@ nb = EvaluationNotebook[];
 Button["Create", NotebookWrite[nb, Style["Hi there!", Bold]]]
 ```
 
-Use [EvaluationCell](../Cells%20and%20Notebook/EvaluationCell) to get a reference to the input cell that triggered the current evaluation:
+Use [EvaluationCell](../Cells-and-Notebook/EvaluationCell) to get a reference to the input cell that triggered the current evaluation:
 
 ```wolfram
 cell = EvaluationCell[];
@@ -202,7 +202,7 @@ and add a cell after:
 NotebookWrite[NotebookLocationSpecifier[cell, "After"], Red];
 ```
 
-Use [ResultCell](../Cells%20and%20Notebook/ResultCell) to get a *future reference* to the output cell (even before it's created):
+Use [ResultCell](../Cells-and-Notebook/ResultCell) to get a *future reference* to the output cell (even before it's created):
 
 ```wolfram
 outputCell = ResultCell[];
@@ -210,7 +210,7 @@ outputCell = ResultCell[];
 
 <Callout type="idea">`ResultCell` can be useful for tracking [cell events](#Cell%20event%20handlers) or deleting it under certain conditions automatically</Callout>
 
-Use [NotebookFocusedCell](./../Cells%20and%20Notebook/NotebookFocusedCell) to get a focused / selected cell in the notebook:
+Use [NotebookFocusedCell](./../Cells-and-Notebook/NotebookFocusedCell) to get a focused / selected cell in the notebook:
 
 ```wolfram
 focusedCell = NotebookFocusedCell[]
@@ -223,7 +223,7 @@ focusedCell = NotebookRead[EvaluationNotebook[]]
 ```
 
 ### Writing to existing cells
-Use [NotebookWrite](../Cells%20and%20Notebook/NotebookWrite) on cell objects to overwrite their content:
+Use [NotebookWrite](../Cells-and-Notebook/NotebookWrite) on cell objects to overwrite their content:
 
 ```wolfram
 NotebookWrite[EvaluationCell[], "Hi there!"];
@@ -244,7 +244,7 @@ Button["Delete cell",
 
 ### Reading cells
 
-Use [NotebookRead](../Cells%20and%20Notebook/NotebookRead) to read cell contents:
+Use [NotebookRead](../Cells-and-Notebook/NotebookRead) to read cell contents:
 
 ```wolfram
 (* Read the focused cell *)
@@ -253,7 +253,7 @@ content = NotebookRead[NotebookFocusedCell[]];
 
 ### Deleting cells
 
-Use [NotebookDelete](../Cells%20and%20Notebook/NotebookDelete) to remove cells:
+Use [NotebookDelete](../Cells-and-Notebook/NotebookDelete) to remove cells:
 
 ```wolfram
 cell = CellPrint[Now];
@@ -298,11 +298,11 @@ With[{cell = EvaluationCell[]},
 
 ## Expression windows manipulation
 
-> Note that created expression windows and cells in fact share the same object structure: [RemoteCellObj](./../Cells%20and%20Notebook/RemoteCellObj)
+> Note that created expression windows and cells in fact share the same object structure: [RemoteCellObj](./../Cells-and-Notebook/RemoteCellObj)
 
 ### Creating windows
 
-Use [CreateWindow](../Cells%20and%20Notebook/CreateWindow) to open content in a new expression window:
+Use [CreateWindow](../Cells-and-Notebook/CreateWindow) to open content in a new expression window:
 
 ```wolfram
 (* Open graphics in a new window *)
@@ -348,7 +348,7 @@ EventHandler[win, {
 ```
 
 ## Application windows manipulation
-Each visible window of WLJS Notebook can be retrieved from the context using [CurrentWindow](./../Frontend%20IO/CurrentWindow)
+Each visible window of WLJS Notebook can be retrieved from the context using [CurrentWindow](./../Frontend-IO/CurrentWindow)
 
 ```wolfram
 appWindow = CurrentWindow[]
@@ -365,7 +365,7 @@ The following rules apply:
 - Each opened application window has a unique `WindowObj`
 - Any function calls by UI events implicitly provide `WindowObj` as well, which can be accessed using `CurrentWindow[]`
 - Evaluation context also contains current `WindowObj` if the notebook is open
-- `WindowObj` is required for certain actions such as script execution on the window done by [FrontSubmit](./../Frontend%20IO/FrontSubmit) and others
+- `WindowObj` is required for certain actions such as script execution on the window done by [FrontSubmit](./../Frontend-IO/FrontSubmit) and others
 
 </Card>
 
@@ -388,7 +388,7 @@ Now try to reload a window or close/open a notebook—you will see the change in
 
 ## Notebooks as modules
 
-Use [NotebookEvaluateAsModule](../Cells%20and%20Notebook/NotebookEvaluateAsModule) to import notebooks as reusable modules:
+Use [NotebookEvaluateAsModule](../Cells-and-Notebook/NotebookEvaluateAsModule) to import notebooks as reusable modules:
 
 ```wolfram
 {exports} = NotebookEvaluateAsModule["myLibrary.wln"];
@@ -435,7 +435,7 @@ This is my slide
 
 </Card>
 
-For non-blocking imports, use [NotebookEvaluateAsModuleAsync](../Cells%20and%20Notebook/NotebookEvaluateAsModuleAsync):
+For non-blocking imports, use [NotebookEvaluateAsModuleAsync](../Cells-and-Notebook/NotebookEvaluateAsModuleAsync):
 
 ```wolfram
 Then[NotebookEvaluateAsModuleAsync["Library.wln"], Function[exports,
@@ -803,7 +803,7 @@ export := Then[SystemDialogInputAsync["FileSave", {Null, {"STL" -> {"*.stl"}}}],
 
 Here we used `SystemDialogInputAsync` instead of `SystemDialogInput`, since the latter is blocking and cannot be used in calls generated by external asynchronous events such as button clicks.
 
-Notebooks exported as [mini apps](./../Share/Mini-apps) use the very last cell's output as the main window. To take advantage of better customization, we use a [WLX](./../Cell%20types/WLX) cell as the output instead of a plain Wolfram language cell:
+Notebooks exported as [mini apps](./../Share/Mini-apps) use the very last cell's output as the main window. To take advantage of better customization, we use a [WLX](./../Cell-types/WLX) cell as the output instead of a plain Wolfram language cell:
 
 ```jsx title="Last cell in the notebook"
 .wlx
@@ -848,7 +848,7 @@ Then double-click on the exported file to open it with WLJS as a runtime.
 
 ## User dialogs
 
-Use [MessageDialog](../Frontend%20IO/MessageDialog) for notifications:
+Use [MessageDialog](../Frontend-IO/MessageDialog) for notifications:
 
 ```wolfram
 MessageDialog["Operation completed!"];
@@ -866,7 +866,7 @@ Button["Message", MessageDialog["Operation completed!", "Notebook"->n]]
 ```
 
 
-Use [ChoiceDialog](../Frontend%20IO/ChoiceDialog) for user choices:
+Use [ChoiceDialog](../Frontend-IO/ChoiceDialog) for user choices:
 
 ```wolfram
 (* Simple OK/Cancel *)
@@ -890,7 +890,7 @@ Button["Message", Then[ChoiceDialogAsync["Proceed with operation?", "Notebook"->
 ]]]
 ```
 
-Use [Input](../Frontend%20IO/Input) or [InputString](../Frontend%20IO/InputString) for user input:
+Use [Input](../Frontend-IO/Input) or [InputString](../Frontend-IO/InputString) for user input:
 
 ```wolfram
 Input["Enter expression:", x^2]
@@ -912,7 +912,7 @@ Button["Enter expr", Then[InputAsync["Enter expression:", x^2, "Notebook"->nb],
 
 <Callout type="warning">This requires WLJS desktop application</Callout>
 
-Use [SystemDialogInput](../Frontend%20IO/SystemDialogInput) for file operations:
+Use [SystemDialogInput](../Frontend-IO/SystemDialogInput) for file operations:
 
 ```wolfram
 (* Open file *)
@@ -944,7 +944,7 @@ Button["Save", Then[SystemDialogInputAsync["FileSave"], Print]]
 
 
 ## Editor commands
-You can send direct commands to the cells editor using [FrontEditorSelected](./../Interpreter/FrontEditorSelected). This function is defined only on frontend, i.e. it has to be executed using [FrontSubmit](./../Frontend%20IO/FrontSubmit) or [FrontFetch](./../Frontend%20IO/FrontFetch).
+You can send direct commands to the cells editor using [FrontEditorSelected](./../Interpreter/FrontEditorSelected). This function is defined only on frontend, i.e. it has to be executed using [FrontSubmit](./../Frontend-IO/FrontSubmit) or [FrontFetch](./../Frontend-IO/FrontFetch).
 
 To read the last selected text in a cell:
 
@@ -977,7 +977,7 @@ Button["Overwrite", FrontSubmit[FrontEditorSelected["Set", "1+1"]] ]
 
 ### Copying to clipboard
 
-Use [CopyToClipboard](../Frontend%20IO/CopyToClipboard) to programmatically copy:
+Use [CopyToClipboard](../Frontend-IO/CopyToClipboard) to programmatically copy:
 
 ```wolfram
 CopyToClipboard[{1, 2, 3, 4, 5}];
@@ -994,7 +994,7 @@ SetTimeout[CopyToClipboard[RandomWord[], "Window"->win]; Echo["Copied"], 1000];
 
 </Callout>
 
-Use [ClickToCopy](../Frontend%20IO/ClickToCopy) for interactive copy buttons:
+Use [ClickToCopy](../Frontend-IO/ClickToCopy) for interactive copy buttons:
 
 ```wolfram
 ClickToCopy["Click to copy this text"]
@@ -1003,13 +1003,13 @@ ClickToCopy["Copy Code", "Plot[Sin[x], {x, 0, 2Pi}]"]
 
 ### Pasting from clipboard
 
-Use [Paste](../Frontend%20IO/Paste) to paste clipboard content as a new cell:
+Use [Paste](../Frontend-IO/Paste) to paste clipboard content as a new cell:
 
 ```wolfram
 Paste[];
 ```
 
-Use [PasteButton](../Frontend%20IO/PasteButton) for interactive paste buttons:
+Use [PasteButton](../Frontend-IO/PasteButton) for interactive paste buttons:
 
 ```wolfram
 PasteButton["Paste"]
@@ -1033,7 +1033,7 @@ Button["Read", Then[FrontFetchAsync[ReadClipboard[]], Print]]
 
 ## Notebook storage
 
-Use [NotebookStore](../Cells%20and%20Notebook/NotebookStore) to persist data within a notebook. This data survives export/import cycles, including [Static HTML](../Share/Standalone-HTML) export.
+Use [NotebookStore](../Cells-and-Notebook/NotebookStore) to persist data within a notebook. This data survives export/import cycles, including [Static HTML](../Share/Standalone-HTML) export.
 
 ```wolfram
 NotebookStore[key_String ]

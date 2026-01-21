@@ -9,7 +9,7 @@ env:
 MakeBoxes[expr_, form_]
 ```
 
-defines how `expr` is represented in the Wolfram output cells, [output slides](./../Cell%20types/Slide), output [WLX cells](./../Cell%20types/WLX). The representation is constructed using so-called *boxes* - a wrapper expressions, allowing to decorate or completely alter the visible content of expression.
+defines how `expr` is represented in the Wolfram output cells, [output slides](./../Cell-types/Slide), output [WLX cells](./../Cell-types/WLX). The representation is constructed using so-called *boxes* - a wrapper expressions, allowing to decorate or completely alter the visible content of expression.
 
 <Card>
 
@@ -47,7 +47,7 @@ It is a core concept of the notebook interface
 - [Graphics](../Graphics/Graphics)
 - [Graphics3D](../Graphics3D/Graphics3D)
 - [ListLinePlotly](../Plotly/ListLinePlotly)
-- [Plotly](../Plotting%20Functions/Plotly)
+- [Plotly](../Plotting-Functions/Plotly)
 - [EventObject](../Misc/Events)
 - many more
 
@@ -75,7 +75,7 @@ core.MyJSPlot = async (args, env) => {
 
 <Callout type="idea">
 
-If the inner data is large, to avoid editor lags, please compress expressions into a reference using [CreateFrontEndObject](./../Frontend%20Objects/CreateFrontEndObject), i.e.:
+If the inner data is large, to avoid editor lags, please compress expressions into a reference using [CreateFrontEndObject](./../Frontend-Objects/CreateFrontEndObject), i.e.:
 
 ```wolfram
 MyJSPlot /: MakeBoxes[m: MyJSPlot[args__], StandardForm] := With[{
