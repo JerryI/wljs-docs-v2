@@ -2,7 +2,7 @@
 title: DensityHistogram
 ---
 
-`DensityHistogram[{{x1, y1}, {x2, y2}, ...}]` plots a density histogram of the values {xi, yi}.
+`DensityHistogram[{{x1, y1}, {x2, y2}, ...}]` plots a density histogram of the values `{xi, yi}`.
 
 `DensityHistogram[data, bspec]` plots a density histogram with bins specified by bspec.
 
