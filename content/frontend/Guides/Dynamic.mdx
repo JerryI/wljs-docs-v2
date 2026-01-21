@@ -332,7 +332,7 @@ Here is a demonstration:
 The beauty of this approach, that we do not need to run the update cycle contineusly, but only when a user drags a control point.
 
 <Accordions>
-<Accordion title="Frontend curve generation">
+<Accordion title="Advanced: Frontend curve generation">
 
 We can push `Offload` further and run inside a small program, which generates a set of points without Wolfram Kernel. The interpreter support a small subset of Wolfram Expressions including `Table` and `With`. Let's use them inside `Offload`:
 
@@ -858,7 +858,7 @@ FrontInstanceGroupRemove[group]
 ```
 
 <Accordions>
-<Accordion title="Pool of objects">
+<Accordion title="Advanced: Pool of objects">
 
 We can go further and animate bubbles. The problem arises when we create a bubble. In fact, we need to provide a graphical primitive (let’s say `Disk`) and a *dynamic symbol* to control its properties. Creating 1000 extra symbols is a significant overhead for the system, especially if we want to update all of them.
 

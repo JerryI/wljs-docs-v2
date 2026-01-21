@@ -33,8 +33,6 @@ jobs:
 
       - name: Build
         run: npx next build
-        env:
-          NEXT_PUBLIC_BASE_PATH: /wljs-docs-v2
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
