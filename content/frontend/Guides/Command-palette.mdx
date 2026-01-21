@@ -157,6 +157,20 @@ A helper tool that creates a syntactic sugar inline widget on a selected pair `{
 
 For example: select a parameter's initial value you want to manipulate and call this tool. It will create an inline widget with a display and place a dragging gizmo on your 2D or 3D canvas. Evaluate your cell, drag the red dot (or 3D sphere), and once you are satisfied, click on the mark icon.
 
+<Callout type="tip">
+
+If your dragging point overlaps with an object, offset the coordinates before applying this tool:
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-10 group-hover:opacity-50 transition duration-500" />
+<wljs-editor lazy="true" type="Input" display="codemirror">{`
+Text["Hello World", Offload[{-0.3,-0.3} + (*BB[*)({0,0})(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRAeB5AILqnMSXXKr0hjgskHleakFnMBGU6JydnpRfmleSlpzDDlQe5Ozvk5+UVFDGDwwR6dwcAAAAHdFiw="*)(*]BB*)]]
+`}</wljs-editor></WLJSWrapper>
+
+Apply dragging tool on highlighted list. Why we used `Offload` - check [this guide](./Dynamic).
+
+</Callout>
+
 ### Inline navigation helper (Joystick)
 A helper tool that creates a syntactic sugar inline widget on a selected pair `{x,y}`. It is used in 2D and any other expression that supports [Offload](./../Interpreter/Offload) aka live-updates and accepts a pair of numbers:
 
