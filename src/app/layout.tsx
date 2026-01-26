@@ -9,6 +9,8 @@ const inter = Inter({
   subsets: ['latin'],
 });
 
+import { SpeedInsights } from "@vercel/speed-insights/next"
+
 export default function Layout({ children }: LayoutProps<'/'>) {
   return (
     <html lang="en" className={inter.className} suppressHydrationWarning>
