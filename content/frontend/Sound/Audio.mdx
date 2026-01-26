@@ -1,5 +1,6 @@
 ---
 title: Audio
+update: true
 ---
 
 `Audio[file]` represents audio stored in the given file.
@@ -7,6 +8,23 @@ title: Audio
 `Audio[url]` represents audio stored in the given URL.
 
 `Audio[data]` represents audio with samples given by the array data.
+
+`Audio[data, format, opts]` represents audio stored as format, where format:
+
+- `"SignedInteger8"` - `data` must be an array of signed 8 bit values
+- `"SignedInteger16"` - `data` must be an array of signed 16 bit values
+- `"Real32"` - `data` is a floating point array from -1.0 to 1.0
+
+`Audio[SoundNote[...]]` samples `SoundNote` into an audio
+
+`Audio[Video[...]]` extracts audio track from video object
+
+Any improted audio files are represented as `Audio`.
+
+## Options
+
+### `SampleRate`
+Sets the sample rate of `Audio` object.
 
 ## Examples
 
@@ -16,4 +34,50 @@ Create audio from a sine wave:
 Audio[Table[Sin[440 * 2 Pi * t], {t, 0, 1, 1/44100}]]
 ```
 
+## Methods
+See all `Audio*` symbols in this reference section.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Audio.html) for more details.
+
+## Updates and streaming
+As many WLJS primitives `Audio` supports real-time streaming of data using [Offload](./../Interpreter/Offload) expression:
+
+```wolfram
+buffer = {};
+Audio[buffer//Offload, "Real32"]
+```
+
+The following formats are supported for streaming:
+- `"Real32", mono
+- `"SignedInteger16", mono
+
+with `SampleRate` option:
+- 8000
+- 16000
+- 44100
+
+To push a new chunk of data to the buffer - simply assign an array:
+
+```wolfram
+buffer = Table[Exp[-x/100.0]Sin[x/1.5], {x,0,100Pi, 0.1}];
+```
+
+<Callout>We recommend to use typed arrays such as `NumericArray` for the best performance</Callout>
+
+You can assign an event handler to detect, when the buffer is about to be finished to push a new chunk of data:
+
+```wolfram
+buffer = {};
+samplingFunction = Function[t, Exp[-Mod[t,3]/1.0]Sin[200.0 t]]; 
+time = 0;
+
+EventHandler[Audio[buffer//Offload, "Real32", SampleRate->8000], {"More" -> Function[Null,
+  With[{c = (1.0/8000.0) (2Pi)},
+    With[{sampled =  Table[samplingFunction[c (i + time)], {i, 0, 4 1024 - 1}]},
+      buffer = NumericArray[sampled, "Real32"];
+    ];
+    
+    time += 4 1024;
+  ];
+]}]
+```

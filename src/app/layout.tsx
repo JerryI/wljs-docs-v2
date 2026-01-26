@@ -16,7 +16,7 @@ export default function Layout({ children }: LayoutProps<'/'>) {
         <RootProvider>{children}</RootProvider>
         <Script
           src="https://cdn.jsdelivr.net/gh/WLJSTeam/web-components@latest/src/common/app.tw.js"
-          strategy="lazyOnload"
+          strategy="afterInteractive"
           id="wljs-component"
         />
       </body>

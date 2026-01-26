@@ -1,0 +1,13 @@
+{
+  "title": "Advanced",
+  "pages": [
+    "Notebook-Operations",
+    "Asynchronous-programming",
+    "Component-based-markup",
+    "Frontend-functions",
+    "Decorating-symbols",
+    "Animation-framework",
+    "Canvas-2D",
+    "OOP"
+  ]
+}

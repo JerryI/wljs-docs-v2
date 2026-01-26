@@ -512,9 +512,12 @@ Templates typically contain:
 
 - **Style cells** — HTML/CSS that override default notebook appearance
 - **Banner or header content** (optionally) — Images or formatted text or Javascript code
+- **Hidden initialization cells** - adds predefined symbols to the session
 - **Boilerplate cells** — Pre-written code or documentation structure
 
 </Card>
+
+<Callout type="tip">Enable <small>Expert Mode</small> from the settings menu to see hidden cells in notebook templates</Callout>
 
 import { Step, Steps } from 'fumadocs-ui/components/steps';
 
@@ -569,6 +572,9 @@ See [Global Styling](##Global%20styling) for a complete list of available CSS cl
 For a clean template experience, you should hide the style cells using [cell group properties](./../Overview):
 
 - **Vanish** — Makes the cell completely invisible and uneditable, but its output remains in the DOM (ideal for CSS/JS injection)
+
+or
+
 - **Lock + Hide** — Keeps the output visible but prevents editing
 
 <Callout type="info">
@@ -579,7 +585,14 @@ Vanished cells can be viewed and edited in `Expert` mode (see Settings).
 
 <Step>
 
-#### Step 4: Add a banner (optional)
+#### Step 4: Add hidden initialization cell (optional)
+If you need to provide define some symbols: 
+
+1. create a new cell at the top of the notebook; 
+2. add the definitions;
+3. apply **Vanish** to this input cell.
+
+#### Step 5: Add a banner (optional)
 
 Create an `.md` cell with a banner image:
 
