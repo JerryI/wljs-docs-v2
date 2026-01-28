@@ -2,11 +2,11 @@
 title: Component-based markup
 ---
 
-All metioned techniques can be used in [Markdown](./../Cell-types/Markdown), [Slide](./../Cell-types/Slide) cells as well as with normal Wolfram Expression if combined with [HTMLView](./../GUI/HTMLView) wrapper. Have a look at these guides as well:
+All mentioned techniques can be used in [Markdown](./../Cell-types/Markdown), [Slide](./../Cell-types/Slide) cells as well as with normal Wolfram expressions when combined with the [HTMLView](./../GUI/HTMLView) wrapper. Have a look at these guides as well:
 
 <Cards>
 
-<Card
+  <Card
     href="./../Guides/Styling-HTML"
     title="Styling with HTML"
   >
@@ -15,3 +15,572 @@ All metioned techniques can be used in [Markdown](./../Cell-types/Markdown), [Sl
 
 </Cards>
 
+What we call a component is not a special entity of WLJS, but rather an approach of using Wolfram expressions in [WLX](./../Cell-types/WLX) to build reusable blocks for markup. Think of it as your special custom set of HTML tags that decorate the inner content.
+
+## Reusable local component
+Here is how to define and work with components within a single notebook
+
+### Headers and footers
+Creating presentations is a repetitive process. It is quite common to have some elements shared between different slides. For example we want a basic header to which we can provide textual data. Let's create WLX to define it:
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<wljs-editor lazy="true" type="Input" display="codemirror">{`.wlx
+Heading[OptionsPattern[]] := With[{Title = OptionValue["Title"]},
+    <div>
+      <h1><Title/></h1>
+      Some repetitive text you need
+    </div>
+];
+
+Options[Heading] = {"Title" -> ""};
+`}</wljs-editor></WLJSWrapper>
+
+Now we mark it [initialization cell](./../Overview), so that we do not need to evaluate it manually next time. Then let's create a slide with it:
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<wljs-editor lazy="true" type="Input" display="codemirror">{`.slide
+
+<Heading Title={"Your title"}/>
+
+<br/><br/>
+
+The actual content
+
+Maybe some equations $m \\mathbf{a} = \\mathbf{F}$
+`}</wljs-editor></WLJSWrapper>
+
+However, if we want something more complex, we can avoid passing data as options (or attributes) and render children instead. 
+
+<Callout type="note">Any children passed to a tag will be automatically converted to [WLXForm](./../Formatting/WLXForm). If the passed expression does not have `WLXForm` defined, the result is __forcibly converted__ to a string. See later on how to alter it.</Callout>
+
+Let's also add a custom icon:
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<wljs-editor lazy="true" type="Input" display="codemirror">{`.wlx
+MakeTitle[Children__] := MakeTitle[ToStringRiffle[{Children}]]
+
+MakeTitle[Child_String] := With[{
+  Icon = ParametricPlot[{ReIm@Exp[(I t - 0.1 t)],ReIm@Exp[(I t - 0.3 t)]}, {t,0,8Pi}, PlotStyle->{AbsoluteThickness[4], AbsoluteThickness[4]}, ImageSize->{60,60}, PlotRange->0.9{{-1,1},{-1,1}}]
+},
+<div class="relative flex w-full text-left flex-row gap-x-4" style="align-items: center; margin-bottom:1.5rem;">
+  <div style="bottom:0; z-index:1; position: absolute; background: linear-gradient(to left, orangered, lightblue); width: 100%; height: 0.7rem;"></div>
+  <div style="display:inline-block"><Icon/></div>
+  <h2><Child/></h2>
+</div>
+]
+
+Footer = With[{},
+  <div class="w-full ml-auto mr-auto absolute text-sm" style="top: 690px">
+    Some repetitive footer: <i>Short title</i>, Joe Forest
+  </div>
+];
+`}</wljs-editor></WLJSWrapper>
+
+This allows us to pass multiple child elements to our title generator. By the first definition of `MakeTitle`, all children will be merged into a single one. Here is an example with slides:
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<wljs-editor lazy="true" type="Input" display="codemirror">{`.slide
+<!-- .slide: class="slide-standard" -->
+
+<MakeTitle>Here is <b>our title</b></MakeTitle>
+
+Content goes...
+
+Content goes...
+
+Content goes...
+
+<Footer/>
+`}</wljs-editor></WLJSWrapper>
+
+
+### Layout
+
+There are built-in `Row` and `Column` wrappers from the Wolfram Standard Library that you can use on your slides. There are two ways:
+
+__Way 1: Define beforehand__
+
+```wolfram
+square[{{imin_, imax_}, {jmin_, jmax_}}] := 
+ Table[
+  UnitStep[i - imin, imax - i] UnitStep[j - jmin, jmax - j],
+  {i, 0, 20}, {j, 0, 20}
+]
+
+OurGroupedPlot = Row[{
+  ListPlot3D[square[{{2, 5}, {3, 7}}], Mesh -> None],
+  ListPlot3D[Abs@Fourier@square[{{2, 5}, {3, 7}}], Mesh -> None, ColorFunction -> "Rainbow"]
+}];
+```
+
+and place on a slide or Markdown cell:
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<wljs-editor lazy="true" type="Input" display="codemirror">{`.slide
+
+# Example
+
+<OurPlot/>
+`}</wljs-editor></WLJSWrapper>
+
+__Way 2: Assign figures separately__
+You can also bind each to a separate variable and then assemble them into a group on a slide:
+
+```wolfram
+{Figure1, Figure2} = {
+  ListPlot3D[square[{{2, 5}, {3, 7}}], Mesh -> None],
+  ListPlot3D[Abs@Fourier@square[{{2, 5}, {3, 7}}], Mesh -> None, ColorFunction -> "Rainbow"]
+};
+```
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<wljs-editor lazy="true" type="Input" display="codemirror">{`.slide
+
+# Example
+
+<Row>
+    <Figure1 />
+    <Figure2 />
+</Row>
+`}</wljs-editor></WLJSWrapper>
+
+#### Custom container
+Here’s a simple component implementation using WLX. Use the full power of web-technologies:
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<wljs-editor lazy="true" type="Input" display="codemirror">{`.wlx
+Columns[data__, OptionsPattern[]] := With[{
+    Style = OptionValue["Style"]
+},
+    With[{DataList = Table[
+      <div>
+        <Item />
+      </div>,
+      {Item, List[data]}
+    ]},
+
+      <div class="flex flex-row justify-between" style="{Style}">
+        <DataList />
+      </div>
+    ]
+];
+
+Options[Columns] = {"Style" -> ""};
+`}</wljs-editor></WLJSWrapper>
+
+Here we can not only provide children elements as arguments, but attributes as options as well. For example:
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<wljs-editor lazy="true" type="Input" display="codemirror">{`.slide
+
+# Hey There!
+
+<Columns>
+  <p>Column 1</p>
+  <p>Column 2</p>
+</Columns>
+`}</wljs-editor></WLJSWrapper>
+
+You can safely use Markdown if this component is used on [Markdown](./../Cell-types/Markdown) or [slide cells](./../Cell-types/Slide) by wrapping content in `<p>` tags and adding blank lines:
+
+```md
+<Columns>
+  <p>
+  
+# Heading 1
+
+  </p>
+  <p>
+
+# Heading 2
+
+  </p>
+</Columns>
+```
+
+Using `"Style"` option we can customize the look of columns:
+
+```md
+<Columns Style={"
+    border-radius: 4px;
+    color: #ffffff;
+    background: rgb(49 87 170);
+    padding: 1rem;
+"}>
+
+    <p>Heading 1</p>
+    <p>Heading 2</p>
+</Columns>
+```
+
+#### Adding Javascript
+
+<Cards>
+
+<Card
+    href="./Frontend-functions/Custom-input"
+    title="Custom Input elements with Javascript and WLX"
+  >
+    An guide on integrating Frontend functions with Wolfram, WLX and event system
+  </Card>
+
+</Cards>
+
+JavaScript code can be embedded normally with `<script>` tags—no special magic is required. Here is an example with a helper component to display, let's say, the number of publications:
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<wljs-editor lazy="true" type="Input" display="codemirror">{`.wlx
+Stat[Text_, OptionsPattern[]] := With[{
+  Count = OptionValue["Count"],
+  UId = CreateUUID[]
+},
+
+    <div class="text-center text-gray-600 m-4 p-4 rounded bg-gray-100 flex flex-col">
+      <span style="display:hidden" id="{UId}"><Count /></span>
+      <span class="text-md"><Text /></span>
+      <script type="module">
+        const c = document.getElementById('<UId/>');
+        const final = Number(c.innerText); 
+        c.innerText = 0; c.style.display = "";
+        let cnt = 0;
+        const int = setInterval(()=>{
+          c.innerText=cnt++; 
+          if (cnt > final) clearInterval(int);              
+        }, 100);
+      </script>
+    </div>
+]
+
+Options[Stat] = {"Count" -> 1};
+`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<wljs-editor lazy="true" type="Input" display="codemirror">{`.slide
+
+# Basic counter
+
+<Stat Count={11}>Number of publications</Stat>
+`}</wljs-editor></WLJSWrapper>
+
+Note that our counter will run **immediately**—that is, if you have many slides, you will always see a static number. You need to subscribe to [SlideEventListener](./../Slides/SlideEventListener) to check if the slide is visible. See this guide:
+
+<Cards>
+
+<Card
+    href="./Advanced-Slides"
+    title="Advanced Slides"
+  >
+    An advanced guide on how to build components and live presentations with dynamic content
+  </Card>
+
+</Cards>
+
+## Reusable remote components
+You can reuse components across different notebooks as modules. WLJS provides an interface to define and evaluate a normal notebook as an [isolated module](./../Cells-and-Notebook/NotebookEvaluateAsModule):
+
+<Cards>
+
+<Card
+    href="./Notebook-Operations"
+    title="Notebooks"
+  >
+    An advanced guide on working with notebooks and its data programmatically
+  </Card>
+
+</Cards>
+
+## Pattern matching
+Here we use a different approach to constructing components—instead of converting everything to `WLXForm` strings, we keep a symbolic representation of each child element as a **tree of expressions**. This is similar to both XML and pattern matching in Wolfram Language. As stated in w3schools:
+
+> HTML was designed to display data - with focus on how data looks
+> XML was designed to carry data - with focus on what data is
+
+In this chapter we use WLX as the second one. This allows to declare **data expressions** such as:
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<wljs-editor lazy="true" type="Input" display="codemirror">{`.slide
+
+<Card>
+  <CardTitle>Pluto excitation spectra</CardTitle>
+  <CardImage Link={"link/to/an/image"}/>
+  <CardCredits>Song Goo et al. <b>Nature Programming</b> 33 2027</CardCredits>
+</Card>
+`}</wljs-editor></WLJSWrapper>
+
+<Callout>You can use the same approach for markdown cells within other WLX components as well.</Callout>
+
+The `Card` component is responsible for displaying this data. 
+
+Slides and markdown cells inherit features from [WLX](./../Cell-types/WLX) cells. By default, the WLX parser will pass all arguments as strings using `WLXForm` or `ToString` if the symbol does not have this output form defined. We need to **preserve our data-symbols** to prevent them from being converted to strings: 
+
+```wolfram
+CardTitle   /: ToString[c_CardTitle,   WLXForm] := c
+CardCredits /: ToString[c_CardCredits, WLXForm] := c
+CardImage   /: ToString[c_CardImage,   WLXForm] := c
+```
+
+Now `CardTitle`, `CardCredits`, `CardImage` in the context of WLX will not be transformed before reaching the parent element. This allows us to use the full power of native pattern matching with them on `Card` symbol:
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<wljs-editor lazy="true" type="Input" display="codemirror">{`.wlx
+Card[CardTitle[Title_], CardCredits[credits__]] := With[{Text = ToStringRiffle[{credits}]},
+  <div>
+    <h5><Title/></h5>
+    <span style="font-size:smaller"><Text/></span>
+  </div>
+]
+
+Card[CardTitle[Title_], CardCredits[credits__], CardImage[Rule["Link", url_]]] := With[{Text = ToStringRiffle[{credits}]},
+  <div>
+    <img src="{url}" width="400" style="scale:1.2"/>
+    <br/>
+    <h5><Title/></h5>
+    <span style="font-size:smaller"><Text/></span>
+  </div>
+]
+`}</wljs-editor></WLJSWrapper>
+
+For convenience, we make `Card` arguments orderless and define a fallback for an unknown data structure:
+
+```wolfram
+Card[__] := "Unknown pattern";
+SetAttributes[Card, Orderless];
+```
+
+Here is an example of a slide created using this approach with 4 cards in `Row` container:
+
+![](./imgs/slide-img.png)
+
+### More examples
+You can create a similar helper component for [textual cells](./../Cell-types/Markdown) as well. WLJS Notebooks are designed for creating lab journals and interactive reports. You can also create a [template notebook](./Notebook-Operations) with your custom components in a hidden initialization cell.
+
+Imagine a Lab Journal. Then we need nice-looking header with a title, some parameters and possible tags. Let's start with:
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<wljs-editor lazy="true" type="Input" display="codemirror">{`.wlx
+
+ClearAll[LabJournal];
+
+LabJournal[Content__, opts: OptionsPattern[]] := LabJournal[ToStringRiffle[{Content}], opts];
+
+LabJournal[Content_, OptionsPattern[]] := With[{
+  Title = OptionValue["Title"],
+  Subtitle = OptionValue["Subtitle"],
+  tags = OptionValue["Tags"]
+},
+{
+  Footer = If[Length[tags] == 0, "",
+    With[{Tags = Table[
+      <div class="thz-tag"><Tag/></div>
+    , {Tag, tags}]},
+      <div class="thz-footer">
+        <Tags/>
+      </div>
+    ]
+  ]
+},
+
+ <div class="thz-lab-journal">
+  <div class="thz-header">
+    <div class="thz-title"><Title/></div>
+    <div class="thz-subtitle"><Subtitle/></div>
+  </div>
+  <div class="thz-grid">
+    <Content/>
+    <div class="thz-item">
+      <div class="thz-label">Date</div>
+      <div class="thz-value"><Now/></div>
+    </div>
+  </div>
+  <Footer/>
+ </div>
+];
+
+Options[LabJournal] = {"Title"->"Lab Journal", "Subtitle"->"", "Tags"->{}};
+`}</wljs-editor></WLJSWrapper>
+
+Here is a list of corresponding styles:
+
+<Accordions>
+
+<Accordion title="Styles">
+
+```html
+<style>
+    .thz-lab-journal {
+      font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: #1f2933;
+      border: 1px solid #d1d5db;
+      border-radius: 10px;
+      padding: 20px 24px;
+      max-width: 820px;
+      background: linear-gradient(180deg, #f9fafb 0%, #ffffff 100%);
+    }
+
+    .thz-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      border-bottom: 2px solid #e5e7eb;
+      padding-bottom: 10px;
+      margin-bottom: 18px;
+    }
+
+    .thz-title {
+      font-size: 1.4rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+    }
+
+    .thz-subtitle {
+      font-size: 0.9rem;
+      color: #6b7280;
+    }
+
+    .thz-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px 24px;
+    }
+
+    .thz-item {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .thz-label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #6b7280;
+      margin-bottom: 2px;
+    }
+
+    .thz-value {
+      font-size: 1rem;
+      font-weight: 500;
+    }
+
+    .thz-footer {
+      margin-top: 18px;
+      padding-top: 12px;
+      border-top: 1px dashed #e5e7eb;
+      display: flex;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    .thz-tag {
+      background: #eef2ff;
+      color: #3730a3;
+      padding: 6px 12px;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 500;
+    }
+</style>
+```
+
+</Accordion>
+
+</Accordions>
+
+Place it to the end of WLX cell or create a separate one (HTML or WLX type). `LabJournal` itself does not use any special pattern matching and is meant to just render any children in a nice grid-like structure:
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<wljs-editor lazy="true" type="Input" display="codemirror">{`.md
+
+<LabJournal 
+    Title={"Lab Journal"} 
+    Subtitle={"Sample: ATR370"}
+    Tags={{"Optics", "THZ"}}
+>
+    Here there will be grid of cards
+</LabJournal>
+`}</wljs-editor></WLJSWrapper>
+
+For rendering key-value structures, we define a separate symbol `Card` with data-holding symbols `CardLabel` and `CardValue`. Since it is not bound to `LabJournal`, we can reuse it as a separate component elsewhere:
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<wljs-editor lazy="true" type="Input" display="codemirror">{`.wlx
+
+ClearAll[Card];
+
+Card[_]  := "Undefined pattern";
+Card[__] := "Undefined patterns";
+
+Card[CardLabel[LabelContent_], CardValue[ValueContent_]] := With[{},
+    <div class="thz-item">
+      <div class="thz-label"><LabelContent/></div>
+      <div class="thz-value"><ValueContent/></div>
+    </div>
+];
+
+Card[CardLabel[LabelContent_], CardValue[ValueContent__]] := Card[CardLabel[LabelContent], CardValue[ToStringRiffle[{ValueContent}]]]
+
+Card[CardLabel[LabelContent__], CardValue[ValueContent__]] := Card[CardLabel[ToStringRiffle[{LabelContent}]], CardValue[ToStringRiffle[{ValueContent}]]]
+
+Card[CardLabel[LabelContent__], CardValue[ValueContent_]] := Card[CardLabel[ToStringRiffle[{LabelContent}]], CardValue[ValueContent]]
+
+CardLabel /: ToString[c_CardLabel,   WLXForm] := c;
+CardValue /: ToString[c_CardValue, WLXForm] := c;
+
+SetAttributes[Card, Orderless];
+
+`}</wljs-editor></WLJSWrapper>
+
+We've also handled different patterns—for instance, when `CardValue` has multiple arguments passed to it while `CardLabel` does not. This can be done elegantly using Wolfram Language pattern matching. Now, let's combine both components to create a nice header for our report using Markdown cells:
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<wljs-editor lazy="true" type="Input" display="codemirror">{`.md
+<!-- Hide this cell using Alt-2 or Cmd-2 -->
+
+<LabJournal 
+  Title={"Lab Journal"} 
+  Subtitle={"Sample: ATR370"}
+  Tags={{"Optics", "THZ"}}
+>
+  <Card>
+    <CardLabel>Resolution</CardLabel>
+    <CardValue>0.33 cm<sup>2</sup></CardValue>
+  </Card>
+  <Card>
+    <CardLabel>User</CardLabel>
+    <CardValue>Persephone</CardValue>
+  </Card>
+</LabJournal>
+
+`}</wljs-editor></WLJSWrapper>
+
+Here is how the final result looks:
+
+As we mentioned, you can still use `Card` as a standalone component:
+
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<wljs-editor lazy="true" type="Input" display="codemirror">{`.md
+
+<Card>
+    <CardLabel>Parameter</CardLabel>
+    <CardValue>11.2</CardValue>
+</Card>
+`}</wljs-editor></WLJSWrapper>
+
+<Callout>Check out our components library in <small>Advanced</small> section for ready-to-go templates that you can drop in to your notebooks.</Callout>

@@ -1,0 +1,50 @@
+---
+title: Export
+---
+
+`Export["file.ext", expr]` exports data to a file, converting it to the format corresponding to the file extension.
+
+`Export[file, expr, "fmt"]` exports data in the specified format.
+
+## Examples
+
+Export to a file:
+
+```wolfram
+Export["data.csv", {{1, 2}, {3, 4}}]
+```
+
+Export an image:
+
+```wolfram
+Export["plot.png", Plot[Sin[x], {x, 0, 2 Pi}]]
+```
+
+### Export as PDF
+Use `.pdf` extension to convert an expression to PDF
+
+```wolfram
+Export["expr.pdf", Plot[x, {x,0,1}]]
+```
+
+<Callout type="warning">This feature requires running WLJS as a desktop application. PDF export is a __blocking function__, avoid using it with buttons or async events - use [ExportAsync](./ExportAsync) instead</Callout>
+
+import { Accordion, Accordions } from 'fumadocs-ui/components/accordion';
+
+
+<Accordions>
+
+<Accordion title="List of supported formats">
+
+Evaluate `$ExportFormats`:
+
+
+"3DS","AC","ACO","AIFF","ArrowDataset","ArrowIPC","ASE","AU","AVI","Base64","Binary","Bit","BLEND","BMP","BREP","BSON","Byte","BYU","BZIP2","C","CDF","CDXML","Character16","Character32","Character8","CIF","CML","Complex128","Complex256","Complex64","CSV","Cube","CUR","DAE","DICOM","DIF","DIMACS","DOT","DTA","DXF","EPS","ExpressionJSON","ExpressionML","FASTA","FASTQ","FBX","FCS","FITS","FLAC","FLV","FMU","GeoJSON","GIF","GLTF","Graph6","Graphlet","GraphML","GXL","GZIP","HarwellBoeing","HDF","HDF5","HEIF","HIN","HTML","HTMLFragment","HTTPRequest","HTTPResponse","ICNS","ICO","IFC","IGES","Ini","Integer128","Integer16","Integer24","Integer32","Integer64","Integer8","ISO","JavaProperties","JavaScriptExpression","JPEG","JPEG2000","JSON","JSONLD","JSONLines","JVX","KML","LEDA","List","LWO","LXO","Markdown","MAT","MathML","Matroska","Maya","MCTT","MGF","MIDI","MMCIF","MMJSON","MO","MOL","MOL2","MP3","MP4","MS3D","MTX","MX","MXNet","NASACDF","NB","NetCDF","NEXUS","NOFF","NQuads","NTriples","OBJ","OFF","Ogg","ONNX","OpenEXR","ORC","OWLFunctional","Pajek","Parquet","PBM","PCX","PDB","PDF","PGM","PHPIni","PLY","PNG","PNM","POR","POV","PPM","PXR","PythonExpression","QuickTime","RawBitmap","RawJSON","RDFXML","Real128","Real32","Real64","RIB","RLE","RTF","SAS7BDAT","SAV","SCT","SDF","SMA","SMILES","SND","SPARQLQuery","SPARQLResultsJSON","SPARQLResultsXML","SPARQLUpdate","Sparse6","STEP","STL","String","SurferGrid","SVG","Table","TAR","TerminatedString","TeX","TeXFragment","Text","TGA","TGF","TIFF","TriG","TSV","Turtle","UBJSON","UnsignedInteger128","UnsignedInteger16","UnsignedInteger24","UnsignedInteger32","UnsignedInteger64","UnsignedInteger8","USD","UUE","VideoFrames","VRML","VTK","WAV","Wave64","WDX","WebP","WL","WLNet","WMLF","WXF","X3D","XBM","XGL","XHTML","XHTMLMathML","XLS","XLSX","XML","XPORT","XYZ","ZIP","ZPR","ZSTD"
+
+
+
+</Accordion>
+
+</Accordions>
+
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Export.html) for more details.
