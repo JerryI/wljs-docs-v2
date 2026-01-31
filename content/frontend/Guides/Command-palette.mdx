@@ -290,7 +290,7 @@ This code will break after 6 iterations.
 
 
 ## AI Copilot
-If nothing is selected, text typed into the command palette is sent to a remote LLM, which __has read/write access to the whole notebook__. We use a "knowledge on demand" concept, meaning that additional notebook-specific information (like cell types) is only fetched when needed — __saving tokens__ if your request is unrelated.
+If nothing is selected, text typed into the command palette is sent to a remote or local LLM, which __has read/write access to the whole notebook__. We use a "knowledge on demand" concept, meaning that additional notebook-specific information (like cell types) is only fetched when needed — saving tokens if your request is unrelated.
 
 Given tools are somewhat similar to VSCode Copilot:
 
@@ -302,41 +302,38 @@ Given tools are somewhat similar to VSCode Copilot:
 - __See a notebook structure__
 - __See selection lines and focused cell__ 
 - __Access the knowledge library__
-- ~~Google~~ __Use WolframAlpha__ to fetch real-world data
-- Evaluate any WL expresson in the background
+- __Read symbols truncated documentation__
+- __Manage internal TODO list__
+- __Evaluate any WL expresson in the background__
 
 </Card>
 
 <br/><br/>
 
-<Accordions>
+### Tips
 
-<Accordion title="Demonstration">
+- Mention `focused cell` in the prompt to avoid model to spend tokens for searching the whole notebook.
 
-- YTS: [We made AI Copilot in your Notebook 🤖](https://youtube.com/shorts/6s9m5ZGPkdE?feature=share)
-- YTS: [AI Copilot in your Notebook. Part 2 🤖](https://youtube.com/shorts/B_ZVjN9cvQM?feature=share)
+- Mention `consult docs` in the prompt for weaker models to force them checking the documentation on different cell types or features of interactive evaluation in Wolfram language cells.
 
-</Accordion>
+- In general most LLMs perform much worse in Wolfram Language coding compared to other languages. Try to formulate your task better.
 
-
-<Accordion title="FAQ">
-
-### FAQ
-
-
-#### How to *restart* chat
-Type and send the following message:
-
-```
-reset chat
-```
-
-
-</Accordion>
-</Accordions>
+- Use smaller models for grammar corrections, primitive tasks, i.e. Haiku 3.0 for example
 
 ### Endpoints, Models, and Local LLMs
-There is a dedicated section in the settings menu of WLJS Notebook: 
+There are 3 different models provided available:
+
+<Card>
+
+- OpenAI (Anything higher than gpt-4o is recommended for complex tasks)
+- Anthropic (Haiku 4.5, Opus 4.1 or higher are recommended for complex tasks)
+- Custom model provider (your local LLM for example)
+
+</Card>
+
+You will be prompted automatically for the model to pick (except for a custom provider) and API key if applicable. Model-autodiscovery feature is present.
+
+There is a dedicated section in the settings menu of WLJS Notebook to setup your local/custom model and reset existing API keys: 
 
 import { Dot, Settings } from 'lucide-react';
 
@@ -352,25 +349,25 @@ import { Dot, Settings } from 'lucide-react';
     </div> 
 </div>
 
-You can configure the following:
+You can configure the following for <small>Custom Model</small>:
 
-- **Endpoint**: By default, WLJS Notebook sends OpenAI-compatible requests to the address: `<endpoint>/v1/chat/completions`
-- **Model**: By default, OpenAI's `gpt-4o` is selected
+- **Endpoint**: By default, WLJS Notebook sends requests to the address: `<endpoint>/v1/chat/completions`
+- **Model**
 - **Max tokens**
 - **Temperature**
 
 #### Local LLM
-We recommend using the Ollama server to take advantage of locally running smaller models. For example, the following parameters can be set initially:
+We recommend using the Ollama server to take advantage of locally running models. For example, the following parameters can be set initially:
 
 - **Endpoint**: `http://localhost:11434/` — the default Ollama server
 - **Model**: `qwen3:8b`, a small 5 GB tested model
 
 <Callout type="warning">
-With local LLMs, the performance and quality of the AI assistant may depend on many parameters. In general, the waiting time increases significantly compared to `gpt-4-*` models.
+With local LLMs, the performance and quality of the AI assistant may depend on many parameters. In general, the waiting time increases significantly compared to the commertical ones.
 </Callout>
 
 ### Note on cell types
-The assistant is aware of being in a notebook environment. The following cell types are described in the initial system prompt:
+The assistant is aware of being in a notebook environment. The following cell types are well-described in the initial system prompt:
 
 - Wolfram
 - JavaScript
@@ -378,7 +375,7 @@ The assistant is aware of being in a notebook environment. The following cell ty
 - Slides
 - Mermaid diagrams
 
-Additionally, differences between Wolfram Mathematica and WLJS Notebook are included in the initial prompt.
+Additionally, differences between Wolfram Mathematica and WLJS Notebook are included to the library (on-demand).
 
 
 ## Printing option

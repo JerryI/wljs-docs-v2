@@ -4,13 +4,31 @@ title: Component-based markup
 
 All mentioned techniques can be used in [Markdown](./../Cell-types/Markdown), [Slide](./../Cell-types/Slide) cells as well as with normal Wolfram expressions when combined with the [HTMLView](./../GUI/HTMLView) wrapper. Have a look at these guides as well:
 
+import { Accordion, Accordions } from 'fumadocs-ui/components/accordion';
+
+<wljs-store json="./attachments/6b441fad-685c-4826-9c74-deb6fcfe6fc1.txt"></wljs-store>
+
+
 <Cards>
+<Card
+    href="./../Cell-types/WLX"
+    title="WLX cells"
+  >
+    A basic guide on how to write WLX
+  </Card>
 
   <Card
     href="./../Guides/Styling-HTML"
     title="Styling with HTML"
   >
     An introductory guide on how to shape your data using all the tools of the modern web that you can imagine and integrate it with normal Wolfram Language input/output
+  </Card>
+
+<Card
+    href="./Advanced-Slides"
+    title="Advanced Slides"
+  >
+    An advanced guide on how to build live presentations with dynamic content
   </Card>
 
 </Cards>
@@ -51,6 +69,14 @@ The actual content
 Maybe some equations $m \\mathbf{a} = \\mathbf{F}$
 `}</wljs-editor></WLJSWrapper>
 
+<WLJSWrapper>
+<wljs-editor lazy="true" display="slide" type="Output"  >{`<dummy ><div ><h1 >Your title</h1> Some repetitive text you need</div><br /><br />
+
+The actual content
+
+Maybe some equations $m \\mathbf{a} = \\mathbf{F}$</dummy>`}</wljs-editor>
+</WLJSWrapper>
+
 However, if we want something more complex, we can avoid passing data as options (or attributes) and render children instead. 
 
 <Callout type="note">Any children passed to a tag will be automatically converted to [WLXForm](./../Formatting/WLXForm). If the passed expression does not have `WLXForm` defined, the result is __forcibly converted__ to a string. See later on how to alter it.</Callout>
@@ -63,19 +89,19 @@ Let's also add a custom icon:
 MakeTitle[Children__] := MakeTitle[ToStringRiffle[{Children}]]
 
 MakeTitle[Child_String] := With[{
-  Icon = ParametricPlot[{ReIm@Exp[(I t - 0.1 t)],ReIm@Exp[(I t - 0.3 t)]}, {t,0,8Pi}, PlotStyle->{AbsoluteThickness[4], AbsoluteThickness[4]}, ImageSize->{60,60}, PlotRange->0.9{{-1,1},{-1,1}}]
+    Icon = ParametricPlot[{ReIm@Exp[(I t - 0.1 t)],ReIm@Exp[(I t - 0.3 t)]}, {t,0,8Pi}, PlotStyle->{AbsoluteThickness[4], AbsoluteThickness[4]}, ImageSize->{60,60}, PlotRange->0.9{{-1,1},{-1,1}}]
 },
-<div class="relative flex w-full text-left flex-row gap-x-4" style="align-items: center; margin-bottom:1.5rem;">
-  <div style="bottom:0; z-index:1; position: absolute; background: linear-gradient(to left, orangered, lightblue); width: 100%; height: 0.7rem;"></div>
-  <div style="display:inline-block"><Icon/></div>
-  <h2><Child/></h2>
-</div>
+    <div class="relative flex w-full text-left flex-row gap-x-4" style="align-items: center; margin-bottom:1.5rem;">
+      <div style="bottom:0; z-index:1; position: absolute; background: linear-gradient(to left, orangered, lightblue); width: 100%; height: 0.7rem;"></div>
+      <div style="display:inline-block"><Icon/></div>
+      <h2><Child/></h2>
+    </div>
 ]
 
 Footer = With[{},
-  <div class="w-full ml-auto mr-auto absolute text-sm" style="top: 690px">
-    Some repetitive footer: <i>Short title</i>, Joe Forest
-  </div>
+    <div class="w-full ml-auto mr-auto absolute text-sm" style="top: 690px">
+      Some repetitive footer: <i>Short title</i>, Joe Forest
+    </div>
 ];
 `}</wljs-editor></WLJSWrapper>
 
@@ -97,6 +123,20 @@ Content goes...
 <Footer/>
 `}</wljs-editor></WLJSWrapper>
 
+
+<WLJSWrapper>
+<wljs-editor lazy="true" display="slide" type="Output"  >{`<dummy ><!-- .slide: class="slide-standard" -->
+
+<div class="relative flex w-full text-left flex-row gap-x-4" style="align-items: center; margin-bottom:1.5rem;"><div style="bottom:0; z-index:1; position: absolute; background: linear-gradient(to left, orangered, lightblue); width: 100%; height: 0.7rem;"></div><div style="display:inline-block">FrontEndExecutable[e67a87dd-8fcf-4627-a0d2-52585d182230]</div><h2 >Here is 
+<b >our title</b></h2></div>
+
+Content goes...
+
+Content goes...
+
+Content goes...
+
+<div class="w-full ml-auto mr-auto absolute text-sm" style="top: 690px"> Some repetitive footer: <i >Short title</i>, Joe Forest</div></dummy>`}</wljs-editor></WLJSWrapper>
 
 ### Layout
 
@@ -150,6 +190,90 @@ You can also bind each to a separate variable and then assemble them into a grou
 </Row>
 `}</wljs-editor></WLJSWrapper>
 
+<WLJSWrapper>
+<wljs-editor lazy="true" display="slide" type="Output"  >{`<dummy >
+# Example
+
+<div class="flex flex-row">FrontEndExecutable[4de05fe7-a44b-4f51-a71a-3284cbd182b0]
+FrontEndExecutable[70e41077-f1ce-4422-a7ac-0f1f4a630668]</div></dummy>`}</wljs-editor></WLJSWrapper>
+
+<Callout>Try to drag these plots. It's alive!</Callout>
+
+Here is another example, where we more heavily combine Markdown, WLX and HTML:
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<wljs-editor lazy="true" type="Input" display="codemirror">{`.slide
+<!-- .slide: class="slide-standard" -->
+
+## Example Slide Title
+
+<ul>
+<li>This slide serves as an example of how to format content.</li>
+<li>Use this format for presenting various topics.</li>
+</ul>
+
+<br/>
+
+<Row>
+
+![](https://picsum.photos/200/300)
+  
+<div style="width:400px; margin-top:2rem">
+
+- Example Content
+
+$$
+C = \\frac{m}{V}
+$$
+
+where:
+- $C$ is the concentration of coffee in grams per liter,
+- $m$ is the mass of coffee in grams,
+- $V$ is the volume of water in liters.
+
+</div>
+
+</Row>
+`}</wljs-editor></WLJSWrapper>
+
+
+<WLJSWrapper>
+<wljs-editor lazy="true" type="Output" display="slide">{`
+<!-- .slide: class="slide-standard" -->
+
+## Example Slide Title
+
+<ul>
+<li>This slide serves as an example of how to format content.</li>
+<li>Use this format for presenting various topics.</li>
+</ul>
+
+<br/>
+
+<div class="flex flex-row"> 
+
+![](https://picsum.photos/200/300)
+  
+<div style="width:400px; margin-top:2rem">
+
+- Example Content
+
+$$
+C = \\frac{m}{V}
+$$
+
+where:
+- $C$ is the concentration of coffee in grams per liter,
+- $m$ is the mass of coffee in grams,
+- $V$ is the volume of water in liters.
+
+</div>
+
+</div>
+`}</wljs-editor></WLJSWrapper>
+
+
 #### Custom container
 Here’s a simple component implementation using WLX. Use the full power of web-technologies:
 
@@ -189,6 +313,13 @@ Here we can not only provide children elements as arguments, but attributes as o
 </Columns>
 `}</wljs-editor></WLJSWrapper>
 
+<WLJSWrapper>
+<wljs-editor lazy="true" display="slide" type="Output"  >{`<dummy >
+# Hey There!
+
+<div style="" class="flex flex-row justify-between"><div ><p >Column 1</p></div>
+<div ><p >Column 2</p></div></div></dummy>`}</wljs-editor></WLJSWrapper>
+
 You can safely use Markdown if this component is used on [Markdown](./../Cell-types/Markdown) or [slide cells](./../Cell-types/Slide) by wrapping content in `<p>` tags and adding blank lines:
 
 ```md
@@ -211,15 +342,24 @@ Using `"Style"` option we can customize the look of columns:
 ```md
 <Columns Style={"
     border-radius: 4px;
-    color: #ffffff;
     background: rgb(49 87 170);
     padding: 1rem;
 "}>
 
-    <p>Heading 1</p>
-    <p>Heading 2</p>
+    <p style="color: white">Heading 1</p>
+    <p style="color: white">Heading 2</p>
 </Columns>
 ```
+<WLJSWrapper>
+<wljs-editor lazy="true" display="slide" type="Output"  >{`<dummy >
+# Hey There!
+
+<div style="
+    border-radius: 4px;
+    background: rgb(49 87 170);
+    padding: 1rem;
+" class="flex flex-row justify-between"><div ><p style="color: white">Heading 1</p></div>
+<div ><p style="color: white">Heading 2</p></div></div></dummy>`}</wljs-editor></WLJSWrapper>
 
 #### Adding Javascript
 
@@ -312,9 +452,9 @@ In this chapter we use WLX as the second one. This allows to declare **data expr
 <wljs-editor lazy="true" type="Input" display="codemirror">{`.slide
 
 <Card>
-  <CardTitle>Pluto excitation spectra</CardTitle>
-  <CardImage Link={"link/to/an/image"}/>
-  <CardCredits>Song Goo et al. <b>Nature Programming</b> 33 2027</CardCredits>
+    <CardTitle>Pluto excitation spectra</CardTitle>
+    <CardImage Link={"link/to/an/image"}/>
+    <CardCredits>Song Goo et al. <b>Nature Programming</b> 33 2027</CardCredits>
 </Card>
 `}</wljs-editor></WLJSWrapper>
 
@@ -328,6 +468,9 @@ Slides and markdown cells inherit features from [WLX](./../Cell-types/WLX) cells
 CardTitle   /: ToString[c_CardTitle,   WLXForm] := c
 CardCredits /: ToString[c_CardCredits, WLXForm] := c
 CardImage   /: ToString[c_CardImage,   WLXForm] := c
+
+Card[__] := "Unknown pattern";
+SetAttributes[Card, Orderless];
 ```
 
 Now `CardTitle`, `CardCredits`, `CardImage` in the context of WLX will not be transformed before reaching the parent element. This allows us to use the full power of native pattern matching with them on `Card` symbol:
@@ -352,16 +495,16 @@ Card[CardTitle[Title_], CardCredits[credits__], CardImage[Rule["Link", url_]]] :
 ]
 `}</wljs-editor></WLJSWrapper>
 
-For convenience, we make `Card` arguments orderless and define a fallback for an unknown data structure:
 
-```wolfram
-Card[__] := "Unknown pattern";
-SetAttributes[Card, Orderless];
-```
+Here is an example of a slide created using this approach with 2 cards in `Row` container:
 
-Here is an example of a slide created using this approach with 4 cards in `Row` container:
+<WLJSWrapper>
+<wljs-editor lazy="true" display="slide" type="Output"  >{`<dummy >
+## A row or cards
 
-![](./imgs/slide-img.png)
+<div class="flex flex-row"><div class="flex flex-col text-center items-center"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Reverend_Robert_Walker_%281755_-_1808%29_Skating_on_Duddingston_Loch.jpg/256px-Reverend_Robert_Walker_%281755_-_1808%29_Skating_on_Duddingston_Loch.jpg?20190701200849" width="300"/><br /><h4 style="max-width:15rem;    text-wrap: auto;">Skating on Duddingston Loch</h4><div style="max-width:15rem;    text-wrap: auto;" style="font-size:smaller">Reverend Robert Walker (1755 - 1808), via Wikimedia</div></div>
+<div class="flex flex-col text-center items-center"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Robert_Howlett_%28Isambard_Kingdom_Brunel_Standing_Before_the_Launching_Chains_of_the_Great_Eastern%29%2C_The_Metropolitan_Museum_of_Art_-_restoration1.jpg/256px-Robert_Howlett_%28Isambard_Kingdom_Brunel_Standing_Before_the_Launching_Chains_of_the_Great_Eastern%29%2C_The_Metropolitan_Museum_of_Art_-_restoration1.jpg?20220327171342" width="300"/><br /><h4 style="max-width:15rem;    text-wrap: auto;">...</h4><div style="max-width:15rem;    text-wrap: auto;" style="font-size:smaller">Robert Howlett, via Wikimedia Commons</div></div></div></dummy>`}</wljs-editor>
+</WLJSWrapper>
 
 ### More examples
 You can create a similar helper component for [textual cells](./../Cell-types/Markdown) as well. WLJS Notebooks are designed for creating lab journals and interactive reports. You can also create a [template notebook](./Notebook-Operations) with your custom components in a hidden initialization cell.
@@ -377,9 +520,9 @@ ClearAll[LabJournal];
 LabJournal[Content__, opts: OptionsPattern[]] := LabJournal[ToStringRiffle[{Content}], opts];
 
 LabJournal[Content_, OptionsPattern[]] := With[{
-  Title = OptionValue["Title"],
-  Subtitle = OptionValue["Subtitle"],
-  tags = OptionValue["Tags"]
+    Title = OptionValue["Title"],
+    Subtitle = OptionValue["Subtitle"],
+    tags = OptionValue["Tags"]
 },
 {
   Footer = If[Length[tags] == 0, "",
@@ -552,23 +695,25 @@ We've also handled different patterns—for instance, when `CardValue` has multi
 <!-- Hide this cell using Alt-2 or Cmd-2 -->
 
 <LabJournal 
-  Title={"Lab Journal"} 
-  Subtitle={"Sample: ATR370"}
-  Tags={{"Optics", "THZ"}}
+    Title={"Lab Journal"} 
+    Subtitle={"Sample: ATR370"}
+    Tags={{"Optics", "THZ"}}
 >
-  <Card>
-    <CardLabel>Resolution</CardLabel>
-    <CardValue>0.33 cm<sup>2</sup></CardValue>
-  </Card>
-  <Card>
-    <CardLabel>User</CardLabel>
-    <CardValue>Persephone</CardValue>
-  </Card>
+    <Card>
+      <CardLabel>Resolution</CardLabel>
+      <CardValue>0.33 cm<sup>2</sup></CardValue>
+    </Card>
+    <Card>
+      <CardLabel>User</CardLabel>
+      <CardValue>Persephone</CardValue>
+    </Card>
 </LabJournal>
 
 `}</wljs-editor></WLJSWrapper>
 
 Here is how the final result looks:
+
+<wljs-html encoded="true">{`%3Cdiv%20class%3D%22thz-lab-journal%22%3E%3Cdiv%20class%3D%22thz-header%22%3E%3Cdiv%20class%3D%22thz-title%22%3ELab%20Journal%3C%2Fdiv%3E%3Cdiv%20class%3D%22thz-subtitle%22%3ESample%3A%20ATR370%3C%2Fdiv%3E%3C%2Fdiv%3E%3Cdiv%20class%3D%22thz-grid%22%3E%3Cdiv%20class%3D%22thz-item%22%3E%3Cdiv%20class%3D%22thz-label%22%3EResolution%3C%2Fdiv%3E%3Cdiv%20class%3D%22thz-value%22%3E0.33%20cm%0A%3Csup%20%3E2%3C%2Fsup%3E%3C%2Fdiv%3E%3C%2Fdiv%3E%0A%3Cdiv%20class%3D%22thz-item%22%3E%3Cdiv%20class%3D%22thz-label%22%3EUser%3C%2Fdiv%3E%3Cdiv%20class%3D%22thz-value%22%3EPersephone%3C%2Fdiv%3E%3C%2Fdiv%3E%3Cdiv%20class%3D%22thz-item%22%3E%3Cdiv%20class%3D%22thz-label%22%3EDate%3C%2Fdiv%3E%3Cdiv%20class%3D%22thz-value%22%3ESat%2031%20Jan%202026%2014%3A36%3A01%3C%2Fdiv%3E%3C%2Fdiv%3E%3C%2Fdiv%3E%3Cdiv%20class%3D%22thz-footer%22%3E%3Cdiv%20class%3D%22thz-tag%22%3EOptics%3C%2Fdiv%3E%0A%3Cdiv%20class%3D%22thz-tag%22%3ETHZ%3C%2Fdiv%3E%3C%2Fdiv%3E%3Cstyle%20%3E%20.thz-lab-journal%20%7B%0A%20%20%20%20%20%20font-family%3A%20%22Segoe%20UI%22%2C%20Roboto%2C%20Helvetica%2C%20Arial%2C%20sans-serif%3B%0A%20%20%20%20%20%20color%3A%20%231f2933%3B%0A%20%20%20%20%20%20border%3A%201px%20solid%20%23d1d5db%3B%0A%20%20%20%20%20%20border-radius%3A%2010px%3B%0A%20%20%20%20%20%20padding%3A%2020px%2024px%3B%0A%20%20%20%20%20%20max-width%3A%20820px%3B%0A%20%20%20%20%20%20background%3A%20linear-gradient%28180deg%2C%20%23f9fafb%200%25%2C%20%23ffffff%20100%25%29%3B%0A%20%20%20%20%7D%0A%0A%20%20%20%20.thz-header%20%7B%0A%20%20%20%20%20%20display%3A%20flex%3B%0A%20%20%20%20%20%20justify-content%3A%20space-between%3B%0A%20%20%20%20%20%20align-items%3A%20baseline%3B%0A%20%20%20%20%20%20border-bottom%3A%202px%20solid%20%23e5e7eb%3B%0A%20%20%20%20%20%20padding-bottom%3A%2010px%3B%0A%20%20%20%20%20%20margin-bottom%3A%2018px%3B%0A%20%20%20%20%7D%0A%0A%20%20%20%20.thz-title%20%7B%0A%20%20%20%20%20%20font-size%3A%201.4rem%3B%0A%20%20%20%20%20%20font-weight%3A%20600%3B%0A%20%20%20%20%20%20letter-spacing%3A%200.02em%3B%0A%20%20%20%20%7D%0A%0A%20%20%20%20.thz-subtitle%20%7B%0A%20%20%20%20%20%20font-size%3A%200.9rem%3B%0A%20%20%20%20%20%20color%3A%20%236b7280%3B%0A%20%20%20%20%7D%0A%0A%20%20%20%20.thz-grid%20%7B%0A%20%20%20%20%20%20display%3A%20grid%3B%0A%20%20%20%20%20%20grid-template-columns%3A%201fr%201fr%3B%0A%20%20%20%20%20%20gap%3A%2014px%2024px%3B%0A%20%20%20%20%7D%0A%0A%20%20%20%20.thz-item%20%7B%0A%20%20%20%20%20%20display%3A%20flex%3B%0A%20%20%20%20%20%20flex-direction%3A%20column%3B%0A%20%20%20%20%7D%0A%0A%20%20%20%20.thz-label%20%7B%0A%20%20%20%20%20%20font-size%3A%200.75rem%3B%0A%20%20%20%20%20%20text-transform%3A%20uppercase%3B%0A%20%20%20%20%20%20letter-spacing%3A%200.08em%3B%0A%20%20%20%20%20%20color%3A%20%236b7280%3B%0A%20%20%20%20%20%20margin-bottom%3A%202px%3B%0A%20%20%20%20%7D%0A%0A%20%20%20%20.thz-value%20%7B%0A%20%20%20%20%20%20font-size%3A%201rem%3B%0A%20%20%20%20%20%20font-weight%3A%20500%3B%0A%20%20%20%20%7D%0A%0A%20%20%20%20.thz-footer%20%7B%0A%20%20%20%20%20%20margin-top%3A%2018px%3B%0A%20%20%20%20%20%20padding-top%3A%2012px%3B%0A%20%20%20%20%20%20border-top%3A%201px%20dashed%20%23e5e7eb%3B%0A%20%20%20%20%20%20display%3A%20flex%3B%0A%20%20%20%20%20%20gap%3A%2024px%3B%0A%20%20%20%20%20%20flex-wrap%3A%20wrap%3B%0A%20%20%20%20%7D%0A%0A%20%20%20%20.thz-tag%20%7B%0A%20%20%20%20%20%20background%3A%20%23eef2ff%3B%0A%20%20%20%20%20%20color%3A%20%233730a3%3B%0A%20%20%20%20%20%20padding%3A%206px%2012px%3B%0A%20%20%20%20%20%20border-radius%3A%20999px%3B%0A%20%20%20%20%20%20font-size%3A%200.85rem%3B%0A%20%20%20%20%20%20font-weight%3A%20500%3B%0A%20%20%20%20%7D%3C%2Fstyle%3E%3C%2Fdiv%3E`}</wljs-html>
 
 As we mentioned, you can still use `Card` as a standalone component:
 
@@ -583,4 +728,4 @@ As we mentioned, you can still use `Card` as a standalone component:
 </Card>
 `}</wljs-editor></WLJSWrapper>
 
-<Callout>Check out our components library in <small>Advanced</small> section for ready-to-go templates that you can drop in to your notebooks.</Callout>
+<Callout type="idea">Check out [Advanced slides](./Advanced-Slides) for ready-to-go templates that you can drop in to your notebooks.</Callout>
