@@ -5,7 +5,7 @@ title: WLXForm
 
 A standard form used for representing Wolfram expressions on [slides](./../Cell-types/Slide), [WLX](./../Cell-types/WLX) and [markdown](./../Cell-types/Markdown) cells.
 
-<Callout>The final result is expected to be a string</Callout>
+<Callout>The final result must be conveted using `MakeBoxes` __if it is not a string__</Callout>
 
 ## Example
 Depending on where an expression is displayed, one can change its visual representation using [MakeBoxes](../Formatting/MakeBoxes) tagset, i.e.

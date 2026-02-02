@@ -55,7 +55,7 @@ Depending on where this `MySymbol` is placed, it will look and work differently:
 
 ## Have a look at
 
-<SpecialSymbol/>
+<MySymbol/>
 `}</wljs-editor></WLJSWrapper>
 
 or
@@ -241,9 +241,9 @@ dot = Table[Sin[5 t], {t,0,40Pi,0.1}];
 dash = Join[dot, dot];
 
 morse /: Play[morse[t_String]] := With[{
-  m = morse[t]
+    m = morse[t]
 },
-  Join @@ (Switch[#, ".", Join[dot, silence], "-", Join[dash, silence], _, Join[silence, silence]] & /@ StringSplit[m[[1]], ""]) // ListPlay // EmitSound;
+    Join @@ (Switch[#, ".", Join[dot, silence], "-", Join[dash, silence], _, Join[silence, silence]] & /@ StringSplit[m[[1]], ""]) // ListPlay // EmitSound;
 ];
 `}</wljs-editor></WLJSWrapper>
 
@@ -301,7 +301,7 @@ Now we define a `StandardForm` for our symbol with `ViewBox` container. `ViewBox
 <span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
 <wljs-editor lazy="true" type="Input" display="codemirror">{`
 SmileySymbol /: MakeBoxes[s_SmileySymbol, StandardForm] := With[{},
-  ViewBox[s, smileyDecorator[]]
+    ViewBox[s, smileyDecorator[]]
 ]
 
 SmileySymbol[]
@@ -513,3 +513,7 @@ Now add an icon based on the "Color" field. Note that the icon can only be `Imag
 <wljs-editor lazy="true" type="Output" display="codemirror">{`
 specialSymbol[(*VB[*) <|"Date" -> DateObject[{2026, 2, 2, 11, 31, 53.514057}, "Instant", "Gregorian", 1.], "Color" -> RGBColor[1, 0, 0], "State" -> True|> (*,*)(*"1:eJzFVMmOm0AQdfblEimXSDklUvqQgy1oNntubN5kPCzGGc8pbWgjYqAnTVux/zEflcI4jg85ZJMiweuuV03V45Xg7ZqFmwedTqd+DWCx/ZDx8qPJOakymka7siT8APTmXnPmBcCQs0q4VbrMudiRok28vEi4e5rsBFkXNHoHtKEOqEokuatTRe2qCk26BJhuYui61CeUponeKngIMMtr0ZY8R/eb6NWFupOqiaDlMqdfoseQc4igV2/as88B3DQXjDfpH9XGrEjb6BlAHM4cmrCURu+BQ7iPsLm0kGbBivAAiKbm9foTTUTDGhaWsI6wjU+3LAMoDWhKT5NVSTMQvFFP7cuSivuarA0MrKvIcOAIwnhS1YJUAnZtPOI0YzwnVcvIPXgaaU7b+yjCPks5brCMFJNO94uFx/yonOerkcm0LI5Wt+WdFul3h00xzKMbLUzcOrBGN/vpLF652yzobxVfQnhoRZ4r5nFlHTxnsvDGgeTxFdzxB3NrumbghwFSnOZqJF301pzlyZfW4sbOcAcTftpsKEmvq+JwZBd8R393gE8gZ7OC8T+d4NfOzycYjqxjXeDko52S9H35h0aPK9W3g/mIBL5JA3s8VZLa8A9R//Mqsx3oM7wNrMxzKrBYzWM/zP6XyZH4i8/k3PgXxNWPmh8CKWr6DeUsF20="*)(*]VB*)]
 `}</wljs-editor></WLJSWrapper>
+
+<Callout type="idea">Place [Refresh](./../GUI/Refresh) or any other expression that support live updates to one of the summary fields for live state display</Callout>
+
+<Callout type="idea">Place [InputRange](./../GUI/InputRange) to one of the summary fields to mutate your state</Callout>
