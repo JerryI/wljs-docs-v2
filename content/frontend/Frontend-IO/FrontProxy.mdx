@@ -7,15 +7,14 @@ package: wljs-editor
 ---
 
 <Callout type="warn">
-Definitions are not loaded to the main context
+Definitions are not loaded to the main context by default
 </Callout>
 
-An low-level optional abstraction for managing and manipulating graphical or any dynamic [frontend instances](frontend/Advanced/Frontend%20interpretation/WLJS%20Functions) efficiently and process them in batch. The idea is to use proxy objects as lightweight references to groups of instances (like rectangles, circles combined with other primitives) in a larger scene and __minimize the data transfer__ and symbols usage.
+An low-level optional abstraction for managing and manipulating graphical or any [prototype-based frontend symbols](./../Advanced/Frontend-functions/Overview) efficiently and process them in batch. The idea is to use proxy objects as lightweight references to groups of instances (like rectangles, circles combined with other primitives) in a larger scene and __minimize the data transfer__ and symbols usage.
 
 All properties of proxies are stored in linear auto-sizable buffers, which allows JIT-enabled processing and easy sync with a frontend (single transaction).
 
-## Needs
-To load this library use any context that differs from `Global`
+To load this library use any context __that differs from__ `Global`
 
 ```wolfram
 Needs["FrontProxy`" -> "f`"] // Quiet
@@ -154,7 +153,7 @@ For fast animations with many proxies involved turn off transition interpolation
 </Callout>
 
 <Callout type="tip">
-For processing many proxies use pure functions with `Map`, `Table` or `MapThread` and etc. __Multiple passes using less complicated function cost less__, than a single pass with one complex due to JIT.
+For processing many proxies use pure functions with `Map`, `Table` or `MapThread` and etc. __Multiple passes using less complicated function cost less__, than a single pass with one complex due to JIT optimizations.
 </Callout>
 
 ## Examples

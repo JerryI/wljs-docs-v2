@@ -9,11 +9,12 @@ package: wljs-editor
 FrontInstanceGroup[] _FrontInstanceGroup
 ```
 
-constructs a wrapper, which allows dispose a group of virtual [WLJS Functions](frontend/Advanced/Frontend%20interpretation/WLJS%20Functions) (aka instances of WL symbols) on the frontend.
+constructs a group container for frontend expressions (or symbols).
 
-Normally one can append objects on existing plots using [FrontSubmit](../Frontend-IO/FrontSubmit), this wrapper allows to undo those action by disposing the created instances (even if they are nested). It does also support batch operations.
+Normally one can append objects on existing plots using [FrontSubmit](../Frontend-IO/FrontSubmit), this group container allows to undo those action by disposing the created instances (even if they are nested). It does also support batch operations.
 
 To add expressions into created group, use the following pattern
+
 ```wolfram
 g = FrontInstanceGroup[];
 g[{Red, Disk[]}]
@@ -73,8 +74,8 @@ group = FrontInstanceGroup[];
 FrontSubmit[{Red, Disk[]} // group, scene];
 ```
 
-and delete
+and dispose created instanced and revert any side effects
 
 ```wolfram
-Delete[group]
+FrontInstanceGroupRemove[group]
 ```

@@ -409,7 +409,7 @@ Here is an example of how to trigger confetti with an external JavaScript librar
 
 <Card
     href="./Frontend-functions/Overview"
-    title="Frontend functions"
+    title="Frontend Symbols"
   >
     A guide on how to write and exchange data with Javascript functions and WL
   </Card>
@@ -482,7 +482,7 @@ Now if you place it on any slide, it will launch confetti once the slide has bec
 
 ## Programmatic slides control
 
-Use [FrontSlidesSelected](./../Slides/FrontSlidesSelected) to control slides programmatically. Note that this is a frontend function (i.e., undefined on the Wolfram Kernel). Execute it with [FrontSubmit](./../Frontend-IO/FrontSubmit) to navigate to a different slide programmatically. For example:
+Use [FrontSlidesSelected](./../Slides/FrontSlidesSelected) to control slides programmatically. Note that this is a frontend symbol (i.e., undefined on the Wolfram Kernel). Execute it with [FrontSubmit](./../Frontend-IO/FrontSubmit) to navigate to a different slide programmatically. For example:
 
 ```wolfram
 FrontSlidesSelected["navigateNext", 1] // FrontSubmit
@@ -662,7 +662,7 @@ Here is our repo
 ### Share downloadable files
 If you export your notebook or presentation to a [HTML file](./../Share/Standalone-HTML), you might need to provide some ASCII or other binary files together with it. It may benefit a user, if you provide a direct link to it right on the notebook page.
 
-1. Define a wrapper, that exports any file to a base64 encoded string and passes it to [a frontend function](./Frontend-functions/Overview):
+1. Define a wrapper, that exports any file to a base64 encoded string and passes it to [a frontend symbol](./Frontend-functions/Overview):
 
 ```wolfram
 EmbedFile[name_String, data_] := With[{exported = Export[name, data]},
@@ -676,7 +676,7 @@ EmbedFile[name_String, data_] := With[{exported = Export[name, data]},
 ]
 ```
 
-2. Define a frontend function, which handles the file decoding and downloading:
+2. Define a frontend symbol, which handles the file decoding and downloading:
 
 ```js
 .js

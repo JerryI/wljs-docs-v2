@@ -2,52 +2,151 @@
 title: Overview
 ---
 
+In this guide we explore the core ideas behind WLJS project, what what powers UI, interactivity and how to extend it to your own needs. If you know from the [introduction](./../../Overview) WLJS Notebooks are web-based, it means, that graphical objects, sliders, button, UI elements are made with HTML/CSS and Javascript code. If you want to create your own display function, input element, that cannot be derived from the basic primitives of Wolfram Language Standard libray (or can be, but inefficient) __you need to write supporting Javascript code__ to archive that. 
+
+To bridge Wolfram Kernel and Javascript lands seamlessly, we made the last one speak the same language and called it WLJS Interpreter - a small subset of Wolfram Kernel running in the browser. 
+
+You can define symbols, contexts, that can be evaluated on or only on the frontend and the result fetched by Wolfram Kernel, we would refer to them as __frontend symbols__ as well. 
+
+You can also define __prototype-based symbols__, that are evaluated into scoped runtime instances with local state and reactive bindings to other symbols. This how [reactivity](./../../Guides/Dynamic) of WLJS Notebook works under the hood.  
+
+The possibilites are limitless from creating DOM elements, emiting sound, or using [3rd party libraries](./3rd-party-libs) like `ApexCharts` or `Charts.js` for instance to visualize your data in a facinating way. Frontend symbols give you the full power to go __completely beyong Wolfram Language ecosystem__ and even access [Bluetooth HID](https://developer.mozilla.org/en-US/docs/Web/API/WebHID_API), [GPU](https://developer.mozilla.org/en-US/docs/Web/API/WebGL_API), [serial](https://developer.mozilla.org/en-US/docs/Web/API/Web_Serial_API) devices, pipe in and out the data.
 
 
 ## Quick and Dirty
-Create a new cell, then define a function inside the `core` [context](interpreter/Advanced/architecture.md):
+Create [Javascript cell](./../../Cell-types/Javascript), then define a function within `core` object or as we call it later - global frontend symbol context:
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<wljs-editor lazy="true" type="Input" display="codemirror">{`.js
+core.totalSum = async (args, env) => {
+  const data = await interpretate(args[0], env);
+  const sum = data.reduce((p, a) => p + a, 0);
+  return sum;
+}
+`}</wljs-editor></WLJSWrapper>
+
+To evaluate it directly from the Wolfram Kernel and get the results back, use [FrontFetch](./../../Frontend-IO/FrontFetch):
+
+```wolfram
+totalSum[{1,2,3,4,5}] // FrontFetch
+```
+
+<Callout>`FrontFetch` is a blocking function, use `FrontFetchAsync` in buttons, timers, or asynchronious functions.</Callout>
+
+Since [Alert](./../../Interpreter/Alert) is also frontend symbol, we can chain it with our `totalSum` to display the result in a little box. Then we do not need to fetch the results, we use:
+
+```wolfram
+totalSum[{1,2,3,4,5}] // Alert // FrontSubmit
+```
+
+[FrontSubmit](./../../Frontend-IO/FrontSubmit) acts similar to `LocalSubmit` or `SessionSubmit`.
+
+Here is another example with Canvas API, where we use it to dipsplay cellular automaton:
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<wljs-editor lazy="true" type="Input" display="codemirror">{`.js
+const canvas = document.createElement("canvas");
+canvas.width = 400;
+canvas.height = 400;
+
+let context = canvas.getContext("2d");
+context.fillStyle = "lightgray";
+context.fillRect(0, 0, 500, 500);
+
+//an array to store the previous state
+let old = new Array(40);
+for (let i = 0; i < old.length; i++) {
+  old[i] = new Array(40).fill(0); 
+}
+
+core.drawArray = async (args, env) => {
+  const data = await interpretate(args[0], env);
+
+  //draw our boxes
+  for(let i=0; i<40; ++i) {
+    for (let j=0; j<40; ++j) {
+      //old pixels will leave blue traces
+      if (old[i][j] > 0) {
+        context.fillStyle = "rgba(0,0,255,0.4)"; 
+        context.fillRect(i*10 + 2, j*10 + 2, 6, 6);
+      }
+      //new pixels
+      if (data[i][j] > 0) {
+        context.fillStyle = "rgba(255,0,0,0.6)"; 
+        context.fillRect(i*10 + 1, j*10 + 1, 8, 8);
+      } else {
+        context.fillStyle = "rgba(255,255,255,0.6)"; 
+        context.fillRect(i*10 + 1, j*10 + 1, 8, 8);
+      }
+      
+      //store the previous frame
+      old[i][j] = data[i][j];
+    }
+  }
+}
+
+return canvas
+`}</wljs-editor></WLJSWrapper>
+
+Now we can call `drawArray` repeatedly in a loop and update the field:
+
+```wolfram
+board = RandomInteger[1, {40, 40}];
+
+Do[
+  board = CellularAutomaton["GameOfLife", board];
+  drawArray[board] // FrontSubmit;
+  Pause[0.1];
+, {i,1,50}]
+```
+
+However this is not yet most optimal way of doing that. The output canvas is fixed to a Javascript cell and cannot be represented as a normal Wolfram Expression. To solve that we shall go deeper...
+
+
+## A Deeper Look
+First, one needs to understand how the symbols are defined and evaluated:
+
+- Basic (as shown above)
+- Prototype-based, instanced
+
+### Basics
+When symbol is evaluated, the runtime does not create or store its state - *call (evaluate) and forget principle*, except for the side-effects made by evaluation of this symbol. Here is a few rules for them:
+
+<Card>
+
+- Frontend symbol is asynchronious Javascript function with 2 arguments
+- Frontend symbol should return either nothing or a normal Javascript expression: string, number, array or an object. It can also return a function only if the result is used by the parent frontend symbol, but not a Wolfram Kernel via `FrontFetch`
+- Passed arguments have to be evaluated using a function `window.interpretate`
+- Starting frontend context is always `core`, then you can diverge the evaluation to any other
+
+</Card>
+
+Let's have a look at the basic structure:
 
 ```js
-.js
-core.MyFunction = async (args, env) => {
-  const data = await interpretate(args[0], env);
-  alert(data);
+core.MySymbol = async (args, env) => {
+  //number of arguments + options
+  args.length
+
+  //extract passed options
+  const options = await core._getRules(args, env);
+
+  //evaluate 1st argument
+  const arg1 = await interpretate(args[0], env);
+
+  //access shared memory (side-effects)
+  env.prop = "Hey!";
+  
+  //return evaluation result
+  return 3;
 }
 ```
 
-To call it directly from the Wolfram Kernel, use:
+#### Shared memory and side-effects
 
-```wolfram
-MyFunction["Hello World!"] // FrontSubmit;
-```
-
-Or in the cell's output:
-
-```wolfram
-CreateFrontEndObject[MyFunction["Hello World!"]]
-```
-
-This should produce a pop-up message with the given text.
-
-## A Deeper Look
-First, one needs to understand how the function is called. There are a few different ways:
-
-- Direct calls (as shown above)
-- Indirect calls using containers
-
-The first one is straightforward, and most UI and core built-in functions are written this way.
-
-### Simple Direct Call
-As simple as this:
-
-
-
-A called function has no persistent memory (call and forget), except for the `env` variable, which can share data with other functions in the same subtree. 
-
-__Any defined function must return a JavaScript object or nothing.__
-Arguments (`args`) are always Wolfram Expressions, so use `interpretate` to convert them into JavaScript data types.
-
-For example, `env` is very handy when working with graphics:
+The second argument of `MySymbol` asynchronious function is a shared object between the whole expression tree, which can be used for creating side-effects or pass the data implicitly from parent to children expresion. For example, here is a brief implementation of `RGBColor` of `Graphics`:
 
 ```js
 core.RGBColor = async (args, env) => {
@@ -63,13 +162,19 @@ core.RGBColor = async (args, env) => {
 };
 ```
 
-You can then call `core.RGBColor` somewhere in a list:
+`env` can be scoped using `List` expression for example:
 
 ```wolfram
-{Blue[], {Red[], Sphere[] (* I am red *)}, Cuboid[] (* I am blue *)} // Graphics3D
+{Blue, {Red, Sphere[] (* I am red *)}, Sphere[] (* I am blue *)} // Graphics3D
 ```
 
-In the parent function:
+You can scope it too in Javascript for the children and pass additional properties:
+
+```js
+const arg1 = await interpretate(args[0], {...env, boo: true});
+```
+
+For example, this is how `Graphics3D` work under the hood:
 
 ```js
 core.Graphics3D = async (args, env) => {
@@ -85,81 +190,95 @@ core.Sphere = async (args, env) => {
 };
 ```
 
-Thus, the desired data ends up in the scene. This is the power of pointers.
+Thus, the desired data ends up in the scene.
 
-##### 🎡 Example 1: Game of Life
-To have a bit of fun, let's define some supporting structures.
+To access the __non-scopable part__ of `env`, use:
 
-Create a new cell with the following code:
+```js
+//this will be global for all expressions
+//no matter if it is passed as {...env} or scoped within List[]
+env.global.myParam = "Hey!"
+```
 
-```js title="cell 1"
-.js
-// Create JS canvas
-const canvas = document.createElement("canvas");
-canvas.width = 400;
-canvas.height = 400;
+`env.global` is shared across all branches of the evaluating expression tree.
 
-let context = canvas.getContext("2d");
-context.fillStyle = "lightgray";
-context.fillRect(0, 0, 500, 500);
+#### Namespaces
 
-// An array to store the previous state
-let old = new Array(40);
-for (let i = 0; i < old.length; i++) {
-  old[i] = new Array(40).fill(0); 
-}
+<Callout>Please do not confuse it with Wolfram Language symbols contexts</Callout>
 
-// A function to draw on it
-core.MyFunction = async (args, env) => {
-  const data = await interpretate(args[0], env);
+To prevent name collisions and clutter if symbol `SymbolA` can be interpreted differently depending of its parents expresions, you can specify a namescape context of symbols on Javascript using:
 
-  // Draw our boxes
-  for (let i = 0; i < 40; ++i) {
-    for (let j = 0; j < 40; ++j) {
-      // Old pixels leave blue traces
-      if (old[i][j] > 0) {
-        context.fillStyle = "rgba(0,0,255,0.2)"; 
-        context.fillRect(i * 10 + 2, j * 10 + 2, 6, 6);
-      }
-      // New pixels
-      if (data[i][j] > 0) {
-        context.fillStyle = "rgba(255,0,0,0.4)"; 
-        context.fillRect(i * 10 + 1, j * 10 + 1, 8, 8);
-      } else {
-        context.fillStyle = "rgba(255,255,255,0.4)"; 
-        context.fillRect(i * 10 + 1, j * 10 + 1, 8, 8);
-      }
+```js
+var subSpace = {};
 
-      // Store the previous frame
-      old[i][j] = data[i][j];
-    }
-  }
+subSpace.SymbolA = (args, env) => {
+  // One thing
 };
 
-return canvas;
+core.SymbolA = (args, env) => {
+  // Completely different thing
+};
 ```
 
-This function will draw a 40x40 array of 1 and 0 pixels on the page. Let's try it out with a typical cellular automaton like Conway's Game of Life:
+The interpreter will check all available contexts and __use the first match__. However, you **can prioritize the context** by providing it in the `env` object:
 
-```wolfram title="cell 2"
-gameOfLife = {224, {2, {{2, 2, 2}, {2, 1, 2}, {2, 2, 2}}}, {1, 1}};
-board = RandomInteger[1, {40, 40}];
-Do[
-  board = CellularAutomaton[gameOfLife, board, {{0, 1}}] // Last;
-  MyFunction[board] // FrontSubmit;
-  Pause[0.1];
-, {i, 1, 100}]
+```js
+core.GrantSymbol = (args, env) => {
+  const data = interpretate(args, { ...env, context: subSpace });
+  // ...
+  // First match should be in the `subSpace` object
+  // "One thing"
+};
 ```
 
-The output is shown in the GIF below, but you can try it yourself by opening `GOL.wln` from the examples folder.
+If you have multiple prioritized contexts, you __can pass them as an array__:
 
-:::note
-See more about JS cells in [Cell Types](Cell%20types.md)
-:::
+```js
+core.GrantSymbol = (args, env) => {
+  const data = interpretate(args, { ...env, context: [subSpace1, subSpace2] });
+  // ...
+  // First match in `subSpace1`, if not found, then in `subSpace2`, and finally in the `core` context
+};
+```
 
-Of course, this is not the most efficient way to make animations. A better method would be to let JS run the animation on its own and wait for or request new data using a system of events.
+This sort of emulates pattern matching of Wolfram Language in down-values, i.e.:
 
-#### A Remark About Subsymbols | Methods
+```wolfram
+GrantSymbol[SymbolA[]] := "One thing"
+SymbolA[] := "Completely different thing"
+```
+
+#### Packed and Numeric Arrays
+When sending large chunks of numeric data, the Wolfram Kernel may use `PackedArray`, which becomes a `NumericArrayObject` in JavaScript (a wrapper for `TypedArray`).
+
+Always check for this:
+
+```js
+let data = await interpretate(args[0], env);
+if (data instanceof NumericArrayObject) {
+  // handle TypedArray
+} else {
+  // handle normal array
+}
+```
+
+You can convert to a normal JS array with:
+
+```js
+data = data.normal();
+```
+
+<Accordions>
+
+<Accordion>
+
+</Accordion>
+
+</Accordions>
+
+#### Instanced symbols
+
+#### Prototypes
 Sometimes a function or a tree of functions is called in response to some event. This information is stored in `env.method`. See also [Symbols](../../../../interpreter/Advanced/symbols.md).
 
 If there is a data update, i.e. `env.method = 'update'`, then the interpreter will try to find a subsymbol or function to call (read more about how the interpreter handles them in [WLJS Interpreter](https://github.com/JerryI/wljs-interpreter)).
@@ -202,38 +321,9 @@ core.ListLinePlotly.update = (args, env) => {
 __Destroy and update methods are usually features of [Virtual Functions](#Containers%20Executables).__
 
 
-#### Contexts
-To prevent name collisions and clutter, you can specify a context (or library) of symbols using:
 
-```js
-var library = {};
-library.name = "It is important to write a name";
-interpretate.extendContext(library);
 
-library.Symbol = (args, env) => {
-  // ...
-};
-```
 
-The interpreter will check all available contexts and __use the first match__. However, you **can prioritize the context** by providing it in the `env` object:
-
-```js
-core.GrantSymbol = (args, env) => {
-  const data = interpretate(args, { ...env, context: library });
-  // ...
-  // First match should be in the `library` object
-};
-```
-
-If you have multiple prioritized contexts, you __can pass them as an array__:
-
-```js
-core.GrantSymbol = (args, env) => {
-  const data = interpretate(args, { ...env, context: [library1, library2] });
-  // ...
-  // First match in `library1`, if not found, then in `library2`, and finally in the `core` context
-};
-```
 
 ### Virtualization
 Each time the interpreter encounters a virtual function (or call it a symbol), it creates a unique object that scopes the `env` variable and provides local memory for all Wolfram Expressions located inside the container.
@@ -325,25 +415,7 @@ core.MyFunction.destroy = async (args, env) => {};
 
 Without these, deleting a widget can cause errors.
 
-#### A Note on Packed and Numeric Arrays
-When sending large chunks of numeric data, the Wolfram Kernel may use `PackedArray`, which becomes a `NumericArrayObject` in JavaScript (a wrapper for `TypedArray`).
 
-Always check for this:
-
-```js
-let data = await interpretate(args[0], env);
-if (data instanceof NumericArrayObject) {
-  // handle TypedArray
-} else {
-  // handle normal array
-}
-```
-
-You can convert to a normal JS array with:
-
-```js
-data = data.normal();
-```
 
 ##### 🎡 Example 3: Game of Life (Improved)
 Let’s enhance our animation with containers:
@@ -492,6 +564,8 @@ FrontSubmit[Line[{{0.2, 0.6}, {0.1, 0.5}}], ref]
 :::tip
 See [FrontSubmit](frontend/Reference/Frontend%20IO/FrontSubmit.md) and [FrontInstanceReference](frontend/Reference/Frontend%20IO/FrontInstanceReference.md) for more.
 :::
+
+#### Events
 
 #### Frontend Objects
 If you copy and paste any expressions from the given examples to a normal text editor, it will reveal [InputForm](frontend/Reference/Formatting/InputForm.md) 

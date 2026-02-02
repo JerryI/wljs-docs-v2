@@ -6,21 +6,27 @@ env:
 source: https://github.com/JerryI/wljs-editor/blob/dev/src/FrontSubmitKernel.wl
 package: wljs-editor
 ---
-Sends an expression to be executed on WLJS Interpreter (frontend / browser)
+
+To send an expression to be evaluated on frontend / browser:
 
 ```wolfram
 FrontSubmit[expr_, opts___]
 ```
 
-Sends an raw Javascript expression to be executed on frontend / browser
+where `expr` can be a small subset of Wolfram Language symbols for basic math operations or [any frontend symbols/expressions](./../Advanced/Frontend-functions/Overview).
+
+To sends an raw Javascript expression to be executed on frontend / browser, use:
 
 ```wolfram
 FrontSubmit[expr_String, opts___]
 ```
 
+where `expr` is any valid JS expression represented as a string.
+
+
 ## Options
 ### `"Window"`
-specifies a window socket, to which an expression will be sent. Use [CurrentWindow](../Frontend-IO/CurrentWindow) to fetch a window object from the evaluation context.
+specifies a window object, where an expression will be evaluated. Use [CurrentWindow](../Frontend-IO/CurrentWindow) to fetch a window object from the evaluation context.
 
 <Callout type="warn">
 Be aware of a context loss in a case of an handler function called from outside. For example with [Parallel kernels](frontend/Advanced/Events%20system/Parallel%20kernels) or [`SetTimeout`](../Misc/Async) one have to explicitly provide a [WindowObj](../Frontend-IO/WindowObj)
@@ -42,7 +48,7 @@ With[{win = CurrentWindow[]},
 
 
 ## Examples
-### Calling an WLJS (Frontend) function
+### Evaluating frontend symbols
 
 ```wolfram
 FrontSubmit[Alert["Hello World!"]]
@@ -54,14 +60,14 @@ Or to call a custom-defined Javascript function
 
 ```js title="cell 1"
 .js
-core.ShowReversed = async (args, env) => {
+core.reversed = async (args, env) => {
 	const text = await interpretate(args[0], env);
-	alert(text..split("").reverse().join(""));
+	return (text..split("").reverse().join(""));
 }
 ```
 
 ```wolfram title="cell 2"
-FrontSubmit[ShowReversed["Must be reversed..."]];
+FrontSubmit[reversed["Must be reversed..."] // Alert];
 ```
 
 ### Append objects to a static graph
@@ -80,7 +86,7 @@ FrontSubmit[Arrow[RandomReal[{0,1}, {2,2}]], scene]
 
 to append an arrow to an existing graph.
 
-### Controlling ViewBox
+### Overwritting ViewBox
 A typical graphics figure is usually a [ViewBox](../Formatting/Low-level/ViewBox). Here we can reference it using [FrontInstanceReference](../Frontend-IO/FrontInstanceReference)
 
 ```wolfram
@@ -91,6 +97,6 @@ Plot[x, {x,0,1}, Epilog->{plot}]
 and then we can destroy it and replace with some other text
 
 ```wolfram
-FrontSubmit[ViewBox`OuterExpression["Hello World"], plot] 
+FrontSubmit[ViewBox`OuterExpression["BAM!"], plot] 
 ```
 

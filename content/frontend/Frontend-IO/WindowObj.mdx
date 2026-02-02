@@ -17,6 +17,8 @@ It is produced by [CurrentWindow](../Frontend-IO/CurrentWindow).
 You can attach an event listener to it. The following patterns are supported
 - `"Closed"` - fires, when a windows has been closed
 
+<Callout>You can hook up multiple event handlers to the same window without clonning the event object.</Callout>
+
 It returns a wrapper for [`EventObject`](../Misc/Events) generated from the events of the given window. You can apply `EventRemove` on it to remove all handlers.
 
 *example*

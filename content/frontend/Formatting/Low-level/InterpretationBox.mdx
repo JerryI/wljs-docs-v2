@@ -13,43 +13,9 @@ InterpretationBox[display_, expr_]
 
 where `display` will be shown in the output cell, instead of `expr`, keeping `expr` for the evaluation. 
 
-<Callout type="info">
-`display` can be any Wolfram Expression [converted to boxes](./../MakeBoxes) in `StandardForm`
-</Callout>
-
 <Callout type="warn">
-`display` must be Boxes, if you want to use regular WL expressions, consider [Interpretation](../../Formatting/Interpretation)
+Consider to use [Interpretation](../../Formatting/Interpretation) instead
 </Callout>
-
-<Callout type="tip">
-Please see [BoxBox](../../Formatting/Low-level/BoxBox) and [ViewBox](../../Formatting/Low-level/ViewBox) for an advanced expression decorations
-</Callout>
-
-<Callout type="tip">
-See more at [Decorating symbols](frontend/Advanced/Syntax%20sugar/Decorating%20symbols)
-</Callout>
-
-## Applications
-One of the examples is to make some definitions shorter by setting `UpValues` to  `MakeBoxes`, since the last one is recursively applied to everything in the output cell 
-
-```wolfram
-AVeryLongFunction /: MakeBoxes[AVeryLongFunction, StandardForm] := InterpretationBox[MakeBoxes[Ashort, StandardForm], AVeryLongFunction]
-```
-
-Now we can check the result by
-```wolfram
-AVeryLongFunction
-```
-
-if one define also this
-```wolfram
-AVeryLongFunction[expr__] := SpecialList[expr]
-```
-
-You can use it with the created alias `Ashort`
-
-__An expression will not be revealed__
-
 
 ## Supported output forms
 - [StandardForm](../../Formatting/StandardForm)

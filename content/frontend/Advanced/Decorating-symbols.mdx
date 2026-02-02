@@ -1,5 +1,445 @@
 ---
-title: Decorating symbols and output forms
+title: Decorating symbols
 ---
 
-Hey
+<Callout>We significantly simplified the way how you create syntax sugar for symbool compared to how it is done in Mathematica. You can still use low-level boxes such as `RowBox`, `GridBox` and etc, but we do not recommend it since it violates SOLID principles</Callout>
+
+Symbol decorations or syntax sugar - is one of the main selling point of Wolfram Mathematica and WLJS Notebook. Basic maths helpers such as fractions, square roots, integrals significatly increases the readabillity of input and output expression:
+
+
+Morever, any [Plot](./../Plotting-Functions/Plot) or [Image](./../Image/Image) is in fact just a fancy output form of corresponsing `Graphics`, and `Image` expressions and fully editable! That's why the difference between input and output Wolfram Language cells in WLJS it rather wague.
+
+Every symbol has it's __[InputForm](./../Formatting/InputForm)__ - this is how the expression can be typed by a user or serialized to a file, for example:
+
+```wolfram
+ListPlot[{0,1,2}] // InputForm
+```
+
+```wolfram
+Graphics[{{}, Annotation[{{Annotation[{Directive[PointSize[0.012833333333333334], ...]}]}}]]
+```
+
+Then every symbol has it's output form - how it is displayed in the cell, or within other expressions. In WLJS we generally have 2 output forms:
+
+- [StandardForm](./../Formatting/StandardForm) - what you see in all input/output [Wolfram Language](./../Cell-types/Wolfram-Language) cells;
+- [WLXForm](./../Formatting/WLXForm) - what you see if the expression in placed on a [slide](./../Cell-types/Slide), [Markdown](./../Cell-types/Markdown) or [WLX](./../Cell-types/WLX) cells
+
+If the output form is not defined - `InputForm` will be used, i.e. that's why all user-defined symbols look at they are in the output cells.
+
+On the output expressions are processed with [MakeBoxes](./../Formatting/MakeBoxes) - an internal symbol, which is applied on any output. To define a form of expression, use `TagSet` pattern:
+
+```wolfram
+MySymbol /: MakeBoxes[MySymbol, StandardForm] := "6"
+MySymbol /: MakeBoxes[MySymbol, WLXForm]      := "9"
+```
+
+Depending where this `MySymbol` is placed it will look and work diferently:
+
+```markdown
+.slide
+
+## Have a look at
+
+<SpecialSymbol/>
+```
+
+or
+
+```wolfram
+MySymbol
+```
+
+```wolfram
+6
+```
+
+The given example on `StandardForm` alters not only the appearance, but also the output content: `MySymbol` is gone. __This is rather discuaraged__ in Wolfram Language, when you cannot get the original expression from the output. To address this issue, we shall go in depth on how to alter the displayed expression, but not the undelying one.
+
+## Interpretation 
+
+### Temporal
+
+You can replace a symbol with an icon by applying [Interpretation](./../Formatting/Interpretation). After the first evaluation, the representation is lost and the true expression is revealed:
+
+```wolfram
+Interpretation[
+  Graphics[Rectangle[{-1,-1},{1,1}], ImageSize->{20,20}], 
+  1
+]
+```
+
+```wolfram
+(*VB[*)(1)(*,*)(*"1:eJwlT8tOg0AAJMaD8SuwJyAQgahRk5osZlu2LyxLMEI4AF2B8tgGSoESPtS/keplMjPJTGbuAmp+XzEMU92OAHfJkZZ2Qhr8M0pOsDVX4Ll56R/iJKxck4RHv4gy4vaSIrKSMohsPxJl8EQW5X5EcHImrPTG9qossqo8eDwniGOFMFFeyaK1rDX9wPkm/ZoD6kQQ66f0cfmZrZH2oKc6OI151MGmjmncAJpHioFxuzrLxQwjCJOVpTotJs49AsDyDRRFzxBu9x3dvId2sHCKIF88+YWWz4KDgxLwggAC+7RKq+10Orns8GxN4P8fX49g1hnBNxdC/J1RZN2fa5U1+QVSjFNr"*)(*]VB*)
+```
+
+We can prove it by:
+
+```wolfram
+(*VB[*)(1)(*,*)(*"1:eJwlT8tOg0AAJMaD8SuwJyAQgahRk5osZlu2LyxLMEI4AF2B8tgGSoESPtS/keplMjPJTGbuAmp+XzEMU92OAHfJkZZ2Qhr8M0pOsDVX4Ll56R/iJKxck4RHv4gy4vaSIrKSMohsPxJl8EQW5X5EcHImrPTG9qossqo8eDwniGOFMFFeyaK1rDX9wPkm/ZoD6kQQ66f0cfmZrZH2oKc6OI151MGmjmncAJpHioFxuzrLxQwjCJOVpTotJs49AsDyDRRFzxBu9x3dvId2sHCKIF88+YWWz4KDgxLwggAC+7RKq+10Orns8GxN4P8fX49g1hnBNxdC/J1RZN2fa5U1+QVSjFNr"*)(*]VB*) + 1
+```
+
+```wolfram
+2
+```
+
+<Accordions>
+
+<Accordion title="Magic Joystick">
+
+We can create such structre, which looks like a [joystick](./../GUI/InputJoystick), but acts like a [dynamic symbol](./../Guides/Dynamic):
+
+```wolfram
+createDynamic2DSymbol[] := Module[{symbol = {0,0}}, With[{
+    eventObject = InputJoystick[],
+    helper = InputJoystick`IntegrationHelper[][Function[xy, symbol = xy]]
+},
+    EventHandler[eventObject, helper];
+    Interpretation[eventObject, Offload[symbol]]
+]]
+```
+
+Now we create one symbol like this:
+
+```wolfram
+createDynamic2DSymbol[]
+```
+
+and then __cut and paste__ it to let's say text position in `Graphics`:
+
+```wolfram
+Plot[Sin[x], {x, -5Pi, 5Pi}, Epilog->{
+  Text["Sin[x]", (* HERE *), {0,0}]
+}]
+```
+
+</Accordion>
+
+</Accordions>
+
+
+### Permament
+To permamently change how the given symbol is displayed we should use `MakeBoxes`. Remeber, to apply `MakeBoxes` on any expression you want to provide to the output so it will propage down the tree:
+
+```wolfram
+morse[s_String];
+
+morse /: MakeBoxes[m: morse[s_], f: StandardForm] := With[{
+    i = Interpretation[Row[{"[", Style[s, 12], "]"}], m]
+},
+  MakeBoxes[i, f]
+]
+```
+
+Let' define a helper constructor for our morse code:
+
+```wolfram
+morseTable = {"a" -> ".- ", "b" -> "-... ", "c" -> "-.-. ", 
+  "d" -> "-.. ", "e" -> ". ", "f" -> "..-. ", "g" -> "--. ", 
+  "h" -> ".... ", "i" -> ".. ", "j" -> ".--- ", "k" -> "-.- ", 
+  "l" -> ".-.. ", "m" -> "-- ", "n" -> "-. ", "o" -> "--- ", 
+  "p" -> ".--. ", "q" -> "--.- ", "r" -> ".-. ", "s" -> "... ", 
+  "t" -> "- ", "u" -> "..- ", "v" -> "...- ", "w" -> ".-- ", 
+  "x" -> "-..- ", "y" -> "-.-- ", "z" -> "--.. ", " " -> "/ "};
+
+morse[s_String] := morse[StringReplace[ToLowerCase[s], morseTable]] /; StringMatchQ[s, ___~~WordCharacter..~~___];
+
+morse /: TextString[morse[s_]] := StringReplace[s, 
+  Map[Function[r, Rule[r[[2]], r[[1]]]], SortBy[Normal[morseTable], -StringLength[Last[#]] &]]];
+```
+
+Let's try to create a morse code container:
+
+```wolfram
+morse["sos"]
+```
+
+```wolfram
+(*VB[*)(morse["... --- ... "])(*,*)(*"1:eJxTTMoPSmNiYGAo5gISrimZJflFYZmp5cEngVwNLXenaC3N6mqlaCUNrRotTR0wqaHlBBLWUNLT01PQ1dVVANFKQGEdkJySoVWqV0VIiG9+QHCuX2aku2O+aXpysGNohGlUVHZBYXCetlNweJR2RJ5bYmR5unOISbprWEVwblRAIVA2OcI0KDI7Rzu0MtA3NL00I9MxyMupICS3oDy8Ij0sNDwqNTUnvTjKOdMgJ9DRtzA9vKLc1lYJZG+skxOIgrtSKVapthYo7A4UhviQBUgEleakBnOAGKmJKf55OZVg0ZCi0lQAzblJrw=="*)(*]VB*)
+```
+
+To check that this is still `morse` symbol, apply `InputForm`:
+
+```wolfram
+(*VB[*)(morse["... --- ... "])(*,*)(*"1:eJxTTMoPSmNiYGAo5gISrimZJflFYZmp5cEngVwNLXenaC3N6mqlaCUNrRotTR0wqaHlBBLWUNLT01PQ1dVVANFKQGEdkJySoVWqV0VIiG9+QHCuX2aku2O+aXpysGNohGlUVHZBYXCetlNweJR2RJ5bYmR5unOISbprWEVwblRAIVA2OcI0KDI7Rzu0MtA3NL00I9MxyMupICS3oDy8Ij0sNDwqNTUnvTjKOdMgJ9DRtzA9vKLc1lYJZG+skxOIgrtSKVapthYo7A4UhviQBUgEleakBnOAGKmJKf55OZVg0ZCi0lQAzblJrw=="*)(*]VB*) //InputForm
+```
+
+```wolfram
+morse["... --- ... "]
+```
+
+Let's convert it back to the text:
+
+```wolfram
+(*VB[*)(morse["... --- ... "])(*,*)(*"1:eJxTTMoPSmNiYGAo5gISrimZJflFYZmp5cEngVwNLXenaC3N6mqlaCUNrRotTR0wqaHlBBLWUNLT01PQ1dVVANFKQGEdkJySoVWqV0VIiG9+QHCuX2aku2O+aXpysGNohGlUVHZBYXCetlNweJR2RJ5bYmR5unOISbprWEVwblRAIVA2OcI0KDI7Rzu0MtA3NL00I9MxyMupICS3oDy8Ij0sNDwqNTUnvTjKOdMgJ9DRtzA9vKLc1lYJZG+skxOIgrtSKVapthYo7A4UhviQBUgEleakBnOAGKmJKf55OZVg0ZCi0lQAzblJrw=="*)(*]VB*) // TextString
+```
+
+```wolfram
+"sos"
+```
+
+Finally, make it audible:
+
+```wolfram
+silence = Table[0, {t,0,40Pi,0.1}];
+dot = Table[Sin[5 t], {t,0,40Pi,0.1}];
+dash = Join[dot, dot];
+
+morse /: Play[morse[t_String]] := With[{
+  m = morse[t]
+},
+  Join @@ (Switch[#, ".", Join[dot, silence], "-", Join[dash, silence], _, Join[silence, silence]] & /@ StringSplit[m[[1]], ""]) // ListPlay // EmitSound;
+];
+```
+
+```wolfram
+(*VB[*)(morse["... --- ... "])(*,*)(*"1:eJxTTMoPSmNiYGAo5gISrimZJflFYZmp5cEngVwNLXenaC3N6mqlaCUNrRotTR0wqaHlBBLWUNLT01PQ1dVVANFKQGEdkJySoVWqV0VIiG9+QHCuX2aku2O+aXpysGNohGlUVHZBYXCetlNweJR2RJ5bYmR5unOISbprWEVwblRAIVA2OcI0KDI7Rzu0MtA3NL00I9MxyMupICS3oDy8Ij0sNDwqNTUnvTjKOdMgJ9DRtzA9vKLc1lYJZG+skxOIgrtSKVapthYo7A4UhviQBUgEleakBnOAGKmJKf55OZVg0ZCi0lQAzblJrw=="*)(*]VB*) // Play
+```
+
+
+## ViewBox
+
+<Cards>
+
+<Card
+    href="./Frontend-functions/Overview"
+    title="Frontend symbols"
+  >
+    An advanced guide how to define frontend symbols and make them do funky stuff for you
+  </Card>
+
+</Cards>
+
+Another way is to use Javascript with a custom display function. This can be done using [ViewBox](./../Formatting/Low-level/ViewBox). Let's firstly define our display function as [frontend symbol](./../Advanced/Frontend-functions/Overview):
+
+```js
+core.smileyDecorator = async (args, env) => {
+    const canvas = document.createElement('canvas');
+    canvas.width = 50;
+    canvas.height = 50;
+    const ctx = canvas.getContext('2d');
+    // Draw a smiley face
+    ctx.beginPath();
+    ctx.arc(25, 25, 20, 0, Math.PI * 2, true); // Outer circle
+    ctx.moveTo(35, 25);
+    ctx.arc(25, 25, 8, 0, Math.PI, false);  // Mouth
+    ctx.moveTo(22, 20);
+    ctx.arc(20, 20, 2, 0, Math.PI * 2, true);  // Left eye
+    ctx.moveTo(32, 20);
+    ctx.arc(30, 20, 2, 0, Math.PI * 2, true);  // Right eye
+    ctx.stroke();
+    //append to viewbox container
+    env.element.appendChild(canvas);
+}
+```
+
+Now we define a `StandardForm` for our symbol with `ViewBox` container. `ViewBox` allows to pass any decorator frontend symbol used to display an expression, and place any other expression underneath it in its `InputForm`:
+
+```wolfram
+SmileySymbol /: MakeBoxes[s_SmileySymbol, StandardForm] := With[{},
+  ViewBox[s, smileyDecorator[]]
+]
+
+SmileySymbol[]
+```
+
+```wolfram
+
+```
+
+If you reevaluate the output cell, you will get the same decorated symbol. You can ensure that this is still the same symbol, by taking its first argument:
+
+```wolfram
+SmileySymbol[42]
+```
+
+```wolfram
+SmileySymbol[42] // First
+```
+
+```wolfram
+42
+```
+
+
+In this sence this syntax-sugar is not temporal, but permament. However we can apply the same trick as before an use it to decorate other expressions temporary:
+
+```wolfram
+Interpretation[SmileySymbol[], 1]
+```
+
+```wolfram
+ - 1
+```
+
+```wolfram
+0
+```
+
+### Indicators
+Here is another example. Let's create a gauge, that can react on values changes. Define a gauge meter:
+
+```wolfram
+gauge[level_Real];
+
+gauge /: MakeBoxes[g_gauge, StandardForm] := With[{},
+  ViewBox[g, g]
+]
+```
+
+Here we use identical display and input expressions, the last one has to be defined as a [frontend symbol](./Frontend-functions/Overview) too:
+
+```js
+.js
+
+function setNeedlePosition(needle, value) {
+    value = Math.max(0, Math.min(1, value));
+    const angle = value * 180 - 90;
+    needle.style.transform = `rotate(${angle}deg)`;
+}
+
+core.gauge = async (args, env) => {
+  const gauge = document.createElement('div');
+  gauge.style.width = '100px';
+  gauge.style.height = '50px';
+  gauge.style.border = '1px solid #000';
+  gauge.style.borderRadius = '50px 50px 0 0';
+  gauge.style.position = 'relative';
+  gauge.style.background = 'linear-gradient(to right, red 0%, yellow 50%, green 100%)';
+
+  const needle = document.createElement('div');
+  needle.style.width = '2px';
+  needle.style.height = '40px';
+  needle.style.background = '#000';
+  needle.style.position = 'absolute';
+  needle.style.bottom = '0';
+  needle.style.left = '50%';
+  needle.style.transformOrigin = 'bottom';
+
+  const pos = await interpretate(args[0], env);
+  setNeedlePosition(needle, pos);
+
+  gauge.appendChild(needle);
+  env.element.appendChild(gauge);
+}
+```
+
+Let's test it:
+
+```wolfram
+gauge[0.3]
+```
+
+You can also place it with other wolfram expressions
+
+```wolfram
+gauge[0.3] // Framed
+```
+
+For the next step we need to [define prototypes](./Frontend-functions/Overview) for our symbol to update the needle positon and enable instancing:
+
+```js
+core.gauge.update = async (args, env) => {
+  const val = await interpretate(args[0], env);
+  setNeedlePosition(env.element.firstChild.firstChild, val);
+}
+
+core.gauge.destroy = () => {}
+
+core.gauge.virtual = true;
+```
+
+Now let's provide a symbol to `gauge` and manipulate it with a slider:
+
+```wolfram
+meterLevel = 0.5;
+gauge[meterLevel // Offload]
+
+EventHandler[InputRange[0,1,0.1], (meterLevel = #)&]
+```
+
+```
+
+```
+
+
+
+## ArrangeSummaryBox
+This is somewhat default display structure in Wolfram Language shared across many symbols like `ColorData`, `NumericArray`, `ByteArray` and many more, that keeps the original expression hidden, and instead shows some stats, or details about the content.
+
+For example, we have a symbol with information inside its arguments:
+
+```wolfram
+specialSymbol[<|"Date" -> Now, "Color" -> Red, "State" -> True|>]
+```
+
+Let's decorate it:
+
+```wolfram
+specialSymbol /: MakeBoxes[obj : specialSymbol[asc_Association], StandardForm] := 
+    Module[{above},
+        above = { 
+          {BoxForm`SummaryItem[{"Date: ", asc["Date"]}]},
+          {BoxForm`SummaryItem[{"Color: ", asc["Color"]}]}, 
+          {BoxForm`SummaryItem[{"State: ", asc["State"]}]}
+        };
+
+        BoxForm`ArrangeSummaryBox[
+           specialSymbol, (* Head *)
+           obj,           (* Input expression *)
+           None,          (* Icon *)
+           above,         (* Summary content *)
+           Null
+        ]
+    ];
+```
+
+The result looks like this:
+
+```wolfram
+specialSymbol[<|"Date" -> Now, "Color" -> Red, "State" -> True|>]
+```
+
+```wolfram
+specialSymbol[(*VB[*) <|"Date" -> DateObject[{2026, 2, 2, 11, 28, 25.895413`8.165797824213316}, "Instant", "Gregorian", 1.], "Color" -> RGBColor[1, 0, 0], "State" -> True|> (*,*)(*"1:eJzFU0uPmzAQTt+PS4+VemoPPuwlAhMS0hvmFaKQBZxEmz2VDQ6iAXtrHCX5j/ujakO63Uo99CVVgvHMN+P5Rt/IH25Yun3S6/Wad9IgdvQZrz/ZnGe0IDne13XGTxLePlI1b6TxOaPCo/mq5GKfVV3iqTQTVuWtM2eUdD1VNCsb8b2ojR6r6O0DvjNPKEi9KskBP5c5NxPk4/uu9rU0Xl4KxlX6R8oueiXNMp25ZMNygi8kBqAFoL1CwETyBHAsAdXz8uYz2QiFjhDU4BBAB55/XVeOpYzZt8bmQDfAULP6+tAcjUcWHEDdMPQhGLmyBEAY0kZkVEiviwNOCsbLjHaI3pe3gel23O0Qzv0orQN1YNhkelwsIhbjel6uA5uZxRKvr+tbEw9vT9vKL/GVmW68JkHB1XE6W669XZFYOyPWAPQRjjwxX1J0itxwEU0SLeLhoeHhyt7ZHjrEuACGqz410gNu012ddekkVnKm+4rgl8ohWX5Jq1OLLvie/O4CX8icwyrG/3SDd72fbzANUNtXYnorp6Z9O/6h0BM6iJ1kHmRJbJPEmUyNTTOKT9j6si4cV/L41wkqIpfanj0ol3H630TG4i+eyT3xLwzXPFNvP6sa8hWDJQpB"*)(*]VB*)]
+```
+
+<Callout>
+
+This is still valid input expression, unless it was too large and it will be indicated by a label: "Data is on Kernel", meaning that you can evaluate it in the current session still, but the data is not in the notebook and will be lost if you restart evaluation kernel.
+
+</Callout>
+
+Now add an icon based on the "Color" field. Note, that icon can only be `Image`, `Image3D`, `Graphics`, `Graphics3D`, `None` or any [frontend symbol](./../Advanced/Frontend-functions/Overview):
+
+```wolfram
+specialSymbol /: MakeBoxes[obj : specialSymbol[asc_Association], StandardForm] := 
+    Module[{above, icon},
+        above = { 
+          {BoxForm`SummaryItem[{"Date: ", asc["Date"]}]},
+          {BoxForm`SummaryItem[{"Color: ", asc["Color"]}]}, 
+          {BoxForm`SummaryItem[{"State: ", asc["State"]}]}
+        };
+
+        icon = Graphics[{
+          Lighter[asc["Color"]], Disk[{0,0}, 1],
+          asc["Color"], Disk[{0,0}, 0.8]
+        }, 
+          ImageSize -> {50, 50}, 
+          ImagePadding -> None, 
+          Controls -> False,
+          PlotRange -> {{-1,1},{-1,1}}
+        ];
+
+        BoxForm`ArrangeSummaryBox[
+           specialSymbol,
+           obj,
+           icon,
+           above,
+           Null
+        ]
+    ];
+```
+
+```wolfram
+specialSymbol[(*VB[*) <|"Date" -> DateObject[{2026, 2, 2, 11, 31, 53.514057`8.481042851597264}, "Instant", "Gregorian", 1.], "Color" -> RGBColor[1, 0, 0], "State" -> True|> (*,*)(*"1:eJzFVMmOm0AQdfblEimXSDklUvqQgy1oNntubN5kPCzGGc8pbWgjYqAnTVux/zEflcI4jg85ZJMiweuuV03V45Xg7ZqFmwedTqd+DWCx/ZDx8qPJOakymka7siT8APTmXnPmBcCQs0q4VbrMudiRok28vEi4e5rsBFkXNHoHtKEOqEokuatTRe2qCk26BJhuYui61CeUponeKngIMMtr0ZY8R/eb6NWFupOqiaDlMqdfoseQc4igV2/as88B3DQXjDfpH9XGrEjb6BlAHM4cmrCURu+BQ7iPsLm0kGbBivAAiKbm9foTTUTDGhaWsI6wjU+3LAMoDWhKT5NVSTMQvFFP7cuSivuarA0MrKvIcOAIwnhS1YJUAnZtPOI0YzwnVcvIPXgaaU7b+yjCPks5brCMFJNO94uFx/yonOerkcm0LI5Wt+WdFul3h00xzKMbLUzcOrBGN/vpLF652yzobxVfQnhoRZ4r5nFlHTxnsvDGgeTxFdzxB3NrumbghwFSnOZqJF301pzlyZfW4sbOcAcTftpsKEmvq+JwZBd8R393gE8gZ7OC8T+d4NfOzycYjqxjXeDko52S9H35h0aPK9W3g/mIBL5JA3s8VZLa8A9R//Mqsx3oM7wNrMxzKrBYzWM/zP6XyZH4i8/k3PgXxNWPmh8CKWr6DeUsF20="*)(*]VB*)]
+```

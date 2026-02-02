@@ -33,7 +33,7 @@ export default async function Page(props: PageProps<'/frontend/[[...slug]]'>) {
               key={env}
               className="inline-flex items-center rounded-md bg-fd-secondary px-2 py-1 text-xs font-medium text-fd-secondary-foreground"
             >
-              {env.replace('WLJS', 'Frontend')}
+              {env.replace('WLJS', 'Frontend symbol')}
             </span>
           ))}
         </div>
