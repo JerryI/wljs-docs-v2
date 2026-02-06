@@ -67,7 +67,7 @@ async function requestMicrophoneAccess() {
       return await navigator.mediaDevices.getUserMedia({ audio: true });
     } catch (err) {
       alert(
-        "Could not access the microphone.\n" +
+        "Could not access the microphone. " +
         "Make sure you're using https and you granted permission."
       );
       return null;
