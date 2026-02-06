@@ -5,8 +5,28 @@ package: wljs-inputs
 
 update: false
 ---
+
 ```wolfram
-TableView[table_List, opts___]
+TableView[{{1, 2, 3}, {4, 5, 6}}]
 ```
 
-where `table` is a 2D list
+```wolfram
+TableView[RandomReal[1, {5, 4}]]
+```
+
+```wolfram
+TableView[Table[i + j, {i, 3}, {j, 4}]]
+```
+
+presents the provided data in a table form including:
+
+<Card>
+
+- lazy-loading and pagination
+- supports boolean, numerical and arbitrary expressions
+
+</Card>
+
+<Callout>Use `TableForm` on large tables</Callout>
+
+

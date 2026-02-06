@@ -1,6 +1,10 @@
 {
   "title": "Animation Framework",
   "pages": [
-    "Overview"
+    "Overview",
+    "Tutorial",
+    "Recording",
+    "Timeline",
+    "Reference"
   ]
 }

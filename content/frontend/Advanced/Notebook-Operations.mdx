@@ -251,6 +251,15 @@ Use [NotebookRead](../Cells-and-Notebook/NotebookRead) to read cell contents:
 content = NotebookRead[NotebookFocusedCell[]];
 ```
 
+### List all cells
+
+Use [Cells](../Cells-and-Notebook/Cells) to list all cell objects in the notebook
+
+```wolfram
+cells = Cells[];
+Take[NotebookRead[cells], UpTo[5]]
+```
+
 ### Deleting cells
 
 Use [NotebookDelete](../Cells-and-Notebook/NotebookDelete) to remove cells:
@@ -385,6 +394,28 @@ TextView[state // Offload]
 
 Now try to reload a window or close/open a notebook—you will see the change in the state.
 
+## Cells as data storage
+Programmatic control over the notebook structure allows you to reuse cells as storage for your data. For example, `Cell` representation automatically picks up a cell type if applicable. If you want to call a Python script from the session, where should you store `.py` expressions? Why not store them in __another input cell__ and leave the name in the first line?
+
+```python
+np.py
+import numpy as np
+new_array = np.linspace(0,10,11).astype('int');
+new_array
+```
+
+Then we can locate this particular cell. Let's define a helper function:
+
+```wolfram
+getPythonCell[name_String] := StringDrop[SelectFirst[NotebookRead[Cells[]], MatchQ[Cell[_,_,name<>".py"]]][[1]], StringLength[name]+4]
+```
+
+and evaluate our script:
+
+```wolfram
+scriptText = getPythonCell["np"];
+ExternalEvaluate["Python", scriptText];
+```
 
 ## Notebooks as modules
 

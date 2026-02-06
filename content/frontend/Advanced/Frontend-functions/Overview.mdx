@@ -4,47 +4,47 @@ title: Overview
 
 import { Accordion, Accordions } from 'fumadocs-ui/components/accordion';
 
-In this guide we explore the core ideas behind WLJS project, what what powers UI, interactivity and how to extend it to your own needs. If you know from the [introduction](./../../Overview) WLJS Notebooks are web-based, it means, that graphical objects, sliders, button, UI elements are made with HTML/CSS and Javascript code. If you want to create your own display function, input element, that cannot be derived from the basic primitives of Wolfram Language Standard libray (or can be, but inefficient) __you need to write supporting Javascript code__ to archive that. 
+In this guide, we explore the core ideas behind the WLJS project, what powers the UI, interactivity, and how to extend it to your own needs. As you may know from the [introduction](./../../Overview), WLJS Notebooks are web-based, which means that graphical objects, sliders, buttons, and UI elements are made with HTML/CSS and JavaScript code. If you want to create your own display function or input element that cannot be easily derived from the basic primitives of the Wolfram Language Standard library (or would be inefficient to do so), __you need to write supporting JavaScript code__ to achieve that. 
 
-To bridge Wolfram Kernel and Javascript lands seamlessly, we made the last one speak the same language and called it WLJS Interpreter - a small subset of Wolfram Kernel running in the browser. 
+To bridge the Wolfram Kernel and JavaScript environments seamlessly, we made the latter speak the same language and called it WLJS Interpreter—a small subset of the Wolfram Kernel running in the browser. 
 
-You can define symbols, contexts, that can be evaluated on or only on the frontend and the result fetched by Wolfram Kernel, we would refer to them as __frontend symbols__ as well. 
+You can define symbols and contexts that can be evaluated on the frontend only, with results fetched by the Wolfram Kernel—we refer to them as __frontend symbols__. 
 
-You can also define __prototype-based symbols__, that are evaluated into scoped runtime instances with local state and reactive bindings to other symbols. This how [reactivity](./../../Guides/Dynamic) of WLJS Notebook works under the hood.  
+You can also define __instanced symbols__ that are evaluated into scoped runtime instances with local state and reactive bindings to other symbols. This is how [reactivity](./../../Guides/Dynamic) in WLJS Notebooks works under the hood.  
 
-The possibilites are limitless from creating DOM elements, emiting sound, or using [3rd party libraries](./3rd-party-libs) like `ApexCharts` or `Charts.js` for instance to visualize your data in a facinating way. Frontend symbols give you the full power to go __completely beyong Wolfram Language ecosystem__ and even access [Bluetooth HID](https://developer.mozilla.org/en-US/docs/Web/API/WebHID_API), [GPU](https://developer.mozilla.org/en-US/docs/Web/API/WebGL_API), [serial](https://developer.mozilla.org/en-US/docs/Web/API/Web_Serial_API) devices, pipe in and out the data.
+The possibilities are limitless: from creating DOM elements and emitting sound, to using [3rd party libraries](./3rd-party-libs) like `ApexCharts` or `Charts.js` to visualize your data in fascinating ways. Frontend symbols give you the full power to go __completely beyond the Wolfram Language ecosystem__ and even access [Bluetooth HID](https://developer.mozilla.org/en-US/docs/Web/API/WebHID_API), [GPU](https://developer.mozilla.org/en-US/docs/Web/API/WebGL_API), and [serial](https://developer.mozilla.org/en-US/docs/Web/API/Web_Serial_API) devices to pipe data in and out.
 
 
 ## Quick and Dirty
-Create [Javascript cell](./../../Cell-types/Javascript), then define a function within `core` object or as we call it later - global frontend symbol context:
+Create a [JavaScript cell](./../../Cell-types/Javascript), then define a function within the `core` object—or as we call it later, the global frontend symbol context:
 
 <WLJSWrapper>
 <span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
 <wljs-editor lazy="true" type="Input" display="codemirror">{`.js
 core.totalSum = async (args, env) => {
-  const data = await interpretate(args[0], env);
-  const sum = data.reduce((p, a) => p + a, 0);
-  return sum;
+    const data = await interpretate(args[0], env);
+    const sum = data.reduce((p, a) => p + a, 0);
+    return sum;
 }
 `}</wljs-editor></WLJSWrapper>
 
-To evaluate it directly from the Wolfram Kernel and get the results back, use [FrontFetch](./../../Frontend-IO/FrontFetch):
+To evaluate it directly from the Wolfram Kernel and get the result back, use [FrontFetch](./../../Frontend-IO/FrontFetch):
 
 ```wolfram
 totalSum[{1,2,3,4,5}] // FrontFetch
 ```
 
-<Callout>`FrontFetch` is a blocking function, use `FrontFetchAsync` in buttons, timers, or asynchronious functions.</Callout>
+<Callout>`FrontFetch` is a blocking function. Use `FrontFetchAsync` in buttons, timers, or asynchronous functions.</Callout>
 
-Since [Alert](./../../Interpreter/Alert) is also frontend symbol, we can chain it with our `totalSum` to display the result in a little box. Then we do not need to fetch the results, we use:
+Since [Alert](./../../Interpreter/Alert) is also a frontend symbol, we can chain it with our `totalSum` to display the result in a popup box. In this case, we don't need to fetch the result; instead, we use:
 
 ```wolfram
 totalSum[{1,2,3,4,5}] // Alert // FrontSubmit
 ```
 
-[FrontSubmit](./../../Frontend-IO/FrontSubmit) acts similar to `LocalSubmit` or `SessionSubmit`.
+[FrontSubmit](./../../Frontend-IO/FrontSubmit) acts similarly to `LocalSubmit` or `SessionSubmit`.
 
-Here is another example with Canvas API, where we use it to dipsplay cellular automaton:
+Here is another example using the Canvas API to display a cellular automaton:
 
 <WLJSWrapper>
 <span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
@@ -57,75 +57,65 @@ let context = canvas.getContext("2d");
 context.fillStyle = "lightgray";
 context.fillRect(0, 0, 500, 500);
 
-//an array to store the previous state
-let old = new Array(40);
-for (let i = 0; i < old.length; i++) {
-  old[i] = new Array(40).fill(0); 
-}
-
 core.drawArray = async (args, env) => {
-  const data = await interpretate(args[0], env);
+    const data = await interpretate(args[0], env);
 
-  //draw our boxes
-  for(let i=0; i<40; ++i) {
-    for (let j=0; j<40; ++j) {
-      //old pixels will leave blue traces
-      if (old[i][j] > 0) {
-        context.fillStyle = "rgba(0,0,255,0.4)"; 
-        context.fillRect(i*10 + 2, j*10 + 2, 6, 6);
+    //draw our boxes
+    for(let i=0; i<40; ++i) {
+      for (let j=0; j<40; ++j) {
+        if (data[i][j] > 0) {
+          context.fillStyle = "rgba(255,0,0,0.6)"; 
+          context.fillRect(i*10 + 1, j*10 + 1, 8, 8);
+        } else {
+          context.fillStyle = "rgba(255,255,255,0.6)"; 
+          context.fillRect(i*10 + 1, j*10 + 1, 8, 8);
+        }
       }
-      //new pixels
-      if (data[i][j] > 0) {
-        context.fillStyle = "rgba(255,0,0,0.6)"; 
-        context.fillRect(i*10 + 1, j*10 + 1, 8, 8);
-      } else {
-        context.fillStyle = "rgba(255,255,255,0.6)"; 
-        context.fillRect(i*10 + 1, j*10 + 1, 8, 8);
-      }
-      
-      //store the previous frame
-      old[i][j] = data[i][j];
     }
-  }
 }
 
 return canvas
 `}</wljs-editor></WLJSWrapper>
 
-Now we can call `drawArray` repeatedly in a loop and update the field:
+Now we can call `drawArray` repeatedly in a loop to update the field:
 
-```wolfram
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<wljs-editor lazy="true" type="Input" display="codemirror">{`
 board = RandomInteger[1, {40, 40}];
 
 Do[
-  board = CellularAutomaton["GameOfLife", board];
-  drawArray[board] // FrontSubmit;
-  Pause[0.1];
+    board = CellularAutomaton["GameOfLife", board];
+    drawArray[board] // FrontSubmit;
+    Pause[0.1];
 , {i,1,50}]
-```
+`}</wljs-editor></WLJSWrapper>
 
-However this is not yet most optimal way of doing that. The output canvas is fixed to a Javascript cell and cannot be represented as a normal Wolfram Expression. To solve that we shall go deeper...
+<LazyAutoplayVideo url={"/board-1.mp4"}/>
+
+
+However, this is not yet the most optimal way of doing that. The output canvas is fixed to a JavaScript cell and cannot be represented as a normal Wolfram Expression. To solve this, we need to go deeper...
 
 
 ## A Deeper Look
-First, one needs to understand how the symbols are defined and evaluated:
+First, you need to understand how symbols are defined and evaluated:
 
 - Basic (as shown above)
-- Prototype-based, instanced
+- Instanced (with methods)
 
 ### Basics
-When symbol is evaluated, the runtime does not create or store its state - *call (evaluate) and forget principle*, except for the side-effects made by evaluation of this symbol. Here is a few rules for them:
+When a symbol is evaluated, the runtime does not create or store its state—following the *call (evaluate) and forget principle*—except for the side effects made by evaluating this symbol. Here are a few rules for them:
 
 <Card>
 
-- Frontend symbol is asynchronious Javascript function with 2 arguments
-- Frontend symbol should return either nothing or a normal Javascript expression: string, number, array or an object. It can also return a function only if the result is used by the parent frontend symbol, but not a Wolfram Kernel via `FrontFetch`
-- Passed arguments have to be evaluated using a function `window.interpretate`
-- Starting frontend context is always `core`, then you can diverge the evaluation to any other
+- A frontend symbol is an asynchronous JavaScript function with 2 arguments
+- A frontend symbol should return either nothing or a normal JavaScript expression: string, number, array, or object. It can also return a function only if the result is used by the parent frontend symbol, but not by the Wolfram Kernel via `FrontFetch`
+- Passed arguments must be evaluated using the `window.interpretate` function
+- The starting frontend context is always `core`; you can then diverge the evaluation to any other context
 
 </Card>
 
-Let's have a look at the basic structure:
+Let's look at the basic structure:
 
 ```js
 core.MySymbol = async (args, env) => {
@@ -146,9 +136,11 @@ core.MySymbol = async (args, env) => {
 }
 ```
 
-#### Shared memory and side-effects
+By convention, if `MySymbol` is used in [ViewBox](./../../Formatting/Low-level/ViewBox) as a [display function](./../Decorating-symbols) or in the output form of [FrontEndExecutable](./../../Frontend-Objects/FrontEndExecutable), a visible DOM element is accessible as the `element` property of `env`.
 
-The second argument of `MySymbol` asynchronious function is a shared object between the whole expression tree, which can be used for creating side-effects or pass the data implicitly from parent to children expresion. For example, here is a brief implementation of `RGBColor` of `Graphics`:
+#### Shared memory and side effects
+
+The second argument of the `MySymbol` asynchronous function is a shared object for the entire expression tree, which can be used to create side effects or pass data implicitly from parent to child expressions. For example, here is a brief implementation of `RGBColor` in `Graphics`:
 
 ```js
 core.RGBColor = async (args, env) => {
@@ -170,13 +162,13 @@ core.RGBColor = async (args, env) => {
 {Blue, {Red, Sphere[] (* I am red *)}, Sphere[] (* I am blue *)} // Graphics3D
 ```
 
-You can scope it too in Javascript for the children and pass additional properties:
+You can also scope it in JavaScript for the children and pass additional properties:
 
 ```js
 const arg1 = await interpretate(args[0], {...env, boo: true});
 ```
 
-For example, this is how `Graphics3D` work under the hood:
+For example, this is how `Graphics3D` works under the hood:
 
 ```js
 core.Graphics3D = async (args, env) => {
@@ -202,13 +194,13 @@ To access the __non-scopable part__ of `env`, use:
 env.global.myParam = "Hey!"
 ```
 
-`env.global` is shared across all branches of the evaluating expression tree.
+`env.global` is shared across all branches of the expression tree being evaluated.
 
 #### Namespaces
 
-<Callout>Please do not confuse it with Wolfram Language symbols contexts</Callout>
+<Callout>Please do not confuse this with Wolfram Language symbol contexts</Callout>
 
-To prevent name collisions and clutter if symbol `SymbolA` can be interpreted differently depending of its parents expresions, you can specify a namescape context of symbols on Javascript using:
+To prevent name collisions and reduce clutter when a symbol like `SymbolA` can be interpreted differently depending on its parent expressions, you can specify a namespace context for symbols in JavaScript using:
 
 ```js
 var subSpace = {};
@@ -222,7 +214,7 @@ core.SymbolA = (args, env) => {
 };
 ```
 
-The interpreter will check all available contexts and __use the first match__. However, you **can prioritize the context** by providing it in the `env` object:
+The interpreter will check all available contexts and __use the first match__. However, you can **prioritize a context** by providing it in the `env` object:
 
 ```js
 core.GrantSymbol = (args, env) => {
@@ -233,7 +225,7 @@ core.GrantSymbol = (args, env) => {
 };
 ```
 
-If you have multiple prioritized contexts, you __can pass them as an array__:
+If you have multiple prioritized contexts, you can __pass them as an array__:
 
 ```js
 core.GrantSymbol = (args, env) => {
@@ -243,11 +235,24 @@ core.GrantSymbol = (args, env) => {
 };
 ```
 
-This sort of emulates pattern matching of Wolfram Language in down-values, i.e.:
+This emulates the pattern matching of Wolfram Language down-values, i.e.:
 
 ```wolfram
 GrantSymbol[SymbolA[]] := "One thing"
 SymbolA[] := "Completely different thing"
+```
+
+##### Exposing namespaces
+You can also expose a namespace to the interpreter, so if it doesn't find the desired symbol in the `core` context, it tries all exposed namespaces:
+
+```js
+const namespace = {};
+namespace.name = "Plumbus";
+
+namespace.Symbol = async (args, env) => {}
+
+//HERE ->
+interpretate.contextExpand(namespace);
 ```
 
 #### Packed and Numeric Arrays
@@ -270,348 +275,542 @@ You can convert to a normal JS array with:
 data = data.normal();
 ```
 
+
+### Symbol Methods
+The symbol itself is an asynchronous function that is called during normal evaluation. However, in WLJS we add more: when data changes occur, this may trigger a propagating chain of calls to the `update` method of symbols. If an expression is destroyed, this may trigger chain calls to the `destroy` method of all involved symbols (if applicable). For example:
+
+```js
+//evaluation
+core.MySymbol = (args, env) => {}
+
+//update chain
+core.MySymbol.update = (args, env) => {}
+//destroy chain
+core.MySymbol.destroy = (args, env) => {}
+//custom handler
+core.MySymbol.whatever = (args, env) => {}
+```
+
+As you can see, you can specify your own method and invoke it for all tree branches by providing it as:
+
+```js
+await interpretate(args[1], {...env, method: 'whatever'});
+```
+
+System handles these methods automatically following the rules:
+
+<Card>
+
+1. The `update` method can be called for any symbol in the expression tree __automatically__ when the data changes.
+2. Only __instanced symbols__ (see later) can invoke `update` in response to changes in other dependent __instanced symbols__ 
+3. `destroy` only propagates through __instanced symbols__, skipping any basic frontend symbols, assuming they do not have internal state to clean up
+
+</Card>
+
+For most stateless frontend symbols like `List`, `Plus`, etc., we define:
+
+```js
+namespace.SymbolName.update = namespace.SymbolName
+```
+
+### Instanced symbols
+By setting the `virtual` property to `true`
+
+```js
+core.MySymbol.virtual = true
+```
+
+we allow `MySymbol` to have state. In combination with `update` and `destroy` methods, it basically becomes a class definition. To sum up:
+
+<Card>
+
+1. Instanced symbols inherit all features of stateless frontend symbols
+2. Instanced symbols have state
+3. Instanced symbols can be destroyed with the `destroy` method (handled automatically)
+4. Instanced symbols listen for any changes from dependent instanced symbols down the expression tree; the change event bubbles up and invokes `update`
+
+</Card>
+
+#### Local state and methods
+State is an object that can be accessed using the shared object `env` (2nd argument) from the constructor as well as from all defined methods:
+
+```js
+core.MySymbol = async (args, env) => {
+  env.local    // local state for this instance
+  env.global   // global state for the call tree
+  env.exposed  // state shared outside the instance
+  env.element  // usually some visible DOM element associated to a symbol
+  env          // sharable memory within the instance and its children
+};
+core.MySymbol.update = async (args, env)  => {...}
+core.MySymbol.destroy = async (args, env)  => {...}
+//............
+core.MySymbol.virtual = true
+```
+
+Let's look at a simple example that demonstrates local state:
+
+
 <Accordions>
 
-<Accordion>
+<Accordion title="Clocks">
 
-Hey
+Create a Javascript cell 
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<wljs-editor lazy="true" type="Input" display="codemirror">{`.js
+core.PlaceholderClock = async (args, env) => {
+    env.local.start = new Date();
+    env.local.clock = setInterval(() => {
+      const d = new Date() - env.local.start;
+      env.element.innerHTML = d;
+    }, 10);
+};
+
+core.PlaceholderClock.destroy = async (args, env) => {
+    clearInterval(env.local.clock);
+    const passed = new Date() - env.local.start;
+    alert(passed+'ms passed');
+};
+
+core.PlaceholderClock.virtual = true;
+`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="js" type="Output" encoded="true" class="wljs-hide-undefined" >{`core.PlaceholderClock%20%3D%20async%20%28args%2C%20env%29%20%3D%3E%20%7B%0A%20%20%20%20env.local.start%20%3D%20new%20Date%28%29%3B%0A%20%20%20%20env.local.clock%20%3D%20setInterval%28%28%29%20%3D%3E%20%7B%0A%20%20%20%20%20%20const%20d%20%3D%20new%20Date%28%29%20-%20env.local.start%3B%0A%20%20%20%20%20%20env.element.innerHTML%20%3D%20d%3B%0A%20%20%20%20%7D%2C%2010%29%3B%0A%7D%3B%0A%0Acore.PlaceholderClock.destroy%20%3D%20async%20%28args%2C%20env%29%20%3D%3E%20%7B%0A%20%20%20%20clearInterval%28env.local.clock%29%3B%0A%20%20%20%20const%20passed%20%3D%20new%20Date%28%29%20-%20env.local.start%3B%0A%20%20%20%20alert%28passed%2B%27ms%20passed%27%29%3B%0A%7D%3B%0A%0Acore.PlaceholderClock.virtual%20%3D%20true%3B`}</wljs-editor></WLJSWrapper>
+
+This `PlaceholderClock` symbol represents a ticking timer that is displayed live on a provided DOM element and pops up a window with the elapsed time when removed. To provide a DOM element, we can define an output form for this symbol on the Wolfram Kernel with our display function defined in JavaScript:
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<wljs-editor lazy="true" type="Input" display="codemirror">{`
+PlaceholderClock /: MakeBoxes[p_PlaceholderClock, StandardForm] := ViewBox[p, p];
+
+PlaceholderClock[]
+`}</wljs-editor></WLJSWrapper>
+
+The first argument of `ViewBox` is the actual underlying expression, while the second one will be evaluated on the frontend. In this case, the `PlaceholderClock` symbol is defined on both ends: kernel and frontend. On the kernel it does nothing, whereas as a frontend symbol it shows a ticking timer:
+
+<WLJSWrapper>
+<wljs-editor lazy="true" type="Output" display="codemirror">{`
+(*VB[*)(PlaceholderClock[])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KWkMIJ4AkAjISUxOzQAKpRY55+QnZwMAy3MK4g=="*)(*]VB*)
+`}</wljs-editor></WLJSWrapper>
+
+Try to copy/paste/delete it across cells.
+
+<Callout>
+Note, that `WLXForm` does not support `ViewBox`, and all frontend symbols must be passed as [FrontEndExecutable](./../../Frontend-Objects/FrontEndExecutable) (see later in this guide)
+</Callout>
 
 </Accordion>
 
 </Accordions>
 
-#### Instanced symbols
+The `destroy` method is especially helpful for heavy expressions such as `Graphics3D`, which is re-rendered at 60FPS and, if not disposed of properly, may run in the background like a stray cat occupying your GPU resources.
 
-#### Prototypes
-Sometimes a function or a tree of functions is called in response to some event. This information is stored in `env.method`. See also [Symbols](../../../../interpreter/Advanced/symbols.md).
+We can take advantage of having a different method __for update events to avoid costly reevaluation of the entire expression tree__. For example, instead of redrawing everything on a graph when the data changes, we update only the changed points rather than disposing of and recreating the graph from scratch:
 
-If there is a data update, i.e. `env.method = 'update'`, then the interpreter will try to find a subsymbol or function to call (read more about how the interpreter handles them in [WLJS Interpreter](https://github.com/JerryI/wljs-interpreter)).
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<wljs-editor lazy="true" type="Input" display="codemirror">{`.js
+core.NiceChartPlot = async (args, env) => {
+    // Create the element, draw axes, etc... (SLOW)
+    const arg1 = await interpretate(args[0], env);
+    const arg2 = await interpretate(args[1], env);
+    const data = await interpretate(args[2], env);
+    const chart = new Charts.newPlot(arg1, arg2, data);
+    // Save to the state
+    env.local.chart = chart;
+};
 
+core.NiceChartPlot.update = async (args, env) => {
+    const newdata = await interpretate(args[2], env);
+    // Quickly redraw only changed elements
+    const chart = env.local.chart;
+    chart.points.update(newdata);
+};
 
-
-Imagine if every defined function was like a class with a constructor and methods (subsymbols):
-
-```js
-core.MyFunction = (args, env) => {}
-
-core.MyFunction.update = (args, env) => {}
-core.MyFunction.destroy = (args, env) => {}
-core.MyFunction.whatever = (args, env) => {}
-```
-
-Then, you can specify which method to call during evaluation:
-
-```js
-core.OurParentFunction = (args, env) => {
-  const data = interpretate(args[0], { ...env, method: 'update' });
-  ...
+core.NiceChartPlot.destroy = (args, env) => {
+    env.local.chart.dispose();
 }
-```
 
-This is extremely useful for updating graphs or plots. Instead of redrawing everything, you can perform lightweight operations:
+core.NiceChartPlot.virtual = true;
+`}</wljs-editor></WLJSWrapper>
 
-```js
-core.ListLinePlotly = (args, env) => {
-  // Create the element, draw axes, etc... (SLOW)
-  Plotly.newPlot(...);
-};
+By having dedicated methods, we __not only eliminate lots of resources from being freed and allocated__, but also __cut subtrees of the expression from evaluating__ that are not involved in the update.
 
-core.ListLinePlotly.update = (args, env) => {
-  // Quickly redraw only changed elements
-  Plotly.animate(...) or extend...
-};
-```
-
-__Destroy and update methods are usually features of [Virtual Functions](#Containers%20Executables).__
-
-
-
-
-
-
-### Virtualization
-Each time the interpreter encounters a virtual function (or call it a symbol), it creates a unique object that scopes the `env` variable and provides local memory for all Wolfram Expressions located inside the container.
-
-The interpreter can automatically create a container for any WLJS symbol when it sees a special property defined:
+#### Dynamic symbols
+Here we discuss the relationship between *instanced frontend symbols* and [dynamic symbols](./../../Guides/Dynamic). In short, __these are the same entities__. We use the term *dynamic symbols* as shorthand. The only difference between:
 
 ```js
+core.MySymbol = async () => {}
+//....
 core.MySymbol.virtual = true;
 ```
 
-Then `MySymbol` takes advantage of virtualization behavior, even if it’s called anonymously via [FrontSubmit](frontend/Reference/Frontend%20IO/FrontSubmit.md).
-
-The most important features of virtual functions:
-- They can be **destroyed** or **updated** (see [Subsymbols | Methods](#a-remark-about-subsymbols--methods))
-- They automatically bind to child virtual functions instances, enabling reevaluation when changes are made in children (foundation for [Dynamics](frontend/Dynamics.md))
-
-#### Properties
-Virtualized execution is powerful because each call creates a separate instance with local memory. The `env` variable provides access to:
-
-```js
-core.MyFunction = (args, env) => {
-  env.local    // local memory for this instance
-  env.global   // global memory for the call tree
-  env.exposed  // memory shared outside the instance
-  env          // sharable memory within the instance and its children
-};
-```
-
-- **Global memory** is created with each widget or scope via `FrontSubmit`.
-- **Local memory** is specific to each instance.
-- When executed in the output cell (aka [ViewBox](frontend/Reference/Formatting/Low-level/ViewBox.md)) or on a slide, `env.element` provides access to the DOM placeholder.
-
-Let’s look at an example using local memory:
-
-##### 🎡 Example 2: Clocks
-```js
-.js
-core.PlaceholderClock = async (args, env) => {
-  env.local.start = new Date();
-  env.local.clock = setInterval(() => {
-    const d = new Date() - env.local.start;
-    env.element.innerHTML = d;
-  }, 10);
-};
-
-core.PlaceholderClock.destroy = async (args, env) => {
-  clearInterval(env.local.clock);
-  const passed = new Date() - env.local.start;
-  alert(`${passed}ms passed`);
-};
-
-core.PlaceholderClock.virtual = true;
-```
-
-Then we can use it like this using [ViewBox](frontend/Reference/Formatting/Low-level/ViewBox.md) to execute Javascript
+and this:
 
 ```wolfram
-PlaceholderClock /: MakeBoxes[p_PlaceholderClock, StandardForm] := ViewBox[p, p];
-
-PlaceholderClock[]
+MySymbol = "Hey";
+TextView[MySymbol // Offload]
 ```
 
-Here the first argument of `ViewBox` is actual input form of the expression, while the second one will be used to render the view, which covers input form in the editor.
+is that in the latter, `MySymbol` is automatically generated during runtime into `core.MySymbol`, which returns its own value in both the constructor and `update` calls. However, there is one more thing: the Wolfram Kernel also provides automatic one-way synchronization. When `MySymbol` is changed on the kernel:
 
-Copy/paste it across cells. When you delete a widget, `.destroy` runs and stops the clock showing a pop up message
-
-
-
-
-This is especially useful for things like `Graphics3D`, where a rendering function might run 60 times per second. You don’t want it to keep running if the widget is removed:
-
-```js
-core.Graphics3D.destroy = async (args, env) => {
-  cancelAnimationFrame(env.local.aid);
-};
+```wolfram
+MySymbol = "Hoy!";
 ```
 
-#### Default Methods
-Users can define their own subsymbols (methods) via `env.method`.
+the data is copied to the frontend definition of `core.MySymbol.data`, and an `update` event will bubble up for all instances. This means that if you have multiple expressions that depend on `MySymbol`, each having a unique instance of it, the updated data will be shared among all of them. This allows you to redraw and recalculate many things in a single synchronization cycle.
 
-For container-based functions, you should define these:
-- `.destroy` — triggered when a widget is removed (runs top-down)
-- `.update` — triggered when data changes (runs bottom-up)
+Knowing all of this, let's improve our very first Game of Life board example:
 
-```js
-core.MyFunction.update = async (args, env) => {};
-core.MyFunction.destroy = async (args, env) => {};
-```
+<Accordions>
 
-Without these, deleting a widget can cause errors.
+<Accordion title="Game of Life board (improved)">
 
+Let's enhance our previous animation and turn it into a functional and easily reusable block:
 
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<wljs-editor lazy="true" type="Input" display="codemirror">{`.js
 
-##### 🎡 Example 3: Game of Life (Improved)
-Let’s enhance our animation with containers:
-
-```js
-.js
-core.MyFunction = async (args, env) => {
-  let data = await interpretate(args[0], env);
-  if (data instanceof NumericArrayObject) {
-    data = data.normal();
-  }
-  //we are not going to use data here 
-  //only needs for dynamic link between child and parent
-
-  const canvas = document.createElement("canvas");
-  canvas.width = 400;
-  canvas.height = 400;
-
-  let context = canvas.getContext("2d");
-  context.fillStyle = "lightgray";
-  context.fillRect(0, 0, 500, 500);
-
-  let old = new Array(40);
-  for (let i = 0; i < old.length; i++) {
-    old[i] = new Array(40).fill(0);
-  }
-
-  env.element.appendChild(canvas);
-  env.local.old = old;
-  env.local.ctx = context;
-};
-
-core.MyFunction.virtual = true;
-```
-
-Update method:
-
-```js
-.js
-core.MyFunction.update = async (args, env) => {
-  let data = await interpretate(args[0], env);
-  if (data instanceof NumericArrayObject) {
-    data = data.normal();
-  }
-  //now we are using data
-
-  const context = env.local.ctx;
-  for (let i = 0; i < 40; ++i) {
-    for (let j = 0; j < 40; ++j) {
-      if (env.local.old[i][j] > 0) {
-        context.fillStyle = "rgba(0,0,255,0.2)";
-        context.fillRect(i * 10 + 2, j * 10 + 2, 6, 6);
-      }
-      if (data[i][j] > 0) {
-        context.fillStyle = "rgba(255,0,0,0.4)";
-        context.fillRect(i * 10 + 1, j * 10 + 1, 8, 8);
-      } else {
-        context.fillStyle = "rgba(255,255,255,0.4)";
-        context.fillRect(i * 10 + 1, j * 10 + 1, 8, 8);
+function fillScreen(context, data) {
+    for (let i = 0; i < 40; ++i) {
+      for (let j = 0; j < 40; ++j) {
+        if (data[i][j] > 0) {
+          context.fillStyle = "rgba(255,0,0,0.4)";
+          context.fillRect(i * 10 + 1, j * 10 + 1, 8, 8);
+        } else {
+          context.fillStyle = "rgba(255,255,255,0.4)";
+          context.fillRect(i * 10 + 1, j * 10 + 1, 8, 8);
+        }
       }
     }
-  }
-  env.local.old = data;
+}
+
+core.drawArray = async (args, env) => {
+    let data = await interpretate(args[0], env);
+    if (data instanceof NumericArrayObject) {
+      data = data.normal();
+    }
+
+    const canvas = document.createElement("canvas");
+    canvas.width = 400;
+    canvas.height = 400;
+
+    let context = canvas.getContext("2d");
+    context.fillStyle = "lightgray";
+    context.fillRect(0, 0, 500, 500);
+
+    fillScreen(context, data);
+
+    env.element.appendChild(canvas);
+    env.local.ctx = context;
 };
 
-core.MyFunction.destroy = (args, env) => {};
-```
+core.drawArray.update = async (args, env) => {
+    let data = await interpretate(args[0], env);
+    if (data instanceof NumericArrayObject) {
+      data = data.normal();
+    }
+    //now we are using new data
+    const context = env.local.ctx;
+    fillScreen(context, data);
+};
 
-Let us try to use it with a defined output forms
+core.drawArray.destroy = (args, env) => delete env.local.ctx;
+core.drawArray.virtual = true;
+`}</wljs-editor></WLJSWrapper>
 
-```wolfram
-gameOfLife = {224, {2, {{2, 2, 2}, {2, 1, 2}, {2, 2, 2}}}, {1, 1}};
+Let's try to use it with defined output forms:
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<wljs-editor lazy="true" type="Input" display="codemirror">{`
 board = RandomInteger[1, {40, 40}];
+drawArray /: MakeBoxes[a_drawArray, StandardForm] := ViewBox[a,a]
+`}</wljs-editor></WLJSWrapper>
 
-MyFunction /: MakeBoxes[m_MyFunction, StandardForm] := ViewBox[m,m]
-```
+and then create our first instance using the output form of the `drawArray` symbol:
 
-and then create out first instance
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<wljs-editor lazy="true" type="Input" display="codemirror">{`
+drawArray[board // Offload]
+`}</wljs-editor></WLJSWrapper>
 
-```wolfram
-MyFunction[board]
-```
+<Callout type="idea">
 
-It will show you a blank gray screen, since `core.MyFunction` only draws the data when it changes. To bind `MyFunction` to `board` symbol, we need to hold the last one from the evaluation. This can be done using [Offload](frontend/Reference/Interpreter/Offload.md)
-
-```wolfram
-MyFunction[board // Offload]
-```
-
-> See more about it in [Dynamic Symbols](#Dynamic%20Symbols)
-
-When `board` changes:
+If you want to display this board on a slide or markdown cell, wrap the expression with `CreateFrontEndObject`, i.e
 
 ```wolfram
+drawArray /: MakeBoxes[a_drawArray, WLXForm] := With[{f = CreateFrontEndObject[a]}, MakeBoxes[f, WLXForm]]
+```
+
+`ViewBox` only works in `StandardForm` output.
+
+</Callout>
+
+Now let's perform an update cycle of the `board` symbol, which should be immediately reflected in our array renderer above.
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<wljs-editor lazy="true" type="Input" display="codemirror">{`
 Do[
-  board = CellularAutomaton[gameOfLife, board, {{0, 1}}] // Last;
-  Pause[0.1];
+    board = CellularAutomaton["GameOfLife", board];
+    Pause[0.1];
 , {i, 1, 100}]
-```
+`}</wljs-editor></WLJSWrapper>
 
-All instances update live! Even if you copy and paste the same expressions, its display will be unique
-
-
+<LazyAutoplayVideo url={"/board-1.mp4"}/>
 
 
-#### Dynamic Symbols
-> As one could see from the previous example `board` symbol triggers update of our GOL canvas. `board` can be classified exactly as `dynamic symbol`
+All instances update live! Even if you copy and paste the same expression, its display will be unique and will still be properly updated. 
 
-Any defined Wolfram Language symbol with an `OwnValue` like:
+</Accordion>
 
-```wolfram
-radius = 1;
-```
+</Accordions>
 
-Wrapped in [Offload](frontend/Reference/Interpreter/Offload.md) becomes a `core.radius` virtual symbol:
 
-```wolfram
-Graphics[Disk[{0., 0.}, Offload[radius]]]
-```
+#### Accessing instances
+Sometimes you want to add new objects to an existing instance (like a `Graphics` canvas) without reevaluating everything. You can access the partial instance and evaluate an expression within it if it was placed there before. 
 
-The Kernel tracks changes to `OwnValues`, so if `Disk` is also virtual, both are coupled. For example:
-
-```wolfram
-EventHandler[InputRange[0, 1, 0.1], Function[r, radius = r]]
-```
-
-Will trigger `.update` on `Disk`.
-
-#### Injection into a Virtual Instance
-Sometimes you want to add new objects into an existing instance (like a `Graphics` scene) without reevaluating everything. You can do this using [FrontInstanceReference](frontend/Reference/Frontend%20IO/FrontInstanceReference.md) + [FrontSubmit](frontend/Reference/Frontend%20IO/FrontSubmit.md).
-
-##### 🎡 Example with Lines
-Create a reference to an instance:
+First, we create a pointer to reference it later—[FrontInstanceReference](./../../Frontend-IO/FrontInstanceReference). For example:
 
 ```wolfram
 ref = FrontInstanceReference[];
 Plot[x, {x, 0, 1}, Epilog -> {ref}]
 ```
 
-Then inject a new object:
+then we evaluate a new expression within the instance referenced as `ref`:
 
 ```wolfram
-FrontSubmit[Line[{{0.2, 0.6}, {0.1, 0.5}}], ref]
+FrontSubmit[Text["Plot", {0.5,0.5}, {0,0}], ref];
 ```
 
-:::tip
-See [FrontSubmit](frontend/Reference/Frontend%20IO/FrontSubmit.md) and [FrontInstanceReference](frontend/Reference/Frontend%20IO/FrontInstanceReference.md) for more.
-:::
-
-#### Events
-
-#### Frontend Objects
-If you copy and paste any expressions from the given examples to a normal text editor, it will reveal [InputForm](frontend/Reference/Formatting/InputForm.md) 
-
-```text
-(*VB[*)(MyFunction[Offload[board]])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRAeF5DwrXQrzUsuyczPg4ixAwn/tLSc/MSUYlYgOyk/sSgFAL6LDrY="*)(*]VB*)
-```
-
-What if the inner expressions are too big to be displayed? For example [Graphics3D](frontend/Reference/Graphics3D/Graphics3D.md) can include 10000 of polygons. To cope with this problem you can wrap it into [Frontend Objects](frontend/Advanced/Frontend%20interpretation/Frontend%20Objects.md), i.e.
+A text box will appear in the center. Some of the frontend symbols are meant to be evaluated later and associated with some actions, for example [ZoomAt](./../../Graphics/ZoomAt):
 
 ```wolfram
-MyFunction /: MakeBoxes[m_MyFunction, StandardForm] := With[{
-	o = CreateFrontEndObject[m]
-}, 
-	ViewBox[Null, o]
+FrontSubmit[ZoomAt[{0.5,0.5}, 2.0], ref];
+```
+
+In a similar way, you can remove side effects of expressions using [FrontInstanceGroup](./../../Frontend-IO/FrontInstanceGroup). This groups all instances and allows you to dispose of them if needed:
+
+```wolfram
+g = FrontInstanceGroup[];
+FrontSubmit[g[{Opacity[0.5], Triangle[{{-1,0}, {0,1}, {1,0}}]}], ref];
+```
+
+then to remove it:
+
+```wolfram
+FrontInstanceGroupRemove[g];
+```
+
+
+Here `FrontInstanceGroupRemove` effectively calls `destroy` on all created instances of frontend symbols.
+
+Read more about this technique at:
+
+
+<Cards>
+
+  <Card
+    href="./../../Guides/Dynamics"
+    title="Interactive evaluation and granular updates"
+  >
+    A guide on interactive evaluation, updates and animation
+  </Card>
+
+
+</Cards>
+
+
+### Frontend Objects
+Any interactive widgets or syntax sugar made with `ViewBox` stores the displayed expression inline, hidden within a code line. This takes up space and adds more load to the cell editor. It's one thing if we keep only `MySymbol[data//Offload]` inside a ViewBox, and a completely different story if we try to keep `Plot[x,{x,0,1}]` there, which expands into a bulky 10-100kB expression.
+
+To address this issue, [frontend objects](./../../Frontend-Objects/CreateFrontEndObject) are used. Here's what they do:
+
+<Card>
+
+- Compress an expression into a reference
+- Upload original data to notebook storage and sync with the frontend on-demand in the form of `ExpressionJSON`
+- Upon evaluation, expand the reference back to the Wolfram Expression
+- Automatically garbage collect if not used or referenced anywhere
+
+</Card>
+
+For example, you can compress individual arguments of your expression or an entire expression:
+
+```wolfram
+SomeSymbol /: MakeBoxes[SomeSymbol[arg1_, arg2_], StandardForm] := With[{
+  fe1 = CreateFrontEndObject[arg1]
+},
+  ViewBox[..., displaySymbol[fe1, arg2]]
 ]
 ```
 
-then you get
-
-```text
-(*VB[*)(Null)(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKJ5oaGBukpBnomlqYGOmapFgY6CZamJnoGllYmJukGRqkWpqaAAB12BS3"*)(*]VB*)
-```
-
-- expression is compressed to JSON and will be loaded via separate channel
-- expression no longer keeps its original form and will return `Null`
-
-To improve this situation, one can use a standard form of [FrontEndExecutable](frontend/Reference/Frontend%20Objects/FrontEndExecutable.md) 
+The example below is also valid if your definitions match on the Wolfram Kernel and frontend:
 
 ```wolfram
-MyFunction /: MakeBoxes[m_MyFunction, form: StandardForm | WLXForm] := With[{
-	o = CreateFrontEndObject[m]
-}, 
-	MakeBoxes[o, form]
+SomeSymbol /: MakeBoxes[s_SomeSymbol, StandardForm] := With[{
+  display = CreateFrontEndObject[s]
+},
+  ViewBox[..., display]
 ]
 ```
 
-Then we get
+This method is widely used for entire `Graphics`, `Image`, `Graphics3D` expressions and others when their serialized sizes exceed a certain threshold.
 
-```text
-(*VB[*)(FrontEndRef["382744b2-d98e-49ef-9858-d15675873a2b"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKG1sYmZuYJBnpplhapOqaWKam6VpamFrophiampmbWpgbJxolAQB3iBUG"*)(*]VB*)
+### Javascript IO API
+
+<Cards>
+
+  <Card
+    href="./Custom-input.mdx"
+    title="Custom input elements"
+  >
+    A guide on crafting UI elements using Javascript
+  </Card>
+
+</Cards>
+
+An additional to interact with Wolfram Kernel besides `ViewBox`, `FrontSubmit` or `FrontFetch` is to use event-based IO interface exposed globally as:
+
+```js
+server.kernel.io
 ```
 
-- expression is compressed to JSON and will be loaded via separate channel
-- expression keeps its original form, since [FrontEndRef](frontend/Reference/Frontend%20Objects/FrontEndRef.md) directly points to the internal storage of the original expression
+#### Fire events
+To fire events catch by [EventHandler](./../../Misc/Events) - use `fire` method:
+
+```js
+server.kernel.io.fire(id: string, payload: any, pattern?: string = "Default"): void
+```
+
+where `id` is string id of `EventObject`, `payload` can be any Javascript object, except functions or promises. For example:
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<wljs-editor lazy="true" type="Input" display="codemirror">{`
+EventHandler["someRandomId", {
+    _ -> Beep
+}]
+`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<wljs-editor lazy="true" type="Input" display="codemirror">{`.js
+setTimeout(() => {
+    server.kernel.io.fire('someRandomId', true);
+}, 2000);
+`}</wljs-editor></WLJSWrapper>
+
+To fire event without payload - use `poke` method:
+
+```js
+server.kernel.io.poke(id: string): void
+```
+
+#### Fetching the data
+To evaluate and fetch a own-values or down-values of a symbol - use `fetch`:
+
+```js
+server.kernel.io.fetch(id: string) : Promise
+server.kernel.io.fetch(id: string, [arg1 : any, arg2 : any, ...]) : Promise
+```
+
+it always return `Promise`. For example, let's define a symbol:
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<wljs-editor lazy="true" type="Input" display="codemirror">{`
+GetTime := TextString[Now];
+`}</wljs-editor></WLJSWrapper>
+
+Now fetch and display it:
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<wljs-editor lazy="true" type="Input" display="codemirror">{`.js
+const dom = document.createElement('span');
+
+server.kernel.io.fetch('GetTime').then(async (res) => {
+    dom.innerHTML = await interpretate(res, {});
+})
+
+return dom;
+`}</wljs-editor></WLJSWrapper>
+
+<Callout>
+
+Return `Promise` object to defer io fetch request, i.e.
+
+```wolfram
+GetTime := With[{p = Promise[]},
+    (* do something or set a scheldule, call external *)
+    p 
+]
+```
+
+</Callout>
+
+#### Fire event and fetch the result
+Here is the signature of method `request`:
+
+```js
+server.kernel.io.request(id: string, payload: any, pattern?: string = "Default"): Promise
+```
+
+WLJS [event system](./../../Misc/Events) provides extra features to mimic full-duplex architecture. If one fires and event, it is possible to read the results of all subscribed listeners (if provided) or their handler functions:
+
+```wolfram
+EventHandler[ev, Function[dataA,
+	(* do something *)
+	dataB (* <--- here *)
+]]
+
+EventHandler[ev // EventClone, Function[dataA,
+	(* do something *)
+	dataC (* <--- here *)
+]]
+
+
+EventFire[ev, ...] (* ---> {dataB, dataC} *)
+```
+
+Here is an example:
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<wljs-editor lazy="true" type="Input" display="codemirror">{`.js
+
+const button = document.createElement('button');
+button.innerText = "Press me";
+button.style.background = "pink";
+button.style.padding = "1rem";
+
+button.addEventListener('click', async () => {
+    const data = await server.kernel.io.request('eventUid', true);
+    button.innerHTML = await interpretate(data, {});
+});
+
+return button;
+`}</wljs-editor></WLJSWrapper>
+
+and now we define a handler function:
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<wljs-editor lazy="true" type="Input" display="codemirror">{`
+EventHandler["eventUid", Function[Null,
+    RandomWord[]
+]];
+`}</wljs-editor></WLJSWrapper>
+
+<Callout>
+
+Return `Promise` if you need to do some deferred calculations.
+
+</Callout>

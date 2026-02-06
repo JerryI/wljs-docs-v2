@@ -295,6 +295,8 @@ core.smileyDecorator = async (args, env) => {
 <WLJSWrapper>
 <wljs-editor display="js" type="Output" encoded="true" class="wljs-hide-undefined" >{`core.smileyDecorator%20%3D%20async%20%28args%2C%20env%29%20%3D%3E%20%7B%0A%20%20%20%20const%20canvas%20%3D%20document.createElement%28%27canvas%27%29%3B%0A%20%20%20%20canvas.width%20%3D%2050%3B%0A%20%20%20%20canvas.height%20%3D%2050%3B%0A%20%20%20%20const%20ctx%20%3D%20canvas.getContext%28%272d%27%29%3B%0A%20%20%20%20%2F%2F%20Draw%20a%20smiley%20face%0A%20%20%20%20ctx.beginPath%28%29%3B%0A%20%20%20%20ctx.arc%2825%2C%2025%2C%2020%2C%200%2C%20Math.PI%20%2A%202%2C%20true%29%3B%20%2F%2F%20Outer%20circle%0A%20%20%20%20ctx.moveTo%2835%2C%2025%29%3B%0A%20%20%20%20ctx.arc%2825%2C%2025%2C%208%2C%200%2C%20Math.PI%2C%20false%29%3B%20%20%2F%2F%20Mouth%0A%20%20%20%20ctx.moveTo%2822%2C%2020%29%3B%0A%20%20%20%20ctx.arc%2820%2C%2020%2C%202%2C%200%2C%20Math.PI%20%2A%202%2C%20true%29%3B%20%20%2F%2F%20Left%20eye%0A%20%20%20%20ctx.moveTo%2832%2C%2020%29%3B%0A%20%20%20%20ctx.arc%2830%2C%2020%2C%202%2C%200%2C%20Math.PI%20%2A%202%2C%20true%29%3B%20%20%2F%2F%20Right%20eye%0A%20%20%20%20ctx.stroke%28%29%3B%0A%20%20%20%20%2F%2Fappend%20to%20viewbox%20container%0A%20%20%20%20env.element.appendChild%28canvas%29%3B%0A%7D`}</wljs-editor></WLJSWrapper>
 
+<Callout>The visible DOM element of `ViewBox` is provided as `env.element` property</Callout>
+
 Now we define a `StandardForm` for our symbol with `ViewBox` container. `ViewBox` allows to pass any decorator frontend symbol used to display an expression, and place any other expression underneath it in its `InputForm`:
 
 <WLJSWrapper>
@@ -311,6 +313,10 @@ SmileySymbol[]
 <wljs-editor lazy="true" type="Output" display="codemirror">{`
 (*VB[*)(SmileySymbol[])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KWkMIB4/iMjNzEmtdElNzi9KLMkvAgDDMArI"*)(*]VB*)
 `}</wljs-editor></WLJSWrapper>
+
+<Callout>
+`WLXForm` output form does not support `ViewBox`, and all frontend symbols must be passed as [FrontEndExecutable](./../../Frontend-Objects/FrontEndExecutable) if we want to show it on a slide or markdown cell.
+</Callout>
 
 If you reevaluate the output cell, you will get the same decorated symbol. You can ensure that this is still the same symbol, by taking its first argument:
 

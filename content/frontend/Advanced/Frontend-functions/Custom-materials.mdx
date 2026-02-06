@@ -2,4 +2,148 @@
 title: Custom effects and materials
 ---
 
-WLJS Notebook provides a rich API for programmatic manipulation of notebooks, cells, and windows compatible with Mathematica.
+<Cards>
+
+<Card
+    href="./Overview"
+    title="Frontend symbols"
+  >
+    An advanced guide on how to define frontend symbols and create custom behaviors
+  </Card>
+
+</Cards>
+
+## Custom Graphics attributes
+Since most primitives of `Graphics` are frontend symbols too, you can extend the set of their properties and attribute modifiers (such as `RGBColor`, `Opacity`, etc.) by writing your own frontend symbol. The easiest example would be creating something similar to `Translate`, which creates an SVG group and evaluates all children within a new group. By accessing the env object, you can interact with the canvas and the properties of the children.
+
+### Animated Rainbow stroke
+
+Let's define our custom frontend symbol:
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<wljs-editor lazy="true" type="Input" display="codemirror">{`.js
+core.RainboxStroke = async (args, env) => {
+    const group = env.svg.append("g");
+    env.local.group = group;
+
+    let hue = 0;
+    let frame = 0;
+
+    function animateColor() {
+      if (frame % 2 === 0) {
+        hue = (hue + 4) % 360;
+        group.style('color', 'hsl('+hue+', 100%, 50%)');
+      }
+      frame++;
+      env.local.uid = requestAnimationFrame(animateColor);
+    }
+
+    animateColor();
+
+	//apply special SVG attribute value
+	//that all nested elements can inherit color of the group
+    await interpretate(args[0], {...env, svg: group, color:'currentColor', stroke:'currentColor'});
+  
+    return group;  
+}
+
+core.RainboxStroke.destroy = (args, env) => {
+  cancelAnimationFrame(env.local.uid);
+  env.local.group.remove();
+}
+
+core.RainboxStroke.virtual = true
+`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper>
+<wljs-editor type="Output" display="js">{`
+core.RainboxStroke = async (args, env) => {
+    const group = env.svg.append("g");
+    env.local.group = group;
+
+    let hue = 0;
+    let frame = 0;
+
+    function animateColor() {
+      if (frame % 2 === 0) {
+        hue = (hue + 4) % 360;
+        group.style('color', 'hsl('+hue+', 100%, 50%)');
+      }
+      frame++;
+      env.local.uid = requestAnimationFrame(animateColor);
+    }
+
+    animateColor();
+
+	//apply special SVG attribute value
+	//that all nested elements can inherit color of the group
+    await interpretate(args[0], {...env, svg: group, color:'currentColor', stroke:'currentColor'});
+  
+    return group;  
+}
+
+core.RainboxStroke.destroy = (args, env) => {
+    cancelAnimationFrame(env.local.uid);
+    env.local.group.remove();
+}
+
+core.RainboxStroke.virtual = true
+`}</wljs-editor></WLJSWrapper>
+
+The `RainboxStroke` symbol does not need any definitions on the Wolfram Kernel, since `Graphics`-like expressions are evaluated on the frontend.
+
+Here you can apply it directly to `Line`, `Text`, `Disk`, or any other primitives or groups of primitives that use stroke or fill color:
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<wljs-editor lazy="true" type="Input" display="codemirror">{`
+Graphics[{
+    RegularPolygon[4],
+    RainboxStroke[{
+        RegularPolygon[3],
+        Translate[Rotate[Text[Style["Hello World", FontSize->20], {0,0}], 45Degree],{0.4,0.4}]
+    }]
+}]
+`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper>
+<wljs-editor lazy="true" type="Output" display="codemirror">{`
+(*VB[*)(Graphics[{RegularPolygon[4], RainboxStroke[{RegularPolygon[3], Translate[Rotate[Text[Style["Hello World", FontSize -> 20], {0, 0}], 45*Degree], {0.4, 0.4}]}]}, ImageSize -> 270, "Controls" -> False])(*,*)(*"1:eJyNT0tuwjAQDS1UrSpY9QD0AD1DF1S0lVigOBJrA5N0xCRT2UZKuAncjNvUYxO3YlUvnj2a5/d5XnNeDrIss0MPH0zb8lamew/vRn9/4caWN/1+gdZF9sRDDtWetFkydRU3KIS4HMtSY7PmVjnDO/ingjhH6oOHwujGknaX33fCZ5dmUSugdXEaeVCuI1CP0gOIeLpi4+skcr4nCL3m3DiFB8Cn5NdHQ39nAX5lC6zB4kuf4Q0qA1eNzOko5/yaHle20uez1hUE38ngr68QlOSa+VyGyQbXuSYLP5ccXy8="*)(*]VB*)
+`}</wljs-editor></WLJSWrapper>
+
+## Custom Graphics3D material
+Let's do something similar, but with custom shader materials used in a 3D scene. For this, we need to access the internals of the `Graphics3D` renderer library - THREE.js. Luckily, we expose all shared libraries via a special interface:
+
+```js
+await interpretate.shared.THREE.load(); 
+const THREE = interpretate.shared.THREE.THREE;
+```
+
+Here is a basic example of low-level shaders used to colorize the primitives:
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<wljs-editor lazy="true" type="Input" encoded="true" display="codemirror">{`.js%0Afunction%20vertexShader()%20%7B%0A%20%20return%20%60%0A%20%20%20%20varying%20vec3%20vUv%3B%20%0A%0A%20%20%20%20void%20main()%20%7B%0A%20%20%20%20%20%20vUv%20%3D%20position%3B%20%0A%0A%20%20%20%20%20%20vec4%20modelViewPosition%20%3D%20modelViewMatrix%20*%20vec4(position%2C%201.0)%3B%0A%20%20%20%20%20%20gl_Position%20%3D%20projectionMatrix%20*%20modelViewPosition%3B%20%0A%20%20%20%20%7D%0A%20%20%60%3B%0A%7D%0A%0Afunction%20fragmentShader()%20%20%7B%0A%20%20return%20%60%0A%20%20%20%20%20%20uniform%20vec3%20colorA%3B%20%0A%20%20%20%20%20%20uniform%20vec3%20colorB%3B%20%0A%20%20%20%20%20%20varying%20vec3%20vUv%3B%0A%0A%20%20%20%20%20%20void%20main()%20%7B%0A%20%20%20%20%20%20%20%20gl_FragColor%20%3D%20vec4(mix(colorA%2C%20colorB%2C%20vUv.z)%2C%201.0)%3B%0A%20%20%20%20%20%20%7D%0A%20%20%60%3B%0A%7D%0A%0Alet%20THREE%3B%0Ainterpretate.shared.THREE.load().then(()%20%3D%3E%20%7B%0A%20%20THREE%20%3D%20interpretate.shared.THREE.THREE%3B%0A%7D)%0A%0Acore.CustomMaterial%20%3D%20async%20(args%2C%20env)%20%3D%3E%20%7B%0A%20%20let%20uniforms%20%3D%20%7B%0A%20%20%20%20colorB%3A%20%7Btype%3A%20'vec3'%2C%20value%3A%20new%20THREE.Color(0xACB6E5)%7D%2C%0A%20%20%20%20colorA%3A%20%7Btype%3A%20'vec3'%2C%20value%3A%20new%20THREE.Color(0x74ebd5)%7D%0A%20%20%7D%0A%0A%20%20return%20(function()%20%7B%0A%20%20%20%20return%20new%20THREE.ShaderMaterial(%7B%0A%20%20%20%20%20%20uniforms%3A%20uniforms%2C%0A%20%20%20%20%20%20fragmentShader%3A%20fragmentShader()%2C%0A%20%20%20%20%20%20vertexShader%3A%20vertexShader()%2C%0A%20%20%20%20%7D)%3B%0A%20%20%7D)%0A%7D`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper>
+<wljs-editor type="Output" encoded="true" display="js">{`%0Afunction%20vertexShader()%20%7B%0A%20%20return%20%60%0A%20%20%20%20varying%20vec3%20vUv%3B%20%0A%0A%20%20%20%20void%20main()%20%7B%0A%20%20%20%20%20%20vUv%20%3D%20position%3B%20%0A%0A%20%20%20%20%20%20vec4%20modelViewPosition%20%3D%20modelViewMatrix%20*%20vec4(position%2C%201.0)%3B%0A%20%20%20%20%20%20gl_Position%20%3D%20projectionMatrix%20*%20modelViewPosition%3B%20%0A%20%20%20%20%7D%0A%20%20%60%3B%0A%7D%0A%0Afunction%20fragmentShader()%20%20%7B%0A%20%20return%20%60%0A%20%20%20%20%20%20uniform%20vec3%20colorA%3B%20%0A%20%20%20%20%20%20uniform%20vec3%20colorB%3B%20%0A%20%20%20%20%20%20varying%20vec3%20vUv%3B%0A%0A%20%20%20%20%20%20void%20main()%20%7B%0A%20%20%20%20%20%20%20%20gl_FragColor%20%3D%20vec4(mix(colorA%2C%20colorB%2C%20vUv.z)%2C%201.0)%3B%0A%20%20%20%20%20%20%7D%0A%20%20%60%3B%0A%7D%0A%0Alet%20THREE%3B%0Ainterpretate.shared.THREE.load().then(()%20%3D%3E%20%7B%0A%20%20THREE%20%3D%20interpretate.shared.THREE.THREE%3B%0A%7D)%0A%0Acore.CustomMaterial%20%3D%20async%20(args%2C%20env)%20%3D%3E%20%7B%0A%20%20let%20uniforms%20%3D%20%7B%0A%20%20%20%20colorB%3A%20%7Btype%3A%20'vec3'%2C%20value%3A%20new%20THREE.Color(0xACB6E5)%7D%2C%0A%20%20%20%20colorA%3A%20%7Btype%3A%20'vec3'%2C%20value%3A%20new%20THREE.Color(0x74ebd5)%7D%0A%20%20%7D%0A%0A%20%20return%20(function()%20%7B%0A%20%20%20%20return%20new%20THREE.ShaderMaterial(%7B%0A%20%20%20%20%20%20uniforms%3A%20uniforms%2C%0A%20%20%20%20%20%20fragmentShader%3A%20fragmentShader()%2C%0A%20%20%20%20%20%20vertexShader%3A%20vertexShader()%2C%0A%20%20%20%20%7D)%3B%0A%20%20%7D)%0A%7D`}</wljs-editor></WLJSWrapper>
+
+Now let's hook it up to some basic graphics primitives:
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<wljs-editor lazy="true" type="Input" display="codemirror">{`
+Graphics3D[{
+    Translate[Tetrahedron[], {-1,-2,0}],
+    MeshMaterial[CustomMaterial[]],
+    Translate[Octahedron[], {1,2,0}]
+}]
+`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper>
+<wljs-editor lazy="true" type="Input" display="codemirror">{`
+(*VB[*)(Graphics3D[{Translate[Tetrahedron[], {-1, -2, 0}], MeshMaterial[CustomMaterial[]], Translate[Octahedron[], {1, 2, 0}]}, ImageSize -> 270])(*,*)(*"1:eJx1jl0KwjAQhGP1xR96B8/gERRUsAjVC6ztxi6kjWTTFw+v7hoqCLoPH+xkdibLiy/tyBjDE8HOu9pmus0E2wC3hipebex4cByIY3JMBecAHTuIaI1Kc5UwBmiwDr77vqKnDD0Uak6lC0GB3BSSEQhcyskF656jbz/6v0r957GKvxu1gvQyNWbDY9k7fIftW7jiie5IuXhftrZAqQ=="*)(*]VB*)
+`}</wljs-editor></WLJSWrapper>
+
+*Try to drag it, it is alive*

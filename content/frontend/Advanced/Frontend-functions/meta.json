@@ -2,7 +2,9 @@
   "title": "Frontend symbols",
   "pages": [
     "Overview",
+    "Web-IO",
     "Custom-input",
-    "Custom-material"
+    "Custom-materials",
+    "3rd-party-libs"
   ]
 }

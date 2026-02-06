@@ -1,5 +1,228 @@
 ---
-title: Custom Input Elements
+title: Custom input elements
 ---
 
-Using JS and WLX
+<Cards>
+
+<Card
+    href="./Overview"
+    title="Frontend symbols"
+  >
+    An advanced guide how to define frontend symbols and make them do funky stuff for you
+  </Card>
+
+</Cards>
+
+<wljs-store json="./attachments/f9ddf02e-6c0c-4ef1-a79e-3917e61abdbc.txt"></wljs-store>
+
+
+This guide demonstrates how to create custom input components using pure JavaScript and WLX, providing interactive elements that integrate seamlessly with the Wolfram Language expressions.
+
+## Creating a Basic Custom Component
+
+You can define custom components using JavaScript cells and [defining a frontend symbol](./Overview). Here's a simple button component that fires events when clicked:
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<wljs-editor lazy="true" type="Input" display="codemirror">{`.js
+core.MyCustomComponent = async (args, env) => {
+    const label = await interpretate(args[0], env);
+    const ev = await interpretate(args[1], env);
+    
+    const button = document.createElement('button');
+    button.innerText = label;
+    button.style.backgroundColor = "lightblue";
+
+    button.addEventListener('click', () => {
+      server.kernel.io.fire(ev, true);
+    });
+
+    env.element.appendChild(button);
+}
+`}</wljs-editor></WLJSWrapper>
+
+
+<WLJSWrapper>
+<wljs-editor type="Output" display="js">{`core.MyCustomComponent = async (args, env) => {
+  const label = await interpretate(args[0], env);
+  const ev = await interpretate(args[1], env);
+  
+  const button = document.createElement('button');
+  button.innerText = label;
+  button.style.backgroundColor = "lightblue";
+
+  button.addEventListener('click', () => {
+    server.kernel.io.fire(ev, true);
+  });
+
+  env.element.appendChild(button);
+}
+`}</wljs-editor></WLJSWrapper>
+
+### Defining the Display Rules
+
+To make the component work with Wolfram Language's display system, you need to [define the output form](./../Decorating-symbols), that will use our frontend symbol as a display function:
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<wljs-editor lazy="true" type="Input" display="codemirror">{`
+MyCustomComponent /: MakeBoxes[m_MyCustomComponent, StandardForm] := With[{},
+    ViewBox[m, m]
+]
+`}</wljs-editor></WLJSWrapper>
+
+and for slides, markdown cells use need to define `WLXForm` as well. This form does not have its own `ViewBox` and uses [frontend objects](./Overview) instead:
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<wljs-editor lazy="true" type="Input" display="codemirror">{`
+MyCustomComponent /: MakeBoxes[m_MyCustomComponent, WLXForm] := With[{
+    o = CreateFrontEndObject[m]
+},
+    MakeBoxes[o, WLXForm]
+]
+`}</wljs-editor></WLJSWrapper>
+
+### Example
+
+Now you can use the custom component in your notebook:
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<wljs-editor lazy="true" type="Input" display="codemirror">{`
+MyCustomComponent["Click me pls", "event1"]
+EventHandler["event1", Print];
+`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper>
+<wljs-editor lazy="true" type="Output" display="codemirror">{`
+(*VB[*)(MyCustomComponent["Click me pls", "event1"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KWlMIJ4gkPCtdC4tLsnPdc7PLcjPS80rCeYBijrnZCZnK+SmKhTkFAezAQVSy4BShgB8pBLc"*)(*]VB*)
+`}</wljs-editor></WLJSWrapper>
+
+## Integrating with Standard Inputs
+
+For better integration with the standard input system, you can wrap your component in an `EventObject`. This approach makes your component behave like built-in input elements such as `InputRange` or `InputButton`:
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<wljs-editor lazy="true" type="Input" display="codemirror">{`
+ClearAll[MyCustomComponent]
+
+MyCustomInput[label_String] := With[{uid = CreateUUID[]},
+    EventObject[<|"Id"->uid, "View"->MyCustomComponent[label, uid]|>]
+]
+`}</wljs-editor></WLJSWrapper>
+
+This pattern automatically generates a unique event ID and wraps your component in an `EventObject`, making it compatible with `EventHandler`.
+
+<Callout>You do not need to define the output form, if the symbol is a `View` field of `EventObject` </Callout>
+
+### Example
+
+Easy and natural:
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<wljs-editor lazy="true" type="Input" display="codemirror">{`
+EventHandler[MyCustomInput["Click me"], Print]
+`}</wljs-editor></WLJSWrapper>
+
+When clicked, the button will trigger the event handler and print to the output.
+
+## Using WLX 
+
+[WLX](./../../Cell-types/WLX) provides a more intuitive way to write markup compared to pure JavaScript:
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<wljs-editor lazy="true" type="Input" display="codemirror">{`.wlx
+MyCustomComponent2[OptionsPattern[]] := With[{
+    Event = OptionValue["Event"],
+    Label = OptionValue["Label"],
+    Uid = CreateUUID[]
+},
+  <div>
+    <button id="{Uid}" style="background: lightblue" class="p-1">
+      <Label/>
+    </button>
+    <script type="module">
+      document.getElementById('<Uid/>').addEventListener('click', () => {
+          server.kernel.io.fire('<Event/>', true);
+      })
+    </script>
+  </div>
+]
+
+Options[MyCustomComponent2] = {"Event" -> "", "Label" -> "Click me"};
+`}</wljs-editor></WLJSWrapper>
+
+In order to use it the output cells of Wolfram Language, you need to wrap it with [HTMLView](./../../GUI/HTMLView) with WLX processor:
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<wljs-editor lazy="true" type="Input" encoded="true" display="codemirror">{`HTMLView%5BMyCustomComponent2%5B%22Event%22-%3E%22test%22%2C%20%22Label%22-%3E%22Hello%20World!%22%5D%2C%20Prolog-%3EHTMLView%60WLXProcessor%5B%5D%5D%0AEventHandler%5B%22test%22%2C%20Print%5D%3B`}</wljs-editor></WLJSWrapper>
+
+However, there is a caveat - `UId` for DOM element is generated per `MyCustomComponent2` constructor call. This means, you can't simply have multiple copies of the same input element in the notebook (if created by accident). To account this problem, we can generate DOM Id dynamically using string templates. Let's fix it:
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<wljs-editor lazy="true" type="Input" display="codemirror">{`.wlx
+MyCustomComponent2[OptionsPattern[]] := With[{
+    Event = OptionValue["Event"],
+    Label = OptionValue["Label"]
+},
+    <div>
+      <button id="#uid" style="background: lightblue" class="p-1">
+        <Label/>
+      </button>
+      <script type="module">
+        document.getElementById('#uid').addEventListener('click', () => {
+            server.kernel.io.fire('<Event/>', true);
+        })
+      </script>
+    </div>
+]
+
+Options[MyCustomComponent2] = {"Event" -> "", "Label" -> "Click me"};
+`}</wljs-editor></WLJSWrapper>
+
+And provide a post-processor to `HTMLView`, that will generate unique ids:
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<wljs-editor lazy="true" type="Input" encoded="true" display="codemirror">{`HTMLView%5BMyCustomComponent2%5B%22Event%22-%3E%22test%22%2C%20%22Label%22-%3E%22Hello%20World!%22%5D%2C%20Prolog-%3E%7B%0A%20%20%20%20HTMLView%60TemplateProcessor%5B%3C%7C%22uid%22%20-%3E%20CreateUUID%5B%5D%7C%3E%5D%2C%0A%20%20%20%20HTMLView%60WLXProcessor%5B%5D%0A%7D%5D%0AEventHandler%5B%22test%22%2C%20Print%5D%3B`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper>
+<wljs-editor lazy="true" type="Output" encoded="true" display="codemirror">{`
+(*VB[*)(FrontEndRef["90a96bea-5cd8-4d8c-ab0c-4dd2c38ebd1b"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKWxokWpolpSbqmianWOiapFgk6yYmGSQDWSlGycYWqUkphkkAlGkWuw=="*)(*]VB*)
+`}</wljs-editor></WLJSWrapper>
+
+### Combining WLX with EventObject
+
+You can combine the WLX approach with the `EventObject` pattern from earlier:
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<wljs-editor lazy="true" type="Input" display="codemirror">{`
+MyCustomInput2[label_String] := With[{id = CreateUUID[]},
+  EventObject[<|"Id"->id, "View"-> HTMLView[MyCustomComponent2["Event"->id, "Label"->label], Prolog->{
+    HTMLView\`TemplateProcessor[<|"uid" -> CreateUUID[]|>],
+    HTMLView\`WLXProcessor[]
+}]|>]
+]
+`}</wljs-editor></WLJSWrapper>
+
+This creates a reusable input component that:
+- Uses WLX for cleaner markup
+- Integrates with the `EventObject` system
+- Works seamlessly with `EventHandler`
+
+#### Example 
+
+You can now use it as a standard input element:
+
+<WLJSWrapper>
+<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<wljs-editor lazy="true" type="Input" display="codemirror">{`
+EventHandler[MyCustomInput2["Click me"], Print]
+`}</wljs-editor></WLJSWrapper>

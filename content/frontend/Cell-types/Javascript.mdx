@@ -173,8 +173,8 @@ You can define any function for the WLJS interpreter using JavaScript cells.
 
 {/* ![TODO] */}
 
-## ESM Javascript
-Type `.esm` in the first line of an input cell and start writing Javascript on a new line. This type of Javascript cells allows to __import modules__ and bundle them using Node.js to run in the output cells. 
+## MJS Javascript
+Type `.mjs` in the first line of an input cell and start writing Javascript on a new line. This type of Javascript cells allows to __import modules__ and bundle them using Node.js to run in the output cells. 
 
 The main motication behind it is to take advantage of a vast NPM library, build a standalone script, which can be executed directly in the notebook and stored there as well.
 
@@ -186,7 +186,7 @@ Unlike [Vanilla JS](##Vanilla%20JS) it does not return anything directly. Instea
 
 <WLJSWrapper>
 <span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
-<wljs-editor type="Input" display="codemirror">{`.esm
+<wljs-editor type="Input" display="codemirror">{`.mjs
 const dom = document.createElement('span');
 dom.style.color = "red";
 dom.innerText = 'Hello World';
@@ -202,10 +202,12 @@ dom.innerText = 'Hello World';
 return dom;`}</wljs-editor>
 </WLJSWrapper>
 
-ESM cells use `rollup` bundler (installed automatically locally) and create `packages.json` locally in your notebook's folder.
+MJS cells use `rollup` bundler (installed automatically locally) and create `packages.json` locally in your notebook's folder.
 
 <Callout type="idea">
+
 Note, that the bundled output is stored within the notebook. You do not need to reevaluate the input cell. If you wish to copy the whole group to another notebook - use cell's properties (See [Overview](./../Overview)).
+
 </Callout>
 
 ### Cell context
@@ -217,7 +219,11 @@ This function is called when a cell is destroyed. Assign any clean-up function t
 #### `this.return`
 This is a function that returns a given object to the output cell.
 
+#### `this.after`
+This function is called when DOM element (if provided early via `this.return`) has been mounted. Use it to trigger any layout-dependent rendering functions
+
 For example, let's install an NPM library using [Shell type](./Misc) cell:
+
 
 <WLJSWrapper>
 <span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
@@ -233,7 +239,7 @@ Now we can create a simple animation following the documentation of `siriwave`:
 
 <WLJSWrapper>
 <span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
-<wljs-editor type="Input" display="codemirror">{`.esm
+<wljs-editor type="Input" display="codemirror">{`.mjs
 import SiriWave from "siriwave";
 
 const dom = document.createElement('div');

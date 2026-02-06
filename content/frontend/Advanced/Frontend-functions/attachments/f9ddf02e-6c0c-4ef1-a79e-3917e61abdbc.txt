@@ -1,0 +1,10 @@
+{
+"objects":[
+	"Association",
+	["Rule","'90a96bea-5cd8-4d8c-ab0c-4dd2c38ebd1b'",["Hold",["HTMLView","'<div ><button id=\"#uid\" style=\"background: lightblue\" class=\"p-1\">Hello World!<\/button><script type=\"module\"> document.getElementById('#uid').addEventListener('click', () => {\n          server.kernel.io.fire('test', true);\n      })<\/script><\/div>'",["Rule","Prolog",["List",["CoffeeLiqueur`Extensions`InputsOutputs`Tools`TemplateProcessor",["Association",["Rule","'uid'",["CreateUUID"]]]],["CoffeeLiqueur`Extensions`InputsOutputs`Tools`WLXProcessor"]]]]]],
+	["Rule","'a3c681e4-5c35-403d-afd5-f9eb1b161b47'",["Hold",["HTMLView","'<div ><button id=\"#uid\" style=\"background: lightblue\" class=\"p-1\">Hello World!<\/button><script type=\"module\"> document.getElementById('#uid').addEventListener('click', () => {\n          server.kernel.io.fire('test', true);\n      })<\/script><\/div>'",["Rule","Prolog",["List",["CoffeeLiqueur`Extensions`InputsOutputs`Tools`TemplateProcessor",["Association",["Rule","'uid'",["CreateUUID"]]]],["CoffeeLiqueur`Extensions`InputsOutputs`Tools`WLXProcessor"]]]]]]
+], 
+"symbols":[
+	"Association"
+]
+}
