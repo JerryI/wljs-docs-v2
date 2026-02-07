@@ -1,6 +1,7 @@
 import {
   defineConfig,
   defineDocs,
+  defineCollections,
   frontmatterSchema,
   metaSchema,
 } from 'fumadocs-mdx/config';
@@ -67,6 +68,16 @@ function remarkFixRelativeUrls() {
     });
   };
 }
+
+export const blogPosts = defineCollections({
+  type: 'doc',
+  dir: 'content/blog',
+  // add required frontmatter properties
+  schema: frontmatterSchema.extend({
+    author: z.string(),
+    date: z.string().date().or(z.date()),
+  }),
+});
 
 // You can customise Zod schemas for frontmatter and `meta.json` here
 // see https://fumadocs.dev/docs/mdx/collections
