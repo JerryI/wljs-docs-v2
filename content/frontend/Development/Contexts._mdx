@@ -1,0 +1,208 @@
+---
+title: Contexts
+---
+
+List of all packages contexts available for the developer in WLJS Notebook
+
+## Core packages
+
+### Notebook and cells
+__Master Kernel package__
+
+Abstract notebook and cells implementation
+```wolfram
+CoffeeLiqueur`Notebook`
+CoffeeLiqueur`Notebook`Cells`
+```
+
+Abstraction for projected cells
+
+```wolfram
+CoffeeLiqueur`Notebook`Windows`
+```
+
+### Evaluation
+__Master Kernel package__
+
+Implementation of transaction objects used for evaluation and abstract evaluator
+```wolfram
+CoffeeLiqueur`Notebook`Transactions`
+CoffeeLiqueur`Notebook`Evaluator`
+```
+
+See extensions to find actual implementation of evaluators.
+
+### Kernels
+__Master Kernel package__
+
+Abstract kernel (aka abstract class)
+
+```wolfram
+CoffeeLiqueur`Notebook`Kernel`
+```
+
+Kernel implementation - __Local Kernel__
+
+```wolfram
+CoffeeLiqueur`Notebook`LocalKernel`
+```
+
+### Extensions
+__Master Kernel package__
+
+Manager for `wljs extensions` (plugins)
+
+```wolfram
+CoffeeLiqueur`ExtensionManager`
+```
+
+API for plugins and templates
+
+```wolfram
+CoffeeLiqueur`Notebook`AppExtensions`
+```
+
+### Transport
+__Master and Evaluation Kernel package__
+
+HTTP, WS servers
+
+```wolfram
+KirillBelov`HTTPHandler`
+KirillBelov`WebSocketHandler`
+```
+
+Misc extensions for WS transport layer between the frontend and Kernel used for dynamics `Offload` and Javascript API
+
+```wolfram
+JerryI`Misc`WLJS`Transport`
+```
+
+### Template engine
+__Master and Evaluation Kernel package__
+
+WLX template engine, importer and WebUI framework
+
+```wolfram
+JerryI`WLX`
+JerryI`WLX`Importer`
+JerryI`WLX`WebUI`
+```
+
+### Events system
+__Master and Evaluation Kernel package__
+
+Core events system, promises implementation
+
+```wolfram
+JerryI`Misc`Events`
+JerryI`Misc`Events`Promise`
+```
+
+### Async tools
+__Master and Evaluation Kernel package__
+
+Timers, parallel kernels
+
+```wolfram
+JerryI`Misc`Async`
+JerryI`Misc`Parallel`
+```
+
+### OOP Patterns
+__Master and Evaluation Kernel package__
+
+```wolfram
+KirillBelov`Objects`
+```
+
+### Memory tools
+__Master and Evaluation Kernel package__
+
+```wolfram
+JerryI`Misc`Language`
+```
+
+## Extensions
+
+### Command palette
+__Master Kernel package__
+
+Use for adding more items to command palette
+```wolfram
+CoffeeLiqueur`Extensions`CommandPalette`
+```
+
+### Runtime tools
+__Evaluation Kernel package__
+
+Use for dynamically adding JS, CSS assets in the runtime
+```wolfram
+CoffeeLiqueur`Extensions`RuntimeTools`
+```
+
+### Frontend communication
+__Evaluation Kernel package__
+
+Use for firing notifications, loaders, communicating data to the frontend via `FrontSubmit` and etc
+
+```wolfram
+CoffeeLiqueur`Extensions`Notifications`
+CoffeeLiqueur`Extensions`Communication`
+```
+
+### Frontend objects
+__Master and Evaluation Kernel package__
+
+```wolfram
+CoffeeLiqueur`Extensions`FrontendObject`
+```
+
+### Editor and cell view components
+__Evaluation Kernel package__
+
+Implements `CellView` and `EditorView`
+
+```wolfram
+CoffeeLiqueur`Extensions`EditorView`
+```
+
+### Multimedia
+__Evaluation Kernel package__
+
+Implements extra features for `Graphics` and `Graphics3D`
+```wolfram
+CoffeeLiqueur`Extensions`Graphics`
+CoffeeLiqueur`Extensions`Graphics3D`
+```
+
+Implements `Plotly` interface
+```wolfram
+CoffeeLiqueur`Extensions`Plotly`
+```
+
+Implements extra features for `Audio`
+```wolfram
+CoffeeLiqueur`Extensions`Video`
+```
+
+Implements helper tools for slides cells
+```wolfram
+CoffeeLiqueur`Extensions`SlidesTools`
+```
+
+Implements input elements such as `InputRange`, and etc
+```wolfram
+CoffeeLiqueur`Extensions`InputsOutputs`
+```
+
+### WLJS Interpreter
+__Evaluation Kernel package__
+
+Defines utility commands for WLJS interpreter such as `Alert` and etc
+
+```wolfram
+CoffeeLiqueur`Extensions`WLJSInterpreter`
+```
+
+<Callout>Check `$Packages` and `Names` for more information</Callout>

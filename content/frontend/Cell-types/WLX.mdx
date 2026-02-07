@@ -25,13 +25,12 @@ Make sure the first letter in a symbol name is capitalized. This is required by 
 This allows you to use Wolfram Language XML extension in your cell. It's extremely powerful and especially useful when creating complex cell structures, components for [presentations](./Slide), mini-apps, or enhancing output with the power of HTML, CSS, and JavaScript.
 
 <Cards>
-    <Card
-    href="https://nextjs.org/docs/app/building-your-application/data-fetching/fetching-caching-and-revalidating"
-    title="Data-driven slides"
-  >
-    Advanced guide on making WLX components
 
-    {/* ![TODO] */}
+  <Card
+    href="./../Advanced/Component-based-markup"
+    title="Component-based markup"
+  >
+    An advanced guide on how to build reusable components for slides and more
   </Card>
 </Cards>
 
@@ -121,18 +120,7 @@ then if you evaluate `SpecialSymbol` in WLX cell, it will print `"Hey!"` to a DO
 `}</wljs-editor>
 </WLJSWrapper>
 
-Many symbols have predefined `WLXForm`, namely: `Graphics`, `Graphics3D`, `Image`, `EventObject`, any GUI input elements and many more. Please, see the reference.
-
-<Cards>
-    <Card
-    href="https://nextjs.org/docs/app/building-your-application/data-fetching/fetching-caching-and-revalidating"
-    title="Data-driven slides"
-  >
-    Advanced guide on making WLX components with defined WLXForm
-
-    {/* ![TODO] */}
-  </Card>
-</Cards>
+Many symbols have [predefined `WLXForm`](./../Advanced/Decorating-symbols), namely: `Graphics`, `Graphics3D`, `Image`, `EventObject`, any GUI input elements and many more. 
 
 However, a basic plot will work out of the box:
 

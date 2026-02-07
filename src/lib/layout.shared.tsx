@@ -31,7 +31,7 @@ export function baseOptions(): BaseLayoutProps {
       {
         icon: <BookIcon />,
         text: 'Documentation',
-        url: '/frontend/setup',
+        url: '/frontend/Overview',
         // secondary items will be displayed differently on navbar
         secondary: false,
       },
@@ -44,24 +44,9 @@ export function baseOptions(): BaseLayoutProps {
       },
 
       {
-        icon: <Pyramid />,
-        text: 'Demonstration Project',
-        url: '/demo',
-        // secondary items will be displayed differently on navbar
-        secondary: false,
-      },
-
-      {
         icon: <Rocket/>,
         text: 'Releases',
         url: '/releases',
-        // secondary items will be displayed differently on navbar
-        secondary: false,
-      },      
-      {
-        icon: <AppWindowMac />,
-        text: 'Mini apps',
-        url: '/apps',
         // secondary items will be displayed differently on navbar
         secondary: false,
       }

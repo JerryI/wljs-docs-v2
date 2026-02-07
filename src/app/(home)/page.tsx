@@ -420,44 +420,41 @@ export default function HomePage() {
             icon={<Code2 />}
             title="Feels like Mathematica and Jupyter"
             description="WLJS Notebook feels and works like Wolfram Mathematica (and it can open .nb files) and has a flat and minimal notebook structure like in Jupyter Lab."
-            href="/docs"
+            href="/frontend/Overview#why-not-jupyter-lab-or-vscode"
           />
 
           <Card 
             icon={<Zap />}
             title="Interactive & Powerful"
             description=<>{`Optimized for interactive computing and allows to make complex real-time visualizations. From the high-level `}<code>Manipulate</code> to low-level graphics primitives</>
-            href="/docs"
+            href="/frontend/Guides/Dynamic"
           />
 
           <Card 
             icon={<Lightbulb />}
             title="Driven by real-world problem solving"
             description="Developed through the collaboration of physicists and programmers at University of Augsburg 🇩🇪 it is continuously refined in a feedback loop."
-            href="/docs"
           />
 
           <Card 
             icon={<Download />}
             title="Super portable"
             description="Export and share your notebook as a standalone or embeddable .html or .mdx file—plots stay interactive, and sliders remain draggable."
-            href="/docs"
+            href="/frontend/Share/Standalone-HTML"
           />
-
-          {/* ![TODO] */}
 
           <Card 
             icon={<Package />}
             title="Batteries included"
             description="More than 200 importers/exporters formats, 3000 functions. Vast standard library of Wolfram Engine is ready for every computational need."
-            href="/docs"
+            href="/frontend/File-Operations/Import"
           />
 
           <Card 
             icon={<Terminal />}
             title="Javascript Sandbox"
             description="First class support of Javascript cells with a dedicated communication channel to Wolfram Kernel. Use any library from web to enhance your visuals."
-            href="/docs"
+            href="/frontend/Cell-types/Javascript"
           />
         </Cards>
       </div>
@@ -505,7 +502,7 @@ export default function HomePage() {
               Star and share
             </a>
             <Link 
-              href="/docs" 
+              href="/frontend/Support" 
               className="inline-flex items-center gap-2 rounded-lg bg-fd-primary px-6 py-2.5 font-medium text-fd-primary-foreground transition-all hover:bg-fd-primary/90 hover:scale-105"
             >
               Support

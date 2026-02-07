@@ -1,0 +1,697 @@
+---
+title: HTTP API
+---
+
+## Overview
+
+The HTTP API provides a programmatic interface to interact with the Wolfram notebook application. It allows external clients to manage notebooks, cells, evaluate code, and query the kernel without direct user interaction.
+
+The API uses **HTTP POST requests with JSON payloads** for all operations. Responses are returned as JSON with appropriate HTTP status codes:
+
+- **200** - Success
+- **409** - Failure (returned with error message)
+
+## Response Format
+
+All responses follow this structure:
+
+**Success Response:**
+```json
+{
+  "Body": <response-data>,
+  "Code": 200,
+  "Headers": {
+    "Content-Length": <length>,
+    "Connection": "Keep-Alive",
+    "Keep-Alive": "timeout=5, max=1000",
+    "Access-Control-Allow-Origin": "*"
+  }
+}
+```
+
+**Error Response:**
+```json
+{
+  "Body": <error-message>,
+  "Code": 409,
+  "Headers": { ... }
+}
+```
+
+## Asynchronous Operations
+
+Some operations (like notebook evaluation and kernel execution) are asynchronous and return a **Promise ID** instead of immediate results. Use the `/api/promise/` endpoint to poll for completion.
+
+---
+
+## API Endpoints
+
+The default server address is the same as one used for Web UI:
+
+```
+https://127.0.0.1:20560/
+```
+
+### Availability Check
+
+#### `GET /api/ready/`
+
+Check if the API server is ready to accept requests.
+
+**Request:**
+```json
+{}
+```
+
+**Response:**
+```json
+{
+  "ReadyQ": true
+}
+```
+
+---
+
+### Promise Status
+
+#### `POST /api/promise/`
+
+Poll the status of an asynchronous operation using a Promise ID.
+
+**Request:**
+```json
+{
+  "Promise": "promise-id-string"
+}
+```
+
+**Response (Pending):**
+```json
+{
+  "ReadyQ": false
+}
+```
+
+**Response (Ready):**
+```json
+{
+  "ReadyQ": true,
+  "Result": <actual-result>
+}
+```
+
+**Errors:**
+- `"Missing promise or already resolved"` - Promise ID doesn't exist or has already been resolved
+
+---
+
+### Wolfram Alpha Queries
+
+#### `POST /api/alphaRequest/`
+
+Query Wolfram Alpha for short answers to natural language queries.
+
+**Request:**
+```json
+{
+  "Query": "what is the capital of France"
+}
+```
+
+**Response:**
+```json
+"Paris, Île-de-France, France"
+```
+
+**Notes:**
+- Results are limited to 1000 characters
+- Longer results are truncated with "..."
+
+**Errors:**
+- `"Failed request"` - Query could not be processed
+
+---
+
+### Notebook Operations
+
+#### `POST /api/notebook/list/`
+
+List all notebooks known to the application.
+
+**Request:**
+```json
+{}
+```
+
+**Response:**
+```json
+[
+  {
+    "Id": "notebook-hash",
+    "Opened": true,
+    "Path": "/path/to/file.wln"
+  },
+  ...
+]
+```
+
+---
+
+#### `POST /api/notebook/create/`
+
+Create a new empty notebook and open it in the application. This operation is asynchronous.
+
+**Request:**
+```json
+{}
+```
+
+**Response:**
+```json
+{
+  "Promise": "promise-id"
+}
+```
+
+Poll `/api/promise/` to get the notebook hash ID.
+
+**Final Result:**
+```json
+"notebook-hash-id"
+```
+
+**Errors:**
+- `"All windows are closed"` - No notebook window available
+
+---
+
+### Cell Operations
+
+#### `POST /api/notebook/cells/list/`
+
+List all cells in a notebook with their metadata.
+
+**Request:**
+```json
+{
+  "Notebook": "notebook-hash-id"
+}
+```
+
+**Response:**
+```json
+[
+  {
+    "Id": "cell-hash-id",
+    "Type": "Input",
+    "Display": "codemirror",
+    "Lines": 5,
+    "FirstLine": "Plot[Sin[x], {x, 0, 2Pi}]"
+  },
+  ...
+]
+```
+
+**Cell Types:** `"Input"` | `"Output"`
+
+**Display Formats:** `"codemirror"` | `"markdown"` | `"js"` | `"html"` | ...
+
+**Errors:**
+- `"Notebook is missing"` - Notebook ID not found
+
+---
+
+#### `POST /api/notebook/cells/focused/`
+
+Get the currently focused cell and text selection information.
+
+**Request:**
+```json
+{
+  "Notebook": "notebook-hash-id"
+}
+```
+
+**Response:**
+```json
+{
+  "Id": "cell-hash-id",
+  "Type": "Input",
+  "Display": "codemirror",
+  "Lines": 10,
+  "FirstLine": "f[x_] := ...",
+  "SelectedLines": [3, 5]
+}
+```
+
+**SelectedLines:** `[startLine, endLine]` (1-indexed) or `null` if no selection
+
+**Errors:**
+- `"Notebook is missing"`
+- `"Nothing is focused"` - No cell currently has focus
+
+---
+
+#### `POST /api/notebook/cells/getlines/`
+
+Read a range of lines from a cell.
+
+**Request:**
+```json
+{
+  "Cell": "cell-hash-id",
+  "From": 1,
+  "To": 5
+}
+```
+
+**Response:**
+```json
+"line1\nline2\nline3\nline4\nline5"
+```
+
+**Notes:**
+- Line numbers are 1-indexed
+- `From` and `To` are inclusive
+
+**Errors:**
+- `"Cell not found"`
+- `"From or To is not a number"`
+
+---
+
+#### `POST /api/notebook/cells/setlines/`
+
+Replace a range of lines in a cell.
+
+**Request:**
+```json
+{
+  "Cell": "cell-hash-id",
+  "From": 3,
+  "To": 5,
+  "Content": "new line 3\nnew line 4"
+}
+```
+
+**Response:**
+```json
+"Lines were set"
+```
+
+**Notes:**
+- Replaces lines `From` through `To` (inclusive)
+- Content can have more or fewer lines than the range being replaced
+- Cannot edit output cells
+
+**Errors:**
+- `"Cell not found"`
+- `"From or To is not a number"`
+- `"Cannot edit output cells"`
+
+---
+
+#### `POST /api/notebook/cells/setlines/batch/`
+
+Apply multiple non-overlapping edits to a cell in a single call.
+
+**Request:**
+```json
+{
+  "Cell": "cell-hash-id",
+  "Changes": [
+    {"From": 10, "To": 12, "Content": "replaced lines 10-12"},
+    {"From": 5, "To": 5, "Content": "replaced line 5"},
+    {"From": 1, "To": 2, "Content": "replaced lines 1-2"}
+  ]
+}
+```
+
+**Response:**
+```json
+{
+  "Applied": 3,
+  "Message": "Batch lines were set"
+}
+```
+
+**Notes:**
+- Changes are automatically applied bottom-to-top to preserve line indices
+- Ranges must not overlap
+
+**Errors:**
+- `"Cell not found"`
+- `"Changes must be a list"`
+- `"Cannot edit output cells"`
+- `"Each change must have numeric From, To and string Content"`
+- `"Changes have overlapping line ranges"`
+
+---
+
+#### `POST /api/notebook/cells/insertlines/`
+
+Insert new lines into a cell without replacing existing content.
+
+**Request:**
+```json
+{
+  "Cell": "cell-hash-id",
+  "After": 5,
+  "Content": "new line 1\nnew line 2"
+}
+```
+
+**Response:**
+```json
+"Lines were inserted"
+```
+
+**Notes:**
+- `After: 0` inserts at the beginning
+- `After: n` inserts after line n
+- Cannot edit output cells
+
+**Errors:**
+- `"Cell not found"`
+- `"After must be a number"`
+- `"Content must be a string"`
+- `"Cannot edit output cells"`
+
+---
+
+#### `POST /api/notebook/cells/add/`
+
+Add a new cell to the notebook.
+
+**Request:**
+```json
+{
+  "Notebook": "notebook-hash-id",
+  "Content": "Plot[Sin[x], {x, 0, 2Pi}]",
+  "Type": "Input",
+  "Display": "codemirror",
+  "Hidden": false,
+  "After": "cell-hash-id"
+}
+```
+
+**Optional Parameters:**
+- `Type`: `"Input"` (default) | `"Output"`
+- `Display`: `"codemirror"` (default) or other format
+- `Hidden`: `false` (default)
+- `After`: Insert after this cell ID
+- `Before`: Insert before this cell ID
+- `Id`: Specify a custom cell ID
+
+**Response:**
+```json
+"created-cell-hash-id"
+```
+
+**Errors:**
+- `"Notebook is missing"`
+
+---
+
+#### `POST /api/notebook/cells/add/batch/`
+
+Add multiple cells in sequence.
+
+**Request:**
+```json
+{
+  "Notebook": "notebook-hash-id",
+  "After": "anchor-cell-id",
+  "Cells": [
+    {"Content": "cell 1 code", "Type": "Input"},
+    {"Content": "cell 2 code"},
+    {"Content": "cell 3 code", "Hidden": true}
+  ]
+}
+```
+
+**Response:**
+```json
+{
+  "Created": ["uuid-1", "uuid-2", "uuid-3"],
+  "Count": 3
+}
+```
+
+**Notes:**
+- Cells are inserted sequentially, each after the previous
+- Type, Display, and Hidden are optional per cell
+
+**Errors:**
+- `"Notebook is missing"`
+- `"Cells must be a list"`
+- `"Cells list is empty"`
+- `"Each cell must have a string Content field"`
+
+---
+
+#### `POST /api/notebook/cells/delete/`
+
+Delete a cell from the notebook.
+
+**Request:**
+```json
+{
+  "Cell": "cell-hash-id"
+}
+```
+
+**Response:**
+```json
+"Removed 1 cell"
+```
+
+**Notes:**
+- Only input cells can be deleted directly
+- Output cells must be deleted via their parent input cell
+
+**Errors:**
+- `"Cell is missing"`
+- `"Cannot delete output cell. Delete parent input cell"`
+
+---
+
+#### `POST /api/notebook/cells/evaluate/`
+
+Evaluate an input cell in the notebook's kernel. This is an asynchronous operation.
+
+**Request:**
+```json
+{
+  "Cell": "input-cell-hash-id"
+}
+```
+
+**Response:**
+```json
+{
+  "Promise": "promise-id"
+}
+```
+
+Poll `/api/promise/` to get the output cells.
+
+**Final Result:**
+```json
+[
+  {
+    "Id": "output-cell-hash-id",
+    "Type": "Output",
+    "Display": "html",
+    "Lines": 3,
+    "FirstLine": "<svg>..."
+  },
+  ...
+]
+```
+
+**Errors:**
+- `"Cell is missing"`
+- `"Can't evaluate cell in a closed notebook. Use /api/kernel/evaluate/ path"`
+
+**Notes:**
+- The notebook must be open for evaluation
+- For closed notebooks, use `/api/kernel/evaluate/` instead
+
+---
+
+#### `POST /api/notebook/cells/project/`
+
+Open cell content in a separate projection window (useful for presentations or focused viewing).
+
+**Request:**
+```json
+{
+  "Cell": "cell-hash-id"
+}
+```
+
+**Response:**
+```json
+"Window was created"
+```
+
+**Errors:**
+- `"Cell is missing"`
+- `"Output cells cannot be projected"`
+- `"Can't project cell in a closed notebook"`
+
+---
+
+#### `POST /api/notebook/cells/add/markdown/`
+
+Create an output cell with markdown content.
+
+**Request:**
+```json
+{
+  "Notebook": "notebook-hash-id",
+  "Content": "# Heading\n\nMarkdown content here",
+  "After": "cell-hash-id"
+}
+```
+
+**Response:**
+```json
+"created-cell-hash-id"
+```
+
+---
+
+#### `POST /api/notebook/cells/add/js/`
+
+Create an output cell with JavaScript content.
+
+**Request:**
+```json
+{
+  "Notebook": "notebook-hash-id",
+  "Content": "console.log('Hello, World!');",
+  "After": "cell-hash-id"
+}
+```
+
+**Response:**
+```json
+"created-cell-hash-id"
+```
+
+---
+
+#### `POST /api/notebook/cells/add/html/`
+
+Create an output cell with HTML content.
+
+**Request:**
+```json
+{
+  "Notebook": "notebook-hash-id",
+  "Content": "<div>Hello, World!</div>",
+  "After": "cell-hash-id"
+}
+```
+
+**Response:**
+```json
+"created-cell-hash-id"
+```
+
+---
+
+### Kernel Operations
+
+#### `POST /api/kernel/evaluate/`
+
+Evaluate a Wolfram Language expression directly in the kernel without needing an open notebook. This is an asynchronous operation.
+
+**Request:**
+```json
+{
+  "Expression": "1 + 1",
+  "Kernel": "kernel-hash-id"
+}
+```
+
+**Optional Parameters:**
+- `Kernel`: Specify a kernel by its hash ID. If omitted, uses the first available ready kernel.
+
+**Response:**
+```json
+{
+  "Promise": "promise-id"
+}
+```
+
+Poll `/api/promise/` to get the result.
+
+**Final Result:**
+```json
+"2"
+```
+
+**Errors:**
+- `"No kernel is ready for evaluation"` - No kernel is available
+
+---
+
+### Documentation Search
+
+#### `POST /api/docs/find/`
+
+Search documentation for matching queries.
+
+**Request:**
+```json
+{
+  "Query": "Plot",
+  "WordSearch": true
+}
+```
+
+**Response:**
+```json
+[
+  {
+    "Title": "Plotting Functions",
+    "Path": "/docs/plotting",
+    "Snippet": "..."
+  },
+  ...
+]
+```
+
+**Parameters:**
+- `Query`: Search term
+- `WordSearch`: `true` (default) for word-boundary matching, `false` for substring matching
+
+**Notes:**
+- Returns up to 5 results
+- Results are ordered by relevance
+
+---
+
+## CORS Support
+
+All endpoints support **Cross-Origin Resource Sharing (CORS)** with the header:
+```
+Access-Control-Allow-Origin: *
+```
+
+This allows requests from any domain.
+
+---
+
+## Best Practices
+
+1. **Handle Promises:** Always poll `/api/promise/` when you receive a Promise ID. Use exponential backoff to avoid overwhelming the server.
+
+2. **Batch Operations:** Use batch endpoints (`/api/notebook/cells/add/batch/` and `/api/notebook/cells/setlines/batch/`) when making multiple related changes for better performance.
+
+3. **Check Notebook State:** Use `/api/notebook/list/` to verify notebook status (open/closed) before attempting operations.
+
+4. **Error Handling:** Always check for error responses (HTTP 409) and handle them appropriately in your client application.

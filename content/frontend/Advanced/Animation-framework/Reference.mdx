@@ -1,0 +1,686 @@
+---
+title: Reference
+---
+
+Note, that you need to import this library to any context expect `Global`
+
+```wolfram
+Needs["AnimationFramework`"->"af`"];
+```
+
+## Scene
+```wolfram
+af`Scene[opts___] _Scene
+```
+
+constructs the main object `Scene`, where animation is going to be rendered. It also serves the purpose of a hosting object for primitives, animations, workers and etc. 
+
+The local coordinates are limited to $\pm 1$ for the square aspect ratio, otherwise the smallest side takes is scaled to 1:
+
+<div className="invertColor">
+
+![](./imgs/Untitled-2024-04-16-1534-0fe85a6184d24a75d6d66e6eb0c81b2d.png)
+
+</div>
+
+Scenes can be reused multiple times in different animations. 
+
+### Options
+#### `ImageSize`
+By the default is `Medium`. 
+
+#### `"TimeMarkers"`
+Sets the time markers from the [Timeline](./Timeline)
+
+### `"GlobalDirectives"`
+Adds a provided list to the scene globally (set font size globally and etc)
+
+#### Other options
+The rest is inherited from [Graphics](./../../Graphics/Graphics). `PlotRange`, `ImageSizeRaw`, cannot be changed.
+
+### Animation Flow
+All animations on the scene should follows the pattern:
+- append objects
+- animate
+- remove objects
+
+By design most of methods and functions of AF framework return [Promise](./../../Misc/Promise) expression. In this regard, it makes sense to describe your animation flow using [Asynchronous Functions](./../Asynchronous-programming):
+
+```wolfram
+AsyncFunction[scene, Module[{},
+	...
+]][scene];
+```
+
+
+### Supported methods
+- [AddTo](#AddTo)
+- [Remove](#Remove)
+
+## AddTo
+The most important method for the animation scene or to a layer:
+
+```wolfram title="immutable object"
+af`AddTo[_Scene | layer_, primitives_] _af`Private`entity
+```
+
+```wolfram title="object with mutable properties"
+af`AddTo[_Scene | layer_, primitives_, {
+	prop1_String -> value1_,
+	...
+}] _af`Private`entity
+```
+
+where `primitives` can be any 2D graphics object, or an expression, that produces graphics objects or your custom written [frontend symbol](./../Frontend-functions/Overview) that support `.update` method. 
+
+<Callout>
+`AddTo` function works for both: [Scene](#Scene) and [Layer](#Layer) objects
+</Callout>
+
+Mutable properties are embed using `Slot` expression aka
+
+```wolfram
+Primitive[#prop1, #prop2] ...
+```
+
+Basic example:
+
+```wolfram
+disk = af`AddTo[scene, {Red, Disk[{0,0}, 1]}];
+```
+
+However, *it does not have any mutable properties*. Here is another example
+
+```wolfram
+disk = af`AddTo[scene, {Red, Disk[#pos, #r]}, {
+	"pos" -> {0.,0.},
+	"r" -> 0.5
+}];
+```
+
+On the created entity the following methods are supported
+### Supported methods
+- [Update](#Update)
+- [Animate](#Animate)
+- [Remove](#Remove)
+
+
+## Update
+Assigns a new value to a given property or list of properties
+
+```wolfram title="assign 1 value"
+af`Update[scene_Scene, entity_, prop_String -> newValue_ ..]
+```
+
+```wolfram title="assign set of values"
+af`Update[scene_Scene, entity_, {
+	prop1_String -> val1_,
+	...
+}]
+```
+
+```wolfram
+af`Update[entity_, {__Rule}]
+```
+
+The action will be applied immediately without easing. For example:
+
+```wolfram
+disk = af`AddTo[scene, {Red, Disk[#pos, #r]}, {
+	"pos" -> {0.,0.},
+	"r" -> 0.5
+}];
+```
+
+```wolfram
+af`Update[scene, disk, "pos"->RandomReal[{-1,1}, 2]];
+```
+
+## Remove
+Removes a single object or object from the scene or in a layer (including all children)
+
+```wolfram title="remove a single object"
+af`Remove[_af`Private`entity | _af`Private`runner | _af`Private`worker]
+```
+
+```wolfram title="remove a layer with children"
+af`Remove[layer_af`Private`entity]
+```
+
+```wolfram title="remove all obejcts in the scene"
+af`Remove[_Scene]
+```
+
+<Callout>
+`Remove` acting on `Scene` does not remove the scene itself, but it disposes all objects added to it including the nested ones (layers). Use it as a fast way to clean up the scene.
+</Callout>
+
+## Animate
+It animates the transition of a property or set of properties with a given easing function on the scene
+
+```wolfram
+af`Animate[scene_Scene, entity_, prop_String -> value_, easing_:"CubicInOut", duration_:1] _Promise
+```
+
+```wolfram
+af`Animate[scene_Scene, entity_, {
+	prop1_String -> value1_,
+	prop2_String -> value2_, ...
+}, easing_:"CubicInOut", duration_:1] _Promise
+```
+
+where `easing` is function used for animating the transition:
+
+- `"Linear"`
+- `"CubicInOut"` or `"Ease"`
+- `"QuadIn"`
+- `"QuadOut"`
+- `"LinearEuclidean"`  (usually used for colors)
+- `Function[{t, initial, current, target}, ...]`
+
+and `duration` is given in __seconds__.
+
+In addition `Animate` can be applied to any held `_Symbol`:
+
+```wolfram
+af`Animate[scene_Scene, Hold[symbol_], newValue_, easing_:"CubicInOut", duration_:1] _Promise
+```
+
+or a [Layer](#Layer) entity
+
+```wolfram
+af`Animate[scene_Scene, layer_, prop_String->newValue_, easing_:"CubicInOut", duration_:1] _Promise
+```
+
+`Animate` always returns `Promise`, which is resolved when the animation is finished, i.e.:
+
+*wait for the animation to be finished*
+```wolfram
+af`Animate[scene, object, "prop"->1.0] // Await;
+```
+
+*wait for multiple animations to be finished*
+```wolfram
+{
+	af`Animate[scene, object1, "prop"->1.0],
+	af`Animate[scene, object2, "prop"->1.0],
+}// Await;
+```
+
+<Callout type="tip">
+For animating multiple properties of __the same object__ - use
+```wolfram
+af`Animate[scene, object1, {"prop1"->1.0, "prop2"->3.0}]
+```
+</Callout>
+
+Animation is done fully using Wolfram Kernel (no Javascript easing is involved) at the maximum available frame rate (dynamic).
+
+For example:
+
+```wolfram
+scene = af`Scene[];
+scene
+```
+
+```wolfram
+AsyncFunction[scene, Module[{d},
+  d = af`AddTo[scene, {
+    Opacity[#o], 
+    Translate[
+      Rotate[
+        Rectangle[{-0.5,-0.1}, {0.5,0.1}]
+      , #r]
+    , #c]
+  }, {
+    "o" -> 0.,
+    "r" -> 0.,
+    "c" -> {0,0}
+  }];
+
+  af`Animate[scene, d, {"o" -> 1.0,"r" -> 3.14}, "Ease", 1.0] // Await;
+
+  PauseAsync[1] // Await;
+  
+  af`Animate[scene, d, {"o"->0., "r"->0}, "Ease", 1.0] // Await;
+
+  af`Remove[d];
+]][scene];
+```
+
+
+### Supported property types
+- `Real`, `Integer`
+- `List` of integers, reals
+- `List` of `List` and etc
+- `String` with numbers inside
+
+In principle anything, which can be combined with multiplication and sum can work as a property value. 
+
+#### Strings
+String interpolation is done in steps:
+- exploding string into string and number-like string
+- convert number-like strings into array
+- interpolate a array (using easing function) between the original and target value (transformed from a string)
+- compose back into a string
+
+For example, one can easily animate the following SVG attribute
+
+```wolfram
+scene = af`Scene[];
+scene
+```
+
+```wolfram
+AsyncFunction[scene, Module[{layer},
+  
+  layer = af`Layer[scene, {
+	SVGAttribute[#children, "style"->#style]
+  }, {"style" -> "filter: blur(0px)"}];
+
+  af`AddTo[layer, Table[{RandomColor[], Disk[RandomReal[{-1,1},2], 1.0]}, {10}]];
+  af`Animate[scene, layer, "style"->"filter: blur(100px)", "Ease", 5]//Await;
+
+  af`Remove[layer];
+
+]][scene];
+```
+
+
+
+
+
+
+
+
+## Layer
+It creates an isolated group of objects (layer):
+
+```wolfram title="no mutable props"
+af`Layer[scene_Scene | layer_, body_] _af`Private`entity
+```
+
+```wolfram title="mutable props"
+af`Layer[scene_Scene | layer_, body_, {
+	prop1_String -> value1_,
+	...
+}] _af`Private`entity
+```
+
+where `body` is defined similar to one in [AddTo](#AddTo):
+
+```wolfram
+{
+	Opacity[0.5],
+	#children
+}
+```
+
+or
+
+```wolfram
+{
+	Opacity[#opacity],
+	Translate[#children, #coordinates]
+}
+```
+
+where `#children` is **a special reserved slot** to specify where to append children. __You can append objects similar to `Scene` using [AddTo](#AddTo) expression__:
+
+```wolfram
+layer = af`Layer[scene, {
+	Opacity[#opacity],
+	Translate[#children, #coordinates]
+}, {"opacity" -> 0.5, "coordinates"->{0,0}}];
+
+af`AddTo[layer, Table[{RandomColor[], Disk[RandomReal[{-0.2,0.2},2], 0.05]}, {10}]];
+```
+
+### Z-ordering
+To preserve z-order of your primitives, one can use `Layer` together with [SVGGroup](./../../Graphics/SVGGroup). 
+
+### Supported methods
+- [AddTo](#AddTo)
+- [Update](#Update)
+- [Animate](#Animate)
+- [Remove](#Remove)
+
+
+## Loop
+It create custom animation loop, which is repeated until manually removed
+
+```wolfram
+af`Loop[scene_Scene, entity_, property_String, function_, duration_:1] _af`Private`runner
+```
+
+where `function` should have the following form:
+
+```wolfram
+Function[{t, prevValue, cycleNumber},
+	
+]
+```
+
+Here `t` goes from `0` to `1` in `duration` seconds, and `cycleNumber` represents the number of rounds passed. 
+
+<Callout>
+`function` is fired every frame
+</Callout>
+
+### How to stop a loop
+Before removing a loop animation call `Await` [Finish](#Finish) on the loop object to wait until the cycle is fully finished. `Finish` returns promise, which is resolved on the end of the current cycle. This will help to avoid abrupt stop of the loop. For example
+
+```wolfram
+scene = af`Scene[];
+scene
+
+stop = InputButton["Stop"]
+```
+
+```wolfram
+AsyncFunction[scene, Module[{d, loop},
+  d = af`AddTo[scene, {
+    Rotate[
+      Rectangle[{-0.5,-0.1}, {0.5,0.1}]
+    , #r]
+  }, {
+    "r" -> 0.
+  }];
+
+  loop = af`Loop[scene, d, "r", Function[{t, o, n},
+    3.14 t + (n-1) 3.14
+  ], 2];
+
+  stop // Await;
+
+  af`Finish[loop] // Await;
+  
+  af`Remove[loop];
+
+  PauseAsync[0.5] // Await;
+
+  af`Remove[d];
+]][scene]
+```
+
+
+### Supported methods
+- [Remove](#Remove)
+- [Finish](#Finish)
+
+
+## Worker
+Workers are similar to [Loop](#Loop)s, but allow to execute an arbitrary code concurrently with the main animation on each frame:
+
+```wolfram
+af`Worker[scene_Scene, function_] _af`Private`worker
+```
+
+where `function` has the following form
+
+```wolfram
+Function[absoluteTime, ...]
+```
+
+You can place an entire new animation sequence to a worker as [Asynchronous Functions](./../Asynchronous-programming):  
+
+```wolfram
+AsyncFunction[absoluteTime, ...]
+```
+
+`function` is called every frame, but only after the execution of the previous `function` call is finished. `absoluteTime` is a time in seconds passed after the worker has been created.
+
+For example:
+
+```wolfram
+scene = af`Scene[];
+scene
+stop = InputButton["Stop"]
+```
+
+```wolfram
+AsyncFunction[scene, Module[{d, worker},
+  d = af`AddTo[scene, {
+    Rotate[
+      Rectangle[{-0.5,-0.1}, {0.5,0.1}]
+    , #r]
+  }, {
+    "r" -> 0.
+  }];
+
+  worker = af`Worker[scene, AsyncFunction[Null,
+    af`Animate[scene, d, "r"->Pi/2] // Await;
+    af`Animate[scene, d, "r"->-Pi/2] // Await;
+  ]];
+
+  stop // Await;
+
+  af`Finish[worker] // Await;
+  af`Remove[worker];
+
+  PauseAsync[0.5] // Await;
+
+  af`Remove[d];
+]][scene]
+```
+
+### How to stop a worker
+Before removing a worker call `Await` [Finish](#Finish) on the worker object to wait until the execution is fully finished (as on the example above). `Finish` returns promise, which is resolved on the end of the current cycle. This will help to avoid abrupt stop.
+
+### Supported methods
+- [Remove](#Remove)
+- [Finish](#Finish)
+
+
+## Component
+Adds to a scene or layer an object similar to [AddTo](#AddTo) with custom update and remove functions
+
+```wolfram
+af`Component[s_Scene | layer_, 
+{
+	"Update" -> update_Function,
+	"Remove" -> remove_Function
+},
+{
+	prop1_String -> value1_,
+	...
+}] _af`Private`entity
+```
+
+where `remove` and `update` are called with an association argument, containing all defined properties.
+
+### Supported methods
+- [Animate](#Animate)
+- [Update](#Update)
+- [Remove](#Remove)
+
+## CameraRig
+It is a special object allowing to animate and set camera zoom and pan:
+
+```wolfram
+af`CameraRig[scene_Scene] _af`Private`entity
+```
+
+it returns a similar object to [AddTo](#AddTo), which is removable, animatable and etc - see below.
+
+### Properties
+There are two hidden properties:
+- `"zoom"` by the default is `1.0`
+- `"position"` by the default is `{0,0}`
+
+### Supported methods
+- [Animate](#Animate)
+- [Update](#Update)
+- [Remove](#Remove)
+
+## Finish
+```wolfram
+af`Finish[worker_ | loop_ | _Promise] _Promise
+```
+It is a special promise generator used for waiting for various events:
+- [Loop](#Loop) has finished the cycle of animation
+- [Worker](#Worker) has finished the function execution
+
+Any `Promise` object will be returned without changes. __It only makes sense to use it with `Await` expression__:
+
+```wolfram
+af`Finish[worker1] // Await
+```
+
+or multiple events
+
+```wolfram
+{
+	af`Finish[worker1],
+	af`Finish[worker2]
+} // Await
+```
+
+## RecordAnimation
+
+<Callout>
+Read more at [Recording](./Recording) page
+</Callout>
+
+To render the animation into the sequence of images:
+
+```wolfram
+af`RecordAnimation[animationFunction_, opts___] _af`Private`recorder
+```
+
+where `animationFunction` is your async animation function, that accepts `Scene` object and `opts` are the same as for [Scene](#Scene) including extra:
+
+- `FrameRate` - frames per second (`60` by the default)
+- `GeneratedAssetLocation` - by the default is `$TemporalDirectory`
+- `GeneratedAssetFormat` - format for rendered sequence: `"PNG"`, `"JPEG"`
+- `CompressionLevel` - by the default is `0.2` (applicable only for JPEG)
+- `"TimeMarkers"` - sets the time markers from the [Timeline](./Timeline)
+- `"StaggerDelay"` - sets an extra delay in milliseconds before capturing a frame (by the default is set to 30)
+
+#### Properties
+`recorder` object provides the following fields:
+- `"GeneratedAssetLocation"` - path to sequence
+- `"Recording"` - status
+
+### TimelinedAnimation
+<Callout>
+Read more at [Timeline](./Timeline) page
+</Callout>
+
+To play an animation with a graphical timeline attached:
+
+```wolfram
+af`RecordAnimation[animationFunction_, opts___] _af`Private`timelined
+```
+
+<div className="invertColor">
+
+![](./imgs/Screenshot-2025-06-07-at-12.23.29-28d63066f4e5eb0c451710f4a0552cb6.png)
+
+</div>
+
+where `animationFunction` is your async animation function, that accepts `Scene` object and `opts` are the same as for [Scene](#Scene) including extra:
+
+- `"TimeMarkers"` - sets the time markers from the [Timeline](./Timeline)
+- `"AudioClips"` - restores recorded voice overs
+
+Note, `RecordAnimation` has `HoldFirst` attribute.
+
+#### Properties
+`timelined` object provides the following fields:
+- `"TimeMarkers"` - current time markers
+- `"AudioClips"` - gets audio clips from the timeline
+- `"AudioClipsAsync"` - gets audio clips from the timeline
+
+## Utilities
+### Color
+```wolfram
+af`Color[_Hue | _RGBColor | _LABColor] _List
+```
+
+a color conversion tool, which turns any color representation to a list of RGB values. This comes handy with [RGBColor](./../../Graphics/RGBColor), since to update it you need to provide a list instead of an actual color:
+
+```wolfram
+{RGBColor[#color], ...}
+```
+
+then when you update
+
+```wolfram
+af`Animate[... "color"->af`Color[Red], ...]
+```
+
+### PauseAsync
+A modified version of system default `PauseAsync` with extra argument
+
+```wolfram
+PauseAsync[scene_Scene, n_Integer | n_Real] _Promise
+```
+
+Here the time delay will be in sync with [Scene](#Scene). It makes sense during the [Recording](./Recording) process, where the actual time is fixed with a frame rate.
+
+### Delayed
+#### Pattern 1
+A generator of delay wrappers
+
+```wolfram
+af`Delayed[scene_Scene, duration_] _Function
+```
+
+The returned function can be applied to any other expression to delay its execution (including [Asynchronous Functions](./../Asynchronous-programming)). Returns `Promise`. 
+
+For example:
+
+```wolfram
+g = af`Delayed[scene, 1];
+g[af`Animate[scene, object, "prop"->1.0, "Linear", 1.0]] // Await;
+```
+
+#### Pattern 2
+Using 3 arguments:
+
+```wolfram
+af`Delayed[function_, scene_Scene, duration_] _Promise
+```
+
+
+### RecorderToVideo
+It converts `recorder` object to [Video](./../../Video/Video)  __after the rendering is finished__
+
+```wolfram
+af`RecorderToVideo[_af`Private`recorder] _Video
+```
+
+### Marker
+A helper to wait or extract property from [Timeline](./Timeline) markers
+
+*wait for the marker*
+```wolfram
+af`Marker[scene_Scene, name_String] _Promise
+af`Marker[scene_Scene, name_String, "Start"] _Promise
+```
+
+*wait for the end of the marker*
+```wolfram
+af`Marker[scene_Scene, name_String, "End"] _Promise
+```
+
+*take duration in seconds*
+```wolfram
+af`Marker[scene_Scene, name_String, "Duration"] _Real
+```
+
+### AudioFromClips
+A helper function to convert a list of audio clips (voice overs) retrieved from the properties of `timelined` object to a single audio object:
+
+```wolfram
+af`AudioFromClips[clips_List]
+```
+
+For example:
+
+```wolfram
+af`AudioFromClips[t["AudioClips"]]
+```
+
+where `t` is your [TimelinedAnimation](#TimelinedAnimation) object

@@ -1,0 +1,151 @@
+---
+title: Reference
+---
+
+__Note__, that you need to import this library to any context expect `Global`
+
+```wolfram
+Needs["Canvas2D`"->"ctx`"];
+```
+
+## Constructor
+```wolfram
+context = ctx`Canvas2D[]
+```
+
+creates a canvas context with a buffer of commands.
+
+### Render
+To render context buffer to a screen use [Image](./../../Image/Image):
+
+```wolfram
+Image[context_, opts___]
+```
+
+#### Options
+- `ImageResolution` (by the default is `{500,500}`)
+- `Epilog` (similar to `Graphics`)
+
+##### How to capture user input
+One can directly use `EventHandler` on `Image` expression:
+
+```wolfram
+EventHandler[Image[context], {"mousemove" -> Print}]
+```
+
+
+### AnimationFrameListener
+[AnimationFrameListener](./../../Graphics/AnimationFrameListener) supports canvas context as a first argument:
+
+```wolfram
+AnimationFrameListener[context_, "Event"->event_String]
+```
+
+
+## Buffer Management
+
+```wolfram
+ctx`Dispatch[context_]
+```
+flushes the buffer of commands to the Graphics API.
+
+
+## Paths
+```wolfram
+ctx`BeginPath[context_]
+ctx`ClosePath[context_]
+
+ctx`MoveTo[context_, {x_, y_}]
+ctx`LineTo[context_, {x_, y_}]
+
+ctx`Arc[context_, {cx_, cy_}, r_, θ1_, θ2_, ccw_: False]
+
+ctx`QuadraticCurveTo[context_, {cpx_, cpy_}, {x_, y_}]
+ctx`BezierCurveTo[context_, {cp1x_, cp1y_}, {cp2x_, cp2y_}, {x_, y_}]
+```
+
+- **BeginPath** starts a new path (clears any subpaths).
+- **ClosePath** closes the current subpath by drawing a straight line back to its start.
+- **MoveTo** / **LineTo** move or draw a line to the given point.
+- **Arc** adds a circular arc centered at `(cx,cy)` with radius `r` from angle `θ1` to `θ2` (set `ccw->True` for counterclockwise).
+- **QuadraticCurveTo** / **BezierCurveTo** add Bézier curves with the specified control points.
+
+
+## Shapes
+```wolfram
+ctx`FillRect[context_, {x_, y_}, {w_, h_}]
+ctx`StrokeRect[context_, {x_, y_}, {w_, h_}]
+ctx`Rect[context_, {x_, y_}, {w_, h_}]
+
+ctx`Fill[context_]
+ctx`Stroke[context_]
+```
+
+- **FillRect** draws a filled rectangle at `(x,y)` of size `(w,h)`.
+- **StrokeRect** outlines a rectangle similarly.
+- **Rect** adds a rectangle to the current path (use with `Fill` or `Stroke`).
+- **Fill** / **Stroke** fill or stroke the current path.
+
+## Text
+```wolfram
+ctx`FillText[context_, text_String, {x_, y_}]
+ctx`StrokeText[context_, text_String, {x_, y_}]
+```
+
+Draws filled or stroked text at position `(x,y)`.
+
+## Styles & State
+```wolfram
+ctx`SetFillStyle[context_, style_String]
+ctx`SetStrokeStyle[context_, style_String]
+
+ctx`SetFillStyle[context_, _RGBColor]
+ctx`SetStrokeStyle[context_, _RGBColor]
+
+ctx`SetLineWidth[context_, w_]
+ctx`SetLineCap[context_, cap_String]
+ctx`SetLineJoin[context_, join_String]
+ctx`SetMiterLimit[context_, m_]
+ctx`SetFont[context_, fontSpec_String]
+
+ctx`SetGlobalAlpha[context_, α_]
+ctx`SetGlobalCompositeOperation[context_, op_String]
+ctx`SetFilter[context_, op_String]
+
+ctx`SetTextAlign[context_, align_String]
+ctx`SetTextBaseline[context_, baseline_String]
+
+ctx`Save[context_]
+ctx`Restore[context_]
+```
+
+Configures fill/stroke colors, line styles, font, global transparency, text alignment, and push/pop drawing state.
+
+## Transforms & Clipping
+```wolfram
+ctx`Translate[context_, {dx_, dy_}]
+ctx`Rotate[context_, angle_]
+ctx`Scale[context_, {sx_, sy_}]
+ctx`Clip[context_]
+```
+
+Applies 2D transforms or sets the current clipping region.
+
+## Images
+To plot an image
+
+```wolfram
+ctx`DrawImage[context_, i_Image, {x_, y_}]
+ctx`DrawImage[context_, i_Image, {x_, y_}, {dwidth_, dheight_}]
+```
+
+
+## Utils
+```wolfram
+ctx`ColorToString[_RGBColor | _Hue]
+ctx`ColorToString[{_RGBColor | _Hue, _Opacity}]
+```
+
+converts colors to CSS string.
+
+

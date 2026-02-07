@@ -15,6 +15,8 @@ s = af`Scene[];
 Framed[s]
 ```
 
+<Callout type="warning">AF works only with 2D primitives used in `Graphics` expression</Callout>
+
 
 ### Animation Flow
 All animations on the scene should follows the pattern:
@@ -22,13 +24,28 @@ All animations on the scene should follows the pattern:
 - animate
 - remove objects
 
-By design most of methods and functions of AF framework return [Promise](frontend/Reference/Misc/Promise.md) expression. In this regard, it makes sense to describe your animation flow using [Asynchronous Functions](frontend/Advanced/Events%20system/Asynchronous%20Functions.md).
+By design most of methods and functions of AF framework return [Promise](./../../Misc/Promise) expression. In this regard, it makes sense to describe your animation flow using [Asynchronous Functions](./../../Misc/Async).
+
+<Cards>
+
+<Card
+    href="./../../Advanced/Asynchronous-programming"
+    title="Asynchronous programming"
+  >
+    A advanced guide on how write async functions
+  </Card>
+
+</Cards>
 
 ## Basics
 ### Append and move
 Append and move a disk on the scene:
 
-![](./../../../animExample1-ezgif.com-video-to-gif-converter.gif)
+<div className="invertColor">
+
+![](./imgs/animExample1-ezgif.com-video-to-gif-converter-6d82e43cc2dc7ac4cd3a18152486c3e0.gif)
+
+</div>
 
 ```wolfram
 AsyncFunction[scene, Module[{d},
@@ -44,7 +61,12 @@ AsyncFunction[scene, Module[{d},
 
 Combine animations of two properties:
 
-![](./../../../twoexample-ezgif.com-video-to-gif-converter.gif)
+
+<div className="invertColor">
+
+![](./imgs/twoexample-ezgif.com-video-to-gif-converter-7a3eb53c2788c70caae680725153b736.gif)
+
+</div>
 
 ```wolfram
 AsyncFunction[scene, Module[{d},
@@ -62,7 +84,11 @@ AsyncFunction[scene, Module[{d},
 
 Animate two objects at the same time:
 
-![](./../../../twoobjects-ezgif.com-video-to-gif-converter.gif)
+<div className="invertColor">
+
+![](./imgs/twoobjects-ezgif.com-video-to-gif-converter-f5107d964a07b121c4c3b9bb8daf225d.gif)
+
+</div>
 
 ```wolfram
 AsyncFunction[scene, Module[{d,r},
@@ -92,7 +118,11 @@ AsyncFunction[scene, Module[{d,r},
 ### Timings
 Try different easing functions:
 
-![](./../../../alltransitions-ezgif.com-video-to-gif-converter.gif)
+<div className="invertColor">
+
+![](./imgs/alltransitions-ezgif.com-video-to-gif-converter-1d5efb4ad1530814fdebb4510bbe756d.gif)
+
+</div>
 
 ```wolfram
 AsyncFunction[scene, Module[{d,label},
@@ -125,7 +155,11 @@ AsyncFunction[scene, Module[{d,label},
 
 Use pauses:
 
-![](./../../../seq-ezgif.com-video-to-gif-converter.gif)
+<div className="invertColor">
+
+![](./imgs/seq-ezgif.com-video-to-gif-converter-0d484fe3fe8c9921dfe111b08cf544fd-(1).gif)
+
+</div>
 
 ```wolfram
 AsyncFunction[scene, Module[{r},
@@ -202,9 +236,13 @@ AsyncFunction[scene, Module[{d,label},
 
 
 ### Animating more properties
-Animate [Opacity](frontend/Reference/Graphics/Opacity.md) for adding or removing an objects:
+Animate [Opacity](./../../Graphics/Opacity) for adding or removing an objects:
 
-![](./../../../opacity-ezgif.com-video-to-gif-converter%201.gif)
+<div className="invertColor">
+
+![](./imgs/opacity-ezgif.com-video-to-gif-converter-1-493acdb924cfdd1bf93fe59cbeb40b11.gif)
+
+</div>
 
 ```wolfram
 AsyncFunction[scene, Module[{d},
@@ -225,7 +263,11 @@ AsyncFunction[scene, Module[{d},
 
 To interpolate color of the object we use `"LinearEuclidean"` to get the correct gamma of the intermediate colors:
 
-![](./../../../gamma-ezgif.com-video-to-gif-converter.gif)
+<div className="invertColor">
+
+![](./imgs/gamma-ezgif.com-video-to-gif-converter-a76626c5018062a57dad5449628335b6.gif)
+
+</div>
 
 ```wolfram
 AsyncFunction[scene, Module[{d},
@@ -249,7 +291,11 @@ AsyncFunction[scene, Module[{d},
 
 Background animation:
 
-![](./../../../bganim-ezgif.com-optimize.gif)
+<div className="invertColor">
+
+![](./imgs/bganim-ezgif.com-optimize-9f22505bc30531842987b6a8d7cd1288.gif)
+
+</div>
 
 ```wolfram
 AsyncFunction[scene, Module[{bg,text},
@@ -282,7 +328,7 @@ AsyncFunction[scene, Module[{bg,text},
 ```
 
 ### Layers
-[Layer](frontend/Advanced/Animation%20Framework/Reference.md#Layer) are used for grouping multiple objects. All properties do not propagate to the objects in the group, but applied to the container. You can animate:
+[Layer](./Reference#Layer) are used for grouping multiple objects. All properties do not propagate to the objects in the group, but applied to the container. You can animate:
 
 - `Opacity`
 - `Rotate`
@@ -292,7 +338,11 @@ AsyncFunction[scene, Module[{bg,text},
 
 There is a special key-property for placing children objects `#children`. Methods used for operating groups are similar to `Scene` and to a regular object. For example:
 
-![](./../../../layer-ezgif.com-video-to-gif-converter.gif)
+<div className="invertColor">
+
+![](./imgs/layer-ezgif.com-video-to-gif-converter-06e1985c82904808135a0c612e1f9711.gif)
+
+</div>
 
 ```wolfram
 AsyncFunction[scene, Module[{layer},
@@ -313,7 +363,11 @@ AsyncFunction[scene, Module[{layer},
 
 Apply directly any CSS style:
 
-![](./../../../blurfilter-ezgif.com-video-to-gif-converter.gif)
+<div className="invertColor">
+
+![](./imgs/blurfilter-ezgif.com-video-to-gif-converter-4deb50c04f7c148588d8875d3c449a18.gif)
+
+</div>
 
 ```wolfram
 AsyncFunction[scene, Module[{layer},
@@ -329,19 +383,23 @@ AsyncFunction[scene, Module[{layer},
 ]][s];
 ```
 
-:::note
+<Callout>
 `Animate` does support string interpolation
-:::
+</Callout>
 
-:::info
+<Callout>
 By removing the layer object you will removes all children as well
-:::
+</Callout>
 
 
 ### External events
 Any `EventObject` or `Promise` can be used a trigger for your animation:
 
-![](./../../../save23-ezgif.com-video-to-gif-converter.gif)
+<div className="invertColor">
+
+![](./imgs/save23-ezgif.com-video-to-gif-converter-ce260328749b41f74c22eebbf5498cfa.gif)
+
+</div>
 
 ```wolfram
 next = InputButton["Next"]
@@ -366,11 +424,15 @@ AsyncFunction[scene, Module[{d},
 
 
 ### Embed foreign objects
-For general case you need to use [Inset](frontend/Reference/Graphics/Inset.md) (see also [Inset expressions](frontend/Advanced/Graphics/Inset%20expressions.md)).
+For general case you need to use [Inset](./../../Graphics/Inset).
 
 Embed a graph:
 
-![](./../../../graph-ezgif.com-video-to-gif-converter.gif)
+<div>
+
+![](./imgs/graph-ezgif.com-video-to-gif-converter-966cdfa4ec4633e8af0e73c3210f05bc.gif)
+
+</div>
 
 ```wolfram
 AsyncFunction[scene, Module[{d},
@@ -394,19 +456,34 @@ AsyncFunction[scene, Module[{d},
 ]][s];
 ```
 
-:::warning
-Inset is pixel-perfect and it does not autoscale. Results might depend on pixel-density of the screen. To avoid that use `ImageSizeRaw`  instead of `ImageSize` on `Graphics`-like objects
-:::
+<Callout type="warning">
+`Inset` is pixel-perfect and it does not autoscale. Results might depend on pixel-density of the screen. To avoid that use `ImageSizeRaw`  instead of `ImageSize` on `Graphics`-like objects
+</Callout>
 
 
 ## Medium
 
 ### Combining with Offload
-`AddTo` method effectively uses [Offload](frontend/Reference/Interpreter/Offload.md) technique from [general dynamics ](frontend/Dynamics.md) of WLJS Notebook. It means you can still use it in any animated object.
+`AddTo` method effectively uses `Offload` technique for aniamting things. It means you can still use it in any animated object
 
-`Animate` method can animate an arbitrary symbol as well:
+<Cards>
 
-![](./../../../annya-ezgif.com-video-to-gif-converter.gif)
+  <Card
+    href="./../../Guides/Dynamic"
+    title="Interactive evaluation and granular updates"
+  >
+    A guide on interactive evaluation, updates and animation
+  </Card>
+
+</Cards>
+
+`Animate` method can animate an arbitrary dynamic-symbol as well:
+
+<div className="invertColor">
+
+![](./imgs/annya-ezgif.com-video-to-gif-converter-a184dc524269984b74e8de69035e4ca4.gif)
+
+</div>
 
 ```wolfram
 AsyncFunction[scene, Module[{d, pos = {2,0}, a = 0.},
@@ -456,7 +533,11 @@ AsyncFunction[scene, Module[{d},
 
 An example, where we combine both approaches to avoid extra `Translate` function:
 
-![](./../../../rectangle-ezgif.com-video-to-gif-converter.gif)
+<div className="invertColor">
+
+![](./imgs/rectangle-ezgif.com-video-to-gif-converter-7cd7ae9f9f021862532983adf929f854.gif)
+
+</div>
 
 ```wolfram
 AsyncFunction[scene, Module[{d, pos = {2,0}, a = 0.},
@@ -478,7 +559,11 @@ AsyncFunction[scene, Module[{d, pos = {2,0}, a = 0.},
 
 Another example:
 
-![](./../../../hello-ezgif.com-video-to-gif-converter.gif)
+<div className="invertColor">
+
+![](./imgs/hello-ezgif.com-video-to-gif-converter-d3f530b203b4760fbec524a858df9f51.gif)
+
+</div>
 
 ```wolfram
 AsyncFunction[scene, Module[{d, text = "Hello"},
@@ -510,7 +595,11 @@ AsyncFunction[scene, Module[{d, text = "Hello"},
 
 In general named property slots `#pos` and etc can be passed further to other function outside the main one:
 
-![](./../../../sliders-ezgif.com-optimize.gif)
+<div className="invertColor">
+
+![](./imgs/sliders-ezgif.com-optimize-d32d3c34a68d845c2f0caaab7b3eb0ae.gif)
+
+</div>
 
 <details>
 
@@ -616,9 +705,9 @@ AsyncFunction[scene, Module[{d, sliders = {0,0}},
 
 This example can be heavily simplified using [Workers](#Workers)
 
-:::warning
-Be careful with temporal symbols defined within the `Module`. If they are not involved into any animation Wolfram Kernel will collect them as garbage.
-:::
+<Callout type="warning">
+Be careful with temporal symbols defined within the `Module`. If they are not involved into any animation Wolfram Kernel might collect them as garbage. Use `Unique` to make sure or `LeakyModule`
+</Callout>
 
 ### Loops
 It allows to create custom animation loop on a given property of an object on the scene:
@@ -631,7 +720,7 @@ af`Loop[scene_, object_, prop_String, Function[{t, previousValue, n},
 
 where `t` goes from `0` to `1` every `duration` and `n` represents the number of a cycle.
 
-Loop function is called every frame (usually 30 times per second) and is running until manually removed using [Remove](frontend/Advanced/Animation%20Framework/Reference.md#Remove) method.
+Loop function is called every frame (usually 30 times per second) and is running until manually removed using [Remove](./Reference#Remove) method.
 
 To simulate a delayed event we introduce a button:
 
@@ -641,7 +730,11 @@ next = InputButton["Stop"]
 
 As an example we rotate infinitely a rectangle:
 
-![](./../../../stop1-ezgif.com-video-to-gif-converter.gif)
+<div className="invertColor">
+
+![](./imgs/stop1-ezgif.com-video-to-gif-converter-3e3db435cdbc5620e8d446a8e44914df.gif)
+
+</div>
 
 ```wolfram
 AsyncFunction[scene, Module[{d, loop},
@@ -667,9 +760,13 @@ AsyncFunction[scene, Module[{d, loop},
 ]][s]
 ```
 
-However, one can see that our animation has been interrupted somewhere mid-cycle, which may not be great for some cases. Using [Finish](frontend/Advanced/Animation%20Framework/Reference.md#Finish) method we can wait extra time until the cycle of animation has been finished:
+However, one can see that our animation has been interrupted somewhere mid-cycle, which may not be great for some cases. Using [Finish](./Reference#Finish) method we can wait extra time until the cycle of animation has been finished:
 
-![](./../../../stop2-ezgif.com-video-to-gif-converter.gif)
+<div className="invertColor">
+
+![](./imgs/stop2-ezgif.com-video-to-gif-converter-11692eb2983ac46bf47ef1243baf4cb7.gif)
+
+</div>
 
 ```wolfram
 AsyncFunction[scene, Module[{d, loop},
@@ -716,11 +813,15 @@ af`Worker[scene_Scene, AsyncFunction[absoluteTime,
 ]] 
 ```
 
-The last case is the most valuable. You can assign a sub-animation to a worker. Using [Finish](frontend/Advanced/Animation%20Framework/Reference.md#Finish) method on worker one can catch the moment when async sub-animation has been finished. Workers are running until they are manually removed using [Remove](frontend/Advanced/Animation%20Framework/Reference.md#Remove) method.
+The last case is the most valuable. You can assign a sub-animation to a worker. Using [Finish](./Reference#Finish) method on worker one can catch the moment when async sub-animation has been finished. Workers are running until they are manually removed using [Remove](./Reference#Remove) method.
 
 Taking a previous example, we can modify it slightly to take advantage of workers:
 
-![](./../../../workers-ezgif.com-video-to-gif-converter.gif)
+<div className="invertColor">
+
+![](./imgs/workers-ezgif.com-video-to-gif-converter-153e2b421706e41445d6576967cf00fe.gif)
+
+</div>
 
 ```wolfram
 next = InputButton["Stop"]
@@ -754,7 +855,11 @@ AsyncFunction[scene, Module[{d, worker},
 
 Here is an adapter example from [Combining with Offload](#Combining%20with%20Offload), that becomes much more compact and easier to read using workers:
 
-![](./../../../sliders-ezgif.com-optimize.gif)
+<div className="invertColor">
+
+![](./imgs/sliders-ezgif.com-optimize-d32d3c34a68d845c2f0caaab7b3eb0ae.gif)
+
+</div>
 
 <details>
 

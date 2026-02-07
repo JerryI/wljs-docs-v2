@@ -151,9 +151,24 @@ FrontSubmit[ViewBox`OuterExpression["Hello World"], ref]
 ```
 
 ### From JavaScript function
-The `displayView` expression is evaluated on WLJS Interpreter in the browser with a special property provided (see tutorial WLJS Functions)
+The `displayView` expression must be a frontend symbol
 
-{/* ![TODO] */}
+
+<Cards>
+  <Card
+    href="./../../Advanced/Frontend-functions/Overview"
+    title="Frontend symbols"
+  >
+    Overview of frontend symbols / function
+  </Card>
+
+  <Card
+    href="./../Advanced/Decorating-symbols"
+    title="Decorating symbols"
+  >
+    An advanced guide on how alter or enchance the displayed expression of a symbol
+  </Card>
+</Cards>
 
 ```js
 core.displayView = async (args, env) => {

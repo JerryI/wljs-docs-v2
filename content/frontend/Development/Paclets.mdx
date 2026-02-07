@@ -1,0 +1,112 @@
+---
+title: Wolfram Packages
+---
+
+Paclets are the [canonical format](https://reference.wolfram.com/language/tutorial/Paclets.html) for distributing libraries (packages) for Wolfram Language interpreters (Wolfram Engine, WolframScript, Mathematica).
+
+A paclet can be a compressed or uncompressed bundle that contains one or more packages **plus** metadata and optional assets (documentation, front-end resources, data, web assets).
+
+<Callout>
+
+WLJS Notebook on the fundamental level supports paclets ditributed for Matheamtica. There might be some visual glitches or issues with `Dynamic` due to the differences in the frontend implementations.
+
+</Callout>
+
+## Extensions for Wolfram Paclets
+
+You can write a normal Wolfram package for both **Mathematica** and **WLJS** that can take advantage of WLJS’s extra features when needed.
+
+❓ **What you can do with this:**
+
+* **Ship JavaScript and CSS assets** that are automatically integrated into the runtime once the package is loaded.
+* Write **a single package for WLJS, Mathematica, and WolframScript**.
+* **Expose folders from your paclet to an HTTP server.**
+
+❓ **Will it work for exported notebooks?**
+
+* Yes. JavaScript bundles can be compressed and embedded into the notebook if you enable this in **Settings**.
+* You can safely publish your notebook.
+* Anyone who doesn’t have those package assets installed will still be able to read the notebook without issues.
+* Everything is cached and updated whenever changes are made to the paclet.
+
+### Example
+
+Here’s how this might look in your `PacletInfo`:
+
+```wolfram
+PacletObject[
+  <|
+    "Name" -> "CoffeeLiqueur/SplatMesh",
+    "License" -> "MIT",
+    "Extensions" -> {
+      {
+        "Javascript",
+        "Root" -> {"Assets", "Spark", "kernel.js"}
+      },
+      {
+        "Javascript Bundle", (* only for exporting to HTML *)
+        "Root" -> {"Assets", "Bundle", "bundle.js"}
+      }
+      <...>
+```
+
+Your package structure might look like this:
+
+```
+PacletInfo.wl
+Kernel/
+  Kernel.wl
+  ...
+Assets/
+  Spark/
+    kernel.js
+...
+```
+
+### Front-end Extensions
+
+These are special fields in the `PacletInfo.wl` file that describe what is added to the front-end runtime (i.e., what becomes globally available).
+
+> Mathematica uses a somewhat similar mechanism for adding new styles or extending context menus/palettes.
+
+#### `"Javascript"`
+
+⚠️ Requires the `"Root"` option.
+
+Use this to include `.js` files in the runtime. They are loaded before the notebook view and are never unloaded.
+
+Dynamic imports of other assets from the root folder are supported.
+
+#### `"Javascript Bundle"`
+
+⚠️ Requires the `"Root"` option.
+
+Use this to include `.js` bundles (no dynamic imports; all-in-one) for notebooks exported as [Static HTML](frontend/Exporting/Static%20HTML.md) or [MDX](frontend/Exporting/MDX.md).
+
+It is not loaded into the runtime under normal circumstances. However, if someone opens a notebook without the required package/paclet installed, **the bundle will be temporarily loaded** to avoid rendering issues.
+
+#### `"CSS"`
+
+⚠️ Requires the `"Root"` option.
+
+Use this to include `.css` files in the runtime. They are loaded before the notebook view and are never unloaded.
+
+The same CSS file will be imported and embedded into all exported notebooks.
+
+### Notes on Saving/Exporting Notebooks
+
+The listed third-party assets __are not stored within the notebook by default__ to avoid unwanted copies of random bundles in all notebooks.
+
+From the **Settings** menu you can:
+
+* Remove all cached assets from the WLJS Notebook app.
+* Remove all cached assets from opened (visible) notebooks.
+* Embed all assets into opened notebooks.
+
+**The last option** lets you embed assets not only in saved notebooks but also in notebooks exported to [HTML](./../Share/Standalone-HTML) or [MDX](./../Share/Markdown-React).
+
+### Examples
+
+Some packages published for both WLJS and Mathematica:
+
+* [SplatMesh](https://github.com/JerryI/wl-splatmesh)
