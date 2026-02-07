@@ -1,6 +1,7 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { blogSource } from '@/lib/source';
-import { CalendarDays, User, ArrowRight } from 'lucide-react';
+import { CalendarDays, User, ArrowRight, Tag } from 'lucide-react';
 
 export default function Home() {
   const posts = blogSource
@@ -70,35 +71,63 @@ export default function Home() {
           <Link
             key={post.url}
             href={post.url}
-            className="group relative rounded-lg border border-fd-border bg-fd-card/50 backdrop-blur-sm p-6 sm:p-8 transition-all duration-300 hover:border-fd-primary/40 hover:bg-fd-card/80 hover:shadow-lg hover:shadow-fd-primary/5"
+            className="group relative rounded-lg border border-fd-border bg-fd-card/50 backdrop-blur-sm overflow-hidden transition-all duration-300 hover:border-fd-primary/40 hover:bg-fd-card/80 hover:shadow-lg hover:shadow-fd-primary/5"
           >
             <div className="absolute inset-0 rounded-lg bg-linear-to-r from-fd-primary/5 to-purple-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-            <div className="relative flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">
-              <div className="flex-1 min-w-0">
-                <h2 className="text-xl font-semibold mb-2 group-hover:text-fd-primary transition-colors">
-                  {post.data.title}
-                </h2>
-                {post.data.description && (
-                  <p className="text-fd-muted-foreground text-sm mb-3 line-clamp-2">
-                    {post.data.description}
-                  </p>
-                )}
-                <div className="flex items-center gap-4 text-xs text-fd-muted-foreground/80">
-                  <span className="inline-flex items-center gap-1.5">
-                    <User className="size-3" />
-                    {post.data.author}
-                  </span>
-                  <span className="inline-flex items-center gap-1.5">
-                    <CalendarDays className="size-3" />
-                    {new Date(post.data.date).toLocaleDateString('en-US', {
-                      year: 'numeric',
-                      month: 'short',
-                      day: 'numeric',
-                    })}
-                  </span>
+            <div className="relative flex flex-col sm:flex-row gap-0">
+              {/* Optional preview image */}
+              {post.data.preview && (
+                <div className="relative sm:w-56 md:w-64 shrink-0 aspect-[16/9] sm:aspect-auto sm:self-stretch">
+                  <Image
+                    src={post.data.preview}
+                    alt={post.data.title}
+                    fill
+                    className="object-cover"
+                  />
+                  <div className="absolute inset-0 bg-linear-to-r from-transparent to-fd-card/20" />
                 </div>
+              )}
+              <div className="flex flex-1 min-w-0 p-6 sm:p-8 items-start justify-between gap-4">
+                <div className="flex-1 min-w-0">
+                  <h2 className="text-xl font-semibold mb-2 group-hover:text-fd-primary transition-colors">
+                    {post.data.title}
+                  </h2>
+                  {post.data.description && (
+                    <p className="text-fd-muted-foreground text-sm mb-3 line-clamp-2">
+                      {post.data.description}
+                    </p>
+                  )}
+                  {/* Tags */}
+                  {post.data.tags && post.data.tags.length > 0 && (
+                    <div className="flex flex-wrap items-center gap-1.5 mb-3">
+                      <Tag className="size-3 text-fd-muted-foreground/60" />
+                      {post.data.tags.map((tag) => (
+                        <span
+                          key={tag}
+                          className="inline-flex items-center rounded-md border border-fd-border bg-fd-muted/50 px-2 py-0.5 text-xs text-fd-muted-foreground transition-colors group-hover:border-fd-primary/30 group-hover:text-fd-muted-foreground"
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                  )}
+                  <div className="flex items-center gap-4 text-xs text-fd-muted-foreground/80">
+                    <span className="inline-flex items-center gap-1.5">
+                      <User className="size-3" />
+                      {post.data.author}
+                    </span>
+                    <span className="inline-flex items-center gap-1.5">
+                      <CalendarDays className="size-3" />
+                      {new Date(post.data.date).toLocaleDateString('en-US', {
+                        year: 'numeric',
+                        month: 'short',
+                        day: 'numeric',
+                      })}
+                    </span>
+                  </div>
+                </div>
+                <ArrowRight className="hidden sm:block size-5 text-fd-muted-foreground/40 group-hover:text-fd-primary group-hover:translate-x-1 transition-all mt-1 shrink-0" />
               </div>
-              <ArrowRight className="hidden sm:block size-5 text-fd-muted-foreground/40 group-hover:text-fd-primary group-hover:translate-x-1 transition-all mt-1 shrink-0" />
             </div>
           </Link>
         ))}
