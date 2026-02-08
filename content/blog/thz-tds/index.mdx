@@ -1,0 +1,78 @@
+---
+title:  THz Time-domain modelling
+description: Using a single Lorentz-Oscillator model we model the responce of a materials with a variable thickneses
+date: 2024-05-20
+preview: ./thz-nice.png
+tags:
+  - research
+  - optics
+  - modelling
+author: JerryI
+---
+
+{/* add this script to the body  */}
+{/* https://cdn.jsdelivr.net/gh/WLJSTeam/web-components@latest/src/common/app.js */}
+<wljs-store kernel="./attachments/kernel-2489380216375574333.txt" json="./attachments/dadac3fd-c645-4eee-8b8c-6f3c6085a1c8.txt"></wljs-store>
+
+
+
+
+Using a single Lorentz-Oscillator model we model the responce of a materials with a variable thickneses.
+
+
+  <DownloadFile 
+    title="Download Notebook"
+    description="Get the complete code"
+    href="./attachments/notebook-dad.wln"
+  />
+
+
+Evaluate __thsese initialization cells first__
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`ClearAll[f,n,e,c,tds,tds2line];`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`f[ω_, eps_, ω0_, ωp_, γ_] := eps + (*FB[*)(((*SpB[*)Power[ωp(*|*),(*|*)2](*]SpB*))(*,*)/(*,*)((*SpB[*)Power[ω0(*|*),(*|*)2](*]SpB*) - (*SpB[*)Power[ω(*|*),(*|*)2](*]SpB*) + I γ ω))(*]FB*)`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`n[ω_, params__] := (*SqB[*)Sqrt[f[ω, params]](*]SqB*)
+	
+	e[ω_, L_, params__] := Exp[- (*FB[*)((I 2π (*SpB[*)Power[10(*|*),(*|*)12](*]SpB*) ω n[ω, params] L)(*,*)/(*,*)(c cm2THz))(*]FB*) ] /.{c -> 3.0 (*SpB[*)Power[10(*|*),(*|*)10](*]SpB*), cm2THz -> 33.4}`}</wljs-editor></WLJSWrapper>
+
+Material parameters ($n$ and $\kappa$)
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`Plot[n[x, 9.8, 28.66, 15, 1.5] // ReIm // Evaluate, {x,28.66 - 20, 28.66 + 20}, 
+	  FrameLabel->{"wavenumber (cm^{-1})"}, Frame->True
+	]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(FrontEndRef["8d1a6108-bdf6-4de9-85d2-dbddb2e17679"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKW6QYJpoZGljoJqWkmemapKRa6lqYphjppiSlpCQZpRqam5lbAgCMCRYQ"*)(*]VB*)`}</wljs-editor></WLJSWrapper>
+
+A responce of a material to a short pulse ($\delta$ - function)
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`tds[params__] := (Join[#, Reverse[#]] &@ Table[e[ω, params], {ω, 0,100,0.1}]) // Fourier
+	tds2line[params__] := {Range[Length[#]], #} &@ (Drop[#, -Length[#]/2//Ceiling] &@ tds[params] // Re) // Transpose`}</wljs-editor></WLJSWrapper>
+
+Make it interactive
+
+*evaluate this after initialization cells*
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`Manipulate[Graphics[{
+	  ColorData[97][1],
+	    Line[tds2line[thickness/10.0, 9.8, 28., 15., 0.05]], Black,
+	    Text[StringTemplate["d = \`\` mm"][thickness], {300, 2.5}]
+	  },
+	  
+	  PlotRange->{{0,400}, {-3,3}}, 
+	  Axes->True, Frame->True, FrameLabel->{"time, ps", "Electric field, nA"}
+	], {{thickness, 0.5, "d (mm)"}, 0.01, 1, 0.02},
+	  ContinuousAction -> True,
+	  Appearance->None
+	]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(FrontEndRef["a2e7c659-bc03-46ce-b662-6ed193b3ae55"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKJxqlmiebmVrqJiUbGOuamCWn6iaZmRnpmqWmGFoaJxknppqaAgCJSxXU"*)(*]VB*)`}</wljs-editor></WLJSWrapper>
+
+## Bonus
+Source code of the preview image:
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input"  >{`
+{Gray, {Directive["Roughness"->0.0], Cuboid[{Pi, -10.0/3, -10/2}, {1.4Pi,10.0/2,10.0/3}]}, Directive["Emissive"->Red, "EmissiveIntensity"->10],Red, Cases[Plot[5Exp[-(*SpB[*)Power[(x)(*|*),(*|*)2](*]SpB*)]Cos[10 x], {x,-2Pi,Pi}, PlotRange->Full][[1]], _Line, Infinity] /. {Line[arr_] :> Tube[Map[Function[xy, {xy[[1]], 0.3, xy[[2]]}], arr], 0.1]}};
+Graphics3D[%,  "Renderer"->"PathTracing"]
+`}</wljs-editor></WLJSWrapper>

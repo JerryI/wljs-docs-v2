@@ -4,7 +4,24 @@ import type { MDXComponents } from 'mdx/types';
 import { GithubInfo } from 'fumadocs-ui/components/github-info';
 import Image from "next/image"
 
-import {LazyAutoplayVideo} from "./lib/video"
+import {LazyAutoplayVideo, LazyVideo} from "./lib/video"
+
+import { Download } from 'lucide-react';
+
+import {Card, Cards} from 'fumadocs-ui/components/card';
+
+function DownloadFile({title, description, href}) {
+return <Cards>
+  <Card 
+    icon={<Download />}
+    title={title}
+    description={description}
+    href={href}
+  />
+</Cards>
+}
+
+
 
 function WLJSWrapper({children}: {children: React.ReactNode}) {
   return <figure
@@ -35,7 +52,7 @@ function WLJSWrapper({children}: {children: React.ReactNode}) {
 export function getMDXComponents(components?: MDXComponents): MDXComponents {
   return {
     ...defaultMdxComponents,
-    WLJSWrapper, Image, LazyAutoplayVideo, GithubInfo,
+    WLJSWrapper, Image, LazyAutoplayVideo, GithubInfo, LazyVideo, DownloadFile,
     ...components
   };
 }

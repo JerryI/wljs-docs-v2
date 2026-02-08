@@ -1,0 +1,40 @@
+---
+title: Realtime path-tracing
+author: JerryI
+date: 2023-07-20
+description: There is nothing more exciting in programming than designing a graphics application. We are happy to annouce that 3D plots now support realtime path-tracing.
+tags:
+  - dev
+  - graphics
+---
+
+There is nothing more exciting in programming than designing a graphics application. Thankfully, there is one person on Github [Garrett Johnson](https://github.com/gkjohnson), who implemented a path-tracing algorithm on top of the well-known [THREE.js](https://threejs.org) graphics engine. Moreover, it fully supports features from the original library and can be anytime flipped as a main renderer.
+
+We hooked up this [library](https://github.com/gkjohnson/three-gpu-pathtracer) to works as a secondary engine for `Graphics3D`. Just pass it as an option:
+
+```wolfram
+Graphics3D[{Cuboid[], Directive["Emissive"->Red, "EmissiveIntensity"->100], Sphere[{1,-1,1},0.3]}, "Renderer"->"PathTracing"]
+```
+
+And it will bake a realtime photorealistic image. It also supports all properties used in traditional rendering like `"Emissive"`, `"Metalness"` and many more!
+
+Some classical examples from Wolfram Mathematica
+
+<div className='invertColor'>
+
+![](./IMG_0556.png)
+
+</div>
+
+<div className='invertColor'>
+
+![](./screenshot(8)%201.png)
+
+</div>
+
+You might recognize those examples from `Graphics3D` official documentation page. 
+
+## Limitations
+- The dynamic scenes now are not supported, but can be added in theory according to the documentation of the path-rendering library. 
+- It requires a dedicated GPU (actually with Intel UHD integrated graphics it works, but demands an extremely long time to compile shaders to start rendering). However, iPhones, Androids can still handle not very complicated scenes.
+- Safari crashes (Firefox, Chrome, Vivaldi work well)

@@ -1,9 +1,12 @@
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { InlineTOC } from 'fumadocs-ui/components/inline-toc';
-import defaultMdxComponents from 'fumadocs-ui/mdx';
+import { getMDXComponents } from '@/mdx-components';
 import { blogSource } from '@/lib/source';
+import { GiscusComments } from '@/components/giscus-comments';
 import { ArrowLeft, CalendarDays, User, Tag } from 'lucide-react';
+
+export const dynamicParams = false;
 
 export default async function Page(props: {
   params: Promise<{ slug: string }>;
@@ -86,10 +89,11 @@ export default async function Page(props: {
 
       {/* Article body */}
       <div className="prose prose-fd min-w-0 max-w-none" style={{ maxWidth: '100%' }}>
-        <Mdx components={defaultMdxComponents} />
+        <Mdx components={getMDXComponents()} />
       </div>
 
-
+      {/* Comments */}
+      <div className='invertColor mt-4'><GiscusComments /></div>
     </article>
   );
 }

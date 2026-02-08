@@ -1,0 +1,241 @@
+---
+title:  FDTD Method
+description: In this article, we attempt to solve Maxwell's equations for a 1D case with two interfaces. This work is based on John B. Schneider's Understanding the Finite-Difference Time-Domain Method, 2023
+date: 2024-07-15
+tags:
+  - research
+  - optics
+  - modelling
+author: JerryI
+---
+
+{/* add this script to the body  */}
+{/* https://cdn.jsdelivr.net/gh/WLJSTeam/web-components@latest/src/common/app.js */}
+<wljs-store kernel="./attachments/kernel-8797457989376575414.txt" json="./attachments/50fcefaa-4d88-4ed4-9d3d-87febcecc3af.txt"></wljs-store>
+
+
+Due to the intensive numerical computations, we will use a compiled function constructed from simple C-like building blocks.
+
+  <DownloadFile
+    title="Download Notebook"
+    description="Get the complete code"
+    href="./attachments/notebook-50f.wln"
+  />
+
+## Dielectric plate
+
+We shall start with the simplest case, where there are no losses, and our material parameters $\epsilon$ and $\mu$ are frequency independent (no Drude, no Lorentz response). In this scenario, we do not need to write additional equations for polarization and currents:
+
+$$
+\begin{align*}
+\mu \frac{\partial H_{y}}{\partial t} &= \frac{\partial E_{z}}{\partial x} \\
+\epsilon \frac{\partial E_{z}}{\partial t} &= \frac{\partial H_{y}}{\partial x} 
+\end{align*}
+$$
+
+The first equation provides the temporal derivative of the magnetic field in terms of the spatial derivative of the electric field. Conversely, the second equation provides the temporal derivative of the electric field in terms of the spatial derivative of the magnetic field. 
+
+We then discretize them:
+
+$$
+\begin{align*}
+H_{y}[m] = H_{y}[m] + \frac{S}{\epsilon_r Z} \Big( E_{z}[m+1] - E_{z}[m] \Big) \\
+E_{z}[m] = E_{z}[m] + \frac{S Z}{\mu_r} \Big( H_{y}[m] - H_{y}[m-1] \Big)
+\end{align*}
+$$
+
+where $S=1.0$ is a time-space number, and $Z=\sqrt{\mu_0/\epsilon_0}$ is the vacuum impedance.
+
+In the next step, we preallocate arrays for the electric and magnetic fields, as well as material parameters for each point in space:
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`ζ = 377.0; (*BB[*)(*Ohm*)(*,*)(*"1:eJxTTMoPSmNhYGAo5gcSAUX5ZZkpqSn+BSWZ+XnFaYwgCS4g4Zyfm5uaV+KUXxEMUqxsbm6exgSSBPGCSnNSg9mAjOCSosy8dLBYSFFpKpoKkDkeqYkpEFXBILO1sCgJSczMQVYCAOFrJEU="*)(*]BB*)
+	size = 400;
+	
+	ez = ConstantArray[0., {size}];
+	hy = ConstantArray[0., {size}];
+	
+	\\[Mu]r = ConstantArray[1.,   {size}];
+	\\[Epsilon]r = ConstantArray[1.,  {size}];
+	
+	(*BB[*)(*Define a second medium with different dielectric constant*)(*,*)(*"1:eJxTTMoPSmNhYGAo5gcSAUX5ZZkpqSn+BSWZ+XnFaYwgCS4g4Zyfm5uaV+KUXxEMUqxsbm6exgSSBPGCSnNSg9mAjOCSosy8dLBYSFFpKpoKkDkeqYkpEFXBILO1sCgJSczMQVYCAOFrJEU="*)(*]BB*)
+	
+	\\[Mu]r[[150;;250]] = 1.0;
+	\\[Epsilon]r[[150;;250]] = 1 + 2.5;`}</wljs-editor></WLJSWrapper>
+
+Here, we model an abrupt change in $\epsilon_{r}$, representing a dielectric plate in the middle with a thickness of `100` steps:
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`Graphics[{
+	  Polygon[{Range[Length[\\[Epsilon]r]], \\[Epsilon]r}//Transpose]
+	},
+	  PlotRange->{{0,400}, Automatic}, 
+	  FrameLabel->{"x (steps)", "\\[Epsilon]_{r}"},
+	  AspectRatio->0.8, Frame->True
+	]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(FrontEndRef["1c84e0c7-d2fe-491a-b1b4-433c7443db3c"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKGyZbmKQaJJvrphilpeqaWBom6iYZJpnomhgbJ5ubmBinJBknAwCH2BXG"*)(*]VB*)`}</wljs-editor></WLJSWrapper>
+
+Let's construct our solver with a perfect grid terminator at the boundaries (PMC) and a source on the left side:
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`
+	solver = With[{ie = size}, Compile[{{steps, _Integer}},
+	    Module[
+	     {ez = ez, hy = hy},
+	     Do[
+	
+	        (*BB[*)(*Calculate magnetic field *)(*,*)(*"1:eJxTTMoPSmNhYGAo5gcSAUX5ZZkpqSn+BSWZ+XnFaYwgCS4g4Zyfm5uaV+KUXxEMUqxsbm6exgSSBPGCSnNSg9mAjOCSosy8dLBYSFFpKpoKkDkeqYkpEFXBILO1sCgJSczMQVYCAOFrJEU="*)(*]BB*)
+	        Do[
+	           hy[[j]] += (*FB[*)(((ez[[j + 1]] - ez[[j]]))(*,*)/(*,*)(ζ \\[Mu]r[[j]]))(*]FB*);
+	        , {j, 1, ie-1}];
+	
+	        (*BB[*)(*Boundary conditions*)(*,*)(*"1:eJxTTMoPSmNhYGAo5gcSAUX5ZZkpqSn+BSWZ+XnFaYwgCS4g4Zyfm5uaV+KUXxEMUqxsbm6exgSSBPGCSnNSg9mAjOCSosy8dLBYSFFpKpoKkDkeqYkpEFXBILO1sCgJSczMQVYCAOFrJEU="*)(*]BB*)
+	        hy[[ie]] = hy[[ie-1]];
+	        ez[[ie]] = ez[[ie-1]];
+	      
+	        (*BB[*)(*Pulse generator*)(*,*)(*"1:eJxTTMoPSmNhYGAo5gcSAUX5ZZkpqSn+BSWZ+XnFaYwgCS4g4Zyfm5uaV+KUXxEMUqxsbm6exgSSBPGCSnNSg9mAjOCSosy8dLBYSFFpKpoKkDkeqYkpEFXBILO1sCgJSczMQVYCAOFrJEU="*)(*]BB*)
+	        hy[[49]] -= Exp[- (*FB[*)(((*SpB[*)Power[(n - 30.)(*|*),(*|*)2](*]SpB*))(*,*)/(*,*)(100.))(*]FB*)] (*FB[*)((1)(*,*)/(*,*)(ζ \\[Mu]r[[49]]))(*]FB*);
+	
+	        ez[[1]] = ez[[2]];
+	
+	        (*BB[*)(*Calculate electric field *)(*,*)(*"1:eJxTTMoPSmNhYGAo5gcSAUX5ZZkpqSn+BSWZ+XnFaYwgCS4g4Zyfm5uaV+KUXxEMUqxsbm6exgSSBPGCSnNSg9mAjOCSosy8dLBYSFFpKpoKkDkeqYkpEFXBILO1sCgJSczMQVYCAOFrJEU="*)(*]BB*)
+	        Do[
+	          ez[[j]] = ez[[j]] + (*FB[*)((ζ)(*,*)/(*,*)(\\[Epsilon]r[[j]]))(*]FB*) (hy[[j]] - hy[[j - 1]])
+	        , {j, 2, ie - 1}];
+	
+	        (*BB[*)(*Pulse generator*)(*,*)(*"1:eJxTTMoPSmNhYGAo5gcSAUX5ZZkpqSn+BSWZ+XnFaYwgCS4g4Zyfm5uaV+KUXxEMUqxsbm6exgSSBPGCSnNSg9mAjOCSosy8dLBYSFFpKpoKkDkeqYkpEFXBILO1sCgJSczMQVYCAOFrJEU="*)(*]BB*)
+	        ez[[50]] += Exp[- (*FB[*)(((*SpB[*)Power[(n + 0.5 - (-0.5) - 30.)(*|*),(*|*)2](*]SpB*))(*,*)/(*,*)(100.0))(*]FB*)];
+	
+	        
+	        
+	      , {n, steps}]; ez],
+	    CompilationOptions -> {"InlineExternalDefinitions" -> True}, 
+	    "CompilationTarget" -> "C", "RuntimeOptions" -> "Speed"]];`}</wljs-editor></WLJSWrapper>
+
+Let's plot the __electric field__ component as a function of distance for different numbers of simulation steps:
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`Graphics[{
+	  {Opacity[0.3], Polygon[{Range[Length[\\[Epsilon]r]], (\\[Epsilon]r-1.0)300.0}//Transpose]},
+	  Table[{
+	    Blend[{Green, Orange}, i],
+	    Line[{Range[400], solver[50 + 290 i // Round]}//Transpose]
+	  }, {i,0.1,1.0,0.15}]
+	},
+	  PlotRange->{{0,400}, {-1,1}}, 
+	  AspectRatio->0.8, Frame->True,
+	  TransitionDuration->5
+	]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(FrontEndRef["cfdc8575-a627-4987-bff1-a6bd847c6b6f"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKJ6elJFuYmpvqJpoZmeuaWFqY6yalpRkCuUkpFibmyWZJZmkAjMMWHg=="*)(*]VB*)`}</wljs-editor></WLJSWrapper>
+
+Here, you can observe three waves:
+
+- Incident
+- Reflected
+- Transmitted
+
+We can make it interactive for clearer visualization by placing all compound expressions into a `Manipulate` function with a single parameter:
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`Manipulate[
+	 Graphics[{
+	  {Opacity[0.5], Polygon[{Range[Length[\\[Epsilon]r]], (\\[Epsilon]r-1.0)300.0}//Transpose]},
+	  Orange, Line[{Range[400], solver[steps]}//Transpose]
+	 },
+	  PlotRange->{{0,400}, {-1,1}}, 
+	  AspectRatio->0.8, Frame->True
+	 ]
+	, {{steps,50}, 1, 400, 10}, ContinuousAction->True]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(FrontEndRef["cd1c6045-ba1c-457a-98df-0f5825a8c0d1"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKJ6cYJpsZmJjqJiUaJuuamJon6lpapKTpGqSZWhiZJlokG6QYAgCJnhXL"*)(*]VB*)`}</wljs-editor></WLJSWrapper>
+
+## Dielectric with Frequency-Dependent Permittivity
+
+Let's explore further by modeling light propagation through a medium with frequency-dependent dielectric/magnetic response, such as a glass-like material with absorbing dye center impurities. Since we are working in the time domain, we cannot simply define $\varepsilon_r(\omega)$. Instead, we decompose the relative permittivity into two coupled parts:
+
+$$
+\mathbf{D} = \epsilon_0 \epsilon_r \mathbf{E} = \epsilon_0 (\mathbf{E} + \mathbf{P})
+$$
+
+Here, we write a separate equation and discretize it for $\mathbf{P}$. A good approximation for a dielectric is a Lorentz oscillator:
+
+$$
+\frac{\partial^2 \mathbf{P}}{\partial t^2} + \gamma \frac{\partial \mathbf{P}}{\partial t} + \omega_0^2 \mathbf{P} = \Omega \mathbf{E}
+$$
+
+In this equation, $\Omega$ is a coupling constant, $\gamma$ represents losses (proportional to optical conductivity), and $\omega_0$ is the eigenfrequency. By introducing a polarization current $\mathbf{J}$, we can reduce the second-order derivative equation to a first-order one, making it suitable for the FDTD method.
+
+Here is a single module for modelling such scenario:
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true" fade="true" >{`ie = 6000;
+	ez = ConstantArray[0., {ie}];
+	dz = ConstantArray[0., {ie}];
+	hy = ConstantArray[0., {ie}];
+	pol = ConstantArray[0., {ie}];
+	jpol = ConstantArray[0., {ie}];
+	
+	δt = 0.05; (*BB[*)(* ps *)(*,*)(*"1:eJxTTMoPSmNhYGAo5gcSAUX5ZZkpqSn+BSWZ+XnFaYwgCS4g4Zyfm5uaV+KUXxEMUqxsbm6exgSSBPGCSnNSg9mAjOCSosy8dLBYSFFpKpoKkDkeqYkpEFXBILO1sCgJSczMQVYCAOFrJEU="*)(*]BB*)
+	δx = 0.000015; (*BB[*)(* m *)(*,*)(*"1:eJxTTMoPSmNhYGAo5gcSAUX5ZZkpqSn+BSWZ+XnFaYwgCS4g4Zyfm5uaV+KUXxEMUqxsbm6exgSSBPGCSnNSg9mAjOCSosy8dLBYSFFpKpoKkDkeqYkpEFXBILO1sCgJSczMQVYCAOFrJEU="*)(*]BB*)
+	
+	η0 = 377.0; (*BB[*)(*Ohm*)(*,*)(*"1:eJxTTMoPSmNhYGAo5gcSAUX5ZZkpqSn+BSWZ+XnFaYwgCS4g4Zyfm5uaV+KUXxEMUqxsbm6exgSSBPGCSnNSg9mAjOCSosy8dLBYSFFpKpoKkDkeqYkpEFXBILO1sCgJSczMQVYCAOFrJEU="*)(*]BB*)
+	
+	ω0 = 10.0;
+	ωp =  0.5;
+	γ  = 0;
+	
+	freespace = Join[Range[1,150], Range[200, 210], Range[250, ie]];
+	occupied  = Join[Range[150,199], Range[211, 250]];
+	
+	freespace = Join[Range[1,3000 - 200],  Range[3000 + 200, ie]];
+	occupied  = Join[Range[3000-200, 3000+200]];
+	
+	ϵinf = 3.0;
+	
+	func = With[{ie = ie, freespace = freespace, occupied = occupied}, Compile[{{steps, _Integer}},
+	    Module[
+	     {ez = ez, dz = dz, hy = hy, pol = pol, jpol = jpol},
+	     Do[
+	
+	        hy[[ie]] = hy[[ie-1]];
+	        
+	        Do[
+	           hy[[j]] += (*FB[*)((1)(*,*)/(*,*)(η0))(*]FB*) (ez[[j + 1]] - ez[[j]]);
+	        , {j, 1, ie-1}];
+	              
+	
+	        hy[[09]] -= Sin[n/2.0] Exp[- (n - 30.) (n - 30.) / 100.] / η0;
+	
+	        dz[[1]] = dz[[2]];
+	  
+	
+	        Do[
+	          jpol[[j]] = (*FB[*)((2 - γ δt)(*,*)/(*,*)(2 + γ δt))(*]FB*) jpol[[j]] - (*FB[*)((2 ((*SpB[*)Power[ω0(*|*),(*|*)2](*]SpB*)) δt)(*,*)/(*,*)(2 + γ δt))(*]FB*) pol[[j]] +  (*FB[*)((2 ((*SpB[*)Power[ωp(*|*),(*|*)2](*]SpB*)) δt)(*,*)/(*,*)(2 + γ δt))(*]FB*) ez[[j]];
+	        , {j, occupied}];
+	
+	        Do[
+	          pol[[j]] += jpol[[j]] δt;
+	        , {j, occupied}];
+	      
+	        Do[
+	          dz[[j]] = dz[[j]] + η0 (hy[[j]] - hy[[j - 1]])
+	        , {j, 2, ie }];
+	
+	        dz[[10]] += Sin[n/2.0] Exp[- (n + 0.5 - (-0.5) - 30.)(n + 0.5 - (-0.5) - 30.) / 100.0];
+	
+	          Do[
+	          ez[[j]] = (*FB[*)((dz[[j]] - pol[[j]])(*,*)/(*,*)(1))(*]FB*)
+	        , {j, freespace}];
+	        
+	        Do[
+	          ez[[j]] = (*FB[*)((dz[[j]] - pol[[j]])(*,*)/(*,*)(ϵinf))(*]FB*)
+	        , {j, occupied}];
+	        
+	      , {n, steps}]; {ez,  hy, pol}],
+	    CompilationOptions -> {"InlineExternalDefinitions" -> True}, 
+	    "CompilationTarget" -> "C", "RuntimeOptions" -> "Speed"]];`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`Manipulate[With[{f = func[steps]},
+	  test1 = {Range[6000], With[{g = f[[1]]}, With[{m = 2.0}, g / m]]} // Transpose;
+	  test2 = {Range[6000], With[{g = f[[2]]}, With[{m = 0.006}, g / m]]} // Transpose;
+	  test3 = {Range[6000], With[{g = f[[3]]}, With[{m = 0.02}, g / m]]} // Transpose;
+	];
+	Legended[Graphics[{White,  Red, Line[test1], Green, Line[test2], Opacity[0.5], Blue, Line[test3]}, PlotRange->{{3000-250-700,3000+250+500}, {-0.5,0.5}}, TransitionType->None, AspectRatio->1/3, ImageSize->Medium, Controls->False], SwatchLegend[{Red, Green, Blue}, {"Ez", "Hy", "Pz"}]], {{steps, 3200}, 2200,4000,50}, ContinuousAction->True]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(FrontEndRef["c2e51baa-881a-4b9f-bcde-7ebe64b83379"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKJxulmhomJSbqWlgYJuqaJFmm6SYlp6TqmqcmpZqZJFkYG5tbAgCW8xZp"*)(*]VB*)`}</wljs-editor></WLJSWrapper>

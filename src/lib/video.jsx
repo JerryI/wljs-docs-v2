@@ -3,6 +3,43 @@
 
 import React, { useState, useEffect, useRef } from 'react';
 
+export function LazyVideo ({url}) {
+    const [hasBeenInView, setHasBeenInView] = useState(false);
+    const containerRef = useRef(null);
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                if (entry.isIntersecting) {
+                    setHasBeenInView(true);
+                    observer.disconnect();
+                }
+            },
+            { threshold: 0.1 }
+        );
+
+        if (containerRef.current) {
+            observer.observe(containerRef.current);
+        }
+
+        return () => observer.disconnect();
+    }, []);
+
+    return (
+        <div ref={containerRef} className="my-4 bg-fd-card rounded-xl relative border shadow-sm not-prose overflow-hidden text-sm github-light github-dark" style={{ minHeight: '150px' }}>
+            {hasBeenInView && (
+                <video
+                    src={url}
+                    className='invertColor'
+                    controls
+                    playsInline
+                    style={{ width: '100%', height: 'auto' }}
+                />
+            )}
+        </div>
+    );
+};
+
 export function LazyAutoplayVideo ({url}) {
 
     const [hasBeenInView, setHasBeenInView] = useState(false); // State to track if video has ever been in view 

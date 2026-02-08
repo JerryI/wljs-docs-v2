@@ -1,0 +1,523 @@
+---
+title:  Modelling quantum spin-system with orbital degeneracy
+author: JerryI
+date: 2023-10-10
+preview: ./IMG_05632.png
+description: Today we delve into quantum mechanics with a focus on symbolic quantum operators and spin-Hamiltonians. It begins with setting up orthogonality rules and defining the linear properties of basis functions.
+tags:
+  - quantum-physics
+  - research
+---
+
+{/* add this script to the body  */}
+{/* https://cdn.jsdelivr.net/gh/WLJSTeam/web-components@latest/src/common/app.js */}
+<wljs-store json="./attachments/2eb369aa-f036-4dfe-9597-34a3d26b7ae1.txt"></wljs-store>
+
+
+Today we delve into quantum mechanics with a focus on symbolic quantum operators and spin-Hamiltonians. It begins with setting up orthogonality rules and defining the linear properties of basis functions.
+
+Next, we investigate the spin-Hamiltonian for a cubic system with doubly degenerated orbital states, particularly focusing on $Fe^{2+}$ ions in cubic spinels with $^5E_g$ states. The Hamiltonian for a paramagnetic state is presented and implemented in code, followed by defining basis vectors and functions to find eigenvalues and eigenvectors, and calculating thermal averages of quantum operators.
+
+
+
+  <DownloadFile 
+    title="Download Notebook"
+    description="Get the complete quantum mechanics notebook with all calculations"
+    href="./attachments/notebook-2eb.wln"
+  />
+
+
+
+---
+
+Let us start from the ground level - *how to represent a state*
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*BB[*)(Ket[(*FB[*)((1)(*,*)/(*,*)(2))(*]FB*)])(*,*)(*"1:eJxTTMoPSmNiYGAo5gcSAUX5ZZkpqSn+BSWZ+XnFxTxAMe/UEpfU5PyixJL8IohKFiARVJqTGgxieKQmpgQzQ9QBABLAE1g="*)(*]BB*)`}</wljs-editor></WLJSWrapper>
+
+Just copy and paste the expression above to have prettier representation of your wavefunction.
+
+Let's work with wavefunction in the basis of $S=2$ and a doubly-degenerated orbital state $\hat{L}=1/2$
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`(*BB[*)(Ket[Ms, Ml])(*,*)(*"1:eJxTTMoPSmNiYGAo5gcSAUX5ZZkpqSn+BSWZ+XnFxTxAMe/UEpfU5PyixJL8IohKFiARVJqTGgxieKQmpgQzQ9QBABLAE1g="*)(*]BB*)`}</wljs-editor></WLJSWrapper>
+
+
+## Setting up rules
+Firstly, define the ortogonality of our basis functions
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`Ket /: (*BB[*)(Bra[Ms1_, Ml1_])(*,*)(*"1:eJxTTMoPSmNiYGAo5gcSAUX5ZZkpqSn+BSWZ+XnFxTxAMaeiRJfU5PyixJL8IohKFiARVJqTGgxieKQmpgQzQ9QBABBAEzo="*)(*]BB*).(*BB[*)(Ket[Ms2_, Ml2_])(*,*)(*"1:eJxTTMoPSmNiYGAo5gcSAUX5ZZkpqSn+BSWZ+XnFxTxAMe/UEpfU5PyixJL8IohKFiARVJqTGgxieKQmpgQzQ9QBABLAE1g="*)(*]BB*) := KroneckerDelta[Ms1, Ms2] KroneckerDelta[Ml1, Ml2]
+	
+	Ket /: Conjugate[(*BB[*)(Ket[Ms2_, Ml2_])(*,*)(*"1:eJxTTMoPSmNiYGAo5gcSAUX5ZZkpqSn+BSWZ+XnFxTxAMe/UEpfU5PyixJL8IohKFiARVJqTGgxieKQmpgQzQ9QBABLAE1g="*)(*]BB*)] := (*BB[*)(Bra[Ms2, Ml2])(*,*)(*"1:eJxTTMoPSmNiYGAo5gcSAUX5ZZkpqSn+BSWZ+XnFxTxAMaeiRJfU5PyixJL8IohKFiARVJqTGgxieKQmpgQzQ9QBABBAEzo="*)(*]BB*)  `}</wljs-editor></WLJSWrapper>
+
+__Linear properties__ must also be defined as well
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`Unprotect[Dot];
+	Unprotect[Conjugate];
+	
+	Conjugate[a_ b_] := Conjugate[a] Conjugate[b]
+	Conjugate[a_ + b_] := Conjugate[a] + Conjugate[b]
+	Dot[a_, b_?NumericQ] := b a
+	Dot[b_?NumericQ, a_] := b a
+	Dot[a_ + b_, c_] := a.c + b.c 
+	Dot[c_, a_ + b_] := c.a + c.b  
+	Dot[a_, b_?NumericQ c_] := b a.c
+	Dot[b_?NumericQ c_, a_] := b c.a
+	
+	Protect[Dot];
+	Protect[Conjugate];`}</wljs-editor></WLJSWrapper>
+
+## Symbolic quantum operators
+A well known ladder-like operators (see [more here](https://easyspin.org/easyspin/documentation/spinoperators.html)) as well as pauli-like operators $U_\theta$, $U_\varepsilon$ for an orbital doublet
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`Ket /: Sp.(*BB[*)(Ket[Ms_, Ml_])(*,*)(*"1:eJxTTMoPSmNiYGAo5gcSAUX5ZZkpqSn+BSWZ+XnFxTxAMe/UEpfU5PyixJL8IohKFiARVJqTGgxieKQmpgQzQ9QBABLAE1g="*)(*]BB*) := (*SqB[*)Sqrt[2(2+1) - (Ms+1)Ms](*]SqB*) (*BB[*)(Ket[Ms+1, Ml])(*,*)(*"1:eJxTTMoPSmNiYGAo5gcSAUX5ZZkpqSn+BSWZ+XnFxTxAMe/UEpfU5PyixJL8IohKFiARVJqTGgxieKQmpgQzQ9QBABLAE1g="*)(*]BB*)
+	Ket /: Sm.(*BB[*)(Ket[Ms_, Ml_])(*,*)(*"1:eJxTTMoPSmNiYGAo5gcSAUX5ZZkpqSn+BSWZ+XnFxTxAMe/UEpfU5PyixJL8IohKFiARVJqTGgxieKQmpgQzQ9QBABLAE1g="*)(*]BB*) := (*SqB[*)Sqrt[2(2+1) - (Ms-1)Ms](*]SqB*) (*BB[*)(Ket[Ms-1, Ml])(*,*)(*"1:eJxTTMoPSmNiYGAo5gcSAUX5ZZkpqSn+BSWZ+XnFxTxAMe/UEpfU5PyixJL8IohKFiARVJqTGgxieKQmpgQzQ9QBABLAE1g="*)(*]BB*)
+	Ket /: Sz.(*BB[*)(Ket[Ms_, Ml_])(*,*)(*"1:eJxTTMoPSmNiYGAo5gcSAUX5ZZkpqSn+BSWZ+XnFxTxAMe/UEpfU5PyixJL8IohKFiARVJqTGgxieKQmpgQzQ9QBABLAE1g="*)(*]BB*) := Ms (*BB[*)(Ket[Ms, Ml])(*,*)(*"1:eJxTTMoPSmNiYGAo5gcSAUX5ZZkpqSn+BSWZ+XnFxTxAMe/UEpfU5PyixJL8IohKFiARVJqTGgxieKQmpgQzQ9QBABLAE1g="*)(*]BB*)
+	
+	Uθ = Sum[(*BB[*)(Ket[Ms,1])(*,*)(*"1:eJxTTMoPSmNiYGAo5gcSAUX5ZZkpqSn+BSWZ+XnFxTxAMe/UEpfU5PyixJL8IohKFiARVJqTGgxieKQmpgQzQ9QBABLAE1g="*)(*]BB*).(*BB[*)(Bra[Ms, 1])(*,*)(*"1:eJxTTMoPSmNiYGAo5gcSAUX5ZZkpqSn+BSWZ+XnFxTxAMaeiRJfU5PyixJL8IohKFiARVJqTGgxieKQmpgQzQ9QBABBAEzo="*)(*]BB*) - (*BB[*)(Ket[Ms,-1])(*,*)(*"1:eJxTTMoPSmNiYGAo5gcSAUX5ZZkpqSn+BSWZ+XnFxTxAMe/UEpfU5PyixJL8IohKFiARVJqTGgxieKQmpgQzQ9QBABLAE1g="*)(*]BB*).(*BB[*)(Bra[Ms, -1])(*,*)(*"1:eJxTTMoPSmNiYGAo5gcSAUX5ZZkpqSn+BSWZ+XnFxTxAMaeiRJfU5PyixJL8IohKFiARVJqTGgxieKQmpgQzQ9QBABBAEzo="*)(*]BB*), {Ms,-2,2}];
+	Uϵ = Sum[(*BB[*)(Ket[Ms,1])(*,*)(*"1:eJxTTMoPSmNiYGAo5gcSAUX5ZZkpqSn+BSWZ+XnFxTxAMe/UEpfU5PyixJL8IohKFiARVJqTGgxieKQmpgQzQ9QBABLAE1g="*)(*]BB*).(*BB[*)(Bra[Ms, -1])(*,*)(*"1:eJxTTMoPSmNiYGAo5gcSAUX5ZZkpqSn+BSWZ+XnFxTxAMaeiRJfU5PyixJL8IohKFiARVJqTGgxieKQmpgQzQ9QBABBAEzo="*)(*]BB*) + (*BB[*)(Ket[Ms,-1])(*,*)(*"1:eJxTTMoPSmNiYGAo5gcSAUX5ZZkpqSn+BSWZ+XnFxTxAMe/UEpfU5PyixJL8IohKFiARVJqTGgxieKQmpgQzQ9QBABLAE1g="*)(*]BB*).(*BB[*)(Bra[Ms, 1])(*,*)(*"1:eJxTTMoPSmNiYGAo5gcSAUX5ZZkpqSn+BSWZ+XnFxTxAMaeiRJfU5PyixJL8IohKFiARVJqTGgxieKQmpgQzQ9QBABBAEzo="*)(*]BB*), {Ms,-2,2}];
+	
+	Sx = (*FB[*)((1)(*,*)/(*,*)(2))(*]FB*)(Sp + Sm);
+	Sy =  (*FB[*)((1)(*,*)/(*,*)(2I ))(*]FB*)(Sp - Sm); 
+	`}</wljs-editor></WLJSWrapper>
+
+### Testing
+
+check a single operator
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`Sm.(*BB[*)(Ket[0,1])(*,*)(*"1:eJxTTMoPSmNiYGAo5gcSAUX5ZZkpqSn+BSWZ+XnFxTxAMe/UEpfU5PyixJL8IohKFiARVJqTGgxieKQmpgQzQ9QBABLAE1g="*)(*]BB*)`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`((*SqB[*)Sqrt[6](*]SqB*)) ((*BB[*)(Ket[-1,1])(*,*)(*"1:eJxTTMoPSmNiYGAo5gcSAUX5ZZkpqSn+BSWZ+XnFxTxAMe/UEpfU5PyixJL8IohKFiARVJqTGgxieKQmpgQzQ9QBABLAE1g="*)(*]BB*))`}</wljs-editor></WLJSWrapper>
+
+We can also build the matrix of a operator in the basis of spin-only states
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`Table[
+	
+	  (*BB[*)(Bra[Ms1, 1])(*,*)(*"1:eJxTTMoPSmNiYGAo5gcSAUX5ZZkpqSn+BSWZ+XnFxTxAMaeiRJfU5PyixJL8IohKFiARVJqTGgxieKQmpgQzQ9QBABBAEzo="*)(*]BB*).(Sz).(*BB[*)(Ket[Ms2, 1])(*,*)(*"1:eJxTTMoPSmNiYGAo5gcSAUX5ZZkpqSn+BSWZ+XnFxTxAMe/UEpfU5PyixJL8IohKFiARVJqTGgxieKQmpgQzQ9QBABLAE1g="*)(*]BB*)
+	
+	, {Ms1, -2,2}, {Ms2, -2,2}] // MatrixForm `}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*GB[*){{-2(*|*),(*|*)0(*|*),(*|*)0(*|*),(*|*)0(*|*),(*|*)0}(*||*),(*||*){0(*|*),(*|*)-1(*|*),(*|*)0(*|*),(*|*)0(*|*),(*|*)0}(*||*),(*||*){0(*|*),(*|*)0(*|*),(*|*)0(*|*),(*|*)0(*|*),(*|*)0}(*||*),(*||*){0(*|*),(*|*)0(*|*),(*|*)0(*|*),(*|*)1(*|*),(*|*)0}(*||*),(*||*){0(*|*),(*|*)0(*|*),(*|*)0(*|*),(*|*)0(*|*),(*|*)2}}(*||*)(*1:eJxTTMoPSmNkYGAo5gUSYZmp5S6pyflFiSX5RcFsQBHfxJKizAoAs04KOA==*)(*]GB*)`}</wljs-editor></WLJSWrapper>
+
+Now check the modulus of an spin-momentum
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`Table[
+	
+	  (*BB[*)(Bra[Ms1, 1])(*,*)(*"1:eJxTTMoPSmNiYGAo5gcSAUX5ZZkpqSn+BSWZ+XnFxTxAMaeiRJfU5PyixJL8IohKFiARVJqTGgxieKQmpgQzQ9QBABBAEzo="*)(*]BB*).(Sz.Sz + Sx.Sx + Sy.Sy).(*BB[*)(Ket[Ms2, 1])(*,*)(*"1:eJxTTMoPSmNiYGAo5gcSAUX5ZZkpqSn+BSWZ+XnFxTxAMe/UEpfU5PyixJL8IohKFiARVJqTGgxieKQmpgQzQ9QBABLAE1g="*)(*]BB*)
+	
+	, {Ms1, -2,2}, {Ms2, -2,2}] // MatrixForm `}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*GB[*){{6(*|*),(*|*)0(*|*),(*|*)0(*|*),(*|*)0(*|*),(*|*)0}(*||*),(*||*){0(*|*),(*|*)6(*|*),(*|*)0(*|*),(*|*)0(*|*),(*|*)0}(*||*),(*||*){0(*|*),(*|*)0(*|*),(*|*)6(*|*),(*|*)0(*|*),(*|*)0}(*||*),(*||*){0(*|*),(*|*)0(*|*),(*|*)0(*|*),(*|*)6(*|*),(*|*)0}(*||*),(*||*){0(*|*),(*|*)0(*|*),(*|*)0(*|*),(*|*)0(*|*),(*|*)6}}(*||*)(*1:eJxTTMoPSmNkYGAo5gUSYZmp5S6pyflFiSX5RcFsQBHfxJKizAoAs04KOA==*)(*]GB*)`}</wljs-editor></WLJSWrapper>
+
+This is correct! As it should be $S(S + 1) = 6$
+
+## Spin-Hamiltonian
+Let us have a look at the cubic system with a doubly degenerated orbital states. For example, it can be effectively $Fe^{2+}$ ions in a cubic spinels with $^5E_g$ states as a ground multiplet. Let us have a look at the Hamiltonian for a paramagnetic state
+
+$$
+H = \mu g~ \mathbf{S H_0} - d \Big[ U_{\theta} (3 Sz^2 - S(S+1)) + \sqrt{3} U_{\epsilon}(Sx^2 - Sy^2)  \Big] 
+$$
+
+where $d$ accounts for an effective spin-orbit coupling and then dictates cubic anistoropy for the spin
+
+### Implementation
+Now we move to the actual code
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`μ = 0.466;
+	g = 2.;`}</wljs-editor></WLJSWrapper>
+
+Effective hamiltonian in our notations
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`H[Hx_, Hy_, Hz_, d_] := μ g (Hx Sx + Hy Sy + Hz Sz ) - d (3 Sz.Sz.Uθ -  2(2+1) Uθ + (*SqB[*)Sqrt[3](*]SqB*) Sx.Sx.Uϵ - (*SqB[*)Sqrt[3](*]SqB*) Sy.Sy.Uϵ)`}</wljs-editor></WLJSWrapper>
+
+Now define an array of basis vectors and function to __find eigenvalues and eigenvectors__
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`basis = Table[(*BB[*)(Ket[Ms2, Ml])(*,*)(*"1:eJxTTMoPSmNiYGAo5gcSAUX5ZZkpqSn+BSWZ+XnFxTxAMe/UEpfU5PyixJL8IohKFiARVJqTGgxieKQmpgQzQ9QBABLAE1g="*)(*]BB*), {Ms2,-2,2}, {Ml,-1,1,2}] // Flatten; 
+	
+	system[params__] := With[{ h = Simplify[H[params]]}, With[{
+	  r = Table[
+	
+	    Conjugate[i].(h.j)
+	
+	  , {i, basis}, {j, basis}]  // Eigensystem // Transpose 
+	},
+	
+	  (* truncate accuracy *)
+	  r // Chop
+	] ]`}</wljs-editor></WLJSWrapper>
+
+Now we need a helper function to find a __thermal average of any quantum operator__
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`(* for caching already calculated values *)
+	
+	ClearAll[cached];
+	cached[expr_] := cached[expr] = expr;
+	SetAttributes[cached, HoldFirst]
+	
+	
+	average[sys_, T_, operator_] := With[{
+	  operatorMatrix = cached[Table[Conjugate[i].operator.j, {i, basis}, {j, basis}]],
+	  
+	  stat = Total[Exp[-(*FB[*)((#[[1]])(*,*)/(*,*)(0.7 T))(*]FB*)] &/@ sys]
+	},
+	  Map[
+	    ((Conjugate[{#[[2]]}].operatorMatrix.Transpose[{#[[2]]}]) // First // First) (*FB[*)((1)(*,*)/(*,*)(stat))(*]FB*) Exp[-(*FB[*)((#[[1]])(*,*)/(*,*)(0.7 T))(*]FB*)] &
+	    , sys] // Total  
+	]`}</wljs-editor></WLJSWrapper>
+
+Usually for such systems a parameter $d\simeq 3-4~cm^{-1}$. 
+
+Let's try to see a magnetic anisotropy in an averaged magnetic moment of a single ion site at $T=10~K$ in the magnetic field around $10~T$
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`Table[
+	  With[{
+	    (*BB[*)(*apply a magnetic field to the given direction*)(*,*)(*"1:eJxTTMoPSmNhYGAo5gcSAUX5ZZkpqSn+BSWZ+XnFaYwgCS4g4Zyfm5uaV+KUXxEMUqxsbm6exgSSBPGCSnNSg9mAjOCSosy8dLBYSFFpKpoKkDkeqYkpEFXBILO1sCgJSczMQVYCAOFrJEU="*)(*]BB*)
+	    sys = system[10 Sin[x], 10 Cos[x], 0, 3.]
+	  },
+	    (*BB[*)(*project magnetic moment to the direction of field*)(*,*)(*"1:eJxTTMoPSmNhYGAo5gcSAUX5ZZkpqSn+BSWZ+XnFaYwgCS4g4Zyfm5uaV+KUXxEMUqxsbm6exgSSBPGCSnNSg9mAjOCSosy8dLBYSFFpKpoKkDkeqYkpEFXBILO1sCgJSczMQVYCAOFrJEU="*)(*]BB*)
+	    (2.0 average[sys, 10, #] &/@ {Sx, Sy}).({Sin[x],  Cos[x]})
+	   
+	  ] {Sin[x],  Cos[x]}
+	, {x, 0, 2Pi, 0.1}] // Re;
+	
+	ListLinePlot[%, 
+	  PlotRange->Full, 
+	  Epilog->{
+	    Black // Lighter, Arrow[{{0, 0}, {2.5501, 0.0}}],
+	    Arrow[{{0,0}, {0, 2.52099}}]
+	}, AxesLabel->{"\\[Mu]_{x}", "\\[Mu]_{y}"}, ImageSize->500, AspectRatio->1]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(FrontEndRef["22ab8b8c-882b-44d8-b7d8-1035b80a9287"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKGxklJlkkWSTrWlgYJemamKRY6CaZAwlDA2PTJAuDREsjC3MAg+QVSg=="*)(*]VB*)`}</wljs-editor></WLJSWrapper>
+
+It is clear, __that a cubic anistropy is quite visible here__ 💫
+
+Actually, this is not a typical spin system with a fixed magnetic anisotropy. Here it comes from the orbital degeneracy, which is lifted in magnetic fields. However, it also means, that the field can change anisotropy. The less field we apply, the less spin prjection we have, the less splitting between the orbital states we have, and therefore the less anisotropy we observe. *Try to evaluate the cell above using different fields*
+
+## Ferromagnetic ordering
+One can go further and model an ordered state using *mean field approximation*, which is suitable for ferromagnets
+
+$$
+H = \mu g~ \mathbf{S H_0} - d \Big[ U_{\theta} (3 Sz^2 - S(S+1)) + \sqrt{3} U_{\epsilon}(Sx^2 - Sy^2)  \Big] + J \mathbf{S M}
+$$
+
+where $M$ is an average of $\hat{S}$ (i.e. just a classical vector).
+
+### Implementation
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`H[Hx_, Hy_, Hz_, d_, J_, Mx_, My_, Mz_] := μ g (Hx Sx + Hy Sy + Hz Sz ) - d (3 Sz.Sz.Uθ -  2(2+1) Uθ + (*SqB[*)Sqrt[3](*]SqB*) Sx.Sx.Uϵ - (*SqB[*)Sqrt[3](*]SqB*) Sy.Sy.Uϵ) + J (Mx Sx + My Sy + Mz Sz)`}</wljs-editor></WLJSWrapper>
+
+Now it becomes more computationally expensive to do. It is better monitor the progress, for this reason we need a helper function
+
+<wljs-html encoded="true">{`%3Cbr%20%2F%3E`}</wljs-html>
+
+#### Progress bar
+Here is a helper function to track the progress:
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true" fade="true" >{`progressReport[max_:1.0] := Module[{p=0.0, timer = AbsoluteTime[]}, With[{
+	  cell = CellPrint[ProgressIndicator[p//Offload, {0,max}]]
+	},
+	  object["Set", val_] := With[{now = AbsoluteTime[]},
+	    If[now - timer > 0.1,
+	      p = val;
+	      timer = now;
+	    ];
+	  ];
+	  
+	  object["Finished"] := (
+	    NotebookDelete[cell];
+	    ClearAll[object, p];
+	  );
+	  
+	  object
+	] ]`}</wljs-editor></WLJSWrapper>
+
+Continue with our plotting
+
+Since this is a mean approximation method, we need to substitute an averaged value of a spin back to the Hamiltonian and wait until it converges. The *memory* of our system is stored exactly in this mean field vector
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`meanField = {0.1, -0.8, -0.1};
+	sys;
+	
+	With[{
+	  progress = progressReport[2Pi]
+	},
+	
+	{results = Table[
+	  With[{},
+	    Do[
+	    
+	      sys = system @@ Join[{10. Sin[x], 10. Cos[x], 0, 3., -100.}, meanField];
+	      meanField = average[sys, 10, #] &/@ {Sx, Sy, Sz}; 
+	      
+	    , {i, 15}];
+	
+	    progress["Set", x];
+	    
+	    
+	    ( meanField[[{1,2}]] ) . {Sin[x], Cos[x]}
+	   
+	  ] * {Sin[x], Cos[x]}
+	  
+	, {x, 0, 2Pi, 0.05}]},
+	
+	  progress["Finished"];
+	  results
+	
+	];
+	
+	ListLinePlot[%, 
+	  PlotRange->Full, 
+	  Epilog->{
+	    Black // Lighter, Arrow[{{0, 0}, {2.3501, 0.0}}],
+	    Arrow[{{0,0}, {0, 2.32099}}]
+	}, AxesLabel->{"\\\\mu x", "\\\\mu y"}, ImageSize->500, AspectRatio->1]
+	
+	`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(FrontEndRef["79243c6b-4fd9-4cca-be59-e5868af9d411"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKm1samRgnmyXpmqSlWOqaJCcn6ialmlrqpppamFkkplmmmBgaAgCImxXo"*)(*]VB*)`}</wljs-editor></WLJSWrapper>
+
+From this plot one can see, that our magnetic moment sticks to $C_4$ directions and when the rotating magnetic field overcomes the anisotropy magnetic moment switches to another easy-axis or direction.
+
+A calculation itself is quite slow, due to algebra we used for quantum computations. In general, we do not need all operators, once we constructed the Hamiltonian in the basis we have. We can deal only with matrixes and simple numerics.
+
+### Converting operators to matrixes
+We build a function, that approximate any arbitary function up to 2nd order for all variables in arguments
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true" fade="true" >{`quadraticInterpolation[f_, vars__, OptionsPattern[]] := Module[{
+	  variables =  List[vars],
+	  rules,
+	  constant,
+	  quadratic,
+	  final,
+	  cached,
+	  mdcache,
+	  calculated = <||>,
+	  linear,
+	  handler, count = 0
+	},
+	
+	  If[OptionValue["Monitor"] =!= Null,
+	    handler = OptionValue["Monitor"][ (Length[variables] Length[variables] - Length[variables]) / 2  + 2 Length[variables]];
+	  ];
+	
+	  cached[expr_, {i_,j_}] := mdcache[expr, Sort[{i,j}]];
+	  SetAttributes[cached, HoldFirst];
+	
+	  mdcache[expr_, {i_,j_}] := If[KeyExistsQ[calculated, {i,j}],
+	    calculated[{i,j}]
+	  ,
+	    calculated[{i,j}] = expr
+	  ];
+	
+	  SetAttributes[mdcache, HoldFirst];
+	
+	  rules = (#[[1]] -> #[[2]]) &/@ variables;
+	  
+	  constant = Hold[f] /. rules // ReleaseHold;
+	
+	  linear = Table[
+	    With[{
+	      r = {i[[1]] -> 1.}
+	    },
+	
+	      count++;
+	      handler["Set", count];
+	
+	      (Hold[f] /. r /. rules // ReleaseHold) - constant
+	    ]
+	    
+	  , {i, variables}];
+	
+	  quadratic = Table[
+	    cached[With[{
+	      f11 = With[{
+	        r = {i[[1]] -> 1., j[[1]] -> 1.}
+	      },
+	        (Hold[f] /. r /. rules // ReleaseHold)
+	      ],
+	
+	      fm1m1 = With[{
+	        r = {i[[1]] -> -1., j[[1]] -> -1.}
+	      },
+	        (Hold[f] /. r /. rules // ReleaseHold)
+	      ],
+	
+	      f1m1 = With[{
+	        r = {i[[1]] -> 1., j[[1]] -> -1.}
+	      },
+	        (Hold[f] /. r /. rules // ReleaseHold)
+	      ],
+	
+	      fm11 = With[{
+	        r = {i[[1]] -> -1., j[[1]] -> 1.}
+	      },
+	        (Hold[f] /. r /. rules // ReleaseHold)
+	      ]      
+	      
+	    },
+	      count++;
+	      handler["Set", count];
+	
+	
+	      (*FB[*)((f11 - f1m1 - fm11 + fm1m1)(*,*)/(*,*)(4.))(*]FB*)
+	    ], {i,j}]
+	    
+	  , {i, variables}, {j, variables}];
+	
+	  final = Sum[
+	    With[{l = linear[[i]]},
+	      Slot[i] Hold[l]
+	    ]
+	  , {i, Length[linear]}] + Sum[
+	    With[{
+	      q = (*FB[*)((1)(*,*)/(*,*)(2))(*]FB*)quadratic[[i, j]]
+	    },
+	      Slot[i]Slot[j] Hold[q]
+	    ]
+	  , {i, Length[linear]}, {j, Length[linear]}] + With[{c = constant}, Hold[c] ];
+	
+	  With[{
+	    r = final
+	  },
+	    handler["Finished"];
+	    
+	    (r &) /. {Hold -> Identity}
+	  ]
+	];
+	
+	SetAttributes[quadraticInterpolation, HoldFirst];
+	
+	Options[quadraticInterpolation] = {"Monitor"->Null};`}</wljs-editor></WLJSWrapper>
+
+Now we apply it to our hamiltonian calculated in the basis with a given parameters
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`int = quadraticInterpolation[
+	
+	  Table[Conjugate[fin].H[a1,a2,a3, a4, a5, a6,a7,a8].ini, {fin, basis}, {ini, basis}]
+	  
+	, {a1,0}, {a2,0}, {a3,0}, {a4,0}, {a5,0}, {a6,0}, {a7,0}, {a8,0}, "Monitor"->progressReport];`}</wljs-editor></WLJSWrapper>
+
+Now one can check that __it speeds up things drastically__. Here is a benchmark: smaller - better
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`Labeled[Table[Conjugate[fin].H[0,1.,1., 1., 1.,  1.,1.,1.].ini, {fin, basis}, {ini, basis}] // RepeatedTiming // First, "Operators (old)"]
+	
+	Labeled[int[0,1.,1., 1., 1.,  1.,1.,1.] // RepeatedTiming // First, "Matrices (new)"]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*GB[*){{(*BB[*)(1.184651\`)(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KWnMIB4vkAjLTC13SU3OL0osyS8KBskHJOalpjHBVAeV5qQWcwIZjjmZ6Xm5qXklCDmfzOKSYjYgwxkonFpUzAFkOiUWp+ZkYpgggCQVkF+cWZKZn4eiHgAIiyhB"*)(*]BB*)(*VB[*)(**)(*,*)(*"1:eJxTTMoPSmNiYGAo5gUSYZmp5S6pyflFiSX5RcEsQBHPktRciDyIF1Sak1osAGS4pKYlluaUOCUWpwaXVOakBrMDBX0Sk1JzUlMAU+0Vnw=="*)(*]VB*)}(*||*),(*||*){"Operators (old)"(*VB[*)(**)(*,*)(*"1:eJxTTMoPSmNiYGAo5gUSYZmp5S6pyflFiSX5RcEsQBHPktRciDyIF1Sak1osAGS4pKYlluaUOCUWpwaXVOakBvMABX0Sk1JzUlPAFADFtBeE"*)(*]VB*)}}(*]GB*)`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*GB[*){{(*BB[*)(0.000742501953125\`)(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KWnMIB4vkAjLTC13SU3OL0osyS8KBskHJOalpjHBVAeV5qQWcwIZjjmZ6Xm5qXklCDmfzOKSYjYgwxkonFpUzAFkOiUWp+ZkYpgggCQVkF+cWZKZn4eiHgAIiyhB"*)(*]BB*)(*VB[*)(**)(*,*)(*"1:eJxTTMoPSmNiYGAo5gUSYZmp5S6pyflFiSX5RcEsQBHPktRciDyIF1Sak1osAGS4pKYlluaUOCUWpwaXVOakBrMDBX0Sk1JzUlMAU+0Vnw=="*)(*]VB*)}(*||*),(*||*){"Matrices (new)"(*VB[*)(**)(*,*)(*"1:eJxTTMoPSmNiYGAo5gUSYZmp5S6pyflFiSX5RcEsQBHPktRciDyIF1Sak1osAGS4pKYlluaUOCUWpwaXVOakBvMABX0Sk1JzUlPAFADFtBeE"*)(*]VB*)}}(*]GB*)`}</wljs-editor></WLJSWrapper>
+
+We can also save this function for later, so that we do not need to derive it again
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`int // Iconize `}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(Get[FileNameJoin[{".iconized", "None-ecb.wl"}]])(*,*)(*"1:eJxTTMoPSmNhYGAo5gUSYZmp5S6pyflFiSX5RcEcQBHP5Py8zKrUlEwLcWaGNCaQQpDqoNKc1GBWIMMnMSk1Jxgk5Jefl4qmAMRwy8xJBYuEFJWmAgCJohiz"*)(*]VB*)`}</wljs-editor></WLJSWrapper>
+
+Or better to internal Notebook storage, so that we do not need to worry about folders structure
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`NotebookWrite[NotebookStore["Int"], int];`}</wljs-editor></WLJSWrapper>
+
+## Modelling
+using faster approach
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`int = NotebookRead[NotebookStore["Int"]];
+	
+	meanField = {0.1, -0.8, -0.1};
+	sys;
+	
+	With[{
+	  progress = progressReport[15]
+	},
+	{ results = Table[
+	  With[{
+	    
+	  },
+	  
+	    Do[
+	      sys = int @@ Join[{h Sin[x], h Cos[x], 0, 3., -100.}, meanField] // Eigensystem // Transpose;
+	      meanField = average[sys, 10, #] &/@ {Sx, Sy, Sz}; 
+	    , {i, 25}];
+	
+	    progress["Set", h];
+	
+	    
+	    
+	    ( meanField[[{1,2}]]).({Sin[x], Cos[x]})
+	   
+	  ] * {Sin[x], Cos[x]}
+	, {h, {1,5,10,15}}, {x, 0, 2Pi, 0.05}]},
+	
+	  progress["Finished"];
+	  results
+	];
+	
+	ListLinePlot[%, 
+	  PlotRange->Full, 
+	  Epilog->{
+	    Black // Lighter, Arrow[{{0, 0}, {2.5501, 0.0}}],
+	    Arrow[{{0,0}, {0, 2.52099}}]
+	}, AxesLabel->{"\\[Mu]_{x}", "\\[Mu]_{y}"}, ImageSize->500, AspectRatio->1, PlotLegends->{"1T", "5T", "10T", "15T"}]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(Legended[ToExpression[FrontEndRef["e48e4c4a-2ce7-4594-82b1-153514b02f85"], InputForm], Placed[LineLegend[{Directive[PointSize[1/120], RGBColor[0.24, 0.6, 0.8], AbsoluteThickness[2]], Directive[PointSize[1/120], RGBColor[0.95, 0.627, 0.1425], AbsoluteThickness[2]], Directive[PointSize[1/120], RGBColor[0.455, 0.7, 0.21], AbsoluteThickness[2]], Directive[PointSize[1/120], RGBColor[0.922526, 0.385626, 0.209179], AbsoluteThickness[2]]}, {"1T", "5T", "10T", "15T"}, LegendMarkers -> {{False, Automatic}, {False, Automatic}, {False, Automatic}, {False, Automatic}}, Joined -> {True, True, True, True}, LabelStyle -> {}, LegendLayout -> "Column"], After, Identity]])(*,*)(*"1:eJzFU71PFEEUP04+lGiixMIKY2Jhc5E9dsNZ4OSU8yI5IrIrtbO7b2BywwyZnVWOnj9CGxPojKEzoaagoLAgJFpoQTQmhkBCQ818wAUuxFiY3Ct+M/PmzXu/9+a9e7GYIVcKhUJ2Q8MshbcTkAiJlZDhgNY0YA54WiZFYzKooZZSfWcMSY/RDWl4JgVXNZ7WliDJFY4ZhPe1GvwK+ImPS+UExkp+8MgvVcqxV/KC0cDz45EyqQTOca+GmVw/u2o2gNMXnLWsNpI5OH79GqYZTiAl/WdkGpSDY0h6z/w0aKbci2saJqiERNE34Nga1bSgXIV0GVxsGxIrKjhm1BjRJQ3Og72rP3kqmJByY3hl/+XGFyRHrfxE8v07I3+Q831LQzXOBMsVRPM0aXLIMlpsO/vPdIiVQyQ/Hu1MxTd/ITk++HVtcXyzO3TumuIM/0CnvH4jubd8e72+t90dOrufjx+/WjlA8vvDD5/urH9D8kG9Z/X11j/QudBJoVF5kV2CKDSBvJHTNYgudq8dIdeOU1g2QWYdXVk8f8r6zORgloFNtJorsaAzS7ppZbMw0zWpyw4dQ9Wex79sOlzZGcUxsFC1GJDC5dWwptfbtWvglshVaGjov8wXuOVdJUoX1Pzx8xS4oqp1AiCsL/w="*)(*]VB*)`}</wljs-editor></WLJSWrapper>
+
+*Why do we have circles at the bottom?*
+
+Well, it looks that the magnetic field cannot overcome the anisotropy and the position of magentic moment remains constant, while projection goes from 0 up to the maximum. We can prove its shape by plotting this function
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`PolarPlot[(*BB[*)(*our constant magnetic moment*)(*,*)(*"1:eJxTTMoPSmNhYGAo5gcSAUX5ZZkpqSn+BSWZ+XnFaYwgCS4g4Zyfm5uaV+KUXxEMUqxsbm6exgSSBPGCSnNSg9mAjOCSosy8dLBYSFFpKpoKkDkeqYkpEFXBILO1sCgJSczMQVYCAOFrJEU="*)(*]BB*) {0,-1}.{ (*BB[*)(*projection*)(*,*)(*"1:eJxTTMoPSmNhYGAo5gcSAUX5ZZkpqSn+BSWZ+XnFaYwgCS4g4Zyfm5uaV+KUXxEMUqxsbm6exgSSBPGCSnNSg9mAjOCSosy8dLBYSFFpKpoKkDkeqYkpEFXBILO1sCgJSczMQVYCAOFrJEU="*)(*]BB*) Cos[x], Sin[x]}, {x,0,2Pi}, PlotRange->{{-1,1},{-1,1}}, Epilog->{Style[Circle[{0,0}, 1], Dashed]}] `}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(FrontEndRef["ef245373-9bc5-45ff-b006-fb70737eabc6"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKp6YZmZgamxvrWiYlm+qamKal6SYZGJjppiWZG5gbm6cmJiWbAQCERRXX"*)(*]VB*)`}</wljs-editor></WLJSWrapper>
+
+<wljs-html encoded="true">{`%3Cstyle%3E%0A%20%20%23realtimeStuff%20%7B%0A%20%20%20%20scroll-behavior%3A%20smooth%3B%0A%20%20%7D%0A%3C%2Fstyle%3E%0A%3Cdiv%20id%3D%22realtimeStuff%22%3E%3C%2Fdiv%3E`}</wljs-html>
+
+## Real-time modelling
+We can go further and recalculate spins based on user's input. For this case `Offload` keyword is used together with some GUI building blocks
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`matrices = NotebookRead @ NotebookStore["Int"];
+	
+	Module[{
+	  spin = {0.1, -0.8, -0.11},
+	  defaults = {0.,0.,0., 3., -100.},
+	  temperature = 10.,
+	  field = {0.,0.},
+	  controlPanel,
+	  update
+	},
+	
+	  controlPanel = InputGroup[{
+	    InputRange[0, 5., 1, 3, "Label"->"Spin-orbit"],
+	    InputRange[-100, 0., 10, -100, "Label"->"J"],
+	    InputRange[1, 150., 10, 10, "Label"->"Temperature"]
+	  }];
+	
+	  update = Function[Null,
+	    With[{
+	      sys = matrices @@ Join[defaults, spin] // Eigensystem // Transpose
+	    },
+	      spin = average[sys, temperature, #] &/@ {Sx, Sy, Sz} // Chop // Re;
+	    ]  
+	  ];
+	
+	  EventHandler[controlPanel, Function[data,
+	    defaults[[4;;5]] = data[[1;;2]];
+	    temperature = data[[3]];
+	  ]];
+	
+	  {
+	    EventHandler[Graphics[{
+	      Red, Arrow[{{0,0}, With[{s = spin}, {s[[1]], s[[2]]}] // Offload}],
+	      Blue, Arrow[{{0,0}, field // Offload}],
+	      EventHandler[AnimationFrameListener[spin // Offload], update]
+	    }, PlotRange->1.5{{-2,2}, {-2,2}}, Controls->False, ImagePadding->0], 
+	      {"mousemove" -> Function[xy,
+	        defaults[[1;;2]] = - 10 xy;
+	        field = xy 0.8;
+	      ]}
+	    ],
+	    
+	    controlPanel
+	  } // Row  
+	]`}</wljs-editor></WLJSWrapper>
+
+
+<LazyVideo url="./spin-ham.mp4"/>
+
+Blue arrow is applied field, while red arrow represents a thermal averaged spin.

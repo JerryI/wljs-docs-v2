@@ -1,0 +1,107 @@
+---
+title:  Realtime Finite Elements Method
+description: Here we will solve simple 2D wave-equation and visualize it in realtime using polygons
+date: 2024-06-20
+tags:
+  - differential equations
+  - modelling
+  - 3D
+author: JerryI
+---
+
+{/* add this script to the body  */}
+{/* https://cdn.jsdelivr.net/gh/WLJSTeam/web-components@latest/src/common/app.js */}
+<wljs-store kernel="./attachments/kernel-3138038282575484216.txt" json="./attachments/3c23fdc6-5f3f-41e2-9742-fc263bbcdc8d.txt"></wljs-store>
+
+
+  <DownloadFile
+    title="Download Notebook"
+    description="Get the complete code"
+    href="./attachments/notebook-9fe.wln"
+  />
+
+
+## Initialize mesh
+50x50 equally distributed points on 2D plane
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`field0 = Table[0., {i,50}, {j,50}];
+	field1 = field0;
+	field2 = field0;
+	
+	(*BB[*)(* initial perturbation *)(*,*)(*"1:eJxTTMoPSmNhYGAo5gcSAUX5ZZkpqSn+BSWZ+XnFaYwgCS4g4Zyfm5uaV+KUXxEMUqxsbm6exgSSBPGCSnNSg9mAjOCSosy8dLBYSFFpKpoKkDkeqYkpEFXBILO1sCgJSczMQVYCAOFrJEU="*)(*]BB*)
+	field2[[25,25]] = 0.05;
+	
+	lattice = Table[{i,j}, {i, 50}, {j,50}];
+	mesh = Flatten[lattice, 1];
+	
+	makeVertices = Compile[{{f, _Real, 2}, {pairs, _Integer, 2}, {scale, _Real}},
+	  Join[#, {scale f[[#[[1]], #[[2]]]]}] &/@ pairs
+	];
+	
+	vertices = NumericArray[makeVertices[field0, mesh, 300]];`}</wljs-editor></WLJSWrapper>
+
+## Triangulation
+This is necessary for plotting the data using 3D polygons. That we keep indexes of all polygons the same, but will update vertices
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`Needs["ComputationalGeometry\`"];
+	
+	triangles2[points_] := Module[{tr, triples},
+	  tr = DelaunayTriangulation[points];
+	  triples = Flatten[Function[{v, list},
+	      Switch[Length[list],
+	        (* account for nodes with connectivity 2 or less *)
+	        1, {},
+	        2, {Flatten[{v, list}]}, 
+	        _, {v, ##} & @@@ Partition[list, 2, 1, {1, 1}]
+	      ]
+	    ] @@@ tr, 1];
+	  Cases[GatherBy[triples, Sort], a_ /; Length[a] == 3 :> a[[1]]]]
+	
+	triangles = triangles2[mesh];`}</wljs-editor></WLJSWrapper>
+
+Let us check the result
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`ListPlot[mesh, PlotStyle->{Red, PointSize[0.01]}, Prolog->{Line[mesh[[#]]] &/@ triangles}]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(FrontEndRef["51f56b92-40e0-47fb-8b1a-9df9b700dd1d"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKmxqmmZolWRrpmhikGuiamKcl6VokGSbqWqakWSaZGxikpBimAACAORXR"*)(*]VB*)`}</wljs-editor></WLJSWrapper>
+
+## Define our equation
+This is discretization of a wave-equation in a form
+
+$$
+\partial^2_{t,t} f - \alpha^2 \nabla^2 f = 0
+$$
+
+we follows [the following](https://beltoforion.de/en/recreational_mathematics/2d-wave-equation.php) tutorial and rewrite it in a form
+
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`update = Compile[{{i, _Integer}, {j, _Integer}, {f, _Real, 2}, {p, _Real, 2}}, 
+	  0.001 (If[i-1 > 0, f[[i-1, j]], 0] + If[i+1 < 51, f[[i+1, j]], 0] + If[j+1<51, f[[i, j+1]], 0] + If[j-1 > 0, f[[i, j-1]], 0] - 4 f[[i,j]])
+	+ 2 f[[i,j]] - p[[i,j]]
+	];`}</wljs-editor></WLJSWrapper>
+
+Update function calculated a new value at vertex $\{i,j\}$. 
+
+## Realtime modelling
+For displaying we use simple `Polygon` and `GraphicsComplex`
+
+<wljs-html encoded="true">{`%3Cspan%20style%3D%22color%3Ared%22%3ERun%20the%20cell%20below%20after%3C%2Fspan%3E`}</wljs-html> __evaluation of the initialization cells__
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`Graphics3D[{SpotLight[Blue, {2.4463, 60.1604, 9.3104}, "Intensity"->1000], SpotLight[Red, {48.1378, 47.8679, 12.4545}, "Intensity"->1000], 
+	  Roughness[0],
+	  GraphicsComplex[vertices // Offload, Polygon[triangles]],
+	  EventHandler[AnimationFrameListener[vertices // Offload], Function[Null,
+	    With[{i = #[[1]], j = #[[2]]}, 
+	      field0[[i,j]] = update[i,j, field1, field2];
+	    ]&/@ RandomSample[mesh];
+	  
+	    field2 = field1;
+	    field1 = field0;
+	  
+	    vertices = NumericArray[makeVertices[field0, mesh, 300]];    
+	  ]]
+	}, ImageSize->500, Lighting->None, Background->Black]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(FrontEndRef["1ab83f94-85ab-4a64-aafb-f486cab8adda"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKGyYmWRinWZroWpgmJumaJJqZ6CYmpiXppplYmCUD5RJTUhIBjrwWvg=="*)(*]VB*)`}</wljs-editor></WLJSWrapper>
+
+*Try to drag it, it is alive*

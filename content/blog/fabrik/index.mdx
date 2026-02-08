@@ -1,0 +1,80 @@
+---
+title:  Planar Inverse Kinematics
+preview: ./attachments/planar_ik.png
+description: A very small and easy implementation of the Fabrik algorithm. Useful for animation, robotics or other optimization problems.
+date: 2023-12-20
+author: JerryI
+tags:
+  - animation
+  - algorithms
+  - physics
+---
+
+{/* add this script to the body  */}
+{/* https://cdn.jsdelivr.net/gh/WLJSTeam/web-components@latest/src/common/app.js */}
+<wljs-store kernel="./attachments/kernel-1135582189241424060.txt" json="./attachments/e87ac909-4ccc-448f-974c-6d5cfdc576e5.txt"></wljs-store>
+
+
+*the actual implemntation is not well-optimized for Wolfram Language, but serves a good purpose for the demonstration*
+
+
+Define a bunch of points connect them into a segmented line with fixed length
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`chain = Table[Exp[-ϕ]{-Cos[ϕ], Sin[ϕ]}, {ϕ, 0, π - π/7, π/7.0}];
+	Graphics[{
+	    Line[chain // Offload], Black, 
+	    PointSize[0.04], Point[chain // Offload], Red,
+	    EventHandler[Point[chain // Last], {
+	      "drag" -> handler
+	    }]
+	  },
+	  Axes->True, PlotRange->{{-1,0.2}, {0,0.4}}, ImageSize->400
+	]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(Graphics[{Line[Offload[chain]], GrayLevel[0], PointSize[0.04], Point[Offload[chain]], RGBColor[1, 0, 0], EventListener[Point[{0.060987992534901246, 0.02937026925683148}], {"drag" -> "3d8758e3-67b5-4669-8edf-429e88097113"}]}, Axes -> True, PlotRange -> {{-1, 0.2}, {0, 0.4}}, ImageSize -> 400])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KWkgRjEHkHAvSizIyEwuTmODyftkFpcgVPtk5qVCeOxAwj8tLSc/MaWYFchOzkjMzINIcUIMqvRJLUvNyQRyGBDiAfmZeSXBmVWpRdUi69wfVi2xh8ixwuTwmc4Mc2aQu5Nzfk5+USZIMdgGiDVMIAW8QMK1LDWvBOT01LzUInQbmJD9VvR77dGii5br7YsiDXen2wrPs0f2bTGS6qDSnNRgECOlKDE9WAXIME6xMDe1SDXWNTNPMtU1MTOz1LVITUnTNTGyTLWwMLA0NzQ0RtUPZjhWpBaDGSFFpalo8uAwyskvCUrMS09FdSkqL/M/EBTNmgkCJ+3R5ECBAZW7aY/FBs/cxPRUUCxkTgB6FgB4cX1r"*)(*]VB*)`}</wljs-editor></WLJSWrapper>
+
+*Try to drag a red dot*
+
+<Callout>
+
+Run this code in WLJS Notebook for better experience
+
+</Callout>
+
+## FABRIK Solver
+Original paper published in 2011
+
+<wljs-html encoded="true">{`%3Ciframe%20class%3D%22rounded-md%20border-0%20mt-4%22%20style%3D%22width%3A100%25%3B%20height%3A400px%22%20src%3D%22http%3A%2F%2Fwww.andreasaristidou.com%2Fpublications%2Fpapers%2FFABRIK.pdf%22%3E%3C%2Fiframe%3E`}</wljs-html>
+
+Let' define our `handler`. For the demonstration purposes, we implemented this in the simples possible way:
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`handler = Function[target,
+	  Module[{buffer = chain, origin = {-1,0}, prev = chain, lengths = Norm /@ (chain // Reverse // Differences) // Reverse},
+	    buffer = Table[With[{p = chain[[-i]]},
+	      If[i === 1,
+	        prev = target;
+	        target
+	      ,
+	    
+	        prev = prev - Normalize[(prev - p)] lengths[[1-i]];
+	        prev 
+	      ]
+	    ]   
+	    , {i, chain // Length}] // Reverse;
+	
+	    buffer = Table[With[{p = buffer[[i]]},
+	      If[i === 1,
+	        prev = origin;
+	        origin
+	      ,
+	        prev = prev - Normalize[(prev - p)] lengths[[i-1]];
+	        prev 
+	      ]
+	    ]
+	    , {i, chain // Length}];
+	
+	    chain = buffer;
+	   ]
+	];`}</wljs-editor></WLJSWrapper>
+
+Now we can try to drag that red little dot to see the effect.
