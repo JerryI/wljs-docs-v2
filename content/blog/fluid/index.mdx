@@ -325,6 +325,19 @@ Here is our implementation on a grid:
 	  ], grid, {2}]
 	] ];`}</wljs-editor></WLJSWrapper>
 
+Let's try it on a vector field with two divergency points in the center: a source and a drain:
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true">{`
+field = Table[{0,0}, {19}, {19}];
+field[[10,10]] = {0,1};
+Table[ListVectorPlot[Nest[removeDivergence, field, n], VectorRange->0.01, VectorScaling->True, ImageSize->300, PlotLabel->ToString[n]<>" iterations"], {n, {0, 5, 100}}] // Column 
+`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output">{`
+(*GB[*){{(*VB[*)(FrontEndRef["51a45954-3cde-49b9-a843-4507eda22782"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKmxommphamproGienpOqaWCZZ6iZamBjrmpgamKemJBoZmVsYAQB7PRUb"*)(*]VB*)}(*||*),(*||*){(*VB[*)(FrontEndRef["fa5765be-5b42-42d3-a4d7-6c4e4262a684"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKpyWampuZJqXqmiaZGOmaGKUY6yaapJjrmiWbpJoYmRklmlmYAACG7RV1"*)(*]VB*)}(*||*),(*||*){(*VB[*)(FrontEndRef["ebbfe06f-6a02-4127-a117-db0b1eea6401"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKpyYlpaUamKXpmiUaGOmaGBqZ6yYaGprrpiQZJBmmpiaamRgYAgCQVRXj"*)(*]VB*)}}(*]GB*)
+`}</wljs-editor></WLJSWrapper>
+
+
 ### Bilinear interpolator
 The velocity field is defined only on the grid points. To get the continuous vector field of it we can interpolate the values between the grid points:
 
