@@ -1,0 +1,50 @@
+---
+title: Interactive Magnifying Glass Effect
+description: This code creates a magnifying glass effect over an image in Wolfram Language. As the mouse moves over the image, a zoomed-in circular region follows the cursor, simulating a magnifying lens.
+tags:
+  - graphics
+author: JerryI
+date: 2025-01-01
+---
+
+
+## How it works:
+ - `takeImagePart`: Extracts and resizes a square region of the image around a given position.
+ - `magnifyingGlass`: Displays the full image in a graphics canvas with a circular “lens” that updates in real time using `EventHandler`. The lens dynamically shows a magnified version of the area under the cursor.
+
+It uses low-level image manipulation (`ImageTake`, `ImageCrop`, `ImageResize`) and efficient buffer updates with `ImageData` for performance.
+
+
+```wolfram
+takeImagePart[i_Image, position_, size_:0.1] := With[{
+  dims = ImageDimensions[i] {ImageAspectRatio[i],1}
+}, With[{
+  part = {position - (*FB[*)((size dims)(*,*)/(*,*)(2.0))(*]FB*), position + (*FB[*)((size dims)(*,*)/(*,*)(2.0))(*]FB*)} // Round // Transpose
+},
+  ImageResize[ImageCrop[ImageTake[i, Sequence @@ part[[{2,1}]]], Round[size dims]], Scaled[5]]
+] ]
+
+magnifyingGlass[i_Image] := Module[{
+  p = {0,0}, buffer = ImageData[takeImagePart[i, {0,0}], "Byte"]
+}, With[{
+  canvas = Graphics[{
+    Inset[i, ImageDimensions[i]/2],
+    Red, Circle[p//Offload, Scaled[0.05{1,1/ImageAspectRatio[i]}]]
+  }, 
+    ImagePadding->0, "Controls"->False,
+    PlotRange-> Transpose[{{0,0}, ImageDimensions[i]}],
+    ImageSizeRaw->ImageDimensions[i]
+  ]
+},
+  Labeled[EventHandler[canvas, {"mousemove" -> Function[position,
+    buffer = ImageData[takeImagePart[i, {0,1} ImageDimensions[i] + {1,-1} position], "Byte"];
+    p = position;
+  ]}], Image[buffer // Offload, "Byte"], Right]
+] ]
+```
+
+Now run it:
+
+```wolfram
+ExampleData[{"TestImage", "Lena"}] // magnifyingGlass
+```

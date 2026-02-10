@@ -18,7 +18,7 @@ export default async function Page(props: {
   const Mdx = page.data.body;
 
   return (
-    <article className="relative max-w-5xl lg:w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-10">
+    <article className="relative w-full lg:max-w-5xl lg:w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-10">
       {/* Back link */}
       <Link
         href="/blog"

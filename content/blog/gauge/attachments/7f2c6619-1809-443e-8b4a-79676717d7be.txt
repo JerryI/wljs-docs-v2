@@ -1,0 +1,10 @@
+{
+"objects":[
+	"Association",
+	["Rule","'13dbf70f-40fd-4e46-92dd-d49b41d545eb'",["Hold",["HTMLView","'<div class=\"relative shrink-0 gap-y-3 pb-2 flex flex-col sm-controls\"><div class=\"flex gap-x-5 sm-controls\"><label for=\"default-range\" class=\"block mb-2 text-sm font-medium text-gray-900\"><\/label><input min=\"0\" max=\"1\" step=\"0.1\" value=\"0.5\" id=\"n-#instanceId\" type=\"number\" class=\"ml-auto h-2 grow max-w-60 block p-2.5 text-xs text-gray-900 bg-gray-50 rounded-md border-2-gray-50 border border-gray-300 focus:ring-blue-500 focus:border-blue-500\"><\/input><\/div><input min=\"0\" max=\"1\" step=\"0.1\" value=\"0.5\" id=\"r-#instanceId\" type=\"range\" class=\"sm-controls native\"><\/input><\/div>\n<script type=\"module\"> const num = document.getElementById('n-#instanceId');\n        const ran = document.getElementById('r-#instanceId');\n\n        let harpticQ = true;\n\n        function isNumber(value) { return typeof value === 'number'}\n\n        num.addEventListener('input', (event)=> {\n            if (isNaN(num.value)) return;\n            ran.value = num.value;\n            server.kernel.io.fire('4e5f4f00-7f50-4d5d-af3d-9b132c9e78ac', Number(num.value), 'Default');      \n        });\n\n        ran.addEventListener('input', (event)=> {\n            if (isNaN(ran.value)) return;\n            num.value = ran.value;\n            server.kernel.io.fire('4e5f4f00-7f50-4d5d-af3d-9b132c9e78ac', Number(ran.value), 'Default');   \n            if (harpticQ) {\n                if (!window.electronAPI) {harpticQ = false; return}\n                if (!window.electronAPI.harptic) {harpticQ = false; return}\n                window.electronAPI.harptic();\n            }               \n        });<\/script>'",["Rule","Prolog",["CoffeeLiqueur`Extensions`InputsOutputs`Tools`TemplateProcessor",["Association",["Rule","'instanceId'",["CreateUUID"]]]]]]]]
+], 
+"symbols":[
+	"Association",
+	["Rule","'meterLevel'",0.6]
+]
+}

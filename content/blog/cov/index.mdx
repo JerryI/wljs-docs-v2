@@ -1,0 +1,67 @@
+---
+author: JerryI
+title: Covariant Matrices and Ellipses
+date: 2024-08-22
+tags:
+  - math
+description: By simply computing the covariance matrix and finding its eigenvectors and -values, you can determine the principal axes and the corresponding lengths of the ellipse
+---
+
+Ellipses are common shapes characterized by their major and minor axes
+
+$$
+\frac{(x - h)^2}{a^2} + \frac{(y - k)^2}{b^2} = 1
+$$
+
+Here, $(h, k)$ is the center of the ellipse, and $a$ and $b$ represent the lengths of the semi-major and semi-minor axes, respectively. In multivariate statistics, ellipses frequently appear as confidence regions, where they represent the distribution and correlation between two or more variables.
+
+The connection between ellipses and the covariance matrix arises from the fact that the covariance matrix encapsulates the variance and covariance of data in multiple dimensions. Specifically, the covariance matrix of a set of data points can be used to determine the orientation and lengths of the ellipse that best represents the spread of the data.
+
+Mathematically, the covariance matrix $\Sigma$ for a set of data points $(x_i, y_i)$ is:
+
+$$
+\Sigma = \begin{pmatrix}
+\sigma_{xx} & \sigma_{xy} \\
+\sigma_{xy} & \sigma_{yy}
+\end{pmatrix}
+$$
+
+where $\sigma_{xx}$ and $\sigma_{yy}$ are the variances along the $x$ and $y$ axes, and $\sigma_{xy}$ is the covariance between $x$ and $y$. The eigenvalues and eigenvectors of this covariance matrix are key to understanding the shape and orientation of the ellipse:
+
+- The eigenvectors indicate the directions of the ellipse's axes.
+- The eigenvalues correspond to the squared lengths of these axes.
+
+This connection makes it surprisingly straightforward to estimate the semi-major and semi-minor axes $a$ and $b$ of an ellipse from sampled data. By simply computing the covariance matrix and finding its eigensystem, you can determine the principal axes and the corresponding lengths of the ellipse
+
+
+<wljs-store json="./attachments/0f6f88be-c98e-48a7-a399-d3090620bdbc.txt"></wljs-store>
+
+
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`(* Generate sample data points representing an ellipse *)
+	
+	sampleElipse[n_, r_, a_, b_, angle_] := 
+	 Flatten[(RandomReal[r] RotationMatrix[angle] . {a Cos[#], b Sin[#]})] & /@ 
+	  RandomReal[{-Pi, Pi}, n];
+	
+	data = sampleElipse[1000, {0.9, 1.0}, 1, 2, 45 Degree];`}</wljs-editor></WLJSWrapper>
+
+In this code, `sampleElipse` generates random points distributed in the shape of an ellipse. The covariance matrix is computed from the centered data, and its eigensystem is then found. The eigenvectors provide the directions of the ellipse's axes, and the square roots of the eigenvalues give the lengths of these axes
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`(* Process the data *)
+	
+	centered = With[{m = Mean[data]}, (# - m) & /@ data];
+	
+	(* Compute the covariance matrix of the centered data *)
+	covMatrix = Covariance[centered];
+	
+	(* Find the eigenvalues and eigenvectors of the covariance matrix *)
+	{eigenValues, mainAxes} = Eigensystem[covMatrix];
+	
+	ListPlot[centered, 
+	 Epilog -> {Line[{{0, 0}, #}] & /@ (mainAxes (*SqB[*)Sqrt[2 eigenValues](*]SqB*))}, 
+	 AspectRatio -> 1]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(FrontEndRef["47f4f3d8-aac6-456c-9b80-1db270f687f1"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKm5inmaQZp1joJiYmm+mamJol61omWRjoGqYkGZkbpJlZmKcZAgCI6xWv"*)(*]VB*)`}</wljs-editor></WLJSWrapper>
+
+

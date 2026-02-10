@@ -1,0 +1,4 @@
+[
+	"List",
+	["Association",["Rule","'CompressedMap'","'eJxN0TtuRDEIBdB6ZhlTjyJjPoa1RCn4mP0vIY7yRnpy4YbjC+b7+fh+Ph4vzDUxZwjrOd5j7eGzOjbAIE8khlTR1\/tUjy99Pn7eFzWkYQhrZy8u1sWrDIWk0qC3TeZehB+6blTSTZQWDCwCU+bdUgwrOQb+PVdtTn3Read4ejpZ7IWW7kClYcYDVcWy3TNgU1wUb7QgIPkkLDnAJ52Uhd2go8YKAfDqIXVRulEApebQopCqoWucKGDAnrKIQNYQ3uOiN0he28tKmKDCsRyCBV23n9vGSLCE+mTajS4Xq6Z9JqvNA5RtxpAICCTK2l0Cp\/OL8o3iznX+EnGehdrs0KFySqe3iQsCT7CAD5UbbZnmmyhWYGXvIqJCwS1T9mkHYKeY\/28VblDBNTvHpHAQ23nmm2d0KZjkLajoZ2y7Mv\/o8+cXKP6Q6A=='"],["Rule","'Basis'",["List",["List",0.4],["List",0.3],["List",0.2],["List",0.1],["List",0],["List",0.5],["List",0.7],["List",0.8],["List",0.9],["List",1],["List",0.6]]],["Rule","'Class'","'StateMachine'"],["Rule","'Interpolation'",true],["Rule","'Symbol'","'meterLevel'"],["Rule","'Events'",["List",["List","'4e5f4f00-7f50-4d5d-af3d-9b132c9e78ac'","'Default'"]]],["Rule","'InitialValues'",["List",0.6]]]
+]

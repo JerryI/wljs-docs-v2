@@ -1,0 +1,100 @@
+---
+title: Writting a custom indicator in Javascript
+description: In this short post we code a gauge indicator in JS and integrate it with Wolfram Language
+tags:
+  - io
+  - javascript
+author: JerryI
+date: 2024-04-22
+---
+
+{/* add this script to the body  */}
+{/* https://cdn.jsdelivr.net/gh/WLJSTeam/web-components@latest/src/common/app.js */}
+<wljs-store kernel="./attachments/kernel-919971719243571499.txt" json="./attachments/7f2c6619-1809-443e-8b4a-79676717d7be.txt"></wljs-store>
+
+
+Let's create a gauge that can react to value changes. Define a gauge meter:
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`gauge[level_Real];
+	
+	gauge /: MakeBoxes[g_gauge, StandardForm] := With[{},
+	      ViewBox[g, g]
+	]`}</wljs-editor></WLJSWrapper>
+
+Here we use identical display and input expressions, the last one has to be defined as a __frontend symbol__ too:
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`.js
+	
+	function setNeedlePosition(needle, value) {
+	  value = Math.max(0, Math.min(1, value));
+	  const angle = value * 180 - 90;
+	  needle.style.transform = 'rotate('+Math.round(angle)+'deg)';
+	}
+	
+	core.gauge = async (args, env) => {
+	  const gauge = document.createElement('div');
+	  gauge.style.width = '100px';
+	  gauge.style.height = '50px';
+	  gauge.style.border = '1px solid #000';
+	  gauge.style.borderRadius = '50px 50px 0 0';
+	  gauge.style.position = 'relative';
+	  gauge.style.background = 'linear-gradient(to right, red 0%, yellow 50%, green 100%)';
+	  
+	  const needle = document.createElement('div');
+	  needle.style.width = '2px';
+	  needle.style.height = '40px';
+	  needle.style.background = '#000';
+	  needle.style.position = 'absolute';
+	  needle.style.bottom = '0';
+	  needle.style.left = '50%';
+	  needle.style.transformOrigin = 'bottom';
+	  
+	  const pos = await interpretate(args[0], env);
+	  setNeedlePosition(needle, pos);
+	  
+	  gauge.appendChild(needle);
+	  env.element.appendChild(gauge);
+	}
+	
+	// for later
+	core.gauge.setNeedlePosition = setNeedlePosition;`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="js" type="Output" encoded="true" class="wljs-hide-undefined" >{`%0Afunction%20setNeedlePosition%28needle%2C%20value%29%20%7B%0A%20%20value%20%3D%20Math.max%280%2C%20Math.min%281%2C%20value%29%29%3B%0A%20%20const%20angle%20%3D%20value%20%2A%20180%20-%2090%3B%0A%20%20needle.style.transform%20%3D%20%27rotate%28%27%2BMath.round%28angle%29%2B%27deg%29%27%3B%0A%7D%0A%0Acore.gauge%20%3D%20async%20%28args%2C%20env%29%20%3D%3E%20%7B%0A%20%20const%20gauge%20%3D%20document.createElement%28%27div%27%29%3B%0A%20%20gauge.style.width%20%3D%20%27100px%27%3B%0A%20%20gauge.style.height%20%3D%20%2750px%27%3B%0A%20%20gauge.style.border%20%3D%20%271px%20solid%20%23000%27%3B%0A%20%20gauge.style.borderRadius%20%3D%20%2750px%2050px%200%200%27%3B%0A%20%20gauge.style.position%20%3D%20%27relative%27%3B%0A%20%20gauge.style.background%20%3D%20%27linear-gradient%28to%20right%2C%20red%200%25%2C%20yellow%2050%25%2C%20green%20100%25%29%27%3B%0A%20%20%0A%20%20const%20needle%20%3D%20document.createElement%28%27div%27%29%3B%0A%20%20needle.style.width%20%3D%20%272px%27%3B%0A%20%20needle.style.height%20%3D%20%2740px%27%3B%0A%20%20needle.style.background%20%3D%20%27%23000%27%3B%0A%20%20needle.style.position%20%3D%20%27absolute%27%3B%0A%20%20needle.style.bottom%20%3D%20%270%27%3B%0A%20%20needle.style.left%20%3D%20%2750%25%27%3B%0A%20%20needle.style.transformOrigin%20%3D%20%27bottom%27%3B%0A%20%20%0A%20%20const%20pos%20%3D%20await%20interpretate%28args%5B0%5D%2C%20env%29%3B%0A%20%20setNeedlePosition%28needle%2C%20pos%29%3B%0A%20%20%0A%20%20gauge.appendChild%28needle%29%3B%0A%20%20env.element.appendChild%28gauge%29%3B%0A%7D%0A%0A%2F%2F%20for%20later%0Acore.gauge.setNeedlePosition%20%3D%20setNeedlePosition%3B`}</wljs-editor></WLJSWrapper>
+
+Let's test it:
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`gauge[0.3]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(gauge[0.3])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRAeK5BITyxNTy0yBoPL9gCxdwlI"*)(*]VB*)`}</wljs-editor></WLJSWrapper>
+
+You can also place it with other wolfram expressions
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`gauge[0.3] // Framed`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*BB[*)((*VB[*)(gauge[0.3])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRAeK5BITyxNTy0yBoPL9gCxdwlI"*)(*]VB*))(*,*)(*"1:eJxTTMoPSmNiYGAo5gMSwSWVOakuqcn5RYkl+UUQcRYgEVSak1rMA1ZQlFngn+eZV1BaUswKFHBLzClORVUYDBYvSsxNBQuFFJWmAgAQ7xjr"*)(*]BB*)`}</wljs-editor></WLJSWrapper>
+
+For the next step, we need to __define prototypes__ for our symbol to update the needle position and __enable instancing__:
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`.js
+	
+	core.gauge.update = async (args, env) => {
+	  const val = await interpretate(args[0], env);
+	  core.gauge.setNeedlePosition(env.element.firstChild.firstChild, val);
+	}
+	
+	core.gauge.destroy = () => {}
+	
+	core.gauge.virtual = true;`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="js" type="Output" encoded="true" class="wljs-hide-undefined" >{`%0Acore.gauge.update%20%3D%20async%20%28args%2C%20env%29%20%3D%3E%20%7B%0A%20%20const%20val%20%3D%20await%20interpretate%28args%5B0%5D%2C%20env%29%3B%0A%20%20core.gauge.setNeedlePosition%28env.element.firstChild.firstChild%2C%20val%29%3B%0A%7D%0A%0Acore.gauge.destroy%20%3D%20%28%29%20%3D%3E%20%7B%7D%0A%0Acore.gauge.virtual%20%3D%20true%3B`}</wljs-editor></WLJSWrapper>
+
+Now let's provide a symbol to gauge and manipulate it with a slider:
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`meterLevel = 0.5;
+	gauge[meterLevel // Offload]
+	
+	EventHandler[InputRange[0,1,0.1], (meterLevel = #)&]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(gauge[Offload[meterLevel]])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRAeK5BITyxNT4Vw2YGEf1paTn5iSjEXkJ2bWpJa5JNalpoDAKdSDsA="*)(*]VB*)`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(EventObject[<|"Id" -> "4e5f4f00-7f50-4d5d-af3d-9b132c9e78ac", "Initial" -> 0.5, "View" -> "13dbf70f-40fd-4e46-92dd-d49b41d545eb"|>])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKGxqnJKWZG6TpmhikpeiapJqY6VoapaTopphYJpkYppiamKYmAQCLVxYF"*)(*]VB*)`}</wljs-editor></WLJSWrapper>

@@ -1,0 +1,242 @@
+---
+title:  Basics of Compute Shaders in WL & WLJS 1
+preview: ./imgCl.png
+description: An introduction guide on writting and testing compute shaders (GPGPU) written in OpenCL
+date: 2024-01-01
+author: JerryI
+tags:
+  - opencl
+  - GPU
+---
+
+{/* add this script to the body  */}
+{/* https://cdn.jsdelivr.net/gh/WLJSTeam/web-components@latest/src/common/app.js */}
+<wljs-store kernel="./attachments/kernel-7841448232801035952.txt" json="./attachments/4893d99b-a8e4-4546-8166-85377eb99826.txt"></wljs-store>
+
+  <DownloadFile
+    title="Download Notebook"
+    description="Get the complete code"
+    href="./attachments/notebook-489.wln"
+  />
+
+A GPU is also a great tool for general-purpose computations. There are a few ways to couple it with Wolfram Language:
+
+- CUDALink
+- OpenCLLink
+- LibraryLink
+
+The first option requires hardware from Nvidia, which is a massive drawback considering there are many other processors on the market capable of crunching numbers. The last option allows integrating any dynamic library written in C/Rust (probably there are other bindings as well) into our Kernel, but the amount of effort required to write a general-purpose GPU library and deal with cross-platform issues is quite cumbersome and defeats the whole purpose of using WL here.
+
+We will go with the most cross-platform and hardware-agnostic solution: `OpenCL`.
+
+```wolfram
+Needs["OpenCLLink`"]
+If[!OpenCLQ[], Beep[]; $Failed]
+```
+
+We assume you already know the OpenCL programming language and its execution model. There are plenty of resources available online.
+
+## Drawing on Canvas
+The most visual way of seeing the work of your tiny GPU kernels is to ask them to generate data and interpret it as an image. Let us define a simple kernel that fills an entire screen.
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`test.cl
+	
+	__kernel void render(
+	  __global uchar4* output, 
+	  const int width, 
+	  const int height
+	) {
+	    unsigned int work_item_id = get_global_id(0);
+	    
+	    unsigned int x_coord = work_item_id % width;
+	    unsigned int y_coord = work_item_id / width;
+	
+	    float3 finalcolor = (float3)(0.0f, 0.5f, 0.2f);
+	
+	    //clamp to 8bits for each channel
+	    
+	    uchar4 rgba;
+	    rgba.x=(uchar)(finalcolor.x*255.0);
+	    rgba.y=(uchar)(finalcolor.y*255.0);
+	    rgba.z=(uchar)(finalcolor.z*255.0);
+	    rgba.w=255;
+	
+	    output[work_item_id] = rgba;
+	}`}</wljs-editor></WLJSWrapper>
+
+
+A side note
+
+> If you run the cell above, it creates a file named `test.cl`
+
+We added a minor optimization: the resulting color will be normalized to the range of the `UnsignedInteger8` typed array in Wolfram Language.
+
+Now let us compile it.
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`render = OpenCLFunctionLoad[File["test.cl"], 
+	  "render", {{"UnsignedByte[4]", _, "Output"}, _Integer, _Integer}, 256, "ShellOutputFunction"->Print];`}</wljs-editor></WLJSWrapper>
+
+
+
+Here we specified the local group size to be `256`, but at this stage, it does not matter for us. Just make sure that it does not exceed your CL device limitations.
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`Cases[OpenCLInformation[], Rule["Maximum Work Group Size", r_] :> r, Infinity]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`{256}`}</wljs-editor></WLJSWrapper>
+
+Allocate memory for our generated image. Let it be small for now, `128x128`.
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`image = OpenCLMemoryLoad[Table[{0, 0, 0, 0}, {i, 128}, {j, 128}], "UnsignedByte[4]"];`}</wljs-editor></WLJSWrapper>
+
+
+A side note
+
+> Do not forget to unload this memory if you no longer need it.
+
+To execute our OpenCL function, we also need to specify the grid size (aka how many kernels we need to run). Since in our case this is a bitmap image and we are running 1 kernel per pixel the number will `128^2` according the resolution we picked for an image
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`render[image, 128, 128, 128 128];
+	image // OpenCLMemoryGet;
+	NumericArray[%, "UnsignedInteger8"];
+	Image[%, "Byte", Magnification->3]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(FrontEndRef["3e1c334c-dccc-4410-a710-e308c6887e9b"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKG6caJhsbmyTrpiQnJ+uamBga6CaaA4lUYwOLZDMLC/NUyyQAhnMVmw=="*)(*]VB*)`}</wljs-editor></WLJSWrapper>
+
+It is important to note that __you should always try to utilize__ `NumericArray` when working with raster graphics, since Wolfram's native `List` is quite slow for this task. The second important thing is to specify the format explicitly in `Image` as well. There is a 1:1 correspondence:
+
+<wljs-html encoded="true">{`%3Cbr%20%2F%3E`}</wljs-html>
+
+| OpenCL             | NumericArray       | Image                |
+|--------------------|--------------------|----------------------|
+| `UnsignedByte`     | `UnsignedInteger8` | `Byte`               |
+| `Float`            | `Real32`           | `Real`               |
+
+Let us try something more interesting.
+
+Here is a very primitive example of what is called Signed-Distance-Fields (SDF). We set the "geometry" using a parametric equation and calculate the color of every pixel based on the distance to vertices or any other control points of our defined geometry. For example, to draw a disk we need only the equation of a circle with two parameters:
+
+$$
+\text{color} = R^2 - |\mathbf{r} - \mathbf{r}_c|^2 
+$$
+
+where $\mathbf{r}_c$ is the coordinates of the center and $R$ is the radius. After that, we should clip the resulting color to the range of `0.0` and `1.0` to avoid any artifacts.
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`test.cl
+	
+	float clip(float val, const float min, const float max) {
+	  if (val > max) return max;
+	  if (val < min) return min;
+	  return val;
+	}
+	
+	__kernel void render(
+	  __global uchar4* output, 
+	  const int width, 
+	  const int height
+	) {
+	    unsigned int work_item_id = get_global_id(0);
+	    
+	    unsigned int x_coord = work_item_id % width;
+	    unsigned int y_coord = work_item_id / width;
+	
+	    //normalize screen coordinates
+	    float fx = (float)x_coord / (float)width; 
+		float fy = (float)y_coord / (float)height;
+	
+	    float3 finalcolor = (float3)(fy * 0.1f, fy * 0.3f, 0.3f); // a nice background
+	
+	    float dist2 = (fx - 0.5f)*(fx - 0.5f) + (fy - 0.5f)*(fy - 0.5f);
+	    finalcolor.x += clip(10.0f*(0.4f*0.4f - dist2), 0.0f, 1.0f);
+	
+	    //clamp to 8bits for each channel
+	    
+	    uchar4 rgba;
+	    rgba.x=(uchar)(finalcolor.x*255.0);
+	    rgba.y=(uchar)(finalcolor.y*255.0);
+	    rgba.z=(uchar)(finalcolor.z*255.0);
+	    rgba.w=255;
+	
+	    output[work_item_id] = rgba;
+	}`}</wljs-editor></WLJSWrapper>
+
+Reload
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`render = OpenCLFunctionLoad[File["test.cl"], 
+	  "render", {{"UnsignedByte[4]", _, "Output"}, _Integer, _Integer}, 256, "ShellOutputFunction"->Print];
+	
+	render[image, 128, 128, 128 128];
+	image // OpenCLMemoryGet;
+	NumericArray[%, "UnsignedInteger8"];
+	Image[%, "Byte", Magnification->3]`}</wljs-editor></WLJSWrapper>
+
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(FrontEndRef["8d264403-91a7-4611-a58f-f1a53d0da156"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKW6QYmZmYGBjrWhommuuamBka6iaaWqTpphkmmhqnGKQkGpqaAQBzRhUJ"*)(*]VB*)`}</wljs-editor></WLJSWrapper>
+
+Because our toy SDF function provides a squared distance, it creates a smooth transition on the edges before it starts to clip to 1.0.
+
+## Controls
+We can hook up some external controls to change the parameters of our disk. The simplest one will be the radius.
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`test.cl
+	
+	float clip(float val, const float min, const float max) {
+	  if (val > max) return max;
+	  if (val < min) return min;
+	  return val;
+	}
+	
+	__kernel void render(
+	  __global uchar4* output, 
+	  const int width, 
+	  const int height,
+	  const float radius //<---- HERE
+	) {
+	    unsigned int work_item_id = get_global_id(0);
+	    
+	    unsigned int x_coord = work_item_id % width;
+	    unsigned int y_coord = work_item_id / width;
+	
+	    //normalize screen coordinates
+	    float fx = (float)x_coord / (float)width; 
+		float fy = (float)y_coord / (float)height;
+	
+	    float3 finalcolor = (float3)(fy * 0.1f, fy * 0.3f, 0.3f); // a nice background
+	
+	    float dist2 = (fx - 0.5f)*(fx - 0.5f) + (fy - 0.5f)*(fy - 0.5f);
+	    finalcolor.x += clip(10.0f*(radius*radius - dist2), 0.0f, 1.0f); //<---- HERE
+	
+	    //clamp to 8bits for each channel
+	    
+	    uchar4 rgba;
+	    rgba.x=(uchar)(finalcolor.x*255.0);
+	    rgba.y=(uchar)(finalcolor.y*255.0);
+	    rgba.z=(uchar)(finalcolor.z*255.0);
+	    rgba.w=255;
+	
+	    output[work_item_id] = rgba;
+	}`}</wljs-editor></WLJSWrapper>
+
+
+Now recompile it once.
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`render = OpenCLFunctionLoad[File["test.cl"], 
+	  "render", {{"UnsignedByte[4]", _, "Output"}, _Integer, _Integer, "Float"}, 256, "ShellOutputFunction"->Print];`}</wljs-editor></WLJSWrapper>
+
+
+To render dynamically, we provide an intermediate symbol to which an `Image` listener will be assigned.
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`Module[{buffer},
+	  {
+	    Image[buffer // Offload, "Byte", Magnification->3],
+	
+	    EventHandler[InputRange[0., 1., 0.1, "Label"->"R"], Function[radius,
+	      render[image, 128, 128, radius, 128 128];
+	      buffer = NumericArray[image // OpenCLMemoryGet, "UnsignedInteger8"];
+	    ]] // EventFire (*BB[*)(* fire once to initialize buffer *)(*,*)(*"1:eJxTTMoPSmNhYGAo5gcSAUX5ZZkpqSn+BSWZ+XnFaYwgCS4g4Zyfm5uaV+KUXxEMUqxsbm6exgSSBPGCSnNSg9mAjOCSosy8dLBYSFFpKpoKkDkeqYkpEFXBILO1sCgJSczMQVYCAOFrJEU="*)(*]BB*)
+	  } // Row 
+	]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*GB[*){{(*VB[*)(FrontEndRef["919c08ed-5272-4d7c-ab81-beb0d4162d83"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKWxpaJhtYpKbomhqZG+mapJgn6yYmWRjqJqUmGaSYGJoZpVgYAwCDBhWh"*)(*]VB*)(*|*),(*|*)(*VB[*)(EventObject[<|"Id" -> "b26cab38-c7c1-4053-a341-5ffb5dc916af", "Initial" -> 0.5, "View" -> "d1ac378f-41e4-4a70-bb2c-863d7c057e04"|>])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKpxgmJhubW6TpmhimmuiaJJob6CYlGSXrWpgZp5gnG5iapxqYAACIWhWb"*)(*]VB*)}}(*]GB*)`}</wljs-editor></WLJSWrapper>
+
+
+When you drag the slider, it reruns the OpenCL kernel and provides a new bitmap image to be displayed on the screen.

@@ -1,0 +1,9 @@
+<|"Notebook" -> <|"HaveToSaveAs" -> True, "Path" -> "/private/var/folders/fs/\
+ch7ddlhn7jz5vyg5k8bbrxyh0000gn/T/wljs_quicknotes/gaseous.wln", 
+   "PublicFields" -> {"Properties"}, "Quick" -> True|>, 
+ "Cells" -> {<|"Data" -> "", "Display" -> "codemirror", 
+    "Hash" -> "f524083d-50ec-4c5f-ba6a-208d7cc1d39e", "Invisible" -> False, 
+    "MetaOnly" -> False, "Props" -> <||>, "PublicFields" -> {"Properties"}, 
+    "State" -> "Idle", "Type" -> "Input", "UID" -> Null, 
+    "Notebook" -> "0f6f88be-c98e-48a7-a399-d3090620bdbc"|>}, 
+ "serializer" -> "jsfn4"|>
