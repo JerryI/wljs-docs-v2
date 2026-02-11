@@ -24,7 +24,13 @@ In academic settings or at conferences, presentations can be critical to conveyi
 
 Yet, interactivity in presentations—and in publications—is often overlooked. This area has potential, especially for internal reports, lecture notes, or educational materials where interactivity could aid understanding.
 
-Take a look at [**this example**](./ppt_blog.html) ⭐️
+Take a look at **this example**
+
+  <DownloadFile
+    title="Open HTML presentation"
+    description="Get the complete notebook"
+    href="./ppt_blog.html"
+  />
 
 Creating traditional slides is time-consuming: drag items, align, format... And if you're dealing with 3D content (protein structures, crystal models), you’ll often resort to GIFs.
 
@@ -62,7 +68,11 @@ This is some text in the first frame.
 \end{document}
 ```
 
+<div className="invertColor">
+
 ![Render Result](./99a6d20c03906aea070102d2f353eb02.png)
+
+</div>
 
 Beamer is extremely powerful, but also intimidating. For something easier and web-native, there's [RevealJS](https://revealjs.com/):
 
@@ -166,7 +176,11 @@ But as of 2025, **no platform beats Wolfram Mathematica** for producing clean, p
 ContourPlot[Cos[x] + Cos[y], {x, 0, 4 Pi}, {y, 0, 4 Pi}]
 ```
 
+<div className="invertColor">
+
 ![Wolfram Output](./c2f32768e32f83ebfc8fadc6e6c98cd0.png)
+
+</div>
 
 Want interactivity?
 
@@ -206,7 +220,11 @@ Or make it a reusable component. This is where [Wolfram Language XML](./../../fr
 
 Download binaries [here](https://wljs.io). **You don’t need** the app to view presentations—**a browser is enough**, even offline.
 
+<div className="invertColor">
+
 ![](./Pasted-image-20250402155342-0993083f43dd6806969ba4d63015b00d.png)
+
+</div>
 
 This is a client-server setup. The client is your browser (or Electron app), and computations happen on the server.
 
@@ -223,12 +241,17 @@ Let’s create our first `.slide` cell with an image. Simply drag and drop a pic
 
 # Hey There!
 
-![](/attachments/Screenshot%202024-10-24%20at%2011.29.01-354.png)
+![](/yourimage.jpg)
+
 ```
 
 The image is automatically uploaded to the notebook directory and inserted as a Markdown image reference. Press <kbd>Shift-Enter</kbd> or click the play button to render the slide.
 
+<div className="invertColor">
+
 ![](./Screenshot-2025-04-02-at-15.54.47-e0e639a8bed76266044498b2ada73782.png)
+
+</div>
 
 
 
@@ -258,7 +281,11 @@ Now insert it into your slide:
 <OurPlot />
 ```
 
+<div className="invertColor">
+
 ![](./Screenshot-2025-04-02-at-16.09.37-304c224a98ac0364fc1a03604f586358.png)
+
+</div>
 
 Yes—you can rotate it live in the browser.
 
@@ -270,23 +297,50 @@ OurPlotly = With[{data = square[{{2, 5}, {3, 7}}]},
 ]
 ```
 
+<div className="invertColor">
+
 ![](./Screenshot-2025-04-02-at-16.10.23-68e8a6a031fbf2b9917d841979023ac6.png)
+
+</div>
 
 ---
 
 ## Important Notes on WLX
 
 - Tags starting with a lowercase letter are interpreted as HTML.
-- Tags starting with an uppercase letter are WL components.
+- Tags starting with an uppercase letter are WL symbols.
 - All tags must be properly closed.
 - Leave a blank line above and below Markdown headers and HTML blocks to avoid parsing issues.
-- Full WLX [documentation](https://jerryi.github.io/wlx-docs/) and presentation-specific docs [here](https://jerryi.github.io/wljs-docs/frontend/Advanced/Slides/).
+
+<Cards>
+
+<Card href="./../../frontend/Cell-types/WLX" title="WLX Cells">
+
+A guide on basics of WLX cells
+
+</Card>
+
+</Cards>
+
+## Read more 
+
+<Cards>
+
+
+<Card
+    href="./../../frontend/Advanced/Component-based-markup"
+    title="Component-based markup"
+  >
+    An advanced guide on how to build reusable components for slides and more
+  </Card>
+
+</Cards>
 
 ---
 
 ## Presenting Slides
 
-Want fullscreen mode? Press `f` on any slide or choose “Project to a New Window” in cell settings.
+Want fullscreen mode? Press <kbd>f</kbd> on any slide or choose “Project to a New Window” (<kbd>Ctrl-Shift-Enter</kbd> or <kbd>⌘-Shift-Enter</kbd>) in cell settings.
 
 Want to show all slides in sequence? Just use the `.slides` cell to collect content from all other `.slide` cells:
 
@@ -313,7 +367,11 @@ Minimalist slides are often best—just a graphic and a short list. But if you w
 </style>
 ```
 
+<div className="invertColor">
+
 ![](./Screenshot-2025-04-02-at-16.11.11-f92c6d5f3c803e91f6cfb246476270ef.png)
+
+</div>
 
 Reusable headers or footers? Easy. Let’s define and use them as components next...
 
@@ -359,7 +417,11 @@ Use it on a slide like this:
 </Columns>
 ```
 
+<div className="invertColor">
+
 ![](./Screenshot-2025-04-02-at-16.12.11-60ca1ccaab53e1da26f356ef41ff39ec.png)
+
+</div>
 
 You can safely use Markdown by wrapping content in `<p>` tags and adding blank lines:
 
@@ -378,7 +440,11 @@ You can safely use Markdown by wrapping content in `<p>` tags and adding blank l
 </Columns>
 ```
 
+<div className="invertColor">
+
 ![](./Screenshot-2025-04-02-at-16.12.39-88a30f75ddf9ea5df1e69b62b97e02d2.png)
+
+</div>
 
 Style the component directly:
 
@@ -395,7 +461,11 @@ Style the component directly:
 </Columns>
 ```
 
+<div className="invertColor">
+
 ![](./Screenshot-2025-04-02-at-16.13.38-2b9c94d8e983e10d8f9d49abd9c1e59f.png)
+
+</div>
 
 ---
 
@@ -424,7 +494,11 @@ OurPlot = Row[{
 <OurPlot/>
 ```
 
+<div className="invertColor">
+
 ![](./Screenshot-2025-04-02-at-16.14.46-0e6febc89aff5cac0a40a9b90857258e.png)
+
+</div>
 
 You can also bind each to a separate variable and use them together:
 
@@ -481,7 +555,12 @@ Content goes here...
 <Footer />
 ```
 
+<div className="invertColor">
+
 ![Header + Footer Example](./0650702b218a1b704d6db13f001f9410.png)
+
+</div>
+
 ## Fragments & Animations
 
 RevealJS supports slide fragments, which allow staged reveals of content. This can be used to animate text appearance or any HTML element.
@@ -498,7 +577,11 @@ RevealJS supports slide fragments, which allow staged reveals of content. This c
 # White <!-- .element: style="color:white" class="fragment" -->
 ```
 
+<div className="invertColor">
+
 ![](./Screenshot-2025-04-02-at-16.15.38-131050c3c9ddc9add32bea14876e1aa2.png)
+
+</div>
 
 Each `.fragment` appears step-by-step as the user presses →. You can also control the order using `data-fragment-index`:
 
@@ -530,7 +613,11 @@ $$
 $$
 ```
 
+<div className="invertColor">
+
 ![Rendered LaTeX](./d3cc56ffa21c98784750274eabd0ddac.png)
+
+</div>
 
 ### Animated Equations
 
@@ -544,7 +631,11 @@ $$
 $$ <!-- .element: data-eq-speed="0.1" -->
 ```
 
+<div className="invertColor">
+
 ![Animated LaTeX](./08d5e18256879d7b7c82a82bbdab4a53.gif)
+
+</div>
 
 ---
 
@@ -571,45 +662,24 @@ Use it in a slide:
 <MyDiagram />
 ```
 
+<div className="invertColor">
+
 ![](./Screenshot-2025-04-02-at-16.16.41-48d84a1c8e42e9639ab5a7b2a08ce48f.png)
+
+</div>
 
 ---
 
-## Source Code on Slides
+## More examples
 
-To display syntax-highlighted WL source code inline, define a helper:
-
-```jsx
-.wlx
-CodeInset[str_String] := With[{Fe = EditorView[str]},
-  <div style="text-align: left; font-size:14px;"><Fe /></div>
-]
-```
-
-Add styling to align properly:
-
-```html
-.wlx
-<style>
-  .slide-frontend-object .cm-editor {
-    text-align: left;
-  }
-</style>
-```
-
-Use in a slide:
-
-```markdown
-.slide
-
-## Source code (WL) on the slide
-
-<CodeInset>
-1-((*FB[*)((1)(*,*)/(*,*)(6))(*]FB*)) ((*SpB[*)Power[x(*|*),(*|*)2](*]SpB*))+((*FB[*)((1)(*,*)/(*,*)(120))(*]FB*)) ((*SpB[*)Power[x(*|*),(*|*)4](*]SpB*))-(*FB[*)(((*SpB[*)Power[x(*|*),(*|*)6](*]SpB*))(*,*)/(*,*)(5040))(*]FB*)+(*FB[*)(((*SpB[*)Power[x(*|*),(*|*)8](*]SpB*))(*,*)/(*,*)(362880))(*]FB*)-(*FB[*)(((*SpB[*)Power[x(*|*),(*|*)10](*]SpB*))(*,*)/(*,*)(39916800))(*]FB*)
-</CodeInset>
-```
-
-![](./Screenshot-2025-04-02-at-16.18.39-45aebb2722a2d1517e688faec2800106.png)
+<Cards>
+  <Card
+    href="./../../frontend/Advanced/Advanced-Slides"
+    title="Advanced Slides"
+  >
+    A guide on how to make dynamic event-based slides, use components and layout helpers
+  </Card>
+</Cards>
 
 ## Excalidraw Integration
 
@@ -625,7 +695,11 @@ To embed a drawing area, just use this simple syntax in a `.slide` cell:
 
 This creates an embedded drawing canvas. Your sketch is saved inside the widget itself, allowing it to be moved or nested inside other tags.
 
+<div className="invertColor">
+
 ![Excalidraw Widget](./100e1abbc624c758bf29fcb034119f46.png)
+
+</div>
 
 Support is still evolving, but it works well for basic annotation and ideas.
 
@@ -663,7 +737,11 @@ Render it on a slide:
 <Stat Count={11}>Number of publications</Stat>
 ```
 
+<div className="invertColor">
+
 ![](./Screenshot-2025-04-02-at-16.19.38-29db0218b6779184d5ae4e327ad9a02a.png)
+
+</div>
 
 ### Step 2: Make It Dynamic
 
@@ -713,7 +791,11 @@ Now use multiple instances:
 </Row>
 ```
 
+<div className="invertColor">
+
 ![](./Screenshot-2025-04-02-at-16.24.19-83adf7b57dfaf19b7bfb60bf60ef94d7.png)
+
+</div>
 
 Each counter is self-contained and responds only when the slide is active.
 
@@ -724,14 +806,18 @@ Remember `Manipulate` in Wolfram Language? In this system, there's a more effici
 
 Try it first in a regular cell:
 
-```wolfram @
+```wolfram
 Widget = ManipulatePlot[{
   Sin[x t], 
-  (*TB[*)Sum[(*|*)(*FB[*)((Sin[w x t])(*,*)/(*,*)(w))(*]FB*)(*|*), {(*|*)w(*|*),(*|*)1(*|*),(*|*)n(*|*)}](*|*)(*1:eJxTTMoPSmNiYGAoZgMSwaW5TvkVmYwgPguQCCkqTQUAeAcHBQ==*)(*]TB*) 
+  Sum[((Sin[w x t])/(w)), {w,1,n}] 
 } // Re,  {t, 0, 10 Pi}, {x, 0, 2}, {n, 1, 15, 1}]
 ```
 
+<div className="invertColor">
+
 ![ManipulatePlot Example](./66e7b9dadfdd55d6ed119a2cf2344a99.png)
+
+</div>
 
 Now let’s embed it directly into a slide:
 
@@ -745,7 +831,11 @@ You can drag the sliders!
 <Widget />
 ```
 
+<div className="invertColor">
+
 ![](./Screenshot-2025-04-02-at-16.29.13-504a54b42940bad2ac6f7c6d1eb0644c.png)
+
+</div>
 
 Each slider input sends a signal back to the WL kernel to re-evaluate the plot in real time. But this doesn’t mean you can’t export it to HTML.
 
@@ -763,7 +853,11 @@ AnimatePlot[
 ]
 ```
 
+<div className="invertColor">
+
 ![Looping Animation](./79d464329e6cd4511da6d59d370a0c58.gif)
+
+</div>
 
 This approach caches every frame in advance—great for offline use or lighter devices.
 
@@ -771,7 +865,7 @@ This approach caches every frame in advance—great for offline use or lighter d
 
 ## Reactive Data: Real-Time Graphics Updates
 
-Let’s simulate dynamic data updates using `Offload`, which enables reactive primitives like `Line`, `Disk`, etc.
+Let’s simulate data updates using `Offload`, which enables reactive primitives like `Line`, `Disk`, etc.
 
 ```wolfram
 myData = Table[{x, Sin[x]}, {x, 0, 5 Pi, 0.1}];
@@ -787,7 +881,11 @@ Update the data elsewhere:
 myData = Table[{x, Sinc[x]}, {x, 0, 5 Pi, 0.1}];
 ```
 
+<div className="invertColor">
+
 ![Reactive Plot Update](./e4493c9901a9f8e8dd64ca62128609a0.gif)
+
+</div>
 
 You can combine this with slide fragments, animations, or event triggers.
 
@@ -861,28 +959,13 @@ Options[PlotWidget] = {"DataA" -> {}, "DataB" -> {}};
 # Second slide
 ```
 
+<div className="invertColor">
+
 ![](./dummy-ezgif.com-video-to-gif-converter-d46f4f293449aeb85743284a1fc0f594.gif)
 
+</div>
+
 ---
-
-## External Event Wiring
-
-You can wire multiple widgets to the same global event ID:
-
-```markdown
-.slide
-
-First fragment <!-- .element: data-fragment-index="1" class="fragment" -->
-
-Second fragment <!-- .element: data-fragment-index="2" class="fragment" -->
-
-<SomeWidget1 Event={"my-first-slide"} /> 
-<SomeWidget2 Event={"my-first-slide"} /> 
-
-<SlideEventListener Id={"my-first-slide"} />
-```
-
-This lets you control multiple widgets from one place—great for large presentations.
 
 ## Confetti with External JS
 
@@ -943,33 +1026,48 @@ EventHandler[Ev, {
 <Party />
 ```
 
+<div className="invertColor">
+
 ![](./partypeople-ezgif.com-video-to-gif-converter-fab2bfd4b3c53149f1c4c4c3f6e93684.gif)
+
+</div>
 
 ---
 
 
-## Published Examples 📔
+## Published Examples 
 
 These presentations were all exported using the techniques above:
 
-- [Why fitting the raw data matters – Augsburg 2024](https://jerryi.github.io/wljs-demo/fitting_tds_ppt.html)
-- [Basic animation presentation](https://jerryi.github.io/wljs-demo/offload_slide.html)
-- [THz report on Fe₂Mo₃O₈ in a magnetic field](https://jerryi.github.io/wljs-demo/thz_report.html)
-- [Example with `ManipulatePlot`](https://jerryi.github.io/wljs-demo/habr_ppt3.html)
-- [2-slide animation demo](https://jerryi.github.io/wljs-demo/habr_ppt2.html)
+<Cards>
+
+    <DownloadFile 
+    title="Example with `Manipulate`"
+    href="./ppt_manipulate.html"
+  />
+    <DownloadFile 
+    title="2-slide animation demo"
+    href="./ppt_2slide.html"
+  />
+
+  <DownloadFile 
+    title="THz report on Fe₂Mo₃O₈ in a magnetic field"
+    href="./ppt_report.html"
+  />  
+</Cards>
+
 
 ---
 
 ## Conclusion
 
-This approach blends code and content into a single, powerful system. At a glance:
+This approach blends code and content into a single framework. At a glance:
 
 - Simpler than PowerPoint for tech-heavy talks
 - Fully reproducible (every visual has traceable code)
-- Runs in any browser—no dependencies
-- Supports dynamic or static export to a single HTML file (free of the license restrictions)
+- Supports dynamic or static export to a [single HTML file](./../../frontend/Share/Standalone-HTML) or PDF
 
-Markdown becomes your structure, Wolfram Language your engine (sometimes with a help of Javascript). With a little setup, you can focus on content—not formatting.
+Markdown becomes your structure, Wolfram Language your engine (sometimes with a help of Javascript). With a little setup, you can focus on content — not formatting.
 
 And yes, interactivity makes learning and presenting way more engaging. Your students and colleagues will thank you ☺️
 
@@ -979,9 +1077,8 @@ And yes, interactivity makes learning and presenting way more engaging. Your stu
 
 - [RevealJS](https://revealjs.com/) – Markdown presentations (core engine)
 - [Excalidraw](https://excalidraw.com/) – drawing board (SVG tool)
-- [WLJS Notebook Docs](https://jerryi.github.io/wljs-docs/)
+- [WLJS Notebook Docs](https://wljs.io/)
 - [Wolfram Engine](https://www.wolfram.com/engine/)
-- [Mathematica Programming Introduction (free PDF)](https://jerryi.github.io/wljs-docs/assets/files/MathProgrammingIntro-90327183685b448b1fc72200e4e1c507.pdf)
 
 ---
 
