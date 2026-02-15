@@ -1,0 +1,48 @@
+---
+title: Animating Hypotrochoids
+author: Refrigirator
+description: Spirograph-like curves arise from simple sums of rotating vectors; a tiny tweak in frequency or phase yields striking patterns
+tags: 
+  - animation
+  - math
+date: 2025-10-11
+---
+
+{/* add this script to the body  */}
+{/* https://cdn.jsdelivr.net/gh/WLJSTeam/web-components@latest/src/common/app.js */}
+<wljs-store kernel="./attachments/kernel-7674291466263714855.txt" json="./attachments/1fe7625d-8f85-4283-a23f-b12292392f79.txt"></wljs-store>
+
+
+Compact parametric form is : 
+$$
+x(t)=R\cos t+r\cos(kt+\varphi),\\ y(t)=R\sin t+r\sin(kt+\varphi),
+$$ 
+where \(k\) is the frequency ratio. Rational \(k\) ⇒ closed patterns; irrational \(k\) ⇒ long, nonrepeating traces. ℂ numbers allow to write such expressions much shorter, for instance:
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`ParametricPlot[ReIm[(*SpB[*)Power[I(*|*),(*|*)-t](*]SpB*) + 3 (*SpB[*)Power[I(*|*),(*|*)t/3](*]SpB*)], {t, 0, 4Pi}]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(FrontEndRef["2e93dc89-05e1-4882-a8cd-ec0bfeedc741"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKG6VaGqckW1jqGpimGuqaWFgY6SZaJKfopiYbJKWlpqYkm5sYAgCHyxY8"*)(*]VB*)`}</wljs-editor></WLJSWrapper>
+
+We can nicely decompose it back into 2 components and animate it using `Animate` expression and bunch of arrows:
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`Animate[
+	  ParametricPlot[ReIm[(*SpB[*)Power[I(*|*),(*|*)-t](*]SpB*) + 3 (*SpB[*)Power[I(*|*),(*|*)t/3](*]SpB*)], {t,0,u}, 
+	    Epilog->{
+	      Arrow[{{0,0}, ReIm[(*SpB[*)Power[I(*|*),(*|*)-u](*]SpB*)]}], 
+	      Arrow[{ ReIm[(*SpB[*)Power[I(*|*),(*|*)-u](*]SpB*)], ReIm[(*SpB[*)Power[I(*|*),(*|*)-u](*]SpB*) + 3 (*SpB[*)Power[I(*|*),(*|*)u/3](*]SpB*)]}]
+	    }, PlotRange->{{-4,4}, {-4,4}}, GridLines->Automatic,
+	    PlotStyle->(*VB[*)(RGBColor[1, 0, 0])(*,*)(*"1:eJxTTMoPSmNiYGAo5gUSYZmp5S6pyflFiSX5RcEsQBHn4PCQNGaQPAeQCHJ3cs7PyS8qYgCDD/ZQBgMDnAEA4iUPRg=="*)(*]VB*)
+	  ]
+	, {u, 0.001, 4Pi}, RefreshRate->30, Appearance->None]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(FrontEndRef["54067362-f5ed-424b-a94a-b0ac40f13ea1"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKm5oYmJkbmxnpppmmpuiaGJkk6SZamiTqJhkkJpsYpBkapyYaAgB6ZRWO"*)(*]VB*)`}</wljs-editor></WLJSWrapper>
+
+<Callout>
+Here we start from `0.001` to avoid zeros in `ParametricPlot`, othwersize it will throw a warning message
+</Callout>
+
+Now we can export it to GIF animation by rasterizing it into `AnimatedImage`:
+
+```wolfram
+Export["animation.gif", AnimatedImage @ a]
+```

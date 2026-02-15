@@ -1,0 +1,51 @@
+---
+title: Quick 3 band-stop filter
+description: A EQ-like band-stop filter mini app for processing any XY numerical data tables with interactive preview and real-time data manipulation.
+tags:
+  - signal-processing
+  - mini-app
+author: JerryI
+date: 2025-03-24
+---
+
+<div className='invertColor'>
+![](./design.png)
+</div>
+
+## Features
+- Block or amplify bands in real or Fourier space
+- See the changes immediately ✨
+- Columns selection, importers for csv, tsv, dat, xls data
+- Units agnostic
+- Batch processing
+
+<DownloadFile
+    title="Download"
+    description="Get the this mini-app"
+    href="./bandstop.wlw"
+/>
+
+Here it is in action:
+
+<div className='invertColor'>
+![](./action.gif)
+</div>
+
+## Workflow
+
+1. Import and select 2 columns (assumed to be XY)
+
+<div className='invertColor'>
+![](./col1.png)
+</div>
+
+2. Apply band-stoping
+
+<div className='invertColor'>
+![](./col2.png)
+</div>
+
+It is designed in the way that your data is filtered in real space first (left), then converted to Fourier space and filtered there (right), and after that converted back to real space with the same sampling used in the original data.
+
+A user can export from both stages depending on the application.
+

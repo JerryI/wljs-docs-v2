@@ -1,0 +1,9 @@
+<|"Notebook" -> <|"HaveToSaveAs" -> True, "Path" -> "/private/var/folders/fs/\
+ch7ddlhn7jz5vyg5k8bbrxyh0000gn/T/wljs_quicknotes/securely.wln", 
+   "PublicFields" -> {"Properties"}, "Quick" -> True|>, 
+ "Cells" -> {<|"Data" -> "", "Display" -> "codemirror", 
+    "Hash" -> "8b315267-7323-493d-9fc8-9b2248b52a64", "Invisible" -> False, 
+    "MetaOnly" -> False, "Props" -> <||>, "PublicFields" -> {"Properties"}, 
+    "State" -> "Idle", "Type" -> "Input", "UID" -> Null, 
+    "Notebook" -> "12844ce6-5fd7-4d21-b215-c95ae591da6c"|>}, 
+ "serializer" -> "jsfn4"|>

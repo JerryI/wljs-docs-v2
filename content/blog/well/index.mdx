@@ -1,0 +1,49 @@
+---
+title: Quantum Well
+date: 2024-06-08
+author: JerryI
+tags:
+  - quantum-physics
+  - research
+description: Solving the time-independent Schrödinger equation for a **finite square quantum well** using numerical eigensystem methods. This notebook computes the first few bound-state energy levels and wavefunctions, and provides an interactive visualization.
+---
+
+{/* add this script to the body  */}
+{/* https://cdn.jsdelivr.net/gh/WLJSTeam/web-components@latest/src/common/app.js */}
+<wljs-store kernel="./attachments/kernel-278696981435977083.txt" json="./attachments/3f753daa-f73d-4fc3-9ead-85a10dede7d0.txt"></wljs-store>
+
+
+## Initial parameters
+Clear all symbols to avoid conflicts. We use natural units where ℏ = 1 throughout.
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`ClearAll[v0, hb, d, m, V, op, u, V, x];`}</wljs-editor></WLJSWrapper>
+
+## Potential and Hamiltonian operator
+Define the finite square well potential `V(x)` — zero inside the well (|x| < d) and `v0` outside — and the 1D Hamiltonian operator `−(ℏ²/2m) ∂²/∂x² + V(x)`.
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`V[x_, v0_, d_] := (*TB[*)Piecewise[{{(*|*)0(*|*),(*|*)-d<=x<d(*|*)},{(*|*)v0(*|*),(*|*)True(*|*)}}](*|*)(*1:eJxTTMoPSmNkYGAo5gESAZmpyanlmcWpTvkVmUxAAQBzVQdd*)(*]TB*) ;
+	
+	op[u_[x_], m_, rest__] := - (*FB[*)(((*SpB[*)Power[hb(*|*),(*|*)2](*]SpB*))(*,*)/(*,*)(2 m))(*]FB*) u''[x] + V[x, rest] u[x];`}</wljs-editor></WLJSWrapper>
+
+## Interactive eigenstate viewer
+Use `NDEigensystem` to numerically solve for the first 6 energy eigenvalues and eigenfunctions with Dirichlet boundary conditions. The wavefunctions are shifted vertically by their energy for easy visualization. The black line shows the potential profile. Adjust **V0** (well depth), **Mass**, and **d** (half-width) with the sliders.
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`Manipulate[Block[{ev, ef, hb = 1.0},
+	
+	  {ev, ef} = NDEigensystem[{
+	    op[u[x], m, v0, d], DirichletCondition[u[x] == 0, True]
+	  }, u[x], {x, -2, 2}, 6];
+	
+	  Plot[Evaluate[ef + ev], {x,-2,2}, PlotRange->Full, Epilog->{
+	    Line @ Table[{x, V[x, v0, d] 2}, {x,-2,2,0.1}]
+	  }]
+	], 
+	  {{v0, 7, "V0"}, 1,7,3},
+	  {{m, 1.0, "Mass"}, 1,5,1},
+	  {{d, 0.1 3, "d"}, 0.1,0.1 5,0.1},
+	  ContinuousAction->True
+	]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(FrontEndRef["7f2661eb-8445-45e4-b197-f448c12e871c"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKm6cZmZkZpibpWpiYmOqamKaa6CYZWprrppmYWCQbGqVamBsmAwB6LRUk"*)(*]VB*)`}</wljs-editor></WLJSWrapper>
+
+*Try it*

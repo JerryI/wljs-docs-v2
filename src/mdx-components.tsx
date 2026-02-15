@@ -39,7 +39,7 @@ function WLJSWrapper({children}: {children: React.ReactNode}) {
       <div
         role="region"
         tabIndex={0}
-        className="text-[0.8125rem] px-3 py-3.5 overflow-auto max-h-[600px] fd-scroll-container focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-fd-ring"
+        className="text-[0.8125rem] px-3 py-3.5 overflow-auto fd-scroll-container focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-fd-ring"
         style={{ "--padding-right": "calc(var(--spacing) * 8)" }}
       >
         <pre className="min-w-full w-max *:flex *:flex-col">

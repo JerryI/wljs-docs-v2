@@ -1,0 +1,104 @@
+---
+title:  Dragging object in constrained area
+description: In this example, we construct a solid region with a Г-shaped cutout, where a small rectangle is going to be dragged by a user's mouse.
+author: JerryI
+tags:
+  - graphics
+  - regions
+  - interaction
+date: 2025-06-26
+---
+
+{/* add this script to the body  */}
+{/* https://cdn.jsdelivr.net/gh/WLJSTeam/web-components@latest/src/common/app.js */}
+<wljs-store kernel="./attachments/kernel-7738205344313459329.txt" json="./attachments/9195016d-bbf1-450b-a53c-e78a296606c9.txt"></wljs-store>
+
+
+
+Then we utilize a very powerful standard function of a Wolfram library, `RegionDistance`, allowing estimation of the minimal distance between regions in a single line.
+
+<Callout>
+Region computations are supported not only for `Region`, `Mesh`-like objects, but also basic geometrical primitives such as `Rectangle` are absolutely valid for the input.
+</Callout>
+
+## Region cutout
+We start from cutting a hole inside a big rectangle using boolean operations:
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`outer = RegionDifference[
+	  Rectangle[{-1,-1}, {1,1}],
+	  RegionUnion[
+	    Rectangle[{-0.9,-0.9}, {0.9,-0.4}]  ,
+	    Rectangle[{0.4,-0.9}, {0.9,0.4}]  
+	  ]
+	];
+	
+	outer = Rationalize[outer, 0];
+	RegionPlot[outer]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(FrontEndRef["7df6cee7-5278-40aa-9f46-1c5a0565a480"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKm6ekmSWnpprrmhqZW+iaGCQm6lqmmZjpGiabJhqYmpkmmlgYAACJ7BV6"*)(*]VB*)`}</wljs-editor></WLJSWrapper>
+
+<Callout type="warning">
+[There is a bug](https://mathematica.stackexchange.com/questions/314230/understanding-2d-regions-boolean-manipulation-graphics-vs-region) in the standard library of WL14. You need to apply `Rationalize` on the final primitive; otherwise, it won't work correctly.
+</Callout>
+
+## Dynamic Scene
+Here we assemble a dynamic scene, where we add a draggable red rectangle and update its position if the minimal distance between it and the outer region is greater than 0:
+
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`distanceOp = RegionDistance[outer, Translate[Rectangle[-{0.2,0.2}, {0.2,0.2}], #]]&;
+	
+	rect = {0.65, 0.15};
+	
+	RegionPlot[outer, Epilog->{
+	  Red, 
+	  Translate[EventHandler[
+	    Rectangle[-{0.2,0.2}, {0.2,0.2}], 
+	    {"dragsignal" -> Function[target,
+	      If[distanceOp[target] > 0, rect = target]
+	    ]}
+	  ], Offload[rect]]
+	}]`}</wljs-editor></WLJSWrapper>
+
+We use the `dragsignal` event instead of `drag` on the `Rectangle` to prevent the primitive from being actually dragged by the mouse, and instead update its position manually.
+
+> You may notice that the dragging behavior is a bit off our expectations. An object abruptly stops once the mouse enters the "forbidden" land.
+
+One easy approach to fix this (but not quite efficient) is to iteratively approach the target separately by the x- and y-axis:
+
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`distanceOp = RegionDistance[outer, Translate[Rectangle[-{0.2,0.2}, {0.2,0.2}], #]]&;
+	
+	rect = {0.65, 0.15};
+	
+	RegionPlot[outer, Epilog->{
+	  Red, 
+	  Translate[EventHandler[
+	    Rectangle[-{0.2,0.2}, {0.2,0.2}], 
+	    {"dragsignal" -> Function[target,
+	      rect = {
+	        If[distanceOp[{target[[1]], rect[[2]]}] > 0.01,
+	          target[[1]]
+	        ,
+	          FixedPoint[If[distanceOp[{#, rect[[2]]}] > 0.01,
+	             # + 0.01 (target[[1]] - #)   
+	          ,
+	             #
+	          ]&, rect[[1]]] - 0.01 (target[[1]] - rect[[1]]) 
+	        ],
+	        If[distanceOp[{rect[[1]], target[[2]]}] > 0.01,
+	          target[[2]]
+	        ,
+	          FixedPoint[If[distanceOp[{rect[[1]], #}] > 0.01,
+	             # + 0.01 (target[[2]] - #)   
+	          ,
+	             #
+	          ]&, rect[[2]]] - 0.01 (target[[2]] - rect[[2]])  
+	        ]
+	      }
+	    ]}
+	  ], Offload[rect]]
+	}]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(FrontEndRef["924af074-0985-4425-a7d1-38a69a41c04d"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKWxqZJKYZmJvoGlhamOqamBiZ6iaapxjqGlskmlkmmhgmG5ikAAByHRTi"*)(*]VB*)`}</wljs-editor></WLJSWrapper>
+
+Now it should feel *more natural*

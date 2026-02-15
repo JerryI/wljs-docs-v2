@@ -1,0 +1,66 @@
+---
+title:  Interactive Curve Fitting
+date: 2023-12-09
+author: JerryI
+description: Some primitives, as well as the entire canvas, can emit events on various user actions. Let's build an interactive Gaussian curve fit
+tags:
+  - graphics
+---
+
+{/* add this script to the body  */}
+{/* https://cdn.jsdelivr.net/gh/WLJSTeam/web-components@latest/src/common/app.js */}
+<wljs-store kernel="./attachments/kernel-1093096515169138256.txt" json="./attachments/5691b4bc-01e5-4284-a632-cbc12db8d3a3.txt"></wljs-store>
+
+Certain graphic primitives emit events. Some supported primitives, including `Point`, `Disk`, and `Rectangle`, support these patterns:
+
+<Card>
+
+- "drag": Makes the primitive draggable and returns coordinates 
+- "dragsignal": Captures dragging without moving the primitive itself; returns coordinates 
+- "dragall": Like "drag", but also fires events at drag start and end 
+- "click": Captures clicks without the Alt key 
+- "altclick": Captures clicks with the Alt key 
+- "mousedown": Fires on mouse press 
+- "mouseup": Fires on mouse release 
+- "mousemove": Captures movement 
+- "mouseover": Captures entry into element area 
+- "zoom": Captures mouse wheel input
+
+</Card>
+
+Here we combine "zoom" and "drag":
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`curve = {{-1,0}, {1,0}};
+	
+	Graphics[{
+	  Cyan, Line[curve // Offload], Red, PointSize[0.05],
+	  EventHandler[Point[{0,0.5}], {
+	    "drag" -> drag,
+	    "zoom" -> zoom
+	  }]
+	}, Frame->True, Axes->True, PlotRange->{{-1,1}, {0,1}}, "Controls"->False]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(Graphics[{RGBColor[0, 1, 1], Line[Offload[curve]], RGBColor[1, 0, 0], PointSize[0.05], EventListener[Point[{0, 0.5}], {"drag" -> "c969b663-92ab-4138-9657-0d52d5d44a12", "zoom" -> "c969b663-92ab-4138-9657-0d52d5d44a12"}]}, Frame -> True, Axes -> True, PlotRange -> {{-1, 1}, {0, 1}}, "Controls" -> False])(*,*)(*"1:eJydUUtOwzAQdYGKsuAQSGwj0TQJZFVBBWVRCZRwAaceF0uuB9lOhXoTuAG34ibgj6KKfjbM4mlmnt/TzPiiwYr3CCHmxMEjSsb7vho4mGr69irmJnY8PxPG8uOOr6Z3E5SohcuJ6HWwsZsJBbE6dfDEuUTKjHebt3oFe5yCCekgas8cPKNQthZr0J8fPr7G/Mhz5w7uV6CsnwwU6Cjpd5L4qhs9mGoS4nv8l9tUVSuh9gnTdFFf+mnLomyKYpSUKW2SbDi6Scoiv06uWJ6ynGUZHaZ79GvE5T/1YYMHTZcQWi+6ha0HPrl9B3OID1eTaCuqFnBo1XCUHxfx43aPtdUPq/kPm6CyGqWJc1Jp4Beag3te"*)(*]VB*)`}</wljs-editor></WLJSWrapper>
+
+But if you drag a red point, it won't do anything since `drag` and `zoom` functions are undefined.
+
+Let's start with a generator for our Gaussian curve:
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`ClearAll[generate];
+	generate[{x_, y_}, k_] := Table[{t, y Exp[- (*FB[*)(((*SpB[*)Power[(x - t)(*|*),(*|*)2](*]SpB*))(*,*)/(*,*)(2 k))(*]FB*)]}, {t,-1,1, 0.03}]`}</wljs-editor></WLJSWrapper>
+
+We should regenerate the curve every time we interact with a red point. Finally, we define our handlers:
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`defaults = {{0, 0.5}, 1/20.};
+	
+	drag[xy_] := (
+	  defaults[[1]] = xy;
+	  curve = generate @@ defaults;
+	)
+	
+	zoom[k_] := (
+	  defaults[[2]] = k / 20.;
+	  curve = generate @@ defaults;
+	)`}</wljs-editor></WLJSWrapper>
+
+*Now try to drag and use the mouse wheel on a point above*

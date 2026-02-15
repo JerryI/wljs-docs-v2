@@ -1,0 +1,274 @@
+---
+title:  Recreation of World of Goo or Bridge Construction Game with WLJS
+description: Here we shall try to model a system of interconnected bonds using the Verlet method. Then, we'll add some visuals to make it feel like a game.
+date: 2025-08-22
+author: JerryI
+preview: ./preview.jpg
+tags:
+  - physics
+  - game
+  - modelling
+---
+
+{/* add this script to the body  */}
+{/* https://cdn.jsdelivr.net/gh/WLJSTeam/web-components@latest/src/common/app.js */}
+
+<wljs-store kernel="./attachments/kernel-2039405790236998246.txt" json="./attachments/750b5a6f-68db-498f-89a6-d5e9974f261d.txt"></wljs-store>
+
+  <DownloadFile 
+    title="Download Notebook"
+    description="Get the complete code and resources"
+    href="./attachments/notebook-750.wln"
+  />
+
+## Motion Equations
+The system of connected points must obey Newton's laws and kinematic equations as well. To integrate them in real-time, Euler's method, RK (Runge-Kutta), or Verlet methods can be used. We will go for the Verlet method since it will be easier to apply constraints of the bonds in the future:
+
+$$
+x_{n+1} = 2 x_{n} - x_{n-1} + \frac{f_{n}}{m} \delta t^2
+$$
+
+We can try to apply it for the simples case, when $\mathbf{f}_{n} = - m\mathbf{x}/|\mathbf{x}|^4$ is sort of a gravity force caused by a red star in the center
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`estimateX[n_Integer, initialV_:0.01] := FixedPoint[Function[x,
+	  {
+	    2 x[[1]] - x[[2]] - 0.001 (*FB[*)((x[[1]])(*,*)/(*,*)((*SpB[*)Power[Norm[x[[1]]](*|*),(*|*)4](*]SpB*)))(*]FB*), 
+	    x[[1]], 
+	    x[[2]]
+	  }
+	], {
+	  {-1.0, 2 initialV 0.01},
+	  {-1.0, initialV 0.01},
+	  {-1.0, 0}
+	}, n];`}</wljs-editor></WLJSWrapper>
+
+Now let's plot our solutions for different initial conditions:
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true" encoded="true"  >{`Table%5B%7Bv%2C%20Table%5BestimateX%5Bn%2C%20v%5D%5B%5B1%5D%5D%2C%20%7Bn%2C%201%2C%20100%7D%5D%7D%2C%20%7Bv%2C0%2C4%7D%5D%3B%0A%25%20%2F%2F%20Transpose%3B%0AListLinePlot%5B%0A%20%20%25%5B%5B2%5D%5D%0A%2C%20PlotStyle%20-%3E%20AbsoluteDashing%5B%7B3%7D%5D%20%20%0A%2C%20PlotRange%20-%3E%202%7B%7B-1%2C1%7D%2C%20%7B-1%2C1%7D%7D%0A%2C%20PlotLegends%20-%3E%20%28StringTemplate%5B%22v%20%3D%20%60%60%22%5D%5B%23%5D%26%2F%40%20%25%5B%5B1%5D%5D%29%0A%2C%20Epilog%20-%3E%20%7BRed%2C%20Disk%5B%7B0%2C0%7D%2C%200.1%5D%7D%20%0A%2C%20Frame%20-%3E%20True%0A%2C%20AspectRatio%20-%3E%201%0A%5D`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(Legended[ToExpression[FrontEndRef["e819352d-9d13-4ad7-baab-dcd127eba72d"], InputForm], Placed[LineLegend[{Directive[PointSize[1/120], RGBColor[0.24, 0.6, 0.8], AbsoluteThickness[2], AbsoluteDashing[{3}]], Directive[PointSize[1/120], RGBColor[0.95, 0.627, 0.1425], AbsoluteThickness[2], AbsoluteDashing[{3}]], Directive[PointSize[1/120], RGBColor[0.455, 0.7, 0.21], AbsoluteThickness[2], AbsoluteDashing[{3}]], Directive[PointSize[1/120], RGBColor[0.922526, 0.385626, 0.209179], AbsoluteThickness[2], AbsoluteDashing[{3}]], Directive[PointSize[1/120], RGBColor[0.578, 0.51, 0.85], AbsoluteThickness[2], AbsoluteDashing[{3}]]}, {"v = 0", "v = 1", "v = 2", "v = 3", "v = 4"}, LegendMarkers -> {{False, Automatic}, {False, Automatic}, {False, Automatic}, {False, Automatic}, {False, Automatic}}, Joined -> {True, True, True, True, True}, LabelStyle -> {}, LegendLayout -> "Column"], After, Identity]])(*,*)(*"1:eJzVVL1rFEEUv0SNGhQ/sLCKUSxsDr29yJniHE7vcigXjLfR2tmdN8mQyYzMzMZcCrv8EdoI2omkE1JbWFiIiKCggvELJCjYCHbOR25JDgsLhXOKH2/fe/veb96+/R1NZJtuKxQKeq+Fqwxu1CGVChup4p3W04IZECSigy5l2EKDMBtziXTA+Q5amFBSmIYgjUVIM4MTDvFx64YzpfHy6YgUx0mpXBzDpFJMME6KJCWlqAIJrkQkFN5uoZ3Z13Y5AzC5JHjHe6dVBoHfkIUpjlMgdKhLpsUEBIZ0R7dOi2lDnaF3W6gzBalhCxDYOteUZMLEbAlCb98SGyYF5swlsUULoaePNc+dl1wqtTqyvH559SlSZX8+IHX7ljtfUKh9wEIt0ZJnBqZnWTonQGvmeoT4vk3xOtazTMyEQJc1cz3/CXXqzzek7n9/Ppns/4hUdfjlvevVR/1P/Ygb+shbtHGHz0itLR1aaa496X/qLx7+OHtl+StSb07eeXB45RVSJ5oDd689/g+of3p27PXPm++Ravutf9dd+vW/S33LTxu7p4XR6uip3CrlVpRb5dwa2yoeXsGCGkxiNQdK94jC4OYn7WITmGvwg6plRs7byaT9n+Xv6iTwov240KN8uWj+idFT0ysqToDHpsOBFn4/PJ+6Jx91C3dkZmLHx65ONi/8BWrU2Pm7lbpAQBhmOr8A1TiYdA=="*)(*]VB*)`}</wljs-editor></WLJSWrapper>
+
+*The case of v=3 must be related to the orbital velocity of a star*
+
+To see it animated we should repeat the calulations for every frame
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`With[{initialV = 3.0, handler}, Module[{
+	  point = {{-1.0, 2 initialV 0.01},
+	           {-1.0, initialV 0.01},
+	           {-1.0, 0}}
+	},
+	  handler = Function[Null,
+	    point[[3]] = point[[2]];
+	    point[[2]] = point[[1]];
+	
+	    point[[1]] = 2 point[[2]] - point[[3]] - (*FB[*)((point[[1]])(*,*)/(*,*)((*SpB[*)Power[Norm[point[[1]]](*|*),(*|*)4](*]SpB*)))(*]FB*) 0.001;  
+	    point = point; (* to trigger an update *)
+	  ];
+	
+	  Graphics[{
+	    Point[point // Offload],
+	    EventHandler[AnimationFrameListener[point // Offload], handler]
+	  },
+	    PlotRange->2{{-1,1}, {-1,1}}, 
+	    Epilog -> {Red, Disk[{0,0}, 0.1]},
+	    AspectRatio->1
+	  ]
+	] ]`}</wljs-editor></WLJSWrapper>
+
+## Constraints Algorithm
+The simplest and well-known approach for solving the bonds problem is approximating it with springs with finite or infinite stiffness. As it follows from [Wikipedia article](https://en.wikipedia.org/wiki/Verlet_integration):
+
+> In one dimension, the relationship between the unconstrained positions $\tilde{x}_i^{(n+1)}$ and the actual positions $x_i^{(n+1)}$ of points $i$ at time step $n$, given a desired constraint distance of $L$, can be found with the algorithm
+
+$$
+\begin{align*}
+d_1 &= \tilde{x}_2^{(n+1)} - \tilde{x}_1^{(n+1)}\\
+d_2 &= 1 - \frac{L}{|d_1|} \\
+x_1^{(n+1)} &= \tilde{x}_1^{(n+1)} + \tfrac{1}{2} s d_1 d_2 \\
+x_2^{(n+1)} &= \tilde{x}_2^{(n+1)} - \tfrac{1}{2} s d_1 d_2
+\end{align*}
+$$
+
+where $s$ is an effective stiffness constant: $s=1$ represents an infinitely stiff spring (hard bond), and $s < 1$ represents a soft bond.
+
+> Verlet integration is useful because it directly relates the force to the position, rather than solving the problem using velocities.
+
+<Callout>
+Constraints Algorithm is applied on the vertices __after__ Verlet integration has been performed
+</Callout>
+
+Let's draft a function, that takes the following arguments and process the data efficiently:
+- __list of vertices__
+- __list of indices of fixed vertices__
+- __list of bonds__:
+  - index A
+  - index B
+  - initial length
+  - stiffness
+ 
+And it should output a new list of vertices:
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true" fade="true" >{`processVertices[vertices_List, fixed_List, bonds_List] := Module[{
+	  coords  = vertices[[1]],
+	  coords2 = vertices[[2]],
+	  coords3 = vertices[[3]]
+	},
+	  Do[
+	    coords3 = coords2;
+	    coords2 = coords;
+	    
+	    Module[{
+	      integrated = 2 coords2 - coords3 + Table[{0,-1}, Length[coords]] 0.001
+	    },
+	    
+	      MapThread[Function[{i,j,l,s}, With[{
+	        d = integrated[[i]] - integrated[[j]]
+	      },{
+	        norm = Norm[d]
+	      },{
+	        m = 0.5 s Min[(l/(norm+0.001) - 1), 0.1]
+	             (* avoid blowing up the system *)
+	      },
+	      
+	        integrated[[i]] +=  m d;
+	        integrated[[j]] -=  m d;
+	        
+	      ]], RandomSample[bonds]// Transpose]; 
+	
+	      Map[Function[index, 
+	        integrated[[index]] = coords[[index]];
+	      ], fixed];
+	      
+	      coords = integrated;
+	    ];
+	
+	  , {2 5}];
+	
+	  {coords, coords2, coords3}
+	]`}</wljs-editor></WLJSWrapper>
+
+<Callout>
+For the stabillity it is recommended to apply constaints in random order
+</Callout>
+
+Let us try it on some basic example:
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`bridge = Join @@ Table[{{i, 75}, {i+5, 55}}, {i,1,100, 10}];
+	bonds = Join[
+	  Table[{i, i+1}, {i, 1, Length[bridge]-1, 2}],
+	  Table[{i, i+2}, {i, 1, Length[bridge]-2, 2}],
+	  Table[{i+1, i+3}, {i, 1, Length[bridge]-3, 2}]
+	];
+	bonds = Map[Join[#, {Norm[bridge[[#[[1]]]] - bridge[[#[[2]]]]], 0.7}//N]&, bonds];
+	
+	plotBridge[bridge_] := Graphics[{
+	  MapThread[{bridge[[#1]], bridge[[#2]]}&, bonds // Transpose] // Line,
+	  Point[bridge],
+	  ColorData[97][4], MapIndexed[Text[#2[[1]], #1]&, bridge]
+	}, PlotRange->{{0,100}, {0,100}}, "Controls"->False];
+	
+	plotBridge[bridge]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(FrontEndRef["645fd80a-7cc7-409b-8faf-7af5f30d845c"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKm5mYpqVYGCTqmicnm+uaGFgm6VqkJabpmiemmaYZG6RYmJgmAwCKKhYR"*)(*]VB*)`}</wljs-editor></WLJSWrapper>
+
+Let's run the simulation for a few iterations and plot the final result, while keeping [$1$, $2$] vertices fixed at the original positions
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`Module[{bridgeState = {bridge, bridge, bridge}},
+	  Do[
+	    bridgeState = processVertices[bridgeState, {1,2,19,20}, bonds];
+	  , {10}];
+	
+	  Show[plotBridge[bridge], plotBridge[bridgeState[[1]]]]
+	]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(FrontEndRef["e74bf2a8-103b-4e42-9480-0f7db23627d4"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKp5qbJKUZJVroGhoYJ+mapJoY6VqaWBjoGqSZpyQZGZsZmaeYAACBhBU/"*)(*]VB*)`}</wljs-editor></WLJSWrapper>
+
+Great! At least it did not collapse 🙂 It would be great to see it live. For this we apply the same strategy with `Offload` technique
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`Module[{bridgeState, lines, points, handler},
+	
+	  handler = Function[Null, 
+	    bridgeState = processVertices[bridgeState, {1,2,19,20}, bonds];
+	    lines = MapThread[{bridgeState[[1,#1]], bridgeState[[1,#2]]}&, bonds // Transpose];
+	  ];
+	
+	  bridgeState = {bridge, bridge, bridge};
+	  lines = MapThread[{bridgeState[[1,#1]], bridgeState[[1,#2]]}&, bonds // Transpose];
+	  points = bridge;
+	
+	  Show[plotBridge[bridge], Graphics[{
+	    ColorData[97][1], Point[points // Offload],
+	    Line[lines // Offload],
+	    EventHandler[AnimationFrameListener[lines // Offload], handler]
+	  }]]
+	]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(FrontEndRef["51ad9ca7-a82a-4283-849d-98f646c5a7f4"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKmxomplgmJ5rrJloYJeqaGFkY61qYWKboWlqkmZmYJZsmmqeZAACEShWJ"*)(*]VB*)`}</wljs-editor></WLJSWrapper>
+
+## Preparing Graphics
+The original inspiration was a puzzle video game developed and published by 2D Boy - __The World of Goo__. It was first released in 2008. In the game, players must use balls of goo to build structures, such as bridges, towers and etc.
+
+We start from the background, and add some blur to it:
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`background = NotebookRead[NotebookStore["repulse-f32"]];
+	clouds = NotebookRead[NotebookStore["bother-eb0"]];`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`{clouds, Thumbnail@background}`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`{{(*VB[*)(FrontEndRef["61d51723-bf76-43f7-b419-75b77f7ae537"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKmxmmmBqaGxnrJqWZm+maGKeZ6yaZGFrqmpsmmZunmSemmhqbAwB4MxUn"*)(*]VB*),(*VB[*)(FrontEndRef["4e94aecc-445f-464b-b79c-4e151d7c0bb1"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKm6RamiSmJifrmpiYpumamJkk6SaZWwK5qYamhinmyQZJSYYAjJMWAA=="*)(*]VB*)},(*VB[*)(FrontEndRef["0ffd8dd8-97c0-462f-a1fe-20e5b7df7bf3"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKG6SlpVikpFjoWponG+iamBml6SYapqXqGhmkmiaZp6SZJ6UZAwCSPhZu"*)(*]VB*)}`}</wljs-editor></WLJSWrapper>
+
+## Rendering
+
+Rendering the scene using retained mode with pure raster graphics is more efficient, especially when applying special effects.
+
+For this reason we use Javascript Canvas API, which is mapped 1:1 to `Canvas2D` library
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true" encoded="true"  >{`Needs%5B%22Canvas2D%60%22-%3E%22ctx%60%22%5D%20%2F%2F%20Quiet%3B%20`}</wljs-editor></WLJSWrapper>
+
+Let's define a helper function for rendering bonds:
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true" encoded="true" fade="true" >{`drawBonds%5Bcontext_%2C%20vert_%2C%20edges_%2C%20fixed_%2C%20%7Bwidth_%2C%20height_%7D%5D%20%3A%3D%20%28%0A%20%20ctx%60BeginPath%5Bcontext%5D%3B%0A%20%20ctx%60SetLineWidth%5Bcontext%2C%204%5D%3B%0A%20%20ctx%60SetStrokeStyle%5Bcontext%2C%20%22%232C6C75%22%5D%3B%0A%0A%20%20Do%5B%0A%20%20%20%20ctx%60MoveTo%5Bcontext%2C%20%7B0%2C%20height%7D%20-%20%7B-1%2C%201%7D%20vert%5B%5Bp%5B%5B1%5D%5D%5D%5D%5D%3B%0A%20%20%20%20ctx%60LineTo%5Bcontext%2C%20%7B0%2C%20height%7D%20-%20%7B-1%2C%201%7D%20vert%5B%5Bp%5B%5B2%5D%5D%5D%5D%5D%3B%0A%20%20%2C%20%7Bp%2C%20edges%7D%5D%3B%0A%0A%20%20ctx%60Stroke%5Bcontext%5D%3B%0A%0A%20%20ctx%60SetFillStyle%5Bcontext%2C%20%22%231C4E28%22%5D%3B%0A%0A%20%20%28%0A%20%20%20%20ctx%60BeginPath%5Bcontext%5D%3B%0A%20%20%20%20ctx%60Arc%5Bcontext%2C%20%7B0%2C%20height%7D%20-%20%7B-1%2C%201%7D%20%23%2C%206%2C%200%2C%202.0%20Pi%5D%3B%0A%20%20%20%20ctx%60Fill%5Bcontext%5D%3B%0A%20%20%29%20%26%2F%40%20vert%3B%0A%0A%20%20ctx%60SetFillStyle%5Bcontext%2C%20RGBColor%5B0.9%2C%200.4%2C%200.4%5D%2F%2FDarker%5D%3B%0A%20%20%0A%20%20%28%0A%20%20%20%20ctx%60BeginPath%5Bcontext%5D%3B%0A%20%20%20%20ctx%60Arc%5Bcontext%2C%20%7B0%2C%20height%7D%20-%20%7B-1%2C%201%7D%20vert%5B%5B%23%5D%5D%2C%204%2C%200%2C%202.0%20Pi%5D%3B%0A%20%20%20%20ctx%60Fill%5Bcontext%5D%3B%0A%20%20%29%20%26%2F%40%20fixed%3B%0A%29%3B`}</wljs-editor></WLJSWrapper>
+
+Here we use the same bridge section and render it using our new raster renderer:
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true" encoded="true"  >{`Module%5B%7B%0A%20%20ctx%20%3D%20ctx%60Canvas2D%5B%5D%0A%7D%2C%0A%20%20drawBonds%5Bctx%2C%205%20bridge%2C%20bonds%2C%20%7B1%2C2%2C19%2C20%7D%2C%20%7B500%2C500%7D%5D%3B%0A%20%20ctx%60Dispatch%5Bctx%5D%3B%0A%20%20Image%5Bctx%2C%20ImageResolution-%3E%7B500%2C500%7D%5D%0A%5D`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(FrontEndRef["f17c87d7-06cf-41d1-838b-c7c9f553800a"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKpxmaJ1uYp5jrGpglp+maGKYY6loYWyTpJpsnW6aZmhpbGBgkAgCEmBV+"*)(*]VB*)`}</wljs-editor></WLJSWrapper>
+
+As a basic visual effect, we can add a trailing effect to the cursor, similar to how it was done in the original game (to some extent):
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true" encoded="true" fade="true" >{`drawPointer%5Bcontext_%2C%20trail_%2C%20edges_%2C%20%7Bwidth_%2C%20height_%7D%5D%20%3A%3D%20%28%0A%20%20ctx%60BeginPath%5Bcontext%5D%3B%0A%20%20ctx%60SetLineWidth%5Bcontext%2C%202%5D%3B%0A%20%20ctx%60SetStrokeStyle%5Bcontext%2C%20RGBColor%5B0.4%2C%200.6%2C%200.9%5D%2F%2FDarker%5D%3B%0A%0A%20%20Do%5B%0A%20%20%20%20ctx%60MoveTo%5Bcontext%2C%20%7B0%2C%20height%7D%20-%20%7B-1%2C%201%7D%20t%5B%5B1%5D%5D%5D%3B%0A%20%20%20%20ctx%60LineTo%5Bcontext%2C%20%7B0%2C%20height%7D%20-%20%7B-1%2C%201%7D%20t%5B%5B2%5D%5D%5D%3B%0A%20%20%2C%20%7Bt%2C%20edges%7D%5D%3B%0A%0A%20%20ctx%60Stroke%5Bcontext%5D%3B%0A%20%20ctx%60SetFillStyle%5Bcontext%2C%20RGBColor%5B0.4%2C%200.9%2C%200.6%5D%2F%2FDarker%5D%3B%0A%0A%20%20Do%5B%0A%20%20%20%20ctx%60BeginPath%5Bcontext%5D%3B%0A%20%20%20%20ctx%60Arc%5Bcontext%2C%20%7B0%2C%20height%7D%20-%20%7B-1%2C%201%7D%20trail%5B%5Bi%5D%5D%2C%206.0%2Fi%2C%200%2C%202.0%20Pi%5D%3B%0A%20%20%20%20ctx%60Fill%5Bcontext%5D%3B%0A%20%20%2C%20%7Bi%2C%20Length%5Btrail%5D%7D%5D%3B%0A%29%3B`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true" encoded="true" fade="true" >{`Module%5B%7B%0A%20%20ctx%20%3D%20ctx%60Canvas2D%5B%5D%2C%0A%20%20trail%20%3D%20Table%5B%7B0%2C0%7D%2C%20%7B10%7D%5D%2C%0A%20%20frame%20%3D%20CreateUUID%5B%5D%2C%0A%20%20target%20%3D%20%7B0%2C0%7D%2C%0A%20%20state%20%3D%20Table%5Bbridge%20%2F%2F%20N%2C%20%7B3%7D%5D%0A%7D%2C%0A%20%20EventHandler%5Bframe%2C%20Function%5BNull%2C%0A%20%20%20%20ctx%60ClearRect%5Bctx%2C%20%7B0%2C0%7D%2C%20%7B500%2C500%7D%5D%3B%0A%20%20%20%20drawBonds%5Bctx%2C%205%20state%5B%5B1%5D%5D%2C%20bonds%2C%20%7B1%2C2%2C19%2C20%7D%2C%20%7B500%2C500%7D%5D%3B%0A%20%20%20%20drawPointer%5Bctx%2C%20trail%2C%20%7B%7D%2C%20%7B500%2C500%7D%5D%3B%0A%20%20%20%20ctx%60Dispatch%5Bctx%5D%3B%20%20%0A%0A%20%20%20%20trail%20%3D%20RotateRight%5Btrail%2C%201%5D%3B%0A%20%20%20%20trail%5B%5B1%5D%5D%20%3D%20target%3B%0A%0A%20%20%20%20state%20%3D%20processVertices%5Bstate%2C%20%7B1%2C2%2C19%2C20%7D%2C%20bonds%5D%3B%0A%20%20%5D%5D%3B%0A%20%20%0A%20%20EventHandler%5BImage%5Bctx%2C%20%0A%20%20%20%20ImageResolution-%3E%7B500%2C500%7D%2C%0A%20%20%20%20Epilog-%3EAnimationFrameListener%5Bctx%2C%20%22Event%22-%3Eframe%5D%0A%20%20%5D%2C%20%7B%0A%20%20%20%20%22mousemove%22-%3EFunction%5Bxy%2C%0A%20%20%20%20%20%20target%20%3D%20%7B0%2C500%7D%20%2B%20%7B1%2C-1%7D%20xy%3B%0A%20%20%5D%7D%5D%0A%5D`}</wljs-editor></WLJSWrapper>
+
+## Utils
+For adding more bonds to the structure of a bridge, we need to find the shortest links (maximum 2) to the cursor position. Here is a little function for this purpose:
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`findConnections[vertx_, p_, th_: 2.0] := 
+	  With[{a = 
+	     MapIndexed[Function[{val, i}, 
+	       With[{n = Norm[p - val]}, 
+	        If[n < th, {i[[1]], n}, Nothing]]], vertx]}, 
+	   If[Length[a] == 0, {}, 
+	    If[Length[a] > 2, 
+	     TakeSmallestBy[a, Function[v, v[[2]]], 2], a][[All, 1]]]]`}</wljs-editor></WLJSWrapper>
+
+It is far from the optimal solution, since it naively checks all vertices available. 
+
+## Wrapping up
+As the last step, we add a click listener to append new vertices and bonds to the system. For the visuals, we also add a background image and moving clouds in a simple linear pattern:
+
+<wljs-html encoded="true">{`%3Cdiv%20id%3D%22tldr-goo%22%3E%3C%2Fdiv%3E`}</wljs-html>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true" encoded="true"  >{`With%5B%7B%0A%20%20frameRender%20%3D%20Unique%5B%5D%2C%0A%20%20ctx%20%3D%20ctx%60Canvas2D%5B%5D%2C%0A%20%20fixed%20%3D%20NotebookRead%20%40%20NotebookStore%5B%22contemporaneously-be4%22%5D%0A%7D%2C%20Module%5B%7B%0A%20%20p%2C%20pointer%2C%20trail%2C%20target%2C%20nearbyVertices%2C%20bonds%2C%20%0A%20%20offset%2C%20targetOffset%2C%20cloudsPos%2C%20cloudsImages%0A%7D%2C%20%0A%20%20p%20%3D%20NotebookRead%20%40%20NotebookStore%5B%22audience-36d%22%5D%3B%0A%20%20bonds%20%3D%20NotebookRead%20%40%20NotebookStore%5B%22huckster-6b8%22%5D%3B%0A%20%20%0A%20%20nearbyVertices%20%3D%20%7B%7D%3B%0A%20%20cloudsPos%20%3D%20NotebookRead%20%40%20NotebookStore%5B%22circumvention-9f5%22%5D%3B%0A%20%20%0A%20%20cloudsImages%20%3D%20RandomChoice%5Bclouds%2C%205%5D%3B%0A%20%20%0A%0A%20%20pointer%20%3D%20%7B250%2C250%7D%3B%0A%20%20offset%20%3D%200.0%3B%0A%20%20targetOffset%20%3D%20-150%3B%0A%20%20target%20%3D%20pointer%3B%0A%20%20trail%20%3D%20Table%5Bpointer%2C%20%7B10%7D%5D%3B%0A%20%20%0A%20%20frameRender%20%3D%20%20Function%5BNull%2C%0A%20%20%20%20%0A%20%20%20%20%28%2A%20clear%20and%20translate%20the%20screen%20buffer%20%2A%29%0A%20%20%20%20ctx%60ClearRect%5Bctx%2C%20%7B0%2C0%7D%2C%20%7B500%2C500%7D%5D%3B%0A%20%20%20%20ctx%60Translate%5Bctx%2C%20%7B0%2C%20offset%7D%5D%3B%0A%0A%20%20%20%20%28%2A%20background%20%2A%29%0A%20%20%20%20ctx%60DrawImage%5Bctx%2C%20background%2C%20%7B0%2C0%7D%5D%3B%0A%20%20%20%20MapThread%5Bctx%60DrawImage%5Bctx%2C%20%231%2C%20%232%5D%26%2C%20%7BcloudsImages%2C%20cloudsPos%7D%5D%3B%0A%0A%20%20%20%20%28%2A%20draw%20bridge%20%2A%29%0A%20%20%20%20drawBonds%5Bctx%2C%20p%5B%5B1%5D%5D%2C%20bonds%2C%20fixed%2C%20%7B500%2C500%7D%5D%3B%0A%0A%20%20%20%20%0A%20%20%20%20%28%2A%20draw%20a%20cursor%20%2A%29%0A%20%20%20%20drawPointer%5Bctx%2C%20trail%2C%20%7Btrail%5B%5B1%5D%5D%2C%20p%5B%5B1%2C%20%23%5D%5D%7D%20%26%2F%40%20nearbyVertices%2C%20%7B500%2C500%7D%5D%3B%0A%0A%20%20%20%20%28%2A%20reset%20transformation%20and%20flip%20the%20buffers%20%2A%29%0A%20%20%20%20ctx%60Translate%5Bctx%2C%20%7B0%2C%20-offset%7D%5D%3B%0A%20%20%20%20ctx%60Dispatch%5Bctx%5D%3B%0A%0A%20%20%20%20%28%2A%20trail%20computations%20%2A%29%0A%20%20%20%20pointer%20%3D%200.35%20%28target%20%2B%20%7B0%2C1%7D%20offset%29%20%2B%200.65%20pointer%3B%0A%20%20%20%20trail%20%3D%20RotateRight%5Btrail%2C%201%5D%3B%0A%20%20%20%20trail%5B%5B1%5D%5D%20%3D%20pointer%3B%0A%0A%20%20%20%20%28%2A%20animation%20of%20clouds%20%2A%29%0A%20%20%20%20cloudsPos%20%3D%20Map%5BIf%5B%23%5B%5B1%5D%5D%20%3E%20500%2C%20%7B-150%2C%20%23%5B%5B2%5D%5D%7D%2C%20%23%20%2B%20%7B1%2C0%7D%5D%26%2C%20cloudsPos%5D%3B%0A%0A%20%20%20%20%28%2A%20camera%20animation%20%2A%29%0A%20%20%20%20If%5Btarget%5B%5B2%5D%5D%20%20%3C%20100%20%26%26%20targetOffset%20%3E%20-200%2C%20targetOffset-%3D6.0%5D%3B%0A%20%20%20%20If%5Btarget%5B%5B2%5D%5D%20%20%3E%20500-100%20%26%26%20targetOffset%20%3C%200%2C%20targetOffset%2B%3D6.0%5D%3B%0A%0A%20%20%20%20offset%20%3D%20offset%20%2B%200.1%20%28targetOffset%20-%20offset%29%3B%0A%0A%20%20%20%20%28%2A%20perform%20Verlet%20%2A%29%0A%20%20%20%20p%20%3D%20processVertices%5Bp%2C%20fixed%2C%20bonds%5D%3B%0A%20%20%5D%3B%0A%0A%20%20EventHandler%5BImage%5Bctx%2C%20ImageResolution-%3E%7B500%2C500%7D%2C%20Epilog-%3E%7B%0A%20%20%20%20EventHandler%5BAnimationFrameListener%5Bctx%5D%2C%20frameRender%5D%0A%20%20%7D%5D%2C%20%7B%0A%20%20%20%20%22click%22%20-%3E%20Function%5Bxy%2C%0A%20%20%20%20%20%20p%5B%5B1%5D%5D%20%3D%20Append%5Bp%5B%5B1%5D%5D%2C%20pointer%5D%3B%0A%20%20%20%20%20%20p%5B%5B2%5D%5D%20%3D%20Append%5Bp%5B%5B2%5D%5D%2C%20pointer%5D%3B%0A%20%20%20%20%20%20p%5B%5B3%5D%5D%20%3D%20Append%5Bp%5B%5B3%5D%5D%2C%20pointer%5D%3B%0A%20%20%20%20%20%20With%5B%7Blength%20%3D%20Length%5Bp%5B%5B1%5D%5D%5D%7D%2C%20%0A%20%20%20%20%20%20%20%20bonds%20%3D%20Join%5Bbonds%2C%20Table%5B%0A%20%20%20%20%20%20%20%20%20%20%7Blength%2C%20i%2C%20Norm%5Bpointer%20-%20p%5B%5B1%2C%20i%5D%5D%5D%2C%200.3%7D%0A%20%20%20%20%20%20%20%20%2C%20%7Bi%2C%20nearbyVertices%7D%5D%5D%3B%0A%20%20%20%20%20%20%5D%3B%0A%20%20%20%20%5D%2C%0A%20%20%20%20%22mousemove%22%20-%3E%20Function%5Bxy%2C%0A%20%20%20%20%20%20target%20%3D%20%7B0%2C%20500%7D%20-%20%7B-1%2C%201%7D%20xy%3B%0A%20%20%20%20%20%20%28%2A%20scan%20for%20vertices%20near%20the%20cursor%20%2A%29%0A%20%20%20%20%20%20nearbyVertices%20%3D%20findConnections%5Bp%5B%5B1%5D%5D%2C%20pointer%2C%2060%5D%3B%0A%20%20%20%20%5D%0A%20%20%7D%5D%0A%5D%5D`}</wljs-editor></WLJSWrapper>
+
+This wasn't that hard, was it? It is amazing how powerful Wolfram Language becomes once bridged with web-tech sandbox tools:
+
+<LazyVideo url="./world_of_goo2.mp4"/>
+
+<Callout type="idea">
+*If you are reading this from a web page and not from the WLJS Notebook:*
+
+Some resources were kept within the notebook storage. Download the original notebook from the heading section to have all images and precalculated vertices.
+</Callout>
+

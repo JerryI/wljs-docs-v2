@@ -1,0 +1,103 @@
+---
+title: Time-domain Echo Removal
+description: It is common in time-domain spectroscopy to observe copies of the initial system response due to impedance mismatch. If deconvolution is not possible using slab-like models, then we have to smoothly suppress them to avoid artifacts in further processing
+author: JerryI
+date: 2025-11-25
+tags:
+  - signal-processing
+---
+
+{/* add this script to the body  */}
+{/* https://cdn.jsdelivr.net/gh/WLJSTeam/web-components@latest/src/common/app.js */}
+<wljs-store kernel="./attachments/kernel-5982214645333806109.txt" json="./attachments/62ec207b-e884-499a-bcbc-79381cfa3d79.txt"></wljs-store>
+
+  <DownloadFile
+    title="Download Notebook"
+    description="Get the complete code"
+    href="./attachments/notebook-62e.wln"
+  />
+
+We perform a 'surgery' by applying an envelope function to the signal to suppress echoes, which cause oscillations in the frequency domain:
+
+
+<wljs-html encoded="true">{`%3Cdiv%20class%3D%22text-center%20w-full%22%3E%3Csvg%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20918%20286.86328125%22%3E%0A%20%20%3C%21--%20svg-source%3Aexcalidraw%20--%3E%0A%20%20%0A%20%20%3Cdefs%3E%0A%20%20%20%20%3Cstyle%20class%3D%22style-fonts%22%3E%0A%20%20%20%20%20%20%40font-face%20%7B%0A%20%20%20%20%20%20%20%20font-family%3A%20%22Virgil%22%3B%0A%20%20%20%20%20%20%20%20src%3A%20url%28%22https%3A%2F%2Funpkg.com%2F%40excalidraw%2Fexcalidraw%40undefined%2Fdist%2Fexcalidraw-assets%2FVirgil.woff2%22%29%3B%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%40font-face%20%7B%0A%20%20%20%20%20%20%20%20font-family%3A%20%22Cascadia%22%3B%0A%20%20%20%20%20%20%20%20src%3A%20url%28%22https%3A%2F%2Funpkg.com%2F%40excalidraw%2Fexcalidraw%40undefined%2Fdist%2Fexcalidraw-assets%2FCascadia.woff2%22%29%3B%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%40font-face%20%7B%0A%20%20%20%20%20%20%20%20font-family%3A%20%22Assistant%22%3B%0A%20%20%20%20%20%20%20%20src%3A%20url%28%22https%3A%2F%2Funpkg.com%2F%40excalidraw%2Fexcalidraw%40undefined%2Fdist%2Fexcalidraw-assets%2FAssistant-Regular.woff2%22%29%3B%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%3C%2Fstyle%3E%0A%20%20%20%20%0A%20%20%3C%2Fdefs%3E%0A%20%20%3Cg%20stroke-linecap%3D%22round%22%3E%3Cg%20transform%3D%22translate%28150%20150.6328125%29%20rotate%280%20254%200%29%22%3E%3Cpath%20d%3D%22M0%200%20C84.67%200%2C%20423.33%200%2C%20508%200%20M0%200%20C84.67%200%2C%20423.33%200%2C%20508%200%22%20stroke%3D%22%231e1e1e%22%20stroke-width%3D%222%22%20fill%3D%22none%22%3E%3C%2Fpath%3E%3C%2Fg%3E%3C%2Fg%3E%3Cmask%3E%3C%2Fmask%3E%3Cg%20stroke-linecap%3D%22round%22%3E%3Cg%20transform%3D%22translate%28163%20149.6328125%29%20rotate%280%20229%20-8.5%29%22%3E%3Cpath%20d%3D%22M0%200%20C2.41%20-27.08%2C%204.83%20-54.17%2C%209%20-101%20M0%200%20C2.63%20-29.51%2C%205.26%20-59.01%2C%209%20-101%20M9%20-101%20C9%20-34.42%2C%209%2032.17%2C%209%2084%20M9%20-101%20C9%20-28.22%2C%209%2044.56%2C%209%2084%20M9%2084%20C11.13%2061.94%2C%2013.25%2039.87%2C%2017%201%20M9%2084%20C11.02%2063.06%2C%2013.04%2042.12%2C%2017%201%20M17%201%20C49.58%201%2C%2082.16%201%2C%20129%201%20M17%201%20C44.64%201%2C%2072.27%201%2C%20129%201%20M129%201%20C132.96%20-7.38%2C%20136.91%20-15.75%2C%20146%20-35%20M129%201%20C132.53%20-6.48%2C%20136.06%20-13.96%2C%20146%20-35%20M146%20-35%20C146.73%20-6.5%2C%20147.46%2022.01%2C%20148%2043%20M146%20-35%20C146.57%20-12.8%2C%20147.14%209.39%2C%20148%2043%20M148%2043%20C150.6%2029.36%2C%20153.2%2015.72%2C%20156%201%20M148%2043%20C150.49%2029.95%2C%20152.97%2016.9%2C%20156%201%20M156%201%20C186.07%201%2C%20216.14%201%2C%20259%201%20M156%201%20C183.72%201%2C%20211.44%201%2C%20259%201%20M259%201%20C263.17%20-6.51%2C%20267.34%20-14.01%2C%20274%20-26%20M259%201%20C262.88%20-5.98%2C%20266.75%20-12.95%2C%20274%20-26%20M274%20-26%20C274.31%20-9.64%2C%20274.62%206.71%2C%20275%2027%20M274%20-26%20C274.36%20-7.03%2C%20274.72%2011.94%2C%20275%2027%20M275%2027%20C278.39%2018.69%2C%20281.77%2010.37%2C%20286%200%20M275%2027%20C279.33%2016.37%2C%20283.66%205.74%2C%20286%200%20M286%200%20C334.72%200.28%2C%20383.44%200.57%2C%20458%201%20M286%200%20C321.07%200.2%2C%20356.13%200.41%2C%20458%201%22%20stroke%3D%22%231971c2%22%20stroke-width%3D%222%22%20fill%3D%22none%22%3E%3C%2Fpath%3E%3C%2Fg%3E%3C%2Fg%3E%3Cmask%3E%3C%2Fmask%3E%3Cg%20stroke-linecap%3D%22round%22%3E%3Cg%20transform%3D%22translate%28165%20152.1328125%29%20rotate%280%20229%20-8.5%29%22%3E%3Cpath%20d%3D%22M0%200%20C3.27%20-36.65%2C%206.53%20-73.31%2C%209%20-101%20M0%200%20C2.87%20-32.26%2C%205.75%20-64.52%2C%209%20-101%20M9%20-101%20C9%20-42.91%2C%209%2015.19%2C%209%2084%20M9%20-101%20C9%20-48.78%2C%209%203.44%2C%209%2084%20M9%2084%20C11.23%2060.84%2C%2013.46%2037.69%2C%2017%201%20M9%2084%20C11.58%2057.23%2C%2014.16%2030.47%2C%2017%201%20M17%201%20C58.96%201%2C%20100.93%201%2C%20129%201%20M17%201%20C49.73%201%2C%2082.47%201%2C%20129%201%20M129%201%20C132.69%20-1.37%2C%20136.38%20-3.74%2C%20143%20-8%20M129%201%20C134.51%20-2.54%2C%20140.02%20-6.08%2C%20143%20-8%20M143%20-8%20C144.19%20-5.15%2C%20145.38%20-2.29%2C%20148%204%20M143%20-8%20C144.72%20-3.88%2C%20146.43%200.24%2C%20148%204%20M148%204%20C149.64%203.39%2C%20151.27%202.77%2C%20156%201%20M148%204%20C149.92%203.28%2C%20151.83%202.56%2C%20156%201%20M156%201%20C194.01%201%2C%20232.02%201%2C%20259%201%20M156%201%20C189.75%201%2C%20223.51%201%2C%20259%201%20M259%201%20C261.64%200.56%2C%20264.28%200.12%2C%20271%20-1%20M259%201%20C262.17%200.47%2C%20265.34%20-0.06%2C%20271%20-1%20M271%20-1%20C271.43%20-0.79%2C%20271.85%20-0.57%2C%20273%200%20M271%20-1%20C271.57%20-0.72%2C%20272.14%20-0.43%2C%20273%200%20M273%200%20C277.65%200%2C%20282.29%200%2C%20286%200%20M273%200%20C276.45%200%2C%20279.89%200%2C%20286%200%20M286%200%20C336.89%200.3%2C%20387.78%200.59%2C%20458%201%20M286%200%20C336.74%200.3%2C%20387.48%200.59%2C%20458%201%22%20stroke%3D%22%23f08c00%22%20stroke-width%3D%222%22%20fill%3D%22none%22%3E%3C%2Fpath%3E%3C%2Fg%3E%3C%2Fg%3E%3Cmask%3E%3C%2Fmask%3E%3Cg%20stroke-linecap%3D%22round%22%3E%3Cg%20stroke-opacity%3D%220.2%22%20fill-opacity%3D%220.2%22%20transform%3D%22translate%28307%2047.6328125%29%20rotate%280%200%2026%29%22%3E%3Cpath%20d%3D%22M0%200%20C0%2019.5%2C%200%2039.01%2C%200%2052%20M0%200%20C0%2012.77%2C%200%2025.54%2C%200%2052%22%20stroke%3D%22%23e03131%22%20stroke-width%3D%222%22%20fill%3D%22none%22%3E%3C%2Fpath%3E%3C%2Fg%3E%3Cg%20stroke-opacity%3D%220.2%22%20fill-opacity%3D%220.2%22%20transform%3D%22translate%28307%2047.6328125%29%20rotate%280%200%2026%29%22%3E%3Cpath%20d%3D%22M0%2052%20L-6.34%2038.41%20L6.34%2038.41%20L0%2052%22%20stroke%3D%22none%22%20stroke-width%3D%220%22%20fill%3D%22%23e03131%22%20fill-rule%3D%22evenodd%22%3E%3C%2Fpath%3E%3Cpath%20d%3D%22M0%2052%20C-2.38%2046.9%2C%20-4.76%2041.8%2C%20-6.34%2038.41%20M0%2052%20C-1.56%2048.66%2C%20-3.11%2045.32%2C%20-6.34%2038.41%20M-6.34%2038.41%20C-3.01%2038.41%2C%200.32%2038.41%2C%206.34%2038.41%20M-6.34%2038.41%20C-3.4%2038.41%2C%20-0.45%2038.41%2C%206.34%2038.41%20M6.34%2038.41%20C4.36%2042.65%2C%202.38%2046.9%2C%200%2052%20M6.34%2038.41%20C4.32%2042.74%2C%202.3%2047.07%2C%200%2052%20M0%2052%20C0%2052%2C%200%2052%2C%200%2052%20M0%2052%20C0%2052%2C%200%2052%2C%200%2052%22%20stroke%3D%22%23e03131%22%20stroke-width%3D%222%22%20fill%3D%22none%22%3E%3C%2Fpath%3E%3C%2Fg%3E%3C%2Fg%3E%3Cmask%3E%3C%2Fmask%3E%3Cg%20transform%3D%22translate%28616%20120.6328125%29%20rotate%280%2019.639976501464844%2012.5%29%22%3E%3Ctext%20x%3D%220%22%20y%3D%220%22%20font-family%3D%22Virgil%2C%20Segoe%20UI%20Emoji%22%20font-size%3D%2220px%22%20fill%3D%22%231e1e1e%22%20text-anchor%3D%22start%22%20style%3D%22white-space%3A%20pre%3B%22%20direction%3D%22ltr%22%20dominant-baseline%3D%22text-before-edge%22%3Etime%3C%2Ftext%3E%3C%2Fg%3E%3Cg%20stroke-linecap%3D%22round%22%3E%3Cg%20stroke-opacity%3D%220.2%22%20fill-opacity%3D%220.2%22%20transform%3D%22translate%28434.43359375%2058.56640625%29%20rotate%280%200%2026%29%22%3E%3Cpath%20d%3D%22M0%200%20C0%2019.96%2C%200%2039.91%2C%200%2052%20M0%200%20C0%2014.63%2C%200%2029.27%2C%200%2052%22%20stroke%3D%22%23e03131%22%20stroke-width%3D%222%22%20fill%3D%22none%22%3E%3C%2Fpath%3E%3C%2Fg%3E%3Cg%20stroke-opacity%3D%220.2%22%20fill-opacity%3D%220.2%22%20transform%3D%22translate%28434.43359375%2058.56640625%29%20rotate%280%200%2026%29%22%3E%3Cpath%20d%3D%22M0%2052%20L-6.34%2038.41%20L6.34%2038.41%20L0%2052%22%20stroke%3D%22none%22%20stroke-width%3D%220%22%20fill%3D%22%23e03131%22%20fill-rule%3D%22evenodd%22%3E%3C%2Fpath%3E%3Cpath%20d%3D%22M0%2052%20C-2.43%2046.78%2C%20-4.87%2041.57%2C%20-6.34%2038.41%20M0%2052%20C-1.78%2048.17%2C%20-3.57%2044.35%2C%20-6.34%2038.41%20M-6.34%2038.41%20C-3.66%2038.41%2C%20-0.98%2038.41%2C%206.34%2038.41%20M-6.34%2038.41%20C-3.08%2038.41%2C%200.19%2038.41%2C%206.34%2038.41%20M6.34%2038.41%20C4.16%2043.07%2C%201.99%2047.74%2C%200%2052%20M6.34%2038.41%20C4.35%2042.67%2C%202.36%2046.93%2C%200%2052%20M0%2052%20C0%2052%2C%200%2052%2C%200%2052%20M0%2052%20C0%2052%2C%200%2052%2C%200%2052%22%20stroke%3D%22%23e03131%22%20stroke-width%3D%222%22%20fill%3D%22none%22%3E%3C%2Fpath%3E%3C%2Fg%3E%3C%2Fg%3E%3Cmask%3E%3C%2Fmask%3E%3Cg%20stroke-opacity%3D%220.2%22%20fill-opacity%3D%220.2%22%20stroke-linecap%3D%22round%22%20transform%3D%22translate%2810%2010%29%20rotate%280%20449%20121%29%22%3E%3Cpath%20d%3D%22M0%200%20C220.56%200%2C%20441.13%200%2C%20898%200%20M0%200%20C291.74%200%2C%20583.49%200%2C%20898%200%20M898%200%20C898%2089.15%2C%20898%20178.3%2C%20898%20242%20M898%200%20C898%2079.5%2C%20898%20159.01%2C%20898%20242%20M898%20242%20C685.51%20242%2C%20473.02%20242%2C%200%20242%20M898%20242%20C683.49%20242%2C%20468.98%20242%2C%200%20242%20M0%20242%20C0%20152.14%2C%200%2062.28%2C%200%200%20M0%20242%20C0%20188.05%2C%200%20134.1%2C%200%200%22%20stroke%3D%22transparent%22%20stroke-width%3D%222%22%20fill%3D%22none%22%3E%3C%2Fpath%3E%3C%2Fg%3E%3Cg%20transform%3D%22translate%28120.87109375%20251.0703125%29%20rotate%280%2052.78996276855469%2012.5%29%22%3E%3Ctext%20x%3D%220%22%20y%3D%220%22%20font-family%3D%22Virgil%2C%20Segoe%20UI%20Emoji%22%20font-size%3D%2220px%22%20fill%3D%22%231e1e1e%22%20text-anchor%3D%22start%22%20style%3D%22white-space%3A%20pre%3B%22%20direction%3D%22ltr%22%20dominant-baseline%3D%22text-before-edge%22%3EMain%20signal%3C%2Ftext%3E%3C%2Fg%3E%3Cg%20transform%3D%22translate%28282.55078125%20251.86328125%29%20rotate%280%2029.949981689453125%2012.5%29%22%3E%3Ctext%20x%3D%220%22%20y%3D%220%22%20font-family%3D%22Virgil%2C%20Segoe%20UI%20Emoji%22%20font-size%3D%2220px%22%20fill%3D%22%231e1e1e%22%20text-anchor%3D%22start%22%20style%3D%22white-space%3A%20pre%3B%22%20direction%3D%22ltr%22%20dominant-baseline%3D%22text-before-edge%22%3EEcho%201%3C%2Ftext%3E%3C%2Fg%3E%3Cg%20transform%3D%22translate%28410.7609558105469%20251.796875%29%20rotate%280%2034.35997772216797%2012.5%29%22%3E%3Ctext%20x%3D%220%22%20y%3D%220%22%20font-family%3D%22Virgil%2C%20Segoe%20UI%20Emoji%22%20font-size%3D%2220px%22%20fill%3D%22%231e1e1e%22%20text-anchor%3D%22start%22%20style%3D%22white-space%3A%20pre%3B%22%20direction%3D%22ltr%22%20dominant-baseline%3D%22text-before-edge%22%3EEcho%202%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fsvg%3E%3C%2Fdiv%3E`}</wljs-html>
+
+
+**Key Considerations**:
+- *Cutting* reduces resolution, so we use exponential decay to avoid artifacts
+- We wrap everything with `Manipulate` to interactively tune the parameters
+
+Test spectrum processing will follow:
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`test = NotebookRead@NotebookStore["troubling-fd8"];
+	
+	{
+	  ListLinePlot[test, ImageSize->400, PlotRange->Full, PlotLabel->"Time domain"], 
+	  ListLinePlot[Take[Fourier[test[[All,2]]], 500] // Abs, ImageSize->400, PlotLabel->"Frequency domain" ]
+	} // Column `}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*GB[*){{(*VB[*)(FrontEndRef["9462ab33-4624-4f98-bcc9-3e29d60d1311"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKW5qYGSUmGRvrAmkTXZM0SwvdpORkS13jVCPLFDODFENjQ0MAeUAVFA=="*)(*]VB*)}(*||*),(*||*){(*VB[*)(FrontEndRef["f211fc50-8e2a-423f-9a49-5dbb2120a08f"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKpxkZGqYlmxroWqQaJeqaGBmn6VommljqmqYkJRkZGhkkGlikAQCDUhWS"*)(*]VB*)}}(*]GB*)`}</wljs-editor></WLJSWrapper>
+
+One can see the *wiggles* in the fourier image, which we should get rid of without any loss of resolution.
+
+Let's define our envelope generator:
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`env[offset_, \\[Sigma]_] := Function[x, If[x>=offset, Exp[- (*FB[*)(((x-offset))(*,*)/(*,*)(\\[Sigma]))(*]FB*)], 1.0]]`}</wljs-editor></WLJSWrapper>
+
+<Callout>
+Instead of direct calculation of the envelope we return a pure function to speed up the calculations later. Pattern matching is fast, but pure functions wrapped with `Map` or `Table` can take advantage of just-in-time compiler.
+</Callout>
+
+Now we apply to it to our time trace and perform Fourier transformation interactively
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`Manipulate[With[
+	{
+	  e = env[offset, \\[Sigma]]
+	},
+	{
+	  filtered = Map[Function[xy,
+	      {xy[[1]], xy[[2]]  e @ xy[[1]]}
+	  ], test],
+	  envelope = Map[Function[xy,
+	      {xy[[1]], 10.0 e @ xy[[1]]}
+	  ], test]
+	},
+	
+	Row[{
+	  ListLinePlot[{
+	    (*BB[*)(* skip every 2nd point *)(*,*)(*"1:eJxTTMoPSmNhYGAo5gcSAUX5ZZkpqSn+BSWZ+XnFaYwgCS4g4Zyfm5uaV+KUXxEMUqxsbm6exgSSBPGCSnNSg9mAjOCSosy8dLBYSFFpKpoKkDkeqYkpEFXBILO1sCgJSczMQVYCAOFrJEU="*)(*]BB*)
+	    test[[;;;;2]],
+	    filtered[[;;;;2]],
+	    envelope[[;;;;2]]
+	  }, PlotRange->Full]
+	,
+	  ListLinePlot[{
+	    Take[Fourier[test[[All,2]]]//Abs, 500],
+	    Take[Fourier[filtered[[All,2]]]//Abs, 500]
+	  }, PlotRange->Full]
+	}]
+	
+	], {{offset, 1108}, 1100, 1114, 2}, {{\\[Sigma], 0.4}, 0.2, 0.6, 0.1}, ContinuousAction->True, Appearance->None]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(FrontEndRef["f8606382-fdaf-4be9-bcb8-7a58d98d25c8"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKp1mYGZgZWxjppqUkpumaJKVa6iYlJ1nomieaWqRYWqQYmSZbAACMZBYe"*)(*]VB*)`}</wljs-editor></WLJSWrapper>
+
+Here you can see, that by tuning the offset parameter and damping $1/\sigma$ we can nicely remove all the wiggles. 
+
+
+## Batch processing
+If you have many similar files, you can import them one by one and process on fly using the same envelope function
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`With[{
+	  original = Import[#, HeaderLines->1],
+	  e = env[1108, 0.4]
+	},
+	{
+	  new = Map[Function[xy,
+	      {xy[[1]], xy[[2]] e @ xy[[1]]}
+	  ], original]
+	},  
+	  Export[FileNameJoin[{
+	    DirectoryName[#], "Filtered", FileNameTake[#]
+	  }], new]
+	] &/@ FileNames["*.csv", "path_to_your_files"];
+	Pane[Style[% // TableForm, 10, Italic], {600,200}]`}</wljs-editor></WLJSWrapper>

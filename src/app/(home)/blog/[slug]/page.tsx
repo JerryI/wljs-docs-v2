@@ -5,6 +5,7 @@ import { getMDXComponents } from '@/mdx-components';
 import { blogSource } from '@/lib/source';
 import { GiscusComments } from '@/components/giscus-comments';
 import { ArrowLeft, CalendarDays, User, Tag } from 'lucide-react';
+import { markdownToHtml } from '@/lib/markdown';
 
 export const dynamicParams = false;
 
@@ -45,9 +46,10 @@ export default async function Page(props: {
           {page.data.title}
         </h1>
         {page.data.description && (
-          <p className="text-lg text-fd-muted-foreground mb-6">
-            {page.data.description}
-          </p>
+          <div
+            className="text-lg text-fd-muted-foreground mb-6 prose prose-fd prose-p:my-0"
+            dangerouslySetInnerHTML={{ __html: markdownToHtml(page.data.description) }}
+          />
         )}
         <div className="flex flex-wrap items-center gap-5 text-sm text-fd-muted-foreground">
           <span className="inline-flex items-center gap-1.5">

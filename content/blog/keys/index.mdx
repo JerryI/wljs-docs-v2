@@ -1,0 +1,312 @@
+---
+title:  Keys and Fingerboard
+description: A notebook demonstrating a custom `View` functions with a working toy-like piano and guitar fingerboard. This covers basic graphics manipulation, sound emission and working with dynamic graphics groups.
+tags:
+  - music
+  - graphics
+author: JerryI
+date: 2025-03-10
+---
+
+{/* add this script to the body  */}
+{/* https://cdn.jsdelivr.net/gh/WLJSTeam/web-components@latest/src/common/app.js */}
+<wljs-store json="./attachments/aebb121e-d9ba-4b40-8da3-3cce187b47ae.txt"></wljs-store>
+
+
+## Helper function to work with notes and scales
+Define semintone converters 
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true" fade="true" >{`semitone["C"] = 0;
+	semitone["C#"] = 1;
+	semitone["D"] = 2;
+	semitone["D#"] = 3;
+	semitone["Eb"] = 3;
+	semitone["E"] = 4;
+	semitone["F"] = 5;
+	semitone["F#"] = 6;
+	semitone["Gb"] = 6;
+	semitone["G"] = 7;
+	semitone["Ab"] = 8;
+	semitone["G#"] = 8;
+	semitone["A"] = 9;
+	semitone["Bb"] = 10;
+	semitone["B"] = 11;
+	
+	convertToSemitones[s_String] := With[{c = StringCases[s, {a__~~b:DigitCharacter :> {a,ToExpression[b]}, a__ :> {a,4}}]//First},
+	  semitone[c[[1]]] + (c[[2]] - 4) 12
+	]
+	convertToSemitones[s_] := s;
+	convertToSemitones[l_List] := convertToSemitones /@ l`}</wljs-editor></WLJSWrapper>
+
+## Piano view
+A view-function to visualize and play `SoundNote` on a keyboard.
+
+Helper functions to generate keys
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true" fade="true" >{`keyLevels = {0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 0, 0};
+	
+	generateKeys[keyCount_] := Module[
+	  {index = 1, position = 1, keyWidth, keyOffset},
+	  Table[
+	    With[
+	      {
+	        cycleIndex = Mod[index - 1, 12] + 1,
+	        level = keyLevels[[Mod[index - 1, 12] + 1]]
+	      },
+	      keyWidth = 0.5 - 0.2 level;
+	      keyOffset = 0.5 level;
+	      position += 1 - level;
+	      index++;
+	      Rectangle[
+	        {position - keyWidth + keyOffset, keyOffset},
+	        {position + keyWidth + keyOffset, 1}
+	      ]
+	    ],
+	    {keyCount}
+	  ]
+	];
+	
+	annotateKeys[keys_] := MapIndexed[
+	  Annotation[#, keyLevels[[Mod[#2[[1]] - 1, 12] + 1]], #2[[1]]] &,
+	  keys
+	];
+	
+	highlightNotes[skeys_, indexes_] := Map[Function[key,
+	  If[MemberQ[indexes, key[[3]]], 
+	    {(*VB[*)(RGBColor[1., 0.6862745098039216, 0.47843137254901963])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeGJAIcndyzs/JLwouTyxJzghJzS3ISSxJTWMGyXMgyRcxgMEH+6JvX0HgqX3R/HkgcM8eAIGmHxI="*)(*]VB*), key}
+	  ,
+	    key
+	  ]
+	], skeys]
+	
+	separateKeys[keys_] := Module[
+	  {annotatedKeys = annotateKeys[keys]},
+	  {
+	    Cases[annotatedKeys, Annotation[_, 0, _]],
+	    Cases[annotatedKeys, Annotation[_, 1, _]]
+	  }
+	];`}</wljs-editor></WLJSWrapper>
+
+A main function to construct a __piano view__
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true" fade="true" >{`PianoView[] := PianoView[SoundNote[{}]]
+	PianoView[SoundNote[rawNotes_List], OptionsPattern[]] := Module[{
+	  keys, separated, scene,
+	  highlighted, names = {"C", "C#", "D", "Eb", "E", "F", "F#", "G", "Ab", "A", "Bb", "B", "C"}, annotations,
+	  notes = convertToSemitones @ rawNotes
+	},
+	  keys = generateKeys[OptionValue["Size"]];
+	
+	  separated = separateKeys[keys];
+	
+	  scene = FrontInstanceReference[];
+	
+	  highlighted = Mod[#, Length[keys]] + 1 &/@ notes;
+	  annotations = Text[names[[Mod[#, 12]+1]], Mean @ (
+	    List @@ keys[[Mod[#, Length[keys]] + 1]]
+	  ) + {0.,-0.1}, {0,0}] &/@ notes;
+	
+	  notes = Switch[OptionValue["Mode"],
+	    "Play",
+	      notes,
+	
+	    "Show",
+	      {},
+	
+	    _,
+	      notes
+	  ];
+	
+	  Graphics[{scene,
+	    {White, EdgeForm[Gray], highlightNotes[separated[[1]], highlighted], Black//Lighter, highlightNotes[separated[[2]],highlighted]},
+	    {Yellow, Opacity[0.3]}, {Black, annotations},
+	  EventHandler[Null, {"click" -> clicker[scene, separated, keys, notes, names]}]
+	  }, ImageSize->OptionValue[ImageSize], "Controls"->False]
+	]
+	
+	Options[PianoView] = {ImageSize->{500,200}, "Size"->25, "Mode"->"Play"};`}</wljs-editor></WLJSWrapper>
+
+Define a handler for emitting sound and highlighting keys
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true" fade="true" >{`ClearAll[clicker]
+	clicker[scene_, separated_, keys_, additional_:{}, notes_][xy_] := With[{
+	  whiteMatch = SelectFirst[separated[[1]], RegionMember[#[[1]], xy]  &],
+	  blackMatch = SelectFirst[separated[[2]], RegionMember[#[[1]], xy]  &],
+	  group = FrontInstanceGroup[]
+	},
+	
+	  With[{
+	    key = If[!MissingQ[blackMatch], blackMatch[[3]], whiteMatch[[3]]]
+	  },
+	  
+	    FrontSubmit[SoundNote[Join[additional, {key-1}]//DeleteDuplicates] // Sound];
+	    
+	    FrontSubmit[{
+	      Red, Text[notes[[Mod[# - 1, 12] + 1]], 
+	      Mean[List @@ (keys[[#]])] - {0,0.2}, {0,0}] &/@ Join[(Mod[#, Length[keys]-1] &/@ additional)+1, {key}], 
+	      Opacity[0.3], keys[[Join[((Mod[#, Length[keys]-1]) &/@ additional)+1, {key}]]]
+	    } // group, scene];
+	  
+	    SetTimeout[Delete[group], 200];
+	  ]
+	]`}</wljs-editor></WLJSWrapper>
+
+### Testing
+Time to play some chords
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`SoundNote[{"D4", "E5", 7}] // PianoView `}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(FrontEndRef["159960d2-454d-45c9-a227-6b2958ecc9ce"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKG5paWpoZpBjpmpiapACJZEvdRCMjc12zJCNLU4vU5GTL5FQActkVVQ=="*)(*]VB*)`}</wljs-editor></WLJSWrapper>
+
+## Guitar Fingerboard
+A view function to do the same, but on the fingerboard of a guitar with an arbitary tuning
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true" fade="true" >{`GuitarView[SoundNote[rawNotes_List], OptionsPattern[]] := Module[{
+	  tuning = OptionValue["Tuning"],
+	  scene = FrontInstanceReference[],
+	 names = {"C", "C#", "D", "Eb", "E", "F", "F#", "G", "Ab", "A", "Bb", "B", "C"}, annotations,
+	  notes = convertToSemitones @ rawNotes,
+	  board, highlighted,
+	  semitoneTuning = Reverse[convertToSemitones @ OptionValue["Tuning"]]
+	},
+	
+	notes = Switch[OptionValue["Mode"],
+	    "Play",
+	      notes,
+	
+	    "Show",
+	      {},
+	
+	    _,
+	      notes
+	  ];
+	
+	notes = With[{c = Mod[#, convertToSemitones @ (semitoneTuning[[-1]] + 12)]},
+	  If[c < semitoneTuning[[1]],
+	    c + 12
+	  ,
+	    c
+	  ]
+	] &/@ notes;
+	
+	board = GroupBy[Flatten[
+	  Table[With[{note = semitoneTuning[[y]] + x},
+	    Annotation[Disk[{x,y}, {0.15, 0.15 2.8 }], note, names[[Mod[note, 12]+1]]]
+	  ], {x, 0, 12}, {y, Length[tuning]}]
+	], #[[2]] &];
+	
+	highlighted[notes_] := {
+	  ColorDataFunction[(*VB[*) 24, "Indexed", {1, 10, 1}, {RGBColor[0.9215686274509803, 0.49411764705882355, 0.43137254901960786], RGBColor[1., 0.7215686274509804, 0.2196078431372549], RGBColor[0.9490196078431372, 0.8627450980392157, 0.43529411764705883], RGBColor[0.6705882352941176, 0.8784313725490196, 0.9372549019607843], RGBColor[0.3176470588235294, 0.6549019607843137, 0.7529411764705882], RGBColor[0.12941176470588237, 0.5176470588235295, 0.6313725490196078], RGBColor[0.09019607843137255, 0.33725490196078434, 0.49411764705882355], RGBColor[0.7058823529411765, 0.49411764705882355, 0.5450980392156862], RGBColor[0.5333333333333333, 0.23529411764705882, 0.3058823529411765], RGBColor[0.8941176470588236, 0.7098039215686275, 0.7490196078431373]}[[Mod[Floor[#1], 10, 1]]] &  (*,*)(*"1:eJylk82TmjAYxrdf04/pTI+d6al74OiMBti6vRFERdRVglg9NTUBWRKCAXb1b+s/16Bra6edqdO9PLz83jd5HiBcfhN+9Ozi4qL4oASKbVdI/tWSEmcxJajiHMudwtGTeuadkq4UWelkJExkWWF2aDxX0heM7IuxyGj09IiHSVH+7e79id+Dj1tSHib0Hr1UPTcjdPv542H4jRKHJKWQdf/gWQ/dRBETmBzAayUzf9ihK0EoqtcB45ezXzGKXtUFxeQmY7s9DWRF/52nXmYLJmTxyECt5vmBzn9dtc8EM1qW9BH5viumgbYGLAg1E6qrBq73oGbhb+x4CHwa7TEgxicSAaI3AKVGwzBAs4GBQRqGjnVwTdq03TbVmGZ2jpuqnewTD1WAlqZbdLANgpGYID5OFz1LLGMH9e9S0/Nt6gzgvdeWE0/vj5HeK5HTrIYzNtql6TiMHS83k0V+NV3m/q3sbeacVwnmMF5e2QvMcSD4Os5663KZsySds2RhxXYv2YagDnaaxOyEPx/1/8LO2ciFRj+14mqz2g7IanMXu4llumNv1fKG1QyiTcDzHZoP0MyqPLMjWb4OMnfDby1STFmXx180AOmyZUI8ZbY77UC2Lr0/o8KHqOccrOKtKlCOM/X9+JBGZfGi/qMxK+gPONoNHg=="*)(*]VB*)] /@ Range[notes // Length],
+	  Map[Function[place, 
+	    If[place[[1,1,1]] > 0.5,
+	      {place, White, Text[place[[3]] , place[[1,1]]- {0,0.16}, {0,0}]}
+	    ,
+	      place
+	    ]
+	  ], board[#]] &/@ notes
+	}//Transpose;
+	
+	Graphics[{
+	  scene, EventHandler[Null, {"click"->plucker[scene, board, highlighted, notes]}],
+	  Table[Line[{{0, string}, {12, string}}], {string, Length[tuning]}],
+	  Table[Line[{{i - 0.5, 1 - 0.2 }, {i - 0.5, Length[tuning] + 0.2}}], {i, 12}],
+	  Table[Text[tuning[[Length[tuning] + 1 - string]], {-0.5, string - 0.2}, {-1,0}], {string, Length[tuning]}],
+	  {
+	    AbsoluteThickness[4], Line[{{0.5, 1}, {0.5, Length[tuning]}}], 
+	    Gray, Table[Disk[{0.5 + 2.5 + k, 0.3}, {0.15, 0.15 2.8 }/2], {k, 0, 6, 2}],
+	    Disk[{0.5 + 2.5 + 8.9, 0.3}, {0.15, 0.15 2.8 }/2], Disk[{0.5 + 2.5 + 9.1, 0.3}, {0.15, 0.15 2.8 }/2]
+	  },
+	  
+	  highlighted[notes]
+	  
+	}, ImageSize->(1.2 {500,100}), "Controls"->False, ImagePadding->None, PlotRange->{{0 - 0.5, 12 + 0.5}, {0, Length[tuning] + .5}}]
+	]
+	
+	Options[GuitarView] = {"Tuning"->({"E4", "A4", "D5", "G5", "B5", "E6"}//Reverse), "Mode"->"Play"};`}</wljs-editor></WLJSWrapper>
+
+A handler function to emit sound
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true" fade="true" >{`plucker[scene_, board_, highlighted_, additional_][xy_] := With[{
+	  group = FrontInstanceGroup[],
+	  match = SelectFirst[board//Values//Flatten, With[{reg = Disk[#[[1,1]], #[[1,2]] * 2] },
+	    RegionMember[reg, xy]
+	  ]&]
+	},
+	  If[MissingQ[match], Return[]];
+	  With[{
+	    notes = Join[additional, {match[[2]]}]//DeleteDuplicates
+	  },
+	  
+	    FrontSubmit[SoundNote[notes] // Sound];
+	    FrontSubmit[{
+	      Opacity[0.7], highlighted[notes]
+	    } // group, scene];
+	  
+	    SetTimeout[Delete[group], 200];
+	  ]  
+	]`}</wljs-editor></WLJSWrapper>
+
+### Testing
+Let's play some guitar chords
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`SoundNote[{"E4", "G5", "B4", "E5", "B5"}] // GuitarView`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(FrontEndRef["7692caba-70e0-4406-833f-3697781f9650"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKm5tZGiUnJiXqmhukGuiamBiY6VoYG6fpGptZmptbGKZZmpkaAAB6yhTD"*)(*]VB*)`}</wljs-editor></WLJSWrapper>
+
+## Explore chords
+Let's build chords in E Major. Firstly we need to define scales
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true" fade="true" >{`scale["Major"] = {2,2,1,2,2,2,1};
+	scale["Dorian"] = {2,1,2,2,2,1,2};
+	scale["Lydian"] = {2,2,2,1,2,2,1};
+	
+	makeScale[root_Integer, scale_List] := With[{base = Accumulate[Join[{root}, scale]]},
+	  (base[[Mod[#-1, Length[base]-1] + 1]] + 12 Floor[# / Length[base]]) &
+	]
+	
+	makeScale[root_String, scale_List] := makeScale[convertToSemitones[root], scale]`}</wljs-editor></WLJSWrapper>
+
+Structures for building chords
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true" fade="true" >{`makeChord[root_, scalename_String, ext_Integer:3] := With[{s = makeScale[root, scale[scalename]]},
+	  chordObject[s, ext]
+	]
+	
+	NoteTranspose[SoundNote[l_List], i_Integer] := With[{c = convertToSemitones[l]}, 
+	  SoundNote[Map[(# + i)&, c]]
+	]
+	
+	NoteMerge[s:(SoundNote[_List]..)] := SoundNote[DeleteDuplicates[convertToSemitones[Join @@ ({s}[[All,1]])]]]
+	
+	
+	makeChord[root_, scalename_String, ext_String];
+	makeChord[root_, scalename_String, ext_Integer, mod_Rule];
+	makeChord[root_, scalename_String, ext_Integer, mod:{__Rule}];
+	
+	chordObject[s_, ext_][offset_String] := chordObject[s, ext][FromRomanNumeral[offset]-1]
+	
+	chordObject[s_, ext_][offset_Integer] := SoundNote @ Table[  s[i + offset], {i, 1, 2 ext, 2}] `}</wljs-editor></WLJSWrapper>
+
+Use GuitarView to show all chords
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`With[{m = makeChord["E4", "Major", 3]},
+	  Table[{
+	    GuitarView[NoteMerge[m[r], NoteTranspose[m[r], 12]]], 
+	    Spacer[40], Style[r, FontSize->20]
+	  }, {r, {"I", "II", "III", "IV", "V", "VI"}}] 
+	] // TableForm `}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*GB[*){{(*VB[*)(FrontEndRef["8b30a46a-009e-4ed9-b4a3-f87e9574e93d"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKWyQZGySamCXqGhhYpuqapKZY6iaZJBrrplmYp1qampukWhqnAACEGhWy"*)(*]VB*)(*|*),(*|*)(*VB[*)(Spacer[40])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRAeJ5AILkhMTi1yyq/I1ADyALJsCKU="*)(*]VB*)(*|*),(*|*)(*BB[*)("I")(*,*)(*"1:eJxTTMoPSmNiYGAo5gcSAUX5ZZkpqSn+BSWZ+XnFaYwgCRYg4ZGfkwLhcQKJ4JKizLx0p/wKiE6QgqDSnNRiDiDDLT+vJDizKjVTBMhBlQ9mg+sFi4UUlaYCAHYQHT8="*)(*]BB*)}(*||*),(*||*){(*VB[*)(FrontEndRef["270ca4fa-9d5d-4130-8042-10b932c42081"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKG5kbJCeapCXqWqaYpuiaGBob6FoYmBjpGhokWRobJZsYGVgYAgB9cBTK"*)(*]VB*)(*|*),(*|*)(*VB[*)(Spacer[40])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRAeJ5AILkhMTi1yyq/I1ADyALJsCKU="*)(*]VB*)(*|*),(*|*)(*BB[*)("II")(*,*)(*"1:eJxTTMoPSmNiYGAo5gcSAUX5ZZkpqSn+BSWZ+XnFaYwgCRYg4ZGfkwLhcQKJ4JKizLx0p/wKiE6QgqDSnNRiDiDDLT+vJDizKjVTBMhBlQ9mg+sFi4UUlaYCAHYQHT8="*)(*]BB*)}(*||*),(*||*){(*VB[*)(FrontEndRef["fdf77bdb-a9df-40c8-90f1-ef7bb0b2345a"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKp6WkmZsnpSTpJlqmpOmaGCRb6FoapBnqpqaZJyUZJBkZm5gmAgCeiBaT"*)(*]VB*)(*|*),(*|*)(*VB[*)(Spacer[40])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRAeJ5AILkhMTi1yyq/I1ADyALJsCKU="*)(*]VB*)(*|*),(*|*)(*BB[*)("III")(*,*)(*"1:eJxTTMoPSmNiYGAo5gcSAUX5ZZkpqSn+BSWZ+XnFaYwgCRYg4ZGfkwLhcQKJ4JKizLx0p/wKiE6QgqDSnNRiDiDDLT+vJDizKjVTBMhBlQ9mg+sFi4UUlaYCAHYQHT8="*)(*]BB*)}(*||*),(*||*){(*VB[*)(FrontEndRef["b7a43dde-dda7-4056-ba48-87d3914619b1"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKJ5knmhinpKTqpqQkmuuaGJia6SYlmljoWpinGFsampgZWiYZAgCQPhWm"*)(*]VB*)(*|*),(*|*)(*VB[*)(Spacer[40])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRAeJ5AILkhMTi1yyq/I1ADyALJsCKU="*)(*]VB*)(*|*),(*|*)(*BB[*)("IV")(*,*)(*"1:eJxTTMoPSmNiYGAo5gcSAUX5ZZkpqSn+BSWZ+XnFaYwgCRYg4ZGfkwLhcQKJ4JKizLx0p/wKiE6QgqDSnNRiDiDDLT+vJDizKjVTBMhBlQ9mg+sFi4UUlaYCAHYQHT8="*)(*]BB*)}(*||*),(*||*){(*VB[*)(FrontEndRef["64314d4e-1126-49a2-b5e9-83ef05ab00bb"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKm5kYG5qkmKTqGhoamemaWCYa6SaZplrqWhinphmYJiYZGCQlAQB17xVj"*)(*]VB*)(*|*),(*|*)(*VB[*)(Spacer[40])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRAeJ5AILkhMTi1yyq/I1ADyALJsCKU="*)(*]VB*)(*|*),(*|*)(*BB[*)("V")(*,*)(*"1:eJxTTMoPSmNiYGAo5gcSAUX5ZZkpqSn+BSWZ+XnFaYwgCRYg4ZGfkwLhcQKJ4JKizLx0p/wKiE6QgqDSnNRiDiDDLT+vJDizKjVTBMhBlQ9mg+sFi4UUlaYCAHYQHT8="*)(*]BB*)}(*||*),(*||*){(*VB[*)(FrontEndRef["f864ce3b-cbd3-4558-b425-6f2e55e75361"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKp1mYmSSnGifpJielGOuamJpa6CaZGJnqmqUZpZqappqbGpsZAgCK4BV/"*)(*]VB*)(*|*),(*|*)(*VB[*)(Spacer[40])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRAeJ5AILkhMTi1yyq/I1ADyALJsCKU="*)(*]VB*)(*|*),(*|*)(*BB[*)("VI")(*,*)(*"1:eJxTTMoPSmNiYGAo5gcSAUX5ZZkpqSn+BSWZ+XnFaYwgCRYg4ZGfkwLhcQKJ4JKizLx0p/wKiE6QgqDSnNRiDiDDLT+vJDizKjVTBMhBlQ9mg+sFi4UUlaYCAHYQHT8="*)(*]BB*)}}(*]GB*)`}</wljs-editor></WLJSWrapper>
+
+A common *pop* progression could be like $I-V-VI-IV-I-...$ repeat
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`With[{m = makeChord["E4", "Major", 3]},
+	  Table[{
+	    NoteMerge[m[r], NoteTranspose[m[r], 12]],
+	    NoteMerge[m[r], NoteTranspose[m[r], 12]],
+	    NoteMerge[m[r], NoteTranspose[m[r], 12]],
+	    NoteMerge[m[r], NoteTranspose[m[r], 12]]
+	  }, {r, {"I", "V", "VI", "IV", "I", "V", "VI", "IV", "I"}}] 
+	] // Flatten // Sound `}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(FrontEndRef["467ab9f3-38b4-4357-940e-78b7d925e3b6"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKm5iZJyZZphnrGlskmeiaGJua61qaGKTqmlskmadYGpmmGieZAQB6mxUr"*)(*]VB*)`}</wljs-editor></WLJSWrapper>
