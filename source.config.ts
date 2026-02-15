@@ -64,7 +64,8 @@ function remarkFixRelativeUrls() {
                   // Copy file if it doesn't exist or if source is newer
                   if (!fs.existsSync(destPath) || 
                       fs.statSync(sourcePath).mtime > fs.statSync(destPath).mtime) {
-                    fs.copyFileSync(sourcePath, destPath);
+                    console.log(`Copying: ${filename} → public/`);
+                        fs.copyFileSync(sourcePath, destPath);
                     console.log(`Copied: ${filename} → public/`);
                   }
                   
@@ -116,6 +117,7 @@ export const blogPosts = defineCollections({
           }
           if (!fs.existsSync(destPath) ||
               fs.statSync(sourcePath).mtime > fs.statSync(destPath).mtime) {
+                console.log(`Copying: ${filename} → public/`);
             fs.copyFileSync(sourcePath, destPath);
             console.log(`Copied preview: ${filename} → public/attachments/`);
           }
