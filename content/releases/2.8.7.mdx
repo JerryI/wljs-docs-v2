@@ -19,18 +19,18 @@ Wed 15 Oct 2025 19:19:29
 ## Better laser pointer
 We improved our "laser" pointer used on slides. It has a trail and can work properly in fullscreen mode as well:
 
-:::tip
+<Callout type="info">
 Press <wljs-html encoded="true">{`%3Ckbd%20%3Eq%3C%2Fkbd%3E`}</wljs-html> on a slide
-:::
+</Callout>
 
 
 ![](./attachments/Screenshot-2025-10-03-at-20.51.48-ac1.png)
 
 ## Print feature!
 
-:::warning
+<Callout type="warn">
 This feature requires WLJS Notebook App, since we rely on our custom renderer implemented in Electron.js.
-:::
+</Callout>
 
 Now you can print any notebook directly to PDF document:
 
@@ -48,9 +48,9 @@ Now you can print any notebook directly to PDF document:
 ### Manual page breaks
 Since now you can easily print any notebook, it make sence to control page breaks manually.
 
-:::note
+<Callout type="info">
 It will also work if you export a notebook to HTML and then print it
-:::
+</Callout>
 
 Use `PageBreakAbove` or `PageBreakBelow` symbols in the context of Markdown or WLX cells:
 
@@ -146,9 +146,9 @@ Paste button
 ## Export Animations as GIFs 🍳
 `Animate`-like expressions are now easy to rasterize into the sequence of frames with `AnimatedImage`
 
-:::warning
+<Callout type="warn">
 This feature requires WLJS Notebook App, since we rely on our custom renderer implemented in Electron.js.
-:::
+</Callout>
 
 Then `AnimatedImage` expression can be safely exported to video, GIF or preprocessed using standard tools for images
 

@@ -69,9 +69,9 @@ We added a special handler for such cases, that will automatically convert expre
 
 <WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`i=(*VB[*)(FrontEndRef["a08ba99a-3516-4aa4-a284-d753c6a25ee2"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKJxpYJCVaWibqGpsamumaJCaa6CYaWZjoppibGiebJRqZpqYaAQCDiRWa"*)(*]VB*);`}</wljs-editor></WLJSWrapper>
 
-:::note
+<Callout type="info">
 Make sure, that any kernel is connected to a notebook
-:::
+</Callout>
 
 This also works with Mathematica or Wolfram Player __directly__:
 
@@ -163,11 +163,11 @@ As a drawback: it is picture and non-interactable.
 ## Documentation
 New examples, new tutorials!
 
-:::info
+<Callout type="info">
 See how to port or optimize dynamics from Mathematica to WLJS:
 
 https://wljs.io/frontend/Advanced/Dynamics/Porting%20from%20MMA/
-:::
+</Callout>
 
 ## Better Autocomplete
 We reformatted all autocomplete info boxes to make it beautiful:
@@ -190,9 +190,9 @@ The same counts for `Inset`:
 
 <WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(Graphics[{Circle[{0, 0}], Inset[x^2 + y^2 == 1, {0, 0}]}, ImageSize -> Small])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KWlMIB4HkHAvSizIyEwuhoiA5H0yi0sgqtmAhHNmUXJOKqpsJpBmABMQcVYg4ZlXnFqC4LoWlibmIHQF5JQWIyQD8stTi4pBVlRkMqGYgpCpBMtkMsKlcVkOEg8qzUkt5gS5IjcxPTU4syoVbFpwbmJODgC9Ji4Y"*)(*]VB*)`}</wljs-editor></WLJSWrapper>
 
-:::note
+<Callout type="info">
 Inset supports `Image`, `Image3D`, `Graphics`, `Graphics3D`, and any WLJS Functions defined as well. If the expression is undefined a standard form will be shown
-:::
+</Callout>
 
 ## Better ticks for 3D plots
 It is only getting better ;)

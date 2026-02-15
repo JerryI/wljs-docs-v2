@@ -23,33 +23,33 @@ Make admonitions like in Docusaurus (Facebook) using directives
 
 <WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`.md
 	
-	:::tip
+	<Callout type="info">
 	Use admonitions
 	:::
 	
-	:::custom
+	<Callout type="info">
 	Text text
 	:::`}</wljs-editor></WLJSWrapper>
 
 
-:::tip
+</Callout>tip
 Use admonitions
-:::
+</Callout>
 
-:::custom
+<Callout type="info">
 Text text
-:::
+</Callout>
 
 Supported types: `info`, `warning`, `tip`, `todo`, while any other combination will be styled as `info`.
 
 ### TODO list
 There is a special type of admonition, which also adds a live counter to the right-top corner of the notebook
 
-:::todo
+<Callout type="info">
 
 - [ ] Task 1
 - [x] Task 2
-:::
+</Callout>
 
 ### Bookmarks
 This is a special keyword in markdown editor, which adds a bookmark on a page. It also appears in the top-right corner, by clicking on it you will be directed to the marked place on the page

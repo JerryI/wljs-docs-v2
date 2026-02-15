@@ -66,11 +66,11 @@ Here is an example with custom WLJS function, that defines a label:
 ## Improved Slides Export
 By utilizing our custom PDF renderer (based on the ElectronJS engine), we managed to export slides in a semi-automatic mode as close as possible to the original view you see in the WLJS Notebook.
 
-:::note
+<Callout type="info">
 Export happens live; the slides are projected to the full window size, input is blocked, and you need to wait while it artificially flips through all slides.
 
 This is the only way to ensure that all dynamics and transitions have occurred on time.
-:::
+</Callout>
 
 ## Missing Decorations
 We fixed some broken standard forms of `Complexes`, `Reals`, etc.:
@@ -115,9 +115,9 @@ The only requirements are:
 - The completion API must be compatible with the OpenAI v1 API (this is usually the case for most models/LLM servers).
 - Support for plugins/tools.
 
-:::note
+<Callout type="info">
 Local LLMs performance is strongly depend on your machine/model specs.
-:::
+</Callout>
 
 ...and we also fixed unicode issue 🙂
 
