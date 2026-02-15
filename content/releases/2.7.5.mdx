@@ -1,0 +1,118 @@
+---
+date: 2025-03-25
+title:  Release notes *2.7.5*
+---
+
+{/* add this script to the body  */}
+{/* https://cdn.jsdelivr.net/gh/WLJSTeam/web-components@latest/src/common/app.js */}
+<wljs-store json="./attachments/8170c16a-8369-4c08-a73d-569099d69353.txt"></wljs-store>
+
+
+
+
+
+
+
+
+
+
+## 2D Input Improvements
+
+### Helper boxes
+We introduced helper boxes that appear when you move your cursor through equations or other decorations, which helps to see the borders of each decoration
+
+![](./attachments/Screenshot%202025-05-17%20at%2011.12.23-5d5.png)
+
+*Try to focus on different elements*
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`(*FB[*)((A)(*,*)/(*,*)((*SpB[*)Power[w(*|*),(*|*)2](*]SpB*) - (*SpB[*)Power[x(*|*),(*|*)2](*]SpB*) + I g x))(*]FB*) + (*TB[*)Sum[(*|*)x(*|*), {(*|*)x(*|*),(*|*)xmin(*|*),(*|*)xmax(*|*)}](*|*)(*1:eJxTTMoPSmNiYGAoZgMSwaW5TvkVmYwgPguQCCkqTQUAeAcHBQ*)(*]TB*) + (*TB[*)Integrate[(*|*)x(*|*), {(*|*)x(*|*),(*|*)xmin(*|*),(*|*)xmax(*|*)}](*|*)(*1:eJxTTMoPSmNiYGAo5gESnnklqelFiSWpTvkVmYwgURYgEVJUmgoAvmMJeQ*)(*]TB*) `}</wljs-editor></WLJSWrapper>
+
+### MatrixForm
+`MatrixForm` has a new output form!
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`Table[{i,j/i}, {i,5}, {j,5}] // MatrixForm`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*GB[*){{{1,1}(*|*),(*|*){1,2}(*|*),(*|*){1,3}(*|*),(*|*){1,4}(*|*),(*|*){1,5}}(*||*),(*||*){{2,(*FB[*)((1)(*,*)/(*,*)(2))(*]FB*)}(*|*),(*|*){2,1}(*|*),(*|*){2,(*FB[*)((3)(*,*)/(*,*)(2))(*]FB*)}(*|*),(*|*){2,2}(*|*),(*|*){2,(*FB[*)((5)(*,*)/(*,*)(2))(*]FB*)}}(*||*),(*||*){{3,(*FB[*)((1)(*,*)/(*,*)(3))(*]FB*)}(*|*),(*|*){3,(*FB[*)((2)(*,*)/(*,*)(3))(*]FB*)}(*|*),(*|*){3,1}(*|*),(*|*){3,(*FB[*)((4)(*,*)/(*,*)(3))(*]FB*)}(*|*),(*|*){3,(*FB[*)((5)(*,*)/(*,*)(3))(*]FB*)}}(*||*),(*||*){{4,(*FB[*)((1)(*,*)/(*,*)(4))(*]FB*)}(*|*),(*|*){4,(*FB[*)((1)(*,*)/(*,*)(2))(*]FB*)}(*|*),(*|*){4,(*FB[*)((3)(*,*)/(*,*)(4))(*]FB*)}(*|*),(*|*){4,1}(*|*),(*|*){4,(*FB[*)((5)(*,*)/(*,*)(4))(*]FB*)}}(*||*),(*||*){{5,(*FB[*)((1)(*,*)/(*,*)(5))(*]FB*)}(*|*),(*|*){5,(*FB[*)((2)(*,*)/(*,*)(5))(*]FB*)}(*|*),(*|*){5,(*FB[*)((3)(*,*)/(*,*)(5))(*]FB*)}(*|*),(*|*){5,(*FB[*)((4)(*,*)/(*,*)(5))(*]FB*)}(*|*),(*|*){5,1}}}(*||*)(*1:eJxTTMoPSmNkYGAo5gUSYZmp5S6pyflFiSX5RcFsQBHfxJKizAoAs04KOA==*)(*]GB*)`}</wljs-editor></WLJSWrapper>
+
+## Dataset Improvements
+We fixed many bugs related to poor `Dataset` implementation. This one in particular was not rendered correctly
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`ResourceData["Global and National Annual CO2 Emissions from Fossil Fuel Burning 1751-2014"]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output" encoded="true"  >{`%28%2AVB%5B%2A%29%28Dataset%5BJoin%40%40CoffeeLiqueur%60Extensions%60InputsOutputs%60Private%60store%24167774%5D%29%28%2A%2C%2A%29%28%2A%221%3AeJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKm5okJqVZphrqGhkYJuuamCYn6yamWRjqJiWZWhonW5gYJ1qaAQCKxxXQ%22%2A%29%28%2A%5DVB%2A%29`}</wljs-editor></WLJSWrapper>
+
+## Speak
+One of the oldest function from Wolfram Standard Library
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`Speak[(*VB[*)(RGBColor[1, 0, 0])(*,*)(*"1:eJxTTMoPSmNiYGAo5gUSYZmp5S6pyflFiSX5RcEsQBHn4PCQNGaQPAeQCHJ3cs7PyS8qYgCDD/ZQBgMDnAEA4iUPRg=="*)(*]VB*)]`}</wljs-editor></WLJSWrapper>
+
+It can also be converted to `Audio` object
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`SpeechSynthesize[SpokenString[(*VB[*)(RGBColor[1, 0, 0])(*,*)(*"1:eJxTTMoPSmNiYGAo5gUSYZmp5S6pyflFiSX5RcEsQBHn4PCQNGaQPAeQCHJ3cs7PyS8qYgCDD/ZQBgMDnAEA4iUPRg=="*)(*]VB*)], GeneratedAssetLocation -> None]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(Audio[FrontEndRef["3084d98a-f8fc-4003-b2b6-0adfe3c2edd8"], "SignedInteger16"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKp6UkJRuYGVvqpiYbGOiamCWl6VokGifpJqUkWpimGSalmCQaAQCU3haE"*)(*]VB*)`}</wljs-editor></WLJSWrapper>
+
+## Improved support for Video object
+For quite some time `Video` could only show "motion picture" without any audio. Now we have audio playback as well.
+
+> UPD: A few seconds before the release. We found a way to stream it to the native browser's video engine. It will work even better
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`Video["ExampleData/Caminandes.mp4"]`}</wljs-editor></WLJSWrapper>
+
+## Better `Inset` support
+It allows to combine multiple different graphics objects in a quite complex way. Here are a few example
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`Plot[Sin[x], {x, 0, 10}, 
+	 Epilog -> Inset[Graphics3D[Cylinder[], ImageSize -> 60], {0.5,0.5}]]
+	Graphics[{Circle[], Inset[EditorView[ToString[x^2 + y^2 == 1 // Unevaluated, StandardForm]], {0, 0}, Center, {1,0.7}]}, ImageSize->200]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(FrontEndRef["5393609c-0f83-4065-880c-9e21d14e9307"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKmxpbGpsZWCbrGqRZGOuaGJiZ6lpYGCTrWqYaGaYYmqRaGhuYAwBtzBSO"*)(*]VB*)`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(Graphics[{Circle[{0, 0}], Inset[EditorView["(*SpB[*)Power[x(*|*),(*|*)2](*]SpB*)+(*SpB[*)Power[y(*|*),(*|*)2](*]SpB*)==1"], {0, 0}, Center, {1, 0.7}]}, ImageSize -> 200])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KWlMIB4HkHAvSizIyEwuhoiA5H0yi0sgqtmAhHNmUXJOKqpsJpBmABNpIKFiViDhmVecCtXGBSRcUzJL8ovCMlPLg32AXA2t4AKnaC3NgPzy1KLoCg2tGi1NHTBpFKuhFQuU1NLURlVUiVWRra0hLrdAnJuaV5JahKYE5KqiNDB4Zo+QCyrNSS3mBLk9NzE9NTizKjXzBJAHAJcsQnQ="*)(*]VB*)`}</wljs-editor></WLJSWrapper>
+
+Or combination of overlayed raster images
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`img = (*VB[*)(FrontEndRef["3404a670-7ee4-478b-9771-8ccfa938b07d"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKG5sYmCSamRvomqemmuiamFsk6VqamxvqWiQnpyVaGlskGZinAAB3QRVU"*)(*]VB*);
+	faces = FindFaces[img];
+	res = HighlightImage[img, {"Blur", faces}]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(FrontEndRef["2ed27c25-8a6c-4ad4-80e5-91b2daa99385"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKG6WmGJknG5nqWiSaJeuaJKaY6FoYpJrqWhomGaUkJlpaGluYAgCHkhWo"*)(*]VB*)`}</wljs-editor></WLJSWrapper>
+
+## Internals
+
+### Welcome Screen
+If WLJS Notebook is launched for the first time, it will guide a user though a short tutorial.
+
+<wljs-html encoded="true">{`%3Cbr%20%2F%3E`}</wljs-html>
+
+### Watchdog 🩼
+We added a set of self-tests for the Wolfram Kernel, which are performed periodically during the active session and before any evaluation. They take about $10^{-6}$ seconds of computational time; however, they allow for hot-reloading some of the modules that may misbehave due to uncontrollable definition reloads in the Wolfram Language Standard Library.
+
+> Yes, this is a sort of workaround. The Wolfram Kernel can clear any custom `FormatValues` of the system symbol, even those that do not interfere with system definitions. This is a big pain, but we can still live with it since it happens rarely and only for particular symbols.
+
+### UI bug fixes
+- Layout scroll bars corrections for mini apps on Windows
+
+## On-demand license
+
+If you want to try WLJS Notebook without binding the free license to your machine, you can issue [license entitlement](https://reference.wolfram.com/language/ref/CreateLicenseEntitlement.html) using Wolfram Cloud or a friend. Then
+
+
+
+<wljs-html encoded="true">{`%3Cpre%20%3E%3Ccode%20%3E%0Agit%20clone%20https%3A%2F%2Fgithub.com%2FJerryI%2Fwolfram-js-frontend%0Acd%20wolfram-js-frontend%0Awolframscript%20-f%20Scripts%2Fstart.wls%20-entitlement%20XXX-CODE-OF-ENTITLEMENT-XXX%0A%3C%2Fcode%3E%3C%2Fpre%3E`}</wljs-html>
+
+
+
+It also would make sense on servers.
+
+:::warning
+In this regime the evaluation kernel works much slower
+:::
+
+---
+
+
+
+<wljs-html encoded="true">{`%0A%3Cstyle%3E%0A%20%20img%20%7B%0A%20%20%20%20border-radius%3A%200.5rem%3B%0A%20%20%7D%0A%3C%2Fstyle%3E`}</wljs-html>
+
+<wljs-html encoded="true">{`%0A%3Cstyle%3E%0A%20%20%5Btransparency%3D%22false%22%5D%20.bg-g-trans%20%7B%0A%20%20%20%20background%3A%20transparent%20%21important%3B%0A%20%20%7D%0A%0A%20%20%5Btransparency%3D%22true%22%5D%20.bg-g-trans%20%7B%0A%20%20%20%20background%3A%20transparent%20%21important%3B%0A%20%20%7D%0A%3C%2Fstyle%3E`}</wljs-html>

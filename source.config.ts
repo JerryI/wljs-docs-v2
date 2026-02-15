@@ -82,6 +82,15 @@ function remarkFixRelativeUrls() {
   };
 }
 
+export const releases = defineCollections({
+  type: 'doc',
+  dir: 'content/releases',
+  // add required frontmatter properties
+  schema: (ctx) => frontmatterSchema.extend({
+    date: z.string().date().or(z.date())
+  }),
+});
+
 export const blogPosts = defineCollections({
   type: 'doc',
   dir: 'content/blog',

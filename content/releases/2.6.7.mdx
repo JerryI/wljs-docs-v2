@@ -1,0 +1,319 @@
+---
+date: 2024-10-24
+title:  Release notes *2.6.7*
+---
+
+{/* add this script to the body  */}
+{/* https://cdn.jsdelivr.net/gh/WLJSTeam/web-components@latest/src/common/app.js */}
+<wljs-store json="./attachments/9bcc846d-9828-4165-ba53-5a90e02d0b54.txt"></wljs-store>
+
+
+
+
+
+
+
+
+
+
+
+## Markdown
+### Admonitions
+Make admonitions like in Docusaurus (Facebook) using directives
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`.md
+	
+	:::tip
+	Use admonitions
+	:::
+	
+	:::custom
+	Text text
+	:::`}</wljs-editor></WLJSWrapper>
+
+
+:::tip
+Use admonitions
+:::
+
+:::custom
+Text text
+:::
+
+Supported types: `info`, `warning`, `tip`, `todo`, while any other combination will be styled as `info`.
+
+### TODO list
+There is a special type of admonition, which also adds a live counter to the right-top corner of the notebook
+
+:::todo
+
+- [ ] Task 1
+- [x] Task 2
+:::
+
+### Bookmarks
+This is a special keyword in markdown editor, which adds a bookmark on a page. It also appears in the top-right corner, by clicking on it you will be directed to the marked place on the page
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`.md
+	
+	@bookmark`}</wljs-editor></WLJSWrapper>
+
+@bookmark
+
+## Convert .wln back to .nb
+*Export to Mathematica*
+
+A reverse convertations now is possible! However, for now it comes with some limitations
+
+- only input cells
+- markdown to Mathematica's cells is problematic
+
+## Failsafe 🛟
+Double backups and a saving indicator, which prevent accidental window closing.
+
+
+
+## Iframe API
+Want to embed WLJS interface to your app? The good old `iframe` tag is [a way to go](https://jerryi.github.io/wljs-docs/frontend/Development/API/Iframe).
+
+## EventHandler update
+There are some minor changes. Attaching an event listener to any `Graphics` expression should feel more natural. For example
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`pc = {0.,0.};
+	EventHandler[
+	  Plot[x, {x,0,1}, Epilog->{Disk[pc // Offload, 0.1]}]
+	, {"mousemove" -> ((pc = #)&)}]`}</wljs-editor></WLJSWrapper>
+
+Alternative way is still valid
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`Plot[x, {x,0,1}, Epilog->{
+	  Disk[pc // Offload, 0.1],
+	  EventHandler[Null, {"mousemove" -> ((pc = #)&)}]
+	}]`}</wljs-editor></WLJSWrapper>
+
+Here is forces event listener to attach to the nearest parent, which emits events. In this case, it is `Graphics` produced by `Plot`.
+
+## More formatting
+We added the support for more formatting expressions
+
+## Indexed
+It represents the component of `expr` with index `i` and formats as follows
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`Indexed[x, 3]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*TB[*)Indexed[(*|*)x(*|*), {(*|*)3(*|*)}](*|*)(*1:eJxTTMoPSmMAgmIuIOGZl5JakZrilF8BAECTBhI=*)(*]TB*)`}</wljs-editor></WLJSWrapper>
+
+Or multiple
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`Indexed[x, {3, 5}]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*TB[*)Indexed[(*|*)x(*|*), {(*|*)3,5(*|*)}](*|*)(*1:eJxTTMoPSmMAgmIuIOGZl5JakZrilF8BAECTBhI=*)(*]TB*)`}</wljs-editor></WLJSWrapper>
+
+## Better support for Image3D
+We implemented a shader version of `Image3D` using maximum intensity projection (MIP).
+
+It still lacks some options and can only work with grayscale 3D images 
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`Image3D[
+	  ExampleData[{"TestImage3D","CThead"}], 
+	  BoxRatios->{1,1,1}, 
+	  ColorFunction->"GrayLevelOpacity"
+	]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(FrontEndRef["6eef2e8b-4037-4102-b96f-113fa50055e0"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKm6WmphmlWiTpmhgYm+uaGBoY6SZZmqXpGhoapyWaGhiYmqYaAACC/RU2"*)(*]VB*)`}</wljs-editor></WLJSWrapper>
+
+## WebUI Framework and WLX
+WLJS Notebook is built on the WLX and [WebUI technology](https://jerryi.github.io/wlx-docs/docs/Reference/WLX/WebUI/#webuieventlistener) stack. Now it is fully usable even inside the notebook and does not conflict with the existing WebUI from the master Kernel.
+
+Want to build a more complex application? A fully functional sidebar? Here we go!
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true" encoded="true"  >{`%3C%3CCoffeeLiqueur%60WLX%60Importer%60%0A%3C%3CCoffeeLiqueur%60WLX%60WebUI%60`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="print" type="Output" encoded="true"  >{`%22Caching%20is%20enabled%20for%201%20hour%21%20Type%20CoffeeLiqueur%60WLX%60Importer%60Private%60CacheControl%5BFalse%5D%20to%20disable%20it%22`}</wljs-editor></WLJSWrapper>
+
+Now disable caching and load a component
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true" encoded="true"  >{`CoffeeLiqueur%60WLX%60Importer%60Private%60CacheControl%5BFalse%5D%3B%0ASidebarBody%20%3D%20ImportComponent%5B%22attachments%2FSidebar%2FBody.wlx%22%5D%3B`}</wljs-editor></WLJSWrapper>
+
+Use it as if it was a normal WL function
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`.wlx
+	event = CreateUUID[];
+	EventHandler[event, {
+	  filename_String :> (Print[URLDecode[filename]];&)
+	}];
+	
+	SidebarBody["Path"->NotebookDirectory[], "Channel"->event]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="wlx" type="Output"  >{`<nav class="flex flex-1 flex-col" style="-webkit-app-region:none"><ul role="list" class="flex flex-1 flex-col gap-y-7 p-0"><li class="list-none"><ul class="p-0 -mx-2 space-y-0 pl-0"><li class="list-none"><div class=" pb-0.5 pt-0.5 text-gray-700 dark:text-gray-400 flex flex-start items-center pl-7 gap-x-1 rounded-md" style="position: relative"><div ><svg class="w-4 h-5 text-gray-800" viewBox="2 0 20 24" stroke="currentColor" fill="rgb(153 246 228)" stroke-width="1"><path d="M8 4H7.2002C6.08009 4 5.51962 4 5.0918 4.21799C4.71547 4.40973 4.40973 4.71547 4.21799 5.0918C4 5.51962 4 6.08009 4 7.2002V16.8002C4 17.9203 4 18.4801 4.21799 18.9079C4.40973 19.2842 4.71547 19.5905 5.0918 19.7822C5.5192 20 6.07899 20 7.19691 20H8M8 4H16.8002C17.9203 4 18.4796 4 18.9074 4.21799C19.2837 4.40973 19.5905 4.71547 19.7822 5.0918C20 5.5192 20 6.07899 20 7.19691V16.8036C20 17.9215 20 18.4805 19.7822 18.9079C19.5905 19.2842 19.2837 19.5905 18.9074 19.7822C18.48 20 17.921 20 16.8031 20H8M8 4V20M12 11H16M12 8H16"></path></svg></div><button id="f90eb5d4-c362-4a32-997d-acc5fa762dd7" class="block rounded-md py-0 pr-0 text-sm leading-tight">2.5.0.wln</button><script type="module"> const el = document.getElementById('f90eb5d4-c362-4a32-997d-acc5fa762dd7');
+	        el.addEventListener('click', function (e) {
+	            server.kernel.io.fire('466d1417-1a65-49c3-898e-624aa5641973', encodeURIComponent(String(el.value)), '%2FUsers%2Fkirill%2FGithub%2Fwljs-demos-archive%2FDemos%2FRelease%20notes%2F2.5.0.wln');
+	        });</script></div></li>
+	<li class="list-none"><div class=" pb-0.5 pt-0.5 text-gray-700 dark:text-gray-400 flex flex-start items-center pl-7 gap-x-1 rounded-md" style="position: relative"><div ><svg class="w-4 h-5 text-gray-800" viewBox="2 0 20 24" stroke="currentColor" fill="rgb(153 246 228)" stroke-width="1"><path d="M8 4H7.2002C6.08009 4 5.51962 4 5.0918 4.21799C4.71547 4.40973 4.40973 4.71547 4.21799 5.0918C4 5.51962 4 6.08009 4 7.2002V16.8002C4 17.9203 4 18.4801 4.21799 18.9079C4.40973 19.2842 4.71547 19.5905 5.0918 19.7822C5.5192 20 6.07899 20 7.19691 20H8M8 4H16.8002C17.9203 4 18.4796 4 18.9074 4.21799C19.2837 4.40973 19.5905 4.71547 19.7822 5.0918C20 5.5192 20 6.07899 20 7.19691V16.8036C20 17.9215 20 18.4805 19.7822 18.9079C19.5905 19.2842 19.2837 19.5905 18.9074 19.7822C18.48 20 17.921 20 16.8031 20H8M8 4V20M12 11H16M12 8H16"></path></svg></div><button id="a7014143-bc0b-494c-b307-99634c8e3d8a" class="block rounded-md py-0 pr-0 text-sm leading-tight">2.5.2.wln</button><script type="module"> const el = document.getElementById('a7014143-bc0b-494c-b307-99634c8e3d8a');
+	        el.addEventListener('click', function (e) {
+	            server.kernel.io.fire('466d1417-1a65-49c3-898e-624aa5641973', encodeURIComponent(String(el.value)), '%2FUsers%2Fkirill%2FGithub%2Fwljs-demos-archive%2FDemos%2FRelease%20notes%2F2.5.2.wln');
+	        });</script></div></li>
+	<li class="list-none"><div class=" pb-0.5 pt-0.5 text-gray-700 dark:text-gray-400 flex flex-start items-center pl-7 gap-x-1 rounded-md" style="position: relative"><div ><svg class="w-4 h-5 text-gray-800" viewBox="2 0 20 24" stroke="currentColor" fill="rgb(153 246 228)" stroke-width="1"><path d="M8 4H7.2002C6.08009 4 5.51962 4 5.0918 4.21799C4.71547 4.40973 4.40973 4.71547 4.21799 5.0918C4 5.51962 4 6.08009 4 7.2002V16.8002C4 17.9203 4 18.4801 4.21799 18.9079C4.40973 19.2842 4.71547 19.5905 5.0918 19.7822C5.5192 20 6.07899 20 7.19691 20H8M8 4H16.8002C17.9203 4 18.4796 4 18.9074 4.21799C19.2837 4.40973 19.5905 4.71547 19.7822 5.0918C20 5.5192 20 6.07899 20 7.19691V16.8036C20 17.9215 20 18.4805 19.7822 18.9079C19.5905 19.2842 19.2837 19.5905 18.9074 19.7822C18.48 20 17.921 20 16.8031 20H8M8 4V20M12 11H16M12 8H16"></path></svg></div><button id="94d2515a-f9bb-475e-9e4a-97d822e8f03f" class="block rounded-md py-0 pr-0 text-sm leading-tight">2.5.3.wln</button><script type="module"> const el = document.getElementById('94d2515a-f9bb-475e-9e4a-97d822e8f03f');
+	        el.addEventListener('click', function (e) {
+	            server.kernel.io.fire('466d1417-1a65-49c3-898e-624aa5641973', encodeURIComponent(String(el.value)), '%2FUsers%2Fkirill%2FGithub%2Fwljs-demos-archive%2FDemos%2FRelease%20notes%2F2.5.3.wln');
+	        });</script></div></li>
+	<li class="list-none"><div class=" pb-0.5 pt-0.5 text-gray-700 dark:text-gray-400 flex flex-start items-center pl-7 gap-x-1 rounded-md" style="position: relative"><div ><svg class="w-4 h-5 text-gray-800" viewBox="2 0 20 24" stroke="currentColor" fill="rgb(153 246 228)" stroke-width="1"><path d="M8 4H7.2002C6.08009 4 5.51962 4 5.0918 4.21799C4.71547 4.40973 4.40973 4.71547 4.21799 5.0918C4 5.51962 4 6.08009 4 7.2002V16.8002C4 17.9203 4 18.4801 4.21799 18.9079C4.40973 19.2842 4.71547 19.5905 5.0918 19.7822C5.5192 20 6.07899 20 7.19691 20H8M8 4H16.8002C17.9203 4 18.4796 4 18.9074 4.21799C19.2837 4.40973 19.5905 4.71547 19.7822 5.0918C20 5.5192 20 6.07899 20 7.19691V16.8036C20 17.9215 20 18.4805 19.7822 18.9079C19.5905 19.2842 19.2837 19.5905 18.9074 19.7822C18.48 20 17.921 20 16.8031 20H8M8 4V20M12 11H16M12 8H16"></path></svg></div><button id="18c159ec-b3e2-4b4d-a561-193495d896ce" class="block rounded-md py-0 pr-0 text-sm leading-tight">2.5.4.wln</button><script type="module"> const el = document.getElementById('18c159ec-b3e2-4b4d-a561-193495d896ce');
+	        el.addEventListener('click', function (e) {
+	            server.kernel.io.fire('466d1417-1a65-49c3-898e-624aa5641973', encodeURIComponent(String(el.value)), '%2FUsers%2Fkirill%2FGithub%2Fwljs-demos-archive%2FDemos%2FRelease%20notes%2F2.5.4.wln');
+	        });</script></div></li>
+	<li class="list-none"><div class=" pb-0.5 pt-0.5 text-gray-700 dark:text-gray-400 flex flex-start items-center pl-7 gap-x-1 rounded-md" style="position: relative"><div ><svg class="w-4 h-5 text-gray-800" viewBox="2 0 20 24" stroke="currentColor" fill="rgb(153 246 228)" stroke-width="1"><path d="M8 4H7.2002C6.08009 4 5.51962 4 5.0918 4.21799C4.71547 4.40973 4.40973 4.71547 4.21799 5.0918C4 5.51962 4 6.08009 4 7.2002V16.8002C4 17.9203 4 18.4801 4.21799 18.9079C4.40973 19.2842 4.71547 19.5905 5.0918 19.7822C5.5192 20 6.07899 20 7.19691 20H8M8 4H16.8002C17.9203 4 18.4796 4 18.9074 4.21799C19.2837 4.40973 19.5905 4.71547 19.7822 5.0918C20 5.5192 20 6.07899 20 7.19691V16.8036C20 17.9215 20 18.4805 19.7822 18.9079C19.5905 19.2842 19.2837 19.5905 18.9074 19.7822C18.48 20 17.921 20 16.8031 20H8M8 4V20M12 11H16M12 8H16"></path></svg></div><button id="658a11ac-f835-43ac-a146-8ab6560bbd45" class="block rounded-md py-0 pr-0 text-sm leading-tight">2.5.6.wln</button><script type="module"> const el = document.getElementById('658a11ac-f835-43ac-a146-8ab6560bbd45');
+	        el.addEventListener('click', function (e) {
+	            server.kernel.io.fire('466d1417-1a65-49c3-898e-624aa5641973', encodeURIComponent(String(el.value)), '%2FUsers%2Fkirill%2FGithub%2Fwljs-demos-archive%2FDemos%2FRelease%20notes%2F2.5.6.wln');
+	        });</script></div></li>
+	<li class="list-none"><div class=" pb-0.5 pt-0.5 text-gray-700 dark:text-gray-400 flex flex-start items-center pl-7 gap-x-1 rounded-md" style="position: relative"><div ><svg class="w-4 h-5 text-gray-800" viewBox="2 0 20 24" stroke="currentColor" fill="rgb(153 246 228)" stroke-width="1"><path d="M8 4H7.2002C6.08009 4 5.51962 4 5.0918 4.21799C4.71547 4.40973 4.40973 4.71547 4.21799 5.0918C4 5.51962 4 6.08009 4 7.2002V16.8002C4 17.9203 4 18.4801 4.21799 18.9079C4.40973 19.2842 4.71547 19.5905 5.0918 19.7822C5.5192 20 6.07899 20 7.19691 20H8M8 4H16.8002C17.9203 4 18.4796 4 18.9074 4.21799C19.2837 4.40973 19.5905 4.71547 19.7822 5.0918C20 5.5192 20 6.07899 20 7.19691V16.8036C20 17.9215 20 18.4805 19.7822 18.9079C19.5905 19.2842 19.2837 19.5905 18.9074 19.7822C18.48 20 17.921 20 16.8031 20H8M8 4V20M12 11H16M12 8H16"></path></svg></div><button id="75b10f3e-db60-46fa-80c1-0f0ee91aae42" class="block rounded-md py-0 pr-0 text-sm leading-tight">2.5.7.wln</button><script type="module"> const el = document.getElementById('75b10f3e-db60-46fa-80c1-0f0ee91aae42');
+	        el.addEventListener('click', function (e) {
+	            server.kernel.io.fire('466d1417-1a65-49c3-898e-624aa5641973', encodeURIComponent(String(el.value)), '%2FUsers%2Fkirill%2FGithub%2Fwljs-demos-archive%2FDemos%2FRelease%20notes%2F2.5.7.wln');
+	        });</script></div></li>
+	<li class="list-none"><div class=" pb-0.5 pt-0.5 text-gray-700 dark:text-gray-400 flex flex-start items-center pl-7 gap-x-1 rounded-md" style="position: relative"><div ><svg class="w-4 h-5 text-gray-800" viewBox="2 0 20 24" stroke="currentColor" fill="rgb(153 246 228)" stroke-width="1"><path d="M8 4H7.2002C6.08009 4 5.51962 4 5.0918 4.21799C4.71547 4.40973 4.40973 4.71547 4.21799 5.0918C4 5.51962 4 6.08009 4 7.2002V16.8002C4 17.9203 4 18.4801 4.21799 18.9079C4.40973 19.2842 4.71547 19.5905 5.0918 19.7822C5.5192 20 6.07899 20 7.19691 20H8M8 4H16.8002C17.9203 4 18.4796 4 18.9074 4.21799C19.2837 4.40973 19.5905 4.71547 19.7822 5.0918C20 5.5192 20 6.07899 20 7.19691V16.8036C20 17.9215 20 18.4805 19.7822 18.9079C19.5905 19.2842 19.2837 19.5905 18.9074 19.7822C18.48 20 17.921 20 16.8031 20H8M8 4V20M12 11H16M12 8H16"></path></svg></div><button id="57dc53fa-1860-47cd-b65a-4cdc4778360d" class="block rounded-md py-0 pr-0 text-sm leading-tight">2.5.9.wln</button><script type="module"> const el = document.getElementById('57dc53fa-1860-47cd-b65a-4cdc4778360d');
+	        el.addEventListener('click', function (e) {
+	            server.kernel.io.fire('466d1417-1a65-49c3-898e-624aa5641973', encodeURIComponent(String(el.value)), '%2FUsers%2Fkirill%2FGithub%2Fwljs-demos-archive%2FDemos%2FRelease%20notes%2F2.5.9.wln');
+	        });</script></div></li>
+	<li class="list-none"><div class=" pb-0.5 pt-0.5 text-gray-700 dark:text-gray-400 flex flex-start items-center pl-7 gap-x-1 rounded-md" style="position: relative"><div ><svg class="w-4 h-5 text-gray-800" viewBox="2 0 20 24" stroke="currentColor" fill="rgb(153 246 228)" stroke-width="1"><path d="M8 4H7.2002C6.08009 4 5.51962 4 5.0918 4.21799C4.71547 4.40973 4.40973 4.71547 4.21799 5.0918C4 5.51962 4 6.08009 4 7.2002V16.8002C4 17.9203 4 18.4801 4.21799 18.9079C4.40973 19.2842 4.71547 19.5905 5.0918 19.7822C5.5192 20 6.07899 20 7.19691 20H8M8 4H16.8002C17.9203 4 18.4796 4 18.9074 4.21799C19.2837 4.40973 19.5905 4.71547 19.7822 5.0918C20 5.5192 20 6.07899 20 7.19691V16.8036C20 17.9215 20 18.4805 19.7822 18.9079C19.5905 19.2842 19.2837 19.5905 18.9074 19.7822C18.48 20 17.921 20 16.8031 20H8M8 4V20M12 11H16M12 8H16"></path></svg></div><button id="3e6c0e78-e6a0-4db8-b561-f194b2698af2" class="block rounded-md py-0 pr-0 text-sm leading-tight">2.6.1.wln</button><script type="module"> const el = document.getElementById('3e6c0e78-e6a0-4db8-b561-f194b2698af2');
+	        el.addEventListener('click', function (e) {
+	            server.kernel.io.fire('466d1417-1a65-49c3-898e-624aa5641973', encodeURIComponent(String(el.value)), '%2FUsers%2Fkirill%2FGithub%2Fwljs-demos-archive%2FDemos%2FRelease%20notes%2F2.6.1.wln');
+	        });</script></div></li>
+	<li class="list-none"><div class=" pb-0.5 pt-0.5 text-gray-700 dark:text-gray-400 flex flex-start items-center pl-7 gap-x-1 rounded-md" style="position: relative"><div ><svg class="w-4 h-5 text-gray-800" viewBox="2 0 20 24" stroke="currentColor" fill="rgb(153 246 228)" stroke-width="1"><path d="M8 4H7.2002C6.08009 4 5.51962 4 5.0918 4.21799C4.71547 4.40973 4.40973 4.71547 4.21799 5.0918C4 5.51962 4 6.08009 4 7.2002V16.8002C4 17.9203 4 18.4801 4.21799 18.9079C4.40973 19.2842 4.71547 19.5905 5.0918 19.7822C5.5192 20 6.07899 20 7.19691 20H8M8 4H16.8002C17.9203 4 18.4796 4 18.9074 4.21799C19.2837 4.40973 19.5905 4.71547 19.7822 5.0918C20 5.5192 20 6.07899 20 7.19691V16.8036C20 17.9215 20 18.4805 19.7822 18.9079C19.5905 19.2842 19.2837 19.5905 18.9074 19.7822C18.48 20 17.921 20 16.8031 20H8M8 4V20M12 11H16M12 8H16"></path></svg></div><button id="b034e31a-5721-43da-88a1-6fd46bcba1e2" class="block rounded-md py-0 pr-0 text-sm leading-tight">2.6.2.wln</button><script type="module"> const el = document.getElementById('b034e31a-5721-43da-88a1-6fd46bcba1e2');
+	        el.addEventListener('click', function (e) {
+	            server.kernel.io.fire('466d1417-1a65-49c3-898e-624aa5641973', encodeURIComponent(String(el.value)), '%2FUsers%2Fkirill%2FGithub%2Fwljs-demos-archive%2FDemos%2FRelease%20notes%2F2.6.2.wln');
+	        });</script></div></li>
+	<li class="list-none"><div class=" pb-0.5 pt-0.5 text-gray-700 dark:text-gray-400 flex flex-start items-center pl-7 gap-x-1 rounded-md" style="position: relative"><div ><svg class="w-4 h-5 text-gray-800" viewBox="2 0 20 24" stroke="currentColor" fill="rgb(153 246 228)" stroke-width="1"><path d="M8 4H7.2002C6.08009 4 5.51962 4 5.0918 4.21799C4.71547 4.40973 4.40973 4.71547 4.21799 5.0918C4 5.51962 4 6.08009 4 7.2002V16.8002C4 17.9203 4 18.4801 4.21799 18.9079C4.40973 19.2842 4.71547 19.5905 5.0918 19.7822C5.5192 20 6.07899 20 7.19691 20H8M8 4H16.8002C17.9203 4 18.4796 4 18.9074 4.21799C19.2837 4.40973 19.5905 4.71547 19.7822 5.0918C20 5.5192 20 6.07899 20 7.19691V16.8036C20 17.9215 20 18.4805 19.7822 18.9079C19.5905 19.2842 19.2837 19.5905 18.9074 19.7822C18.48 20 17.921 20 16.8031 20H8M8 4V20M12 11H16M12 8H16"></path></svg></div><button id="56456446-5454-4e45-8bfe-6b3734de8fde" class="block rounded-md py-0 pr-0 text-sm leading-tight">2.6.3.wln</button><script type="module"> const el = document.getElementById('56456446-5454-4e45-8bfe-6b3734de8fde');
+	        el.addEventListener('click', function (e) {
+	            server.kernel.io.fire('466d1417-1a65-49c3-898e-624aa5641973', encodeURIComponent(String(el.value)), '%2FUsers%2Fkirill%2FGithub%2Fwljs-demos-archive%2FDemos%2FRelease%20notes%2F2.6.3.wln');
+	        });</script></div></li>
+	<li class="list-none"><div class=" pb-0.5 pt-0.5 text-gray-700 dark:text-gray-400 flex flex-start items-center pl-7 gap-x-1 rounded-md" style="position: relative"><div ><svg class="w-4 h-5 text-gray-800" viewBox="2 0 20 24" stroke="currentColor" fill="rgb(153 246 228)" stroke-width="1"><path d="M8 4H7.2002C6.08009 4 5.51962 4 5.0918 4.21799C4.71547 4.40973 4.40973 4.71547 4.21799 5.0918C4 5.51962 4 6.08009 4 7.2002V16.8002C4 17.9203 4 18.4801 4.21799 18.9079C4.40973 19.2842 4.71547 19.5905 5.0918 19.7822C5.5192 20 6.07899 20 7.19691 20H8M8 4H16.8002C17.9203 4 18.4796 4 18.9074 4.21799C19.2837 4.40973 19.5905 4.71547 19.7822 5.0918C20 5.5192 20 6.07899 20 7.19691V16.8036C20 17.9215 20 18.4805 19.7822 18.9079C19.5905 19.2842 19.2837 19.5905 18.9074 19.7822C18.48 20 17.921 20 16.8031 20H8M8 4V20M12 11H16M12 8H16"></path></svg></div><button id="0e62bb95-58d5-4c61-99f6-a316c2b96808" class="block rounded-md py-0 pr-0 text-sm leading-tight">2.6.4.wln</button><script type="module"> const el = document.getElementById('0e62bb95-58d5-4c61-99f6-a316c2b96808');
+	        el.addEventListener('click', function (e) {
+	            server.kernel.io.fire('466d1417-1a65-49c3-898e-624aa5641973', encodeURIComponent(String(el.value)), '%2FUsers%2Fkirill%2FGithub%2Fwljs-demos-archive%2FDemos%2FRelease%20notes%2F2.6.4.wln');
+	        });</script></div></li>
+	<li class="list-none"><div class=" pb-0.5 pt-0.5 text-gray-700 dark:text-gray-400 flex flex-start items-center pl-7 gap-x-1 rounded-md" style="position: relative"><div ><svg class="w-4 h-5 text-gray-800" viewBox="2 0 20 24" stroke="currentColor" fill="rgb(153 246 228)" stroke-width="1"><path d="M8 4H7.2002C6.08009 4 5.51962 4 5.0918 4.21799C4.71547 4.40973 4.40973 4.71547 4.21799 5.0918C4 5.51962 4 6.08009 4 7.2002V16.8002C4 17.9203 4 18.4801 4.21799 18.9079C4.40973 19.2842 4.71547 19.5905 5.0918 19.7822C5.5192 20 6.07899 20 7.19691 20H8M8 4H16.8002C17.9203 4 18.4796 4 18.9074 4.21799C19.2837 4.40973 19.5905 4.71547 19.7822 5.0918C20 5.5192 20 6.07899 20 7.19691V16.8036C20 17.9215 20 18.4805 19.7822 18.9079C19.5905 19.2842 19.2837 19.5905 18.9074 19.7822C18.48 20 17.921 20 16.8031 20H8M8 4V20M12 11H16M12 8H16"></path></svg></div><button id="fa638cb6-4e1e-4074-b874-fc638f946703" class="block rounded-md py-0 pr-0 text-sm leading-tight">2.6.5.wln</button><script type="module"> const el = document.getElementById('fa638cb6-4e1e-4074-b874-fc638f946703');
+	        el.addEventListener('click', function (e) {
+	            server.kernel.io.fire('466d1417-1a65-49c3-898e-624aa5641973', encodeURIComponent(String(el.value)), '%2FUsers%2Fkirill%2FGithub%2Fwljs-demos-archive%2FDemos%2FRelease%20notes%2F2.6.5.wln');
+	        });</script></div></li>
+	<li class="list-none"><div class=" pb-0.5 pt-0.5 text-gray-700 dark:text-gray-400 flex flex-start items-center pl-7 gap-x-1 rounded-md" style="position: relative"><div ><svg class="w-4 h-5 text-gray-800" viewBox="2 0 20 24" stroke="currentColor" fill="rgb(153 246 228)" stroke-width="1"><path d="M8 4H7.2002C6.08009 4 5.51962 4 5.0918 4.21799C4.71547 4.40973 4.40973 4.71547 4.21799 5.0918C4 5.51962 4 6.08009 4 7.2002V16.8002C4 17.9203 4 18.4801 4.21799 18.9079C4.40973 19.2842 4.71547 19.5905 5.0918 19.7822C5.5192 20 6.07899 20 7.19691 20H8M8 4H16.8002C17.9203 4 18.4796 4 18.9074 4.21799C19.2837 4.40973 19.5905 4.71547 19.7822 5.0918C20 5.5192 20 6.07899 20 7.19691V16.8036C20 17.9215 20 18.4805 19.7822 18.9079C19.5905 19.2842 19.2837 19.5905 18.9074 19.7822C18.48 20 17.921 20 16.8031 20H8M8 4V20M12 11H16M12 8H16"></path></svg></div><button id="333b2a4e-9016-473d-a047-67a7594acb6b" class="block rounded-md py-0 pr-0 text-sm leading-tight">2.6.7.wln</button><script type="module"> const el = document.getElementById('333b2a4e-9016-473d-a047-67a7594acb6b');
+	        el.addEventListener('click', function (e) {
+	            server.kernel.io.fire('466d1417-1a65-49c3-898e-624aa5641973', encodeURIComponent(String(el.value)), '%2FUsers%2Fkirill%2FGithub%2Fwljs-demos-archive%2FDemos%2FRelease%20notes%2F2.6.7.wln');
+	        });</script></div></li>
+	<li class="list-none"><div class=" pb-0.5 pt-0.5 text-gray-700 dark:text-gray-400 flex flex-start items-center pl-7 gap-x-1 rounded-md" style="position: relative"><div ><svg class="w-4 h-5 text-gray-800" viewBox="2 0 20 24" stroke="currentColor" fill="rgb(153 246 228)" stroke-width="1"><path d="M8 4H7.2002C6.08009 4 5.51962 4 5.0918 4.21799C4.71547 4.40973 4.40973 4.71547 4.21799 5.0918C4 5.51962 4 6.08009 4 7.2002V16.8002C4 17.9203 4 18.4801 4.21799 18.9079C4.40973 19.2842 4.71547 19.5905 5.0918 19.7822C5.5192 20 6.07899 20 7.19691 20H8M8 4H16.8002C17.9203 4 18.4796 4 18.9074 4.21799C19.2837 4.40973 19.5905 4.71547 19.7822 5.0918C20 5.5192 20 6.07899 20 7.19691V16.8036C20 17.9215 20 18.4805 19.7822 18.9079C19.5905 19.2842 19.2837 19.5905 18.9074 19.7822C18.48 20 17.921 20 16.8031 20H8M8 4V20M12 11H16M12 8H16"></path></svg></div><button id="b913be1a-755f-4216-8859-3676e2d85056" class="block rounded-md py-0 pr-0 text-sm leading-tight">2.6.8.wln</button><script type="module"> const el = document.getElementById('b913be1a-755f-4216-8859-3676e2d85056');
+	        el.addEventListener('click', function (e) {
+	            server.kernel.io.fire('466d1417-1a65-49c3-898e-624aa5641973', encodeURIComponent(String(el.value)), '%2FUsers%2Fkirill%2FGithub%2Fwljs-demos-archive%2FDemos%2FRelease%20notes%2F2.6.8.wln');
+	        });</script></div></li>
+	<li class="list-none"><div class=" pb-0.5 pt-0.5 text-gray-700 dark:text-gray-400 flex flex-start items-center pl-7 gap-x-1 rounded-md" style="position: relative"><div ><svg class="w-4 h-5 text-gray-800" viewBox="2 0 20 24" stroke="currentColor" fill="rgb(153 246 228)" stroke-width="1"><path d="M8 4H7.2002C6.08009 4 5.51962 4 5.0918 4.21799C4.71547 4.40973 4.40973 4.71547 4.21799 5.0918C4 5.51962 4 6.08009 4 7.2002V16.8002C4 17.9203 4 18.4801 4.21799 18.9079C4.40973 19.2842 4.71547 19.5905 5.0918 19.7822C5.5192 20 6.07899 20 7.19691 20H8M8 4H16.8002C17.9203 4 18.4796 4 18.9074 4.21799C19.2837 4.40973 19.5905 4.71547 19.7822 5.0918C20 5.5192 20 6.07899 20 7.19691V16.8036C20 17.9215 20 18.4805 19.7822 18.9079C19.5905 19.2842 19.2837 19.5905 18.9074 19.7822C18.48 20 17.921 20 16.8031 20H8M8 4V20M12 11H16M12 8H16"></path></svg></div><button id="8e1d53d6-8870-4c4b-957d-3c64ca3c7d73" class="block rounded-md py-0 pr-0 text-sm leading-tight">2.7.0.wln</button><script type="module"> const el = document.getElementById('8e1d53d6-8870-4c4b-957d-3c64ca3c7d73');
+	        el.addEventListener('click', function (e) {
+	            server.kernel.io.fire('466d1417-1a65-49c3-898e-624aa5641973', encodeURIComponent(String(el.value)), '%2FUsers%2Fkirill%2FGithub%2Fwljs-demos-archive%2FDemos%2FRelease%20notes%2F2.7.0.wln');
+	        });</script></div></li>
+	<li class="list-none"><div class=" pb-0.5 pt-0.5 text-gray-700 dark:text-gray-400 flex flex-start items-center pl-7 gap-x-1 rounded-md" style="position: relative"><div ><svg class="w-4 h-5 text-gray-800" viewBox="2 0 20 24" stroke="currentColor" fill="rgb(153 246 228)" stroke-width="1"><path d="M8 4H7.2002C6.08009 4 5.51962 4 5.0918 4.21799C4.71547 4.40973 4.40973 4.71547 4.21799 5.0918C4 5.51962 4 6.08009 4 7.2002V16.8002C4 17.9203 4 18.4801 4.21799 18.9079C4.40973 19.2842 4.71547 19.5905 5.0918 19.7822C5.5192 20 6.07899 20 7.19691 20H8M8 4H16.8002C17.9203 4 18.4796 4 18.9074 4.21799C19.2837 4.40973 19.5905 4.71547 19.7822 5.0918C20 5.5192 20 6.07899 20 7.19691V16.8036C20 17.9215 20 18.4805 19.7822 18.9079C19.5905 19.2842 19.2837 19.5905 18.9074 19.7822C18.48 20 17.921 20 16.8031 20H8M8 4V20M12 11H16M12 8H16"></path></svg></div><button id="caed6f0a-9307-498e-9cdd-00c3f5659332" class="block rounded-md py-0 pr-0 text-sm leading-tight">2.7.1.wln</button><script type="module"> const el = document.getElementById('caed6f0a-9307-498e-9cdd-00c3f5659332');
+	        el.addEventListener('click', function (e) {
+	            server.kernel.io.fire('466d1417-1a65-49c3-898e-624aa5641973', encodeURIComponent(String(el.value)), '%2FUsers%2Fkirill%2FGithub%2Fwljs-demos-archive%2FDemos%2FRelease%20notes%2F2.7.1.wln');
+	        });</script></div></li>
+	<li class="list-none"><div class=" pb-0.5 pt-0.5 text-gray-700 dark:text-gray-400 flex flex-start items-center pl-7 gap-x-1 rounded-md" style="position: relative"><div ><svg class="w-4 h-5 text-gray-800" viewBox="2 0 20 24" stroke="currentColor" fill="rgb(153 246 228)" stroke-width="1"><path d="M8 4H7.2002C6.08009 4 5.51962 4 5.0918 4.21799C4.71547 4.40973 4.40973 4.71547 4.21799 5.0918C4 5.51962 4 6.08009 4 7.2002V16.8002C4 17.9203 4 18.4801 4.21799 18.9079C4.40973 19.2842 4.71547 19.5905 5.0918 19.7822C5.5192 20 6.07899 20 7.19691 20H8M8 4H16.8002C17.9203 4 18.4796 4 18.9074 4.21799C19.2837 4.40973 19.5905 4.71547 19.7822 5.0918C20 5.5192 20 6.07899 20 7.19691V16.8036C20 17.9215 20 18.4805 19.7822 18.9079C19.5905 19.2842 19.2837 19.5905 18.9074 19.7822C18.48 20 17.921 20 16.8031 20H8M8 4V20M12 11H16M12 8H16"></path></svg></div><button id="1d57c524-da8c-4c77-abfe-bf5e8f8030e6" class="block rounded-md py-0 pr-0 text-sm leading-tight">2.7.2.wln</button><script type="module"> const el = document.getElementById('1d57c524-da8c-4c77-abfe-bf5e8f8030e6');
+	        el.addEventListener('click', function (e) {
+	            server.kernel.io.fire('466d1417-1a65-49c3-898e-624aa5641973', encodeURIComponent(String(el.value)), '%2FUsers%2Fkirill%2FGithub%2Fwljs-demos-archive%2FDemos%2FRelease%20notes%2F2.7.2.wln');
+	        });</script></div></li>
+	<li class="list-none"><div class=" pb-0.5 pt-0.5 text-gray-700 dark:text-gray-400 flex flex-start items-center pl-7 gap-x-1 rounded-md" style="position: relative"><div ><svg class="w-4 h-5 text-gray-800" viewBox="2 0 20 24" stroke="currentColor" fill="rgb(153 246 228)" stroke-width="1"><path d="M8 4H7.2002C6.08009 4 5.51962 4 5.0918 4.21799C4.71547 4.40973 4.40973 4.71547 4.21799 5.0918C4 5.51962 4 6.08009 4 7.2002V16.8002C4 17.9203 4 18.4801 4.21799 18.9079C4.40973 19.2842 4.71547 19.5905 5.0918 19.7822C5.5192 20 6.07899 20 7.19691 20H8M8 4H16.8002C17.9203 4 18.4796 4 18.9074 4.21799C19.2837 4.40973 19.5905 4.71547 19.7822 5.0918C20 5.5192 20 6.07899 20 7.19691V16.8036C20 17.9215 20 18.4805 19.7822 18.9079C19.5905 19.2842 19.2837 19.5905 18.9074 19.7822C18.48 20 17.921 20 16.8031 20H8M8 4V20M12 11H16M12 8H16"></path></svg></div><button id="0f9c911f-96fe-4e35-b6d2-b5cd3014005e" class="block rounded-md py-0 pr-0 text-sm leading-tight">2.7.2 X1.wln</button><script type="module"> const el = document.getElementById('0f9c911f-96fe-4e35-b6d2-b5cd3014005e');
+	        el.addEventListener('click', function (e) {
+	            server.kernel.io.fire('466d1417-1a65-49c3-898e-624aa5641973', encodeURIComponent(String(el.value)), '%2FUsers%2Fkirill%2FGithub%2Fwljs-demos-archive%2FDemos%2FRelease%20notes%2F2.7.2%20X1.wln');
+	        });</script></div></li>
+	<li class="list-none"><div class=" pb-0.5 pt-0.5 text-gray-700 dark:text-gray-400 flex flex-start items-center pl-7 gap-x-1 rounded-md" style="position: relative"><div ><svg class="w-4 h-5 text-gray-800" viewBox="2 0 20 24" stroke="currentColor" fill="rgb(153 246 228)" stroke-width="1"><path d="M8 4H7.2002C6.08009 4 5.51962 4 5.0918 4.21799C4.71547 4.40973 4.40973 4.71547 4.21799 5.0918C4 5.51962 4 6.08009 4 7.2002V16.8002C4 17.9203 4 18.4801 4.21799 18.9079C4.40973 19.2842 4.71547 19.5905 5.0918 19.7822C5.5192 20 6.07899 20 7.19691 20H8M8 4H16.8002C17.9203 4 18.4796 4 18.9074 4.21799C19.2837 4.40973 19.5905 4.71547 19.7822 5.0918C20 5.5192 20 6.07899 20 7.19691V16.8036C20 17.9215 20 18.4805 19.7822 18.9079C19.5905 19.2842 19.2837 19.5905 18.9074 19.7822C18.48 20 17.921 20 16.8031 20H8M8 4V20M12 11H16M12 8H16"></path></svg></div><button id="9e3679e2-35f0-4453-ad2c-84ff77634d61" class="block rounded-md py-0 pr-0 text-sm leading-tight">2.7.3.wln</button><script type="module"> const el = document.getElementById('9e3679e2-35f0-4453-ad2c-84ff77634d61');
+	        el.addEventListener('click', function (e) {
+	            server.kernel.io.fire('466d1417-1a65-49c3-898e-624aa5641973', encodeURIComponent(String(el.value)), '%2FUsers%2Fkirill%2FGithub%2Fwljs-demos-archive%2FDemos%2FRelease%20notes%2F2.7.3.wln');
+	        });</script></div></li>
+	<li class="list-none"><div class=" pb-0.5 pt-0.5 text-gray-700 dark:text-gray-400 flex flex-start items-center pl-7 gap-x-1 rounded-md" style="position: relative"><div ><svg class="w-4 h-5 text-gray-800" viewBox="2 0 20 24" stroke="currentColor" fill="rgb(153 246 228)" stroke-width="1"><path d="M8 4H7.2002C6.08009 4 5.51962 4 5.0918 4.21799C4.71547 4.40973 4.40973 4.71547 4.21799 5.0918C4 5.51962 4 6.08009 4 7.2002V16.8002C4 17.9203 4 18.4801 4.21799 18.9079C4.40973 19.2842 4.71547 19.5905 5.0918 19.7822C5.5192 20 6.07899 20 7.19691 20H8M8 4H16.8002C17.9203 4 18.4796 4 18.9074 4.21799C19.2837 4.40973 19.5905 4.71547 19.7822 5.0918C20 5.5192 20 6.07899 20 7.19691V16.8036C20 17.9215 20 18.4805 19.7822 18.9079C19.5905 19.2842 19.2837 19.5905 18.9074 19.7822C18.48 20 17.921 20 16.8031 20H8M8 4V20M12 11H16M12 8H16"></path></svg></div><button id="4c7d7a0f-1aa2-4100-917f-fbbd4be016cb" class="block rounded-md py-0 pr-0 text-sm leading-tight">2.7.4.wln</button><script type="module"> const el = document.getElementById('4c7d7a0f-1aa2-4100-917f-fbbd4be016cb');
+	        el.addEventListener('click', function (e) {
+	            server.kernel.io.fire('466d1417-1a65-49c3-898e-624aa5641973', encodeURIComponent(String(el.value)), '%2FUsers%2Fkirill%2FGithub%2Fwljs-demos-archive%2FDemos%2FRelease%20notes%2F2.7.4.wln');
+	        });</script></div></li>
+	<li class="list-none"><div class=" pb-0.5 pt-0.5 text-gray-700 dark:text-gray-400 flex flex-start items-center pl-7 gap-x-1 rounded-md" style="position: relative"><div ><svg class="w-4 h-5 text-gray-800" viewBox="2 0 20 24" stroke="currentColor" fill="rgb(153 246 228)" stroke-width="1"><path d="M8 4H7.2002C6.08009 4 5.51962 4 5.0918 4.21799C4.71547 4.40973 4.40973 4.71547 4.21799 5.0918C4 5.51962 4 6.08009 4 7.2002V16.8002C4 17.9203 4 18.4801 4.21799 18.9079C4.40973 19.2842 4.71547 19.5905 5.0918 19.7822C5.5192 20 6.07899 20 7.19691 20H8M8 4H16.8002C17.9203 4 18.4796 4 18.9074 4.21799C19.2837 4.40973 19.5905 4.71547 19.7822 5.0918C20 5.5192 20 6.07899 20 7.19691V16.8036C20 17.9215 20 18.4805 19.7822 18.9079C19.5905 19.2842 19.2837 19.5905 18.9074 19.7822C18.48 20 17.921 20 16.8031 20H8M8 4V20M12 11H16M12 8H16"></path></svg></div><button id="dc4e5014-8e45-4774-a489-5f95fddd35f3" class="block rounded-md py-0 pr-0 text-sm leading-tight">2.7.5.wln</button><script type="module"> const el = document.getElementById('dc4e5014-8e45-4774-a489-5f95fddd35f3');
+	        el.addEventListener('click', function (e) {
+	            server.kernel.io.fire('466d1417-1a65-49c3-898e-624aa5641973', encodeURIComponent(String(el.value)), '%2FUsers%2Fkirill%2FGithub%2Fwljs-demos-archive%2FDemos%2FRelease%20notes%2F2.7.5.wln');
+	        });</script></div></li>
+	<li class="list-none"><div class=" pb-0.5 pt-0.5 text-gray-700 dark:text-gray-400 flex flex-start items-center pl-7 gap-x-1 rounded-md" style="position: relative"><div ><svg class="w-4 h-5 text-gray-800" viewBox="2 0 20 24" stroke="currentColor" fill="rgb(153 246 228)" stroke-width="1"><path d="M8 4H7.2002C6.08009 4 5.51962 4 5.0918 4.21799C4.71547 4.40973 4.40973 4.71547 4.21799 5.0918C4 5.51962 4 6.08009 4 7.2002V16.8002C4 17.9203 4 18.4801 4.21799 18.9079C4.40973 19.2842 4.71547 19.5905 5.0918 19.7822C5.5192 20 6.07899 20 7.19691 20H8M8 4H16.8002C17.9203 4 18.4796 4 18.9074 4.21799C19.2837 4.40973 19.5905 4.71547 19.7822 5.0918C20 5.5192 20 6.07899 20 7.19691V16.8036C20 17.9215 20 18.4805 19.7822 18.9079C19.5905 19.2842 19.2837 19.5905 18.9074 19.7822C18.48 20 17.921 20 16.8031 20H8M8 4V20M12 11H16M12 8H16"></path></svg></div><button id="28cdcaf4-906e-4aa8-a71a-41beff721d78" class="block rounded-md py-0 pr-0 text-sm leading-tight">2.7.6.wln</button><script type="module"> const el = document.getElementById('28cdcaf4-906e-4aa8-a71a-41beff721d78');
+	        el.addEventListener('click', function (e) {
+	            server.kernel.io.fire('466d1417-1a65-49c3-898e-624aa5641973', encodeURIComponent(String(el.value)), '%2FUsers%2Fkirill%2FGithub%2Fwljs-demos-archive%2FDemos%2FRelease%20notes%2F2.7.6.wln');
+	        });</script></div></li>
+	<li class="list-none"><div class=" pb-0.5 pt-0.5 text-gray-700 dark:text-gray-400 flex flex-start items-center pl-7 gap-x-1 rounded-md" style="position: relative"><div ><svg class="w-4 h-5 text-gray-800" viewBox="2 0 20 24" stroke="currentColor" fill="rgb(153 246 228)" stroke-width="1"><path d="M8 4H7.2002C6.08009 4 5.51962 4 5.0918 4.21799C4.71547 4.40973 4.40973 4.71547 4.21799 5.0918C4 5.51962 4 6.08009 4 7.2002V16.8002C4 17.9203 4 18.4801 4.21799 18.9079C4.40973 19.2842 4.71547 19.5905 5.0918 19.7822C5.5192 20 6.07899 20 7.19691 20H8M8 4H16.8002C17.9203 4 18.4796 4 18.9074 4.21799C19.2837 4.40973 19.5905 4.71547 19.7822 5.0918C20 5.5192 20 6.07899 20 7.19691V16.8036C20 17.9215 20 18.4805 19.7822 18.9079C19.5905 19.2842 19.2837 19.5905 18.9074 19.7822C18.48 20 17.921 20 16.8031 20H8M8 4V20M12 11H16M12 8H16"></path></svg></div><button id="0e756f3e-a452-4246-9451-2a9a496e1dbe" class="block rounded-md py-0 pr-0 text-sm leading-tight">2.7.8.wln</button><script type="module"> const el = document.getElementById('0e756f3e-a452-4246-9451-2a9a496e1dbe');
+	        el.addEventListener('click', function (e) {
+	            server.kernel.io.fire('466d1417-1a65-49c3-898e-624aa5641973', encodeURIComponent(String(el.value)), '%2FUsers%2Fkirill%2FGithub%2Fwljs-demos-archive%2FDemos%2FRelease%20notes%2F2.7.8.wln');
+	        });</script></div></li>
+	<li class="list-none"><div class=" pb-0.5 pt-0.5 text-gray-700 dark:text-gray-400 flex flex-start items-center pl-7 gap-x-1 rounded-md" style="position: relative"><div ><svg class="w-4 h-5 text-gray-800" viewBox="2 0 20 24" stroke="currentColor" fill="rgb(153 246 228)" stroke-width="1"><path d="M8 4H7.2002C6.08009 4 5.51962 4 5.0918 4.21799C4.71547 4.40973 4.40973 4.71547 4.21799 5.0918C4 5.51962 4 6.08009 4 7.2002V16.8002C4 17.9203 4 18.4801 4.21799 18.9079C4.40973 19.2842 4.71547 19.5905 5.0918 19.7822C5.5192 20 6.07899 20 7.19691 20H8M8 4H16.8002C17.9203 4 18.4796 4 18.9074 4.21799C19.2837 4.40973 19.5905 4.71547 19.7822 5.0918C20 5.5192 20 6.07899 20 7.19691V16.8036C20 17.9215 20 18.4805 19.7822 18.9079C19.5905 19.2842 19.2837 19.5905 18.9074 19.7822C18.48 20 17.921 20 16.8031 20H8M8 4V20M12 11H16M12 8H16"></path></svg></div><button id="01c25a75-308f-4750-9422-122405f446c9" class="block rounded-md py-0 pr-0 text-sm leading-tight">2.7.9.wln</button><script type="module"> const el = document.getElementById('01c25a75-308f-4750-9422-122405f446c9');
+	        el.addEventListener('click', function (e) {
+	            server.kernel.io.fire('466d1417-1a65-49c3-898e-624aa5641973', encodeURIComponent(String(el.value)), '%2FUsers%2Fkirill%2FGithub%2Fwljs-demos-archive%2FDemos%2FRelease%20notes%2F2.7.9.wln');
+	        });</script></div></li>
+	<li class="list-none"><div class=" pb-0.5 pt-0.5 text-gray-700 dark:text-gray-400 flex flex-start items-center pl-7 gap-x-1 rounded-md" style="position: relative"><div ><svg class="w-4 h-5 text-gray-800" viewBox="2 0 20 24" stroke="currentColor" fill="rgb(153 246 228)" stroke-width="1"><path d="M8 4H7.2002C6.08009 4 5.51962 4 5.0918 4.21799C4.71547 4.40973 4.40973 4.71547 4.21799 5.0918C4 5.51962 4 6.08009 4 7.2002V16.8002C4 17.9203 4 18.4801 4.21799 18.9079C4.40973 19.2842 4.71547 19.5905 5.0918 19.7822C5.5192 20 6.07899 20 7.19691 20H8M8 4H16.8002C17.9203 4 18.4796 4 18.9074 4.21799C19.2837 4.40973 19.5905 4.71547 19.7822 5.0918C20 5.5192 20 6.07899 20 7.19691V16.8036C20 17.9215 20 18.4805 19.7822 18.9079C19.5905 19.2842 19.2837 19.5905 18.9074 19.7822C18.48 20 17.921 20 16.8031 20H8M8 4V20M12 11H16M12 8H16"></path></svg></div><button id="ef0a7c1a-36c8-498c-8e59-8b1fad0d30fd" class="block rounded-md py-0 pr-0 text-sm leading-tight">2.8.0.wln</button><script type="module"> const el = document.getElementById('ef0a7c1a-36c8-498c-8e59-8b1fad0d30fd');
+	        el.addEventListener('click', function (e) {
+	            server.kernel.io.fire('466d1417-1a65-49c3-898e-624aa5641973', encodeURIComponent(String(el.value)), '%2FUsers%2Fkirill%2FGithub%2Fwljs-demos-archive%2FDemos%2FRelease%20notes%2F2.8.0.wln');
+	        });</script></div></li>
+	<li class="list-none"><div class=" pb-0.5 pt-0.5 text-gray-700 dark:text-gray-400 flex flex-start items-center pl-7 gap-x-1 rounded-md" style="position: relative"><div ><svg class="w-4 h-5 text-gray-800" viewBox="2 0 20 24" stroke="currentColor" fill="rgb(153 246 228)" stroke-width="1"><path d="M8 4H7.2002C6.08009 4 5.51962 4 5.0918 4.21799C4.71547 4.40973 4.40973 4.71547 4.21799 5.0918C4 5.51962 4 6.08009 4 7.2002V16.8002C4 17.9203 4 18.4801 4.21799 18.9079C4.40973 19.2842 4.71547 19.5905 5.0918 19.7822C5.5192 20 6.07899 20 7.19691 20H8M8 4H16.8002C17.9203 4 18.4796 4 18.9074 4.21799C19.2837 4.40973 19.5905 4.71547 19.7822 5.0918C20 5.5192 20 6.07899 20 7.19691V16.8036C20 17.9215 20 18.4805 19.7822 18.9079C19.5905 19.2842 19.2837 19.5905 18.9074 19.7822C18.48 20 17.921 20 16.8031 20H8M8 4V20M12 11H16M12 8H16"></path></svg></div><button id="966ffb1f-a7bd-4761-bbd1-49e1781504f9" class="block rounded-md py-0 pr-0 text-sm leading-tight">2.8.1.wln</button><script type="module"> const el = document.getElementById('966ffb1f-a7bd-4761-bbd1-49e1781504f9');
+	        el.addEventListener('click', function (e) {
+	            server.kernel.io.fire('466d1417-1a65-49c3-898e-624aa5641973', encodeURIComponent(String(el.value)), '%2FUsers%2Fkirill%2FGithub%2Fwljs-demos-archive%2FDemos%2FRelease%20notes%2F2.8.1.wln');
+	        });</script></div></li>
+	<li class="list-none"><div class=" pb-0.5 pt-0.5 text-gray-700 dark:text-gray-400 flex flex-start items-center pl-7 gap-x-1 rounded-md" style="position: relative"><div ><svg class="w-4 h-5 text-gray-800" viewBox="2 0 20 24" stroke="currentColor" fill="rgb(153 246 228)" stroke-width="1"><path d="M8 4H7.2002C6.08009 4 5.51962 4 5.0918 4.21799C4.71547 4.40973 4.40973 4.71547 4.21799 5.0918C4 5.51962 4 6.08009 4 7.2002V16.8002C4 17.9203 4 18.4801 4.21799 18.9079C4.40973 19.2842 4.71547 19.5905 5.0918 19.7822C5.5192 20 6.07899 20 7.19691 20H8M8 4H16.8002C17.9203 4 18.4796 4 18.9074 4.21799C19.2837 4.40973 19.5905 4.71547 19.7822 5.0918C20 5.5192 20 6.07899 20 7.19691V16.8036C20 17.9215 20 18.4805 19.7822 18.9079C19.5905 19.2842 19.2837 19.5905 18.9074 19.7822C18.48 20 17.921 20 16.8031 20H8M8 4V20M12 11H16M12 8H16"></path></svg></div><button id="a6f74384-0bbc-414e-a3d9-83c85dfa1549" class="block rounded-md py-0 pr-0 text-sm leading-tight">2.8.2.wln</button><script type="module"> const el = document.getElementById('a6f74384-0bbc-414e-a3d9-83c85dfa1549');
+	        el.addEventListener('click', function (e) {
+	            server.kernel.io.fire('466d1417-1a65-49c3-898e-624aa5641973', encodeURIComponent(String(el.value)), '%2FUsers%2Fkirill%2FGithub%2Fwljs-demos-archive%2FDemos%2FRelease%20notes%2F2.8.2.wln');
+	        });</script></div></li>
+	<li class="list-none"><div class=" pb-0.5 pt-0.5 text-gray-700 dark:text-gray-400 flex flex-start items-center pl-7 gap-x-1 rounded-md" style="position: relative"><div ><svg class="w-4 h-5 text-gray-800" viewBox="2 0 20 24" stroke="currentColor" fill="rgb(153 246 228)" stroke-width="1"><path d="M8 4H7.2002C6.08009 4 5.51962 4 5.0918 4.21799C4.71547 4.40973 4.40973 4.71547 4.21799 5.0918C4 5.51962 4 6.08009 4 7.2002V16.8002C4 17.9203 4 18.4801 4.21799 18.9079C4.40973 19.2842 4.71547 19.5905 5.0918 19.7822C5.5192 20 6.07899 20 7.19691 20H8M8 4H16.8002C17.9203 4 18.4796 4 18.9074 4.21799C19.2837 4.40973 19.5905 4.71547 19.7822 5.0918C20 5.5192 20 6.07899 20 7.19691V16.8036C20 17.9215 20 18.4805 19.7822 18.9079C19.5905 19.2842 19.2837 19.5905 18.9074 19.7822C18.48 20 17.921 20 16.8031 20H8M8 4V20M12 11H16M12 8H16"></path></svg></div><button id="852a7ac0-065c-4955-a8b0-85ae072462c4" class="block rounded-md py-0 pr-0 text-sm leading-tight">2.8.3.wln</button><script type="module"> const el = document.getElementById('852a7ac0-065c-4955-a8b0-85ae072462c4');
+	        el.addEventListener('click', function (e) {
+	            server.kernel.io.fire('466d1417-1a65-49c3-898e-624aa5641973', encodeURIComponent(String(el.value)), '%2FUsers%2Fkirill%2FGithub%2Fwljs-demos-archive%2FDemos%2FRelease%20notes%2F2.8.3.wln');
+	        });</script></div></li>
+	<li class="list-none"><div class=" pb-0.5 pt-0.5 text-gray-700 dark:text-gray-400 flex flex-start items-center pl-7 gap-x-1 rounded-md" style="position: relative"><div ><svg class="w-4 h-5 text-gray-800" viewBox="2 0 20 24" stroke="currentColor" fill="rgb(153 246 228)" stroke-width="1"><path d="M8 4H7.2002C6.08009 4 5.51962 4 5.0918 4.21799C4.71547 4.40973 4.40973 4.71547 4.21799 5.0918C4 5.51962 4 6.08009 4 7.2002V16.8002C4 17.9203 4 18.4801 4.21799 18.9079C4.40973 19.2842 4.71547 19.5905 5.0918 19.7822C5.5192 20 6.07899 20 7.19691 20H8M8 4H16.8002C17.9203 4 18.4796 4 18.9074 4.21799C19.2837 4.40973 19.5905 4.71547 19.7822 5.0918C20 5.5192 20 6.07899 20 7.19691V16.8036C20 17.9215 20 18.4805 19.7822 18.9079C19.5905 19.2842 19.2837 19.5905 18.9074 19.7822C18.48 20 17.921 20 16.8031 20H8M8 4V20M12 11H16M12 8H16"></path></svg></div><button id="d5bc056c-732b-42fd-9b13-f7b186f25fb0" class="block rounded-md py-0 pr-0 text-sm leading-tight">2.8.5.wln</button><script type="module"> const el = document.getElementById('d5bc056c-732b-42fd-9b13-f7b186f25fb0');
+	        el.addEventListener('click', function (e) {
+	            server.kernel.io.fire('466d1417-1a65-49c3-898e-624aa5641973', encodeURIComponent(String(el.value)), '%2FUsers%2Fkirill%2FGithub%2Fwljs-demos-archive%2FDemos%2FRelease%20notes%2F2.8.5.wln');
+	        });</script></div></li>
+	<li class="list-none"><div class=" pb-0.5 pt-0.5 text-gray-700 dark:text-gray-400 flex flex-start items-center pl-7 gap-x-1 rounded-md" style="position: relative"><div ><svg class="w-4 h-5 text-gray-800" viewBox="2 0 20 24" stroke="currentColor" fill="rgb(153 246 228)" stroke-width="1"><path d="M8 4H7.2002C6.08009 4 5.51962 4 5.0918 4.21799C4.71547 4.40973 4.40973 4.71547 4.21799 5.0918C4 5.51962 4 6.08009 4 7.2002V16.8002C4 17.9203 4 18.4801 4.21799 18.9079C4.40973 19.2842 4.71547 19.5905 5.0918 19.7822C5.5192 20 6.07899 20 7.19691 20H8M8 4H16.8002C17.9203 4 18.4796 4 18.9074 4.21799C19.2837 4.40973 19.5905 4.71547 19.7822 5.0918C20 5.5192 20 6.07899 20 7.19691V16.8036C20 17.9215 20 18.4805 19.7822 18.9079C19.5905 19.2842 19.2837 19.5905 18.9074 19.7822C18.48 20 17.921 20 16.8031 20H8M8 4V20M12 11H16M12 8H16"></path></svg></div><button id="4e385c04-21df-4633-92a7-7d82f8dc5fbe" class="block rounded-md py-0 pr-0 text-sm leading-tight">2.8.7.wln</button><script type="module"> const el = document.getElementById('4e385c04-21df-4633-92a7-7d82f8dc5fbe');
+	        el.addEventListener('click', function (e) {
+	            server.kernel.io.fire('466d1417-1a65-49c3-898e-624aa5641973', encodeURIComponent(String(el.value)), '%2FUsers%2Fkirill%2FGithub%2Fwljs-demos-archive%2FDemos%2FRelease%20notes%2F2.8.7.wln');
+	        });</script></div></li>
+	<li class="list-none"><div class=" pb-0.5 pt-0.5 text-gray-700 dark:text-gray-400 flex flex-start items-center pl-7 gap-x-1 rounded-md" style="position: relative"><div ><svg class="w-4 h-5 text-gray-800" viewBox="2 0 20 24" stroke="currentColor" fill="rgb(153 246 228)" stroke-width="1"><path d="M8 4H7.2002C6.08009 4 5.51962 4 5.0918 4.21799C4.71547 4.40973 4.40973 4.71547 4.21799 5.0918C4 5.51962 4 6.08009 4 7.2002V16.8002C4 17.9203 4 18.4801 4.21799 18.9079C4.40973 19.2842 4.71547 19.5905 5.0918 19.7822C5.5192 20 6.07899 20 7.19691 20H8M8 4H16.8002C17.9203 4 18.4796 4 18.9074 4.21799C19.2837 4.40973 19.5905 4.71547 19.7822 5.0918C20 5.5192 20 6.07899 20 7.19691V16.8036C20 17.9215 20 18.4805 19.7822 18.9079C19.5905 19.2842 19.2837 19.5905 18.9074 19.7822C18.48 20 17.921 20 16.8031 20H8M8 4V20M12 11H16M12 8H16"></path></svg></div><button id="c84fa6eb-534f-40bf-8ab1-0fc1694db4f5" class="block rounded-md py-0 pr-0 text-sm leading-tight">2.8.8.wln</button><script type="module"> const el = document.getElementById('c84fa6eb-534f-40bf-8ab1-0fc1694db4f5');
+	        el.addEventListener('click', function (e) {
+	            server.kernel.io.fire('466d1417-1a65-49c3-898e-624aa5641973', encodeURIComponent(String(el.value)), '%2FUsers%2Fkirill%2FGithub%2Fwljs-demos-archive%2FDemos%2FRelease%20notes%2F2.8.8.wln');
+	        });</script></div></li>
+	<li class="list-none"><div class=" pb-0.5 pt-0.5 text-gray-700 dark:text-gray-400 flex flex-start items-center pl-7 gap-x-1 rounded-md" style="position: relative"><div ><svg class="w-4 h-5 text-gray-800" viewBox="2 0 20 24" stroke="currentColor" fill="rgb(153 246 228)" stroke-width="1"><path d="M8 4H7.2002C6.08009 4 5.51962 4 5.0918 4.21799C4.71547 4.40973 4.40973 4.71547 4.21799 5.0918C4 5.51962 4 6.08009 4 7.2002V16.8002C4 17.9203 4 18.4801 4.21799 18.9079C4.40973 19.2842 4.71547 19.5905 5.0918 19.7822C5.5192 20 6.07899 20 7.19691 20H8M8 4H16.8002C17.9203 4 18.4796 4 18.9074 4.21799C19.2837 4.40973 19.5905 4.71547 19.7822 5.0918C20 5.5192 20 6.07899 20 7.19691V16.8036C20 17.9215 20 18.4805 19.7822 18.9079C19.5905 19.2842 19.2837 19.5905 18.9074 19.7822C18.48 20 17.921 20 16.8031 20H8M8 4V20M12 11H16M12 8H16"></path></svg></div><button id="c07c828d-64ee-4266-a22c-712671c23aa2" class="block rounded-md py-0 pr-0 text-sm leading-tight">2.8.9.wln</button><script type="module"> const el = document.getElementById('c07c828d-64ee-4266-a22c-712671c23aa2');
+	        el.addEventListener('click', function (e) {
+	            server.kernel.io.fire('466d1417-1a65-49c3-898e-624aa5641973', encodeURIComponent(String(el.value)), '%2FUsers%2Fkirill%2FGithub%2Fwljs-demos-archive%2FDemos%2FRelease%20notes%2F2.8.9.wln');
+	        });</script></div></li>
+	<li class="list-none"><div class=" pb-0.5 pt-0.5 text-gray-700 dark:text-gray-400 flex flex-start items-center pl-7 gap-x-1 rounded-md" style="position: relative"><div ><svg class="w-4 h-5 text-gray-800" viewBox="2 0 20 24" stroke="currentColor" fill="rgb(153 246 228)" stroke-width="1"><path d="M8 4H7.2002C6.08009 4 5.51962 4 5.0918 4.21799C4.71547 4.40973 4.40973 4.71547 4.21799 5.0918C4 5.51962 4 6.08009 4 7.2002V16.8002C4 17.9203 4 18.4801 4.21799 18.9079C4.40973 19.2842 4.71547 19.5905 5.0918 19.7822C5.5192 20 6.07899 20 7.19691 20H8M8 4H16.8002C17.9203 4 18.4796 4 18.9074 4.21799C19.2837 4.40973 19.5905 4.71547 19.7822 5.0918C20 5.5192 20 6.07899 20 7.19691V16.8036C20 17.9215 20 18.4805 19.7822 18.9079C19.5905 19.2842 19.2837 19.5905 18.9074 19.7822C18.48 20 17.921 20 16.8031 20H8M8 4V20M12 11H16M12 8H16"></path></svg></div><button id="7cd23f69-666c-4118-a042-f5b8cfde00cc" class="block rounded-md py-0 pr-0 text-sm leading-tight">2.9.1.wln</button><script type="module"> const el = document.getElementById('7cd23f69-666c-4118-a042-f5b8cfde00cc');
+	        el.addEventListener('click', function (e) {
+	            server.kernel.io.fire('466d1417-1a65-49c3-898e-624aa5641973', encodeURIComponent(String(el.value)), '%2FUsers%2Fkirill%2FGithub%2Fwljs-demos-archive%2FDemos%2FRelease%20notes%2F2.9.1.wln');
+	        });</script></div></li>
+	<li class="list-none"><div class=" pb-0.5 pt-0.5 text-gray-700 dark:text-gray-400 flex flex-start items-center pl-7 gap-x-1 rounded-md" style="position: relative"><div ><svg class="w-4 h-5 text-gray-800" viewBox="2 0 20 24" stroke="currentColor" fill="rgb(153 246 228)" stroke-width="1"><path d="M8 4H7.2002C6.08009 4 5.51962 4 5.0918 4.21799C4.71547 4.40973 4.40973 4.71547 4.21799 5.0918C4 5.51962 4 6.08009 4 7.2002V16.8002C4 17.9203 4 18.4801 4.21799 18.9079C4.40973 19.2842 4.71547 19.5905 5.0918 19.7822C5.5192 20 6.07899 20 7.19691 20H8M8 4H16.8002C17.9203 4 18.4796 4 18.9074 4.21799C19.2837 4.40973 19.5905 4.71547 19.7822 5.0918C20 5.5192 20 6.07899 20 7.19691V16.8036C20 17.9215 20 18.4805 19.7822 18.9079C19.5905 19.2842 19.2837 19.5905 18.9074 19.7822C18.48 20 17.921 20 16.8031 20H8M8 4V20M12 11H16M12 8H16"></path></svg></div><button id="34f0a50f-2b82-4dfe-8c40-ef52fdd19803" class="block rounded-md py-0 pr-0 text-sm leading-tight">2.9.2.wln</button><script type="module"> const el = document.getElementById('34f0a50f-2b82-4dfe-8c40-ef52fdd19803');
+	        el.addEventListener('click', function (e) {
+	            server.kernel.io.fire('466d1417-1a65-49c3-898e-624aa5641973', encodeURIComponent(String(el.value)), '%2FUsers%2Fkirill%2FGithub%2Fwljs-demos-archive%2FDemos%2FRelease%20notes%2F2.9.2.wln');
+	        });</script></div></li>
+	<li class="list-none"><div style="position:relative"><div class="rounded-md"><button id="1b47c6df-bdee-4b73-81df-04de70201dff" class=" flex items-center w-full text-left rounded-md pb-0.5 pt-0.5 pl-1 gap-x-1 text-sm text-gray-700 dark:text-gray-400" type="button" aria-controls="sub-menu-1" aria-expanded="false"><svg id="svg-1b47c6df-bdee-4b73-81df-04de70201dff" class="text-gray-800 dark:text-gray-400 h-5 w-5 shrink-0" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z" clip-rule="evenodd"/></svg><svg class="h-4 w-4 shrink-0 text-gray-800 dark:text-gray-400 group-hover:text-indigo-500" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12.75V12A2.25 2.25 0 014.5 9.75h15A2.25 2.25 0 0121.75 12v.75m-8.69-6.44l-2.12-2.12a1.5 1.5 0 00-1.061-.44H4.5A2.25 2.25 0 002.25 6v12a2.25 2.25 0 002.25 2.25h15A2.25 2.25 0 0021.75 18V9a2.25 2.25 0 00-2.25-2.25h-5.379a1.5 1.5 0 01-1.06-.44z"/></svg>attachments</button></div><script type="module"> const el = document.getElementById('1b47c6df-bdee-4b73-81df-04de70201dff');
+	        el.addEventListener('click', function (e) {
+	            server.kernel.io.fire('1b47c6df-bdee-4b73-81df-04de70201dff', encodeURIComponent(String(el.value)), 'Button');
+	        });</script><script type="module"> new UIJSScript({target: async function() { const button = document.getElementById('svg-1b47c6df-bdee-4b73-81df-04de70201dff');
+	        this.on('Load', (data) => {
+	          button.classList.add('rotate-90', 'text-gray-500');
+	        });
+	
+	        this.on('Show', (data) => {
+	          button.classList.add('rotate-90', 'text-gray-500');
+	        });        
+	
+	        this.on('Hide', (data) => {
+	          button.classList.remove('rotate-90', 'text-gray-500');
+	        });}, uid: '1d6c39a9-487f-4eae-97de-a50848530e9e'})</script><div id="2c7242d7-4f2b-43e3-abae-df4c4f996bde" class=""></div></div></li>
+	<li class="list-none"><div style="position:relative"><div class="rounded-md"><button id="feae7b53-9950-4932-9f08-0e758764ccf2" class=" flex items-center w-full text-left rounded-md pb-0.5 pt-0.5 pl-1 gap-x-1 text-sm text-gray-700 dark:text-gray-400" type="button" aria-controls="sub-menu-1" aria-expanded="false"><svg id="svg-feae7b53-9950-4932-9f08-0e758764ccf2" class="text-gray-800 dark:text-gray-400 h-5 w-5 shrink-0" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z" clip-rule="evenodd"/></svg><svg class="h-4 w-4 shrink-0 text-gray-800 dark:text-gray-400 group-hover:text-indigo-500" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12.75V12A2.25 2.25 0 014.5 9.75h15A2.25 2.25 0 0121.75 12v.75m-8.69-6.44l-2.12-2.12a1.5 1.5 0 00-1.061-.44H4.5A2.25 2.25 0 002.25 6v12a2.25 2.25 0 002.25 2.25h15A2.25 2.25 0 0021.75 18V9a2.25 2.25 0 00-2.25-2.25h-5.379a1.5 1.5 0 01-1.06-.44z"/></svg>.iconized</button></div><script type="module"> const el = document.getElementById('feae7b53-9950-4932-9f08-0e758764ccf2');
+	        el.addEventListener('click', function (e) {
+	            server.kernel.io.fire('feae7b53-9950-4932-9f08-0e758764ccf2', encodeURIComponent(String(el.value)), 'Button');
+	        });</script><script type="module"> new UIJSScript({target: async function() { const button = document.getElementById('svg-feae7b53-9950-4932-9f08-0e758764ccf2');
+	        this.on('Load', (data) => {
+	          button.classList.add('rotate-90', 'text-gray-500');
+	        });
+	
+	        this.on('Show', (data) => {
+	          button.classList.add('rotate-90', 'text-gray-500');
+	        });        
+	
+	        this.on('Hide', (data) => {
+	          button.classList.remove('rotate-90', 'text-gray-500');
+	        });}, uid: 'ae7b4da9-38e5-4bca-842f-f826371e7636'})</script><div id="0688ce0a-0c1b-47e2-9a66-c1950718224e" class=""></div></div></li></ul></li></ul></nav>`}</wljs-editor></WLJSWrapper>
+
+It does support fully lazy-loading and can work on multiple levels. It is exacly the same component used in WLJS Notebook interface.
+
+
+
+<wljs-html encoded="true">{`%0A%3Cstyle%3E%0A%20%20%5Btransparency%3D%22false%22%5D%20.bg-g-trans%20%7B%0A%20%20%20%20background%3A%20transparent%20%21important%3B%0A%20%20%7D%0A%0A%20%20%5Btransparency%3D%22true%22%5D%20.bg-g-trans%20%7B%0A%20%20%20%20background%3A%20transparent%20%21important%3B%0A%20%20%7D%0A%3C%2Fstyle%3E`}</wljs-html>

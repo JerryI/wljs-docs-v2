@@ -1,0 +1,281 @@
+---
+date: 2024-06-15
+title:  Release notes *2.5.9*
+---
+
+{/* add this script to the body  */}
+{/* https://cdn.jsdelivr.net/gh/WLJSTeam/web-components@latest/src/common/app.js */}
+<wljs-store json="./attachments/e2cbf8d3-a3f3-4dfb-b9d5-794ce442dc1f.txt"></wljs-store>
+
+
+
+
+
+
+
+
+It contains the major improvements for `NeuralNet` standard package, provides more features for graphics and insets. We also fixed many bugs in `wljs-export-html` and in WXF deserializer. New examples are available in `Animation` folder.
+
+
+## Inset
+*An update for [`Inset`](https://jerryi.github.io/wljs-docs/frontend/Reference/Graphics/Inset) expression* 
+
+Now you can put any expression on top of your `Graphics` object. Please, make sure this expression supports *WLJS Execution Enveroment* (see top line of [reference](https://jerryi.github.io/wljs-docs/frontend/Reference/GUI/EditorView)
+)
+
+![](./attachments/Screenshot%202024-10-19%20at%2011.59.47-ddb.png)
+
+For example
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`Plot[x, {x,0,10}, Epilog->{Inset[EditorView["(*FB[*)((1)(*,*)/(*,*)(2))(*]FB*)"], {3,5}, {10,30}, {1,3}]}]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(FrontEndRef["3ca22e97-4a4d-4068-b58a-dc793fdfd51b"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKGycnGhmlWprrmiSapOiaGJhZ6CaZWiTqpiSbWxqnpaSlmBomAQCF1hYI"*)(*]VB*)`}</wljs-editor></WLJSWrapper>
+
+Or even put a mermaid diagram using virtual cells
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`mermaid = CellView["graph LR
+	    A[Square Rect] -- Link text --> B((Circle))
+	    A --> C(Round Rect)
+	    B --> D{Rhombus}
+	    C --> D", "Display"->"mermaid"];
+	Plot[x, {x,0,10}, Epilog->{Inset[mermaid, {2,5}, {10,30}, {7,4}]}]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(FrontEndRef["a0bb8b0e-c9e3-4c62-8ce0-b72f9844cf6f"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKJxokJVkkGaTqJlumGuuaJJsZ6VokpxroJpkbpVlamJgkp5mlAQCR6BY5"*)(*]VB*)`}</wljs-editor></WLJSWrapper>
+
+## Slides now supports scripts
+All inline JS scripts provided in slide cells will be executed. Use them for whatever ideas you come up with.
+
+## Tube now supports dynamics
+3D graphics primitive `Tube` now can be coupled to a dynamic symbol, as an example check this out 😉
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true" fade="true" >{`(*BB[*)(* Just run this cell *)(*,*)(*"1:eJxTTMoPSmNhYGAo5gcSAUX5ZZkpqSn+BSWZ+XnFaYwgCS4g4Zyfm5uaV+KUXxEMUqxsbm6exgSSBPGCSnNSg9mAjOCSosy8dLBYSFFpKpoKkDkeqYkpEFXBILO1sCgJSczMQVYCAOFrJEU="*)(*]BB*)
+	RandomIntegerVectorWithinBox[min_List, max_List] := Table[
+	  RandomInteger[{min[[i]], max[[i]]}],
+	  {i, Length[min]}
+	]
+	
+	PositionKey[pos_] := ToString[pos]
+	
+	WithinBoundsQ[pos_, gridMin_, gridMax_] := And @@ Thread[pos >= gridMin] && And @@ Thread[pos <= gridMax]
+	
+	IsUnoccupied[pos_, occupiedPositions_] := ! KeyExistsQ[occupiedPositions, PositionKey[pos]]
+	
+	(* Main function to simulate a pipe *)
+	SimulatePipe[] := Module[
+	  {
+	    gridMin = {-10, -10, -10},
+	    gridMax = {10, 10, 10},
+	    occupiedPositions = <||>,
+	    currentPosition,
+	    positions,
+	    lastPosition,
+	    lastDirectionVector = Null,
+	    directionVector,
+	    newPosition,
+	    axis,
+	    dir,
+	    possibleDirections,
+	    triedDirections,
+	    moveMade
+	  },
+	  
+	  (* Initialize the starting position *)
+	  currentPosition = RandomIntegerVectorWithinBox[gridMin, gridMax];
+	  positions = {currentPosition};
+	  occupiedPositions[PositionKey[currentPosition]] = True;
+	  
+	  (* Simulate the pipe growth *)
+	  Function[Null,
+	    
+	    (* Initialize possible directions *)
+	    possibleDirections = {
+	      {1, 0, 0}, {-1, 0, 0},
+	      {0, 1, 0}, {0, -1, 0},
+	      {0, 0, 1}, {0, 0, -1}
+	    };
+	    
+	    (* Prioritize continuing in the same direction *)
+	    If[lastDirectionVector =!= Null && RandomReal[] < 0.5,
+	      (* Try to continue in the same direction *)
+	      directionVector = lastDirectionVector;
+	      possibleDirections = Prepend[DeleteCases[possibleDirections, directionVector], directionVector];,
+	      (* Shuffle possible directions *)
+	      possibleDirections = RandomSample[possibleDirections];
+	    ];
+	    
+	    triedDirections = {};
+	    moveMade = False;
+	    (* Try each possible direction *)
+	    Do[
+	      directionVector = dir;
+	      newPosition = currentPosition + directionVector;
+	      If[
+	        WithinBoundsQ[newPosition, gridMin, gridMax] && IsUnoccupied[newPosition, occupiedPositions],
+	        (* Valid move found *)
+	        positions = Append[positions, newPosition];
+	        occupiedPositions[PositionKey[newPosition]] = True;
+	        lastDirectionVector = directionVector;
+	        currentPosition = newPosition;
+	        moveMade = True;
+	        Break[];
+	      ];
+	      AppendTo[triedDirections, dir];
+	      ,
+	      {dir, possibleDirections}
+	    ];
+	    
+	    If[!moveMade,
+	      (* No valid moves, terminate simulation *)
+	      $Failed
+	    ,
+	      positions
+	    ]
+	
+	    
+	  ]
+	  
+	]
+	
+	
+	With[{
+	  frame = CreateUUID[],
+	  win = CurrentWindow[]
+	},
+	  Module[{
+	    pipeFunction = Function[Null, $Failed],
+	    pipesNumber = 0,
+	    trigger = 1
+	  },
+	
+	    EventHandler[frame, Function[Null,
+	      With[{
+	        result = pipeFunction[]
+	      },
+	        If[FailureQ[result],
+	          With[{
+	            segments = Unique["pipe"],
+	            generator = SimulatePipe[]
+	          },
+	            pipesNumber++;
+	            pipeFunction = Function[Null,
+	              With[{seg = generator[]}, 
+	                If[FailureQ[seg],
+	                  $Failed
+	                ,
+	                  segments = seg // N;
+	                ]
+	              ]
+	            ];
+	
+	            pipeFunction[];
+	
+	            FrontSubmit[{
+	              ColorData[97][pipesNumber],
+	              Tube[segments // Offload, 0.2]
+	            }, MetaMarker[marker], "Window"->win];
+	          ]
+	        ]
+	      ];
+	
+	      trigger++;
+	    ]];
+	    
+	
+	    Graphics3D[{
+	      Opacity[0], Cuboid[{-4,-4,-4}, {4,4,4}], Opacity[1], MetaMarker[marker],
+	      AnimationFrameListener[trigger // Offload, "Event"->frame]
+	    }]
+	  ]
+	]`}</wljs-editor></WLJSWrapper>
+
+## Neural Networks
+We have finally added partial support for `NeuralNet` package. You can see training progress, representations of different layers and etc
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`(*BB[*)(* try this one *)(*,*)(*"1:eJxTTMoPSmNhYGAo5gcSAUX5ZZkpqSn+BSWZ+XnFaYwgCS4g4Zyfm5uaV+KUXxEMUqxsbm6exgSSBPGCSnNSg9mAjOCSosy8dLBYSFFpKpoKkDkeqYkpEFXBILO1sCgJSczMQVYCAOFrJEU="*)(*]BB*)
+	trained = 
+	 NetTrain[LinearLayer[], {1 -> 1.9, 2 -> 4.1, 3 -> 6.0, 4 -> 8.1}]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`trained[3]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output" encoded="true"  >{`6.04994535446167%60`}</wljs-editor></WLJSWrapper>
+
+`NetGraph` is not supported as well as some icons. We need volunteers to work on it ;) Please contact us if you know something about ML and Wolfram Language `Graphics`.
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`net = NetModel["LeNet Trained on MNIST Data"]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*VB[*)temporalStorage$145507(*,*)(*"1:eJwlkc1ymlAAhWmni06foslKoTNC0AvpTBb8KgISufyImSxALoLgRZErwmP0iWPSzTdnzu585yGp3ew7RVGXX3doadHWTVCgDv77RlEr1Cp5XOC3ER3Ib/T494j+Q49H9CP3Fy17rvQ566ZJdk6um7WriUoLxCQik3UiN2Ta6FZ13RZd4XhW7QwKhB5GfPrKX71DyxiZX6BFiWcaRrmNT5rImwKUjHNhYx/EVVmogw4uxpk3sdSnTlSd8c1JbvsK76Wj6857Z7pDVQ+APdv6ZlIvu6ZtNusF6QCBRsswSqhZAjzG58uC58VkZwqi4Os2hzrzGu3mg2jlicB2WllUcENAUg1zNvQYdWo+8VubKG6aghbXe51Z+GHiuRAxcbpayblEOCNQHe1UBvF0rlmT7el2jiBrH4+Ruc6k7HblUajLp0OQC7PVQV0aM2UC7tPDmMuP5kRhVWNZZumzUwrNRc+a5wS4kzBXeqDrd0mS8loP04jHrck+7V9eHj+dvwcyPX7/f9WPO1xSIfjzM6A4dXDVf7VeQ9AH8nGRcw=="*)(*]VB*)`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`net[(*VB[*)(FrontEndRef["7c52eb9d-6d46-4b1d-ab0a-a2043d2ccccc"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKmyebGqUmWabomqWYmOmaJBmm6CYmGSTqJhoZmBinGCWDAACODxZ6"*)(*]VB*)]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`5`}</wljs-editor></WLJSWrapper>
+
+
+> ok, kinda looks like 5
+
+Some other examples
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`layer = NetInitialize @ LinearLayer[2, "Input" -> 2]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output" encoded="true"  >{`LinearLayer%5B%28%2AVB%5B%2A%29%20%3C%7C%22Type%22%20-%3E%20%22Linear%22%2C%20%22Arrays%22%20-%3E%20%3C%7C%22Weights%22%20-%3E%20NumericArray%5B%7B%7B-0.3594474792480469%2C%20-0.04992305114865303%7D%2C%20%7B-1.127055048942566%2C%201.086535930633545%7D%7D%2C%20%22Real32%22%5D%2C%20%22Biases%22%20-%3E%20NumericArray%5B%7B0.%2C%200.%7D%2C%20%22Real32%22%5D%7C%3E%2C%20%22Parameters%22%20-%3E%20%3C%7C%22OutputDimensions%22%20-%3E%20%7B2%7D%2C%20%22%24OutputSize%22%20-%3E%202%2C%20%22%24InputSize%22%20-%3E%202%2C%20%22%24InputDimensions%22%20-%3E%20%7B2%7D%7C%3E%2C%20%22Inputs%22%20-%3E%20%3C%7C%22Input%22%20-%3E%20NeuralNetworks%60TensorT%5B%7B2%7D%2C%20NeuralNetworks%60AtomT%5D%7C%3E%2C%20%22Outputs%22%20-%3E%20%3C%7C%22Output%22%20-%3E%20NeuralNetworks%60TensorT%5B%7B2%7D%2C%20NeuralNetworks%60RealT%5D%7C%3E%7C%3E%2C%20%3C%7C%22Version%22%20-%3E%20%2214.1.2%22%2C%20%22Unstable%22%20-%3E%20False%7C%3E%20%28%2A%2C%2A%29%28%2A%221%3AeJytUMsKwjAQrI%2BLXgQ9CJ7qL3j0ptBiQSy00rORbCWQbGSboEX8d9NUqVfBy7A7M8sMuzzrrBwEQVAtHGz1PdakThsihhfguVWKUe3ostd4Jg5i0mgi5IUgY5lshaGDnZbcDweNUPY%2F9F5UpjP5zWvzr7x3TmJAFQJu%2BcxpqTVXa0IuFGAlNFbrsD0cO4i4MJq8tyn%2FWD27wMxKyEfNAIzXKcra00ey8GuPqdMS%2FHuN9ktWyhcQzmJg%22%2A%29%28%2A%5DVB%2A%29%5D`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true" encoded="true"  >{`NetExtract%5BLinearLayer%5B%28%2AVB%5B%2A%29%20%3C%7C%22Type%22%20-%3E%20%22Linear%22%2C%20%22Arrays%22%20-%3E%20%3C%7C%22Weights%22%20-%3E%20NumericArray%5B%7B%7B-0.3594474792480469%2C%20-0.04992305114865303%7D%2C%20%7B-1.127055048942566%2C%201.086535930633545%7D%7D%2C%20%22Real32%22%5D%2C%20%22Biases%22%20-%3E%20NumericArray%5B%7B0.%2C%200.%7D%2C%20%22Real32%22%5D%7C%3E%2C%20%22Parameters%22%20-%3E%20%3C%7C%22OutputDimensions%22%20-%3E%20%7B2%7D%2C%20%22%24OutputSize%22%20-%3E%202%2C%20%22%24InputSize%22%20-%3E%202%2C%20%22%24InputDimensions%22%20-%3E%20%7B2%7D%7C%3E%2C%20%22Inputs%22%20-%3E%20%3C%7C%22Input%22%20-%3E%20NeuralNetworks%60TensorT%5B%7B2%7D%2C%20NeuralNetworks%60AtomT%5D%7C%3E%2C%20%22Outputs%22%20-%3E%20%3C%7C%22Output%22%20-%3E%20NeuralNetworks%60TensorT%5B%7B2%7D%2C%20NeuralNetworks%60RealT%5D%7C%3E%7C%3E%2C%20%3C%7C%22Version%22%20-%3E%20%2214.1.2%22%2C%20%22Unstable%22%20-%3E%20False%7C%3E%20%28%2A%2C%2A%29%28%2A%221%3AeJytUMsKwjAQrI%2BLXgQ9CJ7qL3j0ptBiQSy00rORbCWQbGSboEX8d9NUqVfBy7A7M8sMuzzrrBwEQVAtHGz1PdakThsihhfguVWKUe3ostd4Jg5i0mgi5IUgY5lshaGDnZbcDweNUPY%2F9F5UpjP5zWvzr7x3TmJAFQJu%2BcxpqTVXa0IuFGAlNFbrsD0cO4i4MJq8tyn%2FWD27wMxKyEfNAIzXKcra00ey8GuPqdMS%2FHuN9ktWyhcQzmJg%22%2A%29%28%2A%5DVB%2A%29%5D%2C%20%22Weights%22%5D%20%2F%2F%20Normal`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output" encoded="true"  >{`%7B%7B-0.3594474792480469%60%2C-0.04992305114865303%60%7D%2C%7B-1.127055048942566%60%2C1.086535930633545%60%7D%7D`}</wljs-editor></WLJSWrapper>
+
+## Support for custom CSS
+Open your settings and add any styles you want. This is a new step towards customization 
+
+
+![](./attachments/Screenshot%202024-10-19%20at%2012.40.10-464.png)
+
+## Print now supports formatted output
+Try this one
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`Print[Style["Hey", Red, 14]]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="print" type="Output"  >{`(*BB[*)("Hey")(*,*)(*"1:eJxTTMoPSmNiYGAo5gcSAUX5ZZkpqSn+BSWZ+XnFaYwgCRYg4ZGfkwJRxgkkgkuKMvPSnfIr0phBQhxAIsjdyTk/J78oE6QlkwFO8AEJiEaQMUGlOanBbHATwGIhRaWpAL9wHBA="*)(*]BB*)`}</wljs-editor></WLJSWrapper>
+
+You can also print `Graphics` if needed
+
+## Offset support for labels
+It was always a bit of a pain to fight agains `FrameLabel` or `AxesLabel` and trying to position them. We extended the API for this (Mathematica does not have this feature)
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`Plot[PDF[NormalDistribution[0, 1], x], {x, -10, 10}, AxesLabel -> {
+	  {"wavenumber (cm^{-1})", {-100,-15}}, 
+	  {"absorption \\\\alpha", {112,0}}
+	}, PlotRange->Full]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(FrontEndRef["257a6bab-bb74-4016-b624-a40b453a2e63"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKG5maJ5olJSbpJiWZm+iaGBia6SaZGZnoJpoYJJmYGicapZoZAwCDIRVZ"*)(*]VB*)`}</wljs-editor></WLJSWrapper>
+
+## Support for `Entity` and `Quantity`
+We recreated boxes for them
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`Quantity[1, "Millimeters"/"Seconds"]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(q)(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KWlMIB43kAgsTcwrySypdMqvyAQpgciwAomQzNzU4mCQGt/MnBwgpyS1qBghHZBfnloUzA5kBacm5+elFGf+BwIA5ecbxA=="*)(*]VB*)`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`Entity["Country", "Germany"]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(Entity["Country", "Germany"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KWlMIB4nkHDNK8ksqXTKrwhmB/Kc80vzSooqwWz31KLcxLxKAJLGDq8="*)(*]VB*)`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`%["Population"]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(q)(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KWlMIB43kAgsTcwrySypdMqvyFzA950lmA0oGJCaX5CTCgBVHw3o"*)(*]VB*)`}</wljs-editor></WLJSWrapper>
+
+## Support for `SystemOpen`
+Works only if use our desktop application (not a console version)
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`SystemOpen[NotebookDirectory[]]`}</wljs-editor></WLJSWrapper>
+
+## Better Audio support
+We also added a new snippet in the command palette
+
+*Record Voice*
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true" encoded="true"  >{`%28%2AVB%5B%2A%29%28Notebook%60Editor%60Kernel%60PCMAudio%60Internal%60dump%24112924%29%28%2A%2C%2A%29%28%2A%221%3AeJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKmyamJKUkmZnpJhoYJuqamKWY6CYmmVvqmpoYJZoYWBoaGpsmAwCODRWP%22%2A%29%28%2A%5DVB%2A%29%20%2F%2F%20AudioPlot`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(FrontEndRef["fc127432-1b30-420d-b760-f91b0846329e"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKpyUbGpmbGBvpGiYZG+iaGBmk6CaZmxnoplkaJhlYmJgZG1mmAgB2gxTV"*)(*]VB*)`}</wljs-editor></WLJSWrapper>
+
+
+
+<wljs-html encoded="true">{`%0A%3Cstyle%3E%0A%20%20%5Btransparency%3D%22false%22%5D%20.bg-g-trans%20%7B%0A%20%20%20%20background%3A%20transparent%20%21important%3B%0A%20%20%7D%0A%0A%20%20%5Btransparency%3D%22true%22%5D%20.bg-g-trans%20%7B%0A%20%20%20%20background%3A%20transparent%20%21important%3B%0A%20%20%7D%0A%3C%2Fstyle%3E`}</wljs-html>

@@ -1,0 +1,192 @@
+---
+date: 2024-11-15
+title:  Release notes *2.6.8*
+---
+
+{/* add this script to the body  */}
+{/* https://cdn.jsdelivr.net/gh/WLJSTeam/web-components@latest/src/common/app.js */}
+<wljs-store json="./attachments/89fe12bc-cca9-4b7a-a611-f7ea710204a9.txt"></wljs-store>
+
+
+
+
+
+
+
+
+
+
+
+## Massive Code-base Refactor
+We reorganized all extensions and the main repository, rewired connections, and reorganized all defined contexts. It should be much more friendly for the developers as well as for the end users. If one needs to see all public symbols from this or that extension, it should be as easy as calling `Names` on it. No more context hell!
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`Context[FrontSubmit]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output" encoded="true"  >{`%22CoffeeLiqueur%60Extensions%60Communication%60%22`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true" encoded="true"  >{`Names%5B%22CoffeeLiqueur%60Extensions%60Communication%60%2A%22%5D`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`{"CurrentWindow","FrontEndInstanceGroup","FrontEndInstanceGroupDestroy","FrontFetch","FrontFetchAsync","FrontInstanceGroup","FrontInstanceReference","FrontSubmit","WindowObj"}`}</wljs-editor></WLJSWrapper>
+
+Here is how to list all contexts from the extensions (if you want to use them later in your external package)
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true" encoded="true"  >{`Select%5B%24Packages%2C%20StringMatchQ%5B%23%2C%20%22CoffeeLiqueur%60Extensions%60%2A%22%5D%26%5D%20%2F%2F%20TableForm%20`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true" encoded="true" fade="true" >{`%28%2AGB%5B%2A%29%7B%7B%22CoffeeLiqueur%60Extensions%60MarkdownCells%60%22%7D%28%2A%7C%7C%2A%29%2C%28%2A%7C%7C%2A%29%7B%22CoffeeLiqueur%60Extensions%60RevealCells%60%22%7D%28%2A%7C%7C%2A%29%2C%28%2A%7C%7C%2A%29%7B%22CoffeeLiqueur%60Extensions%60WLXCells%60%22%7D%28%2A%7C%7C%2A%29%2C%28%2A%7C%7C%2A%29%7B%22CoffeeLiqueur%60Extensions%60Video%60%22%7D%28%2A%7C%7C%2A%29%2C%28%2A%7C%7C%2A%29%7B%22CoffeeLiqueur%60Extensions%60PrintRedirect%60%22%7D%28%2A%7C%7C%2A%29%2C%28%2A%7C%7C%2A%29%7B%22CoffeeLiqueur%60Extensions%60NeuralNet%60%22%7D%28%2A%7C%7C%2A%29%2C%28%2A%7C%7C%2A%29%7B%22CoffeeLiqueur%60Extensions%60Manipulate%60%22%7D%28%2A%7C%7C%2A%29%2C%28%2A%7C%7C%2A%29%7B%22CoffeeLiqueur%60Extensions%60SlidesTools%60%22%7D%28%2A%7C%7C%2A%29%2C%28%2A%7C%7C%2A%29%7B%22CoffeeLiqueur%60Extensions%60Sound%60%22%7D%28%2A%7C%7C%2A%29%2C%28%2A%7C%7C%2A%29%7B%22CoffeeLiqueur%60Extensions%60InputsOutputs%60%22%7D%28%2A%7C%7C%2A%29%2C%28%2A%7C%7C%2A%29%7B%22CoffeeLiqueur%60Extensions%60Graphics%60%22%7D%28%2A%7C%7C%2A%29%2C%28%2A%7C%7C%2A%29%7B%22CoffeeLiqueur%60Extensions%60Plotly%60%22%7D%28%2A%7C%7C%2A%29%2C%28%2A%7C%7C%2A%29%7B%22CoffeeLiqueur%60Extensions%60Graphics3D%60%22%7D%28%2A%7C%7C%2A%29%2C%28%2A%7C%7C%2A%29%7B%22CoffeeLiqueur%60Extensions%60FrontProxy%60%22%7D%28%2A%7C%7C%2A%29%2C%28%2A%7C%7C%2A%29%7B%22CoffeeLiqueur%60Extensions%60RuntimeTools%60%22%7D%28%2A%7C%7C%2A%29%2C%28%2A%7C%7C%2A%29%7B%22CoffeeLiqueur%60Extensions%60System%60%22%7D%28%2A%7C%7C%2A%29%2C%28%2A%7C%7C%2A%29%7B%22CoffeeLiqueur%60Extensions%60Rasterize%60%22%7D%28%2A%7C%7C%2A%29%2C%28%2A%7C%7C%2A%29%7B%22CoffeeLiqueur%60Extensions%60Autocomplete%60%22%7D%28%2A%7C%7C%2A%29%2C%28%2A%7C%7C%2A%29%7B%22CoffeeLiqueur%60Extensions%60MetaMarkers%60%22%7D%28%2A%7C%7C%2A%29%2C%28%2A%7C%7C%2A%29%7B%22CoffeeLiqueur%60Extensions%60Notifications%60%22%7D%28%2A%7C%7C%2A%29%2C%28%2A%7C%7C%2A%29%7B%22CoffeeLiqueur%60Extensions%60NotebookStorage%60%22%7D%28%2A%7C%7C%2A%29%2C%28%2A%7C%7C%2A%29%7B%22CoffeeLiqueur%60Extensions%60FrontendObject%60MissingFetcher%60%22%7D%28%2A%7C%7C%2A%29%2C%28%2A%7C%7C%2A%29%7B%22CoffeeLiqueur%60Extensions%60Communication%60%22%7D%28%2A%7C%7C%2A%29%2C%28%2A%7C%7C%2A%29%7B%22CoffeeLiqueur%60Extensions%60RemoteCells%60%22%7D%28%2A%7C%7C%2A%29%2C%28%2A%7C%7C%2A%29%7B%22CoffeeLiqueur%60Extensions%60NotebookDirectory%60%22%7D%28%2A%7C%7C%2A%29%2C%28%2A%7C%7C%2A%29%7B%22CoffeeLiqueur%60Extensions%60OffloadTools%60%22%7D%28%2A%7C%7C%2A%29%2C%28%2A%7C%7C%2A%29%7B%22CoffeeLiqueur%60Extensions%60Boxes%60%22%7D%28%2A%7C%7C%2A%29%2C%28%2A%7C%7C%2A%29%7B%22CoffeeLiqueur%60Extensions%60EditorView%60%22%7D%28%2A%7C%7C%2A%29%2C%28%2A%7C%7C%2A%29%7B%22CoffeeLiqueur%60Extensions%60FrontendObject%60%22%7D%28%2A%7C%7C%2A%29%2C%28%2A%7C%7C%2A%29%7B%22CoffeeLiqueur%60Extensions%60WLJSInterpreter%60%22%7D%7D%28%2A%5DGB%2A%29%20`}</wljs-editor></WLJSWrapper>
+
+## Tutorials on making WLJS Extensions
+We have prepared such section in the documentation!
+
+## Objects Compression
+
+We have probably noticed, that saving a notebook with a lot of 3D objects, or raster images might take ages. However, __this is no longer an issue__! Using basic compression for frontend objects allows to reduce the files size by 10 times. For example
+
+
+
+![](./attachments/Screenshot%202025-02-01%20at%2021.58.38-9a2.png)
+
+You don't have to do anything extra. A compression is acting like a wrapper and sends compressed object to Javascript side, where it is decompressed using a tiny subset of `fflate` library. Compression is applied only for the objects larger than 0.5 Megabytes.
+
+It __also works with exported notebook__ (HTML, MDX and etc)!
+
+## Safer and easier Javascript API
+The API used to communicate from JS to Kernel is now finally shaped. *The old way is still be valid, but we don't recommend to use it*
+
+New API allows seamless convertion from JS objects to Wolfram Expression
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`cell = EvaluationCell[];
+	
+	EventHandler["test", 
+	  CellPrint[
+	    ToString[#, StandardForm]
+	  , "After" -> cell]&
+	];`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`<|"array"->{1,2,3,4},"value"->"Hello World"|>`}</wljs-editor></WLJSWrapper>
+
+Now run the script 
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`.js
+	
+	server.kernel.io.fire('test', {
+	  array: [1,2,3,4],
+	  value: "Hello World"
+	});
+	`}</wljs-editor></WLJSWrapper>
+
+## Markdown and Slides are Interchangeable
+There is full compatibility between slides and markdown cells. If you want to turn your slides into continuous pages in the notebook, simply replace .slide with .md.
+
+For example
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`CrystalStructure = NotebookStore["undercover-3ec"];`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true" fade="true" >{`.slide
+	
+	## Crystal structure
+	
+	<Row>
+	 <CrystalStructure/>
+	 <div style="text-align:left">
+	
+	<br/>
+	   <br/>
+	   <br/>
+	   
+	  - Fe<sub>2</sub> Mo<sub>3</sub> O<sub>8</sub>
+	  - Hexagonal structure (polar) P6<sub>3mc</sub> group
+	  - Collinear AFM ordering below T<sub>N</sub> = 60K
+	  - __magnetoelectric__
+	
+	  <br/>
+	  <br/>
+	
+	Optically / Magnetically active ions
+	
+	  <div>
+	
+	  </div>
+	  
+	  - A-site FeO<sub>4</sub> 
+	  - B-site FeO<sub>6</sub>
+	 
+	 </div> 
+	</Row>`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="slide" type="Output"  >{`<dummy >
+	## Crystal structure
+	
+	<div class="flex flex-row">FrontEndExecutable[2310e92e-a38b-41a2-92ee-6084ace3ca99]
+	<div style="text-align:left"><br /><br /><br />
+	   
+	  - Fe<sub >2</sub> Mo<sub >3</sub> O<sub >8</sub>
+	  - Hexagonal structure (polar) P6<sub >3mc</sub> group
+	  - Collinear AFM ordering below T<sub >N</sub>= 60K
+	  - __magnetoelectric__
+	
+	  <br /><br />
+	
+	Optically / Magnetically active ions
+	
+	  <div ></div>
+	  
+	  - A-site FeO<sub >4</sub> 
+	  - B-site FeO<sub >6</sub></div></div></dummy>`}</wljs-editor></WLJSWrapper>
+
+Now simply replace slide with md
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true" fade="true" >{`.md
+	
+	## Crystal structure
+	
+	<Row>
+	 <CrystalStructure/>
+	 <div style="text-align:left">
+	
+	<br/>
+	   <br/>
+	   <br/>
+	   
+	  - Fe<sub>2</sub> Mo<sub>3</sub> O<sub>8</sub>
+	  - Hexagonal structure (polar) P6<sub>3mc</sub> group
+	  - Collinear AFM ordering below T<sub>N</sub> = 60K
+	  - __magnetoelectric__
+	
+	  <br/>
+	  <br/>
+	
+	Optically / Magnetically active ions
+	
+	  <div>
+	
+	  </div>
+	  
+	  - A-site FeO<sub>4</sub> 
+	  - B-site FeO<sub>6</sub>
+	 
+	 </div> 
+	</Row>`}</wljs-editor></WLJSWrapper>
+
+
+## Crystal structure
+
+<wljs-html encoded="true">{`%3Cdiv%20class%3D%22flex%20flex-row%22%3EFrontEndExecutable%5B9964db6d-1c0e-4ac0-ab2b-6e41e15b7349%5D%0A%3Cdiv%20style%3D%22text-align%3Aleft%22%3E%3Cbr%20%2F%3E%3Cbr%20%2F%3E%3Cbr%20%2F%3E%0A%20%20%20%0A%20%20-%20Fe%3Csub%20%3E2%3C%2Fsub%3E%20Mo%3Csub%20%3E3%3C%2Fsub%3E%20O%3Csub%20%3E8%3C%2Fsub%3E%0A%20%20-%20Hexagonal%20structure%20%28polar%29%20P6%3Csub%20%3E3mc%3C%2Fsub%3E%20group%0A%20%20-%20Collinear%20AFM%20ordering%20below%20T%3Csub%20%3EN%3C%2Fsub%3E%3D%2060K%0A%20%20-%20__magnetoelectric__%0A%0A%20%20%3Cbr%20%2F%3E%3Cbr%20%2F%3E%0A%0AOptically%20%2F%20Magnetically%20active%20ions%0A%0A%20%20%3Cdiv%20%3E%3C%2Fdiv%3E%0A%20%20%0A%20%20-%20A-site%20FeO%3Csub%20%3E4%3C%2Fsub%3E%20%0A%20%20-%20B-site%20FeO%3Csub%20%3E6%3C%2Fsub%3E%3C%2Fdiv%3E%3C%2Fdiv%3E`}</wljs-html>
+
+## Graphics improvements
+We added extra padding in framed mode and grid lines
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`Plot[{Sin[x], Cos[x]}, {x,0,10}, Frame->True, GridLines->Automatic]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(FrontEndRef["fe3afc3f-4df7-46e7-ae78-8c3a58f76ba9"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKp6UaJ6YlG6fpmqSkmeuamKWa6yammlvoWiQbJ5papJmbJSVaAgCa8hZ/"*)(*]VB*)`}</wljs-editor></WLJSWrapper>
+
+`GridLines` option is limited to `Automatic` for now.
+
+<wljs-html encoded="true">{`%3Cbr%20%2F%3E`}</wljs-html>
+
+We are somewhat closed to fully support ticks and labels in 3D plots
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(FrontEndRef["20d99c9e-9ddc-4af4-9db3-170b2023cdf0"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKGxmkWFomW6bqWqakJOuaJKaZAFlJxrqG5gZJRgZGxskpaQYAjOQV/w=="*)(*]VB*)`}</wljs-editor></WLJSWrapper>
+
+
+
+<wljs-html encoded="true">{`%0A%3Cstyle%3E%0A%20%20%5Btransparency%3D%22false%22%5D%20.bg-g-trans%20%7B%0A%20%20%20%20background%3A%20transparent%20%21important%3B%0A%20%20%7D%0A%0A%20%20%5Btransparency%3D%22true%22%5D%20.bg-g-trans%20%7B%0A%20%20%20%20background%3A%20transparent%20%21important%3B%0A%20%20%7D%0A%3C%2Fstyle%3E`}</wljs-html>

@@ -1,0 +1,120 @@
+---
+date: 2025-11-20
+title:  Release notes *2.8.9*
+---
+
+{/* add this script to the body  */}
+{/* https://cdn.jsdelivr.net/gh/WLJSTeam/web-components@latest/src/common/app.js */}
+<wljs-store json="./attachments/4441f4a4-c161-4431-a6b6-e062a3e6b99c.txt"></wljs-store>
+
+
+
+
+Fri 14 Nov 2025 14:55:55
+
+
+
+## Support of Molecule framework
+We added the missing representation of `Molecule` symbol
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`Molecule["NC(=O)C[C@H](C(=O)O)N"]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`Molecule[(*VB[*) {"N", "C", "O", "C", Atom["C", "HydrogenCount" -> 1], "C", "O", "O", "N"}, {Bond[{1, 2}, "Single"], Bond[{2, 3}, "Double"], Bond[{2, 4}, "Single"], Bond[{4, 5}, "Single"], Bond[{5, 6}, "Single"], Bond[{6, 7}, "Double"], Bond[{6, 8}, "Single"], Bond[{5, 9}, "Single"]}, {StereochemistryElements -> {<|"StereoType" -> "Tetrahedral", "ChiralCenter" -> 5, "Direction" -> "Counterclockwise"|>}} (*,*)(*"1:eJy1U11LwzAU3fzAjxfBF8GnDcxjYctW0/m2rvsQhoNW92zapFJoG0kTtv17k7a6KcKCMkhves89957zcNMOmR8fNxqN4lYFl60njGevQ85x/kZJILMM842C46bmXKkw4SwX45wsEy4kTqvC9U5hvKaRFDhMaXCnYBQSAiPqWDYKO1a/g2IrdCCyiNPrdtGgh2EHx0d6yIkK86QQ1civrKzd7LirXT0Kmi0TugoutLgqyBQ/tCr6pQpjkgjGNWM7cMZSUmW66cWfezRihAZN1QWgA+Bw6gLbVTeAA4BcfUo4CLd4IMMi4sm7KBE4Ul9FAmhUd2rwG9IHtldDtqeH1bw9bXvFZybizoHEn0zE4YHEFybivd/FkafPJz6t4e0W+lIt77n+oZgs8nRTos9c0h+7WWb6+fhsVT0j87U9U7WhYFnx16XVTV1k4rqktlpmnlyWk/95ujfxVJzqZ4vTgn4AqU8Hpg=="*)(*]VB*)]`}</wljs-editor></WLJSWrapper>
+
+Example: check for patterns and highlight them
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`sulfurOxygenBond = MoleculePattern[{"S", "O"}, {Bond[{1, 2}, "Single"]}];
+	m = Molecule["4-methylbenzenesulfonic acid"]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`Molecule[(*VB[*) {"C", "C", "C", "C", "C", "S", "O", "O", "O", "C", "C", "H", "H", "H", "H", "H", "H", "H", "H"}, {Bond[{1, 2}, "Single"], Bond[{2, 3}, "Aromatic"], Bond[{3, 4}, "Aromatic"], Bond[{4, 5}, "Aromatic"], Bond[{5, 6}, "Single"], Bond[{6, 7}, "Double"], Bond[{6, 8}, "Double"], Bond[{6, 9}, "Single"], Bond[{5, 10}, "Aromatic"], Bond[{10, 11}, "Aromatic"], Bond[{11, 2}, "Aromatic"], Bond[{1, 12}, "Single"], Bond[{1, 13}, "Single"], Bond[{1, 14}, "Single"], Bond[{3, 15}, "Single"], Bond[{4, 16}, "Single"], Bond[{9, 17}, "Single"], Bond[{10, 18}, "Single"], Bond[{11, 19}, "Single"]}, {} (*,*)(*"1:eJy9U11LwzAUnV/48SL4Ivg0wTwWXGpo69u6dpswGDS6Z9MmlULbSJqw7T/5I03a6qYvKwOF9LY595x77sPpbcyj9KjX61U3uvh8NeaieB0KQco3RrEqCiLWGk4PDOdSl7HgpQxLusiEVCRvGldbjXDFEiVJnDN8p2F679pxSpHlIduxHhBEFkkGzHKg59qpPYip56WHZsixLrOsks3I71vdu97art3qSbJikbElPjfmuqFy8thv6Be6hDSTXBjGZuCU57S5GdFLNAtYwinDHxoD0AVwOPEB8vUbQA84vjk1jOMNjlVcJSJ7lzUCR/ppSMAZtUoD/kAcgIIWQoEZ1vJ2yHaaT7uYu39kPu9ibu9rDrEZ7wTmfOknrXwTmEjpnJ2ZD0bovMzXNfosFPsVo/pmkh7xZZP47gk71b2h5EW1b76MaNBp65ra73fbyecl/YedqhPzh5G8Yp8Q1/TL"*)(*]VB*)]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`MoleculePlot[m, sulfurOxygenBond]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(FrontEndRef["07561b8a-d909-45e8-b6a1-540829f8f480"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKG5ibmhkmWSTqplgaWOqamKZa6CaZJRrqmpoYWBhZplmkmVgYAAB39RTz"*)(*]VB*)`}</wljs-editor></WLJSWrapper>
+
+3D molecule plot
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`MoleculePlot3D[m, sulfurOxygenBond]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(FrontEndRef["71530581-9ce1-4559-9f8a-cdfbf6697ddd"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKmxuaGhuYWhjqWianGuqamJpa6lqmWSTqJqekJaWZmVmap6SkAAB2UhW/"*)(*]VB*)`}</wljs-editor></WLJSWrapper>
+
+## Access to properties of the notebook
+You can read and write to the notebook fields using this pattern:
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`n = EvaluationNotebook[];
+	n["Properties"]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`{"Icon","Init","PublicFields","EvaluationContext","Cells","Self","Properties","Hash","AutorunScript","Controller","ExcalidrawImages","FocusedCell","MessangerChannel","ModalsChannel","Objects","Path","Symbols","TOC","WebSocketQ","Opened","Socket","CellsInitialized","Evaluator"}`}</wljs-editor></WLJSWrapper>
+
+:::note
+Both public and private fields are exposed
+:::
+
+Read cells and get their content
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`n["Cells"][[4]]
+	%["Data"]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`RemoteCellObj["54680020-89cf-4be5-aaa7-057ed347804a"]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output" encoded="true"  >{`%22%23%23%20Support%20of%20Molecule%20framework%5CnWe%20added%20the%20missing%20representation%20of%20%60Molecule%60%20symbol%22`}</wljs-editor></WLJSWrapper>
+
+## Create, open, save and evaluate external notebooks
+We completed the implementation of Notebook API to the point, where you can safely:
+
+### Import and evaluate
+Import a WLN notebook from a file and then evaluate it (only initialization cells) and collect the last output cell:
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`pianoNotebook = NotebookOpen[FileNameJoin[{"attachments", "Piano.wln"}], Visible->False];
+	widget = NotebookEvaluateAsModule[pianoNotebook]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output" encoded="true"  >{`rm4339092060234296039G%60PianoView`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`widget[] `}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(FrontEndRef["d8295bd8-29e4-4177-903d-4efab547e2d1"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKp1gYWZompVjoGlmmmuiaGJqb61oaGKfomqSmJSaZmpinGqUYAgB+9RWC"*)(*]VB*)`}</wljs-editor></WLJSWrapper>
+
+We can open that notebook by
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`NotebookOpen[pianoNotebook]`}</wljs-editor></WLJSWrapper>
+
+### Create a notebook
+Let's make an empty notebook and then open it
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`doc = CreateDocument[{
+	  TextCell["Hello World", "Section"], 
+	  Plot[x, {x,0,1}]
+	}, Visible->False];
+	doc // NotebookOpen;`}</wljs-editor></WLJSWrapper>
+
+## NextJS & MDX Export
+We improved our integration with Next.js & React system. Now all assets are served statically within the library: no CDNs, everyhting is local. And Tailwind framework is no longer required! 
+
+Check it out:
+
+- [wljs-notebook-react](https://github.com/WLJSTeam/wljs-notebook-react)
+- [wljs-nextjs-example](https://github.com/WLJSTeam/wljs-nextjs-example)
+
+## Minor Bug Fixes
+- The `Triangle` and `StadiumShape` symbol is missing its graphical representation.
+- `Tooltip` was not rendered inside `Graphics`.
+- The copying button was missing in the cell properties.
+- There was a bug with printing slide cells.
+- Automatic cache flushing occurs after an update.
+
+## Thank You All ❤️
+
+> Monumental effort people, you're democratizing Mathematica!
+> *Anonymous*
+
+> This is a fantastic project! keep it up!
+> *Anonymous*
+
+> ✨ Monthly financial contribution to WLJS Notebook (€3.00)
+> *Jason Cunliffe*
+
+> ✨ Monthly financial contribution to WLJS Notebook (€2.00)
+> *Guest*
+
+<wljs-html encoded="true">{`%0A%3Cscript%20type%3D%22module%22%3E%0A%20%20%20%20const%20rating%20%3D%20%5B%5D%3B%0A%20%20%20%20for%20%28let%20i%3D1%3B%20i%3C%3D5%3B%20%2B%2Bi%29%20rating.push%28document.getElementById%28%22star%22%2Bi%29%29%3B%0A%20%20%20%20const%20feedback%20%3D%20document.getElementById%28%22feedback-form%22%29%3B%0A%20%20%20%20const%20container%20%3D%20document.getElementById%28%22rating-c%22%29%3B%0A%0A%20%20%20%20let%20rate%20%3D%20-1%3B%0A%20%20%20%20let%20text%20%3D%20%22undefined%22%3B%0A%20%20%20%20let%20timer%20%3D%20false%3B%0A%20%20%20%20let%20disabled%20%3D%20false%3B%0A%0A%20%20%20%20const%20submitForm%20%3D%20%28%29%20%3D%3E%20%7B%0A%20%20%20%20%20%20disabled%20%3D%20true%3B%0A%20%20%20%20%20%20let%20n%20%3D%201%3B%0A%20%20%20%20%20%20let%20interval%20%3D%20setInterval%28%28%29%20%3D%3E%20%7B%0A%20%20%20%20%20%20%20%20container.style.filter%20%3D%20%22blur%28%22%2Bn%2B%22px%29%22%3B%0A%20%20%20%20%20%20%20%20n%2B%2B%3B%0A%20%20%20%20%20%20%20%20if%20%28n%20%3E%20200%29%20%7B%0A%20%20%20%20%20%20%20%20%20%20clearInterval%28interval%29%3B%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%7D%2C%2030%29%3B%0A%0A%20%20%20%20%20%20server.io.fire%28%27submit-form-281%27%2C%20%5Brate%2C%20text%5D%29%3B%0A%20%20%20%20%7D%0A%0A%20%20%20%20const%20setTimer%20%3D%20%28%29%20%3D%3E%20%7B%0A%20%20%20%20%20%20if%20%28disabled%29%20return%3B%0A%20%20%20%20%20%20if%20%28timer%29%20clearTimeout%28timer%29%3B%0A%20%20%20%20%20%20timer%20%3D%20false%3B%0A%20%20%20%20%20%20timer%20%3D%20setTimeout%28submitForm%2C%205000%29%3B%0A%20%20%20%20%7D%0A%0A%20%20%20%20const%20clearTimer%20%3D%20%28%29%20%3D%3E%20%7B%0A%20%20%20%20%20%20if%20%28timer%29%20clearTimeout%28timer%29%3B%0A%20%20%20%20%20%20timer%20%3D%20false%3B%0A%20%20%20%20%7D%0A%0A%20%20%20%20rating.forEach%28%28e%29%20%3D%3E%20%7B%0A%20%20%20%20%20%20e.addEventListener%28%27change%27%2C%20%28ev%29%3D%3E%7B%0A%20%20%20%20%20%20%20%20rate%20%3D%20ev.srcElement.value%3B%0A%20%20%20%20%20%20%20%20setTimer%28%29%3B%0A%20%20%20%20%20%20%7D%29%3B%0A%20%20%20%20%7D%29%3B%0A%0A%20%20%20%20feedback.addEventListener%28%27input%27%2C%20%28%29%3D%3E%7B%0A%20%20%20%20%20%20text%20%3D%20feedback.value%3B%0A%20%20%20%20%20%20clearTimer%28%29%3B%0A%20%20%20%20%7D%29%3B%0A%0A%20%20%20%20feedback.addEventListener%28%27focus%27%2C%20%28%29%3D%3E%7B%0A%20%20%20%20%20%20clearTimer%28%29%3B%0A%20%20%20%20%7D%29%3B%0A%0A%20%20%20%20feedback.addEventListener%28%27blur%27%2C%20%28%29%20%3D%3E%20%7B%0A%20%20%20%20%20%20text%20%3D%20feedback.value%3B%0A%20%20%20%20%20%20setTimer%28%29%3B%0A%20%20%20%20%7D%29%0A%3C%2Fscript%3E`}</wljs-html>
+

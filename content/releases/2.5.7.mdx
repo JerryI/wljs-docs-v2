@@ -1,0 +1,147 @@
+---
+date: 2024-05-24
+title:  Release notes *2.5.7*
+---
+
+{/* add this script to the body  */}
+{/* https://cdn.jsdelivr.net/gh/WLJSTeam/web-components@latest/src/common/app.js */}
+<wljs-store json="./attachments/17c892be-aa70-404c-a264-468d84bad8d3.txt"></wljs-store>
+
+
+
+
+
+
+
+
+
+The major improvements are Mathematica's boxes. We rebuilt the output forms for `Graphics`, `Image`, `Graphics3D` and got rid of many workarounds we had for the last 2 years! We populated `StandardForm` with `TableForm`, `Item`, and `WLXForm` with `Row` and `Column` used on slides.
+
+RTX feature and materials improvements were introduces for `Graphics3D`.
+
+There are no breaking changes. 
+
+## Lists, rows, columns
+Here is the basics of new formatted output
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`Row[{1, "->", 2}]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*GB[*){{1(*|*),(*|*)"->"(*|*),(*|*)2}}(*]GB*)`}</wljs-editor></WLJSWrapper>
+
+Or column
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`Column[{Red, Blue}]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*GB[*){{(*VB[*)(RGBColor[1, 0, 0])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeGJAIcndyzs/JLwouTyxJzghJzS3ISSxJTWMGyXMgyRcxgMEHeyiDgQHOAAALpBNd"*)(*]VB*)}(*||*),(*||*){(*VB[*)(RGBColor[0, 0, 1])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeGJAIcndyzs/JLwouTyxJzghJzS3ISSxJTWMGyXMgyRcxQAE644M9APZHE10="*)(*]VB*)}}(*]GB*)`}</wljs-editor></WLJSWrapper>
+
+Grids, tables can be stylized using `Item`
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`MatrixForm[{{a, b}, {Item[c, Background -> Red], d}}]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`((*GB[*){{a(*|*),(*|*)b}(*||*),(*||*){c(*VB[*)(**)(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KWlMIB47kPAsSc11yq+ACICkg0pzUou5gAynxOTs9KL80ryUNGaQJAdI0t3JOT8nvygTZFomA4xA080DZASXFGUW+Od55hWUlhSzAgXcEnOKUwGXGx1q"*)(*]VB*)(*|*),(*|*)d}}(*]GB*))`}</wljs-editor></WLJSWrapper>
+
+Here is an example of formatted table
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`TableForm[{{5, Item[7, Background->Yellow]}, {4, 2}, {10, 3}}, 
+	 TableHeadings -> {{"Group A", "Group B", "Group C"}, {"y1", "y2"}}]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*GB[*){{(*BB[*)()(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRAeB5AILqnMSXXKr0hjgskHleakFouApDLyy4NLijLz0p0zEosSk0tSi4qLWYESbok5xakAImsVPw"*)(*]BB*)(*|*),(*|*)"y1"(*|*),(*|*)"y2"}(*||*),(*||*){"Group A"(*|*),(*|*)5(*|*),(*|*)7(*VB[*)(**)(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KWlMIB47kPAsSc11yq+ACICkg0pzUou5gAynxOTs9KL80ryUNGaQJAdI0t3JOT8nvygTZBqEAGIGNN08QEZwSVFmgX+eZ15BaUkxK1DALTGnOBUAl00daw"*)(*]VB*)}(*||*),(*||*){"Group B"(*|*),(*|*)4(*|*),(*|*)2}(*||*),(*||*){"Group C"(*|*),(*|*)10(*|*),(*|*)3}}(*||*)(*1:eJxTTMoPSmNkYGAoZgESHvk5KRAeO5BwL8pMccqvSGOCSQeV5qQW8yNkXDLLMlNSi4oRKnwyi0tQ1QeDTHLOzynNzStOY0FWV8wKZLgl5hSngoVCikpTES5BUwBnoRkOZuSXU8NkAKaJOTA=*)(*]GB*)`}</wljs-editor></WLJSWrapper>
+
+## Panels, standard decoration boxes
+Panel is a special container with a title
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*GB[*){{(*BB[*)("My slider")(*,*)(*"1:eJxTTMoPSmNiYGAo5gcSAUX5ZZkpqSn+BSWZ+XnFaYwgCRYg4ZGfkwLhcQKJ4JKizLx0p/yKTC4gD6IdpCqoNCc1mA2uACwWUlSaCgCnOxcR"*)(*]BB*)(*VB[*)(**)(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KWlMIB47kPAsSc11yq+ACICkg0pzUos5gQzHnMz0vNzUvBKEnE9mcQmEkZpWAlbkmZeRWpRZkpqCZoAAkOGSmpZYmlPilFicGlxSmZMazAUUDEjMS83xSUxKzQEAlWIj4w"*)(*]VB*)}(*||*),(*||*){(*BB[*)((*BB[*)(Panel[(*VB[*)(EventObject[<|"Id" -> "4a5c3f8c-9478-47b4-8ce8-1178fd2a9efd", "Initial" -> 0.5, "View" -> "08b1a256-3d97-435a-9c58-fe1b72e1add4"|>])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKG1gkGSYamZrpGqdYmuuaGJsm6lomm1ropqUaJpkbpRompqSYAAB73xWj"*)(*]VB*)])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KWlMIB4/kAgoyi/LTElN8S8oyczPK05jAElwgCQS81JznPIrIEpBGoNKc1KDwSakJqYEs8LUAADiShU/"*)(*]BB*))(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRAeO5DwT0vLyU9MSWOCCQQk5qU65VdABEDqg0pzUos5gQzHnMz0vNzUvBKEnE9mcUkxG5DhDBROLSrmADKdEotTczLzUtFMEECSCsgvzizJzM9DUQ8Ap40nag"*)(*]BB*)(*VB[*)(**)(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRAeO5DwLEnNdcqvSGOCSQeV5qQWCwAZLqlpiaU5JU6JxanBJZU5qcEg5T6JSak5qSkAy0sTkQ=="*)(*]VB*)}}(*]GB*)`}</wljs-editor></WLJSWrapper>
+
+Labels can by attached to any expressions
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`Labeled[Framed[{a, b, c, d}], lbl, Right]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*GB[*){{(*BB[*)((*BB[*)({a,b,c,d})(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRAeB5BwK0rMTXXKr0hjgskHleakFvMAGcElRZkF/nmeeQWlJcWsILWJOcWpAG8uEdg="*)(*]BB*))(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRAeO5DwT0vLyU9MSWOCCQQk5qU65VdABEDqg0pzUos5gQzHnMz0vNzUvBKEnE9mcUkxG5DhDBROLSrmADKdEotTczLzUtFMEECSCsgvzizJzM9DUQ8Ap40nag"*)(*]BB*)(*VB[*)(**)(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRAeO5DwLEnNdcqvSGOCSQeV5qQWCwAZLqlpiaU5JU6JxanBJZU5qcEg5T6JSak5qSkAy0sTkQ"*)(*]VB*)(*|*),(*|*)lbl(*VB[*)(**)(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRAeO5DwLEnNdcqvSGOCSQeV5qQWCwAZLqlpiaU5JU6JxanBJZU5qcE8QEGfxKTUnNQUMAUAMtsVdg=="*)(*]VB*)}}(*]GB*)`}</wljs-editor></WLJSWrapper>
+
+To do basic highlighting
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`Highlighted[4]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*BB[*)(4)(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KWnMIB4HkHArSsxNdcqvSGOCyQeV5qQWCwAZLqlpiaU5JU6JxanBJZU5qcEgQY/M9IwcIC5JTfHMKygtQdPHA2QElxRlFvjngaWLWUF2JOYUp6Ip5ILZDTYaLO6Xn5cKANJHKvA="*)(*]BB*)`}</wljs-editor></WLJSWrapper>
+
+Complex styling 
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`Style[1/Sqrt[2], 10, Red, Frame->True, Background->LightBlue]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*BB[*)((*FB[*)((1)(*,*)/(*,*)((*SqB[*)Sqrt[2](*]SqB*)))(*]FB*))(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KWmsIB4HkAguqcxJdcqvyOQCctKYYcJB7k7O+Tn5RZkgbZkMMCKNCWZKUGlOajHIFLeixNxUsFBIUWkqmgKQoU6JydnpRfmleSmYxhddX1xgy3X9tX2RyDr3h1Ui7+zBFqKZwgN2Z1FmgX+eZ15BaQnE3sSc4lQAMSwyNw=="*)(*]BB*)`}</wljs-editor></WLJSWrapper>
+
+And more in the documentation (Decorations section)
+
+## WLXForm
+Some of those decorations are defined on slides and WLX cells
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`Fig1 = EditorView["Plot[BesselJ[3, z], {z,0,10}]"];
+	Fig2 = Plot[BesselJ[3, z], {z,0,10}];`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`.slide
+	
+	<Column>
+	  <Fig1/>
+	  <Fig2/>
+	</Column>`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="slide" type="Output"  >{`<dummy ><div class="flex flex-col">FrontEndExecutable[98dd7d58-363a-40b5-89ba-fbadcc6e990e]
+	FrontEndExecutable[051fe68e-7e3a-4115-b327-8c8deb1f6818]</div></dummy>`}</wljs-editor></WLJSWrapper>
+
+It means, that functions such as `ManipulatePlot` can work without extra wrappers
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`Man = ManipulatePlot[Sinc[w x], {x,-10,10}, {w,0,10}];`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`.slide
+	
+	<Man/>`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="slide" type="Output"  >{`<dummy ><div class="flex flex-row">FrontEndExecutable[9a9fe427-d9b5-4952-9fdc-703f06f0da30]
+	FrontEndExecutable[61b04ba8-b51f-401d-95e8-be9079b99aff]</div></dummy>`}</wljs-editor></WLJSWrapper>
+
+## Graphics3D
+
+### New materials
+We provide more control over the various physical parameters of the materials used for rendering geometry.
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`Graphics3D[{Darker[White], Polygon[{{-2,-2,0}, {2,-2,0}, {2,2,0}, {-2,2,0}}],{
+	  Directive[Cyan, 
+	    "MaterialThickness"->1.0, 
+	    "Transmission"->1.0,
+	    "Roughness"->0.13
+	  ], 
+	  Sphere[{0,0,1}, 1]
+	}}]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(Graphics3D[{RGBColor[0.6666666666666667, 0.6666666666666667, 0.6666666666666667], Polygon[{{-2, -2, 0}, {2, -2, 0}, {2, 2, 0}, {-2, 2, 0}}], {Directive[RGBColor[0, 1, 1], "MaterialThickness" -> 1., "Transmission" -> 1., "Roughness" -> 0.13], Sphere[{0, 0, 1}, 1]}}])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRAeF5BwL0osyMhMLjZ2SWOGqfDJLC6B8DiARJC7k3N+Tn5RUVgoCDy1x2RAjGMHEgH5OZXp+XlpLJhmwXiZ//7//w8hgCIMaJJMQAZ+STCBRRKsCSHJhOICsHs4gYRLZlFqcklmWSqmB8H6MhlhBMKEoNKc1GBBIMM3sSS1KDMxJwQYYtl5qcXFRQxg8MEeTTEPkBFSlJhXnJtZXJyZn4dLHchFQfml6Rlgw5YU2HJdX3wAqogNSAQXZKQWpaJ5lAHmR4RbAf0PcVk="*)(*]VB*)`}</wljs-editor></WLJSWrapper>
+
+Emissive
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`Graphics3D[{Darker[White], Polygon[{{-2,-2,0}, {2,-2,0}, {2,2,0}, {-2,2,0}}],{ Directive["Emissive"->Red], Sphere[{0,0,1}, 1]}}]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(Graphics3D[{RGBColor[0.6666666666666667, 0.6666666666666667, 0.6666666666666667], Polygon[{{-2, -2, 0}, {2, -2, 0}, {2, 2, 0}, {-2, 2, 0}}], {Directive["Emissive" -> RGBColor[1, 0, 0]], Sphere[{0, 0, 1}, 1]}}])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRAeF5BwL0osyMhMLjZ2SWOGqfDJLC6B8DiARJC7k3N+Tn5RUVgoCDy1x2RAjGMHEgH5OZXp+XlpLJhmwXiZ//7//w8hgCIMaJJMQAZ+STCBRRKsCSHJhOICsAM5gYRLZlFqcklmWSpCQVBpTmowyKeuuZnFxSApDL9nMsLMRTKcDUgEF2SkFqWiuQSuDqINRAAA/RxXvQ=="*)(*]VB*)`}</wljs-editor></WLJSWrapper>
+
+Or use built-in library
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true" encoded="true"  >{`Plot3D%5BSin%5Bx%5D%20Cos%5By%5D%2C%20%7Bx%2C-10%2C10%7D%2C%20%7By%2C-10%2C10%7D%5D%5B%5B1%5D%5D%3B%0AGraphics3D%5B%7B%25%2C%20Graphics3D%60Materials%5B%22Glass%22%5D%2C%20Red%2C%20Sphere%5B%7B0%2C0%2C2%7D%2C%205%5D%7D%5D`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(FrontEndRef["798e59ed-d078-45ef-8ea1-e5fc3f1b7b1c"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKm1tapJpapqbophiYW+iamKam6VqkJhrqppqmJRunGSaZJxkmAwCKwxZJ"*)(*]VB*)`}</wljs-editor></WLJSWrapper>
+
+### Real-time pathtracing
+Now is supported on Mac M1/2/3 machines. Try examples above!
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true" encoded="true"  >{`Plot3D%5BSin%5Bx%5D%20Cos%5By%5D%2C%20%7Bx%2C-10%2C10%7D%2C%20%7By%2C-10%2C10%7D%5D%5B%5B1%5D%5D%3B%0AGraphics3D%5B%7B%25%2C%20Graphics3D%60Materials%5B%22Glass%22%5D%2C%20Red%2C%20Sphere%5B%7B0%2C0%2C2%7D%2C%205%5D%7D%2C%20%22RTX%22-%3ETrue%5D`}</wljs-editor></WLJSWrapper>
+
+### Ticks support
+Automatic ticks were added to `Graphics3D`
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`Plot3D[Sin[Sqrt[x^2 + y^2]], {x, -6, 6}, {y, -6, 6}, 
+	 PlotRange -> All, 
+	 Mesh -> None, 
+	 ColorFunction -> "Rainbow"]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(FrontEndRef["856b6151-d10f-4c3d-95b4-105114306afe"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKW5iaJZkZmhrqphgapOmaJBun6FqaJpnoGhqYGhqaGBuYJaalAgB16BUD"*)(*]VB*)`}</wljs-editor></WLJSWrapper>
+
+
+
+<wljs-html encoded="true">{`%0A%3Cstyle%3E%0A%20%20%5Btransparency%3D%22false%22%5D%20.bg-g-trans%20%7B%0A%20%20%20%20background%3A%20transparent%20%21important%3B%0A%20%20%7D%0A%0A%20%20%5Btransparency%3D%22true%22%5D%20.bg-g-trans%20%7B%0A%20%20%20%20background%3A%20transparent%20%21important%3B%0A%20%20%7D%0A%3C%2Fstyle%3E`}</wljs-html>

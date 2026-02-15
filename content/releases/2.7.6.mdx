@@ -1,0 +1,154 @@
+---
+date: 2025-04-16
+title:  Release notes *2.7.6*
+---
+
+{/* add this script to the body  */}
+{/* https://cdn.jsdelivr.net/gh/WLJSTeam/web-components@latest/src/common/app.js */}
+<wljs-store json="./attachments/29b3da43-5dab-4816-b2a1-3913ce6d56fe.txt"></wljs-store>
+
+
+
+
+
+
+
+
+
+
+## More control over `Manipulate`
+You can specify when to update the expression after or during user's action
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true" encoded="true"  >{`Manipulate%5BStyle%5BStringTemplate%5B%22%60%60%20m%2Fs%22%5D%5Bx%5D%2C%20Blue%5D%2C%20%7Bx%2C10%2C100%7D%2C%20%28%2ABB%5B%2A%29%28ContinuousAction-%3ETrue%29%28%2A%2C%2A%29%28%2A%221%3AeJxTTMoPSmNkYGAoZgESHvk5KRAeB5AILqnMSXXKr0hjgskHleakFnMBGU6JydnpRfmleSlpzDDlQe5Ozvk5%2BUVFDGDwwR6dwcAAAAHdFiw%3D%22%2A%29%28%2A%5DBB%2A%29%5D`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*GB[*){{(*VB[*)(EventObject[<|"Id" -> "84970547-046f-428e-87ef-3e159d78a2c8", "Initial" -> {55.}, "View" -> "7536d8d4-88b3-409c-87c3-ae9081acf568"|>])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKm5sam6VYpJjoWlgkGeuaGFgm61qYJxvrJqZaGlgYJianmZpZAAB7IRVb"*)(*]VB*)}(*||*),(*||*){(*VB[*)(FrontEndRef["366f97d1-9fd5-44ae-bb52-df79431153c5"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKG5uZpVmapxjqWqalmOqamCSm6iYlmRrppqSZW5oYGxqaGiebAgCEvhWB"*)(*]VB*)}}(*]GB*)`}</wljs-editor></WLJSWrapper>
+
+## Expanded API for Plotly
+We fully exposed the available methods to update your `Plotly` graphs
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`p = Plotly[<|"type"->"line", "y"->{1,2,3,4,5,6}|>]
+	
+	EventHandler[InputRange[0,1,0.1,1.0], (PlotlyRestyle[p, <|"opacity"->#, "marker.color"->"red"|>])&]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(FrontEndRef["da9c62e6-ae96-43c2-a04d-0c3bb0a0e7ae"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKpyRaJpsZpZrpJqZamumaGCcb6SYamKToGiQbJyUZJBqkmiemAgCPKRZO"*)(*]VB*)`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(EventObject[<|"Id" -> "407790f6-ad4d-4ec9-bac3-d84cdfe33f17", "Initial" -> 1., "View" -> "ab8abf24-66f6-425f-b4fb-c48967271233"|>])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKJyZZJCalGZnompmlmemaGJmm6SaZpCXpJptYWJqZG5kbGhkbAwCOCRV7"*)(*]VB*)`}</wljs-editor></WLJSWrapper>
+
+## GUI for Animate
+We upgraded `Animate`
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`Animate[Series[Cos[x], {x,0,n}], {n,2, 10, 1}, RefreshRate->3]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(FrontEndRef["bd9f260e-fef4-4a22-9df5-ffc0ba385c58"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKJ6VYphmZGaTqpqWmmeiaJBoZ6VqmpJnqpqUlGyQlGluYJptaAACW2RZt"*)(*]VB*)`}</wljs-editor></WLJSWrapper>
+
+## Dynamic HTML Export
+
+### Check it out!
+Here is a __full demo__
+
+- [https://jerryi.github.io/wljs-demo/LiveHTML.html](https://jerryi.github.io/wljs-demo/LiveHTML.html)
+
+### IDW interpolation with categorical partitioning
+
+__Motivation__
+
+When you are trying to export a widget with continuously changing input data (it can be a canvas with a pointer or an input range with fine steps), it becomes cumbersome and inefficient to manually sample all possible positions of them.
+
+Imagine a Gaussian distribution controlled by a mouse. How can this be exported to HTML? For each mouse position, you have to recalculate the Gaussian. This is done by the WL kernel and not the JavaScript frontend.
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`udata = {{-1,0}, {1,0}};
+	
+	Graphics[{
+	  Cyan, Line[udata // Offload], Red, PointSize[0.05],
+	  EventHandler[Point[{0,0.5}], {
+	    "drag" -> ((udata = generate[#, 0.1])&)
+	  }]
+	}, PlotRange->{{-1,1}, {0,1}}, ImagePadding->None, Axes->{True, False}, ImageSize->Small]
+	
+	ClearAll[generate];
+	generate[{x_, y_}, k_] := Table[{t, y Exp[- (*FB[*)(((*SpB[*)Power[(x - t)(*|*),(*|*)2](*]SpB*))(*,*)/(*,*)(2 k))(*]FB*)]}, {t,-1,1, 0.03}]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(Graphics[{RGBColor[0, 1, 1], Line[Offload[udata]], RGBColor[1, 0, 0], PointSize[0.05], EventListener[Point[{0, 0.5}], {"drag" -> "e502dd1b-793a-472a-ae1c-871a5f41ad1f"}]}, PlotRange -> {{-1, 1}, {0, 1}}, ImagePadding -> None, Axes -> {True, False}, ImageSize -> Small])(*,*)(*"1:eJxtUFtKAzEUTdWiBV2E4O+A6YPRr6KitVC0zLiB2+ZmDKSJJDMi7kR34K7cieZBaGf0fhzOfZzD4Z6udMF7hBB74OBeS8b7vjtyMDPw8izWNk78fiFszffTvphd32ipjXCciF6Crd1CKIzdoYNHzqUGZr1bw6CGf5yCCUkQtQMHSy1UXYp3NJ8fvr6mfM/vThzcvqKqfTJUaKKknyTxKkUPpoaE+p7u5rQ7l0UjsfSEGajKM0dwcj5kjK6y/HIE2TgfQgZI19lFTmHCxxQY5W19DC11XYCqsJ2ik+nHVfzb36ydeXA+dmS+gQqXwJhQVdg8aIWdO0+u3tC2bQN5Mg2GH92BtF3dIPn7d4ercgNS/gIe33Zk"*)(*]VB*)`}</wljs-editor></WLJSWrapper>
+
+*Try to drag a red dot if you are reading it from the `wljs` blog page*
+
+__Solution__
+
+Quite often, we do not need all possible points to be sampled, but only the randomly scattered probe points, which are practical to obtain. The rest can be interpolated using a general Inverse Distance Weighting (IDW) in continuous feature space. Non-numerical data such as checkboxes and select boxes can be treated as categorical types.
+
+What about the output? It can be:
+
+- Number
+- Array (List)
+- Tensor
+- String
+- Other expressions
+
+The first three can easily be interpolated, while for strings and other expressions, we can pick the closest one from an N-dimensional space.
+
+#### More about a string type
+However, we went deeper. Look at this example.
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true" encoded="true"  >{`Manipulate%5BStyle%5BStringTemplate%5B%22%60%60%20m%2Fs%22%5D%5BSetPrecision%5Ba%2C2%5D%5D%2C%20Blue%5D%2C%20%7Ba%2C0%2C1%7D%2C%20ContinuousAction-%3ETrue%5D`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*GB[*){{(*VB[*)(EventObject[<|"Id" -> "39c56b8e-9d55-4615-8efd-6b997e2bf32f", "Initial" -> {0.5}, "View" -> "4fc089ce-57f0-497e-91fe-6bfba4122a59"|>])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKm6QlG1hYJqfqmpqnGeiaWJqn6loapqXqmiWlJSWaGBoZJZpaAgCKcBXi"*)(*]VB*)}(*||*),(*||*){(*VB[*)(FrontEndRef["3f0a664b-f591-4473-976d-d65ad44ad8ce"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKG6cZJJqZmSTppplaGuqamJgb61qam6XoppiZJqaYmCSmWCSnAgB9qRWx"*)(*]VB*)}}(*]GB*)`}</wljs-editor></WLJSWrapper>
+
+The output result is a string, but quite predictable. We analyze all strings used in outputs and decompose them into numbers and string templates if possible. Then the numerical content is interpoalted as usual and the final string is composed back. This allows to do something like this as well
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`Manipulate[Table[(*SpB[*)Power[a(*|*),(*|*)i](*]SpB*) + (*SpB[*)Power[a(*|*),(*|*)j](*]SpB*), {i,2}, {j,2}] // MatrixForm, {a,0,1}, ContinuousAction->True]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*GB[*){{(*VB[*)(EventObject[<|"Id" -> "f7307c91-e81f-4eeb-9367-f93918a72253", "Initial" -> {0.5}, "View" -> "929c2a2a-4e80-4707-9c7a-bc974d67bb68"|>])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKWxpZJhslGiXqmqRaGOiamBuY61ommyfqJiVbmpukmJknJZlZAAB+wBWD"*)(*]VB*)}(*||*),(*||*){(*VB[*)(FrontEndRef["72d6ae0d-2452-4eb2-ad68-8907c695b883"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKmxulmCWmGqToGpmYGumapCYZ6SammFnoWlgamCebWZomWVgYAwCC5hVR"*)(*]VB*)}}(*]GB*)`}</wljs-editor></WLJSWrapper>
+
+Here the output is technically is a string, because this is how our `StandardForm` works under the hood.
+
+## Better handling external windows
+You can assign handlers to the events generated by projected cells
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`state = "";
+	TextView[state // Offload, "Label"->"State"]
+	
+	cell = CellPrint[Plot[x,{x,0,1}], "Target"->_];
+	EventHandler[cell, {
+		"Mounted" -> Function[Null, state = "Mounted"],
+		"Closed" -> Function[Null, state = "Closed"]
+	}]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(FrontEndRef["7a6abe36-9d2d-41db-ac6c-76a7453f0398"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKmyeaJSalGpvpWqYYpeiaGKYk6SYmmyXrmpslmpuYGqcZGFtaAACQBRXY"*)(*]VB*)`}</wljs-editor></WLJSWrapper>
+
+And manually close it if needed
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`Delete[cell]`}</wljs-editor></WLJSWrapper>
+
+Note that `Mounted` event contains `WindowObj`, which can be used together with `FrontSubmit` and `FrontFetch` to trigger actions there.
+
+## Let expression
+We adopted Leonid Shifrin's library [LetWL](https://github.com/lshifr/LetWL)
+
+> __Leonid Shifrin__ is a software developer (Wolfram Research), an enthusiast, and the author of the excellent work [Mathematica Programming: An Advanced Introduction by Leonid Shifrin](https://archive.org/details/ost-computer-science-mathprogrammingintro). Please read it here if you haven't!
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`Let[{a = 1, b = a * 2},
+	  b
+	]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`2`}</wljs-editor></WLJSWrapper>
+
+## Export HTML and LaTeX
+We inject base64 encoded LaTeX font into the final HTML page when you export it. It solves most problems with LaTeX rendering offline.
+
+## Code Freeze
+
+:::note
+This is applicable only for Desktop users.
+:::
+
+We decided to disable automatic granular updates by default (except for the entire WLJS Notebook app), unless you explicitly request it from the launcher window.
+
+We do not expect a demand for frequent updates, as our project is becoming more and more stable. We do this for your own safety, ensuring that you won't face a situation where there is a version mismatch between different subsystems. Additionally, it reduces loading time because it does not check versions by default.
+
+---
+
+
+
+<wljs-html encoded="true">{`%0A%3Cstyle%3E%0A%20%20img%20%7B%0A%20%20%20%20border-radius%3A%200.5rem%3B%0A%20%20%7D%0A%3C%2Fstyle%3E`}</wljs-html>
+
+<wljs-html encoded="true">{`%0A%3Cstyle%3E%0A%20%20%5Btransparency%3D%22false%22%5D%20.bg-g-trans%20%7B%0A%20%20%20%20background%3A%20transparent%20%21important%3B%0A%20%20%7D%0A%0A%20%20%5Btransparency%3D%22true%22%5D%20.bg-g-trans%20%7B%0A%20%20%20%20background%3A%20transparent%20%21important%3B%0A%20%20%7D%0A%3C%2Fstyle%3E`}</wljs-html>

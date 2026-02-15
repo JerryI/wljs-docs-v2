@@ -1,0 +1,56 @@
+---
+date: 2026-01-03
+title:  Release notes *2.9.2*
+---
+
+{/* add this script to the body  */}
+{/* https://cdn.jsdelivr.net/gh/WLJSTeam/web-components@latest/src/common/app.js */}
+<wljs-store json="./attachments/35e239e5-da4f-4842-8fc6-c68ddfc522ea.txt"></wljs-store>
+
+
+
+
+Release candidate (preview)<wljs-html encoded="true">{`%3Cbr%20%2F%3E`}</wljs-html>Mon 22 Dec 2025 10:36:03
+
+
+
+## Improved Math Input
+
+We’ve come a long way toward one of Wolfram Mathematica’s signature features: **2D mathematical input**. This “syntax sugar” transforms plain text like `Sqrt` into properly typeset square roots and fractions, helping blur the line between *writing code* and *presenting mathematics*.
+
+Your maintainers, Kirill Vasin and Kirill Belov, are happy to announce that we’ve finally reached this milestone by adding the last missing piece to the cell editor: *auto-adjustable brackets/parentheses*:
+
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`{(*SqB[*)Sqrt[2](*]SqB*), (*SpB[*)Power[2(*|*),(*|*)1/4](*]SpB*)} - {((*FB[*)((1)(*,*)/(*,*)(2))(*]FB*) - 1), 0} + {1,1}`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`{(*FB[*)((3)(*,*)/(*,*)(2))(*]FB*)+(*SqB[*)Sqrt[2](*]SqB*),1+(*SpB[*)Power[2(*|*),(*|*)1/4](*]SpB*)}`}</wljs-editor></WLJSWrapper>
+
+We locate and match all such elements, measure the height of the range they span, and then select one of four KaTeX fonts to render each element. The remaining challenge has always been performance—how to make this efficient, i.e.
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`\\[Alpha] (-(*FB[*)((g g2 \\[Omega])(*,*)/(*,*)((*SpB[*)Power[\\[Alpha]L(*|*),(*|*)2](*]SpB*)+(*SpB[*)Power[\\[Omega](*|*),(*|*)2](*]SpB*)))(*]FB*)+(*FB[*)((gp kp \\[Gamma]ph \\[Omega])(*,*)/(*,*)(Mph (((*SpB[*)Power[\\[Gamma]ph(*|*),(*|*)2](*]SpB*)) ((*SpB[*)Power[\\[Omega](*|*),(*|*)2](*]SpB*))+(*SpB[*)Power[(-((*SpB[*)Power[\\[Omega](*|*),(*|*)2](*]SpB*))+(*SpB[*)Power[\\[Omega]0(*|*),(*|*)2](*]SpB*))(*|*),(*|*)2](*]SpB*))))(*]FB*)+((*SpB[*)Power[\\[Omega](*|*),(*|*)\\[Mu]](*]SpB*)) Sin[((*FB[*)((1)(*,*)/(*,*)(2))(*]FB*)) \\[Pi] \\[Mu]])`}</wljs-editor></WLJSWrapper>
+
+*The expression above* is fully editable—unlike in Wolfram Cloud, where similar input is effectively “backed” by a static representation
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`R[ω_, params__] := (*SpB[*)Power[Abs[(*FB[*)((n[ω, params] - 1.)(*,*)/(*,*)(n[ω, params] + 1.))(*]FB*)](*|*),(*|*)2](*]SpB*)`}</wljs-editor></WLJSWrapper>
+
+It would be a shame if we took all the credit. We’re truly grateful to **Marijn Haverbeke**—an outstanding programmer, the author of the JavaScript bible *Eloquent JavaScript*, and the creator of **CodeMirror 6**, the core component behind **WLJS Notebooks**. He was also kind enough to answer our dumb questions on his website—for free 🥰
+
+## InputRange extensions
+We added a new `Appearance` for `InputRange` element, allowing to have a fine-tuning $\pm 10\%$ of a variable parameter
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`InputRange[0,1,0.1, Appearance->"FineTuning"]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(EventObject[<|"Id" -> "3eba0b3c-6dc2-493f-93ae-4b6b53df0f1c", "Initial" -> 0.5, "View" -> "563988d8-a52e-49f1-a3f4-6ab18f8bf890"|>])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKm5oZW1pYpFjoJpoapeqaWKYZ6iYap5nomiUmGVqkWSSlWVgaAAB9iRWO"*)(*]VB*)`}</wljs-editor></WLJSWrapper>
+
+Another feature is "debouncing" option when `InputRange` is used with `"TrackedExpression"` allowing to prevent a loop of event calls, when event generator updates its tracked expression
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`var = 0.3;
+	EventHandler[
+	  InputRange[0,10, "TrackedExpression"->{Offload[var], "Debounce"}], 
+	  Function[v, var = v]
+	]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(EventObject[<|"Id" -> "af54e24c-4b65-4672-a0f0-faff84500dfd", "Initial" -> 5, "View" -> "e5c1a681-ad97-405c-a6fe-51d4916d0a1a"|>])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKp5omGyaaWRjqJqZYmuuaGJgm6yaapaXqmhqmmFgamqUYJBomAgCH/xXJ"*)(*]VB*)`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`var = 4.0; (*BB[*)(*now try this*)(*,*)(*"1:eJxTTMoPSmNhYGAo5gcSAUX5ZZkpqSn+BSWZ+XnFaYwgCS4g4Zyfm5uaV+KUXxEMUqxsbm6exgSSBPGCSnNSg9mAjOCSosy8dLBYSFFpKpoKkDkeqYkpEFXBILO1sCgJSczMQVYCAOFrJEU="*)(*]BB*)`}</wljs-editor></WLJSWrapper>
+

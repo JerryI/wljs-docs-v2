@@ -1,0 +1,117 @@
+---
+date: 2025-12-12
+title:  Release notes *2.9.1*
+---
+
+{/* add this script to the body  */}
+{/* https://cdn.jsdelivr.net/gh/WLJSTeam/web-components@latest/src/common/app.js */}
+<wljs-store json="./attachments/c429bdb7-7b0a-45bc-bf78-efd2ec0bec61.txt"></wljs-store>
+
+
+
+
+Fri 5 Dec 2025 18:33:23
+
+
+
+## Improved Export to PDF
+We have reworked our exporter once more to make it possible to print large notebooks or render expressions within a bulky notebook. Now, our renderer won't try to rasterize hidden elements and waste resources on them.
+
+## New Cell Group Feature
+You can now split the notebook into two using this feature starting from the focused cell:
+
+
+<wljs-html encoded="true">{`%3Cimg%20src%3D%22attachments%2FScreenshot%25202025-12-05%2520at%252018.38.50-d00.png%22%20width%3D%22300%22%2F%3E`}</wljs-html>
+
+Also, large imported Mathematica notebooks will be automatically split to avoid performance issues with a large number of cells.
+
+## Improved GUI of Manipulate
+We have improved the layout, as well as added *Copy Expression* and *Copy Parameters* options to assist
+
+![](./attachments/Screenshot%202025-12-05%20at%2018.46.53-7a7.png)
+
+## Minor formatting improvements
+### AlgebraicNumber
+
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`ToNumberField[(*SqB[*)Sqrt[2](*]SqB*), (*SpB[*)Power[2(*|*),(*|*)1/4](*]SpB*)]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(AlgebraicNumber[Root[-2 + #1^4 & , 2, 0], {0, 0, 1, 0}])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KWlMIB4vkAjLTC13SU3OL0osyS8KBskH5eeXFJ2xrk+bt+CbPQCNIhCc"*)(*]VB*)`}</wljs-editor></WLJSWrapper>
+
+## New command palette tools!
+including *Code Beautifier* and *String Escaper*
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`(* try to apply on this one *)
+	(* place your cursor here and run Beautify from the command palette *)
+	
+	f[ω_, eps_, list_List] := eps + Total @ Table[((Power[i[[2]],2])/(Power[i[[1]],2] - Power[ω,2] + I i[[3]] ω)), {i, list}]
+	
+	n[ω_, params__] := Sqrt[f[ω, params]] 
+	
+	r[ω_, L_, params__] :=With[{np = n[ω, params]},Power[Abs[((np - 1)/(np + 1))],2]]`}</wljs-editor></WLJSWrapper>
+
+Try *Bull Running* btw 😉
+
+## Tabular support
+ - is one of new features in Wolfram in a long time, that significantly improves dataset workflow.
+
+We added the corresponding representation to WLJS Notebook with lazy loading and progressive rendering:
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`Tabular[{{1, 2, 3}, {4, 5, 6}}]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(tabular158)(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKJycbGaQapKboJianpOiaGBuk6lomp1rqGiYlJZqYW6QZWxqaAQCbIRZd"*)(*]VB*)`}</wljs-editor></WLJSWrapper>
+
+Here is another example
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`Tabular[{{1, x, Today}, {4, y, Tomorrow}}, {"col1", "col2", "col3"}]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(tabular164)(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKp5qYJRknmyXrGiVamumapKUk61qYWRroJhomGSYnWpqYpxgZAgCLaxXR"*)(*]VB*)`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`EntityValue[
+	 EntityClass["Book", "DuneBooks"], {"FirstPublished", "Author", 
+	  "Image"}, "Tabular"]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(tabular33)(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKJ5kbmqUmJhnomhslJumaGBlY6CYZmyXpmpkZWBibm1taWqSZAACBthUb"*)(*]VB*)`}</wljs-editor></WLJSWrapper>
+
+<wljs-html encoded="true">{`%0A%3Cscript%20type%3D%22module%22%3E%0A%20%20%20%20const%20rating%20%3D%20%5B%5D%3B%0A%20%20%20%20for%20%28let%20i%3D1%3B%20i%3C%3D5%3B%20%2B%2Bi%29%20rating.push%28document.getElementById%28%22star%22%2Bi%29%29%3B%0A%20%20%20%20const%20feedback%20%3D%20document.getElementById%28%22feedback-form%22%29%3B%0A%20%20%20%20const%20container%20%3D%20document.getElementById%28%22rating-c%22%29%3B%0A%0A%20%20%20%20let%20rate%20%3D%20-1%3B%0A%20%20%20%20let%20text%20%3D%20%22undefined%22%3B%0A%20%20%20%20let%20timer%20%3D%20false%3B%0A%20%20%20%20let%20disabled%20%3D%20false%3B%0A%0A%20%20%20%20const%20submitForm%20%3D%20%28%29%20%3D%3E%20%7B%0A%20%20%20%20%20%20disabled%20%3D%20true%3B%0A%20%20%20%20%20%20let%20n%20%3D%201%3B%0A%20%20%20%20%20%20let%20interval%20%3D%20setInterval%28%28%29%20%3D%3E%20%7B%0A%20%20%20%20%20%20%20%20container.style.filter%20%3D%20%22blur%28%22%2Bn%2B%22px%29%22%3B%0A%20%20%20%20%20%20%20%20n%2B%2B%3B%0A%20%20%20%20%20%20%20%20if%20%28n%20%3E%20200%29%20%7B%0A%20%20%20%20%20%20%20%20%20%20clearInterval%28interval%29%3B%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%7D%2C%2030%29%3B%0A%0A%20%20%20%20%20%20server.io.fire%28%27submit-form-281%27%2C%20%5Brate%2C%20text%5D%29%3B%0A%20%20%20%20%7D%0A%0A%20%20%20%20const%20setTimer%20%3D%20%28%29%20%3D%3E%20%7B%0A%20%20%20%20%20%20if%20%28disabled%29%20return%3B%0A%20%20%20%20%20%20if%20%28timer%29%20clearTimeout%28timer%29%3B%0A%20%20%20%20%20%20timer%20%3D%20false%3B%0A%20%20%20%20%20%20timer%20%3D%20setTimeout%28submitForm%2C%205000%29%3B%0A%20%20%20%20%7D%0A%0A%20%20%20%20const%20clearTimer%20%3D%20%28%29%20%3D%3E%20%7B%0A%20%20%20%20%20%20if%20%28timer%29%20clearTimeout%28timer%29%3B%0A%20%20%20%20%20%20timer%20%3D%20false%3B%0A%20%20%20%20%7D%0A%0A%20%20%20%20rating.forEach%28%28e%29%20%3D%3E%20%7B%0A%20%20%20%20%20%20e.addEventListener%28%27change%27%2C%20%28ev%29%3D%3E%7B%0A%20%20%20%20%20%20%20%20rate%20%3D%20ev.srcElement.value%3B%0A%20%20%20%20%20%20%20%20setTimer%28%29%3B%0A%20%20%20%20%20%20%7D%29%3B%0A%20%20%20%20%7D%29%3B%0A%0A%20%20%20%20feedback.addEventListener%28%27input%27%2C%20%28%29%3D%3E%7B%0A%20%20%20%20%20%20text%20%3D%20feedback.value%3B%0A%20%20%20%20%20%20clearTimer%28%29%3B%0A%20%20%20%20%7D%29%3B%0A%0A%20%20%20%20feedback.addEventListener%28%27focus%27%2C%20%28%29%3D%3E%7B%0A%20%20%20%20%20%20clearTimer%28%29%3B%0A%20%20%20%20%7D%29%3B%0A%0A%20%20%20%20feedback.addEventListener%28%27blur%27%2C%20%28%29%20%3D%3E%20%7B%0A%20%20%20%20%20%20text%20%3D%20feedback.value%3B%0A%20%20%20%20%20%20setTimer%28%29%3B%0A%20%20%20%20%7D%29%0A%3C%2Fscript%3E`}</wljs-html>
+
+## InputTerminal
+We added a new I/O element to our GUI building blocks
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`t = InputTerminal[]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(EventObject[<|"StandardInput" -> OutputStream["/private/var/folders/fs/ch7ddlhn7jz5vyg5k8bbrxyh0000gn/T/m000050493621", 7], "StandardError" -> OutputStream["/private/var/folders/fs/ch7ddlhn7jz5vyg5k8bbrxyh0000gn/T/m000051493621", 8], "Id" -> "08892486-275c-4c18-9dbf-3af499c66145", "View" -> "35618a69-6e0e-48b2-9e96-39a440007831"|>])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKG5uaGVokmlnqmqUapOqaWCQZ6VqmWprpGlsmmpgYGBiYWxgbAgB0mhSP"*)(*]VB*)`}</wljs-editor></WLJSWrapper>
+
+It uses the same `EventObject` interface as most GUI element, but allows to interact with default streams
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`WriteString[t["StandardOutput"], "Hi There!"];`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`WriteString[t["StandardError"], Sqrt[1/2]];`}</wljs-editor></WLJSWrapper>
+
+Here is a basic echo handler you can make using events interface:
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`EventHandler[t, {"Command" -> Function[c, c]}];`}</wljs-editor></WLJSWrapper>
+
+## Evaluate All Cells Button
+As many (3) people requested, we added a new button to the top menu
+
+## Improved Information
+We switched back to our own implementation of the output of `Information`, have a look:
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`?Plot`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(FrontEndRef["af697218-bd9d-44c2-9e9c-a6c9c47457aa"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKJ6aZWZobGVroJqVYpuiamCQb6VqmWibrJpolWyabmJuYmicmAgCIbRXo"*)(*]VB*)`}</wljs-editor></WLJSWrapper>
+
+Or multiple symbols
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`?Log*`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(FrontEndRef["dac104f9-0b73-4eed-adf6-e3826bb8258d"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKpyQmGxqYpFnqGiSZG+uapKam6CampJnpphpbGJklJVkYmVqkAACR4hY1"*)(*]VB*)`}</wljs-editor></WLJSWrapper>
+
+## OpenerView
+We implemented `OpenerView` aka spoiler element
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`OpenerView[{"Show me a plot", Plot[x, {x,0,1}]}, False]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(Null)(*,*)(*"1:eJwljsEKwjAQRKvoUQ9+QQSvgZYkkN5t8SYY6X3b7qIQu5Km1M831csbZmCYObZ8o1WWZeMm4cK+p+3idgnNE+czdhwgcnDrlFwbt0/iHjyLFwoQb8/xXz8k1IGHWA199cFuitB6dKcUW9CkcqNkXiiQGkwpLZKRJZGyVvctqWJcVmvwI/6O3MOEX1ESJm4="*)(*]VB*)`}</wljs-editor></WLJSWrapper>
+

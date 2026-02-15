@@ -1,0 +1,63 @@
+---
+date: 2024-08-20
+title:  Release notes *2.6.3*
+---
+
+{/* add this script to the body  */}
+{/* https://cdn.jsdelivr.net/gh/WLJSTeam/web-components@latest/src/common/app.js */}
+<wljs-store json="./attachments/919ffc9c-bfed-47ea-b492-c369a8060755.txt"></wljs-store>
+
+
+
+
+
+
+
+
+
+
+
+## Autocomplete improvements
+We extended the support of providing suggestions for symbols loaded from external packages at runtime. If you load something Kernel will rescan added contextes from `$ContextPath` and populate the suggestion panel.
+
+## UI changes on Windows & Linux
+We moved towards the simplity of the native apps and redesigned the main menu
+
+![](./attachments/Screenshot%202024-12-05%20at%2017.39.09-004.png)
+
+## New way of adding things on canvas
+Wolfram Language is *mostly* immutable by the design, the same is true for all graphics primitives. To add new primitives on the canvas, you would need to reevalaute an expression again.  
+
+We can violate this rule, by injecting new expressions into existing one dynamically and evaluate them in-place. Since our frontend (browser) actually has OOP structure behind the curtains, we can refer to the particular instance of some object `FrontInstanceReference`
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`scene = FrontInstanceReference[];
+	Plot[x, {x,0,1}, Epilog->{scene}]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(FrontEndRef["d537799a-7ff7-4567-a82f-795b86ad5817"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKp5gam5tbWibqmqelmeuamJqZ6yZaGKXpmluaJlmYJaaYWhiaAwB+NhVA"*)(*]VB*)`}</wljs-editor></WLJSWrapper>
+
+Then we can evaluate any expression in the context of our `Plot` like if it was there before
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`FrontSubmit[{RandomColor[], Disk[{.5,.5}, 0.1]}, scene];`}</wljs-editor></WLJSWrapper>
+
+To make a removable object, one need to wrap it into a special group, which allows to cancel the sideffects caused by evaluation
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`group = FrontInstanceGroup[];
+	FrontSubmit[{RandomColor[], Disk[{.7,.7}, 0.1]} // group, scene];`}</wljs-editor></WLJSWrapper>
+
+Then you can simply delete it
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`Delete[group];`}</wljs-editor></WLJSWrapper>
+
+## Manipulate improvements
+We trying to close a gap between Mathematica's `Manipulate` and WLJS version. We added the support of implicit selection form, i.e.
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`Manipulate[Plot3D[f[x] f[y], {x,-10,10}, {y,-10,10}], {f, {Sin, Tanh}}]`}</wljs-editor></WLJSWrapper>
+
+Now this form is also valid (take a previous output), it localizes symbols only if one of them is occupied already
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`(*SpB[*)Power[x(*|*),(*|*)2](*]SpB*) - 2;
+	Manipulate[%, {x,-1,1}]`}</wljs-editor></WLJSWrapper>
+
+
+
+<wljs-html encoded="true">{`%0A%3Cstyle%3E%0A%20%20%5Btransparency%3D%22false%22%5D%20.bg-g-trans%20%7B%0A%20%20%20%20background%3A%20transparent%20%21important%3B%0A%20%20%7D%0A%0A%20%20%5Btransparency%3D%22true%22%5D%20.bg-g-trans%20%7B%0A%20%20%20%20background%3A%20transparent%20%21important%3B%0A%20%20%7D%0A%3C%2Fstyle%3E`}</wljs-html>

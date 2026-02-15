@@ -1,0 +1,200 @@
+---
+date: 2026-01-25
+title:  Release notes *3.0.0*
+---
+
+{/* add this script to the body  */}
+{/* https://cdn.jsdelivr.net/gh/WLJSTeam/web-components@latest/src/common/app.js */}
+<wljs-store json="./attachments/2bd045a9-129e-49c8-8122-505154828de8.txt"></wljs-store>
+
+
+
+
+
+Fri 6 Feb 2026 19:21:38
+
+
+
+## Improved Math Input
+
+We’ve come a long way toward one of Wolfram Mathematica’s signature features: **2D mathematical input**. This “syntax sugar” transforms plain text like `Sqrt` into properly typeset square roots and fractions, helping blur the line between *writing code* and *presenting mathematics*.
+
+Your maintainers, Kirill Vasin and Kirill Belov, are happy to announce that we’ve finally reached this milestone by adding the last missing piece to the cell editor: *auto-adjustable brackets/parentheses*:
+
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`{(*SqB[*)Sqrt[2](*]SqB*), (*SpB[*)Power[2(*|*),(*|*)1/4](*]SpB*)} - {((*FB[*)((1)(*,*)/(*,*)(2))(*]FB*) - 1), 0} + {1,1}`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`{(*FB[*)((3)(*,*)/(*,*)(2))(*]FB*)+(*SqB[*)Sqrt[2](*]SqB*),1+(*SpB[*)Power[2(*|*),(*|*)1/4](*]SpB*)}`}</wljs-editor></WLJSWrapper>
+
+We locate and match all such elements, measure the height of the range they span, and then select one of four KaTeX fonts to render each element. The remaining challenge has always been performance—how to make this efficient, i.e.
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`\\[Alpha] (-(*FB[*)((g g2 \\[Omega])(*,*)/(*,*)((*SpB[*)Power[\\[Alpha]L(*|*),(*|*)2](*]SpB*)+(*SpB[*)Power[\\[Omega](*|*),(*|*)2](*]SpB*)))(*]FB*)+(*FB[*)((gp kp \\[Gamma]ph \\[Omega])(*,*)/(*,*)(Mph (((*SpB[*)Power[\\[Gamma]ph(*|*),(*|*)2](*]SpB*)) ((*SpB[*)Power[\\[Omega](*|*),(*|*)2](*]SpB*))+(*SpB[*)Power[(-((*SpB[*)Power[\\[Omega](*|*),(*|*)2](*]SpB*))+(*SpB[*)Power[\\[Omega]0(*|*),(*|*)2](*]SpB*))(*|*),(*|*)2](*]SpB*))))(*]FB*)+((*SpB[*)Power[\\[Omega](*|*),(*|*)\\[Mu]](*]SpB*)) Sin[((*FB[*)((1)(*,*)/(*,*)(2))(*]FB*)) \\[Pi] \\[Mu]])`}</wljs-editor></WLJSWrapper>
+
+*The expression above* is fully editable—unlike in Wolfram Cloud, where similar input is effectively “backed” by a static representation
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`R[ω_, params__] := (*SpB[*)Power[Abs[(*FB[*)((n[ω, params] - 1.)(*,*)/(*,*)(n[ω, params] + 1.))(*]FB*)](*|*),(*|*)2](*]SpB*)`}</wljs-editor></WLJSWrapper>
+
+It would be a shame if we took all the credit. We’re truly grateful to **Marijn Haverbeke**—an outstanding programmer, the author of the JavaScript bible *Eloquent JavaScript*, and the creator of **CodeMirror 6**, the core component behind **WLJS Notebooks**. He was also kind enough to answer our dumb questions on his website—for free 🥰
+
+## Refined Documentation
+Rebuilding our comprehensive documentation was one of our most time-consuming undertakings. We restructured all 200 pages to be more organized and easier to navigate. Additionally, we reviewed all 6,000 symbols in the Wolfram Standard Library (with both human and AI assistance) and provided essential information for each one. This eliminates the need to constantly switch between our documentation and the official Wolfram Language reference. This comprehensive approach was necessary because we maintain our own custom symbols and features alongside the majority of the Wolfram Standard Library and core symbols.
+
+## Improved cells navigation
+It no longer requires 4x taps on arrow-up or -down key to move between cells.
+
+## Right click to reset axes
+Do it on any 2D plots:
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`Plot[x, {x,0,1}]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(FrontEndRef["ba5e4f56-d706-4552-842c-f95373d83320"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKJyWappqkmZrpppgbmOmamJoa6VqYGCXrplmaGpsbp1gYGxsZAACAbxTs"*)(*]VB*)`}</wljs-editor></WLJSWrapper>
+
+### AxesOrigin
+We added a limited support for `AxesOrigin`:
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`Plot[Sin[x], {x,0,2Pi}, AxesOrigin->{Pi,0}, Ticks->{{{0, "0"},{2Pi, "2Pi"}}, {-0.5,0.5}}]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(FrontEndRef["8864b03b-71b9-4295-8ded-6ef032233885"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKW1iYmSQZGCfpmhsmWeqaGFma6lqkpKbomqWmGRgbGRkbW1iYAgB4/hTz"*)(*]VB*)`}</wljs-editor></WLJSWrapper>
+
+## Fixed UI bugs
+Message windows were hanging the interface on Windows and Linux machines, but not anymore. It was partially Electron.js issue, but we found a safer way.
+
+## Smarter Windows & Docs
+We added a new shortcut for evaluating a cell in a new window: <wljs-html encoded="true">{`%3Ckbd%20%3ECtrl%2F%E2%8C%98-Shift-Enter%3C%2Fkbd%3E`}</wljs-html>.
+
+:::tip
+If you evaluate the same cell repeatedly in a new window, instead of creating a new window with each call, it will update the existing one, allowing you to maintain a fixed window layout in your workflow.
+:::
+
+The same works with the documentation on a given symbol (click on 🔎 icon in the autocomplete box).
+
+## Drag and drop features
+- Drag and drop files from the sidebar to the desktop
+- Drag and drops files to the editor
+
+## AI Assistant
+
+### Easy models access
+We added 3 presents: OpenAI, Anthropic and your custom model. So it should be easy to switch and discover models for your needs. Settings are applied per notebook and can be cleared.
+
+### Agentic mode
+We refactored our integrated AI assistant to an agent, that now have similar tools to VSCode copilot such as:
+
+<wljs-html encoded="true">{`%3Cdiv%20class%3D%22text-sm%20mt-2%22%3E%0A%0A-%20read%2Fwrite%20lines%20of%20code%0A-%20create%20and%20evaluate%20any%20types%20of%20cells%0A-%20run%20WL%20code%20in%20the%20background%0A-%20see%20selections%20and%20focused%20cells%0A-%20perform%20operations%20in%20batches%0A-%20access%20documentation%0A-%20global%20search%20with%20regexp%0A-%20manage%20todo%20list%0A%0A%3C%2Fdiv%3E`}</wljs-html>
+
+## Improved Autocompletion
+The discovery of user defined symbols now works in all cells automatically. 
+
+## InputRange extensions
+We added a new `Appearance` for `InputRange` element, allowing to have a fine-tuning $\pm 10\%$ of a variable parameter
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`InputRange[0,1,0.1, Appearance->"FineTuning"]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(EventObject[<|"Id" -> "3eba0b3c-6dc2-493f-93ae-4b6b53df0f1c", "Initial" -> 0.5, "View" -> "563988d8-a52e-49f1-a3f4-6ab18f8bf890"|>])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKm5oZW1pYpFjoJpoapeqaWKYZ6iYap5nomiUmGVqkWSSlWVgaAAB9iRWO"*)(*]VB*)`}</wljs-editor></WLJSWrapper>
+
+Another feature is "debouncing" option when `InputRange` is used with `"TrackedExpression"` allowing to prevent a loop of event calls, when event generator updates its tracked expression
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`var = 0.3;
+	EventHandler[
+	  InputRange[0,10, "TrackedExpression"->{Offload[var], "Debounce"}], 
+	  Function[v, var = v]
+	]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`var = 4.0; (*BB[*)(*now try this*)(*,*)(*"1:eJxTTMoPSmNhYGAo5gcSAUX5ZZkpqSn+BSWZ+XnFaYwgCS4g4Zyfm5uaV+KUXxEMUqxsbm6exgSSBPGCSnNSg9mAjOCSosy8dLBYSFFpKpoKkDkeqYkpEFXBILO1sCgJSczMQVYCAOFrJEU="*)(*]BB*)`}</wljs-editor></WLJSWrapper>
+
+## Breaking changes
+
+### NotebookStore
+`NotebookStore` no longer can be used as `Association`. It introduced more harm than good. We decided to change API for the first time in last 2 years. 
+
+To read and write to a notebook storage, now you should use more common `NotebookRead/Write` methods:
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`NotebookWrite[NotebookStore["Key"], 1+1];
+	NotebookRead[NotebookStore["Key"]]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`2`}</wljs-editor></WLJSWrapper>
+
+### ESM renamed to MJS
+We only changed the name of compiled Javascript cells to `.mjs` to avoid confusion.
+
+### WLJS API
+We removed some of the features from our public api:
+
+```
+http://localhost:20560/wljs-api/*
+```
+
+For the moment we left only most essential paths used for creating and editing notebooks or cells, which should be enough for the remote control or implementing MCP server.
+
+## Trashed Cells
+We added the feature to restore deleted input cells. Check out the top evaluation menu.
+
+## Improved Boxes rendering
+We went though 1500 functions and check the output for each adjusting the output form. 
+
+### Predictor, Classify
+Output form now is correctly rendered for these ML function:
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`c = Classify[{1 -> "A", 2 -> "A", 3.5 -> "B", 4 -> "B"}]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="print" type="Output"  >{`" | Time elapsed: | Training example used: | Current best method: | Current accuracy: | Current loss: | "`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output" encoded="true"  >{`%28%2AVB%5B%2A%29BoxForm%60temporalStorage%241442467%28%2A%2C%2A%29%28%2A%221%3AeJxdlMeO42YQhAcOgOGnWO9pVjTAnAzsgUEUM0WRoiQu9sCcM%2FkzPL1nfPSl0V2oQx%2Bqvr%2FC7pb%2B%2Bvb2Nv35Mc5xMXejVySr8%2BW3tzehDqapSItklJY2mouu%2FfF%2B8vgfp29f3k9%2Fn769n76i%2FyTqYXoedkUq7v4MGQfguB1YmtsA17PNZmHE0r0XBTJJfFYfBDmfDd9ijRzZwg6uVbgsrYzO%2B9LjjnOvNyzLHAadVCyLhckB8jUFoCKFG61OGEkIk0MEBXxw9XWCq3hO%2BeAyZbiZp5OycULvXixYUTb13KkHBvXXZ1IHTyMIfSRxYZkh3PSlejUEHlUYhjBOVWEwQk0k64a6PgCce72YhHk35txcCXqpHxcrLmKPavxzVNB3MmdUWlNkpNvlsfNEuZHhNrIREND9i1NQjhnwvowqQ8jtpreYWirYFPQJgqDmiBUUPq%2FZPNhERVENxqpULmnO%2Frj1M3c3AzLOGqZl2gYeKekx8y3fGltPwubWgocbcOWuNDhJ17cyLtjbQVjVwPlwVHnNDCVmgFP4Ol7d8ekY2EJzhx%2F5e1Vz1HIVGqkr%2FUc4t910ubuL2SAc%2Bqqfi%2FvqCuclSrpV4shgXyOk2aNlvfKrtrksNrDIYkgi15%2Fp2I%2BQXYosTFg2WrUeE%2BqU8NBe8NUMYA1VdBAMZWcJxMhCzMhr1tDO5l4oqJwB9rlBEUOVWSlCTEuQINq9gZXYc9ZBHG7OlZ54V%2F%2BlVLqKGsTQOvfqvGqX3ddNHeSeyAE4qutNI%2B6sa%2B89mSuXIV5fL9zQDkx3glGwnWm0C2oj0FvlEEbGWUp9xPzFc4ug8AXfBguj4L11Kx%2FFRUTktXJU5e6HqFCG4quELsKsXPeFjM4CtcNx0Qu8Tfq4dlkra021TpEfsXIlDw%2BmmS1%2F8jfGE45zA1F8K2qRaR4bIwXpZGL4U%2BpbFAuaG7QwuG5M%2B6SOLbA5Aue3bABCzyqd6X28zLggk2YAAeV5tFglkjdrwTV2YN1I7rq09C%2BJI0ONB6P3KwokrOmWGRZLZd6vhJa6OP2R3tFbLBrWB4nxllAGvso91XAOUgOBc7GzHwqy5THPoy2Hq6WYtmIEWqRHyRVZy%2BpRau6e5dXMG8RjGHvaRMraJfIG0IMjV0C2y3boUWS6VzvcwpkAGLwysu%2Ffv372%2FqfHn779TH%2F5BMcHKN5uS504f3wuSRBbbb3%2Fp7rjkvzP80kZJ6mTaA7COpl%2B%2FziloJ6SfwEgCna9%22%2A%29%28%2A%5DVB%2A%29`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`Plot[c[x, "Probability" -> "B"], {x, 1, 4}]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(FrontEndRef["c668f8a5-94ce-4d16-95be-8f58fe0acade"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKJ5uZWaRZJJrqWpokp+qapBia6VqaJqXqWqSZWqSlGiQmJ6akAgCKchZ7"*)(*]VB*)`}</wljs-editor></WLJSWrapper>
+
+## New API for Notebooks/Cells
+We have refactored our API for generating notebooks and cells, improving compatibility with Mathematica.
+
+To add a new cell:
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`nb = EvaluationNotebook[];
+	NotebookWrite[nb, x x];`}</wljs-editor></WLJSWrapper>
+
+To add after a specific cell:
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`NotebookWrite[
+	  NotebookLocationSpecifier[EvaluationCell[], "After"], 
+	  x x
+	];`}</wljs-editor></WLJSWrapper>
+
+To specify a cell type:
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`NotebookWrite[
+	  NotebookLocationSpecifier[EvaluationCell[], "After"], 
+	  Cell["x x", "Input"]
+	];`}</wljs-editor></WLJSWrapper>
+
+Non-standard cell display:
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`NotebookWrite[
+	  NotebookLocationSpecifier[EvaluationCell[], "After"], 
+	  Cell["<h2>Hi</h2>", "Output", "HTML"]
+	];`}</wljs-editor></WLJSWrapper>
+
+To create a new window with expression, use:
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`win = CreateWindow[Plot[x, {x,0,1}, ImageSize->{300,300}], WindowSize->{400,400}];`}</wljs-editor></WLJSWrapper>
+
+Then close it:
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`NotebookClose[win];`}</wljs-editor></WLJSWrapper>
+
+Open a window with HTML content:
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`CreateWindow[Cell["<mark>Marked</mark>", "Output", "HTML"]];`}</wljs-editor></WLJSWrapper>
+
+## Refactored code base
+We moved to a monorepo instead of having 13-16 individual modules spread across the Github. This allowed us to cut down the maintenance const in terms of time and decresed the build time drastically. 
+
+## Improved Audio Support
+`Audio` now support updates similar to `Image`.
+
+## Cleaned up and improved examples
+We recreated all examples from scratch
+
+## Improved HTML and MDX Export
+We have transitioned from using React to native HTML Web Components with lazy loading. This change has abstracted our embeddable notebooks from the underlying web framework. You can post WLJS notebooks to your Next.js blog, WordPress, plain HTML website, or any other platform.
+

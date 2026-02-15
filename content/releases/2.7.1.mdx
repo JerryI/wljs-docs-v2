@@ -1,0 +1,193 @@
+---
+date: 2024-12-28
+title:  Release notes *2.7.1*
+---
+
+{/* add this script to the body  */}
+{/* https://cdn.jsdelivr.net/gh/WLJSTeam/web-components@latest/src/common/app.js */}
+<wljs-store json="./attachments/467e0550-e0fb-4cc7-9d6c-891e83ad7500.txt"></wljs-store>
+
+
+
+
+
+
+
+
+
+
+
+## Better support for Legends
+We have implemented all types of Legeds objects
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`Plot[{Sin[x], Cos[x]}, {x, 0, 5}, 
+	 PlotLegends -> SwatchLegend["Expressions"]]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(Legended[ToExpression[FrontEndRef["e61eab2f-97bc-4480-bdf3-06e0d3ebe318"], InputForm], SwatchLegend[{Directive[Opacity[1.], RGBColor[0.24, 0.6, 0.8], AbsoluteThickness[2]], Directive[Opacity[1.], RGBColor[0.95, 0.627, 0.1425], AbsoluteThickness[2]]}, {HoldForm[Sin[HoldForm[x]]], HoldForm[Cos[HoldForm[x]]]}, LegendMarkers -> Automatic, LabelStyle -> {}, LegendLayout -> "Column"]])(*,*)(*"1:eJylUk1Kw0AUTv23VFAPIAhuA60ptS5KqP3RRUqxKe5nJi92aJqRycQ2B/AQunXnCbr2AC7ceADdiCB6A2cmKEZRF77Fx/C97/3O28Ss588ahhGtSDiiMG4CYRwJxt0FyThwDKHnzyhFXkLLo9KldH5OcesS2pyFohV6rQmQWCAcgLslaaiUAOFt39zdwcQsl6tFE3u+ZRYrUPQswGCVqmniOQm9WIYtqQcgrxsGiWb7PAZ/XmkKEtwxEmTwuSWlcWgk0hGWJTQpByLoKaT9LUroniBCRcINbS92Kta19vcaLGCcTzfOng6nNza3tN3b/OJc2aOdplmTUMcRC2IB/QElwxCiiKoW/lvZ1/Zs86vX2w5efbB5LX93eVK7/rtydgO599QHLPDajI9SRlV0afjdHSlm8ltYg0U/hmX+Td9O+i0dxIfAI72QeizYCAlKvqjVHTkIQ+CKJADfyIyRlRY+EjsoYbHQNykXF4/CNx9Orz8="*)(*]VB*)`}</wljs-editor></WLJSWrapper>
+
+This expression can still be copied and reevaluated. Here are some other examples
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`legend = PointLegend[{Red, Green, Blue}, {"red", "green", "blue"}]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(PointLegend[{RGBColor[1, 0, 0], RGBColor[0, 1, 0], RGBColor[0, 0, 1]}, {"red", "green", "blue"}])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KWlMIB43kAjIz8wr8UlNT81LSWOGKfHJLC6B8DiARJC7k3N+Tn5RJsiITAYYgUUBWI6RkAK4KlQLg0G8otSUYFYgnV6UmpoXDJJKyilNBQBj0SLI"*)(*]VB*)`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`Plot[{x, (*SpB[*)Power[x(*|*),(*|*)2](*]SpB*), (*SpB[*)Power[x(*|*),(*|*)3](*]SpB*)}, {x,0,3}, PlotStyle->{(*VB[*)(RGBColor[1, 0, 0])(*,*)(*"1:eJxTTMoPSmNiYGAo5gUSYZmp5S6pyflFiSX5RcEsQBHn4PCQNGaQPAeQCHJ3cs7PyS8qYgCDD/ZQBgMDnAEA4iUPRg=="*)(*]VB*), (*VB[*)(RGBColor[0, 1, 0])(*,*)(*"1:eJxTTMoPSmNiYGAo5gUSYZmp5S6pyflFiSX5RcEsQBHn4PCQNGaQPAeQCHJ3cs7PyS8qYoACKOODPVwEANd+D0Y="*)(*]VB*), (*VB[*)(RGBColor[0, 0, 1])(*,*)(*"1:eJxTTMoPSmNiYGAo5gUSYZmp5S6pyflFiSX5RcEsQBHn4PCQNGaQPAeQCHJ3cs7PyS8qYoACdMYHewDM1w9G"*)(*]VB*)}, PlotLegends->legend]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(Legended[ToExpression[FrontEndRef["8a98ade3-2d63-4f26-a8ae-7dc244b66356"], InputForm], PointLegend[{RGBColor[1, 0, 0], RGBColor[0, 1, 0], RGBColor[0, 0, 1]}, {"red", "green", "blue"}, LabelStyle -> {}, LegendLayout -> "Column"]])(*,*)(*"1:eJyFUcFOAyEQpVaNqXrxD0y87mV3pdtrdfWySU0xvcMyNCQUEhai+/cO1DbZxMTLY+bNm+ExPAq3VXNCyHCPsNPw9Qq98zw4z66R6WAPVqqLpFggtFJjKenULHEPCG/e2dBa2X5DHwMXBtgT0g1fNVxCVZSSVkWtSlrwhkOxlH1Z14LS6pkeB18ibCO23aQAuNxYM2b200dQKRhuET6ctuHX0fzU2OkhHLPc/b5+ccZ5ndxpcoI/BLk2+09wVk0vZCnzINkVnnsPYFkqCYN2J0/KS+u4AMPCaECRie2p9O68746PLob8AeglHuwPAvJcDg=="*)(*]VB*)`}</wljs-editor></WLJSWrapper>
+
+Line legends
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`Plot[{Sin[x], Cos[x]}, {x, 0, 5}, 
+	 PlotLegends -> LineLegend["Expressions"]]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(Legended[ToExpression[FrontEndRef["27faadb4-b494-4f2d-8307-cf1e6bbbeb90"], InputForm], LineLegend[{Directive[Opacity[1.], RGBColor[0.24, 0.6, 0.8], AbsoluteThickness[2]], Directive[Opacity[1.], RGBColor[0.95, 0.627, 0.1425], AbsoluteThickness[2]]}, {HoldForm[Sin[HoldForm[x]]], HoldForm[Cos[HoldForm[x]]]}, LegendMarkers -> None, LabelStyle -> {}, LegendLayout -> "Column"]])(*,*)(*"1:eJylUjtOAzEQ3UD4RSABB0BCoo0UkhUhRbSCfKBIiMhG9PbuGKxs7Mj2QvYAHAJaOk6QmgNQ0HAAaBASghvg9SqIBQEFUzxZb97MG3u8jnmXTFuWJZc0HFE4q4PHBVJcuLOaacExMJ9MxYqchoZPdSrWkUzMrWpoCs5Ug/mNEXihQjgAd0PTxTJByMd2HtsVO2+Top/fLhXKeY9swhbGGHClkDTOauiGumw+PgDyOyyIDNsTIZCZiXmLMvg8UNZwUiUXWNBQpwI8RU8hmW5OQ2eIPKoiYZl4dRKxcdrbrfGACzFeO38+HN86omTiwRGXF3E8OUmbFQ07WPIgVNA7oV6fgZQ0HuG/zsTEiyOu3+7aePnREdXc/dWwevO3c/oFMpPW+zzwm1wMEiZ2dCn7npYxM/qtrMblj2WprZmfk6yljUQfhDSpA87gi9DsEGEIXBUFQKzUDdLSxY+eLRTxUJnPqN8sHLB3riSscA=="*)(*]VB*)`}</wljs-editor></WLJSWrapper>
+
+LaTeX can also be used via inset cells
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`Plot[{Sin[x], Cos[x]}, {x, 0, 5}, 
+	 PlotLegends -> LineLegend[Automatic, {
+	   CellView["$\\\\sin(x)$", "Display"->"markdown"],
+	   CellView["$\\\\cos(x)$", "Display"->"markdown"]
+	 }]]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(Legended[ToExpression[FrontEndRef["15c987a5-5b18-4040-98d8-b639fdbcef18"], InputForm], LineLegend[{Directive[Opacity[1.], RGBColor[0.24, 0.6, 0.8], AbsoluteThickness[2]], Directive[Opacity[1.], RGBColor[0.95, 0.627, 0.1425], AbsoluteThickness[2]]}, {CellView["$\\\\sin(x)$", "Display" -> "markdown"], CellView["$\\\\cos(x)$", "Display" -> "markdown"]}, LegendMarkers -> None, LabelStyle -> {}, LegendLayout -> "Column"]])(*,*)(*"1:eJylUkFOwkAUrYqiRBP1ACYmLHTRBAJoWZBGAd2ARCCu2EzbX50wzJCZqdADeAjduvMErD2ACzceQDfGxOgNnE4DUYwxxr94ad68vv/n/dl0WNOfMwxDrCg4wTCogMs4koy3FhRTg1Ognj8bKVIKqh5WR5HOn4m4dQUHnFFZpV51CG4gkUOglVZ0tuAWrV1UMAtO1jLzmXzGLFqeZTo7uaLvOS74WSs2TihoBuq3xegDkNegJNRsmwfgz4+b1zCFzwMlNCdkfIElBRXMwZX4HOLpkgoafeRiGXJD15sdi3Wnw/0yI4zz0cbFy/HozuY5XY82v7qM6tmObdYU7DmCkUBC+wy7XQpC4GiE/3b2db3a/Ob9vu6sPtm8lHq47pduf+/8NYHZsXUZCInW04oCS3c6AtOt4XZ6Kuiknlj0CQp16D3Eux4b0J99XCb+7DOW6bcVL66uBMCFPjpiFKaEesvIAdKSIQHf+H7HiXR54llDIQukfq4q1aBHPwDgj7dk"*)(*]VB*)`}</wljs-editor></WLJSWrapper>
+
+### Put anything into Legended!
+We managed to get a decent coverage of the default Mathematica's `Legended` features
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`PieChart[{1, Legended[2, "Bob"], 3, Legended[4, "John"]}]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(Legended[ToExpression[FrontEndRef["1101bbb8-6474-4e18-97a7-132f94392b5b"], InputForm], SwatchLegend[{Directive[EdgeForm[Directive[GrayLevel[0], Opacity[0.5]]], RGBColor[0.928, 0.5210666666666667, 0.2]], Directive[EdgeForm[Directive[GrayLevel[0], Opacity[0.5]]], RGBColor[0.49920000000000003, 0.5552, 0.8309304]]}, {"Bob", "John"}, LegendMarkers -> {{Graphics[{GrayLevel[0.9], Directive[EdgeForm[Directive[GrayLevel[0], Opacity[0.5]]], RGBColor[0.928, 0.5210666666666667, 0.2]], Rectangle[{0, 0}, {1, 1}]}, {DisplayFunction -> Identity, ImageSize -> 10}], Graphics[{GrayLevel[0.9], Directive[EdgeForm[Directive[GrayLevel[0], Opacity[0.5]]], RGBColor[0.49920000000000003, 0.5552, 0.8309304]], Rectangle[{0, 0}, {1, 1}]}, {DisplayFunction -> Identity, ImageSize -> 10}]}, {None, None, None, None}}, LabelStyle -> {}, LegendLayout -> "Column"]])(*,*)(*"1:eJzVVEFrFDEUHuuqa6kKvXkUeh1wtqvbPQ3U7paW0cKOVDwmM292g7PJ+ibTOv4BQcGTCO0f0IMnf4MXRfEntIIn0YtXL74ksHSqrd6qOXwkX17e+96XzFzhapCd9jyvuECwKWB7BRKFTCuMzxITwRBkms2YiFmCXipoy8Rlpww3T9BHJXVPpr0HkJSa8RziBaKD4GrAOV/yr7c7bb8NwZLf7bCOHyy2sm57sdvi17hL3CAYlHSsaSbA0g2ZV5a9jSVkZ0zMHEG8zXQyOijJxESi0G51nmBFICRabIHT17Sah9BXOD4yyFCryKoItiAXtPAcf45gY8ISoSv07NgPnVlW6OryDZUrxMuNzYv+628hwscn3rNX+yHu7pjxNjxRWXv3Hz/9/H0vxEcv7rxrvfkU4sz8y7s/nn8J697F5uiy4rEh1tVI1i/FPgzn+U2G9wCL31lfXzWd8slIJIVTNt3/tTP88N6Mryfr1t9c4oDqMTnMod6zLeYq1nlT38JRjll/L9leiknOqn4pqSMlrbS1FKQm1YfCjZC1MRtCLB6CmJ1m/w89/9ML/Zc9bxzMbie3lIRjJodSmiQR45DHuqLmvGPEzk0/wIhVqtT2x0wOlmP5E/5XaXY="*)(*]VB*)`}</wljs-editor></WLJSWrapper>
+
+Highlight prime numbers
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`Legended[
+	 Grid[Partition[
+	   Table[If[PrimeQ[n], Item[n, Background -> LightBlue], n], {n, 100}],
+	    10], Frame -> All], SwatchLegend[{LightBlue}, {"prime numbers"}]]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(Legended[ToExpression[FrontEndRef["16d53b61-0d6d-44a3-9318-25b4a87a5c88"], InputForm], SwatchLegend[{RGBColor[0.87, 0.94, 1]}, {"prime numbers"}]])(*,*)(*"1:eJxTTMoPSmNmYGAo5gUSYZmp5S6pyflFiSX5RcFsQBGf1PTUvJQ0JpAKLiDhmpIJlAKpS2MEiQkBCbei/LwS17wU14rU5NKSxKSc1GAVoLChWYqpcZKZoa5BilmKrolJorGupbGhha6RaZJJooV5ommyhQXEYBYgEVQK1MYBYqQmpvjn5VSCRUOKSlMhaniARHB5YklyBtRJjDCdPpnFJRAvgLW7Oznn5+QXFV1fXGDLdf21fZHIOveHVSLv7DNBOlC1BYM8XVCUmZuqkFeam5RaVAwAF9RFfA=="*)(*]VB*)`}</wljs-editor></WLJSWrapper>
+
+## Autohide strings double-quotes
+We added some optimizations on fractions, grids and subscripts. If it sees a raw string, the rendering will be done in a simplified way
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`RandomWord[5] // TableForm `}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*GB[*){{"localize"}(*||*),(*||*){"pugilistic"}(*||*),(*||*){"publicizing"}(*||*),(*||*){"goulash"}(*||*),(*||*){"premiere"}}(*]GB*)`}</wljs-editor></WLJSWrapper>
+
+One this one can be used for labeling
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`Labeled[Red, (*FB[*)(("\\[Alpha]")(*,*)/(*,*)("\\[Beta]"))(*]FB*), Left]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*GB[*){{(*FB[*)(("\\[Alpha]")(*,*)/(*,*)("\\[Beta]"))(*]FB*)(*VB[*)(**)(*,*)(*"1:eJxTTMoPSmNiYGAo5gUSYZmp5S6pyflFiSX5RcEsQBHPktRciDyIF1Sak1osAGS4pKYlluaUOCUWpwaXVOakBvMABX0Sk1JzUlPAFADFtBeE"*)(*]VB*)(*|*),(*|*)(*BB[*)((*VB[*)(RGBColor[1, 0, 0])(*,*)(*"1:eJxTTMoPSmNiYGAo5gUSYZmp5S6pyflFiSX5RcEsQBHn4PCQNGaQPAeQCHJ3cs7PyS8qYgCDD/ZQBgMDnAEA4iUPRg"*)(*]VB*))(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KWnMIB4vkAjLTC13SU3OL0osyS8KBskHJOalpjHBVAeV5qQWcwIZjjmZ6Xm5qXklCDmfzOKSYjYgwxkonFpUzAFkOiUWp+ZkYpgggCQVkF+cWZKZn4eiHgAIiyhB"*)(*]BB*)(*VB[*)(**)(*,*)(*"1:eJxTTMoPSmNiYGAo5gUSYZmp5S6pyflFiSX5RcEsQBHPktRciDyIF1Sak1osAGS4pKYlluaUOCUWpwaXVOakBrMDBX0Sk1JzUlMAU+0Vnw"*)(*]VB*)}}(*]GB*)`}</wljs-editor></WLJSWrapper>
+
+Note, that those symbols were entered as string. But double quotes are hidden upon rendering.
+
+## Exporting formats improvements
+### Better organized and refactored
+We got rid of a mess in the codebase of `wljs-html-export`, which takes care about various exporting/importing formats
+
+
+<wljs-html encoded="true">{`%3Cdiv%20class%3D%22py-4%22%3E%0A%0A%0A-%20Formats%2F%0A-%20--%20HTML%0A-%20--%20Markdown%0A-%20--%20Mathematica%0A-%20--%20Figures%0A-%20--%20Slides%0A%0A%0A%3C%2Fdiv%3E`}</wljs-html>
+
+Mathematica notebooks got better support, but still far from perfect. A massive improvement was made in HTML notebooks.
+
+
+### Improvements in Dynamic HTML export
+We no longer use JS frontend for inspecting bindings and sampling the data from your sliders. Instead we do everyhting from Wolfram Kernel by injecting a sniffer and listern to symbols mutations and `FrontSubmit` calls.
+
+There are 3 kinds of virtual machines we use (picked automatically based on the results on analysis) with funny names
+
+<wljs-html encoded="true">{`%3Cbr%20%2F%3E`}</wljs-html>
+
+- **State Machine** - has a state, which is determined by the combination of all input elements. When state changes it dispatches a coresponding symbol mutation.
+- **Pavlov Machine** - (aka [Pavlov Dog](https://en.wikipedia.org/wiki/Classical_conditioning)) does not have a state. It basically records pairs of *event* - *FrontSubmit calls*
+- **Animation Machine** - detects a series of symbols mutations caused by the same event and records the whole series (typically an animation made using `AnimationFrameListener`). It does not have a real state, only an abstract frame number
+
+<wljs-html encoded="true">{`%3Cbr%20%2F%3E`}</wljs-html>
+
+We plan to introduce basic a few kB CNN networks as an option to compress the mutations more efficiently in the future.
+
+### Applications
+
+#### Symbols mutations
+Try to records these `Manipulate` and `ManipulatePlot`
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`Manipulate[Series[Sin[x], {x,0,n}], {n,1,10,1}]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`ManipulatePlot[f[w x], {x,-10,10}, {w,0,10}, {f, {Sinc, Sin}}]`}</wljs-editor></WLJSWrapper>
+
+Or custom dynamics
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`radius = 1.0;
+	Graphics[{Hue[radius // Offload], Disk[{0,0}, radius // Offload]}, ImageSize->Small]
+	
+	EventHandler[InputRange[0,1,0.1], (radius = #)&]`}</wljs-editor></WLJSWrapper>
+
+#### FrontSubmit calls
+Here this is done indirectly by `EmitSound`
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`EventHandler[InputButton[], (Sound[SoundNote["C5"]] // EmitSound)&]`}</wljs-editor></WLJSWrapper>
+
+Another example now with `Plotly`
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`p = Plotly[{<|
+		"values" -> {19, 26, 10}, 
+		"labels" -> {"Residential", "Non-Residential", "Utility"}, 
+		"type" -> "pie"
+	|>}]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`EventHandler[InputRange[0,100,10], PlotlyAnimate[p,   
+	  <|"data" -> {<|"values" -> {19, 26, #}|>},
+	    "traces" -> {0}
+	  |>, <||>]&
+	]`}</wljs-editor></WLJSWrapper>
+
+:::note
+The same works for slides, i.e. `SlideEventListener` will also be captured by *Pavlov Machine* if you have one automatically
+:::
+
+## Docker Image
+We refined our docker image with a help of [Yan Loose](https://github.com/yloose) and testing done by [@RomchikL](https://github.com/RomchikL). __Deploy it in a single line__
+
+<wljs-html encoded="true">{`%3Cbr%20%2F%3E`}</wljs-html>```bash
+docker run -it
+-v ~/wljs:"/home/wljs/WLJS Notebooks"
+-v ~/wljs/Licensing:/home/wljs/.WolframEngine/Licensing
+-e PUID=$(id -u)
+-e PGID=$(id -g)
+-p 8000:3000
+--name wljs
+ghcr.io/jerryi/wolfram-js-frontend:main
+```
+
+<wljs-html encoded="true">{`%3Cbr%20%2F%3E`}</wljs-html>
+
+It will prompt you a login and password from Wolfram account and then start a server at
+
+```bash
+http://127.0.0.1:8000
+```
+
+This docker image includes
+- all latest libraries of WLJS
+- WLJS Notebook
+- Wolfram Engine >=14.2
+- Nginx proxy
+
+See more options [here](https://github.com/JerryI/wolfram-js-frontend/tree/main/container).
+
+## Autotests
+We integrated `playwright` into our workflow to capture any bugs before the release. For now we stick to integration tests using screenshots of DOM elements.
+
+Feel free to contribute. All tests are in the main repo.
+
+## ESM and Shell cells
+Both of them finally got a full support on Windows Machines!
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`.sh
+	dir`}</wljs-editor></WLJSWrapper>
+
+
+
+<wljs-html encoded="true">{`%0A%3Cstyle%3E%0A%20%20%5Btransparency%3D%22false%22%5D%20.bg-g-trans%20%7B%0A%20%20%20%20background%3A%20transparent%20%21important%3B%0A%20%20%7D%0A%0A%20%20%5Btransparency%3D%22true%22%5D%20.bg-g-trans%20%7B%0A%20%20%20%20background%3A%20transparent%20%21important%3B%0A%20%20%7D%0A%3C%2Fstyle%3E`}</wljs-html>

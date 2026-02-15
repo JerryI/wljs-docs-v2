@@ -1,0 +1,130 @@
+---
+date: 2025-07-12
+title:  Release notes *2.8.1*
+---
+
+{/* add this script to the body  */}
+{/* https://cdn.jsdelivr.net/gh/WLJSTeam/web-components@latest/src/common/app.js */}
+<wljs-store json="./attachments/4f127521-4958-4eba-a8e5-1b5279e038d3.txt"></wljs-store>
+
+
+
+
+Thu 7 Aug 2025 16:23:43
+
+
+
+<wljs-html encoded="true">{`%0A%3Cscript%20type%3D%22module%22%3E%0A%20%20%20%20const%20rating%20%3D%20%5B%5D%3B%0A%20%20%20%20for%20%28let%20i%3D1%3B%20i%3C%3D5%3B%20%2B%2Bi%29%20rating.push%28document.getElementById%28%22star%22%2Bi%29%29%3B%0A%20%20%20%20const%20feedback%20%3D%20document.getElementById%28%22feedback-form%22%29%3B%0A%20%20%20%20const%20container%20%3D%20document.getElementById%28%22rating-c%22%29%3B%0A%0A%20%20%20%20let%20rate%20%3D%20-1%3B%0A%20%20%20%20let%20text%20%3D%20%22undefined%22%3B%0A%20%20%20%20let%20timer%20%3D%20false%3B%0A%20%20%20%20let%20disabled%20%3D%20false%3B%0A%0A%20%20%20%20const%20submitForm%20%3D%20%28%29%20%3D%3E%20%7B%0A%20%20%20%20%20%20disabled%20%3D%20true%3B%0A%20%20%20%20%20%20let%20n%20%3D%201%3B%0A%20%20%20%20%20%20let%20interval%20%3D%20setInterval%28%28%29%20%3D%3E%20%7B%0A%20%20%20%20%20%20%20%20container.style.filter%20%3D%20%22blur%28%22%2Bn%2B%22px%29%22%3B%0A%20%20%20%20%20%20%20%20n%2B%2B%3B%0A%20%20%20%20%20%20%20%20if%20%28n%20%3E%20200%29%20%7B%0A%20%20%20%20%20%20%20%20%20%20clearInterval%28interval%29%3B%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%7D%2C%2030%29%3B%0A%0A%20%20%20%20%20%20server.io.fire%28%27submit-form-281%27%2C%20%5Brate%2C%20text%5D%29%3B%0A%20%20%20%20%7D%0A%0A%20%20%20%20const%20setTimer%20%3D%20%28%29%20%3D%3E%20%7B%0A%20%20%20%20%20%20if%20%28disabled%29%20return%3B%0A%20%20%20%20%20%20if%20%28timer%29%20clearTimeout%28timer%29%3B%0A%20%20%20%20%20%20timer%20%3D%20false%3B%0A%20%20%20%20%20%20timer%20%3D%20setTimeout%28submitForm%2C%205000%29%3B%0A%20%20%20%20%7D%0A%0A%20%20%20%20const%20clearTimer%20%3D%20%28%29%20%3D%3E%20%7B%0A%20%20%20%20%20%20if%20%28timer%29%20clearTimeout%28timer%29%3B%0A%20%20%20%20%20%20timer%20%3D%20false%3B%0A%20%20%20%20%7D%0A%0A%20%20%20%20rating.forEach%28%28e%29%20%3D%3E%20%7B%0A%20%20%20%20%20%20e.addEventListener%28%27change%27%2C%20%28ev%29%3D%3E%7B%0A%20%20%20%20%20%20%20%20rate%20%3D%20ev.srcElement.value%3B%0A%20%20%20%20%20%20%20%20setTimer%28%29%3B%0A%20%20%20%20%20%20%7D%29%3B%0A%20%20%20%20%7D%29%3B%0A%0A%20%20%20%20feedback.addEventListener%28%27input%27%2C%20%28%29%3D%3E%7B%0A%20%20%20%20%20%20text%20%3D%20feedback.value%3B%0A%20%20%20%20%20%20clearTimer%28%29%3B%0A%20%20%20%20%7D%29%3B%0A%0A%20%20%20%20feedback.addEventListener%28%27focus%27%2C%20%28%29%3D%3E%7B%0A%20%20%20%20%20%20clearTimer%28%29%3B%0A%20%20%20%20%7D%29%3B%0A%0A%20%20%20%20feedback.addEventListener%28%27blur%27%2C%20%28%29%20%3D%3E%20%7B%0A%20%20%20%20%20%20text%20%3D%20feedback.value%3B%0A%20%20%20%20%20%20setTimer%28%29%3B%0A%20%20%20%20%7D%29%0A%3C%2Fscript%3E`}</wljs-html>
+
+## Automated export to interactive HTML
+We got rid of a hassle, that you needed to do in order to export notebooks with interactive elements. At least for the build-in functions such as:
+
+<wljs-html encoded="true">{`%3Cbr%20%2F%3E`}</wljs-html>
+
+- `Manipulate`
+- `ManipulatePlot`
+- `ManipulateParametericPlot`
+- `Animate`
+
+this is a single click - __Automatic__
+
+
+![](./attachments/Screenshot%202025-08-07%20at%2013.43.37-9cb.png)
+
+Here __Manual sampling__ is the same, as __Dynamic HTML__ option was before.
+
+Try it out!
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`Manipulate[Plot3D[Sin[x w]Cos[y w], {y,0,2Pi}, {x,0,2Pi}, PlotRange->Full, ColorFunction->"Rainbow"], {w,0.1,2,0.1}, ContinuousAction->True]`}</wljs-editor></WLJSWrapper>
+
+## Manipulate and Animate
+We improved our JIT transpiler. But it might still not like too many changes.
+
+:::tip
+Try to keep the number of curves/traces the same as well as polygons if possible to get the most from JIT. Try not to add new entities as well.
+
+`PerformanceGoal->"Speed"` is also a good option for 3D plots.
+
+`Mesh->None` might also help.
+
+`PlotRange->Full` can help to avoid fragmentation of line segments
+:::
+
+Here is some more examples:
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`Manipulate[
+	 Plot[Evaluate[
+	   y[t] /. First[
+	     NDSolve[ {y''[x]  -x y[x], y[0]  a, y'[0] == b}, 
+	      y, {x, 0, 4}]]], {t, 0, 4}, 
+	  Epilog -> {Point[{4, 1/2}], Green, Arrow[{{0, a}, {1, b + a}}], Red,
+	     Point[{0, a}]}, ImagePadding -> 25, PlotRange -> {{0,4.5}, 2{-3,3}}],
+	 {{a, 1}, -3, 3, 0.5},
+	 {{b, 0}, -3, 3, 0.5}, ContinuousAction->True
+	]`}</wljs-editor></WLJSWrapper>
+
+Animate
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true" encoded="true"  >{`Animate%5B%0A%20%20ParametricPlot%5BReIm%20%40%20Exp%5B-I%20%28%5C%5BPhi%5D%20%2B%20%5C%5BGamma%5D%20I%20%5C%5BPhi%5D%29%5D%2C%20%7B%5C%5BPhi%5D%2C0%2C5Pi%7D%2C%20%0A%20%20%20%20PlotLabel-%3EStringTemplate%5B%22%5C%5BGamma%5D%20%3D%20%60%60%22%5D%5B%5C%5BGamma%5D%5D%0A%20%20%5D%0A%2C%20%7B%5C%5BGamma%5D%2C0%2C0.5%7D%5D`}</wljs-editor></WLJSWrapper>
+
+Plot expression with epilog
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`Animate[Plot[1.0 + Sin[w] Sin[x + w],{x,0,5Pi}, Epilog->{
+	  Red, Point[{8.0, 1.0 + Sin[w] Sin[8.0 + w]}]
+	}], {w,0,Pi}]`}</wljs-editor></WLJSWrapper>
+
+
+In any case, please, consider to use `ManipulatePlot` or general low-level building blocks like `Offload` and etc for more complex cases.
+
+Images are also supported:
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`img = ImageResize[ExampleData[{"TestImage","Apples"}], 500];
+	Manipulate[ImageAdjust[img, i], {i,-1,1,0.3}, ContinuousAction->True]`}</wljs-editor></WLJSWrapper>
+
+## Improved Shell Cells
+We switched to `StartProcess` for shell-like cells:
+
+
+![](./attachments/Screenshot%202025-08-09%20at%2017.27.23-096.png)<wljs-html encoded="true">{`%3Cbr%20%2F%3E`}</wljs-html>
+
+It allows running something continuously without blocking the kernel. To interrupt the process - simply abort the evaluation as usual.
+
+## Improved Labels for Graphics
+We fixed a couple of bugs related to label positioning and font rendering. Here is an example:
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`ListPlot[MapThread[Labeled, {{{1,2},{2,4},{4,6}}, {"1","2","3"}}]]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(FrontEndRef["2c568e52-2973-432d-a871-f6e70ccd1dfc"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKGyWbmlmkmhrpGlmaG+uaGBul6CZamBvqppmlmhskJ6cYpqQlAwB39xWq"*)(*]VB*)`}</wljs-editor></WLJSWrapper>
+
+and for `Offset`, you can specify the displacement of labels or set an absolute size for `Disk`, `Circle` and others:
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`Plot[x, {x,0,1}, Epilog->{Disk[{.5, .5}, Offset[{15,15}]]}]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(FrontEndRef["025c6102-b371-4910-b09d-6d8567edb4d5"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKGxiZJpsZGhjpJhmbG+qaWBoa6CYZWKbomqVYmJqZp6YkmaSYAgBv4hUM"*)(*]VB*)`}</wljs-editor></WLJSWrapper>
+
+## Improved PlotLabel for Graphics3D
+We have enhanced the `PlotLabel` option in `Graphics3D` functions to support more flexible labeling - not only text:
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`SphericalPlot3D[1, {\\[Theta], 0, Pi}, {\\[Phi], 0, 2Pi}, PlotLabel->HoldForm[(*SbB[*)Subscript[Y(*|*),(*|*)0,0](*]SbB*)]]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(FrontEndRef["2be2fdb8-5dee-493a-b6a2-f362fb470b08"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKGyWlGqWlJFnomqakpuqaWBon6iaZJRrpphmbGaUlmZgbJBlYAACW2RYv"*)(*]VB*)`}</wljs-editor></WLJSWrapper>
+
+## Bonus: LLM Autocompletion
+This is totally optional feature, which was hidden in our modules for a long time.
+
+
+![](./attachments/Screenshot%202025-08-12%20at%2015.13.37-c27.png)
+
+In general it works on all kind of languages, including English 🙂
+
+
+![](./attachments/Screenshot%202025-08-12%20at%2015.14.59-230.png)
+
+By the default it uses the same endpoint as assistant chat window, i.e. OpenAPI API. 
+
+:::note
+To enable LLM autocompletion find a checkbox in the __Settings__ menu under the "AI Assistant" section.
+
+And do not forget to set API Key in the designated field to authenticate your requests.
+:::
+

@@ -1,0 +1,42 @@
+---
+date: 2024-04-11
+title:  Release notes *2.5.4*
+---
+
+{/* add this script to the body  */}
+{/* https://cdn.jsdelivr.net/gh/WLJSTeam/web-components@latest/src/common/app.js */}
+<wljs-store json="./attachments/1f814778-6321-4182-9411-6af2063e5920.txt"></wljs-store>
+
+
+
+
+
+
+
+
+
+Perfomance improvements (mostly in WLJS Interpreter, removed a lot of logging and outdated APIs), new UI features, better support of WL functions
+
+## Outline feature
+Table of content is automatically created for notebook with more than 1 headings. It scans all markdown cells and extracts headings from them 
+
+![](./attachments/Screenshot%202024-08-14%20at%2020.54.17.png)
+
+If you click on labels it will automatically scroll into its view
+
+
+## Find and replace
+The most basic feature you know from other IDE is now implemented. The search is localized for each cell and can be called using `Ctrl/Cmd+f` combination of keys
+
+
+![](./attachments/Screenshot%202024-08-14%20at%2020.56.31.png)
+
+## Links to documentation in autocomplete panel
+Click to 🔎 icon to open a documentation on a given symbol
+
+
+![](./attachments/Screenshot%202024-08-15%20at%2012.50.31.png)
+
+
+
+<wljs-html encoded="true">{`%0A%3Cstyle%3E%0A%20%20%5Btransparency%3D%22false%22%5D%20.bg-g-trans%20%7B%0A%20%20%20%20background%3A%20transparent%20%21important%3B%0A%20%20%7D%0A%0A%20%20%5Btransparency%3D%22true%22%5D%20.bg-g-trans%20%7B%0A%20%20%20%20background%3A%20transparent%20%21important%3B%0A%20%20%7D%0A%3C%2Fstyle%3E`}</wljs-html>

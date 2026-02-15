@@ -1,0 +1,236 @@
+---
+date: 2025-01-19
+title:  Release notes *2.7.2*
+---
+
+{/* add this script to the body  */}
+{/* https://cdn.jsdelivr.net/gh/WLJSTeam/web-components@latest/src/common/app.js */}
+<wljs-store json="./attachments/03e0a514-3832-459e-96d2-791b5fb82583.txt"></wljs-store>
+
+
+
+
+
+
+
+
+
+
+
+## UI Update: resizable sidebar!
+Just drag ;)
+
+## Hardware acceleration of GraphicsComplex
+2D version of `GraphicsComplex` featured in `DensityPlot` and many others was reimplemented in WebGL. We combine SVG and raster graphics to get the best of both worlds
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`ContourPlot[Cos[x] + Cos[y], {x, 0, 4 Pi}, {y, 0, 4 Pi}, PlotLegends->Automatic]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output" encoded="true"  >{`%28%2AVB%5B%2A%29%28Legended%5BToExpression%5BFrontEndRef%5B%220028a70d-65e4-4503-b135-3880fa76a127%22%5D%2C%20InputForm%5D%2C%20Placed%5BBarLegend%5B%7BBlend%5B%22WL13DefaultDensityGradient%22%2C%20%231%5D%20%26%20%2C%20%7B-2.%2C%202.%7D%7D%2C%20%7B%7B-1.5%2C%20Directive%5BGrayLevel%5B0%5D%2C%20Opacity%5B0.5%5D%2C%20CapForm%5B%22Butt%22%5D%5D%7D%2C%20%7B-1.%2C%20Directive%5BGrayLevel%5B0%5D%2C%20Opacity%5B0.5%5D%2C%20CapForm%5B%22Butt%22%5D%5D%7D%2C%20%7B-0.5%2C%20Directive%5BGrayLevel%5B0%5D%2C%20Opacity%5B0.5%5D%2C%20CapForm%5B%22Butt%22%5D%5D%7D%2C%20%7B0.%2C%20Directive%5BGrayLevel%5B0%5D%2C%20Opacity%5B0.5%5D%2C%20CapForm%5B%22Butt%22%5D%5D%7D%2C%20%7B0.5%2C%20Directive%5BGrayLevel%5B0%5D%2C%20Opacity%5B0.5%5D%2C%20CapForm%5B%22Butt%22%5D%5D%7D%2C%20%7B1.%2C%20Directive%5BGrayLevel%5B0%5D%2C%20Opacity%5B0.5%5D%2C%20CapForm%5B%22Butt%22%5D%5D%7D%2C%20%7B1.5%2C%20Directive%5BGrayLevel%5B0%5D%2C%20Opacity%5B0.5%5D%2C%20CapForm%5B%22Butt%22%5D%5D%7D%2C%20%7B2.%2C%20Directive%5BGrayLevel%5B0%5D%2C%20Opacity%5B0.5%5D%2C%20CapForm%5B%22Butt%22%5D%5D%7D%7D%2C%20LabelStyle%20-%3E%20%7B%7D%2C%20LegendLayout%20-%3E%20%22Column%22%2C%20LegendMarkerSize%20-%3E%20225%2C%20ScalingFunctions%20-%3E%20%7BIdentity%2C%20Identity%7D%2C%20Charting%60AxisLabel%20-%3E%20None%2C%20Charting%60TickSide%20-%3E%20Right%2C%20ColorFunctionScaling%20-%3E%20True%5D%2C%20After%2C%20Identity%5D%5D%29%28%2A%2C%2A%29%28%2A%221%3AeJzFVE1P20AQdb9p1Uot4tRbpV4jOQkhufGRD4TkliqL4NqNdzasWHbRek1x%2F1z7U%2BAfcOTYGW8SYotz7cNod%2BbNvDe2%2FL7M7FS%2BiKIo%2B4DhVMGvEaTWcW8de4OZBOZgREc%2BJ8g7DGOhsEZA%2BYxymxgmzho%2FNmJ8A2nu%2BUwD%2B4rpOO4MeD8WrZ0ebLe2e3G3NWt3e63uYBBL3t%2Fh7U4%2FDH6JYZpj2wYdgItjo4sye%2BJyCPpeY%2FiheQpCvqU7hQPugsDHMYnKfFBGsya5Sb2yJtRfUYtGOPuMp7Ok3R2B5Ln2IzCZ8sWh40KBWfTTNKatV3SrErgoPH%2BXhz25URHwFPrhT1iEhI%2BUAxR2DYGKUkheJHANWhE45OkLHF%2FxFLUthtzuPlaG%2FGpi3SUjnoPcP8163wjrbSOsOKqJXXcb%2Ba6NsD40woq%2F1%2F9iJRcqfS7hM9DMFxpktC6pBn0fLT0y4YXNPSObGlqdX5oa8uMK%2BY27C3BM%2FQZ1F61bywrHUq6VmS%2FdK6u%2BldLZjgQaFW5XudRGkTcPz7nzOOvn%2Fo3KyqXK%2BndroIb%2BtI4%2BUekFUwJKz5yq%2BXl98a2wp3VLkQvNK9cuO%2FelB1eR%2BA%2B9lGvh%22%2A%29%28%2A%5DVB%2A%29`}</wljs-editor></WLJSWrapper>
+
+It not only looks smoother (before we only had flat-shading), but also has less impact on the notebook performances
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{` DensityPlot[Cos[x] Sin[y], {x, -4Pi, 4Pi}, {y, -4Pi, 4Pi}, 
+	 ColorFunction -> ColorData["Rainbow"]]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(FrontEndRef["ac70da04-d5a4-4328-b10e-49fc1e623e4c"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKJyabG6QkGpjoppgmmuiaGBtZ6CYZGqTqmlimJRummhkZp5okAwCHqRXB"*)(*]VB*)`}</wljs-editor></WLJSWrapper>
+
+### Texture support
+This feature is still experimental and might not work in all cases. Now we do support `Texture` mapping in 2D `GraphicsComplex`, which make possible to do complex plots
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`ComplexPlot[(*FB[*)(((*SpB[*)Power[z(*|*),(*|*)2](*]SpB*) + 1)(*,*)/(*,*)((*SpB[*)Power[z(*|*),(*|*)2](*]SpB*) - 1))(*]FB*), {z, -2 - 2 I, 2 + 2 I}, 
+	 PlotLegends -> Automatic]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output" encoded="true"  >{`%28%2AVB%5B%2A%29%28Legended%5BToExpression%5BFrontEndRef%5B%224217a64d-2194-4059-88da-4bbb58dd082f%22%5D%2C%20InputForm%5D%2C%20Placed%5BBarLegend%5B%7BColorDataFunction%5B%22MidShiftBalancedHue%22%2C%20%22ThemeGradients%22%2C%20%7B0%2C%201%7D%2C%20Blend%5B%22MidShiftBalancedHue%22%2C%20%231%5D%20%26%20%5D%5B%231%5D%20%26%20%2C%20%7B0%2C%201%7D%7D%2C%20LabelStyle%20-%3E%20%7B%7D%2C%20LegendLayout%20-%3E%20%22Column%22%2C%20LegendMarkerSize%20-%3E%20225%2C%20%22ColorFunctionShading%22%20-%3E%20None%2C%20OpacityFunction%20-%3E%20%281%20-%20Rescale%5B%231%2C%20%7B0%2C%200.9%7D%2C%20%7B0%2C%201%7D%5D%20%26%20%29%2C%20%22OpacityFunctionTicks%22%20-%3E%20%7B%7B0%2C%20%220%22%7D%2C%20%7B0.9%2C%204%7D%2C%20%7B1%2C%20%22Infinity%22%7D%7D%2C%20%22OpacityFunctionSize%22%20-%3E%20Scaled%5B0.5%5D%2C%20%22OpacityFunctionRange%22%20-%3E%20%7B0%2C%201%7D%2C%20Charting%60TickLabels%20-%3E%20%7B%22-%5C%5BPi%5D%22%2C%20%22-%5C%5BPi%5D%2F2%22%2C%20%220%22%2C%20%22%5C%5BPi%5D%2F2%22%2C%20%22%5C%5BPi%5D%22%7D%2C%20Ticks%20-%3E%20%7B%7B0.%2C%200.25%2C%200.5%2C%200.75%2C%201.%7D%2C%20%7B%7B0%2C%201%2F20%2C%201%2F10%2C%203%2F20%2C%201%2F5%7D%2C%20%7B1%2F5%2C%201%2F4%2C%203%2F10%2C%207%2F20%2C%202%2F5%7D%2C%20%7B2%2F5%2C%209%2F20%2C%201%2F2%2C%2011%2F20%2C%203%2F5%7D%2C%20%7B3%2F5%2C%2013%2F20%2C%207%2F10%2C%203%2F4%2C%204%2F5%7D%2C%20%7B4%2F5%2C%2017%2F20%2C%209%2F10%2C%2019%2F20%2C%201%7D%7D%7D%2C%20Charting%60TickSide%20-%3E%20Right%2C%20ColorFunctionScaling%20-%3E%20True%5D%2C%20After%2C%20Identity%5D%5D%29%28%2A%2C%2A%29%28%2A%221%3AeJyNVd1u0zAUDm3W0sGA0b0AErcVbeig203Ftg6QOobqiqtd4MROa811kOMIyjOCxCPAHRdc8AZwbK9Zk7RpfeE45%2Fc73%2FHPEz8ahVXHceI9mD4w%2BvmMBpHEKpKoDpIhnVBBvLCiTXZhGhAGOm0Y3tGyxzCdy0iogSCDLzRIFPY5RU9B3PU6L%2FGLLml5naNuq9s%2BPGr1egS3ur7vH%2FYIafe80AZ2YRol4HZXLygml4LPjXQsE2rx1WB6z3FASaihxg2YTrC0AG%2FDDFmsLDId6zwRgWKRMJJQ6%2BN9mE4jHskzrPBCj5ogvWAETVmoTjDHAvK8SSh6oDFM6Yy%2BlpgwKlScTcXg6zATvZjUWO5onBwwrsthHXVAxCO1FCsrWpc2Q6Bp0RD7lCM15zR0MrRkTe%2Bn7R3ieZQoVLPMJDORs3yUWl5geU0lYl8p%2B1VIjg4W1Ka0ToE0MTEW7yJBc3EfwuLyEw6YmmcatYJF13Q%2FiZdq1sSO2YzG7B8Mu0nqZv%2FEAeYraS1yKL9%2F0%2BNPfzt%2BTYk5yGMWXMc2fZHpNBjSwdpZRZqcuUV02t605OrY8zqDHI5mEYfuii1aeyHNAZGOGT%2F7m8sYYTGhW%2B4ynf10iqWC5n7U9ZstF4c7y97m%2FmhdHbefn7ZR43b9zLNcmMOeimrpTy6XbbOmOHvGM7lu6oR%2B2s%2BPflr5zeL3YvG3n3XN%2FpmSbSZzF2FNDeaGBHZQottdratu8tPZc4DKLNfo3JLsa5DVS5BVtkZWKUHW2FR7ZbXuXolfdWtk1RJkeyUZ6pu6uYZrd2tkbgmy%2FRJkjRJkzYXfquNqnrzl44oYsQdrxCbT%2FLtQvMXhKlnc4vo9Np6vQkWlwfCWwLMIF8l%2FAh%2FCcw%3D%3D%22%2A%29%28%2A%5DVB%2A%29`}</wljs-editor></WLJSWrapper>
+
+Or here is an explicit example
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`texture = Texture[(*VB[*)(FrontEndRef["d86b6f35-0f6f-4159-bf14-6627b1a35523"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKp1iYJZmlGZvqGqSZpemaGJpa6ialGZrompkZmScZJhqbmhoZAwCBcRUY"*)(*]VB*)];
+	
+	ParametricPlot[{r Cos[\\[Theta]], r Sin[\\[Theta]]}, {r, 1, 
+	  2}, {\\[Theta], 0, 2 Pi/3}, PlotRange -> All, Mesh -> 15, PlotStyle->texture]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(FrontEndRef["3e8cb108-95d9-439b-b741-ce4b97ec26a3"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKG6daJCcZGljoWpqmWOqaGFsm6SaZmxjqJqeaJFmapyYbmSUaAwCC+RWu"*)(*]VB*)`}</wljs-editor></WLJSWrapper>
+
+### Placed
+This key-symbol now will fully work with `Legended` too
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`Plot[
+	  {x,x^2}, {x,0,1}, 
+	  PlotLegends->Placed[SwatchLegend[Automatic], {0.2,0.2}]
+	]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(Legended[ToExpression[FrontEndRef["c68abecb-08fc-4509-93d5-166cc85bef0a"], InputForm], Placed[SwatchLegend[{Directive[Opacity[1.], RGBColor[0.24, 0.6, 0.8], AbsoluteThickness[2]], Directive[Opacity[1.], RGBColor[0.95, 0.627, 0.1425], AbsoluteThickness[2]]}, {HoldForm[Placeholder[Style[1, Smaller]]], HoldForm[Placeholder[Style[2, Smaller]]]}, LegendMarkers -> Automatic, LabelStyle -> {}, LegendLayout -> "Column"], {0.2, 0.2}, Identity]])(*,*)(*"1:eJylUjtOAzEQXf5/CTgAEhJtpPBJlBRoFSABpEVAFtF7vbPEirOOvF4gB+AQ0NJxgtR0NBQ0HAAahITgBoxtErQ0SDDFk/0882Y8M4uBqEdDjuMkMwjHDM62gApJlJD+GDIenEAcrkSD2mUSoRoyfNOO0YDm5hFqUsSqGofVc6CpIgEHfwlpWiyRAGiQy5cimlsr5Mu58mpYyC0Xi5SWCgFEeWKFhxHqKYaN6wOQcD/mHcMeyRRsfaMIB5xQCKMRfZ9G8M+Iog1b47eSxxJlYyYQtpgEqtgp2Hr1p/bbhDLVkY6xd9c6m9zbG5uCCym7Cxevh917V64ae3Ll1aW2F9fKzCFUgkTwVMFRg9FmDEnCdAn/zRwZe3PlzcfDXjD77Mr1ycfr9vrt75mzHRjoSe8IHtaEbFlmqtfHBtIgbZDuqK86HFi/VL9FOMf3v8kM/pTJzNksmx3bHpFNkIlpWCVVokUUoz+89d55uErcaEdO5ptZ1+m+sEc6IlW+XhtsbNqKs+35mued2z+YT+6GECuc0CdN580J"*)(*]VB*)`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`Plot[
+	  {x,x^2}, {x,0,1}, 
+	  PlotLegends->Placed[SwatchLegend[Automatic], {Top, Right}]
+	]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(Legended[ToExpression[FrontEndRef["344bc109-901e-4a78-acfe-de956a0710e8"], InputForm], Placed[SwatchLegend[{Directive[Opacity[1.], RGBColor[0.24, 0.6, 0.8], AbsoluteThickness[2]], Directive[Opacity[1.], RGBColor[0.95, 0.627, 0.1425], AbsoluteThickness[2]]}, {HoldForm[Placeholder[Style[1, Smaller]]], HoldForm[Placeholder[Style[2, Smaller]]]}, LegendMarkers -> Automatic, LabelStyle -> {}, LegendLayout -> "Row"], {Top, Right}, Identity]])(*,*)(*"1:eJylUktOwzAQDf9fkYADICGxjdTSAu2iigqUj5QKaCr2jjOhVt24chxKDsAhYMuOE3TNAViw4QCwQUgIboA/oijdIMEsnpLnmTczz17zWTOcsCwrXpRwRqC/B5hxJBj3ZiTjwjlEwUY4rlLmJdQDIs9UYjimuBUJ+5xFoh4F9UvAiUA+BW9d0sVSyceFfMWu5Atgl9B22UY4BDuAyuYWym8X8lA2wpMSmoksm1UfgILjiKaabfEEzHzTEk4owhCEU+o/J8HrI4HbZsYfJZfEwtTMSdgjHLAgF2DmVUsd9xAmIuWWjg/HJOveBzu7jDLOB6tXb6eDB4cXdTw7/OZaxatjZJYl1PyY0URAq01wJ4I4JmqE/3YOdbw7/O7zseEvvTi8Ov9026ve/94568DYt/Qho8E+413DLHz72JY0cFOkHPVESoEMR/W6iFJ5/jeZ8VGZzD3rx2aurYF4B3isDaslgnWRIHgkW707F/lAtXZoZdbMpuaGwi5KWSI8ZXCT9bPexIptsZ4euEnO20JveBRAJOT1fAHDQ8U4"*)(*]VB*)`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`Plot[
+	  {x,x^2}, {x,0,1}, 
+	  PlotLegends->Placed[SwatchLegend[Automatic], After]
+	]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(Legended[ToExpression[FrontEndRef["5c700057-74c4-493a-95b0-47d9dbcd52a6"], InputForm], Placed[SwatchLegend[{Directive[Opacity[1.], RGBColor[0.24, 0.6, 0.8], AbsoluteThickness[2]], Directive[Opacity[1.], RGBColor[0.95, 0.627, 0.1425], AbsoluteThickness[2]]}, {HoldForm[Placeholder[Style[1, Smaller]]], HoldForm[Placeholder[Style[2, Smaller]]]}, LegendMarkers -> Automatic, LabelStyle -> {}, LegendLayout -> "Column"], After, Identity]])(*,*)(*"1:eJylUktKA0EQHeNfI6gHEAS3gWASQxZhiCZRIcHPiPue7hrTpDMtPT1qDuAhdOvOE2TtAVy48QC6EUH0BlZ3o5JsBK3FY6a66tWrz2ooD6Nxz/OSBYRjDud1oFIRLVUwjZ4WnEDM1qOMCZlDaDCObyYwGjO+ZYSmkrFuxKxxATTVJBQQrKG7RMv5fL5UzpWLtJgrVgokVymF+VyxzCospKy0TjYc8QTCYYppM+YDCNuLRd96j1QKTt8Uwr4gFFg0af6zCME50bTjNP4wtXiiXc4sQp0roJqfgdNrmto7JZTrvvKsvfsu2Nbe3tySQio1WLl8PRjc+6pg7clX11fGXnxHs4RQCxMpUg1HHU67MSQJNxL+Wzmy9uar24+Hdrj47Kvq3OPNafXu98rDExj7ot6RgjWl6jnP/NccO+gG5ZLMRAPdF8C/pQY9IgS+/40mM0oztGd7bG5tbaK6oBI7sFqqZY9oTkeizd21SAjCckfeUJvDodlv4hbpy1QH5mxwsGkvtupqkcZqpp1dBrHGXXwCglvB4w=="*)(*]VB*)`}</wljs-editor></WLJSWrapper>
+
+## TeXForm is back!
+We dropped a long time ago this feature, but now it is back
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`TeXForm[Series[Sin[x], {x,0,4}]//Normal]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`"x-\\\\frac{x^3}{6}"`}</wljs-editor></WLJSWrapper>
+
+Now import it back
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`ToExpression[%, TeXForm]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`x-((*FB[*)((1)(*,*)/(*,*)(6))(*]FB*)) ((*SpB[*)Power[x(*|*),(*|*)3](*]SpB*))`}</wljs-editor></WLJSWrapper>
+
+Now use to draw TeX equations using inline markdown cells
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`CellView[StringJoin[
+	  "$$\\n",
+	  TeXForm[Series[Sin[x], {x,0,7}] // Normal],
+	  "\\n$$"
+	], "Display"->"markdown"]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(FrontEndRef["da310997-b769-49f4-8e05-23c94160d11e"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKpyQaGxpYWprrJpmbWeqaWKaZ6FqkGpjqGhknW5oYmhmkGBqmAgB4pBTt"*)(*]VB*)`}</wljs-editor></WLJSWrapper>
+
+## GeoGraphics
+We added the full support of its rasterized version
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`Entity["Country", "Italy"]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(Entity["Country", "Italy"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KWnMIB4vkAjLTC13SU3OL0osyS8KZgOKuOaVZJZUBrMDmc75pXklRZXBrEC2Z0liTiUAdDwSUA=="*)(*]VB*)`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`GeoGraphics[{EdgeForm[Black], FaceForm[Red], Polygon[(*VB[*)(Entity["Country", "Italy"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KWnMIB4vkAjLTC13SU3OL0osyS8KZgOKuOaVZJZUBrMDmc75pXklRZXBrEC2Z0liTiUAdDwSUA=="*)(*]VB*)]}]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(FrontEndRef["6ad96a51-e691-4820-9ff1-e6fb92e56ac3"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKmyWmWJolmhrqpppZGuqaWBgZ6FqmpYG4aUmWRqmmZonJxgCCDBWy"*)(*]VB*)`}</wljs-editor></WLJSWrapper>
+
+## ImageUpscaling option
+
+:::warning
+`Rasterize` is available only for WLJS Desktop App
+:::
+
+When rasterizing images you can upscale the canvas by an integer factor
+
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`Plot[x, {x,0,1}];
+	Rasterize[%, "ImageUpscaling"->1]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(FrontEndRef["2148abe1-7f02-420d-9ee9-7eb9b514656a"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKGxmaWCQmpRrqmqcZGOmaGBmk6FqmplrqmqcmWSaZGpqYmZolAgCAAhV1"*)(*]VB*)`}</wljs-editor></WLJSWrapper>
+
+This comes handy for exporting hi-rez figures.
+
+## Misc static graphics
+Some of gauges now can be used as static graphics
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`ClockGauge[{14, 42, 56}]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(FrontEndRef["2a6caff6-288a-4dc4-bca0-93d066b8cf7c"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKGyWaJSempZnpGllYJOqapCSb6CYlJxroWhqnGJiZJVkkp5knAwCSzxZj"*)(*]VB*)`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`ThermometerGauge[25, {0, 100}]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(FrontEndRef["18989678-a306-4ee5-b152-3dc1e7336841"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKG1pYWliamVvoJhobmOmapKaa6iYZmhrpGqckG6aaGxubWZgYAgBy1hTC"*)(*]VB*)`}</wljs-editor></WLJSWrapper>
+
+__WordCloud__ can also be used in the same way
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`trigrams = 
+	  Tally@*Flatten@*
+	    Map[ToLowerCase/*Characters/*(Partition[#, 3, 1] &)/*
+	      Map[StringJoin]]@
+	   StringSplit[ExampleData[{"Text", "AeneidEnglish"}], 
+	    Except[LetterCharacter] ..];
+	    
+	WordCloud[Take[SortBy[trigrams, Last], -50], 
+	 ColorFunction -> (Blend[{GrayLevel[0.5], GrayLevel[0]}, #1] &)]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(FrontEndRef["d3459540-e96a-4321-b8d9-405335804f84"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKpxibmFqamhjoplqaJeqaGBsZ6iZZpFjqmhiYGhubWhiYpFmYAABy0BSN"*)(*]VB*)`}</wljs-editor></WLJSWrapper>
+
+## WLJS Interpreter
+We improved dynamics in our wljs-interpreter (*quazi Wolfram Language interpreter running on Javascript engine*).
+
+Before depending if you were passing packaged/numerical array to some `Offload` expression it could throw an exception since nested symbols like `List` did not work well with numerical arrays. However, now it is safe to use such expressions
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`axes = RandomReal[3, {3,3}]; (*BB[*)(*ensures it is a packed array *)(*,*)(*"1:eJxTTMoPSmNhYGAo5gcSAUX5ZZkpqSn+BSWZ+XnFaYwgCS4g4Zyfm5uaV+KUXxEMUqxsbm6exgSSBPGCSnNSg9mAjOCSosy8dLBYSFFpKpoKkDkeqYkpEFXBILO1sCgJSczMQVYCAOFrJEU="*)(*]BB*)`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`Graphics3D[{
+	  Red, Tube[{{0.,0.,0.}, axes[[1]]} // Offload, {0.1, 0.01}],
+	  Green, Tube[{{0.,0.,0.}, axes[[2]]} // Offload, {0.1, 0.01}],
+	  Blue, Tube[{{0.,0.,0.}, axes[[3]]} // Offload, {0.1, 0.01}]
+	}]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(Graphics3D[{RGBColor[1, 0, 0], Tube[Offload[{{0., 0., 0.}, axes[[1]]}], {0.1, 0.01}], RGBColor[0, 1, 0], Tube[Offload[{{0., 0., 0.}, axes[[2]]}], {0.1, 0.01}], RGBColor[0, 0, 1], Tube[Offload[{{0., 0., 0.}, axes[[3]]}], {0.1, 0.01}]}])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRAeF5BwL0osyMhMLjZ2SWODqfDJLC5JYwbxOIBEkLuTc35OflEmSE8mA4xIY4IpDylNSoUYyA4k/NPScvITUxDSCNNgvCIGKMBkILQFJBaVgBmJFanFYLtRjSyaNRMEdtoXVYusc39Y1WKPxclg18LdTV8nM1HgZLi76etkZiKcDADSfHB2"*)(*]VB*)`}</wljs-editor></WLJSWrapper>
+
+Here it is used as a mixure of dynamic symbol `axes` (which is a numeric array due to Wolfram Engine optimizations) and external `List`.
+
+Try to update, it should work
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`axes = Map[(# + 0.1 Cross[{1.,1.,1.}, #])&, axes];`}</wljs-editor></WLJSWrapper>
+
+Operations such as `Plus`, `Times` shall work like normal as well.
+
+## Better export to interactive HTML
+We managed to make `Manipulate` work offline! Before it was only possible for custom dynamics or `ManipulatePlot` to function properly, since it does not involve dynamic frontend object creation. Now we turn off garbage collector before processing the notebook, let it accumulate objects and turn it back on after the exporting process has been finished.
+
+The good news, you don't need to think about it. See it in action
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`Manipulate[
+	  Row[{
+	    "m", "==", MatrixForm[m], 
+	    StreamPlot[Evaluate[m . {x, y}], {x, -1, 1}, {y, -1, 1}, 
+	      StreamScale -> Large, ImageSize -> Small
+	    ]
+	  }], {{m, ((*GB[*){{1(*|*),(*|*)0}(*||*),(*||*){0(*|*),(*|*)2}}(*]GB*))}, { ((*GB[*){{1(*|*),(*|*)0}(*||*),(*||*){0(*|*),(*|*)2}}(*]GB*)) -> "Nodal source",  ((*GB[*){{1(*|*),(*|*)1}(*||*),(*||*){0(*|*),(*|*)1}}(*]GB*))  -> "Degenerate source",  ((*GB[*){{0(*|*),(*|*)1}(*||*),(*||*){-1(*|*),(*|*)1}}(*]GB*)) -> "Spiral source",  ((*GB[*){{-1(*|*),(*|*)0}(*||*),(*||*){0(*|*),(*|*)-2}}(*]GB*))  -> "Nodal sink",  ((*GB[*){{-1(*|*),(*|*)1}(*||*),(*||*){0(*|*),(*|*)-1}}(*]GB*)) -> "Degenerate sink",  ((*GB[*){{0(*|*),(*|*)1}(*||*),(*||*){-1(*|*),(*|*)-1}}(*]GB*)) -> "Spiral sink",  ((*GB[*){{0(*|*),(*|*)1}(*||*),(*||*){-1(*|*),(*|*)0}}(*]GB*)) -> "Center",  ((*GB[*){{1(*|*),(*|*)0}(*||*),(*||*){0(*|*),(*|*)-2}}(*]GB*))  -> "Saddle"}}]`}</wljs-editor></WLJSWrapper>
+
+## Better structured examples
+We sorted out all examples and guides we had. Some sections are sill populating with the content.
+
+:::Yo
+We need your help
+:::
+
+__Preview__
+
+- **Introduction to WLJS** - a brief overview of notebook interface and WL
+- **Data Visualization** - showcases of the most essential plotting functions and charts in 2D and 3D, including path-tracing and PBR materials.
+  
+- **For Data Scientists**
+- **For Julia Users**
+- **For Jupyter Users**
+- **For MATLAB Users**
+- **For Python Users**
+- **For Mathematica Users**
+- **For Machine Learning (ML)**
+- **For Physicists**
+
+- **Numerical Data Handling**
+- **Differential Calculus**
+- **Media Formats**
+- **Geographical Data**
+- **Symbolic Programming**
+
+- **Animation**
+- **Dynamics and Interactivity**
+- **GUI Building Blocks**
+
+- **OpenCL**
+
+- **Slides and Presentations**
+
+- **Advanced Syntax Sugar**
+- **JavaScript Bindings**
+- **Mixing Languages**
+- **Frontend Interpreter**
+- **Notebook Utilities**
+- **Standalone Widgets**
+
+- **Experimental**
+- **Release Notes**
+
+
+
+<wljs-html encoded="true">{`%0A%3Cstyle%3E%0A%20%20%5Btransparency%3D%22false%22%5D%20.bg-g-trans%20%7B%0A%20%20%20%20background%3A%20transparent%20%21important%3B%0A%20%20%7D%0A%0A%20%20%5Btransparency%3D%22true%22%5D%20.bg-g-trans%20%7B%0A%20%20%20%20background%3A%20transparent%20%21important%3B%0A%20%20%7D%0A%3C%2Fstyle%3E`}</wljs-html>

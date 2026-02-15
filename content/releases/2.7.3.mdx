@@ -1,0 +1,174 @@
+---
+date: 2025-02-10
+title:  Release notes *2.7.3*
+---
+
+{/* add this script to the body  */}
+{/* https://cdn.jsdelivr.net/gh/WLJSTeam/web-components@latest/src/common/app.js */}
+<wljs-store json="./attachments/9b17bf04-3102-4b22-a6fb-1cbaafe7a357.txt"></wljs-store>
+
+
+
+
+
+
+
+
+
+## Export to PDF
+WLJS Notebook finally has proper support for PDF rendering. This is a big challenge since all visuals are a mixture of HTML, SVG, and sometimes WebGL/Canvas. Therefore, we need to rely on Electron's (Chromium) engine to generate PDFs from HTML tags. Another issue was whitespace trimming; now we render it offscreen, analyze pixel data, and correct the view bounding box.
+
+All our efforts are for you to get a crisp, nice combo of vector and raster graphics!
+
+:::warning
+This feature is available only for the WLJS Desktop application
+:::
+
+Here it is in action
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`Export[
+	  FileNameJoin[{"attachments", "test.pdf"}], 
+	  ContourPlot[Sinc[x] Sinc[y], {x,-4Pi, 4Pi}, {y, -4Pi, 4Pi}]
+	]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`"attachments/test.pdf"`}</wljs-editor></WLJSWrapper>
+
+Preview in the browser
+
+<WLJSWrapper><wljs-editor display="wlx" type="Output"  >{`<iframe src="/attachments/test.pdf" width="100%" height="500"/>`}</wljs-editor></WLJSWrapper>
+
+## Semantic interpretation
+We added a handy shortcut for `SemanticInterpretation`
+
+- Ctrl =
+
+Do it on selection or on the position of the cursor
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`3 (*BB[*)(SemanticInterpretation["3 weeks"])(*,*)(*"1:eJxTTMoPSmNhYGAo5gcSAUX5ZZkpqSn+BSWZ+XnFaYwgCV4gEZaZWu6SmpxflFiSXxTMARQJTs1NzCvJTE5jAqkBmRBUmpMazAaSKinKzEsHi4UUlaaiqeACCSdm5kBUBYMklWKxqPFITUyBqpFAss8zryS1qKAotSQR5MRoJQAneDHG"*)(*]BB*) `}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(Quantity[9, "Weeks"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KWnMIB4vkAjLTC13SU3OL0osyS8K5gCKBJYm5pVkllRmcgI5waxAIjw1NbsYABojEFQ="*)(*]VB*)`}</wljs-editor></WLJSWrapper>
+
+You have a full access to WolframAlpha or if not available, it uses local parsing option
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`(*BB[*)(SemanticInterpretation["Red fox"])(*,*)(*"1:eJxTTMoPSmNhYGAo5gcSAUX5ZZkpqSn+BSWZ+XnFaYwgCV4gEZaZWu6SmpxflFiSXxTMARQJTs1NzCvJTE5jAqkBmRBUmpMazAaSKinKzEsHi4UUlaaiqeACCSdm5kBUBYMklWKxqPFITUyBqpFAss8zryS1qKAotSQR5MRoJQAneDHG"*)(*]BB*)["Image"]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(FrontEndRef["d84a1b43-e5ba-42d0-9f8c-d02f573d4bd0"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKp1iYJBommRjrppomJeqaGKUY6FqmWSTrphgYpZmaG6eYJKUYAACKsRX4"*)(*]VB*)`}</wljs-editor></WLJSWrapper>
+
+<wljs-html encoded="true">{`%3Cbr%20%2F%3E`}</wljs-html><wljs-html encoded="true">{`%3Cbr%20%2F%3E`}</wljs-html>
+
+## LaTeX cells
+If you have any troubles with mixing Markdown and LaTeX code, here you go
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`.latex
+	\\begin{align}
+	\\omega &= \\Big\\{\\alpha^2 + \\frac{a}{b} \\Big\\} \\\\
+	\\hat{\\alpha}_{x} &- \\hat{\\beta}_{y} \\nonumber
+	\\end{align}`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="latex" type="Output"  >{`\\begin{align}
+	\\omega &= \\Big\\{\\alpha^2 + \\frac{a}{b} \\Big\\} \\\\
+	\\hat{\\alpha}_{x} &- \\hat{\\beta}_{y} \\nonumber
+	\\end{align}`}</wljs-editor></WLJSWrapper>
+
+## Optional Rendering Using Mathematica Frontend
+We know that not all styling options, plots, and diagram types are supported in the WLJS Notebook ecosystem. It is a long process, and we need your support.
+
+However, if you just need a static picture similar to what a Jupyter Notebook with the Wolfram Kernel attached can generate, please try out our new view-block.
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`Plot3D[(*SpB[*)Power[x(*|*),(*|*)2](*]SpB*) (*SpB[*)Power[y(*|*),(*|*)2](*]SpB*), {x,0,1}, {y,0,1}] // MMAView `}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(FrontEndRef["76602909-345a-4265-a6d6-afe7e23f7629"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKm5uZGRhZGljqGpuYJuqaGJmZ6iaapZjpJqalmqcaGaeZmxlZAgBvShT0"*)(*]VB*)`}</wljs-editor></WLJSWrapper>
+
+## Graph3D Support
+We implemented some missing primitives for `Graphics3D` to support the output of `GraphPlot3D` and `Graph3D` in general
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`GraphPlot3D@Graph3D[ButterflyGraph[3]]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(FrontEndRef["2613fa03-d8df-4af7-bdd9-ae69799a0a56"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKG5kZGqclGhjrplikpOmaJKaZ6yalpFjqJqaaWZpbWiYaJJqaAQCL3BYP"*)(*]VB*)`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`Graph3D[Table[
+	  Annotation[
+	   v, {VertexSize -> 0.2 + 0.2 Mod[v, 5], 
+	    VertexStyle -> Hue[v/15, 1, 1]}], {v, 0, 14}], 
+	 Table[v \\[UndirectedEdge] Mod[v + 1, 15], {v, 0, 14}]]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output" encoded="true"  >{`%28%2AVB%5B%2A%29%28CoffeeLiqueur%60Extensions%60Boxes%60Workarounds%60temporal%24788661%29%28%2A%2C%2A%29%28%2A%221%3AeJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKJ5mamlgmJZrpJhqYmemamCeb6FqmpSTpGpmapxpamJkZWBolAQCBNRVO%22%2A%29%28%2A%5DVB%2A%29`}</wljs-editor></WLJSWrapper>
+
+## Improvements in 2D Graphics
+Missing symbols were implemented!
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(Graphics[{RegularPolygon[{1, 1}, 0.4, 5], RGBColor[1, 0, 0], Disk[{0, 0}]}, ImageSize -> Small])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KWlMIB4HkHAvSizIyEwuTmOGyftkFpdAeHxAIig1vTQnsSggP6cyPT8Pog+mKhNkJpgomjUTBG7aZ7ICeRDdINOD3J2c83PyiyAqGWAEwjEumcXZaIYiVMHFg0pzUos5gQzP3MT01ODMqtRikD3BuYk5OQDrRy1O"*)(*]VB*)`}</wljs-editor></WLJSWrapper>
+
+`FaceForm` was implemented, which allows more variations of styling. For instance this one produced by *Country* entity
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`(*VB[*)(Entity["Country", "Canada"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KWnMIB4vkAjLTC13SU3OL0osyS8KZgOKuOaVZJZUBrMDmc75pXklRZVgYefEvMSURACGXRKG"*)(*]VB*)["Flag"]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(FrontEndRef["c9816dec-835a-4871-908b-23cf4f2b01f9"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKJ1taGJqlpCbrWhibJuqaWJgb6loaWCTpGhknp5mkGSUZGKZZAgCBqRV+"*)(*]VB*)`}</wljs-editor></WLJSWrapper>
+
+Date histogram
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`data = (*VB[*)(Get[FileNameJoin[{".iconized", "None-18e.wl"}]])(*,*)(*"1:eJxTTMoPSmNhYGAo5gUSYZmp5S6pyflFiSX5RcEcQBHP5Py8zKrUlEwOMQaGNCaQQpDqoNKc1GBWIMMnMSk1Jxgk5Jefl4qmAMRwy8xJBYuEFJWmAgB7pRh/"*)(*]VB*);
+	DateHistogram[data, ColorFunction->"Rainbow"]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(FrontEndRef["74d56ad0-0662-4cbd-84e3-f965240b5f71"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKm5ukmJolphjoGpiZGemaJCel6FqYpBrrplmamRqZGCSZppkbAgB/ARVG"*)(*]VB*)`}</wljs-editor></WLJSWrapper>
+
+## Improvements in 3D Graphics
+Again, missing primitives were implemented
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(Graphics3D[Cone[{{0, 0, -1}, {0, 0, 1}}]])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRAeF5BwL0osyMhMLjZ2Qahwzs9LTWOC8Xwyi0vSmJF5mUCaAUL8BwKckiADARCUGH8="*)(*]VB*)`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(Graphics3D[{PointLight[RGBColor[1, 0, 0], {-2, -2, 2}], PointLight[RGBColor[0, 1, 0], {2, -2, 2}], PointLight[RGBColor[0, 0, 1], {2, 2, 2}], {Directive["Roughness" -> 1], Icosahedron[1]}}])(*,*)(*"1:eJyd0EsOwiAQgGGqXfg4hWfwBtqkmnRh8ASVQpmkYQxQjy/yCLjRxLj5E5jhW7C7IRUVIcTUPiechnTa+LS6v0tgZt+IOm90YKxY5I0LgrIdjNKKZbhb+dD2cMQJNQQHSE5ayAQ8nXMpAftRjFj1RQzEf2JhP4klSSx/EH9p7dOA5szCg78X6Dzxa5hRnEepuDGJj2+2PmeGppd80Kji5AXx81Mu"*)(*]VB*)`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(FrontEndRef["5c63b648-7829-44d2-9605-b81891f8635c"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKmyabGSeZmVjomlsYWeqamKQY6VqaGZjqJlkYWlgaplmYGZsmAwBxNRSg"*)(*]VB*)`}</wljs-editor></WLJSWrapper>
+
+## Better support of Graph styling
+A beautiful library [__IGraphM__](http://szhorvat.net/pelican/igraphm-a-mathematica-interface-for-igraph.html) made by *Szabolcs Horvát* motivated us to rework `Graph` representation.
+
+PS: It also works in WLJS!
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`Graph[
+	    {1, 2, 3, 4, 5, 6},
+	    {
+	        1<->2,
+	        1<->6,
+	        2<->3,
+	        3<->4,
+	        4<->5,
+	        5<->6
+	    },
+	    {
+	        GraphLayout -> {"Dimension" -> 2, "VertexLayout" -> {"CircularEmbedding", "OptimalOrder" -> False}},
+	        GraphStyle -> "SmallNetwork"
+	    }
+	]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(Graph[{1, 2, 3, 4, 5, 6}, {UndirectedEdge[1, 2], UndirectedEdge[1, 6], UndirectedEdge[2, 3], UndirectedEdge[3, 4], UndirectedEdge[4, 5], UndirectedEdge[5, 6]}, {GraphLayout -> {"Dimension" -> 2, "VertexLayout" -> {"CircularEmbedding", "OptimalOrder" -> False}}, GraphStyle -> "SmallNetwork"}])(*,*)(*"1:eJzNmk2IFEcUx2d3/c7Chlw0CJKAYA4e4n5JQBl019WFQcUZQq7tTM1Y2DO9W9277iwYyS1BQgJCDh5MLuLRBCJZ9LAeEkxCchJkwZAoCYKyxg05BCGRdHVP1+zrmlfdXdbAzGHY7l/3v6r/9d6bqup987RzqtqXy+XcDf7XMceuVPv50Rb/6yizZs7QshvyV/2vyWbDqtPycatO3BmrTMJr+Z0F6nrVzeBogB9t5XdRRsoenSfhKf51bI6wXPD5I9/640GeVYPPo3zYIL+15Ld/tkFc193IZS1WIyHkTZ3wu0C9JuUn2s9QoI14v4Jmh9r9Lzhly6NOo7jNP/cuYR5ZmJ7cvS9o8dCc59R9WnY3+UcTpOERllJgGBfogd6Nd7N3ikdPJzDSzd4pxNMJjHazdwrxdAJj3eydQvyl4w7Wi/5U9eJ2u0ywn3/in9V8NReVrCOVGplyWD0UewWWrNjzd7ykLzo5RW2bVCbm2DxZ76J/3xZwpHIYHLEDb6yunLuxuszufvXlwcENv+RjfFfz23/Of/MkznlnDpNFSljYmQFFE4iE4J9efXvzB0uPk/lf763s2tT/6zp+as4m7qD/R3HG9p90ktQYIZTjDBYo9CH/7O6ltX9fPNCwAJGQ+e5rex4+/+8hOgoyN2KBQh9GCeRZLEAkBP/x7ws/eF8/TeayhUYsUOhDDqMkiwWIhMyRRFDkKm5B7Ac75oGY0/jTqmaBzBOb8rLVfowSWfCK/Kp9qacE/Lbjjj8/WldUYUd5g4ctlxS9pk2K62d1xSGhVbBOE7vd5d4qm/ujodgRRutyjL8eJRTkWaIFkRD8YlQzkvhHYUAvG04YhT7kK2G0a1iASMj8ZpgQ6CjI3IgFCn0YJZBnsQCREPy7qGYkcdlCIxYo9CGHUZLFAkRC5kgiKHI1bdkc1i6bw6nXKobL5nAvls3a7OJrV377fJl9EgzlWnyoJljA8zGeJVoQCcEHA349md95PL3w/oU10wmj0Id8dq89NND3TMMCRELmvwc5+yc6CjI3YoFCH0YJ5FksQCQEvxLw68lcttCIBQp9yGGUZLEAkZA5kgiKXE1bNke0y+ZI6k0Uw2VzpBfLZmt5lmdvdf6Fay0M4lxjeYY20VqbJPPL3ZltKvQhf64920QkZH6/81RLWChzIxYo9GGU3NeebSISgrf2KZK5bKHJrRp0iAS/rD3bRCRkjiSCIlfTls1R7bI5mnp313DZHO3FsrkzGoqlzvsp70QJtaS9t4lICH4nqhlJ/F539jYV+pB/qL23iUjIfHvnjT1hocyNWKDQh1GyXXtvE5EQ/OOoZiRx2UIjFij0Ib+nvbeJSMgcSQRFrqYtm2PaZXMs9Wsnw2VzrBfL5hextVN8qLbFlm8a0YJICP5sFq5QUd5aPplOGIU+5K21lYYFiITMW8svdBRkbsQChT6MEsizWIBICH4rtkJFuWyhEQsU+pDDKMliASIhcyQRFLmatmyOa5fN8dQv2w2XzfHqxs6eBlK8bf663fJKzRkSdK/ErArlHbPs9ot4eAPzq2qJls+6orMdrJyuWzVy0qpUaKOGXbc1uq5IFwn9nlsHLggebsJpeMyxw/8gmrJsl/wP6zTXoQ=="*)(*]VB*)`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`Graph[
+	    {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16},
+	    (*VB[*)(Uncompress["1:eJyF0sEOwiAQBFDU1lppqcde+zHePJn4Awo1c7GJ7f9HlsTrzGUT4E2ywE7P5T6Pzrm1yuWGdZv3tgq5PD4R3/TaUrzGd8Iub8EOuThKcWHC9nGQomfC4qikODFhcdRSDEzU8j2KODNhcTRMNPIuRXRMWBwtE63stIjAhMXhmfCyUy8nqJPz0ctOg/zb4d/HDwpUspY="])(*,*)(*"1:eJxTTMoPSmNmYGAo5gUSYZmp5S6pyflFiSX5RcEcQBHP5Py8zKrUlEwNTgaGNCaQQhYgEVSakxrMCmT4JCal5gSDhPzy81IB4VYSLA=="*)(*]VB*),
+	    {
+	        GraphLayout -> {"Dimension" -> 2, "VertexLayout" -> {"CircularEmbedding", "OptimalOrder" -> False}},
+	        GraphStyle -> "DiagramGreen"
+	    }
+	]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output" encoded="true"  >{`%28%2AVB%5B%2A%29%28CoffeeLiqueur%60Extensions%60Boxes%60Workarounds%60temporal%241115261%29%28%2A%2C%2A%29%28%2A%221%3AeJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKp1iapBoaWFjoJqcmGeiaWJgb6CammKXqpplZmiWaJpqbJBkYAwCF9RWp%22%2A%29%28%2A%5DVB%2A%29`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`Graph[
+	    {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12},
+	    (*VB[*)(Uncompress["1:eJyFzUEOQDAQBdCilBKJIziMnZXEBWgrsyHB/aPTxPbPZpJO3/8zbtcSBqXUo+OY6XlDzq8+jvV0dPv99W5yh6csrog/sdBI8J4KUZRIcJwqJLTYkYRBohSvJFEjwXFqkDBiRxIWiVq8kkSLBMepQ8KKHe3f8QF02X9T"])(*,*)(*"1:eJxTTMoPSmNmYGAo5gUSYZmp5S6pyflFiSX5RcEcQBHP5Py8zKrUlMwONgaGNCaQQhYgEVSakxrMCmT4JCal5gSDhPzy81IB7soSiQ=="*)(*]VB*),
+	    {
+	        GraphLayout -> {"Dimension" -> 2, "VertexLayout" -> {"GridEmbedding", "Dimension" -> {3, 4}}},
+	        GraphStyle -> "VintageDiagram"
+	    }
+	]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output" encoded="true"  >{`%28%2AVB%5B%2A%29%28CoffeeLiqueur%60Extensions%60Boxes%60Workarounds%60temporal%241115523%29%28%2A%2C%2A%29%28%2A%221%3AeJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKW5qlmRibJ6bomqYkm%2BiaWCQn6lpapKbqmhinJZoaASUtDE0BiW0VuQ%3D%3D%22%2A%29%28%2A%5DVB%2A%29`}</wljs-editor></WLJSWrapper>
+
+## More Tutorials!
+We adapted some parts from *An Elementary Introduction to the Wolfram Language* by Stephen Wolfram. New users can jump into that without visiting Wolfram Documentation center.
+
+
+
+<wljs-html encoded="true">{`%0A%3Cstyle%3E%0A%20%20%5Btransparency%3D%22false%22%5D%20.bg-g-trans%20%7B%0A%20%20%20%20background%3A%20transparent%20%21important%3B%0A%20%20%7D%0A%0A%20%20%5Btransparency%3D%22true%22%5D%20.bg-g-trans%20%7B%0A%20%20%20%20background%3A%20transparent%20%21important%3B%0A%20%20%7D%0A%3C%2Fstyle%3E`}</wljs-html>
