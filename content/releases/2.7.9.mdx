@@ -55,7 +55,7 @@ __Progress bar__:
 We extended our autocomplete window to work with WLJS specific symbols. Clicking on 🔎 icon will pop up a window with our documentation search results:
 
 
-![](./attachments/Screenshot%202025-06-20%20at%2019.15.28-471.png)<wljs-html encoded="true">{`%3Cbr%20%2F%3E`}</wljs-html>
+![](./attachments/Screenshot-2025-06-20-at-19.15.28-471.png)<wljs-html encoded="true">{`%3Cbr%20%2F%3E`}</wljs-html>
 
 For Wolfram Language standard symbols an official WR documentation will be opened.
 
@@ -65,7 +65,7 @@ When you copy code from Wolfram Language documentation it may include some speci
 We added a special handler for such cases, that will automatically convert expressions using a local kernel:
 
 
-![](./attachments/Screenshot%202025-06-21%20at%2019.03.28-454.png)
+![](./attachments/Screenshot-2025-06-21-at-19.03.28-454.png)
 
 <WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`i=(*VB[*)(FrontEndRef["a08ba99a-3516-4aa4-a284-d753c6a25ee2"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKJxpYJCVaWibqGpsamumaJCaa6CYaWZjoppibGiebJRqZpqYaAQCDiRWa"*)(*]VB*);`}</wljs-editor></WLJSWrapper>
 
@@ -76,20 +76,20 @@ Make sure, that any kernel is connected to a notebook
 This also works with Mathematica or Wolfram Player __directly__:
 
 
-![](./attachments/Screenshot%202025-06-21%20at%2019.21.36-75c.png)
+![](./attachments/Screenshot-2025-06-21-at-19.21.36-75c.png)
 
 
 ## Better support of Mathematica notebooks
 We made quite a big step towards `.nb` format by writting a custom `Box` converter from `StandardForm` of Mathematica to `StandardForm` of WLJS Notebook. Here are some examples:
 
 
-![](./attachments/Screenshot%202025-06-22%20at%2020.36.22-db2.png)
+![](./attachments/Screenshot-2025-06-22-at-20.36.22-db2.png)
 
 
-![](./attachments/Screenshot%202025-06-22%20at%2019.16.18-1d7.png)
+![](./attachments/Screenshot-2025-06-22-at-19.16.18-1d7.png)
 
 
-![](./attachments/Screenshot%202025-06-22%20at%2020.41.55-881.png)
+![](./attachments/Screenshot-2025-06-22-at-20.41.55-881.png)
 
 ## Drag event expansion
 You might have already used the `drag` event handler on some graphics primitives. We have extended it with a sibling event, `dragsignal`. Here is the catch:
@@ -147,7 +147,7 @@ Evaluate the __cell above__ and try to drag a rectangle. When you drag, it esima
 ## Code Formatter
 We have improved our code formatter, which relies on the official `CodeFormatter` package:
 
-![](./attachments/Screenshot%202025-06-26%20at%2021.00.25-380.png)
+![](./attachments/Screenshot-2025-06-26-at-21.00.25-380.png)
 
 It was broken for a long time, but now it can correctly escape our syntax sugar.
 
@@ -173,7 +173,7 @@ https://wljs.io/frontend/Advanced/Dynamics/Porting%20from%20MMA/
 We reformatted all autocomplete info boxes to make it beautiful:
 
 
-![](./attachments/Screenshot%202025-06-27%20at%2016.43.20-939.png)
+![](./attachments/Screenshot-2025-06-27-at-16.43.20-939.png)
 
 <wljs-html encoded="true">{`%0A%3Cstyle%3E%0A%20%20img%20%7B%0A%20%20%20%20border-radius%3A%200.5rem%3B%0A%20%20%7D%0A%3C%2Fstyle%3E`}</wljs-html>
 
