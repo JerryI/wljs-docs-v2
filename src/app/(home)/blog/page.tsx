@@ -57,7 +57,7 @@ export default function Home() {
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#8882_1px,transparent_1px),linear-gradient(to_bottom,#8882_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_60%,transparent_100%)] opacity-40" />
       </div>
 
-    <main className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-16">
+    <main className="relative mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-16" style={{maxWidth:"calc(min(100vw, var(--fd-layout-width)))"}}>
       {/* Header */}
       <div className="text-center mb-16">
         <p className="text-lg text-fd-muted-foreground max-w-xl mx-auto">

@@ -1,0 +1,1137 @@
+---
+title:  Marching Cubes with LibraryLink
+description: The [Marching Cubes algorithm](https://en.wikipedia.org/wiki/Marching_cubes) is a classic technique for extracting polygonal meshes from 3D scalar fields. In this notebook, we implement it as a C library via LibraryLink and render the resulting surfaces using plain `Graphics3D` with `GraphicsComplex`. The goal is to achieve real-time animation of isosurfaces - potentially thousands of polygons — with smooth shading powered by precomputed gradient normals.
+preview: ./blob.png
+tags:
+  - C/C++
+  - geometry
+  - animation
+  - 3D
+date: 2026-02-16
+author: JerryI
+---
+
+{/* add this script to the body  */}
+{/* https://cdn.jsdelivr.net/gh/WLJSTeam/web-components@latest/src/common/app.js */}
+<wljs-store json="./attachments/06bbe891-22ad-43b0-822c-33a3cd37379b.txt"></wljs-store>
+
+
+## LibraryLink
+To get the performance we need, we write the core algorithm in C and load it into the Wolfram Kernel using **LibraryLink**. This lets us operate directly on packed arrays without any overhead from the high-level language. First, load the required packages:
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true" encoded="true"  >{`Get%5B%22CCompilerDriver%60%22%5D%3B%20%0AGet%5B%22LibraryLink%60%22%5D%3B`}</wljs-editor></WLJSWrapper>
+
+Next, we define a header file containing the precomputed lookup tables for all **256 possible cube configurations** (254 non-trivial cases). Each entry encodes which edges of a cube are intersected by the isosurface and how to triangulate them - this is the heart of the Marching Cubes algorithm:
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true" fade="true" >{`tables.h
+	double linearTable[12][3] = {
+	    {0.5, 0.0, 0.0}, // Edge 0
+	    {1.0, 0.0, 0.5}, // Edge 1
+	    {0.5, 0.0, 1.0}, // Edge 2
+	    {0.0, 0.0, 0.5}, // Edge 3
+	    {0.5, 1.0, 0.0}, // Edge 4
+	    {1.0, 1.0, 0.5}, // Edge 5
+	    {0.5, 1.0, 1.0}, // Edge 6
+	    {0.0, 1.0, 0.5}, // Edge 7
+	    {0.0, 0.5, 0.0}, // Edge 8
+	    {1.0, 0.5, 0.0}, // Edge 9
+	    {1.0, 0.5, 1.0}, // Edge 10
+	    {0.0, 0.5, 1.0}  // Edge 11
+	};
+	
+	int triangulationTable[TRIANGULATION_TABLE_SIZE][16] = {
+	    {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1},
+	    {0, 8, 3, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1},
+	    {0, 1, 9, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1},
+	    {1, 8, 3, 9, 8, 1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1},
+	    {1, 2, 10, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1},
+	    {0, 8, 3, 1, 2, 10, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1},
+	    {9, 2, 10, 0, 2, 9, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1},
+	    {2, 8, 3, 2, 10, 8, 10, 9, 8, -1, -1, -1, -1, -1, -1, -1},
+	    {3, 11, 2, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1},
+	    {0, 11, 2, 8, 11, 0, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1},
+	    {1, 9, 0, 2, 3, 11, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1},
+	    {1, 11, 2, 1, 9, 11, 9, 8, 11, -1, -1, -1, -1, -1, -1, -1},
+	    {3, 10, 1, 11, 10, 3, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1},
+	    {0, 10, 1, 0, 8, 10, 8, 11, 10, -1, -1, -1, -1, -1, -1, -1},
+	    {3, 9, 0, 3, 11, 9, 11, 10, 9, -1, -1, -1, -1, -1, -1, -1},
+	    {9, 8, 10, 10, 8, 11, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1},
+	    {4, 7, 8, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1},
+	    {4, 3, 0, 7, 3, 4, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1},
+	    {0, 1, 9, 8, 4, 7, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1},
+	    {4, 1, 9, 4, 7, 1, 7, 3, 1, -1, -1, -1, -1, -1, -1, -1},
+	    {1, 2, 10, 8, 4, 7, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1},
+	    {3, 4, 7, 3, 0, 4, 1, 2, 10, -1, -1, -1, -1, -1, -1, -1},
+	    {9, 2, 10, 9, 0, 2, 8, 4, 7, -1, -1, -1, -1, -1, -1, -1},
+	    {2, 10, 9, 2, 9, 7, 2, 7, 3, 7, 9, 4, -1, -1, -1, -1},
+	    {8, 4, 7, 3, 11, 2, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1},
+	    {11, 4, 7, 11, 2, 4, 2, 0, 4, -1, -1, -1, -1, -1, -1, -1},
+	    {9, 0, 1, 8, 4, 7, 2, 3, 11, -1, -1, -1, -1, -1, -1, -1},
+	    {4, 7, 11, 9, 4, 11, 9, 11, 2, 9, 2, 1, -1, -1, -1, -1},
+	    {3, 10, 1, 3, 11, 10, 7, 8, 4, -1, -1, -1, -1, -1, -1, -1},
+	    {1, 11, 10, 1, 4, 11, 1, 0, 4, 7, 11, 4, -1, -1, -1, -1},
+	    {4, 7, 8, 9, 0, 11, 9, 11, 10, 11, 0, 3, -1, -1, -1, -1},
+	    {4, 7, 11, 4, 11, 9, 9, 11, 10, -1, -1, -1, -1, -1, -1, -1},
+	    {9, 5, 4, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1},
+	    {9, 5, 4, 0, 8, 3, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1},
+	    {0, 5, 4, 1, 5, 0, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1},
+	    {8, 5, 4, 8, 3, 5, 3, 1, 5, -1, -1, -1, -1, -1, -1, -1},
+	    {1, 2, 10, 9, 5, 4, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1},
+	    {3, 0, 8, 1, 2, 10, 4, 9, 5, -1, -1, -1, -1, -1, -1, -1},
+	    {5, 2, 10, 5, 4, 2, 4, 0, 2, -1, -1, -1, -1, -1, -1, -1},
+	    {2, 10, 5, 3, 2, 5, 3, 5, 4, 3, 4, 8, -1, -1, -1, -1},
+	    {9, 5, 4, 2, 3, 11, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1},
+	    {0, 11, 2, 0, 8, 11, 4, 9, 5, -1, -1, -1, -1, -1, -1, -1},
+	    {0, 5, 4, 0, 1, 5, 2, 3, 11, -1, -1, -1, -1, -1, -1, -1},
+	    {2, 1, 5, 2, 5, 8, 2, 8, 11, 4, 8, 5, -1, -1, -1, -1},
+	    {10, 3, 11, 10, 1, 3, 9, 5, 4, -1, -1, -1, -1, -1, -1, -1},
+	    {4, 9, 5, 0, 8, 1, 8, 10, 1, 8, 11, 10, -1, -1, -1, -1},
+	    {5, 4, 0, 5, 0, 11, 5, 11, 10, 11, 0, 3, -1, -1, -1, -1},
+	    {5, 4, 8, 5, 8, 10, 10, 8, 11, -1, -1, -1, -1, -1, -1, -1},
+	    {9, 7, 8, 5, 7, 9, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1},
+	    {9, 3, 0, 9, 5, 3, 5, 7, 3, -1, -1, -1, -1, -1, -1, -1},
+	    {0, 7, 8, 0, 1, 7, 1, 5, 7, -1, -1, -1, -1, -1, -1, -1},
+	    {1, 5, 3, 3, 5, 7, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1},
+	    {9, 7, 8, 9, 5, 7, 10, 1, 2, -1, -1, -1, -1, -1, -1, -1},
+	    {10, 1, 2, 9, 5, 0, 5, 3, 0, 5, 7, 3, -1, -1, -1, -1},
+	    {8, 0, 2, 8, 2, 5, 8, 5, 7, 10, 5, 2, -1, -1, -1, -1},
+	    {2, 10, 5, 2, 5, 3, 3, 5, 7, -1, -1, -1, -1, -1, -1, -1},
+	    {7, 9, 5, 7, 8, 9, 3, 11, 2, -1, -1, -1, -1, -1, -1, -1},
+	    {9, 5, 7, 9, 7, 2, 9, 2, 0, 2, 7, 11, -1, -1, -1, -1},
+	    {2, 3, 11, 0, 1, 8, 1, 7, 8, 1, 5, 7, -1, -1, -1, -1},
+	    {11, 2, 1, 11, 1, 7, 7, 1, 5, -1, -1, -1, -1, -1, -1, -1},
+	    {9, 5, 8, 8, 5, 7, 10, 1, 3, 10, 3, 11, -1, -1, -1, -1},
+	    {5, 7, 0, 5, 0, 9, 7, 11, 0, 1, 0, 10, 11, 10, 0, -1},
+	    {11, 10, 0, 11, 0, 3, 10, 5, 0, 8, 0, 7, 5, 7, 0, -1},
+	    {11, 10, 5, 7, 11, 5, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1},
+	    {10, 6, 5, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1},
+	    {0, 8, 3, 5, 10, 6, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1},
+	    {9, 0, 1, 5, 10, 6, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1},
+	    {1, 8, 3, 1, 9, 8, 5, 10, 6, -1, -1, -1, -1, -1, -1, -1},
+	    {1, 6, 5, 2, 6, 1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1},
+	    {1, 6, 5, 1, 2, 6, 3, 0, 8, -1, -1, -1, -1, -1, -1, -1},
+	    {9, 6, 5, 9, 0, 6, 0, 2, 6, -1, -1, -1, -1, -1, -1, -1},
+	    {5, 9, 8, 5, 8, 2, 5, 2, 6, 3, 2, 8, -1, -1, -1, -1},
+	    {2, 3, 11, 10, 6, 5, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1},
+	    {11, 0, 8, 11, 2, 0, 10, 6, 5, -1, -1, -1, -1, -1, -1, -1},
+	    {0, 1, 9, 2, 3, 11, 5, 10, 6, -1, -1, -1, -1, -1, -1, -1},
+	    {5, 10, 6, 1, 9, 2, 9, 11, 2, 9, 8, 11, -1, -1, -1, -1},
+	    {6, 3, 11, 6, 5, 3, 5, 1, 3, -1, -1, -1, -1, -1, -1, -1},
+	    {0, 8, 11, 0, 11, 5, 0, 5, 1, 5, 11, 6, -1, -1, -1, -1},
+	    {3, 11, 6, 0, 3, 6, 0, 6, 5, 0, 5, 9, -1, -1, -1, -1},
+	    {6, 5, 9, 6, 9, 11, 11, 9, 8, -1, -1, -1, -1, -1, -1, -1},
+	    {5, 10, 6, 4, 7, 8, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1},
+	    {4, 3, 0, 4, 7, 3, 6, 5, 10, -1, -1, -1, -1, -1, -1, -1},
+	    {1, 9, 0, 5, 10, 6, 8, 4, 7, -1, -1, -1, -1, -1, -1, -1},
+	    {10, 6, 5, 1, 9, 7, 1, 7, 3, 7, 9, 4, -1, -1, -1, -1},
+	    {6, 1, 2, 6, 5, 1, 4, 7, 8, -1, -1, -1, -1, -1, -1, -1},
+	    {1, 2, 5, 5, 2, 6, 3, 0, 4, 3, 4, 7, -1, -1, -1, -1},
+	    {8, 4, 7, 9, 0, 5, 0, 6, 5, 0, 2, 6, -1, -1, -1, -1},
+	    {7, 3, 9, 7, 9, 4, 3, 2, 9, 5, 9, 6, 2, 6, 9, -1},
+	    {3, 11, 2, 7, 8, 4, 10, 6, 5, -1, -1, -1, -1, -1, -1, -1},
+	    {5, 10, 6, 4, 7, 2, 4, 2, 0, 2, 7, 11, -1, -1, -1, -1},
+	    {0, 1, 9, 4, 7, 8, 2, 3, 11, 5, 10, 6, -1, -1, -1, -1},
+	    {9, 2, 1, 9, 11, 2, 9, 4, 11, 7, 11, 4, 5, 10, 6, -1},
+	    {8, 4, 7, 3, 11, 5, 3, 5, 1, 5, 11, 6, -1, -1, -1, -1},
+	    {5, 1, 11, 5, 11, 6, 1, 0, 11, 7, 11, 4, 0, 4, 11, -1},
+	    {0, 5, 9, 0, 6, 5, 0, 3, 6, 11, 6, 3, 8, 4, 7, -1},
+	    {6, 5, 9, 6, 9, 11, 4, 7, 9, 7, 11, 9, -1, -1, -1, -1},
+	    {10, 4, 9, 6, 4, 10, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1},
+	    {4, 10, 6, 4, 9, 10, 0, 8, 3, -1, -1, -1, -1, -1, -1, -1},
+	    {10, 0, 1, 10, 6, 0, 6, 4, 0, -1, -1, -1, -1, -1, -1, -1},
+	    {8, 3, 1, 8, 1, 6, 8, 6, 4, 6, 1, 10, -1, -1, -1, -1},
+	    {1, 4, 9, 1, 2, 4, 2, 6, 4, -1, -1, -1, -1, -1, -1, -1},
+	    {3, 0, 8, 1, 2, 9, 2, 4, 9, 2, 6, 4, -1, -1, -1, -1},
+	    {0, 2, 4, 4, 2, 6, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1},
+	    {8, 3, 2, 8, 2, 4, 4, 2, 6, -1, -1, -1, -1, -1, -1, -1},
+	    {10, 4, 9, 10, 6, 4, 11, 2, 3, -1, -1, -1, -1, -1, -1, -1},
+	    {0, 8, 2, 2, 8, 11, 4, 9, 10, 4, 10, 6, -1, -1, -1, -1},
+	    {3, 11, 2, 0, 1, 6, 0, 6, 4, 6, 1, 10, -1, -1, -1, -1},
+	    {6, 4, 1, 6, 1, 10, 4, 8, 1, 2, 1, 11, 8, 11, 1, -1},
+	    {9, 6, 4, 9, 3, 6, 9, 1, 3, 11, 6, 3, -1, -1, -1, -1},
+	    {8, 11, 1, 8, 1, 0, 11, 6, 1, 9, 1, 4, 6, 4, 1, -1},
+	    {3, 11, 6, 3, 6, 0, 0, 6, 4, -1, -1, -1, -1, -1, -1, -1},
+	    {6, 4, 8, 11, 6, 8, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1},
+	    {7, 10, 6, 7, 8, 10, 8, 9, 10, -1, -1, -1, -1, -1, -1, -1},
+	    {0, 7, 3, 0, 10, 7, 0, 9, 10, 6, 7, 10, -1, -1, -1, -1},
+	    {10, 6, 7, 1, 10, 7, 1, 7, 8, 1, 8, 0, -1, -1, -1, -1},
+	    {10, 6, 7, 10, 7, 1, 1, 7, 3, -1, -1, -1, -1, -1, -1, -1},
+	    {1, 2, 6, 1, 6, 8, 1, 8, 9, 8, 6, 7, -1, -1, -1, -1},
+	    {2, 6, 9, 2, 9, 1, 6, 7, 9, 0, 9, 3, 7, 3, 9, -1},
+	    {7, 8, 0, 7, 0, 6, 6, 0, 2, -1, -1, -1, -1, -1, -1, -1},
+	    {7, 3, 2, 6, 7, 2, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1},
+	    {2, 3, 11, 10, 6, 8, 10, 8, 9, 8, 6, 7, -1, -1, -1, -1},
+	    {2, 0, 7, 2, 7, 11, 0, 9, 7, 6, 7, 10, 9, 10, 7, -1},
+	    {1, 8, 0, 1, 7, 8, 1, 10, 7, 6, 7, 10, 2, 3, 11, -1},
+	    {11, 2, 1, 11, 1, 7, 10, 6, 1, 6, 7, 1, -1, -1, -1, -1},
+	    {8, 9, 6, 8, 6, 7, 9, 1, 6, 11, 6, 3, 1, 3, 6, -1},
+	    {0, 9, 1, 11, 6, 7, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1},
+	    {7, 8, 0, 7, 0, 6, 3, 11, 0, 11, 6, 0, -1, -1, -1, -1},
+	    {7, 11, 6, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1},
+	    {7, 6, 11, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1},
+	    {3, 0, 8, 11, 7, 6, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1},
+	    {0, 1, 9, 11, 7, 6, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1},
+	    {8, 1, 9, 8, 3, 1, 11, 7, 6, -1, -1, -1, -1, -1, -1, -1},
+	    {10, 1, 2, 6, 11, 7, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1},
+	    {1, 2, 10, 3, 0, 8, 6, 11, 7, -1, -1, -1, -1, -1, -1, -1},
+	    {2, 9, 0, 2, 10, 9, 6, 11, 7, -1, -1, -1, -1, -1, -1, -1},
+	    {6, 11, 7, 2, 10, 3, 10, 8, 3, 10, 9, 8, -1, -1, -1, -1},
+	    {7, 2, 3, 6, 2, 7, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1},
+	    {7, 0, 8, 7, 6, 0, 6, 2, 0, -1, -1, -1, -1, -1, -1, -1},
+	    {2, 7, 6, 2, 3, 7, 0, 1, 9, -1, -1, -1, -1, -1, -1, -1},
+	    {1, 6, 2, 1, 8, 6, 1, 9, 8, 8, 7, 6, -1, -1, -1, -1},
+	    {10, 7, 6, 10, 1, 7, 1, 3, 7, -1, -1, -1, -1, -1, -1, -1},
+	    {10, 7, 6, 1, 7, 10, 1, 8, 7, 1, 0, 8, -1, -1, -1, -1},
+	    {0, 3, 7, 0, 7, 10, 0, 10, 9, 6, 10, 7, -1, -1, -1, -1},
+	    {7, 6, 10, 7, 10, 8, 8, 10, 9, -1, -1, -1, -1, -1, -1, -1},
+	    {6, 8, 4, 11, 8, 6, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1},
+	    {3, 6, 11, 3, 0, 6, 0, 4, 6, -1, -1, -1, -1, -1, -1, -1},
+	    {8, 6, 11, 8, 4, 6, 9, 0, 1, -1, -1, -1, -1, -1, -1, -1},
+	    {9, 4, 6, 9, 6, 3, 9, 3, 1, 11, 3, 6, -1, -1, -1, -1},
+	    {6, 8, 4, 6, 11, 8, 2, 10, 1, -1, -1, -1, -1, -1, -1, -1},
+	    {1, 2, 10, 3, 0, 11, 0, 6, 11, 0, 4, 6, -1, -1, -1, -1},
+	    {4, 11, 8, 4, 6, 11, 0, 2, 9, 2, 10, 9, -1, -1, -1, -1},
+	    {10, 9, 3, 10, 3, 2, 9, 4, 3, 11, 3, 6, 4, 6, 3, -1},
+	    {8, 2, 3, 8, 4, 2, 4, 6, 2, -1, -1, -1, -1, -1, -1, -1},
+	    {0, 4, 2, 4, 6, 2, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1},
+	    {1, 9, 0, 2, 3, 4, 2, 4, 6, 4, 3, 8, -1, -1, -1, -1},
+	    {1, 9, 4, 1, 4, 2, 2, 4, 6, -1, -1, -1, -1, -1, -1, -1},
+	    {8, 1, 3, 8, 6, 1, 8, 4, 6, 6, 10, 1, -1, -1, -1, -1},
+	    {10, 1, 0, 10, 0, 6, 6, 0, 4, -1, -1, -1, -1, -1, -1, -1},
+	    {4, 6, 3, 4, 3, 8, 6, 10, 3, 0, 3, 9, 10, 9, 3, -1},
+	    {10, 9, 4, 6, 10, 4, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1},
+	    {4, 9, 5, 7, 6, 11, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1},
+	    {0, 8, 3, 4, 9, 5, 11, 7, 6, -1, -1, -1, -1, -1, -1, -1},
+	    {5, 0, 1, 5, 4, 0, 7, 6, 11, -1, -1, -1, -1, -1, -1, -1},
+	    {11, 7, 6, 8, 3, 4, 3, 5, 4, 3, 1, 5, -1, -1, -1, -1},
+	    {9, 5, 4, 10, 1, 2, 7, 6, 11, -1, -1, -1, -1, -1, -1, -1},
+	    {6, 11, 7, 1, 2, 10, 0, 8, 3, 4, 9, 5, -1, -1, -1, -1},
+	    {7, 6, 11, 5, 4, 10, 4, 2, 10, 4, 0, 2, -1, -1, -1, -1},
+	    {3, 4, 8, 3, 5, 4, 3, 2, 5, 10, 5, 2, 11, 7, 6, -1},
+	    {7, 2, 3, 7, 6, 2, 5, 4, 9, -1, -1, -1, -1, -1, -1, -1},
+	    {9, 5, 4, 0, 8, 6, 0, 6, 2, 6, 8, 7, -1, -1, -1, -1},
+	    {3, 6, 2, 3, 7, 6, 1, 5, 0, 5, 4, 0, -1, -1, -1, -1},
+	    {6, 2, 8, 6, 8, 7, 2, 1, 8, 4, 8, 5, 1, 5, 8, -1},
+	    {9, 5, 4, 10, 1, 6, 1, 7, 6, 1, 3, 7, -1, -1, -1, -1},
+	    {1, 6, 10, 1, 7, 6, 1, 0, 7, 8, 7, 0, 9, 5, 4, -1},
+	    {4, 0, 10, 4, 10, 5, 0, 3, 10, 6, 10, 7, 3, 7, 10, -1},
+	    {7, 6, 10, 7, 10, 8, 5, 4, 10, 4, 8, 10, -1, -1, -1, -1},
+	    {6, 9, 5, 6, 11, 9, 11, 8, 9, -1, -1, -1, -1, -1, -1, -1},
+	    {3, 6, 11, 0, 6, 3, 0, 5, 6, 0, 9, 5, -1, -1, -1, -1},
+	    {0, 11, 8, 0, 5, 11, 0, 1, 5, 5, 6, 11, -1, -1, -1, -1},
+	    {6, 11, 3, 6, 3, 5, 5, 3, 1, -1, -1, -1, -1, -1, -1, -1},
+	    {1, 2, 10, 9, 5, 11, 9, 11, 8, 11, 5, 6, -1, -1, -1, -1},
+	    {0, 11, 3, 0, 6, 11, 0, 9, 6, 5, 6, 9, 1, 2, 10, -1},
+	    {11, 8, 5, 11, 5, 6, 8, 0, 5, 10, 5, 2, 0, 2, 5, -1},
+	    {6, 11, 3, 6, 3, 5, 2, 10, 3, 10, 5, 3, -1, -1, -1, -1},
+	    {5, 8, 9, 5, 2, 8, 5, 6, 2, 3, 8, 2, -1, -1, -1, -1},
+	    {9, 5, 6, 9, 6, 0, 0, 6, 2, -1, -1, -1, -1, -1, -1, -1},
+	    {1, 5, 8, 1, 8, 0, 5, 6, 8, 3, 8, 2, 6, 2, 8, -1},
+	    {1, 5, 6, 2, 1, 6, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1},
+	    {1, 3, 6, 1, 6, 10, 3, 8, 6, 5, 6, 9, 8, 9, 6, -1},
+	    {10, 1, 0, 10, 0, 6, 9, 5, 0, 5, 6, 0, -1, -1, -1, -1},
+	    {0, 3, 8, 5, 6, 10, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1},
+	    {10, 5, 6, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1},
+	    {11, 5, 10, 7, 5, 11, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1},
+	    {11, 5, 10, 11, 7, 5, 8, 3, 0, -1, -1, -1, -1, -1, -1, -1},
+	    {5, 11, 7, 5, 10, 11, 1, 9, 0, -1, -1, -1, -1, -1, -1, -1},
+	    {10, 7, 5, 10, 11, 7, 9, 8, 1, 8, 3, 1, -1, -1, -1, -1},
+	    {11, 1, 2, 11, 7, 1, 7, 5, 1, -1, -1, -1, -1, -1, -1, -1},
+	    {0, 8, 3, 1, 2, 7, 1, 7, 5, 7, 2, 11, -1, -1, -1, -1},
+	    {9, 7, 5, 9, 2, 7, 9, 0, 2, 2, 11, 7, -1, -1, -1, -1},
+	    {7, 5, 2, 7, 2, 11, 5, 9, 2, 3, 2, 8, 9, 8, 2, -1},
+	    {2, 5, 10, 2, 3, 5, 3, 7, 5, -1, -1, -1, -1, -1, -1, -1},
+	    {8, 2, 0, 8, 5, 2, 8, 7, 5, 10, 2, 5, -1, -1, -1, -1},
+	    {9, 0, 1, 5, 10, 3, 5, 3, 7, 3, 10, 2, -1, -1, -1, -1},
+	    {9, 8, 2, 9, 2, 1, 8, 7, 2, 10, 2, 5, 7, 5, 2, -1},
+	    {1, 3, 5, 3, 7, 5, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1},
+	    {0, 8, 7, 0, 7, 1, 1, 7, 5, -1, -1, -1, -1, -1, -1, -1},
+	    {9, 0, 3, 9, 3, 5, 5, 3, 7, -1, -1, -1, -1, -1, -1, -1},
+	    {9, 8, 7, 5, 9, 7, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1},
+	    {5, 8, 4, 5, 10, 8, 10, 11, 8, -1, -1, -1, -1, -1, -1, -1},
+	    {5, 0, 4, 5, 11, 0, 5, 10, 11, 11, 3, 0, -1, -1, -1, -1},
+	    {0, 1, 9, 8, 4, 10, 8, 10, 11, 10, 4, 5, -1, -1, -1, -1},
+	    {10, 11, 4, 10, 4, 5, 11, 3, 4, 9, 4, 1, 3, 1, 4, -1},
+	    {2, 5, 1, 2, 8, 5, 2, 11, 8, 4, 5, 8, -1, -1, -1, -1},
+	    {0, 4, 11, 0, 11, 3, 4, 5, 11, 2, 11, 1, 5, 1, 11, -1},
+	    {0, 2, 5, 0, 5, 9, 2, 11, 5, 4, 5, 8, 11, 8, 5, -1},
+	    {9, 4, 5, 2, 11, 3, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1},
+	    {2, 5, 10, 3, 5, 2, 3, 4, 5, 3, 8, 4, -1, -1, -1, -1},
+	    {5, 10, 2, 5, 2, 4, 4, 2, 0, -1, -1, -1, -1, -1, -1, -1},
+	    {3, 10, 2, 3, 5, 10, 3, 8, 5, 4, 5, 8, 0, 1, 9, -1},
+	    {5, 10, 2, 5, 2, 4, 1, 9, 2, 9, 4, 2, -1, -1, -1, -1},
+	    {8, 4, 5, 8, 5, 3, 3, 5, 1, -1, -1, -1, -1, -1, -1, -1},
+	    {0, 4, 5, 1, 0, 5, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1},
+	    {8, 4, 5, 8, 5, 3, 9, 0, 5, 0, 3, 5, -1, -1, -1, -1},
+	    {9, 4, 5, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1},
+	    {4, 11, 7, 4, 9, 11, 9, 10, 11, -1, -1, -1, -1, -1, -1, -1},
+	    {0, 8, 3, 4, 9, 7, 9, 11, 7, 9, 10, 11, -1, -1, -1, -1},
+	    {1, 10, 11, 1, 11, 4, 1, 4, 0, 7, 4, 11, -1, -1, -1, -1},
+	    {3, 1, 4, 3, 4, 8, 1, 10, 4, 7, 4, 11, 10, 11, 4, -1},
+	    {4, 11, 7, 9, 11, 4, 9, 2, 11, 9, 1, 2, -1, -1, -1, -1},
+	    {9, 7, 4, 9, 11, 7, 9, 1, 11, 2, 11, 1, 0, 8, 3, -1},
+	    {11, 7, 4, 11, 4, 2, 2, 4, 0, -1, -1, -1, -1, -1, -1, -1},
+	    {11, 7, 4, 11, 4, 2, 8, 3, 4, 3, 2, 4, -1, -1, -1, -1},
+	    {2, 9, 10, 2, 7, 9, 2, 3, 7, 7, 4, 9, -1, -1, -1, -1},
+	    {9, 10, 7, 9, 7, 4, 10, 2, 7, 8, 7, 0, 2, 0, 7, -1},
+	    {3, 7, 10, 3, 10, 2, 7, 4, 10, 1, 10, 0, 4, 0, 10, -1},
+	    {1, 10, 2, 8, 7, 4, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1},
+	    {4, 9, 1, 4, 1, 7, 7, 1, 3, -1, -1, -1, -1, -1, -1, -1},
+	    {4, 9, 1, 4, 1, 7, 0, 8, 1, 8, 7, 1, -1, -1, -1, -1},
+	    {4, 0, 3, 7, 4, 3, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1},
+	    {4, 8, 7, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1},
+	    {9, 10, 8, 10, 11, 8, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1},
+	    {3, 0, 9, 3, 9, 11, 11, 9, 10, -1, -1, -1, -1, -1, -1, -1},
+	    {0, 1, 10, 0, 10, 8, 8, 10, 11, -1, -1, -1, -1, -1, -1, -1},
+	    {3, 1, 10, 11, 3, 10, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1},
+	    {1, 2, 11, 1, 11, 9, 9, 11, 8, -1, -1, -1, -1, -1, -1, -1},
+	    {3, 0, 9, 3, 9, 11, 1, 2, 9, 2, 11, 9, -1, -1, -1, -1},
+	    {0, 2, 11, 8, 0, 11, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1},
+	    {3, 2, 11, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1},
+	    {2, 3, 8, 2, 8, 10, 10, 8, 9, -1, -1, -1, -1, -1, -1, -1},
+	    {9, 10, 2, 0, 9, 2, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1},
+	    {2, 3, 8, 2, 8, 10, 0, 1, 8, 1, 10, 8, -1, -1, -1, -1},
+	    {1, 10, 2, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1},
+	    {1, 3, 8, 9, 1, 8, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1},
+	    {0, 9, 1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1},
+	    {0, 3, 8, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1},
+	    {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1}
+	};
+	`}</wljs-editor></WLJSWrapper>
+
+Now for the main implementation. The algorithm marches through every cell (cube) in a 3D scalar volume, classifies each cube's vertex configuration against the isovalue, and emits triangles accordingly. It builds an **indexed triangle mesh** (unique vertices + triangle indices) using fast cross-cube edge caching to avoid duplicate vertices. For each vertex, a **surface normal** is computed from the scalar-field gradient via central differences with boundary clamping, trilinearly interpolated at the vertex position. The `process` function fills internal buffers in a single pass, and `getVertices`, `getIndices`, and `getNormals` return the three corresponding arrays to the Wolfram Kernel:
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true" fade="true" >{`main.c
+	#include <stdlib.h>
+	#include <string.h>
+	#include <math.h>
+	
+	#include "WolframLibrary.h"
+	#include "WolframNumericArrayLibrary.h"
+	
+	#define TRIANGULATION_TABLE_SIZE 256
+	
+	#include "tables.h"
+	
+	/* =========================
+	   Global mesh buffers
+	   ========================= */
+	static double *gVertices = NULL;     /* length = 3*gV */
+	static double *gNormals  = NULL;     /* length = 3*gV */
+	static mint   *gIndices  = NULL;     /* length = 3*gT (1-based for Mathematica) */
+	
+	static mint gV = 0;                  /* number of vertices */
+	static mint gT = 0;                  /* number of triangles */
+	
+	static mint gVCap = 0;
+	static mint gTCap = 0;
+	
+	/* Single-threaded use as requested: globals are OK. */
+	
+	/* =========================
+	   Edge index caches (cross-cube)
+	   Store vertex index (0-based) for each global edge, -1 means unset.
+	   We keep two z-planes for X/Y edges, and one slab for Z edges.
+	   ========================= */
+	static mint *xIdxLower = NULL, *xIdxUpper = NULL; /* size: H*(W-1) */
+	static mint *yIdxLower = NULL, *yIdxUpper = NULL; /* size: (H-1)*W */
+	static mint *zIdxSlab  = NULL;                    /* size: H*W */
+	static mint cacheW = 0, cacheH = 0;
+	
+	static int ensureIndexCaches(mint W, mint H) {
+	    if (W <= 1 || H <= 1) return 1;
+	
+	    if (cacheW == W && cacheH == H &&
+	        xIdxLower && xIdxUpper && yIdxLower && yIdxUpper && zIdxSlab) {
+	        return 1;
+	    }
+	
+	    free(xIdxLower); free(xIdxUpper);
+	    free(yIdxLower); free(yIdxUpper);
+	    free(zIdxSlab);
+	
+	    xIdxLower = xIdxUpper = NULL;
+	    yIdxLower = yIdxUpper = NULL;
+	    zIdxSlab  = NULL;
+	
+	    cacheW = cacheH = 0;
+	
+	    const size_t xCount = (size_t)H * (size_t)(W - 1);
+	    const size_t yCount = (size_t)(H - 1) * (size_t)W;
+	    const size_t zCount = (size_t)H * (size_t)W;
+	
+	    xIdxLower = (mint*)malloc(xCount * sizeof(mint));
+	    xIdxUpper = (mint*)malloc(xCount * sizeof(mint));
+	    yIdxLower = (mint*)malloc(yCount * sizeof(mint));
+	    yIdxUpper = (mint*)malloc(yCount * sizeof(mint));
+	    zIdxSlab  = (mint*)malloc(zCount * sizeof(mint));
+	
+	    if (!xIdxLower || !xIdxUpper || !yIdxLower || !yIdxUpper || !zIdxSlab) {
+	        free(xIdxLower); free(xIdxUpper);
+	        free(yIdxLower); free(yIdxUpper);
+	        free(zIdxSlab);
+	
+	        xIdxLower = xIdxUpper = NULL;
+	        yIdxLower = yIdxUpper = NULL;
+	        zIdxSlab  = NULL;
+	        return 0;
+	    }
+	
+	    /* init to -1 */
+	    for (size_t i = 0; i < xCount; ++i) xIdxLower[i] = xIdxUpper[i] = (mint)-1;
+	    for (size_t i = 0; i < yCount; ++i) yIdxLower[i] = yIdxUpper[i] = (mint)-1;
+	    for (size_t i = 0; i < zCount; ++i) zIdxSlab[i]  = (mint)-1;
+	
+	    cacheW = W;
+	    cacheH = H;
+	    return 1;
+	}
+	
+	static inline void resetCachesForZ0(mint W, mint H) {
+	    const size_t xCount = (size_t)H * (size_t)(W - 1);
+	    const size_t yCount = (size_t)(H - 1) * (size_t)W;
+	    const size_t zCount = (size_t)H * (size_t)W;
+	
+	    for (size_t i = 0; i < xCount; ++i) xIdxLower[i] = xIdxUpper[i] = (mint)-1;
+	    for (size_t i = 0; i < yCount; ++i) yIdxLower[i] = yIdxUpper[i] = (mint)-1;
+	    for (size_t i = 0; i < zCount; ++i) zIdxSlab[i]  = (mint)-1;
+	}
+	
+	static inline void rollCachesForNextZ(mint W, mint H) {
+	    const size_t xCount = (size_t)H * (size_t)(W - 1);
+	    const size_t yCount = (size_t)(H - 1) * (size_t)W;
+	    const size_t zCount = (size_t)H * (size_t)W;
+	
+	    mint *tmp;
+	    tmp = xIdxLower; xIdxLower = xIdxUpper; xIdxUpper = tmp;
+	    tmp = yIdxLower; yIdxLower = yIdxUpper; yIdxUpper = tmp;
+	
+	    for (size_t i = 0; i < xCount; ++i) xIdxUpper[i] = (mint)-1;
+	    for (size_t i = 0; i < yCount; ++i) yIdxUpper[i] = (mint)-1;
+	    for (size_t i = 0; i < zCount; ++i) zIdxSlab[i]  = (mint)-1;
+	}
+	
+	/* =========================
+	   Dynamic buffer helpers
+	   ========================= */
+	static int ensureVertexCapacity(mint needV) {
+	    if (needV <= gVCap) return 1;
+	    mint newCap = (gVCap > 0) ? gVCap : 1024;
+	    while (newCap < needV) newCap *= 2;
+	
+	    double *newVerts = (double*)realloc(gVertices, (size_t)newCap * 3u * sizeof(double));
+	    double *newNorms = (double*)realloc(gNormals,  (size_t)newCap * 3u * sizeof(double));
+	    if (!newVerts || !newNorms) {
+	        /* if one realloc fails, we must not lose original pointers:
+	           but realloc returning NULL leaves original unchanged; we’re safe. */
+	        if (newVerts) gVertices = newVerts;
+	        if (newNorms) gNormals  = newNorms;
+	        return 0;
+	    }
+	    gVertices = newVerts;
+	    gNormals  = newNorms;
+	    gVCap     = newCap;
+	    return 1;
+	}
+	
+	static int ensureTriCapacity(mint needT) {
+	    if (needT <= gTCap) return 1;
+	    mint newCap = (gTCap > 0) ? gTCap : 1024;
+	    while (newCap < needT) newCap *= 2;
+	
+	    mint *newIdx = (mint*)realloc(gIndices, (size_t)newCap * 3u * sizeof(mint));
+	    if (!newIdx) return 0;
+	    gIndices = newIdx;
+	    gTCap    = newCap;
+	    return 1;
+	}
+	
+	/* =========================
+	   Utility: clamp
+	   ========================= */
+	static inline mint clamp_mint(mint v, mint lo, mint hi) {
+	    return (v < lo) ? lo : (v > hi) ? hi : v;
+	}
+	
+	/* =========================
+	   Option B normals: gradient from scalar field
+	   - Vertex position is in world coordinates
+	   - Convert to grid coords (gx,gy,gz) = pos / res
+	   - Compute gradient at surrounding 8 lattice points using central diffs
+	   - Trilinear interpolate gradient
+	   ========================= */
+	
+	static inline double sampleFieldClamped(const double *img, mint strideY, mint strideZ,
+	                                        mint D, mint H, mint W,
+	                                        mint z, mint y, mint x) {
+	    z = clamp_mint(z, 0, D - 1);
+	    y = clamp_mint(y, 0, H - 1);
+	    x = clamp_mint(x, 0, W - 1);
+	    return img[(mint)z * strideZ + (mint)y * strideY + x];
+	}
+	
+	static inline void gradientAtGridPoint(const double *img, mint strideY, mint strideZ,
+	                                       mint D, mint H, mint W,
+	                                       mint z, mint y, mint x,
+	                                       double res,
+	                                       double g[3]) {
+	    /* central differences with clamping at boundaries */
+	    const double fx1 = sampleFieldClamped(img, strideY, strideZ, D, H, W, z, y, x + 1);
+	    const double fx0 = sampleFieldClamped(img, strideY, strideZ, D, H, W, z, y, x - 1);
+	    const double fy1 = sampleFieldClamped(img, strideY, strideZ, D, H, W, z, y + 1, x);
+	    const double fy0 = sampleFieldClamped(img, strideY, strideZ, D, H, W, z, y - 1, x);
+	    const double fz1 = sampleFieldClamped(img, strideY, strideZ, D, H, W, z + 1, y, x);
+	    const double fz0 = sampleFieldClamped(img, strideY, strideZ, D, H, W, z - 1, y, x);
+	
+	    const double inv2r = 1.0 / (2.0 * res);
+	    g[0] = (fx1 - fx0) * inv2r;
+	    g[1] = (fy1 - fy0) * inv2r;
+	    g[2] = (fz1 - fz0) * inv2r;
+	}
+	
+	static inline void trilerp3(const double a000[3], const double a100[3], const double a010[3], const double a110[3],
+	                            const double a001[3], const double a101[3], const double a011[3], const double a111[3],
+	                            double fx, double fy, double fz,
+	                            double out[3]) {
+	    /* lerp along x */
+	    double x00[3], x10[3], x01[3], x11[3];
+	    for (int i = 0; i < 3; ++i) {
+	        x00[i] = a000[i] + fx * (a100[i] - a000[i]);
+	        x10[i] = a010[i] + fx * (a110[i] - a010[i]);
+	        x01[i] = a001[i] + fx * (a101[i] - a001[i]);
+	        x11[i] = a011[i] + fx * (a111[i] - a011[i]);
+	    }
+	    /* lerp along y */
+	    double y0[3], y1[3];
+	    for (int i = 0; i < 3; ++i) {
+	        y0[i] = x00[i] + fy * (x10[i] - x00[i]);
+	        y1[i] = x01[i] + fy * (x11[i] - x01[i]);
+	    }
+	    /* lerp along z */
+	    for (int i = 0; i < 3; ++i) {
+	        out[i] = y0[i] + fz * (y1[i] - y0[i]);
+	    }
+	}
+	
+	static inline void normalFromFieldGradient(const double *img, mint strideY, mint strideZ,
+	                                           mint D, mint H, mint W,
+	                                           double res,
+	                                           const double pos[3],
+	                                           double nOut[3]) {
+	    const double gx = pos[0] / res;
+	    const double gy = pos[1] / res;
+	    const double gz = pos[2] / res;
+	
+	    /* base cell for interpolation */
+	    mint ix = (mint)floor(gx);
+	    mint iy = (mint)floor(gy);
+	    mint iz = (mint)floor(gz);
+	
+	    /* clamp to valid cell so ix+1 etc exist */
+	    ix = clamp_mint(ix, 0, W - 2);
+	    iy = clamp_mint(iy, 0, H - 2);
+	    iz = clamp_mint(iz, 0, D - 2);
+	
+	    const double fx = gx - (double)ix;
+	    const double fy = gy - (double)iy;
+	    const double fz = gz - (double)iz;
+	
+	    /* gradients at 8 corners */
+	    double g000[3], g100[3], g010[3], g110[3];
+	    double g001[3], g101[3], g011[3], g111[3];
+	
+	    gradientAtGridPoint(img, strideY, strideZ, D, H, W, iz,   iy,   ix,   res, g000);
+	    gradientAtGridPoint(img, strideY, strideZ, D, H, W, iz,   iy,   ix+1, res, g100);
+	    gradientAtGridPoint(img, strideY, strideZ, D, H, W, iz,   iy+1, ix,   res, g010);
+	    gradientAtGridPoint(img, strideY, strideZ, D, H, W, iz,   iy+1, ix+1, res, g110);
+	
+	    gradientAtGridPoint(img, strideY, strideZ, D, H, W, iz+1, iy,   ix,   res, g001);
+	    gradientAtGridPoint(img, strideY, strideZ, D, H, W, iz+1, iy,   ix+1, res, g101);
+	    gradientAtGridPoint(img, strideY, strideZ, D, H, W, iz+1, iy+1, ix,   res, g011);
+	    gradientAtGridPoint(img, strideY, strideZ, D, H, W, iz+1, iy+1, ix+1, res, g111);
+	
+	    double gInterp[3];
+	    trilerp3(g000, g100, g010, g110, g001, g101, g011, g111, fx, fy, fz, gInterp);
+	
+	    /* Often normals are taken as -grad to point “outward” depending on convention.
+	       Here we use +grad; flip in Mathematica if you need. */
+	    double nx = gInterp[0], ny = gInterp[1], nz = gInterp[2];
+	    const double len = sqrt(nx*nx + ny*ny + nz*nz);
+	    if (len > 1e-20) {
+	        nx /= len; ny /= len; nz /= len;
+	    } else {
+	        nx = 0.0; ny = 0.0; nz = 0.0;
+	    }
+	
+	    nOut[0] = nx; nOut[1] = ny; nOut[2] = nz;
+	}
+	
+	/* =========================
+	   Marching cubes indexed mesh
+	   ========================= */
+	
+	static inline int cubeState8(const double v[8], double iso) {
+	    int s = 0;
+	    s |= (v[0] >= iso) ? 1   : 0;
+	    s |= (v[1] >= iso) ? 2   : 0;
+	    s |= (v[2] >= iso) ? 4   : 0;
+	    s |= (v[3] >= iso) ? 8   : 0;
+	    s |= (v[4] >= iso) ? 16  : 0;
+	    s |= (v[5] >= iso) ? 32  : 0;
+	    s |= (v[6] >= iso) ? 64  : 0;
+	    s |= (v[7] >= iso) ? 128 : 0;
+	    return s;
+	}
+	
+	/* Edge to cube corner mapping */
+	static const int edgeVertices[12][2] = {
+	    {0, 1}, {1, 2}, {2, 3}, {3, 0},
+	    {4, 5}, {5, 6}, {6, 7}, {7, 4},
+	    {0, 4}, {1, 5}, {2, 6}, {3, 7}
+	};
+	
+	/* Unit cube corners */
+	static const double cubeVerts[8][3] = {
+	    {0,0,0},{1,0,0},{1,1,0},{0,1,0},
+	    {0,0,1},{1,0,1},{1,1,1},{0,1,1}
+	};
+	
+	static inline double interp_t(double iso, double v1, double v2) {
+	    const double d = v2 - v1;
+	    if (fabs(d) < 1e-12) return 0.0;
+	    return (iso - v1) / d;
+	}
+	
+	/* Create vertex on an edge and compute its normal (Option B). Returns vertex index (0-based). */
+	static inline mint createVertex(const double *img, const mint *dims,
+	                                mint strideY, mint strideZ,
+	                                double res, double iso,
+	                                int c1, int c2,
+	                                double baseX, double baseY, double baseZ,
+	                                const double val[8],
+	                                double outPos[3]) {
+	    double t;
+	    if (fabs(iso - val[c1]) < 1e-12) t = 0.0;
+	    else if (fabs(iso - val[c2]) < 1e-12) t = 1.0;
+	    else if (fabs(val[c2] - val[c1]) < 1e-12) t = 0.0;
+	    else t = interp_t(iso, val[c1], val[c2]);
+	
+	    const double p1x = baseX + res * cubeVerts[c1][0];
+	    const double p1y = baseY + res * cubeVerts[c1][1];
+	    const double p1z = baseZ + res * cubeVerts[c1][2];
+	    const double p2x = baseX + res * cubeVerts[c2][0];
+	    const double p2y = baseY + res * cubeVerts[c2][1];
+	    const double p2z = baseZ + res * cubeVerts[c2][2];
+	
+	    outPos[0] = p1x + t * (p2x - p1x);
+	    outPos[1] = p1y + t * (p2y - p1y);
+	    outPos[2] = p1z + t * (p2z - p1z);
+	
+	    /* append */
+	    const mint idx = gV;
+	    if (!ensureVertexCapacity(gV + 1)) return (mint)-1;
+	
+	    gVertices[idx * 3 + 0] = outPos[0];
+	    gVertices[idx * 3 + 1] = outPos[1];
+	    gVertices[idx * 3 + 2] = outPos[2];
+	
+	    double n[3];
+	    normalFromFieldGradient(img, strideY, strideZ, dims[0], dims[1], dims[2], res, outPos, n);
+	    gNormals[idx * 3 + 0] = n[0];
+	    gNormals[idx * 3 + 1] = n[1];
+	    gNormals[idx * 3 + 2] = n[2];
+	
+	    gV++;
+	    return idx;
+	}
+	
+	/* Get or create vertex index for a given cube-local edge, using global edge caches.
+	   Returns 0-based index, or -1 on allocation failure.
+	*/
+	static inline mint getEdgeVertexIndex(const double *img, const mint *dims,
+	                                      mint strideY, mint strideZ,
+	                                      double res, double iso,
+	                                      mint x, mint y, mint z,
+	                                      double baseX, double baseY, double baseZ,
+	                                      const double val[8],
+	                                      int edge) {
+	    const mint W = dims[2];
+	    const mint H = dims[1];
+	
+	    double pos[3];
+	
+	    switch (edge) {
+	        /* X edges */
+	        case 0: { /* (x,y,z) */
+	            const size_t id = (size_t)y * (size_t)(W - 1) + (size_t)x;
+	            if (xIdxLower[id] != (mint)-1) return xIdxLower[id];
+	            mint vi = createVertex(img, dims, strideY, strideZ, res, iso,
+	                                   edgeVertices[edge][0], edgeVertices[edge][1],
+	                                   baseX, baseY, baseZ, val, pos);
+	            if (vi == (mint)-1) return (mint)-1;
+	            xIdxLower[id] = vi;
+	            return vi;
+	        }
+	        case 2: { /* (x,y+1,z) */
+	            const size_t id = (size_t)(y + 1) * (size_t)(W - 1) + (size_t)x;
+	            if (xIdxLower[id] != (mint)-1) return xIdxLower[id];
+	            mint vi = createVertex(img, dims, strideY, strideZ, res, iso,
+	                                   edgeVertices[edge][0], edgeVertices[edge][1],
+	                                   baseX, baseY, baseZ, val, pos);
+	            if (vi == (mint)-1) return (mint)-1;
+	            xIdxLower[id] = vi;
+	            return vi;
+	        }
+	        case 4: { /* (x,y,z+1) -> use upper */
+	            const size_t id = (size_t)y * (size_t)(W - 1) + (size_t)x;
+	            if (xIdxUpper[id] != (mint)-1) return xIdxUpper[id];
+	            mint vi = createVertex(img, dims, strideY, strideZ, res, iso,
+	                                   edgeVertices[edge][0], edgeVertices[edge][1],
+	                                   baseX, baseY, baseZ, val, pos);
+	            if (vi == (mint)-1) return (mint)-1;
+	            xIdxUpper[id] = vi;
+	            return vi;
+	        }
+	        case 6: { /* (x,y+1,z+1) -> use upper */
+	            const size_t id = (size_t)(y + 1) * (size_t)(W - 1) + (size_t)x;
+	            if (xIdxUpper[id] != (mint)-1) return xIdxUpper[id];
+	            mint vi = createVertex(img, dims, strideY, strideZ, res, iso,
+	                                   edgeVertices[edge][0], edgeVertices[edge][1],
+	                                   baseX, baseY, baseZ, val, pos);
+	            if (vi == (mint)-1) return (mint)-1;
+	            xIdxUpper[id] = vi;
+	            return vi;
+	        }
+	
+	        /* Y edges */
+	        case 3: { /* (x,y,z) */
+	            const size_t id = (size_t)y * (size_t)W + (size_t)x;
+	            if (yIdxLower[id] != (mint)-1) return yIdxLower[id];
+	            mint vi = createVertex(img, dims, strideY, strideZ, res, iso,
+	                                   edgeVertices[edge][0], edgeVertices[edge][1],
+	                                   baseX, baseY, baseZ, val, pos);
+	            if (vi == (mint)-1) return (mint)-1;
+	            yIdxLower[id] = vi;
+	            return vi;
+	        }
+	        case 1: { /* (x+1,y,z) */
+	            const size_t id = (size_t)y * (size_t)W + (size_t)(x + 1);
+	            if (yIdxLower[id] != (mint)-1) return yIdxLower[id];
+	            mint vi = createVertex(img, dims, strideY, strideZ, res, iso,
+	                                   edgeVertices[edge][0], edgeVertices[edge][1],
+	                                   baseX, baseY, baseZ, val, pos);
+	            if (vi == (mint)-1) return (mint)-1;
+	            yIdxLower[id] = vi;
+	            return vi;
+	        }
+	        case 7: { /* (x,y,z+1) -> upper */
+	            const size_t id = (size_t)y * (size_t)W + (size_t)x;
+	            if (yIdxUpper[id] != (mint)-1) return yIdxUpper[id];
+	            mint vi = createVertex(img, dims, strideY, strideZ, res, iso,
+	                                   edgeVertices[edge][0], edgeVertices[edge][1],
+	                                   baseX, baseY, baseZ, val, pos);
+	            if (vi == (mint)-1) return (mint)-1;
+	            yIdxUpper[id] = vi;
+	            return vi;
+	        }
+	        case 5: { /* (x+1,y,z+1) -> upper */
+	            const size_t id = (size_t)y * (size_t)W + (size_t)(x + 1);
+	            if (yIdxUpper[id] != (mint)-1) return yIdxUpper[id];
+	            mint vi = createVertex(img, dims, strideY, strideZ, res, iso,
+	                                   edgeVertices[edge][0], edgeVertices[edge][1],
+	                                   baseX, baseY, baseZ, val, pos);
+	            if (vi == (mint)-1) return (mint)-1;
+	            yIdxUpper[id] = vi;
+	            return vi;
+	        }
+	
+	        /* Z edges (slab z->z+1) */
+	        case 8: { /* (x,y,z) */
+	            const size_t id = (size_t)y * (size_t)W + (size_t)x;
+	            if (zIdxSlab[id] != (mint)-1) return zIdxSlab[id];
+	            mint vi = createVertex(img, dims, strideY, strideZ, res, iso,
+	                                   edgeVertices[edge][0], edgeVertices[edge][1],
+	                                   baseX, baseY, baseZ, val, pos);
+	            if (vi == (mint)-1) return (mint)-1;
+	            zIdxSlab[id] = vi;
+	            return vi;
+	        }
+	        case 9: { /* (x+1,y,z) */
+	            const size_t id = (size_t)y * (size_t)W + (size_t)(x + 1);
+	            if (zIdxSlab[id] != (mint)-1) return zIdxSlab[id];
+	            mint vi = createVertex(img, dims, strideY, strideZ, res, iso,
+	                                   edgeVertices[edge][0], edgeVertices[edge][1],
+	                                   baseX, baseY, baseZ, val, pos);
+	            if (vi == (mint)-1) return (mint)-1;
+	            zIdxSlab[id] = vi;
+	            return vi;
+	        }
+	        case 10: { /* (x+1,y+1,z) */
+	            const size_t id = (size_t)(y + 1) * (size_t)W + (size_t)(x + 1);
+	            if (zIdxSlab[id] != (mint)-1) return zIdxSlab[id];
+	            mint vi = createVertex(img, dims, strideY, strideZ, res, iso,
+	                                   edgeVertices[edge][0], edgeVertices[edge][1],
+	                                   baseX, baseY, baseZ, val, pos);
+	            if (vi == (mint)-1) return (mint)-1;
+	            zIdxSlab[id] = vi;
+	            return vi;
+	        }
+	        case 11: { /* (x,y+1,z) */
+	            const size_t id = (size_t)(y + 1) * (size_t)W + (size_t)x;
+	            if (zIdxSlab[id] != (mint)-1) return zIdxSlab[id];
+	            mint vi = createVertex(img, dims, strideY, strideZ, res, iso,
+	                                   edgeVertices[edge][0], edgeVertices[edge][1],
+	                                   baseX, baseY, baseZ, val, pos);
+	            if (vi == (mint)-1) return (mint)-1;
+	            zIdxSlab[id] = vi;
+	            return vi;
+	        }
+	
+	        default:
+	            return (mint)-1;
+	    }
+	}
+	
+	/* Build indexed mesh and normals (Option B) */
+	static int marchingCubesIndexed(const double *img, const mint *dims, double res, double iso) {
+	    const mint D = dims[0], H = dims[1], W = dims[2];
+	    const mint strideY = W;
+	    const mint strideZ = H * W;
+	
+	    gV = 0;
+	    gT = 0;
+	
+	    if (!ensureIndexCaches(W, H)) return 0;
+	    resetCachesForZ0(W, H);
+	
+	    for (mint z = 0; z < D - 1; ++z) {
+	        const mint z0 = z * strideZ;
+	        const mint z1 = (z + 1) * strideZ;
+	        const double baseZ = (double)z * res;
+	
+	        for (mint y = 0; y < H - 1; ++y) {
+	            const mint y0 = y * strideY;
+	            const mint y1o = (y + 1) * strideY;
+	            const double baseY = (double)y * res;
+	
+	            for (mint x = 0; x < W - 1; ++x) {
+	                const double baseX = (double)x * res;
+	
+	                /* Load 8 corner scalar values */
+	                const mint i000 = z0 + y0  + x;
+	                const mint i100 = z0 + y0  + (x + 1);
+	                const mint i110 = z0 + y1o + (x + 1);
+	                const mint i010 = z0 + y1o + x;
+	
+	                const mint i001 = z1 + y0  + x;
+	                const mint i101 = z1 + y0  + (x + 1);
+	                const mint i111 = z1 + y1o + (x + 1);
+	                const mint i011 = z1 + y1o + x;
+	
+	                double val[8];
+	                val[0] = img[i000];
+	                val[1] = img[i100];
+	                val[2] = img[i110];
+	                val[3] = img[i010];
+	                val[4] = img[i001];
+	                val[5] = img[i101];
+	                val[6] = img[i111];
+	                val[7] = img[i011];
+	
+	                const int state = cubeState8(val, iso);
+	                if (state == 0 || state == 255) continue;
+	
+	                for (mint ii = 0; triangulationTable[state][ii] != -1; ii += 3) {
+	                    if (!ensureTriCapacity(gT + 1)) return 0;
+	
+	                    const int e0 = triangulationTable[state][ii];
+	                    const int e1 = triangulationTable[state][ii + 1];
+	                    const int e2 = triangulationTable[state][ii + 2];
+	
+	                    const mint v0 = getEdgeVertexIndex(img, dims, strideY, strideZ, res, iso, x, y, z, baseX, baseY, baseZ, val, e0);
+	                    const mint v1i = getEdgeVertexIndex(img, dims, strideY, strideZ, res, iso, x, y, z, baseX, baseY, baseZ, val, e1);
+	                    const mint v2 = getEdgeVertexIndex(img, dims, strideY, strideZ, res, iso, x, y, z, baseX, baseY, baseZ, val, e2);
+	
+	                    if (v0 == (mint)-1 || v1i == (mint)-1 || v2 == (mint)-1) return 0;
+	
+	                    /* Store 1-based indices for Mathematica */
+	                    gIndices[gT * 3 + 0] = v0 + 1;
+	                    gIndices[gT * 3 + 1] = v1i + 1;
+	                    gIndices[gT * 3 + 2] = v2 + 1;
+	                    gT++;
+	                }
+	            }
+	        }
+	
+	        if (z < D - 2) rollCachesForNextZ(W, H);
+	    }
+	
+	    return 1;
+	}
+	
+	/* =========================
+	   LibraryLink exports
+	   ========================= */
+	
+	DLLEXPORT mint WolframLibrary_getVersion() {
+	    return WolframLibraryVersion;
+	}
+	
+	DLLEXPORT int WolframLibrary_initialize(WolframLibraryData libData) {
+	    (void)libData;
+	    gVertices = NULL; gNormals = NULL; gIndices = NULL;
+	    gV = gT = 0;
+	    gVCap = gTCap = 0;
+	
+	    xIdxLower = xIdxUpper = NULL;
+	    yIdxLower = yIdxUpper = NULL;
+	    zIdxSlab  = NULL;
+	    cacheW = cacheH = 0;
+	
+	    return LIBRARY_NO_ERROR;
+	}
+	
+	DLLEXPORT void WolframLibrary_uninitialize(WolframLibraryData libData) {
+	    (void)libData;
+	
+	    free(gVertices); gVertices = NULL;
+	    free(gNormals);  gNormals  = NULL;
+	    free(gIndices);  gIndices  = NULL;
+	
+	    free(xIdxLower); free(xIdxUpper);
+	    free(yIdxLower); free(yIdxUpper);
+	    free(zIdxSlab);
+	
+	    xIdxLower = xIdxUpper = NULL;
+	    yIdxLower = yIdxUpper = NULL;
+	    zIdxSlab  = NULL;
+	
+	    gV = gT = 0;
+	    gVCap = gTCap = 0;
+	    cacheW = cacheH = 0;
+	}
+	
+	/* process[tensor3D_, iso_, res_] -> Integer (#triangles)
+	   Args[0] = MTensor real rank 3
+	   Args[1] = iso (Real)
+	   Args[2] = res (Real)
+	*/
+	DLLEXPORT int process(WolframLibraryData libData, mint Argc, MArgument *Args, MArgument Res) {
+	    (void)Argc;
+	
+	    MTensor in = MArgument_getMTensor(Args[0]);
+	    const mint in_rank = libData->MTensor_getRank(in);
+	    if (in_rank != 3) return LIBRARY_RANK_ERROR;
+	
+	    const mint in_type = libData->MTensor_getType(in);
+	    if (in_type != MType_Real) return LIBRARY_TYPE_ERROR;
+	
+	    const mint *dims = libData->MTensor_getDimensions(in);
+	    const double *img = libData->MTensor_getRealData(in);
+	
+	    const double iso = MArgument_getReal(Args[1]);
+	    const double res = MArgument_getReal(Args[2]);
+	
+	    /* quick sanity */
+	    if (dims[0] < 2 || dims[1] < 2 || dims[2] < 2 || res <= 0.0) {
+	        gV = gT = 0;
+	        MArgument_setInteger(Res, 0);
+	        return LIBRARY_NO_ERROR;
+	    }
+	
+	    /* Ensure caches for W,H */
+	    if (!ensureIndexCaches(dims[2], dims[1])) return LIBRARY_FUNCTION_ERROR;
+	
+	    /* Build mesh */
+	    if (!marchingCubesIndexed(img, dims, res, iso)) return LIBRARY_FUNCTION_ERROR;
+	
+	    /* Return triangle count */
+	    MArgument_setInteger(Res, (mint)gT);
+	    return LIBRARY_NO_ERROR;
+	}
+	
+	/* getVertices[] -> MTensor Real {V,3} */
+	DLLEXPORT int getVertices(WolframLibraryData libData, mint Argc, MArgument *Args, MArgument Res) {
+	    (void)Argc; (void)Args;
+	
+	    MTensor out;
+	    mint out_dims[2] = { gV, 3 };
+	    int err = libData->MTensor_new(MType_Real, 2, out_dims, &out);
+	    if (err != LIBRARY_NO_ERROR) return err;
+	
+	    double *out_data = libData->MTensor_getRealData(out);
+	    memcpy(out_data, gVertices, (size_t)gV * 3u * sizeof(double));
+	
+	    MArgument_setMTensor(Res, out);
+	    return LIBRARY_NO_ERROR;
+	}
+	
+	/* getNormals[] -> MTensor Real {V,3} */
+	DLLEXPORT int getNormals(WolframLibraryData libData, mint Argc, MArgument *Args, MArgument Res) {
+	    (void)Argc; (void)Args;
+	
+	    MTensor out;
+	    mint out_dims[2] = { gV, 3 };
+	    int err = libData->MTensor_new(MType_Real, 2, out_dims, &out);
+	    if (err != LIBRARY_NO_ERROR) return err;
+	
+	    double *out_data = libData->MTensor_getRealData(out);
+	    memcpy(out_data, gNormals, (size_t)gV * 3u * sizeof(double));
+	
+	    MArgument_setMTensor(Res, out);
+	    return LIBRARY_NO_ERROR;
+	}
+	
+	/* getIndices[] -> MTensor Integer {T,3} (1-based indices) */
+	DLLEXPORT int getIndices(WolframLibraryData libData, mint Argc, MArgument *Args, MArgument Res) {
+	    (void)Argc; (void)Args;
+	
+	    MTensor out;
+	    mint out_dims[2] = { gT, 3 };
+	    int err = libData->MTensor_new(MType_Integer, 2, out_dims, &out);
+	    if (err != LIBRARY_NO_ERROR) return err;
+	
+	    mint *out_data = libData->MTensor_getIntegerData(out);
+	    memcpy(out_data, gIndices, (size_t)gT * 3u * sizeof(mint));
+	
+	    MArgument_setMTensor(Res, out);
+	    return LIBRARY_NO_ERROR;
+	}
+	`}</wljs-editor></WLJSWrapper>
+
+With the source files in place, we compile the C code into a shared library and load the four exported functions into the kernel. Each function is typed to work with packed arrays for maximum efficiency:
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`lib = CreateLibrary[File["main.c"], "internal"];
+	
+	ClearAll[process, getVertices, getIndices, getNormals];
+	
+	process = LibraryFunctionLoad[
+	  lib, "process",
+	  {
+	    {Real, 3, "Constant"},  (* volume *)
+	    Real,                   (* iso *)
+	    Real                    (* res *)
+	  },
+	  Integer                   (* returns #triangles *)
+	];
+	
+	getVertices = LibraryFunctionLoad[
+	  lib, "getVertices",
+	  {},
+	  {Real, 2, Automatic}      (* {V,3} *)
+	];
+	
+	getNormals = LibraryFunctionLoad[
+	  lib, "getNormals",
+	  {},
+	  {Real, 2, Automatic}      (* {V,3} *)
+	];
+	
+	getIndices = LibraryFunctionLoad[
+	  lib, "getIndices",
+	  {},
+	  {Integer, 2, Automatic}   (* {T,3}, 1-based *)
+	];
+	`}</wljs-editor></WLJSWrapper>
+
+### Basic Test
+Let's put it through its paces with a non-trivial scalar field — a Gaussian-modulated combination of quadratic forms that produces an intricate, multi-lobed surface. We sample it on a `101×101×101` grid and extract the isosurface:
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`img = Table[Exp[-((*SpB[*)Power[i(*|*),(*|*)2](*]SpB*) + (*SpB[*)Power[j(*|*),(*|*)2](*]SpB*) + (*SpB[*)Power[k(*|*),(*|*)2](*]SpB*))]((*SpB[*)Power[i(*|*),(*|*)2](*]SpB*)-(*SpB[*)Power[j(*|*),(*|*)2](*]SpB*))(2(*SpB[*)Power[j(*|*),(*|*)2](*]SpB*) - (*SpB[*)Power[k(*|*),(*|*)2](*]SpB*) - (*SpB[*)Power[i(*|*),(*|*)2](*]SpB*)), {i, -5, 5, 0.1}, {j, -5, 5, 0.1}, {k, -5, 5, 0.1}];
+	process[img, 0.005, 1] // AbsoluteTiming`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output" encoded="true"  >{`%7B0.003406%60%2C12704%7D`}</wljs-editor></WLJSWrapper>
+
+Now render the extracted mesh using `Graphics3D` with vertex normals for smooth Phong shading:
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`With[{
+	  vertices = getVertices[],
+	  normals = getNormals[],
+	  indices = getIndices[]
+	},
+	    Graphics3D[GraphicsComplex[vertices, {Polygon[indices]}], VertexNormals->normals]
+	]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(FrontEndRef["aa26f60e-1941-49da-bda0-9d711980ddfc"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKJyYamaWZGaTqGlqaGOqaWKYk6ialJBroWqaYGxpaWhikpKQlAwCHexX+"*)(*]VB*)`}</wljs-editor></WLJSWrapper>
+
+*Try to pan it*
+
+### Real-Time Animation
+Let's try animating this 3D volume by varying the scalar field parameters over time. The first challenge is that mapping a function over a large 3D array in pure Wolfram Language is already quite slow:
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`Table[
+	  Exp[-((*SpB[*)Power[i(*|*),(*|*)2](*]SpB*) + (*SpB[*)Power[j(*|*),(*|*)2](*]SpB*) + (*SpB[*)Power[k(*|*),(*|*)2](*]SpB*))]((*SpB[*)Power[i(*|*),(*|*)2](*]SpB*)-(*SpB[*)Power[j(*|*),(*|*)2](*]SpB*))(2(*SpB[*)Power[j(*|*),(*|*)2](*]SpB*) - (*SpB[*)Power[k(*|*),(*|*)2](*]SpB*) - (*SpB[*)Power[i(*|*),(*|*)2](*]SpB*))
+	, {i, -5, 5, 0.1}, {j, -5, 5, 0.1}, {k, -5, 5, 0.1}]; // AbsoluteTiming`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output" encoded="true"  >{`%7B0.114266%60%2CNull%7D`}</wljs-editor></WLJSWrapper>
+
+That's too slow for real-time use. However, we can compile the scalar field computation to C as well using `Compile` with `CompilationTarget -> "C"`. We also halve the grid resolution to keep things interactive:
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`computeShape = Compile[{{a, _Real}, {b, _Real}, {c, _Real}},
+	
+	  Table[
+	    Exp[-((*SpB[*)Power[i(*|*),(*|*)2](*]SpB*) + (*SpB[*)Power[j(*|*),(*|*)2](*]SpB*) + (*SpB[*)Power[k(*|*),(*|*)2](*]SpB*))](a (*SpB[*)Power[i(*|*),(*|*)2](*]SpB*)- b (*SpB[*)Power[j(*|*),(*|*)2](*]SpB*))(c 2(*SpB[*)Power[j(*|*),(*|*)2](*]SpB*) - (*SpB[*)Power[k(*|*),(*|*)2](*]SpB*) - (*SpB[*)Power[i(*|*),(*|*)2](*]SpB*))
+	  , {i, -5, 5, 2 0.1}, {j, -5, 5, 2 0.1}, {k, -5, 5, 2 0.1}]
+	, RuntimeOptions->"Speed", 	CompilationTarget->"C"];`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`computeShape[1.0,1.0,1.0]; // AbsoluteTiming`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output" encoded="true"  >{`%7B0.013573%60%2CNull%7D`}</wljs-editor></WLJSWrapper>
+
+That's roughly **10× faster** — easily enough for 30–50 FPS. Now let's assemble the full animated scene. We use `Offload` to bind dynamic symbols to the graphics primitives so the frontend updates automatically when the data changes:
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true" encoded="true"  >{`Module%5B%7B%0A%20%20handler%2C%0A%20%20cloud%2C%20%0A%20%20a%3D1.0%2Cb%3D1.0%2Cc%3D1.0%2C%0A%20%20time%20%3D%2088.0%2C%0A%20%20verticesAndNormals%20%3D%20%7B%7B%7D%2C%20%7B%7D%2C%20%7B%7D%2C%20%7B%7D%7D%2C%0A%20%20indices%3D%7B%7B%7D%2C%7B%7D%7D%0A%7D%2C%0A%20%20handler%20%3D%20Function%5BNull%2C%0A%20%0A%20%20%20%20indices%20%3D%20indices%3B%0A%20%20%20%20verticesAndNormals%20%3D%20verticesAndNormals%3B%0A%20%20%20%20time%20%3D%20time%20%2B%200.1%3B%0A%20%20%20%20%0A%20%20%20%20%0A%20%20%20%20cloud%20%3D%20computeShape%5Ba%2Cb%2Cc%5D%3B%0A%20%20%20%20%0A%20%20%20%20If%5Bprocess%5Bcloud%2C%200.0005%2C%201%5D%20%3E%200%2C%0A%20%20%20%20%20%20verticesAndNormals%5B%5B2%5D%5D%20%3D%20getNormals%5B%5D%3B%20%20%20%0A%20%20%20%20%20%20indices%5B%5B1%5D%5D%20%3D%20getIndices%5B%5D%3B%0A%20%20%20%20%20%20verticesAndNormals%5B%5B1%5D%5D%20%3D%20getVertices%5B%5D%3B%0A%20%20%20%20%5D%3B%0A%20%20%20%20%0A%20%20%20%20If%5Bprocess%5Bcloud%2C%20-0.0005%2C%201%5D%20%3E%200%2C%0A%20%20%20%20%20%20verticesAndNormals%5B%5B4%5D%5D%20%3D%20getNormals%5B%5D%3B%20%20%20%0A%20%20%20%20%20%20indices%5B%5B2%5D%5D%20%3D%20getIndices%5B%5D%3B%0A%20%20%20%20%20%20verticesAndNormals%5B%5B3%5D%5D%20%3D%20getVertices%5B%5D%3B%0A%20%20%20%20%5D%3B%20%20%0A%20%20%0A%20%20%20%20%0A%20%20%20%20a%20%3D%20Abs%40Sin%5B0.99%20time%5D%3B%20b%20%3D%20Abs%40Cos%5B1.02%20time%5D%3B%0A%20%20%20%20c%20%3D%20Cos%5Btime%5D%20%2B%20Cos%5B1.1%20time%5D%3B%0A%20%20%20%20%0A%20%20%5D%3B%0A%0A%20%20handler%5B%5D%3B%0A%0A%20%20%0A%20%20Graphics3D%5B%7B%0A%20%20%20%20Graphics3D%60Materials%5B%22Glass%22%5D%2C%0A%0A%20%20%20%20Red%2C%20%0A%20%20%20%20%0A%20%20%20%20GraphicsComplex%5BOffload%5BverticesAndNormals%5B%5B1%5D%5D%5D%2C%20%7B%0A%20%20%20%20%20%20Polygon%5BOffload%5Bindices%5B%5B1%5D%5D%5D%5D%0A%20%20%20%20%7D%2C%20VertexNormals-%3EOffload%5BverticesAndNormals%5B%5B2%5D%5D%5D%2C%20%22VertexFence%22-%3ETrue%5D%2C%0A%0A%20%20%20%20Green%2C%0A%0A%20%20%20%20GraphicsComplex%5BOffload%5BverticesAndNormals%5B%5B3%5D%5D%5D%2C%20%7B%0A%20%20%20%20%20%20Polygon%5BOffload%5Bindices%5B%5B2%5D%5D%5D%5D%0A%20%20%20%20%7D%2C%20VertexNormals-%3EOffload%5BverticesAndNormals%5B%5B4%5D%5D%5D%2C%20%22VertexFence%22-%3ETrue%5D%2C%20%20%20%20%0A%0A%20%20%20%20White%2C%20Directive%5B%22Emissive%22-%3EWhite%2C%20%22EmissiveIntensity%22-%3E10%5D%2C%20Sphere%5B%7B25%2C25%2C25%7D%2C5%5D%2C%0A%20%20%20%20EventHandler%5BAnimationFrameListener%5Btime%2F%2FOffload%5D%2C%20handler%5D%0A%20%20%7D%5D%0A%5D`}</wljs-editor></WLJSWrapper>
+
+ Note on race conditions: We merged normals and vertices into a single symbol (`verticesAndNormals`) to avoid race conditions during rendering. If normals and vertices were stored separately, there could be a frame where the renderer picks up new vertices with stale normals (or vice versa), causing visual artifacts. The `"VertexFence"` option already prevents this for indices, but it cannot help with normals — hence the combined update.
+
+	<LazyVideo url="./blob.mp4"/>
+
+## 3D Paint 🎨
+As a more interactive demo, let's build a 3D painting canvas. The idea: start with an empty `100×100×100` voxel grid, and let the user "paint" into it by dragging a sphere around the scene. Each drag event deposits a Gaussian blob into the scalar field, and the Marching Cubes algorithm re-extracts the isosurface in real time.
+
+First, define the voxel grid and a handler that adds a soft Gaussian brush stroke at the given coordinates, then recomputes the mesh:
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`img = Table[0., {i,100}, {j,100}, {k,100}];
+	
+	handler = Function[coords,
+	  With[{}, Do[
+	    With[{i = Clip[Round[coords[[3]]+m], {1,100}], j = Clip[Round[ coords[[2]]+u], {1,100}], k = Clip[Round[coords[[1]]+v], {1,100}]},
+	      img[[i,j,k]] = img[[i,j,k]] + Exp[- (m^2 + u^2 + v^2)/10.0] 0.5; 
+	    ]
+	  , {m, -5,5,0.7}, {u, -5,5,0.7}, {v, -5,5,0.7}]];
+	
+	  process[img, 0.5, 1];
+	
+	  With[{
+	      normals = getNormals[],
+	      indices = getIndices[],
+	      vertices = getVertices[]  
+	  },
+	    paintIndices = indices;
+	    paintVerticesNormals = {vertices, normals};
+	    lightSrc = coords;
+	  ];
+	];`}</wljs-editor></WLJSWrapper>
+
+Finally, set up the 3D scene with colored spot lights, an invisible bounding cuboid for spatial reference, and a draggable sphere that triggers the paint handler. A dynamic point light follows the brush position for a nice visual effect:
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`paintVerticesNormals = {Table[{0.,0.,0.}, {5000}], Table[{0.,0.,0.}, { 5000}]};
+	paintIndices = Table[0, { 5000}];
+	lightSrc = {0,0,0};
+	handler[{32,70,68}];
+	handler[{32,70,68}];
+	handler[{32,70,68}];
+	
+	Graphics3D[{
+	  SpotLight[Red, {100,100,100}],
+	  SpotLight[Green, {-100,100,-100}],
+	  SpotLight[Blue, {-100,100,100}],
+	  GraphicsComplex[Offload[paintVerticesNormals[[1]]], {
+	      Polygon[Offload[paintIndices]]
+	  }, VertexNormals->Offload[paintVerticesNormals[[2]]], "VertexFence"->True], 
+	  {Opacity[0], Cuboid[{0,0,0}, {100,100,100}]}, 
+	  EventHandler[Sphere[{0,0,0}], {"drag"->handler}],
+	  PointLight[Orange, (lightSrc+{1,1,1})//Offload, "Intensity"->10]
+	}]`}</wljs-editor></WLJSWrapper>
+
+	<LazyVideo url="./paint.mp4"/>
