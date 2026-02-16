@@ -77,9 +77,9 @@ Defaults to `False`. When enabled, it sets an update barrier for all dependent p
 This helps prevent desynchronization issues where the vertex buffer updates lag behind polygon or line indices (or vice versa), which can lead to visual artifacts and WebGL buffer errors.
 </Callout>
 
-## Dynamic updates
+## How to update things
 
-### Basic fixed indexes
+### Fixed indexes, variable vertices
 It does support updates for vertices data and colors. Use [Offload](../Interpreter/Offload) wrapper.
 
 ```wolfram title="cell 1"
@@ -176,37 +176,46 @@ now construct the scene
 
 ```wolfram
 Module[{
-    vertices, normals, indices
+    VerticesAndNormals = {{}, {}}, indices = {}
   },
     {
       EventHandler[InputRange[0,1,0.1,0], Function[value,
         With[{res  = sample[value]},
 
           
-          normals = res[[3]];
           indices = res[[2]];
-          vertices = res[[1]];
+          VerticesAndNormals = {res[[1]], res[[3]]};
           
         ];
       ]],
 
-      {vertices, indices, normals} = sample[0];
+      With[{res  = sample[0.0]},
+
+          
+          indices = res[[2]];
+          VerticesAndNormals = {res[[1]], res[[3]]};
+          
+      ];
       
       Graphics3D[{
         SpotLight[Red, 5 {1,1,1}], SpotLight[Blue, 5 {-1,-1,1}], 
         SpotLight[Green, 5 {1,-1,1}], 
         PointLight[Magenta, {10,10,10}],
         
-        GraphicsComplex[vertices // Offload, {
-          Polygon[indices // Offload]
-        }, VertexNormals->Offload[normals], "VertexFence"->True]
+        GraphicsComplex[Offload[VerticesAndNormals[[1]]], {
+          Polygon[Offload[indices]]
+        }, VertexNormals->Offload[VerticesAndNormals[[2]]], "VertexFence"->True]
         
       }, Lighting->None]
     } // Column // Panel 
 ]
 ```
 
-### Non-indexed
+<Callout type="tip">
+Pack normals, vertices and colors to a single symbol. This will help to avoid data races. `"VertexFence"` indeed eliminates races with indices, but it is helpless against mutations of `GraphicsComplex` attributes.
+</Callout>
+
+### Non-indexed geometry
 This is a another mode of working with [Non-indexed geometry](#Non-indexed%20geometry) in `Polygon`. The benefit of this approach, you can use fixed length buffer for vertices and limit your drawing range using two arguments of Polygon.
 
 
