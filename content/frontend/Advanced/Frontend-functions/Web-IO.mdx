@@ -14,7 +14,7 @@ You need to have WLJS Notebook installed as a desktop application or run it as a
 </Callout>
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor lazy="true" type="Input" display="codemirror">{`.js
 const sign = document.createElement("div");
 sign.style.color = "gray";
@@ -121,7 +121,7 @@ as a list of bytes in integer representation. Unfortunately, the `JS->WL` binary
 Let's add control buttons:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor lazy="true" type="Input" display="codemirror">{`
 {Button["Start", MicStart // FrontSubmit], Button["Stop", MicStop // FrontSubmit]} // Row
 `}</wljs-editor></WLJSWrapper>
@@ -130,7 +130,7 @@ Let's add control buttons:
 And finally to handle the incoming data we use `EventHandler` and hook it to some `Graphics` primitive:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor lazy="true" type="Input" display="codemirror">{`
 Module[{line = {}},
     EventHandler["audio", Function[data,
@@ -149,7 +149,7 @@ Module[{line = {}},
 Let's add fourier transform as well:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor lazy="true" type="Input" display="codemirror">{`
 Module[{line = {}, fft={}},
       EventHandler["audio", Function[data,
@@ -189,7 +189,7 @@ Here we will perform a small experiment with the JavaScript Canvas API. Optimizi
 Let's create Javascript cell and evaluate it:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor lazy="true" type="Input" display="codemirror">{`.js
 const canvas = document.createElement("canvas");
 
@@ -382,7 +382,7 @@ return canvas;
 From the evaluation kernel, we need to design a function like `Plot` that accepts a function, samples it in the provided interval, and pipes the data to the `Spark` symbol on the frontend:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor lazy="true" type="Input" display="codemirror">{`
 SparkPlot[func_, range_] := With[{var = Extract[range,1, Inactivate], min = range[[2]], max = range[[3]]}, Table[{var, func}, {var, min, max, (max-min)/200.0}]] // FrontSubmit[Spark[#]] &
 
@@ -392,7 +392,7 @@ SetAttributes[SparkPlot, HoldAll]
 Here we go:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor lazy="true" type="Input" display="codemirror">{`
 SparkPlot[Sinc[1.5 x], {x,-10,10}]
 `}</wljs-editor></WLJSWrapper>

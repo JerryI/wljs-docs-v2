@@ -42,7 +42,7 @@ Here is how to define and work with components within a single notebook
 Creating presentations is a repetitive process. It is quite common to have some elements shared between different slides. For example we want a basic header to which we can provide textual data. Let's create WLX to define it:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor lazy="true" type="Input" display="codemirror">{`.wlx
 Heading[OptionsPattern[]] := With[{Title = OptionValue["Title"]},
     <div>
@@ -57,7 +57,7 @@ Options[Heading] = {"Title" -> ""};
 Now we mark it [initialization cell](./../Overview), so that we do not need to evaluate it manually next time. Then let's create a slide with it:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor lazy="true" type="Input" display="codemirror">{`.slide
 
 <Heading Title={"Your title"}/>
@@ -84,7 +84,7 @@ However, if we want something more complex, we can avoid passing data as options
 Let's also add a custom icon:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor lazy="true" type="Input" display="codemirror">{`.wlx
 MakeTitle[Children__] := MakeTitle[ToStringRiffle[{Children}]]
 
@@ -108,7 +108,7 @@ Footer = With[{},
 This allows us to pass multiple child elements to our title generator. By the first definition of `MakeTitle`, all children will be merged into a single one. Here is an example with slides:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor lazy="true" type="Input" display="codemirror">{`.slide
 <!-- .slide: class="slide-standard" -->
 
@@ -160,7 +160,7 @@ OurGroupedPlot = Row[{
 and place on a slide or Markdown cell:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor lazy="true" type="Input" display="codemirror">{`.slide
 
 # Example
@@ -179,7 +179,7 @@ You can also bind each to a separate variable and then assemble them into a grou
 ```
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor lazy="true" type="Input" display="codemirror">{`.slide
 
 # Example
@@ -202,7 +202,7 @@ FrontEndExecutable[70e41077-f1ce-4422-a7ac-0f1f4a630668]</div></dummy>`}</wljs-e
 Here is another example, where we more heavily combine Markdown, WLX and HTML:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor lazy="true" type="Input" display="codemirror">{`.slide
 <!-- .slide: class="slide-standard" -->
 
@@ -278,7 +278,7 @@ where:
 Here’s a simple component implementation using WLX. Use the full power of web-technologies:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor lazy="true" type="Input" display="codemirror">{`.wlx
 Columns[data__, OptionsPattern[]] := With[{
     Style = OptionValue["Style"]
@@ -302,7 +302,7 @@ Options[Columns] = {"Style" -> ""};
 Here we can not only provide children elements as arguments, but attributes as options as well. For example:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor lazy="true" type="Input" display="codemirror">{`.slide
 
 # Hey There!
@@ -377,7 +377,7 @@ Using `"Style"` option we can customize the look of columns:
 JavaScript code can be embedded normally with `<script>` tags—no special magic is required. Here is an example with a helper component to display, let's say, the number of publications:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor lazy="true" type="Input" display="codemirror">{`.wlx
 Stat[Text_, OptionsPattern[]] := With[{
   Count = OptionValue["Count"],
@@ -404,7 +404,7 @@ Options[Stat] = {"Count" -> 1};
 `}</wljs-editor></WLJSWrapper>
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor lazy="true" type="Input" display="codemirror">{`.slide
 
 # Basic counter
@@ -448,7 +448,7 @@ Here we use a different approach to constructing components—instead of convert
 In this chapter we use WLX as the second one. This allows to declare **data expressions** such as:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor lazy="true" type="Input" display="codemirror">{`.slide
 
 <Card>
@@ -476,7 +476,7 @@ SetAttributes[Card, Orderless];
 Now `CardTitle`, `CardCredits`, `CardImage` in the context of WLX will not be transformed before reaching the parent element. This allows us to use the full power of native pattern matching with them on `Card` symbol:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor lazy="true" type="Input" display="codemirror">{`.wlx
 Card[CardTitle[Title_], CardCredits[credits__]] := With[{Text = ToStringRiffle[{credits}]},
   <div>
@@ -512,7 +512,7 @@ You can create a similar helper component for [textual cells](./../Cell-types/Ma
 Imagine a Lab Journal. Then we need nice-looking header with a title, some parameters and possible tags. Let's start with:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor lazy="true" type="Input" display="codemirror">{`.wlx
 
 ClearAll[LabJournal];
@@ -644,7 +644,7 @@ Here is a list of corresponding styles:
 Place it to the end of WLX cell or create a separate one (HTML or WLX type). `LabJournal` itself does not use any special pattern matching and is meant to just render any children in a nice grid-like structure:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor lazy="true" type="Input" display="codemirror">{`.md
 
 <LabJournal 
@@ -659,7 +659,7 @@ Place it to the end of WLX cell or create a separate one (HTML or WLX type). `La
 For rendering key-value structures, we define a separate symbol `Card` with data-holding symbols `CardLabel` and `CardValue`. Since it is not bound to `LabJournal`, we can reuse it as a separate component elsewhere:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor lazy="true" type="Input" display="codemirror">{`.wlx
 
 ClearAll[Card];
@@ -690,7 +690,7 @@ SetAttributes[Card, Orderless];
 We've also handled different patterns—for instance, when `CardValue` has multiple arguments passed to it while `CardLabel` does not. This can be done elegantly using Wolfram Language pattern matching. Now, let's combine both components to create a nice header for our report using Markdown cells:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor lazy="true" type="Input" display="codemirror">{`.md
 <!-- Hide this cell using Alt-2 or Cmd-2 -->
 
@@ -719,7 +719,7 @@ As we mentioned, you can still use `Card` as a standalone component:
 
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor lazy="true" type="Input" display="codemirror">{`.md
 
 <Card>

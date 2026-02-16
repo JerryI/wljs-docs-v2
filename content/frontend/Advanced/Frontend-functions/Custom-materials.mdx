@@ -21,7 +21,7 @@ Since most primitives of `Graphics` are frontend symbols too, you can extend the
 Let's define our custom frontend symbol:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor lazy="true" type="Input" display="codemirror">{`.js
 core.RainboxStroke = async (args, env) => {
     const group = env.svg.append("g");
@@ -96,7 +96,7 @@ The `RainboxStroke` symbol does not need any definitions on the Wolfram Kernel, 
 Here you can apply it directly to `Line`, `Text`, `Disk`, or any other primitives or groups of primitives that use stroke or fill color:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor lazy="true" type="Input" display="codemirror">{`
 Graphics[{
     RegularPolygon[4],
@@ -123,7 +123,7 @@ const THREE = interpretate.shared.THREE.THREE;
 Here is a basic example of low-level shaders used to colorize the primitives:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor lazy="true" type="Input" encoded="true" display="codemirror">{`.js%0Afunction%20vertexShader()%20%7B%0A%20%20return%20%60%0A%20%20%20%20varying%20vec3%20vUv%3B%20%0A%0A%20%20%20%20void%20main()%20%7B%0A%20%20%20%20%20%20vUv%20%3D%20position%3B%20%0A%0A%20%20%20%20%20%20vec4%20modelViewPosition%20%3D%20modelViewMatrix%20*%20vec4(position%2C%201.0)%3B%0A%20%20%20%20%20%20gl_Position%20%3D%20projectionMatrix%20*%20modelViewPosition%3B%20%0A%20%20%20%20%7D%0A%20%20%60%3B%0A%7D%0A%0Afunction%20fragmentShader()%20%20%7B%0A%20%20return%20%60%0A%20%20%20%20%20%20uniform%20vec3%20colorA%3B%20%0A%20%20%20%20%20%20uniform%20vec3%20colorB%3B%20%0A%20%20%20%20%20%20varying%20vec3%20vUv%3B%0A%0A%20%20%20%20%20%20void%20main()%20%7B%0A%20%20%20%20%20%20%20%20gl_FragColor%20%3D%20vec4(mix(colorA%2C%20colorB%2C%20vUv.z)%2C%201.0)%3B%0A%20%20%20%20%20%20%7D%0A%20%20%60%3B%0A%7D%0A%0Alet%20THREE%3B%0Ainterpretate.shared.THREE.load().then(()%20%3D%3E%20%7B%0A%20%20THREE%20%3D%20interpretate.shared.THREE.THREE%3B%0A%7D)%0A%0Acore.CustomMaterial%20%3D%20async%20(args%2C%20env)%20%3D%3E%20%7B%0A%20%20let%20uniforms%20%3D%20%7B%0A%20%20%20%20colorB%3A%20%7Btype%3A%20'vec3'%2C%20value%3A%20new%20THREE.Color(0xACB6E5)%7D%2C%0A%20%20%20%20colorA%3A%20%7Btype%3A%20'vec3'%2C%20value%3A%20new%20THREE.Color(0x74ebd5)%7D%0A%20%20%7D%0A%0A%20%20return%20(function()%20%7B%0A%20%20%20%20return%20new%20THREE.ShaderMaterial(%7B%0A%20%20%20%20%20%20uniforms%3A%20uniforms%2C%0A%20%20%20%20%20%20fragmentShader%3A%20fragmentShader()%2C%0A%20%20%20%20%20%20vertexShader%3A%20vertexShader()%2C%0A%20%20%20%20%7D)%3B%0A%20%20%7D)%0A%7D`}</wljs-editor></WLJSWrapper>
 
 <WLJSWrapper>
@@ -132,7 +132,7 @@ Here is a basic example of low-level shaders used to colorize the primitives:
 Now let's hook it up to some basic graphics primitives:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor lazy="true" type="Input" display="codemirror">{`
 Graphics3D[{
     Translate[Tetrahedron[], {-1,-2,0}],

@@ -19,7 +19,7 @@ The possibilities are limitless: from creating DOM elements and emitting sound, 
 Create a [JavaScript cell](./../../Cell-types/Javascript), then define a function within the `core` object—or as we call it later, the global frontend symbol context:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor lazy="true" type="Input" display="codemirror">{`.js
 core.totalSum = async (args, env) => {
     const data = await interpretate(args[0], env);
@@ -47,7 +47,7 @@ totalSum[{1,2,3,4,5}] // Alert // FrontSubmit
 Here is another example using the Canvas API to display a cellular automaton:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor lazy="true" type="Input" display="codemirror">{`.js
 const canvas = document.createElement("canvas");
 canvas.width = 400;
@@ -80,7 +80,7 @@ return canvas
 Now we can call `drawArray` repeatedly in a loop to update the field:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor lazy="true" type="Input" display="codemirror">{`
 board = RandomInteger[1, {40, 40}];
 
@@ -358,7 +358,7 @@ Let's look at a simple example that demonstrates local state:
 Create a Javascript cell 
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor lazy="true" type="Input" display="codemirror">{`.js
 core.PlaceholderClock = async (args, env) => {
     env.local.start = new Date();
@@ -382,7 +382,7 @@ core.PlaceholderClock.virtual = true;
 This `PlaceholderClock` symbol represents a ticking timer that is displayed live on a provided DOM element and pops up a window with the elapsed time when removed. To provide a DOM element, we can define an output form for this symbol on the Wolfram Kernel with our display function defined in JavaScript:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor lazy="true" type="Input" display="codemirror">{`
 PlaceholderClock /: MakeBoxes[p_PlaceholderClock, StandardForm] := ViewBox[p, p];
 
@@ -411,7 +411,7 @@ The `destroy` method is especially helpful for heavy expressions such as `Graphi
 We can take advantage of having a different method __for update events to avoid costly reevaluation of the entire expression tree__. For example, instead of redrawing everything on a graph when the data changes, we update only the changed points rather than disposing of and recreating the graph from scratch:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor lazy="true" type="Input" display="codemirror">{`.js
 core.NiceChartPlot = async (args, env) => {
     // Create the element, draw axes, etc... (SLOW)
@@ -472,7 +472,7 @@ Knowing all of this, let's improve our very first Game of Life board example:
 Let's enhance our previous animation and turn it into a functional and easily reusable block:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor lazy="true" type="Input" display="codemirror">{`.js
 
 function fillScreen(context, data) {
@@ -526,7 +526,7 @@ core.drawArray.virtual = true;
 Let's try to use it with defined output forms:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor lazy="true" type="Input" display="codemirror">{`
 board = RandomInteger[1, {40, 40}];
 drawArray /: MakeBoxes[a_drawArray, StandardForm] := ViewBox[a,a]
@@ -535,7 +535,7 @@ drawArray /: MakeBoxes[a_drawArray, StandardForm] := ViewBox[a,a]
 and then create our first instance using the output form of the `drawArray` symbol:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor lazy="true" type="Input" display="codemirror">{`
 drawArray[board // Offload]
 `}</wljs-editor></WLJSWrapper>
@@ -555,7 +555,7 @@ drawArray /: MakeBoxes[a_drawArray, WLXForm] := With[{f = CreateFrontEndObject[a
 Now let's perform an update cycle of the `board` symbol, which should be immediately reflected in our array renderer above.
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor lazy="true" type="Input" display="codemirror">{`
 Do[
     board = CellularAutomaton["GameOfLife", board];
@@ -692,7 +692,7 @@ server.kernel.io.fire(id: string, payload: any, pattern?: string = "Default"): v
 where `id` is string id of `EventObject`, `payload` can be any Javascript object, except functions or promises. For example:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor lazy="true" type="Input" display="codemirror">{`
 EventHandler["someRandomId", {
     _ -> Beep
@@ -700,7 +700,7 @@ EventHandler["someRandomId", {
 `}</wljs-editor></WLJSWrapper>
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor lazy="true" type="Input" display="codemirror">{`.js
 setTimeout(() => {
     server.kernel.io.fire('someRandomId', true);
@@ -724,7 +724,7 @@ server.kernel.io.fetch(id: string, [arg1 : any, arg2 : any, ...]) : Promise
 it always return `Promise`. For example, let's define a symbol:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor lazy="true" type="Input" display="codemirror">{`
 GetTime := TextString[Now];
 `}</wljs-editor></WLJSWrapper>
@@ -732,7 +732,7 @@ GetTime := TextString[Now];
 Now fetch and display it:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor lazy="true" type="Input" display="codemirror">{`.js
 const dom = document.createElement('span');
 
@@ -783,7 +783,7 @@ EventFire[ev, ...] (* ---> {dataB, dataC} *)
 Here is an example:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor lazy="true" type="Input" display="codemirror">{`.js
 
 const button = document.createElement('button');
@@ -802,7 +802,7 @@ return button;
 and now we define a handler function:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor lazy="true" type="Input" display="codemirror">{`
 EventHandler["eventUid", Function[Null,
     RandomWord[]

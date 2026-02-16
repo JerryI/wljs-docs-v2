@@ -21,7 +21,7 @@ import { Accordion, Accordions } from 'fumadocs-ui/components/accordion';
 WLJS Notebook partially inherits a well-known killer feature of Wolfram Mathematica - [Manipulate](./../GUI/Manipulate), [Animate](./../GUI/Animate), and others, allowing interactive evaluation of arbitrary expressions:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-10 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor type="Input" display="codemirror">{`
 Manipulate[
     Plot[Sin[a x + b], {x, 0, 6}], 
@@ -38,7 +38,7 @@ Manipulate[
 Text strings or any other symbolic expressions can also be manipulated:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-10 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor type="Input" display="codemirror">{`
 Manipulate[Column[{
     Style[StringTemplate["\`\` m/s"][v], Blue],
@@ -57,7 +57,7 @@ Under the hood, it uses a diff algorithm to interpret changes between old and ne
 `Animate` works in a similar way, but scans the parameter automatically:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-10 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor type="Input" lazy="true" display="codemirror">{`
 Animate[
     ParametricPlot[ReIm @ Exp[-I (\\[Phi] + \\[Gamma] I \\[Phi])], {\\[Phi],0,5Pi}, 
@@ -75,14 +75,14 @@ Animate[
 For symbolic data it works too:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-10 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor type="Input" lazy="true" display="codemirror">{`
 Animate[{x, (*SpB[*)Power[x(*|*),(*|*)2](*]SpB*)} // NumberForm, {x,0,10}]
 `}</wljs-editor>
 </WLJSWrapper>
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-10 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor type="Input" lazy="true" display="codemirror">{`
 Animate[Row[{Sin[x], "==", Series[Sin[x], {x,0,n}], Invisible[1/2]}], {n, 1, 10, 1}, RefreshRate->3]
 `}</wljs-editor>
@@ -91,7 +91,7 @@ Animate[Row[{Sin[x], "==", Series[Sin[x], {x,0,n}], Invisible[1/2]}], {n, 1, 10,
 If you need to periodically check a symbol or re-evaluate an expression, use [Refresh](./../GUI/Refresh):
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-10 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor type="Input" lazy="true" display="codemirror">{`
 Refresh[Now, 1]
 `}</wljs-editor>
@@ -100,7 +100,7 @@ Refresh[Now, 1]
 It can work for images and many other types as well utilizing the same diff algorithm of `Manipulate`:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-10 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor type="Input" lazy="true" display="codemirror">{`
 img = ExampleData[{"TestImage", "Lena"}];
 Refresh[(img = EdgeDetect[img] 0.05 + img; img), 0.1]
@@ -113,7 +113,7 @@ Refresh[(img = EdgeDetect[img] 0.05 + img; img), 0.1]
 We recommend using [ManipulatePlot](./../Plotting-Functions/ManipulatePlot) and [ManipulateParametricPlot](./../Plotting-Functions/ManipulateParametricPlot) for simple interactive curve plotting, since they are more optimized and do not require the diff algorithm to run:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-10 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor type="Input" lazy="true" display="codemirror">{`
 ManipulatePlot[
     (*TB[*)Sum[(*|*)(*FB[*)((Sin[2π(2j - 1) x])(*,*)/(*,*)(2j-1))(*]FB*)(*|*), {(*|*)j(*|*),(*|*)1.0(*|*),(*|*)n(*|*)}](*|*)(*1:eJxTTMoPSmNiYGAoZgMSwaW5TvkVmYwgPguQCCkqTQUAeAcHBQ==*)(*]TB*)
@@ -127,7 +127,7 @@ ManipulatePlot[
 [AnimatePlot](./../Plotting-Functions/AnimatePlot) and [AnimateParametricPlot](./../Plotting-Functions/AnimateParametericPlot) use a different strategy and precalculate all curves before animating:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-10 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor type="Input" lazy="true" display="codemirror">{`
 AnimateParametricPlot[
       With[{t = If[x > lim,lim,x]},
@@ -151,7 +151,7 @@ The way how you update things like points and lines on your plots, images, or bi
 WLJS mostly uses retained mode for managing objects on screen, which means `Line` or `Point` has a dedicated method to update itself when the dependencies change. Not all primitives have an update method implemented—please check our symbols reference section to confirm. The dependencies are resolved and the changes are propagated by the frontend (browser), not by the evaluation kernel. To create such a dependency, you need to "offload" an expression to be executed on the frontend. For example:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-10 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor type="Input" lazy="true" display="codemirror">{`
 l = 1;
 
@@ -167,7 +167,7 @@ Graphics[{Cyan,
 Here we used [Offload](./../Interpreter/Offload) to tell Wolfram Kernel not to evaluate symbol `l` and keep it for evaluating on the frontend. In this example above the binding happens between [Rectangle](./../Graphics/Rectangle) and `l`. Nothing stops us from offloading a derived expression from the same symbol:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-10 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor type="Input" lazy="true" display="codemirror">{`
 Graphics[{Pink,
     (*BB[*)(Disk)(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRAeB5AILqnMSXXKr0hjgskHleakFnMBGU6JydnpRfmleSlpzDDlQe5Ozvk5+UVFDGDwwb5oDhi8sS+qB4P39gBJMR34"*)(*]BB*)[{(*BB[*)(l)(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRAeB5AILqnMSXXKr0hjgskHleakFnMBGU6JydnpRfmleSlpzDDlQe5Ozvk5+UVFDGDwwb7o7x8QeGNf9PEDCDywBwB4XSLR"*)(*]BB*), (*BB[*)(l)(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRAeB5AILqnMSXXKr0hjgskHleakFnMBGU6JydnpRfmleSlpzDDlQe5Ozvk5+UVFDGDwwb7o7x8QeGNf9PEDCDywBwB4XSLR"*)(*]BB*)}//Offload, (*SpB[*)Power[(*BB[*)(l)(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRAeB5AILqnMSXXKr0hjgskHleakFnMBGU6JydnpRfmleSlpzDDlQe5Ozvk5+UVFDGDwwb7o7x8QeGNf9PEDCDywBwB4XSLR"*)(*]BB*)(*|*),(*|*)2](*]SpB*) // Offload]
@@ -180,7 +180,7 @@ Graphics[{Pink,
 Here the radius of `Disk` depends on `l^2`, therefore when `l` changes, it recalculates the derived square of this symbol. Now let's try to update our symbol:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-10 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor type="Input" lazy="true" display="codemirror">{`
 l = 0.33;
 `}</wljs-editor></WLJSWrapper>
@@ -188,7 +188,7 @@ l = 0.33;
 Using a [slider](./UI-Events-Capture) we can observe the change easier:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-10 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor type="Input" lazy="true" display="codemirror">{`
 EventHandler[InputRange[0,1,.1], Function[val, l=val]]
 `}</wljs-editor></WLJSWrapper>
@@ -206,14 +206,14 @@ When you apply `Offload`, it is effectively a `Hold` expression that keeps an ex
 Whenever the interpreter sees an undefined symbol, it fetches it from Wolfram Kernel and requests tracking of changes. We call these *dynamic symbols*. Dynamic symbols, as well as `Line`, `Point`, and `Image`, are defined on both sides: frontend and kernel, and belong to a special class that can bind to each other and listen to changes. For example, even if the expression is nested:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-10 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor type="Input" lazy="true" display="codemirror">{`
 x = 0.4;
 (*BB[*)(Line)(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRAeB5AILqnMSXXKr0hjgskHleakFnMBGU6JydnpRfmleSlpzDDlQe5Ozvk5+UVFDGDwwb5oDhi8sS+qB4P39gBJMR34"*)(*]BB*)[Offload[{{0,0}, {(*BB[*)(x)(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRAeB5AILqnMSXXKr0hjgskHleakFnMBGU6JydnpRfmleSlpzDDlQe5Ozvk5+UVFDGDwwb7o7x8QeGNf9PEDCDywBwB4XSLR"*)(*]BB*) + 1, 1}}]] // Graphics
 `}</wljs-editor></WLJSWrapper>
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-10 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor type="Input" lazy="true" display="codemirror">{`
 x = -0.5;
 `}</wljs-editor></WLJSWrapper>
@@ -400,7 +400,7 @@ Graphics3D[{
 and run the update cycle:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-10 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor lazy="true" type="Input" display="codemirror">{`
 Do[
   tube = Sum[
@@ -445,7 +445,7 @@ Graphics[Table[Translate[bar[], {2i,0}], {i, -5,5}], PlotRange->{{-10,10}, {-1,1
 In Wolfram Language color, opacity and other directives are automatically applied to all primitives, even scoped with a `List` appearing after them, i.e.:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-10 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor lazy="true" type="Input" display="codemirror">{`
 {Red, (*BB[*)(Disk[...])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRAeB5AILqnMSXXKr0hjgskHleakFnMBGU6JydnpRfmleSlpzDDlQe5Ozvk5+UVF8WDw3r5IAAwe2BfNAYM79gBQ7x14"*)(*]BB*), Blue, {(*BB[*)(Disk[...])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRAeB5AILqnMSXXKr0hjgskHleakFnMBGU6JydnpRfmleSlpzDDlQe5Ozvk5+UVF0mBw277o108QeGlfdP8eCLyzBwCCPCLr"*)(*]BB*), (*BB[*)(Line[...])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRAeB5AILqnMSXXKr0hjgskHleakFnMBGU6JydnpRfmleSlpzDDlQe5Ozvk5+UVF0mBw277o108QeGlfdP8eCLyzBwCCPCLr"*)(*]BB*)}}
 `}</wljs-editor></WLJSWrapper>
@@ -453,7 +453,7 @@ In Wolfram Language color, opacity and other directives are automatically applie
 Therefore if we use *dynamic symbols* and offload them to the frontend, there will be 2 types of binding:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-10 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor lazy="true" type="Input" display="codemirror">{`
 opacity = 1.0;
 Graphics[{
@@ -1356,7 +1356,7 @@ Audio[buffer//Offload]
 ```
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-10 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor lazy="true" type="Input" display="codemirror">{`
 buffer = Table[Exp[-(*FB[*)((x)(*,*)/(*,*)(100.))(*]FB*)] Sin[(*FB[*)((x)(*,*)/(*,*)(1.5))(*]FB*)], {x, 0, 100 \\[Pi], 0.1}];
 `}</wljs-editor></WLJSWrapper>

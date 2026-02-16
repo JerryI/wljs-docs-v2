@@ -5,7 +5,7 @@ title: HTML
 Type `.html` in the first line of an input cell and start writing raw HTML on a new line:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor type="Input" display="codemirror">{`.html
 Here is my
 <h3>Hello World</h3>`}</wljs-editor>
@@ -19,7 +19,7 @@ Here is my
 The input is also processed with PHP-like template engine (WSP) allowing to embed Wolfram expressions:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor type="Input" display="codemirror">{`.html
 <h3>Today is <?wsp Now // TextString ?></h3>
 `}</wljs-editor>

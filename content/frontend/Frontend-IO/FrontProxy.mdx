@@ -162,7 +162,7 @@ For processing many proxies use pure functions with `Map`, `Table` or `MapThread
 Here we will use Lennard-Jones potential to model a bunch of sphere-like molecules on 2D canvas aka [Graphics](../Graphics/Graphics) 
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor type="Input" display="codemirror">{`
 disk = f\`Proxy[{pos, c}, {
 	Opacity[0.2], RGBColor[With[{h=c}, {h, 1-h, 0.}]],

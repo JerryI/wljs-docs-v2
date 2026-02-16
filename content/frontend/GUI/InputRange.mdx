@@ -78,7 +78,7 @@ To prevent an event propagation, when a tracked symbol is updated use
 then you can safely write
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor type="Input" display="codemirror">{`
 var = 0.3;
 EventHandler[InputRange[0,2,0.1, var, "TrackedExpression"->{Offload[var], "Debounce"}], Function[newValue,

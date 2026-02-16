@@ -5,7 +5,7 @@ title: Markdown
 Type `.md` in the first line of an input cell and start writing Markdown on a new line:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor type="Input" display="codemirror">{`.md
 # Notebook Title
 Here are my beautiful notes
@@ -33,7 +33,7 @@ Hide input cells using __cell group properties__ — see [Overview](./../Overvie
 Use `#` for headings, increasing the number of `#` for smaller headings:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor type="Input" display="codemirror">{`.md
 # Heading 1
 ## Heading 2
@@ -45,7 +45,7 @@ Use `#` for headings, increasing the number of `#` for smaller headings:
 Use `*` or `_` for italics, and `**` or `__` for bold:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor type="Input" display="codemirror">{`.md
 *italic* or _italic_
 **bold** or __bold__
@@ -56,7 +56,7 @@ Use `*` or `_` for italics, and `**` or `__` for bold:
 Create unordered lists with `*`, `+`, or `-`, and ordered lists with numbers followed by a period:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor type="Input" display="codemirror">{`.md
 - Item 1
 - Item 2
@@ -72,7 +72,7 @@ Create unordered lists with `*`, `+`, or `-`, and ordered lists with numbers fol
 Create links using `[text](URL)`:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor type="Input" display="codemirror">{`.md
 [Tree](https://en.wikipedia.org/wiki/Tree)
 `}</wljs-editor>
@@ -82,7 +82,7 @@ Create links using `[text](URL)`:
 Embed images using `![alt text](URL)`:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor type="Input" display="codemirror">{`.md
 ![Tree](https://upload.wikimedia.org/wikipedia/commons/e/eb/Ash_Tree_-_geograph.org.uk_-_590710.jpg)
 `}</wljs-editor>
@@ -96,7 +96,7 @@ Files can be remote or local (in the notebook folder). __Try dragging and droppi
 We use the amazing [Excalidraw](https://excalidraw.com/) editor for complex drawings, right inside a markdown input cell. Try typing:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor type="Input" display="codemirror">{`.md
 
 !![]
@@ -117,7 +117,7 @@ If you want to copy the canvas as PNG or SVG - use __context menu__ of the canva
 Create blockquotes using `>`:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor type="Input" display="codemirror">{`.md
 > This is a blockquote.
 `}</wljs-editor>
@@ -127,7 +127,7 @@ Create blockquotes using `>`:
 Use backticks for inline code and triple backticks for code blocks:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor type="Input" display="codemirror">{`.md
 
 \`inline code\`
@@ -142,7 +142,7 @@ code block
 Create a horizontal rule with three or more dashes, asterisks, or underscores:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor type="Input" display="codemirror">{`.md
 ---
 ***
@@ -154,7 +154,7 @@ ___
 Create tables using pipes `|` and dashes `-`:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor type="Input" display="codemirror">{`.md
 | Header 1 | Header 2 |
 |----------|----------|
@@ -167,7 +167,7 @@ Create tables using pipes `|` and dashes `-`:
 Use `==` to highlight text:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor type="Input" display="codemirror">{`.md
 Here is ==my hello world==
 `}</wljs-editor>
@@ -177,7 +177,7 @@ Here is ==my hello world==
 Use the following syntax:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor type="Input" display="codemirror">{`.md
 :::tip
 Use admonitions!
@@ -190,7 +190,7 @@ The following types have special highlighting: `tip`, `info`, `warning`, `danger
 You can also define your own custom type:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor type="Input" display="codemirror">{`.html
 
 <style>
@@ -209,7 +209,7 @@ The `todo` tag adds a live button-counter at the top of the page, serving as a r
 You can place a bookmark on the page using:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor type="Input" display="codemirror">{`.md
 @bookmark
 `}</wljs-editor>
@@ -225,7 +225,7 @@ For printing exported PDF or [HTML](./HTML) it comes handy to control page break
 For example
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor type="Input" display="codemirror">{`.md
 
 Here it breaks in two
@@ -242,7 +242,7 @@ You can use __plain HTML__, styles, scripts to stylize markdown or embed media o
 We use KaTeX as the render engine. To write an equation, wrap it inside `$` for inline or `$$` for a block:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor type="Input" display="codemirror">{`.md
 $$
 E = \\\\hbar \\\\omega
@@ -264,7 +264,7 @@ To have full compatibility with Markdown syntax you have to escape all backslash
 To avoid misinterpretation for `__` markdown command, you need to escape such cases. For example, instead of __this__
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor type="Input" display="codemirror">{`.md
 $$
 \\hat{\\alpha}_{x} - \\hat{\\beta}_{}
@@ -275,7 +275,7 @@ $$
 try to write this
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor type="Input" display="codemirror">{`.md
 $$
 \\\\hat{\\\\alpha}\\_{x} - \\\\hat{\\\\beta}\\_{}
@@ -293,7 +293,7 @@ Markdown cells inherit features of [WLX](./WLX) cells
 For example, if you create a 3D plot:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor type="Input" display="codemirror">{`
 Figure = Plot3D[Sin[x] Cos[y], {x, -5, 5}, {y, -5, 5}];
 `}</wljs-editor>
@@ -306,7 +306,7 @@ Make sure the first letter in a symbol name is capitalized. This is required by 
 Then you can embed it into a markdown cell using a custom tag:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor type="Input" display="codemirror">{`.md
 Hello there! Here is my plot
 

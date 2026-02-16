@@ -15,7 +15,7 @@ You can take advantage of [HTML](./../Cell-types/HTML) and [WLX](./../Cell-types
 You can use basic HTML together with insets of WL using PHP-like syntax:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl  opacity-10 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor display="codemirror" type="Input"  >{`.html
 
 Current time: <b><?wsp TextString[Now] ?></b>`}</wljs-editor></WLJSWrapper>
@@ -26,13 +26,13 @@ Current time: <b><?wsp TextString[Now] ?></b>`}</wljs-editor></WLJSWrapper>
 Let's generate some data in the form of a table.
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl  opacity-10 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor display="codemirror" type="Input"  >{`data = Table[RandomWord[], {i, 4}, {j, 4}];`}</wljs-editor></WLJSWrapper>
 
 The `wsp` template allows you to break the expressions.
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl  opacity-10 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor display="codemirror" type="Input"  >{`.html
 
 <table>
@@ -57,7 +57,7 @@ Wolfram Language XML Extension is a superset of HTML and WL. It requires to lear
 
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl  opacity-10 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor display="codemirror" type="Input"  >{`.wlx
 
 <div>
@@ -70,7 +70,7 @@ Wolfram Language XML Extension is a superset of HTML and WL. It requires to lear
 Make a custom layout for the table with WLX cells:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl  opacity-10 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor display="codemirror" type="Input"  >{`.wlx
 
 makeTable[data_List] := With[{ TableBody = 
@@ -114,11 +114,11 @@ makeTable[data]`}</wljs-editor></WLJSWrapper>
 WLX cells can render many Wolfram Expressions as long as they have a defined `WLXForm`. For example, any graphics object or input slider can be shown properly:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl  opacity-10 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor display="codemirror" type="Input"  >{`GraphicsObject = Graphics[{Line@Table[ReIm@Exp[I x - 0.03 x], {x,0,40Pi,.1}]}, ImageSize->300];`}</wljs-editor></WLJSWrapper>
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl  opacity-10 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor display="codemirror" type="Input"  >{`.wlx
 
 <div class="relative">
@@ -138,11 +138,11 @@ WLX cells can render many Wolfram Expressions as long as they have a defined `WL
 To use WLX components within normal Wolfram cells, you need to use a wrapper. The most general one is [CellView](./../GUI/CellView), which allows you to create an inset of a virtual cell. For example:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl  opacity-10 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor display="codemirror" type="Input"  >{`tableComponent[data_] := CellView[Cell[makeTable[data], "Output", "wlx"]];`}</wljs-editor></WLJSWrapper>
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl  opacity-10 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor display="codemirror" type="Input"  >{`tableComponent[data] // Framed `}</wljs-editor></WLJSWrapper>
 
 <WLJSWrapper>
@@ -155,7 +155,7 @@ Now you can freely use it as if it were a normal WL expression.
 Another way is to utilize [HTMLView](./../GUI/HTMLView) with the `WLXProcessor` preprocessor, which is slightly faster than `CellView`.
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl  opacity-10 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor display="codemirror" type="Input"  >{`tableComponent[data_] := HTMLView[
   makeTable[data], Prolog->HTMLView\`WLXProcessor[]
 ];
@@ -169,7 +169,7 @@ tableComponent[data] // Framed `}</wljs-editor></WLJSWrapper>
 One can create an entire widget using only WLX cells with properly scoped dynamic symbols. For example:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl  opacity-10 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor display="codemirror" type="Input"  >{`.wlx
 
 Module[{Slider = InputRange[0.1,1,0.1,0.5], Figure, lines},

@@ -7,14 +7,14 @@ Type `.wlx` in the first line of an input cell and start writing WLX on a new li
 import {Tab, Tabs} from 'fumadocs-ui/components/tabs';
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor type="Input" display="codemirror">{`.wlx
 <Now/>
 `}</wljs-editor>
 </WLJSWrapper>
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor type="Output" display="wlx">{`Fri 2 Jan 2026 16:11:04`}</wljs-editor>
 </WLJSWrapper>
 
@@ -51,7 +51,7 @@ Wolfram expressions always start with a capital letter, while plain `HTML` tags 
 <Tab value="HTML tag">
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor type="Input" display="codemirror" lazy="true">{`.wlx
 <div></div>`}</wljs-editor>
 </WLJSWrapper>
@@ -60,7 +60,7 @@ Wolfram expressions always start with a capital letter, while plain `HTML` tags 
 <Tab value="Wolfram Expression">
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor type="Input" display="codemirror" lazy="true">{`.wlx
 <Div></Div>`}</wljs-editor>
 </WLJSWrapper>
@@ -81,7 +81,7 @@ StringReverse[TimeNow]
 can be written as
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor type="Input" display="codemirror" lazy="true">{`.wlx
 TimeNow := TextString[Now];
 
@@ -103,7 +103,7 @@ Any symbol in Wolfram Language has a few predefined output forms. `StandardForm`
 For example:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor type="Input" display="codemirror" lazy="true">{`
 SpecialSymbol;
 
@@ -114,7 +114,7 @@ SpecialSymbol /: MakeBoxes[SpecialSymbol, WLXForm] := MakeBoxes["Hey!", WLXForm]
 then if you evaluate `SpecialSymbol` in WLX cell, it will print `"Hey!"` to a DOM tree:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor type="Input" display="codemirror" lazy="true">{`.wlx
 <SpecialSymbol/>
 `}</wljs-editor>
@@ -125,12 +125,12 @@ Many symbols have [predefined `WLXForm`](./../Advanced/Decorating-symbols), name
 However, a basic plot will work out of the box:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor type="Input" display="codemirror" lazy="true">{`MyPlot = Plot[x, {x,0,1}];`}</wljs-editor>
 </WLJSWrapper>
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor type="Input" display="codemirror" lazy="true">{`.wlx
 
 <MyPlot/>`}</wljs-editor>
@@ -151,7 +151,7 @@ However, a basic plot will work out of the box:
 Here is a function, that takes 3 arguments, but prints only the 2nd one:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor type="Input" display="codemirror" lazy="true">{`.wlx
 SomeFunction[Arg1_, Arg2_, Arg3_] := <h3><Arg2/></h3>
 
@@ -167,7 +167,7 @@ SomeFunction[Arg1_, Arg2_, Arg3_] := <h3><Arg2/></h3>
 This is a crucial thing, when it comes to a markup. __Curly braces with double quotes__ can be used to interpolate strings in HTML attributes:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor type="Input" display="codemirror" lazy="true">{`.wlx
 With[{
     url = "upload.wikimedia.org/wikipedia/commons/7/70/Oftheunicorn.jpg"
@@ -180,7 +180,7 @@ With[{
 Any Wolfram expressions are allowed inside the braces
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor type="Input" display="codemirror" lazy="true">{`.wlx
 With[{
     url = {"upload.wikimedia.org/wikipedia/commons/7/70/Oftheunicorn.jpg"}
@@ -195,7 +195,7 @@ With[{
 If you pass an HTML attribute to a Wolfram symbol, it will be translated to an option, i.e.
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor type="Input" display="codemirror" lazy="true">{`.wlx
 
 <Heading title={"Some title"}/>
@@ -205,7 +205,7 @@ If you pass an HTML attribute to a Wolfram symbol, it will be translated to an o
 where we defined `Heading` as
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor type="Input" display="codemirror" lazy="true">{`.wlx
 
 Heading[OptionsPattern[]] := With[{Title = OptionValue["title"]},
@@ -219,7 +219,7 @@ Options[Heading] = {"title" -> "Empty title"}
 The same can be done for tags with children:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor type="Input" display="codemirror" lazy="true">{`.wlx
 <TagName option1={1+1} option2={Now}>
     whatever
@@ -229,7 +229,7 @@ The same can be done for tags with children:
 where all passed arguments __go firstly and before__ the `OptionsPattern[]`:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor type="Input" display="codemirror" lazy="true">{`.wlx
 TagName[child_, OptionsPattern[]] := ...
 TagName[children__, OptionsPattern[]] := ...
@@ -240,7 +240,7 @@ TagName[children__, OptionsPattern[]] := ...
 Use special `<Escape>` tag to avoid interpretation of tags inside:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor type="Input" display="codemirror" lazy="true">{`.wlx
 <Escape>
     <Div>It won't be parsed by WLX</Div>
@@ -255,7 +255,7 @@ The inner content will not be parsed and, but will be returned as string
 `HTML/XML` is a markup language by its nature. Therefore we recommend to use Wolfram Language making tables, conditional rendering for that:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor type="Input" display="codemirror" lazy="true">{`.wlx
 
 Columns[YourList__] := Table[
@@ -281,7 +281,7 @@ Here a multiple `<p>` tags are substituted as a sequence of arguments to `Column
 Here is another way to build lists from raw data:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor type="Input" display="codemirror" lazy="true">{`.wlx
 
 With[{
@@ -311,7 +311,7 @@ This implies that this one will be exported to the output, like in `CompoundExpr
 Modern web-browsers are quite forgiving, when it comes to the syntax mistakes. WLX parser decodes the whole tree of HTML and WL and, then, builds an AST. Therefore, always close tags explicitly
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor type="Input" display="codemirror" lazy="true">{`.wlx
 <img src="http://..."/>
 `}</wljs-editor>
@@ -323,7 +323,7 @@ Modern web-browsers are quite forgiving, when it comes to the syntax mistakes. W
 Plot a function and assign it to a symbol:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor type="Input" display="codemirror" lazy="true">{`
 Figure = Plot[Sinc[5x], {x, -5, 5}]
 `}</wljs-editor>
@@ -332,7 +332,7 @@ Figure = Plot[Sinc[5x], {x, -5, 5}]
 Then, in a new cell, type:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor type="Input" display="codemirror" lazy="true">{`.wlx
 
 <div>
@@ -359,7 +359,7 @@ Now your plot will shake infinitely 😉
 Let's define a hybrid WL function:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor type="Input" display="codemirror" lazy="true">{`
 
 Heading[Text_, OptionPattern[]] := With[{color = OptionValue["Color"]},
@@ -373,7 +373,7 @@ Options[Heading] = {"Color" -> "black"};
 You can now use it in your layout:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor type="Input" display="codemirror" lazy="true">{`.wlx
 
 <Heading Color={"blue"}>
@@ -385,7 +385,7 @@ You can now use it in your layout:
 this will work on [slides](./Slide) and [markdown](./Markdown) cells as well:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor type="Input" display="codemirror" lazy="true">{`.slide
 
 # Slide title
@@ -401,7 +401,7 @@ this will work on [slides](./Slide) and [markdown](./Markdown) cells as well:
 You can fine-tune the layout since you're working directly with HTML and CSS. For example, here's a slider and a plot aligned in a row:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor type="Input" display="codemirror" lazy="true">{`.wlx
 
 Module[{Slider = InputRange[0.1, 1, 0.1, 0.5], Figure, lines},

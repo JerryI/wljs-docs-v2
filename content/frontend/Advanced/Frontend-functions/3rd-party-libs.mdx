@@ -16,7 +16,7 @@ You do not need to reevaluate or recompile any Javascript cells, the generated o
 First, let's install it locally using [shell cells](./../../Cell-types/Misc):
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor lazy="true" type="Input" display="codemirror">{`.sh
 npm i apexcharts --prefix .
 `}</wljs-editor></WLJSWrapper>
@@ -26,7 +26,7 @@ npm i apexcharts --prefix .
 Let's look at the documentation and create a simple example:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor lazy="true" type="Input" display="codemirror">{`.mjs
 import ApexCharts from 'apexcharts'
 
@@ -55,7 +55,7 @@ ApexCharts requires the DOM element `dom` to be mounted to the document before c
 Next, we can turn it into a frontend symbol with its own state and lifecycle. Let's adjust our script accordingly:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor lazy="true" type="Input" display="codemirror">{`.mjs
 import ApexCharts from 'apexcharts'
 
@@ -85,7 +85,7 @@ Here we added a `whenVisible` helper function that renders the chart when it bec
 For the next step we need to define `ApexCharts` on the evaluation kernel:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor lazy="true" type="Input" display="codemirror">{`
 ApexCharts;
 `}</wljs-editor></WLJSWrapper>
@@ -93,7 +93,7 @@ ApexCharts;
 That's it 😀 Actually, we need to define the [output form](./../Decorating-symbols) of `ApexCharts`. For now, we'll avoid data transformation and pass it as is:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor lazy="true" type="Input" display="codemirror">{`
 ApexCharts /: MakeBoxes[a: ApexCharts[_Association], StandardForm] := ViewBox[a,a]
 `}</wljs-editor></WLJSWrapper>
@@ -101,7 +101,7 @@ ApexCharts /: MakeBoxes[a: ApexCharts[_Association], StandardForm] := ViewBox[a,
 Now let's create an example chart:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor lazy="true" type="Input" display="codemirror">{`
 ApexCharts[<|
     "series" -> {
@@ -127,7 +127,7 @@ To use it in [slides](./../../Cell-types/Slide) or [Markdown](./../../Cell-types
 </Callout>
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor lazy="true" type="Input" display="codemirror">{`
 ApexCharts /: MakeBoxes[a: ApexCharts[_Association], WLXForm] := With[{
     f = CreateFrontEndObject[a]
@@ -140,7 +140,7 @@ ApexCharts /: MakeBoxes[a: ApexCharts[_Association], WLXForm] := With[{
 Even if we set the `StandardForm` output form for `ApexCharts`, the input expression itself is still in the output cell. You can verify this by evaluating the output again. It may become an issue if the data reaches a few kilobytes, as it can slow down the editor. To solve this, we can compress it to a single reference represented as a [frontend object](./../../Frontend-Objects/CreateFrontEndObject). The data won't be lost and will remain valid for evaluation:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor lazy="true" type="Input" display="codemirror">{`
 ApexCharts /: MakeBoxes[a: ApexCharts[_Association], form: StandardForm ] := With[{
     o = CreateFrontEndObject[a]

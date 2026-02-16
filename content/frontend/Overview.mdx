@@ -32,7 +32,7 @@ Let\'s write a function to generate notes in the given scale:`}</wljs-editor>
 Let's write a function to generate notes in the given scale:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-10 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor type="Input" display="codemirror">{`
 scale["Major"] = {2, 2, 1, 2, 2, 2, 1};
 
@@ -43,7 +43,7 @@ makeScale[root_, sc_, pos_] := With[
 </WLJSWrapper>
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-10 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor type="Input" display="codemirror">{`.md
 Now we can generate any chord progressions in a major scale, for ex. **I-V-VI-IV**`}</wljs-editor>
 </WLJSWrapper>
@@ -51,7 +51,7 @@ Now we can generate any chord progressions in a major scale, for ex. **I-V-VI-IV
 Now we can generate any chord progressions in a major scale, for ex. **I-V-VI-IV**
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-10 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor type="Input" display="codemirror">{`chords = makeScale[1, scale["Major"], {#,2+#,4+#}] &/@ {
     1, 1, 5, 5, 6, 6, 4, 4, 1 
 };
@@ -62,7 +62,7 @@ SoundNote /@ chords // Sound`}</wljs-editor>
 <wljs-editor type="Output" display="codemirror">{`(*VB[*)(Null)(*,*)(*"1:eJxTTMoPSmNkYGAoZgUSwfmleSlpnCAuC5DwySwugUhywiT98ktS05iRFWSCFGSCdGdyAAnqqwepyuQBEfw0Uc8FUsoLIgRpop4NpBSuifrqUcMTAOwDUao="*)(*]VB*)`}</wljs-editor></WLJSWrapper>
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-10 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor type="Input" display="codemirror">{`.md
 Visualize it on imaginary piano `}</wljs-editor>
 </WLJSWrapper>
@@ -70,7 +70,7 @@ Visualize it on imaginary piano `}</wljs-editor>
 Visualize it on imaginary piano 
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-10 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor type="Input" display="codemirror">{`blackQ[y_] := MemberQ[{2,4,7,9,11}, Mod[y-1,12]+1];
 ListStepPlot[(*BB[*)(Transpose[chords])(*,*)(*"1:eJxTTMoPSmNmYGAo5gcSAUX5ZZkpqSn+BSWZ+XnFaYwgCRYg4ZGfkwLh8QCJkKLEvOKC/OJUp/yKYJBoSBoTTGVQaU5qMFhLamJKMCeyajRFrECGa1lqXglYyK80JwcAFSsgcg=="*)(*]BB*), PlotStyle->(*VB[*)(Hue[0.03561231666487014, 0.8918383801498982, 0.8795337025157177, 1.])(*,*)(*"1:eJxTTMoPSmNiYGAo5gUSYZmp5S6pyflFiSX5RcEsQBHn4PCQNBCjmANIBLk7Oefn5BcVicky3lVWfWNfpLliouDmCxfsi/5vOjStL2qHfREDGHywBwA7SBsq"*)(*]VB*), Prolog->Flatten@Table[{If[blackQ[y],(*VB[*)(RGBColor[0.5666666666666667, 0.5666666666666667, 0.5666666666666667])(*,*)(*"1:eJxTTMoPSmNiYGAo5gUSYZmp5S6pyflFiSX5RcEsQBHn4PCQNGaQPAeQCHJ3cs7PyS8qUgKDR/aYDAAR9RPe"*)(*]VB*),(*VB[*)(GrayLevel[0.95])(*,*)(*"1:eJxTTMoPSmNiYGAo5gUSYZmp5S6pyflFiSX5RcEsQBHn4PCQNGaQPAeQCHJ3cs7PyS8qSgODd/aYDABY1RjK"*)(*]VB*)], Rectangle[{.5,y-.5},{9.5,y+.5}], (*VB[*)(GrayLevel[0])(*,*)(*"1:eJxTTMoPSmNiYGAo5gUSYZmp5S6pyflFiSX5RcEsQBHn4PCQNGaQPAeQCHJ3cs7PyS8qYoACTAYAyrgOFw=="*)(*]VB*), Line[{{.5,y-.5},{9.5,y-.5}}]}, {y, 0, 18}]]`}</wljs-editor>
 </WLJSWrapper>
@@ -88,7 +88,7 @@ WLJS is __more__ than just a <abbr title="Read-Eval-Print-Loop">REPL</abbr> or J
 <Card>
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-10 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor display="codemirror" type="Input"  >{`Manipulate[ParametricPlot[{Sin[u] u , Cos[u] u}, 
  {u, 0, t}, PlotPoints -> 125, Axes -> False, MaxRecursion -> 0, 
  PlotStyle -> Thick], {t,10,100,10}, ContinuousAction->True]`}</wljs-editor>

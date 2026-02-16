@@ -50,7 +50,7 @@ MySymbol /: MakeBoxes[MySymbol, WLXForm]      := "9"
 Depending on where this `MySymbol` is placed, it will look and work differently:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor lazy="true" type="Input" display="codemirror">{`.slide
 
 ## Have a look at
@@ -61,7 +61,7 @@ Depending on where this `MySymbol` is placed, it will look and work differently:
 or
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor lazy="true" type="Input" display="codemirror">{`
 MySymbol
 `}</wljs-editor></WLJSWrapper>
@@ -81,7 +81,7 @@ The given example for `StandardForm` alters not only the appearance but also the
 You can temporarily replace a symbol with an icon by applying [Interpretation](./../Formatting/Interpretation). After the first evaluation, the representation is lost and the true expression is revealed:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor lazy="true" type="Input" display="codemirror">{`
 Interpretation[
         Graphics[Rectangle[{-1,-1},{1,1}], ImageSize->{20,20}], 
@@ -98,7 +98,7 @@ Interpretation[
 We can prove it by:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor lazy="true" type="Input" display="codemirror">{`
 (*VB[*)(1)(*,*)(*"1:eJwlT8tOg0AAJMaD8SuwJyAQgahRk5osZlu2LyxLMEI4AF2B8tgGSoESPtS/keplMjPJTGbuAmp+XzEMU92OAHfJkZZ2Qhr8M0pOsDVX4Ll56R/iJKxck4RHv4gy4vaSIrKSMohsPxJl8EQW5X5EcHImrPTG9qossqo8eDwniGOFMFFeyaK1rDX9wPkm/ZoD6kQQ66f0cfmZrZH2oKc6OI151MGmjmncAJpHioFxuzrLxQwjCJOVpTotJs49AsDyDRRFzxBu9x3dvId2sHCKIF88+YWWz4KDgxLwggAC+7RKq+10Orns8GxN4P8fX49g1hnBNxdC/J1RZN2fa5U1+QVSjFNr"*)(*]VB*) + 1
 `}</wljs-editor></WLJSWrapper>
@@ -116,7 +116,7 @@ We can prove it by:
 We can create such a structure which looks like a [joystick](./../GUI/InputJoystick) but acts like a [dynamic symbol](./../Guides/Dynamic):
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor lazy="true" type="Input" display="codemirror">{`
 createDynamic2DSymbol[] := Module[{symbol = {0,0} }, With[{
     eventObject = InputJoystick[],
@@ -130,7 +130,7 @@ createDynamic2DSymbol[] := Module[{symbol = {0,0} }, With[{
 Now we create one symbol like this:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor lazy="true" type="Input" display="codemirror">{`
 createDynamic2DSymbol[]
 `}</wljs-editor></WLJSWrapper>
@@ -138,7 +138,7 @@ createDynamic2DSymbol[]
 and then __copy and paste__ it to, let's say, the text position in `Graphics`:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor lazy="true" type="Input" display="codemirror">{`
 Plot[5Pi Sin[x], {x, -5Pi, 5Pi}, Epilog->{
   Text["Sin[x]",50.0 (*BB[*)((*HERE*))(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRAeB5AILqnMSXXKr0hjgskHleakFnMBGU6JydnpRfmleSlpzDDlQe5Ozvk5+UVFDGDwwR6dwcAAAAHdFiw="*)(*]BB*), {0,0}]
@@ -159,7 +159,7 @@ Plot[5Pi Sin[x], {x, -5Pi, 5Pi}, Epilog->{
 To permanently change how a given symbol is displayed, we should use `MakeBoxes`. Remember to apply `MakeBoxes` to any expression you want to provide to the output so it will propagate down the tree:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor lazy="true" type="Input" display="codemirror">{`
 morse[s_String];
 
@@ -173,7 +173,7 @@ morse /: MakeBoxes[m: morse[s_], f: StandardForm] := With[{
 Let's define a helper constructor for our morse code:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor lazy="true" type="Input" display="codemirror">{`
 morseTable = {"a" -> ".- ", "b" -> "-... ", "c" -> "-.-. ", 
   "d" -> "-.. ", "e" -> ". ", "f" -> "..-. ", "g" -> "--. ", 
@@ -192,13 +192,13 @@ morse /: TextString[morse[s_]] := StringReplace[s,
 Let's try to create a morse code container:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor lazy="true" type="Input" display="codemirror">{`
 morse["sos"]
 `}</wljs-editor></WLJSWrapper>
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor lazy="true" type="Input" display="codemirror">{`
 (*VB[*)(morse["... --- ... "])(*,*)(*"1:eJxTTMoPSmNiYGAo5gISrimZJflFYZmp5cEngVwNLXenaC3N6mqlaCUNrRotTR0wqaHlBBLWUNLT01PQ1dVVANFKQGEdkJySoVWqV0VIiG9+QHCuX2aku2O+aXpysGNohGlUVHZBYXCetlNweJR2RJ5bYmR5unOISbprWEVwblRAIVA2OcI0KDI7Rzu0MtA3NL00I9MxyMupICS3oDy8Ij0sNDwqNTUnvTjKOdMgJ9DRtzA9vKLc1lYJZG+skxOIgrtSKVapthYo7A4UhviQBUgEleakBnOAGKmJKf55OZVg0ZCi0lQAzblJrw=="*)(*]VB*)
 `}</wljs-editor></WLJSWrapper>
@@ -206,13 +206,13 @@ morse["sos"]
 To check that this is still `morse` symbol, apply `InputForm`:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor lazy="true" type="Input" display="codemirror">{`
 (*VB[*)(morse["... --- ... "])(*,*)(*"1:eJxTTMoPSmNiYGAo5gISrimZJflFYZmp5cEngVwNLXenaC3N6mqlaCUNrRotTR0wqaHlBBLWUNLT01PQ1dVVANFKQGEdkJySoVWqV0VIiG9+QHCuX2aku2O+aXpysGNohGlUVHZBYXCetlNweJR2RJ5bYmR5unOISbprWEVwblRAIVA2OcI0KDI7Rzu0MtA3NL00I9MxyMupICS3oDy8Ij0sNDwqNTUnvTjKOdMgJ9DRtzA9vKLc1lYJZG+skxOIgrtSKVapthYo7A4UhviQBUgEleakBnOAGKmJKf55OZVg0ZCi0lQAzblJrw=="*)(*]VB*) //InputForm
 `}</wljs-editor></WLJSWrapper>
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor lazy="true" type="Input" display="codemirror">{`
 morse["... --- ... "]
 `}</wljs-editor></WLJSWrapper>
@@ -220,13 +220,13 @@ morse["... --- ... "]
 Let's convert it back to the text:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor lazy="true" type="Input" display="codemirror">{`
 (*VB[*)(morse["... --- ... "])(*,*)(*"1:eJxTTMoPSmNiYGAo5gISrimZJflFYZmp5cEngVwNLXenaC3N6mqlaCUNrRotTR0wqaHlBBLWUNLT01PQ1dVVANFKQGEdkJySoVWqV0VIiG9+QHCuX2aku2O+aXpysGNohGlUVHZBYXCetlNweJR2RJ5bYmR5unOISbprWEVwblRAIVA2OcI0KDI7Rzu0MtA3NL00I9MxyMupICS3oDy8Ij0sNDwqNTUnvTjKOdMgJ9DRtzA9vKLc1lYJZG+skxOIgrtSKVapthYo7A4UhviQBUgEleakBnOAGKmJKf55OZVg0ZCi0lQAzblJrw=="*)(*]VB*) // TextString
 `}</wljs-editor></WLJSWrapper>
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor lazy="true" type="Input" display="codemirror">{`
 "sos"
 `}</wljs-editor></WLJSWrapper>
@@ -234,7 +234,7 @@ Let's convert it back to the text:
 Finally, make it audible:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor lazy="true" type="Input" display="codemirror">{`
 silence = Table[0, {t,0,40Pi,0.1}];
 dot = Table[Sin[5 t], {t,0,40Pi,0.1}];
@@ -248,7 +248,7 @@ morse /: Play[morse[t_String]] := With[{
 `}</wljs-editor></WLJSWrapper>
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor lazy="true" type="Input" display="codemirror">{`
 (*VB[*)(morse["... --- ... "])(*,*)(*"1:eJxTTMoPSmNiYGAo5gISrimZJflFYZmp5cEngVwNLXenaC3N6mqlaCUNrRotTR0wqaHlBBLWUNLT01PQ1dVVANFKQGEdkJySoVWqV0VIiG9+QHCuX2aku2O+aXpysGNohGlUVHZBYXCetlNweJR2RJ5bYmR5unOISbprWEVwblRAIVA2OcI0KDI7Rzu0MtA3NL00I9MxyMupICS3oDy8Ij0sNDwqNTUnvTjKOdMgJ9DRtzA9vKLc1lYJZG+skxOIgrtSKVapthYo7A4UhviQBUgEleakBnOAGKmJKf55OZVg0ZCi0lQAzblJrw=="*)(*]VB*) // Play
 `}</wljs-editor></WLJSWrapper>
@@ -270,7 +270,7 @@ morse /: Play[morse[t_String]] := With[{
 Another way is to use Javascript with a custom display function. This can be done using [ViewBox](./../Formatting/Low-level/ViewBox). Let's firstly define our display function as [frontend symbol](./../Advanced/Frontend-functions/Overview):
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor lazy="true" type="Input" display="codemirror">{`.js
 core.smileyDecorator = async (args, env) => {
     const canvas = document.createElement('canvas');
@@ -300,7 +300,7 @@ core.smileyDecorator = async (args, env) => {
 Now we define a `StandardForm` for our symbol with `ViewBox` container. `ViewBox` allows to pass any decorator frontend symbol used to display an expression, and place any other expression underneath it in its `InputForm`:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor lazy="true" type="Input" display="codemirror">{`
 SmileySymbol /: MakeBoxes[s_SmileySymbol, StandardForm] := With[{},
     ViewBox[s, smileyDecorator[]]
@@ -321,13 +321,13 @@ SmileySymbol[]
 If you reevaluate the output cell, you will get the same decorated symbol. You can ensure that this is still the same symbol, by taking its first argument:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor lazy="true" type="Input" display="codemirror">{`
 SmileySymbol[42]
 `}</wljs-editor></WLJSWrapper>
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor lazy="true" type="Input" display="codemirror">{`
 (*VB[*)(SmileySymbol[42])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KWkMIB4/iMjNzEmtdElNzi9KLMkvAgDDMArI"*)(*]VB*)  // First
 `}</wljs-editor></WLJSWrapper>
@@ -342,13 +342,13 @@ SmileySymbol[42]
 In this sense, this syntax sugar is not temporary but permanent. However, we can apply the same trick as before and use it to decorate other expressions temporarily:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor lazy="true" type="Input" display="codemirror">{`
 Interpretation[SmileySymbol[], 1]
 `}</wljs-editor></WLJSWrapper>
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor lazy="true" type="Input" display="codemirror">{`
 (*VB[*)(1)(*,*)(*"1:eJxTTMoPSmNiYGAo5gISrimZJflFYZmp5cHpQK6GVphTtJamRnBuZk5qZXBlblJ+TnSspoaWDlBQS8nQKtWrIiTENz8gONcvO9LdMT8q3TXYoyzb1Ds829fTyUQ/0zfLr8o1tyTFNcevKtPS28c3u8wx3cXF17HIUwlkRmyYk5YmxH4WIBFUmpMazAFipCam+OflVIJFQ4pKUwGOai6k"*)(*]VB*) - 1
 `}</wljs-editor></WLJSWrapper>
@@ -362,7 +362,7 @@ Interpretation[SmileySymbol[], 1]
 Here is another example. Let's create a gauge that can react to value changes. Define a gauge meter:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor lazy="true" type="Input" display="codemirror">{`
 gauge[level_Real];
 
@@ -374,7 +374,7 @@ gauge /: MakeBoxes[g_gauge, StandardForm] := With[{},
 Here we use identical display and input expressions, the last one has to be defined as a [frontend symbol](./Frontend-functions/Overview) too:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor lazy="true" type="Input" display="codemirror">{`.js
 
 function setNeedlePosition(needle, value) {
@@ -415,7 +415,7 @@ core.gauge = async (args, env) => {
 Let's test it:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor lazy="true" type="Input" display="codemirror">{`
 gauge[0.3]
 `}</wljs-editor></WLJSWrapper>
@@ -428,7 +428,7 @@ gauge[0.3]
 You can also place it with other wolfram expressions
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor lazy="true" type="Input" display="codemirror">{`
 gauge[0.3] // Framed
 `}</wljs-editor></WLJSWrapper>
@@ -436,7 +436,7 @@ gauge[0.3] // Framed
 For the next step, we need to [define prototypes](./Frontend-functions/Overview) for our symbol to update the needle position and enable instancing:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor lazy="true" type="Input" display="codemirror">{`.js
 
 //old definitions...
@@ -454,7 +454,7 @@ core.gauge.virtual = true;
 Now let's provide a symbol to `gauge` and manipulate it with a slider:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor lazy="true" type="Input" display="codemirror">{`
 meterLevel = 0.5;
 gauge[meterLevel // Offload]
@@ -478,7 +478,7 @@ This is a default display structure in Wolfram Language shared across many symbo
 For example, we have a symbol with information inside its arguments:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor lazy="true" type="Input" display="codemirror">{`
 specialSymbol[<|"Date" -> Now, "Color" -> Red, "State" -> True|>]
 `}</wljs-editor></WLJSWrapper>
@@ -486,13 +486,13 @@ specialSymbol[<|"Date" -> Now, "Color" -> Red, "State" -> True|>]
 Let's decorate it:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor lazy="true" type="Input" display="codemirror" encoded="true">{`specialSymbol%20%2F%3A%20MakeBoxes%5Bobj%20%3A%20specialSymbol%5Basc_Association%5D%2C%20StandardForm%5D%20%3A%3D%20%0A%20%20%20%20Module%5B%7Babove%7D%2C%0A%20%20%20%20%20%20%20%20above%20%3D%20%7B%20%0A%20%20%20%20%20%20%20%20%20%20%7BBoxForm%60SummaryItem%5B%7B%22Date%3A%20%22%2C%20asc%5B%22Date%22%5D%7D%5D%7D%2C%0A%20%20%20%20%20%20%20%20%20%20%7BBoxForm%60SummaryItem%5B%7B%22Color%3A%20%22%2C%20asc%5B%22Color%22%5D%7D%5D%7D%2C%20%0A%20%20%20%20%20%20%20%20%20%20%7BBoxForm%60SummaryItem%5B%7B%22State%3A%20%22%2C%20asc%5B%22State%22%5D%7D%5D%7D%0A%20%20%20%20%20%20%20%20%7D%3B%0A%0A%20%20%20%20%20%20%20%20BoxForm%60ArrangeSummaryBox%5B%0A%20%20%20%20%20%20%20%20%20%20%20specialSymbol%2C%20(*%20Head%20*)%0A%20%20%20%20%20%20%20%20%20%20%20obj%2C%20%20%20%20%20%20%20%20%20%20%20(*%20Input%20expression%20*)%0A%20%20%20%20%20%20%20%20%20%20%20None%2C%20%20%20%20%20%20%20%20%20%20(*%20Icon%20*)%0A%20%20%20%20%20%20%20%20%20%20%20above%2C%20%20%20%20%20%20%20%20%20(*%20Summary%20content%20*)%0A%20%20%20%20%20%20%20%20%20%20%20Null%0A%20%20%20%20%20%20%20%20%5D%0A%20%20%20%20%5D%3B`}</wljs-editor></WLJSWrapper>
 
 The result looks like this:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor lazy="true" type="Input" display="codemirror">{`
 specialSymbol[<|"Date" -> Now, "Color" -> Red, "State" -> True|>]
 `}</wljs-editor></WLJSWrapper>
@@ -511,11 +511,11 @@ This is still a valid input expression unless it was too large, in which case it
 Now add an icon based on the "Color" field. Note that the icon can only be `Image`, `Image3D`, `Graphics`, `Graphics3D`, `None`, or any [frontend symbol](./../Advanced/Frontend-functions/Overview):
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor lazy="true" type="Input" display="codemirror" encoded="true">{`specialSymbol%20%2F%3A%20MakeBoxes%5Bobj%20%3A%20specialSymbol%5Basc_Association%5D%2C%20StandardForm%5D%20%3A%3D%20%0A%20%20%20%20Module%5B%7Babove%2C%20icon%7D%2C%0A%20%20%20%20%20%20%20%20above%20%3D%20%7B%20%0A%20%20%20%20%20%20%20%20%20%20%7BBoxForm%60SummaryItem%5B%7B%22Date%3A%20%22%2C%20asc%5B%22Date%22%5D%7D%5D%7D%2C%0A%20%20%20%20%20%20%20%20%20%20%7BBoxForm%60SummaryItem%5B%7B%22Color%3A%20%22%2C%20asc%5B%22Color%22%5D%7D%5D%7D%2C%20%0A%20%20%20%20%20%20%20%20%20%20%7BBoxForm%60SummaryItem%5B%7B%22State%3A%20%22%2C%20asc%5B%22State%22%5D%7D%5D%7D%0A%20%20%20%20%20%20%20%20%7D%3B%0A%0A%20%20%20%20%20%20%20%20icon%20%3D%20Graphics%5B%7B%0A%20%20%20%20%20%20%20%20%20%20Lighter%5Basc%5B%22Color%22%5D%5D%2C%20Disk%5B%7B0%2C0%7D%2C%201%5D%2C%0A%20%20%20%20%20%20%20%20%20%20asc%5B%22Color%22%5D%2C%20Disk%5B%7B0%2C0%7D%2C%200.8%5D%0A%20%20%20%20%20%20%20%20%7D%2C%20%0A%20%20%20%20%20%20%20%20%20%20ImageSize%20-%3E%20%7B50%2C%2050%7D%2C%20%0A%20%20%20%20%20%20%20%20%20%20ImagePadding%20-%3E%20None%2C%20%0A%20%20%20%20%20%20%20%20%20%20Controls%20-%3E%20False%2C%0A%20%20%20%20%20%20%20%20%20%20PlotRange%20-%3E%20%7B%7B-1%2C1%7D%2C%7B-1%2C1%7D%7D%0A%20%20%20%20%20%20%20%20%5D%3B%0A%0A%20%20%20%20%20%20%20%20BoxForm%60ArrangeSummaryBox%5B%0A%20%20%20%20%20%20%20%20%20%20%20specialSymbol%2C%0A%20%20%20%20%20%20%20%20%20%20%20obj%2C%0A%20%20%20%20%20%20%20%20%20%20%20icon%2C%0A%20%20%20%20%20%20%20%20%20%20%20above%2C%0A%20%20%20%20%20%20%20%20%20%20%20Null%0A%20%20%20%20%20%20%20%20%5D%0A%20%20%20%20%5D%3B`}</wljs-editor></WLJSWrapper>
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor lazy="true" type="Output" display="codemirror">{`
 specialSymbol[(*VB[*) <|"Date" -> DateObject[{2026, 2, 2, 11, 31, 53.514057}, "Instant", "Gregorian", 1.], "Color" -> RGBColor[1, 0, 0], "State" -> True|> (*,*)(*"1:eJzFVMmOm0AQdfblEimXSDklUvqQgy1oNntubN5kPCzGGc8pbWgjYqAnTVux/zEflcI4jg85ZJMiweuuV03V45Xg7ZqFmwedTqd+DWCx/ZDx8qPJOakymka7siT8APTmXnPmBcCQs0q4VbrMudiRok28vEi4e5rsBFkXNHoHtKEOqEokuatTRe2qCk26BJhuYui61CeUponeKngIMMtr0ZY8R/eb6NWFupOqiaDlMqdfoseQc4igV2/as88B3DQXjDfpH9XGrEjb6BlAHM4cmrCURu+BQ7iPsLm0kGbBivAAiKbm9foTTUTDGhaWsI6wjU+3LAMoDWhKT5NVSTMQvFFP7cuSivuarA0MrKvIcOAIwnhS1YJUAnZtPOI0YzwnVcvIPXgaaU7b+yjCPks5brCMFJNO94uFx/yonOerkcm0LI5Wt+WdFul3h00xzKMbLUzcOrBGN/vpLF652yzobxVfQnhoRZ4r5nFlHTxnsvDGgeTxFdzxB3NrumbghwFSnOZqJF301pzlyZfW4sbOcAcTftpsKEmvq+JwZBd8R393gE8gZ7OC8T+d4NfOzycYjqxjXeDko52S9H35h0aPK9W3g/mIBL5JA3s8VZLa8A9R//Mqsx3oM7wNrMxzKrBYzWM/zP6XyZH4i8/k3PgXxNWPmh8CKWr6DeUsF20="*)(*]VB*)]
 `}</wljs-editor></WLJSWrapper>

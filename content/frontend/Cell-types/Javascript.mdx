@@ -8,7 +8,7 @@ Type `.js` in the first line of an input cell and start writing Javascript on a 
 Entered expressions are evaluated as anonymous function in the isolated environment scoping all declared variables. Depending on the returned result the output cell can show JSON string or DOM element.
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor type="Input" display="codemirror">{`.js
 return 1+1`}</wljs-editor>
 </WLJSWrapper>
@@ -20,7 +20,7 @@ return 1+1`}</wljs-editor>
 or
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor type="Input" display="codemirror">{`.js
 const dom = document.createElement('span');
 dom.innerText = "Hello World";
@@ -50,7 +50,7 @@ There are a few useful built-in objects accessible from the top scope of called 
 This property is called when a cell is destroyed. Assign a clean-up function to it:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor type="Input" display="codemirror">{`.js
 this.ondestroy = () => {
     // Clean up resources
@@ -63,7 +63,7 @@ __Always clean up any timers or animation loops__ using the `this.ondestroy` pro
 For example:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor type="Input" display="codemirror">{`.js
 const canvas = document.createElement('canvas');
 const ctx = canvas.getContext('2d');
@@ -201,7 +201,7 @@ This requires Node.js to be globally installed on your system.
 Unlike [Vanilla JS](##Vanilla%20JS) it does not return anything directly. Instead it provides a special property available from the content:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor type="Input" display="codemirror">{`.mjs
 const dom = document.createElement('span');
 dom.style.color = "red";
@@ -242,7 +242,7 @@ For example, let's install an NPM library using [Shell type](./Misc) cell:
 
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor type="Input" display="codemirror">{`.sh
 npm i siriwave --prefix .`}</wljs-editor>
 </WLJSWrapper>
@@ -254,7 +254,7 @@ Use always `--prefix .` to force npm work locally
 Now we can create a simple animation following the documentation of `siriwave`:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor type="Input" display="codemirror">{`.mjs
 import SiriWave from "siriwave";
 

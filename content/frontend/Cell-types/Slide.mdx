@@ -8,7 +8,7 @@ import { Accordion, Accordions } from 'fumadocs-ui/components/accordion';
 Type `.slide` in the first line of an input cell and start writing Markdown slide on a new line:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor lazy="true" type="Input" display="codemirror">{`.slide
 # Presentation Title
 
@@ -72,7 +72,7 @@ Use the __project__ feature (<kbd>Ctrl-Shift-Enter</kbd> or <kbd>⌘-Shift-Enter
 Each `.slide` cell creates a single presentation slide. You can write multiple slides across different cells in your notebook:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor lazy="true" type="Input" display="codemirror">{`.slide
 # First Slide
 Content for the first slide
@@ -80,7 +80,7 @@ Content for the first slide
 </WLJSWrapper>
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor lazy="true" type="Input" display="codemirror">{`.slide
 # Second Slide
 Content for the second slide
@@ -92,7 +92,7 @@ Content for the second slide
 Within a single `.slide` cell, you can create multiple slides by separating them with `---`:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor lazy="true" type="Input" display="codemirror">{`.slide
 # First Slide
 This is the first slide
@@ -114,7 +114,7 @@ This is the third slide
 To combine all slides from different cells across your notebook into a single presentation, use the plural form:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor lazy="true" type="Input" display="codemirror">{`.slides
 
 Thank you for the attention
@@ -127,7 +127,7 @@ This will merge and render all slide cells in the notebook as one continuous pre
 Standard text to the left, full-height layout:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor lazy="true" type="Input" display="codemirror">{`.slide
 
 <!-- .slide: class="slide-standard" -->
@@ -141,7 +141,7 @@ Content
 Scrollable slide
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor lazy="true" type="Input" display="codemirror">{`.slide
 
 <!-- .slide: class="slide-standard-scroll" -->
@@ -171,7 +171,7 @@ Scrollable slide
 Use plain HTML and plain CSS (or our predefined classes) to create rows and columns:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor lazy="true" type="Input" display="codemirror">{`.slide
 
 # Example
@@ -209,7 +209,7 @@ Add **extra line breaks** to separate HTML tags and embeded Markdown code.
 Using `grid` display property of CSS, we can automatically align many images perfectly on the slide:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor lazy="true" type="Input" display="codemirror">{`.slide
 
 <div style="
@@ -244,7 +244,7 @@ Or create your [custom layout components](./../Advanced/Component-based-markup) 
 Fragments allow you to reveal content incrementally on a slide. Use the `<!-- .element: class="fragment" -->` comment syntax to make elements appear one at a time when you advance the presentation:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor lazy="true" type="Input" display="codemirror">{`.slide
 # Incremental Content
 
@@ -264,7 +264,7 @@ This appears third
 You can customize how fragments appear using different animation classes:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor lazy="true" type="Input" display="codemirror">{`.slide
 # Fragment Animations
 
@@ -314,7 +314,7 @@ Shrink
 Control the order in which fragments appear using the `data-fragment-index` attribute:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor lazy="true" type="Input" display="codemirror">{`.slide
 # Custom Fragment Order
 
@@ -337,7 +337,7 @@ Appears second
 Add background colors to individual slides using HTML attributes:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor lazy="true" type="Input" display="codemirror">{`.slide
 
 <!-- .slide: data-background-color="#ff0000" -->
@@ -353,7 +353,7 @@ This slide has a red background
 Set background images for more visual presentations:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor lazy="true" type="Input" display="codemirror">{`.slide
 
 <!-- .slide: data-background-image="https://example.com/image.jpg" -->
@@ -369,7 +369,7 @@ Content over the background image
 Customize background behavior with additional attributes:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor lazy="true" type="Input" display="codemirror">{`.slide
 
 <!-- .slide: data-background-image="image.jpg" data-background-size="cover" data-background-position="center" data-background-opacity="0.5" -->
@@ -389,7 +389,7 @@ Customize background behavior with additional attributes:
 Control how slides transition using the `data-transition` attribute:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor lazy="true" type="Input" display="codemirror">{`.slide
 
 <!-- .slide: data-transition="zoom" -->
@@ -406,7 +406,7 @@ Available transitions: \`none\`, \`fade\`, \`slide\`, \`convex\`, \`concave\`, \
 Slide cells support plain HTML mixed with [Markdown syntax](./Markdown) and [WLX](./WLX). This allows you to embed rich content like websites, videos. For example:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor lazy="true" type="Input" display="codemirror">{`.slide
 
 <iframe
@@ -422,7 +422,7 @@ Slide cells support plain HTML mixed with [Markdown syntax](./Markdown) and [WLX
 Slide cells inherit features from the [WLX](./WLX) cell type, similar to [Markdown](./Markdown) cells. This feature enables dynamic, interactive content within your presentations:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor lazy="true" type="Input" display="codemirror">{`.slide
 
 Today is <Now/>
@@ -433,7 +433,7 @@ Today is <Now/>
 or embed an entire interactive plot
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor lazy="true" type="Input" display="codemirror">{`
 pts = RandomReal[10, {100, 2}];
 MyFigure = ListLinePlot[pts[[Last@FindShortestTour[pts]]], Epilog->{Point[pts]}, ImageSize->500]
@@ -441,7 +441,7 @@ MyFigure = ListLinePlot[pts[[Last@FindShortestTour[pts]]], Epilog->{Point[pts]},
 </WLJSWrapper>
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor lazy="true" type="Input" display="codemirror">{`.slide
 
 Compute and plot the shortest tour through 100 random points:
@@ -474,7 +474,7 @@ Compute and plot the shortest tour through 100 random points:
 Slides use KaTeX as the rendering engine for mathematical equations. Wrap inline equations in single `$` symbols, or use `$$` for block equations:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor lazy="true" type="Input" display="codemirror">{`.slide
 # Mathematical Equations
 
@@ -494,7 +494,7 @@ $$
 You can create Manim-like animated equations:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor lazy="true" type="Input" display="codemirror">{`.slide
 
 ## Animated LaTeX
@@ -517,7 +517,7 @@ See additional features:
 The time increment (in seconds) between each stroke
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor lazy="true" type="Input" display="codemirror">{`.slide
 
 ## Animated LaTeX
@@ -536,7 +536,7 @@ $$ <!-- .element: data-eq-speed="0.1" -->
 Any number of colors n≥1 is accepted (as well as RGB/hex values)
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor lazy="true" type="Input" display="codemirror">{`.slide
 
 ## Animated LaTeX
@@ -551,7 +551,7 @@ $$ <!-- .element: data-eq-gradient="['red', 'gold']" -->
 The gradient precesses in a loop
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor lazy="true" type="Input" display="codemirror">{`.slide
 
 ## Animated LaTeX
@@ -570,7 +570,7 @@ This is used to skip the animation while still using MathJax for rendering inste
 You can also combine this with [Fragments](##Fragments) in the usual way. The only condition is that the `fragment` class must be in the same `.element` selector as the options for animating
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor lazy="true" type="Input" display="codemirror">{`.slide
 
 ## Animated LaTeX
@@ -623,7 +623,7 @@ Slides support automatic image uploading:
 To capture events such as slide or fragment reveals, use [SlideEventListener](./../Slides/SlideEventListener):
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor lazy="true" type="Input" display="codemirror">{`.slide
 
 # 1st Slide
@@ -643,7 +643,7 @@ Another message <!-- .element: class="fragment" data-fragment-index="1" -->
 Before evaluating, attach an event handler:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor lazy="true" type="Input" display="codemirror">{`
 EventHandler["myEvent", {
     "Slide" -> (Print["Hey there!"]&),
@@ -685,7 +685,7 @@ Check out the examples on triggered animations and more:
 With full HTML support, you can embed a local PDF:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor lazy="true" type="Input" display="codemirror">{`
 .slide
 
@@ -695,7 +695,7 @@ With full HTML support, you can embed a local PDF:
 Or an entire website:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor lazy="true" type="Input" display="codemirror">{`.slide
 
 <iframe width="800" height="500" src="https://wikipedia.com" style="border: none; border-radius: 4px"/>
@@ -706,7 +706,7 @@ Or an entire website:
 This element is used to insert a scrolling area of text. You can control what happens when the text reaches the edges of its content area using its attributes.
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor lazy="true" type="Input" display="codemirror">{`.slide
 
 # Title
@@ -718,7 +718,7 @@ This element is used to insert a scrolling area of text. You can control what ha
 This HTML element represents text which is **marked** or **highlighted**
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor lazy="true" type="Input" display="codemirror">{`.slide
 
 # Title
@@ -730,7 +730,7 @@ This HTML element represents text which is **marked** or **highlighted**
 Any `script` tag will execute after slides are mounted and __scoped to the slide__ (aka module):
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor lazy="true" type="Input" display="codemirror">{`.slide
 
 <div id="dtext">Hello World</div>

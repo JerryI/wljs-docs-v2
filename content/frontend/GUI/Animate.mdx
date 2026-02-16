@@ -39,7 +39,7 @@ Animate[Plot[1.0 + Sin[w] Sin[x + w],{x,0,5Pi}, Epilog->{
 Spinograph
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor type="Input" display="codemirror">{`
 Animate[
   ParametricPlot[ReIm[(*SpB[*)Power[I(*|*),(*|*)-t](*]SpB*) + 3 (*SpB[*)Power[I(*|*),(*|*)t/3](*]SpB*)], {t,0,u}, 
@@ -55,7 +55,7 @@ Animate[
 Animate [Plot3D](../Plotting-Functions/Plot3D) expression
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor type="Input" display="codemirror">{`
 w3D[x_,y_,t_] := Total@Table[With[{kx = 1.0 \[Omega], ky = 1.0 \[Omega]}, 
   Cos[ kx x + ky y - \[Omega] t]

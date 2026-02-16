@@ -36,7 +36,7 @@ Options[MyFigure] = {"Sigma" -> 1.0};
 ```
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor lazy="true" type="Input" display="codemirror">{`.slide
 
 <MyFigure Sigma={1.0}/>
@@ -92,7 +92,7 @@ Cannon = Manipulate[
 Then we place it on a slide as it is:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor lazy="true" type="Input" display="codemirror">{`.slide
 
 ## Projectile Motion Simulator
@@ -116,7 +116,7 @@ However, we can push the idea of slides and data further and bind different acti
 Let's start with simple example described in [component-based markup page](./Component-based-markup):
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor lazy="true" type="Input" display="codemirror">{`.wlx
 
 Stat[Text_, OptionsPattern[]] := With[{
@@ -135,7 +135,7 @@ Options[Stat] = {"Count" -> 1};
 It is a basic stat display component:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor lazy="true" type="Input" display="codemirror">{`.slide
 
 # Basic counter
@@ -164,7 +164,7 @@ EventHandler["generated-by-slide", {
 ```
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor lazy="true" type="Input" display="codemirror">{`.slide
 
 # First slide 
@@ -191,7 +191,7 @@ EventHandler["generated-by-slide", {
 ```
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor lazy="true" type="Input" display="codemirror">{`.slide
 
 # Fragments
@@ -220,7 +220,7 @@ Another way to connect multiple components to the same `SlideEventListener` is t
 Let's go back to our example with `<Stat/>`. We need to update the displayed number using a timer that starts when `SlideEventListener` fires the `"Slide"` event. To display the changing value, we use [HTMLView](./../GUI/HTMLView) (though `TextView` could also work):
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor lazy="true" type="Input" display="codemirror">{`.wlx
 Stat[Text_, OptionsPattern[]] := Module[{
         cnt = 0,
@@ -250,7 +250,7 @@ Options[Stat] = {"Count" -> 1};
 Each `Stat` component is generated with its own scope and counts up independently. You can place them on any slide as many as you want:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor lazy="true" type="Input" display="codemirror">{`.slide
 # Stats
 
@@ -270,7 +270,7 @@ Each counter is self-contained and responds only when the slide is active.
 Let's create another example: a custom widget that reacts to slide fragments. For instance, a reactive chart with a flying disk that moves when a fragment appears. Here we use the [Offload](./../Guides/Dynamic) method to switch between datasets provided in options:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor lazy="true" type="Input" display="codemirror">{`.wlx
 
 PlotWidget[OptionsPattern[]] := Module[{
@@ -322,7 +322,7 @@ Options[PlotWidget] = {"DataA" -> {}, "DataB" -> {}};
 3. Mount it on a slide:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor lazy="true" type="Input" display="codemirror">{`.slide
 
 # First slide
@@ -356,7 +356,7 @@ Animate[Graphics3D[{
 `Animate` supports external controls wired via `EventObject`, which allow you to start, stop, or suspend the animation:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor lazy="true" type="Input" display="codemirror">{`.wlx
 
 Animation := With[{
@@ -383,7 +383,7 @@ Animation := With[{
 Here we used `proxy` to filter out other events and properly wire the rest. Let's place it on a slide:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor lazy="true" type="Input" display="codemirror">{`.slide
 
 # Empty slide
@@ -419,7 +419,7 @@ Here is an example of how to trigger confetti with an external JavaScript librar
 Load an external library (using CDN) using [HTML cell](./../Cell-types/HTML):
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor lazy="true" type="Input" display="codemirror">{`.html
 <script src="https://cdn.jsdelivr.net/npm/party-js@latest/bundle/party.min.js"></script>
 `}</wljs-editor></WLJSWrapper>
@@ -427,7 +427,7 @@ Load an external library (using CDN) using [HTML cell](./../Cell-types/HTML):
 Now it is in the global Javascript scope. Define a javascript function to trigger confetti:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor lazy="true" type="Input" display="codemirror">{`.js
 core.RunFireworks = async (args, env) => {
   const id = await interpretate(args[0], env);
@@ -441,7 +441,7 @@ core.RunFireworks = async (args, env) => {
 Here `RunFireworks[id]` accepts one argument: the ID of a DOM element whose parent will receive the confetti fireworks. We can create a dummy DOM element within a WLX component and trigger `RunFireworks` using [FrontSubmit](./../Frontend-IO/FrontSubmit) in response to slide events:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor lazy="true" type="Input" display="codemirror">{`.wlx
 
 Party := Module[{
@@ -464,7 +464,7 @@ Party := Module[{
 Now if you place it on any slide, it will launch confetti once the slide has become visible. For example:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor lazy="true" type="Input" display="codemirror">{`.slide
 
 # Let's have
@@ -497,7 +497,7 @@ NavButton := Button["→", FrontSlidesSelected["navigateNext", 1] // FrontSubmit
 Then use it on a slide:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor lazy="true" type="Input" display="codemirror">{`.slide
 
 Current slide
@@ -533,7 +533,7 @@ MDTable = CellView[Cell["
 Then it is safe to place it on a slide:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor lazy="true" type="Input" display="codemirror">{`.slide
 
 <MDTable/>
@@ -556,7 +556,7 @@ MermaidDiagram = CellView[Cell["
 Using [EditorView](./../GUI/EditorView) you can display chunks of Wolfram Language code in your narratives. Here is a helper wrapper:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor lazy="true" type="Input" display="codemirror">{`.wlx
 CodeInset[str_String, OptionsPattern[]] := With[{Ev = EditorView[str], size = OptionValue["FontSize"]},
   <div style="text-align: left; font-size:{size}px"><Ev/></div>
@@ -568,7 +568,7 @@ Options[CodeInset] = {"FontSize" -> 14};
 Then we can place any valid input expression, which will be directly rendered on a slide:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor lazy="true" type="Input" display="codemirror">{`.slide
 ## Source code
 
@@ -612,7 +612,7 @@ HLJS[code_, Rule["Lang", lang_String]] := CreateFrontEndObject[
 Now we are ready to embed any code on a slide! Here is an example with C:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor lazy="true" type="Input" display="codemirror">{`.slide
 
 <!-- .slide: class="slide-standard" -->
@@ -651,7 +651,7 @@ Options[QRCode] = {"ImageSize" -> 300}
 For example:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-15 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor lazy="true" type="Input" display="codemirror">{`.slide
 
 Here is our repo

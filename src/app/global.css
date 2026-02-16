@@ -8,6 +8,16 @@
     --editor-key-keyword: #c85910 !important;
 }
 
+
+.code-input {
+    width: 0.25rem;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #dedede;
+}
+
 @theme {
   --color-fd-primary: hsl(24, 85%, 45%);
   --color-fd-primary-foreground: hsl(0, 0%, 98%);
@@ -32,4 +42,10 @@
   .invertColor {
     filter: invert(1) hue-rotate(180Deg);
   }
+
+  .code-input {
+      background: #3a3a3a;
+  }  
 }
+
+
