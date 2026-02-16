@@ -20,6 +20,9 @@ function getUniqueFilename(sourcePath: string): string {
   const basename = path.basename(sourcePath, ext);
   
   // Read file and generate hash
+  if (!fs.existsSync(sourcePath)) {
+    throw new Error(`Source file does not exist: ${sourcePath}`);
+  }
   const fileContent = fs.readFileSync(sourcePath);
   const hash = crypto.createHash('sha256').update(fileContent).digest('hex').slice(0, 8);
   
