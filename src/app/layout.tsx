@@ -9,8 +9,6 @@ const inter = Inter({
   subsets: ['latin'],
 });
 
-import { SpeedInsights } from "@vercel/speed-insights/next"
-import { Analytics } from "@vercel/analytics/next"
 
 export default function Layout({ children }: LayoutProps<'/'>) {
   return (
@@ -25,8 +23,6 @@ export default function Layout({ children }: LayoutProps<'/'>) {
           strategy="afterInteractive"
           id="wljs-component"
         />
-        <Analytics/>
-        <SpeedInsights />
       </body>
     </html>
   );
