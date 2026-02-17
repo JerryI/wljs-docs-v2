@@ -19,9 +19,11 @@ export default function Layout({ children }: LayoutProps<'/'>) {
       }}>{children}</RootProvider>
         
         <Script
-          src="https://cdn.jsdelivr.net/gh/WLJSTeam/web-components@latest/src/common/app.tw.js"
-          strategy="afterInteractive"
           id="wljs-component"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `setTimeout(function(){var s=document.createElement('script');s.src='https://cdn.jsdelivr.net/gh/WLJSTeam/web-components@latest/src/common/app.tw.js';document.body.appendChild(s);},200);`,
+          }}
         />
       </body>
     </html>

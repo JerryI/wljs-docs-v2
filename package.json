@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "build": "NODE_OPTIONS='--max-old-space-size=9096' next build && node ./scripts/sync-content.ts",
+    "build": "NODE_OPTIONS='--max-old-space-size=9096' next build && node ./scripts/resize-images.mjs && node ./scripts/sync-content.ts",
     "dev": "NODE_OPTIONS='--max-old-space-size=9096' next dev",
     "start": "NODE_OPTIONS='--max-old-space-size=9096' next start",
     "types:check": "fumadocs-mdx && next typegen && tsc --noEmit",
@@ -25,6 +25,7 @@
     "react-dom": "^19.2.3",
     "rehype-katex": "^7.0.1",
     "remark-math": "^6.0.0",
+    "sharp": "^0.34.5",
     "unist-util-visit": "^5.0.0"
   },
   "devDependencies": {

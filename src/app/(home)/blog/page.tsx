@@ -24,7 +24,6 @@ export default function Home() {
         <svg className="absolute inset-0 w-full h-full opacity-[0.12]">
           <defs>
             <filter id="blogNoise">
-              <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch" />
               <feColorMatrix type="saturate" values="0" />
             </filter>
           </defs>
@@ -33,12 +32,6 @@ export default function Home() {
 
         {/* Geometric shapes with noise texture */}
         <svg className="absolute inset-0 w-full h-full" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <filter id="blogNoiseTexture">
-              <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="4" result="noise" />
-              <feColorMatrix in="noise" type="saturate" values="0" />
-            </filter>
-          </defs>
           {/* Circle top left */}
           <circle cx="120" cy="180" r="160" fill="#f97316" filter="url(#blogNoiseTexture)" opacity="0.23" />
           {/* Triangle top right */}
@@ -81,6 +74,7 @@ export default function Home() {
                   <Image
                     src={post.data.preview}
                     alt={post.data.title}
+                    loading="lazy"
                     fill
                     className="object-cover"
                   />

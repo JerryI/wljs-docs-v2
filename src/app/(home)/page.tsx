@@ -300,11 +300,9 @@ export default function HomePage() {
         <svg className="absolute inset-0 w-full h-full opacity-[0.02]">
           <defs>
             <filter id="noise">
-              <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch" />
               <feColorMatrix type="saturate" values="0" />
             </filter>
             <filter id="noiseShape">
-              <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="4" />
               <feColorMatrix type="saturate" values="0" />
               <feBlend mode="overlay" />
             </filter>
@@ -314,12 +312,6 @@ export default function HomePage() {
         
         {/* Geometric shapes */}
         <svg className="hidden dark:block absolute inset-0 w-full h-full" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <filter id="noiseTexture">
-              <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="4" result="noise" />
-              <feColorMatrix in="noise" type="saturate" values="0" />
-            </filter>
-          </defs>
           {/* Circle top right */}
           <circle cx="1400" cy="150" r="200" fill="#f97316" filter="url(#noiseTexture)" opacity="0.15" />
           {/* Triangle top left */}
