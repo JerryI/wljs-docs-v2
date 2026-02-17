@@ -10,6 +10,7 @@ const inter = Inter({
 });
 
 import { SpeedInsights } from "@vercel/speed-insights/next"
+import { Analytics } from "@vercel/analytics/next"
 
 export default function Layout({ children }: LayoutProps<'/'>) {
   return (
@@ -18,12 +19,14 @@ export default function Layout({ children }: LayoutProps<'/'>) {
         <RootProvider search={{
         SearchDialog,
       }}>{children}</RootProvider>
-        <SpeedInsights />
+        
         <Script
           src="https://cdn.jsdelivr.net/gh/WLJSTeam/web-components@latest/src/common/app.tw.js"
           strategy="afterInteractive"
           id="wljs-component"
         />
+        <Analytics/>
+        <SpeedInsights />
       </body>
     </html>
   );

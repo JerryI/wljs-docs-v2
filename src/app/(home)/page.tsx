@@ -313,7 +313,7 @@ export default function HomePage() {
         </svg>
         
         {/* Geometric shapes */}
-        <svg className="absolute inset-0 w-full h-full" xmlns="http://www.w3.org/2000/svg">
+        <svg className="hidden dark:block absolute inset-0 w-full h-full" xmlns="http://www.w3.org/2000/svg">
           <defs>
             <filter id="noiseTexture">
               <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="4" result="noise" />
