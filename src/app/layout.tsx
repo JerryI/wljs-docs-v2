@@ -9,6 +9,15 @@ const inter = Inter({
   subsets: ['latin'],
 });
 
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: {
+    default: 'WLJS Notebook',        // used when no child page sets a title
+    template: '%s',  // used when a child page sets a title
+  },
+  description: 'Open-source Notebook interface for Wolfram Language. Typeset math input, syntactic sugar, multiple languages, and a fast, granular evaluation engine',
+};
 
 export default function Layout({ children }: LayoutProps<'/'>) {
   return (
