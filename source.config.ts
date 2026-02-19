@@ -73,7 +73,11 @@ function remarkFixRelativeUrls() {
                   }
                   
                   // Update the attribute to absolute URL
-                  attr.value = '/attachments/' + filename;
+                  if (path.extname(filename).toLowerCase() === '.html') {
+                    attr.value = '/attachments/' + filename;
+                  } else {
+                    attr.value = '/attachments/' + path.basename(filename);
+                  }
                 }
               } catch (error) {
                 console.warn(`Failed to copy ${sourcePath}:`, error);
