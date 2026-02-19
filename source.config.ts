@@ -67,16 +67,18 @@ function remarkFixRelativeUrls() {
                   // Copy file if it doesn't exist or if source is newer
                   if (!fs.existsSync(destPath) || 
                       fs.statSync(sourcePath).mtime > fs.statSync(destPath).mtime) {
-                    console.log(`Copying: ${filename} → public/`);
+                    //console.log(`Copying: ${filename} → public/`);
                         fs.copyFileSync(sourcePath, destPath);
                     console.log(`Copied: ${filename} → public/`);
                   }
                   
                   // Update the attribute to absolute URL
-                  if (!(path.extname(filename).toLowerCase() === '.html')) {
+                  //console.log(path.extname(filename));
+                  if (!(path.extname(filename) === '.html')) {
                     attr.value = '/attachments/' + filename;
                   } else {
-                    attr.value = '/attachments/' + path.basename(filename);
+                     
+                    attr.value = '/attachments/' + path.basename(filename, '.html');
                   }
                 }
               } catch (error) {
