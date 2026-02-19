@@ -73,7 +73,7 @@ function remarkFixRelativeUrls() {
                   }
                   
                   // Update the attribute to absolute URL
-                  if (path.extname(filename).toLowerCase() === '.html') {
+                  if (!(path.extname(filename).toLowerCase() === '.html')) {
                     attr.value = '/attachments/' + filename;
                   } else {
                     attr.value = '/attachments/' + path.basename(filename);
