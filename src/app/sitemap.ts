@@ -1,5 +1,7 @@
 import { source } from '@/lib/source'
 
+export const dynamic = 'force-static'
+
 export default async function sitemap() {
   const baseUrl = 'https://wljs.io'
   const docsUrls = source
