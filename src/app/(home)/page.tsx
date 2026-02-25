@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { useEffect, useRef, useState } from 'react';
 import { Card, Cards } from 'fumadocs-ui/components/card';
-import { Code2, Lightbulb, Zap, Download, Package, Terminal } from 'lucide-react';
+import { Code2, Coffee, Lightbulb, Zap, Download, Package, Terminal } from 'lucide-react';
 import { AnimationController, type AnimationConfig } from './AnimationController';
 
 
@@ -499,6 +499,7 @@ export default function HomePage() {
             >
               Support
             </Link>
+            <Link className="text-fd-primary mt-auto mb-auto hover:scale-105" href="https://buymeacoffee.com/wljs"><Coffee/></Link>
           </div>
         </div>
       </div>
