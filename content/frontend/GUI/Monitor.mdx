@@ -1,0 +1,43 @@
+---
+title: Monitor
+env:
+  - Wolfram Kernel
+
+package: wljs-manipulate
+source: https://github.com/JerryI/wljs-manipulate/blob/main/Kernel.wl
+---
+
+```wolfram
+Monitor[expr_, mon_]
+```
+
+generates a temporary monitor cell in which the continually updated current value of `mon` is displayed during the course of evaluation of `expr`.
+
+## Examples
+
+Monitor `NIntegrate`, with steps along the  axis and evaluation points on the `y`  axis:
+
+```wolfram
+values = {};
+Monitor[NIntegrate[Sqrt[x (1 - x)], {x, 0, 1}, 
+  EvaluationMonitor :> (Pause[0.025]; AppendTo[values, x];)], 
+ Quiet@ListPlot[values]]
+```
+
+Steps in parameter space for a nonlinear fit:
+
+```wolfram
+ClearAll[data, model, lp];
+data = {{0.18, -0.13}, {0.84, -0.06}, {0.05, 
+    0.88}, {0.24, -0.63}, {0.67, 0.93}, {0.05, 0.88}, {0.65, 
+    0.92}, {0.01, 0.99}, {0.17, -0.04}, {0.23, -0.55}};
+lp = ListPlot[data, PlotRange -> All];
+model[{a_, k_, w_, p_}][x_] = a Exp[-k x] Sin[w x + p];
+```
+
+```wolfram
+Module[{vars = {a, k, w, p}}, 
+ Monitor[FindFit[data, model[vars][x], vars, x, 
+   StepMonitor :> Pause[0.3]], 
+  Show[Plot[model[vars][x], {x, 0, 1}, PlotRange -> {-2, 2}], lp]]]
+```

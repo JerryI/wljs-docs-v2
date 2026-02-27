@@ -1,0 +1,36 @@
+---
+date: 2026-01-27
+title:  Release notes *3.0.1*
+---
+
+Thu 27 Feb 2026 21:22:34
+
+## Spellcheck
+We added native OS spellcheck for markdown and slide cells
+
+## Layout improvements
+- Chat window control buttons were misplaced on Windows/Linux machines
+
+
+## `Monitor` support
+We added the missing `Monitor` symbol, which should help your to watch the intermediate results of your long computations:
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`values = {};
+	Monitor[NIntegrate[Sqrt[x (1 - x)], {x, 0, 1}, 
+	  EvaluationMonitor :> (Pause[0.025]; AppendTo[values, x];)], 
+	 Quiet@ListPlot[values]]`}</wljs-editor></WLJSWrapper>
+
+
+## PrintTemporary
+We added another missing feature `PrintTemporary`. It prints `expr` and then automatically removes it after the evaluation is finished
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`val = 0.0;
+	PrintTemporary[ProgressIndicator[val//Offload]];
+	Do[val+=0.1; Pause[0.25], {10.0}];
+	"Hey"`}</wljs-editor></WLJSWrapper>
+
+## MacOS 26 Tahoe
+We had to roll out this release quickly since a new update from Apple had given us extra challenges to pass new audits. <wljs-html encoded="true">{`%3Cstrike%20%3Ef%40ck%20u%2C%20Tim%3C%2Fstrike%3E`}</wljs-html>
+
+## Windows 11 & GNU/Linux
+We improved the sidebar resizing and fixed minor layout bugs
