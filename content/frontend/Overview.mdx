@@ -184,25 +184,25 @@ The notebook consits of cells or groups of *input-output* cells. <span className
 <span className="relative">Input cell gives you a superpower</span></span> to switch between languages or type of produced content with a single line:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-20 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor display="codemirror" type="Input"  >{`1+1`}</wljs-editor>
  </WLJSWrapper>
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-20 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor display="codemirror" type="Input"  >{`.md
 Here is a text note`}</wljs-editor>
  </WLJSWrapper>
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-20 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor display="codemirror" type="Input"  >{`.js
 return 1+1;`}</wljs-editor>
  </WLJSWrapper> 
 
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-20 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor display="codemirror" type="Input"  >{`.slide
 # Slide
 
@@ -212,7 +212,7 @@ My presentation
 
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-20 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor display="codemirror" type="Input"  >{`data.txt
 Write directly to a file
 `}</wljs-editor>
@@ -227,7 +227,7 @@ After typing, press <kbd>Shift-Enter</kbd> or <kbd>Ctrl/⌘-Enter</kbd> to make 
 The output cells are results of evaluation. They can be many things: markdown rendered content, a slide of a presentation, a DOM element returned by Javascript cell or a Mermaid diagram:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-20 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor display="codemirror" type="Input">{`{1,2,3} /. i_Integer :> Hue[i/3] `}</wljs-editor>
  </WLJSWrapper>
 
@@ -236,7 +236,7 @@ The output cells are results of evaluation. They can be many things: markdown re
  </WLJSWrapper>
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-20 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor display="codemirror" type="Input"  >{`.mermaid
 gantt
     section Waffle
@@ -324,7 +324,7 @@ To be honest, typing mathicamtical expressions in the most modern IDE for progra
 So to style code expressions, replace them, or add additional elements in between we use decorations. The most common one for example:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-20 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor display="codemirror" type="Input"  >{`(*FB[*)((1)(*,*)/(*,*)(2))(*]FB*)`}</wljs-editor>
  </WLJSWrapper>
 
@@ -337,7 +337,7 @@ used to render fractions, if you copy it to a text editor you will still see a v
 the meta information is stored safely in comments, the same works with graphical, sound or any other non-textual output. In this sense __the standard output form of WLJS is decorated `InputForm`__. Here is more complex example:
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-20 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor display="codemirror" type="Input"  >{`(*TB[*)Integrate[(*|*)f[x](*|*), (*|*)x(*|*)](*|*)(*1:eJxTTMoPSmNmYGAo5gUSYZmp5S6pyflFiSX5RcGcQBHPvJLUdCA3NZMRpIgVSLgl5hSnAgCQTg44*)(*]TB*)`}</wljs-editor>
  </WLJSWrapper>
 
@@ -425,7 +425,7 @@ Interactive elements like `Manipulate`, `Animate`, `ManipulatePlot`, and `Animat
 <Card>
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-20 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor display="codemirror" type="Input"  >{`var = 1.0;
 Graphics[{
     (*VB[*)(RGBColor[0.9324328496246868, 0.4779810744981178, 0.2076180267119551, 1.])(*,*)(*"1:eJxTTMoPSmNiYGAo5gUSYZmp5S6pyflFiSX5RcEsQBHn4PCQNBCjmANIBLk7Oefn5BcVvQqJzqq99ta+iOnxkXe20+/ZF329mWJrNfmUfREDGHywBwB/2B0I"*)(*]VB*), Rectangle[{0,-.1}, {Offload[var], .1}], 
@@ -442,7 +442,7 @@ For user input, we use an event-based approach by assigning handler functions to
 
 
 <WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-20 group-hover:opacity-50 transition duration-500" />
+<div className="code-input"/>
 <wljs-editor display="codemirror" type="Input"  >{`EventHandler[InputRange[0,1,0.1], Function[val, var=val]]`}</wljs-editor></WLJSWrapper>
 
 Try dragging the slider to see the result:
