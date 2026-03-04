@@ -3,7 +3,44 @@ date: 2026-01-27
 title:  Release notes *3.0.1*
 ---
 
-Thu 27 Feb 2026 21:22:34
+import { Tabs, Tab } from 'fumadocs-ui/components/tabs';
+
+<Tabs items={['Windows', 'Mac','GNU/Linux', 'Docker', 'Homebrew']}>
+  <Tab value="Mac">
+    - [Apple Silicon](https://github.com/WLJSTeam/wolfram-js-frontend/releases/download/v3.0.1/wljs-notebook-3.0.1-arm64-macos.dmg)
+    - [Intel](https://github.com/WLJSTeam/wolfram-js-frontend/releases/download/v3.0.1/wljs-notebook-3.0.1-x64-macos.dmg)
+  </Tab>
+  <Tab value="Windows">
+    - [x86/64](https://github.com/WLJSTeam/wolfram-js-frontend/releases/download/v3.0.1/wljs-notebook-3.0.1-x64-win.exe)
+  </Tab>
+  <Tab value="GNU/Linux">
+    - [DEB x86/64](https://github.com/WLJSTeam/wolfram-js-frontend/releases/download/v3.0.1/wljs-notebook-3.0.1-amd64-gnulinux.deb)
+    - [DEB ARM64](https://github.com/WLJSTeam/wolfram-js-frontend/releases/download/v3.0.1/wljs-notebook-3.0.1-arm64-gnulinux.deb)
+    - [AppImage x86/64](https://github.com/WLJSTeam/wolfram-js-frontend/releases/download/v3.0.1/wljs-notebook-3.0.1-x86_64-gnulinux.AppImage)
+    - [AppImage ARM64](https://github.com/WLJSTeam/wolfram-js-frontend/releases/download/v3.0.1/wljs-notebook-3.0.1-arm64-gnulinux.AppImage)
+  </Tab>
+  <Tab value="Docker">
+
+```bash
+docker run -it \
+  -v ~/wljs:"/home/wljs/WLJS Notebooks" \
+  -v ~/wljs/Licensing:/home/wljs/.WolframEngine/Licensing \
+  -e PUID=$(id -u) \
+  -e PGID=$(id -g) \
+  -p 8000:3000 \
+  --name wljs \
+  ghcr.io/wljsteam/wolfram-js-frontend:main
+```
+
+  </Tab>
+  <Tab value="Homebrew">
+  
+```bash  
+brew install --cask wljs-notebook
+```
+
+  </Tab>
+</Tabs>
 
 ## Spellcheck
 We added native OS spellcheck for markdown and slide cells

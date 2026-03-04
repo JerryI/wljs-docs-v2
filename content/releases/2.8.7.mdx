@@ -10,7 +10,44 @@ title:  Release notes *2.8.7*
 
 
 
-Wed 15 Oct 2025 19:19:29
+import { Tabs, Tab } from 'fumadocs-ui/components/tabs';
+
+<Tabs items={['Windows', 'Mac','GNU/Linux', 'Docker', 'Homebrew']}>
+  <Tab value="Mac">
+    - [Apple Silicon](https://github.com/WLJSTeam/wolfram-js-frontend/releases/download/v2.8.7/wljs-notebook-2.8.7-arm64-macos.dmg)
+    - [Intel](https://github.com/WLJSTeam/wolfram-js-frontend/releases/download/v2.8.7/wljs-notebook-2.8.7-x64-macos.dmg)
+  </Tab>
+  <Tab value="Windows">
+    - [x86/64](https://github.com/WLJSTeam/wolfram-js-frontend/releases/download/v2.8.7/wljs-notebook-2.8.7-x64-win.exe)
+  </Tab>
+  <Tab value="GNU/Linux">
+    - [DEB x86/64](https://github.com/WLJSTeam/wolfram-js-frontend/releases/download/v2.8.7/wljs-notebook-2.8.7-amd64-gnulinux.deb)
+    - [DEB ARM64](https://github.com/WLJSTeam/wolfram-js-frontend/releases/download/v2.8.7/wljs-notebook-2.8.7-arm64-gnulinux.deb)
+    - [AppImage x86/64](https://github.com/WLJSTeam/wolfram-js-frontend/releases/download/v2.8.7/wljs-notebook-2.8.7-x86_64-gnulinux.AppImage)
+    - [AppImage ARM64](https://github.com/WLJSTeam/wolfram-js-frontend/releases/download/v2.8.7/wljs-notebook-2.8.7-arm64-gnulinux.AppImage)
+  </Tab>
+  <Tab value="Docker">
+
+```bash
+docker run -it \
+  -v ~/wljs:"/home/wljs/WLJS Notebooks" \
+  -v ~/wljs/Licensing:/home/wljs/.WolframEngine/Licensing \
+  -e PUID=$(id -u) \
+  -e PGID=$(id -g) \
+  -p 8000:3000 \
+  --name wljs \
+  ghcr.io/wljsteam/wolfram-js-frontend:main
+```
+
+  </Tab>
+  <Tab value="Homebrew">
+  
+```bash  
+brew install --cask wljs-notebook
+```
+
+  </Tab>
+</Tabs>
 
 
 
