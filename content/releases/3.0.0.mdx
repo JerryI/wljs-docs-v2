@@ -15,17 +15,17 @@ import { Tabs, Tab } from 'fumadocs-ui/components/tabs';
 
 <Tabs items={['Windows', 'Mac','GNU/Linux', 'Docker', 'Homebrew']}>
   <Tab value="Mac">
-    - [Apple Silicon](https://github.com/WLJSTeam/wolfram-js-frontend/releases/download/v3.0.0/wljs-notebook-3.0.0-arm64-macos.dmg)
-    - [Intel](https://github.com/WLJSTeam/wolfram-js-frontend/releases/download/v3.0.0/wljs-notebook-3.0.0-x64-macos.dmg)
+    - [Apple Silicon](https://github.com/WLJSTeam/wljs-notebook/releases/download/v3.0.0/wljs-notebook-3.0.0-arm64-macos.dmg)
+    - [Intel](https://github.com/WLJSTeam/wljs-notebook/releases/download/v3.0.0/wljs-notebook-3.0.0-x64-macos.dmg)
   </Tab>
   <Tab value="Windows">
-    - [x86/64](https://github.com/WLJSTeam/wolfram-js-frontend/releases/download/v3.0.0/wljs-notebook-3.0.0-x64-win.exe)
+    - [x86/64](https://github.com/WLJSTeam/wljs-notebook/releases/download/v3.0.0/wljs-notebook-3.0.0-x64-win.exe)
   </Tab>
   <Tab value="GNU/Linux">
-    - [DEB x86/64](https://github.com/WLJSTeam/wolfram-js-frontend/releases/download/v3.0.0/wljs-notebook-3.0.0-amd64-gnulinux.deb)
-    - [DEB ARM64](https://github.com/WLJSTeam/wolfram-js-frontend/releases/download/v3.0.0/wljs-notebook-3.0.0-arm64-gnulinux.deb)
-    - [AppImage x86/64](https://github.com/WLJSTeam/wolfram-js-frontend/releases/download/v3.0.0/wljs-notebook-3.0.0-x86_64-gnulinux.AppImage)
-    - [AppImage ARM64](https://github.com/WLJSTeam/wolfram-js-frontend/releases/download/v3.0.0/wljs-notebook-3.0.0-arm64-gnulinux.AppImage)
+    - [DEB x86/64](https://github.com/WLJSTeam/wljs-notebook/releases/download/v3.0.0/wljs-notebook-3.0.0-amd64-gnulinux.deb)
+    - [DEB ARM64](https://github.com/WLJSTeam/wljs-notebook/releases/download/v3.0.0/wljs-notebook-3.0.0-arm64-gnulinux.deb)
+    - [AppImage x86/64](https://github.com/WLJSTeam/wljs-notebook/releases/download/v3.0.0/wljs-notebook-3.0.0-x86_64-gnulinux.AppImage)
+    - [AppImage ARM64](https://github.com/WLJSTeam/wljs-notebook/releases/download/v3.0.0/wljs-notebook-3.0.0-arm64-gnulinux.AppImage)
   </Tab>
   <Tab value="Docker">
 
@@ -37,7 +37,7 @@ docker run -it \
   -e PGID=$(id -g) \
   -p 8000:3000 \
   --name wljs \
-  ghcr.io/wljsteam/wolfram-js-frontend:main
+  ghcr.io/wljsteam/wljs-notebook:main
 ```
 
   </Tab>

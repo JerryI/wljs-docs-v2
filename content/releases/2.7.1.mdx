@@ -158,7 +158,7 @@ docker run -it
 -e PGID=$(id -g)
 -p 8000:3000
 --name wljs
-ghcr.io/jerryi/wolfram-js-frontend:main
+ghcr.io/jerryi/wljs-notebook:main
 ```
 
 <wljs-html encoded="true">{`%3Cbr%20%2F%3E`}</wljs-html>
@@ -175,7 +175,7 @@ This docker image includes
 - Wolfram Engine >=14.2
 - Nginx proxy
 
-See more options [here](https://github.com/JerryI/wolfram-js-frontend/tree/main/container).
+See more options [here](https://github.com/JerryI/wljs-notebook/tree/main/container).
 
 ## Autotests
 We integrated `playwright` into our workflow to capture any bugs before the release. For now we stick to integration tests using screenshots of DOM elements.

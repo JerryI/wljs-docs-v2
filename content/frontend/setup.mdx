@@ -18,17 +18,17 @@ import { Tabs, Tab } from 'fumadocs-ui/components/tabs';
 
 <Tabs items={['Windows', 'Mac','GNU/Linux', 'Docker', 'Homebrew']}>
   <Tab value="Mac">
-    - [Apple Silicon](https://github.com/WLJSTeam/wolfram-js-frontend/releases/download/v3.0.1/wljs-notebook-3.0.1-arm64-macos.dmg)
-    - [Intel](https://github.com/WLJSTeam/wolfram-js-frontend/releases/download/v3.0.1/wljs-notebook-3.0.1-x64-macos.dmg)
+    - [Apple Silicon](https://github.com/WLJSTeam/wljs-notebook/releases/download/v3.0.1/wljs-notebook-3.0.1-arm64-macos.dmg)
+    - [Intel](https://github.com/WLJSTeam/wljs-notebook/releases/download/v3.0.1/wljs-notebook-3.0.1-x64-macos.dmg)
   </Tab>
   <Tab value="Windows">
-    - [x86/64](https://github.com/WLJSTeam/wolfram-js-frontend/releases/download/v3.0.1/wljs-notebook-3.0.1-x64-win.exe)
+    - [x86/64](https://github.com/WLJSTeam/wljs-notebook/releases/download/v3.0.1/wljs-notebook-3.0.1-x64-win.exe)
   </Tab>
   <Tab value="GNU/Linux">
-    - [DEB x86/64](https://github.com/WLJSTeam/wolfram-js-frontend/releases/download/v3.0.1/wljs-notebook-3.0.1-amd64-gnulinux.deb)
-    - [DEB ARM64](https://github.com/WLJSTeam/wolfram-js-frontend/releases/download/v3.0.1/wljs-notebook-3.0.1-arm64-gnulinux.deb)
-    - [AppImage x86/64](https://github.com/WLJSTeam/wolfram-js-frontend/releases/download/v3.0.1/wljs-notebook-3.0.1-x86_64-gnulinux.AppImage)
-    - [AppImage ARM64](https://github.com/WLJSTeam/wolfram-js-frontend/releases/download/v3.0.1/wljs-notebook-3.0.1-arm64-gnulinux.AppImage)
+    - [DEB x86/64](https://github.com/WLJSTeam/wljs-notebook/releases/download/v3.0.1/wljs-notebook-3.0.1-amd64-gnulinux.deb)
+    - [DEB ARM64](https://github.com/WLJSTeam/wljs-notebook/releases/download/v3.0.1/wljs-notebook-3.0.1-arm64-gnulinux.deb)
+    - [AppImage x86/64](https://github.com/WLJSTeam/wljs-notebook/releases/download/v3.0.1/wljs-notebook-3.0.1-x86_64-gnulinux.AppImage)
+    - [AppImage ARM64](https://github.com/WLJSTeam/wljs-notebook/releases/download/v3.0.1/wljs-notebook-3.0.1-arm64-gnulinux.AppImage)
   </Tab>
   <Tab value="Docker">
 
@@ -40,7 +40,7 @@ docker run -it \
   -e PGID=$(id -g) \
   -p 8000:3000 \
   --name wljs \
-  ghcr.io/wljsteam/wolfram-js-frontend:main
+  ghcr.io/wljsteam/wljs-notebook:main
 ```
 
   </Tab>
@@ -55,7 +55,7 @@ brew install --cask wljs-notebook
 
 see also
 
-[All releases](https://github.com/JerryI/wolfram-js-frontend/releases)
+[All releases](https://github.com/JerryI/wljs-notebook/releases)
 
 > We carefully crafted our UI to match the look of all platforms as close as possible for a web-based application
 
@@ -125,7 +125,7 @@ brew install --cask wljs-notebook
 ## 🚢 Running using Docker
 
 <Callout>
-Certain features such as image/sound recording might require `https` connection if you are running it __not on a local machine__. See how to set up a proxy in [📦 Docker Container Setup](https://github.com/JerryI/wolfram-js-frontend/blob/main/container/README.md)
+Certain features such as image/sound recording might require `https` connection if you are running it __not on a local machine__. See how to set up a proxy in [📦 Docker Container Setup](https://github.com/JerryI/wljs-notebook/blob/main/container/README.md)
 </Callout>
 
 __Step 1__: register and get developer license for [freeware Wolfram Engine](https://www.wolfram.com/engine/) at wolfram.com
@@ -140,12 +140,12 @@ docker run -it \
   -e PGID=$(id -g) \
   -p 8000:3000 \
   --name wljs \
-  ghcr.io/wljsteam/wolfram-js-frontend:main
+  ghcr.io/wljsteam/wljs-notebook:main
 ```
 
 Then open `http://127.0.0.1:8000` 
 
-[📦 Docker Container Setup](https://github.com/JerryI/wolfram-js-frontend/blob/main/container/README.md)
+[📦 Docker Container Setup](https://github.com/JerryI/wljs-notebook/blob/main/container/README.md)
 
 In the case if you do not have `docker`, clone it directly from the repository as follows.
 

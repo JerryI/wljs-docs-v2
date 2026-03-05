@@ -75,7 +75,7 @@ We introduce a new input element. It basically aka `InputText`, but constantly r
 We implemented an automatic adjustments of WebGL buffers, when the data in Graphics3D primitives changes rapidly. By the default, when you plot something in 3D it assumes that the data is static (as it was before). Then after the first update it converts all GPU buffers from `StaticDrawUsage ` to [`StreamDrawUsage`](https://threejs.org/docs/#api/en/constants/BufferAttributeUsage). It means that any dynamic 3D scenes will have less impact on GPU and CPU. 
 
 ## Large formatted output
-There were several compains regarding the truncation filter, which limits the number of characters in the output WL cell. We decided based on [this issue](https://github.com/JerryI/wolfram-js-frontend/issues/313) to let a user decide in for each case individually
+There were several compains regarding the truncation filter, which limits the number of characters in the output WL cell. We decided based on [this issue](https://github.com/JerryI/wljs-notebook/issues/313) to let a user decide in for each case individually
 
 <WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true" encoded="true"  >{`Pane%5B%0A%20%20TableForm%5B%0A%20%20%20%20%7B%23%5B%5B1%5D%5D%2C%20If%5B%23%5B%5B2%5D%5D%20%3C%205000.0%2C%20Item%5B%23%5B%5B2%5D%5D%2C%20Background-%3EHue%5BSin%5B%23%5B%5B2%5D%5D%5D%20%2F%2F%20Abs%5D%5D%2C%20%23%5B%5B2%5D%5D%5D%7D%20%26%0A%20%20%2F%40%20RandomReal%5B%7B0%2C10000%7D%2C%20%7B150%2C%202%7D%5D%2C%20%0A%20%20%20TableHeadings%20-%3E%20%7B%0A%20%20%20%20%20Table%5BStringTemplate%5B%22Group%20%60%60%22%5D%5Bi%5D%2C%20%7Bi%2C%20150%7D%5D%2C%20%0A%20%20%20%20%20%7B%22y1%22%2C%20%22y2%22%7D%7D%0A%20%20%5D%0A%2C%20%7B500%2C300%7D%5D`}</wljs-editor></WLJSWrapper>
 
