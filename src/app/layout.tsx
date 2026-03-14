@@ -34,6 +34,8 @@ export default function Layout({ children }: LayoutProps<'/'>) {
             __html: `setTimeout(function(){var s=document.createElement('script');s.src='https://cdn.jsdelivr.net/gh/WLJSTeam/web-components@latest/src/common/app.tw.js';document.body.appendChild(s);},200);`,
           }}
         />
+        <script data-goatcounter="https://jerryi.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
       </body>
     </html>
   );
