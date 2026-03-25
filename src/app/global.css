@@ -24,6 +24,10 @@
   --color-fd-ring: hsl(24, 85%, 45%);
 }
 
+.invertInvertColor {
+  filter: invert(1) hue-rotate(180Deg);
+}
+
 .dark {
   --color-fd-primary: hsl(24, 100%, 54%);
   --color-fd-primary-foreground: hsl(0, 0%, 9%);
@@ -39,8 +43,14 @@
     color:black;    
   }
 
+
+
   .invertColor {
     filter: invert(1) hue-rotate(180Deg);
+  }
+
+  .invertInvertColor {
+    filter: none;
   }
 
   .code-input {

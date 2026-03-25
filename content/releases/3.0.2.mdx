@@ -1,0 +1,138 @@
+---
+date: 2026-03-21
+title:  Release notes *3.0.2*
+---
+
+import { Tabs, Tab } from 'fumadocs-ui/components/tabs';
+
+<Tabs items={['Windows', 'Mac','GNU/Linux', 'Docker', 'Homebrew']}>
+  <Tab value="Mac">
+    - [Apple Silicon](https://github.com/WLJSTeam/wljs-notebook/releases/download/v3.0.2/wljs-notebook-3.0.2-arm64-macos.dmg)
+    - [Intel](https://github.com/WLJSTeam/wljs-notebook/releases/download/v3.0.2/wljs-notebook-3.0.2-x64-macos.dmg)
+  </Tab>
+  <Tab value="Windows">
+    - [x86/64](https://github.com/WLJSTeam/wljs-notebook/releases/download/v3.0.2/wljs-notebook-3.0.2-x64-win.exe)
+  </Tab>
+  <Tab value="GNU/Linux">
+    - [DEB x86/64](https://github.com/WLJSTeam/wljs-notebook/releases/download/v3.0.2/wljs-notebook-3.0.2-amd64-gnulinux.deb)
+    - [DEB ARM64](https://github.com/WLJSTeam/wljs-notebook/releases/download/v3.0.2/wljs-notebook-3.0.2-arm64-gnulinux.deb)
+    - [AppImage x86/64](https://github.com/WLJSTeam/wljs-notebook/releases/download/v3.0.2/wljs-notebook-3.0.2-x86_64-gnulinux.AppImage)
+    - [AppImage ARM64](https://github.com/WLJSTeam/wljs-notebook/releases/download/v3.0.2/wljs-notebook-3.0.2-arm64-gnulinux.AppImage)
+  </Tab>
+  <Tab value="Docker">
+
+```bash
+docker run -it \
+  -v ~/wljs:"/home/wljs/WLJS Notebooks" \
+  -v ~/wljs/Licensing:/home/wljs/.WolframEngine/Licensing \
+  -v ~/wljs/tmp:/tmp \
+  -e PUID=$(id -u) \
+  -e PGID=$(id -g) \
+  -p 8000:3000 \
+  --name wljs \
+  ghcr.io/wljsteam/wljs-notebook:main
+```
+
+  </Tab>
+  <Tab value="Homebrew">
+  
+```bash  
+brew install --cask wljs-notebook
+```
+
+  </Tab>
+</Tabs>
+
+{/* add this script to the body  */}
+{/* https://cdn.jsdelivr.net/gh/WLJSTeam/web-components@latest/src/common/app.js */}
+<wljs-store json="./attachments/f9d94ebc-a136-4115-9828-48bf64175192.txt"></wljs-store>
+
+
+## TeXView
+We added a shorthand symbol for rendering expressions as $\LaTeX$:
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`TeXView[1/2]`}</wljs-editor></WLJSWrapper>
+
+or directly on LaTeX string:
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`TeXView["\\\\frac{1}{2}"]`}</wljs-editor></WLJSWrapper>
+
+It works on slides, markdown and in a normal Wolfram output cells.
+
+## Tooltip
+A multitool for labelling data on plots or any other expressions:
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`Tooltip[x, Graphics[Disk[], ImageSize->100]]`}</wljs-editor></WLJSWrapper>
+
+A tooltip can be used on graphics primitives as well
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`Plot[{Tooltip[Sin[x], "This is sine"], Tooltip[Cos[x], "This is cosine"]}, {x,0,2Pi}]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(FrontEndRef["4b105372-9957-40d5-b600-e8ca55b969a5"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKmyQZGpgamxvpWlqamuuaGKSY6iaZGRjoplokJ5qaJlmaWSaaAgBwARTp"*)(*]VB*)`}</wljs-editor></WLJSWrapper>
+
+Read our documentation for more information and use cases
+
+## Documentation window fix
+You should no longer have any troubles when copying code blocks from docs pages.
+
+## ListAnimate
+We implemented a new member of `Animate`/`Manipulate` family of symbols: 
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`ListAnimate[Table[Graphics[Disk[{0,0}, RandomReal[100]]], {50}]]`}</wljs-editor></WLJSWrapper>
+
+## Raster
+We improve the performance of `Raster`, which shows up in many 2D plots. For example:
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`Show[AudioAmplify[(*VB[*)(Audio[FrontEndRef["96178de7-c6db-41a1-a233-5b82bf4d5545"], "SignedInteger16", SampleRate->22050])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKGxsmGhmYGyXqGpilmOmapCaa6lommxjqmqYlpaYap5kaGRsZAwB86RVj"*)(*]VB*), 100]//Spectrogram, Frame->True]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(FrontEndRef["b7c42a82-f1c8-4441-869f-a5fad948ec29"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKJ5knmxglWhjpphkmW+iamJgY6lqYWabpJpqmJaZYmlikJhtZAgCDthW1"*)(*]VB*)`}</wljs-editor></WLJSWrapper>
+
+Moreover it supports `Offload`, that means you can make it dynamic manually or automatically:
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`Animate[ArrayPlot[
+	  SeedRandom[123];
+	  Table[Evaluate[Sum[Sin[RandomReal[10, 2] . {x, y} + t], {5}]], {x, 0, 
+	   5, .1}, {y, 0, 5, .1}], ImagePadding->None], {t,0,8Pi, 0.1}, RefreshRate->60]`}</wljs-editor></WLJSWrapper>
+
+Here is another example:
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true" fade="true" >{`rasterDensityPlotAnim[f_, {xs_, xmin_, xmax_}, {ys_, ymin_, ymax_}, {ts_, tmin_, tmax_}, OptionsPattern[]] := 
+	 With[{
+	   time = Unique[], buffer = Unique[], 
+	   cf = With[{c=ColorData[OptionValue[ColorFunction]]}, (List@@c[#])&], 
+	   pts = OptionValue[PlotPoints]//N,
+	   dt = (tmax-tmin)/OptionValue[PlotPoints]//N
+	  },
+	  {
+	   raw := Table[
+	    f /. {xs -> j, ys -> i, ts -> time} // N, {i, ymin, 
+	     ymax, (ymax - ymin)/(pts - 1)}, {j, xmin, 
+	     xmax, (xmax - xmin)/(pts - 1)}]
+	  },
+	  
+	  time = tmin;
+	   
+	  buffer = Map[cf, raw // Rescale, {2}];
+	  
+	  Graphics[{
+	    Raster[buffer//Offload, {{xmin, xmax}, {ymin, ymax}}],
+	    EventHandler[AnimationFrameListener[buffer//Offload], Function[Null,
+	      buffer = Map[cf, raw // Rescale, {2}];
+	      time = If[time >= tmax, tmin, time + dt];
+	    ]]
+	  }, Frame->True]
+	]
+	
+	Options[rasterDensityPlotAnim] = {ColorFunction->"AvocadoColors", PlotPoints->100};`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`rasterDensityPlotAnim[x Sin[y+t], {x, -5, 5}, {y, 0, 10}, {t, 0, 2Pi}, PlotPoints->50]`}</wljs-editor></WLJSWrapper>
+
+## Better setup intructions
+We updated our documentation and added new section on how to set up WLJS Notebook on a server and tunnel HTTP traffic over SSH.
+
+## Minor bug-fixes
+- Incorrect cell content update, when a cell was morphed from output to input
+- Incorrect rendering of `Row` inside ticks and other labels of `Graphics`
+- NeuralNet package invalid format values
+- Global styling of slide cells content (CSS issue)
+- Instabillity of sockets interface hash map

@@ -3,7 +3,7 @@
 
 import React, { useState, useEffect, useRef } from 'react';
 
-export function LazyVideo ({url}) {
+export function LazyVideo ({url, className}) {
     const [hasBeenInView, setHasBeenInView] = useState(false);
     const containerRef = useRef(null);
 
@@ -30,7 +30,7 @@ export function LazyVideo ({url}) {
             {hasBeenInView && (
                 <video
                     src={url}
-                    className='invertColor'
+                    className={className ? className : 'invertColor' }
                     controls
                     playsInline
                     style={{ width: '100%', height: 'auto' }}
@@ -40,7 +40,7 @@ export function LazyVideo ({url}) {
     );
 };
 
-export function LazyAutoplayVideo ({url}) {
+export function LazyAutoplayVideo ({url, className}) {
 
     const [hasBeenInView, setHasBeenInView] = useState(false); // State to track if video has ever been in view 
     const containerRef = useRef(null); // Ref to access the container element 
@@ -102,7 +102,7 @@ export function LazyAutoplayVideo ({url}) {
                 <video
                     ref={videoElementRef}
                     src={url}
-                    className='invertColor'
+                    className={className ? className:'invertColor'}
                     autoPlay
                     muted
                     loop

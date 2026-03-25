@@ -514,6 +514,69 @@ Next slide
 
 ## Misc
 
+### Dark Theme
+If you want to color your slides in black, create [HTML](./../Cell-types/HTML) cell and evaluate it to override styles for slide number, headings and create a few helper classes:
+
+<WLJSWrapper>
+<div className="code-input"/>
+<wljs-editor lazy="true" type="Input" display="codemirror">{`.html
+<style>
+  .slide-number {
+    color:white;
+  }
+  .slides section {
+    border-radius: 0.25rem;
+  } 
+  .dark-content {
+    filter: invert(1) hue-rotate(-180deg) !important; 
+  } 
+  .slide-dark h1 {
+    color: white;
+  }   
+  .slide-dark h2 {
+    color: white;
+  }  
+  .slide-dark h3 {
+    color: white;
+  } 
+  .slide-dark {
+    color: white;
+  }   
+</style>
+`}</wljs-editor></WLJSWrapper>
+
+Then whever you add to a slide `slide-dark` class it will color headings and text accordingly. In combination with black background you can write it as:
+
+<WLJSWrapper>
+<div className="code-input"/>
+<wljs-editor lazy="true" type="Input" display="codemirror">{`.slide
+
+<!-- .slide: class="slide-standard slide-dark" data-background-color="black" -->
+
+# Heading
+
+This is going to be white
+`}</wljs-editor></WLJSWrapper>
+
+Sometimes you need to make a dark variant of an existing picture of a figure. For this reason - use `dark-content` class we defined earlier. It will apply *negative filter combined with a hue shift*:
+
+
+<WLJSWrapper>
+<div className="code-input"/>
+<wljs-editor lazy="true" type="Input" display="codemirror">{`.slide
+
+<!-- .slide: class="slide-standard slide-dark" data-background-color="black" -->
+
+<div class="dark-content">
+  
+![](https://upload.wikimedia.org/wikipedia/commons/7/79/Example_image_not_to_be_used_in_article_namespace.jpg)
+
+</div>
+
+`}</wljs-editor></WLJSWrapper>
+
+
+
 ### Embed cell views
 If you paste a nice-looking Markdown table, it will clash with some Markdown syntax reserved to separate slides. However, you can use [CellView](./../GUI/CellView) to embed a markdown cell into a slide instead:
 

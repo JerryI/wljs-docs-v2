@@ -15,3 +15,15 @@ The only difference compared to traditional `Module` is an optional argument
 
 Then a user can manually purge them.
 
+## `AbortableTable`
+
+`AbortableTable[expr, iter1, iter2, ...]` generates a list of values from expr over the given iterators. If evaluation is aborted before completion, AbortableTable returns the partial results collected up to that point instead of discarding them.
+
+For example:
+
+```wolfram
+AbortableTable[
+  Pause[1];
+  i^2
+, {i, 10}]
+```

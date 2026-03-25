@@ -1,0 +1,153 @@
+<|"Notebook" -> <|"Controller" -> "a3246559-4ca8-4f2b-90fc-241a66f9d913", 
+   "FocusedCell" -> CoffeeLiqueur`Notebook`Cells`CellObj[
+     CoffeeLiqueur`Notebook`Cells`CellObj`$2218], 
+   "FocusedCellSelection" -> {16, 15}, "HaveToSaveAs" -> False, 
+   "MessangerChannel" -> Messanger, "ModalsChannel" -> 
+    "05ac0619-ae4d-451d-809e-35fb6a1af124", "Objects" -> <||>, 
+   "Path" -> "/users/kirill/Library/CloudStorage/OneDrive-Personal/\:0414\
+\:043e\:043a\:0443\:043c\:0435\:043d\:0442\:044b/\:041a\:043e\:043d\:0444\
+\:0435\:0440\:0435\:043d\:0446\:0438\:0438/DPG2026/widgets/Timer.wln", 
+   "PublicFields" -> {"Properties"}, "Quick" -> True, "Symbols" -> <||>, 
+   "TOC" -> {CoffeeLiqueur`Extensions`TOC`Private`heading[1, 
+      "Timer for presentations", CoffeeLiqueur`Notebook`Cells`CellObj[
+       CoffeeLiqueur`Notebook`Cells`CellObj`$2245]], 
+     CoffeeLiqueur`Extensions`TOC`Private`heading[2, "Test", 
+      CoffeeLiqueur`Notebook`Cells`CellObj[
+       CoffeeLiqueur`Notebook`Cells`CellObj`$2217]]}|>, 
+ "Cells" -> {<|"Data" -> ".md\n# Timer for presentations\nThis produces a \
+widget, which can be put on any slide. It will appear as a global overlay \
+element that appears every minute showing the time left for the \
+speaker.\n\nThe lifecycle is automated.", "Display" -> "codemirror", 
+    "Hash" -> "1223f310-b589-4520-97cf-115084510e17", "Invisible" -> False, 
+    "MetaOnly" -> False, "Props" -> <|"Hidden" -> True|>, 
+    "PublicFields" -> {"Properties"}, "State" -> "Idle", "Type" -> "Input", 
+    "UID" -> Null, "Notebook" -> "975d27e7-ca54-4911-94b1-99bb950fc53c"|>, 
+   <|"Data" -> "# Timer for presentations\nThis produces a widget, which can \
+be put on any slide. It will appear as a global overlay element that appears \
+every minute showing the time left for the speaker.\n\nThe lifecycle is \
+automated.", "Display" -> "markdown", 
+    "Hash" -> "e04318dd-862d-4405-834b-b0be0e3b7285", "Invisible" -> False, 
+    "MetaOnly" -> False, "Props" -> <||>, "PublicFields" -> {"Properties"}, 
+    "State" -> "Idle", "Type" -> "Output", "UID" -> Null, 
+    "Notebook" -> "975d27e7-ca54-4911-94b1-99bb950fc53c"|>, 
+   <|"Data" -> ".md\nDefine a unique symbol for our Javascript helpers", 
+    "Display" -> "codemirror", "Hash" -> 
+     "05303505-cb36-48f0-a470-9dfc63ffa394", "Invisible" -> False, 
+    "MetaOnly" -> False, "Props" -> <|"Hidden" -> True|>, 
+    "PublicFields" -> {"Properties"}, "State" -> "Idle", "Type" -> "Input", 
+    "UID" -> Null, "Notebook" -> "975d27e7-ca54-4911-94b1-99bb950fc53c"|>, 
+   <|"Data" -> "Define a unique symbol for our Javascript helpers", 
+    "Display" -> "markdown", "Hash" -> 
+     "03905a91-2493-47ae-99b1-f9f127bfa542", "Invisible" -> False, 
+    "MetaOnly" -> False, "Props" -> <||>, "PublicFields" -> {"Properties"}, 
+    "State" -> "Idle", "Type" -> "Output", "UID" -> Null, 
+    "Notebook" -> "975d27e7-ca54-4911-94b1-99bb950fc53c"|>, 
+   <|"Data" -> "TimerClass = Unique[];", "Display" -> "codemirror", 
+    "Hash" -> "dba43624-61d4-47fc-97bc-713500aa0616", "Invisible" -> False, 
+    "MetaOnly" -> False, "Props" -> <|"InitGroup" -> True|>, 
+    "PublicFields" -> {"Properties"}, "State" -> "Idle", "Type" -> "Input", 
+    "UID" -> Null, "Notebook" -> "975d27e7-ca54-4911-94b1-99bb950fc53c"|>, 
+   <|"Data" -> ".md\nJavascript code in a form of a WLX component:", 
+    "Display" -> "codemirror", "Hash" -> 
+     "e23b80c7-fb50-4cf9-bda7-3c28601ba6fb", "Invisible" -> False, 
+    "MetaOnly" -> False, "Props" -> <|"Hidden" -> True|>, 
+    "PublicFields" -> {"Properties"}, "State" -> "Idle", "Type" -> "Input", 
+    "UID" -> Null, "Notebook" -> "975d27e7-ca54-4911-94b1-99bb950fc53c"|>, 
+   <|"Data" -> "Javascript code in a form of a WLX component:", 
+    "Display" -> "markdown", "Hash" -> 
+     "2114fc36-9767-4900-8e5b-1702233bc264", "Invisible" -> False, 
+    "MetaOnly" -> False, "Props" -> <||>, "PublicFields" -> {"Properties"}, 
+    "State" -> "Idle", "Type" -> "Output", "UID" -> Null, 
+    "Notebook" -> "975d27e7-ca54-4911-94b1-99bb950fc53c"|>, 
+   <|"Data" -> ".wlx\nTimerScript := <script \
+type=\"module\">\n\ncore['<TimerClass/>'] = async (args, env) => {\n  const \
+time = await interpretate(args[0], env);\n  const dom = await \
+interpretate(args[1], env);\n  const color = await interpretate(args[2], \
+env);\n\n  const face = document.createElement('div');\n  face.innerText = \
+time;\n  face.className = \"slide-number\";\n  face.style.position = \
+'absolute';\n  face.style.left = '1rem';\n  face.style.color = color;\n  \
+face.style.zIndex = 10000;\n  \n  dom.appendChild(face);\n  setTimeout(() => \
+{\n    face.remove();\n  }, 5000);\n}\n\n</script>;", 
+    "Display" -> "codemirror", "Hash" -> 
+     "4d3c1626-86b0-467a-b8c0-4dfb0c5da437", "Invisible" -> False, 
+    "MetaOnly" -> False, "Props" -> <|"InitGroup" -> True|>, 
+    "PublicFields" -> {"Properties"}, "State" -> "Idle", "Type" -> "Input", 
+    "UID" -> Null, "Notebook" -> "975d27e7-ca54-4911-94b1-99bb950fc53c"|>, 
+   <|"Data" -> ".md\nWidget itself is below. It attaches an event listener to \
+a slide, once the presentation is visible it requests DOM element of the \
+whole presentation container and periodically shows the time on it. ", 
+    "Display" -> "codemirror", "Hash" -> 
+     "05539c9b-b2ef-45a5-a929-0ee597860176", "Invisible" -> False, 
+    "MetaOnly" -> False, "Props" -> <|"Hidden" -> True|>, 
+    "PublicFields" -> {"Properties"}, "State" -> "Idle", "Type" -> "Input", 
+    "UID" -> Null, "Notebook" -> "975d27e7-ca54-4911-94b1-99bb950fc53c"|>, 
+   <|"Data" -> "Widget itself is below. It attaches an event listener to a \
+slide, once the presentation is visible it requests DOM element of the whole \
+presentation container and periodically shows the time on it. ", 
+    "Display" -> "markdown", "Hash" -> 
+     "bb0c4058-e39e-4d46-9d1c-baea8f4260d2", "Invisible" -> False, 
+    "MetaOnly" -> False, "Props" -> <||>, "PublicFields" -> {"Properties"}, 
+    "State" -> "Idle", "Type" -> "Output", "UID" -> Null, 
+    "Notebook" -> "975d27e7-ca54-4911-94b1-99bb950fc53c"|>, 
+   <|"Data" -> "swatchToHex[swatch_] := \n StringJoin[\"#\", \
+IntegerString[Round[255 Level[RGBColor[swatch], 1]], 16, 2]]", 
+    "Display" -> "codemirror", "Hash" -> 
+     "06dfc29f-8645-4ef5-9a6d-085be228bcf6", "Invisible" -> False, 
+    "MetaOnly" -> False, "Props" -> <|"InitGroup" -> True|>, 
+    "PublicFields" -> {"Properties"}, "State" -> "Idle", "Type" -> "Input", 
+    "UID" -> Null, "Notebook" -> "975d27e7-ca54-4911-94b1-99bb950fc53c"|>, 
+   <|"Data" -> ".wlx\n\nTimer[OptionsPattern[]] := With[{\n  event = \
+CreateUUID[],\n  task = Unique[\"timer1\"],\n  startTime = \
+Unique[\"timer2\"],\n  endTime = Unique[\"timer3\"],\n  color = \
+OptionValue[\"Color\"],\n  period = OptionValue[\"Period\"],\n  timeout = \
+QuantityMagnitude[OptionValue[\"Timeout\"], \"Seconds\"]\n},{\n  show = \
+Function[time, TimerClass[\n    time,\n    \
+FrontSlidesSelected[\"getRevealElement\", {}],\n    swatchToHex[color]\n  ] \
+// FrontSubmit]\n},\n\nEventHandler[event, \n{\"Mounted\" -> Function[Null,\n \
+ startTime = AbsoluteTime[];\n  endTime = AbsoluteTime[] + timeout;\n  task = \
+SetInterval[If[AbsoluteTime[] > endTime, \n    TaskRemove[task];\n    \
+EventRemove[event];\n    ClearAll[endTime, startTime];\n  ,\n    \
+show[DateString[AbsoluteTime[] - startTime, {\"Minute\", \":\", \
+\"Second\"}]]\n  ], period];\n], \"Destroy\" -> Function[Null,\n  \
+TaskRemove[task];\n  EventRemove[event];\n  ClearAll[endTime, \
+startTime];\n]}];\n\n<div>\n  <TimerScript/>\n  <SlideEventListener \
+Id={event}/>\n</div>\n];\n\nOptions[Timer] = {\"Timeout\" -> Quantity[5, \
+\"Minutes\"], \"Color\"->Gray, \"Period\" -> Quantity[1, \"Minutes\"]};", 
+    "Display" -> "codemirror", "Hash" -> 
+     "4443a365-b6a5-466a-8d8d-752a867ccac6", "Invisible" -> False, 
+    "MetaOnly" -> False, "Props" -> <|"InitGroup" -> True|>, 
+    "PublicFields" -> {"Properties"}, "State" -> "Idle", "Type" -> "Input", 
+    "UID" -> Null, "Notebook" -> "975d27e7-ca54-4911-94b1-99bb950fc53c"|>, 
+   <|"Data" -> ".md\n## Test\nTest locally", "Display" -> "codemirror", 
+    "Hash" -> "6c6030fc-2aff-443f-bdef-bf3aafdf8414", "Invisible" -> False, 
+    "MetaOnly" -> False, "Props" -> <|"Hidden" -> True|>, 
+    "PublicFields" -> {"Properties"}, "State" -> "Idle", "Type" -> "Input", 
+    "UID" -> Null, "Notebook" -> "975d27e7-ca54-4911-94b1-99bb950fc53c"|>, 
+   <|"Data" -> "## Test\nTest locally", "Display" -> "markdown", 
+    "Hash" -> "bb895f22-eda1-41d0-9422-4fc44f5e1d16", "Invisible" -> False, 
+    "MetaOnly" -> False, "Props" -> <||>, "PublicFields" -> {"Properties"}, 
+    "State" -> "Idle", "Type" -> "Output", "UID" -> Null, 
+    "Notebook" -> "975d27e7-ca54-4911-94b1-99bb950fc53c"|>, 
+   <|"Data" -> ".slide\n\n# Slide\n\n<Timer Timeout={Quantity[5, \
+\"Minutes\"], Period={Quantity[15, \"Seconds\"]}/>", 
+    "Display" -> "codemirror", "Hash" -> 
+     "5a3cb53a-0119-4a95-bb52-9b364a25147d", "Invisible" -> False, 
+    "MetaOnly" -> False, "Props" -> <||>, "PublicFields" -> {"Properties"}, 
+    "State" -> "Idle", "Type" -> "Input", "UID" -> Null, 
+    "Notebook" -> "975d27e7-ca54-4911-94b1-99bb950fc53c"|>, 
+   <|"Data" -> ".md\n__Exports__", "Display" -> "codemirror", 
+    "Hash" -> "7a0bb1e3-de24-4aff-925c-64d702ab9194", "Invisible" -> False, 
+    "MetaOnly" -> False, "Props" -> <|"Hidden" -> True|>, 
+    "PublicFields" -> {"Properties"}, "State" -> "Idle", "Type" -> "Input", 
+    "UID" -> Null, "Notebook" -> "975d27e7-ca54-4911-94b1-99bb950fc53c"|>, 
+   <|"Data" -> "__Exports__", "Display" -> "markdown", 
+    "Hash" -> "684ab2a8-a7c6-4a06-9c77-af955aa92eb8", "Invisible" -> False, 
+    "MetaOnly" -> False, "Props" -> <||>, "PublicFields" -> {"Properties"}, 
+    "State" -> "Idle", "Type" -> "Output", "UID" -> Null, 
+    "Notebook" -> "975d27e7-ca54-4911-94b1-99bb950fc53c"|>, 
+   <|"Data" -> "Timer", "Display" -> "codemirror", 
+    "Hash" -> "87e2fad4-f585-403d-bba2-eff6abda3894", "Invisible" -> False, 
+    "MetaOnly" -> False, "Props" -> <||>, "PublicFields" -> {"Properties"}, 
+    "State" -> "Idle", "Type" -> "Input", "UID" -> Null, 
+    "Notebook" -> "975d27e7-ca54-4911-94b1-99bb950fc53c"|>}, 
+ "serializer" -> "jsfn4"|>

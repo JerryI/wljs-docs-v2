@@ -1,35 +1,22 @@
 ---
 title: ListAnimate
-env:
-  - Wolfram Kernel
-source: https://github.com/JerryI/wljs-manipulate/blob/main/Kernel.wl
-package: wljs-manipulate
 ---
+
 ```wolfram
-ListAnimate[{__Image}, opts___]
+ListAnimate[seq_List, fps_:20]
 ```
 
-accepts list of [Image](../Image/Image) s and animates them in the session
+animates the list of expressiions `seq` with `fps` frames per second (at best)
 
-<Callout type="warn">
-Limited functionality
-</Callout>
-
-## Options
-### `RefreshRate`
-By the default is set to `12` (frames per second)
-
-## Portability
-`ListAnimate` cannot be exported to any of available formats
-
-## Examples
-Rasterize and animate
+For example:
 
 ```wolfram
-frames = Table[Rasterize[Plot[Sin[x y], {x,0,1}]], {y,0,5}];
+ListAnimate[Table[Plot[Sin[n x], {x, 0, 10}], {n, 5}], 10]
 ```
 
 ```wolfram
-ListAnimate[frames]
+ListAnimate[Table[Graphics[Disk[{0,0}, RandomReal[100]]], {50}]]
 ```
+
+Note, that `ListAnimate` is effectively wrapper over a more general symbol [Animate](./Animate)
 

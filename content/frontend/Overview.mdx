@@ -37,8 +37,8 @@ Let's write a function to generate notes in the given scale:
 scale["Major"] = {2, 2, 1, 2, 2, 2, 1};
 
 makeScale[root_, sc_, pos_] := With[
-  {b = Accumulate @ Prepend[sc, root], n = Length[sc] + 1},
-  b[[Mod[pos - 1, n - 1] + 1]] + 12 Quotient[pos, n]
+        {b = Accumulate @ Prepend[sc, root], n = Length[sc] + 1},
+        b[[Mod[pos - 1, n - 1] + 1]] + 12 Quotient[pos, n]
 ];`}</wljs-editor>
 </WLJSWrapper>
 
@@ -360,7 +360,7 @@ Use arrow keys <kbd>↔</kbd> to navigate your cursor inside boxed expressions o
 
 To assist with writing basic mathematical expressions, we provide special keyboard shortcuts to insert templates or apply formatting to selected text:
 
-<Card className="text-xs">
+<Card className="text-xs" title="Shortcuts">
 
 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
 

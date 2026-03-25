@@ -1,0 +1,58 @@
+---
+title: Tooltip
+---
+
+```wolfram
+Tooltip[expr_, label_]
+```
+
+displays `expr` and shows `label` when the pointer hovers over it.
+
+`Tooltip` can be used with ordinary formatted expressions and with graphics primitives.
+
+## Examples
+
+### Basic tooltip
+
+```wolfram
+Tooltip[Style["hover me", 18, Blue], "This is a tooltip"]
+```
+
+### Tooltip with rich label content
+
+```wolfram
+Tooltip[
+ Framed[Style["status", Bold, 14], Background -> LightYellow],
+ Column[{"Server: online", "Latency: 24 ms", Style["OK", Darker[Green]]}]
+]
+```
+
+### Tooltips on graphics objects
+
+```wolfram
+Graphics[{
+	Tooltip[{Red, Disk[{0, 0}, 0.25]}, "center disk"],
+	Tooltip[{Blue, Rectangle[{0.5, -0.2}, {1.1, 0.4}]}, "data block"],
+	Tooltip[{Black, PointSize[0.03], Point[{0.8, 0.8}]}, "marker"]
+}, PlotRange -> {{-0.4, 1.3}, {-0.4, 1.1}}, Frame -> True]
+```
+
+### Tooltip in generated plots
+
+```wolfram
+Plot[{Tooltip[Sin[x], "This is sine"], Tooltip[Cos[x], "This is cosine"]}, {x,0,2Pi}]
+```
+
+```wolfram
+ListPlot[
+	Table[Tooltip[{x, Sin[x]}, Row[{"x = ", NumberForm[x, {3, 2}], ", y = ", NumberForm[Sin[x], {3, 2}]}]], {x, 0, 6, 0.3}],
+	PlotStyle -> Red,
+	Joined -> False
+]
+```
+
+<Callout type="warning">Avoid large number of tooltips on generated data</Callout>
+
+## Supported output forms
+- [StandardForm](../Formatting/StandardForm)
+

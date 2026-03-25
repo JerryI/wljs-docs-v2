@@ -5,10 +5,16 @@ env:
   - Wolfram Kernel
 ---
 ```wolfram
-Beep[] | Beep[_]
+Beep[]
 ```
 
 make a sound notification. It does not require any context or window object.
+
+```wolfram
+Beep["Your Message"]
+```
+
+make a sound notification and pops up a message dialog window with your message.
 
 <Callout type="idea">
 *Only for desktop application*

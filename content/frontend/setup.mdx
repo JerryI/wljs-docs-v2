@@ -18,17 +18,17 @@ import { Tabs, Tab } from 'fumadocs-ui/components/tabs';
 
 <Tabs items={['Windows', 'Mac','GNU/Linux', 'Docker', 'Homebrew']}>
   <Tab value="Mac">
-    - [Apple Silicon](https://github.com/WLJSTeam/wljs-notebook/releases/download/v3.0.1/wljs-notebook-3.0.1-arm64-macos.dmg)
-    - [Intel](https://github.com/WLJSTeam/wljs-notebook/releases/download/v3.0.1/wljs-notebook-3.0.1-x64-macos.dmg)
+    - [Apple Silicon](https://github.com/WLJSTeam/wljs-notebook/releases/download/v3.0.2/wljs-notebook-3.0.2-arm64-macos.dmg)
+    - [Intel](https://github.com/WLJSTeam/wljs-notebook/releases/download/v3.0.2/wljs-notebook-3.0.2-x64-macos.dmg)
   </Tab>
   <Tab value="Windows">
-    - [x86/64](https://github.com/WLJSTeam/wljs-notebook/releases/download/v3.0.1/wljs-notebook-3.0.1-x64-win.exe)
+    - [x86/64](https://github.com/WLJSTeam/wljs-notebook/releases/download/v3.0.2/wljs-notebook-3.0.2-x64-win.exe)
   </Tab>
   <Tab value="GNU/Linux">
-    - [DEB x86/64](https://github.com/WLJSTeam/wljs-notebook/releases/download/v3.0.1/wljs-notebook-3.0.1-amd64-gnulinux.deb)
-    - [DEB ARM64](https://github.com/WLJSTeam/wljs-notebook/releases/download/v3.0.1/wljs-notebook-3.0.1-arm64-gnulinux.deb)
-    - [AppImage x86/64](https://github.com/WLJSTeam/wljs-notebook/releases/download/v3.0.1/wljs-notebook-3.0.1-x86_64-gnulinux.AppImage)
-    - [AppImage ARM64](https://github.com/WLJSTeam/wljs-notebook/releases/download/v3.0.1/wljs-notebook-3.0.1-arm64-gnulinux.AppImage)
+    - [DEB x86/64](https://github.com/WLJSTeam/wljs-notebook/releases/download/v3.0.2/wljs-notebook-3.0.2-amd64-gnulinux.deb)
+    - [DEB ARM64](https://github.com/WLJSTeam/wljs-notebook/releases/download/v3.0.2/wljs-notebook-3.0.2-arm64-gnulinux.deb)
+    - [AppImage x86/64](https://github.com/WLJSTeam/wljs-notebook/releases/download/v3.0.2/wljs-notebook-3.0.2-x86_64-gnulinux.AppImage)
+    - [AppImage ARM64](https://github.com/WLJSTeam/wljs-notebook/releases/download/v3.0.2/wljs-notebook-3.0.2-arm64-gnulinux.AppImage)
   </Tab>
   <Tab value="Docker">
 
@@ -36,6 +36,7 @@ import { Tabs, Tab } from 'fumadocs-ui/components/tabs';
 docker run -it \
   -v ~/wljs:"/home/wljs/WLJS Notebooks" \
   -v ~/wljs/Licensing:/home/wljs/.WolframEngine/Licensing \
+  -v ~/wljs/tmp:/tmp \
   -e PUID=$(id -u) \
   -e PGID=$(id -g) \
   -p 8000:3000 \
@@ -122,20 +123,23 @@ brew install --cask wljs-notebook
 
 
 
-## 🚢 Running using Docker
+## 🚢 Running on a server
 
 <Callout>
-Certain features such as image/sound recording might require `https` connection if you are running it __not on a local machine__. See how to set up a proxy in [📦 Docker Container Setup](https://github.com/JerryI/wljs-notebook/blob/main/container/README.md)
+Certain features such as image/sound recording might require `https` connection if you are running it __not on a local machine__. See how to set up a proxy in [Container Setup](https://github.com/JerryI/wljs-notebook/blob/main/container/README.md) or use [port forwarding](https://www.digitalocean.com/community/tutorials/ssh-port-forwarding) via SSH.
 </Callout>
+
+For a remote machine:
 
 __Step 1__: register and get developer license for [freeware Wolfram Engine](https://www.wolfram.com/engine/) at wolfram.com
 
-__Step 2__: deploy WLJS Notebook in a single line of code to any machine!
+__Step 2__: deploy WLJS Notebook
 
 ```bash
 docker run -it \
   -v ~/wljs:"/home/wljs/WLJS Notebooks" \
   -v ~/wljs/Licensing:/home/wljs/.WolframEngine/Licensing \
+  -v ~/wljs/tmp:/tmp \
   -e PUID=$(id -u) \
   -e PGID=$(id -g) \
   -p 8000:3000 \
@@ -143,11 +147,9 @@ docker run -it \
   ghcr.io/wljsteam/wljs-notebook:main
 ```
 
-Then open `http://127.0.0.1:8000` 
+This will mount your local `wljs` folder to the container, where examples, configs and license-related files are stored.
 
-[📦 Docker Container Setup](https://github.com/JerryI/wljs-notebook/blob/main/container/README.md)
-
-In the case if you do not have `docker`, clone it directly from the repository as follows.
+Then open `http://127.0.0.1:8000` or forward `8000` port to your local machine and open.
 
 <Callout type="warning">
 Some features require WLJS desktop app:
@@ -156,12 +158,40 @@ Some features require WLJS desktop app:
 - `Rasterize` - expressions rasterization
 - `SystemOpen` - open files/folders using OS system calls
 - `SystemInputDialog` - open system file dialog
-- Any features, which use PDF generation
 </Callout>
+
+### Running without a container
+If you hate contaienrs, you can start WLJS Notebook directly from a repository. Make sure to have Wolfram Engine installed:
+
+__Step 1__: clone WLJS Notebook
+
+```bash
+git clone https://github.com/WLJSTeam/wljs-notebook.git
+cd wljs-notebook
+```
+
+__Step 2__: start it
+
+```bash
+wolframscript -f Scripts/start.wls
+```
+
+<Callout>WLJS Notebook uses 1 port for plain HTTP and 2 WebSockets ports for communication: 20560, 20559, and 20563. Make sure to have 1:1 port-forwarding for the last 2 if you plan to connect from a proxy or SSH tunnel</Callout>
+
+#### Tunnelling though SSH
+Example setup:
+
+```bash
+   ssh -f -N \
+     -L 20560:localhost:20560 \
+     -L 20559:localhost:20559 \
+     -L 20563:localhost:20563 \
+     <host name>@<host address> -p <host port, defualt=22>
+```
 
 ## 🍓 Raspberry PI
 
-Unix ARM64 binaries can work on any Raspberry PI computers with x64 OS installed. However, you might need to install `libuv` or/and `libuv-dev` dependency from the terminal.
+Unix ARM64 binaries can work on any Raspberry PI computers > 3B with x64 OS installed. However, you might need to install `libuv` or/and `libuv-dev` dependency from the terminal.
 
 Wolfram Engine is available from APT repository by the default and does not require authentification.
 

@@ -1,0 +1,35 @@
+---
+title: TeXView
+---
+
+```wolfram
+TeXView[expr_String]
+```
+
+renders `expr` as LaTeX expression to the screen
+
+```wolfram
+TeXView[expr_]
+```
+
+converts arbitrary expression `expr` using [TeXForm](./../Formatting/TeXForm) and then renders it.
+
+
+For example:
+
+```wolfram
+TeXView[1/2]
+```
+
+or directly using LaTeX:
+
+```wolfram
+TeXView["\\frac{1}{2}"]
+```
+
+It works on slides, markdown and in a normal Wolfram output cells.
+
+## Output forms
+- [StandardForm](./../Formatting/StandardForm)
+- [WLXForm](./../Formatting/WLXForm)
+
