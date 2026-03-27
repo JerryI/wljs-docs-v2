@@ -14,6 +14,30 @@ import crypto from 'crypto';
 import rehypeKatex from 'rehype-katex';
 import remarkMath from 'remark-math';
 
+// Transforms ```mermaid code blocks into <Mermaid chart="..."> JSX elements
+// before shiki can process them.
+function rehypeMermaid() {
+  return (tree: any) => {
+    visit(tree, 'element', (node: any, index: any, parent: any) => {
+      if (
+        node.tagName === 'pre' &&
+        node.children?.[0]?.tagName === 'code' &&
+        (node.children[0].properties?.className as string[] | undefined)?.includes('language-mermaid')
+      ) {
+        const code: string = node.children[0].children?.[0]?.value ?? '';
+        parent.children[index] = {
+          type: 'mdxJsxFlowElement',
+          name: 'Mermaid',
+          attributes: [
+            { type: 'mdxJsxAttribute', name: 'chart', value: code },
+          ],
+          children: [],
+        };
+      }
+    });
+  };
+}
+
 // Helper function to generate unique filename based on file hash
 function getUniqueFilename(sourcePath: string): string {
   const ext = path.extname(sourcePath);
@@ -161,6 +185,6 @@ export const docs = defineDocs({
 export default defineConfig({
   mdxOptions: {
     remarkPlugins: [remarkFixRelativeUrls, remarkMath],
-    rehypePlugins: (v) => [rehypeKatex, ...v],
+    rehypePlugins: (v) => [rehypeKatex, rehypeMermaid, ...v],
   },
 });

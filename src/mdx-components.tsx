@@ -9,6 +9,7 @@ import {LazyAutoplayVideo, LazyVideo} from "./lib/video"
 import { Download } from 'lucide-react';
 
 import {Card, Cards} from 'fumadocs-ui/components/card';
+import { Mermaid } from './components/mermaid';
 
 function DownloadFile({title, description, href}) {
 return <Cards>
@@ -52,7 +53,7 @@ function WLJSWrapper({children}: {children: React.ReactNode}) {
 export function getMDXComponents(components?: MDXComponents): MDXComponents {
   return {
     ...defaultMdxComponents,
-    WLJSWrapper, Image, LazyAutoplayVideo, GithubInfo, LazyVideo, DownloadFile,
+    WLJSWrapper, Image, LazyAutoplayVideo, GithubInfo, LazyVideo, DownloadFile, Mermaid,
     ...components
   };
 }
