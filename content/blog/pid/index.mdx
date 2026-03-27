@@ -80,9 +80,7 @@ This curve is our system's reaction. It is delayed. Unlike electromagnetic or el
 We can't readily include our controller in this equation — doing so creates a feedback loop that `NDSolve` and other built-in solvers cannot handle. Instead, we need to discretize the problem.
 
 ## FDTD Method
-To solve such equations, we can try to discretize them in both time and space. It is usually easier to work with 1st order differential equations, therefore we introduce 2 helper symbols `vx`, `vy`, which are spatial derivatives of `w`:
-
-Let's write a basic solver for it:
+To solve such equations, we can try to discretize them in both time and space. Descrete version of Laplacian is already quite known. Let's write a basic solver:
 
 <WLJSWrapper><div className="code-input"/><wljs-editor lazy="true" display="codemirror" type="Input" editable="true"  >{`solveHeat[w_, f_, dt_:0.0025, dx_:0.1] := Table[
 	      
