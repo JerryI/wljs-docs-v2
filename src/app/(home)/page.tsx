@@ -531,10 +531,10 @@ export default function HomePage() {
           <h3 className="text-lg font-semibold mb-4">Licensing</h3>
           <div className="prose prose-sm max-w-none text-fd-muted-foreground">
             <p className="mb-4">
-              WLJS Notebook is open-source software licensed under the <strong>GNU GPL v3.0</strong>. You are free to use, modify, and distribute this software for both personal and commercial purposes.
+              WLJS Notebook is open-source software licensed under the <strong>AGPLv3</strong>
             </p>
             <p className="mb-4">
-              <strong>Note:</strong> While WLJS Notebook itself is GNU GPL v3.0 licensed, it requires the Wolfram Engine to function. The Wolfram Engine is a separate product with its own licensing terms:
+              <strong>Note:</strong> While WLJS Notebook itself is AGPLv3 licensed, it requires the Wolfram Engine to function. The Wolfram Engine is a separate product with its own licensing terms:
             </p>
             <ul className="list-disc list-inside space-y-2 mb-4">
               <li><strong>Free Wolfram Engine for Developers</strong> - Available for non-production use and pre-production software development</li>
