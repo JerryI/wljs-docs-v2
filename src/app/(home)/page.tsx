@@ -544,7 +544,7 @@ export default function HomePage() {
               Please review the <a href="https://www.wolfram.com/legal/agreements/wolfram-engine/" target="_blank" rel="noopener noreferrer" className="text-fd-primary hover:underline">Wolfram Engine License Agreement</a> to ensure compliance with your use case.
             </p>
             <p>
-              For the full license text of WLJS Notebook, visit our <a href="https://github.com/WLJSTeam/wolfram-js-frontend/blob/main/LICENSE" target="_blank" rel="noopener noreferrer" className="text-fd-primary hover:underline">GitHub repository</a>.
+              For the full license text of WLJS Notebook, visit our <a href="https://github.com/WLJSTeam/wolfram-js-frontend/blob/main/LICENSE.md" target="_blank" rel="noopener noreferrer" className="text-fd-primary hover:underline">GitHub repository</a>.
             </p>
           </div>
         </div>
