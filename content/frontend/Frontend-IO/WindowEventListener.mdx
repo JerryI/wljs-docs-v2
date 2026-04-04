@@ -1,0 +1,46 @@
+---
+title: WindowEventListener
+env:
+  - Wolfram Kernel
+
+---
+
+```wolfram
+WindowEventListener[ev_String | ev_EventObject]
+```
+
+```wolfram
+WindowEventListener["Id" -> ev_String]
+```
+
+acts similar to [SlideEventListener](./../Slides/SlideEventListener) and captures global events from a window, **where it is placed**. All events are fired on provided `ev` - [EventObject](./../Misc/Events)
+
+The following patterns can be captured:
+
+<Card>
+
+- `"Mounted"` - when the component or window has loaded
+- `"Closed"` - when a window is closed
+- `"Blur"` - when a user removes focus from a window
+- `"Focus"` - when a user focuses a window
+
+</Card>
+
+This component works in regular cells as well as in WLX. It takes up no space and renders nothing.
+
+For example
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`ev = EventObject[];
+	WindowEventListener[ev]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`log = {};
+	Refresh[log, 1]
+	EventHandler[ev, {
+	  ev_ :> Function[Null,
+	    AppendTo[log, ev];
+	  ]
+	}];`}</wljs-editor></WLJSWrapper>
+
+## Supported output forms
+- [StandardForm](../Formatting/StandardForm)
+- [WLXForm](../Formatting/WLXForm)

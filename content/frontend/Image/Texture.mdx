@@ -1,0 +1,126 @@
+---
+title: Texture
+---
+
+```wolfram
+Texture[image_]
+```
+
+wraps an [Image](../Image/Image) (or any raster data) to be used as a surface texture in [Graphics](../Graphics/Graphics) and [Graphics3D](../Graphics3D/Graphics3D) primitives.
+
+## Examples
+
+### Texture on a 2D polygon
+
+<Callout type="warning">
+Only `GraphicsComplex` is suppored for texturing in `Graphics`
+</Callout>
+
+Texture a triangle using [GraphicsComplex](../Graphics/GraphicsComplex):
+
+```wolfram
+img = ExampleData[{"TestImage", "Mandrill"}];
+
+Graphics[{
+  Texture[img],
+  GraphicsComplex[{{0,0},{2,0},{1,2}}, Polygon[
+    {1,2,3}
+  ], VertexTextureCoordinates -> {{0,0},{1,0},{0.5,1}}]
+}]
+```
+
+### Texture on a 3D Sphere
+
+```wolfram
+img = ExampleData[{"TestImage", "Lena"}];
+
+Graphics3D[{
+  Texture[img],
+  Sphere[]
+}]
+```
+
+### Texture on a 3D Cube
+
+```wolfram
+img = ExampleData[{"TestImage", "Mandrill"}];
+
+Graphics3D[{
+  Texture[img],
+  Cuboid[]
+}]
+```
+
+### VertexTextureCoordinates on a 3D polygon
+
+Manually control UV mapping on a 3D quad using `VertexTextureCoordinates`:
+
+```wolfram
+img = ExampleData[{"TestImage", "Lena"}];
+
+Graphics3D[{
+  Texture[img],
+  Polygon[
+    {{-1, -1, 0}, {1, -1, 0}, {1, 1, 0}, {-1, 1, 0}}
+  ]
+}]
+```
+
+Control UV mapping explicitly using [GraphicsComplex](../Graphics/GraphicsComplex):
+
+```wolfram
+img = ExampleData[{"TestImage", "Lena"}];
+
+Graphics3D[{
+  Texture[img],
+  GraphicsComplex[
+    {{-1, -1, 0}, {1, -1, 0}, {1, 1, 0}, {-1, 1, 0}},
+    Polygon[{1, 2, 3, 4}],
+    VertexTextureCoordinates -> {{0, 1}, {0, 0}, {1, 0}, {1, 1}}
+  ]
+}]
+```
+
+### Plot3D with texture as PlotStyle
+
+Use a texture image as the surface colour via `PlotStyle`:
+
+```wolfram
+img = ExampleData[{"TestImage", "Lena"}];
+
+Plot3D[Sin[x] Cos[y], {x, -Pi, Pi}, {y, -Pi, Pi},
+  PlotStyle -> Texture[img],
+  Mesh -> None
+]
+```
+
+### ParametricPlot with texture (2D)
+
+Map a texture onto a 2D parametric curve region by supplying `Texture` through `PlotStyle`:
+
+```wolfram
+img = ExampleData[{"TestImage", "Lena"}];
+
+ParametricPlot[
+  {(1 + 0.3 s Cos[5 t]) Cos[t], (1 + 0.3 s Sin[5 t]) Sin[t]},
+  {t, 0, 2 Pi}, {s, 0, 1},
+  PlotStyle -> Texture[img],
+  Mesh -> None
+]
+```
+
+### Texture from computed image data
+
+Generate a procedural texture and apply it to a 3D surface:
+
+```wolfram
+data = Table[{Sin[x]^2, Cos[y]^2, 0.5}, {y, 0, Pi, Pi/99}, {x, 0, Pi, Pi/99}];
+img = Image[data];
+
+Graphics3D[{
+  Texture[img],
+  Sphere[]
+}]
+```
+
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Texture.html) for more details.
