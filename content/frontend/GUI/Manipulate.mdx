@@ -178,6 +178,7 @@ Our transpiler does not cover all symbols and is limited to the following for no
 which is a good subset to cover the output produced by `Plot`, `Plot3D` and many others standard functions. What will not be supported in the near future:
 
 - `PlotRange` mutations are ignored
+- `Texture` is not supported
 - adding/removing `Line`, `Point` and etc primitives at runtime leads to deoptimization
 - changing color or opacity __leads to full reevaluation__
 
