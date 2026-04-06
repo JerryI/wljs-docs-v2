@@ -18,4 +18,7 @@ Sample a path:
 RandomFunction[CompoundRenewalProcess[ExponentialDistribution[2], UniformDistribution[]], {0, 10}]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/CompoundRenewalProcess.html) for more details.

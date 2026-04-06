@@ -18,4 +18,7 @@ EstimatedProcess[data, ARProcess[{a}, v]]
 (* ARProcess[{0.498...}, 1.02...] *)
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/EstimatedProcess.html) for more details.

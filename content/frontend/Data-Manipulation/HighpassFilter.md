@@ -17,4 +17,7 @@ HighpassFilter[RandomReal[1, 100], 0.1]
 HighpassFilter[Table[Sin[t] + 0.5 Sin[10 t], {t, 0, 10, 0.01}], 0.3]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/HighpassFilter.html) for more details.

@@ -22,4 +22,7 @@ CharacterCounts["banana", 2]
 (* <|"ba" -> 1, "an" -> 2, "na" -> 2|> *)
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/CharacterCounts.html) for more details.

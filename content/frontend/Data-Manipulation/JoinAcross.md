@@ -18,4 +18,7 @@ JoinAcross[{<|"a" -> 1, "b" -> 2|>}, {<|"a" -> 1, "c" -> 3|>}, "a"]
 JoinAcross[{<|"x" -> 1|>, <|"x" -> 2|>}, {<|"x" -> 1, "y" -> 10|>}, "x"]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/JoinAcross.html) for more details.

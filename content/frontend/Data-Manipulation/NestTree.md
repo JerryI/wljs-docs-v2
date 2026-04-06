@@ -17,4 +17,7 @@ NestTree[{#-1, #+1}&, 0, 2]
 (* Creates a tree starting from 0 with two levels *)
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/NestTree.html) for more details.

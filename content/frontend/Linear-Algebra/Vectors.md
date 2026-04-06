@@ -18,4 +18,7 @@ Vectors[3, Reals]
 (* Vectors[3, Reals] *)
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Vectors.html) for more details.

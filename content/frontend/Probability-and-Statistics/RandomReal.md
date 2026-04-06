@@ -31,4 +31,7 @@ RandomReal[1, 5]
 (* {0.23..., 0.87..., 0.12..., 0.56..., 0.91...} *)
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/RandomReal.html) for more details.

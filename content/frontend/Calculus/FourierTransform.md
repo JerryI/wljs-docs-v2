@@ -20,4 +20,7 @@ FourierTransform[UnitBox[t], t, ω]
 (* Sinc[ω/2]/Sqrt[2 Pi] *)
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/FourierTransform.html) for more details.

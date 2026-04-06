@@ -19,4 +19,7 @@ Plot the real part:
 Plot3D[Re[KleinInvariantJ[x + I y]], {x, -1, 1}, {y, 0.5, 2}]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/KleinInvariantJ.html) for more details.

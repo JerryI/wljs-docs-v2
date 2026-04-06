@@ -20,4 +20,7 @@ Probability of exactly 5 successes:
 PDF[HypergeometricDistribution[10, 30, 100], 5]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/HypergeometricDistribution.html) for more details.

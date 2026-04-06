@@ -29,4 +29,7 @@ ContainsAll[{a, b}][{a, b, c, d}]
 (* True *)
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ContainsAll.html) for more details.

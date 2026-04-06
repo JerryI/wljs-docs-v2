@@ -15,4 +15,7 @@ img = ExampleData[{"TestImage", "Peppers"}];
 ImageContainsQ[img, "Vegetable"]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ImageContainsQ.html) for more details.

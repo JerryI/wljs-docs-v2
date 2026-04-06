@@ -16,4 +16,7 @@ Create an equiripple lowpass filter:
 EquirippleFilterKernel[{{{0, 0.3}, {0.4, 1}}, {1, 0}}, 31]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/EquirippleFilterKernel.html) for more details.

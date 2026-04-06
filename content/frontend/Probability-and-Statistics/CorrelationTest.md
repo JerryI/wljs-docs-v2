@@ -16,4 +16,7 @@ Test correlation significance:
 CorrelationTest[{{1, 2}, {2, 4}, {3, 5}, {4, 8}}]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/CorrelationTest.html) for more details.

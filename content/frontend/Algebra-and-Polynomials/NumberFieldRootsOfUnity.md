@@ -16,4 +16,7 @@ NumberFieldRootsOfUnity[Exp[2 Pi I/6]]
 (* {6, E^(I Pi/3)} *)
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/NumberFieldRootsOfUnity.html) for more details.

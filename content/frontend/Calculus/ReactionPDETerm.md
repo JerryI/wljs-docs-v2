@@ -21,4 +21,7 @@ eq = ReactionPDETerm[{c[t, x], {t, x}}, -k c[t, x]];
 NDSolve[{eq == 0, c[0, x] == Exp[-x^2]}, c, {t, 0, 1}, {x, -5, 5}]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ReactionPDETerm.html) for more details.

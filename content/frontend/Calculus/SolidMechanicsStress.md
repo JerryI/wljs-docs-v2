@@ -22,4 +22,7 @@ pars = <|"YoungModulus" -> 1, "PoissonRatio" -> 0.25|>;
 SolidMechanicsStress[vars, pars, Automatic]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/SolidMechanicsStress.html) for more details.

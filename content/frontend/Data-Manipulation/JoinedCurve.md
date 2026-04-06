@@ -18,4 +18,7 @@ With Bezier curves:
 Graphics[JoinedCurve[{BezierCurve[{{0, 0}, {0.5, 1}, {1, 0}}], Line[{{1, 0}, {2, 1}}]}]]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/JoinedCurve.html) for more details.

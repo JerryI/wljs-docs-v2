@@ -17,4 +17,7 @@ SubsetReplace[{1, 2, 3, 4}, {1, 2} -> x]
 SubsetReplace[{a, b, c, b, c, d}, {b, c} -> z, 1]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/SubsetReplace.html) for more details.

@@ -22,4 +22,7 @@ Split[{1, 2, 3, 5, 6, 8}, #2 == #1 + 1 &]
 (* {{1, 2, 3}, {5, 6}, {8}} *)
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Split.html) for more details.

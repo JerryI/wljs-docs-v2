@@ -20,4 +20,7 @@ Eliminate[{a == b + c, b == 2c, c == 3}, {b, c}]
 (* a == 9 *)
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Eliminate.html) for more details.

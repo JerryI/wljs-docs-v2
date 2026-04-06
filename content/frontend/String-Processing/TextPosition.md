@@ -24,4 +24,7 @@ TextPosition["Hello world. How are you?", "Sentence"]
 (* {{1, 12}, {14, 26}} *)
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/TextPosition.html) for more details.

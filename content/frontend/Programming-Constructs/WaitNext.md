@@ -15,4 +15,7 @@ eids = ParallelSubmit /@ {Pause[1]; 1, Pause[2]; 2};
 {result, eid, rest} = WaitNext[eids]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/WaitNext.html) for more details.

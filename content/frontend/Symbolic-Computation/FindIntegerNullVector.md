@@ -20,4 +20,7 @@ Find relation with Pi:
 FindIntegerNullVector[{Pi, E, 1}]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/FindIntegerNullVector.html) for more details.

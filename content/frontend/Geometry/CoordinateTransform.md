@@ -21,4 +21,7 @@ Convert spherical to Cartesian:
 CoordinateTransform["Spherical" -> "Cartesian", {1, Pi/4, Pi/4}]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/CoordinateTransform.html) for more details.

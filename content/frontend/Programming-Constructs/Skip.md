@@ -13,4 +13,7 @@ str = OpenRead["file.txt"];
 Skip[str, String]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Skip.html) for more details.

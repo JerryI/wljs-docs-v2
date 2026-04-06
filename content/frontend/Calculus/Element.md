@@ -22,4 +22,7 @@ Integrate[1/(1 + x^2), {x, -Infinity, Infinity}, Assumptions -> Element[x, Reals
 (* Pi *)
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Element.html) for more details.

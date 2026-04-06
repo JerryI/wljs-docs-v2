@@ -20,4 +20,7 @@ Length[Permutations[Range[5]]]
 (* 120 = 5! *)
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Permutations.html) for more details.

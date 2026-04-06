@@ -18,4 +18,7 @@ Add to a neural network chain:
 NetChain[{LinearLayer[10], BatchNormalizationLayer[], Ramp}]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/BatchNormalizationLayer.html) for more details.

@@ -20,4 +20,7 @@ Discriminant[x^2 - 5x + 6, x]
 (* 1 *)
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Discriminant.html) for more details.

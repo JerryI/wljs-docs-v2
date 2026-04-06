@@ -23,4 +23,7 @@ Multiply while less than 100:
 FoldWhileList[Times, 1, Range[10], # < 100 &]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/FoldWhileList.html) for more details.

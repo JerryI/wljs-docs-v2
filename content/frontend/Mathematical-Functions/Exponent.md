@@ -20,4 +20,7 @@ Exponent[x^2 * (1 + x)^3, x]
 (* 5 *)
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Exponent.html) for more details.

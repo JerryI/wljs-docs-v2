@@ -15,4 +15,7 @@ ByteArrayFormatQ[ByteArray[{137, 80, 78, 71}], "PNG"]
 (* True *)
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ByteArrayFormatQ.html) for more details.

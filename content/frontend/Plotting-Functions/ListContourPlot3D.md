@@ -15,4 +15,7 @@ data = Table[x^2 + y^2 - z^2, {x, -1, 1, 0.1}, {y, -1, 1, 0.1}, {z, -1, 1, 0.1}]
 ListContourPlot3D[data]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ListContourPlot3D.html) for more details.

@@ -16,4 +16,7 @@ Get calendar information:
 CalendarData["Jewish"]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/CalendarData.html) for more details.

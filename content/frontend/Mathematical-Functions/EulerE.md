@@ -20,4 +20,7 @@ EulerE[2, x]
 (* x^2 - x *)
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/EulerE.html) for more details.

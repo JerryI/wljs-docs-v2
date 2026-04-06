@@ -23,4 +23,7 @@ Reduce multiple dimensions:
 ArrayReduce[Max, RandomReal[1, {3, 4, 5}], {1, 2}]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ArrayReduce.html) for more details.

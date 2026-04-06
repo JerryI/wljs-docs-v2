@@ -22,4 +22,7 @@ CreateUUID["user-"]
 (* "user-550e8400-e29b-41d4-a716-446655440000" *)
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/CreateUUID.html) for more details.

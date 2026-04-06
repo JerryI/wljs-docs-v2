@@ -27,4 +27,7 @@ N[GoldenAngle/Degree]
 (* 137.508 *)
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/GoldenAngle.html) for more details.

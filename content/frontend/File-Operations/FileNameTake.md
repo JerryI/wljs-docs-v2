@@ -24,4 +24,7 @@ FileNameTake["/path/to/file.txt", -2]
 (* "to/file.txt" *)
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/FileNameTake.html) for more details.

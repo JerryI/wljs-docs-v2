@@ -21,4 +21,7 @@ Extract a region:
 ImageTake[img, {100, 200}, {150, 300}]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ImageTake.html) for more details.

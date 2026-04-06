@@ -18,4 +18,7 @@ FourierDCT[{1, 0, -1, 0}, 2]
 (* DCT type 2 result *)
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/FourierDCT.html) for more details.

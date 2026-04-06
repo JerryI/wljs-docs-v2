@@ -26,4 +26,7 @@ Multiple datasets:
 ListPlot[{Table[Sin[x], {x, 0, 10, 0.5}], Table[Cos[x], {x, 0, 10, 0.5}]}]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ListPlot.html) for more details.

@@ -20,4 +20,7 @@ FileConvert["document.docx", "PDF"]
 FileConvert["data.csv" -> "data.xlsx", "CSV" -> "XLSX"]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/FileConvert.html) for more details.

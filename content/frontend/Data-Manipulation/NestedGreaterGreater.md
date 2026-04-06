@@ -24,4 +24,7 @@ In mathematical notation:
 Row[{NestedGreaterGreater[1, 2], " means deeply greater"}]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/NestedGreaterGreater.html) for more details.

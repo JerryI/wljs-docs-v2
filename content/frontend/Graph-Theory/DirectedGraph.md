@@ -20,4 +20,7 @@ With specific conversion:
 DirectedGraph[CycleGraph[4], "Acyclic"]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/DirectedGraph.html) for more details.

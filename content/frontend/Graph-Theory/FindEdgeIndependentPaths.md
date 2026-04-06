@@ -17,4 +17,7 @@ FindEdgeIndependentPaths[g, 1, 4, 2]
 FindEdgeIndependentPaths[g, 1, 4, Infinity]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/FindEdgeIndependentPaths.html) for more details.

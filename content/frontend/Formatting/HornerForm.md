@@ -22,4 +22,7 @@ HornerForm[a + b x + c x^2, x]
 (* a + x (b + c x) *)
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/HornerForm.html) for more details.

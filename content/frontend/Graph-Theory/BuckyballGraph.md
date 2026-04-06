@@ -16,4 +16,7 @@ Create the standard buckyball graph:
 BuckyballGraph[]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/BuckyballGraph.html) for more details.

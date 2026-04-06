@@ -15,4 +15,7 @@ data = RandomFunction[ARProcess[{0.5, -0.3}, 1], {1, 100}];
 FindProcessParameters[data, ARProcess[{a, b}, σ]]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/FindProcessParameters.html) for more details.

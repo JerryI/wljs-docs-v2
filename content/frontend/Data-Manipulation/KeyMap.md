@@ -28,4 +28,7 @@ Operator form:
 KeyMap[ToString] @ <|1 -> a, 2 -> b|>
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/KeyMap.html) for more details.

@@ -16,4 +16,7 @@ InverseFourierCosTransform[1/(1 + ω^2), ω, t]
 InverseFourierCosTransform[Exp[-ω], ω, t]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/InverseFourierCosTransform.html) for more details.

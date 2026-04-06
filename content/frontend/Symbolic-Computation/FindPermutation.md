@@ -22,4 +22,7 @@ FindPermutation[{a, b, c}, {c, a, b}]
 (* Cycles[{{1, 3, 2}}] *)
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/FindPermutation.html) for more details.

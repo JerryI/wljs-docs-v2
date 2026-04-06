@@ -19,4 +19,7 @@ Numerical evaluation:
 N[DirichletL[5, 2, 2]]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/DirichletL.html) for more details.

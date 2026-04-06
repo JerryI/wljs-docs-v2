@@ -14,4 +14,7 @@ GroupElementQ[SymmetricGroup[4], Cycles[{{1, 2, 3}}]]
 GroupElementQ[AlternatingGroup[4], Cycles[{{1, 2}}]]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/GroupElementQ.html) for more details.

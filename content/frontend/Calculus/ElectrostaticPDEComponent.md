@@ -12,4 +12,7 @@ Create electrostatic PDE component:
 ElectrostaticPDEComponent[{V[x, y], {x, y}}, <|"Permittivity" -> 1|>]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ElectrostaticPDEComponent.html) for more details.

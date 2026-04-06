@@ -27,4 +27,7 @@ GraphCenter[GridGraph[{3, 3}]]
 (* {5} - center of 3x3 grid *)
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/GraphCenter.html) for more details.

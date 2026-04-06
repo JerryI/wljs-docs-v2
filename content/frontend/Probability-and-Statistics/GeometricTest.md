@@ -17,4 +17,7 @@ GeometricTest[Triangle[{{0, 0}, {1, 0}, {1/2, Sqrt[3]/2}}], "Equilateral"]
 GeometricTest[{Line[{{0, 0}, {1, 1}}], Line[{{0, 1}, {1, 2}}]}, "Parallel"]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/GeometricTest.html) for more details.

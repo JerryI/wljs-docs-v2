@@ -15,4 +15,7 @@ data = {{1.2, 1.5}, {2.1, 2.3}, {1.8, 2.0}};
 PairedTTest[data]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/PairedTTest.html) for more details.

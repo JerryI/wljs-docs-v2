@@ -18,4 +18,7 @@ ParallelCombine[Map[f], {a, b, c, d, e}, Join]
 (* {f[a], f[b], f[c], f[d], f[e]} *)
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ParallelCombine.html) for more details.

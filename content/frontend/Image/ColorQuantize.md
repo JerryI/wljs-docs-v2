@@ -22,4 +22,7 @@ Quantize to specific palette:
 ColorQuantize[img, {Red, Green, Blue, White, Black}]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ColorQuantize.html) for more details.

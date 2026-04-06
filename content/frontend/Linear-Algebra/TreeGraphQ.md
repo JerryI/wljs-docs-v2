@@ -19,4 +19,7 @@ TreeGraphQ[Graph[{1 <-> 2, 3 <-> 4}]]
 (* False - not connected *)
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/TreeGraphQ.html) for more details.

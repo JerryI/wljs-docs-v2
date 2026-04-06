@@ -20,4 +20,7 @@ FileByteCount["image.png"] / 1024.0
 (* 256.5 kilobytes *)
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/FileByteCount.html) for more details.

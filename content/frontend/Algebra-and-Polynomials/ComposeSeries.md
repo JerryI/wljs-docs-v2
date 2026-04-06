@@ -14,4 +14,7 @@ s2 = Series[Sin[y], {y, 0, 3}];
 ComposeSeries[s1, s2]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ComposeSeries.html) for more details.

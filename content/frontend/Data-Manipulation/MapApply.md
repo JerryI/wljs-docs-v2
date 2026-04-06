@@ -22,4 +22,7 @@ Plus @@@ {{1, 2}, {3, 4, 5}}
 (* {3, 12} *)
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/MapApply.html) for more details.

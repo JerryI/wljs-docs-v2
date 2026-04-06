@@ -19,4 +19,7 @@ EntityValue[Entity["Country", "Germany"], {"Capital", "Area"}]
 EntityValue[{Entity["Planet", "Earth"], Entity["Planet", "Mars"]}, "Radius"]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/EntityValue.html) for more details.

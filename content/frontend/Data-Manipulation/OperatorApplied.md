@@ -32,4 +32,7 @@ OperatorApplied[f, {2, 1}][a][b]
 (* f[b, a] *)
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/OperatorApplied.html) for more details.

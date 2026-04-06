@@ -14,4 +14,7 @@ GeoArea[Entity["Country", "France"]]
 GeoArea[GeoDisk[Here, Quantity[100, "Kilometers"]]]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/GeoArea.html) for more details.

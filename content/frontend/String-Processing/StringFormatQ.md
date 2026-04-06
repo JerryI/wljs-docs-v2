@@ -18,4 +18,7 @@ StringFormatQ["<html></html>", {"JSON", "HTML"}]
 (* True *)
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/StringFormatQ.html) for more details.

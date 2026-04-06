@@ -20,4 +20,7 @@ RandomVariate[ChiDistribution[3], 5]
 (* {1.92, 2.15, 1.78, 2.33, 1.64} *)
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ChiDistribution.html) for more details.

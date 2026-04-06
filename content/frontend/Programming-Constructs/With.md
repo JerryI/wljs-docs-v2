@@ -20,4 +20,7 @@ With[{x = 5}, Hold[x^2]]
 (* Hold[25] *)
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/With.html) for more details.

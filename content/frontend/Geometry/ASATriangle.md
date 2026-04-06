@@ -12,4 +12,7 @@ Create a triangle with two angles and an included side:
 Graphics[ASATriangle[45 Degree, 2, 60 Degree]]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ASATriangle.html) for more details.

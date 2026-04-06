@@ -17,4 +17,7 @@ GeoPositionENU[{1000, 2000, 0}, GeoPosition[{40.7, -74.0}]]
 GeoPosition[GeoPositionENU[{5000, 0, 0}, Here]]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/GeoPositionENU.html) for more details.

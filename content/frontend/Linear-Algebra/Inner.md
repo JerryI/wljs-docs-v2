@@ -22,4 +22,7 @@ Inner[And, {True, False, True}, {True, True, False}, Or]
 (* True *)
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Inner.html) for more details.

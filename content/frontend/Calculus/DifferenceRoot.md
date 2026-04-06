@@ -15,4 +15,7 @@ DifferenceRoot[Function[{y, n}, {y[n + 2] == y[n + 1] + y[n], y[0] == 0, y[1] ==
 (* 55 *)
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/DifferenceRoot.html) for more details.

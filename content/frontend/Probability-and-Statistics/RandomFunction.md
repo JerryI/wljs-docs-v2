@@ -22,4 +22,7 @@ Generate multiple paths:
 RandomFunction[WienerProcess[], {0, 1, 0.01}, 5]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/RandomFunction.html) for more details.

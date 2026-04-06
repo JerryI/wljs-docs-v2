@@ -20,4 +20,7 @@ Create a grayscale image:
 ConstantImage[0.5, {50, 50}]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ConstantImage.html) for more details.

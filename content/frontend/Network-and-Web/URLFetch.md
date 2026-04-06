@@ -22,4 +22,7 @@ URLFetch["https://example.com", "StatusCode"]
 (* 200 *)
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/URLFetch.html) for more details.

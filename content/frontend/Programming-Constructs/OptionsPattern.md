@@ -14,4 +14,7 @@ f[x_, opts : OptionsPattern[{a -> 1}]] := {x, OptionValue[a]}
 f[5, a -> 10]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/OptionsPattern.html) for more details.

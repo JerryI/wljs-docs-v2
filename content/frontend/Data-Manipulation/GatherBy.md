@@ -22,4 +22,7 @@ GatherBy[{"a", "ab", "abc", "bc", "c"}, StringLength]
 (* {{"a", "c"}, {"ab", "bc"}, {"abc"}} *)
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/GatherBy.html) for more details.

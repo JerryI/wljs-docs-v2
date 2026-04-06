@@ -20,4 +20,7 @@ Variables[a*t^2 + b*t + c]
 (* {a, b, c, t} *)
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Variables.html) for more details.

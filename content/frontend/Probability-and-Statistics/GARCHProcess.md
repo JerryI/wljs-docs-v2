@@ -20,4 +20,7 @@ Simulate the process:
 RandomFunction[GARCHProcess[0.1, {0.2}, {0.7}], {0, 100}]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/GARCHProcess.html) for more details.

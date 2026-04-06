@@ -20,4 +20,7 @@ ContainsOnly[{a, b, d}, {a, b, c}]
 (* False *)
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ContainsOnly.html) for more details.

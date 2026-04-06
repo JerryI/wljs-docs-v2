@@ -20,4 +20,7 @@ pts3D = RandomReal[1, {50, 3}];
 DelaunayMesh[pts3D]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/DelaunayMesh.html) for more details.

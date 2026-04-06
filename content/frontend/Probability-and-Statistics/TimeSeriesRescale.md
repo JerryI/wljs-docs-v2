@@ -17,4 +17,7 @@ TimeSeriesRescale[ts, {0, 10}]
 TimeSeriesRescale[ts, {DateObject[{2020, 1, 1}], DateObject[{2020, 12, 31}]}]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/TimeSeriesRescale.html) for more details.

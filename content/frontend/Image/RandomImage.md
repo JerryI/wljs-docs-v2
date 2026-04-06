@@ -15,4 +15,7 @@ title: RandomImage
 RandomImage[1, {100, 100}]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/RandomImage.html) for more details.

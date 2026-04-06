@@ -18,4 +18,7 @@ Plot[ConnesWindow[x], {x, -1, 1}]
 (* Plots the Connes window function *)
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ConnesWindow.html) for more details.

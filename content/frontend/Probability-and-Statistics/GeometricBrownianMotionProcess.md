@@ -18,4 +18,7 @@ Simulate a sample path:
 RandomFunction[proc, {0, 1, 0.01}]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/GeometricBrownianMotionProcess.html) for more details.

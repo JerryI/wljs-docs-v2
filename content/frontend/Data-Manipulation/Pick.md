@@ -13,4 +13,7 @@ Pick[{a, b, c, d}, {True, False, True, False}]
 (* {a, c} *)
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Pick.html) for more details.

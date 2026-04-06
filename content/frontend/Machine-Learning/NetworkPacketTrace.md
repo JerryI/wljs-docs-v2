@@ -29,4 +29,7 @@ Trace packets on a specific port:
 NetworkPacketTrace[URLRead["https://www.wolfram.com"], 443]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/NetworkPacketTrace.html) for more details.

@@ -17,4 +17,7 @@ stream = OpenRead["file.bin", BinaryFormat -> True];
 BinaryRead[stream, "Integer32"]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/BinaryRead.html) for more details.

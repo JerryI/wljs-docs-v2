@@ -25,4 +25,7 @@ Select[Range[20], Divisible[#, 3] &]
 (* {3, 6, 9, 12, 15, 18} *)
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Divisible.html) for more details.

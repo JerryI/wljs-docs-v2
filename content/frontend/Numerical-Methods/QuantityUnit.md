@@ -27,4 +27,7 @@ QuantityUnit[Quantity[10, "Newtons"]*Quantity[2, "Meters"]]
 (* "Joules" *)
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/QuantityUnit.html) for more details.

@@ -18,4 +18,7 @@ VectorAround[{1, 2, 3}, {0.1, 0.2, 0.3}]
 VectorAround[{5, 10}, {{0.5, 1}, 0.8}]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/VectorAround.html) for more details.

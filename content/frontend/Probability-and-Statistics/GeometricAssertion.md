@@ -17,4 +17,7 @@ GeometricAssertion[Triangle[{a, b, c}], "Equilateral"]
 GeometricAssertion[{Line[{a, b}], Line[{c, d}]}, "Parallel"]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/GeometricAssertion.html) for more details.

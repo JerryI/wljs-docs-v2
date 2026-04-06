@@ -20,4 +20,7 @@ Get 5 business days from a specific date:
 DayPlus[{2024, 1, 1}, 5, "BusinessDay"]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/DayPlus.html) for more details.

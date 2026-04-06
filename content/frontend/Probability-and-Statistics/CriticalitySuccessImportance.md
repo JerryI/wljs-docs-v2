@@ -15,4 +15,7 @@ rdist = ReliabilityDistribution[a || b, {{a, 0.9}, {b, 0.8}}];
 CriticalitySuccessImportance[rdist, 1]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/CriticalitySuccessImportance.html) for more details.

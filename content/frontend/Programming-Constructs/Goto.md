@@ -18,4 +18,7 @@ Module[{i = 1},
 Do[If[i == 3, Goto[done]]; Print[i], {i, 5}]; Label[done];
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Goto.html) for more details.

@@ -19,4 +19,7 @@ Conditional loading:
 If[FileExistsQ["config.m"], Get["config.m"]]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/FileExistsQ.html) for more details.

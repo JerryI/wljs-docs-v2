@@ -16,4 +16,7 @@ Find asymptotic solution to a differential equation:
 AsymptoticDSolveValue[y''[x] + y[x] == 0, y, x -> 0]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/AsymptoticDSolveValue.html) for more details.

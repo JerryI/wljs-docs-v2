@@ -15,4 +15,7 @@ RandomVariate[dist, 5]
 Mean[LogMultinormalDistribution[{1, 2}, IdentityMatrix[2]]]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/LogMultinormalDistribution.html) for more details.

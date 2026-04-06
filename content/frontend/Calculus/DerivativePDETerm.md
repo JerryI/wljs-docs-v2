@@ -14,4 +14,7 @@ Create a derivative PDE term:
 DerivativePDETerm[{x, y}, f[x, y]]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/DerivativePDETerm.html) for more details.

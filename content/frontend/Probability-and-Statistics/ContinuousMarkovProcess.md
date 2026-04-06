@@ -19,4 +19,7 @@ proc = ContinuousMarkovProcess[1, {{-1, 1}, {2, -2}}];
 RandomFunction[proc, {0, 10}]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ContinuousMarkovProcess.html) for more details.

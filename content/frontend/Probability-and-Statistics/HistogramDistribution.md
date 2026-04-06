@@ -17,4 +17,7 @@ HistogramDistribution[RandomReal[1, 100]]
 PDF[HistogramDistribution[{1, 2, 2, 3, 3, 3}], x]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/HistogramDistribution.html) for more details.

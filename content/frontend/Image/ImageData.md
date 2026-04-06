@@ -22,4 +22,7 @@ Get byte values:
 ImageData[img, "Byte"]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ImageData.html) for more details.

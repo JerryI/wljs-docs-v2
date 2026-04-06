@@ -22,4 +22,7 @@ FindDistribution[data, 3]
 FindDistribution[data, 1, "AIC"]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/FindDistribution.html) for more details.

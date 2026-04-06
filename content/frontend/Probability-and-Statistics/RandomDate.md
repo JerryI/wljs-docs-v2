@@ -19,4 +19,7 @@ RandomDate[]
 RandomDate[{DateObject[{2020, 1, 1}], DateObject[{2023, 12, 31}]}, 5]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/RandomDate.html) for more details.

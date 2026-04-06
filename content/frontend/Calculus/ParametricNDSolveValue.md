@@ -19,4 +19,7 @@ f = ParametricNDSolveValue[{y'[x] == a y[x], y[0] == 1}, y, {x, 0, 10}, {a}];
 Plot[f[-0.5][x], {x, 0, 10}]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ParametricNDSolveValue.html) for more details.

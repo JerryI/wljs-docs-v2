@@ -27,4 +27,7 @@ Generate a random tree with a specific distribution:
 RandomTree[12, TreeLayout -> "RadialEmbedding"]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/RandomTree.html) for more details.

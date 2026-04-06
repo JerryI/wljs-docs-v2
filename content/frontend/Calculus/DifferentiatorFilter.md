@@ -23,4 +23,7 @@ Use a specific kernel length:
 DifferentiatorFilter[data, 0.5, 21]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/DifferentiatorFilter.html) for more details.

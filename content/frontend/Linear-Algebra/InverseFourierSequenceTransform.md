@@ -16,4 +16,7 @@ InverseFourierSequenceTransform[1/(1 - a Exp[-I ω]), ω, n]
 InverseFourierSequenceTransform[Sin[ω], ω, n]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/InverseFourierSequenceTransform.html) for more details.

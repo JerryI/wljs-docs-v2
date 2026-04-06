@@ -15,4 +15,7 @@ RandomInteger[100]
 (* Same as without BlockRandom *)
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/BlockRandom.html) for more details.

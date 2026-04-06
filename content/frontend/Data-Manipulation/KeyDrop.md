@@ -24,4 +24,7 @@ KeyDrop[{"b"}][<|"a" -> 1, "b" -> 2|>]
 (* <|"a" -> 1|> *)
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/KeyDrop.html) for more details.

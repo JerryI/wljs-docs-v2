@@ -19,4 +19,7 @@ Relation to Riemann zeta:
 LerchPhi[1, s, 1] == Zeta[s]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/LerchPhi.html) for more details.

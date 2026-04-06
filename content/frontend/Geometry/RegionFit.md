@@ -16,4 +16,7 @@ RegionFit[RandomPoint[Disk[], 100], "Disk"]
 RegionFit[pts, "Line", "Region"]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/RegionFit.html) for more details.

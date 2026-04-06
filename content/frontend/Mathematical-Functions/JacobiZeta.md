@@ -19,4 +19,7 @@ Plot the function:
 Plot[JacobiZeta[x, 0.5], {x, 0, 2 Pi}]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/JacobiZeta.html) for more details.

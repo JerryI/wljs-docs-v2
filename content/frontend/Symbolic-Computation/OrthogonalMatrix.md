@@ -17,4 +17,7 @@ om = OrthogonalMatrix[RotationMatrix[Pi/3]];
 om . Transpose[om] // Chop
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/OrthogonalMatrix.html) for more details.

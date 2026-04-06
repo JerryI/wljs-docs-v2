@@ -15,4 +15,7 @@ FromPolarCoordinates[{1, Pi/4}]
 (* {1/Sqrt[2], 1/Sqrt[2]} *)
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/FromPolarCoordinates.html) for more details.

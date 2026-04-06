@@ -13,4 +13,7 @@ TensorContract[{{a, b}, {c, d}}, {{1, 2}}]
 (* a + d *)
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/TensorContract.html) for more details.

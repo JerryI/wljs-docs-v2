@@ -16,4 +16,7 @@ Clip an image to a specific range:
 ImageClip[img, {0.2, 0.8}]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ImageClip.html) for more details.

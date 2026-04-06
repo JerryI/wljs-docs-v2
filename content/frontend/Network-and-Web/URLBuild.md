@@ -28,4 +28,7 @@ URLBuild[{"https://example.com", "api", "v1", "data"}]
 (* "https://example.com/api/v1/data" *)
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/URLBuild.html) for more details.

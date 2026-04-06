@@ -20,4 +20,7 @@ Operate[h, f[g[x]], 2]
 (* f[h[g]][x] *)
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Operate.html) for more details.

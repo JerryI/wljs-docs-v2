@@ -18,4 +18,7 @@ Compute the mean:
 Mean[FisherHypergeometricDistribution[10, 30, 50, 2]]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/FisherHypergeometricDistribution.html) for more details.

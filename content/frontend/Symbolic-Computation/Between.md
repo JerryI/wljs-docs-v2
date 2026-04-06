@@ -27,4 +27,7 @@ Select[{-5, 0, 5, 10, 15}, Between[{0, 10}]]
 (* {0, 5, 10} *)
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Between.html) for more details.

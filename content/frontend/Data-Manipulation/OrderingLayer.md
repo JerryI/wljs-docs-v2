@@ -14,4 +14,7 @@ layer = OrderingLayer[3];
 layer[{5, 2, 8, 1, 9}]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/OrderingLayer.html) for more details.

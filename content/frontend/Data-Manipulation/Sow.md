@@ -24,4 +24,7 @@ Reap[Do[Sow[i, If[EvenQ[i], "even", "odd"]], {i, 6}], {"even", "odd"}]
 (* {Null, {{{2, 4, 6}}, {{1, 3, 5}}}} *)
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Sow.html) for more details.

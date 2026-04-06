@@ -12,4 +12,7 @@ Evaluate the Appell F3 function:
 AppellF3[1, 2, 3, 4, 5, 0.3, 0.2]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/AppellF3.html) for more details.

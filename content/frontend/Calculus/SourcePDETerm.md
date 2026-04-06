@@ -19,4 +19,7 @@ op = SourcePDETerm[{u[x, y], {x, y}}, x^2 + y^2];
 NDSolveValue[{op == 0, DirichletCondition[u[x, y] == 0, True]}, u, {x, y} \[Element] Disk[]]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/SourcePDETerm.html) for more details.

@@ -24,4 +24,7 @@ Fold over a sequence:
 NetFoldOperator[BasicRecurrentLayer[5]][RandomReal[1, {10, 3}]]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/NetFoldOperator.html) for more details.

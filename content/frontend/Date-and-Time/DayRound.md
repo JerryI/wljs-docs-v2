@@ -21,4 +21,7 @@ Round to the previous weekday:
 DayRound[{2024, 1, 7}, "Weekday", "Previous"]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/DayRound.html) for more details.

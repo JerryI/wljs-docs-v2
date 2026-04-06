@@ -21,4 +21,7 @@ With size specification:
 ImagePerspectiveTransformation[img, ScalingMatrix[{1.5, 1}], {400, 400}]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ImagePerspectiveTransformation.html) for more details.

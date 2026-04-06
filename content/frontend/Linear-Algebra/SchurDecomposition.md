@@ -20,4 +20,7 @@ q . t . ConjugateTranspose[q]
 (* {{1., 2.}, {0., 3.}} *)
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/SchurDecomposition.html) for more details.

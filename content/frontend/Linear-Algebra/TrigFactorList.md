@@ -16,4 +16,7 @@ TrigFactorList[Sin[x] Cos[x]]
 (* {{Cos[x], 1}, {Sin[x], 1}} *)
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/TrigFactorList.html) for more details.

@@ -27,4 +27,7 @@ RandomColor["SunsetColors", 3]
 (* {RGBColor[...], ...} *)
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/RandomColor.html) for more details.

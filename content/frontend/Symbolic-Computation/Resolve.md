@@ -16,4 +16,7 @@ Resolve[Exists[x, x^2 == 4], Reals]
 Resolve[ForAll[x, x^2 >= 0], Reals]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Resolve.html) for more details.

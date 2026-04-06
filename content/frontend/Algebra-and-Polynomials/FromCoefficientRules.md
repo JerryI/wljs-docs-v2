@@ -18,4 +18,7 @@ Create a multivariate polynomial:
 FromCoefficientRules[{{1, 0} -> a, {0, 1} -> b, {0, 0} -> c}, {x, y}]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/FromCoefficientRules.html) for more details.

@@ -19,4 +19,7 @@ DatePlus[DateObject[{2024, 1, 15}], {3, "Month"}]
 DatePlus[Today, {{1, "Year"}, {6, "Month"}}]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/DatePlus.html) for more details.

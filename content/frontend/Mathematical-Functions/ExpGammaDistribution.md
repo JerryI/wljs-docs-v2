@@ -12,4 +12,7 @@ Create an exp-gamma distribution:
 ExpGammaDistribution[2, 1, 0]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ExpGammaDistribution.html) for more details.

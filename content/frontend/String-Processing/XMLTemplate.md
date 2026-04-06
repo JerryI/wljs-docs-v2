@@ -20,4 +20,7 @@ Load template from file:
 XMLTemplate[File["template.xml"]]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/XMLTemplate.html) for more details.

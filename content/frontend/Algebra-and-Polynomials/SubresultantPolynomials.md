@@ -16,4 +16,7 @@ SubresultantPolynomials[x^3 - 1, x^2 - 1, x]
 SubresultantPolynomials[x^4 + x + 1, x^2 + 1, x]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/SubresultantPolynomials.html) for more details.

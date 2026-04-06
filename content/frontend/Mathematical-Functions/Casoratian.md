@@ -14,4 +14,7 @@ title: Casoratian
 Casoratian[{n, n^2, n^3}, n]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Casoratian.html) for more details.

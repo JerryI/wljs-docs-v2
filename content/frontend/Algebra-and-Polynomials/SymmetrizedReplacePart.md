@@ -20,4 +20,7 @@ asa = SymmetrizedArray[{{1, 2} -> x}, {3, 3}, Antisymmetric[{1, 2}]];
 SymmetrizedReplacePart[asa, {{1, 3} -> y}]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/SymmetrizedReplacePart.html) for more details.

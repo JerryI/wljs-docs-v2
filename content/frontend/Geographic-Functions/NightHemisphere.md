@@ -20,4 +20,7 @@ Show night hemisphere for a specific date:
 GeoGraphics[{Gray, NightHemisphere[DateObject[{2024, 6, 21, 12, 0}]]}]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/NightHemisphere.html) for more details.

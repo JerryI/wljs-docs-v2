@@ -24,4 +24,7 @@ StringPart["Hello", {1, 3, 5}]
 (* {"H", "l", "o"} *)
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/StringPart.html) for more details.

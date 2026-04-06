@@ -21,4 +21,7 @@ Suppress specific messages:
 Quiet[Log[-1], {Log::argx}]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Quiet.html) for more details.

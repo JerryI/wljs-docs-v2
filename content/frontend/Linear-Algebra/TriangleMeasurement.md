@@ -14,4 +14,7 @@ TriangleMeasurement[Triangle[{{0, 0}, {1, 0}, {0, 1}}], "Area"]
 TriangleMeasurement[Triangle[{{0, 0}, {3, 0}, {0, 4}}], "Perimeter"]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/TriangleMeasurement.html) for more details.

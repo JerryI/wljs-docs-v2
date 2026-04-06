@@ -20,4 +20,7 @@ Table[EulerPhi[n], {n, 1, 10}]
 (* {1, 1, 2, 2, 4, 2, 6, 4, 6, 4} *)
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/EulerPhi.html) for more details.

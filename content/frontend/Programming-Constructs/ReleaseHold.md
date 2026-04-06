@@ -27,4 +27,7 @@ ReleaseHold[Hold[Hold[1 + 1]]]
 (* Hold[1 + 1] - removes one level *)
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ReleaseHold.html) for more details.

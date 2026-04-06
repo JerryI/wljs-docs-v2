@@ -19,4 +19,7 @@ dwd = DiscreteWaveletTransform[Table[Sin[n], {n, 128}]];
 WaveletListPlot[dwd]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/WaveletListPlot.html) for more details.

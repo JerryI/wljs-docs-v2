@@ -16,4 +16,7 @@ TreeLeafQ[Tree[1, {Tree[2, {}]}]]
 (* False *)
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/TreeLeafQ.html) for more details.

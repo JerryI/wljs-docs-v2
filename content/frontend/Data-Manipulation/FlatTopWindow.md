@@ -12,4 +12,7 @@ Plot the flat top window:
 Plot[FlatTopWindow[x], {x, -1, 1}]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/FlatTopWindow.html) for more details.

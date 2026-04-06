@@ -30,4 +30,7 @@ Sunrise on a specific date:
 Sunrise[Here, DateObject[{2024, 6, 21}]]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Sunrise.html) for more details.

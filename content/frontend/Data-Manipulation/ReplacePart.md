@@ -20,4 +20,7 @@ ReplacePart[{a, b, c, d}, {1 -> x, 3 -> y}]
 (* {x, b, y, d} *)
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ReplacePart.html) for more details.

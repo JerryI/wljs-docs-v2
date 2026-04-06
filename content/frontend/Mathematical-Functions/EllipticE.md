@@ -18,4 +18,7 @@ EllipticE[Pi/4, 0.5]
 (* 0.748186 *)
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/EllipticE.html) for more details.

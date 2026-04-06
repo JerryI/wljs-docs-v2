@@ -24,4 +24,7 @@ PositionSmallest[{5, 2, 8, 1, 9}, 3]
 (* {{4}, {2}, {1}} *)
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/PositionSmallest.html) for more details.

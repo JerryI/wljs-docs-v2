@@ -14,4 +14,7 @@ ImageFileFilter[Mean, "input.png", 2, "output.png"]
 ImageFileFilter[Max, "image.tiff", 3, "filtered.tiff"]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ImageFileFilter.html) for more details.

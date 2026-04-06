@@ -18,4 +18,7 @@ It appears in transformation rules:
 Trace[Replace[{1, 2, 3}, {x_, y_, z_} :> x + y + z]]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/RuleCondition.html) for more details.

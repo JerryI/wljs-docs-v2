@@ -19,4 +19,7 @@ GeoPosition[{40.7128, -74.0060}]
 GeoPosition[Entity["City", {"Paris", "IleDeFrance", "France"}]]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/GeoPosition.html) for more details.

@@ -12,4 +12,7 @@ title: TriangleWave
 Plot[TriangleWave[x], {x, 0, 3}]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/TriangleWave.html) for more details.

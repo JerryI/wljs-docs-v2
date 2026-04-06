@@ -16,4 +16,7 @@ RandomVariate[LogNormalDistribution[0, 0.5], 5]
 (* {1.23, 0.87, 1.56, 0.92, 1.12} *)
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/LogNormalDistribution.html) for more details.

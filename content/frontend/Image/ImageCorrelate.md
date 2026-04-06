@@ -22,4 +22,7 @@ template = ImageTake[img, {100, 150}, {100, 150}];
 ImageCorrelate[img, template]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ImageCorrelate.html) for more details.

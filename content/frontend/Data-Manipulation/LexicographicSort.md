@@ -22,4 +22,7 @@ LexicographicSort[{"apple", "apricot", "banana"}]
 (* {"apple", "apricot", "banana"} *)
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/LexicographicSort.html) for more details.

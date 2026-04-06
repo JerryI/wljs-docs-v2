@@ -28,4 +28,7 @@ Mean projection:
 Image3DProjection[img3d, "Z", "Mean"]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Image3DProjection.html) for more details.

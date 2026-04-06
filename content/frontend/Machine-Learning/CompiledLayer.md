@@ -22,4 +22,7 @@ layer = CompiledLayer[Function[x, Sin[x]]];
 layer[{0, Pi/2, Pi}]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/CompiledLayer.html) for more details.

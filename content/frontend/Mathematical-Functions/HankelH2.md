@@ -19,4 +19,7 @@ Plot the real part:
 Plot[Re[HankelH2[0, x]], {x, 0.1, 10}]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/HankelH2.html) for more details.

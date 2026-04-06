@@ -24,4 +24,7 @@ x > 0 && x < 10
 (* True *)
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/And.html) for more details.

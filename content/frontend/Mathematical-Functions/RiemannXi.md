@@ -16,4 +16,7 @@ Plot the function:
 Plot[RiemannXi[1/2 + I t], {t, 0, 50}]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/RiemannXi.html) for more details.

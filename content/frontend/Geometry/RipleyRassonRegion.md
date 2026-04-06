@@ -15,4 +15,7 @@ RipleyRassonRegion[points]
 RipleyRassonRegion[RandomReal[1, {100, 2}]]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/RipleyRassonRegion.html) for more details.

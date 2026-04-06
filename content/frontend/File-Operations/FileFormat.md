@@ -22,4 +22,7 @@ FileFormat["data.csv", {"CSV", "TSV", "JSON"}]
 (* "CSV" *)
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/FileFormat.html) for more details.

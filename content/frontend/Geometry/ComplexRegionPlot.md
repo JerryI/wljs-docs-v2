@@ -20,4 +20,7 @@ Plot multiple regions:
 ComplexRegionPlot[{Re[z] > 0, Im[z] > 0}, {z, -2 - 2 I, 2 + 2 I}]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ComplexRegionPlot.html) for more details.

@@ -17,4 +17,7 @@ ReplaceList[{a, b, c}, {x_, y___} -> {x, {y}}]
 ReplaceList[x + y + z, a_ + b_ :> {a, b}]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ReplaceList.html) for more details.

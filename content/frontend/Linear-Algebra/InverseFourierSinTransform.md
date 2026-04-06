@@ -16,4 +16,7 @@ InverseFourierSinTransform[1/(1 + w^2), w, t]
 InverseFourierSinTransform[Exp[-w], w, t]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/InverseFourierSinTransform.html) for more details.

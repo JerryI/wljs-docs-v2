@@ -20,4 +20,7 @@ Element[1, NonPositiveIntegers]
 (* False *)
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/NonPositiveIntegers.html) for more details.

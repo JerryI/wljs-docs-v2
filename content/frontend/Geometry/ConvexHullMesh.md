@@ -22,4 +22,7 @@ pts3D = RandomReal[1, {30, 3}];
 ConvexHullMesh[pts3D]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ConvexHullMesh.html) for more details.

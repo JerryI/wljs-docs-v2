@@ -20,4 +20,7 @@ SelectFirst[{1, 3, 5}, EvenQ, "none"]
 (* "none" *)
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/SelectFirst.html) for more details.

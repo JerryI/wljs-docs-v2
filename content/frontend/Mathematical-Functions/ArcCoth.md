@@ -20,4 +20,7 @@ N[ArcCoth[2]]
 (* 0.549306 *)
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ArcCoth.html) for more details.

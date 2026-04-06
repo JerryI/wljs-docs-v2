@@ -26,4 +26,7 @@ PeriodicBoundaryCondition[u[x], x == L,
   TranslationTransform[{-L}]]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/PeriodicBoundaryCondition.html) for more details.

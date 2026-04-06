@@ -17,4 +17,7 @@ Sample from the distribution:
 RandomVariate[KDistribution[3, 2], 10]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/KDistribution.html) for more details.

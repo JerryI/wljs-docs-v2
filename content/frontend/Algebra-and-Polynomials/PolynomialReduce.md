@@ -13,4 +13,7 @@ PolynomialReduce[x^2 + y^2, {x + y, x - y}, {x, y}]
 (* {{x/2 - y/2, x/2 + y/2}, 0} *)
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/PolynomialReduce.html) for more details.

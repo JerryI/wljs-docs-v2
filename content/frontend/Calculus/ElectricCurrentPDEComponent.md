@@ -12,4 +12,7 @@ Create an electric current PDE component:
 ElectricCurrentPDEComponent[{V[x, y], {x, y}}, <|"ElectricConductivity" -> 1|>]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ElectricCurrentPDEComponent.html) for more details.

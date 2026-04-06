@@ -28,4 +28,7 @@ Integrate a scalar field over a surface:
 SurfaceIntegrate[x^2, {x, y, z} ∈ Sphere[{0, 0, 0}, 2]]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/SurfaceIntegrate.html) for more details.

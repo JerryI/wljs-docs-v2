@@ -16,4 +16,7 @@ Use in a neural network for image transformation:
 net = NetChain[{SpatialTransformationLayer[{64, 64}]}]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/SpatialTransformationLayer.html) for more details.

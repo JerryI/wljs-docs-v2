@@ -21,4 +21,7 @@ Use a custom aggregation function:
 TimeSeriesAggregate[ts, 2, Max]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/TimeSeriesAggregate.html) for more details.

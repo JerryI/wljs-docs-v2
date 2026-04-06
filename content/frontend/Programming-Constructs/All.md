@@ -28,4 +28,7 @@ matrix[[All, 2]]
 Plot[{Sin[x], Cos[x]}, {x, 0, 2 Pi}, PlotStyle -> All]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/All.html) for more details.

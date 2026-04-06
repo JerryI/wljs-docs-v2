@@ -20,4 +20,7 @@ NMaximize[{x + y, x^2 + y^2 <= 1}, {x, y}]
 (* {1.414, {x -> 0.707, y -> 0.707}} *)
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/NMaximize.html) for more details.

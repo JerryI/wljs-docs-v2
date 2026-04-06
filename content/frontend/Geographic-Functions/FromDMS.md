@@ -21,4 +21,7 @@ Convert a DMS string:
 FromDMS["40°26'46\"N"]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/FromDMS.html) for more details.

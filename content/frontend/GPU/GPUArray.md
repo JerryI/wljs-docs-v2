@@ -71,4 +71,7 @@ x = GPUArray[Range[1.0, 1000.0]];
 Normal[x^2 + Sin[x]]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/GPUArray.html) for more details.

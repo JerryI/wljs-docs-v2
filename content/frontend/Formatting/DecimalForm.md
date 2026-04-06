@@ -17,4 +17,7 @@ DecimalForm[1.23456789*^-5, 10]
 (* 0.0000123457 *)
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/DecimalForm.html) for more details.

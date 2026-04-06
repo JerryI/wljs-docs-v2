@@ -18,4 +18,7 @@ ImageRestyle[ExampleData[{"TestImage", "Lena"}], ExampleData[{"TestImage", "Mand
 ImageRestyle[img, 0.5 -> styleImage]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ImageRestyle.html) for more details.

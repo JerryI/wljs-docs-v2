@@ -14,4 +14,7 @@ SpheroidalS1[2, 1, 0.5, 0.3]
 Plot[SpheroidalS1[2, 0, 1, x], {x, 1, 3}]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/SpheroidalS1.html) for more details.

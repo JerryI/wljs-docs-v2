@@ -19,4 +19,7 @@ For binomial distribution:
 FactorialMomentGeneratingFunction[BinomialDistribution[n, p], t]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/FactorialMomentGeneratingFunction.html) for more details.

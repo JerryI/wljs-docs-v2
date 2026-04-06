@@ -20,4 +20,7 @@ Hypergeometric0F1[1, -x^2/4] // FullSimplify
 (* BesselJ[0, x] *)
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Hypergeometric0F1.html) for more details.

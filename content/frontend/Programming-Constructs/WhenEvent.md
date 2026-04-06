@@ -14,4 +14,7 @@ NDSolve[{y'[t] == y[t], y[0] == 1, WhenEvent[y[t] > 2, "StopIntegration"]}, y, {
 sol = NDSolve[{x''[t] == -x[t], x[0] == 1, x'[0] == 0, WhenEvent[x[t] == 0, x'[t] -> -0.9 x'[t]]}, x, {t, 0, 20}]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/WhenEvent.html) for more details.

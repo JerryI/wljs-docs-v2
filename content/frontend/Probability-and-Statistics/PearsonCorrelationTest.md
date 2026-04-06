@@ -24,4 +24,7 @@ PearsonCorrelationTest[v1, v2, "PValue"]
 (* 0.0417 *)
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/PearsonCorrelationTest.html) for more details.

@@ -25,4 +25,7 @@ Conditional handling:
 If[GraphQ[g], VertexCount[g], "Not a graph"]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/GraphQ.html) for more details.

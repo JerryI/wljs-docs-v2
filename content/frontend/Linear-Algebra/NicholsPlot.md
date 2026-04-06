@@ -16,4 +16,7 @@ Plot a Nichols chart for a transfer function:
 NicholsPlot[TransferFunctionModel[1/(s^2 + s + 1), s]]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/NicholsPlot.html) for more details.

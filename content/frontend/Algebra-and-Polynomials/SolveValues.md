@@ -22,4 +22,7 @@ SolveValues[x^2 < 10, x, Integers]
 (* {-3, -2, -1, 0, 1, 2, 3} *)
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/SolveValues.html) for more details.

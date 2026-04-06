@@ -13,4 +13,7 @@ pts = RandomPoint[Sphere[], 100];
 EstimatedPointNormals[pts]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/EstimatedPointNormals.html) for more details.

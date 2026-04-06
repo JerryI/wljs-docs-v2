@@ -22,4 +22,7 @@ FixedPoint[(# + 2/#)/2 &, 1.0]
 (* 1.41421 *)
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/FixedPoint.html) for more details.

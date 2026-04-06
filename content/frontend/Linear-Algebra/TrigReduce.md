@@ -20,4 +20,7 @@ TrigReduce[Sin[x] Cos[y]]
 (* 1/2 (Sin[x - y] + Sin[x + y]) *)
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/TrigReduce.html) for more details.

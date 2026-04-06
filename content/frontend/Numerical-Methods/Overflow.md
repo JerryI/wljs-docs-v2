@@ -26,4 +26,7 @@ Handle overflow in computations:
 Quiet[Check[10.^500, "Overflow detected"]]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Overflow.html) for more details.

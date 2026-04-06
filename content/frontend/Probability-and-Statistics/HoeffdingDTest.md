@@ -28,4 +28,7 @@ Test statistic:
 HoeffdingDTest[v1, v2, "TestStatistic"]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/HoeffdingDTest.html) for more details.

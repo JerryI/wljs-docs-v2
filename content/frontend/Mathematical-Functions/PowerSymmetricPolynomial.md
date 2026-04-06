@@ -29,4 +29,7 @@ PowerSymmetricPolynomial[{1, 2}, {a, b, c}]
 (* (a + b + c)(a^2 + b^2 + c^2) *)
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/PowerSymmetricPolynomial.html) for more details.

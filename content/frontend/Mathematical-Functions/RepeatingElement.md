@@ -15,4 +15,7 @@ title: RepeatingElement
 FormObject[{"names" -> RepeatingElement["String", 3]}]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/RepeatingElement.html) for more details.

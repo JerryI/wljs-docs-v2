@@ -19,4 +19,7 @@ FileFormatQ["data.txt", {"CSV", "TSV", "Text"}]
 FileFormatQ["document.pdf", "PDF"]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/FileFormatQ.html) for more details.

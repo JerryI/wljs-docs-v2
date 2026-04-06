@@ -17,4 +17,7 @@ Wronskian[{Sin[x], Cos[x]}, x]
 Wronskian[{Exp[x], Exp[2 x], Exp[3 x]}, x]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Wronskian.html) for more details.

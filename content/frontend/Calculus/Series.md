@@ -20,4 +20,7 @@ Series[Exp[x], {x, 0, 4}]
 (* 1 + x + x^2/2 + x^3/6 + x^4/24 + O[x]^5 *)
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Series.html) for more details.

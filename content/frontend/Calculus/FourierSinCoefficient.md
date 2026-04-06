@@ -20,4 +20,7 @@ Get coefficients for a sawtooth wave:
 FourierSinCoefficient[t, t, n]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/FourierSinCoefficient.html) for more details.

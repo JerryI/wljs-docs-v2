@@ -14,4 +14,7 @@ GeoBoundary[Entity["Country", "Germany"]]
 GeoGraphics[GeoBoundary[Entity["AdministrativeDivision", {"California", "UnitedStates"}]]]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/GeoBoundary.html) for more details.

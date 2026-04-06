@@ -14,4 +14,7 @@ data = Table[Sin[x], {x, 0, 2 Pi, 0.1}];
 LiftingWaveletTransform[data]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/LiftingWaveletTransform.html) for more details.

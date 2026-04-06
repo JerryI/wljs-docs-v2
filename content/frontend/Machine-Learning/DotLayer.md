@@ -14,4 +14,7 @@ Create a dot product layer:
 DotLayer[]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/DotLayer.html) for more details.

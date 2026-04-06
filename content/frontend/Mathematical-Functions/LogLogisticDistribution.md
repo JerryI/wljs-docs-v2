@@ -15,4 +15,7 @@ PDF[dist, x]
 RandomVariate[LogLogisticDistribution[3, 2], 5]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/LogLogisticDistribution.html) for more details.

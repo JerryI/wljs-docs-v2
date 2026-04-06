@@ -14,4 +14,7 @@ RiemannR[100]
 Plot[{RiemannR[x], PrimePi[x]}, {x, 2, 100}]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/RiemannR.html) for more details.

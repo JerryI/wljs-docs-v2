@@ -8,4 +8,7 @@ title: MeyerWavelet
 
 `MeyerWavelet[n,lim]` represents the Meyer wavelet of order n evaluated on the equally spaced interval {-lim,lim}.
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/MeyerWavelet.html) for more details.

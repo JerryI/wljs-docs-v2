@@ -16,4 +16,7 @@ Transform a rectangle function:
 RadonTransform[Boole[Abs[x] < 1 && Abs[y] < 1], {x, y}, {p, phi}]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/RadonTransform.html) for more details.

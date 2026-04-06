@@ -25,4 +25,7 @@ Plot the function:
 Plot[PrimeZetaP[s], {s, 1.1, 5}]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/PrimeZetaP.html) for more details.

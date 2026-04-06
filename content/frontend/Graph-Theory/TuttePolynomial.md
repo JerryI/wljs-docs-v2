@@ -16,4 +16,7 @@ TuttePolynomial[CompleteGraph[4], {x, y}]
 TuttePolynomial[CycleGraph[5], {x, y}]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/TuttePolynomial.html) for more details.

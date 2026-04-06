@@ -17,4 +17,7 @@ ToNumberField[Sqrt[2], Sqrt[2]]
 ToNumberField[{Sqrt[2], Sqrt[3]}]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ToNumberField.html) for more details.

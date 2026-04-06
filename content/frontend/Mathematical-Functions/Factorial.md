@@ -30,4 +30,7 @@ Large factorials:
 (* 93326215443944152681699238856266700490715968264381621468592963... *)
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Factorial.html) for more details.

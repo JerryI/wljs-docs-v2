@@ -15,4 +15,7 @@ DFixedPoints[x'[t] == x[t] (1 - x[t]), x[t], t]
 (* {0, 1} *)
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/DFixedPoints.html) for more details.

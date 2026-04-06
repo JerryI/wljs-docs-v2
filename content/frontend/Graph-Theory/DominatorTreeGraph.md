@@ -12,4 +12,7 @@ Find the dominator tree of a graph:
 DominatorTreeGraph[Graph[{1 -> 2, 1 -> 3, 2 -> 4, 3 -> 4}], 1]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/DominatorTreeGraph.html) for more details.

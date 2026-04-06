@@ -20,4 +20,7 @@ Plot Gegenbauer polynomials:
 Plot[Table[GegenbauerC[n, 1, x], {n, 0, 4}], {x, -1, 1}]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/GegenbauerC.html) for more details.

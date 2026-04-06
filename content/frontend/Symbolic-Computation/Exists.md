@@ -24,4 +24,7 @@ Resolve[Exists[x, x > 0, x^2 == 4]]
 (* True *)
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Exists.html) for more details.

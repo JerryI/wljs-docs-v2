@@ -20,4 +20,7 @@ Visualize the correspondences:
 HighlightImage[img1, pts1]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ImageCorrespondingPoints.html) for more details.

@@ -14,4 +14,7 @@ StackBegin[1 + 2]
 StackBegin[Stack[_]]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/StackBegin.html) for more details.

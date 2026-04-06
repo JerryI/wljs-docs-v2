@@ -24,4 +24,7 @@ MovingMap[Total, Range[10], 4]
 (* {10, 14, 18, 22, 26, 30, 34} *)
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/MovingMap.html) for more details.

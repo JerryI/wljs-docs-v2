@@ -16,4 +16,7 @@ Assuming[n ∈ Integers, Integrate[Sin[n x], {x, 0, 2 Pi}]]
 (* 0 *)
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Assuming.html) for more details.

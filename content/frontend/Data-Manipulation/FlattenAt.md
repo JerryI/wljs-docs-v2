@@ -22,4 +22,7 @@ FlattenAt[{{a, {b, c}}, d}, {1, 2}]
 (* {{a, b, c}, d} *)
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/FlattenAt.html) for more details.

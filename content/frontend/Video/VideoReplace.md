@@ -20,4 +20,7 @@ Replace multiple intervals:
 VideoReplace[video, {{Quantity[1, "Seconds"], Quantity[2, "Seconds"]} -> clip1, {Quantity[5, "Seconds"], Quantity[7, "Seconds"]} -> clip2}]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/VideoReplace.html) for more details.

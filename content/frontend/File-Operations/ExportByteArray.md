@@ -14,4 +14,7 @@ Export an image to byte array:
 ExportByteArray[Graphics[Circle[]], "PNG"]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ExportByteArray.html) for more details.

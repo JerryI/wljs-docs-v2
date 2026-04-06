@@ -23,4 +23,7 @@ EdgeCount[GridGraph[{3, 3}]]
 (* 12 *)
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/EdgeCount.html) for more details.

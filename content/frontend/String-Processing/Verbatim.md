@@ -27,4 +27,7 @@ Cases[{f[_], g[x], f[y]}, Verbatim[f[_]]]
 (* {f[_]} *)
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Verbatim.html) for more details.

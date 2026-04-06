@@ -12,4 +12,7 @@ Convert an MA process to invertible form:
 ToInvertibleTimeSeries[MAProcess[{1.5}, 1]]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ToInvertibleTimeSeries.html) for more details.

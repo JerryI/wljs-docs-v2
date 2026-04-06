@@ -13,4 +13,7 @@ DateWithinQ[DateObject[{2020}], DateObject[{2020, 6, 15}]]
 (* True *)
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/DateWithinQ.html) for more details.

@@ -16,4 +16,7 @@ IntegrateChangeVariables[Integrate[Sin[x]^2, x], u, u == Sin[x]]
 IntegrateChangeVariables[Integrate[x^2 Exp[x^3], x], u, u == x^3]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/IntegrateChangeVariables.html) for more details.

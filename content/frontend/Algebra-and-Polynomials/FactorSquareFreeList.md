@@ -20,4 +20,7 @@ FactorSquareFreeList[(x - 1)^3 (x + 2)^2]
 (* {{1, 1}, {2 + x, 2}, {-1 + x, 3}} *)
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/FactorSquareFreeList.html) for more details.

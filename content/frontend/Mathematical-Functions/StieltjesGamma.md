@@ -22,4 +22,7 @@ N[StieltjesGamma[1]]
 (* -0.0728158 *)
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/StieltjesGamma.html) for more details.

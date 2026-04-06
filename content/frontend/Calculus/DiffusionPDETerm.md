@@ -16,4 +16,7 @@ Create a diffusion term for a 2D problem:
 DiffusionPDETerm[{u[x, y], {x, y}}]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/DiffusionPDETerm.html) for more details.

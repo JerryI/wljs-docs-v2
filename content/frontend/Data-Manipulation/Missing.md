@@ -24,4 +24,7 @@ Missing values propagate through computations:
 (* {2, 3, Missing[], 5} *)
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Missing.html) for more details.

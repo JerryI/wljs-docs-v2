@@ -21,4 +21,7 @@ FindGeoLocation["1600 Pennsylvania Ave, Washington DC"]
 FindGeoLocation["8.8.8.8"]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/FindGeoLocation.html) for more details.

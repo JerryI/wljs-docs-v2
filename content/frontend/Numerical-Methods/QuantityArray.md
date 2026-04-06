@@ -24,4 +24,7 @@ QuantityArray[{Quantity[1, "Meters"], Quantity[2, "Meters"]}]
 (* QuantityArray[{1, 2}, "Meters"] *)
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/QuantityArray.html) for more details.

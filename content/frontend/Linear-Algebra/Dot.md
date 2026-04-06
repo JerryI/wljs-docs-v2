@@ -20,4 +20,7 @@ Matrix multiplication:
 (* {{19, 22}, {43, 50}} *)
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Dot.html) for more details.

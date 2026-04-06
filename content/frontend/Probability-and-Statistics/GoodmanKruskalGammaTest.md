@@ -16,4 +16,7 @@ GoodmanKruskalGammaTest[{1, 2, 3, 4, 5}, {2, 4, 5, 7, 9}]
 GoodmanKruskalGammaTest[{1, 2, 3, 4}, {4, 3, 2, 1}, "TestStatistic"]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/GoodmanKruskalGammaTest.html) for more details.

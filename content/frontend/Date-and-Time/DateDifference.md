@@ -20,4 +20,7 @@ DateDifference[{2020, 1, 1}, {2024, 1, 1}, "Year"]
 DateDifference[{2024, 1, 1}, {2025, 6, 15}, {"Year", "Month", "Day"}]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/DateDifference.html) for more details.

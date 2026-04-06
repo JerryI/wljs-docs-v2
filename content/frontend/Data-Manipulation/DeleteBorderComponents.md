@@ -14,4 +14,7 @@ Remove border-touching components from a binary image:
 DeleteBorderComponents[Binarize[img]]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/DeleteBorderComponents.html) for more details.

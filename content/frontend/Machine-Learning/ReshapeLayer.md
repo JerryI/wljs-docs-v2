@@ -14,4 +14,7 @@ ReshapeLayer[{2, 3}]
 ReshapeLayer[{4, 4}][RandomReal[1, {2, 8}]]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ReshapeLayer.html) for more details.

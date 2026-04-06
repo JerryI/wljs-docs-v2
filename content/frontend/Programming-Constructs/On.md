@@ -27,4 +27,7 @@ Enable multiple messages:
 On[Power::infy, General::argx]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/On.html) for more details.

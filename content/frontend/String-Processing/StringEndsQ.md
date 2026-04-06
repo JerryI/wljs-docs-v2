@@ -27,4 +27,7 @@ Select[{"file.txt", "image.png", "data.txt"}, StringEndsQ[".txt"]]
 (* {"file.txt", "data.txt"} *)
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/StringEndsQ.html) for more details.

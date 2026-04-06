@@ -24,4 +24,7 @@ SequenceCases[{1, 2, 3, 4, 5}, {x_, y_} /; y == x + 1]
 (* {{1, 2}, {2, 3}, {3, 4}, {4, 5}} *)
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/SequenceCases.html) for more details.

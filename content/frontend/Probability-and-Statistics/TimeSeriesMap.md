@@ -25,4 +25,7 @@ Apply a smoothing function:
 TimeSeriesMap[MovingAverage[#, 3] &, ts]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/TimeSeriesMap.html) for more details.

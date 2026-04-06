@@ -29,4 +29,7 @@ Select specific columns:
 SemanticImport["data.csv", <|"Name" -> "String", "Age" -> "Number"|>]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/SemanticImport.html) for more details.

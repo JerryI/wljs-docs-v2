@@ -19,4 +19,7 @@ Quantity[100, "Kilometers"] / Quantity[2, "Hours"]
 Quantity[1, "Meters"] + Quantity[50, "Centimeters"]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Quantity.html) for more details.

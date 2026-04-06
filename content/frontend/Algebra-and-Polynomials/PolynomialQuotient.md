@@ -20,4 +20,7 @@ PolynomialQuotient[x^4 - 1, x^2 - 1, x]
 (* x^2 + 1 *)
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/PolynomialQuotient.html) for more details.

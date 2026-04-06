@@ -23,4 +23,7 @@ Get the p-value:
 AutocorrelationTest[data, 5, "PValue"]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/AutocorrelationTest.html) for more details.

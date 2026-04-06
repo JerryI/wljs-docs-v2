@@ -18,4 +18,7 @@ Compute mean and variance:
 {Mean[dist], Variance[dist]}
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/BetaBinomialDistribution.html) for more details.

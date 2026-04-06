@@ -18,4 +18,7 @@ MandelbrotSetMemberQ[2 + 2 I]
 (* False *)
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/MandelbrotSetMemberQ.html) for more details.

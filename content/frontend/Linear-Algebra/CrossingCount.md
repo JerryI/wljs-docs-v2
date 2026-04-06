@@ -21,4 +21,7 @@ CrossingCount[polygon, {2, 2}]
 (* 0 - point is outside *)
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/CrossingCount.html) for more details.

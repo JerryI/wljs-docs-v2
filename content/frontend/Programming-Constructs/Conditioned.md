@@ -12,4 +12,7 @@ Use conditioned expression:
 Integrate[1/x, {x, 0, 1}, Assumptions -> Conditioned[a > 0, a < 1]]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Conditioned.html) for more details.

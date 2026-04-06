@@ -25,4 +25,7 @@ Select[Range[10], OddQ]
 (* {1, 3, 5, 7, 9} *)
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/OddQ.html) for more details.

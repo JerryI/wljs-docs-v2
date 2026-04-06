@@ -24,4 +24,7 @@ Convergents[Pi, 5]
 (* {3, 22/7, 333/106, 355/113, 103993/33102} *)
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Convergents.html) for more details.

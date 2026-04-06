@@ -22,4 +22,7 @@ Flatten[{{a, b}, {c, {d, e}}}, 1]
 (* {a, b, c, {d, e}} *)
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Flatten.html) for more details.

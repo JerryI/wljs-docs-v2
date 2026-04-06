@@ -22,4 +22,7 @@ NProduct[n, {n, 1, 10}]
 (* 3.6288*10^6 *)
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/NProduct.html) for more details.

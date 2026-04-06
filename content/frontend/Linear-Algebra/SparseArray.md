@@ -24,4 +24,7 @@ Normal[SparseArray[{{1, 1} -> 1, {2, 2} -> 1}, {2, 2}]]
 (* {{1, 0}, {0, 1}} *)
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/SparseArray.html) for more details.

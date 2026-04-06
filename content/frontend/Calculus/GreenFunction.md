@@ -16,4 +16,7 @@ title: GreenFunction
 GreenFunction[{y''[x] - y[x], y[0] == 0, y[1] == 0}, y, {x, 0, 1}, s]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/GreenFunction.html) for more details.

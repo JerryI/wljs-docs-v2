@@ -16,4 +16,7 @@ Convert to grayscale:
 ToColor[Red, GrayLevel]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ToColor.html) for more details.

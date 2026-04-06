@@ -16,4 +16,7 @@ net = NetChain[{LinearLayer[10], Ramp}, "layer1", "layer2"];
 NetRename[net, "layer1" -> "input_layer"]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/NetRename.html) for more details.

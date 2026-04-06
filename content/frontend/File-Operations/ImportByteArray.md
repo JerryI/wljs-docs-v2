@@ -17,4 +17,7 @@ ImportByteArray[ByteArray[{72, 101, 108, 108, 111}], "Text"]
 ImportByteArray[ExportByteArray[{1, 2, 3}, "JSON"], "JSON"]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ImportByteArray.html) for more details.

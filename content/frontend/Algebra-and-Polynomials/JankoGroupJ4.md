@@ -13,4 +13,7 @@ GroupOrder[JankoGroupJ4[]]
 (* 86775571046077562880 *)
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/JankoGroupJ4.html) for more details.

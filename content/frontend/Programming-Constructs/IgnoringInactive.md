@@ -14,4 +14,7 @@ MatchQ[Inactive[Plus][1, 2], IgnoringInactive[Plus[1, 2]]]
 Cases[{Inactive[f][x], g[x]}, IgnoringInactive[f[_]]]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/IgnoringInactive.html) for more details.

@@ -21,4 +21,7 @@ With matrix constraints:
 LinearFractionalOptimization[{c1, d1, c2, d2}, {A, b}]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/LinearFractionalOptimization.html) for more details.

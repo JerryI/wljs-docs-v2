@@ -20,4 +20,7 @@ Cases[{{a, b}, {a, b, c}, {a}}, {Shortest[__]}]
 (* {{a}} *)
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Shortest.html) for more details.

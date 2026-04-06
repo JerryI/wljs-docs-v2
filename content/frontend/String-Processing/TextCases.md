@@ -18,4 +18,7 @@ TextCases["The cat and dog ran.", "Noun"]
 TextCases["Call me at 555-1234.", "PhoneNumber"]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/TextCases.html) for more details.

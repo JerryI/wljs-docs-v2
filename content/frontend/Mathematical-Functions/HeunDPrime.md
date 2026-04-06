@@ -18,4 +18,7 @@ Symbolic derivative:
 HeunDPrime[q, a, g, d, e, z]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/HeunDPrime.html) for more details.

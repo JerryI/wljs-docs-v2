@@ -14,4 +14,7 @@ JacobiND[0.5, 0.3]
 Plot[JacobiND[u, 0.5], {u, 0, 4}]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/JacobiND.html) for more details.

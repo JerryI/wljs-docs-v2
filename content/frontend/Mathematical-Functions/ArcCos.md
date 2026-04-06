@@ -19,4 +19,7 @@ N[ArcCos[0.5]]
 (* 1.0472 *)
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ArcCos.html) for more details.

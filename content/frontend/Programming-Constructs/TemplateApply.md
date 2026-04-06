@@ -23,4 +23,7 @@ TemplateApply[StringTemplate["The `item` costs `price`."],
 (* "The book costs $10." *)
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/TemplateApply.html) for more details.

@@ -14,4 +14,7 @@ Module[{i = 0}, Label[start]; i++; If[i < 5, Goto[start]]; i]
 Label["myLabel"]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Label.html) for more details.

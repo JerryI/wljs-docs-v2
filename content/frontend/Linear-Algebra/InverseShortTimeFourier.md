@@ -30,4 +30,7 @@ With offset and window:
 InverseShortTimeFourier[stft, 256, 64, HannWindow]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/InverseShortTimeFourier.html) for more details.

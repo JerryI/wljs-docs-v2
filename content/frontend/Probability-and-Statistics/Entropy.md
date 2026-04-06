@@ -18,4 +18,7 @@ Entropy[2, {1, 1, 0, 1, 0}]
 (* Entropy in bits *)
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Entropy.html) for more details.

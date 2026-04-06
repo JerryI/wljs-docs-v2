@@ -15,4 +15,7 @@ AsymptoticExpectation[x^2, x \[Distributed] NormalDistribution[a, 1],
   a -> Infinity]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/AsymptoticExpectation.html) for more details.

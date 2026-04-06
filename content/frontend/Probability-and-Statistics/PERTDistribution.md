@@ -12,4 +12,7 @@ title: PERTDistribution
 PDF[PERTDistribution[{0, 10}, 5], x]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/PERTDistribution.html) for more details.

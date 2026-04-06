@@ -23,4 +23,7 @@ With specified bin count:
 DensityHistogram[data, 20, ColorFunction -> "Rainbow"]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/DensityHistogram.html) for more details.

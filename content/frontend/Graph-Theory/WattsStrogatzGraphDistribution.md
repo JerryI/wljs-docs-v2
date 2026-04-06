@@ -16,4 +16,7 @@ RandomGraph[WattsStrogatzGraphDistribution[20, 0.1]]
 RandomGraph[WattsStrogatzGraphDistribution[50, 0.3, 3]]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/WattsStrogatzGraphDistribution.html) for more details.

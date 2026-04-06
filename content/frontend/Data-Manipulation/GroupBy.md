@@ -20,4 +20,7 @@ GroupBy[{"apple", "banana", "avocado", "blueberry"}, StringTake[#, 1] &]
 (* <|"a" -> {"apple", "avocado"}, "b" -> {"banana", "blueberry"}|> *)
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/GroupBy.html) for more details.

@@ -19,4 +19,7 @@ Running total with pair:
 FoldPair[{#1 + #2, #1 + #2} &, 0, Range[5]]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/FoldPair.html) for more details.

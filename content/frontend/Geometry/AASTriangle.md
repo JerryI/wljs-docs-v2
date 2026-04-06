@@ -12,4 +12,7 @@ Create a triangle with angles of 30° and 60° and a side of length 2:
 Graphics[AASTriangle[30 Degree, 60 Degree, 2]]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/AASTriangle.html) for more details.

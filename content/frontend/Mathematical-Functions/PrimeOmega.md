@@ -20,4 +20,7 @@ PrimeOmega[100]
 (* 4 - because 100 = 2^2 * 5^2 *)
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/PrimeOmega.html) for more details.

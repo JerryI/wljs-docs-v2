@@ -22,4 +22,7 @@ GraphPeriphery[PathGraph[{a, b, c, d, e}]]
 (* {a, e} *)
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/GraphPeriphery.html) for more details.

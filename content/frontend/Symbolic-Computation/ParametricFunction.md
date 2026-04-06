@@ -13,4 +13,7 @@ pfun = ParametricNDSolveValue[{y'[x] == a y[x], y[0] == 1}, y, {x, 0, 1}, {a}];
 pfun[2][0.5]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ParametricFunction.html) for more details.

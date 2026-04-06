@@ -20,4 +20,7 @@ r = RegionUnion[Ball[{0, 0, 0}], Ball[{5, 0, 0}]];
 ConnectedMeshComponents[BoundaryDiscretizeRegion[r]]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ConnectedMeshComponents.html) for more details.

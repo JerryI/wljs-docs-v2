@@ -16,4 +16,7 @@ Compute the Radon transform of an image:
 Radon[ExampleData[{"TestImage", "Lena"}]]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Radon.html) for more details.

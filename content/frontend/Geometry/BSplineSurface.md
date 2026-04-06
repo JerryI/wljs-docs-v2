@@ -13,4 +13,7 @@ pts = Table[{i, j, Sin[i + j]}, {i, 0, 3}, {j, 0, 3}];
 Graphics3D[BSplineSurface[pts]]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/BSplineSurface.html) for more details.

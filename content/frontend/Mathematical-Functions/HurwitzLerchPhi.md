@@ -20,4 +20,7 @@ N[HurwitzLerchPhi[0.5, 2, 3]]
 (* 0.138629 *)
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/HurwitzLerchPhi.html) for more details.

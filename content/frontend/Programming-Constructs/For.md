@@ -15,4 +15,7 @@ For[i = 0, i < 5, i++, Print[i]]
 
 Note: In Wolfram Language, `Table` or `Do` are often preferred over `For` loops.
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/For.html) for more details.

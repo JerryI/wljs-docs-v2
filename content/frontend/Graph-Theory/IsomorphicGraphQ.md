@@ -20,4 +20,7 @@ IsomorphicGraphQ[CycleGraph[4], PathGraph[Range[4]]]
 (* False *)
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/IsomorphicGraphQ.html) for more details.

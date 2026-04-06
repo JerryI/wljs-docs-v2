@@ -20,4 +20,7 @@ Compare with Rule (immediate evaluation):
 (* {0.789, 0.789, 0.789} *)
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/RuleDelayed.html) for more details.

@@ -20,4 +20,7 @@ Get the 3 most dominant colors in an image:
 DominantColors[img, 3]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/DominantColors.html) for more details.

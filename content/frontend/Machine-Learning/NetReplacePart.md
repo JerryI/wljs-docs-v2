@@ -24,4 +24,7 @@ NetReplacePart[net, "Input" -> 20]
 NetReplacePart[LinearLayer[], "Weights" -> RandomReal[1, {10, 5}]]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/NetReplacePart.html) for more details.

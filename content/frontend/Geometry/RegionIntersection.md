@@ -18,4 +18,7 @@ Intersection of ball and box:
 RegionIntersection[Ball[], Cuboid[{0, 0, 0}, {1, 1, 1}]]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/RegionIntersection.html) for more details.

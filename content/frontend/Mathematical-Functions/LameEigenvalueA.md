@@ -20,4 +20,7 @@ LameEigenvalueA[1, 1, m]
 (* 1 + m *)
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/LameEigenvalueA.html) for more details.

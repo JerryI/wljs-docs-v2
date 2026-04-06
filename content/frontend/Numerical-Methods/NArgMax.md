@@ -24,4 +24,7 @@ NArgMax[{x + y, x^2 + y^2 <= 1}, {x, y}]
 (* {0.707107, 0.707107} *)
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/NArgMax.html) for more details.

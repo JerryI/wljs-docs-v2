@@ -24,4 +24,7 @@ Range[0, 10, 2]
 (* {0, 2, 4, 6, 8, 10} *)
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Range.html) for more details.

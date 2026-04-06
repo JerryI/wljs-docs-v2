@@ -28,4 +28,7 @@ From a quantity:
 UnitDimensions[Quantity[5, "Newtons"]]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/UnitDimensions.html) for more details.

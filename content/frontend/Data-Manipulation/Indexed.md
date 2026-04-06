@@ -22,4 +22,7 @@ Indexed[A, {i, j}]
 (* A_{i,j} *)
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Indexed.html) for more details.

@@ -12,4 +12,7 @@ title: TotalVariationFilter
 TotalVariationFilter[{1, 2, 10, 3, 4, 5}]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/TotalVariationFilter.html) for more details.

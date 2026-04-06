@@ -24,4 +24,7 @@ GeoIdentify["City", GeoPosition[{40.7128, -74.0060}]]
 (* Entity["City", {"NewYork", "NewYork", "UnitedStates"}] *)
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/GeoIdentify.html) for more details.

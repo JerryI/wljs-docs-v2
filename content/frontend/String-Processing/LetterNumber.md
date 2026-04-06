@@ -24,4 +24,7 @@ LetterNumber["hello"]
 (* {8, 5, 12, 12, 15} *)
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/LetterNumber.html) for more details.

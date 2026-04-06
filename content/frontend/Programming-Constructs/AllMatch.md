@@ -24,4 +24,7 @@ AllMatch[{1, 2, 3.5}, _Integer]
 (* False *)
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/AllMatch.html) for more details.

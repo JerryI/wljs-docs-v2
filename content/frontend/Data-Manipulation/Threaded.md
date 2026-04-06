@@ -21,4 +21,7 @@ Specify threading level:
 {{1, 2}, {3, 4}} + Threaded[{100, 200}, 1]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Threaded.html) for more details.

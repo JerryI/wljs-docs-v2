@@ -20,4 +20,7 @@ Laplacian[Sin[x] Cos[y], {x, y}]
 (* -2 Cos[y] Sin[x] *)
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Laplacian.html) for more details.

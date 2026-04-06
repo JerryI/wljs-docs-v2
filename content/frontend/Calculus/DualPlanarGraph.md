@@ -12,4 +12,7 @@ Get the dual of a planar graph:
 DualPlanarGraph[GridGraph[{3, 3}]]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/DualPlanarGraph.html) for more details.

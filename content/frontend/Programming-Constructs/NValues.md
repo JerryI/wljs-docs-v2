@@ -19,4 +19,7 @@ N[myConst] ^= 2.71828;
 NValues[myConst]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/NValues.html) for more details.

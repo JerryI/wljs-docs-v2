@@ -18,4 +18,7 @@ Highlight edges with style:
 HighlightGraph[CompleteGraph[5], {1 <-> 2, 2 <-> 3}, VertexLabels -> Automatic]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/HighlightGraph.html) for more details.

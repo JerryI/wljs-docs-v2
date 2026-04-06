@@ -14,4 +14,7 @@ MathieuCharacteristicExponent[1, 0.5]
 Plot[MathieuCharacteristicExponent[a, 1], {a, 0, 10}]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/MathieuCharacteristicExponent.html) for more details.

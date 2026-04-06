@@ -17,4 +17,7 @@ KolmogorovSmirnovTest[RandomReal[1, 100]]
 KolmogorovSmirnovTest[RandomVariate[NormalDistribution[], 100], NormalDistribution[]]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/KolmogorovSmirnovTest.html) for more details.

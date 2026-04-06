@@ -16,4 +16,7 @@ SymmetrizedArray[{{1, 2} -> a, {2, 1} -> a}, {3, 3}, Symmetric[{1, 2}]]
 SymmetrizedArray[{{1, 0}, {0, 1}}]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/SymmetrizedArray.html) for more details.

@@ -16,4 +16,7 @@ IntegerName[42]
 IntegerName[1000000, "Ordinal"]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/IntegerName.html) for more details.

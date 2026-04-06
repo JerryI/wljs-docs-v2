@@ -28,4 +28,7 @@ Convert a time to a different location:
 LocalTime[Entity["City", {"Tokyo", "Tokyo", "Japan"}], Now]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/LocalTime.html) for more details.

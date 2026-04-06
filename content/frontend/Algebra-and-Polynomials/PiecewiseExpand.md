@@ -29,4 +29,7 @@ Nested piecewise:
 PiecewiseExpand[Max[x, Min[y, z]]]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/PiecewiseExpand.html) for more details.

@@ -18,4 +18,7 @@ GeoDistance[Entity["City", {"NewYork", "NewYork", "UnitedStates"}],
   Entity["City", {"London", "GreaterLondon", "UnitedKingdom"}]]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/GeoDistance.html) for more details.

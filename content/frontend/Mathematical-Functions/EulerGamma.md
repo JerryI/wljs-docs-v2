@@ -20,4 +20,7 @@ Limit[Sum[1/k, {k, 1, n}] - Log[n], n -> Infinity]
 (* EulerGamma *)
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/EulerGamma.html) for more details.

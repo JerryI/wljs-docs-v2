@@ -20,4 +20,7 @@ ShiftRegisterSequence[4]
 ShiftRegisterSequence[{3, {1, 3}}]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ShiftRegisterSequence.html) for more details.

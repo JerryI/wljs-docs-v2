@@ -24,4 +24,7 @@ Specify array initialization:
 NetArray["Weights", "Array" -> RandomReal[{-1, 1}, {10, 5}]]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/NetArray.html) for more details.

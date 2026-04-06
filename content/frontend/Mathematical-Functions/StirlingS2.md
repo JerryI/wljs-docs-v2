@@ -20,4 +20,7 @@ StirlingS2[5, 3]
 (* 25 - ways to partition 5 elements into 3 groups *)
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/StirlingS2.html) for more details.

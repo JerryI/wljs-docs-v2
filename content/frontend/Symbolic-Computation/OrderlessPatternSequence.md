@@ -26,4 +26,7 @@ g[1, 2, 3] /. g[OrderlessPatternSequence[2, 1, rest___]] :> {rest}
 (* {3} *)
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/OrderlessPatternSequence.html) for more details.

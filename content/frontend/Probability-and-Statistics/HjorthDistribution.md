@@ -12,4 +12,7 @@ Plot the PDF of a Hjorth distribution:
 Plot[PDF[HjorthDistribution[0, 1, 2], x], {x, 0, 5}]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/HjorthDistribution.html) for more details.

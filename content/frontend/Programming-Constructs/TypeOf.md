@@ -18,4 +18,7 @@ TypeOf[1 + 2]
 TypeOf[x + 1, Typed[x, "Integer64"]]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/TypeOf.html) for more details.

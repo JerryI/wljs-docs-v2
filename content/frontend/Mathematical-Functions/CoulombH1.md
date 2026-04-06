@@ -12,4 +12,7 @@ Compute outgoing Coulomb wavefunction:
 CoulombH1[0, 1, 2.0]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/CoulombH1.html) for more details.

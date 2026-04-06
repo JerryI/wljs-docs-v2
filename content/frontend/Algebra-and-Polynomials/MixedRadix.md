@@ -12,4 +12,7 @@ Convert a number using mixed radix (hours, minutes, seconds):
 MixedRadix[{24, 60, 60}]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/MixedRadix.html) for more details.

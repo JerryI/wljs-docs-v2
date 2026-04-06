@@ -11,4 +11,7 @@ KeyIntersection[{<|"a" -> 1, "b" -> 2|>, <|"a" -> 3, "c" -> 4|>}]
 (* {<|"a" -> 1|>, <|"a" -> 3|>} *)
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/KeyIntersection.html) for more details.

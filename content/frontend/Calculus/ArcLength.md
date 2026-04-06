@@ -20,4 +20,7 @@ ArcLength[Circle[{0, 0}, r]]
 (* 2 Pi r *)
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ArcLength.html) for more details.

@@ -18,4 +18,7 @@ NDEigenvalues[{-Laplacian[u[x, y], {x, y}], DirichletCondition[u[x, y] == 0, Tru
 NDEigenvalues[-u''[x], u, {x, 0, Pi}, 3]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/NDEigenvalues.html) for more details.

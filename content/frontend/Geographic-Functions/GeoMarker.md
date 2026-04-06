@@ -19,4 +19,7 @@ GeoGraphics[GeoMarker[Entity["City", {"Paris", "IleDeFrance", "France"}]]]
 GeoGraphics[GeoMarker[Here, "SatelliteDish"]]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/GeoMarker.html) for more details.

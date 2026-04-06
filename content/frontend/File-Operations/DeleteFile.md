@@ -21,4 +21,7 @@ Delete multiple files:
 DeleteFile[{"old1.txt", "old2.txt"}]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/DeleteFile.html) for more details.

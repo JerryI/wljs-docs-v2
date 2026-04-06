@@ -24,4 +24,7 @@ CorrelationFunction[WienerProcess[], s, t]
 (* Min[s, t] *)
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/CorrelationFunction.html) for more details.

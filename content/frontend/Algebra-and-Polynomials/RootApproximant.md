@@ -18,4 +18,7 @@ Find a cubic root approximation:
 RootApproximant[1.2599210498, 3]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/RootApproximant.html) for more details.

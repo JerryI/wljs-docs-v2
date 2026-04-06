@@ -16,4 +16,7 @@ VertexCorrelationSimilarity[CompleteGraph[5], 1, 2]
 VertexCorrelationSimilarity[CycleGraph[6], 1, 3]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/VertexCorrelationSimilarity.html) for more details.

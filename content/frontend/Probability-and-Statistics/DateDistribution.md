@@ -12,4 +12,7 @@ Create a date distribution:
 DateDistribution[NormalDistribution[0, 1], "Day", DateObject[{2020, 1, 1}]]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/DateDistribution.html) for more details.

@@ -23,4 +23,7 @@ Pad the bounds:
 GeoBounds[Entity["Country", "France"], Quantity[1, "Degrees"]]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/GeoBounds.html) for more details.

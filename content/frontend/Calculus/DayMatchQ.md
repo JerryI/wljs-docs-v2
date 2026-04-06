@@ -20,4 +20,7 @@ DayMatchQ[{2024, 1, 5}, "BusinessDay"]
 (* True - Friday *)
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/DayMatchQ.html) for more details.

@@ -27,4 +27,7 @@ List all properties:
 NetInformation[NetChain[{LinearLayer[10]}], "Properties"]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/NetInformation.html) for more details.

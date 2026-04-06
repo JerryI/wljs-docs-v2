@@ -22,4 +22,7 @@ paths = FindVertexIndependentPaths[g, 1, 5, 3];
 HighlightGraph[g, paths]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/FindVertexIndependentPaths.html) for more details.

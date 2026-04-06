@@ -24,4 +24,7 @@ Symbolic value:
 ScorerHi[0]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ScorerHi.html) for more details.

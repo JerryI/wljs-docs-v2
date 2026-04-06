@@ -17,4 +17,7 @@ FindPlanarColoring[g]
 FindPlanarColoring[g, {Red, Blue, Green, Yellow}]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/FindPlanarColoring.html) for more details.

@@ -20,4 +20,7 @@ ConjugateTranspose[{{1, 2}, {3, 4}}]
 (* {{1, 3}, {2, 4}} *)
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ConjugateTranspose.html) for more details.

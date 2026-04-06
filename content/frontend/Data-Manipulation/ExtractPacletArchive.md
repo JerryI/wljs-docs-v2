@@ -16,4 +16,7 @@ ExtractPacletArchive["MyPaclet-1.0.0.paclet"]
 ExtractPacletArchive["MyPaclet-1.0.0.paclet", "/tmp/paclets"]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ExtractPacletArchive.html) for more details.

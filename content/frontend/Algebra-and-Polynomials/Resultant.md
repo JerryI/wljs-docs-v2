@@ -20,4 +20,7 @@ Resultant[a*x + b, c*x + d, x]
 (* a d - b c *)
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Resultant.html) for more details.

@@ -16,4 +16,7 @@ GeoGraphics[GeoDisk[Entity["City", {"Tokyo", "Tokyo", "Japan"}], Quantity[200, "
 GeoGraphics[GeoDisk[Here, Quantity[100, "Miles"], {0, 180}]]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/GeoDisk.html) for more details.

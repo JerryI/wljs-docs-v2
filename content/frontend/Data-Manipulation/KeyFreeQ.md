@@ -16,4 +16,7 @@ KeyFreeQ[<|"a" -> 1, "b" -> 2|>, "c"]
 KeyFreeQ[<|1 -> "x", 2 -> "y"|>, _String]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/KeyFreeQ.html) for more details.

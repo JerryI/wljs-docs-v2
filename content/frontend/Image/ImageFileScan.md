@@ -12,4 +12,7 @@ Count pixels in an image file:
 n = 0; ImageFileScan[(n++ &), "image.png"]; n
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ImageFileScan.html) for more details.

@@ -30,4 +30,7 @@ Zeta[2, 1/2] // N
 (* 4.9348 *)
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Zeta.html) for more details.

@@ -24,4 +24,7 @@ Conditional replacement rule:
 (* {1, 4, 3, 16} *)
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Condition.html) for more details.

@@ -28,4 +28,7 @@ sol = NDSolveValue[{eqn == 0, DirichletCondition[u[x, y] == 0, True]},
 Plot3D[sol[x, y], {x, y} \[Element] Disk[]]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/PoissonPDEComponent.html) for more details.

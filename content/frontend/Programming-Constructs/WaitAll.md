@@ -20,4 +20,7 @@ jobs = Table[SessionSubmit[Pause[1]; i], {i, 3}];
 WaitAll[jobs]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/WaitAll.html) for more details.

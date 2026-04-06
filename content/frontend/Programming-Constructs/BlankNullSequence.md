@@ -24,4 +24,7 @@ Extract first element or default:
 (* 1 *)
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/BlankNullSequence.html) for more details.

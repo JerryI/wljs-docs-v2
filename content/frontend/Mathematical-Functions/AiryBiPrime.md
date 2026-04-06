@@ -19,4 +19,7 @@ Plot the derivative:
 Plot[AiryBiPrime[x], {x, -10, 2}]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/AiryBiPrime.html) for more details.

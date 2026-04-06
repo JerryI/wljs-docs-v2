@@ -21,4 +21,7 @@ cf[25, "Probabilities"]
 (* <|"small" -> 0.6, "large" -> 0.4|> *)
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ClassifierFunction.html) for more details.

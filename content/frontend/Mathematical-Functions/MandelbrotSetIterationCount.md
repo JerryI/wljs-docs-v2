@@ -26,4 +26,7 @@ DensityPlot[MandelbrotSetIterationCount[x + I y],
   {x, -2, 1}, {y, -1.5, 1.5}]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/MandelbrotSetIterationCount.html) for more details.

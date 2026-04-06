@@ -18,4 +18,7 @@ Plot random data:
 ArrayPlot[RandomReal[1, {20, 20}], ColorFunction -> "Rainbow"]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ArrayPlot.html) for more details.

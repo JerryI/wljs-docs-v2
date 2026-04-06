@@ -20,4 +20,7 @@ GeometricScene[{a, b, c}, {Triangle[{a, b, c}], GeometricAssertion[Triangle[{a, 
 RandomInstance[GeometricScene[{a, b, c, d}, {Quadrilateral[{a, b, c, d}]}]]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/GeometricScene.html) for more details.

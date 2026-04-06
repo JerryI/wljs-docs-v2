@@ -20,4 +20,7 @@ StringCases["abc123def456", DigitCharacter ..]
 (* {"123", "456"} *)
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/DigitCharacter.html) for more details.

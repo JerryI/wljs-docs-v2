@@ -22,4 +22,7 @@ Get the p-value:
 VarianceEquivalenceTest[{data1, data2}, "PValue"]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/VarianceEquivalenceTest.html) for more details.

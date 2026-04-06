@@ -20,4 +20,7 @@ Eigenvalues[{{1., 2.}, {3., 4.}}]
 (* {5.37228, -0.372281} *)
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Eigenvalues.html) for more details.

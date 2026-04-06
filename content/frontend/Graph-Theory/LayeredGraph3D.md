@@ -18,4 +18,7 @@ LayeredGraph3D[CompleteGraph[5]]
 LayeredGraph3D[{1 -> 2, 2 -> 3, 3 -> 4, 4 -> 1}]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/LayeredGraph3D.html) for more details.

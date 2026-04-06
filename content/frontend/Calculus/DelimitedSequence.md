@@ -24,4 +24,7 @@ Interpreter[DelimitedSequence["Word", ";"]]["apple;banana;cherry"]
 (* {"apple", "banana", "cherry"} *)
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/DelimitedSequence.html) for more details.

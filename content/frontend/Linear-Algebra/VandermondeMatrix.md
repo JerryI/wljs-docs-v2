@@ -17,4 +17,7 @@ VandermondeMatrix[{1, 2, 3}]
 VandermondeMatrix[{a, b, c, d}, 3]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/VandermondeMatrix.html) for more details.

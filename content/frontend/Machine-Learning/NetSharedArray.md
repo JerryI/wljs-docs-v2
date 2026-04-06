@@ -28,4 +28,7 @@ Initialize shared arrays:
 NetInitialize[net, All, "Weights" -> NetSharedArray["w"]]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/NetSharedArray.html) for more details.

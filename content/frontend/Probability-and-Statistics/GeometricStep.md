@@ -16,4 +16,7 @@ GeometricStep[{Triangle[{a, b, c}]}]
 GeometricStep[{GeometricAssertion[Triangle[{a, b, c}], "Isosceles"]}, "Step 2"]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/GeometricStep.html) for more details.

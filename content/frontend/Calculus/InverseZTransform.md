@@ -20,4 +20,7 @@ InverseZTransform[ZTransform[f[n], n, z], z, n]
 (* f[n] *)
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/InverseZTransform.html) for more details.

@@ -24,4 +24,7 @@ KendallTauTest[{1, 2, 3}, {3, 2, 1}, "TestStatistic"]
 (* -1. *)
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/KendallTauTest.html) for more details.

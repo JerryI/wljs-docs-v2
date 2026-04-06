@@ -20,4 +20,7 @@ With custom bevel ratio:
 Graphics3D[BeveledPolyhedron[Tetrahedron[], 0.3]]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/BeveledPolyhedron.html) for more details.

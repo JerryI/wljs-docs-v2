@@ -17,4 +17,7 @@ data = Table[Sin[2 Pi 0.1 t] + Sin[2 Pi 0.4 t], {t, 100}];
 BandpassFilter[data, {0.2, 0.5}]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/BandpassFilter.html) for more details.

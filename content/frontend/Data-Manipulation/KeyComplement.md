@@ -20,4 +20,7 @@ KeyComplement[{<|a -> 1, b -> 2, c -> 3, d -> 4|>, <|a -> 0|>, <|c -> 0|>}]
 (* <|b -> 2, d -> 4|> *)
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/KeyComplement.html) for more details.

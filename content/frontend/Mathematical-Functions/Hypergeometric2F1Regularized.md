@@ -14,4 +14,7 @@ Hypergeometric2F1Regularized[1, 2, 3, 0.5]
 Plot[Hypergeometric2F1Regularized[1, 1, 2, x], {x, 0, 0.9}]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Hypergeometric2F1Regularized.html) for more details.

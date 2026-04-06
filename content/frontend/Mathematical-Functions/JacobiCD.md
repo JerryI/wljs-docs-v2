@@ -19,4 +19,7 @@ Plot the function:
 Plot[JacobiCD[x, 0.5], {x, 0, 4}]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/JacobiCD.html) for more details.

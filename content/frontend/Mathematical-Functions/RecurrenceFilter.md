@@ -21,4 +21,7 @@ RecurrenceFilter[{{1}, {0.5}}, {1, 0, 0, 0, 0}]
 (* {1., 0.5, 0.25, 0.125, 0.0625} *)
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/RecurrenceFilter.html) for more details.

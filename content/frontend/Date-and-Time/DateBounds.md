@@ -27,4 +27,7 @@ ts = TimeSeries[{{1, 10}, {2, 20}, {3, 15}}];
 DateBounds[ts]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/DateBounds.html) for more details.

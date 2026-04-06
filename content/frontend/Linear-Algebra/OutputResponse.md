@@ -15,4 +15,7 @@ sys = TransferFunctionModel[1/(s + 1), s];
 OutputResponse[sys, UnitStep[t], {t, 0, 10}]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/OutputResponse.html) for more details.

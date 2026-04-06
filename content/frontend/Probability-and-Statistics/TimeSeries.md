@@ -15,4 +15,7 @@ TimeSeries[{{0, 1}, {1, 3}, {2, 2}, {3, 5}}]
 (* TimeSeries[...] *)
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/TimeSeries.html) for more details.

@@ -33,4 +33,7 @@ Extract biases:
 NetExtract[NetInitialize[LinearLayer[5]], "Biases"]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/NetExtract.html) for more details.

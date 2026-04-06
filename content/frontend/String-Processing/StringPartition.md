@@ -22,4 +22,7 @@ StringPartition["abcdef", 3, 1]
 (* {"abc", "bcd", "cde", "def"} *)
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/StringPartition.html) for more details.

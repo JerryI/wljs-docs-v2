@@ -20,4 +20,7 @@ StirlingS1[5, 2]
 (* 50 *)
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/StirlingS1.html) for more details.

@@ -30,4 +30,7 @@ PolynomialExpressionQ[2x^2 + 3x + 1, {x}, IntegerQ]
 (* True *)
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/PolynomialExpressionQ.html) for more details.

@@ -14,4 +14,7 @@ Compute a 256×256 co-occurrence matrix for an image:
 ImageCooccurrence[img, 256]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ImageCooccurrence.html) for more details.

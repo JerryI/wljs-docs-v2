@@ -21,4 +21,7 @@ SortedEntityClass["Country", "Population" -> "Descending", 5]
 (* SortedEntityClass[...] *)
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/SortedEntityClass.html) for more details.

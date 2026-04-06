@@ -27,4 +27,7 @@ Get synonyms for a specific sense:
 WordData[{"bank", "Noun", "Riverbank"}, "Synonyms"]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/WordData.html) for more details.

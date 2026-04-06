@@ -16,4 +16,7 @@ Use in compiled code:
 FunctionCompile[Function[{x}, TypeHint[x^2, "Integer64"]]]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/TypeHint.html) for more details.

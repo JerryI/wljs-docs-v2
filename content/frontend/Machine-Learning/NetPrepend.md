@@ -17,4 +17,7 @@ NetPrepend[LinearLayer[10], LinearLayer[5]]
 NetPrepend[NetChain[{LinearLayer[10]}], ElementwiseLayer[Tanh]]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/NetPrepend.html) for more details.

@@ -18,4 +18,7 @@ Get the latest reading:
 DeviceReadLatest[sensor]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/DeviceReadLatest.html) for more details.

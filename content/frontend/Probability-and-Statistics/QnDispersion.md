@@ -22,4 +22,7 @@ StandardDeviation[{1, 2, 3, 4, 5, 100}]
 (* 39.0128 *)
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/QnDispersion.html) for more details.

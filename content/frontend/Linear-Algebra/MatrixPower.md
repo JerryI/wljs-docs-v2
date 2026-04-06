@@ -20,4 +20,7 @@ MatrixPower[{{1, 1}, {1, 0}}, 10]
 (* {{89, 55}, {55, 34}} *)
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/MatrixPower.html) for more details.

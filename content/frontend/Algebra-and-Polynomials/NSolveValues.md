@@ -13,4 +13,7 @@ NSolveValues[x^2 - 2 == 0, x]
 (* {-1.41421, 1.41421} *)
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/NSolveValues.html) for more details.

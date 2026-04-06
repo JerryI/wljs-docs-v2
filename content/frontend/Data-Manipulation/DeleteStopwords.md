@@ -17,4 +17,7 @@ DeleteStopwords["The quick brown fox jumps over the lazy dog"]
 (* "quick brown fox jumps lazy dog" *)
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/DeleteStopwords.html) for more details.

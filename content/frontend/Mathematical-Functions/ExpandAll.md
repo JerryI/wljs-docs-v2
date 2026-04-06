@@ -18,4 +18,7 @@ ExpandAll[(a + b)^2 / (c + d)^2]
 (* (a^2 + 2 a b + b^2)/(c^2 + 2 c d + d^2) *)
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ExpandAll.html) for more details.

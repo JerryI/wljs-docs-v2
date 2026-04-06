@@ -16,4 +16,7 @@ Interpretation[Style["π", Red], Pi]
 Interpretation["click me", Button["Click", Print["Hello"]]]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/Interpretation.html) for more details.

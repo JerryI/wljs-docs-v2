@@ -17,4 +17,7 @@ VideoTranscode[Video["input.avi"], "MP4"]
 VideoTranscode[Video["input.mov"], "YouTube"]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/VideoTranscode.html) for more details.

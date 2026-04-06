@@ -12,4 +12,7 @@ Get countries not in Europe:
 ComplementedEntityClass[EntityClass["Country", "Countries"], EntityClass["Country", "Europe"]]
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/ComplementedEntityClass.html) for more details.

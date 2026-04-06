@@ -24,4 +24,7 @@ DifferenceQuotient[x^2, {x, 2, h}]
 (* 2 *)
 ```
 
+
+Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
+
 Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/DifferenceQuotient.html) for more details.
