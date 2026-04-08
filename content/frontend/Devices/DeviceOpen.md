@@ -16,7 +16,19 @@ Open a serial port connection:
 dev = DeviceOpen["Serial", "/dev/ttyUSB0"]
 ```
 
+## Camera
+This is special case, that allows to stream an image from web-camera akin to `CurrentImage[]`. For example:
+
+```wolfram
+dev = DeviceOpen["Camera"];
+dev["FrameRate"] = 60;
+```
+
+Then stream it to an image:
+
+```wolfram
+Refresh[DeviceRead[dev]//Colorize, 1/30.0]
+```
 
 Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
 
-Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/DeviceOpen.html) for more details.

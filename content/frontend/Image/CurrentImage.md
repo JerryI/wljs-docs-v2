@@ -14,13 +14,7 @@ Capture current webcam image:
 CurrentImage[]
 ```
 
-Capture multiple frames:
-
-```wolfram
-CurrentImage[5]
-(* List of 5 images *)
-```
-
+To stream lively a series of images see [Device](./../Devices/DeviceOpen).
 
 Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
 
