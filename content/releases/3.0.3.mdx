@@ -26,8 +26,6 @@ docker run -it \
   -v ~/wljs:"/home/wljs/WLJS Notebooks" \
   -v ~/wljs/Licensing:/home/wljs/.WolframEngine/Licensing \
   -v ~/wljs/tmp:/tmp \
-  -e PUID=$(id -u) \
-  -e PGID=$(id -g) \
   -p 8000:3000 \
   --name wljs \
   ghcr.io/wljsteam/wljs-notebook:main
