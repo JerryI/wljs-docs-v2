@@ -42,6 +42,8 @@ docker run -it \
   ghcr.io/wljsteam/wljs-notebook:main
 ```
 
+Make sure that `tmp` and `wljs` folder are writtable
+
   </Tab>
   <Tab value="Homebrew">
   
@@ -143,7 +145,11 @@ docker run -it \
   ghcr.io/wljsteam/wljs-notebook:main
 ```
 
-This will mount your local `wljs` folder to the container, where examples, configs and license-related files are stored.
+This will mount your local `wljs` folder to the container, where examples, configs and license-related files are stored. `tmp` is mostly needed for backups and quick notes.
+
+<Callout type="note">
+Make sure `tmp` and the whole `wljs` folder is writtable
+</Callout>
 
 Then open `http://127.0.0.1:8000` or forward `8000` port to your local machine and open.
 
