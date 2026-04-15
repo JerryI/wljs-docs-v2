@@ -431,7 +431,7 @@ export default function HomePage() {
           <Card 
             icon={<Download />}
             title="Super portable"
-            description="Export and share your notebook as a standalone or embeddable .html or .mdx file—plots stay interactive, and sliders remain draggable."
+            description="Export and share your notebook as a mini app or embeddable .html or .mdx file — plots stay interactive, and sliders remain draggable"
             href="/frontend/Share/Standalone-HTML"
           />
 
