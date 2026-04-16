@@ -51,7 +51,7 @@ EventHandler[InputFile[], {"File" -> Function[file,
     (* try different encoding *)
     If[!NumberQ[imported[[1,1]]], imported = Drop[ImportByteArray[file["Data"]//BaseDecode, "TSV"], 3]];
 
-    Plotly`addTraces[plot, {<|"x" -> imported[[All,1]], "y" -> imported[[All,2]]|>}];
+    PlotlyAddTraces[plot, {<|"x" -> imported[[All,1]], "y" -> imported[[All,2]]|>}];
   ]
   
 ]}]
