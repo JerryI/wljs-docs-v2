@@ -1,0 +1,178 @@
+---
+title: Release notes *3.0.4*
+date: 2026-04-17
+---
+
+
+import { Tabs, Tab } from 'fumadocs-ui/components/tabs';
+
+<Tabs items={['Windows', 'Mac','GNU/Linux', 'Docker', 'Homebrew']}>
+  <Tab value="Mac">
+    - [Apple Silicon](https://github.com/WLJSTeam/wljs-notebook/releases/download/v3.0.4/wljs-notebook-3.0.4-arm64-macos.dmg)
+    - [Intel](https://github.com/WLJSTeam/wljs-notebook/releases/download/v3.0.4/wljs-notebook-3.0.4-x64-macos.dmg)
+  </Tab>
+  <Tab value="Windows">
+    - [x86/64](https://github.com/WLJSTeam/wljs-notebook/releases/download/v3.0.4/wljs-notebook-3.0.4-x64-win.exe)
+  </Tab>
+  <Tab value="GNU/Linux">
+    - [DEB x86/64](https://github.com/WLJSTeam/wljs-notebook/releases/download/v3.0.4/wljs-notebook-3.0.4-amd64-gnulinux.deb)
+    - [DEB ARM64](https://github.com/WLJSTeam/wljs-notebook/releases/download/v3.0.4/wljs-notebook-3.0.4-arm64-gnulinux.deb)
+    - [AppImage x86/64](https://github.com/WLJSTeam/wljs-notebook/releases/download/v3.0.4/wljs-notebook-3.0.4-x86_64-gnulinux.AppImage)
+    - [AppImage ARM64](https://github.com/WLJSTeam/wljs-notebook/releases/download/v3.0.4/wljs-notebook-3.0.4-arm64-gnulinux.AppImage)
+  </Tab>
+  <Tab value="Docker">
+
+```bash
+docker run -it \
+  -v ~/wljs:"/home/wljs/WLJS Notebooks" \
+  -v ~/wljs/Licensing:/home/wljs/.WolframEngine/Licensing \
+  -v ~/wljs/tmp:/tmp \
+  -p 8000:3000 \
+  --name wljs \
+  ghcr.io/wljsteam/wljs-notebook:main
+```
+
+  </Tab>
+  <Tab value="Homebrew">
+  
+```bash  
+brew install --cask wljs-notebook
+```
+
+  </Tab>
+</Tabs>
+
+{/* add this script to the body  */}
+{/* https://cdn.jsdelivr.net/gh/WLJSTeam/web-components@latest/src/common/app.js */}
+<wljs-store json="./attachments/f6a1b877-ec64-4804-8189-c48b42001964.txt"></wljs-store>
+
+
+## Sorting feature for Dataset and Tabular
+We added both Kernel- and frontend-side sorting for `Dataset` and `Tabular`. Just click on one of the headers:
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`Take[ExampleData[{"Dataset","Titanic"}], All]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output" encoded="true"  >{`%28%2AVB%5B%2A%29%28Dataset%5BJoin%40%40CoffeeLiqueur%60Extensions%60InputsOutputs%60Private%60store%24272286%5D%29%28%2A%2C%2A%29%28%2A%221%3AeJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKWyZbpKYYJlvqWiSlGeuaWKSk6VqYWSTqpqQZJZkkG1uYmyWbAACRdRYh%22%2A%29%28%2A%5DVB%2A%29`}</wljs-editor></WLJSWrapper>
+
+Or course, if you export a notebook to an HTML file sorting may not work for large datasets, which are partially stored on the kernel.
+
+## Improved input elements
+We fixed `InputTerminal`, now it is selectable and can hold up to 1000 entries
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`t = InputTerminal[]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(EventObject[<|"StandardOutput" -> OutputStream["/private/var/folders/fs/ch7ddlhn7jz5vyg5k8bbrxyh0000gn/T/m000050359951", 5], "StandardError" -> OutputStream["/private/var/folders/fs/ch7ddlhn7jz5vyg5k8bbrxyh0000gn/T/m000051359951", 6], "Id" -> "0c5af463-5623-4beb-98dd-d6aaa3cdd78e", "View" -> "ff7d4d3e-2c4f-4490-be78-127d451a45d6"|>])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKp6WZp5ikGKfqGiWbpOmamFga6CalmlvoGhoBxU0NE01MU8wAjakVrA=="*)(*]VB*)`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`WriteString[t["StandardOutput"], "Hey"];`}</wljs-editor></WLJSWrapper>
+
+### More styling options
+We provide many styling options for `InputButton`, `InputRange` and others. Now you can directly assign classes or styles for labels or controls
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`InputButton["Click me", "Style"->"text-transform: uppercase; letter-spacing: 0.04em; color: #6b7280;"]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(EventObject[<|"Id" -> "47f6a519-9832-447d-9afc-13ab73dcc936", "Initial" -> False, "View" -> "0c10b84e-566c-48fd-9530-3f9c547323db"|>])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKGyQbGiRZmKTqmpqZJeuaWKSl6FqaGhvoGqdZJpuamBsbGackAQB9ZhVI"*)(*]VB*)`}</wljs-editor></WLJSWrapper>
+
+For sliders you have many options
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`InputRange[0,1,0.1, "SliderStyle"->"width:50vw; accent-color: red ", "CounterStyle"->"font-size:larger; padding:1rem"]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(EventObject[<|"Id" -> "eecc7fa5-b3fb-4e5d-9c57-249f5f761556", "Initial" -> 0.5, "View" -> "0d6ce436-f0ef-4a71-871a-9874a68f589f"|>])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKG6SYJaeaGJvpphmkpumaJJob6lqYGybqWlqYmySaWaSZWlimAQCF/RWO"*)(*]VB*)`}</wljs-editor></WLJSWrapper>
+
+## Better texture support
+We improved `Texture` support in 2D graphics. Now it no longer requires `TextureVertexCoordinates` (only optional)
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`Graphics[{
+	  Texture[Array[BitXor, {128,128}]//Rescale//Image],
+	  GraphicsComplex[RandomReal[{-1,1}, {3,2}], Polygon[{1,2,3}]]
+	}, Axes->True]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(FrontEndRef["05a4f084-a14e-442b-b07a-271c10fe54c1"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKG5gmmqQZWJjoJhqapOqamBgl6SYZmCfqGpkbJhsapKWamiQbAgB8rxVW"*)(*]VB*)`}</wljs-editor></WLJSWrapper>
+
+## Added update support for `GraphicsComplex` (2D)
+
+`GraphicsComplex` was already supported, but it did not automatically react to data changes. With this update, lines and points now update automatically when the underlying data changes.
+
+`GraphicsComplex` is a very efficient Wolfram Language structure for storing and rendering large numbers of primitives, usually polygons such as triangles. It is widely used in `ContourPlot` and `Plot3D`. In the context of `Graphics3D`, updating it is relatively straightforward: we render the 3D scene with WebGL and then update or resize GPU buffers as new data arrives
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`vert3 = (*VB[*)(Uncompress@Get[FileNameJoin[{"", "Users", "kirill", "Github", "wolfram-js-frontend", "modules", "wljs-demos-archive", "Demos", "Release notes", ".iconized", "mispronunciation.wl"}]])(*,*)(*"1:eJxTTMoPSmNhYGAo5gUSYZmp5S6pyflFiSX5RcEcQBHP5Py8zKrUlEwgmyGNCaQQpDqoNCc1mBXI8ElMSs0JFgCycjOLC4ry80rzkjMTSzLz89AUgxhumTmpYJGQotJUABoLHa8="*)(*]VB*);
+	  
+	Graphics3D[{
+	  Texture[Array[BitXor, {128,128}]//Rescale//Image],
+	  GraphicsComplex[vert3//Offload, Polygon[(*VB[*)(Uncompress@Get[FileNameJoin[{"", "Users", "kirill", "Github", "wolfram-js-frontend", "modules", "wljs-demos-archive", "Demos", "Release notes", ".iconized", "westwards.wl"}]])(*,*)(*"1:eJxTTMoPSmNhYGAo5gUSYZmp5S6pyflFiSX5RcEcQBHP5Py8zKrUlEwgmyGNCaQQpDqoNCc1mBXI8ElMSs0J5gSyylOLS8oTi1KK0VSBGG6ZOalgkZCi0lQAIQcaug=="*)(*]VB*)]],
+	  EventHandler[AnimationFrameListener[vert3//Offload], 
+	  Function[Null,
+	    vert3 = Map[ With[{n = Normalize[#], t = AbsoluteTime[]},
+	      # + 0.2 n (
+	        Sin[10 (n.{1, 0, 0}) - 4 t] +
+	        0.6 Sin[14 (n.{0, 1, 1}/Sqrt[2]) - 6 t]
+	      )
+	    ] &, vert3];
+	  ]]
+	}]`}</wljs-editor></WLJSWrapper>
+
+Doing the same in `Graphics` is much more difficult. Internally, we still use WebGL vertex and fragment shaders to render `DensityPlot` from hundreds or thousands of triangles, and then bake the result into an image with no visible trace of WebGL. This gives us a small memory footprint and fast, detailed 2D plots.
+
+The challenge is that changing an existing plot may require *de-optimizing* it back into a WebGL canvas, restoring buffers, streaming updated data, and avoiding race conditions. More broadly, our `Graphics` implementation is one of the most sophisticated parts of the system because it combines SVG graphics with a WebGL-rasterized canvas and blends them together. As a result, primitives in `GraphicsComplex` that can still be represented as SVG paths, such as lines, are often much easier to update through SVG than through WebGL. **In any case, now we have it!**
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`vert2 = CirclePoints[0.7, 50]//N;
+	f = (*VB[*)(Uncompress["1:eJxTTMoPSmNkYGAo5gASbqV5ySWZ+XlpTCARFiARnlmSgeD5ZBaXQHjMQCI4taQYpLUAYgBIQXBOfkkmiIepqiSNASTEAyQck4rzc0pLUkMyc1MRhgfklBZDzUOxMJMBbh4rkABpKi76s/LjJd+kAntU7RCHgG3NzEOTQjUgkwvFkS75JVitBolB7GdG1f4fCDJByqB+Q3OeMRg8tifBQXxEOQjkFkgAY3MQG9xBAJbbXNw="])(*,*)(*"1:eJxTTMoPSmNmYGAo5gUSYZmp5S6pyflFiSX5RcEcQBHP5Py8zKrUlEwBRgaGNCaQQhYgEVSakxrMCmT4JCal5oBVJpXmpSfm5JcDACoeE98="*)(*]VB*);
+	  
+	Graphics[{
+	  GraphicsComplex[vert2//Offload, {
+	    LightBlue, Polygon[Range[1,50]], Red, Point[Range[1,50]]
+	  }],
+	  EventHandler[AnimationFrameListener[vert2//Offload], 
+	    Function[Null, vert2 = f /@ vert2]
+	  ]
+	}, PlotRange->{{-1,1}, {-1,1}}]`}</wljs-editor></WLJSWrapper>
+
+
+### Performance comparison
+
+It makes things fast especially for `Polygon` and `Point` using hardware acceleration. Compare these two with GC and without:
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`ClearAll[handler, n, r, f, s, x, p , q]
+	
+	n = 10000; (*BB[*)(*WARNING!*)(*,*)(*"1:eJxTTMoPSmNhYGAo5gcSAUX5ZZkpqSn+BSWZ+XnFaYwgCS4g4Zyfm5uaV+KUXxEMUqxsbm6exgSSBPGCSnNSg9mAjOCSosy8dLBYSFFpKpoKkDkeqYkpEFXBILO1sCgJSczMQVYCAOFrJEU="*)(*]BB*)
+	r := RandomInteger[{1, n}];
+	f := (#/(.01 + Sqrt[#.#])) & /@ (x[[#]] - x) &;
+	s := With[{r1 = r}, p[[r1]] = r; q[[r1]] = r];
+	x = RandomReal[{-1, 1}, {n, 2}];
+	{p, q} = RandomInteger[{1, n}, {2, n}];`}</wljs-editor></WLJSWrapper>
+
+__Plain Point primitives (SVG)__
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`Graphics[{
+	  PointSize[0.007], Point[x // Offload],
+	  EventHandler[AnimationFrameListener[x // Offload], With[{},
+	    x = 0.995 x + 0.02 f[p] - 0.01 f[q];
+	    If[r < 100, s];
+	  ]&],
+	}, PlotRange -> {{-2,2}, {-2,2}}, TransitionType->None]  `}</wljs-editor></WLJSWrapper>
+
+__Using GraphicsComplex (WebGL)__
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`Graphics[{
+	  PointSize[0.007], GraphicsComplex[x//Offload, Point[Range[n]]],
+	  EventHandler[AnimationFrameListener[x // Offload], With[{},
+	    x = 0.995 x + 0.02 f[p] - 0.01 f[q];
+	    If[r < 100, s];
+	  ]&],
+	}, PlotRange -> {{-2,2}, {-2,2}}, TransitionType->None]  `}</wljs-editor></WLJSWrapper>
+
+With increasing `n` the difference gets even more prominent and at some point Wolfram Kernel becomes the bottleneck.
+
+
+## Drop files to a sidebar
+We added support on both: desktop and server variants of WLJS Notebook for files uploading to a working directory by dropping them on a sidebar.
+
+## Shortcuts
+- Added a shortcut for evaluating the whole notebook <wljs-html encoded="true">{`%3Ckbd%20%3EAlt-j%3C%2Fkbd%3E`}</wljs-html> or <wljs-html encoded="true">{`%3Ckbd%20%3ECmd-j%3C%2Fkbd%3E`}</wljs-html>
+- New command palette item: *Optimize memory*, which effectively runs a major garbage collector on the kernel and server using `Share` method.
+
+## Misc
+- Fixed major issues with license activation on docker image
+- `Ready` event for `CreateWindow` now returns a `WindowObj`
+- Offscreen rasterization support if window is not provided
+- Minor issues with `Manipulate`
+- Fixed pale 2D plots (`ParametricPlot` and others)
