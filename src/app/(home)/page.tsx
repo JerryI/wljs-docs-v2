@@ -424,8 +424,9 @@ export default function HomePage() {
 
           <Card 
             icon={<Lightbulb />}
-            title="Driven by real-world problem solving"
-            description="Developed through the collaboration of physicists and programmers at University of Augsburg 🇩🇪 it is continuously refined in a feedback loop."
+            title="Built for presentations"
+            description="Create interactive, component-driven slides directly in your notebook — with 3D graphics and `Manipulate` widgets. Perfect for teaching and sharing live reports."
+            href="/frontend/Cell-types/Slide"
           />
 
           <Card 
