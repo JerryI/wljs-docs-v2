@@ -4,6 +4,10 @@ title: Dataset
 
 `Dataset[data]` represents a structured dataset based on a hierarchy of lists and associations, enabling query operations and visualization.
 
+<Callout type="tip">
+For large dataset -- use strongly typed data-structure [`Tabular`](./Tabular)
+</Callout>
+
 ## Examples
 
 Create and query a dataset:
@@ -19,6 +23,19 @@ ds[All, "name"]
 (* {"Alice", "Bob"} *)
 ```
 
+## Output forms
+Visual representation of `Dataset` supports:
+
+- lazy loading
+- sorting (both: using Kernel and frontend)
+
+Click on one of the headers to sort that dataset content
+
+<div class="invertColor">
+
+![](./imgs/dataset.png)
+
+</div>
 
 Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
 

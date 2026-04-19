@@ -88,6 +88,36 @@ EventHandler[InputRange[0,2,0.1, var, "TrackedExpression"->{Offload[var], "Debou
 
 Then InputRange *will remember its state*
 
+### `"Class"`
+A text string of CSS classes applied to the component wrapper
+
+### `"Style"`
+An inline CSS style string applied to the component wrapper
+
+### `"LabelClass"`
+A text string of CSS classes applied to the label element
+
+### `"LabelStyle"`
+An inline CSS style string applied to the label element
+
+### `"CounterClass"`
+A text string of CSS classes applied to the numerical counter element
+
+### `"CounterStyle"`
+An inline CSS style string applied to the numerical counter element
+
+### `"SliderClass"`
+A text string of CSS classes applied to the slider element
+
+### `"SliderStyle"`
+An inline CSS style string applied to the slider element
+
+For example:
+
+```wolfram
+InputRange[0,1,0.1, "SliderStyle"->"width:50vw; accent-color: red ", "CounterStyle"->"font-size:larger; padding:1rem"]
+```
+
 ### `Appearance`
 By the default is `Automatic`. 
 Possible value: `"FineTuning"` - adds a fine control element to vary the range value $\pm 10\%$.

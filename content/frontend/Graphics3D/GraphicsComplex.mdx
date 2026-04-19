@@ -53,22 +53,58 @@ it assumes you are using triangles
 ### `Tube`
 
 ## Options
-### `"VertexColors"`
-Defines sets of colors used for shading vertices
+### `VertexColors`
+Defines sets of colors used for shading vertices:
+
+```wolfram
+v = {{1, 0, 0}, {1, 1, 1}, {0, 0, 1}};
+Graphics3D[{Yellow, GraphicsComplex[v, Polygon[{1,2,3}], VertexColors -> {Red, Blue, Green}]}, ViewPoint->{1,1,1}]
+```
 
 <Callout type="info">
-`"VertexColors"` is a plain list which must have the following form
+We recommend to provide `VertexColors` as a plain list which should have the following form
 ```wolfram
 "VertexColors" ->{{r1,g1,b1}, {r2,g2,b2}, ...}
 ```
+
+This will avoid high memory and CPU load on many polygons count.
+
 </Callout>
 
-*Supports updates*
 
-### `"VertexNormals"`
-Defines sets of normals used for shading
+### `VertexNormals`
+Defines sets of normals used for shading.
 
-*Supports updates*
+If it is undefined, 3D renderer will use automatically calcualte them based on the polygon normal. It results is so-called *flat-shading*:
+
+```wolfram
+v = {{1, 0, 0}, {1, 1, 1}, {0, 0, 1}};
+Graphics3D[{Yellow, GraphicsComplex[v, Polygon[{1,2,3}]]}, ViewPoint->{1,1,1}]
+```
+
+Using a different normal for one of the triangle's vertices changes the effects of lighting:
+
+```wolfram
+v = {{1, 0, 0}, {1, 1, 1}, {0, 0, 1}};
+n = {1, -1, 1};
+n2 = {-1, 0, -1};
+Graphics3D[{Yellow, GraphicsComplex[v, Polygon[{1,2,3}], VertexNormals -> {n2, n, n}]}, ViewPoint->{1,1,1}]
+```
+
+### `VertexTextureCoordinates`
+Defines sets of UV coordinates used for mapping [`Texture`](./../Image/Texture).
+
+```wolfram
+img = ExampleData[{"TestImage", "Lena"}];
+Graphics3D[{
+  Texture[img],
+  GraphicsComplex[
+    {{-1, -1, 0}, {1, -1, 0}, {1, 1, 0}, {-1, 1, 0}},
+    Polygon[{1, 2, 3, 4}],
+    VertexTextureCoordinates -> {{0, 1}, {0, 0}, {1, 0}, {1, 1}}
+  ]
+}]
+```
 
 ### `"VertexFence"`
 Defaults to `False`. When enabled, it sets an update barrier for all dependent primitives, ensuring they update their data **only after** the vertex data has been updated. 
@@ -77,73 +113,225 @@ Defaults to `False`. When enabled, it sets an update barrier for all dependent p
 This helps prevent desynchronization issues where the vertex buffer updates lag behind polygon or line indices (or vice versa), which can lead to visual artifacts and WebGL buffer errors.
 </Callout>
 
+<Callout type="tip">
+Pack normals, vertices and colors to a single symbol. This will help to avoid data racing. `"VertexFence"` indeed eliminates races with indices, but it is helpless against the mutations of `GraphicsComplex` attributes.
+</Callout>
+
 ## How to update things
 
 ### Fixed indexes, variable vertices
-It does support updates for vertices data and colors. Use [Offload](../Interpreter/Offload) wrapper.
-
-```wolfram title="cell 1"
-(* generate mesh *)
-proc = HardcorePointProcess[50, 0.5, 2];
-reg = Rectangle[{-10, -10}, {10, 10}];
-samples = RandomPointConfiguration[proc, reg]["Points"];
-
-(* triangulate *)
-Needs["ComputationalGeometry`"];
-triangles2[points_] := Module[{tr, triples},
-  tr = DelaunayTriangulation[points];
-  triples = Flatten[Function[{v, list},
-      Switch[Length[list],
-        (* account for nodes with connectivity 2 or less *)
-        1, {},
-        2, {Flatten[{v, list}]}, 
-        _, {v, ##} & @@@ Partition[list, 2, 1, {1, 1}]
-      ]
-    ] @@@ tr, 1];
-  Cases[GatherBy[triples, Sort], a_ /; Length[a] == 3 :> a[[1]]]]
-
-triangles = triangles2[samples];
-
-(* sample function *)
-f[p_, {x_,y_,z_}] := z Exp[-(*FB[*)(((*SpB[*)Power[Norm[p - {x,y}](*|*),(*|*)2](*]SpB*))(*,*)/(*,*)(2.))(*]FB*)]
-
-(* initial data *)
-probe = {#[[1]], #[[2]], f[#, {10, 0, 0}]} &/@ samples // Chop;
-colors = With[{mm = MinMax[probe[[All,3]]]},
-      (Blend[{{mm[[1]], Blue}, {mm[[2]], Red}}, #[[3]]] )&/@ probe /. {RGBColor -> List} // Chop];
-```
-
-```wolfram title="cell 2"
-Graphics3D[{
-  GraphicsComplex[probe // Offload, {Polygon[triangles]}, "VertexColors"->Offload[colors]],
-
-  EventHandler[Sphere[{0,0,0}, 0.1], {"transform"->Function[data, With[{pos = data["position"]},
-    probe = {#[[1]], #[[2]], f[#, pos]} &/@ samples // Chop;
-    colors = With[{mm = MinMax[probe[[All,3]]]},
-      (Blend[{{mm[[1]], Blue}, {mm[[2]], Red}}, #[[3]]] )&/@ probe /. {RGBColor -> List} // Chop];
-  ]]}]
-}]
-```
-
-The result is interactive 3D plot
-
-Or the variation of it, if we add a point light source
+Use [Offload](../Interpreter/Offload) wrapper:
 
 ```wolfram
-light = {0,0,0};
-Graphics3D[{
-  GraphicsComplex[probe // Offload, {Polygon[triangles]}],
-  PointLight[Red, light // Offload],
+vertices = Flatten[Table[{i,j, 0}, {i,1.0,100.0,1.0}, {j, 1.0,100.0,1.0}],1];
+idx[i_, j_] := (i - 1) 100 + j;
+tris = Flatten[
+  Table[
+    {
+      {idx[i, j],     idx[i + 1, j], idx[i, j + 1]},
+      {idx[i + 1, j], idx[i + 1, j + 1], idx[i, j + 1]}
+    },
+    {i, 1, 100 - 1},
+    {j, 1, 100 - 1}
+  ],
+  2
+];
 
-  EventHandler[Sphere[{0,0,0}, 0.1], {"transform"->Function[data, With[{pos = data["position"]},
-    probe = {#[[1]], #[[2]], f[#, pos]} &/@ samples // Chop;
-    light = pos;
-  ]]}]
-}]
+GraphicsComplex[vertices//Offload, Polygon[tris]]//Graphics3D 
 ```
 
-### Update indexes and vertices
-For more complicated example you can update both. Here is an example with dynamic adapter for `ParametericPlot3D`
+Now we can animate vertices:
+
+```wolfram
+gen := Module[
+  {t = AbsoluteTime[], s = 0.13, cx, cy},
+  cx = 50 + 20 Cos[0.5 t];
+  cy = 50 + 20 Sin[0.7 t];
+  vertices = Flatten[
+    Table[
+      {
+        i, j,
+         5 Sin[s i + t] +
+         5 Sin[s j - 1.3 t] +
+        3 12 Exp[-((i - cx)^2 + (j - cy)^2)/120.]
+      },
+      {i, 1., 100.}, {j, 1., 100.}
+    ],
+    1
+  ]
+];
+
+Do[gen; Pause[1/30.0], {500}];
+```
+
+### Fixed indexes, variable vertices and colors
+Taking the previous example, we can add dynamic color:
+
+```wolfram
+idx[i_, j_] := (i - 1) 100 + j;
+tris = Flatten[
+  Table[
+    {
+      {idx[i, j],     idx[i + 1, j], idx[i, j + 1]},
+      {idx[i + 1, j], idx[i + 1, j + 1], idx[i, j + 1]}
+    },
+    {i, 1, 100 - 1},
+    {j, 1, 100 - 1}
+  ],
+  2
+];
+
+cf = ColorData["DarkRainbow"];
+
+genData := Module[
+  {t = AbsoluteTime[], s = 0.12, verts, z, cols},
+
+  verts = Flatten[
+    Table[
+      {
+        i, j,
+        6 Sin[s i + 1.4 t] +
+        5 Sin[s j - 1.1 t] +
+        3 Sin[s (i + j) + 0.6 t] +
+        8 Cos[0.5 s Sqrt[(i - 50.)^2 + (j - 50.)^2] - 1.8 t]
+      },
+      {i, 1., 100.}, {j, 1., 100.}
+    ],
+    1
+  ];
+
+  z = verts[[All, 3]];
+
+  (* fixed range avoids color flicker *)
+  cols = (List@@cf[#]) &/@ Rescale[z, {-18, 18}];
+
+  data = {verts, cols};
+];
+
+genData;
+
+GraphicsComplex[data[[1]]//Offload, Polygon[tris], VertexColors->Offload[data[[2]]]]//Graphics3D 
+
+Do[genData; Pause[1/30.0];, {500}];
+```
+
+Here is another beautiful example:
+
+```wolfram
+(* Grid dimensions *)
+nx = 50; ny = 50;
+
+(* Triangle indices — generated once *)
+indices = Flatten[Table[
+  With[{v = (i - 1) ny + j},
+    {{v, v + 1, v + ny + 1}, {v, v + ny + 1, v + ny}}
+  ],
+  {i, nx - 1}, {j, ny - 1}
+], 2];
+
+(* Generates {vertices, vertexColors} at time t *)
+generateFrame[t_] := Module[{verts, zVals, mn, mx},
+  verts = Flatten[Table[
+    With[{r = Sqrt[x^2 + y^2]},
+      {x, y,
+        Sin[4 r - 2 t] Exp[-0.3 r] +
+        0.3 Sin[2 x - t] Cos[2 y + 0.5 t]}
+    ],
+    {x, Subdivide[-2., 2., nx - 1]},
+    {y, Subdivide[-2., 2., ny - 1]}
+  ], 1];
+
+  zVals = verts[[All, 3]];
+  {mn, mx} = MinMax[zVals];
+
+  {verts, Map[
+    With[{s = Rescale[#[[3]], {mn, mx}]},
+      List@@RGBColor[s, 0.15 + 0.35 s, 1. - 0.8 s]
+    ]&, verts
+  ]}
+];
+
+(* Initialize *)
+complex = generateFrame[0.];
+
+(* Display *)
+Graphics3D[{GraphicsComplex[
+  Offload[complex[[1]]],
+  {Polygon[indices]},
+  VertexColors -> Offload[complex[[2]]]
+], EventHandler[AnimationFrameListener[complex//Offload], Function[Null,
+  complex = generateFrame[AbsoluteTime[]];
+]]}]
+```
+
+### Update everyhting
+Now we consider a more eralistic case, when both indices and vertices / other attributes are changing:
+
+```wolfram
+(* Grid dimensions *)
+nx = 50; ny = 50;
+
+(* All triangle indices *)
+allIndices = Flatten[Table[
+  With[{v = (i - 1) ny + j},
+    {{v, v + 1, v + ny + 1}, {v, v + ny + 1, v + ny}}
+  ],
+  {i, nx - 1}, {j, ny - 1}
+], 2];
+
+xs = Subdivide[-2., 2., nx - 1];
+ys = Subdivide[-2., 2., ny - 1];
+
+(* Precompute centroid XY of each triangle for fast filtering *)
+gridXY = Flatten[Table[{x, y}, {x, xs}, {y, ys}], 1];
+triCX = (gridXY[[#[[1]], 1]] + gridXY[[#[[2]], 1]] + gridXY[[#[[3]], 1]]) / 3. & /@ allIndices;
+triCY = (gridXY[[#[[1]], 2]] + gridXY[[#[[2]], 2]] + gridXY[[#[[3]], 2]]) / 3. & /@ allIndices;
+
+generateFrame[t_] := Module[{verts, zVals, mn, mx, h1, h2, d1, d2, mask},
+  verts = Flatten[Table[
+    With[{r = Sqrt[x^2 + y^2]},
+      {x, y,
+        Sin[4 r - 2 t] Exp[-0.3 r] +
+        0.3 Sin[2 x - t] Cos[2 y + 0.5 t]}
+    ],
+    {x, xs}, {y, ys}
+  ], 1];
+
+  zVals = verts[[All, 3]];
+  {mn, mx} = MinMax[zVals];
+
+  (* Two holes orbiting the center *)
+  h1 = {1.3 Cos[0.8 t], 1.3 Sin[0.8 t]};
+  h2 = {1.3 Cos[0.8 t + Pi], 1.3 Sin[0.8 t + Pi]};
+
+  (* Vectorized distance computation *)
+  d1 = Sqrt[(triCX - h1[[1]])^2 + (triCY - h1[[2]])^2];
+  d2 = Sqrt[(triCX - h2[[1]])^2 + (triCY - h2[[2]])^2];
+
+  (* Keep triangles outside both holes *)
+  mask = UnitStep[d1 - 0.55] UnitStep[d2 - 0.55];
+
+  {Pick[allIndices, mask, 1], {verts,
+   Map[With[{s = Rescale[#[[3]], {mn, mx}]},
+     List @@ RGBColor[s, 0.15 + 0.35 s, 1. - 0.8 s]] &, verts]}}
+];
+
+(* Initialize *)
+{indices, complex} = generateFrame[0.];
+
+(* Display — note Offload on complex[[3]] for dynamic indices *)
+Graphics3D[{GraphicsComplex[
+  Offload[complex[[1]]],
+  {Polygon[Offload[indices]]},
+  VertexColors -> Offload[complex[[2]]],
+  "VertexFence" -> True
+], EventHandler[AnimationFrameListener[complex // Offload], Function[Null,
+  {indices, complex} = generateFrame[AbsoluteTime[]];
+]]}]
+```
+
+#### Use other plot functions as generators
+both. Here is an example with dynamic adapter for `ParametericPlot3D`
 
 *define shapes*
 ```wolfram title="cell 1"
@@ -210,10 +398,6 @@ Module[{
     } // Column // Panel 
 ]
 ```
-
-<Callout type="tip">
-Pack normals, vertices and colors to a single symbol. This will help to avoid data races. `"VertexFence"` indeed eliminates races with indices, but it is helpless against mutations of `GraphicsComplex` attributes.
-</Callout>
 
 ### Non-indexed geometry
 This is a another mode of working with [Non-indexed geometry](#Non-indexed%20geometry) in `Polygon`. The benefit of this approach, you can use fixed length buffer for vertices and limit your drawing range using two arguments of Polygon.

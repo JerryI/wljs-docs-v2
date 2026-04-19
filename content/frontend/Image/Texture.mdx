@@ -29,6 +29,33 @@ Graphics[{
 }]
 ```
 
+Automatic texture mapping:
+
+```wolfram
+Graphics[{
+  Texture[Array[BitXor, {128,128}]//Rescale//Image],
+  GraphicsComplex[RandomReal[{-1,1}, {3,2}], Polygon[{1,2,3}]]
+}, Axes->True]
+```
+
+#### Animation
+`Texture` itself **does not support updates**, however texture coordinates as well as vertices and indices do (see [`GraphicsComplex`](./../Graphics/GraphicsComplex)):
+
+<WLJSWrapper><wljs-editor type="Input" editable="true">{`
+    vert2 = CirclePoints[0.7, 50]//N;
+    f = (*VB[*)(Uncompress["1:eJxTTMoPSmNkYGAo5gASbqV5ySWZ    +XlpTCARFiARnlmSgeD5ZBaXQHjMQCI4taQYpLUAYgBIQXBOfkkmiIepqiSNASTEAyQck4    rzc0pLUkMyc1MRhgfklBZDzUOxMJMBbh4rkABpKi76s/LjJd    +kAntU7RCHgG3NzEOTQjUgkwvFkS75JVitBolB7GdG1f4fCDJByqB   +Q3OeMRg8tifBQXxEOQjkFkgAY3MQG9xBAJbbXNw="])(*,*)   (*"1:eJxTTMoPSmNmYGAo5gUSYZmp5S6pyflFiSX5RcEcQBHP5Py8zKrUlEwBRgaGNCaQQ   hYgEVSakxrMCmT4JCal5oBVJpXmpSfm5JcDACoeE98="*)(*]VB*);
+
+    Graphics[{
+      GraphicsComplex[vert2//Offload, {
+        LightBlue, Polygon[Range[1,50]], Red, Point[Range[1,50]]
+      }],
+      EventHandler[AnimationFrameListener[vert2//Offload], 
+        Function[Null, vert2 = f /@ vert2]
+      ]
+    }, PlotRange->{{-1,1}, {-1,1}}]
+`}</wljs-editor></WLJSWrapper>
+
+
 ### Texture on a 3D Sphere
 
 ```wolfram
@@ -80,6 +107,9 @@ Graphics3D[{
   ]
 }]
 ```
+
+### Animation
+`Texture` itself **does not support updates**, however texture coordinates as well as vertices and indices do. See [`GraphicsComplex`](./../Graphics3D/GraphicsComplex)
 
 ### Plot3D with texture as PlotStyle
 

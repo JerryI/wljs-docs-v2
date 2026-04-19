@@ -695,6 +695,7 @@ Module[{pts},
 ```
 
 ## How to keep and update many objects
+
 In the example above, we tried the ideal cases when one can substitute many data points into a single primitive. In reality, you might need to give them different properties, colors, and so on. For this, we need to address each element by index explicitly and wrap everything with `Offload`:
 
 ```wolfram
@@ -768,6 +769,10 @@ Graphics[
 ```
 
 <LazyAutoplayVideo url={"/dyn_multi2.mp4"}/>
+
+<Callout type="idea">
+We do not recommend to create > 1000 primitives in the context of `Graphics`. It uses SVG by the default, which is heavy. Try [`GraphicsComplex`](./../Graphics/GraphicsComplex) structure instead, which uses GPU acceleration (WebGL) combined with SVG.
+</Callout>
 
 ### Multidimensional arrays
 The idea is the same; however, you have to be careful with the `Part` or `[[]]` operator. Our frontend engine does not fully support all the complex syntax of Wolfram Language. Here is a perfectly valid expression evaluated on Wolfram Kernel:
@@ -1155,7 +1160,8 @@ The resulting animation:
 
 <LazyAutoplayVideo url={"/dyn_shader.mp4"}/>
 
-
+### How to combine raster and vector graphics
+Use [Raster](./../Graphics/Raster) primitive in the context of normal `Graphics` to place any raster data in a format similar to `Image`.
 
 ## Beyond visuals
 

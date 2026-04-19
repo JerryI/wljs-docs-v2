@@ -3,6 +3,7 @@ title: GraphicsComplex
 package: wljs-graphics-d3
 source: https://github.com/JerryI/wljs-graphics-d3/blob/dev/src/kernel.js
 draft: false
+update: true
 ---
 ```wolfram
 GraphicsComplex[{pt1, pt2, ...}, data]
@@ -10,49 +11,188 @@ GraphicsComplex[{pt1, pt2, ...}, data]
 
 represents a graphics complex in which coordinates given as integers `i` in graphics primitives in `data` are taken to be `pti`.
 
-<Callout type="info">
 `GraphicsComplex` provides faster rendering for a complex primitives with many vertices and colors. It looks similar to an interfaces of OpenGL or other graphics framework, where buffers with coordinates are provided separately from the object instances.
-</Callout>
 
-<Callout type="warn">
-Limited functionality
-</Callout>
+See also [a variant for 3D graphics](./../Graphics3D/GraphicsComplex).
 
 ## Supported primitives
+
 ### `Line`
+Supported without HW acceleration. For example:
 
 ```wolfram
-GraphicsComplex[{{0,0}, {1,0}, {1,1}}, Line[{{1,2,3}}]] // Graphics
+GraphicsComplex[{{0,0}, {1,0}, {1,1}}, Line[{1,2,3}]] // Graphics
 ```
 
-vertex colors are not supported
+`VertexColors` are not supported.
 
 ### `Polygon`
-<Callout type="note">
-Uses WebGL graphics acceleration for rendering
-</Callout>
+Here it uses WebGL graphics acceleration for rendering:
 
 ```wolfram
 GraphicsComplex[{{0,0}, {1,0}, {1,1}}, Polygon[{1,2,3}], "VertexColors"->{{1,1,0}, {0,1,1}, {0,1,1}}] // Graphics
 ```
 
 ### `Point`
-<Callout type="note">
-Uses WebGL graphics acceleration for rendering
-</Callout>
+Here it uses WebGL graphics acceleration for rendering:
 
 ```wolfram
-GraphicsComplex[{{0,0}, {1,0}, {1,1}}, Point[{{1,2,3}}]] // Graphics
+GraphicsComplex[{{0,0}, {1,0}, {1,1}}, Point[{1,2,3}]] // Graphics
 ```
 
 or with colors
 
 ```wolfram
-GraphicsComplex[{{0,0}, {1,0}, {1,1}}, Point[{{1,2,3}}], "VertexColors"->{{1,0,0}, {0,1,0}, {0,0,1}}] // Graphics
+GraphicsComplex[{{0,0}, {1,0}, {1,1}}, Point[{1,2,3}], "VertexColors"->{{1,0,0}, {0,1,0}, {0,0,1}}] // Graphics
 ```
 
 ### `Arrow`
-Supported
+Supported without HW acceleration
 
 ### `Disk`
-Supported
+Supported without HW acceleration
+
+## Options
+
+### `VertexColors`
+Defines sets of colors used for shading vertices:
+
+```wolfram
+v = {{1, 0}, {1, 1}, {0, 0}};
+Graphics[{GraphicsComplex[v, Polygon[{1,2,3}], VertexColors -> {Red, Blue, Green}]}]
+```
+
+<Callout type="info">
+We recommend to provide `VertexColors` as a plain list which should have the following form
+```wolfram
+"VertexColors" ->{{r1,g1,b1}, {r2,g2,b2}, ...}
+```
+
+This will avoid high memory and CPU load on many polygons count.
+
+</Callout>
+
+
+### `VertexTextureCoordinates`
+Defines sets of UV coordinates used for mapping [`Texture`](./../Image/Texture).
+
+```wolfram
+img = ExampleData[{"TestImage", "Lena"}];
+Graphics[{
+  Texture[img],
+  GraphicsComplex[
+    {{-1, -1}, {1, -1}, 0.2 {1, 1}, {-1, 1}},
+    Polygon[{1, 2, 3, 4}],
+    VertexTextureCoordinates -> {{0, 1}, {0, 0}, {1, 0}, {1, 1}}
+  ]
+}]
+```
+
+### `"VertexFence"`
+Defaults to `False`. When enabled, it sets an update barrier for all dependent primitives, ensuring they update their data **only after** the vertex data has been updated. 
+
+<Callout type="tip">
+This helps prevent desynchronization issues where the vertex buffer updates lag behind polygon or line indices (or vice versa), which can lead to visual artifacts and WebGL buffer errors.
+</Callout>
+
+<Callout type="tip">
+Pack vertices and colors to a single symbol. This will help to avoid data racing. `"VertexFence"` indeed eliminates races with indices, but it is helpless against the mutations of `GraphicsComplex` attributes.
+</Callout>
+
+## How to update things
+
+### Fixed indexes, variable vertices
+Use [Offload](../Interpreter/Offload) wrapper and [AnimationFrameListener](./AnimationFrameListener):
+
+```wolfram
+vert2 = CirclePoints[0.7, 50]//N;
+f = Uncompress["1:eJxTTMoPSmNkYGAo5gASbqV5ySWZ+XlpTCARFiARnlmSgeD5ZBaXQHjMQCI4taQYpLUAYgBIQXBOfkkmiIepqiSNASTEAyQck4rzc0pLUkMyc1MRhgfklBZDzUOxMJMBbh4rkABpKi76s/LjJd+kAntU7RCHgG3NzEOTQjUgkwvFkS75JVitBolB7GdG1f4fCDJByqB+Q3OeMRg8tifBQXxEOQjkFkgAY3MQG9xBAJbbXNw="];
+  
+Graphics[{
+  GraphicsComplex[vert2//Offload, {
+    LightBlue, Polygon[Range[1,50]], Red, Point[Range[1,50]]
+  }],
+  EventHandler[AnimationFrameListener[vert2//Offload], 
+    Function[Null, vert2 = f /@ vert2]
+  ]
+}, PlotRange->{{-1,1}, {-1,1}}]
+```
+
+### Update everyhting
+Here is comprehensive example:
+
+```wolfram
+(* Grid dimensions *)
+nx = 50; ny = 50;
+
+xs = Subdivide[-1., 1., nx - 1];
+ys = Subdivide[-1., 1., ny - 1];
+
+allIndices = Flatten[Table[
+  With[{v = (i - 1) ny + j},
+    {{v, v + 1, v + ny + 1}, {v, v + ny + 1, v + ny}}
+  ],
+  {i, nx - 1}, {j, ny - 1}
+], 2];
+
+restXY = N @ Flatten[Table[{x, y}, {x, xs}, {y, ys}], 1];
+nVerts = Length[restXY];
+restX = restXY[[All, 1]];
+restY = restXY[[All, 2]];
+
+(* Pre-extract per-triangle vertex columns *)
+tri1 = allIndices[[All, 1]];
+tri2 = allIndices[[All, 2]];
+tri3 = allIndices[[All, 3]];
+
+generateFrame2D[t_] := Module[
+  {vx, vy, holes, holeR = 0.22, insideAny, 
+   dx, dy, dist, inH, safe, triKeep, verts},
+
+  (* Ripple distortion *)
+  vx = restX + 0.04 Sin[6 restY - 3 t];
+  vy = restY + 0.04 Sin[6 restX + 2 t];
+
+  holes = {{0.55 Cos[t], 0.55 Sin[t]},
+           {0.55 Cos[t + Pi], 0.55 Sin[t + Pi]}};
+
+  insideAny = ConstantArray[0, nVerts];
+
+  Do[
+    dx = vx - h[[1]];
+    dy = vy - h[[2]];
+    dist = Sqrt[dx^2 + dy^2];
+    inH = UnitStep[holeR - dist];
+    insideAny = Clip[insideAny + inH, {0, 1}];
+
+    (* Project inside vertices onto the hole boundary circle *)
+    safe = dist + 0.001; (* avoid division by zero *)
+    vx = vx (1 - inH) + inH (h[[1]] + holeR dx / safe);
+    vy = vy (1 - inH) + inH (h[[2]] + holeR dy / safe);
+  , {h, holes}];
+
+  (* Only remove triangles where ALL 3 vertices are inside *)
+  triKeep = 1 - insideAny[[tri1]] insideAny[[tri2]] insideAny[[tri3]];
+
+  verts = Transpose[{vx, vy}];
+
+  {Pick[allIndices, triKeep, 1], {verts,
+   Map[With[{s = Rescale[Sqrt[#[[1]]^2 + #[[2]]^2], {0, 1.4}]},
+     List @@ RGBColor[Hue[Mod[s + 0.2 t, 1.], 0.8, 0.95]]] &, verts]}}
+];
+
+{indices, complex2D} = generateFrame2D[0.];
+
+Graphics[{
+  EdgeForm[],
+  GraphicsComplex[
+    Offload[complex2D[[1]]],
+    {Polygon[Offload[indices]]},
+    VertexColors -> Offload[complex2D[[2]]],
+    "VertexFence"->True
+  ],
+  EventHandler[AnimationFrameListener[complex2D // Offload],
+    Function[Null, {indices, complex2D} = generateFrame2D[AbsoluteTime[]]]
+  ]
+}, PlotRange -> {{-1.1, 1.1}, {-1.1, 1.1}}]
+```
