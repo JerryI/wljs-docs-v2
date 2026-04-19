@@ -118,6 +118,38 @@ Graphics[{
 }, PlotRange->{{-1,1}, {-1,1}}]
 ```
 
+Here is another beautiful example with 10000 points:
+
+```wolfram
+ClearAll[handler, n, r, f, s, x, p , q]
+
+n = 10000/4; 
+r := RandomInteger[{1, n}];
+f := (#/(.01 + Sqrt[#.#])) & /@ (x[[#]] - x) &;
+s := With[{r1 = r}, p[[r1]] = r; q[[r1]] = r];
+x = RandomReal[{-1, 1}, {n, 2}];
+ox = x;
+{p, q} = RandomInteger[{1, n}, {2, n}];
+    x = 0.995 x + 0.02 f[p] - 0.01 f[q];
+    colors = MapThread[(List@@(RGBColor[Hue[Norm[#1-#2] 20.0]]))&, {x,ox}];    
+    ox = x;
+    If[r < 100, s];
+    data = {x,colors};
+```
+
+```wolfram
+Graphics[{
+  PointSize[0.007], GraphicsComplex[data[[1]]//Offload, Point[Range[n]], VertexColors->Offload[data[[2]]]],
+  EventHandler[AnimationFrameListener[data // Offload], With[{},
+    x = 0.995 x + 0.02 f[p] - 0.01 f[q];
+    colors = MapThread[(List@@(RGBColor[Hue[Norm[#1-#2] 20.0]]))&, {x,ox}];    
+    ox = x;
+    If[r < 100, s];
+    data = {x,colors};
+  ]&],
+}, PlotRange -> {{-2,2}, {-2,2}}, TransitionType->None, Background->Black]
+```
+
 ### Update everyhting
 Here is comprehensive example:
 
