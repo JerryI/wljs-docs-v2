@@ -500,35 +500,6 @@ wljs .
 wljs "full path..."
 ```
 
-## Execute a command
-```bash
-wljs -c [command] [args...]
-```
-
-This pattern sends a command to all extensions used by WLJS Notebook. The list of known commands follows
-
-### share
-It allows to share notebooks programmatically in different forms
-
-*Export notebook to HTML*
-
-```bash
-wljs -c share -i "path to wln notebook" -o "path to output file" -t html
-```
-
-*Export notebook to HTML using the same path*
-
-```bash
-wljs -c share -i "path to wln notebook" -t html
-```
-
-List of supported output types:
-- `html` 
-- `nb` 
-- `md` 
-- `mdx` 
-
-
 ## Version of CLI
 ```bash
 wljs -v
