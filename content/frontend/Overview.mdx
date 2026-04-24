@@ -272,6 +272,7 @@ import cellProp from './../cell-prop.png'
 - __Project to a window__ - evaluates input cell in a new window; it can be used for projecting slides, or control sliders
 - __Make initialization cell__ - marks input to be evaluated at the startup
 - __Copy group__ - copies a group as a special compressed string; paste it to an empty input cell 
+- __Copy group as text__ - copies a group as plain text (GIT and LLM friendly)
 - __Split to new notebook__ - cuts all cells below and inserts to a new notebook
 - __Insert cell before__
 - __Hide / Show__ - hide or show input cell of the group; it can be used for markdown text cell
@@ -406,6 +407,13 @@ To assist with writing basic mathematical expressions, we provide special keyboa
 </div>
 
 </Card>
+
+### File uploading
+- Drag and drop to **a sidebar** to upload a file
+- Drag and drop to **Wolfram input cell** to upload and import data
+- Drag and drop to **Markdown input cell** to upload and import as image
+- Use **command palette upload tool** to import `ASCII`, `CSV`, or `TSV` data
+- Drag **from a sidebar** and drop to a desktop any files
 
 ### Command Palette
 Use <kbd>Ctrl-P</kbd> or <kbd>⌘-P</kbd> to access useful tools like matrix builders, color pickers, and more:
