@@ -414,3 +414,98 @@ Of course, we can't just remove triangles from the given positions. In this part
 In addition, we forced `NumericArray` on the generated data, which gives us a 20-30% boost.
 
 We hope you can find many great applications for this primitive we implemented. See you in the next part, where we will explore the 3D version of it.
+
+## Bonus: Ideal Gas Simulation
+*The rest is for the dessert*
+
+> Inspired by Jon McLoone (2007) Simulation of a Simple Gas Pressure Model
+
+Here is a simple two-dimensional toy model of the ideal gas. A collection of particles moves inside a square container, bounces elastically from the walls, and the simulation counts how often those wall collisions happen. The model is deliberately simple: particles do not collide with one another, and the temperature is represented by the step size of their motion (kinetic energy). All of this just to prove:
+
+$$
+P~V = n~R~T
+$$
+
+where $P$ is a pressure, $T$ is a temperature and $V$ is a volume (or "size^2" of a box). The dashed red line in the plot shows this simple reference scaling. The numerical factor used in the code is a calibration constant for the chosen simulation units:
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`
+		size = 0.7;
+		molecules = 500;
+		history = Table[{-50 + i, 0.0}, {i, 0, 50}];
+		temperature = 0.05;
+		avgs = 0;
+		theory = 0.634 molecules temperature / (*SpB[*)Power[size(*|*),(*|*)2](*]SpB*);
+
+		EventHandler[
+		  InputRange[0.01,0.1,0.01,0.05, "Label"->"T"], 
+		  Function[s, temperature=s; theory = 0.634 molecules temperature / (*SpB[*)Power[size(*|*),(*|*)2](*]SpB*)]
+		]
+		EventHandler[
+		  InputRange[0.4,2.0,0.1,size, "Label"->"Size"], 
+		  Function[s, size=s; theory = 0.634 molecules temperature / (*SpB[*)Power[size(*|*),(*|*)2](*]SpB*)]
+		]
+
+		Row[{Module[{
+		  contents = {
+		    RandomReal[{-size,size},{molecules,2}],
+		    {Cos[#1],Sin[#1]}& /@ RandomReal[{0,2 \[Pi]}, molecules], 
+		    Table[{0.5,0.5,1.}, {molecules}]
+		  } // Transpose, 
+		  data = {Table[{0,0,0}, {molecules}], Table[{0,0,0}, {molecules}]}//N, 
+		  indices = Range[molecules], collision = 0
+		},
+
+
+		    Graphics[
+		        {
+		            {EdgeForm[Black], GrayLevel[0.8], Rectangle[{-size, -size}//Offload, {size, size}//Offload]},
+		            GraphicsComplex[Offload[data[[1]]], {
+		                PointSize[0.01], Point[Offload[indices]]
+		              }, VertexColors->Offload[data[[2]]]
+		            ],
+		            EventHandler[
+		                AnimationFrameListener[Offload[data]],
+		                Function[Null,
+
+
+		                    collision = 0;
+		                    contents = ({#1[[1]] + #1[[2]] temperature, #1[[2]], 0.1 {0.5,1.0,1.0} + 0.90 #1[[3]]}&) /@ contents;
+		                    contents = (
+		                        If[Abs[#1[[1, 2]]] > size,
+		                            collision++;
+		                            {{#1[[1, 1]], 2 size Sign[#1[[1, 2]]] - #1[[1, 2]]}, {1, -1} #1[[2]], {1.,0.,1.}}
+		                            ,
+		                            #1
+		                        ]&
+		                    ) /@ contents;
+
+		                    contents = (
+		                        If[Abs[#1[[1, 1]]] > size,
+		                            collision++;
+		                            {{2 size Sign[#1[[1, 1]]] - #1[[1, 1]], #1[[1, 2]]}, {-1, 1} #1[[2]], {1.,0.,1.}}
+		                            ,
+		                            #1
+		                        ]&
+		                    ) /@ contents;
+
+		                    data = {First /@ contents, Last /@ contents};
+
+		                    history[[1,2]] += collision/size;
+
+		                    If[avgs > 20.0,  
+		                      avgs=0;
+		                      history[[1,2]] /= 20.0;
+		                      history = Transpose[{history[[All,1]], RotateLeft[history[[All,2]], 1]}];
+		                    ];
+
+		                    avgs++;
+		                ]
+		            ]
+		        }, PlotRange->{{-1,1}, {-1,1}}
+		    ]
+		], Graphics[{Line[history//Offload], Red, Dashed, Line[{{-50, theory}, {0, theory}}//Offload]}, PlotRange->{{-50,0}, {0,100.0}}, TransitionType->None, ImageSize->300,Frame->True, FrameLabel->{"time", "P"}, "Controls"->False]}]
+`}</wljs-editor></WLJSWrapper>
+
+We heavily rely here on `GraphicsComplex` and tint bounced particles with a red color, that fades out with time. The demontration is on the video below:
+
+<LazyVideo url="./IdealGas.mp4"/>
