@@ -660,7 +660,7 @@ Your template will now appear in the Command Palette under "New from Template".
 </Steps>
 
 
-## Global Styling
+## Application styles
 
 You can apply custom CSS styles to all notebooks by adding them via **Settings → Custom CSS**. These styles are injected into the document head and apply globally.
 
@@ -685,6 +685,10 @@ import { Settings, Dot } from 'lucide-react';
         <div class="flex flex-row items-center text-sm gap-x-2"> Restart app</div>
     </div>       
 </div>
+
+<Callout type="idea">
+Play around with styles using HTML cells, before injecting them globally
+</Callout>
 
 The styles will be applied to all windows automatically.
 
@@ -735,6 +739,7 @@ Wolfram Language input cells have an empty class field.
 
 | Selector | Description |
 |----------|-------------|
+| `.markdown` | All content in textual cells |
 | `.cout.markdown` | Markdown output cells |
 | `.markdown h1` | Heading level 1 in markdown |
 | `.markdown h2` | Heading level 2 in markdown |
@@ -780,9 +785,9 @@ The vertical line on the left side of input cells:
 }
 ```
 
-### Editor color variables
+### Fonts and colors
 
-The following CSS variables control syntax highlighting and UI colors. Override them in `:root`:
+The following CSS variables control syntax highlighting, UI colors. Fonts can be set there as well. Override them in `:root`:
 
 ```css
 :root {
@@ -803,11 +808,21 @@ The following CSS variables control syntax highlighting and UI colors. Override 
   --editor-key-invalid: #f00;
   --editor-outline: #696969;
   
-  /* Typography */
+  /* Typography UI */
   font-size: medium;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 
     'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 
     'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+/* Typography code editor */
+.cm-line {
+  font-family: 'consolas' !important;
+}
+
+/* Typography textual cells */
+.markdown {
+  font-family: 'cursive' !important;
 }
 ```
 
