@@ -4,21 +4,16 @@ title: TeXView
 
 ```wolfram
 TeXView[expr_String]
-```
-
-renders `expr` as LaTeX expression to the screen
-
-```wolfram
 TeXView[expr_]
 ```
 
-converts arbitrary expression `expr` using [TeXForm](./../Formatting/TeXForm) and then renders it.
+renders `expr` as LaTeX expression to the screen. Use [TeXForm](./../Formatting/TeXForm) arbitrary expression to LaTeX string.
 
 
 For example:
 
 ```wolfram
-TeXView[1/2]
+TeXView[1/2 // TeXForm]
 ```
 
 or directly using LaTeX:
@@ -27,7 +22,42 @@ or directly using LaTeX:
 TeXView["\\frac{1}{2}"]
 ```
 
-It works on slides, markdown and in a normal Wolfram output cells.
+It works on slides, markdown and in a normal Wolfram output cells. You can embed it too:
+
+```wolfram
+Plot[x, {x,0,1}, Epilog->{
+  Inset[TeXView[TeXForm[y==x], ImageSize->Medium], {0.5`,0.5`}]
+}]
+```
+
+<Callout type="warning">
+`TeXForm` is a blocking function, avoid using it inside `Button`-like, `Manipulate`, timers, async functions. Use non-blocking variant [TexFormAsync](./../Formatting/TeXFormAsync).
+</Callout>
+
+## Options
+
+### `ImageSize`
+Predefines the container size for the expression
+
+## Live updates
+It supports [Offload](./../Interpreter/Offload) method. The expressions can be rerendered of the underlying data changes:
+
+```wolfram
+str = TeXForm[Integrate[f[x], x]];
+TeXView[str//Offload]
+```
+
+then
+
+```wolfram
+str = TeXForm[Integrate[f[x] x, x]];
+```
+
+or using a buttom:
+
+```wolfram
+Button["Generate", Then[TeXFormAsync[Series[Sin[x] Cos[x], {x, 0, RandomInteger[{1, 30}]}]], (str = #1)&]]
+```
 
 ## Output forms
 - [StandardForm](./../Formatting/StandardForm)

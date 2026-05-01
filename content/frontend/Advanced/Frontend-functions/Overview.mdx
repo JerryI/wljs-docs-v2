@@ -636,7 +636,7 @@ To address this issue, [frontend objects](./../../Frontend-Objects/CreateFrontEn
 
 - Compress an expression into a reference
 - Upload original data to notebook storage and sync with the frontend on-demand in the form of `ExpressionJSON`
-- Upon evaluation, expand the reference back to the Wolfram Expression
+- Upon evaluation, can expand the reference back to the Wolfram Expression
 - Automatically garbage collect if not used or referenced anywhere
 
 </Card>
@@ -651,7 +651,7 @@ SomeSymbol /: MakeBoxes[SomeSymbol[arg1_, arg2_], StandardForm] := With[{
 ]
 ```
 
-The example below is also valid if your definitions match on the Wolfram Kernel and frontend:
+The example below is also valid if **your definitions match** on the Wolfram Kernel and frontend. *But we generally recommend to separate display function and public symbols*
 
 ```wolfram
 SomeSymbol /: MakeBoxes[s_SomeSymbol, StandardForm] := With[{
@@ -660,6 +660,37 @@ SomeSymbol /: MakeBoxes[s_SomeSymbol, StandardForm] := With[{
   ViewBox[..., display]
 ]
 ```
+
+If you want to provide **the same expression** for evaluation, convert the output object to `StandardForm` and supply `ViewBox` with it:
+
+```wolfram
+SomeSymbol /: MakeBoxes[s_SomeSymbol, StandardForm] := With[{
+  display = CreateFrontEndObject[s]
+}, {
+  out = MakeBoxes[display, StandardForm]
+},
+  ViewBox[out, display]
+]
+```
+
+Or if you want to compress only the part of expression and manually construct the rest:
+
+```wolfram
+SomeSymbol /: MakeBoxes[SomeSymbol[arg1_, arg2_], StandardForm] := With[{
+  fe1 = CreateFrontEndObject[arg1]
+}, {
+  out1 = MakeBoxes[fe1, StandardForm],
+  out2 = ToString[arg2, InputForm],
+  name = ToString[SomeSymbol, InputForm]
+},
+  ViewBox[RowBow[{name, "[", out1, ",", out2, "]"}], displaySymbol[fe1, arg2]]
+]
+```
+
+
+<Callout>
+`ViewBox` also accepts `RowBox` as the first argument allowing you manually construct "invisible" part of the expression
+</Callout>
 
 This method is widely used for entire `Graphics`, `Image`, `Graphics3D` expressions and others when their serialized sizes exceed a certain threshold.
 

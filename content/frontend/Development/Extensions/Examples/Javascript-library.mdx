@@ -102,21 +102,13 @@ ApexCharts::usage = "ApexCharts[a_Association] constructor"
 Begin["`Private`"]
 
 
+
 End[]
 EndPackage[]
 ```
 
-We can put a few checks to ensure that input is an association
 
-```wolfram
-nonAssocHeadQ[_] = True
-nonAssocHeadQ[_Association] = False
-
-ApexCharts::notassoc = "Input is not an association"
-ApexCharts[_?nonAssocHeadQ ] := (Message[ApexCharts::notassoc]; $Failed)
-```
-
-Now we can think about `ApexCharts` as if it was a new entity, and the interpretation of this entity will be our graphs. To draw actual graphs instead of a symbolic representation we need to define an output form. For that [ViewBox](./../../../Formatting/Low-level/ViewBox) comes in hand, which is provided in ``CoffeeLiqueur`Extensions`Boxes` `` context
+Now we can think about `ApexCharts` as if it was a new entity, and the interpretation of this entity will be our graphs. To draw actual graphs instead of a symbolic representation we need to define an output form. For that [ViewBox](./../../../Formatting/Low-level/ViewBox) comes in hand, which is provided in ``CoffeeLiqueur`Extensions`Boxes``` context. We define an internal symbol, that will be used for rendering:
 
 ```wolfram
 BeginPackage["CoffeeLiqueur`Extensions`ApexCharts`", {
@@ -125,30 +117,42 @@ BeginPackage["CoffeeLiqueur`Extensions`ApexCharts`", {
 
 (* Public context *)
 
-...
+ApexCharts::usage = "ApexCharts[a_Association] constructor"
+
+Begin["`Private`"]
 
 (* Output forms *)
 
-ApexCharts /: MakeBoxes[a: ApexCharts[_Association], StandardForm ] := With[{},
-    ViewBox[a, a]
+iApexCharts;
+
+ApexCharts /: MakeBoxes[a: ApexCharts[data_Association], StandardForm ] := With[{},
+    ViewBox[a, iApexCharts[data]]
 ]
+
+End[]
+EndPackage[]
 ```
 
-First `a` will be an underlying expression (behind the graph), while second `a` is going to be rendered instead of it. However, if you try to evaluate this with defined output form, you get a similar error
+First `a` will be an underlying expression (behind the graph), while `iApexCharts` is going to be rendered instead of it. However, if you try to evaluate this with defined output form, you get a similar error
 
 ```
 BROKEN BOX
 ```
 
-`ViewBox` tries to evaluate a non-existing frontend symbol `ApexCharts`.
+`ViewBox` tries to evaluate a non-existing frontend symbol `iApexCharts` or more specifically ``CoffeeLiqueur`Extensions`ApexCharts`Private`iApexCharts``.
+
+<Callout type="tip">
+As a rule: do not expose internal symbols in packages to the public context
+</Callout>
+
 
 ## Javascript Library
-Now we need to define `ApexCharts` symbol on the frontend. The idea is simple: take the provided data and using Apex API render a graph on the given DOM element
+Now we need to define `iApexCharts` symbol on the frontend. The idea is simple: take the provided data and using Apex API render a graph on the given DOM element. This DOM element will be provided by `ViewBox` behind the scenes
 
 ```js title="src/kernel.js"
 let ApexCharts;
 
-core.ApexCharts = async (args, env) => {
+core['CoffeeLiqueur`Extensions`ApexCharts`Private`iApexCharts'] = async (args, env) => {
     if (!ApexCharts) ApexCharts = (await import('apexcharts')).default; //lazy loading
 
     const options = await interpretate(args[0], env);
@@ -182,7 +186,7 @@ However, after several evaluation dead instances of `ApexCharts` will pile up as
 ```js title="src/kernel.js"
 let ApexCharts;
 
-core.ApexCharts = async (args, env) => {
+const apex = async (args, env) => {
     if (!ApexCharts) ApexCharts = (await import('apexcharts')).default; //lazy loading
 
     const options = await interpretate(args[0], env);
@@ -192,11 +196,13 @@ core.ApexCharts = async (args, env) => {
     env.local.chart = chart;
 }
 
-core.ApexCharts.destroy = (args, env) => {
+apex.destroy = (args, env) => {
     env.local.chart.destroy();
 } 
 
-core.ApexCharts.virtual = true
+apex.virtual = true
+
+core['CoffeeLiqueur`Extensions`ApexCharts`Private`iApexCharts']  = apex;
 ```
 
 Now we need to bundle this
@@ -208,7 +214,8 @@ npm run build
 
 
 ## Polishing
-We might do a few more tweaks. If our `ApexCharts` expression becomes too big, it might slow down the editor. For that reason we use [Frontend Objects](./../../../Frontend-Objects/CreateFrontEndObject)
+
+We might make a few more tweaks. If the `ApexCharts` expression becomes too large, it can slow down the editor. For this reason, we use [Frontend Objects](./../../../Frontend-Objects/CreateFrontEndObject), which allow the data to be stored separately as a JSON blob. From the kernel’s perspective, there is no visible difference: synchronization, packing, and unpacking are handled automatically.
 
 ```wolfram
 BeginPackage["CoffeeLiqueur`Extensions`ApexCharts`", {
@@ -220,14 +227,31 @@ BeginPackage["CoffeeLiqueur`Extensions`ApexCharts`", {
 ```
 
 ```wolfram
-ApexCharts /: MakeBoxes[a: ApexCharts[_Association], form: StandardForm ] := With[{o = CreateFrontEndObject[a]},
-    MakeBoxes[o, form]
-] /; ByteCount[a] > 1024*4 
+ApexCharts /: MakeBoxes[a: ApexCharts[data_Association], form: StandardForm] := With[{
+    o = CreateFrontEndObject[data]
+}, {
+    odata = MakeBoxes[o, form],
+    name = ToString[ApexCharts, InputForm]
+},
+    ViewBox[RowBow[{name, "[", odata, "]"}], iApexCharts[o]]
+] /; ByteCount[a] > 1024*4
 ```
 
-Frontend objects has a special predefined `StandardForm` (and `WLXForm`), where it uses a reference to a Wolfram Expression stored separately.
+Here, we manually construct the inner expression using low-level boxes. Note that we convert `ApexCharts` to a string instead of writing `"ApexCharts"` directly. This is required when the package is not imported into the global context, because the full symbol path may be used instead, for example `CoffeeLiqueur`Extensions`ApexCharts`ApexCharts`.
 
-Another improvement can be `WLXForm`, if we decide to use those charts on slides or markdown cells:
+In this case, `odata` is a [FrontEndRef](./../../../Frontend-Objects/FrontEndRef), which expands to the original association `data` during the next evaluation. The variable `o` is a [FrontEndExecutable](./../../../Frontend-Objects/FrontEndExecutable): it is a reference to the same compressed expression `data`, but it can only be evaluated on the frontend. It is picked up by the `iApexCharts` function and rendered into the DOM element that covers the visible `ApexCharts` expression.
+
+This complexity gives us full control over what is visible and what remains underneath. We want to avoid either layer leaking into the other. As a result, if you copy the raw expression from the output cell into a plain text editor, it may look like this:
+
+```text
+(*VB[*)(ApexCharts[FrontEndRef["someUUID"]])(*,*)(*"1:eJxTTMo....=="*)(*]VB*)
+```
+
+Here, the comment containing `1:eJxTTMo` stores the encoded form of `iApexCharts[FrontEndExecutable["someUUID"]]`. If you evaluate this cell again, `FrontEndRef[]` automatically expands back into the original data association, and the whole process repeats.
+
+This makes the expression copyable, valid for reevaluation and mutation, and compact in the editor. Frontend objects are stored in the notebook, so they are not lost if the kernel dies.
+
+Another improvement can be `WLXForm`, if we decide to use those charts on slides or markdown cells. For all WLX-like cells we only need to pass a frontend object instance:
 
 ```wolfram
 ApexCharts /: MakeBoxes[a: ApexCharts[_Association], form: WLXForm ] := With[{o = CreateFrontEndObject[a]},

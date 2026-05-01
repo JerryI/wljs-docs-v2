@@ -89,8 +89,10 @@ If the inner data is large, to avoid editor lags, please compress expressions in
 ```wolfram
 MyJSPlot /: MakeBoxes[m: MyJSPlot[args__], StandardForm] := With[{
 	b = CreateFrontEndObject[m]
+}, {
+  o = MakeBoxes[b, StandardForm]
 },
-	MakeBoxes[b, StandardForm]
+	ViewBox[o, b]
 ]
 ```
 

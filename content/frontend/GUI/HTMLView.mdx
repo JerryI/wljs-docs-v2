@@ -55,6 +55,13 @@ a string, which sets CSS style attribute
 ### `"Class"`
 a string, which sets CSS class attribute
 
+## Images
+If you wrap any `Image` with `HTMLView`, it will be automatically serialized to a file and embedded as native img element. This helps if you have many rasterized images in the notebook:
+
+```wolfram
+ExampleData[{"TestImage", "Lena"}] // HTMLView 
+```
+
 ## Template processor
 There is built-in tool for post-processing HTML elements before embedding them into DOM. It can be included to the pipeline using `Prolog` option
 

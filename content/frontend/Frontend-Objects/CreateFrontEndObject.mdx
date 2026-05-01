@@ -10,19 +10,17 @@ package: wljs-editor
 creates a reference to the inner expression and stores it into frontend objects storage  shared with Kernel and frontend
 
 ```wolfram
-CreateFrontEndObject[expr_, uid_String | Nothing] _FrontEndExecutable
+CreateFrontEndObject[expr_]
+CreateFrontEndObject[expr_, uid_String]
 ```
 
-Returns [`FrontEndExecutable`](../Frontend-Objects/FrontEndExecutable) object with a given `uid` or generated.
+Returns [`FrontEndExecutable`](../Frontend-Objects/FrontEndExecutable) expression with a given `uid` or generated.
 
-This is a fundamental component  for expressions like `Graphics` and other interactive elements, which are too large to be stored inline in the editor, but also needed to be fully copyable and evaluatable.
+Frontend obejcts are used for storing things. This is a fundamental component  for expressions like `Graphics`, `Graphics3D`, `Image`, `Audio` and other interactive elements, which are too large to be kept inline in the editor, but also needed to be fully copyable and evaluatable.
 
-<Callout type="tip">
-If you do not want to apply [CreateFrontEndObject](../Frontend-Objects/CreateFrontEndObject) on your symbol manually, consider to define [MakeBoxes](../Formatting/MakeBoxes) for [StandardForm](../Formatting/StandardForm). Then it can be applied automatically once it goes to the output cell.
+<Callout>
+Frontend objects are stored in the notebook, i.e. they will not be lost if Wolfram Kernel dies.
 </Callout>
-
-## Applications
-It is mostly used for storing *heavy* expressions to be executed as [WLJS Functions](frontend/Advanced/Frontend%20interpretation/WLJS%20Functions) such as [Graphics](../Graphics/Graphics), [Graphics3D](../Graphics3D/Graphics3D), [Audio](../Sound/Audio) and etc.
 
 ## Exporting
 Created stored objects are fully portable and can be automatically exported to any available formats.

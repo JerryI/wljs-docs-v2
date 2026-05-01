@@ -54,6 +54,13 @@ EventHandler[Image[...], {
 }]
 ```
 
+### `HTMLView`
+If you wrap any `Image` with [HTMLView](./../GUI/HTMLView), it will be automatically serialized to a file and embedded as native img element. This helps if you have many rasterized images in the notebook:
+
+```wolfram
+ExampleData[{"TestImage", "Lena"}] // HTMLView 
+```
+
 ## Examples
 
 ### Direct

@@ -1,0 +1,74 @@
+---
+title: InputColor
+env:
+  - Wolfram Kernel
+origin: https://github.com/JerryI/wljs-inputs
+
+package: wljs-inputs
+source: https://github.com/JerryI/wljs-inputs/blob/dev/src/Kernel.wl
+---
+```wolfram
+InputColor[initial_RGBColor, opts___] _EventObject
+InputColor[{r,g,b}, opts___] 
+InputColor[color_Hue, opts___] 
+```
+
+represents a UI element - color picker
+
+## Event generation
+Emits picked color in a form `{r,g,b}` or `{r,g,b,a}`.
+
+## Options
+
+### `"Label"`
+Text for a label
+
+### `"Description"`
+Text description
+
+### `"Style"`
+Applies CSS styles to the element
+
+### `"Class"`
+Applies CSS classes to the element
+
+### `"LabelStyle"`
+Applies CSS classes to the label
+
+### `"LabelClass"`
+Applies CSS classes to the label
+
+### `"ShowAlpha"`
+Allows to pick alpha value with a separate slider. By the default is `False`.
+
+### `"Topic"`
+The default topic/pattern is `"Default"`. Specifies an event-pattern used on emitting (see more on [`EventFire`](../Misc/Events) patterns topics)
+
+## Application
+A basic color picker element:
+
+```wolfram
+Module[{col = {1,0,0}},
+  {
+    EventHandler[InputColor[col], (col=#)&],
+    Graphics[{
+      RGBColor[col//Offload], 
+      Triangle[],
+      RGBColor[({1,1,1}-col)//Offload],
+      Disk[{0,0},0.2]
+    }]
+  } // Column 
+]
+```
+
+## Chaining events
+One can reuse another event
+
+```wolfram
+InputCheckbox[event_EventObject, rest__]
+```
+
+
+## Supported output forms
+- [StandardForm](../Formatting/StandardForm)
+- [WLXForm](../Formatting/WLXForm)

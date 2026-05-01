@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { useEffect, useRef, useState } from 'react';
 import { Card, Cards } from 'fumadocs-ui/components/card';
-import { Code2, Coffee, Lightbulb, Zap, Download, Package, Terminal } from 'lucide-react';
+import { Code2, Coffee, Lightbulb, Zap, Download, Package, Terminal, Bot, GitBranch } from 'lucide-react';
 import { AnimationController, type AnimationConfig } from './AnimationController';
 
 
@@ -430,6 +430,13 @@ export default function HomePage() {
           />
 
           <Card 
+            icon={<GitBranch />}
+            title="Git-friendly notebook format"
+            description="A minimal, plain-text notebook format that is easy for people, machines, and LLMs to read, parse, diff, and version with Git."
+            href="/frontend/Overview#format"
+          />  
+
+          <Card 
             icon={<Download />}
             title="Super portable"
             description="Export and share your notebook as a mini app or embeddable .html or .mdx file — plots stay interactive, and sliders remain draggable"
@@ -449,6 +456,13 @@ export default function HomePage() {
             description="First class support of Javascript cells with a dedicated communication channel to Wolfram Kernel. Use any library from web to enhance your visuals."
             href="/frontend/Cell-types/Javascript"
           />
+
+          <Card 
+            icon={<Bot />}
+            title="MCP & CLI ready"
+            description="Expose your notebook through a streaming Model Context Protocol server and CLI, giving LLM agents access to notebooks and documentation."
+            href="/frontend/Guides/Command-palette.mdx#mcp-server"
+          />   
         </Cards>
       </div>
 

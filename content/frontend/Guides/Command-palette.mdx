@@ -2,7 +2,7 @@
 title: Notebook Tools
 ---
 
-WLJS Notebook is fully accessible from the keyboard. One of the most important key combinations to know is <kbd>Ctrl-P</kbd> or <kbd>⌘-P</kbd>, which brings up the Command Palette. From here, you have access to many small helper utilities, toolboxes, shortcuts, and AI copilot: 
+WLJS Notebook is fully accessible from the keyboard. One of the most important key combinations to know is <kbd>Ctrl-P</kbd> or <kbd>⌘-P</kbd>, which brings up the Command Palette. From here, you have access to many small helper utilities, toolboxes, shortcuts: 
 
 
 <div className='relative group'>
@@ -289,120 +289,299 @@ Do[k = i; If[i > 6, test = Now]; Pause[1], {i, 100}];
 This code will break after 6 iterations.
 
 
-## AI Copilot
-If nothing is selected, text typed into the command palette is sent to a remote or local LLM, which __has read/write access to the whole notebook__. We use a "knowledge on demand" concept, meaning that additional notebook-specific information (like cell types) is only fetched when needed — saving tokens if your request is unrelated.
+## MCP Server [#mcp-server]
+Model-Contex-Protocol server is always running in the background allowing LLM agents to interact with the notebook, run, edit, create cells and run code directly on the kernel. By the default it is available at:
 
-Given tools are somewhat similar to VSCode Copilot:
+```bash
+http://127.0.0.1:20564/
+```
 
-<Card>
+It also provides specific skills for various cell types, documentation and fits into 500-600 tokens at the start. 
 
-- __Create and evaluate cells__ (any types)
-- __Read/Edit cells by lines__
-- __Operate in batches__
-- __See a notebook structure__
-- __See selection lines and focused cell__ 
-- __Access the knowledge library__
-- __Read symbols truncated documentation__
-- __Manage internal TODO list__
-- __Evaluate any WL expresson in the background__
+<Callout type="note">
+This feature is only available for WLJS Desktop application
+</Callout>
 
-</Card>
+### Installation
+You can add it to your favourite coding tool as follows:
 
-<br/><br/>
+__Claude Code__
+
+```bash
+claude mcp add --transport http --scope user wljs-notebook http://127.0.0.1:20564/
+```
+
+__Codex__
+
+```bash
+codex mcp add wljs-notebook --url http://127.0.0.1:20564/
+```
 
 ### Tips
+
+- Models are not allowed to create notebooks, but can find the "focused one"
 
 - Mention `focused cell` in the prompt to avoid model to spend tokens for searching the whole notebook.
 
 - Mention `consult docs` in the prompt for weaker models to force them checking the documentation on different cell types or features of interactive evaluation in Wolfram language cells.
 
-- In general most LLMs perform much worse in Wolfram Language coding compared to other languages. Try to formulate your task better.
-
 - Use smaller models for grammar corrections, primitive tasks, i.e. Haiku 3.0 for example
 
-### Examples
-Here are two notebooks for the comparison: original one with arbitrary data inside and processed by AI copilot (Anthropic Opus 4.6 model). The initial prompt:
-
-> Read carefully all cells. Improve description (add or edit markdown cells). Add a nice header to this notebook
-
-<Accordions>
-
-<Accordion title="Original">
-
-<iframe className='rounded' src="/before_ai" width="100%" height="500px"></iframe>
-
-</Accordion>
-
-<Accordion title="Processed">
-
-<iframe className='rounded' src="/after_ai" width="100%" height="500px"></iframe>
-
-
-</Accordion>
-
-</Accordions>
-
-### Endpoints, Models, and Local LLMs
-There are 3 different models provided available:
-
-<Card>
-
-- OpenAI (Anything higher than gpt-4o is recommended for complex tasks)
-- Anthropic (Haiku 4.5, Opus 4.1 or higher are recommended for complex tasks)
-- Custom model provider (your local LLM for example)
-
-</Card>
-
-<Callout>We recommend Anthropic models for coding in WL from our experience</Callout>
-
-You will be prompted automatically for the model to pick (except for a custom provider) and API key if applicable. Model-autodiscovery feature is present.
-
-There is a dedicated section in the settings menu of WLJS Notebook to setup your local/custom model and reset existing API keys: 
-
-import { Dot, Settings } from 'lucide-react';
-
-<div class="fd-steps">
-    <div class="fd-step py-3 items-center flex flex-row">
-        <div class="flex flex-row items-center text-sm gap-x-2"> <Settings width={"1rem"}/> Settings</div>
-    </div>
-    <div class="fd-step py-3 items-center flex flex-row">
-        <div class="flex flex-row items-center text-sm gap-x-2"> <Dot width={"1rem"}/> Command palette</div>
-    </div> 
-    <div class="fd-step py-3 items-center flex flex-row">
-        <div class="flex flex-row items-center text-sm gap-x-2"> <Dot width={"1rem"}/> AI Assistant</div>
-    </div> 
-</div>
-
-You can configure the following for <small>Custom Model</small>:
-
-- **Endpoint**: By default, WLJS Notebook sends requests to the address: `<endpoint>/v1/chat/completions`
-- **Model**
-- **Max tokens**
-- **Temperature**
-
-#### Local LLM
-We recommend using the Ollama server to take advantage of locally running models. For example, the following parameters can be set initially:
-
-- **Endpoint**: `http://localhost:11434/` — the default Ollama server
-- **Model**: `qwen3:8b`, a small 5 GB tested model
-
-<Callout type="warning">
-With local LLMs, the performance and quality of the AI assistant may depend on many parameters. In general, the waiting time increases significantly compared to the commertical ones.
-</Callout>
-
-### Note on cell types
-The assistant is aware of being in a notebook environment. The following cell types are well-described in the initial system prompt:
-
-- Wolfram
-- JavaScript
-- HTML
-- Slides
-- Mermaid diagrams
-
-Additionally, differences between Wolfram Mathematica and WLJS Notebook are included to the library (on-demand).
+- Anthropic models are generally better trained on Wolfram Language and their training data includes WLJS ecosyste
 
 ### Documentation for LLM
-If needed copilot searches the documentiation on a given symbol using LLM-friendly compilation of our entire website: https://wljs.io/llms-full.txt
+If needed MCP searches the documentiation on a given symbol using LLM-friendly compilation of our entire website: https://wljs.io/llms-full.txt
+
+
+## CLI
+
+WLJS Notebook includes a small command-line interface for opening notebooks, inspecting the active notebook, editing cells, evaluating cells, and consulting local WLJS/Wolfram documentation.
+
+Most commands print JSON to stdout. Errors are printed to stderr and return a non-zero exit code.
+
+### Basic usage
+
+```bash
+wljs .
+```
+
+Open the current directory in WLJS Notebook.
+
+```bash
+wljs help
+wljs help --json
+wljs describe
+wljs version
+wljs -v
+wljs --version
+wljs config
+wljs status
+```
+
+| Command                                     | Description                                          |
+| ------------------------------------------- | ---------------------------------------------------- |
+| `wljs help`                                 | Show human-readable help.                            |
+| `wljs help --json`                          | Show machine-readable command information.           |
+| `wljs describe`                             | Print a JSON manifest for LLM agents and automation. |
+| `wljs version`, `wljs -v`, `wljs --version` | Print CLI version.                                   |
+| `wljs config`                               | Print runtime configuration.                         |
+| `wljs status`                               | Check whether the local WLJS backend is reachable.   |
+
+Aliases for `wljs describe`:
+
+```bash
+wljs llm-help
+wljs commands
+```
+
+### Notebook inspection
+
+```bash
+wljs notebooks
+```
+
+List notebooks known to the application.
+
+```bash
+wljs focused
+```
+
+Print the id/hash of the currently focused notebook.
+
+```bash
+wljs context
+wljs context --Notebook <notebook>
+```
+
+Print notebook context, including notebook id, cell list, and focused cell/selection when available. If `--Notebook` is omitted, the focused notebook is used.
+
+```bash
+wljs cells <notebook>
+```
+
+List cells in a notebook.
+
+```bash
+wljs focused-cell <notebook>
+```
+
+Print the currently focused cell and selected line range.
+
+```bash
+wljs lines <cell> <from> <to>
+```
+
+Read an inclusive, 1-indexed line range from a cell.
+
+Example:
+
+```bash
+wljs lines cell123 1 40
+```
+
+### Documentation
+
+```bash
+wljs docs <query>
+```
+
+Consult bundled WLJS skill docs first, then local Wolfram Language docs.
+
+Useful queries include:
+
+```bash
+wljs docs javascript
+wljs docs html
+wljs docs markdown
+wljs docs mermaid
+wljs docs slides
+wljs docs dynamics
+wljs docs Manipulate
+wljs docs EventHandler
+wljs docs Offload
+wljs docs Plot
+```
+
+### Editing cells
+
+```bash
+wljs add <notebook> --content <text|@file|-> [--after <cell>] [--before <cell>] [--eval]
+```
+
+Add a new input cell.
+
+Examples:
+
+```bash
+wljs add notebook123 --content-escaped '.md\none-line markdown'
+wljs add notebook123 --content @example.wl
+printf '.md\nHello World\n' | wljs add notebook123 --content - --eval
+```
+
+Use `--content-escaped` for converting `\n` to new lines.
+
+Use `--after` or `--before` to choose where the new cell is inserted. These options are mutually exclusive.
+
+Use `--eval` to evaluate the new cell after adding it.
+
+```bash
+wljs set-lines <cell> <from> <to> --content <text|@file|->
+```
+
+Replace an inclusive, 1-indexed line range in an input cell.
+
+Example:
+
+```bash
+wljs set-lines cell123 3 5 --content 'replacement text'
+```
+
+```bash
+wljs insert-lines <cell> <after> --content <text|@file|->
+```
+
+Insert content after a line. Use `0` to insert at the beginning.
+
+Example:
+
+```bash
+wljs insert-lines cell123 0 --content '.md'
+```
+
+```bash
+wljs delete-cell <cell>
+```
+
+Delete an input cell. Deleting an input cell also deletes its outputs.
+
+### Evaluation
+
+```bash
+wljs eval <cell>
+```
+
+Evaluate an input cell. Evaluation creates output cells.
+
+```bash
+wljs project <cell>
+```
+
+Project an input cell into a standalone window.
+
+```bash
+wljs wl '<wolfram-expression>'
+```
+
+Evaluate Wolfram Language directly in a ready kernel, without creating a notebook cell.
+
+Examples:
+
+```bash
+wljs wl 'Total[Range[100]]'
+wljs wl 'Plot[Sin[x], {x, 0, 10}]'
+```
+
+### Content input
+
+The `--content` option supports three forms.
+
+#### Inline literal text
+
+```bash
+wljs add notebook123 --content 'one line'
+```
+
+Inline content is passed literally. A string like `\n` is not converted into a newline.
+
+#### File input
+
+```bash
+wljs add notebook123 --content @example.wl
+```
+
+Reads content from `example.wl`.
+
+#### Standard input
+
+```bash
+printf '.md\nHello World\n' | wljs add notebook123 --content -
+```
+
+or:
+
+```bash
+wljs add notebook123 --content - <<'EOF'
+.md
+Hello World
+EOF
+```
+
+This is the recommended form for multiline content.
+
+### Cell type markers
+
+Cell type is determined by the first line of the input cell.
+
+| First line | Cell type        |
+| ---------- | ---------------- |
+| `.md`      | Markdown         |
+| `.html`    | HTML             |
+| `.js`      | JavaScript       |
+| `.mermaid` | Mermaid diagram  |
+| `.slide`   | RevealJS slide   |
+| no marker  | Wolfram Language |
+
+Example Markdown cell:
+
+```bash
+wljs add notebook123 --content - --eval <<'EOF'
+.md
+# Hello World
+
+This is a Markdown cell.
+EOF
+```
+
 
 ## Printing option
 Locate <small>Print</small> from the <small>File</small> menu or from the command palette to print an entire notebook as PDF.
@@ -418,6 +597,182 @@ Use [Markdown cell](./../Cell-types/Markdown) with `PageBreakAbove` or `PageBrea
 <PageBreakAbove/>
 ```
 
+
+## Application styles
+
+You can apply custom CSS styles to all notebooks by adding them via **Settings → Custom CSS**. These styles are injected into the document head and apply globally.
+
+### Adding global styles
+
+import { Settings, Dot } from 'lucide-react';
+
+<div class="fd-steps">
+    <div class="fd-step py-3 items-center flex flex-row">
+        <div class="flex flex-row items-center text-sm gap-x-2"> <Settings width={"1rem"}/> Settings</div>
+    </div>
+    <div class="fd-step py-3 items-center flex flex-row">
+        <div class="flex flex-row items-center text-sm gap-x-2"> <Dot width={"1rem"}/> General</div>
+    </div>
+    <div class="fd-step">
+        <div class="flex flex-row items-center text-sm gap-x-2"> <Dot width={"1rem"}/> Custom CSS</div>
+    </div>
+    <div class="fd-step">
+        <div class="flex flex-row items-center text-sm gap-x-2"> Add your CSS rules</div>
+    </div>  
+    <div class="fd-step">
+        <div class="flex flex-row items-center text-sm gap-x-2"> Restart app</div>
+    </div>       
+</div>
+
+<Callout type="idea">
+Play around with styles using HTML cells, before injecting them globally
+</Callout>
+
+The styles will be applied to all windows automatically.
+
+### Available CSS classes
+
+WLJS Notebook exposes predefined CSS classes for styling various elements:
+
+#### Document structure
+
+| Selector | Description |
+|----------|-------------|
+| `body` | The whole document |
+| `main` | Main window container |
+| `.ccontainer` | Cells container (extends to full size of main) |
+| `.cgroup` | A single group of cells: input + outputs + tools |
+| `.cframe` | Inner group of cells: input + outputs |
+| `.cborder` | Vertical line at the right side of cell group |
+| `.cwrapper` | Input/output cell wrapper |
+| `.cseparator` | Thin space between cells |
+
+#### Cell states and types
+
+| Selector | Description |
+|----------|-------------|
+| `.cinit` | Initialization cells |
+| `.cin` | Input cells parent element |
+| `.cout` | Output cells parent element |
+| `.ttint` | Focused cells |
+| `.cgi-ico` | Initialization cell group icon (teal dot) |
+| `#sidebar-right` | Right sidebar in exported HTML |
+
+#### Input cell languages
+
+| Selector | Description |
+|----------|-------------|
+| `.clang-generic` | Unknown cell type / language |
+| `.clang-markdown` | Markdown cells |
+| `.clang-html` | HTML cells |
+| `.clang-wlx` | WLX cells |
+| `.clang-js` | JavaScript cells |
+| `.clang-slide` | Slide cells |
+
+<Callout type="info">
+Wolfram Language input cells have an empty class field.
+</Callout>
+
+#### Markdown output
+
+| Selector | Description |
+|----------|-------------|
+| `.markdown` | All content in textual cells |
+| `.cout.markdown` | Markdown output cells |
+| `.markdown h1` | Heading level 1 in markdown |
+| `.markdown h2` | Heading level 2 in markdown |
+| `.markdown p` | Paragraphs in markdown |
+
+### Styling examples
+
+#### Change notebook background
+
+```css
+.ccontainer {
+  background: lightblue;
+}
+
+body {
+  background: lightblue !important;
+}
+
+main {
+  background: lightblue !important;
+}
+```
+
+#### Style the input cell border marker
+
+The vertical line on the left side of input cells:
+
+```css
+.cin > :nth-child(2)::after {
+  border-color: #5e8a8b;
+}
+```
+
+#### Custom heading colors
+
+```css
+.markdown h1 {
+  color: #2e7d32;
+}
+
+.markdown h2 {
+  color: #1565c0;
+}
+```
+
+### Fonts and colors
+
+The following CSS variables control syntax highlighting, UI colors:
+
+```css
+:root {
+  /* Syntax highlighting */
+  --editor-key-meta: #404740;
+  --editor-key-keyword: #708;
+  --editor-key-atom: #219;
+  --editor-key-literal: #164;
+  --editor-key-string: #a11;
+  --editor-key-escape: #e40;
+  --editor-key-variable: #00f;
+  --editor-local-variable: #30a;
+  --editor-key-type: #085;
+  --editor-key-class: #167;
+  --editor-special-variable: #256;
+  --editor-key-property: #00c;
+  --editor-key-comment: #940;
+  --editor-key-invalid: #f00;
+  --editor-outline: #696969;
+}
+```
+
+UI fonts can be changed using the following patch:
+
+```css
+:root {
+  /* Typography UI */
+  font-size: medium;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 
+    'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 
+    'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+/* Typography code editor */
+.cm-line {
+  font-family: 'consolas' !important;
+}
+
+/* Typography textual cells */
+.markdown {
+  font-family: 'cursive' !important;
+}
+```
+
+<Callout type="info">
+Global styles are also copied to exported standalone HTML files.
+</Callout>
 
 
 
@@ -484,24 +839,4 @@ Needs["PacletContextName`"->"myAlias`"]
 ## Settings
 In the settings menu <Settings width={"1rem"}/> you can adjust **accent-colors**, **light/dark mode**, **home folder**, **backups** and many other things related to the editing and exporting.
 
-## Cli 
-
-WLJS Notebook app registers (if you allowed this during the installation) a tiny CLI-tool globally in your operating system.
-
-Here is a list of commands you can use
-
-## Open current folder
-```bash
-wljs .
-```
-
-## Open a file by path
-```bash
-wljs "full path..."
-```
-
-## Version of CLI
-```bash
-wljs -v
-```
 

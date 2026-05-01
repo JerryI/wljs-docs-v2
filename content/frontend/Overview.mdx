@@ -506,6 +506,24 @@ Animation made using `Graphics3D`:
 
 All examples were captured using a screenrecording app on the notebook cells.
 
+## Human-, LLM- and GIT-friendly Notebook Format [#format]
+The structure is minimal, and easy to read and parse by people and machines, but most importantly, it allows versioning systems correctly identify the differences. Here is an example:
+
+```text
+%----------%Cells%-----------%
+Type: Input
+%----------------------------%
+1+1
+
+%----------------------------%
+Type: Output
+%----------------------------%
+2
+
+```
+
+All heavy blobs of binary/textual data are stored at the very end in a compressed form. 
+
 ## Portability
 WLJS Notebook offers multiple export formats that <u>preserve interactivity</u>, allowing you to share your work in the way that best suits your needs:
 

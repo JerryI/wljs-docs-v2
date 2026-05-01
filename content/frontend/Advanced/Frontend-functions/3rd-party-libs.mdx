@@ -142,10 +142,12 @@ Even if we set the `StandardForm` output form for `ApexCharts`, the input expres
 <WLJSWrapper>
 <div className="code-input"/>
 <wljs-editor lazy="true" type="Input" display="codemirror">{`
-ApexCharts /: MakeBoxes[a: ApexCharts[_Association], form: StandardForm ] := With[{
+ApexCharts /: MakeBoxes[a: ApexCharts[data_Association], form: StandardForm] := With[{
     o = CreateFrontEndObject[a]
+}, {
+    out = MakeBoxes[o, form]
 },
-    MakeBoxes[o, form]
-] /; ByteCount[a] > 1024*4 
+    ViewBox[out, o]
+] /; ByteCount[a] > 1024*4
 `}</wljs-editor></WLJSWrapper>
 
