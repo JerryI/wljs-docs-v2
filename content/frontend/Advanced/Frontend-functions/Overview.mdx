@@ -679,11 +679,11 @@ Or if you want to compress only the part of expression and manually construct th
 SomeSymbol /: MakeBoxes[SomeSymbol[arg1_, arg2_], StandardForm] := With[{
   fe1 = CreateFrontEndObject[arg1]
 }, {
-  out1 = MakeBoxes[fe1, StandardForm],
+  uid = ToString[fe1[[1]], InputForm],
   out2 = ToString[arg2, InputForm],
   name = ToString[SomeSymbol, InputForm]
 },
-  ViewBox[RowBow[{name, "[", out1, ",", out2, "]"}], displaySymbol[fe1, arg2]]
+  ViewBox[RowBow[{name, "[", "FrontEndRef", "[", uid , "]", ",", out2, "]"}], displaySymbol[fe1, arg2]]
 ]
 ```
 

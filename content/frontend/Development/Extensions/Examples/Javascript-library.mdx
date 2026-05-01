@@ -230,16 +230,14 @@ BeginPackage["CoffeeLiqueur`Extensions`ApexCharts`", {
 ApexCharts /: MakeBoxes[a: ApexCharts[data_Association], form: StandardForm] := With[{
     o = CreateFrontEndObject[data]
 }, {
-    odata = MakeBoxes[o, form],
+    oId = ToString[o[[1]], InputForm],
     name = ToString[ApexCharts, InputForm]
 },
-    ViewBox[RowBow[{name, "[", odata, "]"}], iApexCharts[o]]
+    ViewBox[RowBow[{name, "[", "FrontEndRef", "[", oId, "]", "]"}], iApexCharts[o]]
 ] /; ByteCount[a] > 1024*4
 ```
 
 Here, we manually construct the inner expression using low-level boxes. Note that we convert `ApexCharts` to a string instead of writing `"ApexCharts"` directly. This is required when the package is not imported into the global context, because the full symbol path may be used instead, for example `CoffeeLiqueur`Extensions`ApexCharts`ApexCharts`.
-
-In this case, `odata` is a [FrontEndRef](./../../../Frontend-Objects/FrontEndRef), which expands to the original association `data` during the next evaluation. The variable `o` is a [FrontEndExecutable](./../../../Frontend-Objects/FrontEndExecutable): it is a reference to the same compressed expression `data`, but it can only be evaluated on the frontend. It is picked up by the `iApexCharts` function and rendered into the DOM element that covers the visible `ApexCharts` expression.
 
 This complexity gives us full control over what is visible and what remains underneath. We want to avoid either layer leaking into the other. As a result, if you copy the raw expression from the output cell into a plain text editor, it may look like this:
 

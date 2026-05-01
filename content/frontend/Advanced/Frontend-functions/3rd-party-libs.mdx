@@ -151,3 +151,5 @@ ApexCharts /: MakeBoxes[a: ApexCharts[data_Association], form: StandardForm] := 
 ] /; ByteCount[a] > 1024*4
 `}</wljs-editor></WLJSWrapper>
 
+Here `ViewBox` accepts output boxes of `o` and passes directly to the output, instead of converting it to `InputForm` as it was done in the previous examples.
+
