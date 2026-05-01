@@ -1,0 +1,557 @@
+%-------------------------------%Notebook%--------------------------------%
+HaveToSaveAs: false
+ObjectFields:
+  - Objects
+  - Symbols
+  - Storage
+  - ExcalidrawImages
+  - RuntimeCache
+Quick: true
+%-------------------------------------------------------------------------%
+
+
+%---------------------------------%Cells%---------------------------------%
+Props:
+  Hidden: true
+Type: Input
+%-------------------------------------------------------------------------%
+.md
+# Release notes *3.0.5*
+
+<Now/>
+
+
+%-------------------------------------------------------------------------%
+Display: markdown
+Type: Output
+%-------------------------------------------------------------------------%
+# Release notes *3.0.5*
+
+Fri 24 Apr 2026 17:54:13
+
+%-------------------------------------------------------------------------%
+Props:
+  Hidden: true
+Type: Input
+%-------------------------------------------------------------------------%
+.md
+## Human-, LLM- and GIT-friendly Notebook Format
+We silently introduced a new version of `.wln` notebook format. The structure is minimal, and easy to read and parse by people and machines, but most importantly, it solves issues with versioning systems being unable to correctly identify the differences
+
+%-------------------------------------------------------------------------%
+Display: markdown
+Type: Output
+%-------------------------------------------------------------------------%
+## Human-, LLM- and GIT-friendly Notebook Format
+We silently introduced a new version of `.wln` notebook format. The structure is minimal, and easy to read and parse by people and machines, but most importantly, it solves issues with versioning systems being unable to correctly identify the differences
+
+%-------------------------------------------------------------------------%
+Type: Input
+%-------------------------------------------------------------------------%
+.md
+
+:----:Notebook:---:
+Quick: true
+:-----------------:
+
+:-----:Cells:-----:
+Type: Input
+:-----------------:
+1+1
+
+:-----------------:
+Type: Output
+:-----------------:
+2
+
+:---:EndOfCells:--:
+
+:-:EndOfNotebook:-:
+
+%-------------------------------------------------------------------------%
+Props:
+  Hidden: true
+Type: Input
+%-------------------------------------------------------------------------%
+.md
+It looks like YAML in headers and was definitely inspired by it. After the corresponding separators the data can be any valid Wolfram Language expression.
+
+:::note
+We will never drop the support of the older version of `.wln` format. It costs 0 efforts to maintain the backward compatibility, since it is just input form of `Association` data structure.
+:::
+
+%-------------------------------------------------------------------------%
+Display: markdown
+Type: Output
+%-------------------------------------------------------------------------%
+It looks like YAML in headers and was definitely inspired by it. After the corresponding separators the data can be any valid Wolfram Language expression.
+
+:::note
+We will never drop the support of the older version of `.wln` format. It costs 0 efforts to maintain the backward compatibility, since it is just input form of `Association` data structure.
+:::
+
+%-------------------------------------------------------------------------%
+Props:
+  Hidden: true
+Type: Input
+%-------------------------------------------------------------------------%
+.md
+### Unicode support
+We did some hard work to keep all special symbols of Wolfram intact, while exporting and importing unicode characters. For example, this one will be written as a normal UTF8 string to a file
+
+Куры 🐔
+
+%-------------------------------------------------------------------------%
+Display: markdown
+Type: Output
+%-------------------------------------------------------------------------%
+### Unicode support
+We did some hard work to keep all special symbols of Wolfram intact, while exporting and importing unicode characters. For example, this one will be written as a normal UTF8 string to a file
+
+Куры 🐔
+
+%-------------------------------------------------------------------------%
+Props:
+  Hidden: true
+Type: Input
+%-------------------------------------------------------------------------%
+.md
+## Content hot-reloading support
+In addition to a new format we enabled hot-reloading of a notebook content if it was modified outside WLJS Notebook. You will be prompted to approve changes or decline them.
+
+:::warning
+Due to performance reasons only input/output cells can be reloaded, any internal fields of the notebook such as `NotebookStore` will stay intact.
+:::
+
+%-------------------------------------------------------------------------%
+Display: markdown
+Type: Output
+%-------------------------------------------------------------------------%
+## Content hot-reloading support
+In addition to a new format we enabled hot-reloading of a notebook content if it was modified outside WLJS Notebook. You will be prompted to approve changes or decline them.
+
+:::warning
+Due to performance reasons only input/output cells can be reloaded, any internal fields of the notebook such as `NotebookStore` will stay intact.
+:::
+
+%-------------------------------------------------------------------------%
+Props:
+  Hidden: true
+Type: Input
+%-------------------------------------------------------------------------%
+.md
+## Farewell to AI Copilot 🪦
+We decided to discontinue our built-in AI copilot in favour of support for external tools like coding agents Claude, Codex and others. Our custom copilot was too expensive in terms of tokens and not quite reliable. This also saves a lot of resources for our team, since we provide notebook tools as a service for other apps and do not have to update the providers manually, tweak system prompts and so on.
+
+However, we prepared something better instead...
+
+<br/>
+
+## MCP Server ✨
+We added a background MCP server to interact with the notebook in the same way as our copilot. It can run cells, edit, create and do all autonomous tasks.
+
+It also includes skills, documentation and consumes ~4-5 times fewer tokens compared to our former copilot.
+
+You can add it to your favourite coding tool as follows:
+
+__Claude__
+
+<code>
+claude mcp add --transport http --scope user wljs-notebook http://127.0.0.1:20564/
+</code>
+
+__Codex__
+
+<code>
+codex mcp add wljs-notebook --url http://127.0.0.1:20564/
+</code>
+
+<br/>
+<br/>
+
+## CLI ✨
+We updated our *wljs* cli, that acts like a proxy to our API exposed via MCP server. You can do things like:
+
+<code>
+wljs focused
+</code>
+
+*returns focused notebook ID*
+
+then add a new cell
+
+<code>
+wljs add 'notebookId' --content 'text'|@file|-> [--after 'cell'] [--before 'cell'] [--eval]
+</code>
+
+It is also LLM-friendly, use `help` command for more.
+
+
+
+%-------------------------------------------------------------------------%
+Display: markdown
+Type: Output
+%-------------------------------------------------------------------------%
+## Farewell to AI Copilot 🪦
+We decided to discontinue our built-in AI copilot in favour of support for external tools like coding agents Claude, Codex and others. Our custom copilot was too expensive in terms of tokens and not quite reliable. This also saves a lot of resources for our team, since we provide notebook tools as a service for other apps and do not have to update the providers manually, tweak system prompts and so on.
+
+However, we prepared something better instead...
+
+<br />
+
+## MCP Server ✨
+We added a background MCP server to interact with the notebook in the same way as our copilot. It can run cells, edit, create and do all autonomous tasks.
+
+It also includes skills, documentation and consumes ~4-5 times fewer tokens compared to our former copilot.
+
+You can add it to your favourite coding tool as follows:
+
+__Claude__
+
+<code >
+claude mcp add --transport http --scope user wljs-notebook http://127.0.0.1:20564/
+</code>
+
+__Codex__
+
+<code >
+codex mcp add wljs-notebook --url http://127.0.0.1:20564/
+</code><br /><br />
+
+## CLI ✨
+We updated our *wljs* cli, that acts like a proxy to our API exposed via MCP server. You can do things like:
+
+<code >
+wljs focused
+</code>
+
+*returns focused notebook ID*
+
+then add a new cell
+
+<code >
+wljs add 'notebookId' --content 'text'|@file|-> [--after 'cell'] [--before 'cell'] [--eval]
+</code>
+
+It is also LLM-friendly, use `help` command for more.
+
+
+
+%-------------------------------------------------------------------------%
+Props:
+  Hidden: true
+Type: Input
+%-------------------------------------------------------------------------%
+.md
+
+## Ask community
+Something isn't working? Try this command
+
+
+![](/attachments/Screenshot-2026-05-01-at-12.36.24-881.png)
+
+
+This will automatically copy your cell and create a post on Github Discussions.
+
+%-------------------------------------------------------------------------%
+Display: markdown
+Type: Output
+%-------------------------------------------------------------------------%
+
+## Ask community
+Something isn't working? Try this command
+
+
+![](/attachments/Screenshot-2026-05-01-at-12.36.24-881.png)
+
+
+This will automatically copy your cell and create a post on Github Discussions.
+
+%-------------------------------------------------------------------------%
+Props:
+  Hidden: true
+Type: Input
+%-------------------------------------------------------------------------%
+.md
+## InputColor element
+We added new input element to the standard library:
+
+%-------------------------------------------------------------------------%
+Display: markdown
+Type: Output
+%-------------------------------------------------------------------------%
+## InputColor element
+We added new input element to the standard library:
+
+%-------------------------------------------------------------------------%
+Type: Input
+%-------------------------------------------------------------------------%
+Module[{col = {1,0,0}},
+  {
+    EventHandler[InputColor[col], (col=#)&],
+    Graphics[{
+      RGBColor[col//Offload], 
+      Triangle[],
+      RGBColor[({1,1,1}-col)//Offload],
+      Disk[{0,0},0.2]
+    }]
+  } // Column 
+]
+
+%-------------------------------------------------------------------------%
+Props:
+  Hidden: true
+Type: Input
+%-------------------------------------------------------------------------%
+.md
+## Image with HTMLView
+If you wrap any `Image` with `HTMLView`, it will be automatically serialized to a file and embedded as native `img` element. This helps if you have many rasterized images in the notebook
+
+%-------------------------------------------------------------------------%
+Display: markdown
+Type: Output
+%-------------------------------------------------------------------------%
+## Image with HTMLView
+If you wrap any `Image` with `HTMLView`, it will be automatically serialized to a file and embedded as native `img` element. This helps if you have many rasterized images in the notebook
+
+%-------------------------------------------------------------------------%
+Type: Input
+%-------------------------------------------------------------------------%
+ExampleData[{"TestImage", "Lena"}] // HTMLView 
+
+%-------------------------------------------------------------------------%
+Type: Output
+%-------------------------------------------------------------------------%
+(*VB[*)(FrontEndRef["96e29225-d4cc-4803-9f76-fee6ec1be429"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKW5qlGlkaGZnqppgkJ+uaWBgY61qmmZvppqWmmqUmGyalmhhZAgB/YBW5"*)(*]VB*)
+
+%-------------------------------------------------------------------------%
+Props:
+  Hidden: true
+Type: Input
+%-------------------------------------------------------------------------%
+.md
+## TeXView update
+We added support for live updates in `TeXView` as well as new option `ImageSize` to set the size explicitly:
+
+%-------------------------------------------------------------------------%
+Display: markdown
+Type: Output
+%-------------------------------------------------------------------------%
+## TeXView update
+We added support for live updates in `TeXView` as well as new option `ImageSize` to set the size explicitly:
+
+%-------------------------------------------------------------------------%
+Type: Input
+%-------------------------------------------------------------------------%
+str = TeXForm[Integrate[f[x], x]];
+TeXView[str//Offload]
+
+%-------------------------------------------------------------------------%
+Type: Output
+%-------------------------------------------------------------------------%
+(*VB[*)(Null)(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRAeO5AISY0Iy0wtRwj4p6Xl5CemFDODBEqKAGYDDKI="*)(*]VB*)
+
+%-------------------------------------------------------------------------%
+Props:
+  Hidden: true
+Type: Input
+%-------------------------------------------------------------------------%
+.md
+try to update
+
+%-------------------------------------------------------------------------%
+Display: markdown
+Type: Output
+%-------------------------------------------------------------------------%
+try to update
+
+%-------------------------------------------------------------------------%
+Type: Input
+%-------------------------------------------------------------------------%
+str = TeXForm[Integrate[f[x] x, x]];
+
+%-------------------------------------------------------------------------%
+Props:
+  Hidden: true
+Type: Input
+%-------------------------------------------------------------------------%
+.md
+:::note
+`TeXForm` is a blocking function, use *Async version for cases when called from buttons or timers
+:::
+
+%-------------------------------------------------------------------------%
+Display: markdown
+Type: Output
+%-------------------------------------------------------------------------%
+:::note
+`TeXForm` is a blocking function, use *Async version for cases when called from buttons or timers
+:::
+
+%-------------------------------------------------------------------------%
+Type: Input
+%-------------------------------------------------------------------------%
+Button["Generate", Then[TeXFormAsync[Series[Sin[x] Cos[x], {x, 0, RandomInteger[{1, 30}]}]], (str = #1)&]]
+
+%-------------------------------------------------------------------------%
+Props:
+  Hidden: true
+Type: Input
+%-------------------------------------------------------------------------%
+.md
+You can also easily place it on any plot:
+
+%-------------------------------------------------------------------------%
+Display: markdown
+Type: Output
+%-------------------------------------------------------------------------%
+You can also easily place it on any plot:
+
+%-------------------------------------------------------------------------%
+Type: Input
+%-------------------------------------------------------------------------%
+Plot[x, {x,0,1}, Epilog->{
+  Inset[TeXView[TeXForm[y==x], ImageSize->Medium], {0.5`,0.5`}]
+}]
+
+%-------------------------------------------------------------------------%
+Type: Output
+%-------------------------------------------------------------------------%
+(*VB[*)(FrontEndRef["3ccdd674-35d2-46ce-bb61-b2bccad5a6dd"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKGycnp6SYmZvoGpumGOmamCWn6iYlmRnqJhklJScnppgmmqWkAACRHBa1"*)(*]VB*)
+
+%-------------------------------------------------------------------------%
+Props:
+  Hidden: true
+Type: Input
+%-------------------------------------------------------------------------%
+.md
+## Codebase Refactor
+Another refactoring sweep has happened, unifying the architecture and modules structure.
+
+%-------------------------------------------------------------------------%
+Display: markdown
+Type: Output
+%-------------------------------------------------------------------------%
+## Codebase Refactor
+Another refactoring sweep has happened, unifying the architecture and modules structure.
+
+%-------------------------------------------------------------------------%
+Props:
+  Hidden: true
+Type: Input
+%-------------------------------------------------------------------------%
+.md
+## Breaking changes
+`CreateFrontEndObject` does not run automatically in the output cells, i.e.
+
+%-------------------------------------------------------------------------%
+Display: markdown
+Type: Output
+%-------------------------------------------------------------------------%
+## Breaking changes
+`CreateFrontEndObject` does not run automatically in the output cells, i.e.
+
+%-------------------------------------------------------------------------%
+Type: Input
+%-------------------------------------------------------------------------%
+CreateFrontEndObject[1+1]
+
+%-------------------------------------------------------------------------%
+Type: Output
+%-------------------------------------------------------------------------%
+FrontEndRef["cc7d56fc-6559-4a1c-bd5b-a2b6182a2a51"]
+
+%-------------------------------------------------------------------------%
+Props:
+  Hidden: true
+Type: Input
+%-------------------------------------------------------------------------%
+.md
+We removed it to dedicate this task solely to `ViewBox` avoiding any implicit conventions. In this sense frontend objects serve only the purpose of storing things. For an average user this does not mean anything, since it only affects custom written Javascript symbols. Here is an example:
+
+%-------------------------------------------------------------------------%
+Display: markdown
+Type: Output
+%-------------------------------------------------------------------------%
+We removed it to dedicate this task solely to `ViewBox` avoiding any implicit conventions. In this sense frontend objects serve only the purpose of storing things. For an average user this does not mean anything, since it only affects custom written Javascript symbols. Here is an example:
+
+%-------------------------------------------------------------------------%
+Type: Input
+%-------------------------------------------------------------------------%
+.js
+core.Deco = async (args, env) => {
+  env.element.style.background = 'red';
+  env.element.style.height = '1rem';
+  env.element.style.width = '1rem';
+}
+
+%-------------------------------------------------------------------------%
+Display: js
+Type: Output
+%-------------------------------------------------------------------------%
+core.Deco = async (args, env) => {
+  env.element.style.background = 'red';
+  env.element.style.height = '1rem';
+  env.element.style.width = '1rem';
+}
+
+%-------------------------------------------------------------------------%
+Type: Input
+%-------------------------------------------------------------------------%
+Deco /: MakeBoxes[d_Deco, StandardForm] := ViewBox[d,d]
+
+%-------------------------------------------------------------------------%
+Type: Input
+%-------------------------------------------------------------------------%
+Deco[] + 1(*BB[*)(**)(*,*)(*"1:eJxTTMoPSmNhYGAo5gcSAUX5ZZkpqSn+BSWZ+XnFaYwgCS4g4Zyfm5uaV+KUXxEMUqxsbm6exgSSBPGCSnNSg9mAjOCSosy8dLBYSFFpKpoKkDkeqYkpEFXBILO1sCgJSczMQVYCAOFrJEU="*)(*]BB*)
+
+%-------------------------------------------------------------------------%
+Type: Output
+%-------------------------------------------------------------------------%
+1+(*VB[*)(Deco[])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KWkMMJ5LanI+AGKYBgI="*)(*]VB*)
+
+%------------------------------%EndOfCells%-------------------------------%
+
+
+
+%--------------------------------%Objects%--------------------------------%
+Key: 96e29225-d4cc-4803-9f76-fee6ec1be429
+%-------------------------------------------------------------------------%
+<|"Public" -> Hold[HTMLView["<img src=\"/attachments/9203220223944420879.jpg\" width=\"512\" height=\"512\"/>"]]|>
+
+%-------------------------------------------------------------------------%
+Key: 3ccdd674-35d2-46ce-bb61-b2bccad5a6dd
+%-------------------------------------------------------------------------%
+<|"Public" -> Hold[Graphics[{Annotation[{{{{}, {}, Annotation[{Directive[Opacity[1], RGBColor[0.24, 0.6, 0.8], AbsoluteThickness[2]], Line[{{2.040816326530612*^-8, 2.040816326530612*^-8}, {0.00030671792055962676, 0.00030671792055962676}, {0.0006134154329559882, 0.0006134154329559882}, {0.0012268104577487112, 0.0012268104577487112}, {0.002453600507334157, 0.002453600507334157}, {0.004907180606505049, 0.004907180606505049}, {0.009814340804846833, 0.009814340804846833}, {0.0196286612015304, 0.0196286612015304}, {0.040908357085458646, 0.040908357085458646}, {0.06077788357015209, 0.06077788357015209}, {0.08025764881887605, 0.08025764881887605}, {0.10138846915816112, 0.10138846915816112}, {0.12110912009821138, 0.12110912009821138}, {0.1424808261288228, 0.1424808261288228}, {0.16346277092346467, 0.16346277092346467}, {0.18303454631887175, 0.18303454631887175}, {0.20425737680483996, 0.20425737680483996}, {0.22407003789157337, 0.22407003789157337}, {0.24349293774233727, 0.24349293774233727}, {0.26456689268366235, 0.26456689268366235}, {0.2842306782257526, 0.2842306782257526}, {0.305545518858404, 0.305545518858404}, {0.32647059825508584, 0.32647059825508584}, {0.34598550825253294, 0.34598550825253294}, {0.3671514733405411, 0.3671514733405411}, {0.3869072690293145, 0.3869072690293145}, {0.408314119808649, 0.408314119808649}, {0.429331209352014, 0.429331209352014}, {0.44893812949614426, 0.44893812949614426}, {0.47019610473083556, 0.47019610473083556}, {0.4900439105662921, 0.4900439105662921}, {0.5095019551657791, 0.5095019551657791}, {0.5306110548558273, 0.5306110548558273}, {0.5503099851466406, 0.5503099851466406}, {0.5716599705280151, 0.5716599705280151}, {0.5926201946734201, 0.5926201946734201}, {0.6121702494195903, 0.6121702494195903}, {0.6333713592563216, 0.6333713592563216}, {0.6531622996938181, 0.6531622996938181}, {0.6725634788953451, 0.6725634788953451}, {0.6936157131874332, 0.6936157131874332}, {0.7132577780802865, 0.7132577780802865}, {0.7345508980637009, 0.7345508980637009}, {0.7544338486478805, 0.7544338486478805}, {0.7739270379960906, 0.7739270379960906}, {0.7950712824348619, 0.7950712824348619}, {0.8148053574743983, 0.8148053574743983}, {0.8361904876044959, 0.8361904876044959}, {0.857185856498624, 0.857185856498624}, {0.8767710559935172, 0.8767710559935172}, {0.8980073105789717, 0.8980073105789717}, {0.9178333957651912, 0.9178333957651912}, {0.9372697197154413, 0.9372697197154413}, {0.9583570987562524, 0.9583570987562524}, {0.9780343083978288, 0.9780343083978288}, {0.9783775220102351, 0.9783775220102351}, {0.9787207356226415, 0.9787207356226415}, {0.9794071628474543, 0.9794071628474543}, {0.9807800172970798, 0.9807800172970798}, {0.9835257261963308, 0.9835257261963308}, {0.9890171439948328, 0.9890171439948328}, {0.9893603576072392, 0.9893603576072392}, {0.9897035712196455, 0.9897035712196455}, {0.9903899984444582, 0.9903899984444582}, {0.9917628528940837, 0.9917628528940837}, {0.9945085617933347, 0.9945085617933347}, {0.9948517754057411, 0.9948517754057411}, {0.9951949890181475, 0.9951949890181475}, {0.9958814162429602, 0.9958814162429602}, {0.9972542706925858, 0.9972542706925858}, {0.9975974843049922, 0.9975974843049922}, {0.9979406979173985, 0.9979406979173985}, {0.9986271251422112, 0.9986271251422112}, {0.9989703387546176, 0.9989703387546176}, {0.999313552367024, 0.999313552367024}, {0.9996567659794304, 0.9996567659794304}, {0.9999999795918367, 0.9999999795918367}}]}, "Charting`Private`Tag#1"]}}, {}}, Association["HighlightElements" -> Association["Label" -> {"XYLabel"}, "Ball" -> {"InterpolatedBall"}], "LayoutOptions" -> Association["PanelPlotLayout" -> Association[], "PlotRange" -> {{0, 1}, {0, 0.9999999795918367}}, "Frame" -> {{False, False}, {False, False}}, "AxesOrigin" -> {0, 0}, "ImageSize" -> {360, 360/GoldenRatio}, "Axes" -> {True, True}, "LabelStyle" -> {}, "AspectRatio" -> GoldenRatio^(-1), "DefaultStyle" -> {Directive[Opacity[1], RGBColor[0.24, 0.6, 0.8], AbsoluteThickness[2]]}, "HighlightLabelingFunctions" -> Association["CoordinatesToolOptions" -> ({(Identity[#1] & )[#1[[1]]], (Identity[#1] & )[#1[[2]]]} & ), "ScalingFunctions" -> {{Identity, Identity}, {Identity, Identity}}], "Primitives" -> {}, "GCFlag" -> False], "Meta" -> Association["DefaultHighlight" -> {"Dynamic", None}, "Index" -> {}, "Function" -> Plot, "GroupHighlight" -> False]], "DynamicHighlight"]}, {DisplayFunction -> Identity, PlotInteractivity :> $PlotInteractivity, DisplayFunction -> Identity, PlotInteractivity :> $PlotInteractivity, DefaultBaseStyle -> {"PlotGraphics", "Graphics"}, DisplayFunction -> Identity, Ticks -> {Automatic, Automatic}, AxesOrigin -> {0, 0}, FrameTicks -> {{Automatic, Automatic}, {Automatic, Automatic}}, GridLines -> {None, None}, PlotInteractivity :> $PlotInteractivity, DefaultBaseStyle -> {"PlotGraphics", "Graphics"}, DisplayFunction -> Identity, PlotRangePadding -> {{Scaled[0.02], Scaled[0.02]}, {Scaled[0.05], Scaled[0.05]}}, PlotRangeClipping -> True, ImagePadding -> All, PlotInteractivity :> $PlotInteractivity, DisplayFunction -> Identity, PlotInteractivity :> $PlotInteractivity, DefaultBaseStyle -> {"PlotGraphics", "Graphics"}, AspectRatio -> GoldenRatio^(-1), Axes -> {True, True}, AxesLabel -> {None, None}, AxesOrigin -> {0, 0}, DisplayFunction :> Identity, Epilog -> {Inset[TeXView["y=x", ImageSize -> Medium], {0.5, 0.5}]}, Frame -> {{False, False}, {False, False}}, FrameLabel -> {{None, None}, {None, None}}, FrameTicks -> {{Automatic, Automatic}, {Automatic, Automatic}}, GridLines -> {None, None}, GridLinesStyle -> Directive[GrayLevel[0.5, 0.4]], Method -> {"DefaultBoundaryStyle" -> Automatic, "DefaultGraphicsInteraction" -> {"Version" -> 1.2, "TrackMousePosition" -> {True, False}, "Effects" -> {"Highlight" -> {"ratio" -> 2}, "HighlightPoint" -> {"ratio" -> 2}, "Droplines" -> {"freeformCursorMode" -> True, "placement" -> {"x" -> "All", "y" -> "None"}}}}, "DefaultMeshStyle" -> AbsolutePointSize[6], "ScalingFunctions" -> None, "CoordinatesToolOptions" -> {"DisplayFunction" -> ({(Identity[#1] & )[#1[[1]]], (Identity[#1] & )[#1[[2]]]} & ), "CopiedValueFunction" -> ({(Identity[#1] & )[#1[[1]]], (Identity[#1] & )[#1[[2]]]} & )}}, PlotRange -> {{0, 1}, {0, 0.9999999795918367}}, PlotRangeClipping -> True, PlotRangePadding -> {{Scaled[0.02], Scaled[0.02]}, {Scaled[0.02], Scaled[0.02]}}, Ticks -> {Automatic, Automatic}}]]|>
+
+%-----------------------------%EndOfObjects%------------------------------%
+
+
+
+%--------------------------------%Symbols%--------------------------------%
+Key: str
+%-------------------------------------------------------------------------%
+"\\int f(x) \\, dx"
+
+%-----------------------------%EndOfSymbols%------------------------------%
+
+
+
+%--------------------------------%Storage%--------------------------------%
+%-----------------------------%EndOfStorage%------------------------------%
+
+
+
+%---------------------------%ExcalidrawImages%----------------------------%
+%-------------------------%EndOfExcalidrawImages%-------------------------%
+
+
+
+%-----------------------------%RuntimeCache%------------------------------%
+%---------------------------%EndOfRuntimeCache%---------------------------%
+
+
+
+
+
+%-----------------------------%EndOfNotebook%-----------------------------%
