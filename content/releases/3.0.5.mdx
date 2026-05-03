@@ -189,6 +189,16 @@ You can also easily place it on any plot:
 
 <WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(FrontEndRef["1716324f-9dc8-4ab7-aa0c-95f4f214e4dc"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKG5obmhkbmaTpWqYkW+iaJCaZ6yYmGiTrWpqmmaQZGZqkmqQkAwB/chXR"*)(*]VB*)`}</wljs-editor></WLJSWrapper>
 
+## Project cell to a window (Update)
+
+We improved this feature: <kbd>Ctrl-Shift-Enter</kbd>. It now automatically copies all output HTML or JavaScript cells to a new window as well.
+
+Why?
+
+Imagine you have created a presentation with custom styles defined in separate HTML cells, along with some components, and you do not want to present it directly from the same notebook. You could still package all scripts using WLX cells and embed them into one of the slides, but this may not be ideal for every case.
+
+Now, you can simply project your slides as usual, and everything else happens in the background.
+
 ## Codebase Refactor
 Another refactoring sweep has happened, unifying the architecture and modules structure.
 
