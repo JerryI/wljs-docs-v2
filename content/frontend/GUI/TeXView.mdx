@@ -39,6 +39,14 @@ Plot[x, {x,0,1}, Epilog->{
 ### `ImageSize`
 Predefines the container size for the expression
 
+### `Aligment` or `AlignmentPoint`
+Sets the aligment of the content inside the contaner defined by `ImageSize`. Possible values:
+- `Center`
+- `{Center, Center}`
+- `{Left, Top}`
+- `{Right, Top}`
+- ...
+
 ## Live updates
 It supports [Offload](./../Interpreter/Offload) method. The expressions can be rerendered of the underlying data changes:
 

@@ -22,10 +22,13 @@ Parameters:
 	- - `"Bottom"`
 	- - `"Left"`
 	- - `"Right"`
+	- - `{Center, Center}` (default value)
+	- - `{Left, Top}`
+	- - ...
 
 ## Options
 ### `ImageSizeRaw`
-Sets the raw size in pixels `{width, height}` of the container for the inner object. It sometimes comes handy when it fails to automatically guess the required size
+Sets the raw size in pixels `{width, height}` of the container for the inner object. It sometimes comes handy when it fails to automatically guess the required size. It works the best with `origin` set to `{Left, Top}`.
 
 ## Examples
 

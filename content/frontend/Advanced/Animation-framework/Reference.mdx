@@ -178,7 +178,24 @@ where `easing` is function used for animating the transition:
 - `"LinearEuclidean"`  (usually used for colors)
 - `Function[{t, initial, current, target}, ...]`
 
-and `duration` is given in __seconds__.
+and `duration` is given in __seconds__. Here is an example of custom function, that imitates a spring:
+
+```wolfram
+springEase = Function[{t, initial, current, target},
+  initial + (target - initial)*
+    If[t <= 0,
+      0,
+      If[t >= 1,
+        1,
+        Module[{u},
+          u = t^2 (3 - 2 t); (* smooth start *)
+          1 - Exp[-14 u] * (Cos[18 u] + (14/18) Sin[18 u])
+        ]
+      ]
+    ]//N
+];
+```
+
 
 In addition `Animate` can be applied to any held `_Symbol`:
 
