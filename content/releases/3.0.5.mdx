@@ -199,6 +199,28 @@ Imagine you have created a presentation with custom styles defined in separate H
 
 Now, you can simply project your slides as usual, and everything else happens in the background.
 
+## Image3D Update
+We added support for colors (in RGB format) in `Image3D`!
+
+```wolfram
+Image3D[RandomReal[1, {5, 10, 10, 3}]]
+```
+
+And it also now supports updates using `Offload` wrapper. Here is a rotating human brain (voxelized)
+
+```wolfram
+img3d = ImageResize[Image3D[ExampleData[{"TestImage3D","MRbrain"}]], 4 {15,15,15}];
+buf3d = ImageData[img3d, "Real32"];
+angle = 0.0;
+
+Image3D[buf3d//Offload, "Real32", BoxRatios->{1,1,1/1.65}, ColorFunction->"XRay", Epilog->{
+  EventHandler[AnimationFrameListener[buf3d//Offload], Function[Null,
+    buf3d = ImageData[ImageRotate[img3d, {angle, {1,1,1}}, ImageDimensions[img3d]], "Real32"];
+    angle+=0.1;
+  ]]
+}]
+```
+
 ## Codebase Refactor
 Another refactoring sweep has happened, unifying the architecture and modules structure.
 

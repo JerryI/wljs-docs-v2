@@ -4,19 +4,20 @@ env:
   - WLJS
   - Wolfram Kernel
 
+update: true
 package: wljs-graphics3d-threejs
 source: https://github.com/JerryI/Mathematica-ThreeJS-graphics-engine/blob/dev/src/Kernel.wl
 ---
 
 <Callout type="warn">
-Limited support. Only gray-scale and minimum options. Not possible to combine with `Graphics3D`
+Limited support. Curently it is not possible to combine with `Graphics3D` using `Show`
 </Callout>
 
 ```wolfram
 Image3D[data_List]
 ```
 
-represents a 3D image with pixel values given by the 3D array `data`
+represents a 3D image with pixel values given by the 3D array `data`
 
 ```wolfram
 Image3D[{image1, image2, ...}]
@@ -24,7 +25,7 @@ Image3D[{image1, image2, ...}]
 
 creates a 3D image from a list of 2D images.
 
-Image is rendered using **maximum intensity projection** (**MIP**) and shader code developed by [Martin Röhlig](https://observablehq.com/@mroehlig).
+Image is rendered using **maximum intensity projection** (**MIP**) and shader code developed by [Martin Röhlig](https://observablehq.com/@mroehlig).
 
 ## Options
 ### `ImageSize`
@@ -85,12 +86,26 @@ Image is rendered using **maximum intensity projection** (**MIP**) and shader c
 
 or one can provide a pure color function similar to `Graphics`, which return color based on the input value from `0` to `1`.
 
+### `Epilog`
+Run somenting after (similar how it is used in [Image](./../Image/Image))
+
+
+
+
+
 ## Examples
 Generate one from random numbers
 
 ```wolfram
 Image3D[RandomReal[1, {5, 10, 10}]]
 ```
+
+RGB example:
+
+```wolfram
+Image3D[RandomReal[1, {5, 10, 10, 3}]]
+```
+
 
 Use example data
 
@@ -102,4 +117,36 @@ or MRT of a brain
 
 ```wolfram
 Image3D[ExampleData[{"TestImage3D","MRbrain"}], BoxRatios->{1,1,1/1.65}, ColorFunction->"XRay"]
+```
+
+
+
+## How to update
+It supports `Offload` method with an assumption that the data format does not change as well as image size. For example:
+
+```wolfram
+cells = CellularAutomaton[{14, {2, 1}, {1, 1, 1}}, {{{{1}}}, 0}, 8];
+off = cells[[1]];
+Image3D[off//Offload, "Real32"]
+```
+
+then update it:
+
+```wolfram
+Do[off = cells[[i]]; Pause[1/10.0], {i,Length[cells]}];
+```
+
+Here is another example with automated animation using [AnimationFrameListener](./../Graphics3D/AnimationFrameListener) 
+
+```wolfram
+img3d = ImageResize[Image3D[ExampleData[{"TestImage3D","MRbrain"}]], 4 {15,15,15}];
+buf3d = ImageData[img3d, "Real32"];
+angle = 0.0;
+
+Image3D[buf3d//Offload, "Real32", BoxRatios->{1,1,1/1.65}, ColorFunction->"XRay", Epilog->{
+  EventHandler[AnimationFrameListener[buf3d//Offload], Function[Null,
+    buf3d = ImageData[ImageRotate[img3d, {angle, {1,1,1}}, ImageDimensions[img3d]], "Real32"];
+    angle+=0.1;
+  ]]
+}]
 ```
