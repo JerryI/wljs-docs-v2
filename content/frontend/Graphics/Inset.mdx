@@ -12,6 +12,10 @@ Inset[expr_, opts___]
 Inset[expr_, pos_List, origin: Center, opts___]
 ```
 
+```wolfram
+Inset[expr_, pos_List, origin: Center, size_:Automatic, opts___]
+```
+
 a graphics object, that allows to put another [Graphics](../Graphics/Graphics), [Image](../Image/Image), [EditorView](../GUI/EditorView), [CellView](../GUI/CellView) or __anything else__ on the canvas.
 
 Parameters:
@@ -25,6 +29,8 @@ Parameters:
 	- - `{Center, Center}` (default value)
 	- - `{Left, Top}`
 	- - ...
+	- - `{x, y}` coordinates
+- `size` __is optional__ and specifies the size of inner object in the system coordinates of the parent container (i.e. `Graphics`). If the specified size does not match the size of inner object `Inset` will be rescaled to match visually
 
 ## Options
 ### `ImageSizeRaw`
@@ -42,12 +48,45 @@ inset = Graphics[{
 Plot[x, {x,0,10}, Epilog->{Inset[inset, {5,5}]}]
 ```
 
+set an anchor point:
+
+```wolfram
+inset = Graphics[{
+  LightRed,
+  Disk[{0,0},0.25],
+  Black, Directive[FontSize->16], Text["Test", {0,0}, {0,0}]
+}, PlotRange->{{-1,1}, {-1,1}}, Background->Yellow, ImageSize->100];
+
+Plot[x, {x,0,10}, Epilog->{Inset[inset, {5,5}, {Left, Top}]}]
+```
+
+override size and distort the object:
+
+```wolfram
+inset = Graphics[{
+  LightRed,
+  Disk[{0,0},0.25],
+  Black, Directive[FontSize->16], Text["Test", {0,0}, {0,0}]
+}, PlotRange->{{-1,1}, {-1,1}}, Background->Yellow, ImageSize->100];
+
+Plot[x, {x,0,10}, Epilog->{Inset[inset, {5,5}, {Center, Center}, {1,1}]}]
+```
+
 or use place any Wolfram expression:
 
 <WLJSWrapper>
 <div className="code-input"/>
 <wljs-editor type="Input" display="codemirror">{`Plot[x, {x,0,10}, Epilog->{Inset[HoldForm[(*FB[*)((1)(*,*)/(*,*)(2))(*]FB*)], {5,5}, Bottom]}]`}</wljs-editor>
 </WLJSWrapper>
+
+Rescale the object if needed:
+
+```wolfram
+g = Plot[Sin[x], {x, 0, 10}, Frame -> True, FrameTicks -> None, 
+   AspectRatio -> Full];
+   Table[Graphics[{Inset[g, Automatic, Automatic, {s, s}], 
+   Circle[{0, 0}, 2]}, Frame -> True, ImageSize->150], {s, {1, 2, 3}}]
+```
 
 ## Transitions and updates
 The second arguments `pos` that specifies the position of an inset does support updates.

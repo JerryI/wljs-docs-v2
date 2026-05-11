@@ -221,8 +221,20 @@ Image3D[buf3d//Offload, "Real32", BoxRatios->{1,1,1/1.65}, ColorFunction->"XRay"
 }]
 ```
 
+## Inset expression update
+We added the missing `size` argument to `Inset`, which is useful for embedding other objects into 2D graphics. Here is an updated example:
+
+```wolfram
+g = Plot[Sin[x], {x, 0, 10}, Frame -> True, FrameTicks -> None, 
+   AspectRatio -> Full];
+   Table[Graphics[{Inset[g, Automatic, Automatic, {s, s}], 
+   Circle[{0, 0}, 2]}, Frame -> True, ImageSize->150], {s, {1, 2, 3}}]
+```
+
 ## Codebase Refactor
 Another refactoring sweep has happened, unifying the architecture and modules structure.
+
+Stability of kernels connection was significantly improved by switching from TCP/IP communication to WTSP + shared memory.
 
 ## Breaking changes
 `CreateFrontEndObject` does not run automatically in the output cells, i.e.
