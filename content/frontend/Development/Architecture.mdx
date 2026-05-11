@@ -5,7 +5,7 @@ title: Architecture
 
 ![](./imgs/Pasted-image-20250210130401-7170ae332f32e0f49b05f6a6eb4866eb.png)
 
-WLJS Notebook is an application built on top of the Wolfram Engine (a freeware distribution of Wolfram Language) with a web-based GUI. Naturally, we isolate evaluation to a separate process of the Wolfram Engine, similar to Mathematica or Jupyter. Both can directly interact with the content rendered on the page directly for the sake of performance and low-latency.
+WLJS Notebook is an application built on top of the Wolfram Engine (a freeware distribution of Wolfram Language) with a web-based GUI. Naturally, we isolate evaluation to a separate process of the Wolfram Engine connected via 2 shared-memory channels (main control link and async link), similar to Mathematica or Jupyter. Both can directly interact with the content rendered on the page directly using 2 binary WebSockets for the sake of performance and low-latency.
 
 ## GUI
 We use a superset of Wolfram Language and HTML—[WLX](./../Cell-types/WLX)—to build app components (similar to JSX) and the entire GUI. Together with a small UI framework, it allows seamless integration of JS with WL, which is why we do not explicitly separate backend and frontend parts in the architecture. The state is not stored on the client; all UI updates are performed by the main Wolfram Engine process.
