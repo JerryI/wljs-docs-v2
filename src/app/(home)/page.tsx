@@ -350,7 +350,7 @@ export default function HomePage() {
           Open-source Notebook interface for Wolfram Language
         </p>
         <p className="text-base sm:text-lg text-fd-muted-foreground/80 mb-8 max-w-xl">
-          Typeset math input, syntactic sugar, multiple languages, and a fast, granular evaluation engine
+          Typeset math input, expressive syntax, rich media output, and live interactivity
         </p>
         
         <div className="flex gap-3 mb-12 flex-wrap justify-center">
@@ -418,7 +418,7 @@ export default function HomePage() {
           <Card 
             icon={<Zap />}
             title="Interactive & Powerful"
-            description=<>{`Optimized for interactive computing and allows to make complex real-time visualizations. From the high-level `}<code>Manipulate</code> to low-level graphics primitives</>
+            description=<>{`Optimized for fast interactive computing and allows to make complex real-time visualizations. From the high-level `}<code>Manipulate</code> to low-level graphics primitives</>
             href="/frontend/Guides/Dynamic"
           />
 
