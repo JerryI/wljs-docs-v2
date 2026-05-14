@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     default: 'WLJS Notebook',        // used when no child page sets a title
     template: '%s',  // used when a child page sets a title
   },
-  description: 'Open-source Notebook interface for Wolfram Language. Typeset math input, syntactic sugar, multiple languages, and a fast, granular evaluation engine',
+  description: 'Interactive open-source notebook interface for Wolfram Language',
 };
 
 export default function Layout({ children }: LayoutProps<'/'>) {
