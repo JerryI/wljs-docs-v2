@@ -461,7 +461,7 @@ export default function HomePage() {
             icon={<Bot />}
             title="MCP & CLI ready"
             description="Expose your notebook through a streaming Model Context Protocol server and CLI, giving LLM agents access to notebooks and documentation."
-            href="/frontend/Guides/Command-palette.mdx#mcp-server"
+            href="/frontend/Guides/Command-palette#mcp-server"
           />   
         </Cards>
       </div>
