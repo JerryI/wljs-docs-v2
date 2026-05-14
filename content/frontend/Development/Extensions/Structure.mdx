@@ -41,6 +41,7 @@ This is standard package declaration file from NodeJS, but modified with extra f
     "kernel": "src/Kernel.wl" | Array<string>, //loaded to Evaluation Kernel
     "deferred": "src/package" | Array<string>, //will be exposed to PATH of Evaluation Kernel
     "frontend": "src/Frontend.wl" | Array<string>, //loaded to Main Kernel
+    "electron": "dist/electron/" | Array<string>, //loaded to NodeJS process as CommonJS module
     "category": "<catergory-name>",
     "priority": 5000, 
     "menu": [ //top-menu items

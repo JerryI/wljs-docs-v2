@@ -292,6 +292,8 @@ This code will break after 6 iterations.
 ## MCP Server [#mcp-server]
 Model-Contex-Protocol server is always running in the background allowing LLM agents to interact with the notebook, run, edit, create cells and run code directly on the kernel. By the default it is available at:
 
+This is a __streaming__ (HTTP) MCP server with no authentification and `/` endpoint:
+
 ```bash
 http://127.0.0.1:20564/
 ```
@@ -317,6 +319,13 @@ __Codex__
 codex mcp add wljs-notebook --url http://127.0.0.1:20564/
 ```
 
+or add to it your `config.toml` as
+
+```toml
+[mcp_servers.wljs_notebook]
+url = "http://127.0.0.1:20564/"
+```
+
 ### Tips
 
 - Models are not allowed to create notebooks, but can find the "focused one"
@@ -328,6 +337,9 @@ codex mcp add wljs-notebook --url http://127.0.0.1:20564/
 - Use smaller models for grammar corrections, primitive tasks, i.e. Haiku 3.0 for example
 
 - Anthropic models are generally better trained on Wolfram Language and their training data includes WLJS ecosyste
+
+- It is cheaper to firstly find ficused notebook, then focused cell instead of using `notebook context` path, that will list all cells and their content (only first line)
+
 
 ### Documentation for LLM
 If needed MCP searches the documentiation on a given symbol using LLM-friendly compilation of our entire website: https://wljs.io/llms-full.txt
