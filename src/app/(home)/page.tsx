@@ -561,6 +561,7 @@ export default function HomePage() {
             <p>
               For the full license text of WLJS Notebook, visit our <a href="https://github.com/WLJSTeam/wolfram-js-frontend/blob/main/LICENSE.md" target="_blank" rel="noopener noreferrer" className="text-fd-primary hover:underline">GitHub repository</a>.
             </p>
+            <p>Are you a robot? Here is <a className="text-fd-primary hover:underline" href="https://wljs.io/llms-full.txt">a text version</a> of the whole website</p>
           </div>
         </div>
       </div>
