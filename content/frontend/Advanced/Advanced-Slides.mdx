@@ -514,6 +514,19 @@ Next slide
 
 ## Misc
 
+### Font
+You can alter font-family and other styles of all slides using `.slide` class. For example:
+
+<WLJSWrapper>
+<div className="code-input"/>
+<wljs-editor lazy="true" type="Input" display="codemirror">{`.html
+ <style>
+  .slide {
+    font-family:'KaTeX_Main';
+  }
+  </style>
+`}</wljs-editor></WLJSWrapper>
+
 ### Dark Theme
 If you want to color your slides in black, create [HTML](./../Cell-types/HTML) cell and evaluate it to override styles for slide number, headings and create a few helper classes:
 
