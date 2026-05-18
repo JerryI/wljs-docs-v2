@@ -3,11 +3,14 @@ title: Patch 18052026 for *3.0.5*
 date: 2026-05-18
 ---
 
-We release it as a notebook, that you run and it modifies application files. This patch includes the following fixes:
+We release it as a notebook that you can run to modify the application files. This patch includes the following fixes:
 
-- Better unicode support for view decorations
-- Fixes major bugs with `.wl` files editor
-- Improved performance of the editor
+* Better Unicode support for view decorations
+* Fixed major bugs in the `.wl` file editor
+* Improved editor performance
+
+The most important fix is Unicode-related. The issue may appear as unreadable labels if you have `Graphics` with `Text` inside, written using non-ASCII characters. However, it will not appear if the expression is large enough to be automatically compressed, such as `Plot`, `Image`, or `Audio` outputs.
+
 
   <DownloadFile
     title="Download"
