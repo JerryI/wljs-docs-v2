@@ -8,6 +8,7 @@ We release it as a notebook that you can run to modify the application files. Th
 * Better Unicode support for view decorations
 * Fixed major bugs in the `.wl` file editor
 * Improved editor performance
+* Fixes `Destory` event propagation for projected cells
 
 The most important fix is Unicode-related. The issue may appear as unreadable labels if you have `Graphics` with `Text` inside, written using non-ASCII characters. However, it will not appear if the expression is large enough to be automatically compressed, such as `Plot`, `Image`, or `Audio` outputs.
 
