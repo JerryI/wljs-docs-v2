@@ -15,10 +15,6 @@ returns a window socket object from the evaluation context. The object correspon
 Provides [WindowObj](../Frontend-IO/WindowObj)
 
 ## Notes on projected cells
-`CurrentWindow[]` will return an object pointing to the window, where a cell was projected. To get the window object of the parent notebook window use
-
-```wolfram
-CurrentWindow["Origin"]
-```
+`CurrentWindow[]` will return an object pointing to the window, where a cell was projected. 
 
 It is used by [FrontSubmit](../Frontend-IO/FrontSubmit), [FrontFetch](../Frontend-IO/FrontFetch) and [FrontFetchAsync](../Frontend-IO/FrontFetchAsync)
