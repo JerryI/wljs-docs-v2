@@ -2,16 +2,20 @@
 title: Troubleshooting
 ---
 
-If something isn't working as intended, please post an [__issue on GitHub__](https://github.com/WLJSTeam/wljs-notebook/issues) and include information evaluated in your Wolfram Engine, such as:
+If something isn't working as intended, please post an [__issue on GitHub__](https://github.com/WLJSTeam/wljs-notebook/issues) and include information evaluated in your Wolfram Engine (wolframscript), such as:
 
 ```wolfram
 $Version
 $SystemID
 ```
 
-Also specify how you are running the app (as desktop or Docker image).
+<Callout type="warning">WLJS works correctly with Wolfram Engine > 14.1. The older versions are not supported due to some missing I/O features</Callout>
 
-## Cache Issues
+Also, please, specify __how you are running the app__ (as a normal desktop application or as a Docker image on a server).
+
+## Caching Issues
+> This is only relevant for Docker images
+
 Sometimes after an update, your browser's cache may still be outdated. Try the following options depending on your browser:
 
 - <kbd>Ctrl-F5</kbd> or <kbd>⌘-R</kbd>
@@ -19,29 +23,8 @@ Sometimes after an update, your browser's cache may still be outdated. Try the f
 - `Reload Window` (from the top menu of desktop application window)
 - `Clear Cache and Reload` (from the top menu)
 
-
-## Cells Didn't Load Correctly
-This rarely occurs when asynchronous loading fails.
-
-Perform a __Force Reload__ of the window/page (from the main top menu or your browser).
-
-## Javascript Console
-Any errors caused by cell evaluation will appear there:
-
-import { Menu, Dot } from 'lucide-react';
-
-<div class="fd-steps">
-    <div class="fd-step py-3 items-center flex flex-row">
-        <div class="flex flex-row items-center text-sm gap-x-2"> <Menu width={"1rem"}/> Menu</div>
-    </div>
-    <div class="fd-step py-3 items-center flex flex-row">
-        <div class="flex flex-row items-center text-sm gap-x-2"> <Dot width={"1rem"}/> Window</div>
-    </div>
-    <div class="fd-step">
-        <div class="flex flex-row items-center text-sm gap-x-2"> <Dot width={"1rem"}/> Toggle Developer Tools</div>
-    </div>
-</div>
-
+## General advice
+Take a screenshot and provide the context of what went wrong
 
 ## Bypass WLJS Renderer and use MMA's
 To bypass the standard form of expression used in WLJS Notebook, use [MMAView](./GUI/MMAView)
@@ -60,6 +43,11 @@ If you're comfortable sharing logs (and it doesn't violate your privacy), you ca
 3. Close the app normally.
 4. A window with the collected log file will appear.
 5. Send the log to us via Telegram, email to one of the maintainers, or submit to GitHub Issues.
+
+## Ask community
+Use a built-in feature of the command palette bar to submit a focused cell group to our Github Discussion even if it is just a question:
+
+![](./../content/askcomm.png)
 
 ## General Discussions
 We are encouraging you to share anyhting on our [Github Discussion page](https://github.com/WLJSTeam/wljs-notebook/discussions). 
