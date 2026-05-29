@@ -13,6 +13,12 @@ $SystemID
 
 Also, please, specify __how you are running the app__ (as a normal desktop application or as a Docker image on a server).
 
+## License-related issues
+Make sure that no other processes `wolframscript` or Wolfram Kernel are running. WLJS uses 2 processes: 1 for UI, frontend and 1 for actual evaluation. This is the maximum allowed by freeware Wolfram Engine license.
+
+In addition, please, visit https://account.wolfram.com/products and verify that one of the Wolfram Engine basic keys has (Available) next to it. 
+
+
 ## Caching Issues
 > This is only relevant for Docker images
 
