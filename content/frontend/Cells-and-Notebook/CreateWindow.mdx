@@ -103,7 +103,20 @@ EventHandler[win, {
 }];
 ```
 
-<Callout type="idea">
-The `Mounted` event provides `WindowObj`, which can be used together with `FrontSubmit` and `FrontFetch` to trigger actions in the created window.
-</Callout>
+#### Getting WindowObj
+In order to send event or evaluate frontend symbols (`FrontSubmit` and others) in the context of created window or push dialog windows, you can get it's connection object using `"Ready"` event:
+
+```wolfram
+win = CreateWindow[ExpressionCell[Plot[x, {x, 0, 1}], "Output"]];
+winObject;
+EventHandler[win, {
+  "Ready" -> Function[o, winObject = o]
+}];
+```
+
+Then you can do, for example:
+
+```wolfram
+FrontSubmit[Alert["Hey!"], "Window"->winObject];
+```
 

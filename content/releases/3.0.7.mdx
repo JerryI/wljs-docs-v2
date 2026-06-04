@@ -1,0 +1,120 @@
+---
+title: Release notes *3.0.7*
+date: 2026-06-05
+---
+
+
+import { Tabs, Tab } from 'fumadocs-ui/components/tabs';
+
+<Tabs items={['Windows', 'Mac','GNU/Linux', 'Docker', 'Homebrew']}>
+  <Tab value="Mac">
+    - [Apple Silicon](https://github.com/WLJSTeam/wljs-notebook/releases/download/v3.0.7/wljs-notebook-3.0.7-arm64-macos.dmg)
+    - [Intel](https://github.com/WLJSTeam/wljs-notebook/releases/download/v3.0.7/wljs-notebook-3.0.7-x64-macos.dmg)
+  </Tab>
+  <Tab value="Windows">
+    - [x86/64](https://github.com/WLJSTeam/wljs-notebook/releases/download/v3.0.7/wljs-notebook-3.0.7-x64-win.exe)
+  </Tab>
+  <Tab value="GNU/Linux">
+    - [DEB x86/64](https://github.com/WLJSTeam/wljs-notebook/releases/download/v3.0.7/wljs-notebook-3.0.7-amd64-gnulinux.deb)
+    - [DEB ARM64](https://github.com/WLJSTeam/wljs-notebook/releases/download/v3.0.7/wljs-notebook-3.0.7-arm64-gnulinux.deb)
+    - [AppImage x86/64](https://github.com/WLJSTeam/wljs-notebook/releases/download/v3.0.7/wljs-notebook-3.0.7-x86_64-gnulinux.AppImage)
+    - [AppImage ARM64](https://github.com/WLJSTeam/wljs-notebook/releases/download/v3.0.7/wljs-notebook-3.0.7-arm64-gnulinux.AppImage)
+  </Tab>
+  <Tab value="Docker">
+
+```bash
+docker run -it \
+  -v ~/wljs:"/home/wljs/WLJS Notebooks" \
+  -v ~/wljs/Licensing:/home/wljs/.WolframEngine/Licensing \
+  -v ~/wljs/tmp:/tmp \
+  -p 8000:3000 \
+  --name wljs \
+  ghcr.io/wljsteam/wljs-notebook:main
+```
+
+  </Tab>
+  <Tab value="Homebrew">
+  
+```bash  
+brew install --cask wljs-notebook
+```
+
+  </Tab>
+</Tabs>
+
+<wljs-store json="./attachments/2e96f590-bb0e-4e9e-b07f-25f17cce1425.txt"></wljs-store>
+
+
+## TraditionalForm
+We implemented `TraditionalForm`, which was missing in WLJS. Under the hood, it attempts to convert expressions to LaTeX and render them in the output.
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`Integrate[f[x], x] // TraditionalForm`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(FrontEndRef["731f6c12-4e58-447b-8fd1-ac5616d2453c"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKmxsbppklGxrpmqSaWuiamJgn6VqkpRjqJiabmhmapRiZmBonAwB7mhVF"*)(*]VB*)`}</wljs-editor></WLJSWrapper>
+
+You can also use it for labels and plot legends.
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`Plot[Sin[x], {x, 0, 1}, PlotLegends->{Sin[x]//TraditionalForm}, ImageSize->300]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(FrontEndRef["df723720-12f1-4eb3-b008-b669d3f9f39d"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKp6SZGxmbGxnoGhqlGeqapCYZ6yYZGFjoJpmZWaYYp1mmGVumAAB9OBV3"*)(*]VB*)`}</wljs-editor></WLJSWrapper>
+
+## Settings Hot Reload & Dark Mode Update
+Now you don't have to restart WLJS every time you change a setting (for the most part). All open notebooks will automatically reload once you change something.
+
+In addition, we added contrast and brightness adjustments for dark mode, so you can tune it continuously until it feels comfortable for your eyes.
+
+
+![](./attachments/Screenshot-2026-06-03-at-16.55.40-ddd.png)
+
+## Window Manager Refactor & Offscreen Rendering
+We simplified and improved many things in our codebase. `Rasterize` and many other system features no longer require open windows and work seamlessly in the background. However, for most users, this will not make a huge difference; for future maintenance and advanced WLJS usage, it makes a big difference.
+
+If you are using the WLJS desktop application, try:
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`Rasterize[Plot[x, {x,0,1}]]`}</wljs-editor></WLJSWrapper>
+
+`CellPrint` no longer requires additional parameters when used without an evaluation context, for example inside a `Button`.
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`Button["Print", CellPrint[RandomColor[]]]`}</wljs-editor></WLJSWrapper>
+
+## CLI Update
+You can use the `wljs` utility not only to inspect notebooks,
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`.sh
+	wljs focused`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="shell" type="Output"  >{`{
+	  "Id": "008",
+	  "Kernel": "002"
+	}
+	`}</wljs-editor></WLJSWrapper>
+
+but also to run Wolfram Language, similar to `wolframscript`. Here is an analogue of the `ls` or `dir` command, for example:
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`.sh
+	wljs -c 'FileNames["*"]'`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="shell" type="Output"  >{`{"2.5.0.wln", "2.5.2.wln", "2.5.3.wln", "2.5.4.wln", "2.5.6.wln", "2.5.7.wln", "2.5.9.wln", "2.6.1.wln", "2.6.2.wln", "2.6.3.wln", "2.6.4.wln", "2.6.5.wln", "2.6.7.wln", "2.6.8.wln", "2.7.0.wln", "2.7.1.wln", "2.7.2.wln", "2.7.2 X1.wln", "2.7.3.wln", "2.7.4.wln", "2.7.5.wln", "2.7.6.wln", "2.7.8.wln", "2.7.9.wln", "2.8.0.wln", "2.8.1.wln", "2.8.2.wln", "2.8.3.wln", "2.8.5.wln", "2.8.7.wln", "2.8.8.wln", "2.8.9.wln", "2.9.1.wln", "2.9.2.wln", "3.0.0.wln", "3.0.1.wln", "3.0.2.wln", "3.0.3.wln", "3.0.4.wln", "3.0.7.wln", "3.0.7.wln", "attachments"}
+	`}</wljs-editor></WLJSWrapper>
+
+`Rasterize` and WLJS-specific functions will work out of the box too.
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`.sh
+	wljs -c 'Rasterize[TeXView[TeXForm[1/2]]]'`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="shell" type="Output"  >{`<<Image>>
+	`}</wljs-editor></WLJSWrapper>
+
+## MCP Update
+With help from @Hachann, we significantly improved tools for AI agents and reduced token consumption.
+
+## AF Update
+The animation framework got an update. It is more stable and renders animations for export fully offscreen at up to 2K resolution, using native NodeJS I/O to write frames to disk and bypass the Wolfram Kernel entirely.
+
+## Misc
+- Improved `Short`
+- Fixed encoding issues for `Text`
+- Added missing binaries
+- Improved `MMAView`, `GeoGraphics`, and `TeXForm`
+- Stability improvements
+- WLW (Mini Apps) bug fixes

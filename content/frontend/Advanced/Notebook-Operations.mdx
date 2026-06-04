@@ -356,6 +356,23 @@ EventHandler[win, {
 }];
 ```
 
+### Getting WindowObj
+In order to send event or evaluate frontend symbols (`FrontSubmit` and others) in the context of created window or push dialog windows, you can get it's connection object using `"Ready"` event:
+
+```wolfram
+win = CreateWindow[ExpressionCell[Plot[x, {x, 0, 1}], "Output"]];
+winObject;
+EventHandler[win, {
+  "Ready" -> Function[o, winObject = o]
+}];
+```
+
+Then you can do, for example:
+
+```wolfram
+FrontSubmit[Alert["Hey!"], "Window"->winObject];
+```
+
 ## Application windows manipulation
 Each visible window of WLJS Notebook can be retrieved from the context using [CurrentWindow](./../Frontend-IO/CurrentWindow)
 
@@ -746,7 +763,7 @@ MessageDialog["Operation completed!"];
 MessageDialog[Graphics[Disk[{0,0}, 1]]];
 ```
 
-In the case of lost context, i.e. `MessageDialog` is called by a timer, button click - provide `"Notebook"` as an option:
+In the case of lost context, i.e. `MessageDialog` is called by a timer, button click - it will find a window to show automatically, unless you explicitly provide `"Notebook"` as an option:
 
 ```wolfram
 n = EvaluationNotebook[];
@@ -772,8 +789,7 @@ choice = ChoiceDialog["Select option:", {
 `ChoiceDialog` is a blocking function. Avoid using it in timers like `SetTimeout`, external event handlers such as `InputButton` or `Button`, or within `AsyncFunction`. Use `ChoiceDialogAsync` instead:
 
 ```wolfram
-n = EvaluationNotebook[];
-Button["Message", Then[ChoiceDialogAsync["Proceed with operation?", "Notebook"->n], Function[choise,
+Button["Message", Then[ChoiceDialogAsync["Proceed with operation?"], Function[choise,
   Print[choise];
 ]]]
 ```
@@ -816,13 +832,15 @@ path = SystemDialogInput["FileSave"];
 dir = SystemDialogInput["Directory"];
 ```
 
-System dialogs are no longer associated with notebooks; instead they require `WindowObj` to be provided, which specifies the parent application window:
+System dialogs are no longer associated with notebooks:
 
 ```wolfram
-w = CurrentWindow[];
-SetTimeout[Then[SystemDialogInputAsync["FileSave", "Window"->w], Print], 1000];
+SetTimeout[Then[SystemDialogInputAsync["FileSave"], Print], 1000];
 ```
 
+<Callout type="warning">
+    `SystemDialogInputAsync` will not work if it WLJS is running on a server (Docker Image)
+</Callout>
 
 However, you do not have to provide `"Window"` if the dialog is called from a button click. The event context carries `"Window"` implicitly:
 

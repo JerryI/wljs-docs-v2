@@ -70,18 +70,6 @@ timeline = AsyncFunction[scene, Module[{d},
 r = af`RecordAnimation[animation, ImageSize->Large, FrameRate->60];
 ```
 
-To start recording - evaluate `r` and resize the notebook __to fit the render window__:
-
-```wolfram
-r
-```
-
-<div className="invertColor">
-
-![](./imgs/record.png)
-
-</div>
-
 ### Step 3
 Once the rendering has been finished, you can see the exported series:
 
@@ -94,5 +82,11 @@ Make a video using Wolfram Standard library
 
 ```wolfram
 af`RecorderToVideo[r]
+```
+
+or use `ffmpeg` (recommended):
+
+```bash
+ffmpeg -y -stats_period 60 -pattern_type glob -framerate 60 -i "output_dir/*.png" -c:v prores_ks -profile:v 4 -pix_fmt yuv444p10le prores4444.mov
 ```
 

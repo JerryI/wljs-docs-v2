@@ -42,6 +42,7 @@ In general, you can think of a mini app as if it were an output of a single cell
 - The default context (`$Context`) of all symbols is randomly generated and will be unique for each running instance of your app
 - __All initialization cells will be executed automatically__ on the startup of an app
 - __The output of the last input cell__ will be the first window of your app
+- Use WLX for the last input cell
 - An app will pick the first available computation kernel in your system
 
 </Card>
@@ -56,52 +57,16 @@ Let's write the simplest possible interactive widget:
 <span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-20 group-hover:opacity-50 transition duration-500" />
 <wljs-editor display="codemirror" type="Input"  >{`
 (* make it initialization cell *)
-equation[x_,n_] := Sum[(Sin[2\[Pi](2j - 1) x])/(2j - 1), {j, 1, n}]
+equation[x_,n_] := Sum[(Sin[2\[Pi](2j - 1) x])/(2j - 1), {j, 1, n}];
+Widget = ManipulatePlot[equation[x,n]//Re, {x, -1,1}, {n, 1,10,1}];
 `}</wljs-editor>
 </WLJSWrapper>
 
 <WLJSWrapper>
 <span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-20 group-hover:opacity-50 transition duration-500" />
-<wljs-editor display="codemirror" type="Input"  >{`
-(* make it the last input cell in the notebook *)
-ManipulatePlot[equation[x,n]//Re, {x, -1,1}, {n, 1,10,1}]
+<wljs-editor display="codemirror" type="Input"  >{`.wlx
+<Widget/>
 `}</wljs-editor>
 </WLJSWrapper>
 
 Then export it as <small>Mini app</small> and double-click the created file. You can open it anytime on any machine with WLJS Notebook installed. 
-
-### Example 2
-
-<WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-20 group-hover:opacity-50 transition duration-500" />
-<wljs-editor display="codemirror" type="Input"  >{`
-(* make it initialization cell *)
-newWindow = Module[{
-  text = "Hello World"
-},
-Column[{
-	EventHandler[InputText[text], (text = #)&],
-	Graphics[Table[{
-		RandomColor[], 
-		Rotate[
-			Text[text // Offload, RandomReal[{-1,1}, 2]],
-			RandomReal[{0, 3.14}]
-		]
-	}, {40}]]
-}]
-];
-`}</wljs-editor>
-</WLJSWrapper>
-
-and the last input cell:
-
-<WLJSWrapper>
-<span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-20 group-hover:opacity-50 transition duration-500" />
-<wljs-editor display="codemirror" type="Input"  >{`
-notebook = EvaluationNotebook[];
-
-Button["Open window", CellPrint[newWindow, "Notebook"->notebook, "Target"->_]]
-`}</wljs-editor>
-</WLJSWrapper>
-
-It will create a window with a single button that, when clicked, creates a new window with its content.

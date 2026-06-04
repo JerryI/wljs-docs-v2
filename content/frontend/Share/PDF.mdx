@@ -72,7 +72,7 @@ Export["filename.pdf", %]
 For the PDF format, there are a few extra options you can provide:
 
 - `"Crop"` - by default is `True`, which trims white regions
-- `"Window"` - by default is `CurrentWindow[]`, which specifies the window object where to render
+- `"Notebook"` - by default is `EvaluationNotebook[]`, specifies the notebook to take when rendering the content (if it includes some custom HTML, WLX or JS cells to be used in expression)
 - `"ExposureTime"` - time delay to wait before capturing (to let the layout settle), the default is 2.5 seconds
 - `"Landscape"` - printing mode, by default is `True`
 

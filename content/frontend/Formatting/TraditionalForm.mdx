@@ -1,0 +1,30 @@
+---
+title: TraditionalForm
+---
+
+```wolfram
+TraditionalForm[expr_]
+```
+
+attempts to convert `expr` to a traditional mathematical form (using LaTeX)
+
+## Examples
+Display undefined integral:
+
+```wolfram
+Integrate[f[x], x] // TraditionalForm
+```
+
+Make a plot with a fancy legend
+
+```wolfram
+Plot[Sin[x], {x,0,10}, PlotLegends->{
+  Sin[x] // TraditionalForm
+}]
+```
+
+
+## Supported output forms
+- [StandardForm](../Formatting/StandardForm)
+- [WLXForm](../Formatting/WLXForm)
+

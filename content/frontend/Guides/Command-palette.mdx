@@ -300,6 +300,8 @@ http://127.0.0.1:20564/
 
 It also provides specific skills for various cell types, documentation and fits into 500-600 tokens at the start. 
 
+We carefully crafted our tools, all responces to avoid unnecessary information noise, long random UIDs providing the bare mimimum data required to inspect, edit and add cells.
+
 <Callout type="note">
 This feature is only available for WLJS Desktop application
 </Callout>
@@ -338,7 +340,7 @@ url = "http://127.0.0.1:20564/"
 
 - Anthropic models are generally better trained on Wolfram Language and their training data includes WLJS ecosyste
 
-- It is cheaper to firstly find ficused notebook, then focused cell instead of using `notebook context` path, that will list all cells and their content (only first line)
+- It is cheaper to firstly find focused notebook, then focused cell instead of using `notebook context` path, that will list all cells and their content (only first line)
 
 
 ### Documentation for LLM
@@ -347,9 +349,9 @@ If needed MCP searches the documentiation on a given symbol using LLM-friendly c
 
 ## CLI
 
-WLJS Notebook includes a small command-line interface for opening notebooks, inspecting the active notebook, editing cells, evaluating cells, and consulting local WLJS/Wolfram documentation.
+WLJS Notebook includes a small command-line interface for evaluating code, opening notebooks, inspecting the active notebook, editing cells, evaluating cells, and consulting local WLJS/Wolfram documentation.
 
-Most commands print JSON to stdout. Errors are printed to stderr and return a non-zero exit code.
+Most notebook-related commands print JSON to stdout. Errors are printed to stderr and return a non-zero exit code.
 
 ### Basic usage
 
@@ -363,41 +365,47 @@ Open the current directory in WLJS Notebook.
 wljs path/to/file
 ```
 
-or
+Open a directory or a file by path
 
 ```bash
 wljs 'path/to/file'
+wljs 'path/to/file/notebook.wln'
 ```
 
-Open a file by path
+Use `''` to shield white-space characters
 
 ```bash
-wljs help
-wljs help --json
-wljs describe
-wljs version
-wljs -v
-wljs --version
-wljs config
-wljs status
+wljs new
 ```
 
-| Command                                     | Description                                          |
-| ------------------------------------------- | ---------------------------------------------------- |
-| `wljs help`                                 | Show human-readable help.                            |
-| `wljs help --json`                          | Show machine-readable command information.           |
-| `wljs describe`                             | Print a JSON manifest for LLM agents and automation. |
-| `wljs version`, `wljs -v`, `wljs --version` | Print CLI version.                                   |
-| `wljs config`                               | Print runtime configuration.                         |
-| `wljs status`                               | Check whether the local WLJS backend is reachable.   |
-
-Aliases for `wljs describe`:
+Create a new notebook
 
 ```bash
-wljs llm-help
-wljs commands
+wljs wl '<wolfram-expression>'
 ```
 
+Evaluate code in a ready kernel (akin to `wolframscript`), without creating a notebook cell.
+
+Examples:
+
+```bash
+wljs wl 'Total[Range[100]]'
+wljs wl 'Plot[Sin[x], {x, 0, 10}]'
+```
+
+Here are some aliases:
+
+```bash
+wljs code 'Total[Range[100]]'
+wljs c 'Plot[Sin[x], {x, 0, 10}]'
+wljs -c 'Plot[Sin[x], {x, 0, 10}]'
+```
+
+Note, that any such evaluation temporary changes the working directory to one, where a script was called. Here is analog of `ls` or `dir` command:
+
+```bash
+wljs -c 'FileNames["*"]'
+```
 
 ### Notebook inspection
 
@@ -449,6 +457,12 @@ Example:
 
 ```bash
 wljs lines cell123 1 40
+```
+
+Print the full cell content bypassing any shortening or formatting tricks normally done in the notebook:
+
+```bash
+wljs full <cell>
 ```
 
 ### Documentation
@@ -540,18 +554,7 @@ wljs project <cell>
 
 Project an input cell into a standalone window.
 
-```bash
-wljs wl '<wolfram-expression>'
-```
 
-Evaluate Wolfram Language directly in a ready kernel, without creating a notebook cell.
-
-Examples:
-
-```bash
-wljs wl 'Total[Range[100]]'
-wljs wl 'Plot[Sin[x], {x, 0, 10}]'
-```
 
 ### Content input
 

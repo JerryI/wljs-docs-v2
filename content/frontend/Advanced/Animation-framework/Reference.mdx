@@ -29,9 +29,6 @@ Scenes can be reused multiple times in different animations.
 #### `ImageSize`
 By the default is `Medium`. 
 
-#### `"TimeMarkers"`
-Sets the time markers from the [Timeline](./Timeline)
-
 ### `"GlobalDirectives"`
 Adds a provided list to the scene globally (set font size globally and etc)
 
@@ -571,7 +568,6 @@ where `animationFunction` is your async animation function, that accepts `Scene`
 - `GeneratedAssetLocation` - by the default is `$TemporalDirectory`
 - `GeneratedAssetFormat` - format for rendered sequence: `"PNG"`, `"JPEG"`
 - `CompressionLevel` - by the default is `0.2` (applicable only for JPEG)
-- `"TimeMarkers"` - sets the time markers from the [Timeline](./Timeline)
 - `"StaggerDelay"` - sets an extra delay in milliseconds before capturing a frame (by the default is set to 30)
 
 #### Properties
@@ -579,35 +575,6 @@ where `animationFunction` is your async animation function, that accepts `Scene`
 - `"GeneratedAssetLocation"` - path to sequence
 - `"Recording"` - status
 
-### TimelinedAnimation
-<Callout>
-Read more at [Timeline](./Timeline) page
-</Callout>
-
-To play an animation with a graphical timeline attached:
-
-```wolfram
-af`RecordAnimation[animationFunction_, opts___] _af`Private`timelined
-```
-
-<div className="invertColor">
-
-![](./imgs/Screenshot-2025-06-07-at-12.23.29-28d63066f4e5eb0c451710f4a0552cb6.png)
-
-</div>
-
-where `animationFunction` is your async animation function, that accepts `Scene` object and `opts` are the same as for [Scene](#Scene) including extra:
-
-- `"TimeMarkers"` - sets the time markers from the [Timeline](./Timeline)
-- `"AudioClips"` - restores recorded voice overs
-
-Note, `RecordAnimation` has `HoldFirst` attribute.
-
-#### Properties
-`timelined` object provides the following fields:
-- `"TimeMarkers"` - current time markers
-- `"AudioClips"` - gets audio clips from the timeline
-- `"AudioClipsAsync"` - gets audio clips from the timeline
 
 ## Utilities
 ### Color
@@ -667,37 +634,3 @@ It converts `recorder` object to [Video](./../../Video/Video)  __after the rende
 ```wolfram
 af`RecorderToVideo[_af`Private`recorder] _Video
 ```
-
-### Marker
-A helper to wait or extract property from [Timeline](./Timeline) markers
-
-*wait for the marker*
-```wolfram
-af`Marker[scene_Scene, name_String] _Promise
-af`Marker[scene_Scene, name_String, "Start"] _Promise
-```
-
-*wait for the end of the marker*
-```wolfram
-af`Marker[scene_Scene, name_String, "End"] _Promise
-```
-
-*take duration in seconds*
-```wolfram
-af`Marker[scene_Scene, name_String, "Duration"] _Real
-```
-
-### AudioFromClips
-A helper function to convert a list of audio clips (voice overs) retrieved from the properties of `timelined` object to a single audio object:
-
-```wolfram
-af`AudioFromClips[clips_List]
-```
-
-For example:
-
-```wolfram
-af`AudioFromClips[t["AudioClips"]]
-```
-
-where `t` is your [TimelinedAnimation](#TimelinedAnimation) object
