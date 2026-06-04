@@ -10,7 +10,13 @@ draws a circle with a given radius `r`
 Circle[{x_,y_}, r_]
 ```
 
-for example
+for multiple copies
+
+```wolfram
+Circle[{{x1_, y1_}, ...}, r_]
+```
+
+Here is an example:
 
 ```wolfram
 Graphics[Table[Circle[RandomReal[{-1,1}, 2], 1], {i,10}]]
