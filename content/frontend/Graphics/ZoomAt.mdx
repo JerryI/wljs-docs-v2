@@ -10,7 +10,7 @@ source: https://github.com/JerryI/wljs-graphics-d3/blob/dev/src/Kernel.wl
 ZoomAt[k_, position_:{width/2,height/2}]
 ```
 
-zooms `k` times at the given position `position` (in the coordinate system of the plot). `position` defines the center of view.
+a graphics primitive, that zooms `k` times at the given position `position` (in the coordinate system of the plot). `position` defines the center of view.
 
 ```wolfram
 ZoomAt[]
@@ -19,7 +19,7 @@ ZoomAt[]
 returns current zoom and panning values.
 
 <Callout type="info">
-This has to be called inside the instance of [Graphics](../Graphics/Graphics) using [FrontSubmit](../Frontend-IO/FrontSubmit)
+This has to be called inside the instance of [Graphics](../Graphics/Graphics) using [FrontSubmit](../Frontend-IO/FrontSubmit). Or it can be placed to `Epilog` of `Graphics` object to take immediate action
 </Callout>
 
 *All transition effects are applied here as well*
@@ -36,4 +36,11 @@ now we can zoom it
 
 ```wolfram
 FrontSubmit[ZoomAt[1.2, {0.5,0.5}], ref] 
+```
+
+
+Or one places it to `Epilog`, this zooms immediately:
+
+```wolfram
+Plot[x, {x,0,1}, Epilog->{ZoomAt[1.2, {0.5,0.5}]}]
 ```
