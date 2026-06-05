@@ -42,43 +42,47 @@ brew install --cask wljs-notebook
   </Tab>
 </Tabs>
 
-<wljs-store json="./attachments/2e96f590-bb0e-4e9e-b07f-25f17cce1425.txt"></wljs-store>
+{/* add this script to the body  */}
+{/* https://cdn.jsdelivr.net/gh/WLJSTeam/web-components@latest/src/common/app.js */}
+<wljs-assets encoded="true">%20</wljs-assets>
+
+<wljs-store json="./attachments/84dc9383-f56e-4da9-b8dc-e3814bf8a65f.txt"></wljs-store>
 
 
 ## TraditionalForm
-We implemented `TraditionalForm`, which was missing in WLJS. Under the hood, it attempts to convert expressions to LaTeX and render them in the output.
+We implemented `TraditionalForm`, which was missing from WLJS. Under the hood, it attempts to convert expressions to LaTeX and render them in the output.
 
 <WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`Integrate[f[x], x] // TraditionalForm`}</wljs-editor></WLJSWrapper>
 
-<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(FrontEndRef["731f6c12-4e58-447b-8fd1-ac5616d2453c"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKmxsbppklGxrpmqSaWuiamJgn6VqkpRjqJiabmhmapRiZmBonAwB7mhVF"*)(*]VB*)`}</wljs-editor></WLJSWrapper>
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(Null)(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRAeO5AISY0Iy0wtRwj4p6Xl5CdCVXACidAgH5fU5PyU1GB5IE/V1Dkzr0TVyCBN1ciiQtXIEsgEiqkaAZFBSgUAmPIW7A=="*)(*]VB*)`}</wljs-editor></WLJSWrapper>
 
 You can also use it for labels and plot legends.
 
-<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`Plot[Sin[x], {x, 0, 1}, PlotLegends->{Sin[x]//TraditionalForm}, ImageSize->300]`}</wljs-editor></WLJSWrapper>
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`Plot[Sin[x], {x, 0, 1}, PlotLegends->{Sin[x]//TraditionalForm}]`}</wljs-editor></WLJSWrapper>
 
-<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(FrontEndRef["df723720-12f1-4eb3-b008-b669d3f9f39d"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKp6SZGxmbGxnoGhqlGeqapCYZ6yYZGFjoJpmZWaYYp1mmGVumAAB9OBV3"*)(*]VB*)`}</wljs-editor></WLJSWrapper>
+<WLJSWrapper><wljs-editor display="codemirror" type="Output" encoded="true"  >{`%28%2AVB%5B%2A%29%28Legended%5BToExpression%5BFrontEndRef%5B%2221a0dc29-abb8-4d97-8f62-a4e5a28975fa%22%5D%2C%20InputForm%5D%2C%20Placed%5BLineLegend%5B%7BDirective%5BOpacity%5B1.%5D%2C%20RGBColor%5B0.24%2C%200.6%2C%200.8%5D%2C%20AbsoluteThickness%5B2%5D%5D%7D%2C%20%7BBoxForm%60TeXForm%5BSin%5BHoldForm%5Bx%5D%5D%5D%7D%2C%20LegendMarkers%20-%3E%20None%2C%20LabelStyle%20-%3E%20%7B%7D%2C%20LegendLayout%20-%3E%20%22Column%22%5D%2C%20After%2C%20Identity%5D%5D%29%28%2A%2C%2A%29%28%2A%221%3AeJxdUUtOwzAQDVC%2BAiE4ABIS20gQWtquopamgFQoNBViiROPwaprI9uB5gAcAk7SU3AJVogNR8AfgdTO4sWeeZ5587KfiQFZCoJAbRm4pfDSgVxIpIVMV02mBw%2FAcUQWLWXDQIKpqVkiWbC5XQNdKbhOOE4mkBcaZQzSA5OOjtAhzqNmiLKsEVZxsx42yEkUoirUUNRo1msE%2BcYVA4PCPFuzB0C4z1npskNZgNe3YuCaoRwwWf4T06McvEIvpuJySvsX6wY6VEKu6TN4gl2p%2F4RyqksZuPiJPdlNPmufCiaknO69ft9MP2J57OIzlu9vNr5i32bHQCtTghUaho80H3FQitpV5nS427aBtph0hRzfD%2BHOfn3BDk4p9xcr4FwwbMvKZiaz3rgf5Je9RHIEUrnSleAwR3TOoAxYqksGJJhRNEvd%2FO%2FZQ6UodGpdNh4UY66syy2izSAr7QID18a2X1CCiro%3D%22%2A%29%28%2A%5DVB%2A%29`}</wljs-editor></WLJSWrapper>
 
 ## Settings Hot Reload & Dark Mode Update
-Now you don't have to restart WLJS every time you change a setting (for the most part). All open notebooks will automatically reload once you change something.
+You no longer need to restart WLJS every time you change a setting, for the most part. Open notebooks automatically reload after a settings change.
 
-In addition, we added contrast and brightness adjustments for dark mode, so you can tune it continuously until it feels comfortable for your eyes.
+In addition, we added contrast and brightness adjustments for dark mode, so you can tune it until it feels comfortable for your eyes.
 
 
-![](./attachments/Screenshot-2026-06-03-at-16.55.40-ddd.png)
+![](attachments/Screenshot-2026-06-03-at-16.55.40-ddd.png)<wljs-html encoded="true">{`%3Cbr%20%2F%3E`}</wljs-html>
 
 ## Window Manager Refactor & Offscreen Rendering
-We simplified and improved many things in our codebase. `Rasterize` and many other system features no longer require open windows and work seamlessly in the background. However, for most users, this will not make a huge difference; for future maintenance and advanced WLJS usage, it makes a big difference.
+We simplified and improved many parts of the codebase. `Rasterize` and many other system features no longer require open windows and now work seamlessly in the background. Most users may not notice a huge difference, but this makes future maintenance and advanced WLJS usage much better.
 
 If you are using the WLJS desktop application, try:
 
 <WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`Rasterize[Plot[x, {x,0,1}]]`}</wljs-editor></WLJSWrapper>
 
-`CellPrint` no longer requires additional parameters when used without an evaluation context, for example inside a `Button`.
+`CellPrint` no longer requires additional parameters when used without an evaluation context, such as inside a `Button`.
 
 <WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`Button["Print", CellPrint[RandomColor[]]]`}</wljs-editor></WLJSWrapper>
 
 ## CLI Update
-You can use the `wljs` utility not only to inspect notebooks,
+You can use the `wljs` utility to inspect notebooks:
 
 <WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`.sh
 	wljs focused`}</wljs-editor></WLJSWrapper>
@@ -89,15 +93,15 @@ You can use the `wljs` utility not only to inspect notebooks,
 	}
 	`}</wljs-editor></WLJSWrapper>
 
-but also to run Wolfram Language, similar to `wolframscript`. Here is an analogue of the `ls` or `dir` command, for example:
+You can also run Wolfram Language code, similar to `wolframscript`. For example, here is an analogue of the `ls` or `dir` command:
 
 <WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`.sh
 	wljs -c 'FileNames["*"]'`}</wljs-editor></WLJSWrapper>
 
-<WLJSWrapper><wljs-editor display="shell" type="Output"  >{`{"2.5.0.wln", "2.5.2.wln", "2.5.3.wln", "2.5.4.wln", "2.5.6.wln", "2.5.7.wln", "2.5.9.wln", "2.6.1.wln", "2.6.2.wln", "2.6.3.wln", "2.6.4.wln", "2.6.5.wln", "2.6.7.wln", "2.6.8.wln", "2.7.0.wln", "2.7.1.wln", "2.7.2.wln", "2.7.2 X1.wln", "2.7.3.wln", "2.7.4.wln", "2.7.5.wln", "2.7.6.wln", "2.7.8.wln", "2.7.9.wln", "2.8.0.wln", "2.8.1.wln", "2.8.2.wln", "2.8.3.wln", "2.8.5.wln", "2.8.7.wln", "2.8.8.wln", "2.8.9.wln", "2.9.1.wln", "2.9.2.wln", "3.0.0.wln", "3.0.1.wln", "3.0.2.wln", "3.0.3.wln", "3.0.4.wln", "3.0.7.wln", "3.0.7.wln", "attachments"}
+<WLJSWrapper><wljs-editor display="shell" type="Output"  >{`{"2.5.0.wln", "2.5.2.wln", "2.5.3.wln", "2.5.4.wln", "2.5.6.wln", "2.5.7.wln", "2.5.9.wln", "2.6.1.wln", "2.6.2.wln", "2.6.3.wln", "2.6.4.wln", "2.6.5.wln", "2.6.7.wln", "2.6.8.wln", "2.7.0.wln", "2.7.1.wln", "2.7.2.wln", "2.7.2 X1.wln", "2.7.3.wln", "2.7.4.wln", "2.7.5.wln", "2.7.6.wln", "2.7.8.wln", "2.7.9.wln", "2.8.0.wln", "2.8.1.wln", "2.8.2.wln", "2.8.3.wln", "2.8.5.wln", "2.8.7.wln", "2.8.8.wln", "2.8.9.wln", "2.9.1.wln", "2.9.2.wln", "3.0.0.wln", "3.0.1.wln", "3.0.2.wln", "3.0.3.wln", "3.0.4.wln", "3.0.7.wln", "3.0.7.wln", "attachments", ".DS_Store", ".iconized"}
 	`}</wljs-editor></WLJSWrapper>
 
-`Rasterize` and WLJS-specific functions will work out of the box too.
+`Rasterize` and WLJS-specific functions also work out of the box.
 
 <WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`.sh
 	wljs -c 'Rasterize[TeXView[TeXForm[1/2]]]'`}</wljs-editor></WLJSWrapper>
@@ -106,16 +110,33 @@ but also to run Wolfram Language, similar to `wolframscript`. Here is an analogu
 	`}</wljs-editor></WLJSWrapper>
 
 ## MCP Update
-With help from @Hachann, we significantly improved tools for AI agents and reduced token consumption.
+With help from @Hachann, we significantly improved the tools for AI agents and reduced token consumption.
+
+## Disk and Circle Improvements
+Our `Disk` and `Circle` graphics primitives now support multiple coordinates as their first argument, similar to `Point` and `Line`. For example:
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`pts = {{-1.,-1.}, {1.,1.}};
+	Graphics[{
+	  Disk[pts // Offload, 0.08], Red, 
+	  Circle[pts // Offload, 0.11]
+	}, "Controls"->False]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(Graphics[{Disk[Offload[pts], 0.08], RGBColor[1, 0, 0], Circle[Offload[pts], 0.11]}, "Controls" -> False])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KWlMIB4HkHAvSizIyEwuTmOGyftkFpdA5EE8l8zibIhediDhn5aWk5+YUgxSXFBSXFQtss79YdUWe4hukHlB7k7O+Tn5RZkgPZkMMAJiIBuQcM4sSs5JxW2kZkz/oa8ae+wRTggqzUkNBpntnJ9XUpSfU1zMCuS4JeYUpwIAslYw0A=="*)(*]VB*)`}</wljs-editor></WLJSWrapper>
+
+Now try updating the points:
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`pts = Append[pts, RandomReal[{-1,1}, 2]];`}</wljs-editor></WLJSWrapper>
+
+This was already possible with `FrontSubmit` and by referencing the graphics canvas with `FrontInstanceReference`. Use that approach if you need to append or remove compound graphics primitives.
 
 ## AF Update
-The animation framework got an update. It is more stable and renders animations for export fully offscreen at up to 2K resolution, using native NodeJS I/O to write frames to disk and bypass the Wolfram Kernel entirely.
+The animation framework has been updated. It is more stable and now renders export animations fully offscreen at up to 2K resolution. It uses native Node.js I/O to write frames to disk and bypasses the Wolfram Kernel entirely.
 
 ## Misc
 - Improved `Short`
-- `Disk`, `Circle` now support multiple center points
 - Fixed encoding issues for `Text`
 - Added missing binaries
+- Improved `ZoomAt`
 - Improved `MMAView`, `GeoGraphics`, and `TeXForm`
 - Stability improvements
 - WLW (Mini Apps) bug fixes

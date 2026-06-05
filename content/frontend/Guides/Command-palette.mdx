@@ -353,74 +353,126 @@ WLJS Notebook includes a small command-line interface for evaluating code, openi
 
 Most notebook-related commands print JSON to stdout. Errors are printed to stderr and return a non-zero exit code.
 
-### Basic usage
+<Callout type="info">
+Notebook, cell and kernel ids may be passed bare or wrapped in `''` or `""`. The following are equivalent:
 
 ```bash
+wljs cells notebook123
+wljs cells 'notebook123'
+wljs cells "notebook123"
+```
+</Callout>
+
+### General
+
+```bash
+wljs help
+```
+
+Print the list of available commands.
+
+```bash
+wljs version
+```
+
+Print the installed CLI/application version.
+
+```bash
+wljs config
+```
+
+Print the current CLI configuration (such as the address of the running application).
+
+### Opening notebooks and folders
+
+Pass a path directly to open it in WLJS Notebook. Supported notebook formats are `.wln`, `.md` and `.html`:
+
+```bash
+wljs path/to/notebook.wln
+wljs ./notebook.wln
+wljs ./notebook.md
+wljs ./notebook.html
+```
+
+Use `''` (or `""`) to shield white-space and special characters in a path:
+
+```bash
+wljs 'path/to/notebook.wln'
+```
+
+Open a folder (use `.` for the current directory):
+
+```bash
+wljs path/to/folder
 wljs .
 ```
 
-Open the current directory in WLJS Notebook.
+### Direct evaluation
 
-```bash
-wljs path/to/file
-```
-
-Open a directory or a file by path
-
-```bash
-wljs 'path/to/file'
-wljs 'path/to/file/notebook.wln'
-```
-
-Use `''` to shield white-space characters
-
-```bash
-wljs new
-```
-
-Create a new notebook
+Evaluate code in a ready kernel (akin to `wolframscript`), without creating a notebook cell:
 
 ```bash
 wljs wl '<wolfram-expression>'
 ```
 
-Evaluate code in a ready kernel (akin to `wolframscript`), without creating a notebook cell.
-
 Examples:
 
 ```bash
+wljs wl 1+1
+wljs wl 'Range[10]^2'
 wljs wl 'Total[Range[100]]'
 wljs wl 'Plot[Sin[x], {x, 0, 10}]'
 ```
 
-Here are some aliases:
+Use `--time-limit <seconds>` to cap the evaluation time, and `--kernel <kernel-id>` to target a specific kernel:
 
 ```bash
-wljs code 'Total[Range[100]]'
-wljs c 'Plot[Sin[x], {x, 0, 10}]'
-wljs -c 'Plot[Sin[x], {x, 0, 10}]'
+wljs wl 'Pause[60]; 1+1' --time-limit 120
+wljs wl 'Range[10]' --kernel <kernel-id>
 ```
 
-Note, that any such evaluation temporary changes the working directory to one, where a script was called. Here is analog of `ls` or `dir` command:
+The following are all aliases of `wl`:
+
+```bash
+wljs code 1+1
+wljs -code 1+1
+wljs -c 1+1
+```
+
+Note, that any such evaluation temporarily changes the working directory to the one where the script was called. Here is an analog of the `ls` or `dir` command:
 
 ```bash
 wljs -c 'FileNames["*"]'
 ```
 
-### Notebook inspection
-
+You can also read the expression from __stdin__ by passing `-` as the code:
 
 ```bash
-wljs new
+echo 'FileNames["*"]' | wljs -c -
 ```
 
-Create empty notebook.
+<Callout type="warning">
+On __Windows / PowerShell__ quoting rules differ and double quotes inside `wljs -c <code>` must be escaped (e.g. `\"`), otherwise the expression will be mangled before it reaches the kernel. To avoid escaping altogether, pipe the expression through stdin with `wljs -c -`:
+
+```powershell
+echo 'FileNames["*"]' | wljs -c -
+```
+</Callout>
+
+### Notebook inspection
 
 ```bash
 wljs notebooks
 ```
 
 List notebooks known to the application.
+
+```bash
+wljs new
+wljs new --nocells
+```
+
+Create a new notebook. Use `--nocells` to create a completely empty notebook with no initial cells.
 
 ```bash
 wljs focused
@@ -465,46 +517,24 @@ Print the full cell content bypassing any shortening or formatting tricks normal
 wljs full <cell>
 ```
 
-### Documentation
-
-```bash
-wljs docs <query>
-```
-
-Consult bundled WLJS skill docs first, then local Wolfram Language docs.
-
-Useful queries include:
-
-```bash
-wljs docs javascript
-wljs docs html
-wljs docs markdown
-wljs docs mermaid
-wljs docs slides
-wljs docs dynamics
-wljs docs Manipulate
-wljs docs EventHandler
-wljs docs Offload
-wljs docs Plot
-```
-
 ### Editing cells
 
 ```bash
 wljs add <notebook> --content <text|@file|-> [--after <cell>] [--before <cell>] [--eval]
 ```
 
-Add a new input cell.
+Add a new input cell. See [Content input](#content-input) for the forms accepted by `--content`.
 
 Examples:
 
 ```bash
+wljs add notebook123 --content '1+1'
 wljs add notebook123 --content-escaped '.md\none-line markdown'
 wljs add notebook123 --content @example.wl
 printf '.md\nHello World\n' | wljs add notebook123 --content - --eval
 ```
 
-Use `--content-escaped` for converting `\n` to new lines.
+Use `--content-escaped` instead of `--content` to convert `\n` sequences into new lines (handy for passing multiline content inline without a literal line break).
 
 Use `--after` or `--before` to choose where the new cell is inserted. These options are mutually exclusive.
 
@@ -540,13 +570,13 @@ wljs delete-cell <cell>
 
 Delete an input cell. Deleting an input cell also deletes its outputs.
 
-### Evaluation
+### Evaluation in the notebook
 
 ```bash
-wljs eval <cell>
+wljs eval <cell> [--time-limit <seconds>]
 ```
 
-Evaluate an input cell. Evaluation creates output cells.
+Evaluate an input cell. Evaluation creates output cells. Use `--time-limit <seconds>` to cap the evaluation time.
 
 ```bash
 wljs project <cell>
@@ -554,9 +584,30 @@ wljs project <cell>
 
 Project an input cell into a standalone window.
 
+### Documentation
 
+```bash
+wljs docs <query>
+```
 
-### Content input
+Consult bundled WLJS skill docs first, then local Wolfram Language docs.
+
+Useful queries include:
+
+```bash
+wljs docs javascript
+wljs docs html
+wljs docs markdown
+wljs docs mermaid
+wljs docs slides
+wljs docs dynamics
+wljs docs Manipulate
+wljs docs EventHandler
+wljs docs Offload
+wljs docs Plot
+```
+
+### Content input [#content-input]
 
 The `--content` option supports three forms.
 
