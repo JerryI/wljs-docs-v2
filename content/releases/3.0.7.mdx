@@ -44,7 +44,7 @@ brew install --cask wljs-notebook
 
 {/* add this script to the body  */}
 {/* https://cdn.jsdelivr.net/gh/WLJSTeam/web-components@latest/src/common/app.js */}
-<wljs-assets encoded="true">%20</wljs-assets>
+
 
 <wljs-store json="./attachments/84dc9383-f56e-4da9-b8dc-e3814bf8a65f.txt"></wljs-store>
 
@@ -54,21 +54,20 @@ We implemented `TraditionalForm`, which was missing from WLJS. Under the hood, i
 
 <WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`Integrate[f[x], x] // TraditionalForm`}</wljs-editor></WLJSWrapper>
 
-<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(Null)(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRAeO5AISY0Iy0wtRwj4p6Xl5CdCVXACidAgH5fU5PyU1GB5IE/V1Dkzr0TVyCBN1ciiQtXIEsgEiqkaAZFBSgUAmPIW7A=="*)(*]VB*)`}</wljs-editor></WLJSWrapper>
-
 You can also use it for labels and plot legends.
 
 <WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`Plot[Sin[x], {x, 0, 1}, PlotLegends->{Sin[x]//TraditionalForm}]`}</wljs-editor></WLJSWrapper>
-
-<WLJSWrapper><wljs-editor display="codemirror" type="Output" encoded="true"  >{`%28%2AVB%5B%2A%29%28Legended%5BToExpression%5BFrontEndRef%5B%2221a0dc29-abb8-4d97-8f62-a4e5a28975fa%22%5D%2C%20InputForm%5D%2C%20Placed%5BLineLegend%5B%7BDirective%5BOpacity%5B1.%5D%2C%20RGBColor%5B0.24%2C%200.6%2C%200.8%5D%2C%20AbsoluteThickness%5B2%5D%5D%7D%2C%20%7BBoxForm%60TeXForm%5BSin%5BHoldForm%5Bx%5D%5D%5D%7D%2C%20LegendMarkers%20-%3E%20None%2C%20LabelStyle%20-%3E%20%7B%7D%2C%20LegendLayout%20-%3E%20%22Column%22%5D%2C%20After%2C%20Identity%5D%5D%29%28%2A%2C%2A%29%28%2A%221%3AeJxdUUtOwzAQDVC%2BAiE4ABIS20gQWtquopamgFQoNBViiROPwaprI9uB5gAcAk7SU3AJVogNR8AfgdTO4sWeeZ5587KfiQFZCoJAbRm4pfDSgVxIpIVMV02mBw%2FAcUQWLWXDQIKpqVkiWbC5XQNdKbhOOE4mkBcaZQzSA5OOjtAhzqNmiLKsEVZxsx42yEkUoirUUNRo1msE%2BcYVA4PCPFuzB0C4z1npskNZgNe3YuCaoRwwWf4T06McvEIvpuJySvsX6wY6VEKu6TN4gl2p%2F4RyqksZuPiJPdlNPmufCiaknO69ft9MP2J57OIzlu9vNr5i32bHQCtTghUaho80H3FQitpV5nS427aBtph0hRzfD%2BHOfn3BDk4p9xcr4FwwbMvKZiaz3rgf5Je9RHIEUrnSleAwR3TOoAxYqksGJJhRNEvd%2FO%2FZQ6UodGpdNh4UY66syy2izSAr7QID18a2X1CCiro%3D%22%2A%29%28%2A%5DVB%2A%29`}</wljs-editor></WLJSWrapper>
 
 ## Settings Hot Reload & Dark Mode Update
 You no longer need to restart WLJS every time you change a setting, for the most part. Open notebooks automatically reload after a settings change.
 
 In addition, we added contrast and brightness adjustments for dark mode, so you can tune it until it feels comfortable for your eyes.
 
+<div className="invertColor">
 
 ![](attachments/Screenshot-2026-06-03-at-16.55.40-ddd.png)<wljs-html encoded="true">{`%3Cbr%20%2F%3E`}</wljs-html>
+
+</div>
 
 ## Window Manager Refactor & Offscreen Rendering
 We simplified and improved many parts of the codebase. `Rasterize` and many other system features no longer require open windows and now work seamlessly in the background. Most users may not notice a huge difference, but this makes future maintenance and advanced WLJS usage much better.
