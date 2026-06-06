@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { useEffect, useRef, useState } from 'react';
 import { Card, Cards } from 'fumadocs-ui/components/card';
-import { Code2, Coffee, Lightbulb, Zap, Download, Package, Terminal, Bot, GitBranch } from 'lucide-react';
+import { Code2, Coffee, Lightbulb, Zap, Download, Package, Terminal, Bot, GitBranch, MessageCircle, MessagesSquare, Send } from 'lucide-react';
 import { AnimationController, type AnimationConfig } from './AnimationController';
 
 
@@ -519,7 +519,35 @@ export default function HomePage() {
         </div>
       </div>
 
-
+      {/* Socials Section */}
+      <div className="mb-16">
+        <h2 className="text-2xl sm:text-3xl font-bold text-center mb-3">
+          Join the community
+        </h2>
+        <p className="text-fd-muted-foreground text-center mb-10 max-w-2xl mx-auto">
+          Ask questions, share your notebooks, and follow along with what we're building.
+        </p>
+        <Cards>
+          <Card
+            icon={<MessageCircle />}
+            title="Reddit"
+            description="Join the discussion and share your work on r/wljs."
+            href="https://www.reddit.com/r/wljs/"
+          />
+          <Card
+            icon={<MessagesSquare />}
+            title="GitHub Discussions"
+            description="Ask questions, request features, and report issues with the team."
+            href="https://github.com/WLJSTeam/wljs-notebook/discussions"
+          />
+          <Card
+            icon={<Send />}
+            title="Telegram Group"
+            description="Chat with the community and get support in real time."
+            href="https://t.me/wljs_support"
+          />
+        </Cards>
+      </div>
 
       {/* Privacy Policy Section */}
       <div className="mb-16">
