@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { useEffect, useRef, useState } from 'react';
 import { Card, Cards } from 'fumadocs-ui/components/card';
-import { Code2, Coffee, Lightbulb, Zap, Download, Package, Terminal, Bot, GitBranch, MessageCircle, MessagesSquare, Send } from 'lucide-react';
+import { Code2, Coffee, Lightbulb, Zap, Download, Package, Terminal, Bot, GitBranch, MessageCircle, MessagesSquare, Send, Youtube } from 'lucide-react';
 import { AnimationController, type AnimationConfig } from './AnimationController';
 
 
@@ -545,6 +545,12 @@ export default function HomePage() {
             title="Telegram Group"
             description="Chat with the community and get support in real time."
             href="https://t.me/wljs_support"
+          />
+          <Card
+            icon={<Youtube />}
+            title="YouTube"
+            description="Watch tutorials on our channel."
+            href="https://www.youtube.com/@coffee-liqueur"
           />
         </Cards>
       </div>
