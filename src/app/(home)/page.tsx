@@ -554,25 +554,6 @@ export default function HomePage() {
           />
         </Cards>
       </div>
-
-      {/* Privacy Policy Section */}
-      <div className="mb-16">
-        <div className="rounded-lg border border-fd-border bg-fd-card/50 backdrop-blur-sm p-8 sm:p-10">
-          <h3 className="text-lg font-semibold mb-4">Privacy Policy</h3>
-          <div className="prose prose-sm max-w-none text-fd-muted-foreground">
-            
-            {/* <h3 className="text-lg font-semibold text-fd-foreground mb-3 mt-6">Data Collection</h3> */}
-            <p className="mb-4">
-              WLJS Notebook is a desktop application that runs entirely on your local machine. We do not collect, transmit, or store any of your personal data, notebooks, or computational results.
-            </p>
-            
-            {/* <h3 className="text-lg font-semibold text-fd-foreground mb-3 mt-6">Local Storage</h3> */}
-            <p className="mb-4">
-              All notebook files and settings are stored locally on your computer. You have complete control over your data and can delete it at any time by removing the application and its associated files.
-            </p>
-          </div>
-        </div>
-      </div>
       
       {/* Licensing Section */}
       <div className="mb-16">
@@ -583,17 +564,7 @@ export default function HomePage() {
               WLJS Notebook is open-source software licensed under the <strong>AGPLv3</strong>
             </p>
             <p className="mb-4">
-              <strong>Note:</strong> While WLJS Notebook itself is AGPLv3 licensed, it requires the Wolfram Engine to function. The Wolfram Engine is a separate product with its own licensing terms:
-            </p>
-            <ul className="list-disc list-inside space-y-2 mb-4">
-              <li><strong>Free Wolfram Engine for Developers</strong> - Available for non-production use and pre-production software development</li>
-              <li><strong>Commercial licenses</strong> - Required for production use in commercial applications</li>
-            </ul>
-            <p className="mb-4">
-              Please review the <a href="https://www.wolfram.com/legal/agreements/wolfram-engine/" target="_blank" rel="noopener noreferrer" className="text-fd-primary hover:underline">Wolfram Engine License Agreement</a> to ensure compliance with your use case.
-            </p>
-            <p>
-              For the full license text of WLJS Notebook, visit our <a href="https://github.com/WLJSTeam/wolfram-js-frontend/blob/main/LICENSE.md" target="_blank" rel="noopener noreferrer" className="text-fd-primary hover:underline">GitHub repository</a>.
+              While WLJS Notebook itself is AGPLv3 licensed, it requires the Wolfram Engine to function. The Wolfram Engine is a separate product with its own <a href="https://www.wolfram.com/legal/agreements/wolfram-engine/" target="_blank" rel="noopener noreferrer" className="text-fd-primary hover:underline">licensing terms</a> For the full license text of WLJS Notebook, visit our <a href="https://github.com/WLJSTeam/wolfram-js-frontend/blob/main/LICENSE.md" target="_blank" rel="noopener noreferrer" className="text-fd-primary hover:underline">GitHub repository</a>.
             </p>
             <p>Are you a robot? Here is <a className="text-fd-primary hover:underline" href="https://wljs.io/llms-full.txt">a text version</a> of the whole website</p>
           </div>
