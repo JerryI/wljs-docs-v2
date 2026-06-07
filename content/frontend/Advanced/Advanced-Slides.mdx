@@ -655,6 +655,26 @@ Then we can place any valid input expression, which will be directly rendered on
 
 <Callout>You do not need to write these special comments manually. This is special syntax sugar used in WLJS. Copy the input expression from a normal Wolfram Language cell.</Callout>
 
+There is another way similar to `EditorView` using `CellView`:
+
+<WLJSWrapper>
+<div className="code-input"/>
+<wljs-editor lazy="true" type="Input" display="codemirror">{`.slide
+## Source code
+
+<CellView>
+moveAction[xy_] := With[{
+        (* match mouse cursor to the nearest bond *)
+            found = SelectFirst[
+                grid, Function[point, Norm[point[[;;2]] - xy] < 0.7]
+            ]},
+            If[!MissingQ[found], 
+                hovered = found;
+            ]
+];
+</CellView> <!-- .element: class="text-left" -->
+`}</wljs-editor></WLJSWrapper>
+
 ### Syntax Highlighter
 This is more general version of `CodeInset`, which uses HLJS compiled using [MJS cells](./../Cell-types/Javascript). You __do not need to recompile it again__, to embed this component into your workflow:
 
