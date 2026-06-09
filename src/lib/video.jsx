@@ -3,7 +3,12 @@
 
 import React, { useState, useEffect, useRef } from 'react';
 
-export function LazyVideo ({url, className, style}) {
+export function LazyVideo({
+    url,
+    className,
+    style,
+    autoPlayLoop = false,
+}) {
     const [hasBeenInView, setHasBeenInView] = useState(false);
     const containerRef = useRef(null);
 
@@ -26,19 +31,26 @@ export function LazyVideo ({url, className, style}) {
     }, []);
 
     return (
-        <div ref={containerRef} className="my-4 bg-fd-card rounded-xl relative border shadow-sm not-prose overflow-hidden text-sm github-light github-dark" style={{ minHeight: '150px', ...(style ?? {}) }}>
+        <div
+            ref={containerRef}
+            className="my-4 bg-fd-card rounded-xl relative border shadow-sm not-prose overflow-hidden text-sm github-light github-dark"
+            style={{ minHeight: '150px', ...(style ?? {}) }}
+        >
             {hasBeenInView && (
                 <video
                     src={url}
-                    className={className ? className : 'invertColor' }
+                    className={className || 'invertColor'}
                     controls
                     playsInline
+                    autoPlay={autoPlayLoop}
+                    loop={autoPlayLoop}
+                    muted={autoPlayLoop}
                     style={{ width: '100%', height: 'auto' }}
                 />
             )}
         </div>
     );
-};
+}
 
 export function LazyAutoplayVideo ({url, className}) {
 

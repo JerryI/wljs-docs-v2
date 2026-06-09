@@ -17,7 +17,7 @@ tags:
 
 Theoretical physicist and programmer [Dr. Vasil Saroka](https://www.linkedin.com/in/vasil-saroka/) recently built a small interactive Wolfram Language application, `NanographenesBuilder`, that helps chemists construct hydrocarbons and explore their structural properties using graph theory.
 
-<div className="ml-auto mr-auto" style={{width:"600px", height:"auto"}}>
+<div className="ml-auto mr-auto" style={{width:"min(600px, 80vw)", height:"auto"}}>
 
 ![](./attachments/Screenshot-2026-06-07-at-14.51.26-d0c.png)
 
@@ -27,7 +27,7 @@ Theoretical physicist and programmer [Dr. Vasil Saroka](https://www.linkedin.com
 
 He later asked me (@JerryI) whether it could also run in WLJS Notebook (and may be much faster). That is how this short story began 🚀
 
-<div className="ml-auto mr-auto" style={{width:"700px", height:"auto"}}>
+<div className="ml-auto mr-auto" style={{width:"min(700px, 80vw)", height:"auto"}}>
 
 ![](./scr2.png)
 
@@ -827,7 +827,7 @@ Much better! Let's add a red visual guide to show where the snapped point is on 
 	  "click" -> clickAction
 	}]`}</wljs-editor></WLJSWrapper>
  
-<LazyVideo  className="invertColor" style={{width:"fit-content"}} url="./vid1.mp4"/>
+<LazyVideo autoPlayLoop className="invertColor" style={{width:"fit-content"}} url="./vid1.mp4"/>
 
 This effectively gives us the following diagram on any change of `hovered` symbol:
 
@@ -883,7 +883,7 @@ As the final step, we need to indicate the selected vertices from the list. How?
 	  "click" -> clickAction
 	}]`}</wljs-editor></WLJSWrapper>
 
-<LazyVideo className="invertColor" style={{width:"fit-content"}} url="./vid2.mp4"/>
+<LazyVideo autoPlayLoop className="invertColor" style={{width:"fit-content"}} url="./vid2.mp4"/>
 
 This is how we can make a basic selector/toggler for the vertices: one `Graphics` block with `EventHandler` and two handler functions, one for clicks and one for mouse movements.
 
@@ -964,7 +964,7 @@ Let's reconstruct our graphics canvas with these types of bonds added:
 	  "click" -> clickAction
 	}]`}</wljs-editor></WLJSWrapper>
 
-<LazyVideo className="invertColor" style={{width:"fit-content"}} url="./vid3.mp4"/>
+<LazyVideo autoPlayLoop className="invertColor" style={{width:"fit-content"}} url="./vid3.mp4"/>
 
 As a basic UI element, it is worth adding a *Clear* button:
 
