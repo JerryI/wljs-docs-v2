@@ -3,7 +3,7 @@
 
 import React, { useState, useEffect, useRef } from 'react';
 
-export function LazyVideo ({url, className}) {
+export function LazyVideo ({url, className, style}) {
     const [hasBeenInView, setHasBeenInView] = useState(false);
     const containerRef = useRef(null);
 
@@ -26,7 +26,7 @@ export function LazyVideo ({url, className}) {
     }, []);
 
     return (
-        <div ref={containerRef} className="my-4 bg-fd-card rounded-xl relative border shadow-sm not-prose overflow-hidden text-sm github-light github-dark" style={{ minHeight: '150px' }}>
+        <div ref={containerRef} className="my-4 bg-fd-card rounded-xl relative border shadow-sm not-prose overflow-hidden text-sm github-light github-dark" style={{ minHeight: '150px', ...(style ?? {}) }}>
             {hasBeenInView && (
                 <video
                     src={url}
