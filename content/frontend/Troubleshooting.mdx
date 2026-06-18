@@ -13,6 +13,15 @@ $SystemID
 
 Also, please, specify __how you are running the app__ (as a normal desktop application or as a Docker image on a server).
 
+## App does not start (CODE -1)
+It may show on a lanucher screen something like `no hup, exit code -1`. Then close an app, open a terminal and run
+
+```bash
+wolframscript -activate
+```
+
+Start WLJS app again.
+
 ## License-related issues
 Make sure that no other processes `wolframscript` or Wolfram Kernel are running. WLJS uses 2 processes: 1 for UI, frontend and 1 for actual evaluation. This is the maximum allowed by freeware Wolfram Engine license.
 
