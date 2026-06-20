@@ -24,6 +24,12 @@ Around[10, 1] + Around[5, 0.5]
 (* Around[15, 1.12] *)
 ```
 
+If you plot it using `ListLinePlot`, error bars will be added automatically:
+
+```wolfram
+ListLinePlot[Table[{i, Around[RandomReal[{-10,10}, 5]+i]}, {i,30}]]
+```
+
 
 Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.
 
