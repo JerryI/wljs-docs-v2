@@ -24,7 +24,7 @@ Around[10, 1] + Around[5, 0.5]
 (* Around[15, 1.12] *)
 ```
 
-If you plot it using `ListLinePlot`, error bars will be added automatically:
+If you plot it using `ListLinePlot`, __error bars__ will be added automatically:
 
 ```wolfram
 ListLinePlot[Table[{i, Around[RandomReal[{-10,10}, 5]+i]}, {i,30}]]
