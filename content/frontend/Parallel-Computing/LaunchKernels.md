@@ -5,8 +5,7 @@ title: LaunchKernels
 `LaunchKernels[]` launches all currently configured parallel subkernels.
 
 - `LaunchKernels[n]` launches n local subkernels on the current computer.
-- `LaunchKernels[ker]` launches the kernel specified by ker.
-- `LaunchKernels[{ker1, ker2, ...}]` launches the kernels keri.
+
 
 ## Examples
 
@@ -16,7 +15,7 @@ Launch all configured kernels:
 LaunchKernels[]
 ```
 
-Launch 4 local kernels:
+Launch 4 local subkernels:
 
 ```wolfram
 LaunchKernels[4]

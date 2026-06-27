@@ -1,0 +1,11 @@
+{
+"objects":[
+	"Association",
+	["Rule","'a6de5537-409a-41e9-8061-2bf2cb47709e'",["Hold",null]]
+], 
+"symbols":[
+	"Association",
+	["Rule","'CoffeeLiqueur`Extensions`Manipulate`Internal`trigger$161756'",0],
+	["Rule","'CoffeeLiqueur`Extensions`Manipulate`Internal`str$161743'","'False'"]
+]
+}

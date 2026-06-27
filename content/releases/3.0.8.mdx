@@ -1,0 +1,120 @@
+---
+title: Release notes *3.0.8*
+date: 2026-07-27
+---
+
+
+import { Tabs, Tab } from 'fumadocs-ui/components/tabs';
+
+<Tabs items={['Windows', 'Mac','GNU/Linux', 'Docker', 'Homebrew']}>
+  <Tab value="Mac">
+    - [Apple Silicon](https://github.com/WLJSTeam/wljs-notebook/releases/download/v3.0.8/wljs-notebook-3.0.8-arm64-macos.dmg)
+    - [Intel](https://github.com/WLJSTeam/wljs-notebook/releases/download/v3.0.8/wljs-notebook-3.0.8-x64-macos.dmg)
+  </Tab>
+  <Tab value="Windows">
+    - [x86/64](https://github.com/WLJSTeam/wljs-notebook/releases/download/v3.0.8/wljs-notebook-3.0.8-x64-win.exe)
+  </Tab>
+  <Tab value="GNU/Linux">
+    - [DEB x86/64](https://github.com/WLJSTeam/wljs-notebook/releases/download/v3.0.8/wljs-notebook-3.0.8-amd64-gnulinux.deb)
+    - [DEB ARM64](https://github.com/WLJSTeam/wljs-notebook/releases/download/v3.0.8/wljs-notebook-3.0.8-arm64-gnulinux.deb)
+    - [AppImage x86/64](https://github.com/WLJSTeam/wljs-notebook/releases/download/v3.0.8/wljs-notebook-3.0.8-x86_64-gnulinux.AppImage)
+    - [AppImage ARM64](https://github.com/WLJSTeam/wljs-notebook/releases/download/v3.0.8/wljs-notebook-3.0.8-arm64-gnulinux.AppImage)
+  </Tab>
+  <Tab value="Docker">
+
+```bash
+docker run -it \
+  -v ~/wljs:"/home/wljs/WLJS Notebooks" \
+  -v ~/wljs/Licensing:/home/wljs/.WolframEngine/Licensing \
+  -v ~/wljs/tmp:/tmp \
+  -p 8000:3000 \
+  --name wljs \
+  ghcr.io/wljsteam/wljs-notebook:main
+```
+
+  </Tab>
+  <Tab value="Homebrew">
+  
+```bash  
+brew install --cask wljs-notebook
+```
+
+  </Tab>
+</Tabs>
+
+{/* add this script to the body  */}
+{/* https://cdn.jsdelivr.net/gh/WLJSTeam/web-components@latest/src/common/app.js */}
+<wljs-store json="./attachments/ba74efd4-806e-425d-a16c-54627864ece8.txt"></wljs-store>
+
+## Workers API
+WLJS now provides asynchronous access to parallel kernels. The freeware Wolfram Engine is not limited to a single parallel kernel or subkernel, so you can use this API to build truly parallel Wolfram Language workflows.
+
+> Why not `ParallelSubmit`?
+
+The default Wolfram parallel API is blocking, which makes it hard to stream data in and out without pausing the main kernel. The Workers API avoids that bottleneck. Here is a basic message loopback example:
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`w = WorkerLaunch[Module[{},
+	  EventHandler[Null, {
+	    _ -> (EventFire[Null, #]&)
+	  }]
+	]]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`WorkerObject[(*VB[*) LinkObject["'/Applications/Wolfram Engine.app/Contents/Resources/Wolfram Player.app/Contents/MacOS/WolframKernel' -noicon -wstp -noinit -subkernel", 819, 11], "dfaaf4aa-19b6-484b-8ce0-ef7d3dc13233" (*,*)(*"1:eJydU8tum0AUTfpuN5W6qdRVK5WlqwHjV3dgY4xj/IAYx1l1DBcbGBgygA35pn5kB9tKUnXTVkKXc885usycGb5sqOU/v7i4yD7xotJySFn8Q2EMJ1vw7CKOMas47V/Wnve8DBlNci3xnIDlBSYn4cMTQSvBLXK8IWB/5TRue9BqNTsNGfVwQxah1+iittiQNr7kbuROB/XAf1YPecHLJMjy08iH7qh9fLK686qMHGIngIP9imtTHMP3zyfvO140L8gpq+XHaSNKvFP3lpelNRmASz2wf/JOkCRB6gjSUElTErg4D2iS8XZFic9wLEhIS7ZBAt9wmnK6z7cKSV47LMhowVz43T0nuAL2p9vE7sx+dF4BS4Acv4waCQ1cmtTokOXpmUmCvEZZsYnOXukxLavgIb+pAWBvlpDqyF6zAv41w9fnIdX/hni4rEPsCpLiqEJL5W9B6nFiWhByQkeq/yAcgSQKTQXGlROi6EoJtYXlZepIl3eFjg55KCkz5FhLw1rdjPzM0aPteEzVnruGQzukC+IVc8rDDIbiap+JZsuhxtYcLX2zWq7nWR/5YCt6Vu7SfmsN3W4cDguSl/cz1pb0sFwFy7F9K86na2Nh8MNRzVhF3ZtoHWmY3S1SQq4rWs6Xi1C/GTI7oqG68hDpo0jXRN+dFNbssAnb+2UH2/L+zt0we8BQZ3LoLcbR2uQZqFWcF2U7CNUJtVBsrJw7XRFvY8NFxgCmMJfZJEo1SOf3cXIje7t9t70ym01o7lqlGXnyVvVGC6E5qJ/6hj7JrjVwzin/zX3IXtZ/KCYZ/AJM/R05"*)(*]VB*)]`}</wljs-editor></WLJSWrapper>
+
+You can also start a worker from a `.wl` file:
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`w = WorkerLaunch["path_to_worker.wl"];`}</wljs-editor></WLJSWrapper>
+
+Each worker object runs in a separate OS thread and communicates with the main kernel through the shared-memory WSTP protocol.
+
+This design mirrors the JavaScript Workers API used across frontend and backend systems. In the example below, we subscribe to messages from a worker, then submit one to it:
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`EventHandler[w, Print];
+	EventFire[w, "Hey!"];`}</wljs-editor></WLJSWrapper>
+
+Terminate the worker when it is no longer needed:
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`WorkerClose[w]`}</wljs-editor></WLJSWrapper>
+
+Check the documentation for more examples.
+
+## Typed `Shallow` / Expression Summarization
+With help from @Hachann, we extended `Shallow` with typed expression summarization. You can tune both the depth and the number of arguments shown at each level. It now hides the internals of opaque objects such as `ByteArray` and `TimeSeries`, whose input forms are usually less useful than their overall structure.
+
+We also expanded the basic skeleton view from the Wolfram Standard Library. Instead of showing only `<<wljs-html encoded="true">{`%3CN%3E`}</wljs-html>>`, WLJS can now display types and expression patterns such as:
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`Table[{i,j}, {i,1000}, {j,10}]//Shallow `}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`{{{1, 1}, {1, 2}, {1, 3}, {1, 4}, {1, 5}, <<5, {_Integer, _Integer}>>}, {{2, 1}, {2, 2}, {2, 3}, {2, 4}, {2, 5}, <<5, {_Integer, _Integer}>>}, {{3, 1}, {3, 2}, {3, 3}, {3, 4}, {3, 5}, <<5, {_Integer, _Integer}>>}, {{4, 1}, {4, 2}, {4, 3}, {4, 4}, {4, 5}, <<5, {_Integer, _Integer}>>}, {{5, 1}, {5, 2}, {5, 3}, {5, 4}, {5, 5}, <<5, {_Integer, _Integer}>>}, <<995, {{_Integer, _Integer}..}>>}`}</wljs-editor></WLJSWrapper>
+
+Byte arrays are summarized by structure rather than full contents:
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`{{{{ByteArray[{1,2,3,4}]}, Red, I}}, ByteArray[RandomInteger[{0,255}, 10000]]} // Shallow `}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`{{{{ByteArray[...]}, RGBColor[1, 0, 0], I}}, ByteArray[...]}`}</wljs-editor></WLJSWrapper>
+
+A more complex example:
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`Shallow[Plot[x, {x,0,1}], {2,1}]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`Graphics[{Annotation[<<3>>]}, <<1, {_Rule | _RuleDelayed..}>>]`}</wljs-editor></WLJSWrapper>
+
+## UI Improvements
+- The notebook now autoscrolls the focused cell into view.
+- Fixed race conditions during multiple `Rasterize` calls.
+
+## MCP Server
+- Improved summarization, with contributions from @Hachann.
+- Added more options for cell evaluation.
+- Improved error messages.
+- Improved the CLI.
+
+## Wolfram Engine 15.0
+For now, WLJS Notebook will stay on Wolfram Engine 14.3. Early testing with Wolfram Engine 15.0 showed a 15-20% performance regression, including on the official WolframMark benchmark on MacOS/ARM64 machines. WLJS still runs on 15.0 in shallow tests, but we cannot guarantee that every new feature works reliably there yet.
+
+## Misc
+- Fixed the `wln` parser.
+- Added `Offload` support for `BezierCurve`.
+- Fixed a 32-bit index-buffer overflow for `GraphicsComplex` in the `Graphics` context.
+- Fixed rounding output for `Around`.
+- Improved stability.

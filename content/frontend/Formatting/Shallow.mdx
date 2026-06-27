@@ -1,0 +1,158 @@
+---
+title: Shallow
+env:
+  - Wolfram Kernel
+package: wljs-editor
+---
+
+`Shallow` prints a bounded preview of an expression without expanding every nested part.
+In WLJS it is implemented as a [`StandardForm`](../Formatting/StandardForm) display wrapper with typed skeletons for omitted data.
+
+```wolfram
+Shallow[expr_]
+```
+
+The default form fits the preview to roughly `1000` characters. It is useful for displaying large lists, associations, datasets, images, graphs, packed arrays, distributions, and other expressions that are expensive or noisy to expand completely.
+
+<Callout type="note">
+WLJS `Shallow` is not only a depth cutoff. Omitted tails are summarized with inferred type skeletons whenever possible, for example `<<15, _Integer>>` or `<<95, {_Real, _Real}>>`.
+</Callout>
+
+## Forms
+
+### `Shallow[expr]`
+Creates a character-budgeted preview.
+
+```wolfram
+Shallow[expr]
+```
+
+Internally WLJS increases the expansion budget until the rendered preview would exceed the default character limit, then uses the largest preview that still fits.
+
+### `Shallow[expr, depth]`
+Limits the displayed depth.
+
+```wolfram
+Shallow[expr, depth_Integer]
+```
+
+`depth` should be a non-negative integer. At depth `0`, compound expressions are represented as `Head[<<n>>]`, or `{<<n>>}` for lists.
+
+```wolfram
+Shallow[Table[{i, i^2, i^3}, {i, 10}], 1]
+```
+
+```wolfram
+{{<<3>>}, {<<3>>}, {<<3>>}, <<7>>}
+```
+
+### `Shallow[expr, {depth, length}]`
+Controls both depth and breadth.
+
+```wolfram
+Shallow[expr, {depth_Integer, length_Integer}]
+```
+
+`length` is the maximum number of children shown at each expanded level before the remaining siblings are elided.
+
+```wolfram
+Shallow[Range[20], {2, 5}]
+```
+
+```wolfram
+{1, 2, 3, 4, 5, <<15, _Integer>>}
+```
+
+For nested uniform data, omitted rows keep a structural type:
+
+```wolfram
+Shallow[Table[{i, i^2, i^3}, {i, 10}], {2, 3}]
+```
+
+```wolfram
+{{1, 1, 1}, {2, 4, 8}, {3, 9, 27}, <<7, {_Integer, _Integer, _Integer}>>}
+```
+
+### `Shallow[expr, {depth, length, string}]`
+Also limits string atoms.
+
+```wolfram
+Shallow[expr, {depth_Integer, length_Integer, string_Integer}]
+```
+
+`string` is the maximum number of characters shown for each string atom.
+
+```wolfram
+Shallow[{"abcdefghijklmnopqrstuvwxyz", "short"}, {2, 3, 8}]
+```
+
+```wolfram
+{"abcdefgh\[Ellipsis]", "short"}
+```
+
+### `Shallow[expr, {depth, length, string, max}]`
+Also limits the total number of expanded compound nodes.
+
+```wolfram
+Shallow[expr, {depth_Integer, length_Integer, string_Integer, max_Integer}]
+```
+
+`max` is a node budget, not a character budget. It protects the frontend from huge, shared, or deeply nested expressions even when the requested depth and length are large.
+
+## Typed skeletons
+When `Shallow` hides remaining siblings, it groups them by head and adds a compact type summary if the depth budget still allows it.
+
+```wolfram
+Shallow[{1, 2, 3, "a", "b", x, y}, {2, 3}]
+```
+
+```wolfram
+{1, 2, 3, <<2, _String>>, <<2, _Symbol>>}
+```
+
+Common skeleton forms are:
+
+```wolfram
+<<n>>                    (* hidden with no type information *)
+<<n, _Integer>>          (* n hidden Integer atoms *)
+<<n, _Integer | _String>> (* mixed hidden heads *)
+<<n, {_Real, _Real}>>    (* fixed-length list rows *)
+<<n, {_Real..}>>         (* repeated list elements *)
+<<n, _Integer -> _String>> (* association keys and values *)
+```
+
+The skeleton is a preview of the sampled structure, not a validation contract. For performance, type inference is bounded in both width and depth.
+
+## Associations
+Associations are displayed with normal rule syntax and typed summaries for omitted key-value pairs.
+
+```wolfram
+Shallow[AssociationThread[Range[20] -> CharacterRange["a", "t"]], {2, 4}]
+```
+
+```wolfram
+<|1 -> "a", 2 -> "b", 3 -> "c", 4 -> "d", <<16, _Integer -> _String>>|>
+```
+
+## Opaque expressions
+Some large built-in heads are intentionally treated as opaque and displayed as `Head[\[Ellipsis]]` instead of being traversed.
+
+Examples include:
+
+```wolfram
+Dataset
+SparseArray
+Graph
+Image
+Image3D
+ByteArray
+NumericArray
+TemporalData
+TimeSeries
+EventSeries
+```
+
+Many statistical distributions, stochastic processes, and trained predictor or classifier objects are handled the same way.
+
+## Supported output forms
+- [StandardForm](../Formatting/StandardForm)

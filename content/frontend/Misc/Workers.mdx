@@ -1,0 +1,189 @@
+---
+title: Workers
+---
+
+<Cards>
+
+  <Card
+    href="./Events"
+    title="Events"
+  >
+    Reference on event objects
+  </Card>
+
+  <Card
+    href="./Parallel"
+    title="Parallel"
+  >
+    Promise based wrappers around Wolfram parallel kernels
+  </Card>
+
+</Cards>
+
+## Workers API
+WLJS provides asynchronous access to parallel Wolfram kernels. The freeware Wolfram Engine is not limited to a single parallel kernel or subkernel, so this API can be used to build truly parallel Wolfram Language workflows.
+
+> Why not `ParallelSubmit`?
+
+The default Wolfram parallel API is blocking, which makes it hard to stream data in and out without pausing the main kernel. The Workers API avoids that bottleneck by using [`EventHandler`](./Events) and [`EventFire`](./Events) as a bidirectional message channel.
+
+Each worker runs in an isolated Wolfram subkernel and communicates with the main kernel through a shared-memory WSTP link. The design mirrors JavaScript Workers: launch a worker, subscribe to messages from it, post messages to it, and terminate it when it is no longer needed.
+
+<Callout type="info">
+Inside the worker, use `EventHandler[Null, ...]` to receive messages from the main kernel and `EventFire[Null, ...]` to send messages back.
+</Callout>
+
+## `WorkerLaunch`
+Launches a new worker from a held expression or from a Wolfram Language source file.
+
+```wolfram
+WorkerLaunch[expr_] _WorkerObject
+WorkerLaunch[path_String] _WorkerObject
+WorkerLaunch[file_File] _WorkerObject
+```
+
+`WorkerLaunch` has the `HoldFirst` attribute. The expression is transferred to a fresh subkernel after the worker event bridge is installed.
+
+<Callout type="warn">
+Workers are isolated. Definitions from the main kernel are not shared automatically, so a worker expression should be self-contained or should load the packages and files it needs.
+</Callout>
+
+### Message loopback
+A minimal worker can listen for any message and send it back to the main kernel.
+
+```wolfram
+w = WorkerLaunch[Module[{},
+  EventHandler[Null, {
+    _ -> (EventFire[Null, #]&)
+  }]
+]]
+```
+
+Subscribe to messages from the worker, then submit a message to it:
+
+```wolfram
+EventHandler[w, Print];
+EventFire[w, "Hey!"];
+```
+
+The worker receives `"Hey!"` through `EventHandler[Null, ...]` and replies with `EventFire[Null, "Hey!"]`.
+
+### Launching from a file
+You can also start a worker from a `.wl` file:
+
+```wolfram
+w = WorkerLaunch["path_to_worker.wl"];
+```
+
+or with a `File` object:
+
+```wolfram
+w = WorkerLaunch[File["path_to_worker.wl"]];
+```
+
+The file is imported as Wolfram Language source and evaluated inside the worker.
+
+### Topics
+`EventFire` supports the same topic based pattern as other WLJS event objects.
+
+```wolfram
+w = WorkerLaunch[
+  EventHandler[Null, {
+    "Square" -> Function[x,
+      EventFire[Null, "Result", x^2]
+    ],
+    _ -> Function[data,
+      EventFire[Null, "Error", data]
+    ]
+  }]
+];
+
+EventHandler[w, {
+  "Result" -> Print,
+  "Error" -> Echo
+}];
+
+EventFire[w, "Square", 12];
+```
+
+When no topic is provided, `"Message"` is used as the default topic.
+
+```wolfram
+EventFire[w, data]
+```
+
+is equivalent to sending the worker a `"Message"` event.
+
+## `WorkerObject`
+`WorkerLaunch` returns a `WorkerObject`, which behaves like an event object in the main kernel.
+
+```wolfram
+EventHandler[w_WorkerObject, handler_]
+EventHandler[w_WorkerObject, {handlers___Rule | handlers___RuleDelayed}]
+
+EventFire[w_WorkerObject, data_]
+EventFire[w_WorkerObject, topic_, data_]
+```
+
+The worker-side equivalents use `Null`:
+
+```wolfram
+EventHandler[Null, handler_]
+EventHandler[Null, {handlers___Rule | handlers___RuleDelayed}]
+
+EventFire[Null, data_]
+EventFire[Null, topic_, data_]
+```
+
+You can also clone and remove worker handlers using the normal event helpers:
+
+```wolfram
+EventClone[w_WorkerObject] _EventObject
+EventRemove[w_WorkerObject]
+EventRemove[w_WorkerObject, pattern_]
+```
+
+## `Workers`
+Returns the current pool of active worker objects.
+
+```wolfram
+Workers[] _List
+```
+
+This is useful for inspection or for closing all workers during cleanup:
+
+```wolfram
+WorkerClose /@ Workers[];
+```
+
+## `WorkerReadyQ`
+Checks whether a worker link is still valid.
+
+```wolfram
+WorkerReadyQ[w_WorkerObject] _Boolean
+```
+
+For example:
+
+```wolfram
+If[WorkerReadyQ[w],
+  EventFire[w, "Message", "ping"]
+]
+```
+
+## `WorkerClose`
+Terminates the worker and removes the event handlers connected to it.
+
+```wolfram
+WorkerClose[w_WorkerObject]
+```
+
+Close workers explicitly when they are no longer needed:
+
+```wolfram
+WorkerClose[w]
+```
+
+<Callout type="tip">
+For long-running workflows, send a final event from the worker before closing it, then close the worker from the main kernel after receiving that event.
+</Callout>

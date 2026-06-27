@@ -18,17 +18,17 @@ import { Tabs, Tab } from 'fumadocs-ui/components/tabs';
 
 <Tabs items={['Windows', 'Mac','GNU/Linux', 'Docker', 'Homebrew']}>
   <Tab value="Mac">
-    - [Apple Silicon](https://github.com/WLJSTeam/wljs-notebook/releases/download/v3.0.7/wljs-notebook-3.0.7-arm64-macos.dmg)
-    - [Intel](https://github.com/WLJSTeam/wljs-notebook/releases/download/v3.0.7/wljs-notebook-3.0.7-x64-macos.dmg)
+    - [Apple Silicon](https://github.com/WLJSTeam/wljs-notebook/releases/download/v3.0.8/wljs-notebook-3.0.8-arm64-macos.dmg)
+    - [Intel](https://github.com/WLJSTeam/wljs-notebook/releases/download/v3.0.8/wljs-notebook-3.0.8-x64-macos.dmg)
   </Tab>
   <Tab value="Windows">
-    - [x86/64](https://github.com/WLJSTeam/wljs-notebook/releases/download/v3.0.7/wljs-notebook-3.0.7-x64-win.exe)
+    - [x86/64](https://github.com/WLJSTeam/wljs-notebook/releases/download/v3.0.8/wljs-notebook-3.0.8-x64-win.exe)
   </Tab>
   <Tab value="GNU/Linux">
-    - [DEB x86/64](https://github.com/WLJSTeam/wljs-notebook/releases/download/v3.0.7/wljs-notebook-3.0.7-amd64-gnulinux.deb)
-    - [DEB ARM64](https://github.com/WLJSTeam/wljs-notebook/releases/download/v3.0.7/wljs-notebook-3.0.7-arm64-gnulinux.deb)
-    - [AppImage x86/64](https://github.com/WLJSTeam/wljs-notebook/releases/download/v3.0.7/wljs-notebook-3.0.7-x86_64-gnulinux.AppImage)
-    - [AppImage ARM64](https://github.com/WLJSTeam/wljs-notebook/releases/download/v3.0.7/wljs-notebook-3.0.7-arm64-gnulinux.AppImage)
+    - [DEB x86/64](https://github.com/WLJSTeam/wljs-notebook/releases/download/v3.0.8/wljs-notebook-3.0.8-amd64-gnulinux.deb)
+    - [DEB ARM64](https://github.com/WLJSTeam/wljs-notebook/releases/download/v3.0.8/wljs-notebook-3.0.8-arm64-gnulinux.deb)
+    - [AppImage x86/64](https://github.com/WLJSTeam/wljs-notebook/releases/download/v3.0.8/wljs-notebook-3.0.8-x86_64-gnulinux.AppImage)
+    - [AppImage ARM64](https://github.com/WLJSTeam/wljs-notebook/releases/download/v3.0.8/wljs-notebook-3.0.8-arm64-gnulinux.AppImage)
   </Tab>
   <Tab value="Docker">
 
@@ -80,7 +80,7 @@ Download and install the latest `.exe`. *Only x86/64-bit architecture is support
 ```bash
 sudo apt install ./wljs-notebook.deb
 ```
-⚠ *Ubuntu 24.04 users*: If you encounter AppArmor issues, run:
+⚠ *Ubuntu 24.04 users*: If you encounter AppArmor issues, one of the options to disable apparmor temporary:
 ```bash
 sudo sysctl -w kernel.apparmor_restrict_unprivileged_userns=0
 ```
@@ -179,6 +179,58 @@ wolframscript -f Scripts/start.wls
 ```
 
 <Callout>WLJS Notebook uses 1 port for plain HTTP and 2 WebSockets ports for communication: 20560, 20559, and 20563. Make sure to have 1:1 port-forwarding for the last 2 if you plan to connect from a proxy or SSH tunnel</Callout>
+
+#### Library dependencies (no Docker)
+If you do not want to use Docker on your GNU/Linux-like server, you might need to install these dependencies for Wolfram Engine to function. This list was taken from the official WE documentation page:
+
+*RHEL, CentOS, AlmaLinux, Fedora...*
+```
+fontconfig
+freetype
+libX11
+libxcb
+libXext
+libxkbcommon
+libxkbcommon-x11
+xcb-util-image
+xcb-util-keysyms
+xcb-util-renderutil
+xcb-util-wm
+```
+
+*Debian-Based Distributions (Debian, Ubuntu)*
+```
+libfontconfig1
+libfreetype6
+libx11-6
+libxcb-icccm4
+libxcb-image0
+libxcb-keysyms1
+libxcb-render-util0
+libxcb-xfixes0
+libxcb1
+libxext6
+libXinerama.so.1
+libxkbcommon-x11-0
+libxkbcommon0
+```
+
+*OpenSUSE Leap or SUSE Linux Enterprise Server*
+
+```
+fontconfig
+libfreetype6
+libX11-xcb1
+libxcb-icccm4
+libxcb-image0
+libxcb-keysyms1
+libxcb-render-util0
+libxcb-xfixes0
+libxcb1
+libXext6
+libxkbcommon-x11-0
+libxkbcommon0
+```
 
 #### Tunnelling though SSH
 Example setup:
