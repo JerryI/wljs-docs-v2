@@ -81,7 +81,7 @@ Check the documentation for more examples.
 ## Typed `Shallow` / Expression Summarization
 With help from @Hachann, we extended `Shallow` with typed expression summarization. You can tune both the depth and the number of arguments shown at each level. It now hides the internals of opaque objects such as `ByteArray` and `TimeSeries`, whose input forms are usually less useful than their overall structure.
 
-We also expanded the basic skeleton view from the Wolfram Standard Library. Instead of showing only `<<wljs-html encoded="true">{`%3CN%3E`}</wljs-html>>`, WLJS can now display types and expression patterns such as:
+We also expanded the basic skeleton view from the Wolfram Standard Library. Instead of showing only `<<N>>`, WLJS can now display types and expression patterns such as:
 
 <WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`Table[{i,j}, {i,1000}, {j,10}]//Shallow `}</wljs-editor></WLJSWrapper>
 
