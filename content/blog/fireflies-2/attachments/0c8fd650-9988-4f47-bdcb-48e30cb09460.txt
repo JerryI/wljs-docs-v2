@@ -1,0 +1,34 @@
+{
+"objects":[
+	"Association",
+	["Rule","'8c78df5a-f348-4823-a71e-2f4498c8795a'",["Hold",["Graphics",["List",["Circle",["List",0,0],1],["List",["Opacity",["Offload",["Plus",1,["Times",-1,["Times","a$164405",["Power",10,-1]]]]]],["RGBColor",1,1,0],["Disk",["List",0,0],0.9]],["Line",["List",["List",0,0],["Offload",["List",["Cos",["Times",0.628,"a$164405"]],["Sin",["Times",0.628,"a$164405"]]]]]],["Directive",["Rule","FontSize",24]],["Text",["Offload","a$164405"],["List",0,0.2],["List",0,0]]],["Rule","ImageSize",["List",100,100]]]]],
+	["Rule","'361e1d35-2446-4ab5-be66-efb73d786690'",["Hold",["Graphics",["List",["Circle",["List",0,0],1],["List",["Opacity",["Offload",["Plus",1,["Times",-1,["Times","a$218348",["Power",10,-1]]]]]],["RGBColor",1,1,0],["Disk",["List",0,0],0.9]],["Line",["List",["List",0,0],["Offload",["List",["Cos",["Times",0.628,"a$218348"]],["Sin",["Times",0.628,"a$218348"]]]]]],["Directive",["Rule","FontSize",24]],["Text",["Offload","a$218348"],["List",0,0.2],["List",0,0]]],["Rule","ImageSize",["List",100,100]]]]],
+	["Rule","'2525b7a8-ed02-4d58-a542-723887f11175'",["Hold",["Graphics",["List",["Circle",["List",0,0],1],["List",["Opacity",["Offload",["Plus",1,["Times",-1,["Times","a$218387",["Power",10,-1]]]]]],["RGBColor",1,1,0],["Disk",["List",0,0],0.9]],["Line",["List",["List",0,0],["Offload",["List",["Cos",["Times",0.628,"a$218387"]],["Sin",["Times",0.628,"a$218387"]]]]]],["Directive",["Rule","FontSize",24]],["Text",["Offload","a$218387"],["List",0,0.2],["List",0,0]]],["Rule","ImageSize",["List",100,100]]]]],
+	["Rule","'d5c7eb8f-440c-4c9f-8bbb-d9c1d2db1a9d'",["Hold",["Graphics",["List",["Circle",["List",0,0],1],["List",["Opacity",["Offload",["Plus",1,["Times",-1,["Times","a$220569",["Power",10,-1]]]]]],["RGBColor",1,1,0],["Disk",["List",0,0],0.9]],["Line",["List",["List",0,0],["Offload",["List",["Cos",["Times",0.628,"a$220569"]],["Sin",["Times",0.628,"a$220569"]]]]]],["Directive",["Rule","FontSize",24]],["Text",["Offload","a$220569"],["List",0,0.2],["List",0,0]]],["Rule","ImageSize",["List",100,100]]]]],
+	["Rule","'782d6211-51f1-45ec-8003-e46625f25187'",["Hold",["Graphics",["List",["Circle",["List",0,0],1],["List",["Opacity",["Offload",["Plus",1,["Times",-1,["Times","a$220608",["Power",10,-1]]]]]],["RGBColor",1,1,0],["Disk",["List",0,0],0.9]],["Line",["List",["List",0,0],["Offload",["List",["Cos",["Times",0.628,"a$220608"]],["Sin",["Times",0.628,"a$220608"]]]]]],["Directive",["Rule","FontSize",24]],["Text",["Offload","a$220608"],["List",0,0.2],["List",0,0]]],["Rule","ImageSize",["List",100,100]]]]],
+	["Rule","'24c8d4f7-e69c-4520-972d-a63cce485793'",["Hold",["Graphics",["List",["Circle",["List",0,0],1],["List",["Opacity",["Offload",["Plus",1,["Times",-1,["Times","a$335494",["Power",10,-1]]]]]],["RGBColor",1,1,0],["Disk",["List",0,0],0.9]],["Line",["List",["List",0,0],["Offload",["List",["Cos",["Times",0.628,"a$335494"]],["Sin",["Times",0.628,"a$335494"]]]]]],["Directive",["Rule","FontSize",24]],["Text",["Offload","a$335494"],["List",0,0.2],["List",0,0]]],["Rule","ImageSize",["List",100,100]]]]],
+	["Rule","'035faa2c-4313-449e-b297-91f788aae458'",["Hold",["Graphics",["List",["Circle",["List",0,0],1],["List",["Opacity",["Offload",["Plus",1,["Times",-1,["Times","a$335495",["Power",10,-1]]]]]],["RGBColor",1,1,0],["Disk",["List",0,0],0.9]],["Line",["List",["List",0,0],["Offload",["List",["Cos",["Times",0.628,"a$335495"]],["Sin",["Times",0.628,"a$335495"]]]]]],["Directive",["Rule","FontSize",24]],["Text",["Offload","a$335495"],["List",0,0.2],["List",0,0]]],["Rule","ImageSize",["List",100,100]]]]],
+	["Rule","'fa582bf3-3776-44cb-b844-9c4cb13929e3'",["Hold",["Graphics",["List",["Circle",["List",0,0],1],["List",["Opacity",["Offload",["Plus",1,["Times",-1,["Times","a$335496",["Power",10,-1]]]]]],["RGBColor",1,1,0],["Disk",["List",0,0],0.9]],["Line",["List",["List",0,0],["Offload",["List",["Cos",["Times",0.628,"a$335496"]],["Sin",["Times",0.628,"a$335496"]]]]]],["Directive",["Rule","FontSize",24]],["Text",["Offload","a$335496"],["List",0,0.2],["List",0,0]]],["Rule","ImageSize",["List",100,100]]]]]
+], 
+"symbols":[
+	"Association",
+	["Rule","'CoffeeLiqueur`Extensions`Manipulate`Internal`trigger$164419'",0],
+	["Rule","'CoffeeLiqueur`Extensions`Manipulate`Internal`str$164406'","'(*VB[*)(FrontEndRef[\"8c78df5a-f348-4823-a71e-2f4498c8795a\"])(*,*)(*\"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKWySbW6SkmSbqphmbWOiaWBgZ6yaaG6bqGqWZmFhaJFuYW5omAgCDlRVj\"*)(*]VB*)'"],
+	["Rule","'a$164405'",0],
+	["Rule","'CoffeeLiqueur`Extensions`Manipulate`Internal`trigger$220623'",0],
+	["Rule","'CoffeeLiqueur`Extensions`Manipulate`Internal`trigger$220650'",0],
+	["Rule","'CoffeeLiqueur`Extensions`Manipulate`Internal`str$220610'","'(*VB[*)(FrontEndRef[\"d5c7eb8f-440c-4c9f-8bbb-d9c1d2db1a9d\"])(*,*)(*\"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKp5gmm6cmWaTpmpgYJOuaJFum6VokJSXpplgmG6YYpSQZJlqmAACXVhbG\"*)(*]VB*)'"],
+	["Rule","'CoffeeLiqueur`Extensions`Manipulate`Internal`str$220637'","'(*VB[*)(FrontEndRef[\"782d6211-51f1-45ec-8003-e46625f25187\"])(*,*)(*\"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKm1sYpZgZGRrqmhqmGeqamKYm61oYGBjrppqYmRmZphmZGlqYAwBwmRSE\"*)(*]VB*)'"],
+	["Rule","'a$220569'",9],
+	["Rule","'a$220608'",10],
+	["Rule","'CoffeeLiqueur`Extensions`Manipulate`Internal`trigger$335511'",0],
+	["Rule","'CoffeeLiqueur`Extensions`Manipulate`Internal`trigger$335538'",0],
+	["Rule","'CoffeeLiqueur`Extensions`Manipulate`Internal`trigger$335565'",0],
+	["Rule","'CoffeeLiqueur`Extensions`Manipulate`Internal`str$335498'","'(*VB[*)(FrontEndRef[\"24c8d4f7-e69c-4520-972d-a63cce485793\"])(*,*)(*\"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKG5kkW6SYpJnrpppZJuuamBoZ6FqaG6XoJpoZJyenmliYmlsaAwCBrRVa\"*)(*]VB*)'"],
+	["Rule","'CoffeeLiqueur`Extensions`Manipulate`Internal`str$335525'","'(*VB[*)(FrontEndRef[\"035faa2c-4313-449e-b297-91f788aae458\"])(*,*)(*\"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKGxibpiUmGiXrmhgbGuuamFim6iYZWZrrWhqmmVtYJCammphaAAB9YxVM\"*)(*]VB*)'"],
+	["Rule","'CoffeeLiqueur`Extensions`Manipulate`Internal`str$335552'","'(*VB[*)(FrontEndRef[\"fa582bf3-3776-44cb-b844-9c4cb13929e3\"])(*,*)(*\"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKpyWaWhglpRnrGpubm+mamCQn6SZZmJjoWiYDmYbGlkaWqcYAhQIVfw==\"*)(*]VB*)'"],
+	["Rule","'a$335494'",10],
+	["Rule","'a$335495'",4],
+	["Rule","'a$335496'",5]
+]
+}
