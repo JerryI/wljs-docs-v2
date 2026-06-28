@@ -144,14 +144,14 @@ AnimateParametricPlot[
 
 ## Granular Updates
 
-The way how you update things like points and lines on your plots, images, or bind those elements to the changes of data differs from one used in [Pluto.jl](https://plutojl.org/en/docs/bind/), [Marimo](https://docs.marimo.io/#a-reactive-programming-environment) and [Wolfram Mathematica](https://reference.wolfram.com/language/ref/Dynamic.html?q=Dynamic). If the last one uses 2-ways binding, we rely on 1-way. The key changes were made for the sake of [performance](./../Overview/###%20Performance) and simplicity. 
+The way how you update things like points and lines on your plots, images, or bind those elements to the changes of data differs from one used in [Pluto.jl](https://plutojl.org/en/docs/bind/), [Marimo](https://docs.marimo.io/#a-reactive-programming-environment) and [Wolfram Mathematica](https://reference.wolfram.com/language/ref/Dynamic.html?q=Dynamic). If the last one uses 2-ways binding, we rely on 1-way and a push-model. The key changes were made for the sake of [performance](./../Overview/###%20Performance) and simplicity. 
 
 ### Why it can be faster
-Mathematica typically performs a full reevaluation of `Plot` or `ListPlot` on every change, then calculates diffs and applies updates. For example, `ListPlot` called on the same fixed dataset of `1000` numbers allocates about `~100-300 kB` on every call due to many internal module calls. This can be *partially* garbage collected later using the `Share` method. By contrast, our granular approach allocates `~0 kB` and takes `120x` less CPU time (including rendering costs!). 
+Mathematica typically performs a full reevaluation of `Plot` or `ListPlot` on every change, then calculates diffs and applies updates. For example, `ListPlot` called on the same fixed dataset of `1000` numbers allocates about `~100-300 kB` on every call due to many internal module calls. This can be *partially* garbage collected later using the `Share` method. By contrast, our granular approach allocates `~0 kB` and takes less CPU time.
 
 ## Architecture
 
-WLJS mostly uses retained mode for managing objects on screen, which means `Line` or `Point` has a dedicated method to update itself when the dependencies change. Not all primitives have an update method implemented—please check our symbols reference section to confirm. The dependencies are resolved and the changes are propagated by the frontend (browser), not by the evaluation kernel. To create such a dependency, you need to "offload" an expression to be executed on the frontend. For example:
+WLJS mostly uses retained mode and push-model for managing objects on screen, which means `Line` or `Point` has a dedicated method to update itself when the dependencies change. Not all primitives have an update method implemented—please check our symbols reference section to confirm. The dependencies are resolved and the changes are propagated by the frontend (browser), not by the evaluation kernel. To create such a dependency, you need to "offload" an expression to be executed on the frontend. For example:
 
 <WLJSWrapper>
 <div className="code-input"/>
