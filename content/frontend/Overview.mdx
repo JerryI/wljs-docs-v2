@@ -128,12 +128,123 @@ import { Accordion, Accordions } from 'fumadocs-ui/components/accordion';
 - Markdown language is used for text cells
 - There might not be full support of all plotting functions or <abbr title="Please, forgive us, there are over 5000 symbols in the standard library. We are getting there with your support :)">symbols representations</abbr>
 
+#### Refresh
+
+<div className="grid gap-4 md:grid-cols-2">
+<div>
+
+**Mathematica**
+
+```wolfram
+Dynamic@Refresh[Now, UpdateInterval -> 1]
+```
+
+</div>
+<div>
+
+**WLJS**
+
+```wolfram
+Refresh[Now, 1]
+```
+
+</div>
+</div>
+
+#### Low-level dynamics
+
+<div className="grid gap-4 md:grid-cols-2">
+<div>
+
+**Mathematica**
+
+```wolfram
+r = 1.0;
+Dynamic@Graphics[
+  {Disk[{0, 0}, r]},
+  PlotRange -> 1
+]
+
+(* later *)
+r = 0.3;
+```
+
+</div>
+<div>
+
+**WLJS**
+
+```wolfram
+r = 1.0;
+Graphics[
+  {Disk[{0, 0}, Offload[r]]},
+  PlotRange -> 1
+]
+
+(* later *)
+r = 0.3;
+```
+
+</div>
+</div>
+
+#### User input
+
+<div className="grid gap-4 md:grid-cols-2">
+<div>
+
+**Mathematica**
+
+```wolfram
+DynamicModule[{pt = {}},
+  EventHandler[
+    Dynamic@Graphics[
+      Point[pt],
+      PlotRange -> 1
+    ],
+    "MouseMoved" :> (pt = Append[pt, MousePosition["Graphics"]])
+  ]
+]
+```
+
+</div>
+<div>
+
+**WLJS**
+
+```wolfram
+Module[{pt = {}},
+  EventHandler[
+    Graphics[
+      Point[pt // Offload],
+      PlotRange -> 1
+    ],
+    {"mousemove" -> ((pt = Append[pt, #]) &)}
+  ]
+]
+```
+
+</div>
+</div>
+
 </Accordion>
 </Accordions>
 
 <Callout title="If something is not working, but you really need it">
 Apply `MMAView` expression on anything to make it looks like in Mathematica. It will bypass all WLJS pipleines and be rendered to an image.
 </Callout>
+
+WLJS and Mathematica frontends are based on two different paradigms, where both have their own advantages, while we focus on control and performance
+
+| Aspect           | Mathematica                                     | WLJS                                       |
+| ---------------- | ----------------------------------------------- | -------------------------------------------------- |
+| Rendering model  | Immediate mode                                  | Retained mode (+ immediate mode emulation)         |
+| Reactive updates | Automatic dependency tracking and re-evaluation | Explicit, targeted updates                         |
+| Data binding     | Two-way symbol binding                          | One-way symbol binding + events for input elements |
+| Reactive model          | Pull                                      | Push                                          |
+
+
+
 
 > **Can it open `.nb` files?**
 > __Yes!__ There are some limitations regarding complex styling / formatting of the text, and dynamic modules (see below). But we gradually improve the compatibility with every update. 

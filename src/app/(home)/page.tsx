@@ -3,6 +3,8 @@
 import Link from 'next/link';
 import { useEffect, useRef, useState } from 'react';
 import { Card, Cards } from 'fumadocs-ui/components/card';
+import { DynamicCodeBlock } from 'fumadocs-ui/components/dynamic-codeblock';
+import { Tab, Tabs } from 'fumadocs-ui/components/tabs';
 import { Code2, Coffee, Lightbulb, Zap, Download, Package, Terminal, Bot, GitBranch, MessageCircle, MessagesSquare, Send, Youtube } from 'lucide-react';
 import { AnimationController, type AnimationConfig } from './AnimationController';
 
@@ -87,6 +89,135 @@ return r;`.split('')
     frames: 'Tomorrow - Today'.split('')
   }
 };
+
+const comparisonExamples = [
+  {
+    title: 'Wolfram/WLJS',
+    lang: 'wolfram',
+    code: `Manipulate[Plot3D[
+  Sin[n x] Cos[n y], {x, -1, 1}, {y, -1, 1}
+], {n, 1, 5, 0.3}, ContinuousAction -> True]`,
+  },
+  {
+    title: 'Wolfram/Mathematica (Proprietary)',
+    lang: 'wolfram',
+    code: `Manipulate[Plot3D[
+  Sin[n x] Cos[n y], {x, -1, 1}, {y, -1, 1}
+], {n, 1, 5, 0.3}]`,
+  },
+  {
+    title: 'Julia/Pluto',
+    lang: 'julia',
+    code: `begin
+    using PlutoUI
+    using PlotlyJS
+end
+
+@bind n Slider(1:0.3:5; default=1, show_value=true)
+
+begin
+    xs = range(-1, 1; length=80)
+    ys = range(-1, 1; length=80)
+
+    zs = [sin(n * x) * cos(n * y) for y in ys, x in xs]
+
+    Plot(
+        surface(x=xs, y=ys, z=zs),
+        Layout(
+            height=700,
+            scene=attr(
+                xaxis_title="x",
+                yaxis_title="y",
+                zaxis_title="sin(n x) cos(n y)"
+            )
+        )
+    )
+end`,
+  },
+  {
+    title: 'Python/Jupyter',
+    lang: 'python',
+    code: `import numpy as np
+import plotly.graph_objects as go
+import ipywidgets as widgets
+from IPython.display import display
+import plotly.io as pio
+
+pio.renderers.default = "iframe_connected"
+
+x = np.linspace(-1, 1, 80)
+y = np.linspace(-1, 1, 80)
+X, Y = np.meshgrid(x, y)
+
+def plot_surface(n):
+    Z = np.sin(n * X) * np.cos(n * Y)
+
+    fig = go.Figure(data=[go.Surface(x=x, y=y, z=Z)])
+    fig.update_layout(
+        height=700,
+        margin=dict(l=0, r=0, b=0, t=30),
+        scene=dict(
+            xaxis_title="x",
+            yaxis_title="y",
+            zaxis_title="sin(n x) cos(n y)",
+        ),
+    )
+
+    display(fig)
+
+n_slider = widgets.FloatSlider(
+    value=1,
+    min=1,
+    max=5,
+    step=0.3,
+    description="n",
+    continuous_update=True,
+    readout_format=".1f",
+)
+
+out = widgets.interactive_output(plot_surface, {"n": n_slider})
+
+display(widgets.VBox([n_slider, out]))`,
+  },
+  {
+    title: 'Python/Marimo',
+    lang: 'python',
+    code: `import marimo as mo
+import numpy as np
+import plotly.graph_objects as go
+
+n_slider = mo.ui.slider(
+    start=1,
+    stop=5,
+    step=0.3,
+    value=1,
+    label="n",
+    show_value=True,
+    full_width=True,
+)
+
+n_slider
+
+_x = np.linspace(-1, 1, 80)
+_y = np.linspace(-1, 1, 80)
+_X, _Y = np.meshgrid(_x, _y)
+
+_Z = np.sin(n_slider.value * _X) * np.cos(n_slider.value * _Y)
+
+_fig = go.Figure(data=[go.Surface(x=_x, y=_y, z=_Z)])
+_fig.update_layout(
+    height=700,
+    margin=dict(l=0, r=0, b=0, t=30),
+    scene=dict(
+        xaxis_title="x",
+        yaxis_title="y",
+        zaxis_title="sin(n x) cos(n y)",
+    ),
+)
+
+mo.ui.plotly(_fig)`,
+  },
+] as const;
 
 
 const animationsArray = [
@@ -464,6 +595,27 @@ export default function HomePage() {
             href="/frontend/Guides/Command-palette#mcp-server"
           />   
         </Cards>
+      </div>
+
+      <div className="relative mb-16">
+        <div className="rounded-lg border border-fd-border bg-fd-card/50 backdrop-blur-sm p-6 sm:p-8 shadow-lg">
+          <div className="flex flex-col gap-6">
+            <div className="min-w-0 text-left">
+              <h3 className="mb-4">Create dynamic 3D plots quickly </h3>
+              <Tabs items={comparisonExamples.map((example) => example.title)} className="my-0 w-full">
+                {comparisonExamples.map((example) => (
+                  <Tab key={example.title} value={example.title}>
+                    <DynamicCodeBlock
+                      lang={example.lang}
+                      code={example.code}
+                      codeblock={{ 'data-line-numbers': true }}
+                    />
+                  </Tab>
+                ))}
+              </Tabs>
+            </div>
+          </div>
+        </div>
       </div>
 
       {/* CodeSign Sponsor Banner */}
