@@ -28,6 +28,34 @@ Grid[Table[x, {3}, {7}],
 `}</wljs-editor>
 </WLJSWrapper>
 
+### Spacings
+Sets the horizontal and vertical spacing between cells. A pair specifies the spacing in each direction.
+
+```wolfram
+Grid[Table[x, {3}, {5}], Spacings -> {5, 0}]
+```
+
+### Alignment
+Aligns the contents of the cells. Use a pair for the horizontal and vertical alignment, or nested lists to specify alignment by row and column.
+
+```wolfram
+Grid[{{1, 2}, {3, 4}}, Alignment -> {{Right, Left}, {Bottom, Top}}]
+```
+
+### ImageSize
+Specifies the size of the grid in pixels.
+
+```wolfram
+Grid[Table[x, {3}, {5}], ImageSize -> 300]
+```
+
+### BaselinePosition
+Controls the vertical position of the grid relative to surrounding content.
+
+```wolfram
+Grid[{{Orange}, {Yellow}}, BaselinePosition -> Center]
+```
+
 ## Modifiers
 - [`Item`](../Formatting/Item)
 

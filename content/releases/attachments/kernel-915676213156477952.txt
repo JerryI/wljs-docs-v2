@@ -1,0 +1,4 @@
+[
+	"List",
+	["Association",["Rule","'CompressedMap'","'eJxV0ElqJDAMBdB11TGyDkHzcJaQhWxZ9z9CO1CB6oXBFuJZ+t\/Px\/fz8fiQymLppGgOiJ4a3K1HEuHgbwlpzaqPz9sNX4kIwqyeKEKZz8fP50tCKXYg4CXmx3xxaxmWm1gZKDpo1sqX5MlOysmM9+b0JgG7OTdz17AuHm\/08tVQJ\/Skn9npAH8SBSBkxF3ifhP\/zTRINLsko9ZkCBXzMJcNekJdEanmbzsTNgU3yKRUe5OqY+052RbSLbUYmMb997VnMyyOzr1fkrqIGt3V9WZI7zO1bhZNzQloWb3US3kn3roV+c0LLDxekum1OJSEb7iA71KJnTXbY2UDnT12bmCHKE1xjrT3ndJeUqgI3GxFGf2eKz1\/\/gE2+3M5'"],["Rule","'Basis'",["List",["List",0.63],["List",0.53],["List",0.43],["List",0.33],["List",0.73],["List",0.83],["List",0.93]]],["Rule","'Class'","'StateMachine'"],["Rule","'Interpolation'",true],["Rule","'Symbol'","'sqval'"],["Rule","'Events'",["List",["List","'7e28238b-71fe-4b8e-b587-e16c295b9bd4'","'Default'"]]],["Rule","'InitialValues'",["List",0.93]]]
+]

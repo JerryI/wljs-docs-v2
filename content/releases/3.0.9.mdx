@@ -1,0 +1,313 @@
+---
+title: Release notes *3.0.9*
+date: 2026-07-09
+---
+
+
+import { Tabs, Tab } from 'fumadocs-ui/components/tabs';
+
+<Tabs items={['Windows', 'Mac','GNU/Linux', 'Docker', 'Homebrew']}>
+  <Tab value="Mac">
+    - [Apple Silicon](https://github.com/WLJSTeam/wljs-notebook/releases/download/v3.0.9/wljs-notebook-3.0.9-arm64-macos.dmg)
+    - [Intel](https://github.com/WLJSTeam/wljs-notebook/releases/download/v3.0.9/wljs-notebook-3.0.9-x64-macos.dmg)
+  </Tab>
+  <Tab value="Windows">
+    - [x86/64](https://github.com/WLJSTeam/wljs-notebook/releases/download/v3.0.9/wljs-notebook-3.0.9-x64-win.exe)
+  </Tab>
+  <Tab value="GNU/Linux">
+    - [DEB x86/64](https://github.com/WLJSTeam/wljs-notebook/releases/download/v3.0.9/wljs-notebook-3.0.9-amd64-gnulinux.deb)
+    - [DEB ARM64](https://github.com/WLJSTeam/wljs-notebook/releases/download/v3.0.9/wljs-notebook-3.0.9-arm64-gnulinux.deb)
+    - [AppImage x86/64](https://github.com/WLJSTeam/wljs-notebook/releases/download/v3.0.9/wljs-notebook-3.0.9-x86_64-gnulinux.AppImage)
+    - [AppImage ARM64](https://github.com/WLJSTeam/wljs-notebook/releases/download/v3.0.9/wljs-notebook-3.0.9-arm64-gnulinux.AppImage)
+  </Tab>
+  <Tab value="Docker">
+
+```bash
+docker run -it \
+  -v ~/wljs:"/home/wljs/WLJS Notebooks" \
+  -v ~/wljs/Licensing:/home/wljs/.WolframEngine/Licensing \
+  -v ~/wljs/tmp:/tmp \
+  -p 8000:3000 \
+  --name wljs \
+  ghcr.io/wljsteam/wljs-notebook:main
+```
+
+  </Tab>
+  <Tab value="Homebrew">
+  
+```bash  
+brew install --cask wljs-notebook
+```
+
+  </Tab>
+</Tabs>
+
+{/* add this script to the body  */}
+{/* https://cdn.jsdelivr.net/gh/WLJSTeam/web-components@latest/src/common/app.js */}
+<wljs-store kernel="./attachments/kernel-915676213156477952.txt" json="./attachments/b048058f-c459-4100-94f6-1a382f4cffe2.txt"></wljs-store>
+
+
+## UI Revision
+Refreshing lighter colors, better UI elements, less blocky panels...
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`NumericArray[{1,2,4}]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`NumericArray[(*VB[*) {1, 2, 4}, "UnsignedInteger8" (*,*)(*"1:eJydUMtqAkEQ3MQ8JeAtAU/JwR8wB8WbskoEUdhVz45O7zIw0x16Zkn279PjGpKcEnIpuqqarqKf9pQVrSRJfFdgQu8zYrcbMyssQeeVc4prkYuzuNMRmDFhmKLeGg6Vso1xIfBCVh+HJSEU55/ywvjQsIdvCafL8wBua+AtvxJvXb/C6LHZbQtMtQnE0f4Z0rBbgU22SOFAGvJ7Yb1+f4PelAh6jgFK4KFIX02yykJ+EwdQeoW2PqprruD3fnfipcaB3Cf0/215HVsOJs+9QfqXWv4y/ltZDx8CVGil"*)(*]VB*)]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`Panel[1+1]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*BB[*)(Panel[2])(*,*)(*"1:eJxTTMoPSmNiYGAo5gcSAUX5ZZkpqSn+BSWZ+XnFaYwgCV4gEZaZWu6SmpxflFiSXxTMClKamJeaA9HJAiSCSnNSg0EMj9TEFIQCAH5qF00="*)(*]BB*)`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`Quantity[1, "Meters"/"Kilograms"]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(Quantity[1, "Meters"/"Kilograms"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KWnMIB4vkAjLTC13SU3OL0osyS8K5gCKBJYm5pVkllRmgnSkMYEUsgKJkMzc1GIENyC/PLUomBPI8s7MyU8vSswtzvwPBMFsQCHf1JLUomIAZKEe9w=="*)(*]VB*)`}</wljs-editor></WLJSWrapper>
+
+## Rows, Columns, Grids, and Tables
+We significantly improved support for the standard symbols used to format lists and tables. For `Grid`, `Row`, and `Column`, the `Dividers`, `Spacings`, `Alignment`, `ImageSize`, and `BaselinePosition` options are now supported. For `TableForm`, `TableAlignments`, `TableHeadings`, and `TableSpacing` are supported as well. Here are a few examples:
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`Row[{
+	  Graphics[{Red, Disk[]}, ImageSize->{18,18}, PlotRange->2], 
+	  Style["Hey there", (*VB[*)(RGBColor[0.3333333333333333, 0.3333333333333333, 0.3333333333333333])(*,*)(*"1:eJxTTMoPSmNiYGAo5gUSYZmp5S6pyflFiSX5RcEsQBHn4PCQNGaQPAeQCHJ3cs7PyS8qCgWDq/aYDABERxdN"*)(*]VB*)]
+	}, Alignment->{{Right, Left},Center}, ImageSize->400]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*GB[*){{(*VB[*)(Graphics[{RGBColor[1, 0, 0], Disk[{0, 0}]}, ImageSize -> {18, 18}, PlotRange -> 2])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KWnMIB4HkHAvSizIyEwuTmOCyftkFpcg5IPcnZzzc/KLMkH6MxlgBMI4l8zibFTNSKrg4kGlOanFnECGZ25iempwZlUqmh4hkB4h7HoCcvJLghLz0lMzQXIAEh0ltg=="*)(*]VB*)(*|*),(*|*)(*BB[*)("Hey there")(*,*)(*"1:eJxTTMoPSmNiYGAo5gcSAUX5ZZkpqSn+BSWZ+XnFaYwgCT4gEVxSmZPqkpqcX5RYkl+UxgwS5wASQe5Ozvk5+UVFoWBw1R6TATGdBaS4NCc1mA1sWlFmXjpYLKSoNBUAbPgknA=="*)(*]BB*)}}(*||*)(*1:eJxTTMoPSmNmYGAo5gUSYZmp5S6pyflFiSX5RcEsQBH3osyUNCaQPIgXVJqTWiwAFXbKr3DMyUzPy03NK0Eo8cksLkHVEMwOZDjn55Tm5hWjqitmBSnJTM8ogQilpqFrBTPyy4vTGFHMR+EVs4HMBzoitQjNpZxAhmduYnpqcGZVauYEoC4AiZg1Yw==*)(*]GB*)`}</wljs-editor></WLJSWrapper>
+
+Grid examples
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`Grid[Table[x, {3}, {5}],  Spacings->{5,0}]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*GB[*){{x(*|*),(*|*)x(*|*),(*|*)x(*|*),(*|*)x(*|*),(*|*)x}(*||*),(*||*){x(*|*),(*|*)x(*|*),(*|*)x(*|*),(*|*)x(*|*),(*|*)x}(*||*),(*||*){x(*|*),(*|*)x(*|*),(*|*)x(*|*),(*|*)x(*|*),(*|*)x}}(*||*)(*1:eJxTTMoPSmNiYGAo5gUSYZmp5S6pyflFiSX5RcEsQBH3oswUiDyIF1Sak1rMDxV2yq8ILkhMzsxLL0ao8MksLkFVH8wOZDjn55Tm5hWnMaKoQ+FlsgIZaFrBjPxy/PqANAMAdo8pjQ==*)(*]GB*)`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`Grid[Table[x, {3}, {7}], 
+	 Dividers -> {{False, False, True}, {False, True}}, Spacings->2]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*GB[*){{x(*|*),(*|*)x(*|*),(*|*)x(*|*),(*|*)x(*|*),(*|*)x(*|*),(*|*)x(*|*),(*|*)x}(*||*),(*||*){x(*|*),(*|*)x(*|*),(*|*)x(*|*),(*|*)x(*|*),(*|*)x(*|*),(*|*)x(*|*),(*|*)x}(*||*),(*||*){x(*|*),(*|*)x(*|*),(*|*)x(*|*),(*|*)x(*|*),(*|*)x(*|*),(*|*)x(*|*),(*|*)x}}(*||*)(*1:eJxTTMoPSmNmYGAo5gUSYZmp5S6pyflFiSX5RcEsQBH3osyUNCaQPIgXVJqTWswPFXbKr3DJLMtMSS0qRqjwySwuQVUfzA5kOOfnlObmFUNsgqkrZgUy3BJzilORWCDJkKLSVDRDwIz8cjSbCOpDdmxwQWJyZl56cRojkY5FVYfCywTpAgBm0UWK*)(*]GB*)`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`Grid[{
+	  {Graphics[Rectangle[{-1,-1}, {1,1}], ImageSize -> 20], 
+	   Graphics[Rectangle[{-1,-1}, {1,1}], ImageSize -> 30]}, 
+	  {Graphics[Rectangle[{-1,-1}, {1,1}],ImageSize -> 40], 
+	   Graphics[Rectangle[{-1,-1}, {1,1}], ImageSize -> 50]}}, 
+	 Alignment -> {{Right, Left}, {Bottom, Top}}]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*GB[*){{(*VB[*)(Graphics[Rectangle[{-1, -1}, {1, 1}], ImageSize -> 20])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KWlMIB4HkHAvSizIyEwuhohwAomg1OSSxLz0nFSIEEiLT2ZxSeZ/IAATaOIgg8EEQjyoNCcVbJZnbmJ6anBmVWqmCJAHAOtwIbk="*)(*]VB*)(*|*),(*|*)(*VB[*)(Graphics[Rectangle[{-1, -1}, {1, 1}], ImageSize -> 30])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KWlMIB4HkHAvSizIyEwuhohwAomg1OSSxLz0nFSIEEiLT2ZxSeZ/IAATaOIgg8EEQjyoNCcVbJZnbmJ6anBmVWqmHJAHAOuYIcM="*)(*]VB*)}(*||*),(*||*){(*VB[*)(Graphics[Rectangle[{-1, -1}, {1, 1}], ImageSize -> 40])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KWlMIB4HkHAvSizIyEwuhohwAomg1OSSxLz0nFSIEEiLT2ZxSeZ/IAATaOIgg8EEQjyoNCcVbJZnbmJ6anBmVWqmBpAHAOvAIc0="*)(*]VB*)(*|*),(*|*)(*VB[*)(Graphics[Rectangle[{-1, -1}, {1, 1}], ImageSize -> 50])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KWlMIB4HkHAvSizIyEwuhohwAomg1OSSxLz0nFSIEEiLT2ZxSeZ/IAATaOIgg8EEQjyoNCcVbJZnbmJ6anBmVWqmEZAHAOvoIdc="*)(*]VB*)}}(*||*)(*1:eJxTTMoPSmNiYGAo5gUSYZmp5S6pyflFiSX5RcEsQBH3oswUiDyIF1Sak1osABV2yq9wzMlMz8tNzStBKPHJLC5B1RDMDmQ45+eU5uYVo6orZgUpyUzPKIEIpaahawUz8svR9bEBGU75JSX5ucXMQGZIfgEAMEEtOw==*)(*]GB*)`}</wljs-editor></WLJSWrapper>
+
+Baseline alignment
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`a Grid[{{Orange}, {Yellow}}, BaselinePosition->Top]
+	a Grid[{{Orange}, {Yellow}}, BaselinePosition->Center]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`a (*GB[*){{(*VB[*)(RGBColor[1, 0.5, 0])(*,*)(*"1:eJxTTMoPSmNiYGAo5gUSYZmp5S6pyflFiSX5RcEsQBHn4PCQNGaQPAeQCHJ3cs7PyS8qYgCDD/ZQxgMYg4EBAO47EGU="*)(*]VB*)}(*||*),(*||*){(*VB[*)(RGBColor[1, 1, 0])(*,*)(*"1:eJxTTMoPSmNiYGAo5gUSYZmp5S6pyflFiSX5RcEsQBHn4PCQNGaQPAeQCHJ3cs7PyS8qYgCDD/boDAYGAO7rEHU="*)(*]VB*)}}(*||*)(*1:eJxTTMoPSmNiYGAo5gUSYZmp5S6pyflFiSX5RcEsQBH3oswUiDyIF1Sak1osAGQ4JRan5mTmpQbkF2eWZObnFTMDBUPyCwABnBRj*)(*]GB*)`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`a (*GB[*){{(*VB[*)(RGBColor[1, 0.5, 0])(*,*)(*"1:eJxTTMoPSmNiYGAo5gUSYZmp5S6pyflFiSX5RcEsQBHn4PCQNGaQPAeQCHJ3cs7PyS8qYgCDD/ZQxgMYg4EBAO47EGU="*)(*]VB*)}(*||*),(*||*){(*VB[*)(RGBColor[1, 1, 0])(*,*)(*"1:eJxTTMoPSmNiYGAo5gUSYZmp5S6pyflFiSX5RcEsQBHn4PCQNGaQPAeQCHJ3cs7PyS8qYgCDD/boDAYGAO7rEHU="*)(*]VB*)}}(*||*)(*1:eJxTTMoPSmNiYGAo5gUSYZmp5S6pyflFiSX5RcEsQBH3oswUiDyIF1Sak1osAGQ4JRan5mTmpQbkF2eWZObnFbMBBZ1T80pSiwBA2xWU*)(*]GB*)`}</wljs-editor></WLJSWrapper>
+
+Column examples
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`Column[{1, 12, 123, 1234}, Center]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*GB[*){{1}(*||*),(*||*){12}(*||*),(*||*){123}(*||*),(*||*){1234}}(*||*)(*1:eJxTTMoPSmNiYGAo5gUSYZmp5S6pyflFiSX5RcEsQBH3oswUiDyIF1Sak1osABV2yq9wzMlMz8tNzStJY4Qp8cksLkHVEMwOZDjn55Tm5hWjqUPhFbOB1AENSy0CAGejIoo=*)(*]GB*)`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`Column[{1, 22, 333}, Dividers -> All]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*GB[*){{1}(*||*),(*||*){22}(*||*),(*||*){333}}(*||*)(*1:eJxTTMoPSmNmYGAo5gUSYZmp5S6pyflFiSX5RcEsQBH3osyUNCaQPIgXVJqTWiwAFXbKr3DMyUzPy03NK0ljhCnxySwuQdUQzA5kOOfnlObmFaOpQ+FBGKlpaNqL+RH2uWSWZaakFhUjVFBoXUhRaSqadjAjv5w4vQDdjUVR*)(*]GB*)`}</wljs-editor></WLJSWrapper>
+
+Table examples
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`TableForm[{{5, 7}, {4, 2}, {10, 3}}, 
+	 TableHeadings -> {{"Group A", "Group B", "Group C"}, {"y1", "y2"}}]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*GB[*){{(*BB[*)(None)(*,*)(*"1:eJxTTMoPSmNiYGAo5gMSwSWVOakuqcn5RYkl+UUQcRYgEVSak1osAlKQkV8eXFKUmZfunJFYlJhcklpUXMwKlHBLzClORdUQzAPV4JyfV5KaV4KkEAAnBR+D"*)(*]BB*)(*|*),(*|*)"y1"(*|*),(*|*)"y2"}(*||*),(*||*){"Group A"(*|*),(*|*)5(*|*),(*|*)7}(*||*),(*||*){"Group B"(*|*),(*|*)4(*|*),(*|*)2}(*||*),(*||*){"Group C"(*|*),(*|*)10(*|*),(*|*)3}}(*||*)(*1:eJytj8EOgjAMhqfR6MXoK/goItGLJzDeJ3SkydjMuomP7wYiiiHh4KX5+/dL/3Z71YmYMcZo5csFoYoh04ZbbdJgHw3mYhrmoUucBFq/7Eg/YrxjDoY64oRkv/l04cVeS1cqapJajuZeHLgkqK2zcSAmA8Bb9ZbXQlf/3/z5ZnrjGapi9JsYsgYORfYzo00XtZNYqBKUHZvVICD6SJtHSy8iTiBRwRPvv20n*)(*]GB*)`}</wljs-editor></WLJSWrapper>
+
+Note that this can still be used as input.
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`data = (*GB[*){{(*BB[*)(None)(*,*)(*"1:eJxTTMoPSmNiYGAo5gMSwSWVOakuqcn5RYkl+UUQcRYgEVSak1osAlKQkV8eXFKUmZfunJFYlJhcklpUXMwKlHBLzClORdUQzAPV4JyfV5KaV4KkEAAnBR+D"*)(*]BB*)(*|*),(*|*)"y1"(*|*),(*|*)"y2"}(*||*),(*||*){"Group A"(*|*),(*|*)5(*|*),(*|*)7}(*||*),(*||*){"Group B"(*|*),(*|*)4(*|*),(*|*)2}(*||*),(*||*){"Group C"(*|*),(*|*)10(*|*),(*|*)3}}(*||*)(*1:eJytj8EOgjAMhqfR6MXoK/goItGLJzDeJ3SkydjMuomP7wYiiiHh4KX5+/dL/3Z71YmYMcZo5csFoYoh04ZbbdJgHw3mYhrmoUucBFq/7Eg/YrxjDoY64oRkv/l04cVeS1cqapJajuZeHLgkqK2zcSAmA8Bb9ZbXQlf/3/z5ZnrjGapi9JsYsgYORfYzo00XtZNYqBKUHZvVICD6SJtHSy8iTiBRwRPvv20n*)(*]GB*);
+	
+	data[[2,2]]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`5`}</wljs-editor></WLJSWrapper>
+
+Styling options
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`ScientificForm[TableForm[RandomReal[10^5, {2, 3}]], 3]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*GB[*){{(*VB[*)(2.103554622652979*^4)(*,*)(*"1:eJxtkEtPwkAUhatxYfwV2FUfxFjTsjBhMVMoCUjBTmf6ICzqMDa1bxCmEH+8LWjiws25J/fcxXfu/VvpvF8LgrC7a2W8ST7LLUkYR96VIEgKhCtFlp4etF8r9pqeKEtKv/WKqD2zaeO683KJcjsJJqA0YooA9o0wTKsaFSpEXqj6hRUFPDZdPR6TBuXhsm5T6htOkGYqbmKODA7QKzMWp0NqqJhYo8mIczhwgTvZwAjptkm1HGg7L7Ny/6MKXmaotCEG2E4Z58Oh2PGsIewGqjrUZcnZdqU9SsqXIvfPqq/bmzZV5P8bpJcGc9TWJ4so3de0+GEklWvCxkqAQ6a16yXcxJXp+I1BcYXCTB3QlCQ4t47Iyxx6AjWm48N8hnULgCC3SPmH8PLvm1acfcbQbWdYtFkU2fG8dbd79g1LwndR"*)(*]VB*)(*|*),(*|*)(*VB[*)(3.383082912826145*^4)(*,*)(*"1:eJxtkEtvgkAUhWnTRdNfYVnxME2JYJomLmZQTLSiZWZ4GRd0nBIKCGh10PTHF7RNuujm3JN77uI79/6tcN6vBUHY3TUyWiefxdZNGEf+lSBICoRLRZZ6D72nXy926o4oS0q38YqoPbNJjfGsWKDcToIxKIyYIkB8IwzTskIbFSIvVP2NFQU8NrEej9wa5eGialLqG06QZiqpY44MDtArM+anQ2qoxLWG4yHnsI8BHq9hhHTbpFoOtJ2XWbn/UQYvU1TYkABip4zzwUBseVYQtgOVLeqi4Gy71B4l5UuRu2fVV81Nkyry/w3SS4MZ4shz51G6r+jmh9EtsQlrKwGOO6mwl3CTlKbj1wYlJQoztU9TNyG5dURe5tATqAgdHWZTolsABLnlFn8ILw+/acTZZwzdtoZF6/kmO563eLtn36tmd40="*)(*]VB*)(*|*),(*|*)(*VB[*)(1.9383738919320036*^4)(*,*)(*"1:eJxtkEtPwkAUhatxYfwV2FUfxNikJdGExUyhJCAFO48+CItaxqb2DcIU4o+3BU1cuDn35J67+M69fyud92tBEHZ3rYw3yWe5pQnjyLsSBEmBcKXIkvbwpP96sdf0RFlS+q1XRO2ZTRuM5+US5XbiT0BpxBECxDOCIK1qVKgQuYHqFVbo89jEejymDcqDZd2mkWc4fpqppIk5MjhAr8xYnA6poRJqjSYjzuEAAzzZwBDpthlpOdB2bmbl3kflv8xQaUMCiJ0yzodDseNZQ9gNVHWoy5Kz7Up7lJQvRe6fVV+3N22qyP83SC8N5ogjly7CdF9HxQ8jrbAJGysBDp3W2E24SSrT8RojIhUKMnUQpTQhuXVEbuZEJ1CTaHyYz4huAeDnFi3/EF4eftOKs88Yuu0MCzeLIjuet3i7Z9+rZneN"*)(*]VB*)}(*||*),(*||*){(*VB[*)(4.3403939032740025*^4)(*,*)(*"1:eJxtkEtPwkAUhatxYfwV2FUfxNjYsjBhMVMoCUjBTmf6ICzqMDa1bxCmEH+8LWjiws25J/fcxXfu/VvpvF8LgrC7a2W8ST7LLUkYR/6VIEgKhCtFlvSHJ/3Xi72mJ8qS0m+9ImrPbNq47rxcotxOggkojZgigH0jDNOqRoUKkReqfmFFAY9NV4/HpEF5uKzblPqGE6SZipuYI4MD9MqMxemQGiom1mgy4hwOXOBONjBCum1SLQfazsus3P+ogpcZKm2IAbZTxvlwKHY8awi7gaoOdVlytl1pj5Lypcj9s+rr9qZNFfn/BumlwRxx5JFFlO5rWvwwkso1YWMlwCHT2vUSbuLKdPzGoLhCYaYOaEoSnFtH5GUOPYEa0/FhPsO6BUCQW6T8Q3h5+E0rzj5j6LYzLNosiux43rrbPfsGpxZ3ig=="*)(*]VB*)(*|*),(*|*)(*VB[*)(9.365170413742297*^3)(*,*)(*"1:eJxtkEtPwkAUhatxYfwV2lUfxNhAMZqwmCmUBKRg59EHYVHL2NS+QZhC/PG2oIkLN+ee3HMX37l3b4X9fikIwvamkdE6/iw2NGYcuReCICkQLhVZerrvPv568ba+FWVJ6TReEbVnNqkxnhULlFmxNwaFHoUIEFf3/aSsUK5C5Piqm5uBxyMD96IRrVHmL6omDV3d9pJUJXXEkc4BemX6/LhPdJVQczgecg77GODxGgaoZxmhlgFt66Rm5n6U3ssUFRYkgFgJ43wwEFueFYTtQGWLuig42yy1B0n5UuTOSbur5qZJFfn/Bsm5wQxx5NB5kOyqMP9hpCU2YG3GwKaTCjsxN0hp2G6th6REfqr2w4TGJDMPyEnt8AgqEo72synpmQB4mUmLP4Tnh181Yu9Shq5bw4L1PE8Ppy3e7Ng3sgJ3kQ=="*)(*]VB*)(*|*),(*|*)(*VB[*)(9.837795596860886*^4)(*,*)(*"1:eJxtkEtPwkAUhatxYfwV2lUfxNikJWrCYqZQEpCCnUcfhEUdalP7BmEK8cfbgiYu3Jx7cs9dfOfevZXO+6UgCNubVkbr5LPc0CTiyLsQBEmBcKnI0tP9o/7rxdvmVpQlpdd6RdSeo0mD8axcoNxO/DEojZghQDwjCNKqRoUKkRuoXmGFPo9NrMcj2qA8WNRtyjzD8dNMJU3MkcEBeo2M+XGfGiqh1nA85Bz2McDjNQyRbptMy4G2dTMr9z4q/2WKShsSQOw04nwwEDueFYTdQFWHuih5tFlqD5Lypci9k+qr9qZNFfn/Bum5wQxx5NJ5mO5qVvww0gqbsLES4NBJjd2Em6QyHa8xGKlQkKl9ltKE5NYBuZnDjqAmbLSfTYluAeDnFi3/EJ4fftWKs8sidN2ZKFzPi+xw2uLNLvoGtZR3lA=="*)(*]VB*)}}(*||*)(*1:eJxTTMoPSmNmYGAo5gUSYZmp5S6pyflFiSX5RcEsQBH3osyUNCaQPIgXVJqTWswPFXbKrwguSEzOzEsvRqjwySwuQVUfzA5kOOfnlObmFWcyAtlo0mBGfnlxJgOGXLEAwirHnMz0vNzUvBJi7YIoSU1DVwKzr5gDyHBKLE7NycxLBQCTMDsw*)(*]GB*)`}</wljs-editor></WLJSWrapper>
+
+Styled cells
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`Grid[{{Item[1, Background -> Red, Frame -> True], 2}, {3, 4}}]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*GB[*){{1(*VB[*)(**)(*,*)(*"1:eJxTTMoPSmNhYGAo5gUSYZmp5S6pyflFiSX5RcEgYc+S1Nw0JpA8iBdUmpNazAVkOCUmZ6cX5ZfmpaQxgyQ5QJLuTs75OflFmYxATiYDjEDTzQpkuBUl5qaChUKKSlPRFPAAGcElRZkF/nmeeQWlJRAdiTnFqQDR+CZq"*)(*]VB*)(*|*),(*|*)2}(*||*),(*||*){3(*|*),(*|*)4}}(*||*)(*1:eJxTTMoPSmNkYGAo5gUSYZmp5S6pyflFiSX5RcEsQBH3oswUAJ89CUc=*)(*]GB*)`}</wljs-editor></WLJSWrapper>
+
+MatrixForm output
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`MatrixForm @ PauliMatrix[3]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*GB[*){{1(*|*),(*|*)0}(*||*),(*||*){0(*|*),(*|*)-1}}(*||*)(*1:eJxTTMoPSmNkYGAo5gUSYZmp5S6pyflFiSX5RcFsQBHfxJKizAoAs04KOA==*)(*]GB*)`}</wljs-editor></WLJSWrapper>
+
+For tables that need lazy-loading support:
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`RandomReal[10^5, {2000, 3}]//TableView  `}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(FrontEndRef["b744ef31-8849-4728-94f8-207dbee3b658"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKJ5mbmKSmGRvqWliYWOqamBtZ6FqapFnoGhmYpySlphonmZlaAAB5RhUx"*)(*]VB*)`}</wljs-editor></WLJSWrapper>
+
+---
+
+## `Deploy` support
+The Wolfram Language `Deploy` wrapper now works with any decorated expression. It:
+- traverses the full expression tree
+- makes the expression non-selectable and non-editable
+
+A typical use case is constructing a GUI with `Panel`, `Row`, and `Grid` blocks:
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`Row[{
+	  Graphics[{Red, Disk[]}, ImageSize->{18,18}, PlotRange->2], 
+	  Style["Hey there", (*VB[*)(RGBColor[0.3333333333333333, 0.3333333333333333, 0.3333333333333333])(*,*)(*"1:eJxTTMoPSmNiYGAo5gUSYZmp5S6pyflFiSX5RcEsQBHn4PCQNGaQPAeQCHJ3cs7PyS8qCgWDq/aYDABERxdN"*)(*]VB*)]
+	}, Alignment->{{Right, Left},Center}, ImageSize->400] // Deploy`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*GB[*){{(*VB[*)(Graphics[{RGBColor[1, 0, 0], Disk[{0, 0}]}, ImageSize -> {18, 18}, PlotRange -> 2])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KWnMIB4HkHAvSizIyEwuTmOCyftkFpcg5IPcnZzzc/KLMkH6MxlgBMI4l8zibFTNSKrg4kGlOanFnECGZ25iempwZlUqmh4hkB4h7HoCcvJLghLz0lMzQXIAEh0ltg=="*)(*]VB*)(*|*),(*|*)(*BB[*)("Hey there")(*,*)(*"1:eJxTTMoPSmNiYGAo5gcSAUX5ZZkpqSn+BSWZ+XnFaYwgCT4gEVxSmZPqkpqcX5RYkl+UxgwS5wASQe5Ozvk5+UVFoWBw1R6TATGdBaS4NCc1mA1sWlFmXjpYLKSoNBUAbPgknA=="*)(*]BB*)}}(*||*)(*1:eJxdTlsKAjEQq+IDBcEreBQfKIJfW/C/u07rQB/Q6bLiKTyyUxWk/RmSTBKyaUOjJ0IIWvG5IgwH6EJUKUSZ5VPEmx7nf2ZNb4HWP3kXHluLxjvw6W+5IKUyIOcM9sH2zlPpo2m2oLmnrwS6jn5AGEiPiv6C0Sz38wiI1dIFg7NTBiQ+AV+cqgxLBhIsdEm1TPOco7IEb0vbPq8=*)(*]GB*)`}</wljs-editor></WLJSWrapper>
+
+The earlier example is now unselectable and uneditable.
+
+## Improved `Panel`
+`Panel` now supports background and appearance options.
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`Panel[Plot[x, {x,0,1}], Background->LightYellow]
+	Panel[Plot[x, {x,0,1}], Appearance->"Frameless"]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*BB[*)(Panel[(*VB[*)(FrontEndRef["a124c496-b4f7-4943-861c-aca03010938b"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKJxoamSSbWJrpJpmkmeuaWJoY61qYGSbrJiYnGhgbGBpYGlskAQB6ghUJ"*)(*]VB*)])(*,*)(*"1:eJxTTMoPSmNiYGAo5gcSAUX5ZZkpqSn+BSWZ+XnFEAleIBGWmVrukpqcX5RYkl8UzApSmpiXmgNRwAIkgkpzUou5gAynxOTs9KL80ryUNGaQJAdI0t3JOT8nvyiTEcgBE0XGYPDaHtWEYBDDIzUxBWEFAHX1JaI="*)(*]BB*)`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*BB[*)(Panel[(*VB[*)(FrontEndRef["80de2c1c-bec8-466b-a303-243fe9a32b85"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKWxikpBolGybrJqUmW+iamJkl6SYaGxjrGpkYp6VaJhobJVmYAgCMdBXK"*)(*]VB*)])(*,*)(*"1:eJxTTMoPSmNiYGAo5gcSAUX5ZZkpqSn+BSWZ+XnFEAleIBGWmVrukpqcX5RYkl8UzApSmpiXmgNRwAIkgkpzUou5gAzHgoLUxKLEvOTUYE4g160oMTcVKFWMqjQYxPBITUxBmAUAfXIiMA=="*)(*]BB*)`}</wljs-editor></WLJSWrapper>
+
+## `StandardForm` update
+As you might know, not every expression can be placed on a slide or WLX cell - only if it has `WLXForm` defined or they might also look different. You can bypass it by forcing `StandardForm` on it.
+
+Here is an example:
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`Expr = Panel[1/2]
+	ExprForSlide = StandardForm[Expr];`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*BB[*)(Panel[(*FB[*)((1)(*,*)/(*,*)(2))(*]FB*)])(*,*)(*"1:eJxTTMoPSmNiYGAo5gcSAUX5ZZkpqSn+BSWZ+XnFaYwgCV4gEZaZWu6SmpxflFiSXxTMClKamJeaA9HJAiSCSnNSg0EMj9TEFIQCAH5qF00="*)(*]BB*)`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`.slide
+	
+	<ExprForSlide/>`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="slide" type="Output"  >{`<dummy >FrontEndExecutable[ba89cb44-04a0-4060-8bbe-9c1967a41efd]</dummy>`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`.wlx
+	
+	<ExprForSlide/>`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="wlx" type="Output"  >{`FrontEndExecutable[78c0aefc-f2a1-49d8-8379-1103a58d602d]`}</wljs-editor></WLJSWrapper>
+
+The same will work out of the box for all `Deploy`-able expressions too.
+
+## `Locator` Primitive
+We added `Locator[]` symbol for easier 2D or 3D coordinates manipulation, here is an example:
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`location = {0.3,0.7};
+	Plot[x, {x,0,1}, Epilog->{
+	  EventHandler[Locator[location], {
+	    "drag"->Function[xy, location = xy]
+	  }]
+	}]
+	
+	Refresh[NumberForm[location, {3,2}], 1/2]`}</wljs-editor></WLJSWrapper>
+
+As you can see it generates `drag` event as `Disk`, `Polygon`, `Text` and `Rectangle`.
+
+## Improved `TextView`
+`TextView` now applies fewer default styles and supports multiple lines, as well as the `ImageSize` option:
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`TextView["Hey!"]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(FrontEndRef["a252dff6-b9f5-4a5f-9f1b-d645a8531f5b"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKJxqZGqWkpZnpJlmmmeqaJJqm6VqmGSbpppiZmCZamBobppkmAQCPmRYN"*)(*]VB*)`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`TextView["Hey!\\nThere"]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(FrontEndRef["94766904-6b81-4bf0-92a3-d782c3467c31"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKW5qYm5lZGpjomiVZGOqaJKUZ6FoaJRrrpphbGCUbm5iZJxsbAgBwuxS/"*)(*]VB*)`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`TextView["A very long line here", ImageSize->100]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(FrontEndRef["a87d7cba-d1af-438d-8260-3e4f16529314"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKJ1qYp5gnJyXqphgmpumaGFuk6FoYmRnoGqeapBmamRpZGhuaAACOyhV0"*)(*]VB*)`}</wljs-editor></WLJSWrapper>
+
+## Frontend support for string operators
+We extended the lightweight WL interpreter that runs in the frontend with more string-related operators, including `ToString`, `NumberForm`, `StringJoin`, and `Round`. This is useful for frontend-side formatting and label generation.
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`sqval = 0.3;
+	EventHandler[InputRange[0.33,1,0.1], (sqval=(*SqB[*)Sqrt[#](*]SqB*))&]
+	
+	TextView[
+	  sqval // Offload,
+	  "Label" -> "Before"
+	]
+	
+	TextView[
+	  StringJoin["sqval = ", 
+	    ToString[NumberForm[sqval, {4,2}]
+	  ]] // Offload,
+	  "Label" -> "After"
+	]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(EventObject[<|"Id" -> "7e28238b-71fe-4b8e-b587-e16c295b9bd4", "Initial" -> 0.7000000000000001, "View" -> "86aa0700-60c2-4f2d-a88d-e9d33197f5f4"|>])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKW5glJhqYGxjomhkkG+mapBml6CZaWKToplqmGBsbWpqnmaaZAAB+QxV4"*)(*]VB*)`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(FrontEndRef["06dc650d-d924-4049-b092-2e1028ba6e37"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKG5ilJJuZGqToplgameiaGJhY6iYZWBrpGqUaGhhZJCWapRqbAwB5jhUK"*)(*]VB*)`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(FrontEndRef["3a4fd6c4-3026-415b-b753-0bd865816065"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKGyeapKWYJZvoGhsYmemaGJom6SaZmxrrGiSlWJiZWhiaGZiZAgB9aRTd"*)(*]VB*)`}</wljs-editor></WLJSWrapper>
+
+These operators also work under `Offload`, because they are defined as frontend symbols.
+
+Here is another example that uses `Round`.
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`ln = Table[{i, 5.0 Sin[i/25.0 Pi]}, {i,0,50,0.04}];
+	Graphics[{
+	  Red, Line[ln//Offload],
+	  Blue, Line[ln//Round//Offload],
+	  EventHandler[AnimationFrameListener[ln//Offload], (
+	    ln = Transpose[{ln[[All,1]], RotateLeft[ln[[All,2]], 1]}]
+	  )&]
+	}, ImageSize->150]`}</wljs-editor></WLJSWrapper>
+
+## Improved support for packed arrays
+We improved how packed arrays are stored and transferred from the Wolfram Kernel to the frontend. During initial evaluation, `Graphics` and `Image` expressions are usually serialized as `"ExpressionJSON"` and reinterpreted in the frontend; subsequent updates use binary WXF. That initial pass was inefficient because numeric and packed arrays were serialized as plain lists by default, increasing payload sizes by 10-100 times. We patched the standard JSON serializer so packed and numeric arrays are sent as base64-encoded WXF strings. This matters especially for data structures such as `Image` and `Graphics3D` objects with many vertices.
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`ComplexPlot3D[(*FB[*)(((*SpB[*)Power[Sin[z](*|*),(*|*)3](*]SpB*))(*,*)/(*,*)((*SpB[*)Power[(z+1)(*|*),(*|*)4](*]SpB*)))(*]FB*), {z, -5 - 5 I, 5 + 5 I}]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(FrontEndRef["22af5701-3668-44e0-a384-d673c15f2f5d"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKGxklppmaGxjqGpuZWeiamKQa6CYaW5joppiZGycbmqYZpZmmAABzwhUT"*)(*]VB*)`}</wljs-editor></WLJSWrapper>
+
+As before, the data is also compressed with gzip. This should reduce file size, memory use, and CPU usage.
+
+## Association keys for frontend symbols
+Frontend symbols that are associations now support key access. Previously, you could do this:
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`h = {1,2}; 
+	TextView[h[[1]]//Offload]`}</wljs-editor></WLJSWrapper>
+
+Because `[[1]]` implicitly calls the `Part` operator, `a["key"]` was previously treated as a function-style argument instead of association key access.
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`a = <|"a"->1, "b"->0.3|>;
+	TextView[a["a"]//Offload]
+	TextView[a["b"]//Offload]`}</wljs-editor></WLJSWrapper>
+
+Now `a["key"]` works when `a` is an `Association`. Try it yourself!
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`a = <|"a"->-1, "b"->0.8|>;`}</wljs-editor></WLJSWrapper>
+
+## More Examples!
+Check out new examples in *Interactive Evaluation*, *For Physicists* and *Mini Apps*
+
+## Fixed bugs
+- [x] `Animate`, `Refresh`, `Manipulate` major bugs related to JIT-unsupported data structures and formatting
+- [x] JIT transpiler (`Manipulate` and etc) fails on `VertexTextureCoordinates`
+- [x] JIT transpiler fails silently when `VertexColors` is `RGBColor` list instead of converting it to plain triples of numbers
+- [x] JIT transpiler silently overwrites its own table with `$Failed`
+- [x] JIT transpiler converts 2D polygons incorrectly (replaces with lines - a typo)   
+- [x] **Insert Matrix** snippet is broken
+- [x] `Transparent` is unsupported in the context of 2D and 3D graphics
+- [x] Invisible text selection 
+- [x] Minor bugs related to MCP server and CLI
+- [x] `CreateWindow` event generation issues
+- [x] `InputTerminal` always adds `\n` character
+- [x] Accent colors are not reflected in separators 
+- [x] `Refresh` and `EditorView` flickering, content size changes
+- [x] Missing `Reset Zoom` command on Windows/Linux  

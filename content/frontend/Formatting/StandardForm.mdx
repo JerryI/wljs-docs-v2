@@ -10,4 +10,52 @@ A standard form for representing math, colors, dates, graphics, which comes with
 
 __This is a default representation__ used in output cells. You can apply it to expressions before using in [EditorView](../GUI/EditorView) and [InputEditor](../GUI/InputEditor) and [CellPrint](../Cells-and-Notebook/CellPrint) and [Interpretation](./Interpretation)
 
-<Callout type="note">`StandardForm` is a decorated `InputForm` in WLJS Notebook</Callout>
+<Callout type="note">`StandardForm` is a decorated `InputForm` in the output cells of WLJS Notebook</Callout>
+
+## Forcing `StandardForm`
+
+`StandardForm[expr]` can be used as a display wrapper around any expression. It is also useful in definitions (downvalues) that should transform their argument into a standard-form representation:
+
+```wolfram
+showAsStandardForm[expr_] := StandardForm[expr]
+
+showAsStandardForm[Panel[1/2]]
+```
+
+In an ordinary Wolfram Language output cell, evaluating `StandardForm[expr]` looks the same as evaluating `expr`, because output cells already call `MakeBoxes[expr, StandardForm]`.
+
+The distinction matters when the result is placed in another cell type. Slides, [WLX](../Cell-types/WLX), and [Markdown](../Cell-types/Markdown) cells normally call `MakeBoxes[expr, WLXForm]`. If an expression is wrapped in `StandardForm`, its contents are rendered using the same standard-form decorations as an output cell, even though the result is being displayed on a slide, WLX cell, or Markdown cell.
+
+For example:
+
+```wolfram
+expr = Panel[1/2];
+ExprForSlide = StandardForm[expr];
+```
+
+Evaluating `ExprForSlide` in a slide, WLX, or Markdown cell displays `expr` using its `StandardForm` representation. For example:
+
+```html
+.slide
+
+<ExprForSlide/>
+```
+
+or
+
+```
+.md
+
+<ExprForSlide/>
+```
+
+or
+
+```jsx
+.wlx
+
+<ExprForSlide/>
+```
+
+
+See [MakeBoxes](../Formatting/MakeBoxes) and [WLXForm](../Formatting/WLXForm) for the underlying output-form rules.

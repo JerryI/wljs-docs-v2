@@ -1,0 +1,262 @@
+# Release Notes for *3.0.9*
+Tue 7 Jul 2026 20:01:15
+
+## UI Revision
+Refreshing lighter colors, better UI elements, less blocky panels...
+
+```wolfram
+NumericArray[{1,2,4}]
+```
+
+```wolfram
+Panel[1+1]
+```
+
+```wolfram
+Quantity[1, "Meters"/"Kilograms"]
+```
+
+## Rows, Columns, Grids, and Tables
+We significantly improved support for the standard symbols used to format lists and tables. For `Grid`, `Row`, and `Column`, the `Dividers`, `Spacings`, `Alignment`, `ImageSize`, and `BaselinePosition` options are now supported. For `TableForm`, `TableAlignments`, `TableHeadings`, and `TableSpacing` are supported as well. Here are a few examples:
+
+```wolfram
+Row[{
+  Graphics[{Red, Disk[]}, ImageSize->{18,18}, PlotRange->2], 
+  Style["Hey there", (RGBColor[0.3333333333333333, 0.3333333333333333, 0.3333333333333333])]
+}, Alignment->{{Right, Left},Center}, ImageSize->400]
+```
+
+Grid examples
+
+```wolfram
+Grid[Table[x, {3}, {5}],  Spacings->{5,0}]
+```
+
+```wolfram
+Grid[Table[x, {3}, {7}], 
+ Dividers -> {{False, False, True}, {False, True}}, Spacings->2]
+```
+
+```wolfram
+Grid[{
+  {Graphics[Rectangle[{-1,-1}, {1,1}], ImageSize -> 20], 
+   Graphics[Rectangle[{-1,-1}, {1,1}], ImageSize -> 30]}, 
+  {Graphics[Rectangle[{-1,-1}, {1,1}],ImageSize -> 40], 
+   Graphics[Rectangle[{-1,-1}, {1,1}], ImageSize -> 50]}}, 
+ Alignment -> {{Right, Left}, {Bottom, Top}}]
+```
+
+Baseline alignment
+
+```wolfram
+a Grid[{{Orange}, {Yellow}}, BaselinePosition->Top]
+a Grid[{{Orange}, {Yellow}}, BaselinePosition->Center]
+```
+
+Column examples
+
+```wolfram
+Column[{1, 12, 123, 1234}, Center]
+```
+
+```wolfram
+Column[{1, 22, 333}, Dividers -> All]
+```
+
+Table examples
+
+```wolfram
+TableForm[{{5, 7}, {4, 2}, {10, 3}}, 
+ TableHeadings -> {{"Group A", "Group B", "Group C"}, {"y1", "y2"}}]
+```
+
+Note that this can still be used as input.
+
+```wolfram
+data = {{(None),"y1","y2"},{"Group A",5,7},{"Group B",4,2},{"Group C",10,3}};
+
+data[[2,2]]
+```
+
+Styling options
+
+```wolfram
+ScientificForm[TableForm[RandomReal[10^5, {2, 3}]], 3]
+```
+
+Styled cells
+
+```wolfram
+Grid[{{Item[1, Background -> Red, Frame -> True], 2}, {3, 4}}]
+```
+
+MatrixForm output
+
+```wolfram
+MatrixForm @ PauliMatrix[3]
+```
+
+For tables that need lazy-loading support:
+
+```wolfram
+RandomReal[10^5, {2000, 3}]//TableView  
+```
+
+---
+
+## `Deploy` support
+The Wolfram Language `Deploy` wrapper now works with any decorated expression. It:
+- traverses the full expression tree
+- makes the expression non-selectable and non-editable
+
+A typical use case is constructing a GUI with `Panel`, `Row`, and `Grid` blocks:
+
+```wolfram
+Row[{
+  Graphics[{Red, Disk[]}, ImageSize->{18,18}, PlotRange->2], 
+  Style["Hey there", (RGBColor[0.3333333333333333, 0.3333333333333333, 0.3333333333333333])]
+}, Alignment->{{Right, Left},Center}, ImageSize->400] // Deploy
+```
+
+The earlier example is now unselectable and uneditable.
+
+## Improved `Panel`
+`Panel` now supports background and appearance options.
+
+```wolfram
+Panel[Plot[x, {x,0,1}], Background->LightYellow]
+Panel[Plot[x, {x,0,1}], Appearance->"Frameless"]
+```
+
+## `StandardForm` update
+As you might know, not every expression can be placed on a slide or WLX cell - only if it has `WLXForm` defined or they might also look different. You can bypass it by forcing `StandardForm` on it.
+
+Here is an example:
+
+```wolfram
+Expr = Panel[1/2]
+ExprForSlide = StandardForm[Expr];
+```
+
+<dummy >FrontEndExecutable[ba89cb44-04a0-4060-8bbe-9c1967a41efd]</dummy>
+
+```jsx
+
+<ExprForSlide/>
+```
+
+The same will work out of the box for all `Deploy`-able expressions too.
+
+## `Locator` Primitive
+We added `Locator[]` symbol for easier 2D or 3D coordinates manipulation, here is an example:
+
+```wolfram
+location = {0.3,0.7};
+Plot[x, {x,0,1}, Epilog->{
+  EventHandler[Locator[location], {
+    "drag"->Function[xy, location = xy]
+  }]
+}]
+
+Refresh[NumberForm[location, {3,2}], 1/2]
+```
+
+As you can see it generates `drag` event as `Disk`, `Polygon`, `Text` and `Rectangle`.
+
+## Improved `TextView`
+`TextView` now applies fewer default styles and supports multiple lines, as well as the `ImageSize` option:
+
+```wolfram
+TextView["Hey!"]
+```
+
+```wolfram
+TextView["Hey!\nThere"]
+```
+
+```wolfram
+TextView["A very long line here", ImageSize->100]
+```
+
+## Frontend support for string operators
+We extended the lightweight WL interpreter that runs in the frontend with more string-related operators, including `ToString`, `NumberForm`, `StringJoin`, and `Round`. This is useful for frontend-side formatting and label generation.
+
+```wolfram
+sqval = 0.3;
+EventHandler[InputRange[0.33,1,0.1], (sqval=Sqrt[#])&]
+
+TextView[
+  sqval // Offload,
+  "Label" -> "Before"
+]
+
+TextView[
+  StringJoin["sqval = ", 
+    ToString[NumberForm[sqval, {4,2}]
+  ]] // Offload,
+  "Label" -> "After"
+]
+```
+
+These operators also work under `Offload`, because they are defined as frontend symbols.
+
+Here is another example that uses `Round`.
+
+```wolfram
+ln = Table[{i, 5.0 Sin[i/25.0 Pi]}, {i,0,50,0.04}];
+Graphics[{
+  Red, Line[ln//Offload],
+  Blue, Line[ln//Round//Offload],
+  EventHandler[AnimationFrameListener[ln//Offload], (
+    ln = Transpose[{ln[[All,1]], RotateLeft[ln[[All,2]], 1]}]
+  )&]
+}, ImageSize->150]
+```
+
+## Improved support for packed arrays
+We improved how packed arrays are stored and transferred from the Wolfram Kernel to the frontend. During initial evaluation, `Graphics` and `Image` expressions are usually serialized as `"ExpressionJSON"` and reinterpreted in the frontend; subsequent updates use binary WXF. That initial pass was inefficient because numeric and packed arrays were serialized as plain lists by default, increasing payload sizes by 10-100 times. We patched the standard JSON serializer so packed and numeric arrays are sent as base64-encoded WXF strings. This matters especially for data structures such as `Image` and `Graphics3D` objects with many vertices.
+
+```wolfram
+ComplexPlot3D[((Power[Sin[z],3])/(Power[(z+1),4])), {z, -5 - 5 I, 5 + 5 I}]
+```
+
+As before, the data is also compressed with gzip. This should reduce file size, memory use, and CPU usage.
+
+## Association keys for frontend symbols
+Frontend symbols that are associations now support key access. Previously, you could do this:
+
+```wolfram
+h = {1,2}; 
+TextView[h[[1]]//Offload]
+```
+
+Because `[[1]]` implicitly calls the `Part` operator, `a["key"]` was previously treated as a function-style argument instead of association key access.
+
+```wolfram
+a = <|"a"->1, "b"->0.3|>;
+TextView[a["a"]//Offload]
+TextView[a["b"]//Offload]
+```
+
+Now `a["key"]` works when `a` is an `Association`. Try it yourself!
+
+```wolfram
+a = <|"a"->-1, "b"->0.8|>;
+```
+
+## More Examples!
+Check out new examples in *Interactive Evaluation*, *For Physicists* and *Mini Apps*
+
+## Fixed bugs
+- [x] `Animate`, `Refresh`, `Manipulate` major bugs related to JIT-unsupported data structures and formatting
+- [x] JIT transpiler (`Manipulate` and etc) fails on `VertexTextureCoordinates`
+- [x] JIT transpiler fails silently when `VertexColors` is `RGBColor` list instead of converting it to plain triples of numbers
+- [x] JIT transpiler silently overwrites its own table with `$Failed`
+- [x] JIT transpiler converts 2D polygons incorrectly (replaces with lines - a typo)   
+- [x] **Insert Matrix** snippet is broken
+- [x] `Transparent` is unsupported in the context of 2D and 3D graphics
+- [x] Invisible text selection 
+- [x] Minor bugs related to MCP server and CLI
+- [x] `CreateWindow` event generation issues
+- [x] `InputTerminal` always adds `\n` character
+- [x] Accent colors are not reflected in separators 

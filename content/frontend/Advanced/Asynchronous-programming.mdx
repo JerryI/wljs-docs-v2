@@ -93,6 +93,18 @@ Button[
 
 </Accordions>
 
+## Microtasks
+Wolfram Kernel has some sort of event loop serving all external events and timers.
+To scheldule something to run after the current execution use `SessionSubmit`:
+
+```wolfram
+x = 0;
+
+EventHandler[InputButton["Press me"], Function[Null,
+  SessionSubmit[x=x+1]; (* non blocking, x is still 0 *)
+  Echo[x]; (* do something else *)
+]]
+```
 
 ## Asynchronous functions
 

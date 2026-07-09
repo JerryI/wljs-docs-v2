@@ -457,6 +457,24 @@ Compute and plot the shortest tour through 100 random points:
 </WLJSWrapper>
 
 
+## Embedding any WL expression
+To display Wolfram expression as in the normal output cell, you can force `StandardForm` on it:
+
+```wolfram
+expr = Panel[1/2];
+ExprForSlide = StandardForm[expr];
+```
+
+And then place it on a slide:
+
+<WLJSWrapper>
+<div className="code-input"/>
+<wljs-editor lazy="true" type="Input" display="codemirror">{`.slide
+
+<ExprForSlide/>
+`}</wljs-editor>
+</WLJSWrapper>
+
 <Cards>
   <Card
     href="./../Advanced/Advanced-Slides"
