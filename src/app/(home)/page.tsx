@@ -464,7 +464,7 @@ export default function HomePage() {
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#8882_1px,transparent_1px),linear-gradient(to_bottom,#8882_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_60%,transparent_100%)] opacity-20" />
       </div>
 
-      <main className="relative max-w-7xl mx-auto py-12 sm:py-24 px-4 sm:px-6 lg:px-8">
+      <main className="relative w-full min-w-0 max-w-7xl mx-auto py-12 sm:py-24 px-4 sm:px-6 lg:px-8">
       <div className="flex flex-col items-center justify-center text-center mb-16">
         <div className="inline-flex items-center gap-2 rounded-full border border-fd-border bg-fd-secondary/50 px-4 py-1.5 text-sm mb-6 backdrop-blur-sm">
           <span className="relative flex h-2 w-2">
