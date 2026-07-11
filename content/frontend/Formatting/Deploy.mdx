@@ -1,0 +1,58 @@
+---
+title: Deploy
+env:
+  - Wolfram Kernel
+package: wljs-editor
+---
+
+Wraps an expression to make its displayed contents non-selectable and non-editable.
+
+```wolfram
+Deploy[expr]
+```
+
+`Deploy` traverses the complete expression tree, so it can be used for composed interfaces containing panels, rows, grids, graphics, and other decorated expressions.
+
+## Example
+
+The following interface is displayed as a single deployed object. Its contents cannot be selected or edited in the output cell.
+
+```wolfram
+Deploy @ Row[{
+  Graphics[{Red, Disk[]}, ImageSize -> {18, 18}, PlotRange -> 2],
+  Style["Hey there", Gray]
+}, Alignment -> {{Right, Left}, Center}, ImageSize -> 400]
+```
+
+`Deploy` is especially useful when presenting a finished GUI or formatted result:
+
+```wolfram
+Deploy @ Panel[
+  Grid[{
+    {"Name", InputText[]},
+    {"Value", InputRange[0, 1, 0.1]}
+  }, Alignment -> {{Right, Left}, Center}]
+]
+```
+
+## Slides, WLX, and Markdown
+
+Slides, [WLX](../Cell-types/WLX), and [Markdown](../Cell-types/Markdown) cells normally render expressions using `WLXForm`. To display a deployed expression using the same decorated representation as an ordinary output cell, wrap it in [StandardForm](../Formatting/StandardForm) before placing it in the cell:
+
+```wolfram
+expr = Deploy @ Panel[1/2];
+ExprForSlide = StandardForm[expr];
+```
+
+`ExprForSlide` can then be evaluated or inserted into a slide, WLX cell, or Markdown cell. The expression is rendered with its `StandardForm` decorations while retaining the deployed, non-selectable and non-editable behavior.
+
+```jsx
+.slide
+
+<ExprForSlide/>
+````
+
+## Supported output forms
+
+- [StandardForm](../Formatting/StandardForm)
+- [WLXForm](../Formatting/WLXForm)
