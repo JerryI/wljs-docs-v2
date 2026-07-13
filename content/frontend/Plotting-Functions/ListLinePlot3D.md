@@ -18,6 +18,7 @@ ListLinePlot3D[data]
 Multiple curves:
 
 ```wolfram
+data = Table[{Cos[t], Sin[t], t}, {t, 0, 4 Pi, 0.1}];
 ListLinePlot3D[{data, RotationTransform[Pi/4, {0, 0, 1}] /@ data}]
 ```
 

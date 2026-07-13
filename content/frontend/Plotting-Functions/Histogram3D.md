@@ -16,7 +16,7 @@ Histogram3D[data]
 With bin specification:
 
 ```wolfram
-Histogram3D[data, 10]
+Histogram3D[RandomReal[1, {1000, 2}], 10]
 ```
 
 

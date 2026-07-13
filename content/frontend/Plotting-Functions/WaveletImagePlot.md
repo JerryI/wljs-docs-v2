@@ -12,21 +12,25 @@ title: WaveletImagePlot
 Plot wavelet decomposition:
 
 ```wolfram
-img = ExampleData[{"TestImage", "Lena"}];
-dwd = DiscreteWaveletTransform[img];
-WaveletImagePlot[dwd]
+WaveletImagePlot[
+ DiscreteWaveletTransform[
+  Image[Table[Sin[i/10] Cos[j/10], {i, 64}, {j, 64}]]]]
 ```
 
 Limited refinement level:
 
 ```wolfram
-WaveletImagePlot[dwd, 2]
+WaveletImagePlot[
+ DiscreteWaveletTransform[
+  Image[Table[Sin[i/10] Cos[j/10], {i, 64}, {j, 64}]]], 2]
 ```
 
 With image function:
 
 ```wolfram
-WaveletImagePlot[dwd, 3, ImageAdjust]
+WaveletImagePlot[
+ DiscreteWaveletTransform[
+  Image[Table[Sin[i/10] Cos[j/10], {i, 64}, {j, 64}]]], 3, ImageAdjust]
 ```
 
 

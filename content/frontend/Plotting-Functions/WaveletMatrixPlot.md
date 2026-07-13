@@ -12,7 +12,7 @@ title: WaveletMatrixPlot
 Create a wavelet matrix plot:
 
 ```wolfram
-data = Table[Sin[20 t] + Cos[5 t], {t, 0, 1, 0.001}];
+data = Table[Sin[20 i/32] + Cos[5 j/32], {i, 0, 31}, {j, 0, 31}];
 dwd = DiscreteWaveletTransform[data];
 WaveletMatrixPlot[dwd]
 ```
@@ -20,13 +20,17 @@ WaveletMatrixPlot[dwd]
 Plot up to a specific refinement level:
 
 ```wolfram
+data = Table[Sin[20 i/32] + Cos[5 j/32], {i, 0, 31}, {j, 0, 31}];
+dwd = DiscreteWaveletTransform[data];
 WaveletMatrixPlot[dwd, 3]
 ```
 
 Apply absolute value before plotting:
 
 ```wolfram
-WaveletMatrixPlot[dwd, All, Abs]
+data = Table[Sin[20 i/32] + Cos[5 j/32], {i, 0, 31}, {j, 0, 31}];
+dwd = DiscreteWaveletTransform[data];
+WaveletMatrixPlot[dwd, 3, Abs[#1] &]
 ```
 
 
