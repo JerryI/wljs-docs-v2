@@ -7,12 +7,9 @@ title: SearchResultObject
 ## Examples
 
 ```wolfram
-res = TextSearch[index, "query"];
-res["Snippet"]
-```
-
-```wolfram
-SearchResultObject[...]["Location"]
+index = CreateSearchIndex["ExampleData/Text"];
+res = TextSearch[index, "dog"];
+res[All, "FileName"]
 ```
 
 

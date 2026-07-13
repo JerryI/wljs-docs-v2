@@ -13,7 +13,7 @@ EntityValue[Entity["Country", "Japan"], "Population"]
 (* Quantity[1.258*10^8, "People"] *)
 
 (* Multiple properties *)
-EntityValue[Entity["Country", "Germany"], {"Capital", "Area"}]
+EntityValue[Entity["Country", "Germany"], {"CapitalCity", "Area"}]
 
 (* Multiple entities *)
 EntityValue[{Entity["Planet", "Earth"], Entity["Planet", "Mars"]}, "Radius"]

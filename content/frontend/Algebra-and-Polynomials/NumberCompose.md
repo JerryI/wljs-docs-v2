@@ -20,10 +20,10 @@ NumberCompose[{2, 30, 45}, {3600, 60, 1}]
 (* 9045 seconds *)
 ```
 
-With unit objects:
+Compose quantities with unit arithmetic:
 
 ```wolfram
-NumberCompose[{5, 3}, {Quantity[1, "Meters"], Quantity[1, "Centimeters"]}]
+UnitConvert[5 Quantity[1, "Meters"] + 3 Quantity[1, "Centimeters"], "Centimeters"]
 ```
 
 

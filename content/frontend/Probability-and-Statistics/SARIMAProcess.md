@@ -15,7 +15,7 @@ SARIMAProcess[{0.5}, 1, {0.3}, {12, {0.2}, 1, {0.1}}, 1]
 ```
 
 ```wolfram
-RandomFunction[SARIMAProcess[...], {0, 100}]
+RandomFunction[SARIMAProcess[{0.5}, 1, {0.3}, {12, {0.2}, 1, {0.1}}, 1], {0, 100}]
 ```
 
 ```wolfram

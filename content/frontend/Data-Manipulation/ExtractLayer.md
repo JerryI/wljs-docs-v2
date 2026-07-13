@@ -11,7 +11,7 @@ title: ExtractLayer
 layer = ExtractLayer[]
 
 (* Apply to an array with position *)
-layer[<|"Array" -> {1, 2, 3, 4}, "Position" -> 2|>]
+layer[<|"Input" -> {1, 2, 3, 4}, "Position" -> 2|>]
 
 (* Use in a neural network *)
 net = NetChain[{LinearLayer[10], ExtractLayer[]}]

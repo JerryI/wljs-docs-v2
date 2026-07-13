@@ -13,7 +13,7 @@ title: GeoElevationData
 ## Examples
 
 ```wolfram
-GeoElevationData[Entity["Mountain", {"MountEverest", "Himalaya", "Nepal"}]]
+GeoElevationData[GeoPosition[{27.9881, 86.9250}]]
 ```
 
 ```wolfram

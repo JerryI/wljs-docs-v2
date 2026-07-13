@@ -9,11 +9,11 @@ title: NetDecoder
 ## Examples
 
 ```wolfram
-NetDecoder["Class", {"cat", "dog", "bird"}]
+NetDecoder[{"Class", {"cat", "dog", "bird"}}]
 ```
 
 ```wolfram
-NetDecoder[{"Image", {224, 224}}]
+NetDecoder[{"Image", "RGB"}]
 ```
 
 

@@ -11,7 +11,7 @@ ImageAugmentationLayer[{224, 224}]
 ```
 
 ```wolfram
-ImageAugmentationLayer[{128, 128}, "Rotation" -> 15 Degree]
+ImageAugmentationLayer[{128, 128}, "ReflectionProbabilities" -> {0.5, 0.5}]
 ```
 
 

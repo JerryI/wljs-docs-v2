@@ -11,7 +11,7 @@ title: FindMeshDefects
 
 ```wolfram
 (* Find all defects in a mesh *)
-mesh = BoundaryMeshRegion[...];
+mesh = BoundaryDiscretizeRegion[Disk[]];
 FindMeshDefects[mesh]
 
 (* Find specific defects *)

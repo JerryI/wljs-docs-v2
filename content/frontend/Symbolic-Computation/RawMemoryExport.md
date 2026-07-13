@@ -13,7 +13,8 @@ RawMemoryExport[{1, 2, 3, 4}]
 ```
 
 ```wolfram
-RawMemoryExport[Image[RandomReal[1, {10, 10}]], "Real32"]
+img = Image[RandomReal[1, {10, 10}]];
+RawMemoryExport[Flatten[ImageData[img]], "Real32"]
 ```
 
 

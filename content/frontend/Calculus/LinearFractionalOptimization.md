@@ -18,7 +18,7 @@ LinearFractionalOptimization[(x + 1)/(2 x + 3), {x >= 0, x <= 10}, {x}]
 
 With matrix constraints:
 ```wolfram
-LinearFractionalOptimization[{c1, d1, c2, d2}, {A, b}]
+LinearFractionalOptimization[{{1}, 1, {1}, 3}, {{{1}, {-1}}, {0, 10}}]
 ```
 
 

@@ -49,7 +49,7 @@ The following event patterns (or topics for [`EventHandler`](../Misc/Events)) ar
 - `"altclick"`: Captures clicks with the Alt key held
 
 ```wolfram
-EventHandler[Image[...], {
+EventHandler[Image[Table[RandomReal[], {20}, {20}]], {
 	"click" -> Print
 }]
 ```

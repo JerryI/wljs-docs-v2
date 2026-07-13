@@ -17,7 +17,7 @@ NetUnfold[trainedRNN]
 ```
 
 ```wolfram
-unfoldedNet = NetUnfold[NetModel["...RNN..."]]
+unfoldedNet = NetUnfold[GatedRecurrentLayer[5]]
 ```
 
 *See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/NetUnfold.html) for more details.

@@ -11,7 +11,7 @@ title: GeoOrientationData
 Get the polar motion on a specific date:
 
 ```wolfram
-GeoOrientationData[Today, "PolarMotion"]
+GeoOrientationData[DateObject[{2024, 1, 1}], "PolarMotion"]
 ```
 
 

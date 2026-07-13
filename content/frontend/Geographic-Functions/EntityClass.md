@@ -17,7 +17,7 @@ EntityClass["Country", "G20"]
 Filtered entity class:
 
 ```wolfram
-EntityClass["Country", "Population" -> GreaterThan[Quantity[100, "Millions"]]]
+EntityClass["Country", "Population" -> GreaterThan[Quantity[100000000, "People"]]]
 ```
 
 

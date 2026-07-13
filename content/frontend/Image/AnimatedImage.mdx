@@ -66,21 +66,25 @@ where it is extended with options alike [Rasterize](../Image/Rasterize)
 You can export `AnimatedImage` as GIF using file, `ByteArray` or a string as a container:
 
 ```wolfram
-Export["anim.gif", AnimatedImage[...]]
+animation = AnimatedImage[Rasterize[Style[#, 40]] & /@ Range[0, 9]];
+Export["anim.gif", animation]
 ```
 
 ```wolfram
-ExportByteArray[AnimatedImage[...], "GIF"]
+animation = AnimatedImage[Rasterize[Style[#, 40]] & /@ Range[0, 9]];
+ExportByteArray[animation, "GIF"]
 ```
 
 ```wolfram
-ExportString[AnimatedImage[...], {"Base64", "GIF"}]
+animation = AnimatedImage[Rasterize[Style[#, 40]] & /@ Range[0, 9]];
+ExportString[animation, {"Base64", "GIF"}]
 ```
 
 Also [Video](../Video/Video) object can be directly derived from [AnimatedImage](../Image/AnimatedImage):
 
 ```wolfram
-Video[AnimatedImage[...]]
+animation = AnimatedImage[Rasterize[Style[#, 40]] & /@ Range[0, 9]];
+Video[animation]
 ```
 
 ## Output forms

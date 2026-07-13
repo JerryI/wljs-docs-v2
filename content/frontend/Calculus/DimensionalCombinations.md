@@ -11,13 +11,13 @@ title: DimensionalCombinations
 Find dimensionless combinations:
 
 ```wolfram
-DimensionalCombinations[{Quantity["Length"], Quantity["Time"], Quantity["Speed"]}]
+DimensionalCombinations[{QuantityVariable["l", "Length"], QuantityVariable["t", "Time"], QuantityVariable["v", "Speed"]}]
 ```
 
 Match specific dimensions:
 
 ```wolfram
-DimensionalCombinations[{Quantity["Mass"], Quantity["Speed"]}, Quantity["Energy"]]
+DimensionalCombinations[{QuantityVariable["m", "Mass"], QuantityVariable["v", "Speed"]}, QuantityVariable["e", "Energy"]]
 ```
 
 
