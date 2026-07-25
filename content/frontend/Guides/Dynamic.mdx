@@ -158,7 +158,7 @@ Mathematica typically performs a full reevaluation of `Plot` or `ListPlot` on ev
 
 ## Architecture
 
-WLJS mostly uses retained mode and push-model for managing objects on screen, which means `Line` or `Point` has a dedicated method to update itself when the dependencies change. Not all primitives have an update method implemented—please check our symbols reference section to confirm. The dependencies are resolved and the changes are propagated by the frontend (browser), not by the evaluation kernel. To create such a dependency, you need to "offload" an expression to be executed on the frontend. For example:
+WLJS mostly uses retained mode and push-model for managing objects on screen, which means `Line` or `Point` has a dedicated method to update itself when the dependencies change. Not all primitives have an update method implemented — please check our symbols reference section to confirm. The dependencies are resolved and the changes are propagated by the frontend (browser), not by the evaluation kernel. To create such a dependency, you need to "offload" an expression to be executed on the frontend. For example:
 
 <WLJSWrapper>
 <div className="code-input"/>

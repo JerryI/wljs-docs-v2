@@ -374,7 +374,7 @@ Using `"Style"` option we can customize the look of columns:
 
 </Cards>
 
-JavaScript code can be embedded normally with `<script>` tags—no special magic is required. Here is an example with a helper component to display, let's say, the number of publications:
+JavaScript code can be embedded normally with `<script>` tags — no special magic is required. Here is an example with a helper component to display, let's say, the number of publications:
 
 <WLJSWrapper>
 <div className="code-input"/>
@@ -412,7 +412,7 @@ Options[Stat] = {"Count" -> 1};
 <Stat Count={11}>Number of publications</Stat>
 `}</wljs-editor></WLJSWrapper>
 
-Note that our counter will run **immediately**—that is, if you have many slides, you will always see a static number. You need to subscribe to [SlideEventListener](./../Slides/SlideEventListener) to check if the slide is visible. See this guide:
+Note that our counter will run **immediately** — that is, if you have many slides, you will always see a static number. You need to subscribe to [SlideEventListener](./../Slides/SlideEventListener) to check if the slide is visible. See this guide:
 
 <Cards>
 
@@ -440,7 +440,7 @@ You can reuse components across different notebooks as modules. WLJS provides an
 </Cards>
 
 ## Pattern matching
-Here we use a different approach to constructing components—instead of converting everything to `WLXForm` strings, we keep a symbolic representation of each child element as a **tree of expressions**. This is similar to both XML and pattern matching in Wolfram Language. As stated in w3schools:
+Here we use a different approach to constructing components — instead of converting everything to `WLXForm` strings, we keep a symbolic representation of each child element as a **tree of expressions**. This is similar to both XML and pattern matching in Wolfram Language. As stated in w3schools:
 
 > HTML was designed to display data - with focus on how data looks
 > XML was designed to carry data - with focus on what data is
@@ -687,7 +687,7 @@ SetAttributes[Card, Orderless];
 
 `}</wljs-editor></WLJSWrapper>
 
-We've also handled different patterns—for instance, when `CardValue` has multiple arguments passed to it while `CardLabel` does not. This can be done elegantly using Wolfram Language pattern matching. Now, let's combine both components to create a nice header for our report using Markdown cells:
+We've also handled different patterns — for instance, when `CardValue` has multiple arguments passed to it while `CardLabel` does not. This can be done elegantly using Wolfram Language pattern matching. Now, let's combine both components to create a nice header for our report using Markdown cells:
 
 <WLJSWrapper>
 <div className="code-input"/>

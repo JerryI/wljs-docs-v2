@@ -6,9 +6,9 @@ import { Accordion, Accordions } from 'fumadocs-ui/components/accordion';
 
 In this guide, we explore the core ideas behind the WLJS project, what powers the UI, interactivity, and how to extend it to your own needs. As you may know from the [introduction](./../../Overview), WLJS Notebooks are web-based, which means that graphical objects, sliders, buttons, and UI elements are made with HTML/CSS and JavaScript code. If you want to create your own display function or input element that cannot be easily derived from the basic primitives of the Wolfram Language Standard library (or would be inefficient to do so), __you need to write supporting JavaScript code__ to achieve that. 
 
-To bridge the Wolfram Kernel and JavaScript environments seamlessly, we made the latter speak the same language and called it WLJS Interpreter—a small subset of the Wolfram Kernel running in the browser. 
+To bridge the Wolfram Kernel and JavaScript environments seamlessly, we made the latter speak the same language and called it WLJS Interpreter — a small subset of the Wolfram Kernel running in the browser. 
 
-You can define symbols and contexts that can be evaluated on the frontend only, with results fetched by the Wolfram Kernel—we refer to them as __frontend symbols__. 
+You can define symbols and contexts that can be evaluated on the frontend only, with results fetched by the Wolfram Kernel — we refer to them as __frontend symbols__. 
 
 You can also define __instanced symbols__ that are evaluated into scoped runtime instances with local state and reactive bindings to other symbols. This is how [reactivity](./../../Guides/Dynamic) in WLJS Notebooks works under the hood.  
 
