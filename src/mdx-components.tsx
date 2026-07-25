@@ -22,6 +22,27 @@ return <Cards>
 </Cards>
 }
 
+function CodeComparison({children}: {children: React.ReactNode}) {
+  return <div className="my-6 grid min-w-0 overflow-hidden rounded-xl border border-fd-border bg-fd-card shadow-sm divide-y divide-fd-border md:grid-cols-2 md:divide-x md:divide-y-0">
+    {children}
+  </div>
+}
+
+function CodeComparisonItem({
+  title,
+  children,
+}: {
+  title: React.ReactNode;
+  children: React.ReactNode;
+}) {
+  return <div className="min-w-0 p-4">
+    <div className="mb-3 text-xs font-semibold uppercase tracking-wide text-fd-muted-foreground">
+      {title}
+    </div>
+    {children}
+  </div>
+}
+
 
 
 function WLJSWrapper({children}: {children: React.ReactNode}) {
@@ -54,6 +75,7 @@ export function getMDXComponents(components?: MDXComponents): MDXComponents {
   return {
     ...defaultMdxComponents,
     WLJSWrapper, Image, LazyAutoplayVideo, GithubInfo, LazyVideo, DownloadFile, Mermaid,
+    CodeComparison, CodeComparisonItem,
     ...components
   };
 }

@@ -11,7 +11,7 @@ package: wljs-inputs
 TextView[string_String, opts___]
 ```
 
-represents a text field used for displaying dynamic data
+represents a text field used for displaying static or dynamic textual data
 
 ## Options
 ### `"Event"`
@@ -33,6 +33,26 @@ adds a label at the left side to the text field
 by the default is `Automatic`. By setting to any other value it will remove borders and other styling
 
 ## Application
+
+### Show large text blocks
+Import a text file and show it as text:
+
+```wolfram
+Import["file.txt", "Text"] // TextView
+```
+
+Line breaks will also work:
+
+```wolfram
+TextView["Hey!\nThere"]
+```
+
+Use `ImageSize` to limit maximum size and introduce scroll bars if needed:
+
+```wolfram
+TextView["A very long line here", ImageSize->100]
+```
+
 ### Dynamic indication
 There are various of applications. For example to display the current coordinates on a graph
 

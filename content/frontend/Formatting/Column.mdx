@@ -8,9 +8,18 @@ env:
 Column[{object1, object2, ...}]
 ```
 
-shows the list of any Wolfram Expressions in a single column acting as a decoration
-- spawns a normal WL editor for each row of a column
-- editable
+shows the list of any Wolfram Expressions in a single column acting as a decoration.
+
+```wolfram
+Column[{1, 12, 123, 1234}, Center]
+```
+
+```wolfram
+Column[{1, 22, 333}, Dividers -> All]
+```
+
+<Callout>Use [Deploy](./Deploy) to make the content uneditable and non-selectable</Callout>
+
 
 ## Options
 

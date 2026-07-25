@@ -2,9 +2,11 @@
   "title": "Guides",
   "icon": "Book",
   "pages": [
+    "Formatting",
     "Command-palette",
     "Dynamic",
     "UI-Events-Capture",
-    "Styling-HTML"
+    "Styling-HTML",
+    "Migration"
   ]
 }

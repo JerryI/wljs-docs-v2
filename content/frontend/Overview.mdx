@@ -234,24 +234,28 @@ Module[{pt = {}},
 Apply `MMAView` expression on anything to make it looks like in Mathematica. It will bypass all WLJS pipleines and be rendered to an image.
 </Callout>
 
-WLJS and Mathematica frontends are based on two different paradigms, where both have their own advantages, while we focus on control and performance
-
-| Aspect           | Mathematica                                     | WLJS                                       |
-| ---------------- | ----------------------------------------------- | -------------------------------------------------- |
-| Rendering model  | Immediate mode                                  | Retained mode (+ immediate mode emulation)         |
-| Reactive updates | Automatic dependency tracking and re-evaluation | Explicit, targeted updates                         |
-| Data binding     | Two-way symbol binding                          | One-way symbol binding + events for input elements |
-| Reactive model          | Pull                                      | Push                                          |
-
-
-
 
 > **Can it open `.nb` files?**
 > __Yes!__ There are some limitations regarding complex styling / formatting of the text, and dynamic modules (see below). But we gradually improve the compatibility with every update. 
 
 </Card>
 
-<br/>
+<Cards>
+  <Card
+    href="./../Guides/Dynamic"
+    title="Interactive evaluation and granular updates"
+  >
+    A guide on interactive evaluation, updates and animation
+  </Card>
+
+  <Card
+    href="./../Guides/Migration"
+    title="Migration Guide"
+  >
+  Migration Guide for Mathematica users
+  </Card> 
+
+</Cards>
 
 <Card>
 

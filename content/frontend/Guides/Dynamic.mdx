@@ -10,6 +10,13 @@ title: Interactive evaluation and granular updates
     How to handle user interaction with sliders, graphics primitives and other input building blocks
   </Card>
 
+  <Card
+    href="./../Guides/Migration"
+    title="Migration guide"
+  >
+  How to convert advanced dynamics from Wolfram Mathematica to WLJS
+  </Card>
+
 </Cards>
 
 import { Accordion, Accordions } from 'fumadocs-ui/components/accordion';
@@ -199,14 +206,14 @@ EventHandler[InputRange[0,1,.1], Function[val, l=val]]
 <WLJSWrapper>
 <wljs-editor display="codemirror" lazy="true" type="Output"  >{`(*VB[*)(EventObject[<|"Id" -> "f9254465-73cd-4a66-a54d-97a1a96543a4", "Initial" -> 0.5, "View" -> "13864cb4-9741-4d0f-9746-459803ffa629"|>])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKGxpbmJkkJ5noWpqbGOqapBikgVhmuiamlhYGxmlpiWZGlgByOxTK"*)(*]VB*)`}</wljs-editor></WLJSWrapper>
 
-Here we used a built-in UI element `InputRange` with a basic event handler assigned to it, that updates our symbol with a new value. When a new value is assigned to `l` symbol, Wolfram Kernel pushes a new value using a <abbr title="Binary WebSockets">fast binary protocol</abbr> to the frontend, that updates all visible instances coupled to `l`. 
+Here we used a built-in UI element `InputRange` with a basic event handler assigned to it, that updates our symbol with a new value. When a new value is assigned to `l` symbol, Wolfram Kernel pushes a new value using a <abbr title="Binary WebSockets">fast binary messaging protocol</abbr> to the frontend, that updates all visible instances coupled to `l`. 
 
 <Accordions>
 <Accordion title="Why and how this works">
 
 When you apply `Offload`, it is effectively a `Hold` expression that keeps an expression to be evaluated on the frontend. On the frontend (browser), it is parsed and executed by the WLJS Interpreter - a subset of Wolfram Language written in Javascript. This subset includes basic math operations and some frontend-specific symbols like [Alert](./../Interpreter/Alert) or [ReadClipboard](./../Interpreter/ReadClipboard) **marked in the documentation** as <small>Frontend</small> in the heading, as well as `Table` and `With`.
 
-Whenever the interpreter sees an undefined symbol, it fetches it from Wolfram Kernel and requests tracking of changes. We call these *dynamic symbols*. Dynamic symbols, as well as `Line`, `Point`, and `Image`, are defined on both sides: frontend and kernel, and belong to a special class that can bind to each other and listen to changes. For example, even if the expression is nested:
+Whenever the interpreter sees an undefined symbol, it fetches it from Wolfram Kernel and requests tracking of changes. We call these *frontend symbols*. Frontend symbols, as well as `Line`, `Point`, and `Image`, are defined on both sides: frontend and kernel, and belong to a special class that can bind to each other and listen to changes. For example, even if the expression is nested:
 
 <WLJSWrapper>
 <div className="code-input"/>
@@ -239,7 +246,7 @@ Read more on how to define symbols or functions such as `Line` on the frontend i
   </Card>
 </Cards>
 
-Not all expressions can be passed to *dynamic symbols*, here is a full list:
+Not all expressions can be passed to *frontend symbols*, here is a full list:
 
 <Card>
 
@@ -253,7 +260,7 @@ Not all expressions can be passed to *dynamic symbols*, here is a full list:
 
 </Card>
 
-Note this __does not restrict__ what you can put inside `Offload`; it only limits the assignment values to *dynamic symbols*.
+Note this __does not restrict__ what you can put inside `Offload`; it only limits the assignment values to *frontend symbols*.
 
 </Accordion>
 </Accordions>
@@ -453,7 +460,7 @@ In Wolfram Language color, opacity and other directives are automatically applie
 {Red, (*BB[*)(Disk[...])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRAeB5AILqnMSXXKr0hjgskHleakFnMBGU6JydnpRfmleSlpzDDlQe5Ozvk5+UVF8WDw3r5IAAwe2BfNAYM79gBQ7x14"*)(*]BB*), Blue, {(*BB[*)(Disk[...])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRAeB5AILqnMSXXKr0hjgskHleakFnMBGU6JydnpRfmleSlpzDDlQe5Ozvk5+UVF0mBw277o108QeGlfdP8eCLyzBwCCPCLr"*)(*]BB*), (*BB[*)(Line[...])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRAeB5AILqnMSXXKr0hjgskHleakFnMBGU6JydnpRfmleSlpzDDlQe5Ozvk5+UVF0mBw277o108QeGlfdP8eCLyzBwCCPCLr"*)(*]BB*)}}
 `}</wljs-editor></WLJSWrapper>
 
-Therefore if we use *dynamic symbols* and offload them to the frontend, there will be 2 types of binding:
+Therefore if we use *frontend symbols* and offload them to the frontend, there will be 2 types of binding:
 
 <WLJSWrapper>
 <div className="code-input"/>
@@ -659,6 +666,30 @@ Module[{
 However, now you are responsible for stopping the `task`.
 
 <Callout type="warning">Timers can run even when all notebooks are closed</Callout>
+
+
+#### Combine with mouse events
+Move a mouse inside the framed area to see bouncing balls:
+
+```wolfram
+Framed@Module[{contents = {}, pts = {}}, 
+  EventHandler[
+   Graphics[{
+     PointSize[0.1], 
+     Point[pts // Offload],
+     EventHandler[AnimationFrameListener[pts//Offload], Function[Null,
+      contents = 
+        Map[If[#[[1, 2]] >= 
+            0, {#[[1]] - #[[2]], #[[2]] + {0, 0.001}}, {{#[[1, 1]], 
+             0}, {1, -0.8} #[[2]]}] &, contents];
+      pts = Map[First, contents];
+     ]]},
+     PlotRange -> {{0, 1}, {0, 1}}], {
+      "mousemove" -> Function[xy,
+       AppendTo[contents, {xy, {0,0}}]
+     ]}
+]]
+```
 
 
 #### Combine with Animate
@@ -916,7 +947,7 @@ We can go further and animate bubbles. The problem arises when we create a bubbl
 
 <Callout type="info">We generally recommend using [Canvas 2D](./../Advanced/Canvas-2D/Overview) for such animations or the [FrontProxy](./../Frontend-IO/FrontProxy) abstraction for a better developer experience</Callout>
 
-Let us use a limited number of dynamic symbols—buffers—and bind each animated `Disk` or bubble to one of its parts.
+Let us use a limited number of frontend symbols—buffers—and bind each animated `Disk` or bubble to one of its parts.
 
 ```wolfram
 cPool = Table[{0., 0.}, {i, 100}]; (* Positions *)
@@ -1163,7 +1194,22 @@ The resulting animation:
 ### How to combine raster and vector graphics
 Use [Raster](./../Graphics/Raster) primitive in the context of normal `Graphics` to place any raster data in a format similar to `Image`.
 
-## Beyond visuals
+### Locator
+Is a known graphics primitive, which is used to be dragged by a user mouse acting as a position pointer in 2D or 3D context:
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`location = {0.3,0.7};
+	Plot[x, {x,0,1}, Epilog->{
+	  EventHandler[Locator[location], {
+	    "drag"->Function[xy, location = xy]
+	  }]
+	}]
+	
+	Refresh[NumberForm[location, {3,2}], 1/2]`}</wljs-editor></WLJSWrapper>
+
+It supports `EventHandler` method and generates `"drag"` event. Use it everywhere where you need coordinates tracking or manual curves fitting.
+
+
+## Beyond graphics
 
 Many other expressions support live updates.
 
@@ -1307,6 +1353,22 @@ TextView[tp // Offload]
 ```
 
 <LazyAutoplayVideo url={"/dyn_cross.mp4"}/>
+
+###### LaTeX equations renderer
+Use [TeXView](./../GUI/TeXView) to render TeX equations. It also supports updates:
+
+```wolfram
+tex = TeXForm[x^n];
+TeXView[tex // Offload]
+```
+
+here is how to update:
+
+```wolfram
+EventHandler[InputRange[1, 12, 1], Function[n,
+  tex = TeXForm[x^n];
+]]
+```
 
 ##### Dynamically Appending to a Plot
 One can also append it to a plot dynamically afterward using [FrontInstanceReference](./../Frontend-IO/FrontInstanceReference). Sometimes this approach is better since all variables remain scoped:

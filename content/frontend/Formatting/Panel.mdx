@@ -5,11 +5,22 @@ title: Panel
 Panel[expr_]
 ```
 
+for example:
+
+```wolfram
+Panel[Plot[x, {x,0,1}], Background->LightYellow]
+Panel[Plot[x, {x,0,1}], Appearance->"Frameless"]
+```
+
 ```wolfram
 Panel[expr_, titleLabel_, pos_:Top]
 ```
 
 displays as a panel containing `expr` and provides a title at the top.
+
+
+<Callout>Use [Deploy](./Deploy) to make the content uneditable and non-selectable</Callout>
+
 
 ## Methods
 ### `EventHandler`

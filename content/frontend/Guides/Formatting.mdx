@@ -1,0 +1,1209 @@
+---
+title: Formatting expressions
+---
+
+
+<wljs-store json="./attachments/34b28b08-d7cc-4969-9c9c-7d4d22cdf054.txt"></wljs-store>
+
+
+
+
+Formatting in WLJS is not limited to text. Numbers, formulas, lists, tables,
+graphics, controls, and even complete interfaces are all Wolfram Language
+expressions, and the same formatting functions can be composed around them.
+
+If you are coming from Python or Julia, it helps to read the following examples
+with three small syntax rules in mind:
+
+- function arguments use square brackets: `Style[expr, Red]`
+- lists use braces: `{a, b, c}`
+- options are rules: `Background -> Yellow`
+- `name = value` assigns a value, and a final semicolon suppresses its output
+
+Wolfram Language also supports postfix notation. These two expressions are
+equivalent:
+
+<WLJSWrapper>
+<div className="code-input"/>
+<wljs-editor display="codemirror" type="Input" editable="true" lazy="true">{`TraditionalForm[expr]  (* equivalent to expr // TraditionalForm *)`}</wljs-editor>
+</WLJSWrapper>
+
+Prefix notation is common when several wrappers are composed:
+`function @ expr` is equivalent to `function[expr]`.
+
+We shall start with common display tasks, then explain the WLJS-specific
+behavior that makes formatted output editable and reusable.
+
+## Choose the right tool!
+
+| Description | Expression |
+| --- | --- |
+| Control significant digits or decimal places | [`NumberForm`](./../Formatting/NumberForm), [`DecimalForm`](./../Formatting/DecimalForm), [`PaddedForm`](./../Formatting/PaddedForm) |
+| Display percentages, accounting, or engineering notation | [`PercentForm`](./../Formatting/PercentForm), [`AccountingForm`](./../Formatting/AccountingForm), [`EngineeringForm`](./../Formatting/EngineeringForm) |
+| Display integers in another base | [`BaseForm`](./../Formatting/BaseForm) |
+| Select the overall output representation | [`StandardForm`](./../Formatting/StandardForm), [`InputForm`](./../Formatting/InputForm), [`TraditionalForm`](./../Formatting/TraditionalForm), [`WLXForm`](./../Formatting/WLXForm) |
+| Arrange expressions horizontally or vertically | [`Row`](./../Formatting/Row), [`Column`](./../Formatting/Column), [`Spacer`](./../Formatting/Spacer) |
+| Build a grid, table, or matrix | [`Grid`](./../Formatting/Grid), [`Item`](./../Formatting/Item), [`TableForm`](./../Formatting/TableForm), [`MatrixForm`](./../Formatting/MatrixForm) |
+| Change color, font, size, or background | [`Style`](./../Formatting/Style), [`Highlighted`](./../Formatting/Highlighted), [`Squiggled`](./../Formatting/Squiggled) |
+| Frame, scale, rotate, hide, or constrain an expression | [`Framed`](./../Formatting/Framed), [`Magnify`](./../Formatting/Magnify), [`Rotate`](./../Formatting/Rotate), [`Invisible`](./../Formatting/Invisible), [`Pane`](./../Formatting/Pane) |
+| Build panels and tabbed layouts | [`Panel`](./../Formatting/Panel), [`TabView`](./../Formatting/TabView) |
+| Attach visible labels, legends, or tooltips | [`Labeled`](./../Formatting/Labeled), [`Legended`](./../Formatting/Legended), [`Placed`](./../Formatting/Placed), [`Tooltip`](./../Formatting/Tooltip) |
+| Create plot and graphics legends | [`LineLegend`](./../Formatting/LineLegend), [`PointLegend`](./../Formatting/PointLegend), [`SwatchLegend`](./../Formatting/SwatchLegend), [`BarLegend`](./../Formatting/BarLegend) |
+| Attach invisible metadata or interpretation | [`Annotation`](./../Formatting/Annotation), [`Indexed`](./../Formatting/Indexed), [`Interpretation`](./../Formatting/Interpretation) |
+| Add subscripts, overscripts, or mathematical accents | [`Subscript`](./../Formatting/Subscript), [`Overscript`](./../Formatting/Overscript), [`Underscript`](./../Formatting/Underscript), [`OverBar`](./../Formatting/OverBar), [`OverHat`](./../Formatting/OverHat), [`OverVector`](./../Formatting/OverVector) |
+| Display function syntax in another notation | [`Prefix`](./../Formatting/Prefix), [`Postfix`](./../Formatting/Postfix), [`Infix`](./../Formatting/Infix) |
+| Display quantities or bra-ket notation | [`Quantity`](./../Formatting/Quantity), [`Bra`](./../Formatting/Bra), [`Ket`](./../Formatting/Ket) |
+| Make a finished result non-editable | [`Deploy`](./../Formatting/Deploy) |
+| Collapse or truncate a large expression | [`Iconize`](./../Formatting/Iconize), [`Shallow`](./../Formatting/Shallow) |
+| Export or display LaTeX | [`TeXForm`](./../Formatting/TeXForm), [`TeXView`](./../GUI/TeXView) |
+| Define custom formatting for your own symbols | [`MakeBoxes`](./../Formatting/MakeBoxes), [`ArrangeSummaryBox`](./../Formatting/ArrangeSummaryBox) |
+
+This table is a task-oriented starting point rather than a complete list.
+Browse the **Formatting** section in the documentation sidebar for additional
+symbols, including more numeric forms, mathematical accents, low-level boxes,
+and specialized notation.
+
+<Callout type="info">
+Most examples in this guide change how an expression is displayed, not the data
+you should use for computation. A reliable pattern is to keep raw data in one
+symbol and apply formatting only when producing output.
+</Callout>
+
+## Formatting numbers
+
+Wolfram Language distinguishes exact and approximate numbers. For example,
+`1/3` is exact, while `N[1/3]` produces a machine-precision approximation.
+[`NumberForm`](./../Formatting/NumberForm) controls how a number is shown:
+
+<WLJSWrapper>
+<div className="code-input"/>
+<wljs-editor display="codemirror" type="Input" editable="true" lazy="true">{`value = N[Pi];
+	NumberForm[value, {5, 3}]`}</wljs-editor>
+</WLJSWrapper>
+
+<WLJSWrapper>
+<wljs-editor display="codemirror" type="Output" lazy="true">{`(*VB[*)(3.141592653589793)(*,*)(*"1:eJxdT11LwzAALNOB+C/cU5uJMF19GPiQlEWY1Em+ah0+dFkmoenSruva+RP81Uv36Mtxdxzc3d3aku2V53n1rYP5Rh/sXmjV0j8nfYDQCgT+08Nk+hj44N5xMJrM1KJjLLYftHjP01dow5+YtjQRyyxvKrkLSZqbMRcli1CHNSRiUbFEtxEvI/LZhZKX9MuMn2UuNC/wiSaGyF9YcTk/xm98iiFMCyzsy6jv+0YIBNtBP/HaAWmMojc9UdlmuTOni8v2jfqX6f9QZZQ8ZGuj6qGTODO1OgMpmUK8"*)(*]VB*)`}</wljs-editor>
+</WLJSWrapper>
+
+You can still copy it and use it as input. The expression will expand back to
+its original form:
+
+<WLJSWrapper>
+<div className="code-input"/>
+<wljs-editor display="codemirror" type="Input" editable="true" lazy="true">{`(*VB[*)(3.141592653589793)(*,*)(*"1:eJxdT11LwzAALNOB+C/cU5uJMF19GPiQlEWY1Em+ah0+dFkmoenSruva+RP81Uv36Mtxdxzc3d3aku2V53n1rYP5Rh/sXmjV0j8nfYDQCgT+08Nk+hj44N5xMJrM1KJjLLYftHjP01dow5+YtjQRyyxvKrkLSZqbMRcli1CHNSRiUbFEtxEvI/LZhZKX9MuMn2UuNC/wiSaGyF9YcTk/xm98iiFMCyzsy6jv+0YIBNtBP/HaAWmMojc9UdlmuTOni8v2jfqX6f9QZZQ8ZGuj6qGTODO1OgMpmUK8"*)(*]VB*)`}</wljs-editor>
+</WLJSWrapper>
+
+<WLJSWrapper>
+<wljs-editor display="codemirror" type="Output" encoded="true" lazy="true">{`3.141592653589793%60`}</wljs-editor>
+</WLJSWrapper>
+
+In `{5, 3}`, the first value is the number of significant digits to print and
+the second is the number of digits to the right of the decimal point.
+
+You can format every number in a larger expression at once:
+
+<WLJSWrapper>
+<div className="code-input"/>
+<wljs-editor display="codemirror" type="Input" editable="true" lazy="true">{`values = N[{Pi, Sqrt[2], 1/7}];
+	NumberForm[values, {5, 3}]`}</wljs-editor>
+</WLJSWrapper>
+
+<WLJSWrapper>
+<wljs-editor display="codemirror" type="Output" lazy="true">{`{(*VB[*)(3.141592653589793)(*,*)(*"1:eJxdT11LwzAALNOB+C/cU5uJMF19GPiQlEWY1Em+ah0+dFkmoenSruva+RP81Uv36Mtxdxzc3d3aku2V53n1rYP5Rh/sXmjV0j8nfYDQCgT+08Nk+hj44N5xMJrM1KJjLLYftHjP01dow5+YtjQRyyxvKrkLSZqbMRcli1CHNSRiUbFEtxEvI/LZhZKX9MuMn2UuNC/wiSaGyF9YcTk/xm98iiFMCyzsy6jv+0YIBNtBP/HaAWmMojc9UdlmuTOni8v2jfqX6f9QZZQ8ZGuj6qGTODO1OgMpmUK8"*)(*]VB*),(*VB[*)(1.4142135623730951)(*,*)(*"1:eJxdT11LwzAALOpA/Bfuqc1EKLQ+CHtIyiJM6iRftcoeuiyT0HRp13Xt9hP81aY++nLcHQd3d7+xZHfteV5752Cx1Ud7EFr19MdJHyD0BQI/fIzCKPDBg+NgGj6r5cBYat9p9VbmL9DG3yntaSZWRdk1ch+TvDQzLmqWoAFrSMSyYZnuE14n5GOIJa/pp5k9yVJoXuEzzQyRF9hwuTilrzzCEOYVFnY+HfvWCIFgdzVOvHFAOqPo7UhUsV3tzfnPZYdO/cuMf6gySh6LjVHtxElcmFb9AimUQrw="*)(*]VB*),(*VB[*)(0.14285714285714285)(*,*)(*"1:eJxdT8tqwkAADH1A6V/UU7KWotT0IPSwG9yCJVr2laalh7iuZcnGTYxpop/gV7vx2MswMwzMzMPKks2153n1vYPZWu/tTmjV0pOTPkDoGwT+6Gk8eQ588Og4GIynat4xFtsPWizy9A3a8DemLU3EMsubSm5DkuZmyEXJItRhDYmYVyzRbcTLiHx2oeQl/TLDF5kLzQt8oIkh8ggrLmd/8TufYAjTAgv7Ouj7fhACweaqn3jjgDRG0bueqGy93JrDxWW7Rv3L9H+oMkrus5VR9a2TODO1OgMn+0K6"*)(*]VB*)}`}</wljs-editor>
+</WLJSWrapper>
+
+`ScientificForm` is useful when magnitudes vary widely:
+
+<WLJSWrapper>
+<div className="code-input"/>
+<wljs-editor display="codemirror" type="Input" editable="true" lazy="true">{`ScientificForm[{0.000012345, 1234567.0}, 4]`}</wljs-editor>
+</WLJSWrapper>
+
+<WLJSWrapper>
+<wljs-editor display="codemirror" type="Output" lazy="true">{`{(*VB[*)(1.2345*^-5)(*,*)(*"1:eJxtUU1Pg0AQxa/E+CtqTxSqEe16MPGwi6WJtbQyLF/GA27XBlkKtLZLG3+8UDUxxsubefPm8N7M6UvuvB4oirI8qaE/Td7zhZdwCdGeoqgaIU9aRzXOL6/QD2m3qla7o2rdutfaxg2/r1x3lE8gs5NwgHM0Y4BpgKIoLUqY6wT8SA/mVhzKmen2Zn2vgiyalLXKAuSEqdBpNZOAJIZHjsbbdYp06ll3gzspybWL3cGUxNCzTWZk2Fj6wsqCtyJ8GEJuE4qpnXIpb2/bjZ9nQpoCRWN1kku+eDIuVO1D63R3eIae66Va1jr/R0i/IoxAgu+N43RVsvm3Sa9wTVJZCXa8+9L1E2nSwnSCCjFaQCT0a5Z6Cc2sDfjCYVtcUtZfj4a0Z2EcZpaX/7L4ut+c/LAGZyU4HDcNj6fjudjspu5ixf/sNP8BLjh7j18EXx7V1IrFkn8CP7OBFg=="*)(*]VB*),(*VB[*)(1.234567*^6)(*,*)(*"1:eJxtUdtOwkAQrbfE+BXIE7TEWKU8mPCwWygJyMVOtzfCQ1kWUrulLbctxI+3RU2M8eXMnDnzcM7M/Twxl1eSJG3vCuguwl2ysUMmwLuQpJqM8VSu19SHp2fth1QreaVar8mNoper6gvr55Y1TCYQj0KvhxJtRQERV/P9KM1grWBwfMVdG4EnVrrVXHXtHGJ/khUqdTXTi7hC8pUATSB4Y9r4dIg0hdhGp9cRArcsZPUWOIDmSKdqjNStw43YfU+91wEkI0wQGUVMiHa7WvqZYVwWSEurk0SwzVR9rMkfcr1xxtas2ClUuf5/gugrwRAEOPY4iPYZXX97tFNLx7kRItPuZ5YTCp2kuunmGiUp+Fxp0cgOSWwcweEmPaGM0O5hOCBNAyEvNuzkl8PlZXnx6wLMPWdwWzYsWIzX/HieWps9+7NTvgcYZ3QXzDnb3hTUCPiWfQLUdYDp"*)(*]VB*)}`}</wljs-editor>
+</WLJSWrapper>
+
+If you re-evaluate it:
+
+<WLJSWrapper>
+<div className="code-input"/>
+<wljs-editor display="codemirror" type="Input" editable="true" lazy="true">{`{(*VB[*)(1.2345*^-5)(*,*)(*"1:eJxtUU1Pg0AQxa/E+CtqTxSqEe16MPGwi6WJtbQyLF/GA27XBlkKtLZLG3+8UDUxxsubefPm8N7M6UvuvB4oirI8qaE/Td7zhZdwCdGeoqgaIU9aRzXOL6/QD2m3qla7o2rdutfaxg2/r1x3lE8gs5NwgHM0Y4BpgKIoLUqY6wT8SA/mVhzKmen2Zn2vgiyalLXKAuSEqdBpNZOAJIZHjsbbdYp06ll3gzspybWL3cGUxNCzTWZk2Fj6wsqCtyJ8GEJuE4qpnXIpb2/bjZ9nQpoCRWN1kku+eDIuVO1D63R3eIae66Va1jr/R0i/IoxAgu+N43RVsvm3Sa9wTVJZCXa8+9L1E2nSwnSCCjFaQCT0a5Z6Cc2sDfjCYVtcUtZfj4a0Z2EcZpaX/7L4ut+c/LAGZyU4HDcNj6fjudjspu5ixf/sNP8BLjh7j18EXx7V1IrFkn8CP7OBFg=="*)(*]VB*),(*VB[*)(1.234567*^6)(*,*)(*"1:eJxtUdtOwkAQrbfE+BXIE7TEWKU8mPCwWygJyMVOtzfCQ1kWUrulLbctxI+3RU2M8eXMnDnzcM7M/Twxl1eSJG3vCuguwl2ysUMmwLuQpJqM8VSu19SHp2fth1QreaVar8mNoper6gvr55Y1TCYQj0KvhxJtRQERV/P9KM1grWBwfMVdG4EnVrrVXHXtHGJ/khUqdTXTi7hC8pUATSB4Y9r4dIg0hdhGp9cRArcsZPUWOIDmSKdqjNStw43YfU+91wEkI0wQGUVMiHa7WvqZYVwWSEurk0SwzVR9rMkfcr1xxtas2ClUuf5/gugrwRAEOPY4iPYZXX97tFNLx7kRItPuZ5YTCp2kuunmGiUp+Fxp0cgOSWwcweEmPaGM0O5hOCBNAyEvNuzkl8PlZXnx6wLMPWdwWzYsWIzX/HieWps9+7NTvgcYZ3QXzDnb3hTUCPiWfQLUdYDp"*)(*]VB*)}`}</wljs-editor>
+</WLJSWrapper>
+
+<WLJSWrapper>
+<wljs-editor display="codemirror" type="Output" encoded="true" lazy="true">{`%7B0.000012345%60%2C1.234567%60%2A%5E6%7D`}</wljs-editor>
+</WLJSWrapper>
+
+### Convert to text only when you need text
+
+`NumberForm` is intended for presentation. If a formatted value must become
+part of a plain string—for example, for export or a text-only API—use
+`ToString` explicitly:
+
+<WLJSWrapper>
+<div className="code-input"/>
+<wljs-editor display="codemirror" type="Input" editable="true" lazy="true">{`formatted = ToString[NumberForm[1.35356, {4, 1}]]`}</wljs-editor>
+</WLJSWrapper>
+
+<WLJSWrapper>
+<wljs-editor display="codemirror" type="Output" lazy="true">{`"1.4"`}</wljs-editor>
+</WLJSWrapper>
+
+
+<WLJSWrapper>
+<div className="code-input"/>
+<wljs-editor display="codemirror" type="Input" editable="true" lazy="true">{`"measurement = " <> formatted`}</wljs-editor>
+</WLJSWrapper>
+
+<WLJSWrapper>
+<wljs-editor display="codemirror" type="Output" lazy="true">{`"measurement = 1.4"`}</wljs-editor>
+</WLJSWrapper>
+
+Here `<>` joins strings. After `ToString`, the result is text rather than a
+number, so do not convert values earlier than necessary.
+
+<WLJSWrapper>
+<div className="code-input"/>
+<wljs-editor display="codemirror" type="Input" editable="true" lazy="true">{`raw = 1.35356;
+	raw^2`}</wljs-editor>
+</WLJSWrapper>
+
+<WLJSWrapper>
+<wljs-editor display="codemirror" type="Output" encoded="true" lazy="true">{`1.8321246736000003%60`}</wljs-editor>
+</WLJSWrapper>
+
+
+<WLJSWrapper>
+<div className="code-input"/>
+<wljs-editor display="codemirror" type="Input" editable="true" lazy="true">{`label = "measurement = " <> ToString[NumberForm[raw, {4, 1}]];
+	Row[{label, Spacer[20], "squared value: ", NumberForm[(*SpB[*)Power[raw(*|*),(*|*)2](*]SpB*), {5, 2}]}]`}</wljs-editor>
+</WLJSWrapper>
+
+<WLJSWrapper>
+<wljs-editor display="codemirror" type="Output" lazy="true">{`(*GB[*){{"measurement = 1.4"(*|*),(*|*)(*VB[*)(Spacer[20])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KWlMIB4vkAjLTC13SU3OL0osyS8KZgOKBBckJqcWZYoAmQBlCw0E"*)(*]VB*)(*|*),(*|*)"squared value: "(*|*),(*|*)(*VB[*)(1.8321246736000003)(*,*)(*"1:eJxdT81Kw0AYDP6A+Bb2lGxFKBoRwcNu6AqVWNm/GMVDuv0qSzbdpGlM6hv41m48ehlmhoGZuVg5tjkOgqA99zBfm73bKQM9//EyRIS8oyicXd1dRyG69BRNZvewGIRI3Quvnsv8Ebv4M+U9z9SyKLtGb2OWl3YqVS0SMlCDmVo0IjN9IuuEvQ6xljV/s9NbXSojK3rgmWX6GzdSz7/SJ3lDMc4rqtzDZOz7IARFm6Nx4YkH1lngZyOBYr3c2sOfK3Yd/MuMdzhY0PtiZaE99ZIWtoVf+xlCjQ=="*)(*]VB*)}}(*||*)(*1:eJxTTMoPSmNkYGAo5gUSYZmp5S6pyflFiSX5RcEsQBH3oswUAJ89CUc=*)(*]GB*)`}</wljs-editor>
+</WLJSWrapper>
+
+## Output forms
+
+An output form answers a different question from `Style` or `Grid`: it chooses
+the representation used to display an expression.
+
+### `StandardForm`: normal WLJS output
+
+[`StandardForm`](./../Formatting/StandardForm) is the default form for ordinary
+Wolfram Language output cells. In WLJS it is implemented as decorated
+[`InputForm`](./../Formatting/InputForm): comments carry visual metadata for
+fractions, grids, and other structures, while the remaining text is still valid
+Wolfram Language input.
+
+For example, a visually typeset fraction remains based on the plain expression
+`(1)/(2)`. This is why WLJS notebook code works well with text editors, Git, and
+LLM tools. See [Math typesetting and shortcuts](./../Overview#math-typesetting-and-shortcuts)
+for the editor-side details.
+
+You rarely need to write `StandardForm` explicitly in a normal output cell. It
+is useful when an expression is being inserted into a cell type that normally
+uses another form:
+
+<WLJSWrapper>
+<div className="code-input"/>
+<wljs-editor display="codemirror" type="Input" editable="true" lazy="true">{`expr = Panel[1/2];
+	expr
+	StandardForm[expr]`}</wljs-editor>
+</WLJSWrapper>
+
+<WLJSWrapper>
+<wljs-editor display="codemirror" type="Output" lazy="true">{`(*BB[*)(Panel[(*FB[*)((1)(*,*)/(*,*)(2))(*]FB*)])(*,*)(*"1:eJxTTMoPSmNiYGAo5gcSAUX5ZZkpqSn+BSWZ+XnFaYwgCV4gEZaZWu6SmpxflFiSXxTMClKamJeaA9HJAiSCSnNSg0EMj9TEFIQCAH5qF00="*)(*]BB*)`}</wljs-editor>
+</WLJSWrapper>
+
+<WLJSWrapper>
+<wljs-editor display="codemirror" type="Output" lazy="true">{`(*BB[*)(Panel[(*FB[*)((1)(*,*)/(*,*)(2))(*]FB*)])(*,*)(*"1:eJxTTMoPSmNiYGAo5gcSAUX5ZZkpqSn+BSWZ+XnFaYwgCV4gEZaZWu6SmpxflFiSXxTMClKamJeaA9HJAiSCSnNSg0EMj9TEFIQCAH5qF00="*)(*]BB*)`}</wljs-editor>
+</WLJSWrapper>
+
+### `InputForm`: inspect the underlying expression
+
+[`InputForm`](./../Formatting/InputForm) displays a one-dimensional
+representation close to what you would type in a source file:
+
+<WLJSWrapper>
+<div className="code-input"/>
+<wljs-editor display="codemirror" type="Input" editable="true" lazy="true">{`Red`}</wljs-editor>
+</WLJSWrapper>
+
+<WLJSWrapper>
+<wljs-editor display="codemirror" type="Output" lazy="true">{`(*VB[*)(RGBColor[1, 0, 0])(*,*)(*"1:eJxTTMoPSmNiYGAo5gUSYZmp5S6pyflFiSX5RcEsQBHn4PCQNGaQPAeQCHJ3cs7PyS8qYgCDD/ZQBgMDnAEA4iUPRg=="*)(*]VB*)`}</wljs-editor>
+</WLJSWrapper>
+
+
+<WLJSWrapper>
+<div className="code-input"/>
+<wljs-editor display="codemirror" type="Input" editable="true" lazy="true">{`Red // InputForm`}</wljs-editor>
+</WLJSWrapper>
+
+<WLJSWrapper>
+<wljs-editor display="codemirror" type="Output" lazy="true">{`(*VB[*)(InputForm[RGBColor[1, 0, 0]])(*,*)(*"1:eJxdj91Og0AQhYk/ifEptFeAvZCYJsTEC7AFhdDaXUCx6cWWDrjulG2hBPGBfE4XL00mJ3O+TDLnXG8kKU41TWsulcy2/CjrlENHf5TVTdddmYZOfPdRoqxX1vjqVs3a0M2x4ubIuofgK44j+UJ3c575jpyUEe3oa7pgoj3k1YRkAm+SZJmTrJyllAlLNg6GS5Ha8OaFye69aKvAyzD4yAXuk6mXkQQp4wcGvv3ZhbY1p/yuj+l3SHg5daKyf5LPD6Ph/9p1TaM4GeKfKSEtAr0YFmDbRYX9H43rFv7dDF0pIORHtkFozpX1GDbwCyQJTGU="*)(*]VB*)`}</wljs-editor>
+</WLJSWrapper>
+
+The first result is shown as a color. The second exposes its underlying
+expression:
+
+To obtain that representation as a string, use the two-argument form of
+`ToString`:
+
+<WLJSWrapper>
+<div className="code-input"/>
+<wljs-editor display="codemirror" type="Input" editable="true" lazy="true">{`ToString[Red, InputForm]`}</wljs-editor>
+</WLJSWrapper>
+
+<WLJSWrapper>
+<wljs-editor display="codemirror" type="Output" lazy="true">{`"RGBColor[1, 0, 0]"`}</wljs-editor>
+</WLJSWrapper>
+
+`InputForm` is especially useful for debugging unfamiliar symbolic objects,
+copying an expression to a plain-text environment, or seeing what a visual
+decoration contains.
+
+### `TraditionalForm`: mathematical notation
+
+[`TraditionalForm`](./../Formatting/TraditionalForm) displays expressions using
+conventional mathematical notation:
+
+<WLJSWrapper>
+<div className="code-input"/>
+<wljs-editor display="codemirror" type="Input" editable="true" lazy="true">{`Series[Sin[x], {x, 0, 7}] // TraditionalForm`}</wljs-editor>
+</WLJSWrapper>
+
+<WLJSWrapper>
+<wljs-editor display="codemirror" type="Output" lazy="true">{`(*VB[*)(Null)(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRAeO5AISY0Iy0wtRwj4p6Xl5CdCVXACidAgH5fU5PyU1OASIK9CV9XUOa0oMVnV3KlC1dTVWNXcBcg0A1FGTqhyphA5QyMDIANNnzlEztTAxACi1R8on5OaVqJqZAGStwByizLTM4B8SwADMS0N"*)(*]VB*)`}</wljs-editor>
+</WLJSWrapper>
+
+
+<WLJSWrapper>
+<div className="code-input"/>
+<wljs-editor display="codemirror" type="Input" editable="true" lazy="true">{`Integrate[f[x], x] // TraditionalForm`}</wljs-editor>
+</WLJSWrapper>
+
+<WLJSWrapper>
+<wljs-editor display="codemirror" type="Output" lazy="true">{`(*VB[*)(Null)(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRAeO5AISY0Iy0wtRwj4p6Xl5CdCVXACidAgH5fU5PyU1GB5IE/V1Dkzr0TVyCBN1ciiQtXIEsgEiqkaAZFBSgUAmPIW7A=="*)(*]VB*)`}</wljs-editor>
+</WLJSWrapper>
+
+This is a visual representation, not a request to evaluate the expression
+differently. It is useful for equations, plot labels, legends, and
+presentation-ready output.
+
+### `WLXForm`: slides, Markdown, and WLX
+
+[`WLXForm`](./../Formatting/WLXForm) is the default representation used when
+Wolfram expressions are embedded in [slides](./../Cell-types/Slide),
+[Markdown](./../Cell-types/Markdown), and [WLX](./../Cell-types/WLX) cells.
+This is distinct from the `StandardForm` used by ordinary output cells.
+
+Most users only need to remember the practical consequence: if an expression
+looks different when inserted into a slide or WLX component, wrap it in
+`StandardForm` to request the ordinary output-cell representation.
+
+<WLJSWrapper>
+<div className="code-input"/>
+<wljs-editor display="codemirror" type="Input" editable="true" lazy="true">{`WLXPanel = StandardForm @ Deploy @ Panel[Plot[x, {x,0,1}]];`}</wljs-editor>
+</WLJSWrapper>
+
+<WLJSWrapper>
+<div className="code-input"/>
+<wljs-editor display="codemirror" type="Input" editable="true" lazy="true">{`.wlx
+	
+	<WLXPanel/>`}</wljs-editor>
+</WLJSWrapper>
+
+or on a slide:
+
+<WLJSWrapper>
+<div className="code-input"/>
+<wljs-editor display="codemirror" type="Input" editable="true" lazy="true">{`.slide
+	
+	<WLXPanel/>`}</wljs-editor>
+</WLJSWrapper>
+
+Package authors can define representations for both forms with
+[`MakeBoxes`](./../Formatting/MakeBoxes). See
+[Decorating symbols](./../Advanced/Decorating-symbols) for custom symbolic
+formatting.
+
+## Arrange expressions
+
+Unlike a string formatter, layout functions keep their arguments as
+expressions. A row can therefore contain text, formulas, graphics, colors, or
+controls at the same time.
+
+### Rows and columns
+
+[`Row`](./../Formatting/Row) places the elements of a list horizontally.
+Strings are displayed as normal text without quotation marks:
+
+<WLJSWrapper>
+<div className="code-input"/>
+<wljs-editor display="codemirror" type="Input" editable="true" lazy="true">{`Row[{"1", Graphics[Arrow[{{0,0}, {1,0}}], ImageSize->{35,18}], "2"}]`}</wljs-editor>
+</WLJSWrapper>
+
+<WLJSWrapper>
+<wljs-editor display="codemirror" type="Output" lazy="true">{`(*GB[*){{"1"(*|*),(*|*)(*VB[*)(Graphics[Arrow[{{0, 0}, {1, 0}}], ImageSize -> {35, 18}])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KWlMIB4HkHAvSizIyEwuhsizAgnHoqL8cogCkHKfzOISVF4mkGYAE2jijJjiQaU5qcWcQIZnbmJ6anBmVSqaHmWQHiEgAQDZch2x"*)(*]VB*)(*|*),(*|*)"2"}}(*||*)(*1:eJxTTMoPSmNkYGAo5gUSYZmp5S6pyflFiSX5RcEsQBH3oswUAJ89CUc=*)(*]GB*)`}</wljs-editor>
+</WLJSWrapper>
+
+Any expression is valid:
+
+<WLJSWrapper>
+<div className="code-input"/>
+<wljs-editor display="codemirror" type="Input" editable="true" lazy="true">{`Row[{
+	  Plot[Sin[x], {x, 0, 2 Pi}, ImageSize -> 180],
+	  Plot[Cos[x], {x, 0, 2 Pi}, ImageSize -> 180]
+	}, Spacings -> 2]`}</wljs-editor>
+</WLJSWrapper>
+
+<WLJSWrapper>
+<wljs-editor display="codemirror" type="Output" lazy="true">{`(*GB[*){{(*VB[*)(FrontEndRef["0b3a4ba5-1ad0-4736-bb31-4face908e455"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKGyQZJ5okJZrqGiamGOiamBub6SYlGRvqmqQlJqdaGlikmpiaAgCIOhW+"*)(*]VB*)(*|*),(*|*)(*VB[*)(FrontEndRef["23babb22-b902-49b6-bd3a-91f6b530ca1a"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKGxknJSYlGRnpJlkaGOmaWCaZ6SalGCfqWhqmmSWZGhskJxomAgCH8hXl"*)(*]VB*)}}(*||*)(*1:eJxTTMoPSmNiYGAo5gUSYZmp5S6pyflFiSX5RcEsQBH3oswUiDyIF1Sak1rMDxV2yq8ILkhMzsxLL05jhKnwySwuQVUfzA5kOOfnlObmoatD4WWCdAEAbpYfsw==*)(*]GB*)`}</wljs-editor>
+</WLJSWrapper>
+
+[`Column`](./../Formatting/Column) stacks expressions vertically:
+
+<WLJSWrapper>
+<div className="code-input"/>
+<wljs-editor display="codemirror" type="Input" editable="true" lazy="true">{`Column[{
+	  Style["Summary", Bold, 16],
+	  Row[{"minimum: ", Min[values]}],
+	  Row[{"maximum: ", Max[values]}]
+	}, Spacings -> 1]`}</wljs-editor>
+</WLJSWrapper>
+
+<WLJSWrapper>
+<wljs-editor display="codemirror" type="Output" encoded="true" lazy="true">{`%28%2AGB%5B%2A%29%7B%7B%28%2ABB%5B%2A%29%28%22Summary%22%29%28%2A%2C%2A%29%28%2A%221%3AeJxTTMoPSmNiYGAo5gcSAUX5ZZkpqSn%2BBSWZ%2BXnFEAk%2BIBFcUpmT6pKanF%2BUWJJfVMwCFHLKz0nJFAAyIKpAQkGlOanBbGDlRZl56WCxkKLSVAAOrhjE%22%2A%29%28%2A%5DBB%2A%29%7D%28%2A%7C%7C%2A%29%2C%28%2A%7C%7C%2A%29%7B%28%2AGB%5B%2A%29%7B%7B%22minimum%3A%20%22%28%2A%7C%2A%29%2C%28%2A%7C%2A%290.14285714285714285%60%7D%7D%28%2A%7C%7C%2A%29%28%2A1%3AeJxTTMoPSmNkYGAo5gUSYZmp5S6pyflFiSX5RcEsQBH3oswUAJ89CUc%3D%2A%29%28%2A%5DGB%2A%29%7D%28%2A%7C%7C%2A%29%2C%28%2A%7C%7C%2A%29%7B%28%2AGB%5B%2A%29%7B%7B%22maximum%3A%20%22%28%2A%7C%2A%29%2C%28%2A%7C%2A%293.141592653589793%60%7D%7D%28%2A%7C%7C%2A%29%28%2A1%3AeJxTTMoPSmNkYGAo5gUSYZmp5S6pyflFiSX5RcEsQBH3oswUAJ89CUc%3D%2A%29%28%2A%5DGB%2A%29%7D%7D%28%2A%7C%7C%2A%29%28%2A1%3AeJxTTMoPSmNmYGAo5gUSYZmp5S6pyflFiSX5RcEsQBH3osyUNCaQPIgXVJqTWiwAFXbKr3DMyUzPy03NK0ljhCnxySwuQdUQzA5kOOfnlObmFaOpQ%2BFBGKlpaNqL%2BRH2BRckJmfmpRcjVFBgHSeQ4Vhakp%2BbWJKZjGYGmJFfjteATBAPAGNxRa4%3D%2A%29%28%2A%5DGB%2A%29`}</wljs-editor>
+</WLJSWrapper>
+
+Useful options shared by `Row`, `Column`, and `Grid` include `Spacings`,
+`Dividers`, `Alignment`, `ImageSize`, and `BaselinePosition`. Check the symbol
+pages for the exact option support in WLJS.
+
+<WLJSWrapper>
+<div className="code-input"/>
+<wljs-editor display="codemirror" type="Input" editable="true" lazy="true">{`Column[{1, 12, 123, 1234}, Center, Dividers -> All]`}</wljs-editor>
+</WLJSWrapper>
+
+<WLJSWrapper>
+<wljs-editor display="codemirror" type="Output" lazy="true">{`(*GB[*){{1}(*||*),(*||*){12}(*||*),(*||*){123}(*||*),(*||*){1234}}(*||*)(*1:eJxTTMoPSmNmYGAo5gUSYZmp5S6pyflFiSX5RcEsQBH3osyUNCaQPIgXVJqTWiwAFXbKr3DMyUzPy03NK0ljhCnxySwuQdUQzA5kOOfnlObmFaOpQ+EVs4HUAQ1LLUKzkR9ho0tmWWZKalExQgUFFoIYIUWlqWjawYz8cuL0AgCyhEYp*)(*]GB*)`}</wljs-editor>
+</WLJSWrapper>
+
+### Grids
+
+[`Grid`](./../Formatting/Grid) is the general-purpose building block for
+two-dimensional layouts:
+
+<WLJSWrapper>
+<div className="code-input"/>
+<wljs-editor display="codemirror" type="Input" editable="true" lazy="true">{`Grid[{
+	  {Style["name", Bold], Style["value", Bold]},
+	  {"alpha", 1/3},
+	  {"beta", N[Pi]}
+	}, Dividers -> All, Alignment -> {{Left, Right}, Center}]`}</wljs-editor>
+</WLJSWrapper>
+
+<WLJSWrapper>
+<wljs-editor display="codemirror" type="Output" encoded="true" lazy="true">{`%28%2AGB%5B%2A%29%7B%7B%28%2ABB%5B%2A%29%28%22name%22%29%28%2A%2C%2A%29%28%2A%221%3AeJxTTMoPSmNiYGAo5gcSAUX5ZZkpqSn%2BBSWZ%2BXnFaYwgCT4gEVxSmZPqkpqcX5RYkl9UzAIUcsrPSYHoBPGCSnNSg9nAKosy89LBYiFFpakAp10YSg%3D%3D%22%2A%29%28%2A%5DBB%2A%29%28%2A%7C%2A%29%2C%28%2A%7C%2A%29%28%2ABB%5B%2A%29%28%22value%22%29%28%2A%2C%2A%29%28%2A%221%3AeJxTTMoPSmNiYGAo5gcSAUX5ZZkpqSn%2BBSWZ%2BXnFaYwgCT4gEVxSmZPqkpqcX5RYkl9UzAIUcsrPSYHoBPGCSnNSg9nAKosy89LBYiFFpakAp10YSg%3D%3D%22%2A%29%28%2A%5DBB%2A%29%7D%28%2A%7C%7C%2A%29%2C%28%2A%7C%7C%2A%29%7B%22alpha%22%28%2A%7C%2A%29%2C%28%2A%7C%2A%29%28%2AFB%5B%2A%29%28%281%29%28%2A%2C%2A%29%2F%28%2A%2C%2A%29%283%29%29%28%2A%5DFB%2A%29%7D%28%2A%7C%7C%2A%29%2C%28%2A%7C%7C%2A%29%7B%22beta%22%28%2A%7C%2A%29%2C%28%2A%7C%2A%293.141592653589793%60%7D%7D%28%2A%7C%7C%2A%29%28%2A1%3AeJxTTMoPSmNmYGAo5gUSYZmp5S6pyflFiSX5RcEsQBH3osyUNCaQPIgXVJqTWiwAFXbKr3DMyUzPy03NK0Eo8cksLkHVEMwOZDjn55Tm5hWjqoMwUtNKillBajPTM9C1ghn55cVpjCjmo%2FCK2UDmAx2RWoTmUn6ES10yyzJTUouKiXYoPgtBjJCi0lRyHAvTCwAaZVGW%2A%29%28%2A%5DGB%2A%29`}</wljs-editor>
+</WLJSWrapper>
+
+Use [`Item`](./../Formatting/Item) to style an individual grid cell:
+
+<WLJSWrapper>
+<div className="code-input"/>
+<wljs-editor display="codemirror" type="Input" editable="true" lazy="true">{`Grid[{
+	  {Item["status", Background -> LightGray], "ready"},
+	  {"samples", Item[128, Background -> LightYellow]}
+	}, Dividers -> All]`}</wljs-editor>
+</WLJSWrapper>
+
+<WLJSWrapper>
+<wljs-editor display="codemirror" type="Output" lazy="true">{`(*GB[*){{"status"(*VB[*)(**)(*,*)(*"1:eJxTTMoPSmNmYGAo5gUSYZmp5S6pyflFiSX5RcEsQBHPktTcNCaQPIgXVJqTWswFZDglJmenF+WX5qWkMYIkOYGEe1FipU9qWWpOkTEYvLZH08gDZASXFGUW+Od55hWUlhSzAgXcEnOKUwGUbyG6"*)(*]VB*)(*|*),(*|*)"ready"}(*||*),(*||*){"samples"(*|*),(*|*)128(*VB[*)(**)(*,*)(*"1:eJxTTMoPSmNmYGAo5gUSYZmp5S6pyflFiSX5RcEsQBHPktTcNCaQPIgXVJqTWswFZDglJmenF+WX5qVANHOAJN2dnPNz8osyGYEcMFFkDAav7dFM4AEygkuKMgv88zzzCkpLilmBAm6JOcWpAFNHId4="*)(*]VB*)}}(*||*)(*1:eJxTTMoPSmNiYGAo5gUSYZmp5S6pyflFiSX5RcEsQBH3oswUiDyIF1Sak1rMDxV2yq9wySzLTEktKkao8MksLkFVH8wOZDjn55Tm5hWnMaKoQ+GBGSFFpalo2sGM/HLi9AIACPss5g==*)(*]GB*)`}</wljs-editor>
+</WLJSWrapper>
+
+Conditional formatting works naturally because a grid is still built from
+ordinary expressions:
+
+<WLJSWrapper>
+<div className="code-input"/>
+<wljs-editor display="codemirror" type="Input" editable="true" lazy="true">{`block = {{1, 2}, {3, 4}};
+	Grid[KroneckerProduct[IdentityMatrix[5], block]] /. {
+	  0 -> 0,
+	  x_?NumberQ -> Item[x, Background -> Orange]
+	}`}</wljs-editor>
+</WLJSWrapper>
+
+<WLJSWrapper>
+<wljs-editor display="codemirror" type="Output" lazy="true">{`(*GB[*){{1(*VB[*)(**)(*,*)(*"1:eJxTTMoPSmNmYGAo5gUSYZmp5S6pyflFiSX5RcEsQBHPktTcNCaQPIgXVJqTWswFZDglJmenF+WX5qVANHOAJN2dnPNz8osyGYGcIgYweGCfCaLQTOABMoJLijIL/PM88wpKS4pZgQJuiTnFqQAdxyCg"*)(*]VB*)(*|*),(*|*)2(*VB[*)(**)(*,*)(*"1:eJxTTMoPSmNmYGAo5gUSYZmp5S6pyflFiSX5RcEsQBHPktTcNCaQPIgXVJqTWswFZDglJmenF+WX5qVANHOAJN2dnPNz8osyGYGcIgYweGCfCaLQTOABMoJLijIL/PM88wpKS4pZgQJuiTnFqQAdxyCg"*)(*]VB*)(*|*),(*|*)0(*|*),(*|*)0(*|*),(*|*)0(*|*),(*|*)0(*|*),(*|*)0(*|*),(*|*)0(*|*),(*|*)0(*|*),(*|*)0}(*||*),(*||*){3(*VB[*)(**)(*,*)(*"1:eJxTTMoPSmNmYGAo5gUSYZmp5S6pyflFiSX5RcEsQBHPktTcNCaQPIgXVJqTWswFZDglJmenF+WX5qVANHOAJN2dnPNz8osyGYGcIgYweGCfCaLQTOABMoJLijIL/PM88wpKS4pZgQJuiTnFqQAdxyCg"*)(*]VB*)(*|*),(*|*)4(*VB[*)(**)(*,*)(*"1:eJxTTMoPSmNmYGAo5gUSYZmp5S6pyflFiSX5RcEsQBHPktTcNCaQPIgXVJqTWswFZDglJmenF+WX5qVANHOAJN2dnPNz8osyGYGcIgYweGCfCaLQTOABMoJLijIL/PM88wpKS4pZgQJuiTnFqQAdxyCg"*)(*]VB*)(*|*),(*|*)0(*|*),(*|*)0(*|*),(*|*)0(*|*),(*|*)0(*|*),(*|*)0(*|*),(*|*)0(*|*),(*|*)0(*|*),(*|*)0}(*||*),(*||*){0(*|*),(*|*)0(*|*),(*|*)1(*VB[*)(**)(*,*)(*"1:eJxTTMoPSmNmYGAo5gUSYZmp5S6pyflFiSX5RcEsQBHPktTcNCaQPIgXVJqTWswFZDglJmenF+WX5qVANHOAJN2dnPNz8osyGYGcIgYweGCfCaLQTOABMoJLijIL/PM88wpKS4pZgQJuiTnFqQAdxyCg"*)(*]VB*)(*|*),(*|*)2(*VB[*)(**)(*,*)(*"1:eJxTTMoPSmNmYGAo5gUSYZmp5S6pyflFiSX5RcEsQBHPktTcNCaQPIgXVJqTWswFZDglJmenF+WX5qVANHOAJN2dnPNz8osyGYGcIgYweGCfCaLQTOABMoJLijIL/PM88wpKS4pZgQJuiTnFqQAdxyCg"*)(*]VB*)(*|*),(*|*)0(*|*),(*|*)0(*|*),(*|*)0(*|*),(*|*)0(*|*),(*|*)0(*|*),(*|*)0}(*||*),(*||*){0(*|*),(*|*)0(*|*),(*|*)3(*VB[*)(**)(*,*)(*"1:eJxTTMoPSmNmYGAo5gUSYZmp5S6pyflFiSX5RcEsQBHPktTcNCaQPIgXVJqTWswFZDglJmenF+WX5qVANHOAJN2dnPNz8osyGYGcIgYweGCfCaLQTOABMoJLijIL/PM88wpKS4pZgQJuiTnFqQAdxyCg"*)(*]VB*)(*|*),(*|*)4(*VB[*)(**)(*,*)(*"1:eJxTTMoPSmNmYGAo5gUSYZmp5S6pyflFiSX5RcEsQBHPktTcNCaQPIgXVJqTWswFZDglJmenF+WX5qVANHOAJN2dnPNz8osyGYGcIgYweGCfCaLQTOABMoJLijIL/PM88wpKS4pZgQJuiTnFqQAdxyCg"*)(*]VB*)(*|*),(*|*)0(*|*),(*|*)0(*|*),(*|*)0(*|*),(*|*)0(*|*),(*|*)0(*|*),(*|*)0}(*||*),(*||*){0(*|*),(*|*)0(*|*),(*|*)0(*|*),(*|*)0(*|*),(*|*)1(*VB[*)(**)(*,*)(*"1:eJxTTMoPSmNmYGAo5gUSYZmp5S6pyflFiSX5RcEsQBHPktTcNCaQPIgXVJqTWswFZDglJmenF+WX5qVANHOAJN2dnPNz8osyGYGcIgYweGCfCaLQTOABMoJLijIL/PM88wpKS4pZgQJuiTnFqQAdxyCg"*)(*]VB*)(*|*),(*|*)2(*VB[*)(**)(*,*)(*"1:eJxTTMoPSmNmYGAo5gUSYZmp5S6pyflFiSX5RcEsQBHPktTcNCaQPIgXVJqTWswFZDglJmenF+WX5qVANHOAJN2dnPNz8osyGYGcIgYweGCfCaLQTOABMoJLijIL/PM88wpKS4pZgQJuiTnFqQAdxyCg"*)(*]VB*)(*|*),(*|*)0(*|*),(*|*)0(*|*),(*|*)0(*|*),(*|*)0}(*||*),(*||*){0(*|*),(*|*)0(*|*),(*|*)0(*|*),(*|*)0(*|*),(*|*)3(*VB[*)(**)(*,*)(*"1:eJxTTMoPSmNmYGAo5gUSYZmp5S6pyflFiSX5RcEsQBHPktTcNCaQPIgXVJqTWswFZDglJmenF+WX5qVANHOAJN2dnPNz8osyGYGcIgYweGCfCaLQTOABMoJLijIL/PM88wpKS4pZgQJuiTnFqQAdxyCg"*)(*]VB*)(*|*),(*|*)4(*VB[*)(**)(*,*)(*"1:eJxTTMoPSmNmYGAo5gUSYZmp5S6pyflFiSX5RcEsQBHPktTcNCaQPIgXVJqTWswFZDglJmenF+WX5qVANHOAJN2dnPNz8osyGYGcIgYweGCfCaLQTOABMoJLijIL/PM88wpKS4pZgQJuiTnFqQAdxyCg"*)(*]VB*)(*|*),(*|*)0(*|*),(*|*)0(*|*),(*|*)0(*|*),(*|*)0}(*||*),(*||*){0(*|*),(*|*)0(*|*),(*|*)0(*|*),(*|*)0(*|*),(*|*)0(*|*),(*|*)0(*|*),(*|*)1(*VB[*)(**)(*,*)(*"1:eJxTTMoPSmNmYGAo5gUSYZmp5S6pyflFiSX5RcEsQBHPktTcNCaQPIgXVJqTWswFZDglJmenF+WX5qVANHOAJN2dnPNz8osyGYGcIgYweGCfCaLQTOABMoJLijIL/PM88wpKS4pZgQJuiTnFqQAdxyCg"*)(*]VB*)(*|*),(*|*)2(*VB[*)(**)(*,*)(*"1:eJxTTMoPSmNmYGAo5gUSYZmp5S6pyflFiSX5RcEsQBHPktTcNCaQPIgXVJqTWswFZDglJmenF+WX5qVANHOAJN2dnPNz8osyGYGcIgYweGCfCaLQTOABMoJLijIL/PM88wpKS4pZgQJuiTnFqQAdxyCg"*)(*]VB*)(*|*),(*|*)0(*|*),(*|*)0}(*||*),(*||*){0(*|*),(*|*)0(*|*),(*|*)0(*|*),(*|*)0(*|*),(*|*)0(*|*),(*|*)0(*|*),(*|*)3(*VB[*)(**)(*,*)(*"1:eJxTTMoPSmNmYGAo5gUSYZmp5S6pyflFiSX5RcEsQBHPktTcNCaQPIgXVJqTWswFZDglJmenF+WX5qVANHOAJN2dnPNz8osyGYGcIgYweGCfCaLQTOABMoJLijIL/PM88wpKS4pZgQJuiTnFqQAdxyCg"*)(*]VB*)(*|*),(*|*)4(*VB[*)(**)(*,*)(*"1:eJxTTMoPSmNmYGAo5gUSYZmp5S6pyflFiSX5RcEsQBHPktTcNCaQPIgXVJqTWswFZDglJmenF+WX5qVANHOAJN2dnPNz8osyGYGcIgYweGCfCaLQTOABMoJLijIL/PM88wpKS4pZgQJuiTnFqQAdxyCg"*)(*]VB*)(*|*),(*|*)0(*|*),(*|*)0}(*||*),(*||*){0(*|*),(*|*)0(*|*),(*|*)0(*|*),(*|*)0(*|*),(*|*)0(*|*),(*|*)0(*|*),(*|*)0(*|*),(*|*)0(*|*),(*|*)1(*VB[*)(**)(*,*)(*"1:eJxTTMoPSmNmYGAo5gUSYZmp5S6pyflFiSX5RcEsQBHPktTcNCaQPIgXVJqTWswFZDglJmenF+WX5qVANHOAJN2dnPNz8osyGYGcIgYweGCfCaLQTOABMoJLijIL/PM88wpKS4pZgQJuiTnFqQAdxyCg"*)(*]VB*)(*|*),(*|*)2(*VB[*)(**)(*,*)(*"1:eJxTTMoPSmNmYGAo5gUSYZmp5S6pyflFiSX5RcEsQBHPktTcNCaQPIgXVJqTWswFZDglJmenF+WX5qVANHOAJN2dnPNz8osyGYGcIgYweGCfCaLQTOABMoJLijIL/PM88wpKS4pZgQJuiTnFqQAdxyCg"*)(*]VB*)}(*||*),(*||*){0(*|*),(*|*)0(*|*),(*|*)0(*|*),(*|*)0(*|*),(*|*)0(*|*),(*|*)0(*|*),(*|*)0(*|*),(*|*)0(*|*),(*|*)3(*VB[*)(**)(*,*)(*"1:eJxTTMoPSmNmYGAo5gUSYZmp5S6pyflFiSX5RcEsQBHPktTcNCaQPIgXVJqTWswFZDglJmenF+WX5qVANHOAJN2dnPNz8osyGYGcIgYweGCfCaLQTOABMoJLijIL/PM88wpKS4pZgQJuiTnFqQAdxyCg"*)(*]VB*)(*|*),(*|*)4(*VB[*)(**)(*,*)(*"1:eJxTTMoPSmNmYGAo5gUSYZmp5S6pyflFiSX5RcEsQBHPktTcNCaQPIgXVJqTWswFZDglJmenF+WX5qVANHOAJN2dnPNz8osyGYGcIgYweGCfCaLQTOABMoJLijIL/PM88wpKS4pZgQJuiTnFqQAdxyCg"*)(*]VB*)}}(*||*)(*1:eJxTTMoPSmNkYGAo5gUSYZmp5S6pyflFiSX5RcEsQBH3oswUAJ89CUc=*)(*]GB*)`}</wljs-editor>
+</WLJSWrapper>
+
+Here `/.` applies replacement rules, while `x_?NumberQ` matches each numeric
+element. This is a compact Wolfram Language pattern for styling data by value.
+
+### Matrices and tables
+
+Use [`MatrixForm`](./../Formatting/MatrixForm) for the familiar mathematical
+matrix layout:
+
+<WLJSWrapper>
+<div className="code-input"/>
+<wljs-editor display="codemirror" type="Input" editable="true" lazy="true">{`matrix = {{a, b}, {c, d}};
+	MatrixForm[matrix]`}</wljs-editor>
+</WLJSWrapper>
+
+<WLJSWrapper>
+<wljs-editor display="codemirror" type="Output" lazy="true">{`(*GB[*){{a(*|*),(*|*)b}(*||*),(*||*){c(*|*),(*|*)d}}(*||*)(*1:eJxTTMoPSmNkYGAo5gUSYZmp5S6pyflFiSX5RcFsQBHfxJKizAoAs04KOA==*)(*]GB*)`}</wljs-editor>
+</WLJSWrapper>
+
+Cells may still contain formatting:
+
+<WLJSWrapper>
+<div className="code-input"/>
+<wljs-editor display="codemirror" type="Input" editable="true" lazy="true">{`MatrixForm[{{a, b}, {Item[c, Background -> LightRed], d}}]`}</wljs-editor>
+</WLJSWrapper>
+
+<WLJSWrapper>
+<wljs-editor display="codemirror" type="Output" lazy="true">{`(*GB[*){{a(*|*),(*|*)b}(*||*),(*||*){c(*VB[*)(**)(*,*)(*"1:eJxTTMoPSmNmYGAo5gUSYZmp5S6pyflFiSX5RcEsQBHPktTcNCaQPIgXVJqTWswFZDglJmenF+WX5qVANHOAJN2dnPNz8osyGYGcImMweG0PZ6CZwgNkBJcUZRb453nmFZSWFLMCBdwSc4pTAScvJEI="*)(*]VB*)(*|*),(*|*)d}}(*||*)(*1:eJxTTMoPSmNkYGAo5gUSYZmp5S6pyflFiSX5RcFsQBHfxJKizAoAs04KOA==*)(*]GB*)`}</wljs-editor>
+</WLJSWrapper>
+
+And you can still use it as input even if it has decorated expressions inside:
+
+<WLJSWrapper>
+<div className="code-input"/>
+<wljs-editor display="codemirror" type="Input" editable="true" lazy="true">{`(*GB[*){{a(*|*),(*|*)b}(*||*),(*||*){c(*VB[*)(**)(*,*)(*"1:eJxTTMoPSmNmYGAo5gUSYZmp5S6pyflFiSX5RcEsQBHPktTcNCaQPIgXVJqTWswFZDglJmenF+WX5qVANHOAJN2dnPNz8osyGYGcImMweG0PZ6CZwgNkBJcUZRb453nmFZSWFLMCBdwSc4pTAScvJEI="*)(*]VB*)(*|*),(*|*)d}}(*||*)(*1:eJxTTMoPSmNkYGAo5gUSYZmp5S6pyflFiSX5RcFsQBHfxJKizAoAs04KOA==*)(*]GB*) == {{a,b},{c,d}}`}</wljs-editor>
+</WLJSWrapper>
+
+<WLJSWrapper>
+<wljs-editor display="codemirror" type="Output" lazy="true">{`True`}</wljs-editor>
+</WLJSWrapper>
+
+[`TableForm`](./../Formatting/TableForm) is convenient for labeled data:
+
+<WLJSWrapper>
+<div className="code-input"/>
+<wljs-editor display="codemirror" type="Input" editable="true" lazy="true">{`TableForm[
+	  {{5, 7}, {4, 2}, {10, 3}},
+	  TableHeadings -> {
+	    {"Group A", "Group B", "Group C"},
+	    {"y1", "y2"}
+	  }
+	]`}</wljs-editor>
+</WLJSWrapper>
+
+<WLJSWrapper>
+<wljs-editor display="codemirror" type="Output" lazy="true">{`(*GB[*){{(*BB[*)(None)(*,*)(*"1:eJxTTMoPSmNiYGAo5gMSwSWVOakuqcn5RYkl+UUQcRYgEVSak1osAlKQkV8eXFKUmZfunJFYlJhcklpUXMwKlHBLzClORdUQzAPV4JyfV5KaV4KkEAAnBR+D"*)(*]BB*)(*|*),(*|*)"y1"(*|*),(*|*)"y2"}(*||*),(*||*){"Group A"(*|*),(*|*)5(*|*),(*|*)7}(*||*),(*||*){"Group B"(*|*),(*|*)4(*|*),(*|*)2}(*||*),(*||*){"Group C"(*|*),(*|*)10(*|*),(*|*)3}}(*||*)(*1:eJytj8EOgjAMhqfR6MXoK/goItGLJzDeJ3SkydjMuomP7wYiiiHh4KX5+/dL/3Z71YmYMcZo5csFoYoh04ZbbdJgHw3mYhrmoUucBFq/7Eg/YrxjDoY64oRkv/l04cVeS1cqapJajuZeHLgkqK2zcSAmA8Bb9ZbXQlf/3/z5ZnrjGapi9JsYsgYORfYzo00XtZNYqBKUHZvVICD6SJtHSy8iTiBRwRPvv20n*)(*]GB*)`}</wljs-editor>
+</WLJSWrapper>
+
+`TableAlignments`, `TableHeadings`, and `TableSpacing` are supported. For large
+datasets, use [`TableView`](./../GUI/TableView) instead; it lazily renders data
+and is much more efficient:
+
+<WLJSWrapper>
+<div className="code-input"/>
+<wljs-editor display="codemirror" type="Input" editable="true" lazy="true">{`RandomReal[10^5, {2000, 3}] // TableView`}</wljs-editor>
+</WLJSWrapper>
+
+<WLJSWrapper>
+<wljs-editor display="codemirror" type="Output" lazy="true">{`(*VB[*)(FrontEndRef["29419236-777b-4c4e-bfd2-564bdff1a78e"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKG1maGFoaGZvpmpubJ+maJJuk6ialpRjpmpqZJKWkpRkmmlukAgB4GRWz"*)(*]VB*)`}</wljs-editor>
+</WLJSWrapper>
+
+<Callout type="note">
+Keep `matrix` or the original list assigned separately when it will be used in
+later calculations. Apply `MatrixForm` or `TableForm` at the point where you
+display the result.
+</Callout>
+
+## Style expressions
+
+[`Style`](./../Formatting/Style) can change the font, size, foreground color,
+background, and other supported visual properties of an arbitrary expression:
+
+<WLJSWrapper>
+<div className="code-input"/>
+<wljs-editor display="codemirror" type="Input" editable="true" lazy="true">{`Style[1/Sqrt[2], 18, Red, Background -> LightYellow]`}</wljs-editor>
+</WLJSWrapper>
+
+<WLJSWrapper>
+<wljs-editor display="codemirror" type="Output" lazy="true">{`(*BB[*)((*FB[*)((1)(*,*)/(*,*)((*SqB[*)Sqrt[2](*]SqB*)))(*]FB*))(*,*)(*"1:eJxTTMoPSmNhYGAo5gMSwSWVOakuqcn5RYkl+UWZQkChNGaQJAeQCHJ3cs7PAQozAjmZDDAijQmkAGREUGlOajEXkOGUmJydXpRfmpeCSzeIKDIGg9f2aCbwgB1SlFngn+eZV1BaUswKFHBLzClOBQBdWyXl"*)(*]BB*)`}</wljs-editor>
+</WLJSWrapper>
+
+Strings accept the richest set of font options:
+
+<WLJSWrapper>
+<div className="code-input"/>
+<wljs-editor display="codemirror" type="Input" editable="true" lazy="true">{`Style[
+	  "Important result",
+	  Bold,
+	  Italic,
+	  18,
+	  FontFamily -> "system-ui",
+	  Background -> LightYellow
+	]`}</wljs-editor>
+</WLJSWrapper>
+
+<WLJSWrapper>
+<wljs-editor display="codemirror" type="Output" lazy="true">{`(*BB[*)("Important result")(*,*)(*"1:eJxtjk0KwjAQhetfURcK3sADuOoBhCgVV0rrBWKTlsE0I5NE6Jm9hJO4EpzF4837hsds71i14yzL3JrlSvgCpdXl6QGta2cRrFhqPxh91A2S9EhuypFAo1zO5uylgQY2bL9NkVbBaLdkU6L1pezBDPUiwsF53e8C/DkVsnl0hMGqdhLhPMKTOKBBghEvSahI897/NtR5epPAdim7UdAfph005Q=="*)(*]BB*)`}</wljs-editor>
+</WLJSWrapper>
+
+Because styling functions accept normal expressions, they are easy to apply
+conditionally:
+
+<WLJSWrapper>
+<div className="code-input"/>
+<wljs-editor display="codemirror" type="Input" editable="true" lazy="true">{`Table[
+	  If[PrimeQ[i], Style[i, Bold, Background -> Yellow], i],
+	  {i, 1, 30}
+	]`}</wljs-editor>
+</WLJSWrapper>
+
+<WLJSWrapper>
+<wljs-editor display="codemirror" type="Output" lazy="true">{`{1,(*BB[*)(2)(*,*)(*"1:eJxTTMoPSmNmYGAo5gMSwSWVOakuqcn5RYkl+UXFLEAhp/yclDQmkAIQL6g0J7WYCyScmJydXpRfmpcC0c0BknR3cs7PyS/KZARyIAQQM6Dp5gHbU5RZ4J/nmVdQWlLMChRwS8wpTgUA1/8gAg=="*)(*]BB*),(*BB[*)(3)(*,*)(*"1:eJxTTMoPSmNmYGAo5gMSwSWVOakuqcn5RYkl+UXFLEAhp/yclDQmkAIQL6g0J7WYCyScmJydXpRfmpcC0c0BknR3cs7PyS/KZARyIAQQM6Dp5gHbU5RZ4J/nmVdQWlLMChRwS8wpTgUA1/8gAg=="*)(*]BB*),4,(*BB[*)(5)(*,*)(*"1:eJxTTMoPSmNmYGAo5gMSwSWVOakuqcn5RYkl+UXFLEAhp/yclDQmkAIQL6g0J7WYCyScmJydXpRfmpcC0c0BknR3cs7PyS/KZARyIAQQM6Dp5gHbU5RZ4J/nmVdQWlLMChRwS8wpTgUA1/8gAg=="*)(*]BB*),6,(*BB[*)(7)(*,*)(*"1:eJxTTMoPSmNmYGAo5gMSwSWVOakuqcn5RYkl+UXFLEAhp/yclDQmkAIQL6g0J7WYCyScmJydXpRfmpcC0c0BknR3cs7PyS/KZARyIAQQM6Dp5gHbU5RZ4J/nmVdQWlLMChRwS8wpTgUA1/8gAg=="*)(*]BB*),8,9,10,(*BB[*)(11)(*,*)(*"1:eJxTTMoPSmNmYGAo5gMSwSWVOakuqcn5RYkl+UXFLEAhp/yclDQmkAIQL6g0J7WYCyScmJydXpRfmpcC0c0BknR3cs7PyS/KZARyIAQQM6Dp5gHbU5RZ4J/nmVdQWlLMChRwS8wpTgUA1/8gAg=="*)(*]BB*),12,(*BB[*)(13)(*,*)(*"1:eJxTTMoPSmNmYGAo5gMSwSWVOakuqcn5RYkl+UXFLEAhp/yclDQmkAIQL6g0J7WYCyScmJydXpRfmpcC0c0BknR3cs7PyS/KZARyIAQQM6Dp5gHbU5RZ4J/nmVdQWlLMChRwS8wpTgUA1/8gAg=="*)(*]BB*),14,15,16,(*BB[*)(17)(*,*)(*"1:eJxTTMoPSmNmYGAo5gMSwSWVOakuqcn5RYkl+UXFLEAhp/yclDQmkAIQL6g0J7WYCyScmJydXpRfmpcC0c0BknR3cs7PyS/KZARyIAQQM6Dp5gHbU5RZ4J/nmVdQWlLMChRwS8wpTgUA1/8gAg=="*)(*]BB*),18,(*BB[*)(19)(*,*)(*"1:eJxTTMoPSmNmYGAo5gMSwSWVOakuqcn5RYkl+UXFLEAhp/yclDQmkAIQL6g0J7WYCyScmJydXpRfmpcC0c0BknR3cs7PyS/KZARyIAQQM6Dp5gHbU5RZ4J/nmVdQWlLMChRwS8wpTgUA1/8gAg=="*)(*]BB*),20,21,22,(*BB[*)(23)(*,*)(*"1:eJxTTMoPSmNmYGAo5gMSwSWVOakuqcn5RYkl+UXFLEAhp/yclDQmkAIQL6g0J7WYCyScmJydXpRfmpcC0c0BknR3cs7PyS/KZARyIAQQM6Dp5gHbU5RZ4J/nmVdQWlLMChRwS8wpTgUA1/8gAg=="*)(*]BB*),24,25,26,27,28,(*BB[*)(29)(*,*)(*"1:eJxTTMoPSmNmYGAo5gMSwSWVOakuqcn5RYkl+UXFLEAhp/yclDQmkAIQL6g0J7WYCyScmJydXpRfmpcC0c0BknR3cs7PyS/KZARyIAQQM6Dp5gHbU5RZ4J/nmVdQWlLMChRwS8wpTgUA1/8gAg=="*)(*]BB*),30}`}</wljs-editor>
+</WLJSWrapper>
+
+Several small formatting functions cover common visual effects:
+
+| Expression | Description |
+| --- | --- |
+| [`Framed`](./../Formatting/Framed) | Draw a frame around an expression |
+| [`Highlighted`](./../Formatting/Highlighted) | Apply a basic highlight |
+| [`Squiggled`](./../Formatting/Squiggled) | Add a colored squiggled underline |
+| [`Magnify`](./../Formatting/Magnify) | Scale an expression visually |
+| [`Rotate`](./../Formatting/Rotate) | Rotate an expression |
+| [`Invisible`](./../Formatting/Invisible) | Hide an expression while preserving its layout space |
+| [`Spacer`](./../Formatting/Spacer) | Insert explicit empty space |
+
+<WLJSWrapper>
+<div className="code-input"/>
+<wljs-editor display="codemirror" type="Input" editable="true" lazy="true">{`Row[{
+	  Framed[x + y],
+	  Spacer[20],
+	  Squiggled["check this", Red]
+	}]`}</wljs-editor>
+</WLJSWrapper>
+
+<WLJSWrapper>
+<wljs-editor display="codemirror" type="Output" lazy="true">{`(*GB[*){{(*BB[*)(x+y)(*,*)(*"1:eJxTTMoPSmNiYGAo5gMSwSWVOakuqcn5RYkl+UUQcRYgEVSak1rMA1ZQlFngn+eZV1BaUswKFHBLzClORVUYDBYvSsxNBQuFFJWmAgAQ7xjr"*)(*]BB*)(*|*),(*|*)(*VB[*)(Spacer[20])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KWlMIB4vkAjLTC13SU3OL0osyS8KZgOKBBckJqcWZYoAmQBlCw0E"*)(*]VB*)(*|*),(*|*)(*BB[*)("check this")(*,*)(*"1:eJxTTMoPSmNiYGAo5gcSAUX5ZZkpqSn+BSWZ+XnFaYwgCT4gEVxSmZPqkpqcX5RYkl8E0cACJIJKc1KLuYCM0LyU1KKczLzUlDRmkCQHSNLdyTk/J78oE2RMJgOMQNUdzAY2vigzLx0sFlJUmgoAoPMiSg=="*)(*]BB*)}}(*||*)(*1:eJxTTMoPSmNkYGAo5gUSYZmp5S6pyflFiSX5RcEsQBH3oswUAJ89CUc=*)(*]GB*)`}</wljs-editor>
+</WLJSWrapper>
+
+`Invisible` is useful for alignment because it preserves the dimensions of its
+content:
+
+<WLJSWrapper>
+<div className="code-input"/>
+<wljs-editor display="codemirror" type="Input" editable="true" lazy="true">{`Row[{
+	  Framed[1/2],
+	  Framed[Invisible[1/2]],
+	  Framed[1/2]
+	}]`}</wljs-editor>
+</WLJSWrapper>
+
+<WLJSWrapper>
+<wljs-editor display="codemirror" type="Output" lazy="true">{`(*GB[*){{(*BB[*)((*FB[*)((1)(*,*)/(*,*)(2))(*]FB*))(*,*)(*"1:eJxTTMoPSmNiYGAo5gMSwSWVOakuqcn5RYkl+UUQcRYgEVSak1rMA1ZQlFngn+eZV1BaUswKFHBLzClORVUYDBYvSsxNBQuFFJWmAgAQ7xjr"*)(*]BB*)(*|*),(*|*)(*BB[*)((*BB[*)((*FB[*)((1)(*,*)/(*,*)(2))(*]FB*))(*,*)(*"1:eJxTTMoPSmNiYGAo5gMSwSWVOakuqcn5RYkl+UUQcRYgEVSak1rMA1KQkV/unJ9XkppXUlzMChRwS8wpTsWmsKQos8A/zzOvoLQEoRAA+nccYg=="*)(*]BB*))(*,*)(*"1:eJxTTMoPSmNiYGAo5gMSwSWVOakuqcn5RYkl+UUQcRYgEVSak1rMA1ZQlFngn+eZV1BaUswKFHBLzClORVUYDBYvSsxNBQuFFJWmAgAQ7xjr"*)(*]BB*)(*|*),(*|*)(*BB[*)((*FB[*)((1)(*,*)/(*,*)(2))(*]FB*))(*,*)(*"1:eJxTTMoPSmNiYGAo5gMSwSWVOakuqcn5RYkl+UUQcRYgEVSak1rMA1ZQlFngn+eZV1BaUswKFHBLzClORVUYDBYvSsxNBQuFFJWmAgAQ7xjr"*)(*]BB*)}}(*||*)(*1:eJxTTMoPSmNkYGAo5gUSYZmp5S6pyflFiSX5RcEsQBH3oswUAJ89CUc=*)(*]GB*)`}</wljs-editor>
+</WLJSWrapper>
+
+## Containers, labels, and metadata
+
+### Frames, panes, and panels
+
+These containers solve related but different problems:
+
+- `Framed[expr]` adds a visible frame around an expression.
+- `Pane[expr, size]` gives an expression a controlled display area.
+- `Panel[expr, title]` creates a higher-level container with an optional title.
+
+<WLJSWrapper>
+<div className="code-input"/>
+<wljs-editor display="codemirror" type="Input" editable="true" lazy="true">{`Framed[Integrate[f[x], x]]`}</wljs-editor>
+</WLJSWrapper>
+
+<WLJSWrapper>
+<wljs-editor display="codemirror" type="Output" lazy="true">{`(*BB[*)((*TB[*)Integrate[(*|*)f[x](*|*), (*|*)x(*|*)](*|*)(*1:eJxTTMoPSmNmYGAo5gUSYZmp5S6pyflFiSX5RcGcQBHPvJLUdCA3NZMRpIgVSLgl5hSnAgCQTg44*)(*]TB*))(*,*)(*"1:eJxTTMoPSmNiYGAo5gMSwSWVOakuqcn5RYkl+UUQcRYgEVSak1rMA1ZQlFngn+eZV1BaUswKFHBLzClORVUYDBYvSsxNBQuFFJWmAgAQ7xjr"*)(*]BB*)`}</wljs-editor>
+</WLJSWrapper>
+
+
+<WLJSWrapper>
+<div className="code-input"/>
+<wljs-editor display="codemirror" type="Input" editable="true" lazy="true">{`Pane[Range[20], 200]`}</wljs-editor>
+</WLJSWrapper>
+
+<WLJSWrapper>
+<wljs-editor display="codemirror" type="Output" lazy="true">{`(*BB[*)({1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20})(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KWlMIB4vkAjLTC13SU3OL0osyS8KBskHJOalQuRBvKDSnNRiTiDDMzcxPTU4syo18wSQBwD5nxNN"*)(*]BB*)`}</wljs-editor>
+</WLJSWrapper>
+
+
+<WLJSWrapper>
+<div className="code-input"/>
+<wljs-editor display="codemirror" type="Input" editable="true" lazy="true">{`Panel[
+	  Plot[Sin[x], {x, 0, 2 Pi}, ImageSize -> 300],
+	  Style["Sine wave", Bold],
+	  Top
+	]`}</wljs-editor>
+</WLJSWrapper>
+
+<WLJSWrapper>
+<wljs-editor display="codemirror" type="Output" lazy="true">{`(*GB[*){{(*BB[*)("Sine wave")(*,*)(*"1:eJxTTMoPSmNiYGAo5gcSAUX5ZZkpqSn+BSWZ+XnFaYwgCT4gEVxSmZPqkpqcX5RYkl9UzAIUcsrPSYHoBPGCSnNSg9nAKosy89LBYiFFpakAp10YSg=="*)(*]BB*)(*VB[*)(**)(*,*)(*"1:eJxTTMoPSmNiYGAo5gUSYZmp5S6pyflFiSX5RcEsQBHPktRciDyIF1Sak1osAGS4pKYlluaUOCUWpwaXVOakBnMBBQMS81JzfBKTUnMAl08WyQ=="*)(*]VB*)}(*||*),(*||*){(*BB[*)((*BB[*)(Panel[(*VB[*)(FrontEndRef["9cea5d4c-fe35-42d2-8b33-a6f77e9d18b8"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKWyanJpqmmCTrpqUam+qaGKUY6VokGRvrJpqlmZunWqYYWiRZAACR0xYU"*)(*]VB*)])(*,*)(*"1:eJxTTMoPSmNiYGAo5gcSAUX5ZZkpqSn+BSWZ+XnFaYwgCV4gEZaZWu6SmpxflFiSXxTMClKamJeaA9HJAiSCSnNSg0EMj9TEFIQCAH5qF00="*)(*]BB*))(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KWnMIB4vkAjLTC13SU3OL0osyS8KBskHJOalpjHBVAeV5qQWcwIZjjmZ6Xm5qXklCDmfzOKSYjYgwxkonFpUzAFkOiUWp+ZkYpgggCQVkF+cWZKZn4eiHgAIiyhB"*)(*]BB*)(*VB[*)(**)(*,*)(*"1:eJxTTMoPSmNiYGAo5gUSYZmp5S6pyflFiSX5RcEsQBHPktRciDyIF1Sak1osAGS4pKYlluaUOCUWpwaXVOakBrMDBX0Sk1JzUlMAU+0Vnw=="*)(*]VB*)}}(*||*)(*1:eJxTTMoPSmNmYGAo5gUSYZmp5S6pyflFiSX5RcEsQBH3osyUNCaQPIgXVJqTWiwAFXbKr3DMyUzPy03NK0Eo8cksLkHVEMwOZDjn55Tm5hWnMaKoQ+EVs4HUAQ1LLUIzAMzILydPN9i9TonFqTmZeakB+cWZJZn5eajuzQTxMkHGAQB90DuV*)(*]GB*)`}</wljs-editor>
+</WLJSWrapper>
+
+Background and appearance can be controlled with options:
+
+<WLJSWrapper>
+<div className="code-input"/>
+<wljs-editor display="codemirror" type="Input" editable="true" lazy="true">{`Panel[
+	  Plot[Sin[x], {x, 0, 2 Pi}, ImageSize -> 300],
+	  Background -> LightYellow
+	]`}</wljs-editor>
+</WLJSWrapper>
+
+<WLJSWrapper>
+<wljs-editor display="codemirror" type="Output" lazy="true">{`(*BB[*)(Panel[(*VB[*)(FrontEndRef["51ab736f-7a3b-4283-ac1b-5f56224890d9"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKmxomJpkbm6XpmicaJ+maGFkY6yYmGybpmqaZmhkZmVhYGqRYAgCBOBVD"*)(*]VB*)])(*,*)(*"1:eJxTTMoPSmNiYGAo5gcSAUX5ZZkpqSn+BSWZ+XnFEAleIBGWmVrukpqcX5RYkl8UzApSmpiXmgNRwAIkgkpzUou5gAynxOTs9KL80ryUNGaQJAdI0t3JOT8nvyiTEcgBE0XGYPDaHtWEYBDDIzUxBWEFAHX1JaI="*)(*]BB*)`}</wljs-editor>
+</WLJSWrapper>
+
+Use `Appearance -> "Frameless"` when you want the panel's layout behavior
+without its usual frame:
+
+<WLJSWrapper>
+<div className="code-input"/>
+<wljs-editor display="codemirror" type="Input" editable="true" lazy="true">{`Panel[Column[{"one", "two", "three"}], Appearance -> "Frameless"]`}</wljs-editor>
+</WLJSWrapper>
+
+<WLJSWrapper>
+<wljs-editor display="codemirror" type="Output" lazy="true">{`(*BB[*)(Panel[(*GB[*){{"one"}(*||*),(*||*){"two"}(*||*),(*||*){"three"}}(*||*)(*1:eJxTTMoPSmNiYGAo5gUSYZmp5S6pyflFiSX5RcEsQBH3oswUiDyIF1Sak1osABV2yq9wzMlMz8tNzStJY4Qp8cksLkHVEMwOZDjn55Tm5hWjqUPhQRipaSUAIwUhsg==*)(*]GB*)])(*,*)(*"1:eJxTTMoPSmNiYGAo5gcSAUX5ZZkpqSn+BSWZ+XnFEAleIBGWmVrukpqcX5RYkl8UzApSmpiXmgNRwAIkgkpzUou5gAzHgoLUxKLEvOTUYE4g160oMTcVKFWMqjQYxPBITUxBmAUAfXIiMA=="*)(*]BB*)`}</wljs-editor>
+</WLJSWrapper>
+
+### Visible labels
+
+[`Labeled`](./../Formatting/Labeled) attaches a visible expression at `Top`,
+`Bottom`, `Left`, or `Right`:
+
+<WLJSWrapper>
+<div className="code-input"/>
+<wljs-editor display="codemirror" type="Input" editable="true" lazy="true">{`Labeled[Framed[{a, b, c, d}], "parameters", Right]`}</wljs-editor>
+</WLJSWrapper>
+
+<WLJSWrapper>
+<wljs-editor display="codemirror" type="Output" lazy="true">{`(*GB[*){{(*BB[*)((*BB[*)({a,b,c,d})(*,*)(*"1:eJxTTMoPSmNiYGAo5gMSwSWVOakuqcn5RYkl+UUQcRYgEVSak1rMA1ZQlFngn+eZV1BaUswKFHBLzClORVUYDBYvSsxNBQuFFJWmAgAQ7xjr"*)(*]BB*))(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KWnMIB4vkAjLTC13SU3OL0osyS8KBskHJOalpjHBVAeV5qQWcwIZjjmZ6Xm5qXklCDmfzOKSYjYgwxkonFpUzAFkOiUWp+ZkYpgggCQVkF+cWZKZn4eiHgAIiyhB"*)(*]BB*)(*VB[*)(**)(*,*)(*"1:eJxTTMoPSmNiYGAo5gUSYZmp5S6pyflFiSX5RcEsQBHPktRciDyIF1Sak1osAGS4pKYlluaUOCUWpwaXVOakBrMDBX0Sk1JzUlMAU+0Vnw=="*)(*]VB*)(*|*),(*|*)"parameters"(*VB[*)(**)(*,*)(*"1:eJxTTMoPSmNiYGAo5gUSYZmp5S6pyflFiSX5RcEsQBHPktRciDyIF1Sak1osAGS4pKYlluaUOCUWpwaXVOakBvMABX0Sk1JzUlPAFADFtBeE"*)(*]VB*)}}(*||*)(*1:eJxTTMoPSmNmYGAo5gUSYZmp5S6pyflFiSX5RcEsQBH3osyUNCaQPIgXVJqTWiwAFXbKr3DMyUzPy03NK0Eo8cksLkHVEMwOZDjn55Tm5hWnMaKoQ+EVs4HUAQ1LLUIzAMzILydPN9i9TonFqTmZeakB+cWZJZn5eajuzQSZBCYAfcc7lA==*)(*]GB*)`}</wljs-editor>
+</WLJSWrapper>
+
+The label can itself be any expression:
+
+<WLJSWrapper>
+<div className="code-input"/>
+<wljs-editor display="codemirror" type="Input" editable="true" lazy="true">{`Labeled[
+	  Plot[Sin[x], {x, 0, 2 Pi}],
+	  Style[Row[{"range: ", 0, " to ", 2 Pi}], Gray],
+	  Bottom
+	]`}</wljs-editor>
+</WLJSWrapper>
+
+<WLJSWrapper>
+<wljs-editor display="codemirror" type="Output" lazy="true">{`(*GB[*){{(*BB[*)((*VB[*)(FrontEndRef["7afd1f2c-a2b0-41eb-9084-069e16e22aad"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKmyempRimGSXrJholGeiaGKYm6VoaWJjoGphZphqapRoZJSamAACNXRXx"*)(*]VB*))(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KWnMIB4vkAjLTC13SU3OL0osyS8KBskHJOalpjHBVAeV5qQWcwIZjjmZ6Xm5qXklCDmfzOKSYjYgwxkonFpUzAFkOiUWp+ZkYpgggCQVkF+cWZKZn4eiHgAIiyhB"*)(*]BB*)(*VB[*)(**)(*,*)(*"1:eJxTTMoPSmNiYGAo5gUSYZmp5S6pyflFiSX5RcEsQBHPktRciDyIF1Sak1osAGS4pKYlluaUOCUWpwaXVOakBrMDBX0Sk1JzUlMAU+0Vnw=="*)(*]VB*)}(*||*),(*||*){(*BB[*)((*GB[*){{"range: "(*|*),(*|*)0(*|*),(*|*)" to "(*|*),(*|*)2 \\[Pi]}}(*||*)(*1:eJxTTMoPSmNkYGAo5gUSYZmp5S6pyflFiSX5RcEsQBH3oswUAJ89CUc=*)(*]GB*))(*,*)(*"1:eJxTTMoPSmNiYGAo5gMSwSWVOakuqcn5RYkl+UVpjCBxTiDhXpRY6ZNalppTxAAGD+wheliARFBpTmoxD1hzUWaBf55nXkFpSTErUMAtMac4FQB5ixgZ"*)(*]BB*)(*VB[*)(**)(*,*)(*"1:eJxTTMoPSmNiYGAo5gUSYZmp5S6pyflFiSX5RcEsQBHPktRciDyIF1Sak1osAGS4pKYlluaUOCUWpwaXVOakBvMABX0Sk1JzUlPAFADFtBeE"*)(*]VB*)}}(*||*)(*1:eJxTTMoPSmNmYGAo5gUSYZmp5S6pyflFiSX5RcEsQBH3osyUNCaQPIgXVJqTWiwAFXbKr3DMyUzPy03NK0Eo8cksLkHVEMwOZDjn55Tm5hWnMaKoQ+EVs4HUAQ1LLUIzAMzILydPN9i9TonFqTmZeakB+cWZJZn5eajuzQSZBCYAfcc7lA==*)(*]GB*)`}</wljs-editor>
+</WLJSWrapper>
+
+### Invisible metadata
+
+[`Annotation`](./../Formatting/Annotation) stores metadata without changing the
+visible result:
+
+<WLJSWrapper>
+<div className="code-input"/>
+<wljs-editor display="codemirror" type="Input" editable="true" lazy="true">{`annotated = Table[Annotation[i, PrimeQ[i]], {i, 20}]`}</wljs-editor>
+</WLJSWrapper>
+
+<WLJSWrapper>
+<wljs-editor display="codemirror" type="Output" lazy="true">{`{1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20}`}</wljs-editor>
+</WLJSWrapper>
+
+You can later recover matching expressions:
+
+<WLJSWrapper>
+<div className="code-input"/>
+<wljs-editor display="codemirror" type="Input" editable="true" lazy="true">{`Cases[annotated, Annotation[_, True]]`}</wljs-editor>
+</WLJSWrapper>
+
+<WLJSWrapper>
+<wljs-editor display="codemirror" type="Output" lazy="true">{`{2,3,5,7,11,13,17,19}`}</wljs-editor>
+</WLJSWrapper>
+
+Annotations are also used by higher-level functions. For example, an annotation
+on a graph edge can provide its label:
+
+<WLJSWrapper>
+<div className="code-input"/>
+<wljs-editor display="codemirror" type="Input" editable="true" lazy="true">{`Graph[{
+	  Annotation[1 <-> 2, EdgeLabels -> "hello"],
+	  2 <-> 3,
+	  3 <-> 1
+	}]`}</wljs-editor>
+</WLJSWrapper>
+
+<WLJSWrapper>
+<wljs-editor display="codemirror" type="Output" lazy="true">{`(*VB[*)(Graph[{1, 2, 3}, {UndirectedEdge[1, 2], UndirectedEdge[2, 3], UndirectedEdge[3, 1]}, {EdgeLabels -> {UndirectedEdge[1, 2] -> "hello"}}])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKG6QYWViamlvoplmaJuqamKeZ6VqkpZrqphmZW5pYppgmGRmYAgB8UBU5"*)(*]VB*)`}</wljs-editor>
+</WLJSWrapper>
+
+In graph expressions, `1 <-> 2` is the compact notation for an undirected edge.
+
+Use `Labeled` when a user should see the information; use `Annotation` when code
+should carry and inspect it.
+
+## Editable output and `Deploy`
+
+Formatted `StandardForm` output in WLJS is usually still selectable and
+editable. For example, evaluating a `TableForm` result produces a decorated
+table, but its cells represent ordinary Wolfram Language expressions. You can
+copy or edit the decorated result and evaluate it again as input.
+
+This differs from the usual experience in Wolfram Mathematica. WLJS stores
+visual structure as decorations over text-compatible input rather than relying
+exclusively on Mathematica box expressions.
+
+<Callout type="warning">
+This is a WLJS-specific feature and does not work the same way in Wolfram
+Mathematica. Mathematica copies frontend box structures or preserves formatting
+wrappers; WLJS decorations can be pasted and reevaluated as ordinary list-based
+Wolfram Language input.
+</Callout>
+
+### Copy a formatted table back into a variable
+
+Evaluate a table with row and column headings:
+
+<WLJSWrapper>
+<div className="code-input"/>
+<wljs-editor display="codemirror" type="Input" editable="true" lazy="true">{`TableForm[
+	  {{5, 7}, {4, 2}, {10, 3}},
+	  TableHeadings -> {
+	    {"Group A", "Group B", "Group C"},
+	    {"y1", "y2"}
+	  }
+	]`}</wljs-editor>
+</WLJSWrapper>
+
+<WLJSWrapper>
+<wljs-editor display="codemirror" type="Output" lazy="true">{`(*GB[*){{(*BB[*)(None)(*,*)(*"1:eJxTTMoPSmNiYGAo5gMSwSWVOakuqcn5RYkl+UUQcRYgEVSak1osAlKQkV8eXFKUmZfunJFYlJhcklpUXMwKlHBLzClORdUQzAPV4JyfV5KaV4KkEAAnBR+D"*)(*]BB*)(*|*),(*|*)"y1"(*|*),(*|*)"y2"}(*||*),(*||*){"Group A"(*|*),(*|*)5(*|*),(*|*)7}(*||*),(*||*){"Group B"(*|*),(*|*)4(*|*),(*|*)2}(*||*),(*||*){"Group C"(*|*),(*|*)10(*|*),(*|*)3}}(*||*)(*1:eJytj8EOgjAMhqfR6MXoK/goItGLJzDeJ3SkydjMuomP7wYiiiHh4KX5+/dL/3Z71YmYMcZo5csFoYoh04ZbbdJgHw3mYhrmoUucBFq/7Eg/YrxjDoY64oRkv/l04cVeS1cqapJajuZeHLgkqK2zcSAmA8Bb9ZbXQlf/3/z5ZnrjGapi9JsYsgYORfYzo00XtZNYqBKUHZvVICD6SJtHSy8iTiBRwRPvv20n*)(*]GB*)`}</wljs-editor>
+</WLJSWrapper>
+
+Select the displayed table, copy it, then paste it after `data =` in a new input
+cell. The pasted expression remains visually formatted in the editor, but its
+underlying Wolfram Language is equivalent to:
+
+<WLJSWrapper>
+<div className="code-input"/>
+<wljs-editor display="codemirror" type="Input" editable="true" lazy="true">{`data = (*GB[*){{(*BB[*)(None)(*,*)(*"1:eJxTTMoPSmNiYGAo5gMSwSWVOakuqcn5RYkl+UUQcRYgEVSak1osAlKQkV8eXFKUmZfunJFYlJhcklpUXMwKlHBLzClORdUQzAPV4JyfV5KaV4KkEAAnBR+D"*)(*]BB*)(*|*),(*|*)"y1"(*|*),(*|*)"y2"}(*||*),(*||*){"Group A"(*|*),(*|*)5(*|*),(*|*)7}(*||*),(*||*){"Group B"(*|*),(*|*)4(*|*),(*|*)2}(*||*),(*||*){"Group C"(*|*),(*|*)10(*|*),(*|*)3}}(*||*)(*1:eJytj8EOgjAMhqfR6MXoK/goItGLJzDeJ3SkydjMuomP7wYiiiHh4KX5+/dL/3Z71YmYMcZo5csFoYoh04ZbbdJgHw3mYhrmoUucBFq/7Eg/YrxjDoY64oRkv/l04cVeS1cqapJajuZeHLgkqK2zcSAmA8Bb9ZbXQlf/3/z5ZnrjGapi9JsYsgYORfYzo00XtZNYqBKUHZvVICD6SJtHSy8iTiBRwRPvv20n*)(*]GB*);`}</wljs-editor>
+</WLJSWrapper>
+
+The table itself is still editable. Try changing 5 to 7.
+
+After evaluation, `data` is an ordinary list of lists rather than a table
+widget:
+
+<WLJSWrapper>
+<div className="code-input"/>
+<wljs-editor display="codemirror" type="Input" editable="true" lazy="true">{`Head[data]`}</wljs-editor>
+</WLJSWrapper>
+
+<WLJSWrapper>
+<wljs-editor display="codemirror" type="Output" lazy="true">{`List`}</wljs-editor>
+</WLJSWrapper>
+
+
+<WLJSWrapper>
+<div className="code-input"/>
+<wljs-editor display="codemirror" type="Input" editable="true" lazy="true">{`Dimensions[data]`}</wljs-editor>
+</WLJSWrapper>
+
+<WLJSWrapper>
+<wljs-editor display="codemirror" type="Output" lazy="true">{`{4,3}`}</wljs-editor>
+</WLJSWrapper>
+
+
+<WLJSWrapper>
+<div className="code-input"/>
+<wljs-editor display="codemirror" type="Input" editable="true" lazy="true">{`data[[2, 2]]`}</wljs-editor>
+</WLJSWrapper>
+
+<WLJSWrapper>
+<wljs-editor display="codemirror" type="Output" lazy="true">{`5`}</wljs-editor>
+</WLJSWrapper>
+
+The copied headings become the first row and first column. To recover only the
+original numeric matrix, select rows and columns from the second to the last:
+
+<WLJSWrapper>
+<div className="code-input"/>
+<wljs-editor display="codemirror" type="Input" editable="true" lazy="true">{`data[[2 ;;, 2 ;;]]`}</wljs-editor>
+</WLJSWrapper>
+
+<WLJSWrapper>
+<wljs-editor display="codemirror" type="Output" lazy="true">{`{{5,7},{4,2},{10,3}}`}</wljs-editor>
+</WLJSWrapper>
+
+
+`expr[[row, column]]` is Wolfram Language's one-based part syntax, roughly
+corresponding to two-dimensional indexing in Python or Julia. The span `2 ;;`
+means “from position 2 through the end.”
+
+### `MatrixForm`, `Row`, and `Column`
+
+The same copy-and-paste workflow works with [`MatrixForm`](./../Formatting/MatrixForm):
+
+<WLJSWrapper>
+<div className="code-input"/>
+<wljs-editor display="codemirror" type="Input" editable="true" lazy="true">{`MatrixForm[{{a, b}, {c, d}}]`}</wljs-editor>
+</WLJSWrapper>
+
+<WLJSWrapper>
+<wljs-editor display="codemirror" type="Output" lazy="true">{`(*GB[*){{a(*|*),(*|*)b}(*||*),(*||*){c(*|*),(*|*)d}}(*||*)(*1:eJxTTMoPSmNkYGAo5gUSYZmp5S6pyflFiSX5RcFsQBHfxJKizAoAs04KOA==*)(*]GB*)`}</wljs-editor>
+</WLJSWrapper>
+
+Copy the displayed matrix and paste it after an assignment. Reevaluating it
+produces an ordinary list of lists:
+
+<WLJSWrapper>
+<div className="code-input"/>
+<wljs-editor display="codemirror" type="Input" editable="true" lazy="true">{`matrixData = (*GB[*){{a(*|*),(*|*)b}(*||*),(*||*){c(*|*),(*|*)d}}(*||*)(*1:eJxTTMoPSmNkYGAo5gUSYZmp5S6pyflFiSX5RcFsQBHfxJKizAoAs04KOA==*)(*]GB*);
+	
+	matrixData[[2, 1]]`}</wljs-editor>
+</WLJSWrapper>
+
+<WLJSWrapper>
+<wljs-editor display="codemirror" type="Output" lazy="true">{`c`}</wljs-editor>
+</WLJSWrapper>
+
+The layout decorations created by [`Row`](./../Formatting/Row) and
+[`Column`](./../Formatting/Column) can be reused in the same way. A copied row
+reevaluates as a list containing one row:
+
+<WLJSWrapper>
+<div className="code-input"/>
+<wljs-editor display="codemirror" type="Input" editable="true" lazy="true">{`Row[{1, " -> ", 2}]`}</wljs-editor>
+</WLJSWrapper>
+
+<WLJSWrapper>
+<wljs-editor display="codemirror" type="Output" lazy="true">{`(*GB[*){{1(*|*),(*|*)" -> "(*|*),(*|*)2}}(*||*)(*1:eJxTTMoPSmNkYGAo5gUSYZmp5S6pyflFiSX5RcEsQBH3oswUAJ89CUc=*)(*]GB*)`}</wljs-editor>
+</WLJSWrapper>
+
+Its underlying structure is equivalent to:
+
+<WLJSWrapper>
+<div className="code-input"/>
+<wljs-editor display="codemirror" type="Input" editable="true" lazy="true">{`rowData = (*GB[*){{1(*|*),(*|*)" -> "(*|*),(*|*)2}}(*||*)(*1:eJxTTMoPSmNkYGAo5gUSYZmp5S6pyflFiSX5RcEsQBH3oswUAJ89CUc=*)(*]GB*);
+	rowData[[1, 3]]`}</wljs-editor>
+</WLJSWrapper>
+
+<WLJSWrapper>
+<wljs-editor display="codemirror" type="Output" lazy="true">{`2`}</wljs-editor>
+</WLJSWrapper>
+
+A copied column reevaluates as a list containing one list for each row:
+
+<WLJSWrapper>
+<div className="code-input"/>
+<wljs-editor display="codemirror" type="Input" editable="true" lazy="true">{`Column[{1, 2, 3}]`}</wljs-editor>
+</WLJSWrapper>
+
+<WLJSWrapper>
+<wljs-editor display="codemirror" type="Output" lazy="true">{`(*GB[*){{1}(*||*),(*||*){2}(*||*),(*||*){3}}(*||*)(*1:eJxTTMoPSmNiYGAo5gUSYZmp5S6pyflFiSX5RcEsQBH3oswUiDyIF1Sak1osABV2yq9wzMlMz8tNzStJY4Qp8cksLkHVEMwOZDjn55Tm5hWjqUPhQRipaSUAIwUhsg==*)(*]GB*)`}</wljs-editor>
+</WLJSWrapper>
+
+Its underlying structure is equivalent to:
+
+<WLJSWrapper>
+<div className="code-input"/>
+<wljs-editor display="codemirror" type="Input" editable="true" lazy="true">{`columnData = (*GB[*){{1}(*||*),(*||*){2}(*||*),(*||*){3}}(*||*)(*1:eJxTTMoPSmNiYGAo5gUSYZmp5S6pyflFiSX5RcEsQBH3oswUiDyIF1Sak1osABV2yq9wzMlMz8tNzStJY4Qp8cksLkHVEMwOZDjn55Tm5hWjqUPhQRipaSUAIwUhsg==*)(*]GB*);
+	columnData[[2, 1]]`}</wljs-editor>
+</WLJSWrapper>
+
+<WLJSWrapper>
+<wljs-editor display="codemirror" type="Output" lazy="true">{`2`}</wljs-editor>
+</WLJSWrapper>
+
+Likewise, copy the displayed result of:
+
+<WLJSWrapper>
+<div className="code-input"/>
+<wljs-editor display="codemirror" type="Input" editable="true" lazy="true">{`Style[1/Sqrt[2], 18, Red]`}</wljs-editor>
+</WLJSWrapper>
+
+<WLJSWrapper>
+<wljs-editor display="codemirror" type="Output" lazy="true">{`(*BB[*)((*FB[*)((1)(*,*)/(*,*)((*SqB[*)Sqrt[2](*]SqB*)))(*]FB*))(*,*)(*"1:eJxTTMoPSmNmYGAo5gMSwSWVOakuqcn5RYkl+UWZQkAhiCQHkAhyd3LOzwEKMwI5mQwwIo0JpIAFpKA0J7WYB2xMUWaBf55nXkFpSTErUMAtMac4FQDVJReQ"*)(*]BB*)`}</wljs-editor>
+</WLJSWrapper>
+
+Paste it into a new input cell and continue calculating with it:
+
+<WLJSWrapper>
+<div className="code-input"/>
+<wljs-editor display="codemirror" type="Input" editable="true" lazy="true">{`styledValue = (*BB[*)((*FB[*)((1)(*,*)/(*,*)((*SqB[*)Sqrt[2](*]SqB*)))(*]FB*))(*,*)(*"1:eJxTTMoPSmNmYGAo5gMSwSWVOakuqcn5RYkl+UWZQkAhiCQHkAhyd3LOzwEKMwI5mQwwIo0JpIAFpKA0J7WYB2xMUWaBf55nXkFpSTErUMAtMac4FQDVJReQ"*)(*]BB*);
+	styledValue / 2`}</wljs-editor>
+</WLJSWrapper>
+
+<WLJSWrapper>
+<wljs-editor display="codemirror" type="Output" lazy="true">{`(*FB[*)((1)(*,*)/(*,*)(2 ((*SqB[*)Sqrt[2](*]SqB*))))(*]FB*)`}</wljs-editor>
+</WLJSWrapper>
+
+In WLJS the pasted fraction may still look red and enlarged while you edit it,
+but reevaluation uses the underlying expression `1/Sqrt[2]`. The styling is
+decoration, not a conversion to an image or string.
+
+<Callout type="note">
+This copy-and-paste behavior is different from assigning the wrapper itself.
+For reusable computations, keep the raw list in a variable and write
+`TableForm[data]` only when displaying it. Copying decorated output is most
+useful for editing a result in place or turning a small visual table back into
+input.
+</Callout>
+
+When a result is finished and should behave as one presentation object, wrap it
+with [`Deploy`](./../Formatting/Deploy):
+
+<WLJSWrapper>
+<div className="code-input"/>
+<wljs-editor display="codemirror" type="Input" editable="true" lazy="true">{`Deploy @ Row[{
+	  Graphics[{Red, Disk[]}, ImageSize -> {18, 18}, PlotRange -> 2],
+	  Style["Ready", Bold, Darker[Green]]
+	}, Alignment -> {{Right, Left}, Center}, ImageSize -> 300]`}</wljs-editor>
+</WLJSWrapper>
+
+<WLJSWrapper>
+<wljs-editor display="codemirror" type="Output" lazy="true">{`(*GB[*){{(*VB[*)(Graphics[{RGBColor[1, 0, 0], Disk[{0, 0}]}, ImageSize -> {18, 18}, PlotRange -> 2])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KWnMIB4HkHAvSizIyEwuTmOCyftkFpcg5IPcnZzzc/KLMkH6MxlgBMI4l8zibFTNSKrg4kGlOanFnECGZ25iempwZlUqmh4hkB4h7HoCcvJLghLz0lMzQXIAEh0ltg=="*)(*]VB*)(*|*),(*|*)(*BB[*)("Ready")(*,*)(*"1:eJxTTMoPSmNiYGAo5gcSAUX5ZZkpqSn+BSWZ+XnFEAk+IBFcUpmT6pKanF+UWJJfVMwCFHLKz0lJYwYp4AASQe5Ozvk5+UWZQDYDRB9YOBFkUGJOJkgkE6QaSQHIlKDSnNRgNrANRZl56WCxkKLSVAC8UiHP"*)(*]BB*)}}(*||*)(*1:eJxdTssKAjEQq+IDBcFf8O5P+EARPG3Be3ed1oE+oNNlxa93qoK0lyHJJCGbNjR6IoSgFZ8bwnCELkSVQpRZPke863H+Z9b0Fmj9k/fhubNovAOf/pYrUioDcs7gEGzvPJU+mmYLmkf6SqDr6AeEgfSo6C8YzXI/j4BYLV0wuDhlQOILcMupyrBkIMFCl1TLNM85KUvwBjsPPks=*)(*]GB*)`}</wljs-editor>
+</WLJSWrapper>
+
+`Deploy` traverses the complete displayed expression and makes the decorated
+content non-selectable and non-editable. It is particularly useful for
+dashboards, controls, and presentation output:
+
+<WLJSWrapper>
+<div className="code-input"/>
+<wljs-editor display="codemirror" type="Input" editable="true" lazy="true">{`Deploy @ Panel[
+	  Grid[{
+	    {"Name", InputText[]},
+	    {"Value", InputRange[0, 1, 0.1]}
+	  }, Alignment -> {{Left, Right}, Center}, Spacings->{1,0}],
+	  "Controls"
+	]`}</wljs-editor>
+</WLJSWrapper>
+
+<WLJSWrapper>
+<wljs-editor display="codemirror" type="Output" lazy="true">{`(*GB[*){{"Controls"(*VB[*)(**)(*,*)(*"1:eJxTTMoPSmNmYGAo5gUSYZmp5S6pyflFiSX5RcEsQBHPktTcNCaQPIgXVJqTWswJZDjmZKbn5abmlSDkfDKLSyCM1LQSsCLPvIzUosyS1BQ0AwSADJfUtMTSnBKnxOLU4JLKnNRgLqBgQGJeao5PYlJqDgCpyyXx"*)(*]VB*)}(*||*),(*||*){(*BB[*)((*BB[*)(Panel[(*GB[*){{"Name"(*|*),(*|*)(*VB[*)(EventObject[<|"Id" -> "9154c853-e04e-4f8a-b6ee-e13b13740357", "Initial" -> "", "View" -> "d85203ba-ff22-489e-b796-d7d7cb3d2c90"|>])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKp1iYGhkYJyXqpqUZGemaWFim6iaZW5rpppinmCcnGacYJVsaAACG2RXe"*)(*]VB*)}(*||*),(*||*){"Value"(*|*),(*|*)(*VB[*)(EventObject[<|"Id" -> "403e6cea-2f90-4bb3-882f-998485c302b2", "Initial" -> 0.5, "View" -> "16a3c955-86f2-46eb-b6f9-b10f3f20e99f"|>])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKG5olGidbmprqWpilGemamKUm6SaZpVnqJhkapBmnGRmkWlqmAQCAtxWz"*)(*]VB*)}}(*||*)(*1:eJydkM0KwjAQhKP4A4LoK/goatGLpwa8p3FTF9JEsin18c2qUFJBxEuY2cxsPrKpfGkmQghapuOM0BWgfVDRB8njY8CLGfM9u7K1QOv3eOfvW4u1a8DFPnJCinlBzpPYe9s2jvLcS4CJNOUs1tdh9Sl8R2aU7c8czXh/goAwIF31pPKmNLqafgb98iCy+wMUxUePFklIsKCjqpLlfzgoS/AA7QZXhQ==*)(*]GB*)])(*,*)(*"1:eJxTTMoPSmNiYGAo5gcSAUX5ZZkpqSn+BSWZ+XnFEAleIBGWmVrukpqcX5RYkl8UzApSmpiXmgNRwAIkgkpzUou5gIzg1JzU5JLEJCAXpMwtMac4FVVZMIjhkZqYgjAHAN5SIJk="*)(*]BB*))(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KWnMIB4vkAjLTC13SU3OL0osyS8KBskHJOalpjHBVAeV5qQWcwIZjjmZ6Xm5qXklCDmfzOKSYjYgwxkonFpUzAFkOiUWp+ZkYpgggCQVkF+cWZKZn4eiHgAIiyhB"*)(*]BB*)(*VB[*)(**)(*,*)(*"1:eJxTTMoPSmNiYGAo5gUSYZmp5S6pyflFiSX5RcEsQBHPktRciDyIF1Sak1osAGS4pKYlluaUOCUWpwaXVOakBrMDBX0Sk1JzUlMAU+0Vnw=="*)(*]VB*)}}(*||*)(*1:eJxTTMoPSmNmYGAo5gUSYZmp5S6pyflFiSX5RcEsQBH3osyUNCaQPIgXVJqTWiwAFXbKr3DMyUzPy03NK0Eo8cksLkHVEMwOZDjn55Tm5hWnMaKoQ+EVs4HUAQ1LLUIzAMzILydPN9i9TonFqTmZeakB+cWZJZn5eajuzQTxMkHGAQB90DuV*)(*]GB*)`}</wljs-editor>
+</WLJSWrapper>
+
+Apply `Deploy` last so the output remains easy to inspect and edit while you are
+building it.
+
+## Labels and legends in plots
+
+Plot labels do not have to be strings. You can pass formatted expressions
+directly:
+
+<WLJSWrapper>
+<div className="code-input"/>
+<wljs-editor display="codemirror" type="Input" editable="true" lazy="true">{`Plot[
+	  x^2,
+	  {x, 0, 1},
+	  Frame -> True,
+	  FrameLabel -> {
+	    "x",
+	    Row[{TraditionalForm[x^2], " value"}]
+	  }
+	]`}</wljs-editor>
+</WLJSWrapper>
+
+<WLJSWrapper>
+<wljs-editor display="codemirror" type="Output" lazy="true">{`(*VB[*)(FrontEndRef["9fea110f-2aa2-4f5b-bc95-c1bf1bf4666f"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKW6alJhoaGqTpGiUmGumapJkm6SYlW5rqJhsmpQGRiZmZWRoAklUWWw=="*)(*]VB*)`}</wljs-editor>
+</WLJSWrapper>
+
+[`Placed`](./../Formatting/Placed) controls the position of legends and other
+supported elements. [`TeXView`](./../GUI/TeXView) can render a label supplied as
+LaTeX:
+
+<WLJSWrapper>
+<div className="code-input"/>
+<wljs-editor display="codemirror" type="Input" editable="true" lazy="true">{`Plot[
+	  x^2,
+	  {x, 0, 1},
+	  PlotLegends -> Placed[
+	    {TeXView["x^2"]},
+	    {0.2, 0.7}
+	  ]
+	]`}</wljs-editor>
+</WLJSWrapper>
+
+<WLJSWrapper>
+<wljs-editor display="codemirror" type="Output" lazy="true">{`(*VB[*)(Legended[ToExpression[FrontEndRef["c30ce5a4-067a-43ef-a6e1-490668e888dc"], InputForm], Placed[LineLegend[{Directive[Opacity[1.], RGBColor[0.24, 0.6, 0.8], AbsoluteThickness[2]]}, {TeXView[Offload[URLDecode["x%5E2"]]]}, LegendMarkers -> None, LabelStyle -> {}, LegendLayout -> "Column"], {0.2, 0.7}, Identity]])(*,*)(*"1:eJxdUUtOwzAUDNDyEyzgAEhIsIxU+glhFQENCClQaApi6zjPENXYyHGgOQCHgJP0Cmy4BBISYsMR8Ke0at9iZI3nPc8bbye8SxYcx8nXFdxk8NwGzAWSXMRLiongDlhat5JVBWGaqTstJHOa21RwIjiTIUvDAeBCooRCvKNo3KhhaKGmW/P2kdtsAHGRB3tu86DmeT74vp9iMq+HVBR0C9W2rA+A0g6jpWF7ooAZjXYRAwVsXsqr2gCiOViPiwouKcKQkuq/5yhjYBexniuGy6XtWFHQzoSalz2BFejNO48IZ7IUjqnfwIqNwdOjY065EMOtl5+r4UcgGqY+A/H2qus7sGM2FBwmOaeFhN59hvsM8jzT28z4GD/ag9tJtMYFIZSjkW/t9Lob6R9KIdbrDXZbYX06H/ORdttzJPogcnN1wdlMkDYalACNZUmBOFOWpqVr45kRKnkhYx2zCqF4YBOl7hsl8B4IYuorMJGdpcCkSvMPEeacHw=="*)(*]VB*)`}</wljs-editor>
+</WLJSWrapper>
+
+Use `Row` when a label combines mathematical and ordinary content:
+
+<WLJSWrapper>
+<div className="code-input"/>
+<wljs-editor display="codemirror" type="Input" editable="true" lazy="true">{`Plot[
+	  x^2,
+	  {x, 0, 1},
+	  PlotLegends -> Placed[
+	    {Row[{TeXView["x^2"], Spacer[5], "function"}]},
+	    {0.2, 0.7}
+	  ]
+	]`}</wljs-editor>
+</WLJSWrapper>
+
+<WLJSWrapper>
+<wljs-editor display="codemirror" type="Output" lazy="true">{`(*VB[*)(Legended[ToExpression[FrontEndRef["29c2351b-cd23-4b94-8826-256492254696"], InputForm], Placed[LineLegend[{Directive[Opacity[1.], RGBColor[0.24, 0.6, 0.8], AbsoluteThickness[2]]}, {Row[{TeXView[Offload[URLDecode["x%5E2"]]], Spacer[5], "function"}]}, LegendMarkers -> None, LabelStyle -> {}, LegendLayout -> "Column"], {0.2, 0.7}, Identity]])(*,*)(*"1:eJxdUklOwzAUDdAyCRZwACQkWHaBO6hdRUALQioUmoLYOsk3WDU2chzaHoBDwEl6BTZcAgkJseEI+NtlaP/iKf6T33vOdqy6bCEIgmzdwhWHQRMSpalROlqymTbcgEyJb1m10Eq5rWEjm8PcpoUjraRpybQ1hCQ3NBYQ7dg0aSSkXN2LS0lKyqVK3KiU6nVSK5FqrdIgpFqpNWpsHpcULHRzO7aMH0DTjhQjl+3pHGZ6kEUEAhJ3U1ZEAlRk4DkuWjgXNIGUFX84t7kEL8RzLrhcZvzEioUm13YffwDfgMo79zThZqQDF1+hb3YEjw8OlVBaj7cePy/Gr6Euu3gL9fMTxkfo12xY2I8zJXIDvVue9CVkGUc1MzzcCfd31cDfM11CPj24/nPdEWRMKDqRhCIuu218vBQiVD7crbaIL6InkZUDmmPFucxyaQUrOW2u+wu8VadU90FnrnSm5MwreF9pDCIyIwEsmCI93br2u7NNRyo3EfKxDuZ3/27HuYl9L6FmLt5D5/dJCtLYp/gGmBOm0Q=="*)(*]VB*)`}</wljs-editor>
+</WLJSWrapper>
+
+## Place expressions inside graphics
+
+[`Inset`](./../Graphics/Inset) places an arbitrary expression on a
+two-dimensional graphics canvas. This can be text, held Wolfram Language,
+another graphic, an image, or a UI view.
+
+Use `HoldForm` when the displayed expression should not evaluate:
+
+<WLJSWrapper>
+<div className="code-input"/>
+<wljs-editor display="codemirror" type="Input" editable="true" lazy="true">{`Plot[
+	  x,
+	  {x, 0, 10},
+	  Epilog -> {
+	    Inset[HoldForm[1 + 1], {5, 5}, Center]
+	  }
+	]`}</wljs-editor>
+</WLJSWrapper>
+
+<WLJSWrapper>
+<wljs-editor display="codemirror" type="Output" lazy="true">{`(*VB[*)(FrontEndRef["87c8f413-5a8b-4fbb-bb12-1e20955d8a61"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKW5gnW6SZGBrrmiZaJOmapCUl6SYlGRrpGqYaGViamqZYJJoZAgCGbhWf"*)(*]VB*)`}</wljs-editor>
+</WLJSWrapper>
+
+Another complete graphic can be inset as well:
+
+<WLJSWrapper>
+<div className="code-input"/>
+<wljs-editor display="codemirror" type="Input" editable="true" lazy="true">{`smallPlot = Plot[
+	  Sin[x],
+	  {x, 0, 10},
+	  Frame -> True,
+	  FrameTicks -> None,
+	  ImageSize -> 120
+	];
+	
+	Graphics[{
+	  Circle[{0, 0}, 2],
+	  Inset[smallPlot, {0, 0}, Center, {2.5, 1.5}]
+	}, PlotRange -> 3, ImageSize -> 300]`}</wljs-editor>
+</WLJSWrapper>
+
+<WLJSWrapper>
+<wljs-editor display="codemirror" type="Output" lazy="true">{`(*VB[*)(FrontEndRef["0df6e31f-793d-4d6e-9d78-5dc44118696d"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKG6SkmaUaG6bpmlsap+iapJil6lqmmFvomqYkm5gYGlqYWZqlAACIXBWP"*)(*]VB*)`}</wljs-editor>
+</WLJSWrapper>
+
+## LaTeX conversion
+
+[`TeXForm`](./../Formatting/TeXForm) exports a Wolfram expression as a LaTeX
+string:
+
+<WLJSWrapper>
+<div className="code-input"/>
+<wljs-editor display="codemirror" type="Input" editable="true" lazy="true">{`tex = TeXForm[Series[Sin[x], {x, 0, 7}] // Normal]`}</wljs-editor>
+</WLJSWrapper>
+
+<WLJSWrapper>
+<wljs-editor display="codemirror" type="Output" lazy="true">{`"-\\\\frac{x^7}{5040}+\\\\frac{x^5}{120}-\\\\frac{x^3}{6}+x"`}</wljs-editor>
+</WLJSWrapper>
+
+`Normal` converts the truncated series object to an ordinary polynomial before
+it is exported.
+
+That string can be rendered with [`TeXView`](./../GUI/TeXView):
+
+<WLJSWrapper>
+<div className="code-input"/>
+<wljs-editor display="codemirror" type="Input" editable="true" lazy="true">{`TeXView[tex]`}</wljs-editor>
+</WLJSWrapper>
+
+<WLJSWrapper>
+<wljs-editor display="codemirror" type="Output" lazy="true">{`(*VB[*)(Null)(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRAeO5AISY0Iy0wtRwj4p6Xl5CdCVXACidAgH5fU5PyU1OBIIE9X1dQ5rSgxWdXcqULV1NVc1dwFyDQ1MDEAsYycUKVNIdKGRiBZNK3GEDkziL4KAIJqJTI="*)(*]VB*)`}</wljs-editor>
+</WLJSWrapper>
+
+It can also be pasted into a [Markdown](./../Cell-types/Markdown) cell:
+
+<WLJSWrapper>
+<div className="code-input"/>
+<wljs-editor display="codemirror" type="Input" editable="true" lazy="true">{`.md
+
+	$$
+	-\\frac{x^7}{5040}+\\frac{x^5}{120}-\\frac{x^3}{6}+x
+	$$`}</wljs-editor>
+</WLJSWrapper>
+
+Or placed directly in a LaTeX cell:
+
+<WLJSWrapper>
+<div className="code-input"/>
+<wljs-editor display="codemirror" type="Input" editable="true" lazy="true">{`.latex
+	
+	-\\frac{x^7}{5040}+\\frac{x^5}{120}-\\frac{x^3}{6}+x`}</wljs-editor>
+</WLJSWrapper>
+
+For supported LaTeX input, `ToExpression` performs the reverse conversion:
+
+<WLJSWrapper>
+<div className="code-input"/>
+<wljs-editor display="codemirror" type="Input" editable="true" lazy="true">{`ToExpression["\\\\frac{x^5}{120}-\\\\frac{x^3}{6}+x", TeXForm]`}</wljs-editor>
+</WLJSWrapper>
+
+Do not confuse `TeXForm` with `TraditionalForm`: `TraditionalForm` is an
+in-notebook visual representation, while `TeXForm` produces text for
+interchange with LaTeX-based tools.
+
+<Callout type="note">
+`TeXForm` is blocking. For buttons, animations, timers, and other interactive
+code, use the non-blocking [`TeXFormAsync`](./../Formatting/TeXFormAsync)
+variant.
+</Callout>
+
+## Compact large expressions
+
+Large lists, graphics options, and generated expressions can make a notebook
+difficult to navigate. [`Iconize`](./../Formatting/Iconize) replaces an
+expression with a compact icon:
+
+<WLJSWrapper>
+<div className="code-input"/>
+<wljs-editor display="codemirror" type="Input" editable="true" lazy="true">{`data = Range[100] // Iconize`}</wljs-editor>
+</WLJSWrapper>
+
+<WLJSWrapper>
+<wljs-editor display="codemirror" type="Output" lazy="true">{`(*VB[*)(Uncompress["1:eJwl0jtOQzEQhtHLYyPsIJnxY7yEK6ViCQghUVGE/Yvg0/yfmzmV3z5+3r8+j+O4vz7m9n3/PZ8ej+ve2Jt7296+d+yde2vvOp//ry5ylZCUJl2GTCmhBCUoQQlKUIISlKAEJShJSUpSkpKUpCQlKUlJSqM0SqM0SqM0SqM0SqM0Sqd0Sqd0Sqd0Sqd0Sqd0yqAMyqAMyqAMyqAMyqAMyqRMyqRMyqRMyqRMyqRMSlGKUpSiFKUoRSlKUYqyKIuyKIuyKIuyKIuyKGudL/vXXf4AYh9I6w=="])(*,*)(*"1:eJxTTMoPSmNmYGAo5gUSYZmp5S6pyflFiSX5RcEcQBHP5Py8zKrUlEwHRgaGNCaQQhYgEVSakxrMCmT4JCal5gSDhPLy87MB5DYSYw=="*)(*]VB*)`}</wljs-editor>
+</WLJSWrapper>
+
+You can also select an expression—or a sequence of expressions—and choose
+**Iconize** from the context menu or the
+[command palette](./Command-palette).
+
+Small iconized values are compressed into the notebook text. Expressions larger
+than 30,000 bytes are stored in the `.iconized/` directory next to the notebook
+and referenced by the icon.
+
+<Callout type="warning">
+If a notebook contains file-backed icons, keep its `.iconized/` directory when
+moving, sharing, or versioning the notebook.
+</Callout>
+
+Iconization changes how much source is visible, not what the expression
+represents. It is useful for embedded constants and generated arguments, but
+named variables or external data files are usually clearer when the same data
+is reused in several places.
+
+## When to use HTML or WLX instead
+
+`Style`, `Grid`, and related functions are a good fit for symbolic output that
+should remain close to Wolfram Language input. For a complete application page,
+responsive web layout, custom CSS, or reusable interface components, use
+[HTML cells](./../Cell-types/HTML) or [WLX cells](./../Cell-types/WLX).
+
+See [Styling with HTML](./Styling-HTML) for a guided introduction. Wolfram
+expressions can be embedded in those cells, and `StandardForm` can be used when
+you want their ordinary WLJS output-cell appearance.
+
+For custom formatting of your own symbolic heads, continue with
+[`MakeBoxes`](./../Formatting/MakeBoxes) and the
+[Decorating symbols](./../Advanced/Decorating-symbols) guide.

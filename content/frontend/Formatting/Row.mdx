@@ -7,7 +7,18 @@ env:
 ```wolfram
 Row[{object1, object2, ...}]
 ```
-shows the list of any Wolfram Expressions in a row acting as a decoration
+
+shows the list of any Wolfram Expressions in a row acting as a decoration. It supports many options for content aligment:
+
+```wolfram
+Row[{
+  Graphics[{Red, Disk[]}, ImageSize->{18,18}, PlotRange->2], 
+  Style["Hey there", Black]
+}, Alignment->{{Right, Left},Center}, ImageSize->400]
+```
+
+<Callout>Use [Deploy](./Deploy) to make the content uneditable and non-selectable</Callout>
+
 
 Or using it on slides with [WLX](frontend/Cell-types/WLX)
 

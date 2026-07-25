@@ -1,0 +1,1009 @@
+---
+title: Migration from Mathematica
+---
+
+WLJS Notebook uses a standard Wolfram Kernel, so most Wolfram Language code runs without modification. The main differences are in the notebook format and frontend: rich output, interactive controls, and dynamic evaluation are implemented differently from Wolfram Mathematica.
+
+This guide focuses on those differences and shows how to adapt common notebook patterns. WLJS currently tests more than 3,500 symbols against over 5,000 examples. Symbols that have not been tested are omitted from autocomplete and from the WLJS documentation, but they may still work when evaluated by the kernel.
+
+## Wolfram Language compatibility
+
+You can use the same standard library available in Mathematica or `wolframscript`, including external Wolfram Language packages and paclets. Paclets written for Mathematica are supported at the kernel level, although frontend features such as custom formatting or `Dynamic` may need adjustments.
+
+If you maintain a Wolfram Language library and need to return different output in WLJS, test the frontend with ``Internal`Kernel`WLJSQ``.
+
+## Notebook files
+
+WLJS stores notebooks as plain-text `*.wln` files. The format is readable by people and LLMs, produces useful diffs in Git, and can be edited with an external text editor.
+
+Opening a Mathematica `*.nb` file imports it into WLJS. You can also export a WLJS notebook as `*.nb`. Import support is still improving, so please report notebooks that do not convert correctly.
+
+## Input and output expressions
+
+In Mathematica, you usually enter an expression in an input cell:
+
+<WLJSWrapper>
+<div className="code-input"/>
+<wljs-editor type="Input" display="codemirror">{`1/2`}</wljs-editor>
+</WLJSWrapper>
+
+The frontend displays the result in `StandardForm`, using low-level box expressions such as:
+
+```wolfram
+FractionBox["1", "2"]
+```
+
+These box expressions are designed for the Mathematica frontend. They cannot be pasted directly into `wolframscript` or a plain-text source file without conversion.
+
+WLJS instead stores `StandardForm` as decorated `InputForm`. The same fraction is represented as:
+
+```wolfram
+(*FB[*)((1)(*,*)/(*,*)(2))(*]FB*)
+```
+
+The comments contain formatting metadata. Remove them and the remaining expression, `(1)/(2)`, is still valid Wolfram Language input. In normal use this distinction is nearly invisible, but it keeps notebook expressions compatible with text editors, version control, and LLM tools. The usual mathematical input shortcuts work in both input and output cells.
+
+## Text, equations, and stored state
+
+### Equations in text cells
+
+WLJS uses [Markdown cells](./../Cell-types/Markdown) for narrative content. To include a traditional mathematical expression, convert it to LaTeX with `TeXForm` and place it in a Markdown cell.
+
+Use two dollar signs for a display equation:
+
+```markdown
+.md
+Here is my expression:
+
+$$
+U = m c^2
+$$
+```
+
+Use single dollar signs for inline mathematics:
+
+```markdown
+.md
+Here is my expression: $U = m c^2$.
+```
+
+### Persisting expressions in a notebook
+
+Mathematica notebooks can preserve large expressions and interactive output even after the kernel has stopped. WLJS does the same unless a widget or decoration is marked *Data is on Kernel*. That label means the visible object depends on state that exists only in the running kernel.
+
+To preserve arbitrary kernel data with the notebook, write it to [`NotebookStore`](./../Cells-and-Notebook/NotebookStore):
+
+```wolfram
+NotebookWrite[NotebookStore["key"], 1 + 1];
+NotebookRead[NotebookStore["key"]]
+```
+
+## Cloud and AI services
+
+WLJS does not guarantee compatibility with Wolfram Cloud services. ChatBook and Wolfram LLM features are disabled or not included; WLJS instead provides [MCP connectivity](./Command-palette#mcp-server) for external tools and agents. The project remains focused on local-first, fully offline workflows.
+
+## TraditionalForm
+WLJS does support `TraditionalForm` expression converting Wolfram expressions to LaTeX-like equations and render them in-place. However, the inverse transformation is not possible.
+
+## Formatting
+Various elements such as `Pane`, `Panel`, `Grid` and etc support most of the options. Please check our documentation on them in the section *Formatting*.
+
+## Interactive evaluation
+
+Mathematica and WLJS use different frontend architectures. High-level functions such as `Manipulate`, `Animate`, and `Button` often need only small changes. Code built directly around `Dynamic`, `DynamicModule`, or two-way symbol bindings usually needs to be expressed with explicit events and targeted updates.
+
+| Mathematica pattern | WLJS pattern |
+| --- | --- |
+| `Dynamic[expr]` | `Refresh[expr, interval]` for polling, or `Offload` for pushed updates |
+| `DynamicModule` | `Module` |
+| `Slider[Dynamic[x], ...]` | `EventHandler[InputRange[...], ...]` |
+| Automatic dependency tracking | Explicit events and frontend dependencies |
+
+For a deeper explanation of the WLJS reactive model, see [Interactive evaluation and granular updates](./Dynamic).
+
+### Manipulate
+
+WLJS supports [`Manipulate`](./../GUI/Manipulate), with fewer options and less control over the layout of controls. `TrackedSymbols`, bookmarks, and the `Appearance` block are not supported. Check the symbol reference for the current list of supported options.
+
+<Callout type="info">
+`Manipulate` and `Animate` inspect the output expression and try to replace full reevaluation with granular frontend updates. If this optimization cannot be applied, the output falls back to full reevaluation and may update more slowly or flicker. Keep output structure and plot ranges stable when possible, follow the [`Manipulate` optimization recommendations](./../GUI/Manipulate#jit-transpiler), or build the interaction from lower-level primitives such as `Offload`.
+</Callout>
+
+Set `ContinuousAction -> True` when the output should update while a slider is being dragged rather than only after release:
+
+<CodeComparison>
+<CodeComparisonItem title="Mathematica">
+
+```wolfram
+Manipulate[
+  Plot[Sin[a x + b], {x, 0, 6}],
+  {{a, 2, "Frequency"}, 1, 4, 1},
+  {{b, 0, "Phase"}, 0, 10, 1}
+]
+```
+
+</CodeComparisonItem>
+<CodeComparisonItem title="WLJS">
+
+```wolfram
+Manipulate[
+  Plot[Sin[a x + b], {x, 0, 6}],
+  {{a, 2, "Frequency"}, 1, 4, 1},
+  {{b, 0, "Phase"}, 0, 10, 1},
+  ContinuousAction -> True
+]
+```
+
+</CodeComparisonItem>
+</CodeComparison>
+
+Optimization depends on the structure of the generated output. In the following example, `Sin` and `Cos` keep a stable set of graphics primitives. `Tan` and `Cot` can introduce additional `Line` primitives at discontinuities, causing WLJS to fall back to full reevaluation:
+
+<CodeComparison>
+<CodeComparisonItem title="Mathematica">
+
+```wolfram
+Manipulate[
+  Plot[f[x], {x, 0, 2 Pi}],
+  {f, {Sin, Cos, Tan, Cot}}
+]
+```
+
+</CodeComparisonItem>
+<CodeComparisonItem title="WLJS">
+
+```wolfram
+Manipulate[
+  Plot[f[x], {x, 0, 2 Pi}],
+  {f, {Sin, Cos, Tan, Cot}}
+]
+```
+
+</CodeComparisonItem>
+</CodeComparison>
+
+A fixed `PlotRange` can help prevent changes in the number of line segments. When an expression is inexpensive, full reevaluation can also be fast enough:
+
+<CodeComparison>
+<CodeComparisonItem title="Mathematica">
+
+```wolfram
+Manipulate[
+  Column[{
+    Style[StringTemplate["`` m/s"][v], Blue],
+    Table["🚗", {i, Floor[v/25]}] // Row
+  }],
+  {v, 10, 100}
+]
+```
+
+</CodeComparisonItem>
+<CodeComparisonItem title="WLJS">
+
+```wolfram
+Manipulate[
+  Column[{
+    Style[StringTemplate["`` m/s"][v], Blue],
+    Table["🚗", {i, Floor[v/25]}] // Row
+  }],
+  {v, 10, 100},
+  ContinuousAction -> True
+]
+```
+
+</CodeComparisonItem>
+</CodeComparison>
+
+Complex control layouts should be reduced to a flat list of control specifications:
+
+<CodeComparison>
+<CodeComparisonItem title="Mathematica">
+
+```wolfram
+Manipulate[
+  {x1, x2, x3},
+  Row[{
+    Control[{x1, 0, 1}],
+    Control[{x2, {1, 2, 3}}],
+    Control[{x3, {True, False}}]
+  }, Spacer[20]]
+]
+```
+
+</CodeComparisonItem>
+<CodeComparisonItem title="WLJS">
+
+```wolfram
+Manipulate[
+  {x1, x2, x3},
+  {x1, 0, 1},
+  {x2, {1, 2, 3}},
+  {x3, {True, False}}
+]
+```
+
+</CodeComparisonItem>
+</CodeComparison>
+
+Stable 3D graphics and images with fixed dimensions are also good candidates for granular updates:
+
+<CodeComparison>
+<CodeComparisonItem title="Mathematica">
+
+```wolfram
+Manipulate[
+  Plot3D[
+    Sin[n x] Cos[n y],
+    {x, -1, 1}, {y, -1, 1}
+  ],
+  {n, 1, 5, 0.3}
+]
+```
+
+</CodeComparisonItem>
+<CodeComparisonItem title="WLJS">
+
+```wolfram
+Manipulate[
+  Plot3D[
+    Sin[n x] Cos[n y],
+    {x, -1, 1}, {y, -1, 1}
+  ],
+  {n, 1, 5, 0.3},
+  ContinuousAction -> True
+]
+```
+
+</CodeComparisonItem>
+</CodeComparison>
+
+<CodeComparison>
+<CodeComparisonItem title="Mathematica">
+
+```wolfram
+img = ImageResize[
+  ExampleData[ExampleData["TestImage"] // Last],
+  350
+];
+
+Manipulate[
+  ImageAdjust[img, {c, a}],
+  {{c, 0}, 0, 5, 0.1},
+  {{a, 0}, 0, 5, 0.1}
+]
+```
+
+</CodeComparisonItem>
+<CodeComparisonItem title="WLJS">
+
+```wolfram
+img = ImageResize[
+  ExampleData[ExampleData["TestImage"] // Last],
+  350
+];
+
+Manipulate[
+  ImageAdjust[img, {c, a}],
+  {{c, 0}, 0, 5, 0.1},
+  {{a, 0}, 0, 5, 0.1},
+  ContinuousAction -> True
+]
+```
+
+</CodeComparisonItem>
+</CodeComparison>
+
+### Animate
+
+[`Animate`](./../GUI/Animate) uses the same optimization strategy as `Manipulate`, but WLJS supports fewer options. Options that only configure Mathematica's animation controls may be omitted:
+
+<CodeComparison>
+<CodeComparisonItem title="Mathematica">
+
+```wolfram
+Animate[
+  Plot[Sin[x + a], {x, 0, 10}],
+  {a, 0, 5},
+  AnimationRunning -> False
+]
+```
+
+</CodeComparisonItem>
+<CodeComparisonItem title="WLJS">
+
+```wolfram
+Animate[
+  Plot[Sin[x + a], {x, 0, 10}],
+  {a, 0, 5}
+]
+```
+
+</CodeComparisonItem>
+</CodeComparison>
+
+WLJS animates one parameter, and its range must be finite. Replace an infinite upper bound with a practical limit:
+
+<CodeComparison>
+<CodeComparisonItem title="Mathematica">
+
+```wolfram
+Animate[
+  ArrayPlot[
+    CellularAutomaton[
+      {i, 2, 2}, {{1}, 0}, {40, All}
+    ]
+  ],
+  {i, 0, Infinity, 2},
+  AnimationRate -> 4
+]
+```
+
+</CodeComparisonItem>
+<CodeComparisonItem title="WLJS">
+
+```wolfram
+Animate[
+  ArrayPlot[
+    CellularAutomaton[
+      {i, 2, 2}, {{1}, 0}, {40, All}
+    ]
+  ],
+  {i, 0, 100, 2},
+  AnimationRate -> 4
+]
+```
+
+</CodeComparisonItem>
+</CodeComparison>
+
+Use `RefreshRate` to cap the number of frames per second when the output is expensive or cannot be optimized:
+
+<CodeComparison>
+<CodeComparisonItem title="Mathematica">
+
+```wolfram
+Animate[
+  ParametricPlot[
+    Through[{Re, Im}[(x + I y)^s]],
+    {x, -2, 2}, {y, -2, 2},
+    PerformanceGoal -> "Quality",
+    PlotLabel -> z^s,
+    PlotRange -> {{-2, 2}, {-2, 2}}
+  ],
+  {s, 0, 1}
+]
+```
+
+</CodeComparisonItem>
+<CodeComparisonItem title="WLJS">
+
+```wolfram
+Animate[
+  ParametricPlot[
+    Through[{Re, Im}[(x + I y)^s]],
+    {x, -2, 2}, {y, -2, 2},
+    PerformanceGoal -> "Speed",
+    PlotLabel -> z^s,
+    PlotRange -> {{-2, 2}, {-2, 2}}
+  ],
+  {s, 0, 1},
+  RefreshRate -> 0.5
+]
+```
+
+</CodeComparisonItem>
+</CodeComparison>
+
+WLJS throttles updates when optimization fails, which prevents an expensive animation from overwhelming the frontend. When the structure is stable, animations can run at a higher rate. For best performance, use strings rather than arbitrary expressions for `PlotLabel`:
+
+<CodeComparison>
+<CodeComparisonItem title="Mathematica">
+
+```wolfram
+Animate[
+  ParametricPlot[
+    ReIm @ Exp[
+      -I (\[Phi] + \[Gamma] I \[Phi])
+    ],
+    {\[Phi], 0, 5 Pi},
+    PlotLabel -> \[Gamma]
+  ],
+  {\[Gamma], 0, 0.5}
+]
+```
+
+</CodeComparisonItem>
+<CodeComparisonItem title="WLJS">
+
+```wolfram
+Animate[
+  ParametricPlot[
+    ReIm @ Exp[
+      -I (\[Phi] + \[Gamma] I \[Phi])
+    ],
+    {\[Phi], 0, 5 Pi},
+    PlotLabel ->
+      StringTemplate["\[Gamma] = ``"][\[Gamma]]
+  ],
+  {\[Gamma], 0, 0.5}
+]
+```
+
+</CodeComparisonItem>
+</CodeComparison>
+
+### Refresh
+
+[`Refresh`](./../GUI/Refresh) periodically, or in response to an event, reevaluates an expression and displays the changed output. It applies the same granular-update strategy as `Manipulate` and `Animate`, but learns the output structure incrementally because no parameter range is known in advance.
+
+Unlike `Manipulate` and `Animate`, `Refresh` cannot be exported as an interactive widget to [standalone HTML](./../Share/Standalone-HTML) or MDX. Its WLJS syntax also differs from Mathematica, and it does not need an outer `Dynamic`:
+
+<CodeComparison>
+<CodeComparisonItem title="Mathematica">
+
+```wolfram
+Dynamic[
+  Refresh[
+    DateString[],
+    UpdateInterval -> 1
+  ]
+]
+```
+
+</CodeComparisonItem>
+<CodeComparisonItem title="WLJS">
+
+```wolfram
+Refresh[DateString[], 1]
+```
+
+</CodeComparisonItem>
+</CodeComparison>
+
+`Refresh` does not automatically track symbols inside the expression. Trigger reevaluation with a timer or an event:
+
+<CodeComparison>
+<CodeComparisonItem title="Mathematica">
+
+```wolfram
+DynamicModule[{u = 0},
+  Dynamic[
+    Refresh[
+      If[u > 100, u = u, u = u + 1],
+      TrackedSymbols :> {},
+      UpdateInterval -> 0.5
+    ]
+  ]
+]
+```
+
+</CodeComparisonItem>
+<CodeComparisonItem title="WLJS">
+
+```wolfram
+Module[{u = 0},
+  Refresh[
+    If[u > 100, u = u, u = u + 1],
+    0.5
+  ]
+]
+```
+
+</CodeComparisonItem>
+</CodeComparison>
+
+### Specialized plotting functions
+
+For interactive curves, prefer [`ManipulatePlot`](./../Plotting-Functions/ManipulatePlot), [`ManipulateParametricPlot`](./../Plotting-Functions/ManipulateParametricPlot), [`AnimatePlot`](./../Plotting-Functions/AnimatePlot), or [`AnimateParametricPlot`](./../Plotting-Functions/AnimateParametericPlot). These functions are optimized for plotting and avoid the general-purpose diff step used by `Manipulate` and `Animate`.
+
+```wolfram
+ManipulatePlot[
+  {x + y, x y},
+  {x, 0, 2 Pi},
+  {y, 1, 10}
+]
+```
+
+### Dynamic and Offload
+
+The two frontends use different reactive models:
+
+| Aspect | Mathematica | WLJS |
+| --- | --- | --- |
+| Rendering | Primarily immediate mode | Primarily retained mode, with immediate-mode emulation |
+| Updates | Automatic dependency tracking and reevaluation | Explicit, targeted updates |
+| Data binding | Two-way symbol binding | One-way binding with events for inputs |
+| Reactive model | Pull | Push |
+
+There is no direct equivalent of `Dynamic` in WLJS. Use [`Refresh`](./../GUI/Refresh) when an expression must be polled, or [`Offload`](./../Interpreter/Offload) when changes can be pushed to a supported frontend primitive.
+
+For example, polling a symbol is straightforward:
+
+<CodeComparison>
+<CodeComparisonItem title="Mathematica">
+
+```wolfram
+Dynamic[x]
+
+x = 0.34;
+```
+
+</CodeComparisonItem>
+<CodeComparisonItem title="WLJS">
+
+```wolfram
+Refresh[x, 0.25]
+
+x = 0.34;
+```
+
+</CodeComparisonItem>
+</CodeComparison>
+
+For more efficient targeted updates, define the symbol first and pass it through `Offload`. The symbol must have an `OwnValue`:
+
+```wolfram
+x = 1;
+TextView[x // Offload]
+```
+
+Later assignments are pushed to the dependent frontend object:
+
+```wolfram
+x = 0.34;
+```
+
+For an arbitrary expression, convert the value to a string before sending it to `EditorView`:
+
+```wolfram
+str = ToString[x, StandardForm];
+EditorView[str // Offload]
+```
+
+Then update the string:
+
+```wolfram
+str = ToString[1/2, StandardForm];
+```
+
+```wolfram
+str = ToString[Red, StandardForm];
+```
+
+Not every expression or frontend primitive supports `Offload`. Check the relevant symbol page before relying on granular updates.
+
+The following graphics example shows the difference between pull and push updates:
+
+<CodeComparison>
+<CodeComparisonItem title="Mathematica">
+
+```wolfram
+pts = {};
+Graphics[
+  {Red, Point[pts // Dynamic]},
+  PlotRange -> 1
+]
+
+pts = RandomReal[{-1, 1}, {15, 2}];
+```
+
+</CodeComparisonItem>
+<CodeComparisonItem title="WLJS">
+
+```wolfram
+pts = {};
+Graphics[
+  {Red, Point[pts // Offload]},
+  PlotRange -> 1
+]
+
+pts = RandomReal[{-1, 1}, {15, 2}];
+```
+
+</CodeComparisonItem>
+</CodeComparison>
+
+Mathematica tracks `pts` as a dependency and pulls its current value when needed. WLJS pushes assignments to `pts` directly to the dependent `Point` primitive.
+
+For pointer-driven graphics, replace implicit dependencies such as `MousePosition` with an explicit event handler:
+
+<CodeComparison>
+<CodeComparisonItem title="Mathematica">
+
+```wolfram
+Framed @ Graphics[
+  Disk[
+    Dynamic[
+      MousePosition[
+        {"Graphics", Graphics},
+        {0, 0}
+      ]
+    ],
+    0.2
+  ],
+  PlotRange -> 2
+]
+```
+
+</CodeComparisonItem>
+<CodeComparisonItem title="WLJS">
+
+```wolfram
+Module[{p = {0, 0}},
+  EventHandler[
+    Graphics[
+      Disk[p // Offload, 0.2],
+      PlotRange -> 2
+    ],
+    {"mousemove" ->
+      Function[xy, p = xy]}
+  ]
+]
+```
+
+</CodeComparisonItem>
+</CodeComparison>
+
+In the Mathematica version, the dependency between `MousePosition` and `Disk` is implicit. In WLJS, `p` is an explicit dependency: the event handler updates it whenever the pointer moves, and the new value is pushed to `Disk`.
+
+The same pattern can drive continuous animation. Subscribe to [`AnimationFrameListener`](./../Graphics/AnimationFrameListener) and update an offloaded symbol on each frame:
+
+<CodeComparison>
+<CodeComparisonItem title="Mathematica">
+
+```wolfram
+Framed @ DynamicModule[{contents = {}},
+  EventHandler[
+    Graphics[{
+      PointSize[0.1],
+      Point[
+        Dynamic[
+          contents = Map[
+            If[#[[1, 2]] >= 0,
+              {#[[1]] - #[[2]],
+               #[[2]] + {0, 0.001}},
+              {{#[[1, 1]], 0},
+               {1, -0.8} #[[2]]}
+            ] &,
+            contents
+          ];
+          Map[First, contents]
+        ]
+      ]},
+      PlotRange -> {{0, 1}, {0, 1}}
+    ],
+    "MouseMove" :>
+      AppendTo[
+        contents,
+        {MousePosition["Graphics"], {0, 0}}
+      ]
+  ]
+]
+```
+
+</CodeComparisonItem>
+<CodeComparisonItem title="WLJS">
+
+```wolfram
+Framed @ Module[
+  {contents = {}, pts = {}},
+  EventHandler[
+    Graphics[{
+      PointSize[0.1],
+      Point[pts // Offload],
+      EventHandler[
+        AnimationFrameListener[
+          pts // Offload
+        ],
+        Function[Null,
+          contents = Map[
+            If[#[[1, 2]] >= 0,
+              {#[[1]] - #[[2]],
+               #[[2]] + {0, 0.001}},
+              {{#[[1, 1]], 0},
+               {1, -0.8} #[[2]]}
+            ] &,
+            contents
+          ];
+          pts = Map[First, contents];
+        ]
+      ]},
+      PlotRange -> {{0, 1}, {0, 1}}
+    ],
+    {"mousemove" ->
+      Function[xy,
+        AppendTo[contents, {xy, {0, 0}}]
+      ]}
+  ]
+]
+```
+
+</CodeComparisonItem>
+</CodeComparison>
+
+`AnimationFrameListener` follows the display refresh cycle. It does not request another frame until its dependent symbol, `pts`, has been updated, so the animation naturally adapts to kernel and system performance.
+
+### DynamicModule
+
+Use `Module` instead of `DynamicModule`. State changes become visible when they are connected to `Refresh` or to a supported primitive through `Offload`.
+
+### Buttons, sliders, and checkboxes
+
+WLJS maintains direct compatibility for some controls, including simple buttons:
+
+<CodeComparison>
+<CodeComparisonItem title="Mathematica">
+
+```wolfram
+Button[
+  "Print Date",
+  Print[DateString[]]
+]
+```
+
+</CodeComparisonItem>
+<CodeComparisonItem title="WLJS">
+
+```wolfram
+Button[
+  "Print Date",
+  Print[DateString[]]
+]
+```
+
+</CodeComparisonItem>
+</CodeComparison>
+
+The event-driven form uses an input primitive with an explicit handler:
+
+```wolfram
+EventHandler[
+  InputButton["Click me"],
+  Function[Null,
+    Print[DateString[]]
+  ]
+]
+```
+
+For controls that produce values, replace two-way `Dynamic` bindings with an `EventHandler`. A Mathematica `Slider` becomes an HTML-like `InputRange`:
+
+<CodeComparison>
+<CodeComparisonItem title="Mathematica">
+
+```wolfram
+r = 1.0;
+{
+  Slider[Dynamic[r], {0, 1, 0.1}],
+  Graphics[
+    Disk[{0, 0}, r] // Dynamic
+  ]
+}
+```
+
+</CodeComparisonItem>
+<CodeComparisonItem title="WLJS">
+
+```wolfram
+r = 1.0;
+{
+  EventHandler[
+    InputRange[0, 1, 0.1, r],
+    (r = #) &
+  ],
+  Graphics[
+    Disk[{0, 0}, r // Offload]
+  ]
+}
+```
+
+</CodeComparisonItem>
+</CodeComparison>
+
+When the displayed value is numeric or textual, use `TextView`:
+
+<CodeComparison>
+<CodeComparisonItem title="Mathematica">
+
+```wolfram
+{
+  Slider[Dynamic[n], {0, 100, 1}],
+  Dynamic[n]
+}
+```
+
+</CodeComparisonItem>
+<CodeComparisonItem title="WLJS">
+
+```wolfram
+n = 0;
+{
+  EventHandler[
+    InputRange[0, 100, 1, n],
+    (n = #) &
+  ],
+  TextView[n // Offload]
+}
+```
+
+</CodeComparisonItem>
+</CodeComparison>
+
+The same event-driven pattern applies to checkboxes. This truth-table example replaces `Checkbox[Dynamic[...]]` with `InputCheckbox`, an event handler, and an offloaded result:
+
+<CodeComparison>
+<CodeComparisonItem title="Mathematica">
+
+```wolfram
+DynamicTruthTable[f_, vars_] :=
+  DynamicModule[{v, arr, e, tt},
+    v = Array[arr, {Length[vars]}];
+    e = Function[
+      Evaluate[
+        f /. Thread[
+          vars -> Array[Slot, {Length[vars]}]
+        ]
+      ]
+    ];
+
+    tt = Grid[{
+      Append[vars, TraditionalForm[f]],
+      Append[
+        Map[
+          Composition[Checkbox, Dynamic],
+          v
+        ],
+        Apply[
+          Composition[Dynamic, Evaluate[e]],
+          v
+        ]
+      ]},
+      Dividers -> {All, All}
+    ];
+
+    Do[arr[i] = False, {i, Length[vars]}];
+    tt
+  ]
+
+DynamicTruthTable[
+  And[Or[a, b], b, c],
+  {a, b, c}
+]
+```
+
+</CodeComparisonItem>
+<CodeComparisonItem title="WLJS">
+
+```wolfram
+DynamicTruthTable[f_, vars_] :=
+  Module[{v, arr, e, tt, res, run},
+    v = Array[arr, {Length[vars]}];
+    e = Function[
+      Evaluate[
+        f /. Thread[
+          vars -> Array[Slot, {Length[vars]}]
+        ]
+      ]
+    ];
+
+    tt = Grid[{
+      Append[vars, TraditionalForm[f]],
+      Append[
+        Map[
+          Function[a,
+            EventHandler[
+              InputCheckbox[False],
+              (a = #; run) &
+            ]
+          ],
+          v
+        ],
+        TextView[res // Offload]
+      ]},
+      Dividers -> {All, All}
+    ];
+
+    run := res = Apply[
+      Composition[ToString, Evaluate[e]],
+      v
+    ];
+
+    Do[arr[i] = False, {i, Length[vars]}];
+    run;
+    tt // Deploy
+  ]
+
+DynamicTruthTable[
+  And[Or[a, b], b, c],
+  {a, b, c}
+]
+```
+
+</CodeComparisonItem>
+</CodeComparison>
+
+See the *GUI* section of the documentation for other supported controls and input primitives.
+
+### Locator
+
+Use an event handler to receive changes from `Locator`:
+
+<CodeComparison>
+<CodeComparisonItem title="Mathematica">
+
+```wolfram
+DynamicModule[{p = {0.5, 0.5}},
+  {
+    Graphics[
+      Locator[Dynamic[p]],
+      PlotRange -> 2
+    ],
+    Dynamic[p]
+  }
+] // Column
+```
+
+</CodeComparisonItem>
+<CodeComparisonItem title="WLJS">
+
+```wolfram
+Module[{p = {0.5, 0.5}},
+  {
+    Graphics[
+      EventHandler[
+        Locator[p],
+        {"drag" -> ((p = #) &)}
+      ],
+      PlotRange -> 2
+    ],
+    Refresh[p, 0.1]
+  }
+] // Column
+```
+
+</CodeComparisonItem>
+</CodeComparison>
+
+For a push-based result, replace `Refresh` with `TextView`:
+
+```wolfram
+Module[{p = {0.5, 0.5}},
+  {
+    Graphics[
+      EventHandler[
+        Locator[p],
+        {"drag" -> ((p = #) &)}
+      ],
+      PlotRange -> 2
+    ],
+    TextView[p // Offload]
+  }
+] // Column
+```
+
+You can format the value before it reaches `TextView`:
+
+```wolfram
+Module[{p = {0.5, 0.5}},
+  {
+    Graphics[
+      EventHandler[
+        Locator[p],
+        {"drag" -> ((p = #) &)}
+      ],
+      PlotRange -> 2
+    ],
+    TextView[
+      {
+        NumberForm[p[[1]], {3, 2}],
+        NumberForm[p[[2]], {3, 2}]
+      } // ToString // Offload
+    ]
+  }
+] // Column
+```
+
+Here `NumberForm` and `ToString` are evaluated by the frontend. Only plain mathematical operators, lists, and a limited set of other symbols support frontend evaluation; check the relevant symbol documentation before offloading a more complex expression.
+
+<Callout type="warning">
+`Locator` inside `Manipulate` is not supported in WLJS.
+</Callout>

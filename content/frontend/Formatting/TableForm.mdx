@@ -27,6 +27,9 @@ Specifies the spacing between rows and columns. A pair gives the horizontal and 
 See [Item](../Formatting/Item)
 
 ## Examples
+
+<Callout>Tables are editable</Callout>
+
 A fully formatted table 
 
 ```wolfram
@@ -38,3 +41,19 @@ TableForm[{{5, Item[7, Background->Yellow]}, {4, 2}, {10, 3}},
 <wljs-editor type="Output" display="codemirror">{`
 (*GB[*){{(*BB[*)()(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRAeB5AILqnMSXXKr0hjgskHleakFouApDLyy4NLijLz0p0zEosSk0tSi4qLWYESbok5xakAImsVPw=="*)(*]BB*)(*|*),(*|*)"y1"(*|*),(*|*)"y2"}(*||*),(*||*){"Group A"(*|*),(*|*)5(*|*),(*|*)7(*VB[*)(**)(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KWlMIB47kPAsSc11yq+ACICkg0pzUou5gAynxOTs9KL80ryUNGaQJAdI0t3JOT8nvygTZBqEAGIGNN08QEZwSVFmgX+eZ15BaUkxK1DALTGnOBUAl00daw=="*)(*]VB*)}(*||*),(*||*){"Group B"(*|*),(*|*)4(*|*),(*|*)2}(*||*),(*||*){"Group C"(*|*),(*|*)10(*|*),(*|*)3}}(*||*)(*1:eJxTTMoPSmNkYGAoZgESHvk5KRAeO5BwL8pMccqvSGOCSQeV5qQW8yNkXDLLMlNSi4oRKnwyi0tQ1QeDTHLOzynNzStOY0FWV8wKZLgl5hSngoVCikpTES5BUwBnoRkOZuSXU8NkAKaJOTA=*)(*]GB*)
 `}</wljs-editor></WLJSWrapper>
+
+Use formatted tables as input:
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`data = (*GB[*){{(*BB[*)(None)(*,*)(*"1:eJxTTMoPSmNiYGAo5gMSwSWVOakuqcn5RYkl+UUQcRYgEVSak1osAlKQkV8eXFKUmZfunJFYlJhcklpUXMwKlHBLzClORdUQzAPV4JyfV5KaV4KkEAAnBR+D"*)(*]BB*)(*|*),(*|*)"y1"(*|*),(*|*)"y2"}(*||*),(*||*){"Group A"(*|*),(*|*)5(*|*),(*|*)7}(*||*),(*||*){"Group B"(*|*),(*|*)4(*|*),(*|*)2}(*||*),(*||*){"Group C"(*|*),(*|*)10(*|*),(*|*)3}}(*||*)(*1:eJytj8EOgjAMhqfR6MXoK/goItGLJzDeJ3SkydjMuomP7wYiiiHh4KX5+/dL/3Z71YmYMcZo5csFoYoh04ZbbdJgHw3mYhrmoUucBFq/7Eg/YrxjDoY64oRkv/l04cVeS1cqapJajuZeHLgkqK2zcSAmA8Bb9ZbXQlf/3/z5ZnrjGapi9JsYsgYORfYzo00XtZNYqBKUHZvVICD6SJtHSy8iTiBRwRPvv20n*)(*]GB*);
+	
+	data[[2,2]]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`5`}</wljs-editor></WLJSWrapper>
+
+
+Styling options:
+
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`ScientificForm[TableForm[RandomReal[10^5, {2, 3}]], 3]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*GB[*){{(*VB[*)(2.103554622652979*^4)(*,*)(*"1:eJxtkEtPwkAUhatxYfwV2FUfxFjTsjBhMVMoCUjBTmf6ICzqMDa1bxCmEH+8LWjiws25J/fcxXfu/VvpvF8LgrC7a2W8ST7LLUkYR96VIEgKhCtFlp4etF8r9pqeKEtKv/WKqD2zaeO683KJcjsJJqA0YooA9o0wTKsaFSpEXqj6hRUFPDZdPR6TBuXhsm5T6htOkGYqbmKODA7QKzMWp0NqqJhYo8mIczhwgTvZwAjptkm1HGg7L7Ny/6MKXmaotCEG2E4Z58Oh2PGsIewGqjrUZcnZdqU9SsqXIvfPqq/bmzZV5P8bpJcGc9TWJ4so3de0+GEklWvCxkqAQ6a16yXcxJXp+I1BcYXCTB3QlCQ4t47Iyxx6AjWm48N8hnULgCC3SPmH8PLvm1acfcbQbWdYtFkU2fG8dbd79g1LwndR"*)(*]VB*)(*|*),(*|*)(*VB[*)(3.383082912826145*^4)(*,*)(*"1:eJxtkEtvgkAUhWnTRdNfYVnxME2JYJomLmZQTLSiZWZ4GRd0nBIKCGh10PTHF7RNuujm3JN77uI79/6tcN6vBUHY3TUyWiefxdZNGEf+lSBICoRLRZZ6D72nXy926o4oS0q38YqoPbNJjfGsWKDcToIxKIyYIkB8IwzTskIbFSIvVP2NFQU8NrEej9wa5eGialLqG06QZiqpY44MDtArM+anQ2qoxLWG4yHnsI8BHq9hhHTbpFoOtJ2XWbn/UQYvU1TYkABip4zzwUBseVYQtgOVLeqi4Gy71B4l5UuRu2fVV81Nkyry/w3SS4MZ4shz51G6r+jmh9EtsQlrKwGOO6mwl3CTlKbj1wYlJQoztU9TNyG5dURe5tATqAgdHWZTolsABLnlFn8ILw+/acTZZwzdtoZF6/kmO563eLtn36tmd40="*)(*]VB*)(*|*),(*|*)(*VB[*)(1.9383738919320036*^4)(*,*)(*"1:eJxtkEtPwkAUhatxYfwV2FUfxNikJdGExUyhJCAFO48+CItaxqb2DcIU4o+3BU1cuDn35J67+M69fyud92tBEHZ3rYw3yWe5pQnjyLsSBEmBcKXIkvbwpP96sdf0RFlS+q1XRO2ZTRuM5+US5XbiT0BpxBECxDOCIK1qVKgQuYHqFVbo89jEejymDcqDZd2mkWc4fpqppIk5MjhAr8xYnA6poRJqjSYjzuEAAzzZwBDpthlpOdB2bmbl3kflv8xQaUMCiJ0yzodDseNZQ9gNVHWoy5Kz7Up7lJQvRe6fVV+3N22qyP83SC8N5ogjly7CdF9HxQ8jrbAJGysBDp3W2E24SSrT8RojIhUKMnUQpTQhuXVEbuZEJ1CTaHyYz4huAeDnFi3/EF4eftOKs88Yuu0MCzeLIjuet3i7Z9+rZneN"*)(*]VB*)}(*||*),(*||*){(*VB[*)(4.3403939032740025*^4)(*,*)(*"1:eJxtkEtPwkAUhatxYfwV2FUfxNjYsjBhMVMoCUjBTmf6ICzqMDa1bxCmEH+8LWjiws25J/fcxXfu/VvpvF8LgrC7a2W8ST7LLUkYR/6VIEgKhCtFlvSHJ/3Xi72mJ8qS0m+9ImrPbNq47rxcotxOggkojZgigH0jDNOqRoUKkReqfmFFAY9NV4/HpEF5uKzblPqGE6SZipuYI4MD9MqMxemQGiom1mgy4hwOXOBONjBCum1SLQfazsus3P+ogpcZKm2IAbZTxvlwKHY8awi7gaoOdVlytl1pj5Lypcj9s+rr9qZNFfn/BumlwRxx5JFFlO5rWvwwkso1YWMlwCHT2vUSbuLKdPzGoLhCYaYOaEoSnFtH5GUOPYEa0/FhPsO6BUCQW6T8Q3h5+E0rzj5j6LYzLNosiux43rrbPfsGpxZ3ig=="*)(*]VB*)(*|*),(*|*)(*VB[*)(9.365170413742297*^3)(*,*)(*"1:eJxtkEtPwkAUhatxYfwV2lUfxNhAMZqwmCmUBKRg59EHYVHL2NS+QZhC/PG2oIkLN+ee3HMX37l3b4X9fikIwvamkdE6/iw2NGYcuReCICkQLhVZerrvPv568ba+FWVJ6TReEbVnNqkxnhULlFmxNwaFHoUIEFf3/aSsUK5C5Piqm5uBxyMD96IRrVHmL6omDV3d9pJUJXXEkc4BemX6/LhPdJVQczgecg77GODxGgaoZxmhlgFt66Rm5n6U3ssUFRYkgFgJ43wwEFueFYTtQGWLuig42yy1B0n5UuTOSbur5qZJFfn/Bsm5wQxx5NB5kOyqMP9hpCU2YG3GwKaTCjsxN0hp2G6th6REfqr2w4TGJDMPyEnt8AgqEo72synpmQB4mUmLP4Tnh181Yu9Shq5bw4L1PE8Ppy3e7Ng3sgJ3kQ=="*)(*]VB*)(*|*),(*|*)(*VB[*)(9.837795596860886*^4)(*,*)(*"1:eJxtkEtPwkAUhatxYfwV2lUfxNikJWrCYqZQEpCCnUcfhEUdalP7BmEK8cfbgiYu3Jx7cs9dfOfevZXO+6UgCNubVkbr5LPc0CTiyLsQBEmBcKnI0tP9o/7rxdvmVpQlpdd6RdSeo0mD8axcoNxO/DEojZghQDwjCNKqRoUKkRuoXmGFPo9NrMcj2qA8WNRtyjzD8dNMJU3MkcEBeo2M+XGfGiqh1nA85Bz2McDjNQyRbptMy4G2dTMr9z4q/2WKShsSQOw04nwwEDueFYTdQFWHuih5tFlqD5Lypci9k+qr9qZNFfn/Bum5wQxx5NJ5mO5qVvww0gqbsLES4NBJjd2Em6QyHa8xGKlQkKl9ltKE5NYBuZnDjqAmbLSfTYluAeDnFi3/EJ4fftWKs8sidN2ZKFzPi+xw2uLNLvoGtZR3lA=="*)(*]VB*)}}(*||*)(*1:eJxTTMoPSmNmYGAo5gUSYZmp5S6pyflFiSX5RcEsQBH3osyUNCaQPIgXVJqTWswPFXbKrwguSEzOzEsvRqjwySwuQVUfzA5kOOfnlObmFWcyAtlo0mBGfnlxJgOGXLEAwirHnMz0vNzUvBJi7YIoSU1DVwKzr5gDyHBKLE7NycxLBQCTMDsw*)(*]GB*)`}</wljs-editor></WLJSWrapper>
