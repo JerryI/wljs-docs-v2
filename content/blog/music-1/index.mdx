@@ -1,66 +1,88 @@
 ---
-title:  Music in Wolfram Language and WLJS
+title: Symbolic notes, scales and chords in Wolfram Language
+description: In this tutorial we start with the low-level `Sound` and `SoundNote` expressions used to describe playable audio, then move to the higher-level `Music*` framework introduced in WL 15 (Wolfram Engine 15). Stay in tune!
+date: 2026-07-29
+author: JerryI
+tags:
+  - music
+  - sound
 ---
 
-{/* add this script to the body  */}
-{/* https://cdn.jsdelivr.net/gh/WLJSTeam/web-components@latest/src/common/app.js */}
+
 <wljs-store json="./attachments/a9eca884-ee9a-4e2a-8106-042444a1fa44.txt"></wljs-store>
 
+Let's start with a major scale chord followed by a few notes from the same scale:
 
-
-
-# Music in Wolfram Language and WLJS
-
-This tutorial starts with the low-level `Sound` and `SoundNote` expressions used to describe playable audio, then moves to the higher-level `Music*` framework introduced in WL 15. We will build examples from notes and chords to timed layers and multi-voice scores, while keeping every musical object available for inspection and transformation.
-
-<wljs-editor display="codemirror" type="Input" editable="true"  >{`Sound[{
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`Sound[{
 	  SoundNote[{"C4", "E4", "G4"}, {0, 1/2}],
 	  SoundNote["A4", {1/2, 1}],
 	  SoundNote["F4", {1, 3/2}],
 	  SoundNote["G4", {3/2, 2}]
-	}]`}</wljs-editor>
+	}]`}</wljs-editor></WLJSWrapper>
 
-<wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(Sound[{SoundNote[{"C4", "E4", "G4"}, {0, 1/2}], SoundNote["A4", {1/2, 1}], SoundNote["F4", {1, 3/2}], SoundNote["G4", {3/2, 2}]}])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRAeK5AIzi/NS0ljgUn6ZBaXpDGBeJwwSb/8ktQ0ZmQFwSAFziZgyhVCuZtAdMGUZAJpBogQB5AISizJzM9LzMkE2ZvJBJdDsQRskCOaQfjMALNwGeSG7iJG7C5iJuQidK/hMwNMAACvpUHK"*)(*]VB*)`}</wljs-editor>
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(Sound[{SoundNote[{"C4", "E4", "G4"}, {0, 1/2}], SoundNote["A4", {1/2, 1}], SoundNote["F4", {1, 3/2}], SoundNote["G4", {3/2, 2}]}])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRAeK5AIzi/NS0ljgUn6ZBaXpDGBeJwwSb/8ktQ0ZmQFwSAFziZgyhVCuZtAdMGUZAJpBogQB5AISizJzM9LzMkE2ZvJBJdDsQRskCOaQfjMALNwGeSG7iJG7C5iJuQidK/hMwNMAACvpUHK"*)(*]VB*)`}</wljs-editor></WLJSWrapper>
 
 ### Listen to the result
 
 Click the output to play it. A `SoundNote` with one pitch describes a single event; a list of pitches in one `SoundNote` starts them simultaneously, which is how a chord is represented. Explicit start and end times make the sequence easy to read and edit.
 
-<wljs-editor display="codemirror" type="Input" editable="true"  >{`SoundNote[{"C3", "E3", "G3"}] // Sound`}</wljs-editor>
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`SoundNote[{"C3", "E3", "G3"}] // Sound`}</wljs-editor></WLJSWrapper>
 
-<wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(Sound[SoundNote[{"C3", "E3", "G3"}]])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRAeK5AIzi/Ng3I5YVy//JLUNGaYep/M4pJgJiDD2RhMuUIod2MA5nUP9w=="*)(*]VB*)`}</wljs-editor>
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(Sound[SoundNote[{"C3", "E3", "G3"}]])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRAeK5AIzi/Ng3I5YVy//JLUNGaYep/M4pJgJiDD2RhMuUIod2MA5nUP9w=="*)(*]VB*)`}</wljs-editor></WLJSWrapper>
+
+### Generate waveform
+Use `Play` to create any sound texture using numerical functions:
+
+```wolfram
+Play[Sin[20000 x x], {x,0,1000, 0.1}]
+```
+
+### Emit sound
+Call `EmitSound` on any `Sound` object:
+
+```wolfram
+s = Play[Sin[20000 x x], {x,0,1000, 0.1}];
+Button["Sound", EmitSound[s]]
+```
+
+or using `SoundNote`:
+
+```wolfram
+s = SoundNote[{"C3", "E3", "G3"}] // Sound;
+Button["Sound", EmitSound[s]]
+```
 
 ### Durations
 
-The second argument controls duration when it is a number. Exact values such as `1/4` and `1/2` are convenient for expressing relative rhythm and keeping the timing easy to edit.
+The second argument controls duration when it is a number. Exact values such as `1/4` and `1/2` are convenient for expressing relative rhythm and keeping the timing easy to edit
 
-<wljs-editor display="codemirror" type="Input" editable="true"  >{`{
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`{
 	  SoundNote[{"C3", "E3", "G3"}, 1/4],
 	  SoundNote[{"A2", "C3", "E3"}, 1/4],
 	  SoundNote[{"F2", "A2", "C3"}, 1/4],
 	  SoundNote[{"G2", "B2", "D3"}, 1/2]
-	} // Sound`}</wljs-editor>
+	} // Sound`}</wljs-editor></WLJSWrapper>
 
-<wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(Sound[{SoundNote[{"C3", "E3", "G3"}, 1/4], SoundNote[{"A2", "C3", "E3"}, 1/4], SoundNote[{"F2", "A2", "C3"}, 1/4], SoundNote[{"G2", "B2", "D3"}, 1/2]}])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRAeK5AIzi/NS0ljgUn6ZBaXpDGBeJwwSb/8ktQ0ZmQFwSAFzsZgyhVCuRtDdHEAiaDEksz8vMScTJAlmSBNxJnoaIRqMOUmuhmhGky5ie4Qo5wglAtOE0HCAK6BQmM="*)(*]VB*)`}</wljs-editor>
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(Sound[{SoundNote[{"C3", "E3", "G3"}, 1/4], SoundNote[{"A2", "C3", "E3"}, 1/4], SoundNote[{"F2", "A2", "C3"}, 1/4], SoundNote[{"G2", "B2", "D3"}, 1/2]}])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRAeK5AIzi/NS0ljgUn6ZBaXpDGBeJwwSb/8ktQ0ZmQFwSAFzsZgyhVCuRtDdHEAiaDEksz8vMScTJAlmSBNxJnoaIRqMOUmuhmhGky5ie4Qo5wglAtOE0HCAK6BQmM="*)(*]VB*)`}</wljs-editor></WLJSWrapper>
 
 ### Absolute timing
 
-For precise placement, give `SoundNote` a start/end pair `{t0, t1}`. This is useful for layering sustained notes, synchronizing parts, or leaving intentional gaps.
+For precise placement, give `SoundNote` a start/end pair `{t0, t1}`. This is useful for layering sustained notes, synchronizing parts, or leaving intentional gaps. Again, C major scale:
 
-<wljs-editor display="codemirror" type="Input" editable="true"  >{`Sound[{
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`Sound[{
 	  SoundNote["C2", {0, 2}],
 	  SoundNote[{"C3", "E3", "G3"}, {0, 1}],
 	  SoundNote[{"F3", "A3", "C4"}, {1, 2}],
 	  SoundNote[{"G3", "B3", "D4"}, {2, 3}]
-	}]`}</wljs-editor>
+	}]`}</wljs-editor></WLJSWrapper>
 
-<wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(Sound[{SoundNote["C2", {0, 2}], SoundNote[{"C3", "E3", "G3"}, {0, 1}], SoundNote[{"F3", "A3", "C4"}, {1, 2}], SoundNote[{"G3", "B3", "D4"}, {2, 3}]}])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRAeK5AIzi/NS0ljgUn6ZBaXpDGBeJwwSb/8ktRgkJCzEUQGpi4TSDNkgoSw6EhjRlYK0W8MplwhlLsxNtMYiTbNDWKMI4RyNkEzjZE0t7lDjHGCUC7opoF4mSBdAMPuN8g="*)(*]VB*)`}</wljs-editor>
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(Sound[{SoundNote["C2", {0, 2}], SoundNote[{"C3", "E3", "G3"}, {0, 1}], SoundNote[{"F3", "A3", "C4"}, {1, 2}], SoundNote[{"G3", "B3", "D4"}, {2, 3}]}])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRAeK5AIzi/NS0ljgUn6ZBaXpDGBeJwwSb/8ktRgkJCzEUQGpi4TSDNkgoSw6EhjRlYK0W8MplwhlLsxNtMYiTbNDWKMI4RyNkEzjZE0t7lDjHGCUC7opoF4mSBdAMPuN8g="*)(*]VB*)`}</wljs-editor></WLJSWrapper>
 
 ### Instruments
 
-The third argument selects the instrument used for playback. The next example assigns a different timbre to each note; the names marked `WLJS only` are provided by the browser-based WLJS audio engine.
+The third argument selects the instrument used for playback. The next example assigns a different timbre to each note
 
-<wljs-editor display="codemirror" type="Input" editable="true"  >{`Sound[{
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`Sound[{
 	  SoundNote["C5", {0., .4}, "Piano"],
 	  SoundNote["D5", {.5, .9}, "Guitar"],
 	  SoundNote["E5", {1., 1.4}, "Violin"],
@@ -76,15 +98,15 @@ The third argument selects the instrument used for playback. The next example as
 	  SoundNote["E5", {5.5, 5.9}, "DuoSynth"], (*WLJS only*)
 	  SoundNote["F4", {6., 6.4}, "MembraneSynth"], (*WLJS only*)
 	  SoundNote["G5", {6.5, 6.9}, "MetalSynth"] (*WLJS only*)
-	}]`}</wljs-editor>
+	}]`}</wljs-editor></WLJSWrapper>
 
-<wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(FrontEndRef["874f0eef-496c-4c85-b07a-36a970e76671"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKW5ibpBmkpqbpmliaJeuaJFuY6iYZmCfqGpslWpobpJqbmZkbAgCFlBVa"*)(*]VB*)`}</wljs-editor>
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(FrontEndRef["874f0eef-496c-4c85-b07a-36a970e76671"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKW5ibpBmkpqbpmliaJeuaJFuY6iYZmCfqGpslWpobpJqbmZkbAgCFlBVa"*)(*]VB*)`}</wljs-editor></WLJSWrapper>
 
 ### A first procedural beat
 
-The following 16-step groove is built from four independent layers: closed hi-hat, kick, snare, and an 808-style bass line. At 140 BPM, `step = 60/140/2` is one eighth-note step. Each layer is a list of time-stamped `SoundNote` objects; `Join` combines the layers into one `Sound`.
+The following 16-step groove is built from four independent layers: closed hi-hat, kick, snare, and an 808-style bass line. At 140 BPM, `step = 60/140/2` is one eighth-note step. Each layer is a list of time-stamped `SoundNote` objects; `Join` combines the layers into one `Sound`
 
-<wljs-editor display="codemirror" type="Input" editable="true" fade="true" >{`With[{step = 60/140/2},
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true" fade="true" >{`With[{step = 60/140/2},
 	  Sound @ Join[
 	    (*BB[*)(* closed hats *)(*,*)(*"1:eJxTTMoPSmNhYGAo5gcSAUX5ZZkpqSn+BSWZ+XnFaYwgCS4g4Zyfm5uaV+KUXxEMUqxsbm6exgSSBPGCSnNSg9mAjOCSosy8dLBYSFFpKpoKkDkeqYkpEFXBILO1sCgJSczMQVYCAOFrJEU="*)(*]BB*)
 	    Table[
@@ -116,35 +138,35 @@ The following 16-step groove is built from four independent layers: closed hi-ha
 	      SoundNote["Eb2", {12 step, 16 step}, "FMSynth"]
 	    }
 	  ]
-	]`}</wljs-editor>
+	]`}</wljs-editor></WLJSWrapper>
 
-<wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(FrontEndRef["c6e66bd4-10e6-4b9c-ad38-8bd62d23182f"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKJ5ulmpklpZjoGhqkmumaJFkm6yamGFvoWiSlmBmlGBkbWhilAQCL6hXV"*)(*]VB*)`}</wljs-editor>
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(FrontEndRef["c6e66bd4-10e6-4b9c-ad38-8bd62d23182f"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKJ5ulmpklpZjoGhqkmumaJFkm6yamGFvoWiSlmBmlGBkbWhilAQCL6hXV"*)(*]VB*)`}</wljs-editor></WLJSWrapper>
 
 ## The `Music*` framework
 
-WL 15 adds a higher-level symbolic layer for chords, notes, scores, voices, rests, and scales. Explore the available symbols with `Names["Music*"]`. These expressions are immutable and compositional: construct a musical object, inspect it, transform it, and combine it into a larger structure. We begin with a single chord:
+WL 15 adds a higher-level symbolic layer for chords, notes, scores, voices, rests, and scales. Explore the available symbols with `Names["Music*"]`. These expressions are immutable and compositional: construct a musical object, inspect it, transform it, and combine it into a larger structure. We begin with a single named chord:
 
-<wljs-editor display="codemirror" type="Input" editable="true"  >{`MusicChord["CMajor7"]`}</wljs-editor>
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`MusicChord["CMajor7"]`}</wljs-editor></WLJSWrapper>
 
-<wljs-editor display="codemirror" type="Output"  >{`MusicChord[(*VB[*) <|"Name" -> "Major Seventh", "Root" -> MusicPitch[<|"Key" -> "C", "Accidental" -> 0|>]|> (*,*)(*"1:eJztVMtum0AUddv0lU2lbip11UplaYmMwbG7Y2ycNIrzYMAPVp3ANSEGxhmGGP9kv6Dqt/ROSFpv2oWXVSV0Zu45R6PDYcTHK+EtnrVarfI9AhX1SMj8qyMlLxKIWZXnXG6QXjzRnjcIIykK5RbxJJWq4lkjvN0S3BqiSvGrDNgnpM1DK+5ZC97umATaFu/Z7V6XQ3thRf1D3u0Ss9NvEuwhnKalao78NT3V07utdA+pvijIJyms2QvUzngOnz803n0EN06VkFr+fdqxyOJmeo0QeKdDiEQM7DtOBukZxKHUsCmuBunfE2TMb4Q0iMngDgp1jcyjhJ7BlhM35MDoOHBS+/5YXLD8LJ0fOcJOIuYEMzsMl6tbVhiEUjYNcZkVIz5fJwPfStxJzfLw4hYd0cz25ssM9WBzuQyS6jp1vBO68vPVelonk2AaAmRJGQ5SM7t0xjfzae0YnaF+dLatPPaQPrxK04puwKvwo7zSG+DxeZFt7llfVrBL554QatfOv/2588H/lh9bfqlvtlBQ7lrzj7/UbOG9djUcaaDWv1t7+Vz/nnhWwk9MHkqg"*)(*]VB*)]`}</wljs-editor>
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`MusicChord[(*VB[*) <|"Name" -> "Major Seventh", "Root" -> MusicPitch[<|"Key" -> "C", "Accidental" -> 0|>]|> (*,*)(*"1:eJztVMtum0AUddv0lU2lbip11UplaYmMwbG7Y2ycNIrzYMAPVp3ANSEGxhmGGP9kv6Dqt/ROSFpv2oWXVSV0Zu45R6PDYcTHK+EtnrVarfI9AhX1SMj8qyMlLxKIWZXnXG6QXjzRnjcIIykK5RbxJJWq4lkjvN0S3BqiSvGrDNgnpM1DK+5ZC97umATaFu/Z7V6XQ3thRf1D3u0Ss9NvEuwhnKalao78NT3V07utdA+pvijIJyms2QvUzngOnz803n0EN06VkFr+fdqxyOJmeo0QeKdDiEQM7DtOBukZxKHUsCmuBunfE2TMb4Q0iMngDgp1jcyjhJ7BlhM35MDoOHBS+/5YXLD8LJ0fOcJOIuYEMzsMl6tbVhiEUjYNcZkVIz5fJwPfStxJzfLw4hYd0cz25ssM9WBzuQyS6jp1vBO68vPVelonk2AaAmRJGQ5SM7t0xjfzae0YnaF+dLatPPaQPrxK04puwKvwo7zSG+DxeZFt7llfVrBL554QatfOv/2588H/lh9bfqlvtlBQ7lrzj7/UbOG9djUcaaDWv1t7+Vz/nnhWwk9MHkqg"*)(*]VB*)]`}</wljs-editor></WLJSWrapper>
 
 ### Inspecting a chord
 
 Click the output to hear and inspect the chord. A chord can be queried for its constituent data; for example, extracting `"Bass"` returns a `MusicPitch` object.
 
-<wljs-editor display="codemirror" type="Input" editable="true"  >{`MusicChord[(*VB[*) <|"Name" -> "Major Seventh", "Root" -> MusicPitch[<|"Key" -> "C", "Accidental" -> 0|>]|> (*,*)(*"1:eJztVMtum0AUddv0lU2lbip11UplaYmMwbG7Y2ycNIrzYMAPVp3ANSEGxhmGGP9kv6Dqt/ROSFpv2oWXVSV0Zu45R6PDYcTHK+EtnrVarfI9AhX1SMj8qyMlLxKIWZXnXG6QXjzRnjcIIykK5RbxJJWq4lkjvN0S3BqiSvGrDNgnpM1DK+5ZC97umATaFu/Z7V6XQ3thRf1D3u0Ss9NvEuwhnKalao78NT3V07utdA+pvijIJyms2QvUzngOnz803n0EN06VkFr+fdqxyOJmeo0QeKdDiEQM7DtOBukZxKHUsCmuBunfE2TMb4Q0iMngDgp1jcyjhJ7BlhM35MDoOHBS+/5YXLD8LJ0fOcJOIuYEMzsMl6tbVhiEUjYNcZkVIz5fJwPfStxJzfLw4hYd0cz25ssM9WBzuQyS6jp1vBO68vPVelonk2AaAmRJGQ5SM7t0xjfzae0YnaF+dLatPPaQPrxK04puwKvwo7zSG+DxeZFt7llfVrBL554QatfOv/2588H/lh9bfqlvtlBQ7lrzj7/UbOG9djUcaaDWv1t7+Vz/nnhWwk9MHkqg"*)(*]VB*)]["Bass"]`}</wljs-editor>
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`MusicChord[(*VB[*) <|"Name" -> "Major Seventh", "Root" -> MusicPitch[<|"Key" -> "C", "Accidental" -> 0|>]|> (*,*)(*"1:eJztVMtum0AUddv0lU2lbip11UplaYmMwbG7Y2ycNIrzYMAPVp3ANSEGxhmGGP9kv6Dqt/ROSFpv2oWXVSV0Zu45R6PDYcTHK+EtnrVarfI9AhX1SMj8qyMlLxKIWZXnXG6QXjzRnjcIIykK5RbxJJWq4lkjvN0S3BqiSvGrDNgnpM1DK+5ZC97umATaFu/Z7V6XQ3thRf1D3u0Ss9NvEuwhnKalao78NT3V07utdA+pvijIJyms2QvUzngOnz803n0EN06VkFr+fdqxyOJmeo0QeKdDiEQM7DtOBukZxKHUsCmuBunfE2TMb4Q0iMngDgp1jcyjhJ7BlhM35MDoOHBS+/5YXLD8LJ0fOcJOIuYEMzsMl6tbVhiEUjYNcZkVIz5fJwPfStxJzfLw4hYd0cz25ssM9WBzuQyS6jp1vBO68vPVelonk2AaAmRJGQ5SM7t0xjfzae0YnaF+dLatPPaQPrxK04puwKvwo7zSG+DxeZFt7llfVrBL554QatfOv/2588H/lh9bfqlvtlBQ7lrzj7/UbOG9djUcaaDWv1t7+Vz/nnhWwk9MHkqg"*)(*]VB*)]["Bass"]`}</wljs-editor></WLJSWrapper>
 
-<wljs-editor display="codemirror" type="Output"  >{`MusicPitch[(*VB[*) <|"Accidental" -> 0, "Key" -> "C"|> (*,*)(*"1:eJxTTMoPSmNmYGAolgISTvkVbvlFuQmORUWJeempKcGlubmJRZVA4TRGkBp+IOFWlJ9X4pqXEpZZVFKamAOREEKScK1ITS4tSUzKSQ1WAQonJ1kYGiWlJOumWhgn6ZqYmFvoWpiaJ+smm5iZWFiapqVZJBulMYAMYQESPpnFJcWsINMSc4pTAbwfKnE="*)(*]VB*)]`}</wljs-editor>
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`MusicPitch[(*VB[*) <|"Accidental" -> 0, "Key" -> "C"|> (*,*)(*"1:eJxTTMoPSmNmYGAolgISTvkVbvlFuQmORUWJeempKcGlubmJRZVA4TRGkBp+IOFWlJ9X4pqXEpZZVFKamAOREEKScK1ITS4tSUzKSQ1WAQonJ1kYGiWlJOumWhgn6ZqYmFvoWpiaJ+smm5iZWFiapqVZJBulMYAMYQESPpnFJcWsINMSc4pTAbwfKnE="*)(*]VB*)]`}</wljs-editor></WLJSWrapper>
 
-Using a pitch and a duration object, you can construct a symbolic **note**.
+Using a pitch and a duration object, you can construct a symbolic **note**
 
-<wljs-editor display="codemirror" type="Input" editable="true"  >{`MusicNote[MusicPitch[(*VB[*) <|"Accidental" -> 0, "Key" -> "C"|> (*,*)(*"1:eJxTTMoPSmNmYGAolgISTvkVbvlFuQmORUWJeempKcGlubmJRZVA4TRGkBp+IOFWlJ9X4pqXEpZZVFKamAOREEKScK1ITS4tSUzKSQ1WAQonJ1kYGiWlJOumWhgn6ZqYmFvoWpiaJ+smm5iZWFiapqVZJBulMYAMYQESPpnFJcWsINMSc4pTAbwfKnE="*)(*]VB*)], MusicDuration[1/4]]`}</wljs-editor>
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`MusicNote[MusicPitch[(*VB[*) <|"Accidental" -> 0, "Key" -> "C"|> (*,*)(*"1:eJxTTMoPSmNmYGAolgISTvkVbvlFuQmORUWJeempKcGlubmJRZVA4TRGkBp+IOFWlJ9X4pqXEpZZVFKamAOREEKScK1ITS4tSUzKSQ1WAQonJ1kYGiWlJOumWhgn6ZqYmFvoWpiaJ+smm5iZWFiapqVZJBulMYAMYQESPpnFJcWsINMSc4pTAbwfKnE="*)(*]VB*)], MusicDuration[1/4]]`}</wljs-editor></WLJSWrapper>
 
-<wljs-editor display="codemirror" type="Output"  >{`MusicNote[(*VB[*) <|"Pitch" -> MusicPitch[<|"Accidental" -> 0, "Key" -> "C"|>], "Duration" -> MusicDuration[<|"Duration" -> 1/4|>]|> (*,*)(*"1:eJzdU8tOwkAUxWfUjYkbE1ea2CWJHRge7toCKgGETsujK4d2qJW2A9M2lK808Yu8BRQ2LnRpMjlz7zk3NydnMjdjrk8OcrlcdAWg8rTBRfCiCEFDlzkkCQIqlkBP9rKZc4CG4GFcD52+J+KE+mvhYkeop8xOYjr2GbkF2qmUqljG5byMJixfrCKaHxdZKS/bqFytYNke49JkP1tyCNDyoni98rtbaZc77jaunmIW9D22IMegdXjM7q/Xs2cAdceLucjk7bZH7jvr7hTA1Fs1ZnOHkXfoJFSRkKKqElbhllB1RSCtCPDVAa3tiFAgWSoorJkaRpt3SdDxRg8Kx65NFHOILWs6m5NQQqpKBhZcw7BBRwtXM4puvZ+SwOrOYcIeYn009UE3l72p6SavnqI31ZkRzBaD1O2bA4sx340szbvze0r7bTRIFalQy07mbccPrqkb99tA9QTe4SQrGHWeQ3+5Yg2RsN/GnMVaSwSNPR7+NeqPn6OWJdT4x2lHR9kXoX7EPgFPSub+"*)(*]VB*)]`}</wljs-editor>
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`MusicNote[(*VB[*) <|"Pitch" -> MusicPitch[<|"Accidental" -> 0, "Key" -> "C"|>], "Duration" -> MusicDuration[<|"Duration" -> 1/4|>]|> (*,*)(*"1:eJzdU8tOwkAUxWfUjYkbE1ea2CWJHRge7toCKgGETsujK4d2qJW2A9M2lK808Yu8BRQ2LnRpMjlz7zk3NydnMjdjrk8OcrlcdAWg8rTBRfCiCEFDlzkkCQIqlkBP9rKZc4CG4GFcD52+J+KE+mvhYkeop8xOYjr2GbkF2qmUqljG5byMJixfrCKaHxdZKS/bqFytYNke49JkP1tyCNDyoni98rtbaZc77jaunmIW9D22IMegdXjM7q/Xs2cAdceLucjk7bZH7jvr7hTA1Fs1ZnOHkXfoJFSRkKKqElbhllB1RSCtCPDVAa3tiFAgWSoorJkaRpt3SdDxRg8Kx65NFHOILWs6m5NQQqpKBhZcw7BBRwtXM4puvZ+SwOrOYcIeYn009UE3l72p6SavnqI31ZkRzBaD1O2bA4sx340szbvze0r7bTRIFalQy07mbccPrqkb99tA9QTe4SQrGHWeQ3+5Yg2RsN/GnMVaSwSNPR7+NeqPn6OWJdT4x2lHR9kXoX7EPgFPSub+"*)(*]VB*)]`}</wljs-editor></WLJSWrapper>
 
-By grouping notes and chords, you can construct a `MusicScore`. A score can contain multiple voices, rests, transformations, and metadata while remaining a single inspectable expression.
+By grouping notes and chords, you can construct a `MusicScore`. A score can contain multiple voices, rests, transformations, and metadata while remaining a single inspectable expression
 
-<wljs-editor display="codemirror" type="Input" editable="true"  >{`MusicScore[{
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`MusicScore[{
 	  MusicChord[(*VB[*) <|"Name" -> "Major Seventh", "Root" -> MusicPitch[<|"Key" -> "C", "Accidental" -> 0|>]|> (*,*)(*"1:eJztVMtum0AUddv0lU2lbip11UplaYmMwbG7Y2ycNIrzYMAPVp3ANSEGxhmGGP9kv6Dqt/ROSFpv2oWXVSV0Zu45R6PDYcTHK+EtnrVarfI9AhX1SMj8qyMlLxKIWZXnXG6QXjzRnjcIIykK5RbxJJWq4lkjvN0S3BqiSvGrDNgnpM1DK+5ZC97umATaFu/Z7V6XQ3thRf1D3u0Ss9NvEuwhnKalao78NT3V07utdA+pvijIJyms2QvUzngOnz803n0EN06VkFr+fdqxyOJmeo0QeKdDiEQM7DtOBukZxKHUsCmuBunfE2TMb4Q0iMngDgp1jcyjhJ7BlhM35MDoOHBS+/5YXLD8LJ0fOcJOIuYEMzsMl6tbVhiEUjYNcZkVIz5fJwPfStxJzfLw4hYd0cz25ssM9WBzuQyS6jp1vBO68vPVelonk2AaAmRJGQ5SM7t0xjfzae0YnaF+dLatPPaQPrxK04puwKvwo7zSG+DxeZFt7llfVrBL554QatfOv/2588H/lh9bfqlvtlBQ7lrzj7/UbOG9djUcaaDWv1t7+Vz/nnhWwk9MHkqg"*)(*]VB*)],
 	  MusicNote[(*VB[*) <|"Pitch" -> MusicPitch[<|"Accidental" -> 0, "Key" -> "C"|>], "Duration" -> MusicDuration[<|"Duration" -> 1/4|>]|> (*,*)(*"1:eJzdU8tOwkAUxWfUjYkbE1ea2CWJHRge7toCKgGETsujK4d2qJW2A9M2lK808Yu8BRQ2LnRpMjlz7zk3NydnMjdjrk8OcrlcdAWg8rTBRfCiCEFDlzkkCQIqlkBP9rKZc4CG4GFcD52+J+KE+mvhYkeop8xOYjr2GbkF2qmUqljG5byMJixfrCKaHxdZKS/bqFytYNke49JkP1tyCNDyoni98rtbaZc77jaunmIW9D22IMegdXjM7q/Xs2cAdceLucjk7bZH7jvr7hTA1Fs1ZnOHkXfoJFSRkKKqElbhllB1RSCtCPDVAa3tiFAgWSoorJkaRpt3SdDxRg8Kx65NFHOILWs6m5NQQqpKBhZcw7BBRwtXM4puvZ+SwOrOYcIeYn009UE3l72p6SavnqI31ZkRzBaD1O2bA4sx340szbvze0r7bTRIFalQy07mbccPrqkb99tA9QTe4SQrGHWeQ3+5Yg2RsN/GnMVaSwSNPR7+NeqPn6OWJdT4x2lHR9kXoX7EPgFPSub+"*)(*]VB*)],
 	  MusicChord[(*VB[*) <|"Duration" -> MusicDuration[<|"Duration" -> 1/8|>], "Name" -> "Major", "Root" -> MusicPitch[<|"Key" -> "D", "Accidental" -> 0|>]|> (*,*)(*"1:eJztVMtO20AUTaGl0E2lbpBYtVK9jBS/SsJunAcPER4eOw+vmNjXxsT2hLGtOD/Jorv+DXcw0GzaRZYIyTp37jlXozNnRv4x43a43Wg08gMEi1cDLtIbIgTLIghomaZMrJAOP8iZrwgDwbOinwWjWBQlS2rh25rQr8AvCzZLgP5EWu/4YKiq2WwdhkbTOIR2sx3qWhP0sK3+UtVZx2C1g48I53Fe1Fu+dluy219z9+zqtIB0FMOS7qB2wVI4+l7PfkHoB3HBhZT/7nbCk6Du9hBc+7wHPg+A/sZO0dqKRixLMS2sitZ5IrQhu+MC6wuBSndNx4WmKjqBs8pxhvyKphfx9JhwM/IpcSem580X9zRTNMuiYw/LJBuw6TLqOkbUH1U09a7uccKfmPZ0nqDurq7nblTexsQ+sxZOuliOq2jkjj2AJMq9btxKrsnwbjquiKL35Ce9rfkxe9bzAeos5LntEq9iVy6ABZdZsnpiHVHCJknbnBebJv3w76R77ym/pPxZvmdeQL5pzH/+E7OhaK2BBGK83cTzT/J/xJIcHgGWPUX9"*)(*]VB*)],
@@ -152,13 +174,13 @@ By grouping notes and chords, you can construct a `MusicScore`. A score can cont
 	  MusicChord[(*VB[*) <|"Duration" -> MusicDuration[<|"Duration" -> 1/8|>], "Name" -> "Major", "Root" -> MusicPitch[<|"Key" -> "A", "Accidental" -> 0|>]|> (*,*)(*"1:eJztVM9P2zAY7cYYsAsSl0k7gbQcK9E0LmQ3p00HiPIjTvojp7mxE9ImcXESNf0nOXDbf7PPBLZexqFHhBS9z997n6znZytHU+GEW41GI/8GYImqL2T6C0tJs4gzUqYplSugww9qZh+gL0VW2BkbxrIoaVILB2uCXfGgLOg04eQ70KxzwviJSZstZoZNI5y2miY6DZsdI0CdsGW0zUCvHXwCuIzzot7yb/dRdV/X3D27Oi94Ooz5knwG7Yqm/MdhPfsFwGZxIaSS/+12JhJWd3sAnnPZ44FgnDxCp+mnmo4tS0MWVE03nwh9QGdCQn0hQOmu6bDQW1ob84vKdQfihqRX8eQnFigKCPbGyPfni3uSabplkZEPZZz16WQZdV0jsocVSf2be5gIxsiZzBPQvdXt3IvKuxg7F9bCTRfLURUNvZHPeRLlfjc+Tm7xYDYZVVhr99SnvK35QT3r+QB1FurcTglXsasWnLLrLFk9sa4s+SZJO0IUmyb98P+k8XvKLynvqPcsCp5vGvPvV2I2NP24iwBs9HYTz7fV/4gmOf8DZEVGnA=="*)(*]VB*)],
 	  MusicRest[(*VB[*) <|"Duration" -> MusicDuration[<|"Duration" -> 1/4|>]|> (*,*)(*"1:eJxlkEFPAjEQhVfRRLhwNOGkh/0BbiRZuLEsjSYEk13FK4UOpkm3k8y2Uf690102Clxe533z0tf0cYvFvhdFUT1iyfBHIFWbGZG0X6BKX1WSDoz3VyEzZBGE1i2sWmtyXpp2ccPygkY1wwot/OGlrt2Zuw7u/l/fsefVQbXW8F0OeJd7kk6jnT60+cAWSjukEDmtbV2f5aNY5rBDBeUnuzhJ42Qmsnic8RknkwakT93EaN4txAVJn5uji45zcbylfVAoL7yB8i4MINWbNYeGvpOH+jb8lTQ1/AJZ8VKa"*)(*]VB*)],
 	  MusicChord[(*VB[*) <|"Duration" -> MusicDuration[<|"Duration" -> 1/2|>], "Name" -> "Major Seventh", "Root" -> MusicPitch[<|"Key" -> "F", "Accidental" -> 0|>]|> (*,*)(*"1:eJztVMtu00AUDe/HBokNEiuQ6mWkZJJRYnbjxKFUTWk9dh5eMfXcuG5sTzq2ifOTfAHiW7hTt5ANLLJESNaZueccjY6PR35/qbzVo1arVbxFcFQ9UTr7wrQWeQySV1km9A7p1QPjeYUw0Sov3VzOEl1WIm2E13uCW0NUleIyBX6EdLcr7EgQaNsSeu3+MKJtezCg7WjYX9mdniRiIJsEjxFOk6Jsjvw1PTTTm710d6k+lZDNEtjyp6idiQw+vGu8LxFcmZRKG/n3accqlc30AiHwTscQKQn8O04WGVqEOY5FHVwtYt8SZCqulbZIh8NXyMsrZO4l9Iz2nLghXavH4KT2/ak659lZsvzIFI0jzoIFDcP15obnFnEcPg9xWeQTsdzGI78fu7OaZ+H5DTqiBfWW6xT1YHexDuLqKmHeibPxs812XsezYB4CpHERjpJOesGm18t5zaze2Dwm214eOnbuXqVpxTTgVfhRnpsNCPk5T3e3rK8rOKRzT6ny0M6//bnzyf+W71t+Zm62KqE4tOYff6m5j/eaGRhRBJf+u7UXT8zvSaQF/AQW+ksI"*)(*]VB*)]
-	}]`}</wljs-editor>
+	}]`}</wljs-editor></WLJSWrapper>
 
-<wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(FrontEndRef["572c90bd-88cd-4175-ba26-b25edb2060f9"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRAeK5AIzi/Ng3KFgIRbUX5eiWteimtFanJpSWJSTmqwClDY1Nwo2dIgKUXXwiI5RdfE0NxUNynRyEw3ycg0NSXJyMDMIM0SAJOJGIk="*)(*]VB*)`}</wljs-editor>
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(FrontEndRef["572c90bd-88cd-4175-ba26-b25edb2060f9"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRAeK5AIzi/Ng3KFgIRbUX5eiWteimtFanJpSWJSTmqwClDY1Nwo2dIgKUXXwiI5RdfE0NxUNynRyEw3ycg0NSXJyMDMIM0SAJOJGIk="*)(*]VB*)`}</wljs-editor></WLJSWrapper>
 
-A great thing about WL's Music Framework is that it has all the necessary functions to transpose and invert chords out of the box. In the past, we had to build our own on top of `SoundNote`. Multiple voices can also be added using a `MusicVoice` container.
+A great thing about WL's Music Framework is that it has all the necessary functions to transpose and invert chords out of the box. In the past, we had to build our own on top of `SoundNote`. Multiple voices can also be added using a `MusicVoice` container
 
-<wljs-editor display="codemirror" type="Input" editable="true"  >{`music = MusicScore[{
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`music = MusicScore[{
 	 MusicVoice[{
 	  MusicChord[(*VB[*) <|"Name" -> "Major Seventh", "Root" -> MusicPitch[<|"Key" -> "C", "Accidental" -> 0|>]|> (*,*)(*"1:eJztVMtum0AUddv0lU2lbip11UplaYmMwbG7Y2ycNIrzYMAPVp3ANSEGxhmGGP9kv6Dqt/ROSFpv2oWXVSV0Zu45R6PDYcTHK+EtnrVarfI9AhX1SMj8qyMlLxKIWZXnXG6QXjzRnjcIIykK5RbxJJWq4lkjvN0S3BqiSvGrDNgnpM1DK+5ZC97umATaFu/Z7V6XQ3thRf1D3u0Ss9NvEuwhnKalao78NT3V07utdA+pvijIJyms2QvUzngOnz803n0EN06VkFr+fdqxyOJmeo0QeKdDiEQM7DtOBukZxKHUsCmuBunfE2TMb4Q0iMngDgp1jcyjhJ7BlhM35MDoOHBS+/5YXLD8LJ0fOcJOIuYEMzsMl6tbVhiEUjYNcZkVIz5fJwPfStxJzfLw4hYd0cz25ssM9WBzuQyS6jp1vBO68vPVelonk2AaAmRJGQ5SM7t0xjfzae0YnaF+dLatPPaQPrxK04puwKvwo7zSG+DxeZFt7llfVrBL554QatfOv/2588H/lh9bfqlvtlBQ7lrzj7/UbOG9djUcaaDWv1t7+Vz/nnhWwk9MHkqg"*)(*]VB*)],
 	  MusicNote[(*VB[*) <|"Pitch" -> MusicPitch[<|"Accidental" -> 0, "Key" -> "C"|>], "Duration" -> MusicDuration[<|"Duration" -> 1/4|>]|> (*,*)(*"1:eJzdU8tOwkAUxWfUjYkbE1ea2CWJHRge7toCKgGETsujK4d2qJW2A9M2lK808Yu8BRQ2LnRpMjlz7zk3NydnMjdjrk8OcrlcdAWg8rTBRfCiCEFDlzkkCQIqlkBP9rKZc4CG4GFcD52+J+KE+mvhYkeop8xOYjr2GbkF2qmUqljG5byMJixfrCKaHxdZKS/bqFytYNke49JkP1tyCNDyoni98rtbaZc77jaunmIW9D22IMegdXjM7q/Xs2cAdceLucjk7bZH7jvr7hTA1Fs1ZnOHkXfoJFSRkKKqElbhllB1RSCtCPDVAa3tiFAgWSoorJkaRpt3SdDxRg8Kx65NFHOILWs6m5NQQqpKBhZcw7BBRwtXM4puvZ+SwOrOYcIeYn009UE3l72p6SavnqI31ZkRzBaD1O2bA4sx340szbvze0r7bTRIFalQy07mbccPrqkb99tA9QTe4SQrGHWeQ3+5Yg2RsN/GnMVaSwSNPR7+NeqPn6OWJdT4x2lHR9kXoX7EPgFPSub+"*)(*]VB*)],
@@ -178,31 +200,33 @@ A great thing about WL's Music Framework is that it has all the necessary functi
 	  MusicNote[(*VB[*) <|"Pitch" -> MusicPitch[<|"Accidental" -> 0, "Octave" -> 4, "Key" -> "D", "Name" -> "D"|>], "Duration" -> MusicDuration[<|"Duration" -> 1/8|>]|> (*,*)(*"1:eJzdU8tOwkAUxWfUjYkbE1ea2CWJTCkPdy0FlQBCp+XRlW1nWittB6ZtKF9p4hd5CyhsXOjSZHLm3nNubk7OZG5sprkHhUIhvgJQWNZiPHyRObcijxKchqHFl0C7e/nMOUCLsyhpRmTo8yS1grVwsSM0M+qkiWUHFN8CbYsViVRQrVglpFos26hSrLslu+i4RCSiS0iparv7+ZJDgI4fJ+uV391Ku9xxt3H1lNBw6NMFPgatxxJ6f72ePQNoEj9hPJe32x5ZQNbdKYChdVTqMELxO3QCqglIVhRBUuAWUH1FILUM8NUB3dgRoUAlQZRpO9P1LuvjsOdPHmQmeQ6WjbFkmtPZHEcCUhQ8MuEaRy1rsvAaetlrDjMcmv05TDhjSZtMA9CN5WBqeOmrL2ttZaaHs8Uo84bGyKQ08GKz4d8FA7n7NhllsiCq+cm97fiRVGXjfhuolsI7nOQFtchzFCxXrM5T+tuY81jVlFuJz6K/Rv3xc9QlAbVq/zft+Cj/IlYQ00+Yrugc"*)(*]VB*)],
 	  MusicNote[(*VB[*) <|"Pitch" -> MusicPitch[<|"Accidental" -> 0, "Key" -> "D", "MIDINumber" -> 38|>], "Duration" -> MusicDuration[<|"Duration" -> 1/2|>]|> (*,*)(*"1:eJzdU8tOg0AUrc+oGxM3Jq40kSWJnYot7qAUtfFVBvpg5bRcEAtMO0BKv9LEL/LS+ujGhS5NJmfuPefm5uRM5mTILX+jUqmkRwg6L0wu4idNCJYE4NE8jpmYI+2vlTP7CKbgSdZKvG4ospxFS+FgRWgVMMozNoyAniINNdVnRG3IAA1VPq8OQVbrNV9mZ1BXyIWnDIH46+WSTYTbMM2WK7+6hXa44u7D1U0GcTeEGd1G7Z5ncHm8nN1DaHlhxkUpf2+75pG37HYRHOvWgBH3gL5iJ5GGRDRdlxQdb4moC4IYBOGzQ7q5ImJBqlJNg3Zh23f8kcb34eBK40owoprTV1x3PJnSRCK6TnsuXv3EZINZ0LTPg1a3oLH7OMWJUV+xBuMIdWfeGTtB/hxqVluf2PFk1iuCrtNzAaIgdZvhWdTR7l4GvUKTakZ5Sm8rfhRD/3D/HaiV4zvslAUw7yGJ5gvWFjn8NuYyViMXLAt58teo336OuioR8x+nnW6VX4RFKbwDomjnwg=="*)(*]VB*)],
 	  MusicNote[(*VB[*) <|"Pitch" -> MusicPitch[<|"Accidental" -> 0, "Key" -> "D", "MIDINumber" -> 38|>], "Duration" -> MusicDuration[<|"Duration" -> 1/4|>]|> (*,*)(*"1:eJzdU01PwkAQxc+oFxMvJp40sUcSWKhSby0FlShit+WjJxc6rZW2C9s2lF9p4i9yCihcPOjRZPN25r3J5OVt9mLIDXenUCjEZwgaz5pchC+qECzywKFpGDIxR9rdymeOEZqCR0kjcrq+SFIWLIWTDaGRwShN2DAAeok0VBSXEaVWBKgpxWp5CEXluuIWWQmuZXLlyEMg7na+ZBfhwY+T5crvbqGdbrhbubpPIOz6MKP7qLV5Ajfny9kjhIbjJ1zk8nrbHQ+cZXeIYBkPOoy4A/QdO4nUJKJqmiRreEtEWRBEJwhfHdL1DRELUpYqKrQy03zkHRq2/cGtymVvRFWrL9v2eDKlkUQ0jfZsvPpRkw1mXt2seo1uRkO7M8WJUV82BuMAdWv+PLa89NVXjZY2McPJrJd5XatnAwRebNf9UvCsPr4NepkqVfT85N42/Mi6tnK/DtRI8R0O8gKY8xQF8wVrihR+G3Meq54Klvg8+mvUHz9HXZZIs/p/04738i/Cghg+AaQy58Q="*)(*]VB*)]}, "Instrument"->"Organ"]
-	}]`}</wljs-editor>
+	}]`}</wljs-editor></WLJSWrapper>
 
-<wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(FrontEndRef["2ba7e139-14c9-4ccc-83d0-e581995a1bf7"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRAeK5AIzi/Ng3KFgIRbUX5eiWteimtFanJpSWJSTmqwClDYKCnRPNXQ2FLX0CTZUtckOTlZ18I4xUA31dTC0NLSNNEwKc0cAJUkGJE="*)(*]VB*)`}</wljs-editor>
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(FrontEndRef["2ba7e139-14c9-4ccc-83d0-e581995a1bf7"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRAeK5AIzi/Ng3KFgIRbUX5eiWteimtFanJpSWJSTmqwClDYKCnRPNXQ2FLX0CTZUtckOTlZ18I4xUA31dTC0NLSNNEwKc0cAJUkGJE="*)(*]VB*)`}</wljs-editor></WLJSWrapper>
 
 Neat!
 
 There is backward compatibility: you can wrap it in `Sound` and use it in `EmitSound`, for example:
 
-<wljs-editor display="codemirror" type="Input" editable="true"  >{`EmitSound[music//Sound]`}</wljs-editor>
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`EmitSound[music//Sound]`}</wljs-editor></WLJSWrapper>
 
-<wljs-editor display="codemirror" type="Input" editable="true"  >{`music//Sound`}</wljs-editor>
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`music//Sound`}</wljs-editor></WLJSWrapper>
 
-<wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(FrontEndRef["21d8180f-7712-41b3-89cc-792f44f2e99e"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKGxmmWBhaGKTpmpsbGumaGCYZ61pYJifrmlsapZmYpBmlWlqmAgB0VxUn"*)(*]VB*)`}</wljs-editor>
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(FrontEndRef["21d8180f-7712-41b3-89cc-792f44f2e99e"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKGxmmWBhaGKTpmpsbGumaGCYZ61pYJifrmlsapZmYpBmlWlqmAgB0VxUn"*)(*]VB*)`}</wljs-editor></WLJSWrapper>
 
-If you need scales, there is a special symbol for that:
+If you need *musical scales*, there is a special symbol for that:
 
-<wljs-editor display="codemirror" type="Input" editable="true"  >{`MusicScale@RandomChoice@MusicScale["Names"]`}</wljs-editor>
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`MusicScale@RandomChoice@MusicScale["Names"]`}</wljs-editor></WLJSWrapper>
 
 Construct chords by sampling every third pitch in the list:
 
-<wljs-editor display="codemirror" type="Input" editable="true"  >{`pitches = MusicScale[(*VB[*) <|"Name" -> "Lydian Augmented"|> (*,*)(*"1:eJzdU11v0zAU7fiGB5B4QeIJJPJYKfVidePNTtPB1I0tTvqRJ9zYyULjuHMSNf21/BWu28EqIR7gEck69j3n6Or6WH6/1GH2sNfr1W8BqO7G2qivxBhe5VKwVilutkBnR9bzCmBsdNUElZgWpml5uRdeHwhBJ9O24ctSsg9A4+HAQy4S/ZNTPOh7Kc/6fIBkX7je0s1Sd8mHw+yBbfIIYFLUzb7lr2qnvTmY7m6qz41U00Ju2BPQLrmSH9/tvS8AAlE02lj5vtsnXYp99RwgDicjmWoh2XeoHHTiIEKpgynsDjrdEWiyFQWvHOSSNleyaqQA8qcKNv/ADAc0cI6JPO+i6EJfMXVZLM6IxnnKSDzHSbJa3zJoRimbJbDNqzFfbHI/8vJg2jGVXN2CI53jcLEqQY+316s4b28KEp7TdaTWm1mXT+NZImWZ14lfuOU1ufi2mHXEOR7ZZWc7mAeP6N1t7gMOW3iXZ/YgufhSldsdG5lW/m3sT23supH1v+b+8uiPufseZD6yEFgYO9gHB7vhZg23stTZ7xSxQC34+P99pvqx/Wu8rOUPphj5hQ=="*)(*]VB*)]["PitchList"];
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`pitches = MusicScale[(*VB[*) <|"Name" -> "Lydian Augmented"|> (*,*)(*"1:eJzdU11v0zAU7fiGB5B4QeIJJPJYKfVidePNTtPB1I0tTvqRJ9zYyULjuHMSNf21/BWu28EqIR7gEck69j3n6Or6WH6/1GH2sNfr1W8BqO7G2qivxBhe5VKwVilutkBnR9bzCmBsdNUElZgWpml5uRdeHwhBJ9O24ctSsg9A4+HAQy4S/ZNTPOh7Kc/6fIBkX7je0s1Sd8mHw+yBbfIIYFLUzb7lr2qnvTmY7m6qz41U00Ju2BPQLrmSH9/tvS8AAlE02lj5vtsnXYp99RwgDicjmWoh2XeoHHTiIEKpgynsDjrdEWiyFQWvHOSSNleyaqQA8qcKNv/ADAc0cI6JPO+i6EJfMXVZLM6IxnnKSDzHSbJa3zJoRimbJbDNqzFfbHI/8vJg2jGVXN2CI53jcLEqQY+316s4b28KEp7TdaTWm1mXT+NZImWZ14lfuOU1ufi2mHXEOR7ZZWc7mAeP6N1t7gMOW3iXZ/YgufhSldsdG5lW/m3sT23supH1v+b+8uiPufseZD6yEFgYO9gHB7vhZg23stTZ7xSxQC34+P99pvqx/Wu8rOUPphj5hQ=="*)(*]VB*)]["PitchList"];
 	pitches = 
 	  Join[pitches, 
 	   MusicTransform[{"Transpose", 12}] /@ Rest@pitches];
 	
-	Table[MusicChord@pitches[[{i, i + 2, i + 4, i + 6}]], {i, 4}]//TableForm`}</wljs-editor>
+	Table[MusicChord@pitches[[{i, i + 2, i + 4, i + 6}]], {i, 4}]//TableForm`}</wljs-editor></WLJSWrapper>
 
-<wljs-editor display="codemirror" type="Output"  >{`(*GB[*){{MusicChord[(*VB[*) <|"PitchList" -> {MusicPitch[<|"Accidental" -> 0, "Octave" -> 4, "Key" -> "C"|>], MusicPitch[<|"Accidental" -> 0, "Octave" -> 4, "Key" -> "E"|>], MusicPitch[<|"Accidental" -> 1, "Octave" -> 4, "Key" -> "G"|>], MusicPitch[<|"Accidental" -> 0, "Octave" -> 4, "Key" -> "B"|>]}|> (*,*)(*"1:eJxdUctO6zAQLY8rHhskNkh3dZHwslLrxojcXZymPMQzTvrICidxQ2gSFydR03/mIxgTEBWSdWbmnJnReOY0lO58p9PplH8BqGxGUuXPllK8SETM6jznag30fEvnHAGMlCwqp4jHqapqnrXC8YbgNCKqKx5mgp0BPe+bwoww6UYh6XeNgYm7Ju71uzwMjXAQx+dG2Gub7ALcpmX1K9rW0cnGdF9TXVciH6dixfZAu5eVKP//a5MPAZw4raTS+k+7K5nFbXQA4Lu3QxHJWLB3iBC+QNiiFBEKFmHzk8C2gXDP0XCJiA0ie+FqichQUxQAf6dCjb1RCQ7uo4ElbhrPu5OPLL9PZ5eWJEnELH9KgmCxfGMFwpSySQBmWoz4bJXYnpE444blweMbZERT4s4WGej++mnhJ/VLark3dOnly9WkScb+JBAiS8rATnvZk3X3Ops0FhoM9dOzbcxDhvTra+2W9EbcGq60rx3B44ciW3+ynqpF+UeflGel+ABO+o8i"*)(*]VB*)]}(*||*),(*||*){MusicChord[(*VB[*) <|"PitchList" -> {MusicPitch[<|"Accidental" -> 0, "Octave" -> 4, "Key" -> "D"|>], MusicPitch[<|"Accidental" -> 1, "Octave" -> 4, "Key" -> "F"|>], MusicPitch[<|"Accidental" -> 0, "Octave" -> 4, "Key" -> "A"|>], MusicPitch[<|"Accidental" -> 0, "Octave" -> 5, "Key" -> "C"|>]}|> (*,*)(*"1:eJxdUU1P4zAQ7cIiFi4r7QWJE0jrY6XGbYByc9KWDwELcdKPnDDJJA1N4uIkavqf+RGMGxDVytabmfeerfH49EU60W6r1SqOESxZj6TKnplSIo8h5FWWCbVGOvqhPb8RRkrm5TAPx4kqK5E2wp8tYVhDUJXiJQX+F+luBN3wTIi2YQho93rGRVsEnahNoXPex0WNqN9c8hPhLinK/6odXR1tdffZ1U0J2TiBFd9H7UGWUFyeNOZDhGGYlFJp/fu6a5mGTXWA4Dl3AwhkCPwdK0IvCGWWRUwLI6H9DUEHPUI7I2LayPO5UEtibiimwTbR8WXFM/bWSUyoQboMbmvXvZePPHtIZldMmnHAmTc1fX+xfOM5oZbFJz6GaT4Ss1Vsu714OK555j++oSOYms5skaLurZ8WXlzNE+bcWks3W64mdTz2Jj5AGhe+nXTSJ3b/OpvUjHQHeuvetvoxB9bn05op6Yk4Ff7SL52ACP/l6XrDuqqCYk9/qUgL+ABxnI8t"*)(*]VB*)]}(*||*),(*||*){MusicChord[(*VB[*) <|"PitchList" -> {MusicPitch[<|"Accidental" -> 0, "Octave" -> 4, "Key" -> "E"|>], MusicPitch[<|"Accidental" -> 1, "Octave" -> 4, "Key" -> "G"|>], MusicPitch[<|"Accidental" -> 0, "Octave" -> 4, "Key" -> "B"|>], MusicPitch[<|"Accidental" -> 0, "Key" -> "D", "MIDINumber" -> 74|>]}|> (*,*)(*"1:eJxdUVtPgzAUnrd4eTHxxcQnTezjEi0Q0Tc6mJdsXijswpMdFMQBnQUy9p/9EZ6KxsWk+drv0pPT07OZcOOtTqdTngAQ0fSFzF8tKVmR8IjWec7kCuR4Q2UOAfpSFJVTRKNUVjXLWuNozXAaHtYVm2WcnoOsMc00w0uzi5nJuvpVyLumPgMa41hnscZ0M26LbAMM0rL6xzYVO17r7qer+4rno5Qv6S54j6Li5c1pGz4AcKK0ElL5f+XuRBa1bB/Adwc2D0XE6ScwhE2ELUKQQWBH+PpbwI6O8MUtMnqg0zcmF8iwlUQU2AYkfqNwp7d2Ew74EmkWf2g8byieaf6YTm8tYSQhtfyJEQTzxQctECaEjgPYJkWfTZdJz9MTZ9TQPHj+gEQ4MdzpPAPfX73M/aR+Sy33gSy8fLEcN8nIHwecZ0kZ9NKL7MUavk/HjYU0Wy3V21o/hk1+ntZOSU3EreGX9tSBs+ipyFbfqidrXu6oL2VZyb8Ax5CPag=="*)(*]VB*)]}(*||*),(*||*){MusicChord[(*VB[*) <|"PitchList" -> {MusicPitch[<|"Accidental" -> 1, "Octave" -> 4, "Key" -> "F"|>], MusicPitch[<|"Accidental" -> 0, "Octave" -> 4, "Key" -> "A"|>], MusicPitch[<|"Accidental" -> 0, "Octave" -> 5, "Key" -> "C"|>], MusicPitch[<|"Accidental" -> 0, "Key" -> "E", "MIDINumber" -> 76|>]}|> (*,*)(*"1:eJxdUclOwzAQLZtYLkhckDiBhI+VSBqjlpuTpixijZMuOWFiN4QmceskavrPfARjAqJCst7MvDczGs+cvUlvutVqtYoTAFvWA6myV6IUy2PBaZVlTK2Anm7onEOAgZJ56eZ8mKiyYmkjHK0Jbi2iqmRvqaDnQF9aPcYM3G1Home0LYt1293IMNoRNqacd3inx0TTZBvgPinKf9Gmjo7XpvuZ6rYU2TARS7oL2qMsRXF12iQfALg8KaXS+l+7G5nyJtoHCLz7vogkF/QTImR2kUlsG2EbLDJ734Q5QNgBir4zNUe4byHzgmhwMIALYP6mQo2zVgmOaaAOEXe17z/IZ5o9JpNrInEcURKMcRjO5guaI9O26SgEM84HbLKMHd+K3WFNs/B5ARnRGHuTWQp6sHqZBXH1nhDvzp772Xw5quNhMAqFSOMidJKL9IU8fExGNUGdvn56trV5cN/++VqzJb0Rr4Ir7WlHMP6Up6tv1leVKHb0SVlaiC+/NY9i"*)(*]VB*)]}}(*||*)(*1:eJxTTMoPSmNmYGAo5gUSYZmp5S6pyflFiSX5RcEsQBH3osyUNCaQPIgXVJqTWswPFXbKrwguSEzOzEsvTmOEqfDJLC5BVQ82Jii/vDgTSDOgmSWAMMsxJzM9Lzc1rwSvYexAhnN+TmluXjFESWpaCQBkRyz7*)(*]GB*)`}</wljs-editor>
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*GB[*){{MusicChord[(*VB[*) <|"PitchList" -> {MusicPitch[<|"Accidental" -> 0, "Octave" -> 4, "Key" -> "C"|>], MusicPitch[<|"Accidental" -> 0, "Octave" -> 4, "Key" -> "E"|>], MusicPitch[<|"Accidental" -> 1, "Octave" -> 4, "Key" -> "G"|>], MusicPitch[<|"Accidental" -> 0, "Octave" -> 4, "Key" -> "B"|>]}|> (*,*)(*"1:eJxdUctO6zAQLY8rHhskNkh3dZHwslLrxojcXZymPMQzTvrICidxQ2gSFydR03/mIxgTEBWSdWbmnJnReOY0lO58p9PplH8BqGxGUuXPllK8SETM6jznag30fEvnHAGMlCwqp4jHqapqnrXC8YbgNCKqKx5mgp0BPe+bwoww6UYh6XeNgYm7Ju71uzwMjXAQx+dG2Gub7ALcpmX1K9rW0cnGdF9TXVciH6dixfZAu5eVKP//a5MPAZw4raTS+k+7K5nFbXQA4Lu3QxHJWLB3iBC+QNiiFBEKFmHzk8C2gXDP0XCJiA0ie+FqichQUxQAf6dCjb1RCQ7uo4ElbhrPu5OPLL9PZ5eWJEnELH9KgmCxfGMFwpSySQBmWoz4bJXYnpE444blweMbZERT4s4WGej++mnhJ/VLark3dOnly9WkScb+JBAiS8rATnvZk3X3Ops0FhoM9dOzbcxDhvTra+2W9EbcGq60rx3B44ciW3+ynqpF+UeflGel+ABO+o8i"*)(*]VB*)]}(*||*),(*||*){MusicChord[(*VB[*) <|"PitchList" -> {MusicPitch[<|"Accidental" -> 0, "Octave" -> 4, "Key" -> "D"|>], MusicPitch[<|"Accidental" -> 1, "Octave" -> 4, "Key" -> "F"|>], MusicPitch[<|"Accidental" -> 0, "Octave" -> 4, "Key" -> "A"|>], MusicPitch[<|"Accidental" -> 0, "Octave" -> 5, "Key" -> "C"|>]}|> (*,*)(*"1:eJxdUU1P4zAQ7cIiFi4r7QWJE0jrY6XGbYByc9KWDwELcdKPnDDJJA1N4uIkavqf+RGMGxDVytabmfeerfH49EU60W6r1SqOESxZj6TKnplSIo8h5FWWCbVGOvqhPb8RRkrm5TAPx4kqK5E2wp8tYVhDUJXiJQX+F+luBN3wTIi2YQho93rGRVsEnahNoXPex0WNqN9c8hPhLinK/6odXR1tdffZ1U0J2TiBFd9H7UGWUFyeNOZDhGGYlFJp/fu6a5mGTXWA4Dl3AwhkCPwdK0IvCGWWRUwLI6H9DUEHPUI7I2LayPO5UEtibiimwTbR8WXFM/bWSUyoQboMbmvXvZePPHtIZldMmnHAmTc1fX+xfOM5oZbFJz6GaT4Ss1Vsu714OK555j++oSOYms5skaLurZ8WXlzNE+bcWks3W64mdTz2Jj5AGhe+nXTSJ3b/OpvUjHQHeuvetvoxB9bn05op6Yk4Ff7SL52ACP/l6XrDuqqCYk9/qUgL+ABxnI8t"*)(*]VB*)]}(*||*),(*||*){MusicChord[(*VB[*) <|"PitchList" -> {MusicPitch[<|"Accidental" -> 0, "Octave" -> 4, "Key" -> "E"|>], MusicPitch[<|"Accidental" -> 1, "Octave" -> 4, "Key" -> "G"|>], MusicPitch[<|"Accidental" -> 0, "Octave" -> 4, "Key" -> "B"|>], MusicPitch[<|"Accidental" -> 0, "Key" -> "D", "MIDINumber" -> 74|>]}|> (*,*)(*"1:eJxdUVtPgzAUnrd4eTHxxcQnTezjEi0Q0Tc6mJdsXijswpMdFMQBnQUy9p/9EZ6KxsWk+drv0pPT07OZcOOtTqdTngAQ0fSFzF8tKVmR8IjWec7kCuR4Q2UOAfpSFJVTRKNUVjXLWuNozXAaHtYVm2WcnoOsMc00w0uzi5nJuvpVyLumPgMa41hnscZ0M26LbAMM0rL6xzYVO17r7qer+4rno5Qv6S54j6Li5c1pGz4AcKK0ElL5f+XuRBa1bB/Adwc2D0XE6ScwhE2ELUKQQWBH+PpbwI6O8MUtMnqg0zcmF8iwlUQU2AYkfqNwp7d2Ew74EmkWf2g8byieaf6YTm8tYSQhtfyJEQTzxQctECaEjgPYJkWfTZdJz9MTZ9TQPHj+gEQ4MdzpPAPfX73M/aR+Sy33gSy8fLEcN8nIHwecZ0kZ9NKL7MUavk/HjYU0Wy3V21o/hk1+ntZOSU3EreGX9tSBs+ipyFbfqidrXu6oL2VZyb8Ax5CPag=="*)(*]VB*)]}(*||*),(*||*){MusicChord[(*VB[*) <|"PitchList" -> {MusicPitch[<|"Accidental" -> 1, "Octave" -> 4, "Key" -> "F"|>], MusicPitch[<|"Accidental" -> 0, "Octave" -> 4, "Key" -> "A"|>], MusicPitch[<|"Accidental" -> 0, "Octave" -> 5, "Key" -> "C"|>], MusicPitch[<|"Accidental" -> 0, "Key" -> "E", "MIDINumber" -> 76|>]}|> (*,*)(*"1:eJxdUclOwzAQLZtYLkhckDiBhI+VSBqjlpuTpixijZMuOWFiN4QmceskavrPfARjAqJCst7MvDczGs+cvUlvutVqtYoTAFvWA6myV6IUy2PBaZVlTK2Anm7onEOAgZJ56eZ8mKiyYmkjHK0Jbi2iqmRvqaDnQF9aPcYM3G1Home0LYt1293IMNoRNqacd3inx0TTZBvgPinKf9Gmjo7XpvuZ6rYU2TARS7oL2qMsRXF12iQfALg8KaXS+l+7G5nyJtoHCLz7vogkF/QTImR2kUlsG2EbLDJ734Q5QNgBir4zNUe4byHzgmhwMIALYP6mQo2zVgmOaaAOEXe17z/IZ5o9JpNrInEcURKMcRjO5guaI9O26SgEM84HbLKMHd+K3WFNs/B5ARnRGHuTWQp6sHqZBXH1nhDvzp772Xw5quNhMAqFSOMidJKL9IU8fExGNUGdvn56trV5cN/++VqzJb0Rr4Ir7WlHMP6Up6tv1leVKHb0SVlaiC+/NY9i"*)(*]VB*)]}}(*||*)(*1:eJxTTMoPSmNmYGAo5gUSYZmp5S6pyflFiSX5RcEsQBH3osyUNCaQPIgXVJqTWswPFXbKrwguSEzOzEsvTmOEqfDJLC5BVQ82Jii/vDgTSDOgmSWAMMsxJzM9Lzc1rwSvYexAhnN+TmluXjFESWpaCQBkRyz7*)(*]GB*)`}</wljs-editor></WLJSWrapper>
+
+This might give the overall impression that there is too much programming or math and not enough music itself. As a musician myself (@JerryI), I find it very handy to quickly generate a scale in a given key and see it on piano keys, or use it to find suitable chords (or 'allowed' notes) for a melody in case, by ear, it just does not come. See you next time! ✌️
