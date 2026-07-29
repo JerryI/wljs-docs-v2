@@ -1,0 +1,43 @@
+---
+title: MusicChord
+package: wljs-sound
+---
+
+```wolfram
+MusicChord[name]
+MusicChord[name, duration]
+MusicChord[{pitch1, pitch2, ...}, duration]
+MusicChord[properties]
+```
+
+represents simultaneous musical pitches. A chord can be specified by name or by an explicit pitch list:
+
+```wolfram
+MusicChord["C Major", 1/2]
+```
+
+```wolfram
+MusicChord[{"C4", "E4", "G4"}, 1/2]
+```
+
+Useful properties include `"PitchList"`, `"Root"`, `"Name"`, `"Duration"`, `"Inversion"`, `"Bass"`, `"SoundVolume"`, `"Style"` and `"TieType"`.
+
+```wolfram
+chord = MusicChord["G DominantSeventh"];
+chord["PitchList"]
+```
+
+## Playback and preview
+
+`MusicChord` is accepted as a [Sound](../Sound/Sound) primitive. Its pitches share one start time and are drawn vertically in the piano roll:
+
+```wolfram
+Sound[{
+  MusicChord[{"C4", "E4", "G4"}, 1/2],
+  MusicChord[{"F4", "A4", "C5"}, 1/2]
+}]
+```
+
+Named chords are resolved before playback; WLJS also supports named chord data that reaches the frontend directly.
+
+See the [Wolfram Language reference](https://reference.wolfram.com/language/ref/MusicChord.html) for supported chord names and properties.

@@ -1,0 +1,40 @@
+---
+title: MusicInterval
+package: wljs-sound
+---
+
+```wolfram
+MusicInterval[semitones]
+MusicInterval[name]
+MusicInterval[properties]
+```
+
+represents the distance between two musical pitches.
+
+```wolfram
+MusicInterval[7]
+MusicInterval["PerfectFifth"]
+```
+
+Useful properties include `"Semitones"`, `"Name"`, `"CompoundOctaves"` and `"CentDeviation"`.
+
+```wolfram
+interval = MusicInterval["MinorThird"];
+interval["Semitones"]
+```
+
+Intervals can transpose symbolic music:
+
+```wolfram
+MusicPitch["E4"] + MusicInterval["MinorThird"]
+MusicNote["C4", 1/4] + MusicInterval[7]
+MusicChord["C Major"] + MusicInterval[7]
+```
+
+They can also define a [MusicScale](../Sound/MusicScale):
+
+```wolfram
+MusicScale[MusicInterval /@ {2, 2, 1, 2, 2, 2, 1}]
+```
+
+See the [Wolfram Language reference](https://reference.wolfram.com/language/ref/MusicInterval.html) for named and compound intervals.

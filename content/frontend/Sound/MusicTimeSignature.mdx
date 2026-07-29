@@ -1,0 +1,38 @@
+---
+title: MusicTimeSignature
+package: wljs-sound
+---
+
+```wolfram
+MusicTimeSignature[numerator]
+MusicTimeSignature[numerator, denominator]
+MusicTimeSignature[numerator, denominator, beatLength]
+MusicTimeSignature[properties]
+```
+
+represents the meter of a musical container.
+
+```wolfram
+MusicTimeSignature[4, 4]
+MusicTimeSignature[6, 8]
+```
+
+The available properties are `"Numerator"`, `"Denominator"` and `"BeatLength"`.
+
+```wolfram
+signature = MusicTimeSignature[6, 8];
+signature["BeatLength"]
+```
+
+Attach a time signature through a container property:
+
+```wolfram
+MusicMeasure[
+  {"G4", "A4", "B4"},
+  <|"TimeSignature" -> MusicTimeSignature[3, 4]|>
+]
+```
+
+Different measures in one [MusicVoice](../Sound/MusicVoice) may use different time signatures.
+
+See the [Wolfram Language reference](https://reference.wolfram.com/language/ref/MusicTimeSignature.html) for simple and compound meter behavior.

@@ -1,0 +1,49 @@
+---
+title: MusicMeasure
+package: wljs-sound
+---
+
+```wolfram
+MusicMeasure[{event1, event2, ...}]
+MusicMeasure[events, properties]
+```
+
+represents one measure containing [MusicNote](../Sound/MusicNote), [MusicRest](../Sound/MusicRest) and [MusicChord](../Sound/MusicChord) events.
+
+```wolfram
+MusicMeasure[{
+  MusicNote["C4", 1/4],
+  MusicNote["E4", 1/4],
+  MusicRest[1/4],
+  MusicChord[{"C4", "E4", "G4"}, 1/4]
+}]
+```
+
+Container properties include `"NoteList"`, `"TimeSignature"`, `"KeySignature"`, `"MusicTempo"` and `"Instrument"`.
+
+```wolfram
+MusicMeasure[
+  {"C4", "D4", "E4"},
+  <|
+    "TimeSignature" -> MusicTimeSignature[3, 4],
+    "Instrument" -> "Flute"
+  |>
+]
+```
+
+The instrument and tempo are inherited by contained events unless a more specific value is present.
+
+## Playback
+
+A measure can be used as a [Sound](../Sound/Sound) primitive or collected into a [MusicVoice](../Sound/MusicVoice):
+
+```wolfram
+Sound[
+  MusicMeasure[
+    {"C4", "E4", "G4", "C5"},
+    <|"Instrument" -> "Marimba"|>
+  ]
+]
+```
+
+See the [Wolfram Language reference](https://reference.wolfram.com/language/ref/MusicMeasure.html) for measure partitioning and tie behavior.

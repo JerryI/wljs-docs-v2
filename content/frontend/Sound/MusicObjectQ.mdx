@@ -1,0 +1,26 @@
+---
+title: MusicObjectQ
+package: wljs-sound
+---
+
+```wolfram
+MusicObjectQ[music]
+```
+
+returns `True` when `music` is a valid symbolic music object, and `False` otherwise.
+
+Supported objects include `MusicNote`, `MusicChord`, `MusicRest`, `MusicMeasure`, `MusicVoice`, `MusicScore`, `MusicPitch`, `MusicDuration`, `MusicInterval`, `MusicScale`, `MusicKeySignature` and `MusicTimeSignature`.
+
+## Example
+
+```wolfram
+MusicObjectQ[MusicNote["G4"]]
+```
+
+```wolfram
+MusicObjectQ[SoundNote["G4"]]
+```
+
+The second expression is a sound primitive rather than a symbolic music object.
+
+See the official [Wolfram Language reference](https://reference.wolfram.com/language/ref/MusicObjectQ.html) for validation details.

@@ -1,0 +1,58 @@
+---
+title: MusicNote
+package: wljs-sound
+---
+
+```wolfram
+MusicNote[pitch]
+MusicNote[pitch, duration]
+MusicNote[properties]
+```
+
+represents a symbolic musical note. `pitch` can be a named pitch, a MIDI pitch number or a [MusicPitch](../Sound/MusicPitch) object. `duration` can be a number, a named duration or a [MusicDuration](../Sound/MusicDuration) object.
+
+```wolfram
+MusicNote["G4", 1/2]
+```
+
+Equivalent property form:
+
+```wolfram
+MusicNote[
+  <|
+    "Pitch" -> MusicPitch["G4"],
+    "Duration" -> MusicDuration[1/2]
+  |>
+]
+```
+
+Useful properties include `"Pitch"`, `"Duration"`, `"SoundVolume"`, `"Style"` and `"TieType"`. Retrieve properties using the normal Wolfram property syntax:
+
+```wolfram
+note = MusicNote["C4", 1/4];
+note["Pitch"]
+note["PropertyAssociation"]
+```
+
+## Playback
+
+`MusicNote` is accepted directly as a [Sound](../Sound/Sound) primitive:
+
+```wolfram
+Sound[MusicNote["C4", 1/4]]
+```
+
+Sequences can mix notes, rests and chords:
+
+```wolfram
+Sound[{
+  MusicNote["C4", 1/4],
+  MusicRest[1/8],
+  MusicNote["E4", 1/8],
+  MusicNote["G4", 1/2]
+}]
+```
+
+WLJS renders music objects in an InputForm-like output, avoiding unsupported native summary boxes.
+
+See the [Wolfram Language reference](https://reference.wolfram.com/language/ref/MusicNote.html) for the complete symbolic API.

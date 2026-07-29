@@ -1,0 +1,29 @@
+---
+title: IncrementalFunction
+---
+
+```wolfram
+IncrementalFunction[fun]
+```
+
+represents a compilable function that can pause its execution, preserve its state and resume later.
+
+Incremental functions are processed by compiler functions such as [FunctionCompile](../Programming-Constructs/FunctionCompile). They can yield a sequence of partial results without completing.
+
+## Example
+
+```wolfram
+compiled = FunctionCompile[
+  IncrementalFunction[
+    Function[
+      Typed[n, "Integer64"],
+      While[True, IncrementalYield[n]]
+    ]
+  ]
+];
+
+instance = compiled[10];
+instance["Next"]
+```
+
+See the official [Wolfram Language reference](https://reference.wolfram.com/language/ref/IncrementalFunction.html) for yielding, receiving and managing active instances.

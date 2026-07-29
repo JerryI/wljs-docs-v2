@@ -1,0 +1,37 @@
+---
+title: MusicDuration
+package: wljs-sound
+---
+
+```wolfram
+MusicDuration[duration]
+MusicDuration[name]
+MusicDuration[properties]
+```
+
+represents a symbolic musical duration.
+
+```wolfram
+MusicDuration[1/4]
+MusicDuration["Eighth"]
+```
+
+Useful properties include `"Duration"`, `"Beats"`, `"BeatDuration"`, `"Multiplier"`, `"RealBeats"` and `"RealDuration"`.
+
+```wolfram
+duration = MusicDuration["Quarter"];
+duration["Duration"]
+duration["PropertyAssociation"]
+```
+
+Numerical musical durations use whole-note units: `1/4` is a quarter note and `1/8` is an eighth note. WLJS converts these durations to seconds using the active [MusicTempo](../Sound/MusicTempo).
+
+```wolfram
+Sound[{
+  MusicNote["C4", MusicDuration["Quarter"]],
+  MusicRest[MusicDuration["Eighth"]],
+  MusicNote["E4", MusicDuration["Eighth"]]
+}]
+```
+
+See the [Wolfram Language reference](https://reference.wolfram.com/language/ref/MusicDuration.html) for beat and real-time duration forms.

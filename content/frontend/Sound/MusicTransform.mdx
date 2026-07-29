@@ -1,0 +1,44 @@
+---
+title: MusicTransform
+package: wljs-sound
+---
+
+```wolfram
+MusicTransform[music, transformation]
+MusicTransform[music, {transformation, parameters}]
+MusicTransform[transformation]
+```
+
+applies a symbolic transformation to a music object. The one-argument form is an operator that can be mapped over music expressions.
+
+Available transformations depend on the object. Common operations include transposition, pitch sorting, accidental normalization, trimming, combining and separating voices.
+
+## Examples
+
+Transpose a note by seven semitones:
+
+```wolfram
+MusicTransform[
+  MusicNote["C4"],
+  {"Transpose", Quantity[7, IndependentUnit["semitones"]]}
+]
+```
+
+Use the operator form:
+
+```wolfram
+MusicTransform[
+  {"Transpose", Quantity[7, IndependentUnit["semitones"]]}
+] /@ {
+  MusicNote["C4"],
+  MusicChord["DMinor"]
+}
+```
+
+Query transformations available for an object:
+
+```wolfram
+MusicTransform[MusicScore[{"C4"}], "Properties"]
+```
+
+See the official [Wolfram Language reference](https://reference.wolfram.com/language/ref/MusicTransform.html) for supported transformations and parameters.

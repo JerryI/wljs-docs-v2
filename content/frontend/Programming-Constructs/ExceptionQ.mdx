@@ -1,0 +1,24 @@
+---
+title: ExceptionQ
+---
+
+```wolfram
+ExceptionQ[expr]
+ExceptionQ[expr, tag]
+ExceptionQ[expr, {tag1, tag2, ...}]
+```
+
+tests whether `expr` is a valid [Exception](../Programming-Constructs/Exception) object. A second argument additionally tests whether its type is the specified tag or one of its subtypes.
+
+## Examples
+
+```wolfram
+exception = Exception["DataConsistencyError", 42];
+
+ExceptionQ[exception]
+ExceptionQ[exception, "DataConsistencyError"]
+```
+
+For a list of tags, matching any one tag is sufficient.
+
+See the official [Wolfram Language reference](https://reference.wolfram.com/language/ref/ExceptionQ.html) for subtype matching behavior.

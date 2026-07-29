@@ -1,0 +1,25 @@
+---
+title: SurfaceContourPlot3D
+---
+
+```wolfram
+SurfaceContourPlot3D[f, p ∈ reg]
+```
+
+generates a contour plot of `f` over the surface of the three-dimensional region `reg`, treating `f` as a function of the point `p`.
+
+## Examples
+
+Color a sphere by the values of `x y`:
+
+```wolfram
+SurfaceContourPlot3D[x y, {x, y, z} ∈ Sphere[]]
+```
+
+Display a legend for the contour values:
+
+```wolfram
+SurfaceContourPlot3D[x + z, {x, y, z} ∈ Torus[], PlotLegends -> Automatic]
+```
+
+See the official [Wolfram Language reference](https://reference.wolfram.com/language/ref/SurfaceContourPlot3D.html) for options and supported regions.

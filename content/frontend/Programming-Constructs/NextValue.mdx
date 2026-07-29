@@ -1,0 +1,22 @@
+---
+title: NextValue
+---
+
+```wolfram
+NextValue[inc]
+```
+
+returns the next value from an [IncrementalObject](../Programming-Constructs/IncrementalObject) or another supported incremental expression.
+
+## Example
+
+```wolfram
+obj = IncrementalObject["Identity"][{a, b}];
+
+NextValue[obj]
+NextValue[obj]
+```
+
+A further call returns a failure object because the incremental has no more values.
+
+See the official [Wolfram Language reference](https://reference.wolfram.com/language/ref/NextValue.html) for more details.

@@ -1,0 +1,46 @@
+---
+title: MusicPitch
+package: wljs-sound
+---
+
+```wolfram
+MusicPitch[name]
+MusicPitch[midiNumber]
+MusicPitch[properties]
+```
+
+represents a musical pitch independently of its duration.
+
+Named pitches may include an accidental and octave:
+
+```wolfram
+MusicPitch["F#4"]
+```
+
+MIDI pitch numbers are also accepted:
+
+```wolfram
+MusicPitch[60]
+```
+
+Useful properties include `"Key"`, `"Accidental"`, `"Octave"`, `"Name"`, `"NameWithOctave"`, `"MIDINumber"`, `"Frequency"`, `"PitchClass"` and `"CentDeviation"`.
+
+```wolfram
+pitch = MusicPitch["A4"];
+pitch["Frequency"]
+pitch["MIDINumber"]
+```
+
+Use a `MusicPitch` in notes, chords and scales:
+
+```wolfram
+Sound[MusicNote[MusicPitch["C#5"], 1/2]]
+```
+
+Add or subtract a [MusicInterval](../Sound/MusicInterval) to transpose a pitch:
+
+```wolfram
+MusicPitch["C4"] + MusicInterval["PerfectFifth"]
+```
+
+See the [Wolfram Language reference](https://reference.wolfram.com/language/ref/MusicPitch.html) for tuning and microtonal properties.

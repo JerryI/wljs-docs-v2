@@ -1,0 +1,23 @@
+---
+title: ThrowException
+---
+
+```wolfram
+ThrowException[spec]
+ThrowException[spec, payload]
+```
+
+creates and throws an [Exception](../Programming-Constructs/Exception) object. Use it inside code whose caller handles structured errors with [CatchExceptions](../Programming-Constructs/CatchExceptions).
+
+## Example
+
+```wolfram
+CatchExceptions[
+  ThrowException["DataConsistencyError", <|"Data" -> 42|>],
+  All
+]
+```
+
+Calling `ThrowException` without an enclosing handler produces an uncaught-exception message.
+
+See the official [Wolfram Language reference](https://reference.wolfram.com/language/ref/ThrowException.html) for accepted exception specifications.

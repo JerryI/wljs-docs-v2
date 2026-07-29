@@ -1,0 +1,26 @@
+---
+title: ExceptionTypes
+---
+
+```wolfram
+ExceptionTypes[]
+ExceptionTypes[tagSpec]
+```
+
+returns registered symbolic exception types. With `tagSpec`, it returns the registered types that are subtypes of the specified type or types.
+
+## Examples
+
+List all registered types:
+
+```wolfram
+ExceptionTypes[]
+```
+
+List registered subtypes of a particular parent:
+
+```wolfram
+ExceptionTypes["GeneralError"]
+```
+
+See the official [Wolfram Language reference](https://reference.wolfram.com/language/ref/ExceptionTypes.html) for accepted tag specifications.

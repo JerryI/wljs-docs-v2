@@ -1,0 +1,24 @@
+---
+title: RegisterExceptionType
+---
+
+```wolfram
+RegisterExceptionType[sym]
+RegisterExceptionType[sym, parent]
+RegisterExceptionType[sym, {parent1, parent2, ...}]
+```
+
+registers `sym` as a symbolic exception type, optionally declaring one or more parent exception types.
+
+## Example
+
+```wolfram
+RegisterExceptionType[FileReadError, "IOError"];
+
+ExceptionTypeRegisteredQ[FileReadError]
+ExceptionTypes["IOError"]
+```
+
+Registration clears prior definitions on `sym` and protects it. Register only symbols intended to serve as exception types.
+
+See the official [Wolfram Language reference](https://reference.wolfram.com/language/ref/RegisterExceptionType.html) for registration and deregistration details.

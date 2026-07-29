@@ -1,0 +1,32 @@
+---
+title: CatchExceptions
+---
+
+```wolfram
+CatchExceptions[expr, spec]
+CatchExceptions[spec][expr]
+```
+
+catches and transforms exceptions thrown while evaluating `expr`. The specification can select all exceptions, a type and its subtypes, or multiple type-to-handler rules.
+
+## Examples
+
+Use the default handler for every exception:
+
+```wolfram
+CatchExceptions[
+  ThrowException["Error", 42],
+  All
+]
+```
+
+Provide a handler:
+
+```wolfram
+CatchExceptions[
+  ThrowException["Error", 42],
+  "Error" -> Function[data, data["ExceptionPayload"]]
+]
+```
+
+See the official [Wolfram Language reference](https://reference.wolfram.com/language/ref/CatchExceptions.html) for handler data and matching rules.

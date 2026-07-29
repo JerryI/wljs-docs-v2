@@ -1,0 +1,24 @@
+---
+title: NonCommutativePolynomialReduce
+---
+
+```wolfram
+NonCommutativePolynomialReduce[poly, {poly1, poly2, ...}, vars, alg]
+NonCommutativePolynomialReduce[poly, {poly1, poly2, ...}, alg]
+```
+
+reduces `poly` modulo a list of non-commutative polynomials. It returns reduction functions together with the remainder.
+
+## Example
+
+```wolfram
+p = x ** x ** y + y ** x;
+divisors = {x ** y - y ** x};
+
+{functions, remainder} =
+  NonCommutativePolynomialReduce[p, divisors, {x, y}]
+```
+
+Use [NonCommutativeExpand](../Algebra-and-Polynomials/NonCommutativeExpand) when verifying the reconstructed polynomial.
+
+See the official [Wolfram Language reference](https://reference.wolfram.com/language/ref/NonCommutativePolynomialReduce.html) for the result structure and ordering rules.

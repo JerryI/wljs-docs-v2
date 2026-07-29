@@ -1,0 +1,51 @@
+---
+title: MusicVoice
+package: wljs-sound
+---
+
+```wolfram
+MusicVoice[{event1, event2, ...}]
+MusicVoice[{measure1, measure2, ...}]
+MusicVoice[content, properties]
+```
+
+represents one sequential musical voice. Event lists are partitioned into [MusicMeasure](../Sound/MusicMeasure) objects by the Wolfram Kernel.
+
+```wolfram
+MusicVoice[{
+  MusicNote["C4", 1/4],
+  MusicNote["D4", 1/4],
+  MusicNote["E4", 1/4],
+  MusicNote["G4", 1/4]
+}]
+```
+
+Container properties include `"MeasureList"`, `"TimeSignature"`, `"KeySignature"`, `"MusicTempo"` and `"Instrument"`.
+
+## Instruments
+
+Assign an instrument through the property association:
+
+```wolfram
+MusicVoice[
+  {"C4", "D4", "E4", "G4"},
+  <|"Instrument" -> "Flute"|>
+]
+```
+
+The instrument is propagated to the generated `SoundNote` events and selected independently on the frontend.
+
+## Parallel voices
+
+Put several voices in a [MusicScore](../Sound/MusicScore) to play them in parallel:
+
+```wolfram
+MusicScore[{
+  MusicVoice[{"C4", "D4", "E4", "G4"}, <|"Instrument" -> "Flute"|>],
+  MusicVoice[{"C3", "G2"}, <|"Instrument" -> "Trumpet"|>]
+}]
+```
+
+The score preview assigns a distinct color to each concurrent voice.
+
+See the [Wolfram Language reference](https://reference.wolfram.com/language/ref/MusicVoice.html) for the complete symbolic API.

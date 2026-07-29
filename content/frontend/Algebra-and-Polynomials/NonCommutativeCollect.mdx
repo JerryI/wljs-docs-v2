@@ -1,0 +1,22 @@
+---
+title: NonCommutativeCollect
+---
+
+```wolfram
+NonCommutativeCollect[expr, x]
+NonCommutativeCollect[expr, x, alg]
+NonCommutativeCollect[expr, {x1, x2, ...}, alg]
+```
+
+collects terms involving the same powers and positions of objects matching `x` in a non-commutative polynomial. A list of objects is collected successively.
+
+## Example
+
+```wolfram
+expr = x ** x ** y ** x + 2 x ** x ** z ** x +
+  3 x ** y ** x ** x + 4 x ** z ** x ** x;
+
+NonCommutativeCollect[expr, x]
+```
+
+See the official [Wolfram Language reference](https://reference.wolfram.com/language/ref/NonCommutativeCollect.html) for algebra and coefficient specifications.

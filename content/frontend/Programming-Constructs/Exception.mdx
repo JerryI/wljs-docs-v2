@@ -1,0 +1,29 @@
+---
+title: Exception
+---
+
+```wolfram
+Exception[spec]
+Exception[spec, payload]
+```
+
+creates an exception object from a string or symbolic type specification. The optional payload can be any expression and is commonly an association containing error details.
+
+## Examples
+
+```wolfram
+Exception["DataConsistencyError"]
+```
+
+Attach structured information:
+
+```wolfram
+Exception[
+  "DataConsistencyError",
+  <|"Data" -> 42, "Source" -> "import"|>
+]
+```
+
+Use [ExceptionQ](../Programming-Constructs/ExceptionQ) to validate an exception object.
+
+See the official [Wolfram Language reference](https://reference.wolfram.com/language/ref/Exception.html) for supported specifications and properties.

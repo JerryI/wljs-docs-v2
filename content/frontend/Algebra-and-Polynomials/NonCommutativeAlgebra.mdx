@@ -1,0 +1,23 @@
+---
+title: NonCommutativeAlgebra
+---
+
+```wolfram
+NonCommutativeAlgebra[alg]
+NonCommutativeAlgebra[spec]
+```
+
+represents a non-commutative algebra. `alg` can name a supported special algebra, while `spec` can provide generators, relations, operation names and ordering settings.
+
+The resulting object can be passed to [NonCommutativeExpand](../Algebra-and-Polynomials/NonCommutativeExpand), [NonCommutativeCollect](../Algebra-and-Polynomials/NonCommutativeCollect) and related functions.
+
+## Example
+
+Create an algebra using the default non-commutative multiplication:
+
+```wolfram
+alg = NonCommutativeAlgebra[];
+NonCommutativeExpand[(a + 2 b) ** (3 a + 4 b), alg]
+```
+
+See the official [Wolfram Language reference](https://reference.wolfram.com/language/ref/NonCommutativeAlgebra.html) for the complete specification format.

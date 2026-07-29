@@ -1,0 +1,44 @@
+---
+title: MusicScale
+package: wljs-sound
+---
+
+```wolfram
+MusicScale[name]
+MusicScale[{pitch1, pitch2, ...}]
+MusicScale[{interval1, interval2, ...}]
+MusicScale[properties]
+```
+
+represents a musical scale defined by a name, pitch list or interval list.
+
+```wolfram
+MusicScale["C Major"]
+MusicScale["E Minor"]
+```
+
+Construct a scale from pitches:
+
+```wolfram
+MusicScale[{"C4", "D4", "E4", "F4", "G4", "A4", "B4"}]
+```
+
+Or from intervals:
+
+```wolfram
+MusicScale[MusicInterval /@ {2, 2, 1, 2, 2, 2, 1}]
+```
+
+Useful properties include `"Name"`, `"NameWithTonic"`, `"Tonic"`, `"PitchList"`, `"IntervalList"`, `"Mode"` and `"Type"`.
+
+```wolfram
+scale = MusicScale["D Dorian"];
+scale["PitchList"]
+scale["IntervalList"]
+```
+
+Use scales to construct [MusicKeySignature](../Sound/MusicKeySignature) objects or as inputs to Wolfram music transformations.
+
+<Callout type="info">
+This page describes the Wolfram Language 15 symbolic `MusicScale`, not the obsolete `Music`` package function with the same name.
+</Callout>

@@ -1,0 +1,21 @@
+---
+title: CliffordAlgebra
+---
+
+```wolfram
+CliffordAlgebra[{pvars, nvars, zvars}]
+CliffordAlgebra[{pvars, nvars, zvars}, alg]
+```
+
+constructs a [NonCommutativeAlgebra](../Algebra-and-Polynomials/NonCommutativeAlgebra) representing a generalized Clifford algebra. Generators in `pvars`, `nvars` and `zvars` square to `1`, `-1` and `0`, respectively.
+
+## Example
+
+```wolfram
+alg = CliffordAlgebra[{{e1, e2}, {e3}, {}}];
+NonCommutativeExpand[(e1 + e3) ** (e1 - e3), alg]
+```
+
+The second form takes operation names and monomial-order settings from `alg`.
+
+See the official [Wolfram Language reference](https://reference.wolfram.com/language/ref/CliffordAlgebra.html) for the defining relations.

@@ -1,0 +1,24 @@
+---
+title: GrassmannAlgebra
+---
+
+```wolfram
+GrassmannAlgebra[vars]
+GrassmannAlgebra[vars, alg]
+```
+
+constructs a [NonCommutativeAlgebra](../Algebra-and-Polynomials/NonCommutativeAlgebra) representing the Grassmann, or exterior, algebra with generators `vars`.
+
+## Example
+
+```wolfram
+alg = GrassmannAlgebra[{x, y, z}];
+NonCommutativeExpand[
+  Wedge[x + 2 y + 3 z, 4 x + 5 y + 6 z],
+  alg
+]
+```
+
+The generators anticommute and their squares vanish.
+
+See the official [Wolfram Language reference](https://reference.wolfram.com/language/ref/GrassmannAlgebra.html) for the canonical representation and supported operations.

@@ -1,0 +1,71 @@
+---
+title: FrontFileDownload
+env:
+  - Wolfram Kernel
+  - WLJS
+package: wljs-editor
+source: https://github.com/JerryI/wljs-editor/blob/dev/src/System.wl
+---
+
+```wolfram
+FrontFileDownload[filename]
+FrontFileDownload[byteArray, filename]
+```
+
+creates a file download in the frontend. Wrap the expression with [FrontSubmit](../Frontend-IO/FrontSubmit) to invoke the browser's download action.
+
+## Download a file
+
+```wolfram
+FrontSubmit[
+  FrontFileDownload[
+    FileNameJoin[{NotebookDirectory[], "report.pdf"}]
+  ]
+]
+```
+
+The file is read by the Wolfram Kernel and transferred to the frontend as bytes. The downloaded file keeps the final component of the source path as its filename.
+
+`File[path]` is also accepted:
+
+```wolfram
+FrontSubmit[
+  FrontFileDownload[File["data/results.csv"]]
+]
+```
+
+## Download a byte array
+
+Use the two-argument form when the content is already available as a `ByteArray`:
+
+```wolfram
+bytes = StringToByteArray["Hello from WLJS"];
+
+FrontSubmit[
+  FrontFileDownload[bytes, "hello.txt"]
+]
+```
+
+The frontend treats the content as an arbitrary binary file, so the supplied filename should include the desired extension.
+
+<Callout type="note">
+The browser or desktop application determines whether the file is saved immediately or a save dialog is shown, according to its download settings.
+</Callout>
+
+## Embed a file in a notebook
+
+Alternatively, `FrontFileDownload` has a **button-like output form that allows files to be embedded in a notebook**:
+
+```wolfram
+bytes = StringToByteArray["Hello from WLJS"];
+FrontFileDownload[bytes, "hello.txt"]
+```
+
+This creates a download button and stores the file data with the notebook. The file content and download functionality are preserved when the notebook is exported to HTML or MDX.
+
+Inputs other than a file path or `ByteArray` produce a `FrontFileDownload::fmt` message and return `$Failed`.
+
+## Supported output forms
+
+- [StandardForm](../Formatting/StandardForm)
+- [WLXForm](../Formatting/WLXForm)

@@ -1,0 +1,410 @@
+---
+title: Release notes *3.1.0*
+date: 2026-07-25
+---
+
+
+import { Tabs, Tab } from 'fumadocs-ui/components/tabs';
+
+<Tabs items={['Windows', 'Mac','GNU/Linux', 'Docker', 'Homebrew']}>
+  <Tab value="Mac">
+    - [Apple Silicon](https://github.com/WLJSTeam/wljs-notebook/releases/download/v3.1.0/wljs-notebook-3.1.0-arm64-macos.dmg)
+    - [Intel](https://github.com/WLJSTeam/wljs-notebook/releases/download/v3.1.0/wljs-notebook-3.1.0-x64-macos.dmg)
+  </Tab>
+  <Tab value="Windows">
+    - [x86/64](https://github.com/WLJSTeam/wljs-notebook/releases/download/v3.1.0/wljs-notebook-3.1.0-x64-win.exe)
+  </Tab>
+  <Tab value="GNU/Linux">
+    - [DEB x86/64](https://github.com/WLJSTeam/wljs-notebook/releases/download/v3.1.0/wljs-notebook-3.1.0-amd64-gnulinux.deb)
+    - [DEB ARM64](https://github.com/WLJSTeam/wljs-notebook/releases/download/v3.1.0/wljs-notebook-3.1.0-arm64-gnulinux.deb)
+    - [AppImage x86/64](https://github.com/WLJSTeam/wljs-notebook/releases/download/v3.1.0/wljs-notebook-3.1.0-x86_64-gnulinux.AppImage)
+    - [AppImage ARM64](https://github.com/WLJSTeam/wljs-notebook/releases/download/v3.1.0/wljs-notebook-3.1.0-arm64-gnulinux.AppImage)
+    - [RPM x86/64](https://github.com/WLJSTeam/wljs-notebook/releases/download/v3.1.0/wljs-notebook-3.1.0-x86_64-gnulinux.rpm)
+  </Tab>
+  <Tab value="Docker">
+
+```bash
+docker run -it \
+  -v ~/wljs:"/home/wljs/WLJS Notebooks" \
+  -v ~/wljs/Licensing:/home/wljs/.WolframEngine/Licensing \
+  -v ~/wljs/tmp:/tmp \
+  -p 8000:3000 \
+  --name wljs \
+  ghcr.io/wljsteam/wljs-notebook:main
+```
+
+  </Tab>
+  <Tab value="Homebrew">
+  
+```bash  
+brew install --cask wljs-notebook
+```
+
+  </Tab>
+</Tabs>
+
+<wljs-store json="./attachments/ee92c8e7-44f0-4d4f-b028-b1cd5ac77404.txt"></wljs-store>
+
+
+## Better compatibility with WL 14.0–15.0
+We significantly improved symbol rendering, added various styling options for new plotting functions, and improved the output forms of new symbols.
+
+## OpenSUSE and others
+We added `.rpm` binaries!
+
+### Exception objects
+For example, an `Exception` object now shows relevant information:
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`Exception["DataConsistencyError"]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`Exception[(*VB[*) {"DataConsistencyError"}, <|"ExceptionValidated" -> True, "ExceptionAPIVersion" -> "1"|> (*,*)(*"1:eJyVUl1v2jAUpVsrbevDpL1U2sPEpOWRCQxpw95sSPox1iEMjPBU41yiiMSmTiJC/27/SK+hH7xOsu71Pef46tjX3xd6tHxfq9XyrxiYrgJtsjtqjFAxRLzMMmG2CC+PrOYzhsBoVfgqmiamKEW6J74cEH4FsizEIgX+A+GO9JoRnLcazQviNTrgkobXulg0CLhuE4hsI7d8Z5scYxgkebFv+VrtuLMDd8+urgvIpgls+ClyfiVhXSRa/arvD3yyYJQU2ljNW8srnUb76iOGyWjQB6kj4I9YOcRzCGXMcRlmh3R3AOmLQvS0ytEMKLn1jdEG4Rcehb0DOW5Iy2lTuKnG4z96yLPbJLyk2o0lp5OZO5+v1vdcOYQx/m+OaaYCEW7i3rgT+9OKZ/PhPSrkzB2Fq7Q7eaDXE5mbIQ+vNBte9ri65XFX0d8633rdAQuTIFiLFV23miGPnXbfLuvuwJHbZ883envpUYkD+mA3IKK/Kt3u0LEp4X/f/xtyVNVLtVJ6o+rwMoq6lrI0BqKfvGZ7nNhPItIcngD41qmR"*)(*]VB*)]`}</wljs-editor></WLJSWrapper>
+
+Throw and catch exceptions:
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`CatchExceptions[
+	  1+ThrowException[Exception["Null"]],
+	  All
+	]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`Failure[(*VB[*) "Null", <|"ExceptionAPIVersion" -> "1", "ExceptionTagList" -> {"Null"}|> (*,*)(*"1:eJyVUctOwkAUxVd8bEzcmLjSxC5J6ECluOtACygi6bRIWVnaS9PQzsC0DeCH+j3OAApbk8l9nHNyc+behwmzpyelUim7EwGzlcV4+mlw7tMIQlKkqc/XAp4eSc21CBZnNDdpOIx5XvjJlrg5IMwVBEXuTxIgjwKuBXolhCe1XKkjvVwDDZV1tT4pI9C0CqCgKrjpsRxyKkIvzvLtyL9uw90euNu56uaQDmNYknPBmZwz/ny/FV9JIIxzxiW/H9dhSbjtLkVw7V4LAhYC+RadgnQFGRgrGhZZQY0NgNpAgceBqH4hwTUPFKJAqlI14GXlOG9sQNJ+7LUNpkUBMdyRNh7P5gtCFYQx+RiLNKKW7y2jplOLzOGKpOPBQiiCkWZ7s6ThfhldN8j4gHgdhgftJqF9EjWo8cqytd7oYS+2rLk/M+ZqxSORUm3JJ90dONJaePeJ/WLtQtzjQhbgh+80WW9Qhxfw33VLZb9IElKSyjN5eT/J4AdtHZiQ"*)(*]VB*)]`}</wljs-editor></WLJSWrapper>
+
+### Symbolic array, matrix, and vector representations
+...fill in gaps
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`ArraySymbol["a", {2,3}]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(ArraySymbol["a",{2,3}])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KWnMIB4vkAjLTC13SU3OL0osyS8KZgKJOAaDZJUSldKYYHp8MotLgkEmGIFJYwCxxQ9A"*)(*]VB*)`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`MatrixSymbol["a", {2,3}]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(MatrixSymbol["a",{2,3}])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KWlMIB4vkAjLTC13SU3OL0osyS8KBgmH+QYzAymlRCUATnQLww=="*)(*]VB*)`}</wljs-editor></WLJSWrapper>
+
+and symbolic vectors:
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`VectorSymbol["a", 45]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(VectorSymbol["a",45])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KWnMIB4vkAjLTC13SU3OL0osyS8KZgKJBAeDZJUSlcBcE1MApEMMiA=="*)(*]VB*)`}</wljs-editor></WLJSWrapper>
+
+Symbolic tensors respect `+`, `-`, and other operations, whereas WL would usually treat them as scalars.
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`a + {1,2,3}
+	(*VB[*)(VectorSymbol["a",45])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KWnMIB4vkAjLTC13SU3OL0osyS8KZgKJBAeDZJUSlcBcE1MApEMMiA=="*)(*]VB*) + {1,2,3}`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`{1+a,2+a,3+a}`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`{1,2,3}+(*VB[*)(VectorSymbol["a",45])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KWnMIB4vkAjLTC13SU3OL0osyS8KZgKJBAeDZJUSlcBcE1MApEMMiA=="*)(*]VB*)`}</wljs-editor></WLJSWrapper>
+
+### Non-commutative algebra representations
+We added support for non-commutative algebra symbols. For example:
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`alg = CliffordAlgebra[{{x}, {y}, {z}}]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`NonCommutativeAlgebra[(*VB[*) <|"Multiplication" -> NonCommutativeMultiply, "Addition" -> Plus, "Unity" -> 1, "Zero" -> 0, "CommutativeVariables" -> {}, "ScalarVariables" -> Automatic, "Generators" -> {{x, y, z}}, "Relations" -> Automatic, "CommutationRelations" -> Automatic, "Structure" -> {"Clifford", {{x}, {y}, {z}}}, "VariableOrder" -> "Increasing", "WordOrder" -> "Lexicographic"|> (*,*)(*"1:eJylkc9LwzAUx+svUC+KF8GTovVW2Lp1bN5a16EwEVrd2TTvVQJpImmC23/vixXsQRAUwpd8v+/l5RNyUemi3gmCoD0jyfR6oU3zkhrD1CtC6ZqGmQ3F9ZbvOSJZGK1srmAljHVMdoWTXiFfI3eWVRLLK4pxPKn5DDCajkbDaAxDFs0G0ziCGCuI62TCB1W97YfskixFazt32uP54ri32KwEvpfHVHtw0oo3KTizQqub8+7UIUkOwmrjGzs4P/dOS+jcAclzsZwj14DlNbkwuQ2TzF/EZBom8zBO/eqlGaXfjIWjp+37DTJ4VHLzmT4Zh7+Te74UCPAfzJc/Mmd/AW73/Mcx2eIH7pWE7Q=="*)(*]VB*)]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`NonCommutativeExpand[(x + 2 y + 3 z) ** (4 x + 5 y + 6 z), alg]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`-6-3 x**y-6 x**z-3 y**z`}</wljs-editor></WLJSWrapper>
+
+### Incremental objects
+A new feature in recent versions of WL is support for incremental functions and objects, similar to JavaScript function generators and the `yield` keyword.
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`obj = IncrementalObject["Identity"][{1, 2}]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`IncrementalObject[(*VB[*) "Identity", {"Source" :> {1, 2}, "Position" :> 1} (*,*)(*"1:eJydkM1LxDAQxesXuAoKggieFPTYg9lU1JuLLbuwKLTas2kylUCaLPnA9r93Yhfcm+LlMe+9Yfgxl40p250kSdw5ysz0hbHd+6O1TH+AqELXMTtg3G7FnWOUwhrtcy1qaX1gaixONoq8Bx48axRUVxjfE6BTLrI0YxRSetvw9I4Kkk5vMk4y2hIgvN2OR3ZRltL50Z1t8Kw5Fh66WsJntYfdM+vgYVw9QMmF9MbGdiSKx+ZGidFNUN7K5RNwI6A6QndNyEKA9tIPOP4AlAG59+MATLxoNXynrzbA71iH2NVMBbjww+q/cKdrOA3W5/3KgnPS6D8yuviZgikHX+ZoeHE="*)(*]VB*)]`}</wljs-editor></WLJSWrapper>
+
+Return values from the incremental object:
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`NextValue[obj]
+	NextValue[obj]
+	NextValue[obj]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`1`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`2`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`Failure[(*VB[*) "IncrementalObjectTerminated", <||> (*,*)(*"1:eJyVUlFv2jAQZuumtXuZ1JdJ60srNY9IYMga+hYDoWy0RThQwtOMc0QpiQ2Oo0J/aH/PztC1vE6yvrv7vtPp89kXczVaHFUqleIHAlWbQOn8j681lwnErMxzrrdILz7Ynm8IgVbSdGU8SbUpebYXTg+E7gZEafg8A3aJdFN4tRh+1qu1K+JVm+CSqle/mlcJuG4NiGigtvhoh3xCGKSF2Y98q3ba9wN3r676BvJJCk/sC2pdrZW+Pt83f7VEnBqlrf4+7kZl8b46QRiPBh0QKgb2gpVDPIf4lDouxeiQ1o4gPZCgU4HZPwq19kEHJqTuNHz4tQnDWzVk+V0a9XzlJoL546k7my1XayYdQil7mGGYyoBHT0k7bCbdyYbls+EaO8TUHUXLrDV+9vtjUeghi24UHfbaTN6xpCX936rYeq0BjdIgWPGlv6rXIpY4jY491t2BI7dDXy/xvthRie9xbBPg8b3Mtjs21CX877rPUOtLoSEHaXh2P38EYULQeSq5wT9TsQM+2w/BswL+AuC/oeI="*)(*]VB*)]`}</wljs-editor></WLJSWrapper>
+
+### Standard colors
+WL's new color palette is now available in autocomplete.
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`StandardBlue
+	StandardRed `}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(RGBColor[0.4, 0.6, 1])(*,*)(*"1:eJxTTMoPSmNiYGAo5gUSYZmp5S6pyflFiSX5RcEsQBHn4PCQNGaQPAeQCHJ3cs7PyS8qmjUTBG7aFxmDwWP7IgYw+GAPAFRyFkk="*)(*]VB*)`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(RGBColor[0.93, 0.27, 0.27])(*,*)(*"1:eJxTTMoPSmNiYGAo5gUSYZmp5S6pyflFiSX5RcEsQBHn4PCQNGaQPAeQCHJ3cs7PyS8qOvxVI6b/0Fv7Io+HVSLr3C8iGAB5sRpI"*)(*]VB*)`}</wljs-editor></WLJSWrapper>
+
+## Improved formatting of PlotLegends and FrameLabels
+Due to a Unicode decoding issue, it wasn't previously possible to embed LaTeX in plot-axis labels or legends, or to mix it with regular labels.
+
+For example, suppose you want to place a LaTeX equation as a plot legend:
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`Plot[x x, {x,0,1}, PlotLegends->Placed[{
+	  TeXView["x^2"]
+	}, {0.2,0.6}]]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(Legended[ToExpression[FrontEndRef["e8652386-8ccc-4fba-a517-7dcf29fb5173"], InputForm], Placed[LineLegend[{Directive[Opacity[1.], RGBColor[0.24, 0.6, 0.8], AbsoluteThickness[2]]}, {TeXView[Offload[URLDecode["x%5E2"]]]}, LegendMarkers -> None, LabelStyle -> {}, LegendLayout -> "Column"], {0.2, 0.6}, Identity]])(*,*)(*"1:eJxdUUtOwzAUDNDyEyzgAEhIsMyCln5YRUADQgoUmoLYOs4zWBgb2Q40B+AQcJJegQ2XYIXYcAT8Ka3atxhZ43nP88bbmeiRhSAI1LqBGwovHcBCIi1kumSYBO6A5zUvWTUQ59TcWSGZs9ymgRMpuI55Hg8AFxplDNIdQ0O72ajV282wjTEO90mGQtTYa4WtHJPaAcnMuU7m7ZCKgV5h2pbtAVDe5ax0bF8WMKOxLlJggN1LqmoNIKbAe1w0cMkQhpxU/z0nlINfxHuuOE5p37FioEOlmUefwQvs5t0nhKkuZeDqN/JiZ/D06FgwIeVw6/XnavgZybqrr0i+v9n6jvyYDQOHmRKs0NC/p/iBg1LUbjPjY/xoH24n0ToXhDCBRr6t0+teYn8oh9SuN9htxLXpfNxH+m3PkXwAqdzVheAzQfpoUAYs1SUDEkxZmpaujWcmqBSFTm3MJoTikU+Utm+UwMckExfZWQ5cmzT/AGE8mx4="*)(*]VB*)`}</wljs-editor></WLJSWrapper>
+
+Here we used `TeXView` directly with TeX code inside. Sometimes, if the expression is too large, you may set the size and anchor manually to better position your legend item:
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`Plot[x x, {x,0,1}, PlotLegends->Placed[{
+	  TeXView["x^2~\\\\text{function}", ImageSize->{150,30}, AlignmentPoint->{Left,Center}]
+	}, {0.2,0.6}]]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(Legended[ToExpression[FrontEndRef["c0121a30-70b4-4e2a-b6ae-a865023f7b39"], InputForm], Placed[LineLegend[{Directive[Opacity[1.], RGBColor[0.24, 0.6, 0.8], AbsoluteThickness[2]]}, {TeXView[Offload[URLDecode["x%5E2~%5Ctext%7Bfunction%7D"]], ImageSize -> {150, 30}, AlignmentPoint -> {Left, Center}]}, LegendMarkers -> None, LabelStyle -> {}, LegendLayout -> "Column"], {0.2, 0.6}, Identity]])(*,*)(*"1:eJxtUslOwzAQDfsiQIIrUiUkeqxUUkrhVNEFhFS2piCuTjIuFq6NHAdaDtz4BST4En6BCz/BCXHhExjbbKnw4ckZv5l5My8roWzTMc/zknmEUwbXDYikIlqqYAojLeiCiH1HmUVoxgzfDJGOmNgSwo6SQjdF3OxDlGoScghWMRwV1/w1UioWKsVwvbAOPimEGwQKZHOjXPRLtBKWtuioKTKO0E4xbdpcgMSHgg9stKNSGOIYFQFwiGynZMIIIDwBp3ES4YiTCGI68a25xQS4QZzmcRtLtMuYQWgwhfXYFTiCmfzwkkRMD5Rnz0fVka3A3VpdcqnUU+7u/fjppapK9rxW1eODOW9VV2YRYTtMJE81dM5ZdCEgSZiZ5j8dpmkHzn5Xa1VQyiX50m2UnrRbxqEYgmX86ufLTf82X65r6Ot8pUZTgWNIka80sluzuXs90oWA3fzZqGnP7vHCckZWNmfB6OesK3og9JFkQmcT3QWotluvIwnUUIn5n39on6gLUIl9OpBiyFXnEwmBB3rAgXqZ/WSpcz81W2QgUx3Y7rjlnsjq+7Lj+dcg699ejErR2k+Yb7yc"*)(*]VB*)`}</wljs-editor></WLJSWrapper>
+
+Use `Row` to combine LaTeX expressions with normal text labels.
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`Plot[x x, {x,0,1}, PlotLegends->Placed[{
+	  Row[{
+	    TeXView["x^2"],
+	    "function"  
+	  }]
+	}, {0.2,0.6}]]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(Legended[ToExpression[FrontEndRef["624aae8d-f789-4f65-8128-44fccff58163"], InputForm], Placed[LineLegend[{Directive[Opacity[1.], RGBColor[0.24, 0.6, 0.8], AbsoluteThickness[2]]}, {Row[{TeXView[Offload[URLDecode["x%5E2"]]], "function"}]}, LegendMarkers -> None, LabelStyle -> {}, LegendLayout -> "Column"], {0.2, 0.6}, Identity]])(*,*)(*"1:eJxdUUtOwzAUDNDyEyzgAEhIsMyiaVrCKgIaEFKg0BTE1kmeIaqxkePQ5gAcAk7SK7DhEqwQG46AP4Uo9WIUvzd+mZm3G7MBXrIsK9+UcJvBuAcJ40gwHq3ISgj3QFPHUNYlBGkme4qIF1RtW8IpZ1QENA0mkBQCxQSiPVnuOi5C4KU2PvAObRd3O7bXcjzbdXGSYNzxWt02XlRDGhIGhXy2qj4ApX1KSl0d8gLmOEpFBAQS/ae8qQQgkoPRuCzhiqAEUtz80xxmFIwRo7mha7kwL9Yk9DIu52XPYAjKef8JJZkouaXPj2/IWuDZ8QkjjPPpzsv39fTD5219Pn3+9qrOl2/GbEk4inNGCgHDhywZUcjzTLmZ06Fvav6AjSu3VUvpGcJdlboWiDFhaGZJmbgZhGp5KUTK+WS/Ezg6UFxQ6Y3Reo564SaVC8RHwHPdumR0LnATIYqBRKIkgK2avjp1439miEpWiEitQ4ZVPNK6r1lS71V2OtrzFKiQqf8C4tGjHQ=="*)(*]VB*)`}</wljs-editor></WLJSWrapper>
+
+The same can be done with the `FrameLabel` of your plot; you can put `TeXView`, or, in general, any other expression, alongside normal text:
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`Plot[x x, {x,0,1}, FrameLabel->
+	  {None, Row[{
+	    TeXView["x^2"],
+	    "function"  
+	  }, Spacings->1]},
+	  Frame->True 
+	]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(FrontEndRef["29a39c5a-c0c3-4217-8c1b-80738bc19f00"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKG1kmGlsmmybqJhskG+uaGBma61okGybpWhiYG1skJRtaphkYAAB+ohU4"*)(*]VB*)`}</wljs-editor></WLJSWrapper>
+
+For example, with a graphic:
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`Plot[x x, {x,0,1}, FrameLabel->
+	  {None, Row[{
+	    Graphics[{StandardRed, Line[{{-1,-1}, {1,1}}]}, ImageSize->10],
+	    "function"  
+	  }]},
+	  Frame->True 
+	]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(FrontEndRef["92c965d7-b00e-40e7-b004-ef923bd81869"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKWxolW5qZppjrJhkYpOqaGKSCWSa6qWmWRsZJKRaGFmaWAH7tFUw="*)(*]VB*)`}</wljs-editor></WLJSWrapper>
+
+## Improved `Sound` support
+We have a nice piano-roll preview of a given sequence of notes!
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`Sound[{{SoundNote[{"A4", "C4"}]}, SoundNote["E4"], SoundNote["G4"], SoundNote["C5"]}]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(Sound[{{SoundNote[{"A4", "C4"}]}, SoundNote["E4"], SoundNote["G4"], SoundNote["C5"]}])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRAeK5AIzi/NS0ljgUn6ZBaXIJQieJwwpX75JalpTMgKgkE8RxMw5WyCRTlYxhWnjDtOGWdTAOEWJA0="*)(*]VB*)`}</wljs-editor></WLJSWrapper>
+
+We improved our synthesizer pipeline; now we have many instruments!
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`Sound[{
+	  SoundNote["C5", {0., .4}, "Piano"],
+	  SoundNote["D5", {.5, .9}, "Guitar"],
+	  SoundNote["E5", {1., 1.4}, "Violin"],
+	  SoundNote["F5", {1.5, 1.9}, "Flute"],
+	  SoundNote["G5", {2., 2.4}, "Trumpet"],
+	  SoundNote["A5", {2.5, 2.9}, "Organ"],
+	  SoundNote["B5", {3., 3.4}, "Marimba"],
+	  SoundNote["C6", {3.5, 3.9}, "Vibraphone"],
+	  SoundNote["C2", {4., 4.4}, "Drums"],
+	
+	  SoundNote["C5", {4.5, 4.9}, "AMSynth"], (*WLJS only*)
+	  SoundNote["D5", {5., 5.4}, "FMSynth"], (*WLJS only*)
+	  SoundNote["E5", {5.5, 5.9}, "DuoSynth"], (*WLJS only*)
+	  SoundNote["F4", {6., 6.4}, "MembraneSynth"], (*WLJS only*)
+	  SoundNote["G5", {6.5, 6.9}, "MetalSynth"] (*WLJS only*)
+	}]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(FrontEndRef["7e531460-c334-45bd-b1bd-94c806387878"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKm6eaGhuamBnoJhsbm+iamCal6CYZAglLk2QLAzNjC3MgBAB4VxTu"*)(*]VB*)`}</wljs-editor></WLJSWrapper>
+
+Here is how you can write a basic 808-style beat:
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true" fade="true" >{`With[{step = 60/140/2},
+	  Sound @ Join[
+	    (*BB[*)(* closed hats *)(*,*)(*"1:eJxTTMoPSmNhYGAo5gcSAUX5ZZkpqSn+BSWZ+XnFaYwgCS4g4Zyfm5uaV+KUXxEMUqxsbm6exgSSBPGCSnNSg9mAjOCSosy8dLBYSFFpKpoKkDkeqYkpEFXBILO1sCgJSczMQVYCAOFrJEU="*)(*]BB*)
+	    Table[
+	      SoundNote["C6", {t, t + .035}, "MetalSynth"],
+	      {t, 0, 15 step, step}
+	    ],
+	
+	    (*BB[*)(* kick *)(*,*)(*"1:eJxTTMoPSmNhYGAo5gcSAUX5ZZkpqSn+BSWZ+XnFaYwgCS4g4Zyfm5uaV+KUXxEMUqxsbm6exgSSBPGCSnNSg9mAjOCSosy8dLBYSFFpKpoKkDkeqYkpEFXBILO1sCgJSczMQVYCAOFrJEU="*)(*]BB*)
+	    {
+	      SoundNote["C1", {0, .18}, "Drums"],
+	      SoundNote["C1", {3 step, 3 step + .18}, "Drums"],
+	      SoundNote["C1", {6 step, 6 step + .18}, "Drums"],
+	      SoundNote["C1", {11 step, 11 step + .18}, "Drums"],
+	      SoundNote["C1", {14 step, 14 step + .18}, "Drums"]
+	    },
+	
+	    (*BB[*)(* snare / clap on beat 3 *)(*,*)(*"1:eJxTTMoPSmNhYGAo5gcSAUX5ZZkpqSn+BSWZ+XnFaYwgCS4g4Zyfm5uaV+KUXxEMUqxsbm6exgSSBPGCSnNSg9mAjOCSosy8dLBYSFFpKpoKkDkeqYkpEFXBILO1sCgJSczMQVYCAOFrJEU="*)(*]BB*)
+	    {
+	      SoundNote["C2", {4 step, 4 step + .12}, "Drums"],
+	      SoundNote["C2", {12 step, 12 step + .12}, "Drums"]
+	    },
+	
+	    (*BB[*)(* sliding-feeling 808 bass line *)(*,*)(*"1:eJxTTMoPSmNhYGAo5gcSAUX5ZZkpqSn+BSWZ+XnFaYwgCS4g4Zyfm5uaV+KUXxEMUqxsbm6exgSSBPGCSnNSg9mAjOCSosy8dLBYSFFpKpoKkDkeqYkpEFXBILO1sCgJSczMQVYCAOFrJEU="*)(*]BB*)
+	    {
+	      SoundNote["C2", {0, 3 step}, "Marimba"],
+	      SoundNote["G1", {3 step, 4 step}, "Marimba"],
+	      SoundNote["Bb1", {6 step, 8 step}, "Marimba"],
+	      SoundNote["C2", {8 step, 11 step}, "Marimba"],
+	      SoundNote["Eb2", {12 step, 16 step}, "Marimba"]
+	    }
+	  ]
+	]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(FrontEndRef["58c0d58d-07d4-4170-8757-1d1ae9932fe7"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKm1okG6SYWqToGpinmOiaGJob6FqYm5rrGqYYJqZaWhobpaWaAwB4xxUj"*)(*]VB*)`}</wljs-editor></WLJSWrapper>
+
+## Music Framework
+In WL 15, a new framework was added for working with chords, music lines, and scales. You can find all the symbols under `Music*` using `Names[]`.
+
+In particular, we developed nice preview boxes for notes, pitches, chords, and scales. In general, it follows OOP-like patterns while remaining immutable. For example, here is a single *chord*:
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`MusicChord["CMajor7"]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`MusicChord[(*VB[*) <|"Name" -> "Major Seventh", "Root" -> MusicPitch[<|"Key" -> "C", "Accidental" -> 0|>]|> (*,*)(*"1:eJztVMtum0AUddv0lU2lbip11UplaYmMwbG7Y2ycNIrzYMAPVp3ANSEGxhmGGP9kv6Dqt/ROSFpv2oWXVSV0Zu45R6PDYcTHK+EtnrVarfI9AhX1SMj8qyMlLxKIWZXnXG6QXjzRnjcIIykK5RbxJJWq4lkjvN0S3BqiSvGrDNgnpM1DK+5ZC97umATaFu/Z7V6XQ3thRf1D3u0Ss9NvEuwhnKalao78NT3V07utdA+pvijIJyms2QvUzngOnz803n0EN06VkFr+fdqxyOJmeo0QeKdDiEQM7DtOBukZxKHUsCmuBunfE2TMb4Q0iMngDgp1jcyjhJ7BlhM35MDoOHBS+/5YXLD8LJ0fOcJOIuYEMzsMl6tbVhiEUjYNcZkVIz5fJwPfStxJzfLw4hYd0cz25ssM9WBzuQyS6jp1vBO68vPVelonk2AaAmRJGQ5SM7t0xjfzae0YnaF+dLatPPaQPrxK04puwKvwo7zSG+DxeZFt7llfVrBL554QatfOv/2588H/lh9bfqlvtlBQ7lrzj7/UbOG9djUcaaDWv1t7+Vz/nnhWwk9MHkqg"*)(*]VB*)]`}</wljs-editor></WLJSWrapper>
+
+**Click on it**
+
+It shows you a tiny piano with notes entering the chord. You can extract a bass pitch, which is a `MusicPitch` object.
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`MusicChord[(*VB[*) <|"Name" -> "Major Seventh", "Root" -> MusicPitch[<|"Key" -> "C", "Accidental" -> 0|>]|> (*,*)(*"1:eJztVMtum0AUddv0lU2lbip11UplaYmMwbG7Y2ycNIrzYMAPVp3ANSEGxhmGGP9kv6Dqt/ROSFpv2oWXVSV0Zu45R6PDYcTHK+EtnrVarfI9AhX1SMj8qyMlLxKIWZXnXG6QXjzRnjcIIykK5RbxJJWq4lkjvN0S3BqiSvGrDNgnpM1DK+5ZC97umATaFu/Z7V6XQ3thRf1D3u0Ss9NvEuwhnKalao78NT3V07utdA+pvijIJyms2QvUzngOnz803n0EN06VkFr+fdqxyOJmeo0QeKdDiEQM7DtOBukZxKHUsCmuBunfE2TMb4Q0iMngDgp1jcyjhJ7BlhM35MDoOHBS+/5YXLD8LJ0fOcJOIuYEMzsMl6tbVhiEUjYNcZkVIz5fJwPfStxJzfLw4hYd0cz25ssM9WBzuQyS6jp1vBO68vPVelonk2AaAmRJGQ5SM7t0xjfzae0YnaF+dLatPPaQPrxK04puwKvwo7zSG+DxeZFt7llfVrBL554QatfOv/2588H/lh9bfqlvtlBQ7lrzj7/UbOG9djUcaaDWv1t7+Vz/nnhWwk9MHkqg"*)(*]VB*)]["Bass"]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`MusicPitch[(*VB[*) <|"Accidental" -> 0, "Key" -> "C"|> (*,*)(*"1:eJxTTMoPSmNmYGAolgISTvkVbvlFuQmORUWJeempKcGlubmJRZVA4TRGkBp+IOFWlJ9X4pqXEpZZVFKamAOREEKScK1ITS4tSUzKSQ1WAQonJ1kYGiWlJOumWhgn6ZqYmFvoWpiaJ+smm5iZWFiapqVZJBulMYAMYQESPpnFJcWsINMSc4pTAbwfKnE="*)(*]VB*)]`}</wljs-editor></WLJSWrapper>
+
+Using pitch and duration objects, you can construct a **note**.
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`MusicNote[MusicPitch[(*VB[*) <|"Accidental" -> 0, "Key" -> "C"|> (*,*)(*"1:eJxTTMoPSmNmYGAolgISTvkVbvlFuQmORUWJeempKcGlubmJRZVA4TRGkBp+IOFWlJ9X4pqXEpZZVFKamAOREEKScK1ITS4tSUzKSQ1WAQonJ1kYGiWlJOumWhgn6ZqYmFvoWpiaJ+smm5iZWFiapqVZJBulMYAMYQESPpnFJcWsINMSc4pTAbwfKnE="*)(*]VB*)], MusicDuration[1/4]]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`MusicNote[(*VB[*) <|"Pitch" -> MusicPitch[<|"Accidental" -> 0, "Key" -> "C"|>], "Duration" -> MusicDuration[<|"Duration" -> 1/4|>]|> (*,*)(*"1:eJzdU8tOwkAUxWfUjYkbE1ea2CWJHRge7toCKgGETsujK4d2qJW2A9M2lK808Yu8BRQ2LnRpMjlz7zk3NydnMjdjrk8OcrlcdAWg8rTBRfCiCEFDlzkkCQIqlkBP9rKZc4CG4GFcD52+J+KE+mvhYkeop8xOYjr2GbkF2qmUqljG5byMJixfrCKaHxdZKS/bqFytYNke49JkP1tyCNDyoni98rtbaZc77jaunmIW9D22IMegdXjM7q/Xs2cAdceLucjk7bZH7jvr7hTA1Fs1ZnOHkXfoJFSRkKKqElbhllB1RSCtCPDVAa3tiFAgWSoorJkaRpt3SdDxRg8Kx65NFHOILWs6m5NQQqpKBhZcw7BBRwtXM4puvZ+SwOrOYcIeYn009UE3l72p6SavnqI31ZkRzBaD1O2bA4sx340szbvze0r7bTRIFalQy07mbccPrqkb99tA9QTe4SQrGHWeQ3+5Yg2RsN/GnMVaSwSNPR7+NeqPn6OWJdT4x2lHR9kXoX7EPgFPSub+"*)(*]VB*)]`}</wljs-editor></WLJSWrapper>
+
+By grouping individual chords or notes, you can construct a `MusicScore`.
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`MusicScore[{
+	  MusicChord[(*VB[*) <|"Name" -> "Major Seventh", "Root" -> MusicPitch[<|"Key" -> "C", "Accidental" -> 0|>]|> (*,*)(*"1:eJztVMtum0AUddv0lU2lbip11UplaYmMwbG7Y2ycNIrzYMAPVp3ANSEGxhmGGP9kv6Dqt/ROSFpv2oWXVSV0Zu45R6PDYcTHK+EtnrVarfI9AhX1SMj8qyMlLxKIWZXnXG6QXjzRnjcIIykK5RbxJJWq4lkjvN0S3BqiSvGrDNgnpM1DK+5ZC97umATaFu/Z7V6XQ3thRf1D3u0Ss9NvEuwhnKalao78NT3V07utdA+pvijIJyms2QvUzngOnz803n0EN06VkFr+fdqxyOJmeo0QeKdDiEQM7DtOBukZxKHUsCmuBunfE2TMb4Q0iMngDgp1jcyjhJ7BlhM35MDoOHBS+/5YXLD8LJ0fOcJOIuYEMzsMl6tbVhiEUjYNcZkVIz5fJwPfStxJzfLw4hYd0cz25ssM9WBzuQyS6jp1vBO68vPVelonk2AaAmRJGQ5SM7t0xjfzae0YnaF+dLatPPaQPrxK04puwKvwo7zSG+DxeZFt7llfVrBL554QatfOv/2588H/lh9bfqlvtlBQ7lrzj7/UbOG9djUcaaDWv1t7+Vz/nnhWwk9MHkqg"*)(*]VB*)],
+	  MusicNote[(*VB[*) <|"Pitch" -> MusicPitch[<|"Accidental" -> 0, "Key" -> "C"|>], "Duration" -> MusicDuration[<|"Duration" -> 1/4|>]|> (*,*)(*"1:eJzdU8tOwkAUxWfUjYkbE1ea2CWJHRge7toCKgGETsujK4d2qJW2A9M2lK808Yu8BRQ2LnRpMjlz7zk3NydnMjdjrk8OcrlcdAWg8rTBRfCiCEFDlzkkCQIqlkBP9rKZc4CG4GFcD52+J+KE+mvhYkeop8xOYjr2GbkF2qmUqljG5byMJixfrCKaHxdZKS/bqFytYNke49JkP1tyCNDyoni98rtbaZc77jaunmIW9D22IMegdXjM7q/Xs2cAdceLucjk7bZH7jvr7hTA1Fs1ZnOHkXfoJFSRkKKqElbhllB1RSCtCPDVAa3tiFAgWSoorJkaRpt3SdDxRg8Kx65NFHOILWs6m5NQQqpKBhZcw7BBRwtXM4puvZ+SwOrOYcIeYn009UE3l72p6SavnqI31ZkRzBaD1O2bA4sx340szbvze0r7bTRIFalQy07mbccPrqkb99tA9QTe4SQrGHWeQ3+5Yg2RsN/GnMVaSwSNPR7+NeqPn6OWJdT4x2lHR9kXoX7EPgFPSub+"*)(*]VB*)],
+	  MusicChord[(*VB[*) <|"Duration" -> MusicDuration[<|"Duration" -> 1/8|>], "Name" -> "Major", "Root" -> MusicPitch[<|"Accidental" -> 0, "Key" -> "D"|>]|> (*,*)(*"1:eJztVMtO20AUTUsftJtKbJBYUYlZRoLJmBB24zyAiFDw2Hl41bE9OCa2J4xtxflJFvwEv8GdmEc27SLLqpJ17txzrkbnHlv+6UnrdqtWq2V7AKYse1Ilv6lSPA1FwIok4WoJ9O0HPfMDoKdkmnfTYBipvOBxJeysCd1S+EXOvViwA6AJaREumkd1jA1SJ6TZqHsebtY5bwTHvtH0/BapHHwCuIyyvLryrfuou901dy+uLnKRDCOxYF9Au+KJON2vZr8DdIMol0rL77edyzioum8AjnXZEb4MBHuEDuEThKlpIsOEinBrReABv5MK6isBSntNhwM+Qg0q+qVtD+Q1S66iyRmVRugz6owN153N71mKsGmykQtlnPb4ZBG2bRJ2hyVL3Ot7mPDHhjWZxaA7y5uZExbTiFp9c24n88WoDIfOyBUiDjO3HR3GN3RwNxmVFDU6+tHe1vwYHfNlgSoLvbdVwKvY1gfBg19pvFyxtirEJklbUuabJv3w56Q7/1N+Tfmr/p5lLrJNY376S8wE4cMeMtrAsylXc9hFU5T8u/lnn/XficeZeAYsf0oF"*)(*]VB*)],
+	  MusicTransform[MusicNote[(*VB[*) <|"Pitch" -> MusicPitch[<|"Accidental" -> 0, "Key" -> "C"|>], "Duration" -> MusicDuration[<|"Duration" -> 1/4|>]|> (*,*)(*"1:eJzdU8tOwkAUxWfUjYkbE1ea2CWJHRge7toCKgGETsujK4d2qJW2A9M2lK808Yu8BRQ2LnRpMjlz7zk3NydnMjdjrk8OcrlcdAWg8rTBRfCiCEFDlzkkCQIqlkBP9rKZc4CG4GFcD52+J+KE+mvhYkeop8xOYjr2GbkF2qmUqljG5byMJixfrCKaHxdZKS/bqFytYNke49JkP1tyCNDyoni98rtbaZc77jaunmIW9D22IMegdXjM7q/Xs2cAdceLucjk7bZH7jvr7hTA1Fs1ZnOHkXfoJFSRkKKqElbhllB1RSCtCPDVAa3tiFAgWSoorJkaRpt3SdDxRg8Kx65NFHOILWs6m5NQQqpKBhZcw7BBRwtXM4puvZ+SwOrOYcIeYn009UE3l72p6SavnqI31ZkRzBaD1O2bA4sx340szbvze0r7bTRIFalQy07mbccPrqkb99tA9QTe4SQrGHWeQ3+5Yg2RsN/GnMVaSwSNPR7+NeqPn6OWJdT4x2lHR9kXoX7EPgFPSub+"*)(*]VB*)], {"Transpose", 7}],
+	  MusicChord[(*VB[*) <|"Duration" -> MusicDuration[<|"Duration" -> 1/8|>], "Name" -> "Major", "Root" -> MusicPitch[<|"Accidental" -> 0, "Key" -> "A"|>]|> (*,*)(*"1:eJztVM9v0zAULr9hFyQuSJxAwsdKw43blZvdpsC0ji1O+iMnnNjLsiZx5yRq+k9y4J/g3+B52aCXcegRIVnf8/u+J+u9z5bfRdq7eNTpdMo3AEw3E23yb9QYUSRK8jrPhdkCffHA1rwEmBhdVG4hZ6mpapG1wqsdwW1UXFciyhR/D/TgSAxkD8su6UvVdWLidCPp9LuqHw0wGQ4i1R+2HTwGOEnLqj3yd/bQZq93urvt6kul8lmqNvwpaKciVx/ftrUHAK5MK22s/Oe0zzqTbfYCIPBOxirWUvEfkCF8hDBlDBEGEeHhDYGn4kobiHcEKKMdHTb4A+pRddz4/lSf8fw0XX6imiQxp8GChOFqfc0LhBnj8xDCopiI5SYZ+U7izhqeh2fXUBEviLdcZaAH2/NVkNSXKfWO2drP15t5k8yCeahUlpThKD3Mzun0ajlvKOqN7bK97fRDxux2gNYLO7dXw1U8txsl5Nci296wvqnVPk57Wlf7Ov39fqfpf5fvXH5m37OuVLmvzT//YrOD8OEIEViMXwqzhlkIUC75d/0vn9jfSWSl+gVP30p8"*)(*]VB*)],
+	  MusicRest[(*VB[*) <|"Duration" -> MusicDuration[<|"Duration" -> 1/4|>]|> (*,*)(*"1:eJxlkEFPAjEQhVfRRLhwNOGkh/0BbiRZuLEsjSYEk13FK4UOpkm3k8y2Uf690102Clxe533z0tf0cYvFvhdFUT1iyfBHIFWbGZG0X6BKX1WSDoz3VyEzZBGE1i2sWmtyXpp2ccPygkY1wwot/OGlrt2Zuw7u/l/fsefVQbXW8F0OeJd7kk6jnT60+cAWSjukEDmtbV2f5aNY5rBDBeUnuzhJ42Qmsnic8RknkwakT93EaN4txAVJn5uji45zcbylfVAoL7yB8i4MINWbNYeGvpOH+jb8lTQ1/AJZ8VKa"*)(*]VB*)],
+	  MusicChord[(*VB[*) <|"Duration" -> MusicDuration[<|"Duration" -> 1/2|>], "Name" -> "Major Seventh", "Root" -> MusicPitch[<|"Accidental" -> 0, "Key" -> "F"|>]|> (*,*)(*"1:eJztVMtu00AUDc9SNkhskFiBVC8jpX6UwG6cOIWq6cNj5+EVE8+168b2pONx4/wkX4D4Fu7ULWQDiywRknVm7jlHo+Pjkd8vhJ886XQ61VsEVzQjIYuvREpWpsBpXRRMbpBOHmnPK4SRFKXySj7JpKpZ3gqvtwSvgbhWbJEDPUD6Q58zODJ59+jQtro27/W7LLF7XTthicVjMJOF1SZ4inCaVao98tf0WE9vttLdp/qioJhksKbPUTtjBXx613pfIng8U0Jq+fdpn0XO22kfIfRPhxALDvQ7TobZN0ziuobj4mqYH+8Ic8yuhTTMHoVbKNUVMg8SegZbTtyYh4ZF4KQJgrG4oMVZNj8mwkljSsKZE0XL1Q0tDdN16TTCZVaO2HydDgI79SYNLaKLG3TEM8efL3PUw83lMkzrq4z4J+4qKFbraZNOwmkEkKdVNMh6+SUZX8+nDTGsoX50tq08ztC9f5W2Fd2AX+NHeaE3wPh5mW/u2EDWsEvnvhBq186//bnz0f+WH1re0zdbKKh2rfnHX2q28V4TDQMHwXP+3dqrZ/r3xPIKfgI7EEuE"*)(*]VB*)]
+	}]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(FrontEndRef["572c90bd-88cd-4175-ba26-b25edb2060f9"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRAeK5AIzi/Ng3KFgIRbUX5eiWteimtFanJpSWJSTmqwClDY1Nwo2dIgKUXXwiI5RdfE0NxUNynRyEw3ycg0NSXJyMDMIM0SAJOJGIk="*)(*]VB*)`}</wljs-editor></WLJSWrapper>
+
+A great thing about WL's Music Framework is that it has all the necessary functions to transpose and invert chords out of the box. In the past, we had to build our own on top of `SoundNote`. Multiple voices can also be added using a `MusicVoice` container.
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`music = MusicScore[{
+	 MusicVoice[{
+	  MusicChord[(*VB[*) <|"Name" -> "Major Seventh", "Root" -> MusicPitch[<|"Key" -> "C", "Accidental" -> 0|>]|> (*,*)(*"1:eJztVMtum0AUddv0lU2lbip11UplaYmMwbG7Y2ycNIrzYMAPVp3ANSEGxhmGGP9kv6Dqt/ROSFpv2oWXVSV0Zu45R6PDYcTHK+EtnrVarfI9AhX1SMj8qyMlLxKIWZXnXG6QXjzRnjcIIykK5RbxJJWq4lkjvN0S3BqiSvGrDNgnpM1DK+5ZC97umATaFu/Z7V6XQ3thRf1D3u0Ss9NvEuwhnKalao78NT3V07utdA+pvijIJyms2QvUzngOnz803n0EN06VkFr+fdqxyOJmeo0QeKdDiEQM7DtOBukZxKHUsCmuBunfE2TMb4Q0iMngDgp1jcyjhJ7BlhM35MDoOHBS+/5YXLD8LJ0fOcJOIuYEMzsMl6tbVhiEUjYNcZkVIz5fJwPfStxJzfLw4hYd0cz25ssM9WBzuQyS6jp1vBO68vPVelonk2AaAmRJGQ5SM7t0xjfzae0YnaF+dLatPPaQPrxK04puwKvwo7zSG+DxeZFt7llfVrBL554QatfOv/2588H/lh9bfqlvtlBQ7lrzj7/UbOG9djUcaaDWv1t7+Vz/nnhWwk9MHkqg"*)(*]VB*)],
+	  MusicNote[(*VB[*) <|"Pitch" -> MusicPitch[<|"Accidental" -> 0, "Key" -> "C"|>], "Duration" -> MusicDuration[<|"Duration" -> 1/4|>]|> (*,*)(*"1:eJzdU8tOwkAUxWfUjYkbE1ea2CWJHRge7toCKgGETsujK4d2qJW2A9M2lK808Yu8BRQ2LnRpMjlz7zk3NydnMjdjrk8OcrlcdAWg8rTBRfCiCEFDlzkkCQIqlkBP9rKZc4CG4GFcD52+J+KE+mvhYkeop8xOYjr2GbkF2qmUqljG5byMJixfrCKaHxdZKS/bqFytYNke49JkP1tyCNDyoni98rtbaZc77jaunmIW9D22IMegdXjM7q/Xs2cAdceLucjk7bZH7jvr7hTA1Fs1ZnOHkXfoJFSRkKKqElbhllB1RSCtCPDVAa3tiFAgWSoorJkaRpt3SdDxRg8Kx65NFHOILWs6m5NQQqpKBhZcw7BBRwtXM4puvZ+SwOrOYcIeYn009UE3l72p6SavnqI31ZkRzBaD1O2bA4sx340szbvze0r7bTRIFalQy07mbccPrqkb99tA9QTe4SQrGHWeQ3+5Yg2RsN/GnMVaSwSNPR7+NeqPn6OWJdT4x2lHR9kXoX7EPgFPSub+"*)(*]VB*)],
+	  MusicChord[(*VB[*) <|"Duration" -> MusicDuration[<|"Duration" -> 1/8|>], "Name" -> "Major", "Root" -> MusicPitch[<|"Accidental" -> 0, "Key" -> "D"|>]|> (*,*)(*"1:eJztVMtO20AUTUsftJtKbJBYUYlZRoLJmBB24zyAiFDw2Hl41bE9OCa2J4xtxflJFvwEv8GdmEc27SLLqpJ17txzrkbnHlv+6UnrdqtWq2V7AKYse1Ilv6lSPA1FwIok4WoJ9O0HPfMDoKdkmnfTYBipvOBxJeysCd1S+EXOvViwA6AJaREumkd1jA1SJ6TZqHsebtY5bwTHvtH0/BapHHwCuIyyvLryrfuou901dy+uLnKRDCOxYF9Au+KJON2vZr8DdIMol0rL77edyzioum8AjnXZEb4MBHuEDuEThKlpIsOEinBrReABv5MK6isBSntNhwM+Qg0q+qVtD+Q1S66iyRmVRugz6owN153N71mKsGmykQtlnPb4ZBG2bRJ2hyVL3Ot7mPDHhjWZxaA7y5uZExbTiFp9c24n88WoDIfOyBUiDjO3HR3GN3RwNxmVFDU6+tHe1vwYHfNlgSoLvbdVwKvY1gfBg19pvFyxtirEJklbUuabJv3w56Q7/1N+Tfmr/p5lLrJNY376S8wE4cMeMtrAsylXc9hFU5T8u/lnn/XficeZeAYsf0oF"*)(*]VB*)],
+	  MusicNote[(*VB[*) <|"Pitch" -> MusicPitch[<|"Accidental" -> 0, "Key" -> "G", "MIDINumber" -> 67|>], "Duration" -> MusicDuration[<|"Duration" -> 1/4|>]|> (*,*)(*"1:eJzdU8tOg0AUrc+oGxM3Jq40kWUTyqMRd9CXNm1tGeiDlVNmQCww7QAp/UoTv8hLW7UbF7o0mZy595ybm5MzmZspM72DUqmUXAEYLG8yHj3rnOPYpwRlUYT5Cmhvr5g5B2hyFqeNmAwDnmY43AgXO0Ijp26W4mlI0S3Qolh1CRG1MpYVt6zIVCprmiuWPYV4ckXzFHla9faLJYcAnSBJNyu/urV2ueNu6+oxpdEwoEt0DFqPpfT+ejN7BtAgQcp4IX9ve2Ah2XSnALbZqVOXEYreoBOkO0HSDUNQDbgFSVsTUksB+OyAru2IUEgVQdZpO7esLuujqBdMWjpTfRfp9lh1nNl8gWJBMgw0cuAax008Wfo1S/EbwxxFTn8BE+5YNSezEHR7NZjZfvYS6GbbmFvRfDnK/aE9cigN/cSpBWI40Luvk1GuC3K9OIW3HT9q3di6/w7UzOAdToqCYvIUh6s1a/GM/jbmItZ6xnEasPivUb//HHVFkJr/OO3kqPgiOEzoB9Mj54A="*)(*]VB*)],
+	  MusicChord[(*VB[*) <|"Duration" -> MusicDuration[<|"Duration" -> 1/8|>], "Name" -> "Major", "Root" -> MusicPitch[<|"Accidental" -> 0, "Key" -> "A"|>]|> (*,*)(*"1:eJztVM9v0zAULr9hFyQuSJxAwsdKw43blZvdpsC0ji1O+iMnnNjLsiZx5yRq+k9y4J/g3+B52aCXcegRIVnf8/u+J+u9z5bfRdq7eNTpdMo3AEw3E23yb9QYUSRK8jrPhdkCffHA1rwEmBhdVG4hZ6mpapG1wqsdwW1UXFciyhR/D/TgSAxkD8su6UvVdWLidCPp9LuqHw0wGQ4i1R+2HTwGOEnLqj3yd/bQZq93urvt6kul8lmqNvwpaKciVx/ftrUHAK5MK22s/Oe0zzqTbfYCIPBOxirWUvEfkCF8hDBlDBEGEeHhDYGn4kobiHcEKKMdHTb4A+pRddz4/lSf8fw0XX6imiQxp8GChOFqfc0LhBnj8xDCopiI5SYZ+U7izhqeh2fXUBEviLdcZaAH2/NVkNSXKfWO2drP15t5k8yCeahUlpThKD3Mzun0ajlvKOqN7bK97fRDxux2gNYLO7dXw1U8txsl5Nci296wvqnVPk57Wlf7Ov39fqfpf5fvXH5m37OuVLmvzT//YrOD8OEIEViMXwqzhlkIUC75d/0vn9jfSWSl+gVP30p8"*)(*]VB*)],
+	  MusicRest[(*VB[*) <|"Duration" -> MusicDuration[<|"Duration" -> 1/4|>]|> (*,*)(*"1:eJxlkEFPAjEQhVfRRLhwNOGkh/0BbiRZuLEsjSYEk13FK4UOpkm3k8y2Uf690102Clxe533z0tf0cYvFvhdFUT1iyfBHIFWbGZG0X6BKX1WSDoz3VyEzZBGE1i2sWmtyXpp2ccPygkY1wwot/OGlrt2Zuw7u/l/fsefVQbXW8F0OeJd7kk6jnT60+cAWSjukEDmtbV2f5aNY5rBDBeUnuzhJ42Qmsnic8RknkwakT93EaN4txAVJn5uji45zcbylfVAoL7yB8i4MINWbNYeGvpOH+jb8lTQ1/AJZ8VKa"*)(*]VB*)],
+	  MusicChord[(*VB[*) <|"Duration" -> MusicDuration[<|"Duration" -> 1/2|>], "Name" -> "Major Seventh", "Root" -> MusicPitch[<|"Accidental" -> 0, "Key" -> "F"|>]|> (*,*)(*"1:eJztVMtu00AUDc9SNkhskFiBVC8jpX6UwG6cOIWq6cNj5+EVE8+168b2pONx4/wkX4D4Fu7ULWQDiywRknVm7jlHo+Pjkd8vhJ886XQ61VsEVzQjIYuvREpWpsBpXRRMbpBOHmnPK4SRFKXySj7JpKpZ3gqvtwSvgbhWbJEDPUD6Q58zODJ59+jQtro27/W7LLF7XTthicVjMJOF1SZ4inCaVao98tf0WE9vttLdp/qioJhksKbPUTtjBXx613pfIng8U0Jq+fdpn0XO22kfIfRPhxALDvQ7TobZN0ziuobj4mqYH+8Ic8yuhTTMHoVbKNUVMg8SegZbTtyYh4ZF4KQJgrG4oMVZNj8mwkljSsKZE0XL1Q0tDdN16TTCZVaO2HydDgI79SYNLaKLG3TEM8efL3PUw83lMkzrq4z4J+4qKFbraZNOwmkEkKdVNMh6+SUZX8+nDTGsoX50tq08ztC9f5W2Fd2AX+NHeaE3wPh5mW/u2EDWsEvnvhBq186//bnz0f+WH1re0zdbKKh2rfnHX2q28V4TDQMHwXP+3dqrZ/r3xPIKfgI7EEuE"*)(*]VB*)]
+	 }, "Instrument"->"Piano"],
+	 
+	 MusicVoice[{
+	  MusicNote[(*VB[*) <|"Pitch" -> MusicPitch[<|"Accidental" -> 0, "Key" -> "C", "MIDINumber" -> 48|>], "Duration" -> MusicDuration[<|"Duration" -> 1/2|>]|> (*,*)(*"1:eJzdU8lOwzAQLauACxIXJE4gkWOl1sVst6QLiwqUOOmSE248CaFJXJxETb8SiS9i0hbohQMckaznmfdGo6dn+WgoTW+tVColBwiGzFtSRU+6Ujz2QbAsiriaIu2tFDO7CC0l47QZi26g0oyHc2FvSWjm4GYpH4bAjpF2yTmlgpBy9RRE+aRGz8pcQLXsDV1+Ss8uKi543mqxZB2hHSTpfOVXN9P2l9wtXN2kEHUDmLBN1O5lCpeH89kdhKYIUqkK+XvbtQzFvNtGsM12A1wpgL1hp5FzjeiGoVEDb41czAhSryF8dkjXl0QsSFWr6XCbW9ad7LDoPhhc6ZL6LtPtPnWc0fiVxRoxDNZz8OrHLT6Y+HXrxG92cxY5nVeccPvUHIxC1O3p48j2s+dAN2+NsRWNJ73c79o9ByD0E6ceVMJH/e5l0Mt1rdYoTuFtyQ9tGAv334GaGb7DVlEAFw9xOJ2xlsrgtzEXsTYyxdNAxn+N+v3nqKsaaZH/m3ayUXwRHibwAem0590="*)(*]VB*)],
+	  MusicNote[(*VB[*) <|"Pitch" -> MusicPitch[<|"Accidental" -> 0, "Key" -> "D", "MIDINumber" -> 50|>], "Duration" -> MusicDuration[<|"Duration" -> 1/4|>]|> (*,*)(*"1:eJzdU8tOg0AUrc+oGxM3Jq40kWUTHRht3UEBtWl9MEBbVk5hilhg2gFS+pUmfpGX1kc3LnRpMjlz7zk3NydnMidDbo02arVadgSg8dLkInlShaBpyAJSJAkVc6BHa9XMPoApeJobaeBGIi9ovBQOVgSjZH6R02HMyCnQF0MZ0Uu/WccybdSVC4TrDeVSqftNKqOGLGMcsNF6tWQToBNl+XLlV7fQDlfcfbi6zVniRmxGtkG74zm7Ol7O7gEYQZRzUcnf2254HCy7XQDH6ujM5wEjr9BJqCEhVdMkrMEtoeaCQLoM8NkB3VoRoUDnkqyydmnbXf5AkrtocK1yHPpEdfrY88aTKUklpGmk58HVT006mIUtWwkNtySJ9zCFCb+PrcE4Bt2ZP46dsHiOVKutTexkMuuVoev0PMbiMPNa0Vn8qHZfBr1SlWS9OpW3FT9Y1z7cfwdqFfAOO1XBaHCfxvMFa4uC/TbmKla9EDSPePrXqN9+jvpcQqbyf9POtqovQuOMvQO33ObL"*)(*]VB*)],
+	  MusicNote[(*VB[*) <|"Pitch" -> MusicPitch[<|"Accidental" -> 0, "Key" -> "G", "MIDINumber" -> 55|>], "Duration" -> MusicDuration[<|"Duration" -> 1/8|>]|> (*,*)(*"1:eJzdU8tOg0AUrc+oGxM3Jq40kSVJO0BS3EFf2rS1ZaAPVk5hilhg2gFS+pUmfpGXtlo2LnRpMjlz7zk3NydnMndTZsyOSqVSfAOgs6zJePiicU4ij7o4DUPC10DPDvKZS4AmZ1HSiNyhz5OUBFvhqiA0MuqkCZkGFN8DLRGVqFIFia4ylURZUsuiSpWpSJyyiyRZlRUZzQ7zJccAHT9Otiu/u412XXC3c/WU0HDo0xU+Ba3HEvpwu529AGi4fsJ4Lu+3PbLA3XbnAJbRqVOHuRS/QyegqoA0XRcUHW4BqRsCtSSArw7oWkGEAlUESaPtzDS7rI/Dnj9paUzxHKxZY8W254sljgSk63hkwzWOmmSy8mqm7DWGGQ7t/hImnLFiTOYB6NZ6MLe89NXXjLa+MMPFapR5Q2tkUxp4sV3zy8FA675NRpkmSPX85N4KfpS6vnO/D9RI4R3O8oIS9zkK1hvW5Cn9bcx5rPWUk8Rn0V+j/vg56oqAmtX/m3Z8kn8REsT0Exm+5u4="*)(*]VB*)],
+	  MusicNote[(*VB[*) <|"Pitch" -> MusicPitch[<|"Accidental" -> 0, "Key" -> "A", "MIDINumber" -> 57|>], "Duration" -> MusicDuration[<|"Duration" -> 1/8|>]|> (*,*)(*"1:eJzdU8lOwzAQLauACxIXJE4gkWOlLA203JwuLGIpcdIlJ9xkEkKTuDiJmn4lEl/EpAXaCwc4IlnPM++NRk/P8smIm/5GpVJJjxAMXnS4iJ+IECwJwKN5HDMxQ9pfK2f2ETqCJ1k78XqhyHIWLYSDFaFdgJtnbBQBPUVaBrk+YqBVNd/3qzUAqDYURa7CeW105ssNRVNdf71csolwG6bZYuV3N9cOV9x9urrOIO6FMKXbqN3zDC6OF7N7CG0vzLgo5eW2Kx55i24XwTZvW+ByD+gbdpJal1RiGJJu4C2pjTmhEg3hq0O6uSJioSqSRuCmsKw73qXxfTi8JFwPXErsge4448krTSTVMGjfwWuQdNhwGjStWtDuFTR2uq844Q50cziOULdnj2M7yJ9DYt4YEyueTPtF0LP7DkAUpE4zlKNHcvcy7BdE0lrlKb2t+NFbxqf7ZaBmju+wUxbAvIckms1ZS+Tw25jLWFu5YFnIk79G/f5z1Iqkdur/N+10q/wiLErhA+Sg59o="*)(*]VB*)],
+	  MusicRest[(*VB[*) <|"Duration" -> MusicDuration[<|"Duration" -> 1/8|>]|> (*,*)(*"1:eJxlkM1LxDAQxesXqBePgif30D/AQqF6a+0GhWWFRrvXjWYqgTQD0wTd/95Ju8Wvy8u83zzyQhav2HRHSZIMVywVfgqkflsSKfcOWoa+V7Rj3B3EzAWLIHR+6XRryAdlp8UxywNaPQ5rdPCNV2bwf9xhdJc/+vY9jx761sCHPOddHUh5g+7uespHttTGI8XI79rJnbG8NKsa3lCD3LBLsyLNSlGlecVnmt2OoLiZJ0b380L8I0UxHnM0r8X+lulBsbwJFuRpHEDpJ2d3I32mAMNJ/CtlB/gCWwlSng=="*)(*]VB*)],
+	  MusicNote[(*VB[*) <|"Pitch" -> MusicPitch[<|"Accidental" -> 0, "Octave" -> 4, "Key" -> "D", "Name" -> "D"|>], "Duration" -> MusicDuration[<|"Duration" -> 1/8|>]|> (*,*)(*"1:eJzdU01PwkAUxM+oFxMvJp40sUcSWNpYvLW0qAQQui0fPbltl1ppu7BtQ/mVJv4iXwGFiwc9mmxm35t5eZnMZm8cZkwOSqVScgWgsrzJePSicE5in3o4iyLCl0BP9oqZc4AmZ3Gqx94g4GlGwrVwsSPoOXWzlDghxbdAy4g4d3RSLxNHcsqi7FTKpOrUy4ggt+aIqCa68mS/WHII0A6SdL3yu1tplzvuNq6eUhoNArrAx6B1WUrvr9ezZwC6F6SMF/J22yMLvXV3CmAZbY26zKP4HToByQJSVFWQVLgFVF8RSBMBvjqgGzsiFKgq1BTayk2zw3o46gbjB4VJvosVayTZ9nQ2x7GAVBUPbbhGcZOMF37DFH19kOPI7s1hwh1Jxngagm4t+1PLz14DxWipMzOaLYa5P7CGNqWhn9iNoBL2lc7beJgrQk0rTuFtx4+kqRv320CNDN7hpCgo8Z7jcLliTZ7R38ZcxKplnKQBi/8a9cfPUVcF1JT/b9rJUfFFSJjQT9Jp59U="*)(*]VB*)],
+	  MusicNote[(*VB[*) <|"Pitch" -> MusicPitch[<|"Accidental" -> 0, "Key" -> "D", "MIDINumber" -> 38|>], "Duration" -> MusicDuration[<|"Duration" -> 1/2|>]|> (*,*)(*"1:eJzdU01PwkAUxM+oFxMvJp40sUcSWaiCt5aCSgCh2/LRk9vutlbaLmzbUH6lib/IV0Dh4kGPJs3szszLy2Q2vbK57u4VCoX4AkDlWZOL8EURgkQeozgNQyIWILs7+cwpQFPwKGlEdOCLJCXByjjbMhoZc9KE2AHD1yATSkvEJXfFagWxYgXZqGhToOiuWr11bKdGaq67my/ZB2j7cbJa+c2W3vlWunWqp4SFA5/N8SF4XZ6w+8vV7AlAg/oJF7m92fbIA7pixwCm3taYwynD78AkVJWQoqqSrMIpodpSQBoC+GIg17dMuKCSVFZYKzOMDu/hsOuPHxQuew5WzJFsWZPpDEcSUlU8tOAYRU0ynnt1o+I1BhkOrd4MJpyRrI8nAfjmoj8xvfTVV/SWOjXC6XyYeQNzaDEWeLFV92+CvtJ5Gw8zRSpr+Zdn28oja+o6/aZQPYV3OMovjNDnKFgsVUOk7Lc157VqqSCJz6O/Vv3xc9UlCTX/cdvxQf6LkCBmnxqT6D8="*)(*]VB*)],
+	  MusicNote[(*VB[*) <|"Pitch" -> MusicPitch[<|"Accidental" -> 0, "Key" -> "D", "MIDINumber" -> 38|>], "Duration" -> MusicDuration[<|"Duration" -> 1/4|>]|> (*,*)(*"1:eJzdU01PwkAUxM+oFxMvJp40sUcSWaiCt5aCSgCh2/LRk9vutlbaLmzbUH6lib/IV0Dh4kGPJs3szszLy2Q2vbK57u4VCoX4AkDlWZOL8EURgkQeozgNQyIWILs7+cwpQFPwKGlEdOCLJCXByjjbMhoZc9KE2AHD1yATSkvEJXfFagWxYgXZqGhToOiuWr11bKdGaq67my/ZB2j7cbJa+c2W3vlWunWqp4SFA5/N8SF4XZ6w+8vV7AlAg/oJF7m92fbIA7pixwCm3taYwynD78AkVJWQoqqSrMIpodpSQBoC+GIg17dMuKCSVFZYKzOMDu/hsOuPHxQuew5WzJFsWZPpDEcSUlU8tOAYRU0ynnt1o+I1BhkOrd4MJpyRrI8nAfjmoj8xvfTVV/SWOjXC6XyYeQNzaDEWeLFV92+CvtJ5Gw8zRSpr+Zdn28oja+o6/aZQPYV3OMovjNDnKFgsVUOk7Lc157VqqSCJz6O/Vv3xc9UlCTUr/7ft+CD/RUgQs08cXehB"*)(*]VB*)]
+	 }, "Instrument"->"Organ"]
+	}]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(FrontEndRef["ebbba9e5-8e53-4079-8509-45bc699c39c8"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRAeK5AIzi/Ng3KFgIRbUX5eiWteimtFanJpSWJSTmqwClA4NSkpKdEy1VTXItXUWNfEwNxS18LUwFLXxDQp2czSMtnYMtkCAJwHGHk="*)(*]VB*)`}</wljs-editor></WLJSWrapper>
+
+Neat!
+
+There is backward compatibility: you can wrap it in `Sound` and use it in `EmitSound`, for example:
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`EmitSound[music//Sound]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`music//Sound`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(FrontEndRef["cdbc4a8e-bab1-4d24-bf7b-9b95f209cff4"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKJ6ckJZskWqTqJiUmGeqapBiZ6CalmSfpWiZZmqYZGVgmp6WZAACgDhbD"*)(*]VB*)`}</wljs-editor></WLJSWrapper>
+
+If you need scales, there is a special symbol for that:
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`MusicScale@RandomChoice@MusicScale["Names"]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`MusicScale[(*VB[*) <|"Name" -> "Dorian"|> (*,*)(*"1:eJzdU8tu2zAQdJqmSYoCAXop0FMCREcDrmwmUW+kHmmDPEXJD51CSbSqmhIdSoLl7+wPdWnnYaDoIT0WEIa7M4PFcggdxdKfbnc6neozAJGtJ1Vxj5ViZcZT2hQFU0ugp1vacwDgKVnWbpkOc1U3TKyFjxuC2/KkqVksOD0Gum+xk2kS8y47YafdgdWLuzFHVjfppciMz/oWOh1M3+ghbwEu86pej3zuVtqnje0et/pe82KY8wV9B9o1K/jXw7X3PYCb5rVUWn6Z9k2KdN3tA4T+pcMTmXL6CzrDPDNMTIiBCJyGaa0I05EqZyUUTwxI9oYBCvOL0cf8og2CK3lLi+t8co4lyhKKwzGKotn8gcIAQugogmNcemyyyOxgkLnDlhbR7QM4kjHyJzMBeri8m4VZ8yPH/gWZB8V8MWqzYTiKOBdZFdl5T9zhq5+TUYuNvqM/vdvGPsghjzd4CdVv4C32dMFZelOK5YoNVMNfG/WujlrWvPrXrD9s/TVre2CYPUeDayAbRE+wGu6jGU/DuQasgfxhsNH/+0jVjv67mKj4bydm9LM="*)(*]VB*)]`}</wljs-editor></WLJSWrapper>
+
+Construct chords by sampling every third pitch in the list:
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`pitches = MusicScale[(*VB[*) <|"Name" -> "Dorian"|> (*,*)(*"1:eJzdU8tu2zAQdJqmSYoCAXop0FMCREcDrmwmUW+kHmmDPEXJD51CSbSqmhIdSoLl7+wPdWnnYaDoIT0WEIa7M4PFcggdxdKfbnc6neozAJGtJ1Vxj5ViZcZT2hQFU0ugp1vacwDgKVnWbpkOc1U3TKyFjxuC2/KkqVksOD0Gum+xk2kS8y47YafdgdWLuzFHVjfppciMz/oWOh1M3+ghbwEu86pej3zuVtqnje0et/pe82KY8wV9B9o1K/jXw7X3PYCb5rVUWn6Z9k2KdN3tA4T+pcMTmXL6CzrDPDNMTIiBCJyGaa0I05EqZyUUTwxI9oYBCvOL0cf8og2CK3lLi+t8co4lyhKKwzGKotn8gcIAQugogmNcemyyyOxgkLnDlhbR7QM4kjHyJzMBeri8m4VZ8yPH/gWZB8V8MWqzYTiKOBdZFdl5T9zhq5+TUYuNvqM/vdvGPsghjzd4CdVv4C32dMFZelOK5YoNVMNfG/WujlrWvPrXrD9s/TVre2CYPUeDayAbRE+wGu6jGU/DuQasgfxhsNH/+0jVjv67mKj4bydm9LM="*)(*]VB*)]["PitchList"];
+	pitches = 
+	  Join[pitches, 
+	   MusicTransform[{"Transpose", 12}] /@ Rest@pitches];
+	
+	Table[MusicChord@pitches[[{i, i + 2, i + 4, i + 6}]], {i, 4}]//TableForm`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*GB[*){{MusicChord[(*VB[*) <|"PitchList" -> {MusicPitch[<|"Accidental" -> 0, "Octave" -> 4, "Key" -> "C"|>], MusicPitch[<|"Accidental" -> -1, "Octave" -> 4, "Key" -> "E"|>], MusicPitch[<|"Accidental" -> 0, "Octave" -> 4, "Key" -> "G"|>], MusicPitch[<|"Accidental" -> -1, "Octave" -> 4, "Key" -> "B"|>]}|> (*,*)(*"1:eJxdUclOwzAQLZtYLkhckDiBhI+V2ixtwy1OUxZBaeOkS06YxgmhTlyyqOmfc2RMQFRI1puZ92ZG45mrV+GEe41GI78AwKIaiCx5MbOMphELSJkkNNsAHe7InFOAQSbSwk6DSZwVJeW1cLYl2BVblAV95YxcA93TjK7abatNqoW9phYCGIZmNLud0GipYYf1Op26yT7AY5wX/6JdGZ1vTfcz1X3BkknM1uQQtKEoWH5zWSefANhBXIhM6n/t7gQP6ugYwHMe+2whAkY+IUJKDykmxkjHYJFifBOKpSGlZSPdAn7AaYH0vmRuJeD/tPJbBvXWVhdwlDZSTfZQue6TGJFkGM9vTaFHC2J6M933l6sPkiIFYzL1wczSAZ2vI8vVIntSkcQffUDGYqY78yUH3duMl15UvsWm84BXbrJaT6to4k19xniU+1bc4mPz6X0+rUyk9uWTs23No/fxzzfrjcntOCVc7Eg6jAbPKd98s25WsvxAnpfynH0Bl7CRag=="*)(*]VB*)]}(*||*),(*||*){MusicChord[(*VB[*) <|"PitchList" -> {MusicPitch[<|"Accidental" -> 0, "Octave" -> 4, "Key" -> "D"|>], MusicPitch[<|"Accidental" -> 0, "Octave" -> 4, "Key" -> "F"|>], MusicPitch[<|"Accidental" -> 0, "Octave" -> 4, "Key" -> "A"|>], MusicPitch[<|"Accidental" -> 0, "Octave" -> 5, "Key" -> "C"|>]}|> (*,*)(*"1:eJxdUdtOwkAQxVu8vJj4YuKTJvaxCfQi1LdtAZUAQrfl0idLd1srbRd6CeVn/RZnKUZisjkzc87JZHbmYcFM/6RWq2V3ADoruyyNP1CauklACS7i2E23QPtH3HMN0E1ZkncSMgnTvHCjSrg5EDol9YrcXUQUPwLtE/Lkq4uG6BPNFxVF9sSF1iRiU2lStaU1WrKrVU1OAfphlv+rjnl1ezDdfqq3nMaTkG7wOWhDltPs+b4yXwF0SJizlOt/7V5ZRKrqEsA2+23qMULxN1SC1BIkpOuCqkMUJG1HSG1FkOpdDoiDoQL3K4LLOPBCIjUEGdFeaVkDNsLxMJy/IKYGHkb2THWc5WqNE0HSdTx1IMySrjvfBIalBJ1JiWNntAaHN1PN+TIC3d6Ol3ZQfIbI7OkrK15tpmUwsacOpVGQOUZYj8Zo8DWflkiQ2/zx2Q7mUdv6/jPVXvgOzALucsET6pL3JNruWCstaHbGj+hGGf0BNMGLnA=="*)(*]VB*)]}(*||*),(*||*){MusicChord[(*VB[*) <|"PitchList" -> {MusicPitch[<|"Accidental" -> -1, "Octave" -> 4, "Key" -> "E"|>], MusicPitch[<|"Accidental" -> 0, "Octave" -> 4, "Key" -> "G"|>], MusicPitch[<|"Accidental" -> -1, "Octave" -> 4, "Key" -> "B"|>], MusicPitch[<|"Accidental" -> 0, "Key" -> "D", "MIDINumber" -> 74|>]}|> (*,*)(*"1:eJxlUclOwzAQLZtYLkhckDiBhI+VwK1F4RY3KYtY46RLTjiJE0KduM2ipn/OkTEBUYFkvZl5b2Y0njnxlR1ttFqt4giAqnqg8vTVyHOexSJkVZryfAl0tKZz9gEGucpKKwuHSV5WXDbCwYpg1SKoSu5LwU6B5pxHUS/stCMcXbS73Sho86DD2xwT/7zn48gPeNNkE+A+Kco/0bqODlem+57qthTpMBELtg3aoypFcXXcJO8BWGFSqlzrv+1ulAybaBfAte9NEahQsA+IEO4hbFCKCAWL8OUXgS1E+kANJC8RMbsIn11roP9ok0D2TxnU91e6gIPPUccQd7XjPKhnlj4mk2tDkThghjsmnjedzVmGMKVs5IEZZwM+WcR9pxtbw5ql3vMcMoIxsSdTCbq7fJm6cfWWGPYdnTnpbDGq46E78oSQceH1kzP5Yjy8T0a1gTqmfnq2lXmISb+/2WxMb8eu4GI72hE8fMrk8ot18koUW/q8XBbiE2FGk5M="*)(*]VB*)]}(*||*),(*||*){MusicChord[(*VB[*) <|"PitchList" -> {MusicPitch[<|"Accidental" -> 0, "Octave" -> 4, "Key" -> "F"|>], MusicPitch[<|"Accidental" -> 0, "Octave" -> 4, "Key" -> "A"|>], MusicPitch[<|"Accidental" -> 0, "Octave" -> 5, "Key" -> "C"|>], MusicPitch[<|"Accidental" -> -1, "Key" -> "E", "MIDINumber" -> 75|>]}|> (*,*)(*"1:eJxdUVtP2zAU7gZoGy9Ie0Ha0ybNj5VaN4Z2b06awBCUEie95GnGcUNWJ25zUdPfzJ/gmDCtQrI+n+9yrGP7x6P2V0edTqf8BmDrxtNF9ocWBc8TGbM6y3ixB3n1wWTOALxC55Wbx7O0qGquWuPrgeE2UtQVf1SS/QR5IIhYWb1hNx5erLrWJZbdkRjyruhfiFF8yUWfWO0hxwC3aVm9Yx8NOz+Y7m2q35XMZqncsU/gTXQly1/f2/ApgBunlS6M//+4a63iln0BCP3bsRQ6luwZGMJDhKltI2LDjvDoVcCehXCPGnAIgIuIAwlP8QqRMSj4XxJanINGKHAfDai8aYLgTk9ZNkmXV1STRDAaLkgUrTdbliNs22wewbbIPb7cJU5gJe6sYVk03UJCLIi/XCvww/3DOkzqp5T6N/YmyDa7eZPMwnkkpUrKyEl76oHe/V3OG4oGY7PMbAfzkLH9drP2kcyD+DV80mdTSB7f52r/qgZFLcsT86NclfIFDPmO9Q=="*)(*]VB*)]}}(*||*)(*1:eJxTTMoPSmNmYGAo5gUSYZmp5S6pyflFiSX5RcEsQBH3osyUNCaQPIgXVJqTWswPFXbKrwguSEzOzEsvTmOEqfDJLC5BVQ82Jii/vDgTSDOgmSWAMMsxJzM9Lzc1rwSvYexAhnN+TmluXjFESWpaCQBkRyz7*)(*]GB*)`}</wljs-editor></WLJSWrapper>
+
+## `Manipulate` colors pre-optimization
+`Hue`, `RGBColor`, and `Opacity` can now be used inside Animate, Manipulate, or Refresh in 2D graphics without triggering a full reevaluation:
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`Manipulate[
+	  Graphics[{Hue[h, l], Disk[]}, ImageSize->Small], 
+	  {h,0,1,0.2}, {l,0,1,0.2}, ContinuousAction->True]`}</wljs-editor></WLJSWrapper>
+
+Just-in-Time transpiler (JIT) will take care of optimizing updates of color/opacity attributes on the graphical canvas.
+
+## Better Mini Apps
+We improved our mini apps export feature. Now you don't have to use WLX language at all. Even a single input cell can become an app.
+
+Try this in a fresh notebook and then export this single cell as a mini app using <wljs-html encoded="true">{`%3Csmall%20%3EShare%3C%2Fsmall%3E`}</wljs-html> menu
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`Manipulate[x, {x,0,1}]`}</wljs-editor></WLJSWrapper>
+
+<wljs-html encoded="true">{`%3Cbr%20%2F%3E`}</wljs-html><wljs-html encoded="true">{`%3Chr%20%2F%3E`}</wljs-html><wljs-html encoded="true">{`%3Cbr%20%2F%3E`}</wljs-html>
+
+## Better autocomplete for Greek letters
+We improved UX on typing $\alpha$ and other common greek letters used in math. Start with <wljs-html encoded="true">{`%3Ckbd%20%3EESC%3C%2Fkbd%3E`}</wljs-html> key in the input field:
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`⣿`}</wljs-editor></WLJSWrapper>
+
+## File downloading
+We introduced a new file container `FrontFileDownload`, that allows to pass any binary data from Wolfram Kernel in a form of a file without touching the file system of OS.
+
+For example:
+
+```wolfram
+
+FrontFileDownload["myFile.png"]
+```
+
+or construct it from pure `ByteArray`:
+
+```wolfram
+f = FrontFileDownload[ByteArray[{1,2,3}], "test.bin"];
+```
+
+Then you can initiate a download file dialog by evaluating the result on the frontend:
+
+```wolfram
+FrontSubmit[f]
+```
+
+This is helpful for cases where WLJS is running on a server (Docker image), since the usual `SystemDialogInput` will not make sense there, and any `Export` function will operate on the server's local file system.
+
+Alternatively it has a __button-like output form allowing to embed files into the notebook__:
+
+```wolfram
+f
+```
+
+It will create a download button for a file.
+
+## Fixed bugs
+- [x] Unicode issues in `PlotLegends` and other elements that rely on the `FrontFetch` function.
+- [x] `Graph` objects are not rendered correctly when their size is less than 1 KB.
+- [x] Fixed MCP tool `kernel_evaluate` and summarization issues on nested associations
+- [x] `Rasterize` and PDF export stop working after a kernel restart.
+- [x] `EmitSound` and `Speak` stop working after a while in the same session.
+- [x] Custom windows cannot be made smaller in the desktop version.

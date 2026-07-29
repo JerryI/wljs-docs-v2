@@ -1,0 +1,21 @@
+---
+title: WeylAlgebra
+---
+
+```wolfram
+WeylAlgebra[{vars, dvars}]
+WeylAlgebra[{vars, dvars}, alg]
+```
+
+constructs a [NonCommutativeAlgebra](../Algebra-and-Polynomials/NonCommutativeAlgebra) representing the Weyl algebra with variables `vars` and corresponding derivative generators `dvars`.
+
+## Example
+
+```wolfram
+alg = WeylAlgebra[{{x, y}, {dx, dy}}];
+NonCommutativeExpand[dy ** dx ** x ** y, alg]
+```
+
+The second form takes operation names and monomial-order settings from `alg`.
+
+See the official [Wolfram Language reference](https://reference.wolfram.com/language/ref/WeylAlgebra.html) for the defining commutation relations.

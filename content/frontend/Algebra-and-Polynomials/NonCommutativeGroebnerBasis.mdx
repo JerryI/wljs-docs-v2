@@ -1,0 +1,23 @@
+---
+title: NonCommutativeGroebnerBasis
+---
+
+```wolfram
+NonCommutativeGroebnerBasis[{poly1, poly2, ...}, vars, alg]
+NonCommutativeGroebnerBasis[{poly1, poly2, ...}, alg]
+```
+
+attempts to compute a reduced Gröbner basis for non-commutative polynomials. When `alg` declares its generators, the explicit `vars` argument can be omitted.
+
+## Example
+
+```wolfram
+NonCommutativeGroebnerBasis[
+  {x ** y - y ** x, x ** x - x},
+  {x, y}
+]
+```
+
+The result depends on the algebra and the monomial ordering.
+
+See the official [Wolfram Language reference](https://reference.wolfram.com/language/ref/NonCommutativeGroebnerBasis.html) for ordering options and left ideals.

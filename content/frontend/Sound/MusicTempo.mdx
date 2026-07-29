@@ -1,0 +1,38 @@
+---
+title: MusicTempo
+package: wljs-sound
+---
+
+```wolfram
+MusicTempo -> beatsPerMinute
+```
+
+specifies playback tempo in beats per minute for symbolic music.
+
+The default is 120 BPM. A quarter note therefore lasts `60 / beatsPerMinute` seconds.
+
+Apply tempo to a [MusicScore](../Sound/MusicScore):
+
+```wolfram
+MusicScore[
+  {
+    MusicVoice[{
+      MusicNote["C4", 1/4],
+      MusicNote["E4", 1/4],
+      MusicNote["G4", 1/2]
+    }]
+  },
+  MusicTempo -> 90
+]
+```
+
+It can also be supplied to [Sound](../Sound/Sound) when playing music events directly:
+
+```wolfram
+Sound[
+  {MusicNote["C4", 1/4], MusicNote["G4", 1/4]},
+  MusicTempo -> 72
+]
+```
+
+The active tempo is shown in the player metadata when it is available to the frontend. Tempo on a score, voice or measure is inherited by its events unless overridden by a more specific container.

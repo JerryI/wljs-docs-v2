@@ -1,0 +1,56 @@
+---
+title: MusicScore
+package: wljs-sound
+---
+
+```wolfram
+MusicScore[{voice1, voice2, ...}]
+MusicScore[{event1, event2, ...}]
+MusicScore[{{voice1Events...}, {voice2Events...}}]
+MusicScore[content, properties]
+```
+
+represents a musical score. Events within one voice are sequential; different voices play in parallel.
+
+## Output form
+
+`MusicScore` has its own WLJS output form. Evaluating a score displays the original `MusicScore` expression together with an interactive sound preview:
+
+```wolfram
+MusicScore[{
+  MusicVoice[{"C4", "D4", "E4", "G4"}],
+  MusicVoice[{"C3", "G2"}]
+}]
+```
+
+There is no need to wrap a score in `Sound` merely to preview it. Internally, the output form supplies `Sound[score]` only as the JavaScript-side preview payload; the displayed and returned expression remains the original `MusicScore`.
+
+## Tempo and instruments
+
+```wolfram
+MusicScore[
+  {
+    MusicVoice[
+      {"C4", "D4", "E4", "G4"},
+      <|"Instrument" -> "Flute"|>
+    ],
+    MusicVoice[
+      {MusicNote["C3", 1/2], MusicNote["G2", 1/2]},
+      <|"Instrument" -> "Trumpet"|>
+    ]
+  },
+  MusicTempo -> 90
+]
+```
+
+The preview displays the available tempo, instruments, event count and total duration. Concurrent voices receive different piano-roll colors.
+
+Properties include `"VoiceList"`, `"TimeSignature"`, `"KeySignature"`, `"MusicTempo"` and `"MetaInformation"`.
+
+```wolfram
+score = MusicScore[{"C4", "E4", "G4"}];
+score["VoiceList"]
+score["PropertyAssociation"]
+```
+
+See the [Wolfram Language reference](https://reference.wolfram.com/language/ref/MusicScore.html) for the complete symbolic API.
