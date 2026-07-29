@@ -5,45 +5,99 @@ env:
   - Wolfram Kernel
 package: wljs-sound
 ---
+
 ```wolfram
-Sound[primitives_]
+Sound[primitive]
+Sound[{primitive1, primitive2, ...}]
 ```
 
-represents sound as a concept composed from `primitives`. Draws a player widget once appears in the output form - [StandardForm](../Formatting/StandardForm)
+represents playable sound composed from sound primitives. In `StandardForm`, WLJS renders a compact player with a piano-roll preview when pitched notes are present.
 
-`primitives` can be a simple primitive or a `List` of primitives played sequentially 
+A list of primitives without explicit start times is played sequentially. Notes grouped inside one [SoundNote](../Sound/SoundNote) are played simultaneously as a chord.
 
-## Primitives
+## Supported primitives
 
-### `SoundNote`
+- [SoundNote](../Sound/SoundNote)
+- [SampledSoundList](../Sound/SampledSoundList)
+- [MusicNote](../Sound/MusicNote)
+- [MusicRest](../Sound/MusicRest)
+- [MusicChord](../Sound/MusicChord)
+- [MusicMeasure](../Sound/MusicMeasure)
+- [MusicVoice](../Sound/MusicVoice)
+- [MusicScore](../Sound/MusicScore)
 
-### `SampledSoundList`
+## Preview
+
+The player preview:
+
+- draws every pitched event on a compact piano roll;
+- preserves chord pitches and note lengths;
+- scrolls horizontally for long sequences;
+- uses different colors for concurrent score voices;
+- shows available tempo, instrument, event-count and duration metadata.
+
+`SampledSoundList` has no pitches to draw, so it keeps the sound icon and shows the available duration metadata.
 
 ## Examples
-Play chord composed from [SoundNote](../Sound/SoundNote)
+
+Play a chord followed by three notes:
 
 ```wolfram
-Sound[SoundNote[{"E", "G#", "B"}]]
+Sound[{
+  SoundNote[{"A4", "C4"}],
+  SoundNote["E4"],
+  SoundNote["G4"],
+  SoundNote["C5"]
+}]
 ```
 
-Play D Major scale up and down doubled in up-octave
+Use symbolic music events:
 
 ```wolfram
-major = {2,2,1,2,2,2};
-SoundNote[{#, # + 12}] &/@ Accumulate[Join[{2}, major, -major]] // Sound
+Sound[{
+  MusicNote["C4", 1/4],
+  MusicRest[1/8],
+  MusicNote["E4", 1/8],
+  MusicChord[{"C4", "E4", "G4"}, 1/2]
+}]
 ```
+
+Use absolute start and end times:
+
+```wolfram
+Sound[{
+  SoundNote["C4", {0., 1.}],
+  SoundNote["E4", {.5, 1.5}],
+  SoundNote["G4", {1., 2.}]
+}]
+```
+
+The overlapping notes are displayed on separate colored lanes.
+
+## Tempo
+
+Musical durations are converted using `MusicTempo`, with 120 beats per minute as the default:
+
+```wolfram
+Sound[
+  {MusicNote["C4", 1/4], MusicNote["E4", 1/4]},
+  MusicTempo -> 90
+]
+```
+
+For structured music, put the option on [MusicScore](../Sound/MusicScore).
 
 ## Emit sound without a widget
-It is possible to play the sound programmatically without a widget using [FrontSubmit](../Frontend-IO/FrontSubmit)
+
+Use [EmitSound](../Sound/EmitSound) to play a sound programmatically:
 
 ```wolfram
-EventHandler[InputButton[], Function[Null,
-  FrontSubmit[Sound[SoundNote[RandomInteger[{0, 12}]]]]
-]]
+EventHandler[
+  InputButton[],
+  Function[Null, EmitSound[Sound[SoundNote[RandomInteger[{0, 12}]]]]]
+]
 ```
 
-or __use [EmitSound](../Sound/EmitSound)__
-
 <Callout type="tip">
-If you want to continuously stream raw sound data, consider to use [PCMPlayer](../Sound/PCMPlayer)
+For continuously streamed raw audio, use [PCMPlayer](../Sound/PCMPlayer).
 </Callout>

@@ -723,6 +723,35 @@ Framed @ Module[
 
 `AnimationFrameListener` follows the display refresh cycle. It does not request another frame until its dependent symbol, `pts`, has been updated, so the animation naturally adapts to kernel and system performance.
 
+Constrain the coordinates of a point to lie on a circle when dragged:
+
+<CodeComparison>
+<CodeComparisonItem title="Mathematica">
+
+```wolfram
+DynamicModule[{p = {0, 1}}, 
+ Graphics[{Dashed, Circle[], PointSize[0.1], 
+   Point[Dynamic[p, (p = Normalize[#]) &]]}, ImageSize -> Tiny, 
+  PlotRange -> 1.2]]
+```
+
+</CodeComparisonItem>
+<CodeComparisonItem title="WLJS">
+
+```wolfram
+Module[{p = {0, 1}}, 
+ Graphics[{Dashed, Circle[], PointSize[0.1], 
+   EventHandler[Point[p//Offload], {
+     "dragsignal" -> ((p = Normalize[#])&)
+   }]}, ImageSize -> Tiny, 
+  PlotRange -> 1.2]]
+```
+
+</CodeComparisonItem>
+</CodeComparison>
+
+Here we used `Point` itself as an event listener and use `dragsignal` event to supply dragging coordinates. If you want just to drag a primitive so it follows your mouse - use `drag` event instead. See more at [UI Events](./UI-Events-Capture) guide.
+
 ### DynamicModule
 
 Use `Module` instead of `DynamicModule`. State changes become visible when they are connected to `Refresh` or to a supported primitive through `Offload`.

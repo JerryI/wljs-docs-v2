@@ -2,21 +2,28 @@
 title: SampledSoundList
 package: wljs-sound
 ---
+
 ```wolfram
-SampledSoundList[{buffer__Real}, sampleRate_Integer:8000]
+SampledSoundList[{sample1, sample2, ...}, sampleRate]
 ```
 
-represents a buffer for PCM-encoded sound wave, where sampled sound data is stored in `buffer` as a plain sequence of real numbers in the range from `0` to `1`.
+represents a mono PCM buffer. Samples are real values, normally in the range from `-1` to `1`, and `sampleRate` is measured in samples per second.
 
-## Methods
-### `Sound`
-Plays or emits a sound stored in `SampledSoundList`
+## Playback
+
+Wrap `SampledSoundList` in [Sound](../Sound/Sound):
 
 ```wolfram
 Sound[
-	SampledSoundList[
-		Table[Sin[2 \[Pi] 50 t], {t, 0, 1, 1./2000}], 8000
-	]
+  SampledSoundList[
+    Table[Sin[2 Pi 440 n/8000], {n, 0, 7999}],
+    8000
+  ]
 ]
 ```
 
+WLJS evaluates and pools the sample data when the output is rendered, but creates the browser audio buffer only when playback starts. This keeps large sampled sounds lightweight before they are used.
+
+Because sampled data has no discrete pitches, its preview uses the sound icon rather than a piano roll. When it can be computed, the duration is still shown.
+
+`NumericArray` and offloaded sample data are supported and avoid unnecessary list conversion for larger buffers.

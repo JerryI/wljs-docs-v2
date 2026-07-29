@@ -2,34 +2,67 @@
 title: SoundNote
 package: wljs-sound
 ---
-```wolfram
-SoundNote[note_String, duration_:1]
-```
-
-represents a single note, where `note` can be `"C"`, `"C#"`, ... and etc. `duration` is given in seconds. To specify octave place a number as a first character, i.e. `"C4"`
 
 ```wolfram
-SoundNote[note_Integer, duration_:1]
+SoundNote[note]
+SoundNote[note, duration]
+SoundNote[note, {start, end}]
+SoundNote[note, duration, instrument]
 ```
 
-represents a note, where `note` is a semitone integer, i.e. C4 is `0`, C#4 is `1` and etc.
+represents one pitched sound event.
+
+`note` can be a named pitch such as `"C4"`, a semitone integer, or a list of pitches. A list of pitches is played simultaneously:
 
 ```wolfram
-SoundNote[{notes__}, duration_:1]
+Sound[SoundNote[{"E4", "G#4", "B4"}]]
 ```
 
-represents a group (vertical in the timeline) of `notes`, which can be a chord for example E Major
+When `duration` is a number or a Tone duration such as `"4n"`, notes in a surrounding list are scheduled sequentially. `{start, end}` places a note explicitly on the sound timeline.
 
 ```wolfram
-SoundNote[{"E", "G#", "B"}]
+Sound[{
+  SoundNote["C4", {0., .5}],
+  SoundNote["E4", {.5, 1.}],
+  SoundNote["G4", {1., 1.5}]
+}]
 ```
+
+## Instruments
+
+The third argument selects the playback instrument:
+
+```wolfram
+Sound[{
+  SoundNote["C4", {0., .5}, "Flute"],
+  SoundNote["E4", {.5, 1.}, "Trumpet"],
+  SoundNote["G4", {1., 1.5}, "Violin"]
+}]
+```
+
+WLJS maps common Wolfram instrument names to cached Tone.js synths. Explicit Tone voice names are also accepted:
+
+- `"Piano"`, `"Guitar"`, `"Violin"` and `"Flute"`
+- `"Trumpet"`, `"Organ"`, `"Marimba"`, `"Vibraphone"` and `"Drums"`
+- `"Synth"`, `"AMSynth"`, `"FMSynth"`, `"DuoSynth"`, `"MembraneSynth"` and `"MetalSynth"`
+
+Unknown names fall back to `Tone.Synth`.
+
+## Piano-roll preview
+
+All notes are evaluated before the player is drawn. The preview can therefore show symbolic or offloaded pitch values, chord members, note lengths and instruments without triggering playback.
+
+Long sequences remain at their natural width and can be scrolled horizontally.
 
 ## Methods
 
-### `Sound`
-To play or emit sound wrap a list of `SoundNote` or a single one into [Sound](../Sound/Sound)
+Wrap a `SoundNote`, or a list of notes, in [Sound](../Sound/Sound) to display and play it:
 
 ```wolfram
-SoundNote[{"E", "G#", "B"}] // Sound
+Sound[{
+  SoundNote[{"A4", "C4"}],
+  SoundNote["E4"],
+  SoundNote["G4"],
+  SoundNote["C5"]
+}]
 ```
-
