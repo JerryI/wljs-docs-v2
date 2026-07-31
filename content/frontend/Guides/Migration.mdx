@@ -88,6 +88,16 @@ WLJS does support `TraditionalForm` expression converting Wolfram expressions to
 ## Formatting
 Various elements such as `Pane`, `Panel`, `Grid` and etc support most of the options. Please check our documentation on them in the section *Formatting*.
 
+## Bypass
+If something isn't working or does not look correct, but you *really want it* - apply `MMAView` on the expression. For example
+
+```wolfram
+Plot[x, {x,0,1}] // MMAView
+```
+
+here `Plot` will be rasterized into an image using Mathematica's renderer (sort of) bypassing WLJS system completely using a parallel kernel. It works on 3D graphics too. Consider `MMAView` as a temporal workaround until the missing features are implemented.
+
+
 ## Interactive evaluation
 
 Mathematica and WLJS use different frontend architectures. High-level functions such as `Manipulate`, `Animate`, and `Button` often need only small changes. Code built directly around `Dynamic`, `DynamicModule`, or two-way symbol bindings usually needs to be expressed with explicit events and targeted updates.
