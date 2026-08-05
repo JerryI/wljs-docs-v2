@@ -10,15 +10,17 @@ tags:
   - geo
 ---
 
-{/* add this script to the body  */}
-{/* https://cdn.jsdelivr.net/gh/WLJSTeam/web-components@latest/src/common/app.js */}
-<wljs-store kernel="./attachments/kernel-8556280656517855959.txt" json="./attachments/974e939a-7268-4f58-b7f9-95898cc3d9dd.txt"></wljs-store>
-
   <DownloadFile
     title="Download Notebook"
     description="Get the complete code"
-    href="./attachments/notebook-974.wln"
+    href="./attachments/notebook-287.wln"
   />
+
+
+<wljs-store json="./attachments/2870068f-e5b9-49b1-b9be-1728bdb55bfe.txt"></wljs-store>
+
+
+Have you ever played Outer Wilds? The planets there are incredibly beautiful. This actually became the main motivation to create my own simple model of a planet, using real geographical elevation data and a bit of Wolfram Language magic.
 
 ## Spreading points on a sphere
 
@@ -27,21 +29,16 @@ Obviously, even if we grab Earth's elevation map, there’s the problem of proje
 - [Delaunay and Voronoi on a Sphere](https://www.redblobgames.com/x/1842-delaunay-voronoi-sphere/)  
 - [Four Ways to Create a Mesh for a Sphere](https://medium.com/@oscarsc/four-ways-to-create-a-mesh-for-a-sphere-d7956b825db4)  
 
-As one approach, we’ll go the other way around — first generating sample points on the sphere, then querying the elevation data for those points.  
+As one approach, we’ll go the other way around—first generating sample points on the sphere, then querying the elevation data for those points.  
 
 So, we need to evenly distribute **N** points across a sphere. No need to reinvent the wheel when a rich standard library is available.  
 
 <WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`Graphics3D[{
 	  Sphere[],
-	  Red, PointSize[0.01], SpherePoints[1000]//Point
-	}]
-	`}</wljs-editor></WLJSWrapper>
+	  Red, PointSize[0.01], SpherePoints[100]//Point
+	}]`}</wljs-editor></WLJSWrapper>
 
-<div className='invertColor'>
-
-![](./attachments/Screenshot-2025-01-14-at-15.32.57-a53.png)
-
-</div>
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(FrontEndRef["8b866ea9-afbf-4d5a-b046-2de796f37ab7"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKWyRZmJmlJlrqJqYlpemapJgm6iYZmJjpGqWkmluapRmbJyaZAwCSiBZE"*)(*]VB*)`}</wljs-editor></WLJSWrapper>
 
 ## Get Elevation Data
 Fortunately (or unfortunately), the standard WL library already includes a rough map of the entire Earth (just in case). If more precision is needed, it can go online and fetch higher-resolution data.  
@@ -88,9 +85,9 @@ Here, we scale them by eye so that the height above sea level only slightly "mod
 	  ColorFunction -> Function[{x,y,z}, 
 	      rainbow[1.5(2 Norm[{x,y,z}]-1)]
 	  ], ColorFunctionScaling -> False
-	] // Rasterize `}</wljs-editor></WLJSWrapper>
+	]`}</wljs-editor></WLJSWrapper>
 
-<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(FrontEndRef["4104ea38-f3a6-4f89-8eb6-98ea517a95e6"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKmxgamKQmGlvophknmumapFlY6lqkJpnpWlqkJpoamidamqaaAQCAOBWL"*)(*]VB*)`}</wljs-editor></WLJSWrapper>
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(FrontEndRef["7c1413a5-d62c-46b0-9995-91033935988a"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKmycbmhgaJ5rqppgZJeuamCUZ6FpaWprqWhoaGBtbGptaWlgkAgB06hSS"*)(*]VB*)`}</wljs-editor></WLJSWrapper>
 
 ## Generating clouds
 What’s Earth without clouds? And what are clouds without Perlin noise?  
@@ -113,7 +110,7 @@ The next piece I honestly stole from one of the forums (no GPT for you!)
 	p0 = p = Sqrt[k2];
 	cloudTexture = Image[im[p0 += p], Magnification->2]`}</wljs-editor></WLJSWrapper>
 
-<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(FrontEndRef["458950d1-e7da-4def-ab37-b7e33e1e1360"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKm5haWJoapBjqppqnJOqapKSm6SYmGZvrJpmnGhunGqYaGpsZAACHqRXR"*)(*]VB*)`}</wljs-editor></WLJSWrapper>
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(FrontEndRef["2ffddc33-b942-4f16-ba8b-f4ab3cf4b0cd"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKG6WlpaQkGxvrJlmaGOmapBma6SYlWiTpppkkJhknp5kkGSSnAACVURa3"*)(*]VB*)`}</wljs-editor></WLJSWrapper>
 
 Here animated version
 
@@ -125,36 +122,21 @@ However, to start, we’ll "stretch" the 2D image into 3D with fading at the edg
 
 <WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`With[{plain = im[p0+=p]}, Table[plain Exp[-( i)^2/200.], {i, -20,20}]][[;;;;8, ;;;;4, ;;;;4]] // Image3D `}</wljs-editor></WLJSWrapper>
 
-*this is not an image, try to drag*
-
 To turn this scalar field into polygons, we can use the `ImageMesh` function. However, it's quite challenging to work with when nonlinear transformations need to be applied to the mesh. And we will need to do these transformations, otherwise, how will we map this square onto the sphere?
 
 Let’s use an external library, `wl-marchingcubes`.  
 
-<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`LPMRepositories[{
-	    "Github" -> "https://github.com/JerryI/wl-marching-cubes" -> "master"
-	}]
-	
-	<<JerryI\`MarchingCubes\``}</wljs-editor></WLJSWrapper>
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true" encoded="true"  >{`LPMRepositories%5B%7B%0A%20%20%20%20%22Github%22%20-%3E%20%22https%3A%2F%2Fgithub.com%2FJerryI%2Fwl-marchingcubes-v2%22%0A%7D%5D%0A%0ANeeds%5B%22JerryI%60MarchingCubes%60%22-%3E%22mc%60%22%5D%3B`}</wljs-editor></WLJSWrapper>
 
-<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`With[{plain = im[p0]}, Table[plain Exp[-( i)^2/200.], {i, -20,20}]];
-	
-	{vertices, normals} = CMarchingCubes[%, 0.2];`}</wljs-editor></WLJSWrapper>
+Now let's try it
 
-The result is stored in `vertices`. By default, the library generates an unindexed set of triangle vertices. This means we can directly interpret them as 
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true" encoded="true"  >{`With%5B%7Bplain%20%3D%20im%5Bp0%5D%7D%2C%20Table%5Bplain%20Exp%5B-%28%20i%29%5E2%2F200.%5D%2C%20%7Bi%2C%20-20%2C20%7D%5D%5D%3B%0A%0Amc%60processSurface%5B%25%2C%200.2%2C%201%5D%3B%0A%0Avertices%20%3D%20mc%60getVertices%5B%5D%3B%0Anormals%20%3D%20mc%60getNormals%5B%5D%3B%0Aindices%20%3D%20mc%60getIndices%5B%5D%3B`}</wljs-editor></WLJSWrapper>
 
+Construct our complex graphics using 55208 triangles
 
-<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`Polygon[{
-	  {1, 2, 3}, // Triangle 1
-	  {4, 5, 6}, // Triangle 2
-	  ...
-	}]`}</wljs-editor></WLJSWrapper>
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`GraphicsComplex[vertices, Polygon[indices], VertexNormals->normals] // Graphics3D `}</wljs-editor></WLJSWrapper>
 
-Where none of the vertices are reused by another triangle. This format is especially simple for the GPU, as only one such list needs to be sent to one of the WebGL buffers. Fortunately, the `Polygon` primitive supports this format
-
-<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`GraphicsComplex[vertices, Polygon[1, Length[vertices]]] // Graphics3D // Rasterize`}</wljs-editor></WLJSWrapper>
-
-<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(FrontEndRef["cfb9bd1c-2faf-4461-bd21-dc626c96fda0"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKJ6clWSalGCbrGqUlpumamJgZ6ialGBnqpiSbGZklW5qlpSQaAACbJhaK"*)(*]VB*)`}</wljs-editor></WLJSWrapper>
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(FrontEndRef["ae8b5d6a-98b5-4549-bd09-f2372afe7c1b"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKJ6ZaJJmmmCXqWgJpXRNTE0vdpBQDS900I2Nzo8S0VPNkwyQAjH8WDQ=="*)(*]VB*)`}</wljs-editor></WLJSWrapper>
 
 
 ### Mapping things to a sphere
@@ -165,7 +147,7 @@ In any case, we’ll be "mapping" this texture onto the sphere in one form or an
 
 Looking at textures from games, we can notice a pattern
 
-![](./attachments/image-372.png)
+![](attachments/image-372.png)
 
 *https://richardrosenman.com/shop/spherical-mapping-corrector/*
 
@@ -190,38 +172,15 @@ It’s akin to transforming [the Mollweide projection into an equal-area cartogr
 	
 	Image[%, Magnification->2]`}</wljs-editor></WLJSWrapper>
 
-<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(FrontEndRef["0b3b02ec-63c8-4c7b-ab43-74a8dcfff90a"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKGyQZJxkYpSbrmhknW+iaJJsn6SYmmRjrmpskWqQkp6WlWRokAgCLfRZZ"*)(*]VB*)`}</wljs-editor></WLJSWrapper>
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(FrontEndRef["71cf6fca-bce6-4914-8418-0d636415984b"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKmxsmp5mlJSfqJiWnmumaWBqa6FqYGFroGqSYGZuZGJpaWpgkAQCKORVP"*)(*]VB*)`}</wljs-editor></WLJSWrapper>
 
 Next, we simply need to repeat Marching Cubes on it and transform all the vertices using the equation above. As a bonus, let's transform `normals` as well!
 
-<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`With[{plain = ImageData[ImageResize[newCloudTexture, Scaled[1/2]]]}, Table[plain Exp[-( i)^2/200.], {i, -20,20,2}]];
-	
-	{vertices, normals} = CMarchingCubes[%, 0.2];
-	
-	vertices = With[{
-	  offset = {Min[vertices[[All,1]]], Min[vertices[[All,2]]], 0},
-	  maxX = Max[vertices[[All,1]]] - Min[vertices[[All,1]]],
-	  maxY = Max[vertices[[All,2]]] - Min[vertices[[All,2]]]
-	}, Map[Function[v, With[{p = v - offset}, {p[[1]]/maxX, p[[2]]/maxY, p[[3]]}]], vertices]];
-	
-	{pvertices, pnormals} = MapThread[Function[{v,n},
-	    With[{\\[Rho] = 50.0 + 0.25 (v[[3]] - 10), \\[Phi] =  2 Pi Clip[v[[1]], {0,1}], \\[Theta] =  Pi Clip[v[[2]], {0,1}]},
-	      {
-	        {\\[Rho] Cos[\\[Phi]] Sin[\\[Theta]], \\[Rho] Sin[\\[Phi]] Sin[\\[Theta]], \\[Rho] Cos[\\[Theta]]},
-	
-	        n[[3]] {Cos[\\[Phi]] Sin[\\[Theta]], Sin[\\[Phi]] Sin[\\[Theta]], Cos[\\[Theta]]} + 
-	        n[[2]] {Cos[\\[Theta]] Cos[\\[Phi]],Cos[\\[Theta]] Sin[\\[Phi]],-Sin[\\[Theta]]} + 
-	        n[[1]] {-Sin[\\[Theta]] Sin[\\[Phi]],Cos[\\[Phi]] Sin[\\[Theta]],0}
-	      }
-	    ]
-	  ]
-	, {vertices, -normals}] // Transpose;
-	
-	{
-	  clouds = GraphicsComplex[0.017 pvertices, Polygon[1, Length[vertices]], VertexNormals->pnormals]
-	} // Graphics3D // Rasterize `}</wljs-editor></WLJSWrapper>
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true" encoded="true"  >{`With%5B%7Bplain%20%3D%20ImageData%5BImageResize%5BnewCloudTexture%2C%20Scaled%5B1%2F2%5D%5D%5D%7D%2C%20Table%5Bplain%20Exp%5B-%28%20i%29%5E2%2F200.%5D%2C%20%7Bi%2C%20-20%2C20%2C2%7D%5D%5D%3B%0A%0Amc%60processSurface%5B%25%2C%200.2%2C%201%5D%3B%0A%0Avertices%20%3D%20mc%60getVertices%5B%5D%3B%0Anormals%20%3D%20mc%60getNormals%5B%5D%3B%0Aindices%20%3D%20mc%60getIndices%5B%5D%3B%0A%0Avertices%20%3D%20With%5B%7B%0A%20%20offset%20%3D%20%7BMin%5Bvertices%5B%5BAll%2C1%5D%5D%5D%2C%20Min%5Bvertices%5B%5BAll%2C2%5D%5D%5D%2C%200%7D%2C%0A%20%20maxX%20%3D%20Max%5Bvertices%5B%5BAll%2C1%5D%5D%5D%20-%20Min%5Bvertices%5B%5BAll%2C1%5D%5D%5D%2C%0A%20%20maxY%20%3D%20Max%5Bvertices%5B%5BAll%2C2%5D%5D%5D%20-%20Min%5Bvertices%5B%5BAll%2C2%5D%5D%5D%0A%7D%2C%20Map%5BFunction%5Bv%2C%20With%5B%7Bp%20%3D%20v%20-%20offset%7D%2C%20%7Bp%5B%5B1%5D%5D%2FmaxX%2C%20p%5B%5B2%5D%5D%2FmaxY%2C%20p%5B%5B3%5D%5D%7D%5D%5D%2C%20vertices%5D%5D%3B%0A%0A%7Bpvertices%2C%20pnormals%7D%20%3D%20MapThread%5BFunction%5B%7Bv%2Cn%7D%2C%0A%20%20%20%20With%5B%7B%5C%5BRho%5D%20%3D%2050.0%20%2B%200.25%20%28v%5B%5B3%5D%5D%20-%2010%29%2C%20%5C%5BPhi%5D%20%3D%20%202%20Pi%20Clip%5Bv%5B%5B1%5D%5D%2C%20%7B0%2C1%7D%5D%2C%20%5C%5BTheta%5D%20%3D%20%20Pi%20Clip%5Bv%5B%5B2%5D%5D%2C%20%7B0%2C1%7D%5D%7D%2C%0A%20%20%20%20%20%20%7B%0A%20%20%20%20%20%20%20%20%7B%5C%5BRho%5D%20Cos%5B%5C%5BPhi%5D%5D%20Sin%5B%5C%5BTheta%5D%5D%2C%20%5C%5BRho%5D%20Sin%5B%5C%5BPhi%5D%5D%20Sin%5B%5C%5BTheta%5D%5D%2C%20%5C%5BRho%5D%20Cos%5B%5C%5BTheta%5D%5D%7D%2C%0A%0A%20%20%20%20%20%20%20%20n%5B%5B3%5D%5D%20%7BCos%5B%5C%5BPhi%5D%5D%20Sin%5B%5C%5BTheta%5D%5D%2C%20Sin%5B%5C%5BPhi%5D%5D%20Sin%5B%5C%5BTheta%5D%5D%2C%20Cos%5B%5C%5BTheta%5D%5D%7D%20%2B%20%0A%20%20%20%20%20%20%20%20n%5B%5B2%5D%5D%20%7BCos%5B%5C%5BTheta%5D%5D%20Cos%5B%5C%5BPhi%5D%5D%2CCos%5B%5C%5BTheta%5D%5D%20Sin%5B%5C%5BPhi%5D%5D%2C-Sin%5B%5C%5BTheta%5D%5D%7D%20%2B%20%0A%20%20%20%20%20%20%20%20n%5B%5B1%5D%5D%20%7B-Sin%5B%5C%5BTheta%5D%5D%20Sin%5B%5C%5BPhi%5D%5D%2CCos%5B%5C%5BPhi%5D%5D%20Sin%5B%5C%5BTheta%5D%5D%2C0%7D%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%5D%0A%20%20%5D%0A%2C%20%7Bvertices%2C%20-normals%7D%5D%20%2F%2F%20Transpose%3B%0A%0A%7B%0A%20%20clouds%20%3D%20GraphicsComplex%5B0.017%20pvertices%2C%20Polygon%5Bindices%5D%2C%20VertexNormals-%3Epnormals%5D%0A%7D%20%2F%2F%20Graphics3D`}</wljs-editor></WLJSWrapper>
 
-<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(FrontEndRef["ce398396-cbb9-4bac-b178-ed6a91941a07"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKJ6caW1oYW5rpJiclWeqaJCUm6yYZmlvopqaYJVoaWpoYJhqYAwCNnBXd"*)(*]VB*)`}</wljs-editor></WLJSWrapper>
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(FrontEndRef["e5e4cdcb-17f9-4d01-b1bd-ffe9f6c1ddfc"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKp5qmmiSnJCfpGpqnWeqapBgY6iYZJqXopqWlWqaZJRumpKQlAwCbTBcm"*)(*]VB*)`}</wljs-editor></WLJSWrapper>
+
+*Beautiful, is itn't it? Try to pan and zoom*
 
 If `VertexNormals` is explicitly set in `GraphicsComplex`, then when shading, the surface will be interpolated across all three normals of the triangle, instead of just one (which is automatically calculated by the graphics library if no other data is provided, in which case the polygon looks like a flat plane — a.k.a. the effect seen in 80s demos).  
 
@@ -241,8 +200,8 @@ We can extend the original `SurfacePlot` with options and add additional graphic
 	  Prolog -> {
 	    Directive["Shadows"->True, "CastShadow"->True],
 	    clouds,
-	    HemisphereLight[LightBlue, Orange // Darker // Darker],
-	    SpotLight[Orange, {-2.4909, 4.069, 3.024}]
+	    HemisphereLight[LightBlue, LightRed],
+	    SpotLight[Blend[{Red, White}, 0.8], 0.5{-2.4909, 4.069, 3.024}, "Intensity"->30]
 	  },
 	  
 	  Background->Black,
@@ -250,9 +209,8 @@ We can extend the original `SurfacePlot` with options and add additional graphic
 	, ImageSize->600]
 	`}</wljs-editor></WLJSWrapper>
 
-<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(FrontEndRef["6927cbfd-deef-4b74-80d6-7a9e3fbca385"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKm1kamScnpaXopqSmpumaJJmb6FoYpJjpmidaphqnJSUnGluYAgCVohZ2"*)(*]VB*)`}</wljs-editor></WLJSWrapper>
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(FrontEndRef["5c17c26d-e276-49d1-bb65-532f4c28052a"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKmyYbmicbmaXophqZm+maWKYY6iYlmZnqmhobpZkkG1kYmBolAgB/wBVA"*)(*]VB*)`}</wljs-editor></WLJSWrapper>
 
-*Try to drag it*
 
 ## Animation  
 Let’s add a simple animation for the movement of the light source, as well as the rotation of the cloud sphere to spice up the scene
@@ -275,8 +233,8 @@ Let’s add a simple animation for the movement of the light source, as well as 
 	  Prolog -> {
 	    Directive["Shadows"->True, "CastShadow"->True],
 	    GeometricTransformation[clouds, rotationMatrix // Offload],
-	    HemisphereLight[LightBlue, Orange // Darker // Darker],
-	    SpotLight[Orange, lightPos // Offload]
+	    HemisphereLight[LightBlue, LightRed],
+	    SpotLight[Blend[{Red, White}, 0.8], 0.5 lightPos // Offload, "Intensity"->30]
 	  },
 	
 	  Epilog -> EventHandler[AnimationFrameListener[lightPos // Offload], Function[Null,
@@ -288,41 +246,10 @@ Let’s add a simple animation for the movement of the light source, as well as 
 	  ImageSize->600
 	]`}</wljs-editor></WLJSWrapper>
 
-To start animation
+To re-start animation
 
 <WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`lightPos = lightPos;`}</wljs-editor></WLJSWrapper>
 
-__Alternative version for a blog__
+To stop - remove output cell
 
-Drag a slider to control clouds and etc
-
-<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`rainbow = ColorData["DarkRainbow"];
-	lightPos = {-2.4909, 4.069, 3.024};
-	
-	rotationMatrix = RotationMatrix[0., {0,0,1}];
-	
-	EventHandler[InputRange[0,1, 0.01], Function[value,
-	  lightPos = RotationMatrix[2Pi value, {1,1,1}].{-2.4909, 4.069, 3.024} // N;
-	  rotationMatrix = RotationMatrix[2Pi value, {0,0,1}] // N;
-	]]
-	
-	ListSurfacePlot3D[
-	  MapThread[(#1 (0.8 + 0.1 #2))&, {points, elevation}], 
-	  Mesh->None, MaxPlotPoints->50, 
-	  ColorFunction -> Function[{x,y,z}, rainbow[1.5(2 Norm[{x,y,z}]-1)]], 
-	  ColorFunctionScaling -> False, 
-	  Lighting->"Default",
-	  PlotStyle->Directive["Shadows"->True, "CastShadow"->True],
-	
-	  Prolog -> {
-	    Directive["Shadows"->True, "CastShadow"->True],
-	    GeometricTransformation[clouds, rotationMatrix // Offload],
-	    HemisphereLight[LightBlue, Orange // Darker // Darker],
-	    SpotLight[Orange, lightPos // Offload]
-	  },
-	  ImageSize->600, Axes->False
-	]`}</wljs-editor></WLJSWrapper>
-
-<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(EventObject[<|"Id" -> "2f0abc26-0920-4543-aa4b-3b697daf469c", "Initial" -> 0.5, "View" -> "a090e724-7609-4ca8-8be5-243a58df057d"|>])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKJxpYGqSaG5nompsZWOqaJCda6FokpZrqGpkYJ5papKQZmJqnAAB5qhVK"*)(*]VB*)`}</wljs-editor></WLJSWrapper>
-
-<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(FrontEndRef["488db774-faaa-48c1-948b-7f9cefab2802"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKm1hYpCSZm5vopiUmJuqaWCQb6lqaWCTpmqdZJqemJSYZWRgYAQCLTxYS"*)(*]VB*)`}</wljs-editor></WLJSWrapper>
+Thanks for reading. See you ✨

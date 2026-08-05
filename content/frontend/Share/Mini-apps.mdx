@@ -42,7 +42,6 @@ In general, you can think of a mini app as if it were an output of a single cell
 - The default context (`$Context`) of all symbols is randomly generated and will be unique for each running instance of your app
 - __All initialization cells will be executed automatically__ on the startup of an app
 - __The output of the last input cell__ will be the first window of your app
-- Use WLX for the last input cell
 - An app will pick the first available computation kernel in your system
 
 </Card>
@@ -64,9 +63,13 @@ Widget = ManipulatePlot[equation[x,n]//Re, {x, -1,1}, {n, 1,10,1}];
 
 <WLJSWrapper>
 <span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-xl opacity-20 group-hover:opacity-50 transition duration-500" />
-<wljs-editor display="codemirror" type="Input"  >{`.wlx
-<Widget/>
+<wljs-editor display="codemirror" type="Input"  >{`
+Widget
 `}</wljs-editor>
 </WLJSWrapper>
 
 Then export it as <small>Mini app</small> and double-click the created file. You can open it anytime on any machine with WLJS Notebook installed. 
+
+<Card title="How to write useful apps with Wolfram & WLJS, or swimming against the stream" href="./../../blog/making-apps">
+    A practical guide to building and deploying research applications with Wolfram Language and WLJS, covering interactive interfaces, asynchronous programming, physics, classical light-matter interaction, data import and export, and a complete Lorentz-oscillator fitting app.    
+</Card>
