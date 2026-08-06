@@ -1,6 +1,6 @@
 ---
 title: How to write useful apps with Wolfram & WLJS, or swimming against the stream
-description: A practical guide to building and deploying research applications with Wolfram Language and WLJS, covering interactive interfaces, asynchronous programming, physics, classical light-matter interaction, data import and export, and a complete Lorentz-oscillator fitting app. This is going to be a wild trip
+description: A practical guide to building and deploying research applications with Wolfram Language and WLJS, covering interactive interfaces, asynchronous programming, physics, classical light-matter interaction, data import and export, and a complete Lorentz-oscillator fitting app. 
 date: 2026-08-05
 author: JerryI
 preview: ./preview.jpg
@@ -1345,6 +1345,9 @@ This system is used by several master's and PhD students in our group. It connec
 
 The system captures $25 \times 4000$ data points per second while monitoring multiple devices. At the same time, one can __still run normal notebooks on the same kernel__, or even other applications. Because WLJS is event-based by design, a temporarily busy kernel causes only short pauses in this setup; incoming data are buffered, so acquisition can continue. A motor may pause briefly and then resume when the next command arrives. No catastrophe.
 
+![](./setup.svg)
+
+*The architecture of one of the setups in our lab automation project. Everyhting is driven by ethernet*
 
 
 <Accordions>
