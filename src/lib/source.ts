@@ -57,6 +57,9 @@ function processLLMText(text: string): string {
   result = result.replace(/<\/Callout>/g, '');
   result = result.replace(/<div\s+className="code-input"[^/]*\/>/g, '');
 
+  // Collapse Mathematica compressed-expression blobs: (*"1:eJx...."*)
+  result = result.replace(/\(\*"1:[A-Za-z0-9+/=]+"\*\)/g, '(*"1:eJx..."*)');
+  
   // Clean up excessive blank lines
   result = result.replace(/\n{3,}/g, '\n\n');
 
