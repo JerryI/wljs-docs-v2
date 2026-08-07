@@ -598,7 +598,7 @@ export default function HomePage() {
       </div>
 
       <div className="relative min-w-0 max-w-full mb-16">
-        <div className="min-w-0 max-w-full overflow-hidden rounded-lg border border-fd-border bg-fd-card/50 backdrop-blur-sm p-4 sm:p-8 shadow-lg">
+        <div className="min-w-0 max-w-full overflow-hidden rounded-lg border border-fd-border bg-fd-card/50 backdrop-blur-sm p-4 sm:p-8">
           <div className="flex min-w-0 flex-col gap-6">
             <div className="min-w-0 text-left">
               <h3 className="mb-4">Create dynamic 3D plots quickly </h3>
@@ -620,7 +620,7 @@ export default function HomePage() {
 
       {/* CodeSign Sponsor Banner */}
       <div className="relative mb-16">
-        <div className="rounded-lg border border-fd-border bg-fd-card/50 backdrop-blur-sm p-6 sm:p-8 shadow-lg">
+        <div className="rounded-lg border border-fd-border bg-fd-card/50 backdrop-blur-sm p-6 sm:p-8">
           <div className="flex flex-col sm:flex-row items-center gap-6">
             <div className="flex-1 text-center sm:text-left">
               <h3 className="text-lg font-semibold mb-2">Digitally Signed</h3>
@@ -645,8 +645,7 @@ export default function HomePage() {
 
       {/* Call to Action Section with gradient border */}
       <div className="relative group mb-16">
-        <div className="absolute -inset-0.5 bg-gradient-to-r from-fd-primary via-purple-500 to-fd-primary rounded-lg blur opacity-20 group-hover:opacity-30 transition duration-500" />
-        <div className="relative rounded-lg border border-fd-border bg-fd-card/95 backdrop-blur-sm p-8 sm:p-12 text-center shadow-xl">
+        <div className="rounded-lg border border-fd-border bg-fd-card/50 backdrop-blur-sm p-8 sm:p-10 text-center">
           <h2 className="text-2xl sm:text-3xl font-bold mb-4">We need your support</h2>
           <p className="text-fd-muted-foreground mb-6 max-w-2xl mx-auto">
             As an independent open-source project, we're unaffiliated with Wolfram or any company. Your support keeps this project alive.
@@ -718,7 +717,7 @@ export default function HomePage() {
             <p className="mb-4">
               While WLJS Notebook itself is AGPLv3 licensed, it requires the Wolfram Engine to function. The Wolfram Engine is a separate product with its own <a href="https://www.wolfram.com/legal/agreements/wolfram-engine/" target="_blank" rel="noopener noreferrer" className="text-fd-primary hover:underline">licensing terms</a> For the full license text of WLJS Notebook, visit our <a href="https://github.com/WLJSTeam/wolfram-js-frontend/blob/main/LICENSE.md" target="_blank" rel="noopener noreferrer" className="text-fd-primary hover:underline">GitHub repository</a>.
             </p>
-            <p>Are you a robot? Here is <a className="text-fd-primary hover:underline" href="https://wljs.io/llms-full.txt">a text version</a> of the whole website</p>
+            <p>Are you a robot? Here is <a className="text-fd-primary hover:underline" href="https://wljs.io/llms.txt">llms.txt</a> index</p>
           </div>
         </div>
       </div>

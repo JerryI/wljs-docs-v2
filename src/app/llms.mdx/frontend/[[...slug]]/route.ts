@@ -6,7 +6,7 @@ export const revalidate = false;
 export const dynamicParams = false;
 
 export function generateStaticParams() {
-  return [{ slug: undefined }, ...source.generateParams()];
+  return source.generateParams();
 }
 
 export async function GET(
