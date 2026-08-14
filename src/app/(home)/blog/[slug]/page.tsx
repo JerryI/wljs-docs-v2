@@ -4,8 +4,9 @@ import { InlineTOC } from 'fumadocs-ui/components/inline-toc';
 import { getMDXComponents } from '@/mdx-components';
 import { blogSource } from '@/lib/source';
 import { GiscusComments } from '@/components/giscus-comments';
-import { ArrowLeft, CalendarDays, User, Tag } from 'lucide-react';
+import { ArrowLeft, CalendarDays, User, Tag, MessagesSquare, GitPullRequest } from 'lucide-react';
 import { markdownToHtml } from '@/lib/markdown';
+import type { Metadata } from 'next';
 
 export const dynamicParams = false;
 
@@ -93,9 +94,36 @@ export default async function Page(props: {
       <div className="prose prose-fd min-w-0 max-w-none" style={{ maxWidth: '100%' }}>
         <Mdx components={getMDXComponents()} />
       </div>
-
+ 
       {/* Comments */}
-      <div className='invertColor mt-4'><GiscusComments /></div>
+      <div className='invertColor mt-10'><GiscusComments /></div>
+      
+      {/* Turn reading into participation */}
+      <aside className="mt-14 rounded-xl border border-fd-border bg-fd-card/60 p-6 sm:p-8">
+        <h2 className="text-xl font-semibold mb-2">Make this your own</h2>
+        <p className="text-fd-muted-foreground mb-5">
+          Adapt the notebook, share what you built, or help improve WLJS. Questions, experiments, and small contributions are all welcome.
+        </p>
+        <div className="flex flex-wrap gap-3">
+          <a
+            href="https://github.com/WLJSTeam/wljs-notebook/discussions"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 rounded-lg bg-fd-primary px-4 py-2 text-sm font-medium text-fd-primary-foreground transition-colors hover:bg-fd-primary/90"
+          >
+            <MessagesSquare className="size-4" />
+            Share or ask the community
+          </a>
+          <Link
+            href="/blog"
+            className="inline-flex items-center rounded-lg px-4 py-2 text-sm font-medium text-fd-muted-foreground transition-colors hover:text-fd-primary"
+          >
+            Explore more examples
+          </Link>
+        </div>
+      </aside>
+
+      
     </article>
   );
 }
@@ -108,12 +136,37 @@ export function generateStaticParams(): { slug: string }[] {
 
 export async function generateMetadata(props: {
   params: Promise<{ slug: string }>;
-}) {
+}): Promise<Metadata> {
   const params = await props.params;
   const page = blogSource.getPage([params.slug]);
   if (!page) notFound();
+
+  const url = `/blog/${params.slug}`;
+  const image = page.data.preview
+    ? [{ url: page.data.preview, alt: page.data.title }]
+    : undefined;
+
   return {
     title: page.data.title,
     description: page.data.description,
+    alternates: {
+      canonical: url,
+    },
+    openGraph: {
+      type: 'article',
+      url,
+      title: page.data.title,
+      description: page.data.description,
+      publishedTime: new Date(page.data.date).toISOString(),
+      authors: [page.data.author],
+      tags: page.data.tags,
+      images: image,
+    },
+    twitter: {
+      card: image ? 'summary_large_image' : 'summary',
+      title: page.data.title,
+      description: page.data.description,
+      images: image,
+    },
   };
 }

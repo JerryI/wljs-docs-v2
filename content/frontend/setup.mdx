@@ -6,11 +6,17 @@ description: Install WLJS Notebook with Wolfram Engine on Windows, macOS, Linux,
 ---
 
 
-__Step 1__: download and install [freeware Wolfram Engine <abbr title="14.1-15.0 are well tested with WLJS Notebook">15.0</abbr>](https://www.wolfram.com/engine/) for developers.
+## Install in two steps
 
-__Step 2__: install WLJS from the binaries hosted at Github or homebrew.
+__Step 1__: Download and install the [free Wolfram Engine <abbr title="Versions 14.1–15.0 are well tested with WLJS Notebook">15.0</abbr>](https://www.wolfram.com/engine/) for developers. Wolfram requires a one-time registration and activation.
 
-Alternatively you can skip __steps 1, 2__ and use a __complete Docker Image__ (see further).
+__Step 2__: Install WLJS from the GitHub binaries below or with Homebrew.
+
+<Callout type="info">
+Want to see what people build before installing? [Explore tutorials and interactive examples](/blog), or read the [Mathematica migration guide](/frontend/Guides/Migration).
+</Callout>
+
+For a server deployment, you can skip the desktop installer and use the complete Docker image described below.
 
 import { Accordion, Accordions } from 'fumadocs-ui/components/accordion';
 
@@ -44,7 +50,7 @@ docker run -it \
   ghcr.io/wljsteam/wljs-notebook:main
 ```
 
-Make sure that `tmp` and `wljs` folder are writtable
+Make sure the `tmp` and `wljs` directories are writable.
 
   </Tab>
   <Tab value="Homebrew">
@@ -58,55 +64,55 @@ brew install --cask wljs-notebook
 
 see also
 
-[All releases](https://github.com/JerryI/wljs-notebook/releases)
+[All releases](https://github.com/WLJSTeam/wljs-notebook/releases)
 
 > We carefully crafted our UI to match the look of all platforms as close as possible for a web-based application
 
 <Accordions>
 <Accordion title="Does it require an internet connection?">
-WLJS itself - __does not__, however, Wolfram Engine needs it for:
+WLJS itself does not require a permanent internet connection. Wolfram Engine needs one for:
 
-1. first time activation;
-2. any online features like: downloading neural nets, fetching natural languages data, online databases.
+1. first-time activation;
+2. online features such as downloading neural networks, fetching natural-language data, or accessing online databases.
 
-If you do not use any of (2), an application will function fully offline and forever.
+If you do not use those online features, the application can run fully offline after activation.
 
 </Accordion>
 </Accordions>
 
 ### Windows
-Download and install the latest `.exe`. *Only x86/64-bit architecture is supported*
+Download and install the latest `.exe`. *Only the x86-64 architecture is supported.*
 
 ### Linux
 ##### Using `.deb` Package (Recommended)
 ```bash
 sudo apt install ./wljs-notebook.deb
 ```
-⚠ *Ubuntu 24.04 users*: If you encounter AppArmor issues, one of the options to disable apparmor temporary:
+⚠ *Ubuntu 24.04 users*: If you encounter AppArmor issues, one option is to disable the restriction temporarily:
 ```bash
 sudo sysctl -w kernel.apparmor_restrict_unprivileged_userns=0
 ```
 
-⚠ *Ubuntu 25.XX users*: There might issues with installing WE due to broken Rust core library for MD5, install GNU version:
+⚠ *Ubuntu 25.xx users*: If Wolfram Engine installation fails because of the Rust core library used for MD5, install the GNU version:
 ```bash
 sudo apt install coreutils-from-gnu coreutils-from-uutils- --allow-remove-essential
 ```
 
 
 ##### Using `.AppImage` Package (Recommended)
-Make AppImage executable and run it by double-click.
+Make the AppImage executable, then run it by double-clicking it.
 
-⚠ *Debian 13 users*: in the case of troubles install FUSE
+⚠ *Debian 13 users*: If you encounter problems, install FUSE:
 ```bash
 sudo apt install libfuse2
 ```
-⚠ or if you are *Ubuntu user*:
+⚠ If you use Ubuntu:
 ```bash
 sudo apt install libfuse2t64
 ```
 
 ##### Using `.rpm` Package
-If you are openSUSE user, download RPM binary, then run
+If you use openSUSE, download the RPM binary, then run:
 
 ```bash
 sudo zypper install ./wljs-notebook-*-gnulinux.rpm
@@ -133,14 +139,14 @@ brew install --cask wljs-notebook
 ## 🚢 Running on a server
 
 <Callout>
-Certain features such as image/sound recording might require `https` connection if you are running it __not on a local machine__. See how to set up a proxy in [Container Setup](https://github.com/JerryI/wljs-notebook/blob/main/container/README.md) or use [port forwarding](https://www.digitalocean.com/community/tutorials/ssh-port-forwarding) via SSH.
+Some features, such as image or sound recording, may require an HTTPS connection when WLJS runs remotely. See how to set up a proxy in the [container documentation](https://github.com/WLJSTeam/wljs-notebook/blob/main/container/README.md), or use [port forwarding](https://www.digitalocean.com/community/tutorials/ssh-port-forwarding) over SSH.
 </Callout>
 
 For a remote machine:
 
-__Step 1__: register and get developer license for [freeware Wolfram Engine](https://www.wolfram.com/engine/) at wolfram.com
+__Step 1__: Register and get a developer license for the [free Wolfram Engine](https://www.wolfram.com/engine/) at wolfram.com.
 
-__Step 2__: deploy WLJS Notebook
+__Step 2__: Deploy WLJS Notebook.
 
 ```bash
 docker run -it \
@@ -152,16 +158,16 @@ docker run -it \
   ghcr.io/wljsteam/wljs-notebook:main
 ```
 
-This will mount your local `wljs` folder to the container, where examples, configs and license-related files are stored. `tmp` is mostly needed for backups and quick notes.
+This mounts your local `wljs` directory into the container, where examples, configuration, and license-related files are stored. The `tmp` directory is mainly used for backups and quick notes.
 
 <Callout type="note">
-Make sure `tmp` and the whole `wljs` folder is writtable
+Make sure `tmp` and the entire `wljs` directory are writable.
 </Callout>
 
-Then open `http://127.0.0.1:8000` or forward `8000` port to your local machine and open.
+Then open `http://127.0.0.1:8000`, or forward port `8000` to your local machine before opening it.
 
 <Callout type="warning">
-Some features require WLJS desktop app:
+Some features require the WLJS desktop app:
 - `Export[_, _, "PDF"]` - export to PDF
 - Rendering `Animate` to a GIF file
 - `Rasterize` - expressions rasterization
@@ -169,8 +175,8 @@ Some features require WLJS desktop app:
 - `SystemInputDialog` - open system file dialog
 </Callout>
 
-### Running without a container
-If you hate contaienrs, you can start WLJS Notebook directly from a repository. Make sure to have Wolfram Engine installed:
+### Running from source
+You can also start WLJS Notebook directly from the repository. Make sure Wolfram Engine is installed first:
 
 __Step 1__: clone WLJS Notebook
 
@@ -185,7 +191,7 @@ __Step 2__: start it
 wolframscript -f Scripts/start.wls
 ```
 
-<Callout>WLJS Notebook uses 1 port for plain HTTP and 2 WebSockets ports for communication: 20560, 20559, and 20563. Make sure to have 1:1 port-forwarding for the last 2 if you plan to connect from a proxy or SSH tunnel</Callout>
+<Callout>WLJS Notebook uses one port for plain HTTP and two WebSocket ports for communication: `20560`, `20559`, and `20563`. Use one-to-one port forwarding for the two WebSocket ports when connecting through a proxy or SSH tunnel.</Callout>
 
 #### Library dependencies (no Docker)
 If you do not want to use Docker on your GNU/Linux-like server, you might need to install these dependencies for Wolfram Engine to function. This list was taken from the official WE documentation page:
@@ -239,7 +245,7 @@ libxkbcommon-x11-0
 libxkbcommon0
 ```
 
-#### Tunnelling though SSH
+#### Tunneling through SSH
 Example setup:
 
 ```bash
@@ -247,11 +253,11 @@ Example setup:
      -L 20560:localhost:20560 \
      -L 20559:localhost:20559 \
      -L 20563:localhost:20563 \
-     <host name>@<host address> -p <host port, defualt=22>
+     <host name>@<host address> -p <host port, default=22>
 ```
 
 ## 🍓 Raspberry PI
 
-Unix ARM64 binaries can work on any Raspberry PI computers > 3B with x64 OS installed. However, you might need to install `libuv` or/and `libuv-dev` dependency from the terminal.
+Unix ARM64 binaries can work on Raspberry Pi models newer than the 3B when a 64-bit operating system is installed. You may also need to install the `libuv` or `libuv-dev` dependency from the terminal.
 
-Wolfram Engine is available from APT repository by the default and does not require authentification.
+Wolfram Engine is available from the default APT repository and does not require authentication.

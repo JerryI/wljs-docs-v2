@@ -1,7 +1,25 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { blogSource } from '@/lib/source';
-import { CalendarDays, User, ArrowRight, Tag } from 'lucide-react';
+import { CalendarDays, User, ArrowRight, Tag, Rss, MessagesSquare } from 'lucide-react';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Blog',
+  description: 'Tutorials, showcases, research notes, and developer updates from the WLJS Notebook community.',
+  alternates: {
+    canonical: '/blog',
+    types: {
+      'application/rss+xml': '/feed.xml',
+    },
+  },
+  openGraph: {
+    type: 'website',
+    url: '/blog',
+    title: 'WLJS Notebook Blog',
+    description: 'Tutorials, showcases, research notes, and developer updates from the WLJS Notebook community.',
+  },
+};
 
 export default function Home() {
   const posts = blogSource
@@ -53,9 +71,28 @@ export default function Home() {
     <main className="relative mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-16" style={{maxWidth:"calc(min(100vw, var(--fd-layout-width)))"}}>
       {/* Header */}
       <div className="text-center mb-16">
+        <h1 className="text-3xl sm:text-4xl font-bold mb-4">WLJS Notebook Blog</h1>
         <p className="text-lg text-fd-muted-foreground max-w-xl mx-auto">
-          News, showcases, research, and developer notes from the WLJS Notebook team
+          Tutorials, showcases, research notes, and developer updates from the WLJS Notebook community.
         </p>
+        <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
+          <Link
+            href="/feed.xml"
+            className="inline-flex items-center gap-2 rounded-lg border border-fd-border bg-fd-card/50 px-4 py-2 text-sm font-medium transition-colors hover:border-fd-primary/40 hover:bg-fd-card"
+          >
+            <Rss className="size-4" />
+            Follow via RSS
+          </Link>
+          <a
+            href="https://github.com/WLJSTeam/wljs-notebook/discussions"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 rounded-lg bg-fd-primary px-4 py-2 text-sm font-medium text-fd-primary-foreground transition-colors hover:bg-fd-primary/90"
+          >
+            <MessagesSquare className="size-4" />
+            Share your work
+          </a>
+        </div>
       </div>
 
       {/* Posts list */}

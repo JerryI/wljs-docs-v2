@@ -12,11 +12,38 @@ const inter = Inter({
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://wljs.io'),
+  applicationName: 'WLJS Notebook',
   title: {
-    default: 'WLJS Notebook',        // used when no child page sets a title
-    template: '%s',  // used when a child page sets a title
+    default: 'WLJS Notebook',
+    template: '%s | WLJS Notebook',
   },
-  description: 'Interactive open-source notebook interface for Wolfram Language',
+  description: 'Build interactive research notebooks and scientific apps with Wolfram Language using an open-source, local-first, Git-friendly frontend.',
+  keywords: [
+    'Wolfram Language',
+    'Wolfram Engine',
+    'computational notebook',
+    'scientific computing',
+    'interactive visualization',
+    'Mathematica frontend',
+  ],
+  openGraph: {
+    type: 'website',
+    url: '/',
+    siteName: 'WLJS Notebook',
+    title: 'WLJS Notebook',
+    description: 'Build interactive research notebooks and scientific apps with Wolfram Language.',
+  },
+  twitter: {
+    card: 'summary',
+    title: 'WLJS Notebook',
+    description: 'Build interactive research notebooks and scientific apps with Wolfram Language.',
+  },
+  alternates: {
+    types: {
+      'application/rss+xml': '/feed.xml',
+    },
+  },
 };
 
 export default function Layout({ children }: LayoutProps<'/'>) {

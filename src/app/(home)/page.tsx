@@ -5,7 +5,7 @@ import { useEffect, useRef, useState } from 'react';
 import { Card, Cards } from 'fumadocs-ui/components/card';
 import { DynamicCodeBlock } from 'fumadocs-ui/components/dynamic-codeblock';
 import { Tab, Tabs } from 'fumadocs-ui/components/tabs';
-import { Code2, Coffee, Lightbulb, Zap, Download, Package, Terminal, Bot, GitBranch, MessageCircle, MessagesSquare, Send, Youtube } from 'lucide-react';
+import { Code2, Coffee, Lightbulb, Zap, Download, Package, Terminal, Bot, GitBranch, MessageCircle, MessagesSquare, Send, Youtube, ArrowRight, GitPullRequest } from 'lucide-react';
 import { AnimationController, type AnimationConfig } from './AnimationController';
 
 
@@ -471,25 +471,26 @@ export default function HomePage() {
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
             <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
           </span>
-          Open Source & Free
+          Open-source notebook frontend
         </div>
         
         <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-br from-fd-foreground via-fd-foreground to-fd-foreground/70 bg-clip-text text-transparent">
           WLJS Notebook
         </h1>
         <p className="text-xl sm:text-2xl text-fd-muted-foreground mb-4 max-w-2xl font-medium">
-          Open-source Notebook interface for Wolfram Language
+          Build interactive research notebooks and scientific tools with Wolfram Language
         </p>
         <p className="text-base sm:text-lg text-fd-muted-foreground/80 mb-8 max-w-xl">
-          Typeset math input, expressive syntax, rich media output, and live interactivity
+          True 2D typeset input, live interactivity, local-first, Git-friendly, and powered by Wolfram Engine or Wolfram Kernel
         </p>
         
         <div className="flex gap-3 mb-12 flex-wrap justify-center">
-          <Link 
-            href="https://wljs.io/frontend/Overview" 
+          <Link
+            href="/frontend/Overview"
             className="group relative inline-flex items-center gap-2 rounded-lg bg-fd-primary px-6 py-2.5 font-medium text-fd-primary-foreground transition-all hover:bg-fd-primary/90 hover:shadow-lg hover:shadow-fd-primary/25"
           >
-            <span className="relative z-10">Overview</span>
+            <span className="relative z-10">See how it works</span>
+            <ArrowRight className="relative z-10 size-4" />
             <div className="absolute inset-0 rounded-lg bg-gradient-to-r from-fd-primary to-purple-600 opacity-0 group-hover:opacity-100 transition-opacity" />
           </Link>
           <Link 
@@ -498,6 +499,18 @@ export default function HomePage() {
           >
             <Download className="size-4" />
             Install
+          </Link>
+          <Link
+            href="/blog"
+            className="inline-flex items-center px-3 py-2.5 text-sm font-medium text-fd-muted-foreground transition-colors hover:text-fd-primary"
+          >
+            Explore examples
+          </Link>
+          <Link
+            href="/frontend/Guides/Migration"
+            className="inline-flex items-center px-3 py-2.5 text-sm font-medium text-fd-muted-foreground transition-colors hover:text-fd-primary"
+          >
+            Migrating from Mathematica?
           </Link>
         </div>
 
@@ -536,7 +549,7 @@ export default function HomePage() {
       {/* Features Section */}
       <div className="mb-16">
         <h2 className="text-2xl sm:text-3xl font-bold text-center mb-10">
-          Everything you need to build amazing sharable notebooks
+          Everything you need to build amazing shareable notebooks
         </h2>
         <Cards>
           <Card 
@@ -549,14 +562,14 @@ export default function HomePage() {
           <Card 
             icon={<Zap />}
             title="Interactive & Powerful"
-            description=<>{`Optimized for fast interactive computing and allows to make complex real-time visualizations. From the high-level `}<code>Manipulate</code> to low-level graphics primitives</>
+            description=<>{`Optimized for fast interactive computing and complex real-time visualizations, from high-level `}<code>Manipulate</code>{` interfaces to low-level graphics primitives.`}</>
             href="/frontend/Guides/Dynamic"
           />
 
           <Card 
             icon={<Lightbulb />}
             title="Built for presentations"
-            description="Create interactive, component-driven slides directly in your notebook — with 3D graphics and `Manipulate` widgets. Perfect for teaching and sharing live reports."
+            description="Create interactive, component-driven slides directly in your notebook — with 3D graphics and `Manipulate` widgets. Perfect for sharing live reports."
             href="/frontend/Cell-types/Slide"
           />
 
@@ -569,22 +582,22 @@ export default function HomePage() {
 
           <Card 
             icon={<Download />}
-            title="Portable, embeddable and web friendly"
-            description="Export and share your notebook as a mini app or embeddable .html or .mdx file — plots stay interactive, and sliders remain draggable"
+            title="Portable, embeddable, and web-friendly"
+            description="Export and share your notebook as a mini app or embeddable .html or .mdx file — plots stay interactive, and sliders remain draggable."
             href="/frontend/Share/Standalone-HTML"
           />
 
           <Card 
             icon={<Package />}
             title="Batteries included"
-            description="More than 200 importers/exporters formats, 3000 functions. Vast standard library of Wolfram Engine is ready for every computational need."
+            description="More than 200 import/export formats and 3,000 functions from the Wolfram Engine standard library are ready for your computational work."
             href="/frontend/File-Operations/Import"
           />
 
           <Card 
             icon={<Terminal />}
-            title="Javascript Sandbox"
-            description="First class support of Javascript cells with a dedicated communication channel to Wolfram Kernel. Use any library from web to enhance your visuals."
+            title="JavaScript sandbox"
+            description="First-class support for JavaScript cells with a dedicated communication channel to the Wolfram kernel. Use web libraries to enhance your visualizations."
             href="/frontend/Cell-types/Javascript"
           />
 
@@ -623,9 +636,9 @@ export default function HomePage() {
         <div className="rounded-lg border border-fd-border bg-fd-card/50 backdrop-blur-sm p-6 sm:p-8">
           <div className="flex flex-col sm:flex-row items-center gap-6">
             <div className="flex-1 text-center sm:text-left">
-              <h3 className="text-lg font-semibold mb-2">Digitally Signed</h3>
+              <h3 className="text-lg font-semibold mb-2">Digitally signed</h3>
               <p className="text-fd-muted-foreground text-sm mb-3">
-                Our releases are digitally signed and checked by SignPath Foundation and Apple
+                Our releases are digitally signed and checked by SignPath Foundation and Apple.
               </p>
               <a 
                 href="https://signpath.org/projects/wljsnotebook/" 
@@ -637,7 +650,7 @@ export default function HomePage() {
               </a>
             </div>
             <div className="flex-shrink-0">
-              <img height="50" width="50" src="/sign.png"/>
+              <img height="50" width="50" src="/sign.png" alt="SignPath Foundation" />
             </div>
           </div>
         </div>
@@ -646,18 +659,27 @@ export default function HomePage() {
       {/* Call to Action Section with gradient border */}
       <div className="relative group mb-16">
         <div className="rounded-lg border border-fd-border bg-fd-card/50 backdrop-blur-sm p-8 sm:p-10 text-center">
-          <h2 className="text-2xl sm:text-3xl font-bold mb-4">We need your support</h2>
+          <h2 className="text-2xl sm:text-3xl font-bold mb-4">Help WLJS grow</h2>
           <p className="text-fd-muted-foreground mb-6 max-w-2xl mx-auto">
-            As an independent open-source project, we're unaffiliated with Wolfram or any company. Your support keeps this project alive.
+            Share WLJS, improve the docs, contribute code, or support independent development. Every contribution helps more people discover and trust the project.
           </p>
           <div className="flex gap-3 justify-center flex-wrap">
-            <a 
-              href="https://github.com/WLJSTeam/wolfram-js-frontend" 
+            <a
+              href="https://github.com/WLJSTeam/wljs-notebook"
               target="_blank" 
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-lg bg-fd-secondary px-6 py-2.5 font-medium text-fd-secondary-foreground transition-all hover:bg-fd-secondary/80 hover:scale-105"
             >
               Star and share
+            </a>
+            <a
+              href="https://github.com/WLJSTeam/wljs-notebook/blob/main/README.md"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-lg border border-fd-border bg-fd-card/50 px-6 py-2.5 font-medium transition-all hover:border-fd-primary/50 hover:bg-fd-card"
+            >
+              <GitPullRequest className="size-4" />
+              Contribute
             </a>
             <Link 
               href="/frontend/Support" 
@@ -665,7 +687,14 @@ export default function HomePage() {
             >
               Support
             </Link>
-            <Link className="text-fd-primary mt-auto mb-auto hover:scale-105" href="https://buymeacoffee.com/wljs"><Coffee/></Link>
+            <Link
+              className="text-fd-primary mt-auto mb-auto hover:scale-105"
+              href="https://buymeacoffee.com/wljs"
+              aria-label="Support WLJS on Buy Me a Coffee"
+              title="Support WLJS on Buy Me a Coffee"
+            >
+              <Coffee />
+            </Link>
           </div>
         </div>
       </div>
@@ -676,19 +705,13 @@ export default function HomePage() {
           Join the community
         </h2>
         <p className="text-fd-muted-foreground text-center mb-10 max-w-2xl mx-auto">
-          Ask questions, share your notebooks, and follow along with what we're building.
+          GitHub Discussions is our community home. Ask questions, share your notebooks, and help shape what we build next.
         </p>
         <Cards>
           <Card
-            icon={<MessageCircle />}
-            title="Reddit"
-            description="Join the discussion and share your work on r/wljs."
-            href="https://www.reddit.com/r/wljs/"
-          />
-          <Card
             icon={<MessagesSquare />}
             title="GitHub Discussions"
-            description="Ask questions, request features, and report issues with the team."
+            description="The canonical place to ask questions, share your work, and propose ideas."
             href="https://github.com/WLJSTeam/wljs-notebook/discussions"
           />
           <Card
@@ -696,6 +719,12 @@ export default function HomePage() {
             title="Telegram Group"
             description="Chat with the community and get support in real time."
             href="https://t.me/wljs_support"
+          />
+          <Card
+            icon={<MessageCircle />}
+            title="Reddit"
+            description="Follow project news and share visual experiments on r/wljs."
+            href="https://www.reddit.com/r/wljs/"
           />
           <Card
             icon={<Youtube />}
@@ -712,10 +741,10 @@ export default function HomePage() {
           <h3 className="text-lg font-semibold mb-4">Licensing</h3>
           <div className="prose prose-sm max-w-none text-fd-muted-foreground">
             <p className="mb-4">
-              WLJS Notebook is open-source software licensed under the <strong>AGPLv3</strong>
+              WLJS Notebook is open-source software licensed under the <strong>AGPLv3</strong>.
             </p>
             <p className="mb-4">
-              While WLJS Notebook itself is AGPLv3 licensed, it requires the Wolfram Engine to function. The Wolfram Engine is a separate product with its own <a href="https://www.wolfram.com/legal/agreements/wolfram-engine/" target="_blank" rel="noopener noreferrer" className="text-fd-primary hover:underline">licensing terms</a> For the full license text of WLJS Notebook, visit our <a href="https://github.com/WLJSTeam/wolfram-js-frontend/blob/main/LICENSE.md" target="_blank" rel="noopener noreferrer" className="text-fd-primary hover:underline">GitHub repository</a>.
+              While WLJS Notebook itself is licensed under AGPLv3, it requires Wolfram Engine to function. Wolfram Engine is a separate product with its own <a href="https://www.wolfram.com/legal/agreements/wolfram-engine/" target="_blank" rel="noopener noreferrer" className="text-fd-primary hover:underline">licensing terms</a>. For the full WLJS Notebook license, visit our <a href="https://github.com/WLJSTeam/wljs-notebook/blob/main/LICENSE.md" target="_blank" rel="noopener noreferrer" className="text-fd-primary hover:underline">GitHub repository</a>.
             </p>
             <p>Are you a robot? Here is <a className="text-fd-primary hover:underline" href="https://wljs.io/llms.txt">llms.txt</a> index</p>
           </div>

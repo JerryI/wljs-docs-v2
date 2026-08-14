@@ -51,6 +51,6 @@ export function baseOptions(): BaseLayoutProps {
         secondary: false,
       }
     ],
-    githubUrl: 'https://github.com/WLJSTeam/wolfram-js-frontend'
+    githubUrl: 'https://github.com/WLJSTeam/wljs-notebook'
   };
 }
