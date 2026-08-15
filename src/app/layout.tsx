@@ -2,8 +2,9 @@ import { RootProvider } from 'fumadocs-ui/provider/next';
 import './global.css';
 import { Inter } from 'next/font/google';
 import SearchDialog from '@/components/search';
+import GoatCounter from '@/components/goatcounter';
 
-import Script from "next/script"; 
+import Script from 'next/script';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -62,8 +63,7 @@ export default function Layout({ children }: LayoutProps<'/'>) {
           }}
         />
 
-        <script data-goatcounter="https://jerryi.goatcounter.com/count"
-                async src="//gc.zgo.at/count.js"></script>
+        <GoatCounter />
       </body>
     </html>
   );
