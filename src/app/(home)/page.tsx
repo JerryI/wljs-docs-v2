@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { useEffect, useRef, useState } from 'react';
 import { Card, Cards } from 'fumadocs-ui/components/card';
-import { DynamicCodeBlock } from 'fumadocs-ui/components/dynamic-codeblock';
+
 import { Tab, Tabs } from 'fumadocs-ui/components/tabs';
 import { Code2, Coffee, Lightbulb, Zap, Download, Package, Terminal, Bot, GitBranch, MessageCircle, MessagesSquare, Send, Youtube, ArrowRight, GitPullRequest } from 'lucide-react';
 import { AnimationController, type AnimationConfig } from './AnimationController';
@@ -614,26 +614,6 @@ export default function HomePage() {
         </Cards>
       </div>
 
-      <div className="relative min-w-0 max-w-full mb-16">
-        <div className="min-w-0 max-w-full overflow-hidden rounded-lg border border-fd-border bg-fd-card/50 backdrop-blur-sm p-4 sm:p-8">
-          <div className="flex min-w-0 flex-col gap-6">
-            <div className="min-w-0 text-left">
-              <h3 className="mb-4">Create dynamic 3D plots quickly </h3>
-              <Tabs items={comparisonExamples.map((example) => example.title)} className="my-0 min-w-0 w-full max-w-full">
-                {comparisonExamples.map((example) => (
-                  <Tab key={example.title} value={example.title}>
-                    <DynamicCodeBlock
-                      lang={example.lang}
-                      code={example.code}
-                      codeblock={{ 'data-line-numbers': true }}
-                    />
-                  </Tab>
-                ))}
-              </Tabs>
-            </div>
-          </div>
-        </div>
-      </div>
 
       {/* CodeSign Sponsor Banner */}
       <div className="relative mb-16">
