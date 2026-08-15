@@ -487,6 +487,7 @@ export default function HomePage() {
         <div className="flex gap-3 mb-12 flex-wrap justify-center">
           <Link
             href="/frontend/Overview"
+            data-goatcounter-click="Overview"
             className="group relative inline-flex items-center gap-2 rounded-lg bg-fd-primary px-6 py-2.5 font-medium text-fd-primary-foreground transition-all hover:bg-fd-primary/90 hover:shadow-lg hover:shadow-fd-primary/25"
           >
             <span className="relative z-10">See how it works</span>
@@ -495,6 +496,7 @@ export default function HomePage() {
           </Link>
           <Link 
             href="/frontend/setup" 
+            data-goatcounter-click="Install"
             className="inline-flex items-center gap-2 rounded-lg border border-fd-border bg-fd-card/50 backdrop-blur-sm px-6 py-2.5 font-medium transition-all hover:bg-fd-primary hover:text-fd-background hover:border-fd-primary/50"
           >
             <Download className="size-4" />
@@ -502,11 +504,13 @@ export default function HomePage() {
           </Link>
           <Link
             href="/blog"
+            data-goatcounter-click="Blog"
             className="inline-flex items-center px-3 py-2.5 text-sm font-medium text-fd-muted-foreground transition-colors hover:text-fd-primary"
           >
             Explore examples
           </Link>
           <Link
+            data-goatcounter-click="Migration"
             href="/frontend/Guides/Migration"
             className="inline-flex items-center px-3 py-2.5 text-sm font-medium text-fd-muted-foreground transition-colors hover:text-fd-primary"
           >
@@ -667,6 +671,7 @@ export default function HomePage() {
             <a
               href="https://github.com/WLJSTeam/wljs-notebook"
               target="_blank" 
+              data-goatcounter-click="Star"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-lg bg-fd-secondary px-6 py-2.5 font-medium text-fd-secondary-foreground transition-all hover:bg-fd-secondary/80 hover:scale-105"
             >
@@ -683,12 +688,14 @@ export default function HomePage() {
             </a>
             <Link 
               href="/frontend/Support" 
+              data-goatcounter-click="Donate"
               className="inline-flex items-center gap-2 rounded-lg bg-fd-primary px-6 py-2.5 font-medium text-fd-primary-foreground transition-all hover:bg-fd-primary/90 hover:scale-105"
             >
               Support
             </Link>
             <Link
               className="text-fd-primary mt-auto mb-auto hover:scale-105"
+              data-goatcounter-click="Coffee"
               href="https://buymeacoffee.com/wljs"
               aria-label="Support WLJS on Buy Me a Coffee"
               title="Support WLJS on Buy Me a Coffee"
