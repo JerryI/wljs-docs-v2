@@ -9,7 +9,7 @@ import Link from 'next/link';
 import type { SortedResult } from 'fumadocs-core/search';
 
 const appId = 'TV1NUK0KDL';
-const apiKey = 'fbd8c2531c90ce74ad168c763b3d990f';
+const apiKey = '1ad8e58db670c2c68621b59249d84498';
 const algoliaClient = liteClient(appId, apiKey);
 
 type SearchableAttribute = 'title' | 'content' | undefined;
