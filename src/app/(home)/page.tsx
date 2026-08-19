@@ -702,17 +702,17 @@ export default function HomePage() {
             href="https://github.com/WLJSTeam/wljs-notebook/discussions"
           />
           <Card
+            icon={<MessageCircle />}
+            title="Reddit"
+            description="Follow project news and share experiments on r/wljs."
+            href="https://www.reddit.com/r/wljs/"
+          />
+          <Card
             icon={<Send />}
             title="Telegram Group"
             description="Chat with the community and get support in real time."
             href="https://t.me/wljs_support"
-          />
-          <Card
-            icon={<MessageCircle />}
-            title="Reddit"
-            description="Follow project news and share visual experiments on r/wljs."
-            href="https://www.reddit.com/r/wljs/"
-          />
+          />          
           <Card
             icon={<Youtube />}
             title="YouTube"
