@@ -763,6 +763,36 @@ Module[{p = {0, 1}},
 
 Here we used `Point` itself as an event listener and use `dragsignal` event to supply dragging coordinates. If you want just to drag a primitive so it follows your mouse - use `drag` event instead. See more at [UI Events](./UI-Events-Capture) guide.
 
+### Temporal live output
+Quite often in Mathematica's code it is useful to print live result to a separate cell using `Print` or `PrintTemporary`. In WLJS this can be easily replaced with `Refresh`:
+
+<CodeComparison>
+<CodeComparisonItem title="Mathematica">
+
+```wolfram
+Module[{data = ...},
+  (* inital setup *)
+  Print[Dynamic[Image[data]]];
+  (* some long running task *)
+]
+```
+
+</CodeComparisonItem>
+<CodeComparisonItem title="WLJS">
+
+```wolfram
+Module[{data = ...},
+  (* inital setup *)
+  Print[Refresh[Image[data], 0.2]];
+  (* some long running task *)
+]
+```
+
+</CodeComparisonItem>
+</CodeComparison>
+
+To display progress bar, see [ProgressIndicator](./../GUI/ProgressIndicator)
+
 ### DynamicModule
 
 Use `Module` instead of `DynamicModule`. State changes become visible when they are connected to `Refresh` or to a supported primitive through `Offload`.
