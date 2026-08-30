@@ -1,0 +1,103 @@
+---
+title:  Release Notes *3.1.1*
+date: 2026-08-30
+---
+
+{/* add this script to the body  */}
+{/* https://cdn.jsdelivr.net/gh/WLJSTeam/web-components@latest/src/common/app.js */}
+<wljs-store json="./attachments/3f28a374-6e36-4fcf-ad05-3155f89d0fa6.txt"></wljs-store>
+
+
+import { Tabs, Tab } from 'fumadocs-ui/components/tabs';
+
+<Tabs items={['Windows', 'Mac','GNU/Linux', 'Docker', 'Homebrew']}>
+  <Tab value="Mac">
+    - [Apple Silicon](https://github.com/WLJSTeam/wljs-notebook/releases/download/v3.1.1/wljs-notebook-3.1.1-arm64-macos.dmg)
+    - [Intel](https://github.com/WLJSTeam/wljs-notebook/releases/download/v3.1.1/wljs-notebook-3.1.1-x64-macos.dmg)
+  </Tab>
+  <Tab value="Windows">
+    - [x86/64](https://github.com/WLJSTeam/wljs-notebook/releases/download/v3.1.1/wljs-notebook-3.1.1-x64-win.exe)
+  </Tab>
+  <Tab value="GNU/Linux">
+    - [DEB x86/64](https://github.com/WLJSTeam/wljs-notebook/releases/download/v3.1.1/wljs-notebook-3.1.1-amd64-gnulinux.deb)
+    - [DEB ARM64](https://github.com/WLJSTeam/wljs-notebook/releases/download/v3.1.1/wljs-notebook-3.1.1-arm64-gnulinux.deb)
+    - [AppImage x86/64](https://github.com/WLJSTeam/wljs-notebook/releases/download/v3.1.1/wljs-notebook-3.1.1-x86_64-gnulinux.AppImage)
+    - [AppImage ARM64](https://github.com/WLJSTeam/wljs-notebook/releases/download/v3.1.1/wljs-notebook-3.1.1-arm64-gnulinux.AppImage)
+    - [RPM x86/64](https://github.com/WLJSTeam/wljs-notebook/releases/download/v3.1.1/wljs-notebook-3.1.1-x86_64-gnulinux.rpm)
+  </Tab>
+  <Tab value="Docker">
+
+```bash
+docker run -it \
+  -v ~/wljs:"/home/wljs/WLJS Notebooks" \
+  -v ~/wljs/Licensing:/home/wljs/.WolframEngine/Licensing \
+  -v ~/wljs/tmp:/tmp \
+  -p 8000:3000 \
+  --name wljs \
+  ghcr.io/wljsteam/wljs-notebook:main
+```
+
+  </Tab>
+  <Tab value="Homebrew">
+  
+```bash  
+brew install --cask wljs-notebook
+```
+
+  </Tab>
+</Tabs>
+
+## UI and colors
+We neutralised base colors, reducing the blue component. The reduced backdrop blur on Windows and macOS also accounts for slightly lower GPU usage.
+
+## TraditionalForm improvements
+This also accounts for a similar bug: combining `TeXForm` with `TeXView` resulted in incorrectly rendered matrices. It now works.
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`MatrixForm[PauliMatrix[3]] // TraditionalForm`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(Null)(*,*)(*"1:eJxdjdsKwjAMhicI4mN40UulG8zDpXaCFxNhHvByp3QWS4vtxvQNfGyzAyJC8iV/fpJMUh3xgeM4dojYaZl3aoZgmnOAUDwqqEy8fZagrNDKxvvE3HNdKwZS2vgE14uAutsbIQ6cS530h8aIcxQGkOkcjm9UxGcSeEm8JaFrFCkUQpHFJjEmeZFFgG2WNRVdj7qYxJsjadP5rI/WpF9z6v67PgOV/55tZ0YUN3y9QvUB1VlAbQ=="*)(*]VB*)`}</wljs-editor></WLJSWrapper>
+
+## Updated mermaid module
+A new version of the Mermaid processor is available from `.mermaid` cells, allowing for much more complex styling:
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`.mermaid
+	---
+	config:
+	  layout: elk
+	---
+	flowchart LR
+	subgraph s1["Raw Commits"]
+	n1["Branch Main"]
+	n2["Branch Dev"]
+	n3["Feature Branches"]
+	end
+	s1 --> n4["Merge Conflict Resolver"]
+	n4 --> n5["Build Pipeline Trigger"]
+	n8(["Approval Gate"]) --> n5
+	n5 -- "<span style='padding-left:10px;'>Generate Artifacts Only</span>" --> n7["Docker Image<br>Single Registry Path<br>n Container Versions"]
+	
+	
+	n1@{ shape: rect}
+	n2@{ shape: rect}
+	n3@{ shape: rect}`}</wljs-editor></WLJSWrapper>
+
+## Minor Graphics3D improvements
+We fixed `GeometricTransformation`, which mutated shared symbols and resulted in visual glitches across multiple instances sharing the same data.
+
+## Improved autocomplete rescan
+<Callout>
+This is an optional feature; __you can switch it on__ in the Editor section of the settings. The kernel actively discovers newly loaded packages with every `Get` or `Needs` call
+</Callout>
+
+Autocomplete now resolves symbols loaded using context aliases. For example:
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true" encoded="true"  >{`Needs%5B%22Quaternions%60%22-%3E%22qa%60%22%5D`}</wljs-editor></WLJSWrapper>
+
+
+![](attachments/Screenshot-2026-08-29-at-14.39.54-15a.png)
+
+## MCP Server patches
+- Stronger type checks for tool calls
+- Fixed minor bugs with argument passing
+- Added a syntax checker
+- Resolved an issue with CORS blocking

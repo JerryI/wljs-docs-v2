@@ -37,7 +37,21 @@ Once a symbol is defined in the `Global`` context of a Wolfram Kernel session, i
 At startup, the Wolfram Kernel loads all imported packages, reads `::usage` directives for defined symbols.
 
 ### Autocomplete for loaded packages
-You can enable periodic checking in the editor's settings for newly loaded packages (not user-defined symbols) information upon `Get` or `Needs` commands.
+You can enable periodic checking in the editor's settings (see: <small>Settings, Editor Settigns, Autocomplete, Enable active rescanning of definitions when Get or Needs called</small>) for newly loaded packages (not user-defined symbols) information upon `Get` or `Needs` commands.
+
+Context aliases are also supported, i.e. this will be picked as well:
+
+```wolfram
+Needs["Quaternions`"->"qa`"]
+```
+
+<div className="invertColor">
+![](./imgs/auto.png)
+</div>
+
+<Callout>
+    Note, that there is a slight delay between rescans - a few seconds
+</Callout>
 
 ## Access to Documentation
 Click the 🔎 icon in the autocomplete window to open the documentation for a symbol in a new tab.
