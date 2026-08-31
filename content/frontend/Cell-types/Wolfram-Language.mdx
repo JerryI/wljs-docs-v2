@@ -59,12 +59,14 @@ Names["*Plot*"]
 ## Auto-upload Files
 Drag and drop files into the editor or paste media from the clipboard
 
-## Syntax Highlighting & Symbol Tracking
-Wolfram Language autocomplete and highlighting can be extended using external packages.
+## Syntax Highlighting & Autocomplete
+Wolfram Language autocomplete and highlighting can be extended with external packages.
 
 Once a symbol is defined in the `Global`` context of a Wolfram Kernel session, it appears in the autocomplete window and is shared across open notebooks.
 
 At startup, the Wolfram Kernel loads all imported packages, reads `::usage` directives for defined symbols.
+
+<Callout>We support fuzzy search, i.e typing `llp` will find candidates like `ListLogPlot` and `ListLinePlot`</Callout>
 
 ### Autocomplete for loaded packages
 You can enable periodic checking in the editor's settings (see: <small>Settings, Editor Settigns, Autocomplete, Enable active rescanning of definitions when Get or Needs called</small>) for newly loaded packages (not user-defined symbols) information upon `Get` or `Needs` commands.
