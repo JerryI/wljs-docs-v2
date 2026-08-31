@@ -1209,9 +1209,9 @@ Let's put everything together. Create an empty notebook with the following conte
 	      path = SystemDialogInputAsync["FileSave", {Null, {"Raster Formats" -> {"*.png", "*.jpg"}, "Portable Vector Document" -> {"*.pdf"}}}] // Await;
 	      If[!StringQ[path], Return[Null, Module]];
 	      If[ToLowerCase[FileExtension[FileNameTake[path]]] === "pdf",
-	        ExportAsync[path, graphics /. {Locator[_] :> Null, Rule[PlotLabel, _] :> Rule[PlotLabel, None]}] // Await;
+	        ExportAsync[path, graphics /. {Offload -> Identity, Locator[_] :> Null, Rule[PlotLabel, _] :> Rule[PlotLabel, None]}] // Await;
 	      ,
-	        data = RasterizeAsync[graphics /. {Locator[_] :> Null, Rule[PlotLabel, _] :> Rule[PlotLabel, None]}, "ExposureTime"->4] // Await;
+	        data = RasterizeAsync[graphics /. {Offload -> Identity, Locator[_] :> Null, Rule[PlotLabel, _] :> Rule[PlotLabel, None]}, "ExposureTime"->4] // Await;
 	        ExportAsync[path, data] // Await;
 	      ];
 	      ClearAll[path, data];
@@ -1268,6 +1268,10 @@ Let's put everything together. Create an empty notebook with the following conte
 	  }, Spacings->0, Alignment->Left]
 	 }, Spacings->{0,1}, Alignment->Left]
 	]`}</wljs-editor></WLJSWrapper>
+
+<Callout>
+    Note, that during export or rasterization we apply rules `Offload -> Identity, Locator[_] :> Null, Rule[PlotLabel, _] :> Rule[PlotLabel, None]` to remove labels, locators and dynamic coupling (changed to static)
+</Callout>
 
 <div className="margin-auto invertColor" style={{maxWidth:'500px'}}>
 
