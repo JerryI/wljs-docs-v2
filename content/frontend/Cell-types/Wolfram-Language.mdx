@@ -26,6 +26,36 @@ If an output is too large, it may be truncated or converted into a temporary sym
 ## Morph Output Cell into Input
 If you modify a Wolfram Language __output cell__, it will automatically be converted into a new __input cell__.
 
+## History of evaluation
+You can access the last evaluated expresion using either `Out[]` symbol or `%`, i.e.
+
+```wolfram
+1 + 1;
+% - 1
+```
+
+It also works across different cells. Note, that unlike Mathematica, the output is preseved only for the latest evaluation.
+
+## Information on symbols
+Evaluate
+
+```wolfram
+?Plot
+```
+
+to get a structured output on the properties of a given symbol. Use `??` to get extra information. To discover symbols within a given context (a package for instace) - use `Names[""]`
+
+```wolfram
+Needs["Quaternions`"];
+Names["Quaternions`*"] // TableForm 
+```
+
+or in general:
+
+```wolfram
+Names["*Plot*"]
+```
+
 ## Auto-upload Files
 Drag and drop files into the editor or paste media from the clipboard
 
