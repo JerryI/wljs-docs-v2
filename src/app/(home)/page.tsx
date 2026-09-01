@@ -430,7 +430,6 @@ export default function HomePage() {
         <Cards>
           <Card 
             icon={<Code2 />}
-            external={true}
             title="Feels like Mathematica and Jupyter"
             description="WLJS Notebook feels and works like Wolfram Mathematica (and it can open .nb files) and has a flat and minimal notebook structure like in Jupyter Lab."
             href="https://wljs.io/frontend/Overview#why-not-jupyter-lab-or-vscode"
@@ -438,7 +437,6 @@ export default function HomePage() {
 
           <Card 
             icon={<Zap />}
-            external={true}
             title="Interactive & Powerful"
             description=<>{`Optimized for fast interactive computing and complex real-time visualizations, from high-level `}<code>Manipulate</code>{` interfaces to low-level graphics primitives.`}</>
             href="https://wljs.io/frontend/Guides/Dynamic"
@@ -446,7 +444,6 @@ export default function HomePage() {
 
           <Card 
             icon={<Lightbulb />}
-            external={true}
             title="Built for presentations"
             description="Create interactive, component-driven slides directly in your notebook — with 3D graphics and `Manipulate` widgets. Perfect for sharing live reports."
             href="https://wljs.io/frontend/Cell-types/Slide"
@@ -454,7 +451,6 @@ export default function HomePage() {
 
           <Card 
             icon={<GitBranch />}
-            external={true}
             title="Git-friendly notebook format"
             description="A minimal, plain-text notebook format that is easy for people, machines, and LLMs to read, parse, diff, and version with Git."
             href="https://wljs.io/frontend/Overview#format"
@@ -462,7 +458,6 @@ export default function HomePage() {
 
           <Card 
             icon={<Download />}
-            external={true}
             title="Portable, embeddable, and web-friendly"
             description="Export and share your notebook as a mini app or embeddable .html or .mdx file — plots stay interactive, and sliders remain draggable."
             href="https://wljs.io/frontend/Share/Standalone-HTML"
@@ -470,7 +465,6 @@ export default function HomePage() {
 
           <Card 
             icon={<Package />}
-            external={true}
             title="Batteries included"
             description="More than 200 import/export formats and 3,000 functions from the Wolfram Engine standard library are ready for your computational work."
             href="https://wljs.io/frontend/File-Operations/Import"
@@ -478,7 +472,6 @@ export default function HomePage() {
 
           <Card 
             icon={<Terminal />}
-            external={true}
             title="JavaScript sandbox"
             description="First-class support for JavaScript cells with a dedicated communication channel to the Wolfram kernel. Use web libraries to enhance your visualizations."
             href="https://wljs.io/frontend/Cell-types/Javascript"
@@ -486,7 +479,6 @@ export default function HomePage() {
 
           <Card 
             icon={<Bot />}
-            external={true}
             title="MCP & CLI ready"
             description="Expose your notebook through a streaming Model Context Protocol server and CLI, giving LLM agents access to notebooks and documentation."
             href="https://wljs.io/frontend/Guides/Command-palette#mcp-server"
