@@ -90,134 +90,6 @@ return r;`.split('')
   }
 };
 
-const comparisonExamples = [
-  {
-    title: 'Wolfram/WLJS',
-    lang: 'wolfram',
-    code: `Manipulate[Plot3D[
-  Sin[n x] Cos[n y], {x, -1, 1}, {y, -1, 1}
-], {n, 1, 5, 0.3}, ContinuousAction -> True]`,
-  },
-  {
-    title: 'Wolfram/Mathematica (Proprietary)',
-    lang: 'wolfram',
-    code: `Manipulate[Plot3D[
-  Sin[n x] Cos[n y], {x, -1, 1}, {y, -1, 1}
-], {n, 1, 5, 0.3}]`,
-  },
-  {
-    title: 'Julia/Pluto',
-    lang: 'julia',
-    code: `begin
-    using PlutoUI
-    using PlotlyJS
-end
-
-@bind n Slider(1:0.3:5; default=1, show_value=true)
-
-begin
-    xs = range(-1, 1; length=80)
-    ys = range(-1, 1; length=80)
-
-    zs = [sin(n * x) * cos(n * y) for y in ys, x in xs]
-
-    Plot(
-        surface(x=xs, y=ys, z=zs),
-        Layout(
-            height=700,
-            scene=attr(
-                xaxis_title="x",
-                yaxis_title="y",
-                zaxis_title="sin(n x) cos(n y)"
-            )
-        )
-    )
-end`,
-  },
-  {
-    title: 'Python/Jupyter',
-    lang: 'python',
-    code: `import numpy as np
-import plotly.graph_objects as go
-import ipywidgets as widgets
-from IPython.display import display
-import plotly.io as pio
-
-pio.renderers.default = "iframe_connected"
-
-x = np.linspace(-1, 1, 80)
-y = np.linspace(-1, 1, 80)
-X, Y = np.meshgrid(x, y)
-
-def plot_surface(n):
-    Z = np.sin(n * X) * np.cos(n * Y)
-
-    fig = go.Figure(data=[go.Surface(x=x, y=y, z=Z)])
-    fig.update_layout(
-        height=700,
-        margin=dict(l=0, r=0, b=0, t=30),
-        scene=dict(
-            xaxis_title="x",
-            yaxis_title="y",
-            zaxis_title="sin(n x) cos(n y)",
-        ),
-    )
-
-    display(fig)
-
-n_slider = widgets.FloatSlider(
-    value=1,
-    min=1,
-    max=5,
-    step=0.3,
-    description="n",
-    continuous_update=True,
-    readout_format=".1f",
-)
-
-out = widgets.interactive_output(plot_surface, {"n": n_slider})
-
-display(widgets.VBox([n_slider, out]))`,
-  },
-  {
-    title: 'Python/Marimo',
-    lang: 'python',
-    code: `import marimo as mo
-import numpy as np
-import plotly.graph_objects as go
-
-n_slider = mo.ui.slider(
-    start=1,
-    stop=5,
-    step=0.3,
-    value=1,
-    label="n",
-    show_value=True,
-    full_width=True,
-)
-
-n_slider
-
-_x = np.linspace(-1, 1, 80)
-_y = np.linspace(-1, 1, 80)
-_X, _Y = np.meshgrid(_x, _y)
-
-_Z = np.sin(n_slider.value * _X) * np.cos(n_slider.value * _Y)
-
-_fig = go.Figure(data=[go.Surface(x=_x, y=_y, z=_Z)])
-_fig.update_layout(
-    height=700,
-    margin=dict(l=0, r=0, b=0, t=30),
-    scene=dict(
-        xaxis_title="x",
-        yaxis_title="y",
-        zaxis_title="sin(n x) cos(n y)",
-    ),
-)
-
-mo.ui.plotly(_fig)`,
-  },
-] as const;
 
 
 const animationsArray = [
@@ -485,37 +357,37 @@ export default function HomePage() {
         </p>
         
         <div className="flex gap-3 mb-12 flex-wrap justify-center">
-          <Link
-            href="/frontend/Overview"
+          <a
+            href="https://wljs.io/frontend/Overview"
             data-goatcounter-click="Overview"
             className="group relative inline-flex items-center gap-2 rounded-lg bg-fd-primary px-6 py-2.5 font-medium text-fd-primary-foreground transition-all hover:bg-fd-primary/90 hover:shadow-lg hover:shadow-fd-primary/25"
           >
             <span className="relative z-10">See how it works</span>
             <ArrowRight className="relative z-10 size-4" />
             <div className="absolute inset-0 rounded-lg bg-gradient-to-r from-fd-primary to-purple-600 opacity-0 group-hover:opacity-100 transition-opacity" />
-          </Link>
-          <Link 
-            href="/frontend/setup" 
+          </a>
+          <a 
+            href="https://wljs.io/frontend/setup" 
             data-goatcounter-click="Install"
             className="inline-flex items-center gap-2 rounded-lg border border-fd-border bg-fd-card/50 backdrop-blur-sm px-6 py-2.5 font-medium transition-all hover:bg-fd-primary hover:text-fd-background hover:border-fd-primary/50"
           >
             <Download className="size-4" />
             Install
-          </Link>
-          <Link
-            href="/blog"
+          </a>
+          <a
+            href="https://wljs.io/blog"
             data-goatcounter-click="Blog"
             className="inline-flex items-center px-3 py-2.5 text-sm font-medium text-fd-muted-foreground transition-colors hover:text-fd-primary"
           >
             Explore examples
-          </Link>
-          <Link
+          </a>
+          <a
             data-goatcounter-click="Migration"
-            href="/frontend/Guides/Migration"
+            href="https://wljs.io/frontend/Guides/Migration"
             className="inline-flex items-center px-3 py-2.5 text-sm font-medium text-fd-muted-foreground transition-colors hover:text-fd-primary"
           >
             Migrating from Mathematica?
-          </Link>
+          </a>
         </div>
 
         {/* Code Example with glow effect */}
@@ -558,58 +430,66 @@ export default function HomePage() {
         <Cards>
           <Card 
             icon={<Code2 />}
+            external={true}
             title="Feels like Mathematica and Jupyter"
             description="WLJS Notebook feels and works like Wolfram Mathematica (and it can open .nb files) and has a flat and minimal notebook structure like in Jupyter Lab."
-            href="/frontend/Overview#why-not-jupyter-lab-or-vscode"
+            href="https://wljs.io/frontend/Overview#why-not-jupyter-lab-or-vscode"
           />
 
           <Card 
             icon={<Zap />}
+            external={true}
             title="Interactive & Powerful"
             description=<>{`Optimized for fast interactive computing and complex real-time visualizations, from high-level `}<code>Manipulate</code>{` interfaces to low-level graphics primitives.`}</>
-            href="/frontend/Guides/Dynamic"
+            href="https://wljs.io/frontend/Guides/Dynamic"
           />
 
           <Card 
             icon={<Lightbulb />}
+            external={true}
             title="Built for presentations"
             description="Create interactive, component-driven slides directly in your notebook — with 3D graphics and `Manipulate` widgets. Perfect for sharing live reports."
-            href="/frontend/Cell-types/Slide"
+            href="https://wljs.io/frontend/Cell-types/Slide"
           />
 
           <Card 
             icon={<GitBranch />}
+            external={true}
             title="Git-friendly notebook format"
             description="A minimal, plain-text notebook format that is easy for people, machines, and LLMs to read, parse, diff, and version with Git."
-            href="/frontend/Overview#format"
+            href="https://wljs.io/frontend/Overview#format"
           />  
 
           <Card 
             icon={<Download />}
+            external={true}
             title="Portable, embeddable, and web-friendly"
             description="Export and share your notebook as a mini app or embeddable .html or .mdx file — plots stay interactive, and sliders remain draggable."
-            href="/frontend/Share/Standalone-HTML"
+            href="https://wljs.io/frontend/Share/Standalone-HTML"
           />
 
           <Card 
             icon={<Package />}
+            external={true}
             title="Batteries included"
             description="More than 200 import/export formats and 3,000 functions from the Wolfram Engine standard library are ready for your computational work."
-            href="/frontend/File-Operations/Import"
+            href="https://wljs.io/frontend/File-Operations/Import"
           />
 
           <Card 
             icon={<Terminal />}
+            external={true}
             title="JavaScript sandbox"
             description="First-class support for JavaScript cells with a dedicated communication channel to the Wolfram kernel. Use web libraries to enhance your visualizations."
-            href="/frontend/Cell-types/Javascript"
+            href="https://wljs.io/frontend/Cell-types/Javascript"
           />
 
           <Card 
             icon={<Bot />}
+            external={true}
             title="MCP & CLI ready"
             description="Expose your notebook through a streaming Model Context Protocol server and CLI, giving LLM agents access to notebooks and documentation."
-            href="/frontend/Guides/Command-palette#mcp-server"
+            href="https://wljs.io/frontend/Guides/Command-palette#mcp-server"
           />   
         </Cards>
       </div>

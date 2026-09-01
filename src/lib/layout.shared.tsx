@@ -31,14 +31,16 @@ export function baseOptions(): BaseLayoutProps {
       {
         icon: <BookIcon />,
         text: 'Documentation',
-        url: '/frontend/Overview',
+        url: 'https://wljs.io/frontend/Overview',
+        external: true,
         // secondary items will be displayed differently on navbar
         secondary: false,
       },
       {
         icon: <BookIcon />,
         text: 'Blog',
-        url: '/blog',
+        external: true,
+        url: 'https://wljs.io/blog',
         // secondary items will be displayed differently on navbar
         secondary: false,
       },
@@ -46,7 +48,8 @@ export function baseOptions(): BaseLayoutProps {
       {
         icon: <Rocket/>,
         text: 'Releases',
-        url: '/releases',
+        external: true,
+        url: 'https://wljs.io/releases',
         // secondary items will be displayed differently on navbar
         secondary: false,
       }
