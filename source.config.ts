@@ -48,6 +48,9 @@ function getUniqueFilename(sourcePath: string): string {
     throw new Error(`Source file does not exist: ${sourcePath}`);
   }
   const fileContent = fs.readFileSync(sourcePath);
+  if (fileContent.length === 0) {
+    throw new Error(`Refusing to publish an empty attachment: ${sourcePath}`);
+  }
   const hash = crypto.createHash('sha256').update(fileContent).digest('hex').slice(0, 8);
   
   // Return filename with hash prefix
