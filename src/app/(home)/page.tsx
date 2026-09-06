@@ -515,9 +515,23 @@ export default function HomePage() {
       {/* Call to Action Section with gradient border */}
       <div className="relative group mb-16">
         <div className="rounded-lg border border-fd-border bg-fd-card/50 backdrop-blur-sm p-8 sm:p-10 text-center">
-          <h2 className="text-2xl sm:text-3xl font-bold mb-4">Help WLJS grow</h2>
+          <h2 className="text-2xl sm:text-3xl font-bold mb-4">Help cover WLJS’s €300 annual costs</h2>
           <p className="text-fd-muted-foreground mb-6 max-w-2xl mx-auto">
-            Share WLJS, improve the docs, contribute code, or support independent development. Every contribution helps more people discover and trust the project.
+            Support code signing, our domain, occasional cloud testing, and coffee.
+            Five people giving €5 per month would reach our goal before fees.
+          </p>
+          <a
+            href="https://opencollective.com/wljs-notebook"
+            data-goatcounter-click="Support-OpenCollective-Home"
+            className="inline-flex items-center gap-2 rounded-lg bg-fd-primary px-6 py-2.5 font-medium text-fd-primary-foreground transition-colors hover:bg-fd-primary/90"
+          >
+            <Coffee className="size-4" />
+            Support monthly or give once
+          </a>
+          <p className="mt-3 mb-8 text-sm">
+            <Link href="/frontend/Support" data-goatcounter-click="Support-Budget" className="text-fd-primary underline underline-offset-4">
+              See the expense breakdown and other ways to donate
+            </Link>
           </p>
           <div className="flex gap-3 justify-center flex-wrap">
             <a
@@ -538,22 +552,6 @@ export default function HomePage() {
               <GitPullRequest className="size-4" />
               Contribute
             </a>
-            <Link 
-              href="/frontend/Support" 
-              data-goatcounter-click="Donate"
-              className="inline-flex items-center gap-2 rounded-lg bg-fd-primary px-6 py-2.5 font-medium text-fd-primary-foreground transition-all hover:bg-fd-primary/90 hover:scale-105"
-            >
-              Support
-            </Link>
-            <Link
-              className="text-fd-primary mt-auto mb-auto hover:scale-105"
-              data-goatcounter-click="Coffee"
-              href="https://buymeacoffee.com/wljs"
-              aria-label="Support WLJS on Buy Me a Coffee"
-              title="Support WLJS on Buy Me a Coffee"
-            >
-              <Coffee />
-            </Link>
           </div>
         </div>
       </div>
@@ -603,7 +601,7 @@ export default function HomePage() {
               WLJS Notebook is open-source software licensed under the <strong>AGPLv3</strong>.
             </p>
             <p className="mb-4">
-              While WLJS Notebook itself is licensed under AGPLv3, it requires Wolfram Engine to function. Wolfram Engine is a separate product with its own <a href="https://www.wolfram.com/legal/agreements/wolfram-engine/" target="_blank" rel="noopener noreferrer" className="text-fd-primary hover:underline">licensing terms</a>. For the full WLJS Notebook license, visit our <a href="https://github.com/WLJSTeam/wljs-notebook/blob/main/LICENSE.md" target="_blank" rel="noopener noreferrer" className="text-fd-primary hover:underline">GitHub repository</a>.
+              While WLJS Notebook itself is licensed under AGPLv3, it requires Wolfram Engine to function. Wolfram Engine is a separate product with its own <a href="https://www.wolfram.com/legal/terms/wolfram-engine.html" target="_blank" rel="noopener noreferrer" className="text-fd-primary hover:underline">licensing terms</a>. For the full WLJS Notebook license, visit our <a href="https://github.com/WLJSTeam/wljs-notebook/blob/main/LICENSE.md" target="_blank" rel="noopener noreferrer" className="text-fd-primary hover:underline">GitHub repository</a>.
             </p>
             <p>Are you a robot? Here is <a className="text-fd-primary hover:underline" href="https://wljs.io/llms.txt">llms.txt</a> index</p>
           </div>

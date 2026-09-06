@@ -1,4 +1,4 @@
-import { Book,BookIcon, BookA, Drum, Rocket, Pyramid, AppWindowMac } from 'lucide-react';
+import { Book,BookIcon, BookA, Drum, Rocket, Pyramid, AppWindowMac, Heart } from 'lucide-react';
 
 import Image from 'next/image'
 
@@ -48,6 +48,12 @@ export function baseOptions(): BaseLayoutProps {
         text: 'Releases',
         url: 'https://wljs.io/releases',
         // secondary items will be displayed differently on navbar
+        secondary: false,
+      },
+      {
+        icon: <Heart />,
+        text: 'Support WLJS',
+        url: '/frontend/Support',
         secondary: false,
       }
     ],

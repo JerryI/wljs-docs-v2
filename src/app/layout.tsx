@@ -34,11 +34,21 @@ export const metadata: Metadata = {
     siteName: 'WLJS Notebook',
     title: 'WLJS Notebook',
     description: 'Build interactive research notebooks and scientific apps with Wolfram Language.',
+    images: [{
+      url: '/wljs-notebook-preview.png',
+      width: 5692,
+      height: 3200,
+      alt: 'WLJS Notebook with typeset equations, interactive controls, 3D plots, and graphs',
+    }],
   },
   twitter: {
-    card: 'summary',
+    card: 'summary_large_image',
     title: 'WLJS Notebook',
     description: 'Build interactive research notebooks and scientific apps with Wolfram Language.',
+    images: [{
+      url: '/wljs-notebook-preview.png',
+      alt: 'WLJS Notebook with typeset equations, interactive controls, 3D plots, and graphs',
+    }],
   },
   alternates: {
     types: {
@@ -58,9 +68,7 @@ export default function Layout({ children }: LayoutProps<'/'>) {
         <Script
           id="wljs-component"
           strategy="afterInteractive"
-          dangerouslySetInnerHTML={{
-            __html: `setTimeout(function(){var s=document.createElement('script');s.src='https://cdn.jsdelivr.net/gh/WLJSTeam/web-components@latest/src/common/app.tw.js';document.body.appendChild(s);},200);`,
-          }}
+          src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/vendor/wljs/app.tw.js`}
         />
 
         <GoatCounter />
