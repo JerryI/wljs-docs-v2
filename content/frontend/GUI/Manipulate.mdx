@@ -166,7 +166,9 @@ However, *we do recommend to use* [InputRange](../GUI/InputRange) directly inste
 
 `Manipulate`, [Animate](../GUI/Animate), and [Refresh](../GUI/Refresh) compare successive results and replace supported changing parts with granular `Offload` updates. This is most effective when every result has the same structure and only numeric arrays or other supported payloads change.
 
-An unsupported change does not normally make the expression invalid: the widget falls back to replacing the complete result. The exception is an option documented as *ignored* below; such an option is not updated while the optimized expression remains active.
+An unsupported change does not normally make the expression invalid: the widget falls back to replacing the complete result. This is a performance fallback, not an evaluation error—the kernel result is still evaluated and displayed. Complete replacement can remain fast for small or textual results and is often entirely reasonable for slowly changing data or interactions that do not need low latency. Treat the recommendations below as performance guidance and optimize when responsiveness actually requires it.
+
+The exception is an option documented as *ignored* below; such an option is not updated while the optimized expression remains active.
 
 ### The practical rule
 
