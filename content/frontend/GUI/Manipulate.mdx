@@ -163,37 +163,92 @@ However, *we do recommend to use* [InputRange](../GUI/InputRange) directly inste
 
 
 ## JIT Transpiler
-`Manipulate`, as well as [Animate](../GUI/Animate), uses a diff algorithm that detects and tries to convert manipulated expressions to more optimized ones that utilize granular updates. If the diff algorithm fails, it will use full reevaluation and update the shown expression accordingly. 
 
-<Card>
+`Manipulate`, [Animate](../GUI/Animate), and [Refresh](../GUI/Refresh) compare successive results and replace supported changing parts with granular `Offload` updates. This is most effective when every result has the same structure and only numeric arrays or other supported payloads change.
 
-Our transpiler does not cover all symbols and is limited to the following for now:
+An unsupported change does not normally make the expression invalid: the widget falls back to replacing the complete result. The exception is an option documented as *ignored* below; such an option is not updated while the optimized expression remains active.
 
-- `Line`, `Point`, `Polygon`, `Tube`, `Arrow`, `Disk`, `Circle`, `Sphere`, `Cuboid`, `Rectangle`, `Text`
-- `GraphicsComplex` in the context of `Graphics3D`
-- `Image`, `Raster`
-- `PlotLabel` in the context of `Graphics`
-- `LineLegend`, `PointLegend`, `SwatchLegend`
+### The practical rule
 
-which is a good subset to cover the output produced by `Plot`, `Plot3D` and many others standard functions. What will not be supported in the near future:
+Keep the expression tree stable:
 
-- `PlotRange` mutations are ignored
-- `Texture` is not supported
-- adding/removing `Line`, `Point` and etc primitives at runtime leads to deoptimization
-- changing color or opacity __leads to full reevaluation__
+- Keep the same heads, argument counts, wrapper nesting, graphics options, and number of graphics primitives.
+- Keep lists that describe structure at the same length. In particular, do not add or remove curves, polygon groups, legend entries, or plot components as a control changes.
+- Change data inside a supported primitive rather than conditionally replacing the primitive. Prefer an empty or degenerate data array over inserting and removing the entire primitive.
+- Keep auxiliary primitive arguments and options static. Support for a head does not imply that every possible form of that head can be patched.
 
-</Card>
+For plots, adaptive sampling, exclusions, contours, and meshes can change the number of generated primitives. A fixed `PlotRange`, `Mesh -> None`, and, where acceptable, bounded or disabled adaptive refinement such as `MaxRecursion -> 0` make the generated structure more predictable.
 
-### Tips for better performance
-If you still want to use `Manipulate` on some complex expressions, there are some tricks to avoid JIT engine failures:
+### Supported changing parts
 
-<Callout type="tip">
-- Try to keep the number of curves/traces/polygons expressions the same if possible. Try not to add new entities to your graphs.
-- `PerformanceGoal->"Speed"` is also a good option for 3D plots.
-- `Mesh->None` might also help.
-- `PlotRange->Full` or set it manually, it can help to avoid fragmentation of line segments
-- Avoid changing colors, opacity
-</Callout>
+The following are the useful JIT targets implemented by the current diff rules:
+
+| Changing part | Supported context and constraints |
+| --- | --- |
+| Coordinates/data of `Line` | Directly inside `Graphics` or `Graphics3D`; changing line data is also supported inside a 3D `GraphicsComplex` |
+| Coordinates/data of `Point`, `Triangle`, and `Arrow` | Directly inside `Graphics` or `Graphics3D`, but not inside `GraphicsComplex` |
+| Coordinates/data of `Polygon` | Directly inside 2D `Graphics`; in 3D, put the polygon in `GraphicsComplex` |
+| `Disk`, `Circle`, `Sphere`, `Cuboid`, `Rectangle`, and `Tube` | Direct two-argument forms in `Graphics` or `Graphics3D`; do not place the changing primitive inside `GraphicsComplex` |
+| `Text` | Direct two-argument form, or three-argument form with a static third argument; changing text should be a string |
+| `Inset` position | Two-argument `Inset` in 2D `Graphics`, with the inset object kept unchanged |
+| Standalone `RGBColor`, `Hue`, and `Opacity` directives | 2D `Graphics` only, outside `GraphicsComplex`; keep `Style[...]`, `Directive[...]`, and all 3D styling static |
+| `Translate`, `GeometricTransformation`, `Scale`, and `Rotate` | Transformation parameters in the two-argument forms can change; the three-argument form of `Rotate` is also supported |
+| `Image` and `Raster` data | Dimensions must remain unchanged; keep `Raster` placement and other arguments static |
+| `PlotLabel` | 2D `Graphics` only |
+| `LineLegend`, `PointLegend`, and `SwatchLegend` | Label lists can change while the style list, entry count, and remaining arguments stay fixed |
+| `TextView`, `HTMLView`, `TeXView`, and `EditorView` | The first payload can change while the remaining arguments stay fixed |
+
+#### Polygons in 2D and 3D
+
+This distinction is important. A changing 2D polygon should remain a direct primitive:
+
+```wolfram
+Graphics[Polygon[points[t]]]
+```
+
+A changing 3D polygon should use an indexed representation in `GraphicsComplex`. Both the vertices and polygon indices may change:
+
+```wolfram
+Graphics3D[
+  GraphicsComplex[
+    vertices[t],
+    Polygon[indices[t]]
+  ]
+]
+```
+
+Avoid `Graphics3D[Polygon[vertices[t]]]`: direct changing `Polygon` data is not a 3D JIT target. Conversely, putting changing polygon data in a 2D `GraphicsComplex` does not help; dynamic `GraphicsComplex` optimization is implemented for `Graphics3D`.
+
+#### `GraphicsComplex` constraints
+
+For changing 3D vertex or index data, keep the number and arrangement of primitive expressions, the `GraphicsComplex` argument count, and its option order fixed. Vertex arrays and nested `Line` or `Polygon` index arrays can be updated independently. The transpiler recognizes these forms:
+
+```wolfram
+GraphicsComplex[vertices, primitives]
+GraphicsComplex[vertices, primitives, VertexNormals -> normals]
+GraphicsComplex[vertices, primitives, VertexColors -> colors]
+GraphicsComplex[vertices, primitives, VertexNormals -> normals, VertexColors -> colors]
+GraphicsComplex[vertices, primitives, VertexColors -> colors, VertexNormals -> normals]
+GraphicsComplex[vertices, primitives,
+  VertexColors -> colors,
+  VertexNormals -> normals,
+  VertexTextureCoordinates -> textureCoordinates]
+```
+
+Use rectangular numeric arrays. The array contents—and, for supported nested `Line` and `Polygon` payloads, their indices—may change, but keep the surrounding primitive list and wrappers structurally compatible. Other option combinations or orders are not JIT-transpiled. Inside a 3D `GraphicsComplex`, changing `Line` and `Polygon` data is supported; changing `Point`, `Triangle`, `Arrow`, shape primitives, or direct color directives is not. Use `VertexColors` for changing per-vertex colors.
+
+### Changes to avoid
+
+- Do not change an expression head, its number of arguments, or the length of a structural list. For example, switching between `Line[...]` and `Point[...]`, or between one and two plot traces, deoptimizes the result.
+- Do not vary `Style[...]` or `Directive[...]`, including any of their arguments, inside `Graphics` or `Graphics3D`; changes in these expressions are not optimized. Other graphics options and style directives must also remain static apart from the narrow standalone 2D color and opacity cases listed above.
+- Do not animate direct colors or opacity in `Graphics3D`. In 2D, direct `RGBColor[...]`, `Hue[...]`, and `Opacity[...]` expressions are optimized outside `GraphicsComplex`; named colors such as `Red` and `Blue` work as well because Wolfram Language evaluates them to `RGBColor[...]` before diffing.
+- Do not change `Texture[...]` or `Image3D[...]`. A static texture may remain in the expression, and vertex texture coordinates are supported only in the exact `GraphicsComplex` form shown above.
+- Do not change image or raster dimensions between updates.
+- Do not rely on changing `PlotRange` or `AxesOrigin`: their mutations are deliberately ignored by the diff engine. Set them once, commonly to an explicit range or `Full`. A changing `PlotLabel` is supported only for 2D graphics.
+
+If the visual genuinely needs to change topology on most updates, full replacement or a purpose-built retained-mode implementation with [Offload](../Interpreter/Offload) is usually a better fit. For interactive or animated curves, also consider [ManipulatePlot](../Plotting-Functions/ManipulatePlot), [ManipulateParametricPlot](../Plotting-Functions/ManipulateParametricPlot), [AnimatePlot](../Plotting-Functions/AnimatePlot), or [AnimateParametricPlot](../Plotting-Functions/AnimateParametericPlot).
+
+When `Animate` cannot build a JIT path, its refresh rate is limited to 5 FPS. `Manipulate` and `Refresh` fall back to complete result updates when a runtime diff cannot be applied.
 
 
 ### Debugging

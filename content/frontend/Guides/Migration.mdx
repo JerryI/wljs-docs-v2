@@ -116,8 +116,8 @@ For a deeper explanation of the WLJS reactive model, see [Interactive evaluation
 
 WLJS supports [`Manipulate`](./../GUI/Manipulate), with fewer options and less control over the layout of controls. `TrackedSymbols`, bookmarks, and the `Appearance` block are not supported. Check the symbol reference for the current list of supported options.
 
-<Callout type="info">
-`Manipulate` and `Animate` inspect the output expression and try to replace full reevaluation with granular frontend updates. If this optimization cannot be applied, the output falls back to full reevaluation and may update more slowly or flicker. Keep output structure and plot ranges stable when possible, follow the [`Manipulate` optimization recommendations](./../GUI/Manipulate#jit-transpiler), or build the interaction from lower-level primitives such as `Offload`.
+<Callout type="warning">
+`Manipulate`, `Animate`, and `Refresh` use a structural JIT diff to replace full reevaluation with granular frontend updates. Before migrating dynamic graphics, read the [JIT optimizer limitations and recommendations](./../GUI/Manipulate#jit-transpiler). Unsupported structural changes fall back to complete result updates and may be slower or flicker; some changing graphics options are deliberately ignored. When the output cannot keep a stable structure, build the interaction from lower-level primitives such as `Offload`.
 </Callout>
 
 Set `ContinuousAction -> True` when the output should update while a slider is being dragged rather than only after release:
