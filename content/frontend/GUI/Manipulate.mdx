@@ -187,9 +187,10 @@ The following are the useful JIT targets implemented by the current diff rules:
 
 | Changing part | Supported context and constraints |
 | --- | --- |
-| Coordinates/data of `Line` | Directly inside `Graphics` or `Graphics3D`; changing line data is also supported inside a 3D `GraphicsComplex` |
-| Coordinates/data of `Point`, `Triangle`, and `Arrow` | Directly inside `Graphics` or `Graphics3D`, but not inside `GraphicsComplex` |
-| Coordinates/data of `Polygon` | Directly inside 2D `Graphics`; in 3D, put the polygon in `GraphicsComplex` |
+| Coordinates/data of `Line` | Directly inside `Graphics` or `Graphics3D`, and inside a 2D or 3D `GraphicsComplex` |
+| Coordinates/data of `Point` | Directly inside `Graphics` or `Graphics3D`, and inside a 2D `GraphicsComplex`; changing point indices inside a 3D `GraphicsComplex` is not supported |
+| Coordinates/data of `Triangle` and `Arrow` | Directly inside `Graphics` or `Graphics3D`, but not inside `GraphicsComplex` |
+| Coordinates/data of `Polygon` | Directly inside 2D `Graphics`, or inside a 2D or 3D `GraphicsComplex`; direct changing polygons are not supported in 3D |
 | `Disk`, `Circle`, `Sphere`, `Cuboid`, `Rectangle`, and `Tube` | Direct two-argument forms in `Graphics` or `Graphics3D`; do not place the changing primitive inside `GraphicsComplex` |
 | `Text` | Direct two-argument form, or three-argument form with a static third argument; changing text should be a string |
 | `Inset` position | Two-argument `Inset` in 2D `Graphics`, with the inset object kept unchanged |
@@ -202,7 +203,7 @@ The following are the useful JIT targets implemented by the current diff rules:
 
 #### Polygons in 2D and 3D
 
-This distinction is important. A changing 2D polygon should remain a direct primitive:
+This distinction is important. A changing 2D polygon can remain a direct primitive:
 
 ```wolfram
 Graphics[Polygon[points[t]]]
@@ -219,11 +220,11 @@ Graphics3D[
 ]
 ```
 
-Avoid `Graphics3D[Polygon[vertices[t]]]`: direct changing `Polygon` data is not a 3D JIT target. Conversely, putting changing polygon data in a 2D `GraphicsComplex` does not help; dynamic `GraphicsComplex` optimization is implemented for `Graphics3D`.
+Avoid `Graphics3D[Polygon[vertices[t]]]`: direct changing `Polygon` data is not a 3D JIT target. In 2D, either the direct form above or an indexed `GraphicsComplex` can be optimized; the latter is useful when vertices or per-vertex colors are shared.
 
 #### `GraphicsComplex` constraints
 
-For changing 3D vertex or index data, keep the number and arrangement of primitive expressions, the `GraphicsComplex` argument count, and its option order fixed. Vertex arrays and nested `Line` or `Polygon` index arrays can be updated independently. The transpiler recognizes these forms:
+For changing 2D or 3D vertex or index data, keep the number and arrangement of primitive expressions, the `GraphicsComplex` argument count, and its option order fixed. Vertex arrays and supported nested primitive index arrays can be updated independently. The transpiler recognizes these forms:
 
 ```wolfram
 GraphicsComplex[vertices, primitives]
@@ -237,7 +238,7 @@ GraphicsComplex[vertices, primitives,
   VertexTextureCoordinates -> textureCoordinates]
 ```
 
-Use rectangular numeric arrays. The array contents—and, for supported nested `Line` and `Polygon` payloads, their indices—may change, but keep the surrounding primitive list and wrappers structurally compatible. Other option combinations or orders are not JIT-transpiled. Inside a 3D `GraphicsComplex`, changing `Line` and `Polygon` data is supported; changing `Point`, `Triangle`, `Arrow`, shape primitives, or direct color directives is not. Use `VertexColors` for changing per-vertex colors.
+Use rectangular numeric arrays. The array contents and supported nested indices may change, but keep the surrounding primitive list and wrappers structurally compatible. Other option combinations or orders are not JIT-transpiled. A 2D `GraphicsComplex` supports changing `Point`, `Line`, and `Polygon` data; a 3D `GraphicsComplex` supports changing `Line` and `Polygon` data. Changing `Triangle`, `Arrow`, shape primitives, or direct color directives inside a complex is not supported. Use `VertexColors` for changing per-vertex colors.
 
 ### Changes to avoid
 
