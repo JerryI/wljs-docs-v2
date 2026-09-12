@@ -1,0 +1,197 @@
+---
+title:  Release Notes *3.1.3*
+date: 2026-09-11
+---
+
+<wljs-store kernel="./attachments/kernel-7010189790007908666.txt" json="./attachments/2cc93590-cfdb-4c3d-ab1d-01cd02debffa.txt"></wljs-store>
+
+
+import { Tabs, Tab } from 'fumadocs-ui/components/tabs';
+
+<Tabs items={['Windows', 'Mac','GNU/Linux', 'Docker', 'Homebrew']}>
+  <Tab value="Mac">
+    - [Apple Silicon](https://github.com/WLJSTeam/wljs-notebook/releases/download/v3.1.2/wljs-notebook-3.1.3-arm64-macos.dmg)
+    - [Intel](https://github.com/WLJSTeam/wljs-notebook/releases/download/v3.1.2/wljs-notebook-3.1.3-x64-macos.dmg)
+  </Tab>
+  <Tab value="Windows">
+    - [x86/64](https://github.com/WLJSTeam/wljs-notebook/releases/download/v3.1.2/wljs-notebook-3.1.3-x64-win.exe)
+  </Tab>
+  <Tab value="GNU/Linux">
+    - [DEB x86/64](https://github.com/WLJSTeam/wljs-notebook/releases/download/v3.1.2/wljs-notebook-3.1.3-amd64-gnulinux.deb)
+    - [DEB ARM64](https://github.com/WLJSTeam/wljs-notebook/releases/download/v3.1.2/wljs-notebook-3.1.3-arm64-gnulinux.deb)
+    - [AppImage x86/64](https://github.com/WLJSTeam/wljs-notebook/releases/download/v3.1.2/wljs-notebook-3.1.3-x86_64-gnulinux.AppImage)
+    - [AppImage ARM64](https://github.com/WLJSTeam/wljs-notebook/releases/download/v3.1.2/wljs-notebook-3.1.3-arm64-gnulinux.AppImage)
+    - [RPM x86/64](https://github.com/WLJSTeam/wljs-notebook/releases/download/v3.1.2/wljs-notebook-3.1.3-x86_64-gnulinux.rpm)
+  </Tab>
+  <Tab value="Docker">
+
+```bash
+docker run -it \
+  -v ~/wljs:"/home/wljs/WLJS Notebooks" \
+  -v ~/wljs/Licensing:/home/wljs/.WolframEngine/Licensing \
+  -v ~/wljs/tmp:/tmp \
+  -p 8000:3000 \
+  --name wljs \
+  ghcr.io/wljsteam/wljs-notebook:v3.1.3
+```
+
+  </Tab>
+  <Tab value="Homebrew">
+  
+```bash  
+brew install --cask wljs-notebook
+```
+
+  </Tab>
+</Tabs>
+
+## Print ordering
+We fixed a very old issue related to how printed messages are handled. Try it out:
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`Print["1"];
+	2
+	Print["3"];
+	4`}</wljs-editor></WLJSWrapper>
+
+## More options for dark theme
+By default, the dark theme is derived using a global window filter that inverts colors and adjusts hue and contrast. This is great for text and vector graphics, but it may confuse users when applied to raster images. We added a new option to address this:
+
+
+![](attachments/Screenshot-2026-09-10-at-14.01.42-455.png)
+
+See it in the UI section of the settings menu.
+
+
+## Improved slides export
+We switched to less distracting offscreen rendering, and it now reports progress while rendering slides.
+
+## Typesetting
+We added missing `URL` and `File` output representations.
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`URL["https://google.com?q=1"]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`URL[(*VB[*)("https://google.com?q=1")(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KWlMIB4vkAjLTC13SU3OL0osyS8KZgaKhAb5BIsB6YySkoJiK3399Pz89JxUveT8XPtCW0MAlAgTVQ=="*)(*]VB*)]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`File["3.1.3.wln"]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`File[(*VB[*)("3.1.3.wln")(*,*)(*"1:eJw1TksKwjAQjeIHBTd6AT1AC9IrFHXhqkH3qZnQ6DQDmdRe30nBzZs37zPMqaXGzZRSvBC4EVo3z9tO4OlhrOFF0SSKOvsXj+C2//Tdc9IylV4KPBgi65Wwj48ecaJXn7qh1QehI6GLpi/eXLhIIUGwei16T3ZAYL3PGRTXQk9cmPjq/Bem03VWdH6pAQTDcAyUpLIRpSrPZVWOGH4sqTPM"*)(*]VB*)]`}</wljs-editor></WLJSWrapper>
+
+If the file does not exist, the output will be shortened:
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`File["3.1.9.wln"]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`File["3.1.9.wln"]`}</wljs-editor></WLJSWrapper>
+
+We also fixed the representation of the `GeneralizedPower` symbol.
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`GeneralizedPower[f, a, 2]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*TB[*)GeneralizedPower[(*|*)(*VB[*)(f)(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KWlMIB4vkAjLTC13SU3OL0osyS8KBinyAZNpACpjCyo="*)(*]VB*)(*|*), (*|*)a(*|*), (*|*)2(*|*)](*|*)(*1:eJxTTMoPSmNkYGAo5gUSYZmp5S6pyflFiSX5RcFMQBH3AACM5QhW*)(*]TB*)`}</wljs-editor></WLJSWrapper>
+
+## Improved Animate/Manipulate
+We added support for `GraphicsComplex` in the context of 2D graphics for our optimizer/transpiler (JIT), used in `Manipulate`, `Animate`, and `Refresh` expressions. This allows us to take advantage of efficient 2D rendering, as in this example:
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true" fade="true" >{`(* Create and Discretize Region *)
+	disks = RegionUnion[Disk[{-1, 0}, 0.5], Disk[{1, 0}, 0.5], 
+	   Disk[{0, -1}, 0.5], Disk[{0, 1}, 0.5], Disk[{0, 0}, 0.25]];
+	region = RegionDifference[Disk[], disks];
+	R2 = RegionBoundary@DiscretizeRegion[region, AccuracyGoal -> 5];
+	(* Set up Region Operators *)
+	rdf = RegionDistance[R2];
+	rnf = RegionNearest[R2];
+	(* Time Increment *)
+	dt = 3 0.001;
+	(* Collision Margin *)
+	margin = 1.02 dt;
+	(* Starting Point for Emission *)
+	sp = 0.85 Normalize[{1, 1}];
+	(* Conditional Particle Advancer *)
+	advance[r_, x_, v_, c_] := 
+	 Block[{xnew = x + dt v}, {rdf[xnew], xnew, v, c}] /; r > margin
+	advance[r_, x_, v_, c_] := 
+	 Block[{xnew = x , vnew = v, normal = Normalize[x - rnf[x]]},
+	   vnew = Normalize[v - 2 v.normal normal];
+	   xnew += dt vnew;
+	   {rdf[xnew], xnew, vnew, c + 1}] /; r <= margin
+	   
+	(* Setup simulation *)
+	nparticles = 500;
+	ntimesteps = 600;`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`Module[{s, rplot = RegionPlot[R2], lasti = Infinity},
+	  Animate[
+	    If[lasti > i, 
+	      lasti = 1; (* reset inner state *)
+	      s = Table[{rdf[sp], sp, AngleVector[2 Pi RandomReal[]], 0}, nparticles]
+	    ];
+	    
+	    Do[s = (advance @@ # &) /@ s, {i-lasti}];
+	    lasti = i;
+	    
+	    Show[rplot, Graphics[{PointSize[.01],
+	      GraphicsComplex[s[[All, 2]], Point[Range[nparticles]],
+	        VertexColors -> (ColorData["Rainbow", (# - 1)/10] & /@ s[[All, 4]])]}]],
+	    {i, 1, ntimesteps, 1}, RefreshRate -> 60]
+	]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(FrontEndRef["5bdffa11-0d4e-4b8d-97ae-e82581e9e94b"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKmyalpKUlGhrqGqSYpOqaJFmk6FqaJ6bqploYmVoYplqmWpokAQCUzhZB"*)(*]VB*)`}</wljs-editor></WLJSWrapper>
+
+In this example, it simulates "photons" bouncing off the inner walls of a 2D region. Depending on the simulation speed, it may produce fewer frames per second, even though the target is set to 60.
+
+Even more: __we guarded__ the `Animate` __widget against spamming the kernel with evaluation requests__. The animation will not go faster than the communication link, rendering pipeline, and computation allow.
+
+## AnimatedImage, or how to export an animation
+Applying `AnimatedImage` to `Animate`, `AnimatePlot`, or `AnimateParametricPlot` will automatically render all frames offscreen and return an `AnimatedImage` object containing all uncompressed frames.
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`animation = Animate[
+	  ParametricPlot[ReIm[(*SpB[*)Power[I(*|*),(*|*)-t](*]SpB*) + 3 (*SpB[*)Power[I(*|*),(*|*)t/3](*]SpB*)], {t,0,u}, 
+	    Epilog->{
+	      Arrow[{{0,0}, ReIm[(*SpB[*)Power[I(*|*),(*|*)-u](*]SpB*)]}], 
+	      Arrow[{ ReIm[(*SpB[*)Power[I(*|*),(*|*)-u](*]SpB*)], ReIm[(*SpB[*)Power[I(*|*),(*|*)-u](*]SpB*) + 3 (*SpB[*)Power[I(*|*),(*|*)u/3](*]SpB*)]}]
+	    }, PlotRange->{{-4,4}, {-4,4}}, GridLines->Automatic,
+	    PlotStyle->(*VB[*)(RGBColor[1, 0, 0])(*,*)(*"1:eJxTTMoPSmNiYGAo5gUSYZmp5S6pyflFiSX5RcEsQBHn4PCQNGaQPAeQCHJ3cs7PyS8qYgCDD/ZQBgMDnAEA4iUPRg=="*)(*]VB*)
+	  ]
+	, {u, 0.001, 4Pi}, RefreshRate->30, Appearance->None];
+	
+	ai = AnimatedImage[animation, FrameRate->30];
+	ai`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output" encoded="true"  >{`%28%2AVB%5B%2A%29%28CoffeeLiqueur%60Extensions%60Video%60Internal%60imgSymbol%24362558%29%28%2A%2C%2A%29%28%2A%221%3AeJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKW5gbJ6caW5jpJqeYJuuamBmn6CYaJBnrWliYpqQYmBkbmSWaAwCEHhV6%22%2A%29%28%2A%5DVB%2A%29`}</wljs-editor></WLJSWrapper>
+
+To export it, simply use the native `Export` function.
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`Export["ai.gif", ai]`}</wljs-editor></WLJSWrapper>
+
+If you prefer to do this asynchronously, set `Asynchronous -> True`; `AnimatedImage` will return a `Promise`:
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`Then[AnimatedImage[animation, Asynchronous->True], Function[result,
+	  ai = result;
+	  Beep[];
+	]];`}</wljs-editor></WLJSWrapper>
+
+<Callout>
+This feature is available only in the WLJS Notebook desktop application because it relies on our custom rendering engine.
+</Callout>
+
+## Experimental Symja backend support
+
+Kudos to Axel Kramer, who managed to bring his creation, [Symja](https://github.com/axkr/symja_android_library), to the level of Wolfram Language!
+
+> Symja is an open-source, pure-Java computer algebra system (CAS) and symbolic math library designed to mimic the programming paradigm and syntax of Wolfram Mathematica.
+
+It can run a WLJS Notebook in browser mode by executing `Scripts/start.wls` from our repository, similar to how it works with the Docker image. Note that it is still far from being a perfect replacement for Wolfram Engine / WolframScript, and many WLJS features are very buggy; some symbols are not yet implemented. However, this is a great starting point for branching off from Wolfram technologies completely.
+
+## Experiments with Woxi
+
+Symja is not the only project trying to harness the power of WL. A relatively new project, [Woxi](https://github.com/ad-si/Woxi), maintained by Adrian Sieber, is now actively developed.
+
+> Woxi — Wolfram Language interpreter implemented in Rust
+
+Fast iterations on issues assisted by AI bring more and more features of WL. We are also currently [trying to launch WLJS](https://github.com/ad-si/Woxi/issues/603) using Woxi as a backend for both kernels. Let's see how it goes! 2026 is fantastic.
+
+## MCP Server patches
+- Improved documentation search
+- New skills for all cell types
+- Smaller system prompt
+- Improved message reporting and tool calling
+- Improved message truncation

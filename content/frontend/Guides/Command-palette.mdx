@@ -331,6 +331,8 @@ url = "http://127.0.0.1:20564/"
 
 ### Tips
 
+- Suggest a model to use `wljs mcp tools`
+
 - Models are not allowed to create notebooks, but can find the "focused one"
 
 - Mention `focused cell` in the prompt to avoid model to spend tokens for searching the whole notebook.
@@ -338,11 +340,6 @@ url = "http://127.0.0.1:20564/"
 - Mention `consult docs` in the prompt for weaker models to force them checking the documentation on different cell types or features of interactive evaluation in Wolfram language cells.
 
 - Use smaller models for grammar corrections, primitive tasks, i.e. Haiku 3.0 for example
-
-- Anthropic models are generally better trained on Wolfram Language and their training data includes WLJS ecosyste
-
-- It is cheaper to firstly find focused notebook, then focused cell instead of using `notebook context` path, that will list all cells and their content (only first line)
-
 
 ### Documentation for LLM
 If needed MCP searches the documentiation on a given symbol using LLM-friendly compilation of our entire website: https://wljs.io/llms-full.txt

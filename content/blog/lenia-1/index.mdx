@@ -1,0 +1,250 @@
+---
+title:  Lenia, or a Convolutional Game of Life
+description: What happens if we replace the binary cells of Conway's Game of Life with a smooth field and let every point interact through a convolution? We get something close to [Lenia](https://doi.org/10.25088/ComplexSystems.28.3.251), the continuous cellular automaton introduced by Bert Wang-Chak Chan. In this post, we will build a small single-channel Lenia experiment using Wolfram Language. The whole update can be written in one line.
+tags:
+  - tutorial
+  - modelling
+author: JerryI
+date: 2026-09-12
+---
+
+{/* add this script to the body  */}
+{/* https://cdn.jsdelivr.net/gh/WLJSTeam/web-components@latest/src/common/app.js */}
+<wljs-store json="./attachments/de7fcf50-dc0f-4224-9582-28bba27aa2d0.txt"></wljs-store>
+
+<DownloadFile
+    title="Download"
+    description="Get the full code and assets"
+    href="./lenia.wln"
+/>
+
+$$
+A^{t+\Delta t}
+=\operatorname{clip}_{[0,1]}\!\left[
+A^t+\Delta t\,G(K*A^t)
+\right].
+$$
+
+There are only two operations to understand: a convolution $K*A^t$, which measures the local neighborhood, and a growth function $G$, which decides whether that neighborhood should grow ($G>1$) or decay ($G<0$). Applied repeatedly, they resemble a recurrent convolutional network, although nothing is trained here. The kernel and the growth curve are prescribed arbitrary "by hand".
+
+We will start with the standard *Lena* test image converted to grayscale. It won't represent a "Lenia organism" rather a sample structured field with values in range $[0,1]$. Later, we will replace it with an actual localized pattern.
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`canvas = ColorConvert[
+	  ImageResize[ExampleData[{"TestImage", "Lena"}], {300,300}], 
+	"Gray"]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(FrontEndRef["ec11b131-b328-4b93-9665-4d1ff7f48e5c"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKpyYbGiYZGhvqJhkbWeiaJFka61qamZnqmqQYpqWZp5lYpJomAwB9wRV6"*)(*]VB*)`}</wljs-editor></WLJSWrapper>
+
+## The kernel
+
+First we need a neighborhood. Instead of counting a few adjacent cells, Lenia uses a smooth radial kernel. And it is not a simple Gaussian, since it leads to rather boring results:
+
+$$
+k_\alpha(s)=
+\begin{cases}
+\exp\!\left[\alpha\left(1-\dfrac{1}{4s(1-s)}\right)\right], & 0<s<1,\\
+0, & \text{otherwise}.
+\end{cases}
+$$
+
+Here in Lenia a kernel is represented as a sum of such $k_{\alpha}$ weighted and scaled by $\boldsymbol{\beta}=(\beta_1,\ldots,\beta_B)$. It copies this bump into $B$ concentric rings:
+
+$$
+K_S(\rho;\boldsymbol{\beta})
+=\beta_{\lfloor B\rho\rfloor+1}\,
+k_\alpha\!\left(\operatorname{frac}(B\rho)\right),
+\qquad 0\leq\rho<1.
+$$
+
+The function `ks[r, α, β]` below samples this profile on a square grid with spacing $1/r$, cuts away everything outside the unit disk, and normalizes the result. The normalization matters: all weights add up to one, so the next convolution behaves like a weighted local average.
+
+> This is a very complicated formulation, but, well, let us implement it in code anyway...
+> *A note from the author*
+
+For the first experiment we will use three rings with relative heights $(1,2/3,1/3)$.
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`k[α_, x_] :=
+	  If[0 < x < 1,
+	    Exp[α (1 - 1/(4 x (1 - x)))],
+	    0.0
+	  ];
+	
+	ks[r_, α_, β_List] := Module[
+	  {rings = Length[β], m},
+	
+	  m = Table[
+	    With[{ρ = Norm[{i, j}]},
+	      If[ρ >= 1,
+	        0.0,                              
+	        With[{q = rings ρ},
+	          β[[Floor[q] + 1]]              
+	            k[α, FractionalPart[q]]
+	        ]
+	      ]
+	    ],
+	    {i, -1.0, 1.0, 1.0/r},
+	    {j, -1.0, 1.0, 1.0/r}
+	  ];
+	
+	  m/Total[m, 2]
+	] // Quiet;
+	
+	ArrayPlot[ks[20, 4, {1.0, 2/3, 1/3}], Axes->True]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(FrontEndRef["858b8a7b-97a6-42e3-b684-46efdd8e055c"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKW5haJFkkmifpWponmumaGKUa6yaZWZjompilpqWkWKQamJomAwCCJhW8"*)(*]VB*)`}</wljs-editor></WLJSWrapper>
+
+These are rings we were talking about. It sort of generalizes a rectangular kernel used in a classical GOL.
+
+## Apply the kernel
+
+Now we can turn the state field into a neighborhood potential. This basically means we __create another field with the same size__ derived by the convolution with our kernel
+
+$$
+U^t(\mathbf{x})=(K*A^t)(\mathbf{x})
+=\sum_{\mathbf{n}}K(\mathbf{n})A^t(\mathbf{x}+\mathbf{n}).
+$$
+
+In Wolfram Language this is just `ImageConvolve` or `ListConvolve` for plain lists. Working with images can be slightly faster in some cases and easier to display. Try to avoid loops, or any direct pixel mutations when working with large arrays of data.
+
+> Think like a shader!
+
+We wrap it in `U[r, α, β]`, so the same convolution operator can be applied again at every step.
+
+There is one important boundary choice here. `Padding -> "Periodic"` joins opposite edges of the image, turning the finite grid into a torus. A pattern that leaves on the right re-enters on the left; there is no artificial wall at the image boundary.
+
+Let's see what this weighted neighborhood looks like on our test image.
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`U[r_, \\[Alpha]_, \\[Beta]_] := With[{m=ks[r, \\[Alpha], \\[Beta]]}, ImageConvolve[#, m, Padding->"Periodic"]&]
+	U[20, 4, {1.0, 2/3, 1/3}][canvas]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(FrontEndRef["5cc2945c-9c08-4e02-87af-88e28b56dac1"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKmyYnG1mamCbrWiYbWOiapBoY6VqYJ6bpWlikGlkkmZqlJCYbAgCB3RWv"*)(*]VB*)`}</wljs-editor></WLJSWrapper>
+
+It is important to note, that here we defined `U` as a function generator. When `U` is called, it generates matrix `ks` and packs it into an anonymous function
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`U[20, 4, {1.0, 2/3, 1/3}] // Shallow `}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`Function[ImageConvolve[Slot[1], {{0., 0., 0., 0., 0., <<36, _Real>>}, {0., 0., 0., 0., 0., <<36, _Real>>}, {0., 0., 0., 0., 0., <<36, _Real>>}, {0., 0., 0., 0., 0., <<36, _Real>>}, {0., 0., 0., 0., 0., <<36, _Real>>}, <<36, {_Real..}>>}, Padding -> "Periodic"]]`}</wljs-editor></WLJSWrapper>
+
+This allows to avoid kernel generation on every call.
+
+## The growth function
+
+The potential `U` is not yet an update. Lenia passes it through a non-monotone growth curve:
+
+$$
+G_{\mu,\sigma}(u)
+=2\exp\!\left[-\frac{(u-\mu)^2}{2\sigma^2}\right]-1.
+$$
+
+A neighborhood close to the preferred value $\mu$ grows. Values farther away decay, while $\sigma$ controls the width of the favorable band. This maps the potential to a signed rate between approximately $-1$ and $1$.
+
+This is also where the neural-network analogy becomes less literal. Unlike a monotone activation such as ReLU, the Lenia response selects a narrow interval of neighborhood densities.
+
+The preview below uses $\mu=2\times0.16=0.32$ and $\sigma=0.021$. `ImageAdjust` changes only the displayed contrast only to see the effect better
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`G[\\[Mu]_, \\[Sigma]_][U_] := ImageApply[Function[a, 2 Exp[- (*FB[*)(((*SpB[*)Power[(a - \\[Mu])(*|*),(*|*)2](*]SpB*))(*,*)/(*,*)(2 (*SpB[*)Power[\\[Sigma](*|*),(*|*)2](*]SpB*)))(*]FB*)]-1.0], U]
+	
+	G[2 0.16, 0.021][U[20, 4, {1.0, 2/3, 1/3}][canvas]] // ImageAdjust`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(FrontEndRef["6a41d2f0-4c6f-4e1e-8e6f-5bb0edd25597"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKmyWaGKYYpRnomiSbpemapBqm6lqkAlmmSUkGqSkpRqamluYAi3QWCA=="*)(*]VB*)`}</wljs-editor></WLJSWrapper>
+
+## Close the loop
+
+Now we can put convolution and growth together:
+
+$$
+A^{t+\Delta t}
+=\operatorname{clip}_{[0,1]}
+\left(A^t+\Delta t\,G_{\mu,\sigma}(K*A^t)\right).
+$$
+
+The code below stores the convolution operator in `potential`, keeps the current image in `field`, and advances it with $\Delta t=0.1$. `Clip` is part of the rule: it keeps every state inside $[0,1]$.
+
+There are two clocks in this cell. The model advances by $0.1$ per update, while `Refresh[..., 1/60.0]` asks the notebook to redraw at roughly 60 Hz. 
+
+With only these few lines, the image becomes a recurrent dynamical system.
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`potential = U[30, 4,  {1.0, 2/3, 1/3}];
+	field = canvas;
+	
+	Refresh[Colorize[
+	  field = Clip[
+	    field + 0.1 G[0.16, 0.011][potential[field]], 
+	  {0.,1.}]], 
+	1/60.0]`}</wljs-editor></WLJSWrapper>
+
+## Record a trajectory
+
+A live `Refresh` loop is useful while experimenting, but a fixed animation is easier to inspect and share. Here we compute 60 updates first and then pass the frames to `AnimatedImage`.
+
+Since $\Delta t=0.1$, the trajectory covers 6 model-time units. Playing 60 frames at 30 frames per second produces a two-second animation. These are separate quantities: changing `FrameRate` changes the movie, not the Lenia dynamics.
+
+The assignment `field = canvas` makes the cell reproducible. Every evaluation starts from the same image.
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`potential = U[30, 4,  {1.0, 2/3, 1/3}];
+	field = canvas;
+	
+	AnimatedImage[Colorize/@Table[
+	    field = Clip[
+	    field + 0.1 G[0.16, 0.011][potential[field]], 
+	  {0.,1.}], {60}], FrameRate->30]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output" encoded="true"  >{`%28%2AVB%5B%2A%29%28CoffeeLiqueur%60Extensions%60Video%60Internal%60imgSymbol%243445231%29%28%2A%2C%2A%29%28%2A%221%3AeJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKG6ZapCQaJafoJlumWeqaJJlY6iaZGZjqJqZZmpgYpySZJ6ZZAACSAxZB%22%2A%29%28%2A%5DVB%2A%29`}</wljs-editor></WLJSWrapper>
+
+## From an image to a creature
+
+So far, *Lena* was only a structured test field. Now let's use a localized Lenia pattern we stored in the notebook as `"felicity-8c2"`. `NotebookRead` restores it directly into `field`.
+
+> Download this notebook to try it by yourself if you are reading it from a web page now
+
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`NotebookRead[NotebookStore["felicity-8c2"]]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(FrontEndRef["98a5f16b-9465-4959-a063-705d17eeb8b0"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKW1okmqYZmiXpWpqYmeqaWJpa6iYamBnrmhuYphiap6YmWSQZAAB3XBUk"*)(*]VB*)`}</wljs-editor></WLJSWrapper>
+
+This run uses
+
+$$
+(r,\alpha,\boldsymbol{\beta},\mu,\sigma,\Delta t)
+=\left(20,4,(1,2/3,1/3),0.13805,0.01312,0.1\right).
+$$
+
+The initial pattern is only half of the experiment. Its parameter tuple is equally important: small changes in $\mu$ or $\sigma$ can alter motion, stability, or survival completely.
+
+There is one practical caveat. The store key is local to this notebook. To reproduce the result elsewhere, we would need to export the state array together with the kernel parameters, time step, grid size, and periodic boundary condition.
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`potential = U[20, 4,  {1.0, 2/3, 1/3}];
+	field = NotebookRead[NotebookStore["felicity-8c2"]];
+	
+	Refresh[Colorize[
+	  field = Clip[
+	    field + 0.1 G[0.13805, 0.01312][potential[field]], 
+	  {0.,1.}]], 
+	1/60.0]`}</wljs-editor></WLJSWrapper>
+
+## Make the final animation
+
+We can record the stored organism in exactly the same way. This time we generate 100 updates and play them at 25 frames per second
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`potential = U[20, 4,  {1.0, 2/3, 1/3}];
+	field = NotebookRead[NotebookStore["felicity-8c2"]];
+	
+	Magnify[AnimatedImage[Colorize/@Table[
+	    field = Clip[
+	    field + 0.1 G[0.13805, 0.01312][potential[field]], 
+	  {0.,1.}], {100}], FrameRate->25], 2]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output" encoded="true"  >{`%28%2ABB%5B%2A%29%28%28%2AVB%5B%2A%29%28CoffeeLiqueur%60Extensions%60Video%60Internal%60imgSymbol%243465405%29%28%2A%2C%2A%29%28%2A%221%3AeJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKp5knmpmbmBjrmpqZW%2BqamBqm6FoYmJjpGiYlJpsmm6YYJ5kaAAB14RUW%22%2A%29%28%2A%5DVB%2A%29%29%28%2A%2C%2A%29%28%2A%221%3AeJxTTMoPSmNiYGAo5gMSwSWVOakuqcn5RYkl%2BUUQcRYgEVSak1rMC2T4JqbnZaZlJieWZObnQeRZgURIZm5qcSaYywkkPPMyUosyS1JT0EzgAVtRlFngn%2BeZV1BaAtbrlphTnAoAxW0hrw%3D%3D%22%2A%29%28%2A%5DBB%2A%29`}</wljs-editor></WLJSWrapper>
+
+## Make this your own!
+
+The most sensitive controls are $\mu$ and $\sigma$, so small parameter sweeps around the creature are a good next experiment. One can also replace the initial field, change the ring amplitudes $\boldsymbol{\beta}$, or track the mass and centroid over time.
+
+See you next time!
+
+## References
+
+- B. W.-C. Chan, [*Lenia—Biology of Artificial Life*](https://doi.org/10.25088/ComplexSystems.28.3.251), *Complex Systems* **28**(3), 251–286 (2019). [Open-access preprint](https://arxiv.org/abs/1812.05433).
+- B. W.-C. Chan, [*Lenia and Expanded Universe*](https://doi.org/10.1162/isal_a_00297), *Artificial Life Conference Proceedings* **32**, 221–229 (2020). [Open-access preprint](https://arxiv.org/abs/2005.03742).
+- S. Rafler, [*Generalization of Conway's Game of Life to a Continuous Domain—SmoothLife*](https://arxiv.org/abs/1111.1567) (2011).
+- [Lenia project page](https://chakazul.github.io/lenia.html) and [reference implementations](https://github.com/Chakazul/Lenia).
