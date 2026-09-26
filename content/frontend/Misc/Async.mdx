@@ -73,8 +73,32 @@ TableAsync[
 , {i,3}] // WaitAll
 ```
 
+Iterator bounds and ranges are evaluated even though `TableAsync` has the `HoldAll` attribute. They can therefore be supplied through variables or lexical scope:
+
+```wolfram
+Module[{low = 1.0, high = 3.0, step = 0.5},
+  TableAsync[i, {i, low, high, step}]
+] // WaitAll
+```
+
 ### `DoAsync`
 Works in the same way as `TableAsync`.
+
+### `WhileAsync`
+Works similarly to `While`, but its condition and body can contain `Await`. It returns a `Promise` and evaluates iterations serially.
+
+```wolfram
+i = 0;
+
+WhileAsync[i < 10,
+  i++;
+  If[EvenQ[i], Continue[]];
+  PauseAsync[0.1] // Await;
+  If[i >= 7, Break[]];
+] // WaitAll
+```
+
+`Break[]` exits the nearest `WhileAsync`, while `Continue[]` starts its next iteration. When used inside an `AsyncFunction`, `Return[value]` exits the surrounding async function, including from inside a loop.
 
 ### More
 There are more expressions in the standard library that support async programming patterns:
@@ -128,19 +152,23 @@ If the argument is not a `Promise`, execution continues without pausing and the 
 **Supported expressions:**
 - `Set`
 - `CompoundExpression`
-- `If` 
+- `If`, including an awaited condition
+- `Which`, including awaited conditions and branches
+- `Switch`, including an awaited selector and branches
 - `Module`, `With`
+- `Return`, `Return[]`
 - `_Symbol` or any other singular expressions
 - `TableAsync`
 - `DoAsync`
+- `WhileAsync`, including `Break` and `Continue`
 - `PauseAsync`
 - Any expression that returns `Promise` or `EventObject`
 
 **Not yet supported:**
-- Loops: `While`, `For`, `Do`
+- Native loops: `While`, `For`, `Do` (use `WhileAsync` or `DoAsync` when awaiting inside a loop)
 - `Await` inside the first argument of `With`
 - Tables and maps: `Map`, `Table`
-- `Return` does not work correctly inside `AsyncFunction`
+- Arbitrarily nested `Await`, such as `1 + Await[p]` or `foo[Await[p]]`; assign the awaited value to a variable first
 
 </Card>
 
@@ -154,7 +182,8 @@ Then[AsyncFunction[x, Module[{res},
   btn // Await;
   Speak["Choose"];
   res = ChoiceDialogAsync["Add 10?"] // Await;
-  If[res, x + 10, x] 
+  If[res, Return[x + 10]];
+  x
 ]][10], Speak];
 
 ```

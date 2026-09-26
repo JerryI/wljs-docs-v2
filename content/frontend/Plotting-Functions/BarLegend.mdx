@@ -6,6 +6,14 @@ title: BarLegend
 
 `BarLegend[{cf, {min, max}}]` generates a legend that identifies colors from the color function cf with the range of values between min and max.
 
+`BarLegend[cf, n]` limits the number of ticks shown on the legend to `n`.
+
+## Options
+
+- `LegendLabel` adds a label to the legend.
+- `LabelStyle` styles the legend label and tick labels. Colors, `FontFamily`, and `FontSize` are supported.
+- `ImageSize` sets the size of the color bar; use a two-element list to align the legend height with a plot.
+
 ## Examples
 
 Create a color bar legend:
@@ -18,6 +26,29 @@ With specified range:
 
 ```wolfram
 BarLegend[{"TemperatureMap", {0, 100}}]
+```
+
+Add a label and limit the number of ticks:
+
+```wolfram
+BarLegend["Thermometer", 3,
+ LegendLabel -> "Temperature",
+ LabelStyle -> Directive[FontSize -> 14]
+]
+```
+
+Align a bar legend with a plot:
+
+```wolfram
+ContourPlot[
+ (x^2 - y^2)/(x^2 + y^2)^2,
+ {x, -1, 1}, {y, -1, 1},
+ Contours -> 4,
+ PlotLegends -> BarLegend[Automatic, ImageSize -> {20, 300}],
+ ImageSize -> {300, 300},
+ ColorFunction -> "Rainbow",
+ ClippingStyle -> Automatic
+]
 ```
 
 

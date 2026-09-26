@@ -7,6 +7,19 @@ title: SwatchLegend
 - `SwatchLegend[{col1, ...}, Automatic]` generates a legend with placeholder labels for the colors coli.
 - `SwatchLegend[{lbl1, ...}]` represents a legend with inherited colors within visualization functions.
 
+## Styling options
+
+`SwatchLegend` supports `LegendFunction`, `LegendLayout`, `LegendMargins`, `LabelStyle`, `RoundingRadius`, and `Background`.
+
+- `LegendFunction` accepts the named functions `"Panel"`, `"Frame"`, `"Framed"`, `"DarkFrame"`, and `"Frameless"`. Arbitrary functions are not currently supported.
+- `LegendLayout` accepts `"Row"`, `"Column"`, `"ReversedRow"`, and `"ReversedColumn"`.
+- `LegendMargins` accepts either one margin for every side or `{{left, right}, {top, bottom}}`.
+- `LabelStyle` supports colors, `FontFamily`, and `FontSize`.
+- `RoundingRadius` sets the corner radius of the legend container.
+- `Background` sets the container background.
+
+These options are also supported by `LineLegend` and `PointLegend`.
+
 ## Examples
 
 Create a color swatch legend:
@@ -17,6 +30,24 @@ SwatchLegend[{Red, Green, Blue}, {"Low", "Medium", "High"}]
 Use with a plot:
 ```wolfram
 BarChart[{1, 2, 3}, ChartLegends -> SwatchLegend[{"A", "B", "C"}]]
+```
+
+Combine layout and container styles:
+
+```wolfram
+Plot[{x, 2x}, {x, 0, 1},
+ PlotLegends -> Placed[
+  SwatchLegend[Automatic, {"x", "2x"},
+   LegendFunction -> "DarkFrame",
+   LegendLayout -> "Row",
+   LegendMargins -> {{5, 9}, {5, 5}},
+   LabelStyle -> Directive[FontSize -> 12],
+   RoundingRadius -> 0,
+   Background -> White
+  ],
+  {0.45, 0.5}
+ ]
+]
 ```
 
 

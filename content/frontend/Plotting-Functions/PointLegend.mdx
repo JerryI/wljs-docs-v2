@@ -7,6 +7,17 @@ title: PointLegend
 - `PointLegend[{col1, ...}, Automatic]` generates a legend with placeholder labels.
 - `PointLegend[{lbl1, ...}]` represents a legend with inherited colors within visualization functions.
 
+## Styling options
+
+`PointLegend` supports `LegendFunction`, `LegendLayout`, `LegendMargins`, `LabelStyle`, `RoundingRadius`, and `Background`.
+
+- `LegendFunction` accepts the named functions `"Panel"`, `"Frame"`, `"Framed"`, `"DarkFrame"`, and `"Frameless"`. Arbitrary functions are not currently supported.
+- `LegendLayout` accepts `"Row"`, `"Column"`, `"ReversedRow"`, and `"ReversedColumn"`.
+- `LegendMargins` accepts either one margin for every side or `{{left, right}, {top, bottom}}`.
+- `LabelStyle` supports colors, `FontFamily`, and `FontSize`.
+- `RoundingRadius` sets the corner radius of the legend container.
+- `Background` sets the container background.
+
 ## Examples
 
 ```wolfram
@@ -22,4 +33,14 @@ ListPlot[{{1, 4, 2}, {2, 3, 5}},
 PointLegend[{Red, Blue}, Automatic]
 ```
 
-*See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/PointLegend.html) for more details.
+```wolfram
+ListPlot[{{1, 4, 2}, {2, 3, 5}},
+ PlotLegends -> PointLegend[Automatic, {"Series 1", "Series 2"},
+   LegendFunction -> "Framed",
+   Background -> White,
+   LegendLayout -> "Row"
+ ]
+]
+```
+
+Please visit the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/PointLegend.html) for more details.

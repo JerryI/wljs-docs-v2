@@ -352,7 +352,8 @@ this.ondestroy = () => {
 };
 
 core.Spark = async (args, env) => {
-    const raw = await interpretate(args[0], env);
+    let raw = await interpretate(args[0], env);
+    if (NumericArrayObject.Q(raw)) raw = raw.normal();
     if (!Array.isArray(raw) || raw.length === 0) {
       data = [];
       return;

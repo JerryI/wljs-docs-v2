@@ -14,6 +14,18 @@ Grid[Table[x, {4}, {7}]]
 
 <Callout>Use [Deploy](./Deploy) to make the content uneditable and non-selectable</Callout>
 
+## WLX output
+
+`Grid` also renders in `WLXForm`, the form used by WLX, slide, and Markdown cells. It lays out each inner list as a row:
+
+```wolfram
+Grid[{{"Name", "Value"}, {"A", 10}},
+  Alignment -> {Left, Center}, Spacings -> {1, 0.5},
+  ImageSize -> {Full, Automatic}]
+```
+
+In `WLXForm`, numeric `ImageSize` values become pixels and numeric `Spacings` values become `em` gaps. `Full` sets a dimension to `100%`, while `Automatic` leaves it unset. Option names may be symbols or strings. The WLX renderer supports a single horizontal and vertical alignment setting; the per-cell alignment examples below use `StandardForm`.
+
 
 ## Options
 ### Dividers
@@ -78,3 +90,4 @@ Grid[KroneckerProduct[IdentityMatrix[5], a]] /. {0 -> 0,
 
 ## Supported output forms
 - [StandardForm](../Formatting/StandardForm)
+- [WLXForm](../Formatting/WLXForm)

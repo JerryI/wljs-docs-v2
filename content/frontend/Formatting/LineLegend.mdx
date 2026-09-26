@@ -1,4 +1,17 @@
 ---
 title: LineLegend
 ---
-Similar to [SwatchLegend](../Formatting/SwatchLegend), but renders as lines
+Similar to [SwatchLegend](../Formatting/SwatchLegend), but renders entries as lines.
+
+## Styling options
+Supports `LegendFunction`, `LegendLayout`, `LegendMargins`, `LabelStyle`, `RoundingRadius`, and `Background`. See [SwatchLegend styling options](../Formatting/SwatchLegend#styling-options) for the supported values and examples.
+
+```wolfram
+Plot[{Sin[x], Cos[x]}, {x, 0, 2 Pi},
+ PlotLegends -> LineLegend[Automatic, {"sin(x)", "cos(x)"},
+   LegendFunction -> "Frame",
+   LegendLayout -> "Row",
+   LabelStyle -> Directive[FontSize -> 12]
+ ]
+]
+```

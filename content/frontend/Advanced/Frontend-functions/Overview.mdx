@@ -22,7 +22,9 @@ Create a [JavaScript cell](./../../Cell-types/Javascript), then define a functio
 <div className="code-input"/>
 <wljs-editor lazy="true" type="Input" display="codemirror">{`.js
 core.totalSum = async (args, env) => {
-    const data = await interpretate(args[0], env);
+    let data = await interpretate(args[0], env);
+    //in the case if data is packed
+    if (NumericArrayObject.Q(data)) data = data.normal();
     const sum = data.reduce((p, a) => p + a, 0);
     return sum;
 }
@@ -58,7 +60,8 @@ context.fillStyle = "lightgray";
 context.fillRect(0, 0, 500, 500);
 
 core.drawArray = async (args, env) => {
-    const data = await interpretate(args[0], env);
+    let data = await interpretate(args[0], env);
+    if (NumericArrayObject.Q(data)) data = data.normal();
 
     //draw our boxes
     for(let i=0; i<40; ++i) {

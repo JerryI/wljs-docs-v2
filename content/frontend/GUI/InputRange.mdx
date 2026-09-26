@@ -119,8 +119,23 @@ InputRange[0,1,0.1, "SliderStyle"->"width:50vw; accent-color: red ", "CounterSty
 ```
 
 ### `Appearance`
-By the default is `Automatic`. 
-Possible value: `"FineTuning"` - adds a fine control element to vary the range value $\pm 10\%$.
+The default value is `Automatic`. The following appearances are supported:
+
+- `"FineTuning"` adds a fine control element for varying the range value by $\pm 10\%$.
+- `"Vertical"` displays the slider vertically.
+- `"Number"` hides the slider and displays only the numerical input field.
+
+Create a vertical slider:
+
+```wolfram
+InputRange[0, 1, Appearance -> "Vertical"]
+```
+
+Create a number-only input:
+
+```wolfram
+InputRange[0, 1, Appearance -> "Number"]
+```
 
 ## Chaining events
 One can reuse another event for a new element

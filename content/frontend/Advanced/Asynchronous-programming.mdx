@@ -139,11 +139,11 @@ EventHandler[InputButton["Add cell"], AsyncFunction[Null,
     choice = ChoiceDialogAsync["Create a cell?", "Notebook"->n];
     choice = choice // Await;
     
-    If[choice =!= True, Return[Null, Module]];
+    If[choice =!= True, Return[Null]];
     content = InputStringAsync["Enter the content", "Notebook"->n];
     content = content // Await;    
 
-    If[!StringQ[content], Return[Null, Module]];
+    If[!StringQ[content], Return[Null]];
     NotebookWrite[n, Cell[content, "Input"]];
   ];
 ]]
@@ -227,6 +227,73 @@ Button["p2B", EventFire[p2, Resolve, 5]]
 Button["p3", EventFire[p3, Resolve, 10]]
 ```
 
+### Await-aware control flow
+
+`If`, `Which`, and `Switch` can suspend while evaluating their conditions, selectors, or selected branches. Unselected branches remain unevaluated.
+
+```wolfram
+result = AsyncFunction[Null,
+  Which[
+    ChoiceDialogAsync["Enter the first value?"] // Await,
+      InputStringAsync["First value"] // Await,
+
+    ChoiceDialogAsync["Enter the second value?"] // Await,
+      InputStringAsync["Second value"] // Await,
+
+    True,
+      Return[$Canceled]
+  ]
+][] // WaitAll
+```
+
+An awaited value can also be used as a `Switch` selector:
+
+```wolfram
+AsyncFunction[Null,
+  Switch[ChoiceDialogAsync["Continue?"] // Await,
+    True, "continue",
+    False, "cancelled",
+    _, Return[$Failed]
+  ]
+][] // WaitAll
+```
+
+`Return[value]` and `Return[]` stop the surrounding `AsyncFunction`, even after one or more `Await` expressions. Expressions following the return are not evaluated.
+
+### Async loops
+
+Use `WhileAsync` when the loop condition or body needs to await a promise. It evaluates iterations serially and supports `Break[]`, `Continue[]`, and `Return[value]`.
+
+```wolfram
+AsyncFunction[Null, Module[{attempt = 0, answer},
+  WhileAsync[attempt < 5,
+    attempt++;
+    answer = InputStringAsync["Enter a value or type quit"] // Await;
+
+    If[answer === "", Continue[]];
+    If[answer === "quit", Break[]];
+    If[!StringQ[answer], Return[$Canceled]];
+
+    Echo[answer];
+  ];
+
+  attempt
+]][] // WaitAll
+```
+
+For bounded iteration, use `TableAsync` or `DoAsync`. Their iterator bounds and ranges can be supplied through variables, including variables localized by `Module`:
+
+```wolfram
+Module[{low = 1.0, high = 3.0, step = 0.5},
+  TableAsync[
+    PauseAsync[0.1] // Await;
+    i
+  , {i, low, high, step}]
+] // WaitAll
+```
+
+Native `While`, `For`, `Do`, `Table`, and `Map` are not rewritten to suspend across `Await`; use their async counterparts or assign awaited values before entering native constructs.
+
 ## Async pause
 
 Use [PauseAsync](./../Misc/Async) to introduce delays in async code without blocking the kernel.
@@ -234,6 +301,5 @@ Use [PauseAsync](./../Misc/Async) to introduce delays in async code without bloc
 ## Finding async functions
 
 Check the symbol reference section for functions ending in `*Async`.
-
 
 

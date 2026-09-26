@@ -8,7 +8,7 @@ env:
 Row[{object1, object2, ...}]
 ```
 
-shows the list of any Wolfram Expressions in a row acting as a decoration. It supports many options for content aligment:
+shows a list of Wolfram expressions in a row. It supports alignment and size options:
 
 ```wolfram
 Row[{
@@ -30,11 +30,15 @@ Editor = EditorView["Plot[x, {x,0,1}] -> "];
 ```html title="cell 2"
 .slide
 
-<Row>
+<Row Alignment={{{Left, Right}, Center}} ImageSize={{Full, Automatic}} Spacings={1}>
 	<Editor/>
 	<Figure/>
 </Row>
 ```
+
+In WLX, slide, and Markdown cells, `Row` renders in `WLXForm`. The example gives each item half of the available row width, places the first item on the left and the second on the right, and centers both vertically. `ImageSize -> {Full, Automatic}` makes the row as wide as its container without setting its height.
+
+Option names can be symbols or strings, for example `Alignment -> Center` and `"Alignment" -> Center`.
 
 ## Options
 
@@ -42,13 +46,13 @@ Editor = EditorView["Plot[x, {x,0,1}] -> "];
 Draws dividers between the elements of the row. Use `All` or a list to control individual dividers.
 
 ### `Spacings`
-Sets the spacing between adjacent elements.
+Sets the spacing between adjacent elements. In `WLXForm`, a number produces a CSS gap in `em`; `{horizontal, vertical}` sets the two gaps separately.
 
 ### `Alignment`
-Aligns the elements within the row.
+Aligns the row's contents. Use `{horizontal, vertical}` for both axes. A list of horizontal positions can align individual items: `Alignment -> {{Left, Right}, Center}` places two items at opposite sides and centers them vertically.
 
 ### `ImageSize`
-Specifies the size of the row in pixels.
+Specifies the row size. In `WLXForm`, numbers are pixels, `Full` sets both width and height to `100%`, and a pair sets each dimension separately. `Automatic` leaves that dimension unset, so `ImageSize -> {Automatic, Full}` sets only the height to `100%`.
 
 ### `BaselinePosition`
 Controls the vertical position of the row relative to surrounding content.

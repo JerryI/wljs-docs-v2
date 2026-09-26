@@ -20,6 +20,15 @@ Column[{1, 22, 333}, Dividers -> All]
 
 <Callout>Use [Deploy](./Deploy) to make the content uneditable and non-selectable</Callout>
 
+In WLX, slide, and Markdown cells, `Column` renders in `WLXForm`. For example, this column is centered horizontally, has a vertical gap, and fills the available height:
+
+```wolfram
+Column[{"Title", "Details"}, Alignment -> Center, Spacings -> 1.5,
+  ImageSize -> {Automatic, Full}]
+```
+
+Option names can be symbols or strings, such as `Alignment -> Center` and `"Alignment" -> Center`.
+
 
 ## Options
 
@@ -27,13 +36,13 @@ Column[{1, 22, 333}, Dividers -> All]
 Draws dividers between the elements of the column. Use `All` or a list to control individual dividers.
 
 ### `Spacings`
-Sets the spacing between adjacent elements.
+Sets the spacing between adjacent elements. In `WLXForm`, a number produces a CSS gap in `em`; `{horizontal, vertical}` sets the two gaps separately.
 
 ### `Alignment`
-Aligns the elements within the column.
+Aligns the elements within the column. Use `Left`, `Center`, or `Right` to control horizontal placement; `{horizontal, vertical}` can specify both axes.
 
 ### `ImageSize`
-Specifies the size of the column in pixels.
+Specifies the column size. In `WLXForm`, numbers are pixels, `Full` sets both width and height to `100%`, and a pair sets each dimension separately. `Automatic` leaves that dimension unset, so `ImageSize -> {Automatic, Full}` sets only the height to `100%`.
 
 ### `BaselinePosition`
 Controls the vertical position of the column relative to surrounding content.

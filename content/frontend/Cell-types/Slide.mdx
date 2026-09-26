@@ -174,7 +174,36 @@ Scrollable slide
 </WLJSWrapper>
 
 ### Rows
-Use plain HTML and plain CSS (or our predefined classes) to create rows and columns:
+Slide cells render embedded Wolfram expressions in `WLXForm` by default. Use [Row](./../Formatting/Row), [Column](./../Formatting/Column), or [Grid](./../Formatting/Grid) to arrange slide content with `Alignment`, `Spacings`, and `ImageSize` options. For example, define a plot in an input cell:
+
+<WLJSWrapper>
+<div className="code-input"/>
+<wljs-editor lazy="true" type="Input" display="codemirror">{`SlidePlot = Plot[x, {x, 0, 1}];`}</wljs-editor>
+</WLJSWrapper>
+
+Then place it beside text in a slide cell:
+
+<WLJSWrapper>
+<div className="code-input"/>
+<wljs-editor lazy="true" type="Input" display="codemirror">{`.slide
+
+## My Title
+
+<Row Alignment={{{Left, Right}, Center}} ImageSize={{Full, Automatic}} Spacings={1}>
+  <div>
+
+- Point 1
+- Point 2
+
+  </div>
+  <SlidePlot/>
+</Row>
+`}</wljs-editor>
+</WLJSWrapper>
+
+The first item stays on the left, the plot stays on the right, and both are centered vertically. `ImageSize -> {Full, Automatic}` fills the slide's available width without setting the row height. Numeric spacings use `em` in `WLXForm`; numeric image sizes use pixels. Option names may also be written as strings, such as `"Alignment"`.
+
+You can also use plain HTML and CSS for custom layouts:
 
 <WLJSWrapper>
 <div className="code-input"/>

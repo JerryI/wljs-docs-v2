@@ -9,6 +9,57 @@ SwatchLegend[colors_List, labels_List]
 
 where `labels` can be any Wolfram Expression
 
+## Styling options
+The following options are also supported by [`LineLegend`](../Formatting/LineLegend) and [`PointLegend`](../Formatting/PointLegend).
+
+### `LegendFunction`
+Wraps the legend in one of the supported named containers:
+
+- `"Panel"`
+- `"Frame"` or `"Framed"`
+- `"DarkFrame"`
+- `"Frameless"`
+
+Only these named functions are currently supported.
+
+```wolfram
+Plot[{x, 2x}, {x, 0, 1},
+ PlotLegends -> SwatchLegend[Automatic, {"x", "2x"},
+   LegendFunction -> "Panel"
+ ]
+]
+```
+
+### `LegendLayout`
+Controls the direction and ordering of legend entries. Supported values are `"Row"`, `"Column"`, `"ReversedRow"`, and `"ReversedColumn"`.
+
+```wolfram
+Plot[{x, 2x}, {x, 0, 1},
+ PlotLegends -> SwatchLegend[Automatic, {"x", "2x"},
+   LegendFunction -> "Frame",
+   Background -> White,
+   LegendLayout -> "Row"
+ ]
+]
+```
+
+### `LegendMargins`
+Sets the padding inside the legend container. Use either one margin for every side or specify horizontal and vertical margins separately:
+
+```wolfram
+LegendMargins -> margin
+LegendMargins -> {{left, right}, {top, bottom}}
+```
+
+### `LabelStyle`
+Styles legend labels. Colors, `FontFamily`, and `FontSize` are supported.
+
+### `RoundingRadius`
+Sets the corner radius of the legend container.
+
+### `Background`
+Sets the background of the legend container.
+
 ## Examples
 ### Manual
 Define firstly
@@ -30,3 +81,19 @@ Let it determine colors or expressions automatically
 Plot[{Sin[x], Cos[x]}, {x, 0, 5}, PlotLegends -> SwatchLegend["Expressions"]]
 ```
 
+### Combining styles
+
+```wolfram
+Plot[{x, 2x}, {x, 0, 1},
+ PlotLegends -> Placed[
+  SwatchLegend[Automatic, {"x", "2x"},
+   LegendFunction -> "DarkFrame",
+   RoundingRadius -> 0,
+   Background -> White,
+   LabelStyle -> Directive[FontSize -> 12],
+   LegendMargins -> {{5, 9}, {5, 5}}
+  ],
+  {0.45, 0.5}
+ ]
+]
+```

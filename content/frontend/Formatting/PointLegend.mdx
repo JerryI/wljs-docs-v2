@@ -1,4 +1,17 @@
 ---
 title: PointLegend
 ---
-Similar to [SwatchLegend](../Formatting/SwatchLegend), but renders as points
+Similar to [SwatchLegend](../Formatting/SwatchLegend), but renders entries as points.
+
+## Styling options
+Supports `LegendFunction`, `LegendLayout`, `LegendMargins`, `LabelStyle`, `RoundingRadius`, and `Background`. See [SwatchLegend styling options](../Formatting/SwatchLegend#styling-options) for the supported values and examples.
+
+```wolfram
+ListPlot[{{1, 4, 2}, {2, 3, 5}},
+ PlotLegends -> PointLegend[Automatic, {"Series 1", "Series 2"},
+   LegendFunction -> "Framed",
+   Background -> White,
+   LegendLayout -> "Row"
+ ]
+]
+```

@@ -25,6 +25,45 @@ An inline CSS style string applied to the button element
 ### `"Topic"`
 The default topic/pattern is `"Default"`. Specifies an event-pattern used on emitting (see more on [`EventFire`](../Misc/Events) patterns topics)
 
+### `"StateExpression"`
+Controls the button state using an expression evaluated on the frontend. This is useful for showing that an action is running or for disabling the button based on external state.
+
+The expression can evaluate to:
+
+- `"Disabled"`, `"Off"`, or `False` to prevent button actions.
+- `"Enabled"`, `"On"`, or `True` to enable normal behavior.
+- `"Busy"` or `"Progress"` to prevent button actions and show a spinner.
+
+Bind the state to an external symbol:
+
+```wolfram
+state = True;
+InputButton["Run", "StateExpression" -> Offload[state]]
+```
+
+The button becomes disabled after evaluating:
+
+```wolfram
+state = False;
+```
+
+`"StateExpression"` can also derive the state from another frontend expression:
+
+```wolfram
+stateText = "Running";
+TextView[stateText // Offload]
+InputButton[
+ "Run",
+ "StateExpression" -> Offload[stateText =!= "Running"]
+]
+```
+
+Whenever `stateText` changes, the button state is recomputed.
+
+<Callout type="note">
+Not every Wolfram Language expression can be evaluated on the frontend. The frontend interpreter supports a limited set of basic symbols.
+</Callout>
+
 ## Application
 A basic GUI element
 
