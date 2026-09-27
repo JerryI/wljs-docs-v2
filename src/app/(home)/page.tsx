@@ -337,15 +337,7 @@ export default function HomePage() {
       </div>
 
       <main className="relative w-full min-w-0 max-w-7xl mx-auto py-12 sm:py-24 px-4 sm:px-6 lg:px-8">
-      <div className="flex flex-col items-center justify-center text-center mb-16">
-        <div className="inline-flex items-center gap-2 rounded-full border border-fd-border bg-fd-secondary/50 px-4 py-1.5 text-sm mb-6 backdrop-blur-sm">
-          <span className="relative flex h-2 w-2">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-            <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
-          </span>
-          Open-source notebook frontend
-        </div>
-        
+      <div className="flex flex-col items-center justify-center text-center mb-16">        
         <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-br from-fd-foreground via-fd-foreground to-fd-foreground/70 bg-clip-text text-transparent">
           WLJS Notebook
         </h1>
