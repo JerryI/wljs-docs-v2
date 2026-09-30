@@ -31,6 +31,10 @@ Plot[x, {x,0,1}, Epilog->{
 }]
 ```
 
+<Callout type="tip">
+    If the equation appears to be cropped by the container, please, set explicitly `ImageSize->{width, height}` as an option to `TeXView` and `AlignmentPoint` to `{Left, Top}` for easier placement.     
+</Callout>
+
 <Callout type="warning">
 `TeXForm` is a blocking function, avoid using it inside `Button`-like, `Manipulate`, timers, async functions. Use non-blocking variant [TexFormAsync](./../Formatting/TeXFormAsync).
 </Callout>
