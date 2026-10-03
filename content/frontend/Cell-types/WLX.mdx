@@ -299,6 +299,28 @@ With[{
 `}</wljs-editor>
 </WLJSWrapper>
 
+### Generate a table from data
+
+Generate `<tr>` and `<td>` elements with nested `Table` expressions. For example, after evaluating `data = Table[RandomWord[], {4}, {4}];` in an input cell, use:
+
+<WLJSWrapper>
+<div className="code-input"/>
+<wljs-editor type="Input" display="codemirror" lazy="true">{`.wlx
+
+With[{TableBody = Table[
+	With[{Row = Table[
+		<td class="px-3 py-2"><Item/></td>,
+		{Item, Rows}
+	]},
+		<tr class="bg-white border-b"><Row/></tr>
+	],
+	{Rows, data}
+]},
+	<table class="table-auto"><TableBody/></table>
+]
+`}</wljs-editor>
+</WLJSWrapper>
+
 <Callout type="warning">Putting a plain text separated by multiple linebreaks counts as a single argument. Wrap each line with `<span>` or `<p>` or `<Identity>` if you want them to be separable</Callout>
 
 

@@ -184,9 +184,30 @@ function SearchResults() {
       )}
 
       {!isLoading && queryParam && results.length === 0 && (
-        <p className="py-12 text-center text-fd-muted-foreground">
-          No results found for &ldquo;{queryParam}&rdquo;
-        </p>
+        <div className="py-12 text-center">
+          <p className="text-fd-muted-foreground">
+            No results found for &ldquo;{queryParam}&rdquo;
+          </p>
+          <p className="mt-3 text-sm text-fd-muted-foreground">
+            Try the{' '}
+            <Link
+              href="/frontend/Troubleshooting"
+              className="text-fd-primary underline underline-offset-4"
+            >
+              Help &amp; FAQ
+            </Link>{' '}
+            or ask in{' '}
+            <a
+              href="https://github.com/WLJSTeam/wljs-notebook/discussions"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-fd-primary underline underline-offset-4"
+            >
+              GitHub Discussions
+            </a>
+            .
+          </p>
+        </div>
       )}
 
       {!isLoading && results.length > 0 && (

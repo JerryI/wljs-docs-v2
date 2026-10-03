@@ -17,17 +17,10 @@ Export["data.csv", {{1, 2}, {3, 4}}]
 Export an image:
 
 ```wolfram
-Export["plot.png", Plot[Sin[x], {x, 0, 2 Pi}]]
+Export["plot.png", RandomImage[]]
 ```
 
-### Export as PDF
-Use `.pdf` extension to convert an expression to PDF
 
-```wolfram
-Export["expr.pdf", Plot[x, {x,0,1}]]
-```
-
-<Callout type="warning">This feature requires running WLJS as a desktop application. PDF export is a __blocking function__, avoid using it with buttons or async events - use [ExportAsync](./ExportAsync) instead</Callout>
 
 import { Accordion, Accordions } from 'fumadocs-ui/components/accordion';
 
@@ -46,6 +39,30 @@ Evaluate `$ExportFormats`:
 </Accordion>
 
 </Accordions>
+
+
+### Frontend-rendered output
+
+Labels, legends, insets, LaTeX, and other frontend elements can finish rendering asynchronously. If PDF `Export` captures the expression before every element is ready, use the `"ExposureTime"` option to wait before capture:
+
+```wolfram
+Export["plot.pdf", expression, "ExposureTime" -> 6]
+```
+
+`"ExposureTime"` is measured in seconds. Increase it only as much as needed for the complete expression to appear.
+
+<Callout type="warning">
+PDF `Export` requires the WLJS Notebook Desktop application and is not available in server mode. The same limitation and `"ExposureTime"` option apply to [`Rasterize`](./../Image/Rasterize).
+</Callout>
+
+### Export as PDF
+Use `.pdf` extension to convert an expression to PDF
+
+```wolfram
+Export["expr.pdf", Plot[x, {x,0,1}]]
+```
+
+<Callout type="warning">PDF export is a blocking function. Avoid using it with buttons or asynchronous events; use [ExportAsync](./ExportAsync) instead.</Callout>
 
 
 Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.

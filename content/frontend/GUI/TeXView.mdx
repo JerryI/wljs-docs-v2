@@ -32,7 +32,7 @@ Plot[x, {x,0,1}, Epilog->{
 ```
 
 <Callout type="tip">
-    If the equation appears to be cropped by the container, please, set explicitly `ImageSize->{width, height}` as an option to `TeXView` and `AlignmentPoint` to `{Left, Top}` for easier placement.     
+If the equation is cropped by the container, explicitly set `ImageSize -> {width, height}` on `TeXView`. Use `AlignmentPoint -> {Left, Top}` when top-left alignment makes the label easier to place.
 </Callout>
 
 <Callout type="warning">
@@ -42,10 +42,14 @@ Plot[x, {x,0,1}, Epilog->{
 ## Options
 
 ### `ImageSize`
-Predefines the container size for the expression
+Defines the container size for the expression. For example:
 
-### `Aligment` or `AlignmentPoint`
-Sets the aligment of the content inside the contaner defined by `ImageSize`. Possible values:
+```wolfram
+TeXView["g_{11}(\\mathcal{C}_1)", ImageSize -> {100, 50}]
+```
+
+### `Alignment` or `AlignmentPoint`
+Sets the alignment of the content inside the container defined by `ImageSize`. Possible values include:
 - `Center`
 - `{Center, Center}`
 - `{Left, Top}`
@@ -75,4 +79,3 @@ Button["Generate", Then[TeXFormAsync[Series[Sin[x] Cos[x], {x, 0, RandomInteger[
 ## Output forms
 - [StandardForm](./../Formatting/StandardForm)
 - [WLXForm](./../Formatting/WLXForm)
-
