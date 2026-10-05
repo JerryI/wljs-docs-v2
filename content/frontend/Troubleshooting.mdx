@@ -56,6 +56,13 @@ Run WLJS on the remote machine, then forward its HTTP and WebSocket ports throug
 
 Yes. Run the Docker image or start WLJS from source, then connect to its web interface in a browser. See [running WLJS on a server](./setup#running-on-a-server) for deployment, port-forwarding, and desktop-only feature limitations.
 
+### Can I use FEM (Finite Element Method or Package)?
+
+*fem.*
+
+Sure! This documentation is not included here, please, refer to official [FEM package page](https://www.wolfram.com/language/core-areas/fem/)
+
+
 ### How do I update WLJS Notebook software?
 
 The desktop application updates automatically on Windows and macOS. On GNU/Linux, download and install the current package from the [release page](https://github.com/WLJSTeam/wljs-notebook/releases).
@@ -82,7 +89,7 @@ Yes. The `.wln` format is designed to be readable by people, version control, an
 
 ### How do I use or connect an AI agent, Codex, or another LLM to WLJS?
 
-*AI agent, Codex, LLM support.*
+*AI agent, vibecoding, Codex, ollama, llama, LLM support.*
 
 WLJS Desktop provides an MCP server. Connect your agent by following the [MCP server guide](./Guides/Command-palette#mcp-server); it can inspect notebooks, cells, and symbols, edit cell lines, and evaluate code in the kernel. In the agent prompt, explicitly say `use wljs mcp tools`.
 
