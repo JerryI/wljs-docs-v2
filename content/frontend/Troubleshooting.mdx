@@ -25,7 +25,7 @@ wolframscript -activate
 
 Then start WLJS Notebook again. If activation succeeds but WLJS still cannot start, collect a debug log as described in [How do I collect logs?](#how-do-i-collect-logs).
 
-### Why do I see a license error or a kernel timeout?
+### Why do I see a license error, kernel timeout, or kernel initialization timeout?
 
 The launcher can display a license error for several startup failures, not only an invalid license. First:
 
@@ -40,9 +40,25 @@ WLJS normally uses two kernel processes, which is the maximum permitted by the f
 
 The desktop application's installation location is controlled by the platform installer. If you need full control over the location, you can [run WLJS from source](./setup#running-from-source) from another drive. A source installation does not provide every desktop integration, such as file associations and some native dialogs.
 
-### Does WLJS require a permanent internet connection?
+### Do I need internet or a permanent connection for WLJS?
 
 No. WLJS itself works offline. Wolfram Engine may require internet access for initial activation, periodic license validation, or account-related operations. See [installation and connectivity](./setup#install-in-two-steps).
+
+### How do I use WLJS with SSH?
+
+*SSH, SSH port forwarding.*
+
+Run WLJS on the remote machine, then forward its HTTP and WebSocket ports through SSH. WLJS uses ports `20560`, `20559`, and `20563`; the [SSH tunneling guide](./setup#tunneling-through-ssh) includes a complete command.
+
+### Can I use WLJS in a browser or run it as a server?
+
+*browser usage, WLJS server.*
+
+Yes. Run the Docker image or start WLJS from source, then connect to its web interface in a browser. See [running WLJS on a server](./setup#running-on-a-server) for deployment, port-forwarding, and desktop-only feature limitations.
+
+### How do I update WLJS Notebook software?
+
+The desktop application updates automatically on Windows and macOS. On GNU/Linux, download and install the current package from the [release page](https://github.com/WLJSTeam/wljs-notebook/releases).
 
 ## Notebooks and evaluation
 
@@ -52,7 +68,9 @@ Use the **Evaluate all** action from the notebook menu. <kbd>Alt-I</kbd> or <kbd
 
 To make a cell run when the notebook starts, open the cell-group menu and choose **Make initialization cell**. See [cell group properties](./Overview#cell-group-properties).
 
-### Can WLJS open Mathematica `.nb` files?
+### Can WLJS open Mathematica `.nb` files, including on Linux?
+
+*start `.nb` in Linux.*
 
 Yes. Open a `.nb` file with WLJS Notebook and it will be converted to the plain-text `.wln` format. Import is still experimental: complex text formatting, `DynamicModule`, some graphics styling, and embedded media may not convert exactly. See [Mathematica notebook import and export](./Share/Mathematica).
 
@@ -61,6 +79,56 @@ Wolfram Language package files such as `.wl` and `.m` can be loaded with `Get` a
 ### Can I edit a notebook with VS Code, Codex, or another coding assistant?
 
 Yes. The `.wln` format is designed to be readable by people, version control, and LLM tools. Changes made by an external editor are automatically hot-reloaded. WLJS also provides an [MCP server and command-line tools](./Guides/Command-palette#mcp-server) for inspecting, editing, and evaluating notebook cells.
+
+### How do I use or connect an AI agent, Codex, or another LLM to WLJS?
+
+*AI agent, Codex, LLM support.*
+
+WLJS Desktop provides an MCP server. Connect your agent by following the [MCP server guide](./Guides/Command-palette#mcp-server); it can inspect notebooks, cells, and symbols, edit cell lines, and evaluate code in the kernel. In the agent prompt, explicitly say `use wljs mcp tools`.
+
+### Why do symbol docs seem incomplete or differ from Wolfram documentation?
+
+WLJS documentation describes the WLJS implementation; it is written for this project rather than copied from Wolfram Research documentation. Some symbols behave differently in the WLJS frontend, while other kernel-level symbols may work without a dedicated WLJS page. Consult the [migration guide](./Guides/Migration#wolfram-language-compatibility) and the official Wolfram Language documentation for missing reference material.
+
+### Does WLJS use Mathematica (MMA) or Wolfram Engine?
+
+*MMA vs WLJS.*
+
+WLJS uses a Wolfram Kernel. It works with Wolfram Engine, which is also distributed separately as a free developer product, or with a kernel installed by Mathematica. Evaluate `$Version` to check the kernel version in use. See [installation](./setup).
+
+### What is a `.wln` file?
+
+`.wln` is WLJS Notebook’s native plain-text notebook format. It is readable in a text editor, works well with version control, and can be edited by coding assistants. See [notebook files in the migration guide](./Guides/Migration#notebook-files).
+
+### Can I import a Jupyter `.ipynb` notebook?
+
+No. Jupyter notebook import is not currently supported. If it is important to your workflow, please open a [feature request](https://github.com/WLJSTeam/wljs-notebook/issues).
+
+### How do I run Python from WLJS?
+
+Yes. Use Wolfram Language `ExternalEvaluate` to run Python and return its result, for example `ExternalEvaluate["Python", "1 + 1"]`. See [using Python from notebook code](./Advanced/Notebook-Operations#cells-as-data-storage).
+
+### Is Wolfram|Alpha available for natural-language input?
+
+*Wolfram Alpha, natural language input.*
+
+Use `SemanticInterpretation["..."]`, or select text and press <kbd>Ctrl-=</kbd> to use semantic input. See [`SemanticInterpretation`](./String-Processing/SemanticInterpretation) for examples.
+
+### How do I access evaluation history or an earlier result?
+
+*evaluation history, previous result.*
+
+WLJS keeps the previous output. Use `%` or `Out[]` to retrieve the latest result; it does not keep a full numbered output history.
+
+### How does autocomplete work for my symbols and package definitions?
+
+Built-in symbols appear first, and symbols you define are added to completion. To rescan definitions after `Get` or `Needs`, enable **Rescan on Get or Needs** in the editor settings. It is disabled by default to reduce startup time.
+
+### How can I use `EvaluationMonitor` or monitor a long-running evaluation?
+
+*evaluationmonitor.*
+
+Wrap the evaluation with `Monitor[expr, status]` to show a temporary, continuously updated monitor cell. You can also use the debugger from the top menu or command palette. See [`Monitor`](./GUI/Monitor).
 
 ### Can I draw a matrix in a Markdown cell?
 
@@ -75,6 +143,10 @@ $$
 ```
 
 In Markdown cells, escape LaTeX backslashes as shown. See [LaTeX in Markdown cells](./Cell-types/Markdown#latex) for inline equations, block equations, and other supported syntax.
+
+### How do I write text in a notebook?
+
+Start an input cell with `.md`, then write Markdown on the following lines. You can hide the input through the cell-group menu or the arrow beside the output cell. See [Markdown cells](./Cell-types/Markdown).
 
 ### How can I generate an HTML table from data?
 
@@ -100,7 +172,19 @@ For raw HTML, use the same nested `Table` expressions through WSP templates. See
 
 ### Is there a command palette?
 
+*palette, command palette.*
+
 Yes. Press <kbd>Ctrl-P</kbd> on Windows or Linux, or <kbd>⌘-P</kbd> on macOS. You can also click the title bar that displays the notebook name or path. See [Notebook Tools](./Guides/Command-palette) for the available commands.
+
+### Can I start and use WLJS from the terminal?
+
+Yes. The WLJS Desktop application includes the `wljs` CLI, which can open notebooks and folders, evaluate code, inspect and edit notebooks, and access documentation. For example, run `wljs .` to open the current folder. See the [CLI reference](./Guides/Command-palette#cli).
+
+To run WLJS as a headless server, use Docker or clone the repository and follow [the server setup guide](./setup#running-on-a-server).
+
+### Where can I find all keyboard shortcuts and hotkeys?
+
+See [Math typesetting and shortcuts](./Overview#math-typesetting-and-shortcuts) for editing, evaluation, notebook, command-palette, and special-character shortcuts.
 
 ## Graphics and formatting
 
@@ -153,6 +237,50 @@ Plot[x^2-1, {x,0,10}, Epilog->{
 
 If the label also needs to be positioned within that box, use `AlignmentPoint`, for example `AlignmentPoint -> {Left, Top}`. See [`TeXView`](./GUI/TeXView#options) for the available values.
 
+### Can I resize an output cell?
+
+*resize output cell.*
+
+Output cells do not have a manual resize handle. Wrap a large expression in `Pane` to give it a fixed viewport with scrolling, for example:
+
+```wolfram
+Pane[1000!, ImageSize -> 300]
+```
+
+See [`Pane`](./Formatting/Pane) for size options.
+
+### How do I disable figure zooming and panning?
+
+*disable figure zoom in and out.*
+
+For a `Graphics` expression, set `"Controls" -> False`. For plotting functions that return `Graphics`, insert the option into the generated expression:
+
+```wolfram
+Insert[Plot[x, {x, 0, 1}], "Controls" -> False, {2, -1}]
+```
+
+See [`Graphics`](./Graphics/Graphics) for interactive graphic controls.
+
+### How do I change the notebook font?
+
+Add custom CSS through **Settings → Custom CSS**. The [application styles guide](./Guides/Command-palette#application-styles) documents selectors for the UI, code editor, and Markdown cells, including font-family examples.
+
+### How do I change the notebook font size or zoom level?
+
+Use <kbd>Ctrl-+</kbd>/<kbd>Ctrl--</kbd> on Windows or Linux, or <kbd>⌘-+</kbd>/<kbd>⌘--</kbd> on macOS. The top-bar **Zoom in** and **Zoom out** actions provide the same global UI scaling.
+
+### How do I switch between light and dark mode?
+
+Open **Settings** and choose the light/dark mode setting. See [Settings](./Guides/Command-palette#settings).
+
+### How do I enter Greek variables or other special characters?
+
+Press <kbd>Esc</kbd>, type the first letter, and choose a symbol from the completion menu. Alternatively, open the command palette with <kbd>Ctrl-P</kbd> or <kbd>⌘-P</kbd> and select **Special characters**. See [keyboard shortcuts](./Overview#math-typesetting-and-shortcuts).
+
+### Is there LaTeX support?
+
+Yes. Use LaTeX equations in a [Markdown cell](./Cell-types/Markdown#latex), use `TeXView` inside Wolfram Language output, or start a dedicated LaTeX cell with `.latex`. See [LaTeX cells](./Cell-types/Misc#latex).
+
 ### Why are labels, legends, or insets missing after `Rasterize` or PDF export?
 
 Labels, legends, insets, and other frontend elements may render asynchronously. If `Rasterize` or PDF `Export` captures the expression before every element is ready, increase the capture delay with `"ExposureTime"`:
@@ -182,6 +310,16 @@ Read [HTML File](./Share/Standalone-HTML#interactive-export-option) for automati
 ### Can someone view an exported notebook without installing WLJS?
 
 Yes. A [standalone HTML notebook](./Share/Standalone-HTML) opens in a normal browser and can include plots, media, stored state, and supported interactive elements. No WLJS installation is required for the reader.
+
+### How can I export or share a notebook?
+
+Use the **Share** or **Print** actions in the top menu, or choose the corresponding command-palette action. WLJS supports [standalone HTML](./Share/Standalone-HTML) and [Markdown-based](./Share/Markdown) exports, and can export or import [Mathematica `.nb` files](./Share/Mathematica).
+
+### Does WLJS support collaboration or a multi-user environment?
+
+*collaboration, multi-user environment.*
+
+WLJS can run on a server, where multiple users can open and evaluate notebooks in a browser with a shared kernel. Two connections cannot edit the same notebook at once: opening it for another user disconnects the existing connection. This is not a simultaneous-editing or real-time collaboration feature. See [running WLJS on a server](./setup#running-on-a-server).
 
 ## Cache and diagnostics
 

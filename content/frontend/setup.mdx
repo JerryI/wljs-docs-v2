@@ -166,6 +166,10 @@ Make sure `tmp` and the entire `wljs` directory are writable.
 
 Then open `http://127.0.0.1:8000`, or forward port `8000` to your local machine before opening it.
 
+### Multiple browser users
+
+Multiple users can open and evaluate notebooks on the same server using its shared kernel. A single notebook supports only one active browser connection: opening that notebook for another user disconnects the existing user. WLJS does not provide simultaneous editing of the same notebook.
+
 <Callout type="warning">
 Some features require the WLJS desktop app:
 - `Export[_, _, "PDF"]` - export to PDF
