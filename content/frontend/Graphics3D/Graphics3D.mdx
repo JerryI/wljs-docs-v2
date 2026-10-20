@@ -62,7 +62,7 @@ Draws a wireframe box around the objects in the scene. Default is `False`.
 Sets the 3D aspect ratio of the whole scene. By the default [Graphics3D](../Graphics3D/Graphics3D) does not rescale the scene. It accepts `{sx_Real, sy_Real, sz_Real}`, where `sx` are real positive numbers.
 
 ### `"SleepAfter"`
-Stops rendering after N milliseconds (`1000` by the default). The rendering process can be wake up by any changes in camera or scene objects.
+Stops rendering after the specified number of milliseconds. The default is `1000`, which limits GPU load. Changes to the camera or scene wake the renderer again.
 
 ### `"Renderer"`
 Sets the rendering engine
@@ -101,6 +101,29 @@ The default is `1`
 
 ### `"EnvironmentIntensity"`
 The artificial ambient lighting intensity. The default is `1`
+
+### Exporting a path-traced image
+
+Path tracing improves progressively as the renderer accumulates samples. Increase `"SleepAfter"` when the default one-second rendering interval is too short, then delay the capture by the same amount with `"ExposureTime"`.
+
+The two options use different units: `"SleepAfter"` is measured in milliseconds, while `"ExposureTime"` is measured in seconds. This example allows two minutes for rendering:
+
+```wolfram
+scene = Graphics3D[{Gray, Cuboid[], Red, Sphere[{0, 0, 2}]},
+  "Renderer" -> "PathTracing",
+  "SleepAfter" -> 2 60 1000
+];
+
+image = Rasterize[scene, "ExposureTime" -> 2 60]
+```
+
+For a PDF capture, use:
+
+```wolfram
+Export["image.pdf", scene, "ExposureTime" -> 2 60]
+```
+
+Use the shortest duration that produces the required quality because path tracing places a high load on the GPU. See [`Rasterize`](../Image/Rasterize) and [frontend-rendered PDF export](../File-Operations/Export#frontend-rendered-output) for capture details and Desktop application restrictions.
 
 ## Mathematica's native renderer
 Using [MMAView](../GUI/MMAView), you can bypass the WLJS pipeline and directly render an expression as it would appear in Wolfram Mathematica **keeping interactivity intact for 3D plots**

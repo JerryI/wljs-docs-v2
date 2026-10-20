@@ -306,6 +306,33 @@ The value is a delay in seconds. Use the shortest delay that consistently captur
 
 See [exporting frontend-rendered output](./File-Operations/Export#frontend-rendered-output) and [`Rasterize`](./Image/Rasterize).
 
+### How do I render and export a path-traced 3D image?
+
+Select the path-tracing renderer and give it enough time to accumulate samples before it stops. For a two-minute render, set `"SleepAfter"` in milliseconds and match it with an `"ExposureTime"` in seconds:
+
+```wolfram
+scene = Graphics3D[{Gray, Cuboid[], Red, Sphere[{0, 0, 2}]},
+  "Renderer" -> "PathTracing",
+  "SleepAfter" -> 2 60 1000
+];
+
+image = Rasterize[scene, "ExposureTime" -> 2 60]
+```
+
+To capture a composition as PDF instead, use the same exposure time:
+
+```wolfram
+Export["image.pdf", scene, "ExposureTime" -> 2 60]
+```
+
+WLJS stops continuous rendering after a short interval by default to reduce GPU load. `"SleepAfter"` controls that interval, while `"ExposureTime"` controls when `Rasterize` or PDF `Export` captures the result.
+
+<Callout type="warning">
+`Rasterize` and PDF `Export` require the WLJS Notebook Desktop application. They are not available in server mode.
+</Callout>
+
+See [`Graphics3D` path tracing](./Graphics3D/Graphics3D#exporting-a-path-traced-image), [`Rasterize`](./Image/Rasterize), and [PDF `Export`](./File-Operations/Export#frontend-rendered-output).
+
 ## Sharing and interactive exports
 
 ### Why is my `Manipulate` static in an exported HTML file?
