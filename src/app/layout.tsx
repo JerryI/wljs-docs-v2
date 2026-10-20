@@ -6,11 +6,16 @@ import GoatCounter from '@/components/goatcounter';
 
 import Script from 'next/script';
 
+import WLJSBootstrap from 'public/bootstrap/src/common/loader.jsx'
+
 const inter = Inter({
   subsets: ['latin'],
 });
 
 import type { Metadata } from 'next';
+
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
+const wljsBaseHref = `${basePath}/bootstrap/src/`;
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://wljs.io'),
@@ -64,13 +69,12 @@ export default function Layout({ children }: LayoutProps<'/'>) {
         <RootProvider search={{
         SearchDialog,
       }}>{children}</RootProvider>
-        
-        <Script
-          id="wljs-component"
-          strategy="afterInteractive"
-          src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/vendor/wljs/app.tw.js`}
-        />
 
+        <Script id="wljs-bootstrap-config" strategy="beforeInteractive">
+          {`globalThis.WLJS_BASE_HREF = ${JSON.stringify(wljsBaseHref)};globalThis.WLJS_BASE_TW=true;`}
+        </Script>
+
+        <WLJSBootstrap webComponentsCSS={'web-components.tw.css'} BASE={wljsBaseHref}/>
         <GoatCounter />
       </body>
     </html>

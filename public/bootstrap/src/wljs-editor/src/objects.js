@@ -1,0 +1,300 @@
+window.ObjectHashMap = {}
+//storage for the frontend objects / executables
+let garbageCollector = true;
+
+window.ObjectStorage = class {
+    refs = {}
+    uid = ''
+    cached = false
+    cache = []
+    doNotCollect = false
+  
+    garbageCollect() {
+      console.warn('garbage collector started...');
+      let toBeRemoved = true;
+      const refs = this.refs;
+      Object.keys(refs).forEach((key) => {
+        if (refs[key].dead) {
+          delete refs[key];
+        } else {
+          toBeRemoved = false;
+        }
+      });
+
+      if (toBeRemoved && !this.doNotCollect && garbageCollector) {
+        console.warn('No active refs. Removing...');
+        delete ObjectHashMap[this.uid];
+        this.cached = false;
+        delete this.cache;
+        delete this.refs;
+      }
+    }         
+  
+    constructor(uid) {
+      this.uid = uid;
+      ObjectHashMap[uid] = this;
+      //check garbage
+      //renewGarbageTimer();
+    }           
+  
+    //assign an instance of FrontEndExecutable to it
+    assign(obj) {
+      this.refs[obj.instance] = obj;
+    }         
+  
+    //remove a reference to the instance of FrontEndExecutable
+    dropref(obj) {
+      console.log('dropped ref: ' + obj.instance);
+      delete this.refs[obj.instance];
+    }         
+  
+    //update the data in the storage and go over all assigned objects
+    update(newdata) {
+      this.cache = newdata;
+      Object.keys(this.refs).forEach((ref)=>{
+        //console.log('Updating... ' + this.refs[ref].uid);
+        this.refs[ref].update();
+      });
+    }         
+  
+    //just get the object (if not in the client -> ask for it and wait)
+    get() {
+      if (this.cached) return this.cache;
+      const self = this;
+      //throw('Object not found!');
+
+      let target = server;
+
+      const promise = new Deferred();
+      console.log(target);
+      getObject(target, self.uid).then((result) => {
+        self.cache = result;
+        self.cached = true;
+        //console.log('resolved');
+        //console.log(self.cache);
+        promise.resolve(self.cache);
+      }, (rejected) => {
+        console.warn('Rejected! Trying evaluation server instance');
+        target = server.kernel;
+        
+        if (typeof target != 'object') {
+          console.error('Object not found on both Frontend & Evaluation Kernel: '+self.uid);
+          console.warn(rejected);
+          promise.reject('Object not found');
+          return;
+        }
+        
+        getObject(target, self.uid).then((result) => {
+            self.cache = result;
+            self.cached = true;
+            //console.log('resolved');
+            //console.log(self.cache);
+            promise.resolve(self.cache);
+        }, (rejected) => {
+            console.error('Did not manage to get frontend object '+self.uid);
+            console.warn(rejected);
+            promise.reject('Object not found');
+        });
+      })
+
+      return promise.promise;
+    }
+}
+
+
+
+//firstly ask server.kernel.ask()
+//if not an object or return $Failed, ask server.ask()
+
+core['CoffeeLiqueur`Extensions`FrontendObject`Internal`Compressed'] = async (args, env) => {
+  let string = args[0].slice(1,-1);
+  string = await interpretate.unzlib64String(string);
+
+  return await interpretate(JSON.parse(string), env);
+}
+
+//Extend Server Class
+function getObject(server, id) {
+    //console.log(server);
+    return server.io.fetch('CoffeeLiqueur`Extensions`FrontendObject`Internal`GetObject', [id]); 
+}
+
+//legacy polyfill (do not remove!)
+core.FrontEndVirtual = async (args, env) => {
+  const copy = {...env};
+  const store = args[0];
+  const instance = new ExecutableObject('fevirtual-'+uuidv4(), copy, store);
+  instance.assignScope(copy);
+  return await instance.execute();
+}
+
+
+//element will be provided in 
+core.FrontEndExecutable = async (args, env) => {
+    console.log('executable object');
+    const uid = await interpretate(args[0], env);
+
+    let obj;
+    console.log('check cache');
+    if (ObjectHashMap[uid]) {
+        obj = ObjectHashMap[uid];
+    } else {
+        obj = new ObjectStorage(uid);
+    }
+    //console.log(obj);
+
+    const copy = {...env};
+    let store;
+    try {
+      if (env.element) {
+        let loadingMessage = false;
+        const timer = setTimeout(() => {
+          if (!env.element) return;
+          loadingMessage = true;
+          env.element.classList.add('floading');
+        }, 450);
+
+        store = await obj.get();
+        clearTimeout(timer);
+        if (loadingMessage) env.element.classList.remove('floading');
+      } else {
+        store = await obj.get();
+      }
+
+      
+    } catch (err) {
+      console.error(err);
+      if (env.element) {
+        env.element.innerText = err;
+        env.element.style.color = "rgb(255, 85, 85)";
+        env.element.style.background = "rgba(255, 179, 179, 0.2)";
+        env.element.classList.add('px-2', 'py-1', 'rounded-md', 'text-xs');
+        env.element.classList.remove('floading');
+      }
+    }
+
+    const instance = new ExecutableObject('static-'+uuidv4(), copy, store, true); // STATIC
+    instance.assignScope(copy);
+    obj.assign(instance);
+
+    return await instance.execute();
+}
+
+core.FrontEndExecutable.destroy = async (args, env) => {
+  console.warn("Nothing to do. Will be purged automatically...");
+}
+
+//bug fix when importing an old format notebook, context gets lost
+core["Global`FrontEndExecutable"] = core.FrontEndExecutable;
+core["System`FrontEndExecutable"] = core.FrontEndExecutable;
+
+const protectedObjects = new Map();
+
+const garbageCollect = () => {
+  if (!garbageCollector) return;
+  const list = Object.keys(ObjectHashMap);
+  for (let i=0; i<list.length; i++) {
+    const uid = list[i];
+    if (protectedObjects.has(uid)) continue;
+    ObjectHashMap[uid].garbageCollect();
+  }  
+}
+
+
+core["CoffeeLiqueur`Extensions`FrontendObject`Tools`UIObjects"] = async (args, env) => {
+  const type = await interpretate(args[0], env);
+  return core["CoffeeLiqueur`Extensions`FrontendObject`Tools`UIObjects"][type](args.slice(1), env);
+}
+
+
+core["CoffeeLiqueur`Extensions`FrontendObject`Tools`UIObjects"].GarbageCollector = async (args, env) => {
+  garbageCollector = await interpretate(args[0], env);
+  if (garbageCollector) console.warn('Garbage collection was enabled!'); else console.warn('Garbage collection was disabled!');
+}
+
+core["CoffeeLiqueur`Extensions`FrontendObject`Tools`UIObjects"].Protect = async (args, env) => {
+  const list = await interpretate(args, env);
+  list.forEach((e) => protectedObjects.set(e, true));
+}
+
+core["CoffeeLiqueur`Extensions`FrontendObject`Tools`UIObjects"].Unprotect = async (args, env) => {
+  const list = await interpretate(args, env);
+  list.forEach((e) => protectedObjects.delete(e));
+}
+
+
+core["CoffeeLiqueur`Extensions`FrontendObject`Tools`UIObjects"].GetAllObjects = async (args, env) => {
+  garbageCollect();
+  console.log(Object.keys(ObjectHashMap));
+  return Object.keys(ObjectHashMap);
+}
+
+core["CoffeeLiqueur`Extensions`FrontendObject`Tools`UIObjects"].GetAllSymbols = async (args, env) => {
+  //garbageCollect();
+  const list = Object.keys(server.kernel.trackedSymbols);
+  const message = [];
+  for (let i=0; i<list.length; i++) {
+    if (Object.keys(core[list[i]].instances).length == 0) {
+      console.warn('Dead symbol: '+list[i] + ' found!');
+      if (!garbageCollector) {
+        console.warn('keeping since garbage collector is disabled');
+      } else {
+        continue;
+      }
+    }
+    message.push(list[i]);
+  }
+  console.log(message);
+  return message;
+}
+
+core["CoffeeLiqueur`Extensions`FrontendObject`Tools`ExtractJSON"] = (args, env) => {
+  const s = interpretate(args[0], env);
+  return JSON.parse(decodeURIComponent(window.atob(s)));
+}
+
+core["CoffeeLiqueur`Extensions`FrontendObject`Tools`ExtractJSONCompressed"] = async (args, env) => {
+  let s = interpretate(args[0], env);
+  s = await interpretate.unzlib64String(s);
+
+  return JSON.parse(s);
+}
+
+core["CoffeeLiqueur`Extensions`FrontendObject`Tools`ExtractCompressed"] = async (args, env) => {
+  let s = interpretate(args[0], env);
+  s = await interpretate.unzlib64String(s);
+
+  const parsed = JSON.parse(s);
+  return await interpretate(parsed, env);
+}
+
+core['CoffeeLiqueur`Extensions`System`Internal`frontDownload'] = async (args, env) => {
+  let filename = 'generic';
+  const arrayBuffer = await interpretate(args[0], env);
+  if (args.length > 1) filename = await interpretate(args[1], env);
+  
+  const blob = new Blob([arrayBuffer], { type: 'application/octet-stream' });
+
+  // Create a temporary object URL pointing to the blob
+  function download() {
+    const url = URL.createObjectURL(blob);
+    // Create an invisible link and trigger a click to start the download
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = filename;
+    document.body.appendChild(link);
+    link.click();
+    // Clean up
+    document.body.removeChild(link);
+    URL.revokeObjectURL(url);    
+  }
+  if (env.element) {
+    const button = document.createElement('button');
+    button.className = 'sm-controls rounded wljs-button bg-white px-2 py-1 text-xs text-gray-900';
+    button.innerText = '⤓ '+filename;
+    env.element.appendChild(button);
+    button.addEventListener('click',download);
+    return;
+  }
+  download();
+};
