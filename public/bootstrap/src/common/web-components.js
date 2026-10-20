@@ -541,6 +541,19 @@ class WLJSEditor extends HTMLElement {
     return ["display", "type", "fade", "encoded", "editable", "lazy"];
   }
 
+  get editor() {
+    return this._instance?.editor ?? null;
+  }
+
+  // Unlike the one-shot event, this also works after the editor has mounted.
+  whenEditorReady() {
+    if (this.editor) return Promise.resolve(this.editor);
+
+    return new Promise((resolve) => {
+      this.addEventListener('codemirrorReady', (event) => resolve(event.detail), { once: true });
+    });
+  }
+
   async connectedCallback() {
 
     this._mounted = true;

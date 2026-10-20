@@ -236,45 +236,44 @@ export default function HomePage() {
   const assetsRef = useRef<HTMLElement | null>(null);
 
   useEffect(() => {
-    const editor = document.getElementById('hero-editor');
-    const outputEditor = document.getElementById('hero-output');
+    type WLJSEditorElement = HTMLElement & {
+      whenEditorReady(): Promise<any>;
+    };
+
+    const editor = document.getElementById('hero-editor') as WLJSEditorElement | null;
+    const outputEditor = document.getElementById('hero-output') as WLJSEditorElement | null;
     
-    if (!editor) return;
+    if (!editor || !outputEditor) return;
 
-    const handleCodemirrorReady = (event: any) => {
-      if (!event.detail) {
-        console.warn('codemirrorReady event missing detail');
-        return;
-      }
+    let cancelled = false;
 
-      // Create animation controller
-      const controller = new AnimationController(ANIMATIONS, event.detail);
-      controllerRef.current = controller;
+    void (async () => {
+      try {
+        // The bootstrap can define the custom element before or after hydration.
+        await customElements.whenDefined('wljs-editor');
+        const [inputEditor, outputEditorInstance] = await Promise.all([
+          editor.whenEditorReady(),
+          outputEditor.whenEditorReady(),
+        ]);
+        if (cancelled) return;
 
-      // Initialize output editor when it's ready
-      if (outputEditor) {
-        const handleOutputReady = (e: any) => {
-          if (e.detail) {
-            controller.setOutputEditor(e.detail);
-          }
-        };
-        outputEditor.addEventListener('codemirrorReady', handleOutputReady);
-      }
+        const controller = new AnimationController(ANIMATIONS, inputEditor);
+        controller.setOutputEditor(outputEditorInstance);
+        controllerRef.current = controller;
 
-      // Run animations with async/await - much cleaner!
-      shuffleArray(animationsArray);
-      (async () => {
+        shuffleArray(animationsArray);
         for(const f of animationsArray) {
+          if (cancelled) break;
           await f(controller, setOutputVisible,assetsRef)
         }
-      })();
-    };
-    
-    editor.addEventListener('codemirrorReady', handleCodemirrorReady);
+      } catch (error) {
+        if (!cancelled) console.error('Failed to initialize homepage editors', error);
+      }
+    })();
     
     // Comprehensive cleanup
     return () => {
-      editor.removeEventListener('codemirrorReady', handleCodemirrorReady);
+      cancelled = true;
 
       // Stop any running animations
       if (controllerRef.current) {
