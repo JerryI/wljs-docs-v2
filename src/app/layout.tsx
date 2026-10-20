@@ -6,8 +6,6 @@ import GoatCounter from '@/components/goatcounter';
 
 import Script from 'next/script';
 
-import WLJSBootstrap from 'public/bootstrap/src/common/loader.jsx'
-
 const inter = Inter({
   subsets: ['latin'],
 });
@@ -71,10 +69,16 @@ export default function Layout({ children }: LayoutProps<'/'>) {
       }}>{children}</RootProvider>
 
         <Script id="wljs-bootstrap-config" strategy="beforeInteractive">
-          {`globalThis.WLJS_BASE_HREF = ${JSON.stringify(wljsBaseHref)};globalThis.WLJS_BASE_TW=true;`}
+          {`globalThis.WLJS_BASE_HREF = ${JSON.stringify(wljsBaseHref)};globalThis.WLJS_BASE_TW=true;globalThis.WLJS_MODULE_LAG=25;`}
         </Script>
 
-        <WLJSBootstrap webComponentsCSS={'web-components.tw.css'} BASE={wljsBaseHref}/>
+        <Script
+          id="wljs-component"
+          type="module"
+          strategy="afterInteractive"
+          src={`${basePath}/bootstrap/src/common/app.js`}
+        />
+
         <GoatCounter />
       </body>
     </html>
