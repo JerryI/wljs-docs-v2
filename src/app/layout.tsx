@@ -69,7 +69,7 @@ export default function Layout({ children }: LayoutProps<'/'>) {
       }}>{children}</RootProvider>
 
         <Script id="wljs-bootstrap-config" strategy="beforeInteractive">
-          {`globalThis.WLJS_BASE_HREF = ${JSON.stringify(wljsBaseHref)};globalThis.WLJS_BASE_TW=true;globalThis.WLJS_MODULE_LAG=25;`}
+          {`globalThis.WLJS_BASE_HREF = ${JSON.stringify(wljsBaseHref)};globalThis.WLJS_BASE_TW=true;globalThis.WLJS_MODULE_LAG=35;`}
         </Script>
 
         <Script

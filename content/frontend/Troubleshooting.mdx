@@ -268,6 +268,26 @@ Insert[Plot[x, {x, 0, 1}], "Controls" -> False, {2, -1}]
 
 See [`Graphics`](./Graphics/Graphics) for interactive graphic controls.
 
+### How do I add custom ticks or tick labels to `Plot` and `Graphics`?
+
+Use `Ticks` for ordinary axes. Provide one list for each axis; each list can contain tick positions:
+
+```wolfram
+Plot[Cos[x], {x, 0, 2 Pi},
+  Ticks -> {{0, Pi, 2 Pi}, Automatic}
+]
+```
+
+To display custom text, use `{position, label}` pairs. The label must be a string:
+
+```wolfram
+Plot[Cos[x], {x, 0, 2 Pi},
+  Ticks -> {{{0, "0"}, {Pi, "\[Pi]"}, {2 Pi, "2\[Pi]"}}, Automatic}
+]
+```
+
+When the plot or graphic uses `Frame -> True`, use `FrameTicks` instead of `Ticks`. The same forms work with both `Plot` and `Graphics`. See the [`Plot` tick options](./Plotting-Functions/Plot#ticks) and [`Graphics` tick options](./Graphics/Graphics#ticks).
+
 ### How do I change the notebook font?
 
 Add custom CSS through **Settings → Custom CSS**. The [application styles guide](./Guides/Command-palette#application-styles) documents selectors for the UI, code editor, and Markdown cells, including font-family examples.
