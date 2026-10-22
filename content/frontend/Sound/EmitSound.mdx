@@ -14,6 +14,36 @@ emits (without output or any widgets) a [Sound](../Sound/Sound) or plays [Audio]
 ### `"Window"`
 The same as in [FrontSubmit](../Frontend-IO/FrontSubmit). By the default is [CurrentWindow](../Frontend-IO/CurrentWindow)
 
+## Examples
+
+Use `EmitSound` in a button action to play a note without producing an output widget:
+
+```wolfram
+Button["Beep", EmitSound[Sound[SoundNote["C4"]]]]
+```
+
+It also accepts imported or generated `Audio` objects:
+
+```wolfram
+EmitSound[Audio["sound.wav"]]
+
+sfx = Audio[
+  Table[Sin[Sqrt[10000.0 t]], {t, 0, 4 Pi, 0.001}],
+  "Real32"
+];
+EmitSound[sfx]
+```
+
+UI events such as button clicks provide the current window implicitly. Timers lose that evaluation context, so capture the window before creating the timer and pass it through the `"Window"` option:
+
+```wolfram
+win = CurrentWindow[];
+SetTimeout[
+  EmitSound[Sound[SoundNote["C4"]], "Window" -> win],
+  Quantity[2, "Seconds"]
+];
+```
+
 <Callout type="tip">
 If you want to continuously stream raw sound data, consider to use a low-level streamer [PCMPlayer](../Sound/PCMPlayer)
 </Callout>

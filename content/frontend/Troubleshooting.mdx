@@ -353,6 +353,41 @@ WLJS stops continuous rendering after a short interval by default to reduce GPU 
 
 See [`Graphics3D` path tracing](./Graphics3D/Graphics3D#exporting-a-path-traced-image), [`Rasterize`](./Image/Rasterize), and [PDF `Export`](./File-Operations/Export#frontend-rendered-output).
 
+## Sound and audio
+
+### How do I play a beep, blop, custom sound, or WAV file without creating output in the cell?
+
+Use `Beep[]` for a notification sound, or `Beep["Hey"]` to play it and display a message. To play a `Sound` or `Audio` object without producing an output widget, use `EmitSound`:
+
+```wolfram
+Button["Beep", EmitSound[Sound[SoundNote["C4"]]]]
+
+EmitSound[Audio["sound.wav"]]
+```
+
+Generated audio works the same way:
+
+```wolfram
+sfx = Audio[
+  Table[Sin[Sqrt[10000.0 t]], {t, 0, 4 Pi, 0.001}],
+  "Real32"
+];
+
+Button["Piu", EmitSound[sfx]]
+```
+
+Button actions inherit the current window. A timer does not, so capture the window before starting it and pass it explicitly:
+
+```wolfram
+win = CurrentWindow[];
+SetTimeout[
+  EmitSound[Sound[SoundNote["C4"]], "Window" -> win],
+  Quantity[2, "Seconds"]
+];
+```
+
+For live raw-audio buffers, use `Audio[buffer // Offload, "Real32"]`. See [`Beep`](./Cells-and-Notebook/Beep), [`EmitSound`](./Sound/EmitSound), and [audio streaming](./Sound/Audio#updates-and-streaming).
+
 ## Sharing and interactive exports
 
 ### Why is my `Manipulate` static in an exported HTML file?
