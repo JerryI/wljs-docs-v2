@@ -251,7 +251,7 @@ Use rectangular numeric arrays. The array contents and supported nested indices 
 
 If the visual genuinely needs to change topology on most updates, full replacement or a purpose-built retained-mode implementation with [Offload](../Interpreter/Offload) is usually a better fit. For interactive or animated curves, also consider [ManipulatePlot](../Plotting-Functions/ManipulatePlot), [ManipulateParametricPlot](../Plotting-Functions/ManipulateParametricPlot), [AnimatePlot](../Plotting-Functions/AnimatePlot), or [AnimateParametricPlot](../Plotting-Functions/AnimateParametericPlot).
 
-When `Animate` cannot build a JIT path, its refresh rate is limited to 5 FPS. `Manipulate` and `Refresh` fall back to complete result updates when a runtime diff cannot be applied.
+When `Animate` or `Refresh` cannot build a JIT path, expensive full-result updates are limited to 5 FPS or less depending on expression size. `Manipulate` also falls back to complete result updates when a runtime diff cannot be applied.
 
 
 ### Debugging

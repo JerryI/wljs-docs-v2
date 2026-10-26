@@ -17,7 +17,7 @@ If you maintain a Wolfram Language library and need to return different output i
 
 WLJS stores notebooks as plain-text `*.wln` files. The format is readable by people and LLMs, produces useful diffs in Git, and can be edited with an external text editor.
 
-Opening a Mathematica `*.nb` file imports it into WLJS. You can also export a WLJS notebook as `*.nb`. Import support is still improving, so please report notebooks that do not convert correctly.
+Opening a Mathematica `*.nb` file imports it into WLJS. Compatible cells and typesetting structures are mapped directly; constructs without a reliable one-to-one representation fall back to TeX so mixed text and equations remain readable. You can also export a WLJS notebook as `*.nb`. Import support is still improving, so please report notebooks that do not convert correctly. See [Mathematica import and export](./../Share/Mathematica) for current limitations.
 
 ## Input and output expressions
 
@@ -405,7 +405,7 @@ Animate[
 </CodeComparisonItem>
 </CodeComparison>
 
-WLJS throttles updates when optimization fails, which prevents an expensive animation from overwhelming the frontend. When the structure is stable, animations can run at a higher rate. For best performance, use strings rather than arbitrary expressions for `PlotLabel`:
+WLJS throttles updates when optimization fails, which prevents an expensive animation from overwhelming the frontend. For full reevaluation, the safety throttle limits updates to 5 FPS or less depending on expression size, even if `RefreshRate` requests more. When the structure is stable, animations can run at a higher rate. For best performance, use strings rather than arbitrary expressions for `PlotLabel`:
 
 <CodeComparison>
 <CodeComparisonItem title="Mathematica">

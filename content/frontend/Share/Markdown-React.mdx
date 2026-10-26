@@ -54,6 +54,21 @@ import { Accordion, Accordions } from 'fumadocs-ui/components/accordion';
 </Accordion>
 </Accordions>
 
+## Generated MDX structure
+
+Narrative Markdown cells remain Markdown in the exported file. Code cells and their visible output are emitted as `wljs-editor` web components. Their source stays readable while the bootstrap loads and when JavaScript is disabled; after loading, the components add syntax highlighting and supported interactive output.
+
+Load the bootstrap once in the page or site layout:
+
+```html
+<script
+  type="module"
+  src="https://cdn.jsdelivr.net/gh/WLJSTeam/web-components@latest/src/common/app.js"
+></script>
+```
+
+The [web-components MDX example](https://github.com/WLJSTeam/web-components-mdx) shows this setup in a React/Next.js project.
+
 ## Export Options
 For detailed export options and modes (Static, Interactive, etc.), see the [HTML file export documentation](./Standalone-HTML).
 

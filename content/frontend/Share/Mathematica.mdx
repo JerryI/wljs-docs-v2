@@ -34,6 +34,8 @@ Consider the following limitations when sharing in Mathematica format:
 ## Importing
 Simply open a `.nb` file with the WLJS application; it will be automatically converted to `.wln`.
 
+The importer maps compatible Mathematica cell and typesetting structures directly to WLJS. When a typesetting construct has no reliable one-to-one WLJS representation, it uses a TeX form so the content remains readable. This fallback is especially useful for notebooks that mix formatted text with undocumented box expressions.
+
 <Callout type="warning">This feature is still experimental</Callout>
 
 <Card>

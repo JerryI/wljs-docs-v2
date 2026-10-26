@@ -11,9 +11,13 @@ title: NetGraph
 ## Examples
 
 ```wolfram
-NetGraph[{LinearLayer[10], Ramp, LinearLayer[5]}, {1 -> 2, 2 -> 3}]
-(* NetGraph[...] *)
+net = NetGraph[
+ {LinearLayer[2], ElementwiseLayer[Ramp], ThreadingLayer[Plus]},
+ {1 -> 2, {NetPort["Input"], 2} -> 3}
+]
 ```
+
+Evaluating a `NetGraph` displays a visual preview of its layers, ports, and connections. The result remains a normal `NetGraph` expression and can be assigned, inspected, or used in later neural-network operations.
 
 
 Something isn't working? [Report](https://github.com/WLJSTeam/wljs-notebook/issues) an issue.

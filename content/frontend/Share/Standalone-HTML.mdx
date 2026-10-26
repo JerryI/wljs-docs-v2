@@ -27,6 +27,12 @@ Call <small>Share</small> from the top menu or click the <span className='inline
 
 Local images are embedded automatically, [NotebookStore](./../Advanced/Notebook-Operations) is preserved, and [embedded files](./Embed-Notebook-Files) are included. You can open the HTML file locally or [publish it as a webpage](./Deploy-to-Github-Pages).
 
+## Exported document structure
+
+The exported file uses standard HTML for narrative Markdown cells. Input and output cells are preserved in `wljs-editor` web components, including their original code and encoded visible objects. This makes the document smaller and search-engine-friendly while retaining the information needed to restore WLJS rendering.
+
+Before the web-components bootstrap loads—or when JavaScript is disabled—the contents of `wljs-editor` remain visible as unstyled code. After the bootstrap loads, the same elements are upgraded with syntax highlighting, graphics, sound, equations, and other supported output. See [HTML Embeddable](./Embeddable-HTML) to use these components in another webpage.
+
 import { Accordion, Accordions } from 'fumadocs-ui/components/accordion';
 
 
@@ -38,6 +44,8 @@ import { Accordion, Accordions } from 'fumadocs-ui/components/accordion';
 
 ## Importing
 The original cell metadata is preserved, __allowing an HTML notebook to be converted back to a normal WLJS notebook__ format when opened or using deep-links — click the <span className='inline-flex' ><CircleQuestionMark style={{height:"1rem"}}/></span> icon in the exported HTML file:
+
+HTML notebooks exported by older WLJS versions can also be reimported; the legacy parser remains supported.
 
 <Accordions>
 <Accordion title="Example">

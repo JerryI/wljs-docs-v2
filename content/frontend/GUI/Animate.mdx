@@ -18,7 +18,7 @@ generates a version of `expr` allowing automatic repeated reevaluation for each 
 <Callout type="idea">Consider to use [AnimatePlot](../Plotting-Functions/AnimatePlot) for basic animated plots or use low-level tools: [Offload](../Interpreter/Offload) and [AnimationFrameListener](../Graphics/AnimationFrameListener).</Callout>
 
 <Callout type="warn">
-`Animate` uses __Just-In-Time__ transpilation of expressions to optimized ones. It might not work in all cases and may fall back to full reevaluation.
+`Animate` uses __Just-In-Time__ transpilation of expressions to optimized ones. It may fall back to full reevaluation. When that reevaluation is expensive, WLJS automatically limits updates to 5 FPS or less, depending on expression size.
 </Callout>
 
 ## Examples
@@ -127,7 +127,7 @@ Animate[Plot[Sin[x y], {x,0,1}], {y,0,5}] // MMAView
 ## Options
 
 ### `RefreshRate`
-Sets the number of frames per second for which animation is being evaluated and played. The default is `12`
+Sets the target number of frames per second at which the animation is evaluated and played. The default is `12`. The safety throttle may lower the effective rate for large or expensive expressions, even when a higher value is requested.
 
 ### `AnimationRate`
 Specifies units or steps per second. By the default is `Automatic`. If set to a numeric value, it will effectively overwrite the step size of the iterator.

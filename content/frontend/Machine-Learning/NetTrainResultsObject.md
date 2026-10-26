@@ -22,7 +22,7 @@ result["TrainedNet"]
 Get training history:
 
 ```wolfram
-result["LossEvolutionPlot"]
+result["LossPlot"]
 ```
 
 

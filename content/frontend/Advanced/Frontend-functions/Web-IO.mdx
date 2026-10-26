@@ -59,7 +59,7 @@ function disconnectGraph() {
 function onAudioProcess() {
     const data = new Uint8Array(analyser.frequencyBinCount);
     analyser.getByteTimeDomainData(data);   
-    server.kernel.io.fire("audio", Array.from(data));
+    server.kernel.io.fire("audio", data);
 }
 
 async function requestMicrophoneAccess() {
@@ -113,10 +113,10 @@ Here we introduce two frontend symbols, `MicStart` and `MicStop`, to control the
 ```js
 const data = new Uint8Array(analyser.frequencyBinCount);
 analyser.getByteTimeDomainData(data);   
-server.kernel.io.fire("audio", Array.from(data));
+server.kernel.io.fire("audio", data);
 ```
 
-as a list of bytes in integer representation. Unfortunately, the `JS->WL` binary format is not yet available.
+The typed array is transferred through the binary JavaScript-to-Wolfram pipeline and arrives as a `NumericArray`. There is no need to call `Array.from`, which would expand the buffer into boxed JavaScript numbers before sending it. For multidimensional buffers such as image data, wrap the typed array in `NumericArrayObject` and provide its dimensions; see the [JavaScript I/O API](./Overview#payload-conversion).
 
 Let's add control buttons:
 
@@ -134,7 +134,7 @@ And finally to handle the incoming data we use `EventHandler` and hook it to som
 <wljs-editor lazy="true" type="Input" display="codemirror">{`
 Module[{line = {}},
     EventHandler["audio", Function[data,
-        line = Transpose[{Range[data//Length], data}];
+        line = Transpose[{Range[data//Length], data//Normal}];
     ]];
   
     Graphics[
@@ -152,21 +152,21 @@ Let's add fourier transform as well:
 <div className="code-input"/>
 <wljs-editor lazy="true" type="Input" display="codemirror">{`
 Module[{line = {}, fft={}},
-      EventHandler["audio", Function[data,
+      EventHandler["audio", Function[odata, With[{data = odata // Normal},
         line = Transpose[{Range[data//Length], data}];
         fft = Drop[Transpose[{Range[128]//N, Log@Take[Fourier[data], 128]//Abs}],1];
-      ]];
+      ]]];
     
       {Graphics[
         {Blue, Line[line // Offload]},
         PlotRange -> {{0,512}, {127-50, 127+50}},
-        TransitionDuration->30,
+        "TransitionDuration"->30,
         Axes->True, AspectRatio->1/2
       ],
       Graphics[
         {Red, Line[fft // Offload]},
         PlotRange -> {{1,128}, {0,6}},
-        TransitionDuration->30,
+        "TransitionDuration"->30,
         Axes->True, AspectRatio->1/2
       ]}  // Row
 ]

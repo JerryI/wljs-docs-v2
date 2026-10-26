@@ -43,6 +43,7 @@ This is standard package declaration file from NodeJS, but modified with extra f
     "frontend": "src/Frontend.wl" | Array<string>, //loaded to Main Kernel
     "electron": "dist/electron/" | Array<string>, //loaded to NodeJS process as CommonJS module
     "category": "<catergory-name>",
+    "exportable": false | true, //if the module should be bundleled to exported HTML file
     "priority": 5000, 
     "menu": [ //top-menu items
         {

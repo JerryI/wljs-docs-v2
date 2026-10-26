@@ -716,6 +716,20 @@ An additional to interact with Wolfram Kernel besides `ViewBox`, `FrontSubmit` o
 server.kernel.io
 ```
 
+
+
+#### Payload conversion
+
+JavaScript arrays become Wolfram Language lists, and plain objects become associations. Typed arrays use the binary transport and arrive as `NumericArray` objects without first being expanded into ordinary JavaScript arrays.
+
+Use `NumericArrayObject` to attach dimensions to a flat typed array:
+
+```js
+const rgba = new Uint8ClampedArray(width * height * 4);
+const image = new NumericArrayObject(rgba, [height, width, 4]);
+server.kernel.io.fire("frame", image);
+```
+
 #### Fire events
 To fire events catch by [EventHandler](./../../Misc/Events) - use `fire` method:
 

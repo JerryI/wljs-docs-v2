@@ -11,6 +11,7 @@ title: BarLegend
 ## Options
 
 - `LegendLabel` adds a label to the legend.
+- `LegendLayout -> "Row"` displays the color bar horizontally.
 - `LabelStyle` styles the legend label and tick labels. Colors, `FontFamily`, and `FontSize` are supported.
 - `ImageSize` sets the size of the color bar; use a two-element list to align the legend height with a plot.
 
@@ -34,6 +35,18 @@ Add a label and limit the number of ticks:
 BarLegend["Thermometer", 3,
  LegendLabel -> "Temperature",
  LabelStyle -> Directive[FontSize -> 14]
+]
+```
+
+Create a horizontal bar and move its label by an absolute offset:
+
+```wolfram
+BarLegend[
+ {"Rainbow", {0, 1}},
+ 2,
+ LegendLayout -> "Row",
+ ImageSize -> {300, 20},
+ LegendLabel -> {"Temperature", {0, -35}}
 ]
 ```
 

@@ -54,6 +54,27 @@ Embeddable WLJS cells provide the same features as the [standard HTML export opt
 
 </Card>
 
+## Generated HTML and bootstrap
+
+Narrative cells are exported as standard HTML. Code cells and their visible output are preserved in `wljs-editor` custom elements, so their source remains readable before JavaScript loads and when JavaScript is disabled:
+
+```html
+<wljs-editor display="codemirror" type="Input">
+  <xmp>Plot[Sin[x], {x, 0, 2 Pi}]</xmp>
+</wljs-editor>
+```
+
+Load the framework-agnostic bootstrap once on the page to activate highlighting and supported interactive output:
+
+```html
+<script
+  type="module"
+  src="https://cdn.jsdelivr.net/gh/WLJSTeam/web-components@latest/src/common/app.js"
+></script>
+```
+
+To self-host the bootstrap and its assets, choose <small>Share</small> – <small>HTML Embeddable</small> – <small>Bootstrap</small> and publish the exported package with your site.
+
 ## Export Options
 For detailed export options and modes (Static, Interactive, etc.), see the [HTML file export documentation](./Standalone-HTML).
 

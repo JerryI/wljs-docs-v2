@@ -22,10 +22,10 @@ Refresh[expr_, trigger_EventObject | trigger_String]
 
 produces a dynamic window with `expr` reevaluated by `trigger` event (see [Events](../Misc/Events)).
 
-`Referesh` has `HoldFirst` attribute.
+`Refresh` has the `HoldFirst` attribute.
 
 <Callout type="note">
-Unlike [Animate](../GUI/Animate), `Refresh` will throttle the refresh rate if the CPU time takes more than provided interval.
+`Refresh` and [Animate](../GUI/Animate) automatically reduce their update rate when an expression is too expensive to reevaluate safely. Expressions that fall back to full reevaluation are limited to 5 FPS or less, depending on expression size. The requested interval is therefore a target, not a guarantee.
 </Callout>
 
 ## Example
@@ -56,7 +56,7 @@ Refresh[ListLinePlot[RandomReal[{-1,1}, 100]], 0.2]
 ```
 
 <Callout type="warn">
-Be careful with `Plot` or any other functions placed as `expr` with a fast refresh rate (< 1 second). It might cause a significant load to the system in some cases if JIT optimizations were not successful. Test it on longer update times beforehand.
+Use care with `Plot` or other expensive expressions at intervals below one second. Automatic throttling prevents unsafe update rates, but repeated full reevaluation can still create significant load. Test with a longer interval first.
 
 Consider to use [Offload](../Interpreter/Offload) for rapidly changing data [AnimatePlot](./../Plotting-Functions/AnimatePlot) or [PlotlyExtendTraces](../Plotly/PlotlyExtendTraces).
 </Callout>

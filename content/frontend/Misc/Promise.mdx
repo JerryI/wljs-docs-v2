@@ -39,6 +39,12 @@ Then[p_Promise | _List | _, resolve_]
 Then[p_Promise | _List | _, resolve_, reject_]
 ```
 
+infix form is the easiest for reading
+
+```wolfram
+p ~ Then ~ resolve
+```
+
 where `resolve` and `reject` are any arbitrary functions, usually, non-blocking functions.
 
 <Callout type="info">

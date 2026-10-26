@@ -13,16 +13,17 @@ title: NetTrain
 ## Examples
 
 ```wolfram
+trainingData = {Range[10] -> 1, Range[11, 20] -> 2};
 net = NetChain[{LinearLayer[10], Ramp, LinearLayer[1]}];
-trained = NetTrain[net, {Range[10] -> 1, Range[10, 20] -> 2}]
+trained = NetTrain[net, trainingData]
 ```
 
 ```wolfram
-NetTrain[NetChain[{5, Ramp, 1}], data, MaxTrainingRounds -> 100]
+NetTrain[NetChain[{5, Ramp, 1}], trainingData, MaxTrainingRounds -> 100]
 ```
 
 ```wolfram
-NetTrain[net, trainingData, All]["FinalLoss"]
+NetTrain[net, trainingData, All]["RoundLoss"]
 ```
 
 *See the official [Wolfram Language Reference](https://reference.wolfram.com/language/ref/NetTrain.html) for more details.

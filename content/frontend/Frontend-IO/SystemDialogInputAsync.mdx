@@ -4,5 +4,19 @@ env:
   - Wolfram Kernel
 package: wljs-editor
 ---
-An async version of [SystemDialogInput](../Frontend-IO/SystemDialogInput), which returns [Promise](../Misc/Promise)
+```wolfram
+SystemDialogInputAsync[type_String, opts___]
+```
+
+is an asynchronous version of [SystemDialogInput](../Frontend-IO/SystemDialogInput) that returns a [Promise](../Misc/Promise). It automatically uses the current window, so a window reference is not required.
+
+For example, select multiple files and display the result when the operating-system dialog closes:
+
+```wolfram
+SystemDialogInputAsync["OpenList", Null] ~Then~ (MessageDialog @* ToString)
+```
+
+<Callout type="note">
+This feature is available only in the WLJS Notebook desktop application.
+</Callout>
 

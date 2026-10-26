@@ -30,6 +30,12 @@ Styles both the legend label and its tick labels. Colors, `FontFamily`, and `Fon
 ### `ImageSize`
 Sets the size of the color bar. A two-element list can be used to align the legend height with a plot.
 
+### `LegendLayout`
+Use `LegendLayout -> "Row"` to display the color bar horizontally.
+
+### `ColorFunctionScaling`
+By the deafult is `True`, which rescales values to the range from 0 to 1 and supply it to the provided color function (if provided)
+
 ## Examples
 Named colors
 
@@ -54,6 +60,21 @@ ContourPlot[Sin[x y], {x, 0, \[Pi]}, {y, 0, \[Pi]}, Contours -> 5, PlotLegends -
 
 ```wolfram
 BarLegend["Thermometer", 3, LegendLabel -> "Temperature"]
+```
+
+### Horizontal layout
+
+Use a two-element `ImageSize` for a wide, short bar. A label can be given as
+`{label, {x, y}}` to apply an absolute offset:
+
+```wolfram
+BarLegend[
+ {"Rainbow", {0, 1}},
+ 2,
+ LegendLayout -> "Row",
+ ImageSize -> {300, 20},
+ LegendLabel -> {"Temperature", {0, -35}}
+]
 ```
 
 ### Align with a plot
