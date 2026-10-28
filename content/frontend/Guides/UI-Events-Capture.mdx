@@ -263,6 +263,8 @@ This approach offers some benefits over using [Primitives](#Primitives). For ins
 
 - `"keydown"`: Captures keyboard input after the canvas is clicked
 - `"capturekeydown"`: Same as above but also prevents page scrolling
+- `"capturekeyup"`: Captures key releases and prevents the default browser action
+- `"capturekeyevents"`: Captures both key presses and releases as `"DOWN:<code>"` and `"UP:<code>"`
 - `"mousemove"`: Captures mouse movement
 - `"mouseenter"`: Captures mouse enter position (once)
 - `"mouseleft"`: Captures mouse left position (once)
@@ -270,11 +272,15 @@ This approach offers some benefits over using [Primitives](#Primitives). For ins
 - `"mousedown"`: Captures mouse down
 - `"click"`: Captures clicks (without the Alt key)
 - `"altclick"`: Captures clicks with the Alt key held
+- `"metaclick"`: Captures clicks with the Meta key held (Command on macOS)
+- `"shiftclick"`: Captures clicks with the Shift key held
 - `"rightclick"`: Captures right click
 - `"contextmenu"`: Captures right click
 - `"onload"`: Fired once the canvas has loaded
 
 </Card>
+
+Keyboard event handlers start receiving input after the graphic is clicked and focused. `"keydown"`, `"capturekeydown"`, and `"capturekeyup"` return the browser's physical key code, such as `"KeyA"` or `"ArrowLeft"`. Use `"capturekeyevents"` when one handler needs both transitions; it returns values such as `"DOWN:KeyA"` and `"UP:KeyA"` and prevents the corresponding default browser actions.
 
 For example:
 
@@ -342,6 +348,8 @@ They support these patterns:
 - `"dragall"`: Like `"drag"`, but also fires events at drag start and end
 - `"click"`: Captures clicks without the Alt key
 - `"altclick"`: Captures clicks with the Alt key
+- `"metaclick"`: Captures clicks with the Meta key held (Command on macOS)
+- `"shiftclick"`: Captures clicks with the Shift key held
 - `"rightclick"`: Captures right click
 - `"contextmenu"`: Captures right click
 - `"mousedown"`: Fires on mouse press
@@ -447,6 +455,8 @@ The following event patterns are supported:
 - `"mousedown"`: Captures mouse down
 - `"click"`: Captures clicks (without the Alt key)
 - `"altclick"`: Captures clicks with the Alt key held
+- `"metaclick"`: Captures clicks with the Meta key held (Command on macOS)
+- `"shiftclick"`: Captures clicks with the Shift key held
 
 </Card>
 
