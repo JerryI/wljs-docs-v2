@@ -1,0 +1,152 @@
+---
+title:  Release Notes *3.2.1*
+date: 2026-10-30
+---
+
+{/* add this script to the body  */}
+{/* https://cdn.jsdelivr.net/gh/WLJSTeam/web-components@latest/src/common/app.js */}
+<wljs-store kernel="./attachments/kernel-5905639153906636136.txt" json="./attachments/f98f94b2-c9e5-494f-bfc6-fceea42bc37a.txt"></wljs-store>
+
+
+import { Tabs, Tab } from 'fumadocs-ui/components/tabs';
+
+<Tabs items={['Windows', 'Mac','GNU/Linux', 'Docker', 'Homebrew']}>
+  <Tab value="Mac">
+    - [Apple Silicon](https://github.com/WLJSTeam/wljs-notebook/releases/download/v3.2.1/wljs-notebook-3.2.1-arm64-macos.dmg)
+    - [Intel](https://github.com/WLJSTeam/wljs-notebook/releases/download/v3.2.1/wljs-notebook-3.2.1-x64-macos.dmg)
+  </Tab>
+  <Tab value="Windows">
+    - [x86/64](https://github.com/WLJSTeam/wljs-notebook/releases/download/v3.2.1/wljs-notebook-3.2.1-x64-win.exe)
+  </Tab>
+  <Tab value="GNU/Linux">
+    - [DEB x86/64](https://github.com/WLJSTeam/wljs-notebook/releases/download/v3.2.1/wljs-notebook-3.2.1-amd64-gnulinux.deb)
+    - [DEB ARM64](https://github.com/WLJSTeam/wljs-notebook/releases/download/v3.2.1/wljs-notebook-3.2.1-arm64-gnulinux.deb)
+    - [AppImage x86/64](https://github.com/WLJSTeam/wljs-notebook/releases/download/v3.2.1/wljs-notebook-3.2.1-x86_64-gnulinux.AppImage)
+    - [AppImage ARM64](https://github.com/WLJSTeam/wljs-notebook/releases/download/v3.2.1/wljs-notebook-3.2.1-arm64-gnulinux.AppImage)
+    - [RPM x86/64](https://github.com/WLJSTeam/wljs-notebook/releases/download/v3.2.1/wljs-notebook-3.2.1-x86_64-gnulinux.rpm)
+  </Tab>
+  <Tab value="Docker">
+
+```bash
+docker run -it \
+  -v ~/wljs:"/home/wljs/WLJS Notebooks" \
+  -v ~/wljs/Licensing:/home/wljs/.WolframEngine/Licensing \
+  -v ~/wljs/tmp:/tmp \
+  -p 8000:3000 \
+  --name wljs \
+  ghcr.io/wljsteam/wljs-notebook:3.2.1
+```
+
+  </Tab>
+  <Tab value="Homebrew">
+  
+```bash  
+brew install --cask wljs-notebook
+```
+
+  </Tab>
+</Tabs>
+
+## Critical patch
+We fixed caching error related to the stored frontend objects when saving. At certain conditions when the kernel link suddenly goes down an attempt to save notebook could corrupt graphs, images and other frontend objects.
+
+However, we could just ship this path alone, so here are some extras for the desert 
+
+## Improved Rasterize
+We implemented the missing features of `Rasterize` expression such as `"Graphics"`, `RasterSize` options. 2nd argument specifies in which form the output should be returned. By the default
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`Rasterize[60]
+	Rasterize[60, "Image"]`}</wljs-editor></WLJSWrapper>
+
+are the same, now can also pack raster data into `Graphics`, which is used internally by some `Plot*` functions
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`Rasterize[60, "Graphics", RasterSize->20]
+	% // Head `}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(FrontEndRef["F47b0f25c-02d8-4418-92b0-b5604cac0eac"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgUJm5gnGaQZmSbrGhilWOiamBha6FoaJRnoJpmaGZgkJyYbpCYmAwCQ1hXU"*)(*]VB*)`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`Graphics`}</wljs-editor></WLJSWrapper>
+
+Providing a list will also work:
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`Rasterize[60, {"Image", "Graphics"}, RasterSize->20];
+	Head /@ %`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`{Image,Graphics}`}</wljs-editor></WLJSWrapper>
+
+This allows `LineIntegralConvolutionPlot` and others to accept images for stream convolution plots
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`house = ExampleData[{"TestImage", "House"}];
+	
+	LineIntegralConvolutionPlot[
+	    {{-1 - (*SpB[*)Power[x(*|*),(*|*)2](*]SpB*) + y, 1 + x - (*SpB[*)Power[y(*|*),(*|*)2](*]SpB*)}, house}
+	    ,
+	    {x, -3, 3}
+	    ,
+	    {y, -3, 3}
+	    ,
+	    VectorPoints -> 10
+	    ,
+	    VectorColorFunction -> None
+	    ,
+	    VectorStyle -> White
+	]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(FrontEndRef["Fdf17ab9d-509f-4563-830f-6fbb4bfe1f42"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgUJp6QZmicmWabomhpYpumamJoZ61oYG6TpmqUlJZkkpaUappkYAQCh3hZR"*)(*]VB*)`}</wljs-editor></WLJSWrapper>
+
+## New event listeners for `Graphics`
+We added new events to track:
+- `"metaclick"` - fired when you click with <wljs-html encoded="true">{`%3Ckbd%20%3ECtrl%2FCmd%3C%2Fkbd%3E`}</wljs-html> pressed
+- `"shiftclick"` - fired when you click with <wljs-html encoded="true">{`%3Ckbd%20%3EShift%3C%2Fkbd%3E`}</wljs-html> pressed
+- `"capturekeyevents"` - fires for both: pressed and released keys
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true" encoded="true"  >{`EventHandler%5BPlot%5Bx%2C%20%7Bx%2C0%2C1%7D%5D%2C%20%7B%0A%20%20%22metaclick%22%20-%3E%20%28Print%5BStringTemplate%5B%22Meta%20as%20%60%60%22%5D%5B%23%5D%5D%26%29%2C%0A%20%20%22shiftclick%22%20-%3E%20%28Print%5BStringTemplate%5B%22Shift%20as%20%60%60%22%5D%5B%23%5D%5D%26%29%0A%7D%5D`}</wljs-editor></WLJSWrapper>
+
+and here is an example for key capture
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true" encoded="true"  >{`EventHandler%5BGraphics%5B%7B%0A%20%20Disk%5B%5D%2C%20StandardRed%2C%20Text%5B%22Focus%20on%20me%22%2C%20%7B0%2C0%7D%2C%20%7B0%2C0%7D%5D%0A%7D%2C%20ImageSize-%3E200%5D%2C%20%7B%0A%20%20%22capturekeyevents%22%20-%3E%20%28Print%5BStringTemplate%5B%22%60%60%22%5D%5B%23%5D%5D%26%29%0A%7D%5D`}</wljs-editor></WLJSWrapper>
+
+## New event lsiteners for `Graphics3D`
+We added missing `click` event and `mousemove` for 3D. This was rather tricky, since one needs to cast rays in 3D space and check for intersection. Here is a good example for that:
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`Module[{pos = {0,0,0}},
+	 EventHandler[Plot3D[x y, {x,-1,1}, {y,-1,1}, 
+	  BoxRatios->{1,1,1}, Epilog->{
+	  Red, Sphere[pos//Offload, 0.1]
+	 }], {"click" -> ((pos = #) &)}]
+	]`}</wljs-editor></WLJSWrapper>
+
+*try to click on the plotted surface*
+
+## Dynamic color and opacity for 3D
+We had this feature for ages in `Graphics`. `RGBColor`, `Hue` and `Opacity` now can be dynamic too in `Graphics3D` context.
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`color = List @@ Pink;
+	Graphics3D[{RGBColor[color//Offload], Cuboid[]}]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(Graphics3D[{RGBColor[Offload[color]], Cuboid[{0, 0, 0}]}])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRAeF5BwL0osyMhMLjZ2SWOCqfDJLC6BqOAAEkHuTs75OflFEBF2IOGflpaTn5hSrAlkO+enpaWm+mQWlqaWFiW4VpSk5hVn5ucVJyAMTkhGaGcDaSlNys9MSWNGti4TSDMgCAB5bSnY"*)(*]VB*)`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`color = List@@RGBColor@RandomColor[];`}</wljs-editor></WLJSWrapper>
+
+Or use a picker
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`EventHandler[InputColor[color], (color=#)&]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(EventObject[<|"Id" -> "9a272c40-ac24-4bca-8458-9e607df67619", "Initial" -> {0.8651494631497672, 0.5231704638558503, 0.297411530768521}, "View" -> "Fd77697e9-67fd-4e28-aa44-4f117fb4e0cf"|>])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgUJp5ibm1map1rqmpmnpeiapBpZ6CYmmpjomqQZGpqnJZmkGiSnAQCaehYx"*)(*]VB*)`}</wljs-editor></WLJSWrapper>
+
+## Improved `NumberForm` support on the frontend
+Sometimes you need trailing zeros for numbers. On Wolfram Kernel this is easy:
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`NumberForm[2, {2,0}, NumberPadding->"0"]
+	NumberForm[2, {2,0}, NumberPadding->"0"] // ToString`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(2)(*,*)(*"1:eJxdT81Kw0AYDP6A+Bb2lGw9VDEeBA+7oStU0sr+xSge0u1XWbLpJk1jUp/Ax3bj0cswMwzMzNXase1pEATtpYf5xhzcXhno+Y+XISLkHUXhbHYbhejaMzS5eYDFIETqXni1LPMn7OLPlPc8U6ui7Bq9i1le2qlUtUjIQA1matGIzPSJrBP2OsRa1vzNTu91qYys6JFnlulv3Eg9/0qf5R3FOK+oco+Tse+DEBRtT8aBZx5YZ4FfjASKzWpnj3+u2HfwLzO+4WBBH4q1hfbcS1rYFn4BxP5CVA=="*)(*]VB*)`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`"002"`}</wljs-editor></WLJSWrapper>
+
+Now this is also supported on the frontend (if expression is executed inside `Offload`)
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`val = 2;
+	TextView[NumberForm[val, {3, 0}, NumberPadding->"0"]//ToString//Offload]`}</wljs-editor></WLJSWrapper>
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(FrontEndRef["Fa2d23169-cb66-4f1a-972b-91629f5b66de"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgUJJxqlGBkbmlnqJieZmemapBkm6lqaGyXpWhqaGVmmmQIFU1IBlY8VxA=="*)(*]VB*)`}</wljs-editor></WLJSWrapper>
