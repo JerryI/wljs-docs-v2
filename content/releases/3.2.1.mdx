@@ -1,12 +1,11 @@
 ---
 title:  Release Notes *3.2.1*
-date: 2026-10-30
+date: 2026-10-31
 ---
 
 {/* add this script to the body  */}
 {/* https://cdn.jsdelivr.net/gh/WLJSTeam/web-components@latest/src/common/app.js */}
-<wljs-store kernel="./attachments/kernel-5905639153906636136.txt" json="./attachments/f98f94b2-c9e5-494f-bfc6-fceea42bc37a.txt"></wljs-store>
-
+<wljs-store kernel="./attachments/kernel-5905639153906636136.txt" json="./attachments/eefd6d5c-3bcb-4fc6-9587-ff584fa95843.txt"></wljs-store>
 
 import { Tabs, Tab } from 'fumadocs-ui/components/tabs';
 
@@ -94,6 +93,43 @@ This allows `LineIntegralConvolutionPlot` and others to accept images for stream
 
 <WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(FrontEndRef["Fdf17ab9d-509f-4563-830f-6fbb4bfe1f42"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgUJp6QZmicmWabomhpYpumamJoZ61oYG6TpmqUlJZkkpaUappkYAQCh3hZR"*)(*]VB*)`}</wljs-editor></WLJSWrapper>
 
+## Locator support in `Manipulate`
+We improved `Manipulate` compatibility with Mathematica. Use `Locator` control option for manipulated expression to add interactive positioning element aka "crosshair"
+
+:::note
+Locators in the context of `Manipulate` can only work if the output expression is `Graphics`
+:::
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`Manipulate[
+	  ParametricPlot[Exp[-x/s]({Cos[x], Sin[x]} + loc), {x,0,5Pi}], 
+	  {s, 1.0, 15.0}, {{loc, {0.,0.}}, Locator}, ContinuousAction->True]`}</wljs-editor></WLJSWrapper>
+
+<wljs-html encoded="true">{`%3Cimg%20width%3D%22350%22%20src%3D%22attachments%2FScreenshot-2026-10-30-at-9.20.40%25E2%2580%25AFPM-852.png%22%2F%3E`}</wljs-html>
+
+:::warning
+If JIT optimization fails (it may happen especially on `ContourPlot`s), `Locator` may not be as useful as a 1-2 basic sliders.
+
+Prefer `DensityPlot` over `ContourPlot` in the case of locators
+:::
+
+Draw the potential of two charges:
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`Manipulate[
+	 DensityPlot[
+	  q1/Norm[{x, y} - p[[1]]] + q2/Norm[{x, y} - p[[2]]], {x, -2, 
+	   2}, {y, -2, 2}], {{q1, -1}, -3, 3}, {{q2, 1}, -3, 
+	  3}, {{p, {{-1, 0}, {1, 0}}}, Locator}]`}</wljs-editor></WLJSWrapper>
+
+<wljs-html encoded="true">{`%3Cimg%20width%3D%22350%22%20src%3D%22attachments%2FScreenshot-2026-10-31-at-11.13.34%25E2%2580%25AFAM-620.png%22%2F%3E`}</wljs-html>
+
+Here is more complicated example, where raster graphics is combined with vector
+
+> Show the local direction of the gradient of a function along with its level curves investigating different unconstrained optimization methods
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true" encoded="true"  >{`Module%5B%7Bf%2C%20L%2C%20fplot%7D%2C%0A%20f%5Bx_%2C%20y_%5D%20%3A%3D%20%28%2ASpB%5B%2A%29Power%5B%281-x%29%28%2A%7C%2A%29%2C%28%2A%7C%2A%292%5D%28%2A%5DSpB%2A%29%20%2B%20100%20%28%28%2ASpB%5B%2A%29Power%5B%28y-Sin%5B%5C%5BPi%5D%20x%5D%29%28%2A%7C%2A%29%2C%28%2A%7C%2A%292%5D%28%2A%5DSpB%2A%29%29%3B%0A%20L%20%3D%201.5%60%3B%0A%0A%20fplot%20%3D%20Show%5B%0A%20%20%20%20LineIntegralConvolutionPlot%5BEvaluate%5BD%5Bf%5Bx%2C%20y%5D%2C%20%7B%7Bx%2C%20y%7D%7D%5D%5D%2C%20%7Bx%2C%20-L%2C%20L%7D%2C%20%7By%2C%20-L%2C%20L%7D%2C%20ColorFunction-%3E%22Rainbow%22%5D%2C%0A%20%20%20%20ContourPlot%5Bf%5Bx%2C%20y%5D%2C%20%7Bx%2C%20-L%2C%20L%7D%2C%20%7By%2C%20-L%2C%20L%7D%2C%20ContourShading%20-%3E%20None%2C%20ContourStyle%20-%3E%20Pink%5D%0A%20%5D%3B%0A%0A%20Manipulate%5B%0A%20%20Module%5B%7Bsteps%7D%2C%0A%20%20%20%20%20%20%20%20steps%20%3D%20Reap%5BQuiet%5BFindMinimum%5Bf%5Bx%2C%20y%5D%2C%20Evaluate%5B%28%2ABB%5B%2A%29%28Transpose%5B%7B%7Bx%2Cy%7D%2Cp0%7D%5D%29%28%2A%2C%2A%29%28%2A%221%3AeJxTTMoPSmNmYGAo5gcSAUX5ZZkpqSn%2BBSWZ%2BXnFaYwgCRYg4ZGfk5LGBOLxAomwzNRyl9Tk%2FKLEkvyiYE6gSEhRYl5xQX5xajBISwhEKUhjUGlOajDYhNTEFFSlaIpYgQzXstS8ErCQX2lODgB64iTl%22%2A%29%28%2A%5DBB%2A%29%5D%2C%20Method%20-%3E%20method%2C%20StepMonitor%20%3A%3E%20Sow%5B%7Bx%2C%20y%7D%5D%5D%5D%5D%5B%5B2%2C%201%5D%5D%3B%20%0A%20%20%20%20%20%20%20%20steps%20%3D%20Prepend%5Bsteps%2C%20p0%5D%3B%20%0A%20%20%20%20%20%20%20%20Show%5Bfplot%2C%20Graphics%5B%7BGreen%2C%20Line%5Bsteps%5D%2C%20%7BPointSize%5B0.025%60%5D%2C%20Point%5BLast%5Bsteps%5D%5D%7D%7D%5D%2C%20PlotRange%20-%3E%20%7B%7B-L%2C%20L%7D%2C%20%7B-L%2C%20L%7D%7D%5D%0A%20%20%5D%2C%20%0A%20%20%20%20%7B%7Bp0%2C%20%7B-1%2C%20-1%7D%7D%2C%20Locator%7D%2C%0A%20%20%20%20%7Bmethod%2C%20%7BAutomatic%2C%20%22Newton%22%2C%20%22GaussNewton%22%2C%20%22QuasiNewton%22%2C%20%22PrincipalAxis%22%7D%7D%0A%20%5D%0A%5D`}</wljs-editor></WLJSWrapper>
+
+<wljs-html encoded="true">{`%3Cimg%20width%3D%22350%22%20src%3D%22attachments%2FScreenshot-2026-10-30-at-9.29.39%25E2%2580%25AFPM-38c.png%22%2F%3E`}</wljs-html>
+
 ## New event listeners for `Graphics`
 We added new events to track:
 - `"metaclick"` - fired when you click with <wljs-html encoded="true">{`%3Ckbd%20%3ECtrl%2FCmd%3C%2Fkbd%3E`}</wljs-html> pressed
@@ -132,7 +168,7 @@ Or use a picker
 
 <WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`EventHandler[InputColor[color], (color=#)&]`}</wljs-editor></WLJSWrapper>
 
-<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(EventObject[<|"Id" -> "9a272c40-ac24-4bca-8458-9e607df67619", "Initial" -> {0.8651494631497672, 0.5231704638558503, 0.297411530768521}, "View" -> "Fd77697e9-67fd-4e28-aa44-4f117fb4e0cf"|>])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgUJp5ibm1map1rqmpmnpeiapBpZ6CYmmpjomqQZGpqnJZmkGiSnAQCaehYx"*)(*]VB*)`}</wljs-editor></WLJSWrapper>
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(EventObject[<|"Id" -> "3092d982-5108-4841-9e03-569e17bfc529", "Initial" -> {1, 0.5, 0.5}, "View" -> "F3cd52012-73aa-40ee-9949-440597e6e2eb"|>])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgUJGyenmBoZGBrpmhsnJuqaGKSm6lpamljqmpgYmFqap5qlGqUmAQCQuhWN"*)(*]VB*)`}</wljs-editor></WLJSWrapper>
 
 ## Improved `NumberForm` support on the frontend
 Sometimes you need trailing zeros for numbers. On Wolfram Kernel this is easy:
@@ -149,4 +185,4 @@ Now this is also supported on the frontend (if expression is executed inside `Of
 <WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`val = 2;
 	TextView[NumberForm[val, {3, 0}, NumberPadding->"0"]//ToString//Offload]`}</wljs-editor></WLJSWrapper>
 
-<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(FrontEndRef["Fa2d23169-cb66-4f1a-972b-91629f5b66de"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgUJJxqlGBkbmlnqJieZmemapBkm6lqaGyXpWhqaGVmmmQIFU1IBlY8VxA=="*)(*]VB*)`}</wljs-editor></WLJSWrapper>
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*VB[*)(FrontEndRef["Ff84631b4-ad4b-4ccd-8165-c6135fd47d43"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgUJp1mYmBkbJpnoJqaYJOmaJCen6FoYmpnqJpsZGpumpZiYp5gYAwCdCRXr"*)(*]VB*)`}</wljs-editor></WLJSWrapper>

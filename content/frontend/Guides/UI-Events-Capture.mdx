@@ -272,7 +272,7 @@ This approach offers some benefits over using [Primitives](#Primitives). For ins
 - `"mousedown"`: Captures mouse down
 - `"click"`: Captures clicks (without the Alt key)
 - `"altclick"`: Captures clicks with the Alt key held
-- `"metaclick"`: Captures clicks with the Meta key held (Command on macOS)
+- `"metaclick"`: Captures clicks with Control held, or Command on macOS
 - `"shiftclick"`: Captures clicks with the Shift key held
 - `"rightclick"`: Captures right click
 - `"contextmenu"`: Captures right click
@@ -348,7 +348,7 @@ They support these patterns:
 - `"dragall"`: Like `"drag"`, but also fires events at drag start and end
 - `"click"`: Captures clicks without the Alt key
 - `"altclick"`: Captures clicks with the Alt key
-- `"metaclick"`: Captures clicks with the Meta key held (Command on macOS)
+- `"metaclick"`: Captures clicks with Control held, or Command on macOS
 - `"shiftclick"`: Captures clicks with the Shift key held
 - `"rightclick"`: Captures right click
 - `"contextmenu"`: Captures right click
@@ -455,7 +455,7 @@ The following event patterns are supported:
 - `"mousedown"`: Captures mouse down
 - `"click"`: Captures clicks (without the Alt key)
 - `"altclick"`: Captures clicks with the Alt key held
-- `"metaclick"`: Captures clicks with the Meta key held (Command on macOS)
+- `"metaclick"`: Captures clicks with Control held, or Command on macOS
 - `"shiftclick"`: Captures clicks with the Shift key held
 
 </Card>
@@ -480,7 +480,30 @@ TextView[point // Offload]
 </WLJSWrapper>
 
 ## 3D Graphics
-Currently, event listeners in [Graphics3D](./../Graphics3D/Graphics3D) are limited.
+
+The [Graphics3D](./../Graphics3D/Graphics3D) canvas supports these event
+patterns:
+
+<Card>
+
+- `"click"`: Captures a click and returns the three-dimensional position on the intersected surface
+- `"mousemove"`: Captures pointer movement and returns the three-dimensional position on the intersected surface
+
+</Card>
+
+For example, this places a sphere where you click on the plotted surface:
+
+```wolfram
+Module[{pos = {0, 0, 0}},
+  EventHandler[
+    Plot3D[x y, {x, -1, 1}, {y, -1, 1},
+      BoxRatios -> {1, 1, 1},
+      Epilog -> {Red, Sphere[pos // Offload, 0.1]}
+    ],
+    {"click" -> Function[point, pos = point]}
+  ]
+]
+```
 
 ### Primitives
 The following 3D primitives support `EventHandler` methods:

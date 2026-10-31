@@ -35,7 +35,45 @@ Use plot functions to automatically create [Graphics3D](../Graphics3D/Graphics3
 Plot3D[Sin[x y], {x, 0, 3}, {y, 0, 3}, ColorFunction -> "Rainbow", Mesh -> None]
 ```
 
+## Methods
 
+### `EventHandler`
+
+Attach an event handler to a `Graphics3D` expression to receive `"click"` or
+`"mousemove"` events. The handler receives the three-dimensional position on
+the intersected rendered surface.
+
+```wolfram
+Module[{pos = {0, 0, 0}},
+  EventHandler[
+    Plot3D[x y, {x, -1, 1}, {y, -1, 1},
+      BoxRatios -> {1, 1, 1},
+      Epilog -> {Red, Sphere[pos // Offload, 0.1]}
+    ],
+    {"click" -> Function[point, pos = point]}
+  ]
+]
+```
+
+This also works with plotting functions such as `Plot3D` because they return a
+`Graphics3D` expression. See [Handling user input](../Guides/UI-Events-Capture#3d-graphics)
+for primitive events such as dragging.
+
+## Dynamic color and opacity
+
+[`RGBColor`](./RGBColor), [`Hue`](./Hue), and [`Opacity`](./Opacity) accept
+frontend values supplied through [`Offload`](../Interpreter/Offload). Updating
+the source value updates the corresponding directive without rebuilding the
+scene:
+
+```wolfram
+color = List @@ Pink;
+Graphics3D[{RGBColor[color // Offload], Cuboid[]}]
+```
+
+```wolfram
+color = RandomReal[{0, 1}, 3];
+```
 
 ## Options
 

@@ -1,10 +1,12 @@
 ---
 title: NumberForm
 ---
-prints with approximate real numbers
+
+Formats approximate real numbers for display.
 
 ```wolfram
 NumberForm[expr_, n_]
+NumberForm[expr_, {n_, f_}, opts___]
 ```
 
 or just
@@ -13,5 +15,25 @@ or just
 NumberForm[expr_]
 ```
 
+In `{n, f}`, `n` is the number of significant digits and `f` is the number of
+digits to the right of the decimal point.
+
+## Frontend evaluation
+
+`NumberForm` can be evaluated on the frontend inside [`Offload`](../Interpreter/Offload),
+including conversion with `ToString` and padding with `NumberPadding`. This is
+useful for dynamically updated text that must keep a fixed number of digits:
+
+```wolfram
+value = 2;
+TextView[
+  NumberForm[value, {3, 0}, NumberPadding -> "0"] // ToString // Offload
+]
+```
+
+Keep the unformatted value for calculations and apply `NumberForm` only when
+producing output.
+
 ## Supported output forms
+
 - [StandardForm](../Formatting/StandardForm)
