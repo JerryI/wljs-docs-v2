@@ -34,6 +34,10 @@ Manipulate[expr_, {{u_Symbol, initial_}, values_List}..]
 Manipulate[expr_, {{u_Symbol, initial_, label_String}, values_List}..]
 ```
 
+```wolfram
+Manipulate[expr_, {{u_Symbol, initial_}, Locator}..]
+```
+
 generates a version of `expr` with controls added to allow interactive reevaluation.
 
 
@@ -113,6 +117,49 @@ Here is an example with mixed symbolics and graphics:
     ]
   }], {{m, ((*GB[*){{1(*|*),(*|*)0}(*||*),(*||*){0(*|*),(*|*)2}}(*]GB*))}, { ((*GB[*){{1(*|*),(*|*)0}(*||*),(*||*){0(*|*),(*|*)2}}(*]GB*)) -> "Nodal source",  ((*GB[*){{1(*|*),(*|*)1}(*||*),(*||*){0(*|*),(*|*)1}}(*]GB*))  -> "Degenerate source",  ((*GB[*){{0(*|*),(*|*)1}(*||*),(*||*){-1(*|*),(*|*)1}}(*]GB*)) -> "Spiral source",  ((*GB[*){{-1(*|*),(*|*)0}(*||*),(*||*){0(*|*),(*|*)-2}}(*]GB*))  -> "Nodal sink",  ((*GB[*){{-1(*|*),(*|*)1}(*||*),(*||*){0(*|*),(*|*)-1}}(*]GB*)) -> "Degenerate sink",  ((*GB[*){{0(*|*),(*|*)1}(*||*),(*||*){-1(*|*),(*|*)-1}}(*]GB*)) -> "Spiral sink",  ((*GB[*){{0(*|*),(*|*)1}(*||*),(*||*){-1(*|*),(*|*)0}}(*]GB*)) -> "Center",  ((*GB[*){{1(*|*),(*|*)0}(*||*),(*||*){0(*|*),(*|*)-2}}(*]GB*))  -> "Saddle"}}]`}</wljs-editor>
 </WLJSWrapper>
+
+## Locator controls
+
+Use [`Locator`](../Graphics/Locator) as a control specification to manipulate a
+two-dimensional position directly on a graphic:
+
+```wolfram
+Manipulate[
+  ParametricPlot[
+    Exp[-x/s] ({Cos[x], Sin[x]} + location),
+    {x, 0, 5 Pi}
+  ],
+  {s, 1.0, 15.0},
+  {{location, {0.0, 0.0}}, Locator},
+  ContinuousAction -> True
+]
+```
+
+The initial value can also be a list of positions to create multiple locators:
+
+```wolfram
+Manipulate[
+  DensityPlot[
+    q1/Norm[{x, y} - positions[[1]]] +
+      q2/Norm[{x, y} - positions[[2]]],
+    {x, -2, 2}, {y, -2, 2}
+  ],
+  {{q1, -1}, -3, 3},
+  {{q2, 1}, -3, 3},
+  {{positions, {{-1, 0}, {1, 0}}}, Locator}
+]
+```
+
+<Callout type="note">
+The manipulated output expression must evaluate to two-dimensional `Graphics`
+for a `Locator` control to work.
+</Callout>
+
+<Callout type="warning">
+Locator dragging is most responsive when the expression can use the JIT update
+path. `ContourPlot` can change its generated graphics structure and prevent
+that optimization; prefer `DensityPlot` when it provides an equivalent view.
+</Callout>
 
 
 ## Options

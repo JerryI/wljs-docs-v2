@@ -12,6 +12,20 @@ Locator[{x,y}]
 
 sets a locator to `{x,y}` initial position
 
+## Using `Locator` with `Manipulate`
+
+`Locator` can be used as a [`Manipulate`](../GUI/Manipulate#locator-controls)
+control specification:
+
+```wolfram
+Manipulate[expr, {{position, {0.0, 0.0}}, Locator}]
+```
+
+Use a list of positions as the initial value when one control should provide
+multiple locators. The manipulated result must be a two-dimensional `Graphics`
+expression. See [`Manipulate`](../GUI/Manipulate#locator-controls) for complete
+examples and performance guidance.
+
 ## Methods
 
 ### `EventHandler`
