@@ -40,7 +40,7 @@ Since it is translated into [`Text`](../Graphics/Text), one can use sort of TeX 
 Plot[PDF[NormalDistribution[0, 1], x], {x, -10, 10}, AxesLabel -> {"wavenumber (cm^{-1})", "absorption \\alpha"}, PlotRange->Full]
 ```
 
-It also supports absolute positioning using offset
+To adjust an individual label, use `{label, {dx, dy}}`, where `dx` and `dy` are horizontal and vertical offsets in pixels:
 
 ```wolfram
 Plot[PDF[NormalDistribution[0, 1], x], {x, -10, 10}, AxesLabel -> {"wavenumber (cm^{-1})", {"absorption \\alpha", {112,0}}}, PlotRange->Full]
@@ -78,7 +78,7 @@ Plot[x, {x, 0, 1}, Frame->True, FrameLabel->{
 }]
 ```
 
-one can specify an absolute offset for a label by wrapping it into a list
+Use the same `{label, {dx, dy}}` form to move an individual frame label by an absolute pixel offset:
 
 ```wolfram
 Plot[x, {x, 0, 1}, Frame->True, FrameLabel->{

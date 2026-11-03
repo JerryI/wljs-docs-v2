@@ -15,6 +15,12 @@ Use this page for known solutions, [GitHub Discussions](https://github.com/WLJST
 
 Wolfram Engine versions **14.1–15.0** are well tested with WLJS Notebook. Install and activate Wolfram Engine before installing WLJS Notebook. See the [installation guide](./setup) for platform-specific instructions.
 
+### Does WLJS support Symja or Woxi as alternative backends?
+
+WLJS has experimental support for the [Symja](https://github.com/axkr/symja_android_library) and [Woxi](https://github.com/ad-si/Woxi) backends. Neither integration is well tested. With WLJS 3.1.0, Symja tends to be more stable with WLJS, but it still lacks many features provided by Wolfram Engine and `wolframscript`.
+
+See the WLJS 3.1.3 release notes for more background on the [Symja](../releases/3.1.3#experimental-symja-backend-support) and [Woxi](../releases/3.1.3#experiments-with-woxi) experiments.
+
 ### Why does the launcher show `exit code -1`?
 
 Close WLJS Notebook, open a terminal, and activate Wolfram Engine:
@@ -287,6 +293,19 @@ Plot[Cos[x], {x, 0, 2 Pi},
 ```
 
 When the plot or graphic uses `Frame -> True`, use `FrameTicks` instead of `Ticks`. The same forms work with both `Plot` and `Graphics`. See the [`Plot` tick options](./Plotting-Functions/Plot#ticks) and [`Graphics` tick options](./Graphics/Graphics#ticks).
+
+### How do I adjust the position of frame labels or axes labels?
+
+Wrap the label as `{label, {dx, dy}}`, where `dx` and `dy` are horizontal and vertical offsets in pixels:
+
+```wolfram
+Plot[x, {x, 0, 1},
+  Frame -> True,
+  FrameLabel -> {{"x-axis", {-70, -10}}, "y-axis"}
+]
+```
+
+The same form works for individual labels in `AxesLabel` and for any graphics-like function whose result is `Graphics`, as well as raw `Graphics` expressions. See the label options for [`Plot`](./Plotting-Functions/Plot#axeslabel) and [`Graphics`](./Graphics/Graphics#axeslabel).
 
 ### How do I change the notebook font?
 

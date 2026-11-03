@@ -226,7 +226,7 @@ Since it is translated into [`Text`](../Graphics/Text), one can use sort of TeX 
 Graphics[Circle[], Axes->True, AxesLabel -> {"x-axis (cm^{-1})", "y-axis \\alpha"}]
 ```
 
-__You can offset the labels__ using the following pattern
+To adjust an individual label, use `{label, {dx, dy}}`, where `dx` and `dy` are horizontal and vertical offsets in pixels:
 
 ```wolfram
 Graphics[Circle[], Axes->True, AxesLabel -> {{"x-axis (cm^{-1})", {-20,-20}}, "y-axis"}]
@@ -269,7 +269,7 @@ The same as [`AxesLabel`](#`AxesLabel`)
 FrameLabel->{{"yy", None}, {"xx", None}}
 ```
 
-to specify __an absolute offset__ for each label, provide a list instead of a string
+Use the same `{label, {dx, dy}}` form to move an individual frame label by an absolute pixel offset:
 
 ```wolfram
 FrameLabel->{{{"yy", {xoffset, yoffset}}, None}, {"xx", None}}
