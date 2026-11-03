@@ -38,6 +38,11 @@ You can also create presentations using the WLJS Notebook.
 <LazyAutoplayVideo url={"/slides-example.mp4"}/>
 
 </Accordion>
+<Accordion title="Excalidraw integration">
+
+<LazyAutoplayVideo url={"/freeform-slide.mp4"}/>
+
+</Accordion>
 </Accordions>
 
 Slide cells inherit the features of [Markdown cells](./Markdown), [WLX](./WLX) and [HTML](./HTML), event listeners for slide events, fragment animations, and the option to export all slides as PDF.
@@ -652,9 +657,74 @@ See [Markdown cells](./Markdown) for more information
 
 ## Drawings
 
-Slides integrate the [Excalidraw](https://excalidraw.com/) editor for creating drawings directly within your presentations. To create a drawing, type: `!![]`
+There are three ways to combine drawings, arrows, text, and images on a slide.
 
-This will open the Excalidraw editor, and the resulting drawing will be saved as an SVG image in the output cell.
+### Freehand drawing with Excalidraw
+
+Put `!![]` on its own line in a slide cell:
+
+```markdown
+.slide
+
+!![]
+```
+
+This opens the [Excalidraw](https://excalidraw.com/) editor. You can draw freely and drop images directly onto its canvas. After evaluation, the drawing is rendered as an inline SVG in the slide output.
+
+### Programmatic drawing with `Graphics`
+
+For precise, reproducible placement, build a `Graphics` expression with [`Inset`](./../Graphics/Inset), `Text`, and an [`Arrow`](./../Graphics/Arrow) around a [`BezierCurve`](./../Graphics/BezierCurve):
+
+```wolfram
+img = ExampleData[{"TestImage", "Lena"}];
+MyCanvas = Graphics[{
+  Inset[img, {-0.5, 0.0}],
+  Directive[FontSize -> 18],
+  Text["This is Lena", {0.5, 0.25}, {0., 0.}],
+  Red,
+  Arrow[BezierCurve[{{0.5, 0.20}, {0.493, -0.016}, {0., 0.}}]]
+}, PlotRange -> 1, ImageSize -> 500];
+```
+
+Then place the result in a slide cell:
+
+```markdown
+.slide
+
+<MyCanvas/>
+```
+
+### HTML, CSS, and SVG overlays
+
+For a web-style layout, place the content in a relatively positioned container and draw annotations in an absolutely positioned SVG overlay:
+
+```html
+.slide
+
+<div style="position: relative; display: flex; align-items: center; justify-content: space-between; width: 600px; margin: 50px auto; padding: 20px; box-sizing: border-box;">
+  <img
+    src="https://upload.wikimedia.org/wikipedia/en/7/7d/Lenna_%28test_image%29.png"
+    alt="Lena test image"
+    style="width: 150px; height: 150px; object-fit: cover; border-radius: 8px;"
+  />
+
+  <div style="width: 250px; padding: 15px; background: white; border: 1px solid #e0e0e0; border-radius: 8px;">
+    <h3 style="margin-top: 0;">Connected concept</h3>
+    <p style="margin-bottom: 0;">This text describes the image.</p>
+  </div>
+
+  <svg viewBox="0 0 600 190" style="position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none;">
+    <defs>
+      <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="0" refY="3.5" orient="auto">
+        <polygon points="0 0, 10 3.5, 0 7" fill="#ff4d4d"/>
+      </marker>
+    </defs>
+    <path d="M 160 95 C 280 40, 320 150, 335 95" fill="none" stroke="#ff4d4d" stroke-width="3" marker-end="url(#arrowhead)"/>
+  </svg>
+</div>
+```
+
+Use this approach when you need full control over layout, styling, and responsive behavior. Slide cells support [plain HTML](#plain-html-support) alongside Markdown and WLX.
 
 ## Export Options (Share)
 

@@ -93,6 +93,16 @@ Embed images using `![alt text](URL)`:
 Files can be remote or local (in the notebook folder). __Try dragging and dropping any image into a markdown cell.__
 </Callout>
 
+#### Resize images
+
+To make an image smaller or larger, use an HTML `img` tag instead of Markdown image syntax and set its width in pixels:
+
+```markdown
+<img src="image.png" width="300"/>
+```
+
+Change `300` to the desired width. This also works in [slide cells](./Slide), which support Markdown and plain HTML.
+
 ### Drawing board (Canvas)
 We use the amazing [Excalidraw](https://excalidraw.com/) editor for complex drawings, right inside a markdown input cell. Try typing:
 

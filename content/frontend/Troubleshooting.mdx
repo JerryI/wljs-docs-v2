@@ -161,6 +161,16 @@ In Markdown cells, escape LaTeX backslashes as shown. See [LaTeX in Markdown cel
 
 Start an input cell with `.md`, then write Markdown on the following lines. You can hide the input through the cell-group menu or the arrow beside the output cell. See [Markdown cells](./Cell-types/Markdown).
 
+### How do I make images smaller or larger in Markdown cells or on a slide?
+
+Replace the Markdown image syntax, such as `![alt text](image.png)`, with an HTML `img` tag and set its `width`:
+
+```markdown
+<img src="image.png" width="300"/>
+```
+
+Change `300` to the desired width in pixels. The same syntax works in Markdown and slide cells. See [resizing images in Markdown cells](./Cell-types/Markdown#resize-images).
+
 ### How can I generate an HTML table from data?
 
 Use a WLX or HTML cell and generate the table rows and cells with `Table`. For example, after evaluating `data = Table[RandomWord[], {4}, {4}];`, this WLX cell creates a table from `data`:
@@ -200,6 +210,16 @@ To run WLJS as a headless server, use Docker or clone the repository and follow 
 See [Math typesetting and shortcuts](./Overview#math-typesetting-and-shortcuts) for editing, evaluation, notebook, command-palette, and special-character shortcuts.
 
 ## Graphics and formatting
+
+### How do I draw freeform annotations or combine drawings with images on a slide?
+
+Choose one of three approaches:
+
+1. For freehand drawing, put `!![]` on its own line in a slide cell. This opens an Excalidraw canvas where you can draw and drop images.
+2. For programmatic diagrams, compose images, text, and arrows inside `Graphics` with `Inset`, `Text`, and `Arrow`, then embed the result in the slide as `<MyCanvas/>`.
+3. For web layouts, use HTML and CSS positioning with an SVG overlay for arrows or other annotations.
+
+See [drawings and image annotations on slides](./Cell-types/Slide#drawings) for complete examples of all three methods.
 
 ### Why does a plot look different from Mathematica?
 
