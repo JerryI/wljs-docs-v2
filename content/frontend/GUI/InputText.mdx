@@ -25,13 +25,16 @@ Every-time user changes the content, an event __in a form of string__ will be ge
 
 ## Options
 ### `"Label"`
-adds a label at the left side to the input text field
+Adds a label to the left of the input text field. String labels recognize
+TeX-style `_{...}` and `^{...}` sequences and convert supported characters to
+Unicode subscripts or superscripts; for example, `"x_{1}"` displays as `x₁`.
 
 ### `"Placeholder"`
 Text placeholder
 
 ### `"Description"`
-adds description field to a widget
+Adds a description to the widget. Description text supports the same TeX-style
+subscript and superscript notation as `"Label"`.
 
 ### `ImageSize`
 sets the width in pixels

@@ -58,7 +58,7 @@ Now hook it up to some basic graphics primitives
 ```wolfram title="WL cell"
 Graphics3D[{
   Translate[PolyhedronData["Dodecahedron"][[1]]//N , {-2,-3,0}],
-  MeshMaterial[CustomMaterial[]],
+  MaterialShading[CustomMaterial[]],
   Translate[PolyhedronData["Dodecahedron"][[1]]//N , {2,3,0}]
 }]
 ```

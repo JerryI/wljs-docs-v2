@@ -7,6 +7,10 @@ Button[label_, action_]
 
 represents a shorthand notation for [InputButton](../GUI/InputButton) with event-handler made for compatibility with Mathematica.
 
+String labels recognize TeX-style `_{...}` and `^{...}` sequences and convert
+supported characters to Unicode subscripts or superscripts; for example,
+`Button["A^{a}", Beep[]]` displays `Aᵃ`.
+
 <Callout type="note">
 If `label` is not a string then a clickable pane will be displayed with a limited styling options
 </Callout>

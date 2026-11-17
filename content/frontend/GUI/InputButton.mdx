@@ -12,6 +12,11 @@ InputButton[label_String, opts___] _EventObject
 ```
 creates a button component and returns [`EventObject`](../Misc/Events)
 
+String labels recognize TeX-style `_{...}` and `^{...}` sequences and convert
+supported characters to Unicode subscripts or superscripts; for example,
+`InputButton["A^{a}"]` displays `Aᵃ`. A sequence containing an unsupported
+character is left unchanged.
+
 ## Event generation
 On-click emits `True` to a handler function assigned
 

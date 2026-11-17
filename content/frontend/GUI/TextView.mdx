@@ -18,7 +18,9 @@ represents a text field used for displaying static or dynamic textual data
 __If specified__ it acts like an [InputText](../GUI/InputText). 
 
 ## `"Description"`
-adds description label
+Adds a description label. Description text recognizes TeX-style `_{...}` and
+`^{...}` sequences and converts supported characters to Unicode subscripts or
+superscripts.
 
 ## `"Placeholder"`
 adds placeholder of the given `string` is empty
@@ -27,7 +29,9 @@ adds placeholder of the given `string` is empty
 sets the width in pixels
 
 ### `"Label"`
-adds a label at the left side to the text field
+Adds a label to the left of the text field. String labels support the same
+TeX-style subscript and superscript notation; for example, `"Boo^{2}"` displays
+as `Boo²`.
 
 ### `Appearance`
 by the default is `Automatic`. By setting to any other value it will remove borders and other styling

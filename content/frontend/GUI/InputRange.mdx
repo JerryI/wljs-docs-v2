@@ -28,10 +28,13 @@ On MacOS devices it provides a haptic feedback when dragged
 
 ## Options
 ### `"Label"`
-Adds a label to a slider
+Adds a label to a slider. String labels recognize TeX-style `_{...}` and
+`^{...}` sequences and convert supported characters to Unicode subscripts or
+superscripts; for example, `"x_{1}"` displays as `x₁`. A sequence containing an
+unsupported character is left unchanged.
 
 ```wolfram
-slider = InputRange[0, 1, 0.1, "Label"->"Slider"]
+slider = InputRange[0, 1, 0.1, "Label" -> "x_{1}"]
 ```
 
 ### `"Topic"`

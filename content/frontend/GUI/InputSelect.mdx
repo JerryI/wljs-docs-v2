@@ -26,7 +26,9 @@ Emits corresponding `expr` based on user's choice.
 
 ## Options
 ### `"Label"`
-Adds a label 
+Adds a label. String labels recognize TeX-style `_{...}` and `^{...}` sequences
+and convert supported characters to Unicode subscripts or superscripts; for
+example, `"x_{1}"` displays as `x₁`.
 
 ### `"Class"`
 A text string of CSS classes applied to the component wrapper

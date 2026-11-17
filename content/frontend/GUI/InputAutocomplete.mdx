@@ -31,7 +31,9 @@ where `results` is a sorted `List` of strings.
 
 ## Options
 ### `"Label"`
-A text-label for the widget
+A text label for the widget. String labels recognize TeX-style `_{...}` and
+`^{...}` sequences and convert supported characters to Unicode subscripts or
+superscripts; for example, `"x_{1}"` displays as `x₁`.
 
 ### `"ClearOnSubmit"`
 Keeps or clears out the input field when a users submitted the result. By the default is `True`. 

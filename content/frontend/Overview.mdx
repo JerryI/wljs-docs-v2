@@ -291,7 +291,35 @@ import {Notebook} from 'lucide-react'
   </Folder>
 </Files>
 
-The notebook consits of cells or groups of *input-output* cells. <span className='relative inline-block group'><span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-3xl opacity-80 group-hover:opacity-50 transition duration-500" />
+### Default documents folder
+
+WLJS Notebook creates the following directories in your default documents folder:
+
+```text
+WLJS Notebooks/
+|-- Demos/            # Example notebooks and demonstrations.
+|-- Extensions/       # WLJS-specific extensions for the frontend and kernel.
+|-- User palette/     # User-defined command palette items.
+|-- User templates/   # Templates for creating notebooks.
+`-- Paclets/          # Local Wolfram paclets loaded when a kernel starts.
+```
+
+Place each local paclet in its own direct subdirectory of `Paclets/`, with a
+`PacletInfo.wl` or `PacletInfo.m` file at the paclet root:
+
+```text
+Paclets/
+`-- MyPaclet/
+    |-- PacletInfo.wl
+    `-- Kernel/
+```
+
+When a kernel starts, WLJS finds these descriptor files and calls
+`PacletDirectoryLoad` on their containing directories. See
+[Wolfram Packages](./Development/Paclets) for details about paclets and WLJS
+frontend extensions.
+
+The notebook consists of cells or groups of *input-output* cells. <span className='relative inline-block group'><span className="absolute -inset-1 bg-gradient-to-r from-fd-primary/50 to-purple-500/50 rounded-lg blur-3xl opacity-80 group-hover:opacity-50 transition duration-500" />
 <span className="relative">Input cell gives you a superpower</span></span> to switch between languages or type of produced content with a single line:
 
 <WLJSWrapper>

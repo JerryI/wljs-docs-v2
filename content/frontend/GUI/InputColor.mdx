@@ -21,7 +21,9 @@ Emits picked color in a form `{r,g,b}` or `{r,g,b,a}`.
 ## Options
 
 ### `"Label"`
-Text for a label
+Text for a label. String labels recognize TeX-style `_{...}` and `^{...}`
+sequences and convert supported characters to Unicode subscripts or
+superscripts; for example, `"x_{1}"` displays as `x₁`.
 
 ### `"Description"`
 Text description
