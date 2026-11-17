@@ -11,7 +11,13 @@ ReactionBalancedQ["2H2 + O2 -> 2H2O"]
 ```
 
 ```wolfram
-ReactionBalancedQ[Molecule["CH4"] + Molecule["O2"] -> Molecule["CO2"] + Molecule["H2O"]]
+combustion = ChemicalReaction[
+  <|ChemicalFormula["CH4"] -> 1, ChemicalFormula["O2"] -> 2|> ->
+  <|ChemicalFormula["CO2"] -> 1, ChemicalFormula["H2O"] -> 2|>
+];
+
+ReactionBalancedQ[combustion]
+(* True *)
 ```
 
 

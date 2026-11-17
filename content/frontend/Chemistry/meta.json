@@ -1,0 +1,19 @@
+{
+  "title": "Chemistry",
+  "pages": [
+    "Molecule",
+    "Atom",
+    "Bond",
+    "MoleculePlot",
+    "MoleculePlot3D",
+    "MoleculePattern",
+    "MoleculeMatchQ",
+    "FindMoleculeSubstructure",
+    "MoleculeSubstructureCount",
+    "ChemicalFormula",
+    "ChemicalFormulaQ",
+    "ChemicalReaction",
+    "PatternReaction",
+    "ApplyReaction"
+  ]
+}

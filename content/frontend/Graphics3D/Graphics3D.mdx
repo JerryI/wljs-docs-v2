@@ -102,6 +102,22 @@ Sets the 3D aspect ratio of the whole scene. By the default [Graphics3D](../Grap
 ### `"SleepAfter"`
 Stops rendering after the specified number of milliseconds. The default is `1000`, which limits GPU load. Changes to the camera or scene wake the renderer again.
 
+### `"SpinShow"`
+Automatically rotates the scene around its z-axis while keeping the lights fixed. The default is `False`.
+
+- `"SpinShow" -> True` rotates continuously through 360 degrees.
+- `"SpinShow" -> maxAngle` oscillates between `-maxAngle` and `maxAngle`, slowing smoothly before changing direction. The angle is in radians.
+- `"SpinShow" -> {maxAngle, speed}` sets the oscillation speed.
+- `"SpinShow" -> {Automatic, speed}` rotates continuously at the specified speed.
+
+Speed is measured in radians per second and defaults to `0.6`. For example:
+
+```wolfram
+Graphics3D[{Red, Cuboid[]}, "SpinShow" -> {Pi/4, 0.5}]
+```
+
+When spinning is enabled, the renderer checks every two seconds whether the output is visible. It pauses while the output is hidden or covered, then resumes from the same angle when visible again. 
+
 ### `"Renderer"`
 Sets the rendering engine
 - `"Rasterization"` __default__
