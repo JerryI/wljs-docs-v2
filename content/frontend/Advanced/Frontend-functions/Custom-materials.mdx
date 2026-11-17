@@ -136,14 +136,14 @@ Now let's hook it up to some basic graphics primitives:
 <wljs-editor lazy="true" type="Input" display="codemirror">{`
 Graphics3D[{
     Translate[Tetrahedron[], {-1,-2,0}],
-    MeshMaterial[CustomMaterial[]],
+    MaterialShading[CustomMaterial[]],
     Translate[Octahedron[], {1,2,0}]
 }]
 `}</wljs-editor></WLJSWrapper>
 
 <WLJSWrapper>
 <wljs-editor lazy="true" type="Input" display="codemirror">{`
-(*VB[*)(Graphics3D[{Translate[Tetrahedron[], {-1, -2, 0}], MeshMaterial[CustomMaterial[]], Translate[Octahedron[], {1, 2, 0}]}, ImageSize -> 270])(*,*)(*"1:eJx1jl0KwjAQhGP1xR96B8/gERRUsAjVC6ztxi6kjWTTFw+v7hoqCLoPH+xkdibLiy/tyBjDE8HOu9pmus0E2wC3hipebex4cByIY3JMBecAHTuIaI1Kc5UwBmiwDr77vqKnDD0Uak6lC0GB3BSSEQhcyskF656jbz/6v0r957GKvxu1gvQyNWbDY9k7fIftW7jiie5IuXhftrZAqQ=="*)(*]VB*)
+(*VB[*)(Graphics3D[{Translate[Tetrahedron[], {-1, -2, 0}], MaterialShading[CustomMaterial[]], Translate[Octahedron[], {1, 2, 0}]}, ImageSize -> 270])(*,*)(*"1:eJx1jl0KwjAQhGP1xR96B8/gERRUsAjVC6ztxi6kjWTTFw+v7hoqCLoPH+xkdibLiy/tyBjDE8HOu9pmus0E2wC3hipebex4cByIY3JMBecAHTuIaI1Kc5UwBmiwDr77vqKnDD0Uak6lC0GB3BSSEQhcyskF656jbz/6v0r957GKvxu1gvQyNWbDY9k7fIftW7jiie5IuXhftrZAqQ=="*)(*]VB*)
 `}</wljs-editor></WLJSWrapper>
 
 *Try to drag it, it is alive*

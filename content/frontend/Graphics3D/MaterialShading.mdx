@@ -1,0 +1,138 @@
+---
+title: MaterialShading
+package: wljs-graphics3d-threejs
+source: https://github.com/WLJSTeam/wolfram-js-frontend/blob/main/modules/wljs-graphics3d-threejs/src/kernel.js
+---
+
+`MaterialShading` is a scoped [Graphics3D](./Graphics3D) directive that specifies
+the material used to shade the primitives that follow it.
+
+## Forms
+
+```wolfram
+MaterialShading[]
+```
+
+uses the default white, nonmetallic material.
+
+```wolfram
+MaterialShading["name"]
+```
+
+uses a named material preset.
+
+```wolfram
+MaterialShading[{"name", color}]
+```
+
+uses a named preset with `color` in place of the preset's base color.
+
+```wolfram
+MaterialShading[<|"property" -> value, ...|>]
+```
+
+specifies physically based material properties with an association.
+
+```wolfram
+MaterialShading[material]
+```
+
+uses a custom frontend [material factory](./../Advanced/Frontend-functions/Custom-materials). This form replaces the corresponding
+legacy `MeshMaterial[material]` expression.
+
+Like [Opacity](./Opacity) and [RGBColor](./RGBColor), `MaterialShading` has
+scope: it applies to the 3D primitives that follow it in the same list.
+
+## Named materials
+
+The available presets are:
+
+- `"Aluminum"`, `"Brass"`, `"Bronze"`, `"Copper"`, `"Electrum"`, `"Gold"`,
+  `"Iron"`, `"Pewter"`, and `"Silver"`
+- `"Clay"`, `"Foil"`, `"Glazed"`, `"Plastic"`, `"Rubber"`, `"Satin"`, and
+  `"Velvet"`
+
+Preset names are case-insensitive. A custom base color must be a color
+expression; otherwise, the preset's own base color is used.
+
+### Example
+
+```wolfram
+Graphics3D[{
+  MaterialShading["Bronze"],
+  KnotData["SolomonSeal", "ImageData"]
+}]
+```
+
+Change the base color while retaining the bronze surface properties:
+
+```wolfram
+Graphics3D[{
+  MaterialShading[{"Bronze", RGBColor[0.25, 0.55, 1]}],
+  Sphere[]
+}]
+```
+
+## Material properties
+
+Association properties use string keys:
+
+| Property | Description |
+| --- | --- |
+| `"BaseColor"` | Base color or texture |
+| `"EmissionColor"` | Emitted color or texture |
+| `"EmissionIntensity"` | Emission strength |
+| `"Opacity"` | Surface opacity, clamped to the range from `0` to `1` |
+| `"SpecularColor"` | Specular-reflection color or texture |
+| `"SpecularIntensity"` | Specular-reflection strength |
+| `"MetallicCoefficient"` | Metallic coefficient or texture |
+| `"RoughnessCoefficient"` | Surface roughness coefficient or texture |
+| `"DiffuseRoughnessCoefficient"` | Diffuse roughness used when `"RoughnessCoefficient"` is absent |
+| `"CoatColor"` | Color or texture of the surface coat |
+| `"CoatIntensity"` | Surface-coat strength |
+| `"CoatRoughnessCoefficient"` | Surface-coat roughness |
+| `"SheenColor"` | Sheen-reflection color or texture |
+| `"SheenIntensity"` | Sheen-reflection strength |
+| `"SheenRoughnessCoefficient"` | Sheen roughness |
+| `"SpecularAnisotropyCoefficient"` | Specular anisotropy, optionally `{coefficient, rotation}` |
+| `"CoatAnisotropyCoefficient"` | Coat anisotropy, optionally `{coefficient, rotation}` |
+| `"AmbientExposureFraction"` | Ambient-occlusion strength or texture |
+| `"SurfaceNormals"` | Surface-normal texture |
+| `"TextureCoordinateScale"` | Texture-coordinate scale `{sx, sy}` |
+| `"TextureCoordinateOffset"` | Texture-coordinate offset `{ox, oy}` |
+
+`"EmissionColor"`, `"SpecularColor"`, `"CoatColor"`, and `"SheenColor"`
+also accept `{colorOrTexture, intensity}`. WLJS additionally supports the
+aliases `"IOR"`, `"IndexOfRefraction"`, `"TransmissionCoefficient"`, and
+`"Thickness"`.
+
+```wolfram
+Graphics3D[{
+  MaterialShading[<|
+    "BaseColor" -> RGBColor[0.15, 0.45, 0.8],
+    "MetallicCoefficient" -> 0.8,
+    "RoughnessCoefficient" -> 0.25,
+    "CoatIntensity" -> 0.4,
+    "CoatRoughnessCoefficient" -> 0.1,
+    "Opacity" -> 0.9
+  |>],
+  Sphere[]
+}]
+```
+
+## Renderer materials
+
+WLJS also accepts `"MeshPhysicalMaterial"`, `"MeshLambertMaterial"`,
+`"MeshPhongMaterial"`, and `"MeshToonMaterial"` to select the corresponding
+underlying Three.js material class.
+
+```wolfram
+Graphics3D[{
+  MaterialShading["MeshToonMaterial"],
+  Sphere[]
+}]
+```
+
+The older [MeshMaterial](./MeshMaterial) directive remains supported. For best
+compatibility with Wolfram Mathematica and access to future material features,
+prefer `MaterialShading`, including for custom frontend materials.

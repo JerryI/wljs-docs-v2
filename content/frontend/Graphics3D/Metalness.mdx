@@ -6,8 +6,12 @@ package: wljs-graphics3d-threejs
 
 source: https://github.com/JerryI/Mathematica-ThreeJS-graphics-engine/blob/dev/src/kernel.js
 ---
-<Callout type="warn">
-It is considered to be removed. Please use [Directive](../Graphics3D/Directive) instead
+<Callout type="note">
+`Metalness` remains supported. For best compatibility with Wolfram Mathematica
+and access to future material features, use
+[`MaterialShading`](./MaterialShading) with
+`"MetallicCoefficient"`, for example
+`MaterialShading[<|"MetallicCoefficient" -> value|>]`.
 </Callout>
 
 specifies metallic property of a graphics primitive (see [MeshPhysicalMaterial](../Graphics3D/MeshPhysicalMaterial))
