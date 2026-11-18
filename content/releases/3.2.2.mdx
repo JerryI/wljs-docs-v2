@@ -338,3 +338,9 @@ EventHandler[InputRange[0,1,0.01], (level=#)&]
 };
 Partition[%, 3]//Grid 
 ```
+
+By the way, they are all supported by `Manipulate`, `Animate` and `Refresh` JIT (Just in Time Transpiler)
+
+```wolfram
+Refresh[ClockGauge[Now], 0.1]
+```
