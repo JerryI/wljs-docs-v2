@@ -38,6 +38,14 @@ Manipulate[expr_, {{u_Symbol, initial_, label_String}, values_List}..]
 Manipulate[expr_, {{u_Symbol, initial_}, Locator}..]
 ```
 
+```wolfram
+Manipulate[expr_, {u_Symbol, initialColor_}..]
+```
+
+```wolfram
+Manipulate[expr_, {u_Symbol, initialColor_, label_String}..]
+```
+
 generates a version of `expr` with controls added to allow interactive reevaluation.
 
 
@@ -118,6 +126,22 @@ Here is an example with mixed symbolics and graphics:
   }], {{m, ((*GB[*){{1(*|*),(*|*)0}(*||*),(*||*){0(*|*),(*|*)2}}(*]GB*))}, { ((*GB[*){{1(*|*),(*|*)0}(*||*),(*||*){0(*|*),(*|*)2}}(*]GB*)) -> "Nodal source",  ((*GB[*){{1(*|*),(*|*)1}(*||*),(*||*){0(*|*),(*|*)1}}(*]GB*))  -> "Degenerate source",  ((*GB[*){{0(*|*),(*|*)1}(*||*),(*||*){-1(*|*),(*|*)1}}(*]GB*)) -> "Spiral source",  ((*GB[*){{-1(*|*),(*|*)0}(*||*),(*||*){0(*|*),(*|*)-2}}(*]GB*))  -> "Nodal sink",  ((*GB[*){{-1(*|*),(*|*)1}(*||*),(*||*){0(*|*),(*|*)-1}}(*]GB*)) -> "Degenerate sink",  ((*GB[*){{0(*|*),(*|*)1}(*||*),(*||*){-1(*|*),(*|*)-1}}(*]GB*)) -> "Spiral sink",  ((*GB[*){{0(*|*),(*|*)1}(*||*),(*||*){-1(*|*),(*|*)0}}(*]GB*)) -> "Center",  ((*GB[*){{1(*|*),(*|*)0}(*||*),(*||*){0(*|*),(*|*)-2}}(*]GB*))  -> "Saddle"}}]`}</wljs-editor>
 </WLJSWrapper>
 
+## Color controls
+
+Use a color as the initial value to create a color-picker control. Supported
+color expressions include `RGBColor`, `Hue`, `GrayLevel`, and `LABColor`;
+named colors such as `Red` evaluate to a supported color expression.
+
+```wolfram
+Manipulate[
+  Plot3D[x y, {x, -1, 1}, {y, -1, 1}, PlotStyle -> color],
+  {color, Red, "Color"}
+]
+```
+
+The selected value remains a Wolfram Language color expression. For a
+standalone color-picker element, see [`InputColor`](./InputColor).
+
 ## Locator controls
 
 Use [`Locator`](../Graphics/Locator) as a control specification to manipulate a
@@ -166,6 +190,20 @@ that optimization; prefer `DensityPlot` when it provides an equivalent view.
 
 ### `ContinuousAction`
 By default, this is `False`, which means that any update happens after the user's action, not before.
+
+### `ControlPlacement`
+
+Controls appear above the manipulated expression by default
+(`ControlPlacement -> Top`). Use `Bottom`, `Left`, or `Right` to place the
+controls on another side:
+
+```wolfram
+Manipulate[
+  Plot3D[x y, {x, -1, 1}, {y, -1, 1}, PlotStyle -> color],
+  {color, Red, "Color"},
+  ControlPlacement -> Right
+]
+```
 
 ### `"ControlsLayout"`
 By default, this is `"Vertical"`. Another possible value is `"Horizontal"`.

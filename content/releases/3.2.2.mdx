@@ -269,3 +269,72 @@ Similar to Excalidraw you now can use TeX-style subscripts and superscripts in a
 `Manipulate` expression also inherits this property for its inputs descriptions
 
 <WLJSWrapper><wljs-editor display="codemirror" type="Input" editable="true"  >{`Manipulate[(*SqB[*)Sqrt[x](*]SqB*), {{x,1, "x^{2}"}, 0, 2, 0.1}]`}</wljs-editor></WLJSWrapper>
+
+## `Manipulate` improvements
+
+### Color-picker controls
+
+`Manipulate` now creates a color picker when a control starts with a color
+value:
+
+```wolfram
+Manipulate[
+  Plot3D[x y, {x, -1, 1}, {y, -1, 1}, PlotStyle -> color],
+  {color, Red, "Color"}
+]
+```
+
+![A Manipulate widget with a color-picker control](attachments/manipulate-color-picker.png)
+
+### `ControlPlacement`
+
+Use `ControlPlacement` to put the controls above, below, to the left, or to the
+right of the manipulated expression. The supported settings are `Top`,
+`Bottom`, `Left`, and `Right`.
+
+```wolfram
+Manipulate[
+  Plot3D[x y, {x, -1, 1}, {y, -1, 1}, PlotStyle -> color],
+  {color, Red, "Color"},
+  ControlPlacement -> Right
+]
+```
+
+![A Manipulate widget with its controls on the right](attachments/manipulate-control-placement.png)
+
+See the [`Manipulate`](../frontend/GUI/Manipulate#color-controls) reference for
+the supported color forms and option details.
+
+## All kinds of Gauges
+We added support for many indicators, angular, linear and etc
+
+```wolfram
+{
+  AngularGauge[20, {0,2}],
+  BulletGauge[0.2, 0.3, {0,1}, GaugeStyle->Green],
+  ClockGauge[Now],
+  HorizontalGauge[0.6],
+  ThermometerGauge[100],
+  VerticalGauge[0.2]
+};
+Partition[%, 3]//Grid 
+```
+
+<WLJSWrapper><wljs-editor display="codemirror" type="Output"  >{`(*GB[*){{(*VB[*)(AngularGauge[20, {0, 2}])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KWlMIB4PkHDMSy/NSSxyTyxNT80UAQpApEAKfTKLSzKBNEMmSAgA6Y4NEA=="*)(*]VB*)(*|*),(*|*)(*VB[*)(BulletGauge[0.2, 0.3, {0, 1}, GaugeStyle -> RGBColor[0, 1, 0]])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KWkgRjE3kHAqzclJLXFPLE1PLZo1EwRO2hcZg8Fl+zQmmCafzOKSTCDNkAkyByEeVJqTWswFZIBNCC6pzElNYwZJcoAk3Z2c83PyixAawSwAsVYf4A=="*)(*]VB*)(*|*),(*|*)(*VB[*)(ClockGauge[4.004002356473822])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRAeF5BwzslPznZPLE1PDVIHck30DAxMDAyMjE3NTMyNLYyMEgzN9IxNTQ3MLI0NjM1NjI1NjbXiLAG0FxD9"*)(*]VB*)}(*||*),(*||*){(*VB[*)(HorizontalGauge[0.6])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRAeP5hXlFmVn1eSmOOeWJqeWmQMBo/tAS8TDWw="*)(*]VB*)(*|*),(*|*)(*VB[*)(ThermometerGauge[100])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeAJAIyUgtys3PTS1JLXJPLE1PzUwBCgIACDoL1g=="*)(*]VB*)(*|*),(*|*)(*VB[*)(VerticalGauge[0.2])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRAeL5AISy0qyUxOzHFPLE1PLZo1EwRO2gMAHYIOxQ=="*)(*]VB*)}}(*||*)(*1:eJxTTMoPSmNkYGAo5gUSYZmp5S6pyflFiSX5RcEsQBH3oswUAJ89CUc=*)(*]GB*)`}</wljs-editor></WLJSWrapper>
+
+Try the dynamic version too
+
+```wolfram
+level = 0.2;
+EventHandler[InputRange[0,1,0.01], (level=#)&]
+
+{
+  AngularGauge[level//Offload, {0,2}],
+  BulletGauge[level//Offload, 0.3, {0,1}, GaugeStyle->Green],
+  ClockGauge[{12 level//Offload,12,0}],
+  HorizontalGauge[level//Offload],
+  ThermometerGauge[100 level//Offload, {0,100}],
+  VerticalGauge[level//Offload]
+};
+Partition[%, 3]//Grid 
+```

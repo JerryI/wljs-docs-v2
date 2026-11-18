@@ -1,0 +1,55 @@
+---
+title: VerticalGauge
+---
+
+```wolfram
+VerticalGauge[value]
+VerticalGauge[value, {min, max}]
+VerticalGauge[{value1, value2, ...}, {min, max}]
+```
+
+draws one or more vertical gauges. The default range is `{0, 1}`. Values
+outside the range are clamped to its endpoints.
+
+```wolfram
+VerticalGauge[60, {0, 100}]
+```
+
+<Callout type="warn">
+WLJS implements a frontend-rendered subset of `VerticalGauge`. Only the
+patterns and options documented on this page are supported; other Wolfram
+Language gauge options and layout patterns are ignored.
+</Callout>
+
+## Dynamic updates
+
+The first argument can be an [`Offload`](../Interpreter/Offload) expression:
+
+```wolfram
+level = 0.2;
+VerticalGauge[Offload[level], {0, 1}]
+```
+
+Changing `level` updates the existing gauge. The range and options are fixed
+when the gauge is created.
+
+## Options
+
+### `GaugeLabels`
+
+Places a single label beside each gauge. Label lists and placement
+specifications are not supported.
+
+```wolfram
+VerticalGauge[0.6, GaugeLabels -> "Load"]
+```
+
+<Callout type="note">
+WLJS uses the browser's native meter for this gauge. `GaugeStyle` is not
+implemented by this frontend renderer.
+</Callout>
+
+## Supported output forms
+
+- [StandardForm](../Formatting/StandardForm)
+- [WLXForm](../Formatting/WLXForm)

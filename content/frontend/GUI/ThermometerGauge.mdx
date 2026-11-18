@@ -1,0 +1,59 @@
+---
+title: ThermometerGauge
+---
+
+```wolfram
+ThermometerGauge[value]
+ThermometerGauge[value, {min, max}]
+ThermometerGauge[{value1, value2, ...}, {min, max}]
+```
+
+draws one or more thermometer gauges. The default range is `{0, 1}`. Values
+outside the range are clamped to its endpoints.
+
+```wolfram
+ThermometerGauge[37, {35, 42}]
+```
+
+<Callout type="warn">
+WLJS implements a frontend-rendered subset of `ThermometerGauge`. Only the
+patterns and options documented on this page are supported; other Wolfram
+Language gauge options and layout patterns are ignored.
+</Callout>
+
+## Dynamic updates
+
+The first argument can be an [`Offload`](../Interpreter/Offload) expression:
+
+```wolfram
+temperature = 20;
+ThermometerGauge[Offload[temperature], {0, 100}]
+```
+
+Changing `temperature` updates the existing gauge. The range and options are
+fixed when the gauge is created.
+
+## Options
+
+### `GaugeStyle`
+
+Sets the thermometer accent color. A single color is supported; lists and
+other style specifications are not.
+
+```wolfram
+ThermometerGauge[37, {35, 42}, GaugeStyle -> Red]
+```
+
+### `GaugeLabels`
+
+Places a single label beside each gauge. Label lists and placement
+specifications are not supported.
+
+```wolfram
+ThermometerGauge[37, {35, 42}, GaugeLabels -> "Temperature"]
+```
+
+## Supported output forms
+
+- [StandardForm](../Formatting/StandardForm)
+- [WLXForm](../Formatting/WLXForm)

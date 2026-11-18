@@ -1,0 +1,62 @@
+---
+title: ClockGauge
+---
+
+```wolfram
+ClockGauge[]
+ClockGauge[time]
+ClockGauge[{hour, minute, second}]
+ClockGauge[{year, month, day, hour, minute, second}]
+```
+
+draws an analog clock. With no argument it shows the current local time.
+`time` can be an absolute time number or a `DateObject`, such as `Now`.
+
+```wolfram
+ClockGauge[Now]
+ClockGauge[{10, 15, 30}]
+```
+
+<Callout type="warn">
+WLJS implements a frontend-rendered subset of `ClockGauge`. Only the
+patterns and options documented on this page are supported; `TimeObject`,
+time-zone display controls, and other Wolfram Language clock patterns are not
+implemented.
+</Callout>
+
+## Dynamic updates
+
+The first argument can be an [`Offload`](../Interpreter/Offload) expression:
+
+```wolfram
+time = {10, 15, 0};
+ClockGauge[Offload[time]]
+```
+
+Changing `time` updates the hands of the existing clock. Options are fixed
+when the clock is created.
+
+## Options
+
+### `GaugeStyle`
+
+Sets the accent color used for the second hand and center of the clock. A
+single color is supported; lists and other style specifications are not.
+
+```wolfram
+ClockGauge[Now, GaugeStyle -> Red]
+```
+
+### `GaugeLabels`
+
+Places a single label beside the clock. Label lists and placement
+specifications are not supported.
+
+```wolfram
+ClockGauge[{10, 15, 30}, GaugeLabels -> "Local time"]
+```
+
+## Supported output forms
+
+- [StandardForm](../Formatting/StandardForm)
+- [WLXForm](../Formatting/WLXForm)

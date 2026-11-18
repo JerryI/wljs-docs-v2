@@ -1,0 +1,59 @@
+---
+title: AngularGauge
+---
+
+```wolfram
+AngularGauge[value]
+AngularGauge[value, {min, max}]
+AngularGauge[{value1, value2, ...}, {min, max}]
+```
+
+draws one or more dial gauges. The default range is `{0, 1}`. Values outside
+the range are clamped to the ends of the dial.
+
+```wolfram
+AngularGauge[20, {0, 100}]
+```
+
+<Callout type="warn">
+WLJS implements a frontend-rendered subset of `AngularGauge`. Only the
+patterns and options documented on this page are supported; other Wolfram
+Language gauge options and layout patterns are ignored.
+</Callout>
+
+## Dynamic updates
+
+The first argument can be an [`Offload`](../Interpreter/Offload) expression:
+
+```wolfram
+level = 0.2;
+AngularGauge[Offload[level], {0, 1}]
+```
+
+Changing `level` updates the existing gauge. The range and options are fixed
+when the gauge is created.
+
+## Options
+
+### `GaugeStyle`
+
+Sets the dial accent color. A single color is supported; lists and other
+style specifications are not.
+
+```wolfram
+AngularGauge[0.65, GaugeStyle -> Green]
+```
+
+### `GaugeLabels`
+
+Places a single label beside each gauge. Label lists and placement
+specifications are not supported.
+
+```wolfram
+AngularGauge[0.65, GaugeLabels -> "Load"]
+```
+
+## Supported output forms
+
+- [StandardForm](../Formatting/StandardForm)
+- [WLXForm](../Formatting/WLXForm)
