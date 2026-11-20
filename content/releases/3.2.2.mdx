@@ -356,3 +356,32 @@ Do[Pause[0.1]; HapticFeedback["Alignment"], {15}];
 Print["LevelChange"];
 Do[Pause[0.1]; HapticFeedback["LevelChange"], {15}];
 ```
+
+## Refresh got new usage patterns
+Did you know you can manually trigger `Refresh`? Now it got even more options to control the evaluation and display:
+
+```wolfram
+ev = EventObject[];
+Refresh[ListPlot[RandomReal[{-1,1}, {2,100}]], ev]
+```
+
+To update it normally with JIT enabled
+
+```wolfram
+EventFire[ev, True]
+```
+
+Or
+
+```wolfram
+EventFire[ev, "Refresh", True]
+EventFire[ev, "I love cucumbers", True]
+```
+
+To bypass JIT and make a hard refresh (clear and rebuild)
+
+```wolfram
+EventFire[ev, "FullRefresh", True]
+```
+
+This might come handy if you need to update the plot ranges, since these are usually ignored by diff-engine and JIT.

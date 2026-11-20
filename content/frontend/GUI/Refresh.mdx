@@ -40,6 +40,41 @@ or even for decorated symbols
 Refresh[Now, 1]
 ```
 
+## Event trigger
+You can manually trigger `Refresh` using provided `trigger_EventObject`. It supports 2 patterns or event topics:
+
+- `"Refresh"` or any other string - normal refresh
+- `"FullRefresh"` full refresh bypassing JIT
+
+Here are a few example:
+
+```wolfram
+ev = EventObject[];
+Refresh[ListPlot[RandomReal[{-1,1}, {2,100}]], ev]
+```
+
+To update it normally with JIT enabled
+
+```wolfram
+EventFire[ev, True]
+```
+
+Or
+
+```wolfram
+EventFire[ev, "Refresh", True]
+EventFire[ev, "I love cucumbers", True]
+```
+
+To bypass JIT and make a hard refresh (clear and rebuild)
+
+```wolfram
+EventFire[ev, "FullRefresh", True]
+```
+
+This might come handy if you need to update the plot ranges, since these are usually ignored by diff-engine and JIT.
+
+
 ## JIT Features
 `Refresh` expression uses the same runtime optimization features as [Manipulate](../GUI/Manipulate) and [Animate](../GUI/Animate), which can benefit some cases and prevent full reevaluation.
 
