@@ -321,6 +321,124 @@ EventHandler[
 
 Keep a `"pointerrawupdate"` handler small because it runs at the rate provided by the device and browser. Use `"pointermove"` when raw sampling is unnecessary. Browsers may still combine hardware samples internally, and `"pointerrawupdate"` availability depends on browser support and a secure browser context.
 
+### Freehand vector drawing with mouse and stylus pressure
+
+The following example creates a freehand vector drawing canvas from `"pointerdown"`, `"pointermove"`, and `"pointerup"` events. Each pointer press starts a new stroke, pointer movement appends coordinates while drawing is active, and pointer release ends the stroke. The `paint` flag ensures that moving the pointer without holding it down does not add points.
+
+Every event supplies a `data` association. The example reads `data["Position"]` to build the strokes and `data["Pressure"]` to update the gauge beside the drawing area. A mouse normally reports a generic pressure value, while a compatible stylus or digitizer can report changes across the normalized range from `0` to `1`.
+
+```wolfram
+Module[{
+  segments = {},
+  paint = False, pressure = 0.0
+},
+  Row[{
+    EventHandler[
+      Graphics[{
+        Black,
+        Directive["TransitionType" -> None],
+        Line[segments // Offload]
+      },
+        PlotRange -> 1,
+        ImageSize -> {500, 500},
+        "Controls" -> False
+      ],
+      {
+        "pointerdown" -> Function[data,
+          segments = Append[segments, {data["Position"]}];
+          paint = True
+        ],
+        "pointerup" -> Function[data,
+          paint = False
+        ],
+        "pointermove" -> Function[data,
+          If[paint,
+            segments[[-1]] = Append[segments[[-1]], data["Position"]];
+            segments = segments
+          ];
+          pressure = data["Pressure"]
+        ]
+      }
+    ] // Framed,
+    VerticalGauge[pressure // Offload, {0, 1}]
+  }]
+] // Deploy
+```
+
+`segments` is a list of strokes, and each stroke is itself a list of coordinates. Because `Line` accepts multiple coordinate lists, all completed and active strokes can remain in a single graphics primitive. `Offload` keeps the displayed line and gauge connected to their changing values. `Directive["TransitionType" -> None]` disables coordinate interpolation for direct freehand rendering, while `"Controls" -> False` prevents the drawing gesture from panning or zooming the canvas.
+
+This example draws vector lines with a fixed appearance, so it does not use pressure to change the strokes; the gauge only demonstrates that pressure data is being captured. For pressure-aware strokes whose width, opacity, or texture changes continuously while drawing, switch to a raster canvas and use each pressure sample while painting the pixels. That requires a different rendering workflow and is outside the scope of this example. See the [Canvas 2D API](./../Advanced/Canvas-2D/Overview) for further reading.
+
+<Accordions>
+
+<Accordion title="Advanced: pressure-aware raster drawing with Canvas2D">
+
+This version uses `data["Pressure"]` to control the width of a raster stroke. The Canvas 2D context applies one line width to each subpath, so the `"pointermove"` handler finishes the current subpath and starts another whenever the pressure changes by more than the selected threshold. `AnimationFrameListener` dispatches the queued drawing commands once per animation frame.
+
+```wolfram
+Needs["Canvas2D`" -> "ctx`"];
+
+Module[{
+  canvas = ctx`Canvas2D[],
+  drawing = False,
+  lastPressure = 0
+},
+  ctx`SetFillStyle[canvas, Blend[{White, Yellow}, 0.1]];
+  ctx`FillRect[canvas, {0, 0}, {500, 500}];
+  ctx`Dispatch[canvas];
+
+  EventHandler[
+    Image[
+      canvas,
+      ImageResolution -> {500, 500},
+      Epilog -> {
+        EventHandler[
+          AnimationFrameListener[canvas],
+          Function[Null, ctx`Dispatch[canvas]]
+        ]
+      }
+    ],
+    {
+      "pointerdown" -> Function[data,
+        drawing = True;
+        ctx`BeginPath[canvas];
+        ctx`SetLineWidth[
+          canvas,
+          lastPressure = 10 data["Pressure"]
+        ];
+        ctx`MoveTo[canvas, data["Position"]]
+      ],
+      "pointermove" -> Function[data,
+        If[drawing,
+          With[{pressure = 10 data["Pressure"]},
+            If[Abs[pressure - lastPressure] > 0.1,
+              ctx`LineTo[canvas, data["Position"]];
+              ctx`Stroke[canvas];
+              ctx`BeginPath[canvas];
+              ctx`SetLineWidth[canvas, pressure];
+              ctx`MoveTo[canvas, data["Position"]],
+              ctx`LineTo[canvas, data["Position"]];
+              ctx`Stroke[canvas]
+            ];
+            lastPressure = pressure
+          ]
+        ]
+      ],
+      "pointerup" -> Function[data,
+        drawing = False;
+        ctx`Stroke[canvas]
+      ]
+    }
+  ]
+]
+```
+
+A mouse usually supplies a generic pressure value, so the stroke width may remain constant. A compatible pressure-sensitive stylus or digitizer produces the varying values used by this example.
+
+</Accordion>
+
+</Accordions>
+
 For example:
 
 ```wolfram
