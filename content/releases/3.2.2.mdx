@@ -385,3 +385,64 @@ EventFire[ev, "FullRefresh", True]
 ```
 
 This might come handy if you need to update the plot ranges, since these are usually ignored by diff-engine and JIT.
+
+## Pointer events (Mouse / Digitizer / Stylus)
+We added new general input event listeners, which can be used for `Graphics`-like  and `Image` expressions
+
+- `"pointerup"`
+- `"pointerdown"`
+- `"pointermove"`
+
+send position, tilt angle, pressure level and buttons state of an input device. Unlike `"click"` or `"mousemove"` these events are not throttled, but may come with 15-30 ms latency.
+
+- `"pointerrawupdate"`
+
+is emitted for any property changes in position, pressure, tilt, geometry, or chorded-button changes as soon as they happen (very high frequency, less than 10 ms). For reliable drawing lifecycle using some Wacom pen, you can listen to:
+
+```
+pointerdown      - begin stroke
+pointerrawupdate - append samples
+pointerup        - finish stroke
+```
+
+
+## Inset improvements
+We added `ContentSize` option to `Inset`, so you predefine the size for the container. It helps in the case if the inset expression relies on the size of its parent (which is undefined in this case).
+
+No predefined size:
+
+```wolfram
+Graphics[{
+  Circle[{0,0}, 0.8],
+  Inset[Manipulate[x, {x,0,1}], {0,0}, Center]
+}, PlotRange->1, ImageSize->200]
+```
+
+
+Fixed container size:
+
+```wolfram
+Graphics[{
+  Circle[{0,0}, 0.8],
+  Inset[Manipulate[x, {x,0,1}], {0,0}, Center, ContentSize->{100, 100}]
+}, PlotRange->1, ImageSize->200]
+```
+
+Then you can take advantage of auto-scaling if you provide the target size of the inset as __3rd argument__ in the relative units of `PlotRange`. Then we also increase the content size to avoid clipping:
+
+```wolfram
+Graphics[{
+  Circle[{0,0}, 0.8],
+  Inset[Manipulate[x, {x,0,1}], {0,0}, Center, 1., ContentSize->{500, 200}]
+}, PlotRange->1, ImageSize->200]
+```
+
+
+If the inset expression already knows its size, you don't need any extra options, just like in Mathematica:
+
+```wolfram
+Graphics[{
+  Circle[{0,0}, 0.8],
+  Inset[Plot[x, {x,0,1}, ImageSize->200, Background->Yellow], {0,0}, Center, 1.]
+}, PlotRange->1, ImageSize->200]
+```

@@ -5,7 +5,7 @@ import { useEffect, useRef, useState } from 'react';
 import { Card, Cards } from 'fumadocs-ui/components/card';
 
 import { Tab, Tabs } from 'fumadocs-ui/components/tabs';
-import { Code2, Coffee, Lightbulb, Zap, Download, Package, Terminal, Bot, GitBranch, MessageCircle, MessagesSquare, Send, Youtube, ArrowRight, GitPullRequest } from 'lucide-react';
+import { Code2, Coffee, Lightbulb, Zap, Download, Package, Terminal, Bot, GitBranch, MessageCircle, MessagesSquare, Send, Youtube, ArrowRight, GitPullRequest, SlidersHorizontal } from 'lucide-react';
 import { AnimationController, type AnimationConfig } from './AnimationController';
 
 
@@ -419,6 +419,28 @@ export default function HomePage() {
           Everything you need to build amazing shareable notebooks
         </h2>
         <Cards>
+          <Card
+            className="col-span-full"
+            icon={<SlidersHorizontal />}
+            title="Make your notebooks interactive with Manipulate"
+            description="Add sliders and other controls to Wolfram Language expressions. Adjust parameters and see plots, 3D graphics, and calculations update live."
+            href="https://wljs.io/frontend/GUI/Manipulate"
+          />
+
+          <Card
+            icon={<Download />}
+            title="Portable, embeddable, and web-friendly"
+            description="Export and share your notebook as a mini app or embeddable .html or .mdx file — plots stay interactive, and sliders remain draggable."
+            href="https://wljs.io/frontend/Share/Standalone-HTML"
+          />
+
+          <Card
+            icon={<Lightbulb />}
+            title="Built for presentations"
+            description="Create interactive, component-driven slides directly in your notebook — with 3D graphics and `Manipulate` widgets. Perfect for sharing live reports."
+            href="https://wljs.io/frontend/Cell-types/Slide"
+          />
+
           <Card 
             icon={<Code2 />}
             title="Feels like Mathematica and Jupyter"
@@ -428,16 +450,9 @@ export default function HomePage() {
 
           <Card 
             icon={<Zap />}
-            title="Interactive & Powerful"
-            description=<>{`Optimized for fast interactive computing and complex real-time visualizations, from high-level `}<code>Manipulate</code>{` interfaces to low-level graphics primitives.`}</>
+            title="Fast graphics and math rendering"
+            description="Custom renderers for 2D and 3D graphics and math switch between static SVG or PNG and live Canvas or WebGL as the data requires. Mix and match components in the same notebook."
             href="https://wljs.io/frontend/Guides/Dynamic"
-          />
-
-          <Card 
-            icon={<Lightbulb />}
-            title="Built for presentations"
-            description="Create interactive, component-driven slides directly in your notebook — with 3D graphics and `Manipulate` widgets. Perfect for sharing live reports."
-            href="https://wljs.io/frontend/Cell-types/Slide"
           />
 
           <Card 
@@ -448,24 +463,17 @@ export default function HomePage() {
           />  
 
           <Card 
-            icon={<Download />}
-            title="Portable, embeddable, and web-friendly"
-            description="Export and share your notebook as a mini app or embeddable .html or .mdx file — plots stay interactive, and sliders remain draggable."
-            href="https://wljs.io/frontend/Share/Standalone-HTML"
-          />
-
-          <Card 
-            icon={<Package />}
-            title="Batteries included"
-            description="More than 200 import/export formats and 3,000 functions from the Wolfram Engine standard library are ready for your computational work."
-            href="https://wljs.io/frontend/File-Operations/Import"
-          />
-
-          <Card 
             icon={<Terminal />}
             title="JavaScript sandbox"
             description="First-class support for JavaScript cells with a dedicated communication channel to the Wolfram kernel. Use web libraries to enhance your visualizations."
             href="https://wljs.io/frontend/Cell-types/Javascript"
+          />
+
+          <Card
+            icon={<Package />}
+            title="Batteries included"
+            description="More than 200 import/export formats and 3,000 functions from the Wolfram Engine standard library are ready for your computational work."
+            href="https://wljs.io/frontend/File-Operations/Import"
           />
 
           <Card 
@@ -475,6 +483,16 @@ export default function HomePage() {
             href="https://wljs.io/frontend/Guides/Command-palette#mcp-server"
           />   
         </Cards>
+        <div className="mt-8 flex justify-center">
+          <Link
+            href="https://wljs.io/frontend/setup"
+            data-goatcounter-click="Install-Features"
+            className="inline-flex items-center gap-2 rounded-lg bg-fd-primary px-6 py-2.5 font-medium text-fd-primary-foreground transition-colors hover:bg-fd-primary/90"
+          >
+            <Download className="size-4" />
+            Install WLJS
+          </Link>
+        </div>
       </div>
 
 

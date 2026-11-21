@@ -270,6 +270,10 @@ This approach offers some benefits over using [Primitives](#Primitives). For ins
 - `"mouseleft"`: Captures mouse left position (once)
 - `"mouseup"`: Captures mouse up
 - `"mousedown"`: Captures mouse down
+- `"pointerdown"`: Captures the start of mouse, stylus, or touch input
+- `"pointerup"`: Captures the end of mouse, stylus, or touch input
+- `"pointermove"`: Captures mouse, stylus, or touch movement without throttling
+- `"pointerrawupdate"`: Captures unthrottled, high-frequency pointer updates when supported
 - `"click"`: Captures clicks (without the Alt key)
 - `"altclick"`: Captures clicks with the Alt key held
 - `"metaclick"`: Captures clicks with Control held, or Command on macOS
@@ -281,6 +285,41 @@ This approach offers some benefits over using [Primitives](#Primitives). For ins
 </Card>
 
 Keyboard event handlers start receiving input after the graphic is clicked and focused. `"keydown"`, `"capturekeydown"`, and `"capturekeyup"` return the browser's physical key code, such as `"KeyA"` or `"ArrowLeft"`. Use `"capturekeyevents"` when one handler needs both transitions; it returns values such as `"DOWN:KeyA"` and `"UP:KeyA"` and prevents the corresponding default browser actions.
+
+### Pointer and digitizer input
+
+`Graphics`, supported [graphics primitives](#primitives), and [Image](#image) accept the `"pointerdown"`, `"pointerup"`, `"pointermove"`, and `"pointerrawupdate"` patterns. They use the browser Pointer Events API, so the same handlers work with a mouse, Wacom or other stylus, touchscreen, and other digitizers exposed by the operating system.
+
+Each pattern returns an association with the current sample:
+
+```wolfram
+<|
+  "Position" -> {x, y},
+  "Tilt" -> {tiltX, tiltY},
+  "Pressure" -> pressure,
+  "Buttons" -> buttons
+|>
+```
+
+- `"Position"` uses plot coordinates for `Graphics` and its primitives. For `Image`, it uses image-canvas device pixels, including the display's device-pixel ratio.
+- `"Tilt"` contains the horizontal and vertical pen angles in degrees. Devices without tilt support normally report `{0, 0}`.
+- `"Pressure"` is normalized from `0` to `1`. A mouse or a device without pressure sensing may report a generic value while its primary button is held.
+- `"Buttons"` is the current button bitmask. Common values are `0` for no buttons, `1` for the primary button, `2` for the secondary button, and `4` for the auxiliary button.
+
+All four pointer patterns bypass the regular event throttle and forward every event dispatched by the browser. `"pointerrawupdate"` is intended for the lowest-latency, highest-frequency input. It can fire when position, pressure, tilt, geometry, or a chorded button changes; it does not indicate whether contact started or ended. Use the following lifecycle for drawing:
+
+```wolfram title="Drawing lifecycle (outline)"
+EventHandler[
+  Graphics[primitives],
+  {
+    "pointerdown" -> Function[sample, beginStroke[sample]],
+    "pointerrawupdate" -> Function[sample, appendSample[sample]],
+    "pointerup" -> Function[sample, endStroke[sample]]
+  }
+]
+```
+
+Keep a `"pointerrawupdate"` handler small because it runs at the rate provided by the device and browser. Use `"pointermove"` when raw sampling is unnecessary. Browsers may still combine hardware samples internally, and `"pointerrawupdate"` availability depends on browser support and a secure browser context.
 
 For example:
 
@@ -355,6 +394,10 @@ They support these patterns:
 - `"mousedown"`: Fires on mouse press
 - `"mouseup"`: Fires on mouse release
 - `"mousemove"`: Captures movement
+- `"pointerdown"`: Captures the start of mouse, stylus, or touch input
+- `"pointerup"`: Captures the end of mouse, stylus, or touch input
+- `"pointermove"`: Captures mouse, stylus, or touch movement without throttling
+- `"pointerrawupdate"`: Captures unthrottled, high-frequency pointer updates when supported
 - `"mouseover"`: Captures entry into element area
 - `"mouseenter"`: Captures mouse enter position (once)
 - `"mouseleft"`: Captures mouse left position (once)
@@ -453,6 +496,10 @@ The following event patterns are supported:
 - `"mousemove"`: Captures mouse movement
 - `"mouseup"`: Captures mouse up
 - `"mousedown"`: Captures mouse down
+- `"pointerdown"`: Captures the start of mouse, stylus, or touch input
+- `"pointerup"`: Captures the end of mouse, stylus, or touch input
+- `"pointermove"`: Captures mouse, stylus, or touch movement without throttling
+- `"pointerrawupdate"`: Captures unthrottled, high-frequency pointer updates when supported
 - `"click"`: Captures clicks (without the Alt key)
 - `"altclick"`: Captures clicks with the Alt key held
 - `"metaclick"`: Captures clicks with Control held, or Command on macOS

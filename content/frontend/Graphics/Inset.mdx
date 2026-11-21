@@ -33,8 +33,18 @@ Parameters:
 - `size` __is optional__ and specifies the size of inner object in the system coordinates of the parent container (i.e. `Graphics`). If the specified size does not match the size of inner object `Inset` will be rescaled to match visually
 
 ## Options
-### `ImageSizeRaw`
-Sets the raw size in pixels `{width, height}` of the container for the inner object. It sometimes comes handy when it fails to automatically guess the required size. It works the best with `origin` set to `{Left, Top}`.
+### `ContentSize`
+Predefines the size of the container in pixels if the inner `expr` relies on the parent's size. You don't need this option in the case of `Plot`, other `Graphics`, `Graphics3D`, `Image` expressions provided as inset, which already know their sizes. For example, `Manipulate`, `Refresh` can benefit form that and be rescaled too of `size` argument is provided:
+
+```wolfram
+Graphics[{
+  Circle[{0,0}, 0.8],
+  Inset[Manipulate[x, {x,0,1}], {0,0}, Center, 1., ContentSize->{500, 200}]
+}, PlotRange->1, ImageSize->200]
+```
+
+### `ImageSizeRaw` (depricated)
+Sets the raw size in pixels `{width, height}` of the container for the inner object. It sometimes comes handy when it fails to automatically guess the required size. It works the best with `origin` set to `{Left, Top}`. Note, this will ignore `size` argument.
 
 ## Examples
 
