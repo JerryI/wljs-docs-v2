@@ -1,6 +1,6 @@
 ---
 title:  Release Notes *3.2.2*
-date: 2026-11-17
+date: 2026-11-21
 ---
 
 
@@ -127,6 +127,12 @@ You can put it on one of your slides if you wish:
 	## Second
 	
 	<AnimatedKnot/>`}</wljs-editor></WLJSWrapper>
+
+Alternatively you can use `SpinShow` symbol from the 3D graphics context, that will apply this option automatically:
+
+```wolfram
+Graphics3D`SpinShow[Plot3D[Cos[4 Pi x y], {x,-1,1}, {y,-1,1}], 3.6 Degree]
+```
 
 ## Improvements in Excalidraw
 We fixed some minor UI issues with the drawing-board widget. In addition, you can now use subscripts and superscripts in plain-text labels. *This is a new feature that the official library does not have.*

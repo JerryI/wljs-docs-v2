@@ -1,0 +1,56 @@
+---
+title: SpinShow
+env:
+  - Wolfram Kernel
+package: wljs-graphics3d-threejs
+---
+```wolfram
+Graphics3D`SpinShow[graphics3d]
+```
+
+transforms any `Graphics3D` expression into animated scene. Automatically rotates the scene around its z-axis while keeping the lights fixed. By the default it rotates continuously through 360 degrees.
+
+```wolfram
+Graphics3D`SpinShow[graphics3d, maxAngle]
+```
+
+oscillates between `-maxAngle` and `maxAngle`, slowing smoothly before changing direction. The angle is in radians.
+
+```wolfram
+Graphics3D`SpinShow[graphics3d, {maxAngle, speed}]
+```
+
+sets the oscillation speed.
+
+```wolfram
+Graphics3D`SpinShow[graphics3d, {Automatic, speed}]
+```
+
+rotates continuously at the specified speed.
+
+Speed is measured in radians per second and defaults to `0.6`. For example:
+
+```wolfram
+Graphics3D`SpinShow[Graphics3D[{Red, Cuboid[]}], {Pi/4, 0.5}]
+```
+
+Here is another example with 3D plots:
+
+```wolfram
+Graphics3D`SpinShow[Plot3D[Cos[4 Pi x y], {x,-1,1}, {y,-1,1}], 3.6 Degree]
+```
+
+The full context name:
+
+```wolfram
+CoffeeLiqueur`Extensions`Graphics3D`Tools`SpinShow[graphics3d]
+```
+
+## Notes
+
+The renderer checks every two seconds whether the output is visible. It pauses while the output is hidden or covered, then resumes from the same angle when visible again. 
+
+<Callout type="idea">
+It does not require dynamic export when packed to HTML or MDX. This spin does not depend on Wolfram Kernel and is a build-in feature of a renderer.
+</Callout>
+

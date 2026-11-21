@@ -415,9 +415,16 @@ export default function HomePage() {
 
       {/* Features Section */}
       <div className="mb-16">
-        <h2 className="text-2xl sm:text-3xl font-bold text-center mb-10">
+        <h2 className="text-2xl sm:text-3xl font-bold text-center mb-3">
           Everything you need to build amazing shareable notebooks
         </h2>
+        <p className="text-fd-muted-foreground text-center max-w-2xl mx-auto mb-10">
+          Open{' '}
+          <Link href="https://wljs.io/frontend/Overview#built-in-examples" className="text-fd-primary underline underline-offset-4">
+            160+ built-in handcrafted example notebooks
+          </Link>{' '}
+          on desktop or in server mode. Start with Wolfram Language and the WLJS framework, then try curve fitting, signal processing, physics simulations and other practical examples.
+        </p>
         <Cards>
           <Card
             className="col-span-full"
