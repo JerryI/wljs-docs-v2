@@ -150,15 +150,23 @@ AnimateParametricPlot[
 <wljs-editor display="codemirror" lazy="true" type="Output"  >{`(*VB[*)(FrontEndRef["7d570729-f4d3-47d7-947e-3022f973c962"])(*,*)(*"1:eJxTTMoPSmNkYGAoZgESHvk5KRCeEJBwK8rPK3HNS3GtSE0uLUlMykkNVgEKm6eYmhuYG1nqppmkGOuamKeY61qamKfqGhsYGaVZmhsnW5oZAQB2dBTQ"*)(*]VB*)`}</wljs-editor></WLJSWrapper>
 
 ### Auto-animated 3D graphics
-There is a special option of any `Graphics3D` expression allowing automatically rotate scenes along z-axis `"SpinShow"`
+There is a special utility function for any `Graphics3D`-like object allowing automatically rotate scenes along z-axis `SpinShow`
 
 <WLJSWrapper>
 <div className="code-input"/>
 <wljs-editor type="Input" lazy="true" display="codemirror">{`
-    Graphics3D[{
+    Graphics3D`SpinShow@Graphics3D[{
       MaterialShading["Copper"],
       Dodecahedron[]
-    }, "SpinShow"->True]
+    }]
+`}</wljs-editor></WLJSWrapper>
+
+any plotting function that produce 3D graphics can also be used:
+
+<WLJSWrapper>
+<div className="code-input"/>
+<wljs-editor type="Input" lazy="true" display="codemirror">{`
+    Graphics3D`SpinShow@Plot3D[{Sin[x y], {x,-1,1}, {y,-1,1}}]
 `}</wljs-editor></WLJSWrapper>
 
 
