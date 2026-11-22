@@ -763,7 +763,7 @@ after</span> __evaluation of the initialization cells__",
     "Notebook" -> "a3556e6f-ff92-474a-8dca-552721b71113"|>, 
    <|"Data" -> "Graphics3D[{SpotLight[Blue, {2.4463, 60.1604, 9.3104}, \
 \"Intensity\"->1000], SpotLight[Red, {48.1378, 47.8679, 12.4545}, \
-\"Intensity\"->1000], \n  Roughness[0],\n  GraphicsComplex[vertices // \
+\"Intensity\"->1000], \n  \n  GraphicsComplex[vertices // \
 Offload, Polygon[triangles]],\n  EventHandler[AnimationFrameListener[vertices \
 // Offload], Function[Null,\n    With[{i = #[[1]], j = #[[2]]}, \n      \
 field0[[i,j]] = update[i,j, field1, field2];\n    ]&/@ RandomSample[mesh];\n  \
