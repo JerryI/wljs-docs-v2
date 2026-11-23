@@ -322,7 +322,7 @@ __Claude Code__
 claude mcp add --transport http --scope user wljs-notebook http://127.0.0.1:20564/
 ```
 
-__Codex__
+__Codex__ (ChatGPT)
 
 ```bash
 codex mcp add wljs-notebook --url http://127.0.0.1:20564/
@@ -334,6 +334,55 @@ or add to it your `config.toml` as
 [mcp_servers.wljs_notebook]
 url = "http://127.0.0.1:20564/"
 ```
+
+__Gemini CLI__
+
+```bash
+gemini mcp add --transport http --scope user wljs-notebook http://127.0.0.1:20564/
+```
+
+__Cursor AI__ `(~/.cursor/mcp.json)`
+
+```json
+{
+  "mcpServers": {
+    "wljs-notebook": {
+      "url": "http://127.0.0.1:20564/"
+    }
+  }
+}
+```
+
+__VS Code / GitHub Copilot__ `(.vscode/mcp.json)`
+
+```json
+{
+  "servers": {
+    "wljs-notebook": {
+      "type": "http",
+      "url": "http://127.0.0.1:20564/"
+    }
+  }
+}
+```
+
+__OpenCode__ (`opencode.json`, works with DeepSeek models)
+
+```json
+{
+  "$schema": "https://opencode.ai/config.json",
+  "mcp": {
+    "wljs-notebook": {
+      "type": "remote",
+      "url": "http://127.0.0.1:20564/",
+      "enabled": true
+    }
+  }
+}
+```
+
+Any other MCP client: look for an option to add a "Streamable HTTP" (or "remote HTTP") server and give it the URL `http://127.0.0.1:20564/`
+
 
 ### Tips
 
