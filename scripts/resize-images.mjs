@@ -38,10 +38,17 @@ async function resizeImages() {
         .resize({ width: MAX_WIDTH, withoutEnlargement: true })
         .toFile(tmpPath);
 
-      // Replace original with resized version
       const originalSize = fs.statSync(filePath).size;
       const newSize = fs.statSync(tmpPath).size;
+
+      if (newSize >= originalSize) {
+        fs.unlinkSync(tmpPath);
+        console.log(`[resize] ${file}: kept original (resized file is not smaller: ${originalSize} → ${newSize} bytes)`);
+        skipped++;
+        continue;
+      }
       
+      // Replace the original only when resizing reduces the file size.
       fs.renameSync(tmpPath, filePath);
       
       const saved = ((1 - newSize / originalSize) * 100).toFixed(0);
