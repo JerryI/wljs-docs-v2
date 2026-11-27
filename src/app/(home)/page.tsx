@@ -370,7 +370,7 @@ export default function HomePage() {
             data-goatcounter-click="Blog"
             className="inline-flex items-center px-3 py-2.5 text-sm font-medium text-fd-muted-foreground transition-colors hover:text-fd-primary"
           >
-            Explore examples
+            Blog &amp; showcases
           </a>
           <a
             data-goatcounter-click="Migration"
