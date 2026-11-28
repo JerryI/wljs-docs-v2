@@ -134,6 +134,9 @@ Thank you for the attention
 
 This will merge and render all slide cells in the notebook as one continuous presentation, allowing you to navigate through all slides sequentially.
 
+### Hidden slides
+You can hide slides from the final presentation by changing its cell type to anything else, for example replace `.slide` with `.slideoff` or `.md` works too.
+
 ## Layout
 Standard text to the left, full-height layout:
 
@@ -278,6 +281,18 @@ Using `grid` display property of CSS, we can automatically align many images per
 </Accordions>
 
 Or create your [custom layout components](./../Advanced/Component-based-markup) using [WLX](#WLX).
+
+## Freeform layout
+
+Put `!![]` on its own line in a slide cell:
+
+```markdown
+.slide
+
+!![]
+```
+
+This opens the [Excalidraw](https://excalidraw.com/) editor. You can draw freely, place text and drop images directly onto its canvas. After evaluation, the drawing is rendered as an inline SVG in the slide output.
 
 ## Fragments
 
@@ -655,7 +670,7 @@ See [Markdown cells](./Markdown) for more information
 </Callout>
 
 
-## Drawings
+## Freeform layout & drawings
 
 There are three ways to combine drawings, arrows, text, and images on a slide.
 
@@ -670,6 +685,14 @@ Put `!![]` on its own line in a slide cell:
 ```
 
 This opens the [Excalidraw](https://excalidraw.com/) editor. You can draw freely and drop images directly onto its canvas. After evaluation, the drawing is rendered as an inline SVG in the slide output.
+
+We also support sub- and superscripts in any text labels of Excalidraw, for example:
+
+```
+H_{2} O
+```
+
+will be automatically converted.
 
 ### Programmatic drawing with `Graphics`
 
